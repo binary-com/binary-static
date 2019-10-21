@@ -1,0 +1,162 @@
+version: 2.1
+orbs:
+  k8s: circleci/kubernetes@0.7.0
+commands:
+  git_checkout_from_cache:
+    description: "Git checkout and save cache"
+    steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
+      - run: 
+          name: Fetch git tags 
+          command: |
+            mkdir -p ~/.ssh
+            echo 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ== ' >> ~/.ssh/known_hosts
+            # Fetch tags if git cache is present
+            if [ -e /home/circleci/project/.git ]
+            then
+              git fetch origin --tags
+            fi
+      - checkout
+      - run:
+          name: Compress git objects 
+          command: git gc
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
+  npm_install_from_cache:
+    description: "npm install and save cache"
+    steps:
+      - restore_cache:
+          keys:
+            - node-{{ checksum "package-lock.json" }}
+            - node-
+      - run:
+          name: Install npm packages
+          command: npm install
+      - save_cache:
+          key: node-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+  npm_test:
+    description: "Run npm test"
+    steps:
+      - run:
+          name: "Run test"
+          command: npm test
+  grunt_release:
+    description: "Build for release target"
+    parameters:
+      target:
+        type: string
+        default: "staging"
+    steps:
+      - run:
+          name: Building dist for << parameters.target >>
+          command: node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
+  docker_build:
+    description: "Build Docker image"
+    steps:
+      - setup_remote_docker
+      - run: 
+          name: Building docker image
+          command: |
+            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
+  docker_push:
+    description: "Push image to docker hub"
+    steps:
+      - run: 
+          name: Pushing Image to docker hub
+          command: |
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
+  k8s_deploy:
+    description: "Deploy to k8s cluster"
+    parameters:
+      k8s_svc_name:
+        type: string
+        default: "staging-binary-com"
+    steps:
+      - k8s/install-kubectl
+      - run: 
+          name: Deploying to k8s cluster for service << parameters.k8s_svc_name >>
+          command: |
+            echo $CA_CRT | base64 --decode > ca.crt
+            kubectl --server=${KUBE_SERVER} --certificate-authority=ca.crt --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:9.8.0-stretch
+    steps:
+      - git_checkout_from_cache
+      - npm_install_from_cache
+      - npm_test
+
+  build_push:
+    docker:
+      - image: circleci/node:9.8.0-stretch
+    steps:
+      - git_checkout_from_cache
+      - npm_install_from_cache
+      - grunt_release
+      - docker_build
+      - docker_push
+      
+  deploy_staging:
+    docker:
+      - image: circleci/node:9.8.0-stretch
+    steps:
+      - k8s_deploy
+      
+  deploy_production:
+    docker:
+      - image: circleci/node:9.8.0-stretch
+    steps:
+      - k8s_deploy:
+          k8s_svc_name: "production-binary-com"
+      
+workflows:
+  build_and_push_master:
+    jobs:
+      - test
+      - build_push:
+          filters:
+            branches:
+              only: /^master/
+  tagged_release_staging:
+    jobs:
+      - build_push:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^staging.*/
+      - deploy_staging:
+          requires:
+            - build_push
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^staging.*/
+  tagged_release_production:
+    jobs:
+      - build_push:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^production.*/
+      - deploy_production:
+          requires:
+            - build_push
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^production.*/

@@ -833,25 +833,27 @@ const Authenticate = (() => {
     });
 
     const initOnfido = async (sdk_token) => {
-        $('#onfido').setVisibility(1);
-        try {
-            onfido = Onfido.init({
-                containerId: 'onfido',
-                language   : {
-                    locale: getLanguage().toLowerCase() || 'en',
-                },
-                token     : sdk_token,
-                useModal  : false,
-                onComplete: handleComplete,
-                steps     : [
-                    'document',
-                    'face',
-                ],
-            });
-            $('#authentication_loading').setVisibility(0);
-        } catch (err) {
-            $('#error_occured').setVisibility(1);
-            $('#authentication_loading').setVisibility(0);
+        if (!$('#onfido').is(':parent')) {
+            $('#onfido').setVisibility(1);
+            try {
+                onfido = Onfido.init({
+                    containerId: 'onfido',
+                    language   : {
+                        locale: getLanguage().toLowerCase() || 'en',
+                    },
+                    token     : sdk_token,
+                    useModal  : false,
+                    onComplete: handleComplete,
+                    steps     : [
+                        'document',
+                        'face',
+                    ],
+                });
+                $('#authentication_loading').setVisibility(0);
+            } catch (err) {
+                $('#error_occured').setVisibility(1);
+                $('#authentication_loading').setVisibility(0);
+            }
         }
     };
 

@@ -1,4 +1,3 @@
-const setShouldRedirect      = require('../user/account/settings/cashier_password').setShouldRedirect;
 const BinaryPjax             = require('../../base/binary_pjax');
 const Client                 = require('../../base/client');
 const BinarySocket           = require('../../base/socket');
@@ -27,13 +26,7 @@ const DepositWithdraw = (() => {
 
     const container = '#deposit_withdraw';
 
-    const init = (cashier_password) => {
-        if (cashier_password) {
-            showMessage('cashier_locked_message');
-            setShouldRedirect(true);
-            return;
-        }
-
+    const init = () => {
         if (!Client.get('currency')) {
             BinaryPjax.load(`${Url.urlFor('user/set-currency')}#redirect_${cashier_type}`);
             return;
@@ -253,20 +246,14 @@ const DepositWithdraw = (() => {
     const onLoad = () => {
         $loading = $('#loading_cashier');
         getCashierType();
-        const req_cashier_password   = BinarySocket.send({ cashier_password: 1 });
         const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
         const req_statement          = BinarySocket.send({ statement: 1, limit: 1 });
         const req_mt5_login_list     = BinarySocket.send({ mt5_login_list: 1 });
 
-        Promise.all([req_cashier_password, req_get_account_status, req_statement, req_mt5_login_list]).then(() => {
+        Promise.all([req_get_account_status, req_statement, req_mt5_login_list]).then(() => {
             // cannot use State.getResponse because we want to check error which is outside of response[msg_type]
-            const response_cashier_password   = State.get(['response', 'cashier_password']);
             const response_get_account_status = State.get(['response', 'get_account_status']);
-            if ('error' in response_cashier_password) {
-                showError('custom_error', response_cashier_password.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response_cashier_password.error.message);
-            } else if (response_cashier_password.cashier_password === 1) {
-                showMessage('cashier_locked_message'); // Locked by client
-            } else if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {
+            if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {
                 showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
             } else {
                 const limit = State.getResponse('get_limits.remainder');
@@ -274,7 +261,7 @@ const DepositWithdraw = (() => {
                     showError('custom_error', localize('You have reached the withdrawal limit.'));
                 } else {
                     BinarySocket.wait('get_settings').then(() => {
-                        init(response_cashier_password.cashier_password);
+                        init();
                     });
                 }
             }

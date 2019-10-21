@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-09-30 07:13\n"
+"PO-Revision-Date: 2019-10-17 07:47\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -278,9 +278,6 @@ msgstr "%1 jest utytułowanym pionierem rynku w branży handlu opcjami w interne
 
 msgid "%1 launches an %2e-commerce site for branded merchandise%3 – enabling clients, affiliates, and developers to buy and sell %1 products."
 msgstr "%1 uruchamia %2sklep internetowy z produktami z logiem firmy%3, umożliwiając klientom, partnerom i programistom zakup i sprzedaż produktów %1."
-
-msgid "%1 lots"
-msgstr "Liczba partii: %1"
 
 msgid "%1 may have access to information that is not available to the client, may have acquired trading positions at prices that are not available to the client, and may have interests different from the client's interests. %1 does not undertake any obligation to provide the client with market or other information that the Company possesses, nor to alter or refrain from the Company's own trading."
 msgstr "%1 może mieć dostęp do informacji, które nie są dostępne dla klientów, może nabywać pozycje handlowe po cenach, które nie są dostępne dla klientów i może uzyskiwać odsetki inne niż klienci. %1 nie jest zobowiązane do przekazywania klientom posiadanych informacji rynkowych lub innych informacji będących w posiadaniu Firmy, ani powstrzymywania się od handlowania, czy też zmieniania sposobu handlowania."
@@ -1299,9 +1296,6 @@ msgstr "Otwartą pozycję można zamknąć poprzez kliknięcie przycisku „x”
 msgid "An Open Position may be partially closed by double clicking the position, selecting the volume to be partially closed from the context menu, and then clicking \"Close\"."
 msgstr "Otwarta pozycja może zostać częściowo zamknięta poprzez dwukrotne kliknięcie pozycji, wybranie wolumenu, który ma być częściowo zamknięty, z menu kontekstowego, i kliknięcie opcji „Zamknij”."
 
-msgid "An additional password can be used to restrict access to the cashier."
-msgstr "Dodatkowe hasło może być wykorzystane do ograniczania dostępu do sekcji Kasjer."
-
 msgid "An advanced university degree in Physics, Financial Engineering or Mathematics"
 msgstr "Ukończone studia wyższe na kierunku Fizyka, Inżynieria finansowa lub Matematyka"
 
@@ -1322,6 +1316,9 @@ msgstr "Chęć zarządzania dużym ryzykiem, aby nadążać za rosnącym tempem 
 
 msgid "An excellent command of spoken and written English"
 msgstr "Doskonała znajomość języka angielskiego w mowie i w piśmie"
+
+msgid "An exciting mobile trading experience"
+msgstr "Doskonały komfort handlowania"
 
 msgid "An intermediate understanding of the interaction of information technology and client servicing aspects within the B2B and B2C environments"
 msgstr "Zrozumienie oddziaływania technologii informatycznej oraz aspektów świadczenia usług klientom w środowisku B2B i B2C"
@@ -1486,7 +1483,7 @@ msgid "Are you sure you want to create your %1 account now?"
 msgstr "Czy na pewno chcesz utworzyć teraz swoje konto %1?"
 
 msgid "Are you sure you want to deposit in %1?"
-msgstr ""
+msgstr "Czy na pewno chcesz dokonać wpłaty w %1?"
 
 msgid "Are you sure?"
 msgstr "Czy na pewno?"
@@ -2121,9 +2118,6 @@ msgstr "Binary Limited, z siedzibą zarejestrowaną pod adresem: 47 Esplanade, S
 msgid "Binary Options"
 msgstr "Opcje binarne"
 
-msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "Handlowanie opcjami binarnymi zostało wyłączone na Twoim koncie. %1Skontaktuj się z działem obsługi klienta%2, aby uzyskać wsparcie."
-
 msgid "Binary Shop"
 msgstr "Sklep Binary"
 
@@ -2385,8 +2379,8 @@ msgstr "Może być stosowany m.in. do otwierania kont, wybierania ustawień, zar
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Może być stosowany do podglądu aktywności na koncie, w tym m.in. ustawień, limitów, salda, historii zakupu kontraktów."
 
-msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
-msgstr "Może być stosowany do dokonywania wypłat przetwarzanych przez pośredników płatności, przelewów środków między kontami oraz ustawiania i zmiany hasła do kasjera."
+msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
+msgstr "Służy do wypłat środków na rzecz pośredników płatności i przelewów środków pomiędzy kontami."
 
 msgid "Can you spare 15 minutes?"
 msgstr "Masz 15 minut?"
@@ -2457,12 +2451,6 @@ msgstr "Wskaźniki gotówkowe"
 msgid "Cashier"
 msgstr "Kasjer"
 
-msgid "Cashier Password"
-msgstr "Hasło do sekcji Kasjer"
-
-msgid "Cashier password"
-msgstr "Hasło do sekcji Kasjer"
-
 msgid "Cashier session expired"
 msgstr "Twoja sesja w sekcji Kasjer wygasła"
 
@@ -2486,9 +2474,6 @@ msgstr "Zmień hasło"
 
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Zmień wysokość Depozytu zabezpieczającego w odniesieniu do pozycji otwartej, jak i do nowych Zleceń"
-
-msgid "Change the password used for deposits and withdrawals."
-msgstr "Zmień hasło używane do dokonywania wpłat i wypłat."
 
 msgid "Change your main login password."
 msgstr "Zmień swoje główne hasło do logowania."
@@ -3825,9 +3810,6 @@ msgstr "Prawa paszportowe UE"
 msgid "EUR"
 msgstr "EUR"
 
-msgid "EUR 1 per point"
-msgstr "1 EUR za punkt"
-
 msgid "EUR Index – Measures the value of the Euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%"
 msgstr "Indeks EUR – mierzy wartość euro w stosunku do koszyka pięciu światowych walut (USD, AUD, GBP, JPY, CAD), z których każda ma wagę 20%"
 
@@ -4616,9 +4598,6 @@ msgstr "Obsługa klienta na najwyższym poziomie."
 
 msgid "Fixed spreads"
 msgstr "Stałe spready"
-
-msgid "Fixed/Variable"
-msgstr "Stałe/Zmienne"
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "Rozwiązywanie problemów i zapewnianie opinii zwrotnej w celu wprowadzania usprawnień."
@@ -5805,9 +5784,6 @@ msgstr "W sytuacji, gdy Firma nie otrzyma od klienta zlecenia zamknięcia pozycj
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "W Przypadku jeśli Firma uzyska informacje, że Partner narusza postanowienia jakiegokolwiek z powyższych klauzuli, Firma ma prawo, według wszelkich innych praw lub środków zaradczych dostępnych na mocy niniejszej Umowy lub obowiązującego prawa, natychmiast zablokować dostęp Partnera do Programu. Partner niniejszym zrzeka się z wszelkich roszczeń lub żądań w stosunku do Firmy lub jakiejkolwiek spółki należącej do grupy Binary, jej kadry zarządzającej i kierowniczej lub pracowników lub udziałowców dotyczących strony internetowej %1, jeśli Firma cofnie dostęp Partnera do programu."
 
-msgid "In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell."
-msgstr "W przypadku nowego, ekscytującego Binary Grid wygrywasz za każdym razem, gdy zakład kończy się poza wybraną komórką."
-
 msgid "In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
 msgstr "W pozostałej części UE wskaźniki zmienności są oferowane przez Binary (Europe) Ltd., W Business Centre, Poziom 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licencjonowana i regulowana przez (1) Malta Gaming Authority na Malcie (% 1licence no. MGA / B2C / 102/2000% 4 wydane 1 Sierpnia 2018 r.), dla klientów w Wielkiej Brytanii przez (2) UK Gambling Commission (licencja %2 nr referencyjny: 39495% 4), a dla klientów w Irlandii przez (3) Revenue Commissioners w Irelandii (licencja Remote Bookmaker's nr 1010285 wydana 1 lipca 2017 r.). Sprawdz kompletne % 3 Informacje regulacyjne% 4."
 
@@ -6141,6 +6117,9 @@ msgstr "Jurysdykcja"
 msgid "Jurisdiction and Choice of Law"
 msgstr "Jurysdykcja i wybór prawa"
 
+msgid "Just tap or swipe to open Rise/Fall, Ends Outside, and Ends Between contracts with our fun mobile trading app."
+msgstr "Dzięki naszej aplikacji do mobilnego handlowania wystarczy nacisnąć lub przeciągnąć, aby otworzyć kontrakty Wzrost/Spadek, Zakończy się poza lub Zakończy się pomiędzy."
+
 msgid "K. Event of Default"
 msgstr "K. Niewywiązanie się z zobowiązania"
 
@@ -6470,9 +6449,6 @@ msgstr "Życie na rajskiej wyspie ma wiele zalet. Labuan to jedno z nielicznych 
 
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "W zlokalizowanym w odległości 10 minut Intelligent Garden City w Malezji znajdziesz zdumiewającą cieplarnię i wyszukane struktury architektoniczne."
-
-msgid "Lock Cashier"
-msgstr "Zablokuj sekcję Kasjer"
 
 msgid "Log in"
 msgstr "Zaloguj się"
@@ -6909,9 +6885,6 @@ msgstr "Maksymalna limit wpłaty"
 msgid "Maximum deposit limit expiry"
 msgstr "Wygaśnięcie maksymalnego limitu wpłaty"
 
-msgid "Maximum leverage"
-msgstr "Maksymalna dźwignia"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Mnożnik maksymalny wynoszący 1000."
 
@@ -6923,9 +6896,6 @@ msgstr "Maksymalna dzienna liczba otwartych pozycji"
 
 msgid "Maximum payout"
 msgstr "Maksymalna wypłata"
-
-msgid "Maximum ticket size"
-msgstr "Maksymalna wielkość ticketa"
 
 msgid "Maximum upload size for each file is %1"
 msgstr "Maksymalny rozmiar każdego pliku to %1"
@@ -6978,9 +6948,6 @@ msgstr "Metoda"
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
 msgstr "Doskonała znajomość języka angielskiego i szczegółowość, jeśli chodzi o interpunkcję, pisownię, gramatykę i składnię"
 
-msgid "Micro-trading on the go"
-msgstr "Mikro-handlowanie w drodze"
-
 msgid "Min"
 msgstr "Min."
 
@@ -7016,9 +6983,6 @@ msgstr "Z datą ważności wynoszącą co najmniej sześć miesięcy"
 
 msgid "Minimum qualifications:"
 msgstr "Minimalne kwalifikacje:"
-
-msgid "Minimum ticket size"
-msgstr "Minimalna wielkość ticketu"
 
 msgid "Minimum two years experience in a software or web application testing role"
 msgstr "Co najmniej dwa lata doświadczenia w zakresie testowania oprogramowania i aplikacji internetowych"
@@ -8659,7 +8623,7 @@ msgid "Q1 2019"
 msgstr "1 kwartał 2019 r."
 
 msgid "Q2 2019"
-msgstr ""
+msgstr "2 kwartał 2019 r."
 
 msgid "Q3 2018"
 msgstr "3 kwartał 2018"
@@ -8705,9 +8669,6 @@ msgstr "Wiele rynków"
 
 msgid "Re-enter password"
 msgstr "Wpisz hasło ponownie"
-
-msgid "Re-enter your password"
-msgstr "Proszę ponownie wpisać hasło"
 
 msgid "Read"
 msgstr "Odczyt"
@@ -8825,9 +8786,6 @@ msgstr "ID referencyjne"
 
 msgid "Referral tools"
 msgstr "Narzędzia do polecania klientów"
-
-msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
-msgstr "Odnosi się do maksymalnego wolumenu lub maksymalnej liczby partii przypadających na zlecenie, które mogą ulec zmianie w zależności od warunków rynkowych."
 
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr "Odmowa wypłacenia jakichkolwiek prowizji Brokerowi polecającemu, który jest zaangażowany z działalność szkodliwą"
@@ -9312,9 +9270,6 @@ msgstr "Czas trwania sesji:"
 msgid "Set Currency"
 msgstr "Ustaw walutę"
 
-msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr "Ustaw %1blokadę hasła do kasjera%2, aby zapobiec nieautoryzowanemu dostępowi."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Ustaw limity, aby określić swoją pozycję, która inicjuje Twoją wypłatę."
 
@@ -9483,6 +9438,9 @@ msgstr "Przepraszamy, wystąpił błąd podczas operacji na Twoim koncie."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Przepraszamy, podczas przetwarzania Twojego żądania wystąpił błąd."
 
+msgid "Sorry, but binary options trading is not available in your financial account."
+msgstr "Przepraszamy, ale handlowanie opcjami binarnymi nie jest dostępne na Twoim koncie finansowym."
+
 msgid "Sorry, live chat is currently unavailable. Please email us at %1."
 msgstr "Przepraszamy, czat na żywo jest obecnie niedostępny. Wyślij nam wiadomość e-mail na adres %1."
 
@@ -9491,9 +9449,6 @@ msgstr "Przepraszamy, ta funkcja jest dostępna tylko dla kont wirtualnych."
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Niestety ta funkcja jest niedostępna w Twojej jurysdykcji."
-
-msgid "Sorry, you have entered an incorrect cashier password"
-msgstr "Przepraszamy, wpisano nieprawidłowe hasło do kasjera"
 
 msgid "Source of income"
 msgstr "Źródło dochodu"
@@ -9648,14 +9603,11 @@ msgstr "Krok 3: Dokonaj transakcji"
 msgid "Step Index"
 msgstr "Indeks Step"
 
+msgid "Step Indices"
+msgstr "Wskaźniki Step"
+
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
 msgstr "Wyjdź na zewnątrz i rozkoszuj się słońcem na jednej z dziewiczych plaży w Labuan. Możesz skorzystać również z takich atrakcji, jak nurkowanie wśród wraków statków, zwiedzanie wysp, wyprawa kajakiem, czy łowienie ryb głębinowych."
-
-msgid "Step size"
-msgstr "Krok – wielkość"
-
-msgid "Step size is the minimum allowable increment applied to all order types. It is the volume from which the increase of the position is based. You can only trade in the minimum ticket size or its multiples."
-msgstr "Wielkość kroku jest najmniejszym dozwolonym wzrostem w przypadku wszystkich rodzajów zakładów. To wolumen, na którym opiera się wzrost pozycji. Możesz handlować wyłącznie minimalną wielkością tickata lub jego wielokrotnością."
 
 msgid "Sticpay is a global e-wallet service for money transfers and online payments. For more information, please visit %1."
 msgstr "Sticpay to globalny e-portfel do przelewów pieniężnych i płatności on-line. Aby uzyskać więcej informacji, odwiedź %1."
@@ -11208,9 +11160,6 @@ msgstr "Maksymalna liczba tokenów (%1) została osiągnięta."
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Minimalna kwota wymagana do skorzystania z funkcji przelewów między kontami to %1."
 
-msgid "The minimum ticket size refers to the minimum volume or number of lots."
-msgstr "Minimalna wielkość ticketu odnosi się do minimalnego wolumenu lub liczby partii."
-
 msgid "The minimum, incremental, and maximum Order amount"
 msgstr "Minimalna, przyrostowa i maksymalna wartość Zlecenia"
 
@@ -11334,8 +11283,8 @@ msgstr "Określone instrukcje, które Firma otrzymuje od klienta"
 msgid "The spread is the difference between the ask and bid price."
 msgstr "Spread jest różnicą między ceną zakupu a ceną sprzedaży."
 
-msgid "The spread is the difference between the buy price and sell price. A fixed spread means that the spread will remain as it is no matter the market condition except in rare cases of extreme market volatility. A variable spread means that the spread is constantly changing, depending on the market condition."
-msgstr "Spread jest różnicą między ceną zakupu a ceną sprzedaży. Stały spread oznacza, że nie zmieni się niezależnie od warunków rynkowych z wyjątkiem rzadkich przypadków ekstremalnej zmienności na rynku. Zmienny spread oznacza, że będzie się stale zmieniał w zależności od warunków rynkowych."
+msgid "The spread is the difference between the buy price and sell price. A variable spread means that the spread is constantly changing, depending on the market conditions. A fixed spread means that the spread is not affected by market conditions but it is subject to alteration at the Company's absolute discretion."
+msgstr "Spread to różnica między ceną zakupu a ceną sprzedaży. Zmienny spread oznacza, że będzie się stale zmieniał w zależności od warunków rynkowych. Stały spread oznacza, że nie zmieni się niezależnie od warunków rynkowych, ale Firma może go zmieniać według swojego wyłącznego uznania."
 
 msgid "The spread – why it matters"
 msgstr "Spread – dlaczego jest istotny"
@@ -12291,17 +12240,11 @@ msgstr "Patenty amerykańskie"
 msgid "USD"
 msgstr "USD"
 
-msgid "USD 1 per point"
-msgstr "1 USD za punkt"
-
 msgid "USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5"
 msgstr "10 USD x 1 partia x 125,000/100,000 = 12.5 USD"
 
 msgid "USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "Indeks USD – mierzy wartość dolara amerykańskiego w stosunku do koszyka pięciu światowych walut (EUR, GBP, JPY, CAD, AUD), z których każda ma wagę 20%"
-
-msgid "USD/EUR"
-msgstr "USD/EUR"
 
 msgid "Ultra fast on-the-go trading"
 msgstr "Super szybkie handlowanie gdziekolwiek jesteś"
@@ -12365,9 +12308,6 @@ msgstr "Nieznany system operacyjny"
 
 msgid "Unless otherwise advised, BIEL shall treat a client as a retail client. Clients may also request, by writing to BIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. BIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "BIEL będzie traktować klienta jako Klienta detalicznego, chyba że postanowiono inaczej. Klienci mogą złożyć pisemny wniosek o zmianę kategorii, do której ich zaklasyfikowano, co może mieć wpływ na poziom oferowanej ochrony. BIEL oceni wiedzę i doświadczenie klienta i określi, czy usługa/produkt inwestycyjny, o który wnioskuje klient, jest dla niego odpowiedni."
-
-msgid "Unlock Cashier"
-msgstr "Odblokuj sekcję Kasjer"
 
 msgid "Up to %1"
 msgstr "Do %1"
@@ -12494,6 +12434,9 @@ msgstr "Zmienne"
 
 msgid "Variable spreads"
 msgstr "Zmienne spready"
+
+msgid "Variable/Fixed"
+msgstr "Zmienny/stały"
 
 msgid "Verification"
 msgstr "Weryfikacja"
@@ -13147,11 +13090,14 @@ msgstr "Z %1 możesz sprzedawać swoje kontrakty przed ich wygaśnięciem, aby z
 msgid "With %1, you'll know the risk and potential reward before you purchase a contract."
 msgstr "Handlując z %1, zapoznasz się z ryzykiem i potencjalnym zyskiem jeszcze przed kupnem kontraktu."
 
-msgid "With Boom 1000 Index, there's an average of one spike in the price series that occurs at anytime within 1000 ticks."
-msgstr "W przypadku Indeksu Boom 1000 na 1000 zmian ceny występuje średnio jeden gwałtowny wzrost ceny."
+msgid "With Boom 1000 (500) Index, there's an average of one spike in the price series that occurs at anytime within 1000 (500) ticks."
+msgstr "W przypadku Indeksu Boom 1000 (500) na 1000 (500) zmian ceny występuje średnio jeden gwałtowny wzrost ceny."
 
-msgid "With Crash 1000 Index, there's an average of one drop in the price series that occurs at anytime within 1000 ticks."
-msgstr "W przypadku Indeksu Crash 1000 występuje średnio jeden gwałtowny spadek ceny, który występuje w dowolnym momencie w obrębie 1000 ticków."
+msgid "With Crash 1000 (500) Index, there's an average of one drop in the price series that occurs at anytime within 1000 (500) ticks."
+msgstr "W przypadku Indeksu Crash 1000 (500) na 1000 (500) zmian ceny występuje średnio jeden gwałtowny spadek ceny."
+
+msgid "With Step Index, there is equal probability of up/down movement in the price series with fixed step size of 0.1."
+msgstr "W przypadku indeksu Step występuje jednakowe prawdopodobieństwo wzrostu/spadku ceny przy stałej wielkości 0,1."
 
 msgid "With insider knowledge of any financial market or instrument"
 msgstr "transakcje te wiążą się z dostępem do poufnych informacji dotyczących jakiegokolwiek rynku lub instrumentu finansowego"
@@ -13596,15 +13542,6 @@ msgstr "Twój wniosek o uznanie za klienta profesjonalnego jest przetwarzany."
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Twoja aplikacja zostanie sprawdzona przez nasz zespół ds. zgodności oraz zespół ds. marketingu. Po akceptacji umieścimy Cię na liście naszych %1pośredników płatności%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click %1here%2."
-msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy kliknąć %1tutaj%2."
-
-msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
-msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy kliknąć <a href=\"%1\">tutaj</a>."
-
-msgid "Your cashier is locked as per your request - to unlock it, please enter the password."
-msgstr "Sekcja Kasjer została zablokowana na Twoją prośbę - jeśli chcesz ją odblokować, prosimy o podanie hasła."
 
 msgid "Your cashier is locked."
 msgstr "Twoja sekcja Kasjer jest zablokowana."

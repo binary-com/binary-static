@@ -48,6 +48,8 @@ const PlatformsGridApp = ({
     status,
     description,
     text,
+    url = '',
+    target,
 }) => (
     <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
         <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m align-self-center'>
@@ -60,7 +62,7 @@ const PlatformsGridApp = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     <p>
-                        <a className='button-secondary android-download-grid-app download-grid-app'><span>{it.L('Download for Android')}</span></a>
+                        <a className='button-secondary android-download-grid-app download-grid-app' href={url} target={target || undefined}><span>{it.L('Download for Android')}</span></a>
                         <span className='ios-download-grid-app invisible'>{it.L('Binary Grid is currently only available on Android devices.')}</span>
                         <span className='divider-sm' />
                     </p>
@@ -221,8 +223,10 @@ const Platform = () => (
                                 data_show='-eucountry'
                                 status='new'
                                 header={it.L('Binary Grid')}
-                                description={it.L('Micro-trading on the go')}
-                                text={it.L('In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell.')}
+                                description={it.L('An exciting mobile trading experience')}
+                                text={it.L('Just tap or swipe to open Rise/Fall, Ends Outside, and Ends Between contracts with our fun mobile trading app.')}
+                                url={it.url_for('binary-grid')}
+                                target='_blank'
                             />
                             <Platforms
                                 image='tick-trade'
