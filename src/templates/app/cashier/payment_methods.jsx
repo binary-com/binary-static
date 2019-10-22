@@ -471,6 +471,25 @@ const PaymentMethods = () => {
                                     },
                                 ],
                             },
+                            {
+                                id : 'airtm',
+                                row: [
+                                    { text: <PaymentLogo logo='airtm' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Airtm is a global e-wallet service for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.airtm.io/#/" target="_blank">https://www.airtm.io/#/</a>') },
+                                        { td_list: [
+                                            { text: 'USD' },
+                                            { text: '5 - 2,500' },
+                                            { text: '5 - 2,500' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
                         ],
                     }}
                 />
