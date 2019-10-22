@@ -481,6 +481,7 @@ const PaymentMethods = () => {
                     dataAnchor='cryptocurrency'
                 />
                 <Table
+                    id='cryptocurrency'
                     dataShow='-default, -malta, -maltainvest, -iom'
                     data={{
                         thead: [
