@@ -127,11 +127,13 @@ const BinaryLoader = (() => {
             } else {
                 handleNotAuthenticated();
             }
-        } else if (config.no_mf && Client.isLoggedIn() && Client.isAccountOfType('financial')) {
-            BinarySocket.wait('authorize').then(() => displayMessage(error_messages.no_mf()));
         } else {
             loadActiveScript(config);
         }
+        if (config.no_mf && Client.isLoggedIn() && Client.isAccountOfType('financial')) {
+            BinarySocket.wait('authorize').then(() => displayMessage(error_messages.no_mf()));
+        }
+
         BinarySocket.setOnDisconnect(active_script.onDisconnect);
     };
 
