@@ -507,7 +507,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'BTC' },
                                             { text: '-' },
-                                            { text: '0.0003' },
+                                            { text: '-' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/StIW7CviBTw' /> },
                                         ],
@@ -526,7 +526,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'ETH' },
                                             { text: '-' },
-                                            { text: '0.01' },
+                                            { text: '-' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/B7EVLt3lIMs' /> },
                                         ],
@@ -545,7 +545,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'LTC' },
                                             { text: '-' },
-                                            { text: '0.02' },
+                                            { text: '-' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
                                         ],
@@ -564,7 +564,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'UST' },
                                             { text: '-' },
-                                            { text: '1' },
+                                            { text: '-' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Tether.pdf' video_link='https://youtu.be/N1WPsq67290' /> },
                                         ],

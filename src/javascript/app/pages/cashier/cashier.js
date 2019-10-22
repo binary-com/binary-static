@@ -113,6 +113,31 @@ const Cashier = (() => {
         el_acc_currency.setVisibility(show_current_currency);
     };
 
+    // Set crypto minimum withdrawal table column based on api.
+    const setCryptoMinimumWithdrawal = () => {
+        const crypto_table = [
+            { id: 'bitcoin', shortname: 'BTC' },
+            { id: 'ethereum-black', shortname: 'ETH' },
+            { id: 'litecoin', shortname: 'LTC' },
+            { id: 'tether', shortname: 'UST' },
+        ];
+
+        BinarySocket.wait('website_status').then((response) => {
+            crypto_table.forEach(item => {
+                const el_crypto_min_withdrawal = $(`tr[data-anchor=${item.id}] td:nth-child(2) div:nth-child(2) p:nth-child(3)`);
+
+                if (el_crypto_min_withdrawal) {
+                    const minimum_withdrawal = response
+                        .website_status
+                        .crypto_config[item.shortname]
+                        .minimum_withdrawal;
+
+                    el_crypto_min_withdrawal.text(minimum_withdrawal);
+                }
+            });
+        });
+    };
+
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
@@ -160,6 +185,7 @@ const Cashier = (() => {
         PaymentMethods: {
             onLoad: () => {
                 showContent();
+                setCryptoMinimumWithdrawal();
             },
         },
     };
