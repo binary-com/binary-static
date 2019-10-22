@@ -42,6 +42,12 @@ commands:
           key: node-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
+  npm_test:
+    description: "Run npm test"
+    steps:
+      - run:
+          name: "Run test"
+          command: npm test
   grunt_release:
     description: "Build for release target"
     parameters:
@@ -83,6 +89,14 @@ commands:
             kubectl --server=${KUBE_SERVER} --certificate-authority=ca.crt --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
 
 jobs:
+  test:
+    docker:
+      - image: circleci/node:9.8.0-stretch
+    steps:
+      - git_checkout_from_cache
+      - npm_install_from_cache
+      - npm_test
+
   build_push:
     docker:
       - image: circleci/node:9.8.0-stretch
@@ -109,6 +123,7 @@ jobs:
 workflows:
   build_and_push_master:
     jobs:
+      - test
       - build_push:
           filters:
             branches:

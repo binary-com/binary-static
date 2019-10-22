@@ -91,3 +91,9 @@ Example:
 ```
 git tag production_v20191010_0 -m 'release fixes to production'
 ```
+
+Push the tag:
+
+```
+git push origin staging_v20191010_0
+```
