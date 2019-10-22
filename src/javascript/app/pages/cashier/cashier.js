@@ -116,19 +116,19 @@ const Cashier = (() => {
     const setCryptoMinimumWithdrawal = () => {
         BinarySocket.wait('website_status').then((response) => {
             $('#cryptocurrency tbody tr').each(function () {
-                const row = $(this);
-                const columns = row.find('td:nth-child(2) div:nth-child(2)');
+                const $row = $(this);
+                const $columns = $row.find('td:nth-child(2) div:nth-child(2)');
 
-                const shortname = columns.find('p:nth-child(1)').text();
-                const el_crypto_min_withdrawal = columns.find('p:nth-child(3)');
+                const shortname = $columns.find('p:nth-child(1)').text();
+                const $crypto_min_withdrawal = $columns.find('p:nth-child(3)');
 
-                if (shortname && el_crypto_min_withdrawal) {
+                if (shortname && $crypto_min_withdrawal) {
                     const minimum_withdrawal = response
                         .website_status
                         .crypto_config[shortname]
                         .minimum_withdrawal;
 
-                    el_crypto_min_withdrawal.text(minimum_withdrawal);
+                    $crypto_min_withdrawal.text(minimum_withdrawal);
                 }
             });
         });
