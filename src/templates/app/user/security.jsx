@@ -2,13 +2,14 @@ import React from 'react';
 
 const Column = ({
     className,
+    dataShow,
     header,
     id,
     image,
     text,
     url,
 }) => (
-    <div className={`gr-3 gr-6-m gr-no-gutter gr-parent ${className}`} id={id}>
+    <div className={`gr-3 gr-6-m gr-no-gutter gr-parent ${className}`} id={id} data-show={dataShow}>
         <div className='gr-8 gr-padding-10'>
             <a href={it.url_for(`user/security/${url}`)}>
                 <img className='responsive' src={it.url_for(`images/pages/settings/${image}.svg`)} />
@@ -43,7 +44,7 @@ const Security = () => (
 
                 <Column className='real invisible' url='self_exclusionws' image='self-exclusion' header={it.L('Self Exclusion')} text={it.L('Facility that allows you to set limits on your account.')} />
 
-                <Column className='real invisible' url='limitsws' image='limits' header={it.L('Limits')} text={it.L('View your trading and withdrawal limits.')} />
+                <Column dataShow='-maltainvest' className='real invisible' url='limitsws' image='limits' header={it.L('Limits')} text={it.L('View your trading and withdrawal limits.')} />
 
                 <Column url='iphistoryws' image='iphistory' header={it.L('Login History')} text={it.L('View your login history.')} />
 

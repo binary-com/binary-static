@@ -93,7 +93,7 @@ const pages_config = {
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     labuan                   : { module: StaticPages.Locations },
     landing_page             : { module: StaticPages.LandingPage,    is_authenticated: true, only_virtual: true },
-    limitsws                 : { module: Limits,                     is_authenticated: true, only_real: true, needs_currency: true },
+    limitsws                 : { module: Limits,                     is_authenticated: true, no_mf: true, only_real: true, needs_currency: true },
     logged_inws              : { module: LoggedInHandler },
     lost_passwordws          : { module: LostPassword,               not_authenticated: true },
     malta                    : { module: StaticPages.Locations },
