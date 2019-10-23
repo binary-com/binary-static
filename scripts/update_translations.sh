@@ -32,6 +32,7 @@ function confirm {
 cd $(git rev-parse --show-toplevel) &&
 
 message "Updating translations branch" &&
+git checkout master &&
 git fetch upstream master &&
 git reset --hard upstream/master &&
 
