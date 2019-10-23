@@ -267,11 +267,11 @@ const commonTrading = (() => {
 
     // Order
     const market_order = {
-        forex      : 1,
-        volidx     : 2,
-        indices    : 3,
-        stocks     : 4,
-        commodities: 5,
+        forex          : 1,
+        synthetic_index: 2,
+        indices        : 3,
+        stocks         : 4,
+        commodities    : 5,
     };
 
     const getMarketsOrder = market => market_order[market] || 100;
@@ -314,11 +314,11 @@ const commonTrading = (() => {
         if (tip) {
             const market = ActiveSymbols.getSymbols()[Defaults.get('underlying')].market;
             const map_to_section_id = {
-                forex      : 'forex',
-                indices    : 'indices',
-                stocks     : 'otc-stocks-and-indices',
-                commodities: 'commodities',
-                volidx     : 'volatility-indices',
+                forex          : 'forex',
+                indices        : 'indices',
+                stocks         : 'otc-stocks-and-indices',
+                commodities    : 'commodities',
+                synthetic_index: 'synthetic-indices',
             };
             tip.setAttribute('href', urlFor('/get-started/binary-options', `anchor=${map_to_section_id[market]}#range-of-markets`));
         }
