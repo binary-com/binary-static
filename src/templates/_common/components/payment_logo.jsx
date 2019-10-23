@@ -18,6 +18,7 @@ const payment_methods_list = [
     { image: 'jeton',                   param: '?anchor=jeton',          dataShow: '-eucountry' },
     { image: 'iwallet',                 param: '?anchor=iwallet',        dataShow: '-eucountry' },
     { image: 'sticpay',                 param: '?anchor=sticpay' },
+    { image: 'airtm',                   param: '?anchor=airtm' },
 ];
 
 const PaymentLogo = () => payment_methods_list.map((item, inx) => (
