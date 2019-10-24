@@ -83,7 +83,7 @@ const submarket_order = {
     commodities    : 15,
     metals         : 16,
     energy         : 17,
-    synthetic_index: 18,
+    volidx         : 18,
     random_index   : 19,
     random_daily   : 20,
     random_nightly : 21,
@@ -388,7 +388,6 @@ class Markets extends React.Component {
             saveRef,
             scrollToMarket,
         } = this;
-
         return (
             <div className='markets'>
                 <div

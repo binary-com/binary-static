@@ -104,8 +104,6 @@ const DigitInfo = (() => {
             }
         });
         underlyings = underlyings.sort();
-        underlyings.splice(2, 0, '1HZ10V');  // add Volatility 10 (1s)
-        underlyings.splice(4, 0, '1HZ100V'); // add Volatility 100 (1s)
         let elem    = '';
         for (let i = 0; i < underlyings.length; i++) {
             elem += `<option value="${underlyings[i]}">${symbols[underlyings[i]]}</option>`;

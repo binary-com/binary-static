@@ -60,7 +60,7 @@ const Index = () => (
                     <div className='gr-1 gr-hide-t gr-hide-p gr-hide-m' />
                     <div className='gr-5 gr-12-m'>
                         <p>{it.L('Founded in 1999, [_1] is one of the oldest and most respected names in online binary trading.', it.website_name)}</p>
-                        <p>{it.L('Using our website, customers can trade currencies, indices, commodities, and synthetic indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available.')}</p>
+                        <p>{it.L('Using our website, customers can trade currencies, indices, commodities, and volatility indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available.')}</p>
                         <p>{it.L('[_1] has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide.', it.website_name)}</p>
                         <p>{it.L('When you trade with [_1], you can be assured that your deposits are held in a separate trust account and are not used for any other purpose.', it.website_name)}</p>
                     </div>

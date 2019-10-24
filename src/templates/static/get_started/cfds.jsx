@@ -39,7 +39,7 @@ const Cfds = () => (
                     </ul>
 
                     <HeaderSecondary header={it.L('What you can trade with CFDs')} />
-                    <p>{it.L('Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At [_1], we offer popular cash indices, cryptocurrencies, as well as proprietary Synthetic Indices that simulate market movement.', it.website_name)}</p>
+                    <p>{it.L('Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At [_1], we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement.', it.website_name)}</p>
                 </Section>
 
                 <Section id='how-trade-cfds' header={it.L('How to trade CFDs')}>
@@ -103,7 +103,7 @@ const Cfds = () => (
                         }}
                     />
 
-                    <HeaderSecondary header={it.L('Synthetic Indices')} />
+                    <HeaderSecondary header={it.L('Volatility Indices')} />
                     <Table
                         scroll
                         data={{
