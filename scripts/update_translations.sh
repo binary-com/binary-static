@@ -32,18 +32,9 @@ function confirm {
 cd $(git rev-parse --show-toplevel) &&
 
 message "Updating translations branch" &&
-git checkout translations &&
-git fetch upstream translations &&
-git reset --hard upstream/translations &&
-
-confirm "Include the master changes as well? (merge master into translations)" &&
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    message "Updating master branch" &&
-    git fetch upstream master:master &&
-    message "Merging master into translations"
-    git merge upstream/master --no-edit
-fi &&
+git checkout master &&
+git fetch upstream master &&
+git reset --hard upstream/master &&
 
 confirm "Update the source file (messages.pot) and push to Crowdin?" &&
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -70,7 +61,7 @@ then
     message "Committing"
     git commit -a -m "Update translations" &&
     message "Pushing"
-    git push origin translations
+    git push origin master
 fi &&
 
 echo ${GREEN}"\nSuccessfully Done." &&
