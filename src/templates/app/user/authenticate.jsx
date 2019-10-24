@@ -28,7 +28,7 @@ const Authenticate = () => (
         </div>
 
         <div id='authenticate_only_real_mt5_advanced' className='notice-msg center-text gr-padding-10 invisible'>
-            <p>{it.L('')}</p>
+            <p>{it.L('Your account doesn’t require authentication unless you open a real MT5 advanced account.')}</p>
         </div>
 
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
