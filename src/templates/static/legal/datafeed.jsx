@@ -16,7 +16,7 @@ const DataFeed = () => (
         <p>{it.L('The Company\'s data feed is designed to be one of the best and most robust available for a trading environment.')}</p>
 
         <h2 data-anchor='weekend-quotes'>{it.L('Weekend quotes')}</h2>
-        <p>{it.L('The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company\'s policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends).')}</p>
+        <p>{it.L('The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company\'s policy not to count weekend prices towards contract settlement values (except for Volatility Indices, which are open during weekends).')}</p>
     </div>
 );
 

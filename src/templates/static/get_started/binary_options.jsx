@@ -135,7 +135,7 @@ const BinaryOptions = () => {
                         <ul className='bullet'>
                             <ListStrong header={it.L('Simple and intuitive')} text={it.L('Enjoy a trading platform that\'s easy to navigate and use')} />
                             <ListStrong header={it.L('Instant access')}       text={it.L('Open an account and start trading in minutes')} />
-                            <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Synthetic Indices are available even on weekends')} />
+                            <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Volatility Indices are available even on weekends')} />
                             <ListStrong header={it.L('Patented technology')}  text={it.L('Trade with the industry pioneer and holder of a patented pricing technology')} />
                             <ListStrong header={it.L('Security and privacy')} text={it.L('Trade confidently, knowing that your personal data, transactions, and funds are always secure')} />
                         </ul>
@@ -178,10 +178,10 @@ const BinaryOptions = () => {
 
                         <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from four available markets:')}>
                             <ul className='checked'>
-                                <ListStrong header={it.L('Forex')}             text={it.L('Major and minor pairs, plus Smart FX indices')} />
-                                <ListStrong header={it.L('Indices')}           text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
-                                <ListStrong header={it.L('Commodities')}       text={it.L('Major commodities such as gold, silver, and oil')} />
-                                <ListStrong header={it.L('Synthetic Indices')} text={it.L('Our proprietary synthetic indices that simulate market forces')} />
+                                <ListStrong header={it.L('Forex')}              text={it.L('Major and minor pairs, plus Smart FX indices')} />
+                                <ListStrong header={it.L('Indices')}            text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
+                                <ListStrong header={it.L('Commodities')}        text={it.L('Major commodities such as gold, silver, and oil')} />
+                                <ListStrong header={it.L('Volatility Indices')} text={it.L('Our proprietary synthetic indices that simulate market forces')} />
                             </ul>
                         </CircleHeader>
 
@@ -191,7 +191,7 @@ const BinaryOptions = () => {
                                 <ListStrong header={it.L('Touch/No touch')} text={it.L('Predict if the market will touch or not touch a price target')} />
                                 <ListStrong header={it.L('In/Out')}         text={it.L('Predict if the market will stay between or go outside two price targets')} />
                             </ul>
-                            <p>{it.L('Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Synthetic Indices.')}</p>
+                            <p>{it.L('Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Volatility Indices.')}</p>
                         </CircleHeader>
 
                         <CircleHeader
@@ -250,7 +250,7 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Only Ups')} text={it.L('Win payout if consecutive ticks rise successively. Contract is lost when at least one tick falls or is equal to any of the previous ticks.')} />
                             <ListStrong header={it.L('Only Downs')} text={it.L('Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks.')} />
                         </SectionLarge>
-                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Synthetic Indices.')}</p>
+                        <p>{it.L('Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
                         <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading.')}</p>
@@ -261,7 +261,7 @@ const BinaryOptions = () => {
                             <SectionSmall image='range-of-markets/indices' header={it.L('Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market.')} />
 
                             <SectionSmall image='range-of-markets/commodities' header={it.L('Commodities')}        text={it.L('All four precious metals, plus energy.')} />
-                            <SectionSmall image='range-of-markets/volatility'  header={it.L('Synthetic Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
+                            <SectionSmall image='range-of-markets/volatility'  header={it.L('Volatility Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
                         </div>
 
                         <HeaderSecondary header={it.L('Forex')} data-anchor='forex' />
@@ -281,10 +281,10 @@ const BinaryOptions = () => {
                         <HeaderSecondary header={it.L('Commodities')} data-anchor='commodities' />
                         <p>{it.L('We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities.')}</p>
 
-                        <HeaderSecondary header={it.L('Synthetic Indices')} data-anchor='synthetic-indices' />
-                        <p>{it.L('[_1]\'s Synthetic Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party.', it.website_name)}</p>
-                        <p>{it.L('Synthetic Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more.')}</p>
-                        <p>{it.L('Synthetic Indices are further categorised into two classes:')}</p>
+                        <HeaderSecondary header={it.L('Volatility Indices')} data-anchor='volatility-indices' />
+                        <p>{it.L('[_1]\'s Volatility Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party.', it.website_name)}</p>
+                        <p>{it.L('Volatility Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more.')}</p>
+                        <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>
                         <ul className='bullet'>
                             <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively')}</li>
                             <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively')}</li>
@@ -315,7 +315,7 @@ const BinaryOptions = () => {
                                 { word: it.L('Payout'),              dataAnchor: 'payout',              definition: it.L('The payout is the amount paid to an options trader if their prediction is correct.') },
                                 { word: it.L('Pip'),                 dataAnchor: 'pip',                 definition: it.L('Pip stands for \'percentage in point\' which is generally the fourth decimal place (i.e. 0.0001).') },
                                 { word: it.L('Profit'),              dataAnchor: 'profit',              definition: it.L('The profit is the difference between the purchase price (the stake) and the payout on a winning trade.') },
-                                { word: it.L('Synthetic Indices'),   dataAnchor: 'synthetic-indices',  definition: it.L('The synthetic indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends.') },
+                                { word: it.L('Volatility Indices'),  dataAnchor: 'volatility-indices',  definition: it.L('The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends.') },
                                 { word: it.L('Resale price'),        dataAnchor: 'resale-price',        definition: it.L('The resale price indicates a contract\'s current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See \'Sell option\' for more details on selling contracts before expiry.') },
                                 { word: it.L('Return'),              dataAnchor: 'return',              definition: it.L('The return is the money realized when the contract expires (see \'Payout\').') },
                                 { word: it.L('Rise/Fall trades'),    dataAnchor: 'rise-fall-trades',    definition: it.L('These are trades where the trader predicts if a market will rise or fall at the end of a selected time period.') },
