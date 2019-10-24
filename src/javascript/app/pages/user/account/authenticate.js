@@ -992,9 +992,10 @@ const Authenticate = (() => {
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
 
-        if (is_required) {
+        if (is_required || Client.hasSvgAccount()) {
             initTab();
             initAuthentication();
+            $('#authenticate_only_real_mt5_advanced').setVisibility(1);
         } else {
             $('#authentication_tab').setVisibility(0);
             $('#not_required_msg').setVisibility(1);
