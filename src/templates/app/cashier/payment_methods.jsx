@@ -601,6 +601,7 @@ const PaymentMethods = () => {
 
             <div className='gr-padding-10'>
                 <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
+                <p className='hint'>* {it.L('The minimum amount for withdrawal will vary depending on the latest exchange rates.')}</p>
             </div>
         </div>
     );
