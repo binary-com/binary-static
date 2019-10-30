@@ -993,11 +993,11 @@ const Authenticate = (() => {
         const is_required = checkIsRequired(authentication_status);
         
         const has_svg_account = Client.hasSvgAccount();
-        if (is_required || has_svg_account) {
+        if (is_required || has_svg_account){
             initTab();
             initAuthentication();
 
-            if (has_svg_account) {
+            if (has_svg_account && !/high/.test(State.getResponse('get_account_status.risk_classification'))) {
                 $('#authenticate_only_real_mt5_advanced').setVisibility(1);
             }
         } else {
