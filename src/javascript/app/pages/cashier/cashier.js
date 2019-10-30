@@ -113,6 +113,27 @@ const Cashier = (() => {
         el_acc_currency.setVisibility(show_current_currency);
     };
 
+    const setCryptoMinimumWithdrawal = () => {
+        BinarySocket.wait('website_status').then((response) => {
+            $('#cryptocurrency tbody tr').each(function () {
+                const $row = $(this);
+                const $columns = $row.find('td:nth-child(2) div:nth-child(2)');
+
+                const shortname = $columns.find('p:nth-child(1)').text();
+                const $crypto_min_withdrawal = $columns.find('p:nth-child(3)');
+
+                if (shortname && $crypto_min_withdrawal) {
+                    const minimum_withdrawal = response
+                        .website_status
+                        .crypto_config[shortname]
+                        .minimum_withdrawal;
+
+                    $crypto_min_withdrawal.text(minimum_withdrawal);
+                }
+            });
+        });
+    };
+
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
@@ -160,6 +181,7 @@ const Cashier = (() => {
         PaymentMethods: {
             onLoad: () => {
                 showContent();
+                setCryptoMinimumWithdrawal();
             },
         },
     };
