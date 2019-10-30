@@ -509,7 +509,7 @@ const PaymentMethods = () => {
                                 { attributes: { colSpan: 5, className: 'th-list' }, custom_th : <CustomTableHead data={[
                                     { text: it.L('Currencies') },
                                     { text: it.L('Min Deposit') },
-                                    { text: it.L('Min Withdrawal') },
+                                    { text: `${it.L('Min Withdrawal')}*` },
                                     { text: `${it.L('Processing Time')}*` },
                                     { text: it.L('Reference') },
                                 ]}
@@ -600,8 +600,8 @@ const PaymentMethods = () => {
             </div>
 
             <div className='gr-padding-10'>
-                <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
                 <p className='hint'>* {it.L('The minimum amount for withdrawal will vary depending on the latest exchange rates.')}</p>
+                <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
             </div>
         </div>
     );
