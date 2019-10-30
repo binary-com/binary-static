@@ -152,7 +152,7 @@ workflows:
               only: /^staging.*/
       - deploy_staging:
           requires:
-            - build_push
+            - build_push_staging
           filters:
             branches:
               ignore: /.*/
@@ -168,7 +168,7 @@ workflows:
               only: /^production.*/
       - deploy_production:
           requires:
-            - build_push
+            - build_push_production
           filters:
             branches:
               ignore: /.*/
