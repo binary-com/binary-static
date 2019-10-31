@@ -50,7 +50,6 @@ const FAQ = () => (
                     <p>{it.L('No, there are no minimum requirements to withdraw your IB commissions.')}</p>
 
                     <h3>{it.L('Do you offer any tools to manage my clients\' trades?')}</h3>
-                    <p>{it.L('Are you a money manager who wants to easily manage multiple client accounts? Our [_1]Multiple Accounts Manager (MAM)[_2] application gives you the ability to view, track, and trade on behalf of all MT5 client accounts under your control.', `<a href='${it.url_for('multiple-accounts-manager')}'>`, '</a>')}</p>
                 </Section>
 
                 <SeparatorLine className='gr-padding-30' />
