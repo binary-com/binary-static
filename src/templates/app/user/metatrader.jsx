@@ -8,9 +8,11 @@ import Loading           from '../../_common/components/loading.jsx';
 /* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items }) => {
     let types = '';
-    account_type.forEach((type) => {
-        types += ` demo_${type} real_${type}`;
-    });
+    if (account_type) {
+        account_type.forEach((type) => {
+            types += ` demo_${type} real_${type}`;
+        });
+    }
 
     return (
         <div className={types}>
