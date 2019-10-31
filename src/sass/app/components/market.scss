@@ -216,13 +216,13 @@
                             background-size: contain;
                         }
                     }
-                    &.volidx {
-                        background: url('../images/pages/trade/assets/ic-volidx-normal.svg') no-repeat;
+                    &.synthetic_index {
+                        background: url('../images/pages/trade/assets/ic-synthetic_index-normal.svg') no-repeat;
                         background-size: contain;
                         transition: none;
 
                         &.active {
-                            background: url('../images/pages/trade/assets/ic-volidx-active.svg') no-repeat;
+                            background: url('../images/pages/trade/assets/ic-synthetic_index-active.svg') no-repeat;
                             background-size: contain;
                         }
                     }
