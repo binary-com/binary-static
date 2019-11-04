@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-10-30 06:36\n"
+"PO-Revision-Date: 2019-11-04 05:36\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -207,8 +207,8 @@ msgstr "Dokonano wpłaty %1 na konto o numerze %3. Identyfikator transakcji: %4"
 msgid "%1 desktop app"
 msgstr "Aplikacja %1 na komputery"
 
-msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
-msgstr "%1 umożliwia wszystkim łatwe działania na rynkach finansowych. Handel głównymi walutami, wskaźnikami, towarami i wskaźnikami zmienności można zacząć od zaledwie 1 $."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and synthetic indices."
+msgstr ""
 
 msgid "%1 has been credited into your MT5 Demo Account: %2."
 msgstr "Zaksięgowano %1 na Twoim koncie demo MT5: %2."
@@ -252,8 +252,8 @@ msgstr "Firma %1 jest aktywnym członkiem społeczności Perl. Obecnie trwa proc
 msgid "%1 is an active proponent of the open-source movement and is in the process of open-sourcing a number of components of its codebase."
 msgstr "Firma %1 jest zwolennikiem ruchu „open-source”. Obecnie trwa proces udostępniania niektórych ścieżek bazowych kodu firmy na zasadzie „open-source”."
 
-msgid "%1 is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %2Responsible Trading%3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
-msgstr "%1 to zdobywająca nagrody platforma do handlu online, która ułatwia swoim klientom handel na rynkach finansowych, oferując opcje binarne i kontrakty na różnice kursowe. Handel opcjami binarnymi i kontraktami na różnice kursowe wskaźników zmienności jest uznawany za grę hazardową. Należy pamiętać, że gra hazardowa może uzależniać – prosimy o rozsądną grę. Dowiedz się więcej na temat %2 odpowiedzialnego handlowania%3. Niektóre produkty są niedostępne w niektórych krajach. Usługi oferowane za pośrednictwem tej strony internetowej nie są dostępne w niektórych krajach, np. w Stanach Zjednoczonych, Kanadzie, Hongkongu, oraz dla osób poniżej 18 roku życia."
+msgid "%1 is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Synthetic Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %2Responsible Trading%3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "%1 is awarded 'Best Trading Platform in Asia' by Global Brands Magazine. The Global Brands Awards honours excellence in performance and exceptional service delivery. "
 msgstr "Firma %1 uzyskała nagrodę „Najlepsza platforma handlowa w Azji” przyznawaną przez Global Brands Magazine. Nagrody Global Brands są przyznawane za doskonałą działalność i wyjątkową jakość świadczenia usług. "
@@ -417,14 +417,14 @@ msgstr "Zespół ds. marketingu w firmie %1 nadzoruje nasze akcje marketingowe i
 msgid "%1's Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company's options book."
 msgstr "Zespół analityków ilościowych %1 odpowiada za wycenę naszych opcji binarnych. Będziesz pomagać im w zarządzaniu ryzykiem i rentownością opcji binarnych oferowanych przez firmę."
 
+msgid "%1's Synthetic Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party."
+msgstr ""
+
 msgid "%1's UI/UX team explores the many ways that we can design better product experiences for our users. As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together."
 msgstr "Zespół UI/UX firmy %1 szuka sposobów ulepszenia doświadczeń związanych z użytkowaniem produktu przez naszych użytkowników. Jako grafik będziesz tworzyć istotne elementy graficzne i wizualne, takie jak obrazy i ikony publikowane na naszych stronach internetowych i w aplikacjach. Będziesz odgrywać ważną rolę w tworzeniu interfejsu użytkownika, który przybliża nasze produkty użytkownikom."
 
 msgid "%1's UI/UX team explores the many ways that we can design better product experiences for our users. As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications."
 msgstr "Zespół UI/UX firmy %1 szuka sposobów ulepszenia doświadczeń związanych z użytkowaniem produktu przez naszych użytkowników. Jako UI/UX Designer w naszej firmie będziesz odgrywać kluczową rolę w konceptualizacji i wpływaniu na doświadczenia użytkowników podczas korzystania z różnych stron internetowych i aplikacji."
-
-msgid "%1's Volatility Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr "Wskaźniki zmienności %1 to wskaźniki syntetyczne odzwierciedlające prawdziwe wskaźniki rynkowe. Są dostępne 24 godz. na dobę. Opierają się na zabezpieczonym kryptograficznie generatorze losowych liczb, za którego audyt odpowiada niezależna strona trzecia."
 
 msgid "%1's patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market."
 msgstr "Opatentowana technologia wyceny opracowana przez %1 umożliwia korzystanie z takich samych stawek zwrotu, z jakich korzystają handlujący na rynku międzybankowym."
@@ -1029,9 +1029,6 @@ msgstr "Wspieranie naszych graczy na pierwszym i drugim poziomie obsługi klient
 msgid "Action"
 msgstr "Czynności"
 
-msgid "Activate the VPN service on the app"
-msgstr "Aktywuj usługę VPN w aplikacji"
-
 msgid "Active trading clients"
 msgstr "Aktywni handlujący klienci"
 
@@ -1608,8 +1605,8 @@ msgstr "Azjatyckie"
 msgid "Aside from the simplicity of its 'yes or no' proposition, binary options trading is also very flexible. It gives you the ability to trade:"
 msgstr "Pomijając prostotę twierdzenia „tak lub nie”, handlowanie opcjami binarnymi daje Ci też dużą elastyczność. Umożliwia handlowanie:"
 
-msgid "Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Volatility Indices."
-msgstr "Oprócz trzech głównych rodzajów zakładów masz do wyboru również zakłady Azjatyckie i Cyfry, którymi możesz handlować wyłącznie z naszymi Wskaźnikami zmienności."
+msgid "Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Synthetic Indices."
+msgstr ""
 
 msgid "Ask"
 msgstr "Zapytaj"
@@ -2004,8 +2001,8 @@ msgstr "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, B
 msgid "Binary (Europe) Limited"
 msgstr "Binarny (Europe) Limited"
 
-msgid "Binary (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta  (licence no. %2) - %3view licence%4 and also maintains an Irish licence. For UK clients by the UK Gambling Commission - %5view licence%4."
-msgstr "Binary (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licencjonowana i regulowana (wyłącznie w zakresie produktów hazardowych – Wskaźniki zmienności %1) przez Malta Gaming Authority na Malcie (licencja nr %2) – %3zobacz licencję%4. Firma posiada również licencję irlandzką. W przypadku klientów ze Zjednoczonego Królestwa licencjonowana i regulowana przez UK Gambling Commission – %5zobacz licencję%4."
+msgid "Binary (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. %2) - %3view licence%4 and also maintains an Irish licence. For UK clients by the UK Gambling Commission - %5view licence%4."
+msgstr ""
 
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033"
 msgstr "Binary (Europe) Ltd i Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033"
@@ -2216,9 +2213,6 @@ msgstr "Wartość wpłaty i bonusu jest widoczna, gdy tego typu promocja jest do
 
 msgid "Brand of first car"
 msgstr "Marka pierwszego samochodu"
-
-msgid "Browse and trade securely on your preferred device"
-msgstr "Przeglądaj i handluj bezpiecznie na swoim ulubionym urządzeniu"
 
 msgid "Browser"
 msgstr "Przeglądarka"
@@ -3042,8 +3036,8 @@ msgstr "Nabyte kontrakty"
 msgid "Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them."
 msgstr "Kontrakty na różnice kursowe (CFDs) to pochodne instrumentów finansowych, które pozwalają ci zawierać zakłady oparte na zmianach cen aktywów bazowych bez konieczności posiadania tych aktywów."
 
-msgid "Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At %1, we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement."
-msgstr "Kontrakty na różnice kursowe (CFDs) pozwalają na spekulację odnośnie różnych rynków, w tym wskaźników, akcji i towarów. Na %1 oferujemy popularne wskaźniki gotówkowe, kryptowaluty, jak również nasze własne Wskaźniki Zmienności, które symulują zmiany na rynkach."
+msgid "Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At %1, we offer popular cash indices, cryptocurrencies, as well as proprietary Synthetic Indices that simulate market movement."
+msgstr ""
 
 msgid "Contracts may not expire on a weekend; therefore, the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
 msgstr "Kontrakty nie mogą kończyć się w weekend, w związku z tym data zakończenia kontraktu może zostać przesunięta na poniedziałek wypadający po tym weekendzie w przypadku, gdy data zakończenia kontraktu przypada na sobotę lub niedzielę."
@@ -3681,12 +3675,6 @@ msgstr "Nie martw się, możesz %1zresetować swoje hasło%2."
 msgid "Dormant and inactive accounts"
 msgstr "Konta zawieszone i nieaktywne"
 
-msgid "Download Binary VPN app For Android"
-msgstr "Pobierz aplikację VPN Binary dla systemu Android"
-
-msgid "Download Binary VPN app for Windows Desktop"
-msgstr "Pobierz aplikację VPN Binary dla stacjonarnego systemu Windows"
-
 msgid "Download CSV"
 msgstr "Pobierz CSV"
 
@@ -3710,12 +3698,6 @@ msgstr "Pobierz aplikację Tick Trade App"
 
 msgid "Download for Android"
 msgstr "Pobierz na urządzenia z systemem Android"
-
-msgid "Download our VPN app for your preferred device"
-msgstr "Pobierz naszą aplikację VPV na swoje ulubione urządzenie"
-
-msgid "Download our VPN app now"
-msgstr "Pobierz naszą aplikację VPN już teraz"
 
 msgid "Download the %1desktop app%2 for the most secure way to access the %3 website."
 msgstr "Pobierz %1aplikację na komputery stacjonarne%2, aby korzystać ze strony %3 w najbezpieczniejszy sposób."
@@ -4040,12 +4022,6 @@ msgstr "Równa się"
 
 msgid "Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions."
 msgstr "Kapitał to suma środków na Twoim koncie oraz zmienny zysk i strata (PnL). Poziom depozytu zabezpieczającego odpowiada stosunkowi kapitału do zabezpieczenia. Gdy ten stosunek osiągnie określony poziom procentowy (zazwyczaj 100%), wezwiemy Cię do uzupełnienia depozytu. Nie wpłynie to na możliwość otwierania nowych pozycji. Celem jest ostrzeżenie, że poziom Twoich zmiennych zysków i strat (PnL) obniża się. Zalecamy jednak dodanie środków do Twojego konta w celu utrzymania otwartych pozycji. Możesz też zamknąć pozycje przynoszące straty."
-
-msgid "Establish a secure Internet connection and protect your privacy."
-msgstr "Nawiąż bezpieczne połączenie internetowe i chroń swoją tożsamość."
-
-msgid "Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy."
-msgstr "Ustanów bezpieczne zaszyfrowane połączenie z serwerem wirtualnej sieci prywatnej (VPN), korzystając z naszej aplikacja VPN, aby chronić swoje dane i prywatność."
 
 msgid "Estimated net worth"
 msgstr "Szacowana wartość netto"
@@ -5754,8 +5730,8 @@ msgstr "W UE produkty finansowe są oferowane przez Binary Investments (Europe) 
 msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "W UE produkty finansowe są oferowane przez Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, objętą regulacjami Malta Financial Services Authority jako firma świadcząca usługi inwestycyjne kategorii 3 (%1licencja o nr IS/70156%2)."
 
-msgid "In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
-msgstr "Na Wyspie Man i w Wielkiej Brytanii indeksy zmienności są oferowane przez Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Wyspa Man, Wyspy Brytyjskie; za wydawanie licencji i jego regulację odpowiada odpowiednio (1) Komisja Nadzoru Gier Hazardowych Wyspy Man, na Wyspach Brytyjskich (Gambling Supervision Commission) – aktualna licencja została wydana dnia 31 sierpnia 2017 r., (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission) – licencja o %1 numerze referencyjnym: 39172%2)."
+msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
+msgstr ""
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) Ltd, Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
 msgstr "W Zjednoczonym Królestwie nasi klienci handlują za pośrednictwem Binary (IOM) Ltd oraz Binary Investments (Europe) Ltd. Na Wyspie Man nasi klienci handlują za pośrednictwem Binary (IOM) Ltd. W Unii Europejskiej (za wyjątkiem Zjednoczonego Królestwa), handlują za pośrednictwem Binary (Europa) Ltd oraz Binary Investments (Europa) Ltd. W pozostałych krajach handel odbywa się za pośrednictwem Binary (SVG) Ltd, Binary (V) Ltd, Binary (BVI) Ltd oraz Binary (FX) Ltd."
@@ -5787,8 +5763,8 @@ msgstr "W sytuacji, gdy Firma nie otrzyma od klienta zlecenia zamknięcia pozycj
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "W Przypadku jeśli Firma uzyska informacje, że Partner narusza postanowienia jakiegokolwiek z powyższych klauzuli, Firma ma prawo, według wszelkich innych praw lub środków zaradczych dostępnych na mocy niniejszej Umowy lub obowiązującego prawa, natychmiast zablokować dostęp Partnera do Programu. Partner niniejszym zrzeka się z wszelkich roszczeń lub żądań w stosunku do Firmy lub jakiejkolwiek spółki należącej do grupy Binary, jej kadry zarządzającej i kierowniczej lub pracowników lub udziałowców dotyczących strony internetowej %1, jeśli Firma cofnie dostęp Partnera do programu."
 
-msgid "In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
-msgstr "W pozostałej części UE wskaźniki zmienności są oferowane przez Binary (Europe) Ltd., W Business Centre, Poziom 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licencjonowana i regulowana przez (1) Malta Gaming Authority na Malcie (% 1licence no. MGA / B2C / 102/2000% 4 wydane 1 Sierpnia 2018 r.), dla klientów w Wielkiej Brytanii przez (2) UK Gambling Commission (licencja %2 nr referencyjny: 39495% 4), a dla klientów w Irlandii przez (3) Revenue Commissioners w Irelandii (licencja Remote Bookmaker's nr 1010285 wydana 1 lipca 2017 r.). Sprawdz kompletne % 3 Informacje regulacyjne% 4."
+msgid "In the rest of the EU, Synthetic Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
+msgstr ""
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "W niniejszej Umowie zastosowanie mają następujące definicje, chyba że kontekst wymaga innej definicji:"
@@ -6489,8 +6465,8 @@ msgstr "Długa:"
 msgid "Lookbacks"
 msgstr "Opcje wsteczne"
 
-msgid "Lookbacks options are currently only available for %1Volatility Indices%2."
-msgstr "Opcje wsteczne są obecnie dostępne wyłącznie dla %1wskaźników zmienności%2."
+msgid "Lookbacks options are currently only available for %1Synthetic Indices%2."
+msgstr ""
 
 msgid "Looking for %1 app?"
 msgstr "Szukasz aplikacji %1?"
@@ -7366,7 +7342,7 @@ msgid "Note"
 msgstr "Uwaga"
 
 msgid "Note : The minimum amount for withdrawal will vary depending on the latest exchange rates."
-msgstr ""
+msgstr "Uwaga: Minimalna kwota wypłaty jest uzależniona od najnowszych kursów wymiany walut."
 
 msgid "Note:"
 msgstr "Uwaga:"
@@ -7824,8 +7800,8 @@ msgstr "Zarobki Partnerów"
 msgid "Partners"
 msgstr "Partnerów"
 
-msgid "Parts of this clause may not apply to Volatility Indices."
-msgstr "Części tej klauzuli nie można stosować w odniesieniu do wskaźników zmienności."
+msgid "Parts of this clause may not apply to Synthetic Indices."
+msgstr ""
 
 msgid "Passion for Linux and other open-source platforms"
 msgstr "Zamiłowanie do Linuxa i innych platform typu open-source"
@@ -8160,8 +8136,8 @@ msgstr "Aby uniknąć opóźnień w przeprowadzeniu weryfikacji, proszę wprowad
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "W formularzu poniżej wpisz login i kwotę, którą chcesz przekazać swojemu Klientowi:"
 
-msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Volatility Indices."
-msgstr "Pamiętaj, że zakłady: Azjatyckie, Cyfry, Reset Call/ Reset Put, Duże zmiany ceny/ Małe zmiany ceny oraz Tylko wzrosty/Tylko spadki są dostępne wyłącznie z naszymi wskaźnikami zmienności."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Synthetic Indices."
+msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "Pamiętaj, że zgodnie z naszymi %1szczegółami kontraktu%2, jedna partia to 100 jednostek."
@@ -9147,9 +9123,6 @@ msgstr "Drugorzędne"
 msgid "Secret question"
 msgstr "Sekretne pytanie"
 
-msgid "Secure your internet connection in three easy steps:"
-msgstr "Wykonaj trzy łatwe kroki i zabezpiecz swoje połączenie internetowe:"
-
 msgid "Security"
 msgstr "Bezpieczeństwo"
 
@@ -9804,6 +9777,12 @@ msgstr "Wskaźniki syntetyczne"
 msgid "Synthetic Indices Account"
 msgstr "Konto wskaźników syntetycznych"
 
+msgid "Synthetic Indices are further categorised into two classes:"
+msgstr ""
+
+msgid "Synthetic Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more."
+msgstr ""
+
 msgid "Synthetic indices that mimic market volatility."
 msgstr "Wskaźniki syntetyczne imitujące zmienność rynkową."
 
@@ -10143,8 +10122,8 @@ msgstr "Średnia"
 msgid "The Commencement Date of this agreement shall mean the date on which the Agent account is approved by the Company."
 msgstr "Za Datę rozpoczęcia niniejszej umowy uważa się datę zatwierdzenia konta Pośrednika przez Firmę."
 
-msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bids and Asks made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Volatility Indices."
-msgstr "Ceny oferowane przez Firmę są określane w odniesieniu do cen Instrumentu bazowego kwotowanych na zewnętrznych platformach wymiany walut i platformach handlowych, które Firma wybiera %1 według własnego uznania. Infrastruktura IT Firmy i agregator cenowy ułatwiają otrzymywanie kwotowania od wybranych najlepszych brokerów będących dostawcami płynności w stosunku do Firmy, a w stosunku do klienta odpowiadających za zapewnianie kwotowania w zestawieniu z rynkami i punktami odniesienia. Klient przyjmuje do wiadomości, że ceny oferowane przez firmę mogą się różnić od Cen sprzedaży i Cen ofertowych dostępnych na zewnętrznych platformach wymiany walut i platformach handlowych i że Firma nie ponosi odpowiedzialności za jakiekolwiek straty, które możesz ponieść w wyniku tych różnic. Niniejszej klauzuli nie stosuje się w odniesieniu do wskaźników zmienności."
+msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bids and Asks made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Synthetic Indices."
+msgstr ""
 
 msgid "The Company aims to keep a record of the kinds of activity that the Company carries on in which a material conflict could arise or has arisen. The Company also maintains procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence among members of the Company's staff who are involved in potentially conflicting activities. Such independence-upholding procedures can be followed, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities, and the maintenance of a policy of independence, which requires the Company's staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest, or in some circumstances, to decline to act for a client or potential client in order to avoid conflicts of interest."
 msgstr "Firma stara się prowadzić rejestr rodzajów prowadzonej przez nią działalności, w przypadku których może lub mógł wystąpić znaczący konflikt. Firma utrzymuje również procedury zarządzania obecnymi lub potencjalnymi konfliktami, w tym procedury zachowania odpowiedniej niezależności pomiędzy jej pracownikami, którzy są zaangażowani w działania mogące stanowić potencjalny konflikt. Takie procedury powstrzymujące niezależność mogą obejmować na przykład poprzez wprowadzenie barier informacyjnych, fizyczne odseparowanie pracowników, podział obowiązków i utrzymanie polityki niezależności, która wymaga od jej pracowników działania w najlepszym interesie klientów Firmy podczas świadczenia usług, unikanie konfliktu interesów oraz, w określonych okolicznościach, odmowy świadczenia usług na rzecz klienta lub potencjalnego klienta w celu uniknięcia konfliktu interesów."
@@ -10431,8 +10410,8 @@ msgstr "Firma zapewni Ci dostęp online do platformy handlowej, na której wyśw
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr "Firma ma wyłączne prawo do decyzji, czy zatwierdzić dane zgłoszenie Brokera polecającego. Decyzja Firmy jest ostateczna i nieodwołalna."
 
-msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Volatility Indices."
-msgstr "Firma korzysta z danych rynkowych pozyskiwanych od głównych brokerów, którzy występują w roli dostawców płynności, i tym samym realizuje zlecenie klienta przy wykorzystaniu grupowania płynności oferowanej przez wiodące banki. Usługi oferowane przez Firmę nie obejmują fizycznej dostawy walut przez Firmę ani przez prime brokerów. Klient przyjmuje do wiadomości, że takie dane są własnością Firmy i dostawców płynności, i potwierdza, że nie będzie ich retransmitować, redystrybuować ani ujawniać, rozpowszechniać czy upubliczniać stronom trzecim w całości lub w części. Klient oświadcza i zapewnia, że te dane będą wykorzystywane wyłącznie, aby ułatwić mu zawieranie transakcji z Firmą lub zawierania ich na jego Prawdziwym koncie MT5 zgodnie z niniejszą umową. Niniejszej klauzuli nie stosuje się w odniesieniu do wskaźników zmienności."
+msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Synthetic Indices."
+msgstr ""
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "Firma dokłada wszelkich starań, by zapewnić, że wszystkie składane zlecenia zostaną zrealizowane, jednak nie zawsze jest to możliwe ze względu na istotne trudności lub nadzwyczajne okoliczności. W przypadku gdy Firma jest świadoma istnienia dowolnych istotnych trudności związanych z właściwą realizacją zlecenia, niezwłocznie poinformuje o tym klienta."
@@ -10908,8 +10887,8 @@ msgstr "Klient zostaje poinformowany, że ceny na rynku mogą się zmieniać bar
 msgid "The client is also reminded that their internet connection can influence what price is displayed after the trade has been executed."
 msgstr "Przypominamy również, że należy wziąć pod uwagę, że połączenie internetowe klienta może wpływać na cenę wyświetlaną po zawarciu zakładu."
 
-msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Volatility Indices, which are open during weekends)."
-msgstr "Klient powinien pamiętać, że zakłady zawierane w weekendy nie będą brane pod uwagę przy rozliczaniu kontraktów. W weekendy rynki walutowe czasami generują ceny, jednak często są to ceny sztuczne (gracze czasami wykorzystują płynność rynków w weekendy, aby podnieść lub obniżyć ceny). Aby uniknąć ustalania cen na podstawie sztucznych cen, zgodnie z polityką Firmy ceny weekendowe nie są wliczane do wartości rozliczeń kontaktów (z wyjątkiem wskaźników zmienności, które są otwarte w weekendy)."
+msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends)."
+msgstr ""
 
 msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
 msgstr "Klient nie jest mieszkańcem kraju z ograniczonym dostępem, takiego jak Kanada, Hongkong, Izrael, Jersey, Malezja, Malta, Paragwaj, Zjednoczone Emiraty Arabskie, Stany Zjednoczone ani dowolnego innego kraju z ograniczonym dostępem, który został określony przez FATF jako kraj z brakami strategicznymi."
@@ -10983,8 +10962,8 @@ msgstr "Należy zauważyć, że obowiązek zapewnienia klientowi przez Firmę na
 msgid "The client should note that the Company's website generates log files that record the IP addresses of accesses to the client's account, login attempts, and device information such as the manufacturer, model, operating system, and browser. This information is gathered for the sole purpose of providing assistance with investigating a client's account in the unlikely event that the account is accessed by unauthorised users. Information supplied by some cookies also helps the Company understand how visitors use the website, so that the Company can improve how it presents its content."
 msgstr "Klient powinien pamiętać, że strona internetowa Firmy generuje pliki dziennika, które rejestrują adresy IP dostępów do konta klienta, próby logowania oraz informacje o urządzeniu, takie jak producent, model, system operacyjny i przeglądarka. Informacje te są gromadzone wyłącznie w celu ułatwienia sprawdzenia konta klienta w mało prawdopodobnym przypadku uzyskania dostępu do niego przez nieuprawnione osoby. Informacje dostarczane przez niektóre pliki cookie pomagają Firmie również zrozumieć, w jaki sposób odwiedzający korzystają ze strony internetowej, dzięki czemu Firma może usprawnić prezentowanie na niej treści."
 
-msgid "The client understands that products based on a random number generator (the \"Volatility Indices\") are gaming products whereas products based on financial market indices (forex, indices, and commodities) are financial instruments."
-msgstr "Klient rozumie, że produkty oparte na generatorze losowych liczb („Wskaźniki zmienności”) są produktami typu gry losowe, a produkty oparte na wskaźnikach rynków finansowych (forex, wskaźniki i towary) są Instrumentami finansowymi."
+msgid "The client understands that products based on a random number generator (the \"Synthetic Indices\") are gaming products whereas products based on financial market indices (forex, indices, and commodities) are financial instruments."
+msgstr ""
 
 msgid "The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to the Agent's %1 account (hereinafter referred to as the \"%1 Agent Account\")."
 msgstr "Klient, korzystający z metod e-płatności i przelewów bankowych mogą dokonać wpłat za pośrednictwem Pośrednika. Pośrednik, po uzyskaniu wpłaty, przekieruje ją na konto %1 Pośrednika (dalej zwane „Kontem pośrednika %1\")."
@@ -11301,6 +11280,9 @@ msgstr "Stawka to kwota, którą gracz musi zapłacić, żeby przystąpić do tr
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective client's %1 account (hereinafter referred to as the \"%1 Client Account\")."
 msgstr "Kwotę uzyskaną na Konto Pośrednika %1 Pośrednik powinien następnie przelać na odpowiednie konto klienta %1 (dalej zwane Kontem Klienta %1)."
 
+msgid "The synthetic indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
+msgstr ""
+
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
 msgstr "System przetwarza zlecenia przy wykorzystaniu metody „pierwsze weszło, pierwsze wyszło” w zależności od kolejności otrzymywania zleceń i Firma nie ma na to wpływu. W rezultacie zamknięcie danej pozycji po zakładanej cenie, która została określona w zleceniu stop klienta może okazać się trudne lub niemożliwe w określonych warunkach rynkowych. Złożenie przez klienta zlecenia stop, mimo że jest przydatnym narzędziem zarządzania ryzykiem, w przypadku bardzo zmiennych warunków rynkowych może nie być skutecznym sposobem ograniczania strat do zamierzonej kwoty, gdyż warunki rynkowe mogą uniemożliwić realizację takich zleceń i możliwa cena końcowa jest niepewna. Podsumowując, zlecenie stop nie jest zleceniem gwarantowanym, gdyż nie można go stosować w każdych warunkach rynkowych."
 
@@ -11333,9 +11315,6 @@ msgstr "w przypadku korzystania z API %1 w połączeniu z innym API, danymi, spr
 
 msgid "The venue at which the client's order will be executed"
 msgstr "Miejsce, gdzie zostanie zrealizowane zlecenie klienta"
-
-msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
-msgstr "Wskaźniki zmienności symulują różne sytuacje rynkowe i zapewniają doskonałe warunki do przećwiczenia strategii handlowych w różnych warunkach rynkowych. Indeksy są zależne od zmienności rynki i pomagają użytkownikom wypróbować różne scenariusze – wysokiej i niskiej zmienności, trendów wzrostowych i spadkowych."
 
 msgid "The willingness to learn new skills"
 msgstr "Chęć nabywania nowych umiejętności"
@@ -11643,8 +11622,8 @@ msgstr "Wymóg ten jest nałożony przez standard automatycznej wymiany informac
 msgid "This risk disclosure statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which the client might be exposed and does not describe all the risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide the client with information, so that the client can reasonably understand the risks associated with forex and contracts for differences offered by %1, as it is the Company's intention to provide the client with the best possible trading experience."
 msgstr "Oświadczenie dot. ujawnienia ryzyka nie jest wyczerpujące i nie stanowi pełnego oświadczenia o wszelkich rodzajach ryzyka, na które klient może być narażony i nie opisuje wszystkich istniejących i mogących wystąpić w przyszłości ryzyk związanych z kontraktami forex i kontraktami na różnice kursowe. Celem oświadczenia jest zapewnienie klientowi informacji umożliwiających zrozumienie ryzyk związanych z kontraktami forex i kontraktami na różnice kursowe oferowanych przez %1 w interesie Firmy, by zapewnić klientowi najlepsze możliwe doświadczenie związane z handlowaniem."
 
-msgid "This section on force majeure events does not apply to Volatility Indices."
-msgstr "Sekcja dotycząca Siły wyższej nie ma zastosowania w odniesieniu do wskaźników zmienności."
+msgid "This section on force majeure events does not apply to Synthetic Indices."
+msgstr ""
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
 msgstr "Ta witryna internetowa nie jest dostępna dla osób poniżej 18 roku życia oraz w niektórych krajach, takich jak: Stany Zjednoczone, Kanada, Hongkong, Japonia."
@@ -11895,8 +11874,8 @@ msgstr "Handluj zgodnie ze swoją ulubioną strategią"
 msgid "Trade all four precious metals on one platform."
 msgstr "Handluj wszystkimi czterema metalami szlachetnymi na jednej platformie."
 
-msgid "Trade all major currencies, indices, commodities, and volatility indices."
-msgstr "Handluj wszystkimi głównymi walutami, wskaźnikami, surowcami i wskaźnikami zmienności."
+msgid "Trade all major currencies, indices, commodities, and synthetic indices."
+msgstr ""
 
 msgid "Trade and manage multiple MT5 client accounts from a single interface."
 msgstr "Handluj i zarządzaj wieloma kontami klientów MT5, korzystając z jednego interfejsu."
@@ -11949,8 +11928,8 @@ msgstr "Handluj popularnymi głównymi i drugorzędnymi parami walutowymi oraz w
 msgid "Trade type"
 msgstr "Rodzaj zakładu"
 
-msgid "Trade when you want. Our Volatility Indices are available even on weekends"
-msgstr "Handluj, kiedy chcesz. Nasze wskaźniki zmienności są dostępne nawet w weekendy"
+msgid "Trade when you want. Our Synthetic Indices are available even on weekends"
+msgstr ""
 
 msgid "Trade with a powerful interface known as the global industry standard."
 msgstr "Handluj przy użyciu rozbudowanego interfejsu będącego wzorcem dla innych firm z branży handlu opcjami binarnymi."
@@ -12141,8 +12120,8 @@ msgstr "Wypróbuj widok handlowy (TradingView)"
 msgid "Try WebTrader"
 msgstr "Wypróbuj WebTrader"
 
-msgid "Try our %1Volatility Indices%2."
-msgstr "Wypróbuj nasze %1wskaźniki płynności%2."
+msgid "Try our %1Synthetic Indices%2."
+msgstr ""
 
 msgid "Try our other markets."
 msgstr "Wypróbuj nasze inne rynki."
@@ -12417,8 +12396,8 @@ msgstr "Możesz skorzystać z dwóch rodzajów wykluczenia: „Alokacja” wyklu
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "korzystania z Aplikacji Programisty i zawartych w niej treści w celach marketingowych, demonstracyjnych i w celu udostępniania Aplikacji Programisty klientom Firmy;"
 
-msgid "Using our website, customers can trade currencies, indices, commodities, and volatility indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
-msgstr "Korzystając z naszej strony internetowej, nasi klienci mogą handlować walutami, wskaźnikami, towarami i wskaźnikami zmienności 24 godziny na dobę. Oferujemy najbardziej zróżnicowane ceny i najbogatszą gamę produktów."
+msgid "Using our website, customers can trade currencies, indices, commodities, and synthetic indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
+msgstr ""
 
 msgid "Utilise a variety of tactics – both online and offline – to grow and support the company's network of partners in your designated market"
 msgstr "Stosowanie różnorodnych taktyk – zarówno online, jak i offline – w celu zapewnienia rozwoju sieci partnerów firmy na określonym rynku"
@@ -12428,12 +12407,6 @@ msgstr "Rachunek za media"
 
 msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr "Rachunki za media (prąd, wodę, gaz, internet i telefon stacjonarny)"
-
-msgid "VPN App"
-msgstr "Aplikacja VPN"
-
-msgid "VPN app"
-msgstr "Aplikacja VPN"
 
 msgid "Variable"
 msgstr "Zmienne"
@@ -12557,16 +12530,6 @@ msgstr "Wskaźnik zmienności 50"
 
 msgid "Volatility 75 Index"
 msgstr "Wskaźnik zmienności 75"
-
-msgid "Volatility Indices"
-msgstr "Zmienne wskaźniki"
-
-msgid "Volatility Indices are further categorised into two classes:"
-msgstr "Istnieją dwa rodzaje wskaźników zmienności:"
-
-msgid "Volatility Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more."
-msgstr "Wskaźniki zmienności dają wyłączny dostęp do różnych rodzajów zakładów, takich jak m. in. Góra/Dół, Osiągnie/ Nie osiągnie, W/Poza, Azjatyckie, Cyfry, Opcje wsteczne, \n"
-"Spread zakupu/ Spread sprzedaży, Tylko wzrosty/ Tylko spadki."
 
 msgid "Volume step"
 msgstr "Krok – wolumen"
@@ -13444,8 +13407,8 @@ msgstr "Jeśli utrzymasz pozycję otwartą po godzinie 23:59:59 GMT, będą mia�
 msgid "You will charge a commission to process the transactions."
 msgstr "Za przeprowadzenie transakcji zostanie pobrana prowizja."
 
-msgid "You will earn a fixed payout based on the volume of individual trades purchased by each referred client. Please refer to our IB commission structure for Forex, metals, and Volatility Indices."
-msgstr "Zyskasz wypłatę w określonej wysokości w zależności od liczby zakupionych kontraktów przez każdego przekierowanego do nas klienta. Zapoznaj się ze strukturą prowizji w naszym programie IB w przypadku rynku forex, metali i wskaźników zmienności."
+msgid "You will earn a fixed payout based on the volume of individual trades purchased by each referred client. Please refer to our IB commission structure for Forex, metals, and Synthetic Indices."
+msgstr ""
 
 msgid "You will have the potential to earn another level of income from our affiliate program."
 msgstr "Nasz program partnerski zapewni Ci potencjalne źródło dodatkowego dochodu."
