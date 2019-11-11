@@ -95,7 +95,6 @@ module.exports = [
     ['terms-and-conditions',                    'static/legal/tac',                            'default',    'Terms and Conditions'],
 
     ['liquidity-solutions',                     'static/partners/liquidity_solutions',         'full_width', 'Multi-asset Liquidity Solutions'],
-    ['multiple-accounts-manager',               'static/partners/multiple_accounts_manager',   'full_width', 'Multiple Accounts Manager'],
     ['open-source-projects',                    'static/partners/open_source_projects',        'full_width', 'Open-Source Projects'],
     ['partners',                                'static/partners/partners',                    'full_width', 'Partners'],
     ['payment-agent',                           'static/partners/payment_agent',               'full_width', 'Payment Agents'],

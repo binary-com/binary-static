@@ -170,9 +170,9 @@ const MetaTrader = (() => {
             }
         });
 
-        if (!/^(verify_password_reset|revoke_mam)$/.test(action)) {
+        if (!/^(verify_password_reset)$/.test(action)) {
             // set main command
-            req[`mt5_${action.replace(action === 'new_account_mam' ? '_mam' : '', '')}`] = 1;
+            req[`mt5_${action}`] = 1;
         }
 
         // add additional fields
@@ -229,7 +229,7 @@ const MetaTrader = (() => {
                     } else {
                         if (accounts_info[acc_type].info) {
                             const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
-                            MetaTraderUI.loadAction(action === 'revoke_mam' ? action : parent_action);
+                            MetaTraderUI.loadAction(parent_action);
                             MetaTraderUI.enableButton(action, response);
                             MetaTraderUI.refreshAction();
                         }
@@ -249,11 +249,6 @@ const MetaTrader = (() => {
                             MetaTraderUI.refreshAction();
                             allAccountsResponseHandler(response_login_list);
                             MetaTraderUI.setAccountType(acc_type, true);
-
-                            if (/^(revoke_mam|new_account_mam)/.test(action)) {
-                                MetaTraderUI.showHideMAM(acc_type);
-                            }
-
                             MetaTraderUI.loadAction(null, acc_type);
                         });
                     }
@@ -281,7 +276,6 @@ const MetaTrader = (() => {
 
         const current_acc_type = getDefaultAccount();
         Client.set('mt5_account', current_acc_type);
-        MetaTraderUI.showHideMAM(current_acc_type);
 
         // Update types with no account
         Object.keys(accounts_info)

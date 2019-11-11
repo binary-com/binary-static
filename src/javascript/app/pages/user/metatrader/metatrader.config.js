@@ -38,12 +38,10 @@ const MetaTraderConfig = (() => {
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                     demo_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Demo Advanced'), short_title: advanced_config.short_title },
                     real_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Real Advanced'), short_title: advanced_config.short_title },
-                    real_mamm    : { mt5_account_type: 'mamm_advanced',              max_leverage: advanced_config.leverage, title: localize('MAM Advanced'),  short_title: advanced_config.short_title },
                 },
                 gaming: {
                     demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Synthetic Indices'), short_title: volatility_config.short_title },
                     real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Synthetic Indices'), short_title: volatility_config.short_title },
-                    real_mamm      : { mt5_account_type: 'mamm',                         max_leverage: volatility_config.leverage, title: localize('MAM Synthetic Indices') , short_title: volatility_config.short_title },
                 },
             });
         };
@@ -281,20 +279,7 @@ const MetaTraderConfig = (() => {
                 });
             },
         },
-        new_account_mam: {
-            title        : localize('Sign up'),
-            login        : response => response.mt5_new_account.login,
-            prerequisites: acc_type => (
-                newAccCheck(acc_type, '#msg_mam_account')
-            ),
-            onSuccess: (response) => {
-                GTM.mt5NewAccount(response);
 
-                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
-                    Header.displayAccountStatus();
-                });
-            },
-        },
         password_change: {
             title        : localize('Change Password'),
             success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
@@ -326,11 +311,6 @@ const MetaTraderConfig = (() => {
                 $form.find(password_reset).setVisibility(1);
                 Validation.init(password_reset, validations()[action]);
             },
-        },
-        revoke_mam: {
-            title        : localize('Revoke MAM'),
-            success_msg  : () => localize('Manager successfully revoked'),
-            prerequisites: () => new Promise(resolve => resolve('')),
         },
         deposit: {
             title      : localize('Deposit'),
@@ -403,23 +383,6 @@ const MetaTraderConfig = (() => {
                         mt5_account_type: accounts_info[acc_type].mt5_account_type,
                     } : {})),
         },
-        new_account_mam: {
-            txt_name         : { id: '#txt_mam_name',          request_field: 'name' },
-            txt_manager_id   : { id: '#txt_manager_id',        request_field: 'manager_id' },
-            txt_main_pass    : { id: '#txt_mam_main_pass',     request_field: 'mainPassword' },
-            txt_re_main_pass : { id: '#txt_mam_re_main_pass' },
-            txt_investor_pass: { id: '#txt_mam_investor_pass', request_field: 'investPassword' },
-            chk_tnc          : { id: '#chk_tnc' },
-            additional_fields:
-                acc_type => (
-                    {
-                        account_type    : accounts_info[acc_type].account_type,
-                        email           : Client.get('email'),
-                        leverage        : accounts_info[acc_type].max_leverage,
-                        mt5_account_type: accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'standard', // for gaming just send standard to distinguish
-                    }
-                ),
-        },
         password_change: {
             ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
             txt_old_password   : { id: '#txt_old_password',  request_field: 'old_password' },
@@ -450,14 +413,6 @@ const MetaTraderConfig = (() => {
         verify_password_reset_token: {
             txt_verification_code: { id: '#txt_verification_code' },
         },
-        revoke_mam: {
-            additional_fields:
-                acc_type => ({
-                    mt5_mamm: 1,
-                    login   : accounts_info[acc_type].info.login,
-                    action  : 'revoke',
-                }),
-        },
         deposit: {
             txt_amount       : { id: '#txt_amount_deposit', request_field: 'amount' },
             additional_fields:
@@ -482,14 +437,6 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
-        ],
-        new_account_mam: [
-            { selector: fields.new_account_mam.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
-            { selector: fields.new_account_mam.txt_manager_id.id,    validations: [['req', { hide_asterisk: true }], ['length', { min: 0, max: 15 }]] },
-            { selector: fields.new_account_mam.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
-            { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
-            { selector: fields.new_account_mam.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
-            { selector: fields.new_account_mam.chk_tnc.id,           validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
@@ -520,8 +467,10 @@ const MetaTraderConfig = (() => {
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
-    const isAuthenticationPromptNeeded = () =>
-        State.getResponse('get_account_status').authentication.needs_verification.length;
+    const isAuthenticationPromptNeeded = () => {
+        const get_account_status = State.getResponse('get_account_status');
+        return get_account_status ? get_account_status.authentication.needs_verification.length : false;
+    };
 
     return {
         accounts_info,

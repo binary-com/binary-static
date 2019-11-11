@@ -6,7 +6,6 @@ import Datafeed from './datafeed.jsx';
 import OrderExecutionBinary from './order_execution.jsx';
 import OrderExecutionMT from './metatrader/order_execution.jsx';
 import RiskDisclaimerBinary from './risk_disclaimer.jsx';
-import MAM from './mam.jsx';
 import RiskDisclaimerMT from './metatrader/risk_disclaimer.jsx';
 import PaymentAgents from './payment_agents.jsx';
 import Privacy from './privacy.jsx';
@@ -28,7 +27,6 @@ const Tac = () => (
                             { id: 'legal-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'mam',              text: it.L('MAM'), className: 'invisible' }, // toEnableMAM: remove className
                     { id: 'datafeed',         text: it.L('Data Feed') },
                     { id: 'privacy',          text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
@@ -63,10 +61,6 @@ const Tac = () => (
 
                 <SidebarContent id='legal-mt'>
                     <TermsAndConditionsMT />
-                </SidebarContent>
-
-                <SidebarContent id='mam'>
-                    <MAM />
                 </SidebarContent>
 
                 <SidebarContent id='datafeed'>

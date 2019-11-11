@@ -77,17 +77,6 @@ const Partners = () => (
                     text={it.L('Access multi-asset liquidity from top-tier institutions.') }
                 />
             </div>
-
-            <div className='gr-row gr-clear invisible'>
-
-                <Column
-                    url={it.url_for('multiple-accounts-manager')}
-                    image='mam'
-                    header={it.L('Multiple Accounts Manager (MAM)')}
-                    text={it.L('Trade and manage multiple MT5 client accounts from a single interface.')}
-                />
-
-            </div>
         </div>
     </React.Fragment>
 );
