@@ -6,6 +6,19 @@ import Loading from '../../_common/components/loading.jsx';
 const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container'>
+            <div id='deriv_banner_container'>
+                <img className='platform_image' src={it.url_for('images/deriv/platform-dtrader.png')} />
+                <img className='watermark_background' src={it.url_for('images/deriv/deriv-logo.png')} />
+                <div>
+                    <h2>{it.L('Say hello to a whole new trading experience!')}</h2>
+                    <h5>{it.L('Log in with your <strong>Binary.com</strong> account')}</h5>
+                    <div className='button_container'>
+                        <a href='https://deriv.app' className='deriv_button' target='_blank' rel='noopener noreferrer'>
+                            {it.L('Try Deriv now')}
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />
             <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws?action=deposit')}>
@@ -129,7 +142,7 @@ const Trading = () => (
                                         </div>
                                         <div className='big-col'>
                                             <select id='prediction' className='small_width_input'>
-                                                { Array.from(new Array(10)).map((x, idx) => (
+                                                {Array.from(new Array(10)).map((x, idx) => (
                                                     <option key={idx} value={idx}>{idx}</option>
                                                 ))}
                                             </select>
@@ -141,7 +154,7 @@ const Trading = () => (
                                         </div>
                                         <div className='big-col'>
                                             <select id='selected_tick' className='small_width_input'>
-                                                { Array.from(new Array(5)).map((x, idx) => (
+                                                {Array.from(new Array(5)).map((x, idx) => (
                                                     <option key={idx + 1} value={idx + 1}>{idx + 1}</option>
                                                 ))}
                                             </select>
