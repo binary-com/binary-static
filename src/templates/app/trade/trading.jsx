@@ -11,7 +11,7 @@ const Trading = () => (
                 <img className='watermark_background' src={it.url_for('images/deriv/deriv-logo.png')} />
                 <div>
                     <h2>{it.L('Say hello to a whole new trading experience!')}</h2>
-                    <h5>{it.L('Log in with your <strong>Binary.com</strong> account')}</h5>
+                    <h5>{it.L('Log in with your [_1] account', `<strong>${it.website_name}</strong>`)}</h5>
                     <div className='button_container'>
                         <a href='https://deriv.app' className='deriv_button' target='_blank' rel='noopener noreferrer'>
                             {it.L('Try Deriv now')}
