@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-11-11 03:23\n"
+"PO-Revision-Date: 2019-11-15 10:24\n"
 "Last-Translator: binarycom\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -87,38 +87,17 @@ msgstr "의 의미는 이 동의문 및 모든 부록, 스케쥴 및 개정된 �
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools, and resources created and maintained by %1 that allows the Programmer to use a registered Application to interface with the %1 trading platform."
 msgstr "\"%1 API\"이란 프로그래머로 하여금 %1 트레이딩 플랫폼과 인터페이스 접속을 할 수 있도록 등록된 응용프로그램을 이용할 수 있도록 %1에 의해 제작되고 유지되어지는 계획적인 틀, 프로토콜, 툴 및 자원의 %1의 소유 사항입니다."
 
-msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
-msgstr "\"계좌\"는 Binary (V) Ltd를 통해 개설된 고객 거래 계좌를 의미합니다."
-
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. binary options can have only one of two possible outcomes and allow the client to take a simple \"Yes or No\" approach. Like traditional options, binary options are based on an underlying asset such as currencies, commodities, or indices; however, one of the most significant differences between binary options and traditional options, among others, is that there can only be two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
 msgstr "\"바이너리\" 또는 \"디지털\" 옵션은 바이너리 옵션이 만기되는 시점에 이벤트가 일어나거나 또는 일어나지 않음에 따라 미리 결정되어 있는 고정된 금액을 지불하는 옵션을 의미합니다. 바이너리 옵션은 가능한 두가지 결과중 단 하나만을 가질수 있으며 고객으로 하여금 간단한 \"네 또는 아니오\"로 접근할 수 있도록 해 줍니다. 전통적인 옵션처럼, 바이너리 옵션은 통화, 상품 또는 지수처럼 기초자산에 기초합니다; 하지만, 바이너리 옵션과 전통적인 옵션과 다른 것과의 가장 두드러지는 차이점은 옵션에 있어서 오직 두가지 결과만 가질 수 있다는 것입니다. 여기에서 두가지 결과는 이벤트의 발생에 따라 수익을 받거나, 또는 고객이 각 옵션에서 결정되어 있는 투자 금액을 잃는 것입니다."
-
-msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
-msgstr "\"고객 동의\"는 약관, 주문 실행정책 및 슬리피지 정책에만 국한되지 않고 고객과 본 회사간의 동의를 의미합니다."
-
-msgid "\"Commencement Date of this Agreement\" shall mean the date on which an appointment of a Money Manager is made by the Client."
-msgstr ""
-
-msgid "\"Company\" means Binary (V) Ltd, operating under the brand or trademark of %1, incorporated and registered in the Republic of Vanuatu, under the International Companies Act Cap. 222 and Financial Dealers Licensing Act (Cap. 70), licensed to provide Investment services and dealing with Securities."
-msgstr ""
 
 msgid "\"Content\" means any data or content either from the Company's Website or accessed via the API. The Company's \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
 msgstr "\"내용\"이란 본 회사의 웹사이트로부터 나오는 또는 API를 통해 접근되어지는 그 어떠한 데이터 또는 내용을 의미합니다. 본 회사의 \"웹사이트\"란 www.binary.com인 %1의 웹사이트와 %1에 의해 소유되거나 또는 운영되어지는 다른 웹사이트 또는 서비스를 의미합니다."
 
-msgid "\"Money Manager\" means any physical person including any executor, representative, administrator or successor in law, authorised to manage the Account on behalf of the Client in accordance with this Agreement."
-msgstr ""
-
-msgid "\"Orders\" means any Order or Orders for any transaction, under the Client Agreement and this Multi-Account Manager (MAM) Agreement."
-msgstr ""
-
 msgid "\"Third-party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"제 3자 공급자(들)\"이란 %1 API 이용을 통해 실행가능한 기능을 만드는 제 3자(비 제휴)를 의미합니다."
 
-msgid "\"Transaction\" means any purchase or sale of any financial Instrument including but not limited to CFDs, Rolling Spot FX, Commodities and any other securities or products may be offered by the Company to the Client, from time to time in accordance with the Client Agreement."
-msgstr ""
-
 msgid "$ per USD 100,000 of turnover"
-msgstr ""
+msgstr "미화 100,000 달러의 턴오버당 $"
 
 msgid "$0 - $20,000"
 msgstr "$0 - $20,000"
@@ -439,9 +418,6 @@ msgstr "%1은 이제 하루당 백만거래를 초과하는 양을 처리합니�
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr ""
 
-msgid "%1Download MAM for Windows%2 after you've set up your master account. Your login credentials will be provided"
-msgstr ""
-
 msgid "%1Founded%2 October 1999"
 msgstr "1999년 10월 %1F설립%2"
 
@@ -605,7 +581,7 @@ msgid "40K+"
 msgstr "40K+"
 
 msgid "45%"
-msgstr ""
+msgstr "45%"
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "지난 12개월간 6-10의 거래량"
@@ -651,9 +627,6 @@ msgstr ""
 
 msgid "A Forex trader has one objective in mind when trading which is:"
 msgstr "외환 거래자는 거래시 다음과 같은 목적을 가집니다:"
-
-msgid "A MAM account can be assigned to a money manager who will trade on your behalf. You can view all the trades executed by a money manager."
-msgstr ""
 
 msgid "A Market Order is an Order to buy or sell at the available market price, which results from the aggregation of prices and volumes received from third-party liquidity providers."
 msgstr "시장 주문은 제 3자 유동성 제공자로부터 받아진 가격과 볼륨의 합산으로부터의 결과인 적용될 수 있는 시장가로 사거나 파는 주문을 의미합니다."
@@ -880,9 +853,6 @@ msgstr "동의문의 수락"
 msgid "Access MT5 dashboard"
 msgstr "MT5 대시보드에 접근하세요"
 
-msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
-msgstr ""
-
 msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
 msgstr ""
 
@@ -1100,7 +1070,7 @@ msgid "Advantages of binary options trading"
 msgstr "바이너리 옵션 트레이딩의 장점"
 
 msgid "Affiliate"
-msgstr ""
+msgstr "제휴자"
 
 msgid "Affiliate Arrangement"
 msgstr "제휴 협정"
@@ -1468,9 +1438,6 @@ msgstr ""
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr ""
 
-msgid "Are you a money manager who wants to easily manage multiple client accounts? Our %1Multiple Accounts Manager (MAM)%2 application gives you the ability to view, track, and trade on behalf of all MT5 client accounts under your control."
-msgstr ""
-
 msgid "Are you sure that you want to permanently delete the token"
 msgstr ""
 
@@ -1640,12 +1607,6 @@ msgid "Asset Index"
 msgstr "자산 지수"
 
 msgid "Asset index is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
-msgstr ""
-
-msgid "Assign and manage multiple sub-accounts seamlessly via one interface – the Multiple Accounts Manager (MAM)."
-msgstr ""
-
-msgid "Assigned manager's account ID:"
 msgstr ""
 
 msgid "Assignment"
@@ -1960,9 +1921,6 @@ msgstr ""
 msgid "Best of all, there is no minimum deposit requirement."
 msgstr ""
 
-msgid "Best of all, your commissions are credited into your account instantly."
-msgstr ""
-
 msgid "BetOnMarkets goes live"
 msgstr "BetOnMarkets의 개시"
 
@@ -2155,9 +2113,6 @@ msgstr ""
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "바이너리 옵션 거래는 비교적 쉽습니다. 고객님께서는 단 3단계만으로 컨트렉트를 구매하실 수 있습니다."
 
-msgid "Binary options transactions fall out of the scope of this Multi-Account Manager (MAM) Agreement."
-msgstr ""
-
 msgid "Binary shall have the absolute discretionary power to accept or reject an application to open an Account by a client introduced by the Introducing Broker."
 msgstr "Binary는 브로커 소개인으로부터 소개된 고객의 계좌 개설 신청을 받아들이거나 또는 거절할 전적인 재량권이 있습니다."
 
@@ -2260,9 +2215,6 @@ msgstr "계약을 구매하거나 또는 귀하의 포지션을 재정립하세�
 msgid "Buy your first currency pairs"
 msgstr "귀하의 첫번쨰 통화쌍을 구매하세요"
 
-msgid "By accepting this Agreement, you agree to authorise the Money Manager to manage your Account on your behalf in accordance with the Client Agreement."
-msgstr ""
-
 msgid "By adhering to the following measures, the Company is committed to making sure that the client's personal data and transactions are secure:"
 msgstr "다음과 같은 조치에 고수함으로써, 본 회사는 고객의 개인정보 및 거래가 안전하도록 전념합니다:"
 
@@ -2354,7 +2306,7 @@ msgid "CFH Clearing Limited"
 msgstr ""
 
 msgid "CPA (EU only)"
-msgstr ""
+msgstr "CPA (유럽연합에만 적용)"
 
 msgid "Call Spread"
 msgstr ""
@@ -2561,7 +2513,7 @@ msgid "Choose your own strike."
 msgstr "본인만의 스트라이크를 선택하세요."
 
 msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
-msgstr ""
+msgstr "귀하께서 선호하는 프로그램을 선택하시고, 신청서를 작성하세요, 그리고 승인이 나면 귀하의 제휴 링크를 받으세요."
 
 msgid "Christmas Day"
 msgstr "성탄절"
@@ -2610,12 +2562,6 @@ msgstr "클라이언트 인출액"
 
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "올해 이전까지 고객이 인출해 온 금액은 미화로 대략 5억달러에 달합니다. 올해의 경우 고객의 인출금액은 미화 1억 4천달러 이상이 예상됩니다."
-
-msgid "Client's Representation"
-msgstr ""
-
-msgid "Client's deposits or withdrawals are immediately reflected in the corresponding master account balance in real time"
-msgstr ""
 
 msgid "Client's liability"
 msgstr "고객의 책임"
@@ -2780,7 +2726,7 @@ msgid "Commission per side trade"
 msgstr ""
 
 msgid "Commission rates"
-msgstr ""
+msgstr "수수료율"
 
 msgid "Commission shall only be paid where the following are met cumulatively:"
 msgstr "수수료는 다음의 사항이 점증적으로 만족된 경우에만 지급될 것입니다:"
@@ -2823,9 +2769,6 @@ msgstr ""
 
 msgid "Company or Binary"
 msgstr "회사 또는 Binary"
-
-msgid "Company's Representation"
-msgstr ""
 
 msgid "Company's obligations"
 msgstr "회사의 의무사항"
@@ -3098,7 +3041,7 @@ msgid "Copywriter"
 msgstr "카피라이터"
 
 msgid "Cost per acquisition (CPA) for EU Affiliates only"
-msgstr ""
+msgstr "유럽연합 제휴자만을 위한 획득 당 비용 (CPA)"
 
 msgid "Costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's Bid and the Company's Ask"
 msgstr "비용 - 고객 주문 집행에 대한 비용이며 대부분 스프레드로 구성되어 있습니다. 예를 들어서 본 회사의 매수 밋 본 회사의 매도가격 사이의 차이입니다"
@@ -3144,9 +3087,6 @@ msgstr ""
 
 msgid "Create Account"
 msgstr "계정 만들기"
-
-msgid "Create MAM account"
-msgstr ""
 
 msgid "Create MetaTrader 5 account"
 msgstr ""
@@ -3676,9 +3616,6 @@ msgstr "휴면 및 비활성 계좌"
 msgid "Download CSV"
 msgstr "CSV 다운로드"
 
-msgid "Download MAM"
-msgstr "MAM(Multi-account manager) 다운로드"
-
 msgid "Download MT5 for Linux"
 msgstr ""
 
@@ -3802,9 +3739,6 @@ msgstr ""
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions of this agreement."
 msgstr "각 당사자는 당사간에 본 동의문 조항의 효력발생을 위해 요구되어지는 합리적인 그 어떠한 사항이라도 이행합니다."
 
-msgid "Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement."
-msgstr ""
-
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr ""
 
@@ -3839,7 +3773,7 @@ msgid "Earn"
 msgstr "수입"
 
 msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU."
-msgstr ""
+msgstr "각 성공적인 소개에 대해 미화 100달러를 받으세요. 귀하로부터 소개된 고객은 반드시 귀하의 특별한 제휴 링크를 통해 %1실제 자금 투자 계좌%2를 개설해야 하며 총 미화 100달러 또는 그 이상에 해당하는 금액을 해당 계좌에 입금해야 합니다 (한번에 또는 누적으로). 이 수수료 설계는 유럽연합에 기반으로 하고 있는 제휴자에게만 적용됩니다."
 
 msgid "Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities."
 msgstr ""
@@ -3860,7 +3794,7 @@ msgid "Earn the same proportional return on stakes of all values"
 msgstr ""
 
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
-msgstr ""
+msgstr "귀하의 고객에 의해 발생되어진 총 순이익에 따라 최대 45%까지 수수료를 받으세요. 수수료는 매달의 15일이 지난 후 귀하의 계좌에 입금됩니다."
 
 msgid "Easily monitor your open positions"
 msgstr "귀하의 오픈 포지션을 쉽게 모니터링하세요"
@@ -3912,9 +3846,6 @@ msgstr ""
 
 msgid "Email:"
 msgstr "이메일:"
-
-msgid "Emercoin vs US Dollar"
-msgstr ""
 
 msgid "Employed"
 msgstr ""
@@ -4678,9 +4609,6 @@ msgstr ""
 msgid "For payments-related queries:"
 msgstr ""
 
-msgid "For the purposes of this Agreement, the following shall mean:"
-msgstr ""
-
 msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds Financial Trading Provider' by Shares Magazine UK. It's the last time we win it because Shares Magazine stops awarding in this category."
 msgstr "연속 3년째, BetOnMarkets.com이 영국 Shares Magazine으로부터 '최고의 고정 승률 금융 거래 공급자' 선정되었습니다. Shares Magazine이 해당 부문에서의 상 수여를 중단했기 때문에 저희가 이 상의 마지막 수여자였습니다."
 
@@ -5233,9 +5161,6 @@ msgstr ""
 msgid "I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information."
 msgstr ""
 
-msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
-msgstr ""
-
 msgid "I want to reapply"
 msgstr ""
 
@@ -5316,9 +5241,6 @@ msgstr "이 동의문의 어떠한 조항이라도 에이전트가 서비스를 
 
 msgid "If any provision of this agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this agreement shall remain in full force and effect."
 msgstr "만약 이 동의문의 어떠한 조항이 법정 또는 권한이 있는 관할권의 규제기관에 의해 무효화되거나 시행될 수 없는 경우, 이 계약의 나머지 조항은 그대로 완전히 유효합니다."
-
-msgid "If any terms of this Agreement be held invalid, void, or unenforceable by any relevant authority or regulatory body, the remainder of this Agreement shall remain in full force and effect."
-msgstr ""
 
 msgid "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this agreement immediately."
 msgstr ""
@@ -5869,12 +5791,6 @@ msgstr "상호적인 온라인 세미나"
 msgid "Interest in IT or software development"
 msgstr "IT 또는 소프트웨어 개발에 대한 관심"
 
-msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
-msgstr ""
-
-msgid "Interested in our MAM tool? %1Contact us%2 for more information on setting up your master account"
-msgstr ""
-
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr ""
 
@@ -5909,7 +5825,7 @@ msgid "Introducing Broker"
 msgstr "브로커 소개인"
 
 msgid "Introducing Broker (IB)"
-msgstr ""
+msgstr "브로커 소개인 (IB)"
 
 msgid "Introducing Broker warranties"
 msgstr "브로커 소개인 보증"
@@ -5964,9 +5880,6 @@ msgstr "투자자 보상 제도"
 
 msgid "Investor password"
 msgstr "투자자 비밀번호"
-
-msgid "Investor password (read-only access)"
-msgstr "투자자 비밀번호 (읽기를 통한 접근만 가능)"
 
 msgid "Ireland"
 msgstr ""
@@ -6259,9 +6172,6 @@ msgstr "본 사의 이 간단한 단계별 안내를 통해 수상경력이 있�
 msgid "Learn more"
 msgstr "더 보기"
 
-msgid "Learn more about our Multiple Accounts Manager (MAM) facility for money managers"
-msgstr ""
-
 msgid "Learn more about our corporate culture"
 msgstr "우리의 기업 문화에 대해 더 알아보세요"
 
@@ -6448,9 +6358,6 @@ msgstr "로그인 기록"
 msgid "Login ID"
 msgstr "로그인 아이디"
 
-msgid "Login ID of money manager who will trade on your behalf"
-msgstr ""
-
 msgid "Login time:"
 msgstr "로그인 시간:"
 
@@ -6513,30 +6420,6 @@ msgstr ""
 
 msgid "M. Force majeure events"
 msgstr "M. 불가항력 상황"
-
-msgid "MAM"
-msgstr ""
-
-msgid "MAM Accounts"
-msgstr ""
-
-msgid "MAM Advanced"
-msgstr ""
-
-msgid "MAM Advanced account"
-msgstr ""
-
-msgid "MAM Advanced*"
-msgstr ""
-
-msgid "MAM Synthetic Indices"
-msgstr ""
-
-msgid "MAM Synthetic Indices Account"
-msgstr ""
-
-msgid "MAM Synthetic Indices*"
-msgstr ""
 
 msgid "MENA FFXPO Award"
 msgstr "MENA FFXPO 상"
@@ -6606,9 +6489,6 @@ msgstr ""
 
 msgid "Main password"
 msgstr "주 비밀번호"
-
-msgid "Main password (trading access)"
-msgstr "주 비밀번호 (거래 액세스)"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "정확한 시스템 가격 책정 파라미터 유지"
@@ -6685,9 +6565,6 @@ msgstr "지중해에서 몰타의 전략적 위치는 그리스, 로마, 아랍,
 msgid "Manage IT assets and maintain an up-to-date asset registry"
 msgstr "IT 자산을 관리하고 최신의 자산 등록을 유지"
 
-msgid "Manage MAM account"
-msgstr ""
-
 msgid "Manage MT5 password"
 msgstr ""
 
@@ -6709,19 +6586,10 @@ msgstr "우리의 버그 바운티 프로그램 관리"
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
 msgstr "각각의 배포된 서버를 위한 보안 관리, 침입 탐지, DDos 보호 및 PCI 규정 준수 조치"
 
-msgid "Manage sub accounts"
-msgstr ""
-
 msgid "Manage the funds in your cryptocurrency account."
 msgstr ""
 
 msgid "Manage your authorised applications."
-msgstr ""
-
-msgid "Manager ID"
-msgstr ""
-
-msgid "Manager successfully revoked"
 msgstr ""
 
 msgid "Managers"
@@ -7012,9 +6880,6 @@ msgstr "고객으로부터 수집된 자금은 고객을 대신하여 어떠한 
 msgid "Monies deposited by clients with BIEL in advance of a trade or pending withdrawal is treated by BIEL as clients' money. BIEL holds such monies in pooled or omnibus clients' money bank accounts opened with banks or other institutions (\"Institutions\"), segregated from BIEL's own money. Such clients' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients' money is held with non-EEA Institutions, this means that such accounts will be subject to laws other than those of an EEA member state and clients' rights may differ accordingly."
 msgstr ""
 
-msgid "Monitor and manage your client list, adjust settings for individual sub accounts, and more"
-msgstr ""
-
 msgid "Monitor campaigns using key metrics and submit reports on campaign performance"
 msgstr "주요 측정기준을 사용하여 캠페인 감시 및 캠페인 실적에 대한 보고서 제출"
 
@@ -7069,9 +6934,6 @@ msgstr ""
 msgid "Multi award-winning trading platform."
 msgstr "다양한 수상 이력의 거래 플랫폼."
 
-msgid "Multi-Account Manager (MAM) Agreement"
-msgstr ""
-
 msgid "Multi-asset Liquidity Solutions"
 msgstr ""
 
@@ -7082,15 +6944,6 @@ msgid "Multi-asset liquidity solutions"
 msgstr ""
 
 msgid "Multilingual platforms"
-msgstr ""
-
-msgid "Multiple Accounts Manager"
-msgstr ""
-
-msgid "Multiple Accounts Manager (MAM)"
-msgstr "멀티 어카운트 관리자 (MAM)"
-
-msgid "Multiple Accounts Manager (MAM) for MetaTrader 5 (MT5)"
 msgstr ""
 
 msgid "Multiple income opportunities"
@@ -7651,12 +7504,6 @@ msgstr "우리의 계좌 &amp; 결제팀은 매일 일어나는 다량의 거래
 msgid "Our Company"
 msgstr "본 회사"
 
-msgid "Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account."
-msgstr ""
-
-msgid "Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account."
-msgstr ""
-
 msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
 msgstr ""
 
@@ -7673,7 +7520,7 @@ msgid "Our active client base is expected to reach over 100,000 total clients th
 msgstr "저희의 기반된 활동 고객님들의 숫자는 올해 총 10만 이상이 될 것으로 예상됩니다."
 
 msgid "Our commission structure is a simple 2-tiered plan."
-msgstr ""
+msgstr "우리의 수수료 구조는 간단하게 2단계로 이루어져 있습니다."
 
 msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
 msgstr ""
@@ -7712,7 +7559,7 @@ msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr ""
 
 msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer you lower commissions."
-msgstr ""
+msgstr "턴오버에 근거한 우리의 수수료 설계는 각 계약에 대한 지불금의 확률에 근거합니다. 고객에게 더 높은 수익이 발생되는 계약일수록 귀하에게는 더 낮은 수수료가 지급됩니다."
 
 msgid "Our values"
 msgstr "우리의 가치"
@@ -7739,9 +7586,6 @@ msgid "Over 3 years"
 msgstr ""
 
 msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
-msgstr ""
-
-msgid "Over 70 available assets"
 msgstr ""
 
 msgid "Over two billion dollars in trades to date."
@@ -7790,7 +7634,7 @@ msgid "Participate in all aspects of the product lifecycle"
 msgstr "제품 수명 주기에 대한 모든 부분들에 참여"
 
 msgid "Partner With Us"
-msgstr "저희와의 파트너"
+msgstr "우리와의 파트너"
 
 msgid "Partner earnings"
 msgstr "파트너 수입"
@@ -8390,7 +8234,7 @@ msgid "Prior to placing an Order, which results in opening a position, the clien
 msgstr "포지션을 개설하는 결과를 가지는 주문을 하기 전에, 고객은 포지션을 개설함과(\"증거금률\") 관련하여 요구되는 증거금을 커버할 수 있을만큼 충분한 계좌 잔여 증거금이 있도록 하는 것과 증거금률에 대해 지속적으로 만족시키는 것은 고객의 책임이라는 것을 인정합니다."
 
 msgid "Probability of returns"
-msgstr ""
+msgstr "수익 가능성"
 
 msgid "Proceed"
 msgstr ""
@@ -8559,9 +8403,6 @@ msgstr ""
 
 msgid "Provision of services"
 msgstr "서비스 조항"
-
-msgid "Provisions of Agreement"
-msgstr ""
 
 msgid "Publish the Programmer's name and logo (with or without a link to the Programmer's Application) on the Company's website, in press releases, and in promotional materials without additional consent."
 msgstr "본 회사의 웹사이트, 언론 자료 및 홍보자료에 추가적인 동의 없이 프로그래머의 성명 및 로고(프로그래머의 응용프로그램에 대한 링크와 함께 또는 링크없이)를 게시합니다."
@@ -8839,9 +8680,6 @@ msgstr "복제,"
 msgid "Represent themselves as a representative of the Company or as an authorised person by the Company in their advertising activities"
 msgstr "에이전트의 광고활동에서 본 회사의 대표 또는 본 회사로부터 인가를 받은 사람인 것처럼 나타내는 행위"
 
-msgid "Representation or Warranty"
-msgstr ""
-
 msgid "Representations and warranties"
 msgstr "진술 및 보증"
 
@@ -8951,7 +8789,7 @@ msgid "Returns above 1000% on %1higher/lower%2 and %3touch/no-touch%2 trades."
 msgstr "%1higher/lower%2 및 %3터치/노터치%2 거래에서는 1000% 이상의 수익률을 볼 수 있습니다."
 
 msgid "Revenue Share"
-msgstr ""
+msgstr "수익배분"
 
 msgid "Reverse Side"
 msgstr ""
@@ -8977,13 +8815,7 @@ msgstr "옵션 가격결정, 변동성 예측 및 위험 관리 프로그램에 
 msgid "Revisions to the %1 API"
 msgstr "%1 API에 대한 수정"
 
-msgid "Revoke MAM"
-msgstr ""
-
 msgid "Revoke access"
-msgstr ""
-
-msgid "Revoke manager"
 msgstr ""
 
 msgid "Right to object"
@@ -9093,9 +8925,6 @@ msgstr ""
 
 msgid "Scope and intent"
 msgstr "범위 및 의도"
-
-msgid "Scope of Agreement"
-msgstr "계약 범위"
 
 msgid "Scope of agreement"
 msgstr "계약의 범위"
@@ -9470,7 +9299,7 @@ msgid "Spread"
 msgstr "스프레드"
 
 msgid "Spread the word to your audience. Use your unique referral link and our tried-and-tested referral tools to drive traffic to %1."
-msgstr ""
+msgstr "귀하의 청중들에게 말을 퍼뜨리세요. %1으로 트래픽을 적용하기 위해 귀하의 독특한 소개 링크 및 믿을 수 있다고 증명된 우리의 소개 툴을 활용하세요."
 
 msgid "Stake"
 msgstr ""
@@ -9658,17 +9487,11 @@ msgstr ""
 msgid "Subject to network latency, the Company endeavours to execute the client's Order within a reasonable time from the time that they trigger the Order, at the price nearest to the client's specified price. The Company does not guarantee that a transaction will be opened/closed following an Order being triggered by the client at their specified price. This can happen under certain trading conditions when there are sharp price movements in the market. In that case, the Company has the right to execute the Order at the first available price."
 msgstr "네트워크의 지연에 따라, 본 회사는 고객이 주문을 한 시점부터 합리적인 시간 내로 고객이 지정한 가격대로 주문을 실행할 수 있도록 노력합니다. 본 회사는 고객께서 시행한 주문이 고객이 명시한 가격으로 거래가 개시/종료 된다는 것에 보장하지 않습니다."
 
-msgid "Subject to the applicable governing law and the Client Agreement, you represent and acknowledge that this Agreement shall be admissible as an evidence in any legal, judicial, administrative, arbitration or mediation proceedings."
-msgstr ""
-
 msgid "Subject to the availability and sufficiency of funds in their MT5 Real Account and any daily transfer limits, the client may withdraw funds from their MT5 Real Account to their %1 account."
 msgstr "MT5 실계좌에 있는 자금의 가용성 및 충분성 및 일일 이체 한도에 따라, 고객께서는 고객의 MT5 실계좌로부터 그들의 %1 계좌로 자금을 인출할 수 있습니다."
 
 msgid "Subject to the law and the terms and conditions of this agreement, the Company shall not be liable to the Agent for any matter arising out of or in relation to this agreement."
 msgstr "법률과 본 동의문의 조항에 따라 본 회사는 이 동의문과 관련하여 초래되는 그 어떠한 사항에도 에이전트에게 책임이 없습니다."
-
-msgid "Subject to the law and the terms of the Client Agreement, the Company shall not be liable to you or your Money Manager for any matter arising out of or in relation to this Agreement."
-msgstr ""
 
 msgid "Subject to the law, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Agent or client for any loss, damage, or debt whatsoever arising directly or indirectly out of, or in connection with, this agreement. The Agent agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses, including all and any legal fees incurred arising out of the Agent's failure to comply with any and all of the Agent's obligations set forth in this agreement."
 msgstr "법률에 의거하여, 본 회사 또는 본 회사의 그 어느 임원, 간부, 관리자, 직원 또는 에이전트 그 누구도 본 동의문과 연관되거나 또는 이로부터 직접 또는 간접적으로 초래된 그 어떠한 손실, 손해, 또는 부채에 대해서 에이전트 또는 고객에게 법적인 책임이 없습니다. 본 동의문에 제시된 그 어떠한 모든 의무사항을 따르지 못한 사항으로 초래되는 모든 그리고 그 어떠한 법적 비용을 포함한 법적 책임, 손실, 손해, 비용에 대해서 에이전트는 본 회사 및 본 회사의 임원, 간부, 관리자, 직원 또는 에이전트에게 배상할 것을 동의합니다."
@@ -10387,9 +10210,6 @@ msgstr "본 회사는 에이전트가 고객에게 제공하는 금융 서비스
 msgid "The Company shall not be responsible or liable to the client for any fraudulent acts or omissions, negligence, misconduct, or wilful default made by the Agent. Likewise, the Company shall not be responsible or liable to the client if any terms and conditions of this agreement are breached by the Agent."
 msgstr "본 회사는 에이전트에 의해 행해진 모든 사기행위, 누락, 부주의, 부당한 행위 또는 고의적인 채무불이행에 대해 책임이 없으며 또는 법적책임이 없을 것입니다. 마찬가지로, 본 회사는 에이전트에 의해 이 동의문의 그 어떠한 조항이 위반된 경우 고객에게도 책임 및/또는 법적책임이 없습니다."
 
-msgid "The Company shall not be responsible or liable to you for any negligence, misconduct, fraudulent acts and omissions made by you or your Money Manager."
-msgstr ""
-
 msgid "The Company shall not perform any supervisory function regarding any financial services whatsoever provided by the Agent."
 msgstr "본 회사는 에이전트로부터 제공된 그 어떠한 금융 서비스와 관련한 감독 기능을 수행하지 않습니다."
 
@@ -10401,9 +10221,6 @@ msgstr "본 회사는 제휴자에게 본 계약의 기간동안 받아지는 �
 
 msgid "The Company shall provide the Affiliate with statements accessible through an electronic system detailing the revenues generated by clients the Affiliate has referred, if any, which have accrued to the Affiliate over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record the Affiliate's total share of net revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to the Affiliate. However, the Company shall also be entitled but not obliged to zeroise the negative balance that would otherwise be carried forward."
 msgstr "본 회사는 해당되는 달에 제휴자에게 축적된 이익이 있는 경우 제휴자가 추천한 고객이 발생시킨 수익에 대한 자세한 확인서를 제휴자가 전자시스템을 통해 접근할 수 있도록 할 것입니다. 이러한 확인서는 매일 업데이트 될 것입니다. 해당되는 달의 말에, 본 회사는 이전 달동안 발생한 순이익에서 제휴자의 지분에 해당하는 총액을 기록할 것입니다. 만약 어떤 달의 수익이 마이너스인 금액인 경우 본 회사는 해당 마이너스 금액을 당신에게 지불되어야 하는 금액이 있는 다른 때로 이월시킬 수 있습니다만 이는 의무적인것은 아닙니다. 그렇지만, 본 회사는 다른 때로 이월할 수 있는 마이너스 잔액에 대해 제로화 할 수 있는 자격은 있지만 의무가 있는 것은 아닙니다."
-
-msgid "The Company shall provide you with online access to the trading platform on which the balance, margin, credit, and equity is displayed so you are able to monitor the status and performance of the Account. You agree that in case of incongruity, you will immediately contact the Company at %1."
-msgstr ""
 
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr "본 회사는 전적인 재량으로, 브로커 소개인 신청의 성공 여부를 결정할 것입니다. 본 회사의 결정은 최종적이며 바뀌지 않습니다."
@@ -10565,15 +10382,6 @@ msgid "The Introducing Broker's obligations"
 msgstr "브로커 소개인의 의무사항"
 
 msgid "The Investor Compensation Scheme"
-msgstr ""
-
-msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
-msgstr ""
-
-msgid "The MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account."
-msgstr ""
-
-msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr ""
 
 msgid "The MT5 platform is not supported by macOS Catalina, Windows XP, Windows 2003, and Windows Vista."
@@ -11458,9 +11266,6 @@ msgstr "고객은 항상 이 조항에서 언급되는 모든 권위, 능력, �
 msgid "Think that a certain currency will go up or down? Learn when you should buy (or \"go long\") and when to sell (or \"go short\")."
 msgstr ""
 
-msgid "This Agreement constitutes the entire Agreement between the Parties, and no earlier representation, arrangement or agreement written or oral relation to any matter dealt with in this Agreement between the Parties shall have any force or effect before the Commencement Date."
-msgstr ""
-
 msgid "This Agreement constitutes the entire agreement between the parties, and no earlier representation or arrangement, written or oral, relating to any matter dealt with in this Agreement between the parties shall have any force or effect before the Effective Date."
 msgstr "이 동의문은 당사자간의 완전한 동의를 구성하며 이 동의문에서 다루는것과 관계하는 해당 당사자간의 그 어떠한 이전의 진술 또는 협약, 서면 또는 구술사항은 유효기일 이전에는 실행되거나 유효하지 않을 것입니다."
 
@@ -11472,12 +11277,6 @@ msgstr "프로그래머가 프로그래머의 본 회사 API 사용을 명확히
 
 msgid "This Agreement has been duly executed and constitutes binding obligations on both parties, enforceable against it in accordance with its Terms."
 msgstr "이 동의문은 동의문의 약관에 따라 당사자들간에 모두 적용될 수 있는 구속력을 지니는 의무사항을 구성하고 적절히 시행되어져 왔습니다."
-
-msgid "This Agreement is between Binary (V) Ltd (hereinafter referred to as 'the Company') and Client who authorises a Multi-Account Manager (hereinafter referred to as 'Money Manager') to manage the Account on behalf of the Client, both of whom agree to bound by this Agreement as a supplement to the Client Agreement."
-msgstr "이 동의문은 Binary (V) Ltd (이하 '본 회사'로 나타낸다) 와 다중 계좌 관리자 (이하 '자금 관리자'로 나타낸다) 가 고객을 대신하여 계좌를 관리하는 것에 대해 권한을 부여하는 고객간의 동의문이며, 이에 해당하는 두 대상은 고객 동의문으로의 보충물로써 이 동의문에 동의합니다."
-
-msgid "This Agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
-msgstr ""
 
 msgid "This Agreement may be terminated forthwith by either party on written notice to the other party if the other party is in material breach of the terms of the Agreement and, in the event of a breach capable of being remedied, fails to remedy the breach within 15 days of receipt of notice in writing of such breach."
 msgstr "당사자가 본 조항에 대해 중대한 위반을 했을 경우, 그리고 해결될 수 있는 위반 사항에 대해 해당 위반사항에 대한 서면 공지후 15일 이내에 해결되지 않는다면 해당 계약은 즉시 각 당사자에게 서면통지를 통해 소멸될 수 있습니다."
@@ -11654,7 +11453,7 @@ msgid "Ticks history returned an empty array."
 msgstr ""
 
 msgid "Tier"
-msgstr ""
+msgstr "티어"
 
 msgid "Time is in the wrong format."
 msgstr ""
@@ -11699,9 +11498,6 @@ msgid "To be able to trade OTC instruments available on the MT5 trading platform
 msgstr ""
 
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
-msgstr ""
-
-msgid "To create a MAM real account, please:"
 msgstr ""
 
 msgid "To create a MetaTrader 5 account:"
@@ -11813,7 +11609,7 @@ msgid "Total deposits"
 msgstr ""
 
 msgid "Total net revenue per month (USD)"
-msgstr ""
+msgstr "달당 총 순수익 (USD)"
 
 msgid "Total withdrawals"
 msgstr ""
@@ -11874,9 +11670,6 @@ msgstr ""
 
 msgid "Trade all major currencies, indices, commodities, and synthetic indices."
 msgstr ""
-
-msgid "Trade and manage multiple MT5 client accounts from a single interface."
-msgstr "단일 인터페이스에서 다수의 MT5 고객 계정을 거래하고 관리하세요."
 
 msgid "Trade based on \"gut feel\" or rely on technical and fundamental analysis"
 msgstr "\"직관\" 또는 기술적 또는 핵심적인 분석을 바탕으로 거래하세요"
@@ -12328,9 +12121,6 @@ msgstr "요청에 따라 에이전트는 등록, 법인, 멤버십, 권한, 지�
 msgid "Upon request from the Company or its legal representatives or government regulators, the Introducing Broker must promptly grant Binary with unlimited access to information to the extent that Binary requires to satisfy any legal or regulatory requirement or obligation."
 msgstr "본 회사 또는 본 회사의 법률 대리인 또는 정부 규제기관으로부터의 요청사항에 따라, 그 어떠한 법률 또는 규제적 요구 또는 의무사항에 만족하기 위해 Binary가 요구하는 정도로 브로커 소개인은 즉시 Binary에게 정보로의 무제한 접근권한을 제공해야 합니다."
 
-msgid "Upon revocation, you acknowledge and understand that your Money Manager will lose all authorisation to manage your Account."
-msgstr ""
-
 msgid "Upon the Company's request, the Agent provides the Company with any and all information reasonably required to fully satisfy any and all demands, requests, orders, or requirements of any government or any other authority."
 msgstr "본 회사의 요구에 따라, 에이전트는 그 어떠한 정부 또는 다른 어떠한 기관으로부터 요구, 요청, 명령 또는 필요사항들을 완전히 만족시키기 위해 합리적으로 요구되는 그 어떠한 모든 정보들을 본 회사에게 제공합니다."
 
@@ -12339,9 +12129,6 @@ msgstr "이유를 막론하고, 계약 종결 또는 만기시, %1 API의 사용
 
 msgid "Usage limit"
 msgstr "사용 제한"
-
-msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes, starting from 0.01 lots"
-msgstr ""
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
 msgstr "금융시장에서의 트렌드/패턴을 공부하기 위해 진보된 데이터 분석 기술 사용"
@@ -12386,9 +12173,6 @@ msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "Binary를 위한 잠재적인 고객을 끌기 위해 최선의 노력을 해야 합니다"
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
-msgstr ""
-
-msgid "Use two different exclusion types: 'Allocation' excludes a client from future trades only, while 'Full' also closes open positions and removes its balance from the master account. Clients can choose to close any open position."
 msgstr ""
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
@@ -12451,16 +12235,10 @@ msgstr "비디오 튜토리얼"
 msgid "View"
 msgstr "보기"
 
-msgid "View all the information you need to manage your client list – including login ID, group, leverage, balance, equity, and margin"
-msgstr "귀하의 고객 리스트(로그인 ID, 그룹, 레버리지, 잔고, 순수 가치, 그리고 마진 포함)를 관리하기 위해 필요한 모든 정보를 확인하세요"
-
 msgid "View available payment methods"
 msgstr "가능한 지불방법 보기"
 
 msgid "View chart"
-msgstr ""
-
-msgid "View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price,  stop loss, take profit, swap, and profit"
 msgstr ""
 
 msgid "View guide"
@@ -12732,9 +12510,6 @@ msgstr ""
 
 msgid "What is Forex trading"
 msgstr "외환 거래란?"
-
-msgid "What is a MAM account?"
-msgstr ""
 
 msgid "What is cryptocurrency trading"
 msgstr "암호화폐 거래란?"
@@ -13117,9 +12892,6 @@ msgstr "인출액의 경우 오직 계좌 개설인에게만 지불될 수 있�
 msgid "Without margin, purchasing one lot of the XAU/USD pair will cost you:"
 msgstr ""
 
-msgid "Without prejudice of any right of the Company to decline any Order placed by the Money Manager, you hereby authorise the Company to accept Orders from the Money Manager and proceed transactions for your Account."
-msgstr ""
-
 msgid "Without prejudice to any other terms of this agreement, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the client in relation to any loss that they have incurred whether directly or indirectly by any cause beyond the Company's control, including, but not limited to, any delay or defect in or failure of the whole or any part of the MT5 trading platform or any systems or network links."
 msgstr "이 동의문의 그 어떠한 조항의 침해 없이, MT5 트레이딩 플랫폼 또는 그 어떠한 시스템 또는 네트워크 링크의 전체 또는 일부의 지연 또는 결함 또는 장애에만 국한되지 않고 본 회사의 통제를 벗어나는 원인해 의해 고객에게 발생된 손실과 관련하여 본 회사 또는 본 회사의 임원, 담당자, 관리자, 직원 또는 에이전트는 고객에게 법적책임이 없습니다."
 
@@ -13174,42 +12946,6 @@ msgstr ""
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr ""
 
-msgid "You acknowledge and agree that it is your absolute responsibility to ensure that all orders or positions have been closed in your Account prior to revocation."
-msgstr ""
-
-msgid "You acknowledge that the Company cannot guarantee that the Software provided to the Money Manager is free of any errors. Thus, you agree that the Company shall not be liable or responsible for any damage and loss that incurs as a result of such error."
-msgstr ""
-
-msgid "You acknowledge that the Company may accept Orders and proceed with transactions for your Account executed by any employees or representatives of the Money Manager."
-msgstr ""
-
-msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr ""
-
-msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
-msgstr ""
-
-msgid "You acknowledge that the Money Manager is not authorised to withdraw or give instructions in relation to any payment transactions for your Account to any person other than yourself. Likewise, the Money Manager is not authorised to accept or amend any of the terms of the Client Agreement."
-msgstr ""
-
-msgid "You acknowledge that you have full legal power and capacity to submit and execute this Agreement and grant authorisation to the Money Manager to place any Order or proceed any transaction for your Account."
-msgstr ""
-
-msgid "You acknowledge that your Account shall be managed and traded only by the Money Manager and not by any other third parties."
-msgstr ""
-
-msgid "You acknowledge that your decision to assign all rights in relation to the management, trading and operation of the Account to the Money Manager is duly clear, voluntary and unqualified. You also declare that you took into consideration the risks associated with trading of Rolling Spot FX, CFDs, Commodities and any other securities or products that may be offered by the Company to you, from time to time in accordance with the Client Agreement."
-msgstr ""
-
-msgid "You agree and authorise the Company to disclose to the Money Manager any data or information related to your Account."
-msgstr ""
-
-msgid "You agree and authorise the Money Manager to place all Orders and transactions for your Account in the same way and validity as you might place such Orders for your Account."
-msgstr ""
-
-msgid "You agree that this Agreement shall become effective on the Commencement Date. You also agree that unless this Agreement is revoked or terminated in accordance with Section E below, this Agreement shall remain valid and in full force."
-msgstr ""
-
 msgid "You are also expected to help us promote our cutting-edge trading platform that has been one of the most recognised in the binary options trading industry for over 18 years."
 msgstr "귀하는 또한 18년 이상동안 바이너리 옵션 트레이딩 업계에서 가장 잘 알려진 것 중의 하나인 우리 최첨단 트레이딩 플렛폼을 홍보하는데에 지원할 것이 기대되어집니다."
 
@@ -13235,9 +12971,6 @@ msgid "You are responsible for mitigating the risks and abuse that we face from 
 msgstr "귀하는 사기 및 자금 세탁으로부터 우리가 마주하는 위험과 오용을 완화해야 하는 책임이 있습니다. 이를 수행하기 위해, 귀하는 고객의 계좌와 예금액에 대하여 반드시 다양한 사기방지 및 자금세탁 검사를 시행, 감독, 분석해야 합니다. 귀하는 몰타에서 우리와 합류할 것이며 우리의 결제장에게 보고할 것입니다."
 
 msgid "You are selling the base currency and buying the quote currency."
-msgstr ""
-
-msgid "You are unilaterally entitled to request the revocation of the appointment of your Money Manager by electronically revoking your Money Manager's authorisation through the relevant functions provided in the system."
 msgstr ""
 
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
@@ -13286,9 +13019,6 @@ msgid "You expect the %1 to fall in value so you can buy it back at a lower pric
 msgstr ""
 
 msgid "You expect the %1 to rise in value so you can sell it back for a profit"
-msgstr ""
-
-msgid "You further agree to indemnify the Company from any loss, damage or liability arising out of your failure or refuse to confirm all Orders and/or transactions proceeded."
 msgstr ""
 
 msgid "You have already withdrawn %1 %2."
@@ -13345,9 +13075,6 @@ msgstr ""
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr ""
 
-msgid "You hereby confirm that in addition to the Client Agreement, you have carefully read and duly understood the contents of this Agreement and agree to be legally bound thereby."
-msgstr ""
-
 msgid "You may also instruct us to exclude you from trading on %1 for a specific period of time. This self-exclusion date cannot be amended once it is set."
 msgstr ""
 
@@ -13358,9 +13085,6 @@ msgid "You may open one account for each supported cryptocurrency."
 msgstr ""
 
 msgid "You may proceed but please authenticate your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed."
-msgstr ""
-
-msgid "You may revoke the current manager's access."
 msgstr ""
 
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
