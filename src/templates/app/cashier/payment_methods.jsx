@@ -494,14 +494,14 @@ const PaymentMethods = () => {
                     }}
                 />
                 <TableTitle
-                    dataShow='-default, -malta, -maltainvest, -iom'
+                    dataShow='-eucountry'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
                     dataAnchor='cryptocurrency'
                 />
                 <Table
                     id='cryptocurrency'
-                    dataShow='-default, -malta, -maltainvest, -iom'
+                    dataShow='-eucountry'
                     data={{
                         thead: [
                             [
@@ -600,7 +600,7 @@ const PaymentMethods = () => {
             </div>
 
             <div className='gr-padding-10'>
-                <p className='hint' data-show='-default, -malta, -maltainvest, -iom'>{it.L('Note : The minimum amount for withdrawal will vary depending on the latest exchange rates.')}</p>
+                <p className='hint' data-show='-eucountry'>{it.L('Note : The minimum amount for withdrawal will vary depending on the latest exchange rates.')}</p>
                 <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
             </div>
         </div>
