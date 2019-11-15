@@ -22,6 +22,7 @@ const Head = () => (
         <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
         <meta name='format-detection' content='telephone=no' />
         <meta name='google' content='notranslate' />
+        <meta name='referrer' content='origin' />
 
         <Title />
 
