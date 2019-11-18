@@ -7,7 +7,7 @@ const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container'>
             <div id='deriv_banner_container' data-show='-eucountry'>
-                <img className='platform_image' src={it.url_for('images/deriv/platform-dtrader.png')} />
+                <img className='platform_image' src={it.url_for('images/deriv/platform-dtrader@2x.png')} />
                 <img className='watermark_background' src={it.url_for('images/deriv/deriv-logo.png')} />
                 <div>
                     <h2>{it.L('Say hello to a whole new trading experience!')}</h2>
