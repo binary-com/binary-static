@@ -189,7 +189,12 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated()) {
-                                $new_account_financial_authenticate_msg.setVisibility(1);
+                                if (accounts_info[acc_type].mt5_account_type === 'advanced') {
+                                    $message.find('.authenticate').setVisibility(1);
+                                    is_ok = false;
+                                } else {
+                                    $new_account_financial_authenticate_msg.setVisibility(1);
+                                }
                             }
 
                             if (is_ok) resolve();

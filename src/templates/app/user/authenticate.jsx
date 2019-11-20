@@ -27,6 +27,10 @@ const Authenticate = () => (
             <p>{it.L('Your account does not need authentication at this time.[_1]We will inform you if authentication is required in the future.', '<br />')}</p>
         </div>
 
+        <div id='authenticate_only_real_mt5_advanced' className='notice-msg center-text gr-padding-10 invisible'>
+            <p>{it.L('This authentication step is required only if you’re opening a Real MT5 Advanced account.')}</p>
+        </div>
+
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
             <h1 className='gr-padding-10'>{it.L('Your account has been verified successfully')}</h1>
