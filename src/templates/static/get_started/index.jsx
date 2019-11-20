@@ -306,7 +306,7 @@ const Index = () => (
                         <div className='formula center-text'>
                             <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
                         </div>
-                        <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}?anchor=volatility-indices#range-of-markets>`, '</a>')}</p>
+                        <p>{it.L('Lookbacks options are currently only available for [_1]Synthetic Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}?anchor=synthetic-indices#range-of-markets>`, '</a>')}</p>
                         <p>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average.')}</p>
                         <CTA />
                     </TabContent>

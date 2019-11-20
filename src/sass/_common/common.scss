@@ -609,6 +609,7 @@ ul.bullet.gr-row > li {
 .foot-note {
     font-size: $FONT_SIZE_XS;
     color: $COLOR_GRAY_SHADE;
+    display: inline-block;
 }
 
 .button + .button {

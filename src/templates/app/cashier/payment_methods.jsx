@@ -494,13 +494,14 @@ const PaymentMethods = () => {
                     }}
                 />
                 <TableTitle
-                    dataShow='-default, -malta, -maltainvest, -iom'
+                    dataShow='-eucountry'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
                     dataAnchor='cryptocurrency'
                 />
                 <Table
-                    dataShow='-default, -malta, -maltainvest, -iom'
+                    id='cryptocurrency'
+                    dataShow='-eucountry'
                     data={{
                         thead: [
                             [
@@ -525,8 +526,8 @@ const PaymentMethods = () => {
                                         { td: it.L('Bitcoin is the world\'s first decentralised cryptocurrency, created in 2009. For more information, please visit [_1].', `${createLink('https://bitcoin.org')}`) },
                                         { td_list: [
                                             { text: 'BTC' },
-                                            { text: '0.002' },
-                                            { text: '0.0003' },
+                                            { text: '-' },
+                                            { text: '' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/StIW7CviBTw' /> },
                                         ],
@@ -544,8 +545,8 @@ const PaymentMethods = () => {
                                         { td: it.L('Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more information, please visit [_1].', `${createLink('https://www.ethereum.org')}`) },
                                         { td_list: [
                                             { text: 'ETH' },
-                                            { text: '0.01' },
-                                            { text: '0.01' },
+                                            { text: '-' },
+                                            { text: '' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/B7EVLt3lIMs' /> },
                                         ],
@@ -563,8 +564,8 @@ const PaymentMethods = () => {
                                         { td: it.L('Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more information, please visit [_1].', `${createLink('https://www.litecoin.org')}`) },
                                         { td_list: [
                                             { text: 'LTC' },
-                                            { text: '0.1' },
-                                            { text: '0.02' },
+                                            { text: '-' },
+                                            { text: '' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
                                         ],
@@ -582,8 +583,8 @@ const PaymentMethods = () => {
                                         { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more information, please visit [_1].', `${createLink('https://www.tether.to')}`) },
                                         { td_list: [
                                             { text: 'UST' },
-                                            { text: '1' },
-                                            { text: '1' },
+                                            { text: '-' },
+                                            { text: '' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Tether.pdf' video_link='https://youtu.be/N1WPsq67290' /> },
                                         ],
@@ -599,6 +600,7 @@ const PaymentMethods = () => {
             </div>
 
             <div className='gr-padding-10'>
+                <p className='hint' data-show='-eucountry'>{it.L('Note : The minimum amount for withdrawal will vary depending on the latest exchange rates.')}</p>
                 <p className='hint'>* {it.L('All your deposits and withdrawals are processed by [_1] within 24 hours. However, there may be additional processing time required by your bank or money transfer service.', it.website_name)}</p>
             </div>
         </div>
