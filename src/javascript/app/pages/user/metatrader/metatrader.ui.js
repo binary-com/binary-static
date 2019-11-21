@@ -397,7 +397,6 @@ const MetaTraderUI = (() => {
         if (/\b(disabled|selected|existed)\b/.test($item.attr('class'))) return;
         $item.parents('.type-group').find(`.${box_class}.selected`).removeClass('selected');
         $item.addClass('selected');
-        $('#new_account_financial_authenticate_msg').setVisibility(0);
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = 'new_account';
         if (/(demo|real)/.test(selected_acc_type)) {
