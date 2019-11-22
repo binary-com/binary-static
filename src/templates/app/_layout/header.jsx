@@ -104,7 +104,6 @@ const Header = () => (
                                                 { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
                                                 { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader'),  className: 'invisible mt_visibility' },
                                                 { text: it.L('Deriv'),        href: 'https://deriv.app/?utm_source=binary&utm_medium=referral', target: '_blank', dataShow: '-eucountry' },
-                                                { text: it.L('Binary Grid'),  href: it.url_for('binary-grid'),      target: '_blank',  dataShow: '-eucountry' },
                                             ],
                                         },
                                         { text: it.L('Trade'),        href: it.url_for('user/metatrader'),     className: 'ico-only-hide client_logged_in invisible', dataShow: 'maltainvest' },
