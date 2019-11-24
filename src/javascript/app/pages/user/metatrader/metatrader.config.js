@@ -114,8 +114,6 @@ const MetaTraderConfig = (() => {
     const newAccCheck = (acc_type, message_selector) => (
         new Promise((resolve) => {
             const $message = $messages.find('#msg_real_financial').clone();
-            const $new_account_financial_authenticate_msg = $('#new_account_financial_authenticate_msg');
-            $new_account_financial_authenticate_msg.setVisibility(0);
             const is_virtual = Client.get('is_virtual');
             const is_demo = accounts_info[acc_type].is_demo;
 
@@ -188,8 +186,9 @@ const MetaTraderConfig = (() => {
                                 showCitizenshipMessage();
                                 is_ok = false;
                             }
-                            if (is_ok && !isAuthenticated()) {
-                                $new_account_financial_authenticate_msg.setVisibility(1);
+                            if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
+                                $message.find('.authenticate').setVisibility(1);
+                                is_ok = false;
                             }
 
                             if (is_ok) resolve();
