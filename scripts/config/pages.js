@@ -115,5 +115,4 @@ module.exports = [
     ['graduates',                               'landing_pages/graduate_program',                 null,        'Binary.com Graduate Program',        'NOT-en'],
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
-    ['binary-grid',                                'landing_pages/binary_grid',                   null,        'Our New Mobile Trading App',         'NOT-en'],
 ];
