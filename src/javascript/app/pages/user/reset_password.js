@@ -1,7 +1,6 @@
-const generateBirthDate = require('../../common/attach_dom/birth_date_picker');
-const FormManager       = require('../../common/form_manager');
-const Login             = require('../../../_common/base/login');
-const localize          = require('../../../_common/localize').localize;
+const FormManager = require('../../common/form_manager');
+const Login       = require('../../../_common/base/login');
+const localize    = require('../../../_common/localize').localize;
 
 const ResetPassword = (() => {
     const responseHandler = (response) => {
@@ -31,20 +30,10 @@ const ResetPassword = (() => {
     };
 
     const onLoad = () => {
-        generateBirthDate();
-
-        $('#have_real_account').off('click').on('click', () => {
-            if ($('#have_real_account_option_0').is(':checked')) {
-                $('#dob_field').setVisibility(1);
-            } else {
-                $('#dob_field').setVisibility(0);
-            }
-        });
-
         const form_id = '#frm_reset_password';
+
         FormManager.init(form_id, [
             { selector: '#have_real_account',  validations: ['req'], exclude_request: 1 },
-            { selector: '#date_of_birth',      validations: ['req'] },
             { selector: '#new_password',       validations: ['req', 'password'], re_check_field: '#repeat_password' },
             { selector: '#repeat_password',    validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
             { request_field: 'reset_password', value: 1 },
