@@ -12,7 +12,6 @@ const Language = (() => {
         // DE   : 'Deutsch', // TODO: uncomment to enable German language
         ES   : 'Español',
         FR   : 'Français',
-        ID   : 'Indonesia',
         IT   : 'Italiano',
         PL   : 'Polish',
         PT   : 'Português',
