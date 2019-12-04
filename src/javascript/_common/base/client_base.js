@@ -316,7 +316,7 @@ const ClientBase = (() => {
 
     const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
         const currency             = get('currency');
-        const has_no_mt5           = mt5_login_list ? mt5_login_list.length === 0 : true;
+        const has_no_mt5           = !mt5_login_list || !mt5_login_list.length;
         const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
         const has_account_criteria = has_no_transaction && has_no_mt5;
 

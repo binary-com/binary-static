@@ -19,20 +19,13 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
-                    try {
-                        await addAllAccounts();
-                    } catch (error) {
-                        // eslint-disable-next-line no-console
-                        console.warn(error.message);
-                    }
-                    getAllAccountsInfo();
+                    addAllAccounts().then(getAllAccountsInfo);
                 } else {
-                    BinarySocket.send({ get_limits: 1 }).then(async () => {
-                        await addAllAccounts();
-                        getAllAccountsInfo();
+                    BinarySocket.send({ get_limits: 1 }).then(() => {
+                        addAllAccounts().then(getAllAccountsInfo);
                     });
                     getExchangeRates();
                 }
