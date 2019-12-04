@@ -19,13 +19,23 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(() => {
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
-                    addAllAccounts().then(getAllAccountsInfo);
+                    try {
+                        await addAllAccounts();
+                    } catch (error) {
+                        MetaTraderUI.displayPageError(error.message);
+                    }
+                    getAllAccountsInfo();
                 } else {
-                    BinarySocket.send({ get_limits: 1 }).then(() => {
-                        addAllAccounts().then(getAllAccountsInfo);
+                    BinarySocket.send({ get_limits: 1 }).then(async () => {
+                        try {
+                            await addAllAccounts();
+                        } catch (error) {
+                            MetaTraderUI.displayPageError(error.message);
+                        }
+                        getAllAccountsInfo();
                     });
                     getExchangeRates();
                 }
