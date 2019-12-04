@@ -225,6 +225,11 @@ const PaymentAgentWithdraw = (() => {
                 }
                 break;
         }
+        if (response.error) {
+            const $error = $('#form-error');
+            $error.text(response.error.message);
+            $error.removeClass('invisible');
+        }
     };
 
     // -----------------------------
