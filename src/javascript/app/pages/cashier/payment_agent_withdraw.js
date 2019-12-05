@@ -216,6 +216,9 @@ const PaymentAgentWithdraw = (() => {
                 break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
+                    const $error = $('#form-error');
+                    $error.text(response.error.message);
+                    $error.removeClass('invisible');
                     setActiveView(view_ids.form);
                     $(field_ids.frm_msg).setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
@@ -224,11 +227,6 @@ const PaymentAgentWithdraw = (() => {
                     showPageError(response.error.message);
                 }
                 break;
-        }
-        if (response.error) {
-            const $error = $('#form-error');
-            $error.text(response.error.message);
-            $error.removeClass('invisible');
         }
     };
 
