@@ -26,6 +26,7 @@ const PaymentAgentWithdraw = (() => {
         ddl_agents: '#ddlAgents',
         txt_agents: '#txtAgents',
         txt_amount: '#txtAmount',
+        frm_msg   : '#form-error',
     };
 
     let $agent_error,
@@ -216,9 +217,6 @@ const PaymentAgentWithdraw = (() => {
                 break;
             default: // error
                 if (response.echo_req.dry_run === 1) {
-                    const $error = $('#form-error');
-                    $error.text(response.error.message);
-                    $error.removeClass('invisible');
                     setActiveView(view_ids.form);
                     $(field_ids.frm_msg).setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
