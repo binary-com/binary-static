@@ -1,14 +1,16 @@
-import React from 'react';
-import Complaints from './complaints.jsx';
-import ConflictsPolicy from './conflicts_policy.jsx';
-import Copyright from './copyright.jsx';
-import Datafeed from './datafeed.jsx';
+import React                from 'react';
+import Affiliate            from './tac_sections/affiliate.jsx';
+import CodeOfConduct        from './code_of_conduct.jsx';
+import Complaints           from './complaints.jsx';
+import ConflictsPolicy      from './conflicts_policy.jsx';
+import Copyright            from './copyright.jsx';
+import Datafeed             from './datafeed.jsx';
 import OrderExecutionBinary from './order_execution.jsx';
-import OrderExecutionMT from './metatrader/order_execution.jsx';
+import OrderExecutionMT     from './metatrader/order_execution.jsx';
 import RiskDisclaimerBinary from './risk_disclaimer.jsx';
-import RiskDisclaimerMT from './metatrader/risk_disclaimer.jsx';
-import PaymentAgents from './payment_agents.jsx';
-import Privacy from './privacy.jsx';
+import RiskDisclaimerMT     from './metatrader/risk_disclaimer.jsx';
+import PaymentAgents        from './payment_agents.jsx';
+import Privacy              from './privacy.jsx';
 import TermsAndConditionsBinary from './terms_and_conditions.jsx';
 import TermsAndConditionsMT from './metatrader/terms_and_conditions.jsx';
 import { SidebarSubmenu, SidebarContent, SidebarContentContainer } from '../../_common/components/sidebar.jsx';
@@ -27,6 +29,11 @@ const Tac = () => (
                             { id: 'legal-mt',     text: it.L('MetaTrader') },
                         ],
                     },
+                    {
+                        id  : 'affiliate-terms-and-conditions',
+                        text: it.L('Affiliate Programme', it.website_name),
+                    },
+                    { id: 'code-of-conduct',    text: it.L('Code of Conduct') },
                     { id: 'datafeed',         text: it.L('Data Feed') },
                     { id: 'privacy',          text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
@@ -57,6 +64,14 @@ const Tac = () => (
             <SidebarContentContainer>
                 <SidebarContent id='legal-binary'>
                     <TermsAndConditionsBinary />
+                </SidebarContent>
+
+                <SidebarContent id='affiliate-terms-and-conditions'>
+                    <Affiliate />
+                </SidebarContent>
+
+                <SidebarContent id='code-of-conduct'>
+                    <CodeOfConduct />
                 </SidebarContent>
 
                 <SidebarContent id='legal-mt'>
