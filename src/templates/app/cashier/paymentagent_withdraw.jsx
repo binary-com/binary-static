@@ -114,6 +114,7 @@ const PaymentAgentWithdraw = () => (
                             <SeparatorLine className='gr-padding-10' show_mobile />
                         </div>
                         <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
+                        <p id='form-error' className='error-msg center-text invisible' />
                         <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
                         <div className='gr-8 gr-centered gr-padding-20'>
                             {it.L('Note: [_1] does not charge any transfer fees.', it.website_name)}
