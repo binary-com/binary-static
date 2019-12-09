@@ -194,6 +194,15 @@ const Platform = () => (
                                 button_text={it.L('Download Tick Trade App')}
                                 download='true'
                             />
+                            <Platforms
+                                image='deriv-p2p-cashier'
+                                header={it.L('Deriv P2P Cashier')}
+                                description={it.L('All brand new payment agents')}
+                                text={it.L('Enjoy advertising, buying or selling money legally.')}
+                                url='https://ticktrade.binary.com/download/ticktrade-app.apk'
+                                button_text={it.L('Download Deriv P2P Cashier App')}
+                                download='true'
+                            />
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}
