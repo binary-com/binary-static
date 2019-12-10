@@ -30,7 +30,7 @@ const Tac = () => (
                         ],
                     },
                     {
-                        id  : 'affiliate-terms-and-conditions',
+                        id  : 'affiliate',
                         text: it.L('Affiliate Programme', it.website_name),
                     },
                     { id: 'code-of-conduct',    text: it.L('Code of Conduct') },
@@ -66,7 +66,7 @@ const Tac = () => (
                     <TermsAndConditionsBinary />
                 </SidebarContent>
 
-                <SidebarContent id='affiliate-terms-and-conditions'>
+                <SidebarContent id='affiliate'>
                     <Affiliate />
                 </SidebarContent>
 
