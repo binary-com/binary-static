@@ -8,7 +8,6 @@ const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLim
 const FormManager          = require('../../common/form_manager');
 const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
-const isVisible            = require('../../../_common/common_functions').isVisible;
 const getElementById       = require('../../../_common/common_functions').getElementById;
 const localize             = require('../../../_common/localize').localize;
 const Url                  = require('../../../_common/url');
@@ -24,6 +23,7 @@ const PaymentAgentWithdraw = (() => {
     };
     const field_ids = {
         ddl_agents: '#ddlAgents',
+        frm_msg   : '#form-error',
         txt_agents: '#txtAgents',
         txt_amount: '#txtAmount',
     };
@@ -145,12 +145,6 @@ const PaymentAgentWithdraw = (() => {
                 fnc_response_handler: withdrawResponse,
                 fnc_additional_check: checkAgent,
                 enable_button       : true,
-            });
-
-            $(field_ids.txt_desc).off().on('keyup', () => {
-                if (isVisible(getElementById('withdrawFormMessage'))) {
-                    $(field_ids.frm_msg).setVisibility(0);
-                }
             });
         }
     };
