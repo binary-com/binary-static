@@ -118,7 +118,7 @@ const Regulation = () => {
                                     { name: 'Italy',          x: 14.2,  y: 168.5, width: 27.3 },
                                     { name: 'Austria',        x: 100.4, y: 185.3 },
                                     { name: 'Slovenia',       x: 109.4, y: 201.5, width: 37.8 },
-                                    { name: 'Croatia',        x: 142.6, y: 215.2, },
+                                    { name: 'Croatia',        x: 142.6, y: 215.2 },
                                     { name: 'Greece',         x: 199.4, y: 215.3 },
                                     { name: 'Cyprus',         x: 257.8, y: 221.8, width: (48.4 - 10.6), link: 'http://www.cysec.gov.cy/en-GB/entities/investment-firms/member-states/Cross-Border/43503/' },
                                     { name: 'Bulgaria',       x: 254.3, y: 159.5, width: (48.4 - 10.6) },
