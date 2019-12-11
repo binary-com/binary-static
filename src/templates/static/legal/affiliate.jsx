@@ -1,5 +1,5 @@
 import React from 'react';
-import ListNested from '../../../_common/components/list_nested.jsx';
+import ListNested from '../../_common/components/list_nested.jsx';
 
 const Affiliate = () => (
     <div>

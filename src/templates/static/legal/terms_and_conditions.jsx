@@ -1,5 +1,4 @@
 import React from 'react';
-import Api from './tac_sections/api.jsx';
 import Biel from './tac_sections/biel.jsx';
 import DepositBonus from './tac_sections/deposit_bonus.jsx';
 import Tac from './tac_sections/tac.jsx';
@@ -33,10 +32,6 @@ const TermsAndConditions = () => (
 
             <Section sectionNum='3' link_id='deposit-bonus' data-show='-eucountry'>
                 <DepositBonus />
-            </Section>
-
-            <Section sectionNum='4' link_id='api'>
-                <Api />
             </Section>
 
             <Section sectionNum='5' link_id='biel' data-show='eucountry'>
