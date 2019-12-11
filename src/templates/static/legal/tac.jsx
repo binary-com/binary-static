@@ -31,7 +31,7 @@ const Tac = () => (
                     },
                     {
                         id  : 'affiliate',
-                        text: it.L('Affiliate Programme', it.website_name),
+                        text: it.L('Affiliate Programme'),
                     },
                     { id: 'code-of-conduct',    text: it.L('Code of Conduct') },
                     { id: 'datafeed',         text: it.L('Data Feed') },
