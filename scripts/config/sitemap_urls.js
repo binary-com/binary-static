@@ -3,6 +3,7 @@ module.exports = {
         // path (without .html),               changefreq, priority, exclude languages
         // ==================== Section: "static" ====================
         ['home',                               'monthly', 1.00],
+        ['dp2p',                               'monthly', 1.00],
         ['tour',                               'monthly', 0.80],
         ['why-us',                             'monthly', 0.80],
         ['platforms',                          'monthly', 0.80],
