@@ -1,9 +1,9 @@
 import React from 'react';
-import ListNested from '../../../_common/components/list_nested.jsx';
+import ListNested from '../../_common/components/list_nested.jsx';
 
 const Affiliate = () => (
     <div>
-        <h2 data-anchor='affiliate-terms-and-conditions'>{it.L('[_1]\'s Affiliate Programme terms and conditions', it.website_name)}</h2>
+        <h2 data-anchor='affiliate'>{it.L('[_1]\'s Affiliate Programme', it.website_name)}</h2>
         <ol className='reset_ol'>
             <ListNested
                 header={it.L('This document')}
