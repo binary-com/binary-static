@@ -25,6 +25,30 @@ const DP2P = (() => {
                 :host {
                     --hem:10px;
                 }
+                :host .theme--light {
+                    --button-primary-default: #2e8836;
+                    --button-primary-hover: #14602b;
+                    --brand-red-coral: #2a3052;
+                    --state-active: #2a3052;
+                    --general-section-1: #ffffff;
+                    --text-profit-success: #2e8836;
+                }
+
+                .dc-button-menu__wrapper
+                .dc-button-menu__button:not(.dc-button-menu__button--active) {
+                    background-color: #f2f2f2 !important;
+                }
+
+                .link {
+                    color: #E88024 !important;
+                }
+
+                .dc-button-menu__wrapper
+                .dc-button-menu__button--active
+                .btn__text {
+                    color: #ffffff;
+                }
+
                 .dc-input__field {
                     box-sizing:border-box;
                 }
