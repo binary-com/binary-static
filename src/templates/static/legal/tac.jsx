@@ -1,14 +1,18 @@
-import React from 'react';
-import Complaints from './complaints.jsx';
-import ConflictsPolicy from './conflicts_policy.jsx';
-import Copyright from './copyright.jsx';
-import Datafeed from './datafeed.jsx';
+import React                from 'react';
+import Affiliate            from './affiliate.jsx';
+import Api                  from './api.jsx';
+import CodeOfConduct        from './code_of_conduct.jsx';
+import Complaints           from './complaints.jsx';
+import ConflictsPolicy      from './conflicts_policy.jsx';
+import Copyright            from './copyright.jsx';
+import Datafeed             from './datafeed.jsx';
+import IntroducingBrokers   from './introducing_brokers.jsx';
 import OrderExecutionBinary from './order_execution.jsx';
-import OrderExecutionMT from './metatrader/order_execution.jsx';
+import OrderExecutionMT     from './metatrader/order_execution.jsx';
 import RiskDisclaimerBinary from './risk_disclaimer.jsx';
-import RiskDisclaimerMT from './metatrader/risk_disclaimer.jsx';
-import PaymentAgents from './payment_agents.jsx';
-import Privacy from './privacy.jsx';
+import RiskDisclaimerMT     from './metatrader/risk_disclaimer.jsx';
+import PaymentAgents        from './payment_agents.jsx';
+import Privacy              from './privacy.jsx';
 import TermsAndConditionsBinary from './terms_and_conditions.jsx';
 import TermsAndConditionsMT from './metatrader/terms_and_conditions.jsx';
 import { SidebarSubmenu, SidebarContent, SidebarContentContainer } from '../../_common/components/sidebar.jsx';
@@ -48,7 +52,17 @@ const Tac = () => (
                             { id: 'order-execution-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'payment-agents', text: it.L('Payment Agents'), dataShow: '-eucountry' },
+                    {
+                        id     : 'business',
+                        text   : it.L('Business'),
+                        submenu: [
+                            { id: 'code-of-conduct',     text: it.L('Code of Conduct') },
+                            { id: 'affiliate',           text: it.L('Affiliate Programme') },
+                            { id: 'introducing-brokers', text: it.L('Introducing Brokers') },
+                            { id: 'payment-agents',      text: it.L('Payment Agents'), dataShow: '-eucountry' },
+                            { id: 'api',                 text: it.L('API') },
+                        ],
+                    },
                 ]}
             />
         </div>
@@ -57,6 +71,14 @@ const Tac = () => (
             <SidebarContentContainer>
                 <SidebarContent id='legal-binary'>
                     <TermsAndConditionsBinary />
+                </SidebarContent>
+
+                <SidebarContent id='affiliate'>
+                    <Affiliate />
+                </SidebarContent>
+
+                <SidebarContent id='code-of-conduct'>
+                    <CodeOfConduct />
                 </SidebarContent>
 
                 <SidebarContent id='legal-mt'>
@@ -101,6 +123,14 @@ const Tac = () => (
 
                 <SidebarContent id='payment-agents'>
                     <PaymentAgents />
+                </SidebarContent>
+
+                <SidebarContent id='api'>
+                    <Api />
+                </SidebarContent>
+
+                <SidebarContent id='introducing-brokers'>
+                    <IntroducingBrokers />
                 </SidebarContent>
             </SidebarContentContainer>
         </div>
