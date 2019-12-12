@@ -8,6 +8,7 @@ module.exports = [
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',                 'app/cashier/payment_methods',                 'default',    'Payment Methods'],
     ['cashier/session_expired',                 'app/cashier/session_expired',                 null,         'Cashier session expired'],
+    ['cashier/dp2p',                            'app/cashier/dp2p',                            'default',    'DP2P'],
     ['cashier/top_up_virtualws',                'app/user/top_up_virtual/top_up_virtual',      'default',    'Top Up Virtual Account'],
 
     ['paymentagent/transferws',                 'app/cashier/paymentagent_transfer',           'default',    'Payment Agent Transfer'],
@@ -65,7 +66,6 @@ module.exports = [
     // ==================== Section: "static" ====================
     ['404',                                     'static/404',                                  'full_width', '404'],
     ['home',                                    'static/home',                                 'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
-    ['dp2p',                                    'static/dp2p',                                 'full_width', 'Deriv P2P'],
     ['keep-safe',                               'static/keep_safe',                            'full_width', 'Keep Safe'],
     ['tour',                                    'static/tour',                                 'full_width', 'Tour'],
     ['why-us',                                  'static/why_us',                               'full_width', 'Why Us'],
