@@ -12,13 +12,6 @@ const DP2P = (() => {
                 const el_dp2p_container = document.getElementById('binary-dp2p');
                 const shadowed_el_dp2p = el_dp2p_container.attachShadow({ mode: 'closed' });
 
-                // const el_head = document.querySelector('head');
-                // const el_main_css = document.createElement('link');
-                // el_main_css.href = urlForStatic('css/p2p.min.css');
-                // el_main_css.rel = 'stylesheet';
-                // el_main_css.type = 'text/css';
-                // el_dp2p_container.innerHTML = module.default;
-
                 const el_main_css = document.createElement('style');
                 el_main_css.innerHTML = `
                 @import url(${urlForStatic('css/p2p.min.css')});
