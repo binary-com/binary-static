@@ -145,7 +145,7 @@ const Cashier = () => (
         <div className='gr-padding-10 table-body invisible gr-parent' id='dp2p_info'>
             <h3 className='gr-padding-10'>{it.L('DP2P')}</h3>
             <div className='gr-row'>
-                <IconWithLink img_id='virtual_money_icon' img_src={it.url_for('images/pages/cashier/dp2p_logo.svg')} />
+                <IconWithLink img_src={it.url_for('images/pages/cashier/dp2p_logo.svg')} />
                 <div className='gr-6 gr-8-m'>
                     <span>{it.L('Make a deposit or withdrawal on your account by buying and selling fiat currencies from anywhere in the world.')}</span>
                 </div>

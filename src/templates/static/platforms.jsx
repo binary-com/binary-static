@@ -194,7 +194,8 @@ const Platform = () => (
                                 button_text={it.L('Download Tick Trade App')}
                                 download='true'
                             />
-                            <Platforms
+                            {/* TODO: Uncomment this when P2P Mobile app is ready */}
+                            {/* <Platforms
                                 image='dp2p-app'
                                 header={it.L('DP2P app')}
                                 description={it.L('Peer-to-peer fiat exchange')}
@@ -202,7 +203,7 @@ const Platform = () => (
                                 url='https://to-be-announced.apk'
                                 button_text={it.L('Download DP2P app')}
                                 download='true'
-                            />
+                            /> */}
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}

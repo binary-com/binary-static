@@ -30,7 +30,6 @@ const Cashier = (() => {
             $toggler.toggleClass('open');
         });
         showCashierNote();
-        showP2PNote();
     };
 
     const showCashierNote = () => {
@@ -44,14 +43,9 @@ const Cashier = (() => {
         });
     };
 
-    const showP2PNote = () => {
-        BinarySocket.wait('authorize').then(() => {
-            $('#dp2p_info').setVisibility(
-                Client.isLoggedIn() &&           // only show to logged-in clients
-                !Client.get('is_virtual') &&     // only show to real accounts
-                Client.get('currency') === 'USD' // only show to USD Currency
-            );
-        });
+    const showP2PNote = (currency) => {
+        const is_usd_account = currency === 'USD';
+        $('#dp2p_info').setVisibility(is_usd_account);
     };
 
     const displayTopUpButton = () => {
@@ -160,6 +154,7 @@ const Cashier = (() => {
                         State.getResponse('statement'),
                         State.getResponse('mt5_login_list')
                     );
+                    showP2PNote(currency);
                 }
 
                 if (residence) {
