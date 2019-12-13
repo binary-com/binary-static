@@ -1,7 +1,7 @@
-const ReactDOM     = require('react-dom');
 const React        = require('react');
-const urlForStatic = require('../../../_common/url').urlForStatic;
+const ReactDOM     = require('react-dom');
 const Client       = require('../../base/client');
+const urlForStatic = require('../../../_common/url').urlForStatic;
 
 const DP2P = (() => {
 

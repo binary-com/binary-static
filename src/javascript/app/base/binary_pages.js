@@ -7,9 +7,9 @@ const Redirect                = require('./redirect');
 const AccountTransfer         = require('../pages/cashier/account_transfer');
 const Cashier                 = require('../pages/cashier/cashier');
 const DepositWithdraw         = require('../pages/cashier/deposit_withdraw');
+const DP2P                    = require('../pages/cashier/dp2p');
 const PaymentAgentList        = require('../pages/cashier/payment_agent_list');
 const PaymentAgentWithdraw    = require('../pages/cashier/payment_agent_withdraw');
-const DP2P                    = require('../pages/cashier/dp2p');
 const Endpoint                = require('../pages/endpoint');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
@@ -82,6 +82,7 @@ const pages_config = {
     cyberjaya                : { module: StaticPages.Locations },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
     download                 : { module: MetatraderDownloadUI },
+    dp2p                     : { module: DP2P,                       is_authenticated: true },
     dubai                    : { module: StaticPages.Locations },
     economic_calendar        : { module: EconomicCalendar },
     endpoint                 : { module: Endpoint },
@@ -90,7 +91,6 @@ const pages_config = {
     forex                    : { module: GetStarted.Forex },
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     home                     : { module: Home,                       not_authenticated: true },
-    dp2p                     : { module: DP2P,                       is_authenticated: true },
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     labuan                   : { module: StaticPages.Locations },
     landing_page             : { module: StaticPages.LandingPage,    is_authenticated: true, only_virtual: true },
