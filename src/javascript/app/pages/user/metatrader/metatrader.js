@@ -22,11 +22,19 @@ const MetaTrader = (() => {
         BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
-                    await addAllAccounts();
+                    try {
+                        await addAllAccounts();
+                    } catch (error) {
+                        MetaTraderUI.displayPageError(error.message);
+                    }
                     getAllAccountsInfo();
                 } else {
                     BinarySocket.send({ get_limits: 1 }).then(async () => {
-                        await addAllAccounts();
+                        try {
+                            await addAllAccounts();
+                        } catch (error) {
+                            MetaTraderUI.displayPageError(error.message);
+                        }
                         getAllAccountsInfo();
                     });
                     getExchangeRates();
@@ -68,8 +76,12 @@ const MetaTrader = (() => {
     };
 
     const addAllAccounts = () => (
-        new Promise((resolve) => {
+        new Promise((resolve, reject) => {
             BinarySocket.wait('mt5_login_list').then((response) => {
+                if (response.error) {
+                    reject(response.error);
+                    return;
+                }
                 const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
                     Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
 
@@ -95,7 +107,7 @@ const MetaTrader = (() => {
                 Object.keys(mt_companies).forEach((company) => {
                     Object.keys(mt_companies[company]).forEach((acc_type) => {
                         mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
-                        
+
                         // If vanuatu exists, don't add svg anymore unless it's for volatility.
                         const vanuatu_and_svg_exists = (
                             (vanuatu_standard_demo_account && /demo_standard/.test(acc_type)) ||
