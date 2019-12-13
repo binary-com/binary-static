@@ -1,6 +1,8 @@
 const React        = require('react');
 const ReactDOM     = require('react-dom');
 const Client       = require('../../base/client');
+const BinarySocket = require('../../base/socket');
+const getLanguage  = require('../../../_common/language').get;
 const urlForStatic = require('../../../_common/url').urlForStatic;
 
 const DP2P = (() => {
@@ -57,9 +59,19 @@ const DP2P = (() => {
                 `;
                 el_main_css.rel = 'stylesheet';
 
+                const dp2p_props = {
+                    className    : 'theme--light',
+                    websocket_api: BinarySocket,
+                    lang         : getLanguage(),
+                    client       : {
+                        currency  : Client.get('currency'),
+                        is_virtual: Client.get('is_virtual'),
+                    },
+                };
+
                 ReactDOM.render(
                     // eslint-disable-next-line no-console
-                    React.createElement(module.default, { className: 'theme--light', websocket_api: { send(params) { console.log(params); return Promise.resolve(params); } }, lang: 'EN' }),
+                    React.createElement(module.default, dp2p_props),
                     shadowed_el_dp2p
                 );
 
