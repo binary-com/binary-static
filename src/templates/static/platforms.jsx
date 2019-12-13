@@ -195,12 +195,12 @@ const Platform = () => (
                                 download='true'
                             />
                             <Platforms
-                                image='deriv-p2p-cashier'
-                                header={it.L('Deriv P2P Cashier')}
-                                description={it.L('All brand new payment agents')}
-                                text={it.L('Enjoy advertising, buying or selling money legally.')}
-                                url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                                button_text={it.L('Download Deriv P2P Cashier App')}
+                                image='dp2p-app'
+                                header={it.L('DP2P app')}
+                                description={it.L('Peer-to-peer fiat exchange')}
+                                text={it.L('The fast, easy, and convenient way to make deposits and withdrawals with zero commission fees.')}
+                                url='https://to-be-announced.apk'
+                                button_text={it.L('Download DP2P app')}
                                 download='true'
                             />
                             <PlatformsDesktop

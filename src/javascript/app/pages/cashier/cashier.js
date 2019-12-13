@@ -30,6 +30,7 @@ const Cashier = (() => {
             $toggler.toggleClass('open');
         });
         showCashierNote();
+        showP2PNote();
     };
 
     const showCashierNote = () => {
@@ -39,6 +40,16 @@ const Cashier = (() => {
                 Client.isLoggedIn() &&                          // only show to logged-in clients
                 !Client.get('is_virtual') &&                    // only show to real accounts
                 !isCryptocurrency(Client.get('currency'))       // only show to fiat currencies
+            );
+        });
+    };
+
+    const showP2PNote = () => {
+        BinarySocket.wait('authorize').then(() => {
+            $('#dp2p_info').setVisibility(
+                Client.isLoggedIn() &&                          // only show to logged-in clients
+                !Client.get('is_virtual') &&                    // only show to real accounts
+                Client.get('currency') === 'USD'       // only show to USD Currency
             );
         });
     };
