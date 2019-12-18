@@ -16,7 +16,11 @@ const Settings = (() => {
             }
 
             // Disabling Authentication button for SVG accounts
-            if ((Client.get('landing_company_shortcode') === 'svg')) {
+            const is_authenticated                 = State.getResponse('get_account_status.status').includes('authenticated');
+            const is_client_prompt_to_authenticate = State.getResponse('get_account_status.prompt_client_to_authenticate');
+            const is_high_risk                     = Client.getRiskAssessment();
+            const is_svg                           = Client.get('landing_company_shortcode') === 'svg';
+            if (is_svg && !is_high_risk && !is_client_prompt_to_authenticate && !is_authenticated) {
                 $('#authenticate a')
                     .attr('href', '#')
                     .on('click',  () => {
