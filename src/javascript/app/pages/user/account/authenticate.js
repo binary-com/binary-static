@@ -4,6 +4,7 @@ const Onfido              = require('onfido-sdk-ui');
 const Client              = require('../../../base/client');
 const Header              = require('../../../base/header');
 const BinarySocket        = require('../../../base/socket');
+const ClientBase          = require('../../../../_common/base/client_base');
 const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
 const isImageType         = require('../../../../_common/image_utility').isImageType;
@@ -989,6 +990,11 @@ const Authenticate = (() => {
     };
 
     const onLoad = async () => {
+        if (!ClientBase.isAuthenticationAllowed()) {
+            $('#authentication_tab').setVisibility(0);
+            $('#authentication_loading').setVisibility(0);
+            $('#error_occured').setVisibility(1);
+        }
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
         
