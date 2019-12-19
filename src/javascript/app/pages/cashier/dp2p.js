@@ -15,6 +15,8 @@ const DP2P = (() => {
                 const shadowed_el_dp2p = el_dp2p_container.attachShadow({ mode: 'closed' });
 
                 const el_main_css = document.createElement('style');
+                // These are styles that are to be injected into the Shadow DOM, so they are in JS and not stylesheets
+                // They are to be applied to the `:host` selector
                 el_main_css.innerHTML = `
                 @import url(${urlForStatic('css/p2p.min.css')});
                 :host {
