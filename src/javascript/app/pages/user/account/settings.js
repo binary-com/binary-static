@@ -16,7 +16,7 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
-            if (ClientBase.isAuthenticationAllowed()) {
+            if (!ClientBase.isAuthenticationAllowed()) {
                 $('#authenticate a')
                     .attr('href', '#')
                     .on('click',  () => {
