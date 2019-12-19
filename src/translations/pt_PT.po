@@ -2,14 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-12-12 06:29\n"
-"Last-Translator: binarycom\n"
+"PO-Revision-Date: 2019-12-19 07:13\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: pt-PT\n"
 "X-Crowdin-File: messages.pot\n"
@@ -1859,6 +1858,9 @@ msgstr "Voltar para o menu"
 msgid "Back to statement"
 msgstr "Extrato bancário"
 
+msgid "Back to trading"
+msgstr ""
+
 msgid "Back-End Developer"
 msgstr "Desenvolvedor back-end"
 
@@ -2594,6 +2596,9 @@ msgstr "Retiradas de cliente"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "Retiradas de clientes antes destes ano totalizaram quase 500 milhões de USD. Mais de 140 milhões de USD em retiradas de clientes estão previstos para este ano."
 
+msgid "Client's demo accounts will be deleted after 365 days of inactivity."
+msgstr ""
+
 msgid "Client's liability"
 msgstr "Responsabilidade do Cliente"
 
@@ -2630,7 +2635,7 @@ msgstr "Os clientes têm a oportunidade de considerar se desejam pedir mais info
 msgid "Clients hereby declare that they are dealing with BIEL outside the scope of their economic or professional activity, and BIEL will therefore treat the client as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
 msgstr "Os clientes declaram que estão negociando com a BIEL fora do escopo de sua atividade econômica ou profissional, e a BIEL, portanto, tratará o cliente como um cliente de varejo individual para fins de conformidade com a EMIR, a menos que seja recomendado de outra forma."
 
-msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2compliance@binary.com%3 management will decide what information needs to be reported to government officials and through what channels."
+msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2 management will decide what information needs to be reported to government officials and through what channels."
 msgstr ""
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
@@ -4372,9 +4377,6 @@ msgstr "F. Margem e Alavancagem"
 
 msgid "FIX API"
 msgstr "API FIX"
-
-msgid "FX"
-msgstr "FX"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -7168,6 +7170,9 @@ msgstr "Negociações Não Toca"
 msgid "No advice"
 msgstr "Sem conselhos"
 
+msgid "No authentication required"
+msgstr ""
+
 msgid "No bribery"
 msgstr ""
 
@@ -7482,6 +7487,9 @@ msgstr "Abrir contratos"
 
 msgid "Open positions"
 msgstr "Vagas em aberto"
+
+msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
+msgstr ""
 
 msgid "Open-Source Projects"
 msgstr "Projetos de código aberto"
@@ -8589,6 +8597,9 @@ msgstr "Padrão real"
 
 msgid "Real Synthetic Indices"
 msgstr "Índices sintéticos Real"
+
+msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Conta de dinheiro real"
@@ -11677,6 +11688,9 @@ msgstr "Liquidez de alto nível"
 msgid "Top-up successful"
 msgstr "Carregamento bem-sucedido"
 
+msgid "TopFX"
+msgstr ""
+
 msgid "Total"
 msgstr "Total"
 
@@ -13132,6 +13146,9 @@ msgstr "Você pode utilizar os Agentes de Pagamentos para processar os depósito
 
 msgid "You did not change anything."
 msgstr "Você não alterou nada."
+
+msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
+msgstr ""
 
 msgid "You expect the %1 to fall in value so you can buy it back at a lower price (and make a profit)"
 msgstr "Você espera que o valor de %1 desça para que possa comprá-lo de volta por um preço inferior (e fazer lucro)"

@@ -2,14 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-12-12 06:29\n"
-"Last-Translator: binarycom\n"
+"PO-Revision-Date: 2019-12-19 07:12\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: messages.pot\n"
@@ -1857,6 +1856,9 @@ msgstr "Kembali ke menu"
 msgid "Back to statement"
 msgstr "Kembali ke pernyataan"
 
+msgid "Back to trading"
+msgstr ""
+
 msgid "Back-End Developer"
 msgstr "Back-End Developer"
 
@@ -2592,6 +2594,9 @@ msgstr "Penarikan klien"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "Total penarikan dana klien sampai saat ini sudah berjumlah sekitar 500 juta USD. Kenaikan lebih dari 140 juta penarikan klien diharapkan tahun ini."
 
+msgid "Client's demo accounts will be deleted after 365 days of inactivity."
+msgstr ""
+
 msgid "Client's liability"
 msgstr "Tanggung jawab klien"
 
@@ -2628,7 +2633,7 @@ msgstr "Klien memiliki kesempatan untuk mempertimbangkan apakah akan meminta inf
 msgid "Clients hereby declare that they are dealing with BIEL outside the scope of their economic or professional activity, and BIEL will therefore treat the client as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
 msgstr "Klien dengan ini menyatakan bahwa mereka berurusan dengan BIEL di luar ruang lingkup kegiatan ekonomi atau profesional mereka, dan karena itu BIEL akan memperlakukan klien sebagai klien ritel individu untuk tujuan kepatuhan EMIR, kecuali disarankan sebaliknya."
 
-msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2compliance@binary.com%3 management will decide what information needs to be reported to government officials and through what channels."
+msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2 management will decide what information needs to be reported to government officials and through what channels."
 msgstr ""
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
@@ -4370,9 +4375,6 @@ msgstr "F. Margin dan Leverage"
 
 msgid "FIX API"
 msgstr "API TETAP"
-
-msgid "FX"
-msgstr "FX"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -7166,6 +7168,9 @@ msgstr "Kontrak No Touch"
 msgid "No advice"
 msgstr "Tidak tersedia saran"
 
+msgid "No authentication required"
+msgstr ""
+
 msgid "No bribery"
 msgstr ""
 
@@ -7480,6 +7485,9 @@ msgstr "Kontrak berjalan"
 
 msgid "Open positions"
 msgstr "Lowongan pekerjaan"
+
+msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
+msgstr ""
 
 msgid "Open-Source Projects"
 msgstr "Proyek Open-Source"
@@ -8587,6 +8595,9 @@ msgstr "Standar Riil"
 
 msgid "Real Synthetic Indices"
 msgstr "Indeks Sintetis Riil"
+
+msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Akun Uang Riil"
@@ -11676,6 +11687,9 @@ msgstr "Likuiditas teratas"
 msgid "Top-up successful"
 msgstr "Isi ulang sukses"
 
+msgid "TopFX"
+msgstr ""
+
 msgid "Total"
 msgstr "Total"
 
@@ -13130,6 +13144,9 @@ msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana
 
 msgid "You did not change anything."
 msgstr "Anda tidak melakukan perubahan."
+
+msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
+msgstr ""
 
 msgid "You expect the %1 to fall in value so you can buy it back at a lower price (and make a profit)"
 msgstr "Anda mengharapkan %1 turun nilainya sehingga Anda dapat membelinya kembali dengan harga lebih rendah (dan menghasilkan keuntungan)"
