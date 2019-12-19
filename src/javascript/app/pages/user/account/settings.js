@@ -1,6 +1,7 @@
 const Client       = require('../../../base/client');
 const BinarySocket = require('../../../base/socket');
 const Dialog       = require('../../../common/attach_dom/dialog');
+const ClientBase   = require('../../../../_common/base/client_base');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 
@@ -15,11 +16,7 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
-            // Disabling Authentication button for SVG accounts
-            const is_authenticated                 = status.includes('authenticated');
-            const is_client_prompt_to_authenticate = State.getResponse('get_account_status.prompt_client_to_authenticate');
-            const is_svg                           = Client.get('landing_company_shortcode') === 'svg';
-            if (is_svg && !is_client_prompt_to_authenticate && !is_authenticated) {
+            if (ClientBase.isAuthenticationAllowed()) {
                 $('#authenticate a')
                     .attr('href', '#')
                     .on('click',  () => {
