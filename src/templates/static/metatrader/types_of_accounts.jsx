@@ -51,24 +51,24 @@ const TypesOfAccounts = () => (
                 className='invisible show-maltainvest'
                 image='standard'
                 title={it.L('Standard')}
-                text={it.L('The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit.')}
+                text={it.L('The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit.')}
             />
             <Box
                 className='hide-maltainvest'
                 image='standard'
                 title={it.L('Standard')}
-                text={it.L('The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.')}
+                text={it.L('The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, standard and micro-lots in major and minor currency pairs with high leverage.')}
             />
             <Box
                 className='hide-maltainvest'
                 image='advanced'
                 title={it.L('Advanced')}
-                text={it.L('The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers.')}
+                text={it.L('The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
             />
             <Box
                 image='volatility_indices'
                 title={it.L('Synthetic Indices')}
-                text={it.L('The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
+                text={it.L('The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party.')}
             />
 
             <div className='gr-padding-30' />
@@ -83,16 +83,17 @@ const TypesOfAccounts = () => (
                                 [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Synthetic Indices') }],
                             ],
                             tbody: [
-                                [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD') }],
-                                [{ text: <Row number={1}  text={it.L('Leverage')} /> },               { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:100') },            { text: it.L('Up to [_1]', '1:1000') }],
-                                [{ text: <Row number={2}  text={it.L('Order execution')} /> },        { text: it.L('Market') },                         { text: it.L('Market') },                         { text: it.L('Market') }],
-                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },                       { text: it.L('Variable') },                       { text: it.L('Variable/Fixed') }],
-                                [{ text: <Row number={4}  text={it.L('Commission')} /> },             { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
-                                [{ text: <Row             text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
-                                [{ text: <Row number={5}  text={it.L('Margin call')} /> },            { text: '150%' },                                 { text: '150%' },                                 { text: '100%' }],
-                                [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '75%' },                                  { text: '75%' },                                  { text: '50%' }],
-                                [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                  { text: '50+' },                                  { text: '10+' }],
-                                [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: 'N/A' },                                  { text: it.L('N/A') }],
+                                [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                                             { text: it.L('USD') },                            { text: it.L('USD') }],
+                                [{ text: <Row number={1}  text={it.L('Leverage')} /> },               { text: it.L('Up to [_1]', '1:1000') },                            { text: it.L('Up to [_1]', '1:100') },            { text: it.L('Up to [_1]', '1:1000') }],
+                                [{ text: <Row number={2}  text={it.L('Order execution')} /> },        { text: it.L('Market') },                                          { text: it.L('Market') },                         { text: it.L('Market') }],
+                                [{ text: <Row number={3}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },                                        { text: it.L('Variable') },                       { text: it.L('Variable/Fixed') }],
+                                [{ text: <Row number={4}  text={it.L('Commission')} /> },             { text: it.L('No') },                                              { text: it.L('No') },                             { text: it.L('No') }],
+                                [{ text: <Row             text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                                              { text: it.L('No') },                             { text: it.L('No') }],
+                                [{ text: <Row number={5}  text={it.L('Margin call')} /> },            { text: '150%' },                                                  { text: '150%' },                                 { text: '100%' }],
+                                [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '75%' },                                                   { text: '75%' },                                  { text: '50%' }],
+                                [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                                   { text: '50+' },                                  { text: '10+' }],
+                                [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                                  { text: 'N/A' },                                  { text: it.L('N/A') }],
+                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: 'FX-majors, FX-minors, Commodities, Cryptocurrencies' },   { text: 'FX-majors, FX-minors, FX-exotics' },     { text: it.L('Synthetics') }],
                             ],
                         }}
                     />
