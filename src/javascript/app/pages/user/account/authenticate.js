@@ -1,11 +1,9 @@
 const DocumentUploader        = require('@binary-com/binary-document-uploader');
 const Cookies                 = require('js-cookie');
 const Onfido                  = require('onfido-sdk-ui');
-const BinaryPjax              = require('../../../base/binary_pjax');
 const Client                  = require('../../../base/client');
 const Header                  = require('../../../base/header');
 const BinarySocket            = require('../../../base/socket');
-const Dialog                  = require('../../../common/attach_dom/dialog');
 const isAuthenticationAllowed = require('../../../../_common/base/client_base').isAuthenticationAllowed;
 const CompressImage           = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64         = require('../../../../_common/image_utility').convertToBase64;
@@ -996,14 +994,7 @@ const Authenticate = (() => {
         if (!isAuthenticationAllowed() && !is_from_mt5) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
-
-            Dialog.alert({
-                id               : 'authorize_svg_error',
-                localized_message: localize('You do not need to authenticate your account at this time.[_1]We will inform you when your account needs to be authenticated.', '<br />'),
-                localized_title  : localize('No authentication required'),
-                ok_text          : localize('Back to trading'),
-                onConfirm        : () => { BinaryPjax.load(Url.urlFor('trading')); },
-            });
+            $('#authentication_unneeded').setVisibility(0);
         }
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
