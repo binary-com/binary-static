@@ -38,7 +38,8 @@ const Authenticate = () => (
 
         <div id='authentication_unneeded' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
-            <h1 className='gr-padding-10'>{it.L('You do not need to authenticate your account at this time.[_1]We will inform you when your account needs to be authenticated.', '<br />')}</h1>
+            <h1 className='gr-padding-10'>{it.L('You do not need to authenticate your account at this time.')}</h1>
+            <p>{it.L('We will inform you when your account needs to be authenticated.')}</p>
         </div>
 
         <div id='authentication_tab' className='gr-padding-20'>
