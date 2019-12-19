@@ -994,7 +994,7 @@ const Authenticate = (() => {
         if (!isAuthenticationAllowed() && !is_from_mt5) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
-            $('#authentication_unneeded').setVisibility(0);
+            $('#authentication_unneeded').setVisibility(1);
         }
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
