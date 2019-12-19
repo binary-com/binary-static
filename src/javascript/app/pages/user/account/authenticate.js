@@ -1,20 +1,22 @@
-const DocumentUploader    = require('@binary-com/binary-document-uploader');
-const Cookies             = require('js-cookie');
-const Onfido              = require('onfido-sdk-ui');
-const Client              = require('../../../base/client');
-const Header              = require('../../../base/header');
-const BinarySocket        = require('../../../base/socket');
-const ClientBase          = require('../../../../_common/base/client_base');
-const CompressImage       = require('../../../../_common/image_utility').compressImg;
-const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
-const isImageType         = require('../../../../_common/image_utility').isImageType;
-const getLanguage         = require('../../../../_common/language').get;
-const localize            = require('../../../../_common/localize').localize;
-const State               = require('../../../../_common/storage').State;
-const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
-const TabSelector         = require('../../../../_common/tab_selector');
-const Url                 = require('../../../../_common/url');
-const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
+const DocumentUploader        = require('@binary-com/binary-document-uploader');
+const Cookies                 = require('js-cookie');
+const Onfido                  = require('onfido-sdk-ui');
+const BinaryPjax              = require('../../../base/binary_pjax');
+const Client                  = require('../../../base/client');
+const Header                  = require('../../../base/header');
+const BinarySocket            = require('../../../base/socket');
+const Dialog                  = require('../../../common/attach_dom/dialog');
+const isAuthenticationAllowed = require('../../../../_common/base/client_base').isAuthenticationAllowed;
+const CompressImage           = require('../../../../_common/image_utility').compressImg;
+const ConvertToBase64         = require('../../../../_common/image_utility').convertToBase64;
+const isImageType             = require('../../../../_common/image_utility').isImageType;
+const getLanguage             = require('../../../../_common/language').get;
+const localize                = require('../../../../_common/localize').localize;
+const State                   = require('../../../../_common/storage').State;
+const toTitleCase             = require('../../../../_common/string_util').toTitleCase;
+const TabSelector             = require('../../../../_common/tab_selector');
+const Url                     = require('../../../../_common/url');
+const showLoadingImage        = require('../../../../_common/utility').showLoadingImage;
 
 /*
     To handle onfido unsupported country, we handle the functions separately,
@@ -990,10 +992,18 @@ const Authenticate = (() => {
     };
 
     const onLoad = async () => {
-        if (!ClientBase.isAuthenticationAllowed()) {
+        const is_from_mt5 = Url.param('from_mt5');
+        if (!isAuthenticationAllowed() && !is_from_mt5) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
-            $('#error_occured').setVisibility(1);
+
+            Dialog.alert({
+                id               : 'authorize_svg_error',
+                localized_message: localize('You do not need to authenticate your account at this time.[_1]We will inform you when your account needs to be authenticated.', '<br />'),
+                localized_title  : localize('No authentication required'),
+                ok_text          : localize('Back to trading'),
+                onConfirm        : () => { BinaryPjax.load(Url.urlFor('trading')); },
+            });
         }
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);

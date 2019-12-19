@@ -1,9 +1,11 @@
-const Client       = require('../../../base/client');
-const BinarySocket = require('../../../base/socket');
-const Dialog       = require('../../../common/attach_dom/dialog');
-const ClientBase   = require('../../../../_common/base/client_base');
-const localize     = require('../../../../_common/localize').localize;
-const State        = require('../../../../_common/storage').State;
+const Client                  = require('../../../base/client');
+const BinaryPjax              = require('../../../base/binary_pjax');
+const BinarySocket            = require('../../../base/socket');
+const Dialog                  = require('../../../common/attach_dom/dialog');
+const isAuthenticationAllowed = require('../../../../_common/base/client_base').isAuthenticationAllowed;
+const localize                = require('../../../../_common/localize').localize;
+const State                   = require('../../../../_common/storage').State;
+const Url                     = require('../../../../_common/url');
 
 const Settings = (() => {
     const onLoad = () => {
@@ -16,7 +18,7 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
-            if (!ClientBase.isAuthenticationAllowed()) {
+            if (!isAuthenticationAllowed()) {
                 $('#authenticate a')
                     .attr('href', '#')
                     .on('click',  () => {
@@ -25,6 +27,7 @@ const Settings = (() => {
                             localized_message: localize('You do not need to authenticate your account at this time.[_1]We will inform you when your account needs to be authenticated.', '<br />'),
                             localized_title  : localize('No authentication required'),
                             ok_text          : localize('Back to trading'),
+                            onConfirm        : () => { BinaryPjax.load(Url.urlFor('trading')); },
                         });
                     });
             }
