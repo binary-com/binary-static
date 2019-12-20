@@ -36,6 +36,12 @@ const Authenticate = () => (
             <h1 className='gr-padding-10'>{it.L('Your account has been verified successfully')}</h1>
         </div>
 
+        <div id='authentication_unneeded' className='center-text gr-padding-20 invisible'>
+            <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
+            <h1 className='gr-padding-10'>{it.L('You do not need to authenticate your account at this time')}</h1>
+            <p>{it.L('We will inform you when your account needs to be authenticated.')}</p>
+        </div>
+
         <div id='authentication_tab' className='gr-padding-20'>
             <TabContainer className='gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
                 <div className='gr-row gr-hide gr-show-m mobile-menu'>

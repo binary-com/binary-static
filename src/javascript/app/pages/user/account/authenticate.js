@@ -1,19 +1,20 @@
-const DocumentUploader    = require('@binary-com/binary-document-uploader');
-const Cookies             = require('js-cookie');
-const Onfido              = require('onfido-sdk-ui');
-const Client              = require('../../../base/client');
-const Header              = require('../../../base/header');
-const BinarySocket        = require('../../../base/socket');
-const CompressImage       = require('../../../../_common/image_utility').compressImg;
-const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
-const isImageType         = require('../../../../_common/image_utility').isImageType;
-const getLanguage         = require('../../../../_common/language').get;
-const localize            = require('../../../../_common/localize').localize;
-const State               = require('../../../../_common/storage').State;
-const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
-const TabSelector         = require('../../../../_common/tab_selector');
-const Url                 = require('../../../../_common/url');
-const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
+const DocumentUploader        = require('@binary-com/binary-document-uploader');
+const Cookies                 = require('js-cookie');
+const Onfido                  = require('onfido-sdk-ui');
+const Client                  = require('../../../base/client');
+const Header                  = require('../../../base/header');
+const BinarySocket            = require('../../../base/socket');
+const isAuthenticationAllowed = require('../../../../_common/base/client_base').isAuthenticationAllowed;
+const CompressImage           = require('../../../../_common/image_utility').compressImg;
+const ConvertToBase64         = require('../../../../_common/image_utility').convertToBase64;
+const isImageType             = require('../../../../_common/image_utility').isImageType;
+const getLanguage             = require('../../../../_common/language').get;
+const localize                = require('../../../../_common/localize').localize;
+const State                   = require('../../../../_common/storage').State;
+const toTitleCase             = require('../../../../_common/string_util').toTitleCase;
+const TabSelector             = require('../../../../_common/tab_selector');
+const Url                     = require('../../../../_common/url');
+const showLoadingImage        = require('../../../../_common/utility').showLoadingImage;
 
 /*
     To handle onfido unsupported country, we handle the functions separately,
@@ -991,16 +992,20 @@ const Authenticate = (() => {
     const onLoad = async () => {
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
+        const is_from_mt5 = Url.param('from_mt5');
+
+        if (!isAuthenticationAllowed() && !is_from_mt5) {
+            $('#authentication_tab').setVisibility(0);
+            $('#authentication_loading').setVisibility(0);
+            $('#authentication_unneeded').setVisibility(1);
+        }
         
         const has_svg_account = Client.hasSvgAccount();
         if (is_required || has_svg_account){
             initTab();
             initAuthentication();
 
-            const { identity, document } = authentication_status;
-            const is_not_fully_authenticated = identity.status !== 'verified' && document.status !== 'verified';
-            const is_not_high_risk = !/high/.test(State.getResponse('get_account_status.risk_classification'));
-            if (is_not_fully_authenticated && has_svg_account && is_not_high_risk) {
+            if (is_from_mt5) {
                 $('#authenticate_only_real_mt5_advanced').setVisibility(1);
             }
         } else {

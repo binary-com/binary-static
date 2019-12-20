@@ -1,8 +1,11 @@
-const Client       = require('../../../base/client');
-const BinarySocket = require('../../../base/socket');
-const Dialog       = require('../../../common/attach_dom/dialog');
-const localize     = require('../../../../_common/localize').localize;
-const State        = require('../../../../_common/storage').State;
+const Client                  = require('../../../base/client');
+const BinaryPjax              = require('../../../base/binary_pjax');
+const BinarySocket            = require('../../../base/socket');
+const Dialog                  = require('../../../common/attach_dom/dialog');
+const isAuthenticationAllowed = require('../../../../_common/base/client_base').isAuthenticationAllowed;
+const localize                = require('../../../../_common/localize').localize;
+const State                   = require('../../../../_common/storage').State;
+const Url                     = require('../../../../_common/url');
 
 const Settings = (() => {
     const onLoad = () => {
@@ -15,11 +18,7 @@ const Settings = (() => {
                 $('#change_password').setVisibility(1);
             }
 
-            // Disabling Authentication button for SVG accounts
-            const is_authenticated                 = status.includes('authenticated');
-            const is_client_prompt_to_authenticate = State.getResponse('get_account_status.prompt_client_to_authenticate');
-            const is_svg                           = Client.get('landing_company_shortcode') === 'svg';
-            if (is_svg && !is_client_prompt_to_authenticate && !is_authenticated) {
+            if (!isAuthenticationAllowed()) {
                 $('#authenticate a')
                     .attr('href', '#')
                     .on('click',  () => {
@@ -28,6 +27,7 @@ const Settings = (() => {
                             localized_message: localize('You do not need to authenticate your account at this time.[_1]We will inform you when your account needs to be authenticated.', '<br />'),
                             localized_title  : localize('No authentication required'),
                             ok_text          : localize('Back to trading'),
+                            onConfirm        : () => { BinaryPjax.load(Url.urlFor('trading')); },
                         });
                     });
             }
