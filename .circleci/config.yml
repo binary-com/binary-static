@@ -57,18 +57,17 @@ commands:
     steps:
       - run:
           name: Building dist for << parameters.target >>
-          command: node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
-  grunt_trigger_e2e:
-    description: "Trigger Robot Framework E2E testing"
-    steps:
-      - run:
-          name: Robot Framework trigger
           command: |
-            git config credential.helper 'cache --timeout=120'
-            git config user.email "E2E Trigger Bot <>"
-            git config user.name "E2E Trigger Bot"
-            git commit -m "Trigger deployment" /home/circleci/project/dist/version
-            git push -q https://${ROBOT_GITHUB_TOKEN}@github.com/regentmarkets/robot-framework.git master
+            node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
+            # Trigger Robot Framework testing on staging release
+            if [ << parameters.target >> = 'staging' ]
+            then
+                git config credential.helper 'cache --timeout=120'
+                git config user.email "E2E Trigger Bot <>"
+                git config user.name "E2E Trigger Bot"
+                git commit -m "Trigger deployment" /home/circleci/project/dist/version
+                git push -q https://${ROBOT_GITHUB_TOKEN}@github.com/regentmarkets/robot-framework.git master
+            fi
   docker_build:
     description: "Build Docker image"
     steps:
@@ -118,7 +117,6 @@ jobs:
           target: 'staging'
       - grunt_release:
           target: 'translations'
-      - grunt_trigger_e2e
       - docker_build
       - docker_push
 
