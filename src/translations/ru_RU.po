@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-12-13 07:59\n"
+"PO-Revision-Date: 2019-12-19 07:14\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -186,7 +186,7 @@ msgid "%1 desktop app"
 msgstr "Приложение %1 для ПК"
 
 msgid "%1 employees and affiliates must avoid conflicts of interest. For example, they may not compete with the company, either directly or indirectly, or use knowledge gained while working for %1 to help anyone else compete with it."
-msgstr ""
+msgstr "Сотрудники и партнеры %1 должны избегать конфликта интересов. Например, они не должны напрямую или косвенно конкурировать с компанией или помогать кому-либо конкурировать с %1, использyя знания и информацию, полученную во время работы в %1 и/или сотрудничества с %1."
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and synthetic indices."
 msgstr "%1 открывает Вам простой способ работы на финансовых рынках. Заключайте контракты на сумму от $1 USD на ведущих валютных парах, сырьевых рынках и Синтетических индексах."
@@ -252,7 +252,7 @@ msgid "%1 is not affiliated with any of the payment agents listed above. Each pa
 msgstr "%1 не является представителем никакого из указанных платежных агентов. Каждый платежный агент функционирует как независимый предприниматель, а %1 не поддерживает, не выполняет поручительства и не гарантирует надежности любого из платежных агентов. КЛИЕНТЫ ПОЛЬЗУЮТСЯ УСЛУГАМИ ПЛАТЕЖНЫХ АГЕНТОВ НА СВОЙ СТРАХ И РИСК. Мы рекомендуем клиентам заранее проверить информацию о платежных агентах, прежде чем высылать им денежные средства. %1 не несет никакой ответственности за транзакции между клиентом и платежным агентом."
 
 msgid "%1 is one of the oldest and most successful online trading companies in the world. Our commitment to high standards of ethics is one of the key factors that will ensure our continuing success.  Our Business Principles summarise the values that underpin our work."
-msgstr ""
+msgstr "%1 является одной из старейших и наиболее успешных мировых компаний, предоставляющих услуги онлайн трейдинга. Приверженности этике и высоким стандартам является одним из ключевых факторов нашего неизменного успеха.  Наши принципы ведения бизнеса подчёркивают ценности, лежащие в основе нашей работы."
 
 msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
 msgstr "%1 принадлежит и находится под управлением группы компаний Binary Group Ltd. Для получения дополнительной информации, пожалуйста, %2посетите страницу нашей истории%3."
@@ -375,7 +375,7 @@ msgid "%1's  IT team is responsible for the design, development, and operation o
 msgstr "IT-команда %1 отвечает за дизайн, разработку и функционирование наших сетей с высокой посещаемостью. В задачи Администратора баз данных (DBA) PostgreSQL входит планирование, внедрение и управление системами баз данных, которые важны для архитектуры нашей высокопосещаемой торговой платформы."
 
 msgid "%1's Affiliate Programme"
-msgstr ""
+msgstr "Партнёрская программа %1"
 
 msgid "%1's CPAN contributions"
 msgstr "Дополнения CPAN от %1"
@@ -1095,7 +1095,7 @@ msgid "Affiliate FAQ"
 msgstr "Партнёрские вопросы"
 
 msgid "Affiliate Programme"
-msgstr ""
+msgstr "Партнёрская программа"
 
 msgid "Affiliate and IB Programme"
 msgstr "Партнёрство и ПБ"
@@ -1107,7 +1107,7 @@ msgid "Affiliate/Country Manager"
 msgstr "Партнёрский/региональный менеджер"
 
 msgid "Affiliates are required to display a risk warning on their website and associated materials, with wording such as the following:"
-msgstr ""
+msgstr "Партнёры должны разместить на своём вебсайте предупреждение о риске и соответствующие материалы со следующим содержанием:"
 
 msgid "Affiliates have a particular responsibility to explain our services clearly and accurately. Of course, we want our clients to share the excitement of trading. However, they need to understand clearly that they may win as well as lose. It is essential to avoid exaggerated descriptions of potential winnings."
 msgstr ""
@@ -1347,7 +1347,7 @@ msgid "Anti-corruption policy"
 msgstr "Антикоррупционная политика"
 
 msgid "Anti-money laundering"
-msgstr ""
+msgstr "Запрет на отмывание денег"
 
 msgid "Anti-money laundering policy"
 msgstr "Политика по борьбе с отмыванием денег"
@@ -1856,6 +1856,9 @@ msgstr "Вернуться в меню"
 msgid "Back to statement"
 msgstr "Вернуться к выпискам"
 
+msgid "Back to trading"
+msgstr ""
+
 msgid "Back-End Developer"
 msgstr "Back-End разработчик"
 
@@ -2181,7 +2184,7 @@ msgid "Blogger and vlogger"
 msgstr "Блоггер и влогер"
 
 msgid "Books and records"
-msgstr ""
+msgstr "Книги и информация"
 
 msgid "Boom 1000 Index"
 msgstr "Boom 1000 индекс"
@@ -2217,7 +2220,7 @@ msgid "Builds trading applications and interfaces using the %1 API"
 msgstr "Создаёт торговые приложения и интерфейсы, пользуясь API от %1"
 
 msgid "Business"
-msgstr ""
+msgstr "Бизнес"
 
 msgid "Business Day"
 msgstr "Рабочий день"
@@ -2591,6 +2594,9 @@ msgstr "Выводы клиентов"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "Сумма средств, выведенных клиентами до этого года, составляет почти 500 млн. долларов США. По предварительной оценке, в этом году сумма выводов должна составить 140 млн. долларов США."
 
+msgid "Client's demo accounts will be deleted after 365 days of inactivity."
+msgstr ""
+
 msgid "Client's liability"
 msgstr "Ответственность клиента"
 
@@ -2628,7 +2634,7 @@ msgid "Clients hereby declare that they are dealing with BIEL outside the scope 
 msgstr "Не умаляя вышеизложенного, настоящим клиент подтверждает, что работает с BIEL вне сферы своей экономической или профессиональной деятельности, и, таким образом, BIEL будет рассматривать клиента в качестве физического лица и отдельного клиента в рамках соблюдения Правил регулирования инфраструктуры европейского финансового рынка (EMIR) и в отсутствии иных предписаний."
 
 msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2 management will decide what information needs to be reported to government officials and through what channels."
-msgstr ""
+msgstr "Клиенты могут торговать на наших платформах лишь на собственные честно заработанные средства. Если у Вас возникли любые подозрения о том, что клиенты могут пользоваться нечестно приобретёнными средствами, Вы должны сообщить об этом %1. В таких ситуациях мы можем провести проверку статуса и истории клиента. Менеджмент %2 примет решение, какую информацию необходимо передать государственным органам и каким способом это сделать."
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "Клиенты могут воспользоваться данным бонусом только при открытии реального счета."
@@ -2718,10 +2724,10 @@ msgid "Cloudflare's public DNS service gives you more secure and faster web brow
 msgstr "Система DNS общего пользования от Cloudflare предоставляет более быстрое и надёжное соединение."
 
 msgid "Code of Conduct"
-msgstr ""
+msgstr "Нормы поведения"
 
 msgid "Code of Conduct for Business Partners"
-msgstr ""
+msgstr "Нормы поведения для бизнес-партнёров"
 
 msgid "Collaborate with a team of world-class, Linux-based Devops Engineers"
 msgstr "Сотрудничать с командой первоклассных разработчиков Linux"
@@ -2910,7 +2916,7 @@ msgid "Conflicts Policy"
 msgstr "Политика по конфликтам"
 
 msgid "Conflicts of interest"
-msgstr ""
+msgstr "Конфликт интересов"
 
 msgid "Congratulations!"
 msgstr "Поздравляем!"
@@ -4370,9 +4376,6 @@ msgstr "F. Маржа и кредитный рычаг"
 msgid "FIX API"
 msgstr "FIX API"
 
-msgid "FX"
-msgstr "FX"
-
 msgid "FXOpen"
 msgstr "FXOpen,"
 
@@ -4389,7 +4392,7 @@ msgid "Failed"
 msgstr "Возникла ошибка"
 
 msgid "Fair Competition"
-msgstr ""
+msgstr "Честная конкуренция"
 
 msgid "Fairly and accurately describe Binary's business and services in a transparent manner to the clients"
 msgstr "честно, добросовестно и прозрачно описывать клиентам бизнес и услуги Binary,"
@@ -5874,7 +5877,7 @@ msgid "Introducing Broker warranties"
 msgstr "Обязательства Представляющего брокера"
 
 msgid "Introducing Brokers"
-msgstr ""
+msgstr "Представляющие брокеры"
 
 msgid "Introducing USB"
 msgstr "Представляем USB"
@@ -6243,7 +6246,7 @@ msgid "Legal"
 msgstr "Правила"
 
 msgid "Legal and regulatory compliance"
-msgstr ""
+msgstr "Нормативно-правовое соответствие"
 
 msgid "Legal compliance"
 msgstr "Нормативно-правовое соответствие"
@@ -7163,8 +7166,11 @@ msgstr "Контракты Нет касания"
 msgid "No advice"
 msgstr "Отсутствие консультаций"
 
-msgid "No bribery"
+msgid "No authentication required"
 msgstr ""
+
+msgid "No bribery"
+msgstr "Отказ от взяток"
 
 msgid "No commission"
 msgstr "Никаких комиссий"
@@ -7477,6 +7483,9 @@ msgstr "Открытые контракты"
 
 msgid "Open positions"
 msgstr "Открытые позиции"
+
+msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
+msgstr ""
 
 msgid "Open-Source Projects"
 msgstr "Проекты с открытым кодом"
@@ -8585,6 +8594,9 @@ msgstr "Реальный стандартный"
 msgid "Real Synthetic Indices"
 msgstr "Реальные Синтетические индексы"
 
+msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr ""
+
 msgid "Real-Money Account"
 msgstr "Реальный счёт"
 
@@ -8727,7 +8739,7 @@ msgid "Relevant work experience in a related field, such as managing and onboard
 msgstr "Опыт работы в соответствующей области, включая управление и адаптацию иностранных сотрудников, получение разрешений на работу, а также опыт взаимодействия с правительством Малайзии будут большим плюсом"
 
 msgid "Reliability"
-msgstr ""
+msgstr "Надёжность"
 
 msgid "Remaining Time"
 msgstr "Оставшееся время"
@@ -8823,7 +8835,7 @@ msgid "Responsible Trading"
 msgstr "Ответственная торговля"
 
 msgid "Responsible trading"
-msgstr ""
+msgstr "Ответственная торговля"
 
 msgid "Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe."
 msgstr "Мы гарантируем, что Ваша информация будет использована только с целью отчётности перед CRS/FATCA и будет надёжно храниться."
@@ -9333,7 +9345,7 @@ msgid "Spanish and Guaraní are the two official languages of the country. Most 
 msgstr "Испанский и гуарани – два официальных языка в стране. Большинство парагвайцев свободно общаются на обоих языках, а гуарани чаще звучит за пределами больших городов. Основным языком в столице является испанский, но найти англоязычных жителей также не составит труда."
 
 msgid "Special conditions apply to clients who are employed in the banking and/or finance sector. They may not conduct trades through our website without the knowledge of their employer. They must check that any such trading is in accordance with their employer's policies."
-msgstr ""
+msgstr "Особые условия распространяются на клиентов, работающих в банковском и/или финансовом секторе. Они не могут заключать контракты на нашем сайте, не уведомив об этом своего работодателя. Также они должны убедиться, что данный вид трейдинга соответствует политике их работодателя."
 
 msgid "Specific instructions"
 msgstr "Специальные инструкции"
@@ -11076,7 +11088,7 @@ msgid "The price of the currency pair indicates how much of the quote currency i
 msgstr "Цена валютной пары означает, какое количество валюты котировки необходимо для покупки одной единицы основной валюты. Это соотношение называется обменным курсом валют."
 
 msgid "The products offered on the %1 website include binary options, contracts for difference (\"CFDs\") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on the website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved."
-msgstr ""
+msgstr "Продукты, предоставленные на сайте %1, включают бинарные опционы, контракты на разницу (или \"CFD\"), а также другие комплексные производные продукты. Торговля бинарными опционами подходит далеко не для всех. Торговля CFD предполагает высокий уровень риска, так как кредитный рычаг может сыграть не только в Вашу пользу, но и против Вас. В результате продукты, предложенные на данном сайте, могут подходить не каждому инвестору, ввиду риска потери всего инвестированного капитала. Настоятельно рекомендуем не инвестировать деньги, которые Вы не можете позволить себе потерять, а также не торговать на деньги, взятые в долг. Перед началом работы с предложенными нами комплексными продуктами, пожалуйста, оцените все сопряженные риски."
 
 msgid "The products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
 msgstr "Продукты, предоставленные на данном сайте, включают бинарные опционы, контракты на разницу (или \"CFD\"), а также другие комплексные производные продукты. Торговля бинарными опционами подходит далеко не для всех. Торговля CFD предполагает высокий уровень риска, так как кредитный рычаг может сыграть не только в Вашу пользу, но и против Вас. В результате продукты, предложенные на данном сайте, могут подходить не каждому инвестору, ввиду риска потери всего инвестированного капитала. Настоятельно рекомендуем не инвестировать деньги, которые Вы не можете позволить себе потерять, а также не торговать на деньги, взятые в долг. Перед началом работы с предложенными нами комплексными продуктами, пожалуйста, оцените все сопряженные риски и ознакомьтесь с условиями %1ответственной торговли%2."
@@ -11671,6 +11683,9 @@ msgstr "Первоклассная ликвидность"
 
 msgid "Top-up successful"
 msgstr "Пополнение прошло успешно"
+
+msgid "TopFX"
+msgstr ""
 
 msgid "Total"
 msgstr "Total"
@@ -13126,6 +13141,9 @@ msgstr "Вы можете воспользоваться платежным аг
 
 msgid "You did not change anything."
 msgstr "Вы не внесли никаких изменений."
+
+msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
+msgstr ""
 
 msgid "You expect the %1 to fall in value so you can buy it back at a lower price (and make a profit)"
 msgstr "Вы ожидаете, что %1 подешевеет и в дальнейшем его можно будет купить по более низкой цене (и таким образом получить прибыль)"
