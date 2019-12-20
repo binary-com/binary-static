@@ -369,7 +369,6 @@ const MetaTraderConfig = (() => {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
-            txt_investor_pass: { id: '#txt_investor_pass', request_field: 'investPassword' },
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields:
                 acc_type => ($.extend(
@@ -435,7 +434,6 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-            { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
