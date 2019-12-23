@@ -1621,6 +1621,9 @@ body #not_authenticated_financial ul.checked > li {
     &-close-title {
         margin-bottom: 0;
     }
+    & .ui-accordion .ui-accordion-icons {
+        padding-right: 1.2em;
+    }
 }
 
 .reason-textfield {

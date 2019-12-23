@@ -65,6 +65,12 @@ const AccountClosure = () => (
                         is_trading_limit
                     />
                     <ClosureDescription
+                        id='fiat_unset' // only fiat
+                        title={it.L('I want to change my currency instead')}
+                        subtitle={it.L('You may [_2]change your currency[_3] to any of the following as long as you haven\'t made a deposit or created an MT5 account:', '<span id="current_currency_fiat"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
+                        list_items={[]}
+                    />
+                    <ClosureDescription
                         id='fiat_1' // only fiat
                         title={it.L('I want to change my currency instead')}
                         subtitle={it.L('You have a [_1] account. You may [_2]change your currency[_3] to any of the following as long as you haven\'t made a deposit or created an MT5 account:', '<span id="current_currency_fiat"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
@@ -72,21 +78,21 @@ const AccountClosure = () => (
                     />
                     <ClosureDescription
                         id='fiat_2' // only fiat
-                        title={it.L('I want to open a crypto currency account instead')}
-                        subtitle={it.L('You can [_1]open a crypto currency[_2] account without closing your fiat currency account.', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
+                        title={it.L('I want to open a cryptocurrency account instead')}
+                        subtitle={it.L('You can [_1]open a cryptocurrency[_2] account without closing your fiat currency account.', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription
                         id='crypto_1' // only crypto
                         title={it.L('I want to open a fiat currency account instead')}
-                        subtitle={it.L('You can open a fiat currency account without closing your crypto currency account.')}
+                        subtitle={it.L('You can open a fiat currency account without closing your cryptocurrency account.')}
                         list_title={it.L('[_1]Choose a currency[_2] for your fiat currency account:', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription
                         id='crypto_2' // only crypto
-                        title={it.L('I want to open another crypto currency account instead')}
-                        subtitle={it.L('You have [_1]. You may open one or [_2]more crypto currency[_3] accounts:', '<span id="current_currency_crypto"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
+                        title={it.L('I want to open another cryptocurrency account instead')}
+                        subtitle={it.L('You have [_1]. You may open one or [_2]more cryptocurrency[_3] accounts:', '<span id="current_currency_crypto"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription
