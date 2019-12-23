@@ -1,5 +1,6 @@
 const BinaryPjax   = require('../../../base/binary_pjax');
 const Client       = require('../../../base/client');
+const Header       = require('../../../base/header');
 const BinarySocket = require('../../../base/socket');
 const Dialog       = require('../../../common/attach_dom/dialog');
 const Currency     = require('../../../common/currency');
@@ -37,12 +38,10 @@ const MetaTraderConfig = (() => {
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                     demo_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Demo Advanced'), short_title: advanced_config.short_title },
                     real_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Real Advanced'), short_title: advanced_config.short_title },
-                    real_mamm    : { mt5_account_type: 'mamm_advanced',              max_leverage: advanced_config.leverage, title: localize('MAM Advanced'),  short_title: advanced_config.short_title },
                 },
                 gaming: {
                     demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Synthetic Indices'), short_title: volatility_config.short_title },
                     real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Synthetic Indices'), short_title: volatility_config.short_title },
-                    real_mamm      : { mt5_account_type: 'mamm',                         max_leverage: volatility_config.leverage, title: localize('MAM Synthetic Indices') , short_title: volatility_config.short_title },
                 },
             });
         };
@@ -67,20 +66,16 @@ const MetaTraderConfig = (() => {
                 short_title : localize('Standard'),
             };
 
-            const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
-
             return ({
                 // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
                 financial: {
                     demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                 },
-                ...(!has_iom_gaming && {
-                    gaming: {
-                        demo_volatility: configMtCompanies.get().gaming.demo_volatility,
-                        real_volatility: configMtCompanies.get().gaming.real_volatility,
-                    },
-                }),
+                gaming: {
+                    demo_volatility: configMtCompanies.get().gaming.demo_volatility,
+                    real_volatility: configMtCompanies.get().gaming.real_volatility,
+                },
             });
         };
 
@@ -100,11 +95,7 @@ const MetaTraderConfig = (() => {
     const accounts_info = {};
 
     let $messages;
-    const needsRealMessage = () => {
-        const has_iom_gaming = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
-        const id_to_show = `#msg_switch${has_iom_gaming ? '_financial' : ''}`;
-        return $messages.find(id_to_show).html();
-    };
+    const needsRealMessage = () => $messages.find('#msg_switch').html();
 
     // currency equivalent to 1 USD
     // or 1 of donor currency if both accounts have the same currency
@@ -123,27 +114,13 @@ const MetaTraderConfig = (() => {
     const newAccCheck = (acc_type, message_selector) => (
         new Promise((resolve) => {
             const $message = $messages.find('#msg_real_financial').clone();
-            const $new_account_financial_authenticate_msg = $('#new_account_financial_authenticate_msg');
-            $new_account_financial_authenticate_msg.setVisibility(0);
             const is_virtual = Client.get('is_virtual');
             const is_demo = accounts_info[acc_type].is_demo;
 
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
             } else if (is_demo) {
-                if (Client.get('residence') === 'gb') {
-                    BinarySocket.wait('get_account_status').then((response) => {
-                        if (!/age_verification/.test(response.get_account_status.status)) {
-                            $message.find('#msg_metatrader_account').setVisibility(1);
-                            $message.find('.authenticate').setVisibility(1);
-                            resolve($message.html());
-                        }
-
-                        resolve();
-                    });
-                } else {
-                    resolve();
-                }
+                resolve();
             } else if (is_virtual) { // virtual clients can only open demo MT accounts
                 resolve(needsRealMessage());
             } else {
@@ -181,21 +158,14 @@ const MetaTraderConfig = (() => {
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
 
-                        if (Client.get('residence') === 'gb') {
-                            BinarySocket.wait('get_account_status').then((response) => {
-                                if (!/age_verification/.test(response.get_account_status.status)) {
-                                    $message.find('.authenticate').setVisibility(1);
-                                }
-
-                                resolveWithMessage();
-                            });
-                        } else {
-                            resolveWithMessage();
-                        }
+                        resolveWithMessage();
                     }
 
                     const response_get_settings = State.getResponse('get_settings');
                     if (is_financial) {
+                        const is_svg = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'svg';
+                        if (is_svg) resolve();
+
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             if (is_maltainvest && !has_financial_account) resolve();
@@ -216,12 +186,9 @@ const MetaTraderConfig = (() => {
                                 showCitizenshipMessage();
                                 is_ok = false;
                             }
-                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response_get_account_status.status)) {
+                            if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
                                 $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
-                            }
-                            if (is_ok && !isAuthenticated()) {
-                                $new_account_financial_authenticate_msg.setVisibility(1);
                             }
 
                             if (is_ok) resolve();
@@ -238,12 +205,10 @@ const MetaTraderConfig = (() => {
                                 showAssessment('.assessment');
                                 is_ok = false;
                             }
-                            if (!response_get_settings.citizen && !(is_maltainvest && !has_financial_account)) {
+                            if (!response_get_settings.citizen
+                                && !(is_maltainvest && !has_financial_account)
+                                && accounts_info[acc_type].mt5_account_type) {
                                 showCitizenshipMessage();
-                                is_ok = false;
-                            }
-                            if (Client.get('residence') === 'gb' && !/age_verification/.test(response_get_account_status.status)) {
-                                $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
 
@@ -307,18 +272,13 @@ const MetaTraderConfig = (() => {
             ),
             onSuccess: (response) => {
                 GTM.mt5NewAccount(response);
+
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    Header.displayAccountStatus();
+                });
             },
         },
-        new_account_mam: {
-            title        : localize('Sign up'),
-            login        : response => response.mt5_new_account.login,
-            prerequisites: acc_type => (
-                newAccCheck(acc_type, '#msg_mam_account')
-            ),
-            onSuccess: (response) => {
-                GTM.mt5NewAccount(response);
-            },
-        },
+
         password_change: {
             title        : localize('Change Password'),
             success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
@@ -351,11 +311,6 @@ const MetaTraderConfig = (() => {
                 Validation.init(password_reset, validations()[action]);
             },
         },
-        revoke_mam: {
-            title        : localize('Revoke MAM'),
-            success_msg  : () => localize('Manager successfully revoked'),
-            prerequisites: () => new Promise(resolve => resolve('')),
-        },
         deposit: {
             title      : localize('Deposit'),
             success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
@@ -368,23 +323,16 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else {
-                    BinarySocket.send({ cashier_password: 1 }).then((response) => {
-                        if (!response.error && response.cashier_password === 1) {
-                            resolve(localize('Your cashier is locked as per your request - to unlock it, please click <a href="[_1]">here</a>.',
-                                urlFor('user/security/cashier_passwordws')));
+                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                        if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
+                            resolve(localize('Your cashier is locked.')); // Locked from BO
                         } else {
-                            BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                                if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
-                                    resolve(localize('Your cashier is locked.')); // Locked from BO
-                                } else {
-                                    const limit = State.getResponse('get_limits.remainder');
-                                    if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue(Client.get('currency'))) {
-                                        resolve(localize('You have reached the limit.'));
-                                    } else {
-                                        resolve();
-                                    }
-                                }
-                            });
+                            const limit = State.getResponse('get_limits.remainder');
+                            if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue(Client.get('currency'))) {
+                                resolve(localize('You have reached the limit.'));
+                            } else {
+                                resolve();
+                            }
                         }
                     });
                 }
@@ -403,7 +351,11 @@ const MetaTraderConfig = (() => {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
-                        resolve(!isAuthenticated() ? $messages.find('#msg_authenticate').html() : '');
+                        if (!/svg_standard/.test(acc_type) && isAuthenticationPromptNeeded()) {
+                            resolve($messages.find('#msg_authenticate').html());
+                        }
+
+                        resolve();
                     });
                 } else {
                     resolve();
@@ -417,7 +369,6 @@ const MetaTraderConfig = (() => {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
-            txt_investor_pass: { id: '#txt_investor_pass', request_field: 'investPassword' },
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields:
                 acc_type => ($.extend(
@@ -429,23 +380,6 @@ const MetaTraderConfig = (() => {
                     accounts_info[acc_type].mt5_account_type ? {
                         mt5_account_type: accounts_info[acc_type].mt5_account_type,
                     } : {})),
-        },
-        new_account_mam: {
-            txt_name         : { id: '#txt_mam_name',          request_field: 'name' },
-            txt_manager_id   : { id: '#txt_manager_id',        request_field: 'manager_id' },
-            txt_main_pass    : { id: '#txt_mam_main_pass',     request_field: 'mainPassword' },
-            txt_re_main_pass : { id: '#txt_mam_re_main_pass' },
-            txt_investor_pass: { id: '#txt_mam_investor_pass', request_field: 'investPassword' },
-            chk_tnc          : { id: '#chk_tnc' },
-            additional_fields:
-                acc_type => (
-                    {
-                        account_type    : accounts_info[acc_type].account_type,
-                        email           : Client.get('email'),
-                        leverage        : accounts_info[acc_type].max_leverage,
-                        mt5_account_type: accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'standard', // for gaming just send standard to distinguish
-                    }
-                ),
         },
         password_change: {
             ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
@@ -477,14 +411,6 @@ const MetaTraderConfig = (() => {
         verify_password_reset_token: {
             txt_verification_code: { id: '#txt_verification_code' },
         },
-        revoke_mam: {
-            additional_fields:
-                acc_type => ({
-                    mt5_mamm: 1,
-                    login   : accounts_info[acc_type].info.login,
-                    action  : 'revoke',
-                }),
-        },
         deposit: {
             txt_amount       : { id: '#txt_amount_deposit', request_field: 'amount' },
             additional_fields:
@@ -508,15 +434,6 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-            { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
-        ],
-        new_account_mam: [
-            { selector: fields.new_account_mam.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
-            { selector: fields.new_account_mam.txt_manager_id.id,    validations: [['req', { hide_asterisk: true }], ['length', { min: 0, max: 15 }]] },
-            { selector: fields.new_account_mam.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
-            { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
-            { selector: fields.new_account_mam.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
-            { selector: fields.new_account_mam.chk_tnc.id,           validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
@@ -547,6 +464,11 @@ const MetaTraderConfig = (() => {
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
+    const isAuthenticationPromptNeeded = () => {
+        const get_account_status = State.getResponse('get_account_status');
+        return get_account_status ? get_account_status.authentication.needs_verification.length : false;
+    };
+
     return {
         accounts_info,
         actions_info,
@@ -557,6 +479,7 @@ const MetaTraderConfig = (() => {
         hasAccount,
         getCurrency,
         isAuthenticated,
+        isAuthenticationPromptNeeded,
         configMtCompanies   : configMtCompanies.get,
         configMtFinCompanies: configMtFinCompanies.get,
         setMessages         : ($msg) => { $messages = $msg; },

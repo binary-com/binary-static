@@ -39,37 +39,6 @@ const Platforms = ({
     </div>
 );
 
-const PlatformsGridApp = ({
-    className,
-    data_show,
-    image_path = 'platforms',
-    image,
-    header,
-    status,
-    description,
-    text,
-}) => (
-    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m align-self-center'>
-            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
-        </div>
-        <div className='gr-8 gr-12-m gr-12-p'>
-            <h3 className={`section-title ${status || ''}`}>{header}</h3>
-            <strong>{description}</strong>
-            <p>{text}</p>
-            <div className='gr-row'>
-                <div className='gr-12'>
-                    <p>
-                        <a className='button-secondary android-download-grid-app download-grid-app'><span>{it.L('Download for Android')}</span></a>
-                        <span className='ios-download-grid-app invisible'>{it.L('Binary Grid is currently only available on Android devices.')}</span>
-                        <span className='divider-sm' />
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-);
-
 const PlatformsDesktop = ({
     className,
     data_show,
@@ -216,14 +185,6 @@ const Platform = () => (
                                 url={it.url_for('trading')}
                                 button_text={it.L('Trade now')}
                             />
-                            <PlatformsGridApp
-                                image='grid-app-sm'
-                                data_show='-eucountry'
-                                status='new'
-                                header={it.L('Binary Grid')}
-                                description={it.L('Micro-trading on the go')}
-                                text={it.L('In the new, exciting Binary Grid, win whenever the trade ends outside your selected cell.')}
-                            />
                             <Platforms
                                 image='tick-trade'
                                 header={it.L('Tick Trade Android App')}
@@ -236,7 +197,7 @@ const Platform = () => (
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}
-                                className='desktop-app invisible financial-only'
+                                className='invisible financial-only'
                                 description={it.L('Enhanced performance. Intuitively simple.')}
                                 text={it.L('Access our products and services from a single app.')}
                             />

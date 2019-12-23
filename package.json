@@ -6,6 +6,7 @@
     "test": "grunt test",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
     "serve": "sudo -p 'enter password for sudo:' grunt serve",
+    "start": "sudo -p 'enter password for sudo:' grunt start",
     "eslint": "eslint --fix \"src/**/*.jsx\" src/"
   },
   "repository": {
@@ -111,6 +112,7 @@
     "@binary-com/binary-document-uploader": "^2.4.4",
     "@binary-com/binary-style": "^0.2.18",
     "@binary-com/webtrader-charts": "0.5.6",
+    "@deriv/p2p": "^0.1.1",
     "babel-polyfill": "6.26.0",
     "canvas-toBlob": "1.0.0",
     "classnames": "2.2.5",
@@ -123,6 +125,7 @@
     "js-cookie": "2.2.0",
     "kinetic": "5.2.0",
     "moment": "2.19.4",
+    "onfido-sdk-ui": "^5.3.0",
     "promise-polyfill": "6.1.0",
     "prop-types": "15.6.1",
     "react": "16.8.6",

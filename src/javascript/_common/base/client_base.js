@@ -213,6 +213,8 @@ const ClientBase = (() => {
     const shouldCompleteTax = () => isAccountOfType('financial') &&
         !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
+    const isAuthenticationAllowed = () => /allow_document_upload/.test(State.getResponse('get_account_status.status'));
+
     // remove manager id or master distinction from group
     // remove EUR or GBP distinction from group
     const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master|EUR|GBP)/, '') : '');
@@ -327,7 +329,7 @@ const ClientBase = (() => {
 
     const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
         const currency             = get('currency');
-        const has_no_mt5           = mt5_login_list.length === 0;
+        const has_no_mt5           = !mt5_login_list || !mt5_login_list.length;
         const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
         const has_account_criteria = has_no_transaction && has_no_mt5;
 
@@ -348,6 +350,7 @@ const ClientBase = (() => {
         getAllLoginids,
         getAccountType,
         isAccountOfType,
+        isAuthenticationAllowed,
         getAccountOfType,
         hasAccountType,
         hasCurrencyType,

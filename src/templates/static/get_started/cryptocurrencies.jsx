@@ -97,7 +97,6 @@ const Cryptocurrencies = () => (
                                 [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US Dollar') }, { text: one }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US Dollar')       }, { text: one }, { text: hundred   }, { text: hundred   }],
                                 [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')         }, { text: one }, { text: one       }, { text: one       }],
-                                [{ text: 'EMC/USD' }, { text: it.L('Emercoin vs US Dollar')     }, { text: one }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'EOS/USD' }, { text: it.L('EOS vs US Dollar')          }, { text: one }, { text: one       }, { text: one       }],
                             ],
                         }}
@@ -124,7 +123,6 @@ const Cryptocurrencies = () => (
                                 [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US Dollar') }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
                                 [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US Dollar')       }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
                                 [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')         }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'EMC/USD' }, { text: it.L('Emercoin vs US Dollar')     }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
                                 [{ text: 'EOS/USD' }, { text: it.L('EOS vs US Dollar')          }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
                             ],
                         }}

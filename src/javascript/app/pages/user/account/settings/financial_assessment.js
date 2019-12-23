@@ -49,7 +49,7 @@ const FinancialAssessment = (() => {
         }
 
         // display Trading Experience only for financial & MT5 financial accounts
-        const is_mt5_financial = /labuan_advanced|real_vanuatu_(standard|advanced|mamm_advanced)/.test(localStorage.getItem('financial_assessment_redirect'));
+        const is_mt5_financial = /labuan_advanced/.test(localStorage.getItem('financial_assessment_redirect'));
         $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
         Object.keys(financial_assessment).forEach((key) => {

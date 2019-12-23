@@ -1,15 +1,18 @@
-import React from 'react';
-import Complaints from './complaints.jsx';
-import ConflictsPolicy from './conflicts_policy.jsx';
-import Copyright from './copyright.jsx';
-import Datafeed from './datafeed.jsx';
+import React                from 'react';
+import Affiliate            from './affiliate.jsx';
+import Api                  from './api.jsx';
+import CodeOfConduct        from './code_of_conduct.jsx';
+import Complaints           from './complaints.jsx';
+import ConflictsPolicy      from './conflicts_policy.jsx';
+import Copyright            from './copyright.jsx';
+import Datafeed             from './datafeed.jsx';
+import IntroducingBrokers   from './introducing_brokers.jsx';
 import OrderExecutionBinary from './order_execution.jsx';
-import OrderExecutionMT from './metatrader/order_execution.jsx';
+import OrderExecutionMT     from './metatrader/order_execution.jsx';
 import RiskDisclaimerBinary from './risk_disclaimer.jsx';
-import MAM from './mam.jsx';
-import RiskDisclaimerMT from './metatrader/risk_disclaimer.jsx';
-import PaymentAgents from './payment_agents.jsx';
-import Privacy from './privacy.jsx';
+import RiskDisclaimerMT     from './metatrader/risk_disclaimer.jsx';
+import PaymentAgents        from './payment_agents.jsx';
+import Privacy              from './privacy.jsx';
 import TermsAndConditionsBinary from './terms_and_conditions.jsx';
 import TermsAndConditionsMT from './metatrader/terms_and_conditions.jsx';
 import { SidebarSubmenu, SidebarContent, SidebarContentContainer } from '../../_common/components/sidebar.jsx';
@@ -28,7 +31,6 @@ const Tac = () => (
                             { id: 'legal-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'mam',              text: it.L('MAM'), className: 'invisible' }, // toEnableMAM: remove className
                     { id: 'datafeed',         text: it.L('Data Feed') },
                     { id: 'privacy',          text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
@@ -50,7 +52,17 @@ const Tac = () => (
                             { id: 'order-execution-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'payment-agents', text: it.L('Payment Agents'), dataShow: '-eucountry' },
+                    {
+                        id     : 'business',
+                        text   : it.L('Business'),
+                        submenu: [
+                            { id: 'code-of-conduct',     text: it.L('Code of Conduct') },
+                            { id: 'affiliate',           text: it.L('Affiliate Programme') },
+                            { id: 'introducing-brokers', text: it.L('Introducing Brokers') },
+                            { id: 'payment-agents',      text: it.L('Payment Agents'), dataShow: '-eucountry' },
+                            { id: 'api',                 text: it.L('API') },
+                        ],
+                    },
                 ]}
             />
         </div>
@@ -61,12 +73,16 @@ const Tac = () => (
                     <TermsAndConditionsBinary />
                 </SidebarContent>
 
-                <SidebarContent id='legal-mt'>
-                    <TermsAndConditionsMT />
+                <SidebarContent id='affiliate'>
+                    <Affiliate />
                 </SidebarContent>
 
-                <SidebarContent id='mam'>
-                    <MAM />
+                <SidebarContent id='code-of-conduct'>
+                    <CodeOfConduct />
+                </SidebarContent>
+
+                <SidebarContent id='legal-mt'>
+                    <TermsAndConditionsMT />
                 </SidebarContent>
 
                 <SidebarContent id='datafeed'>
@@ -107,6 +123,14 @@ const Tac = () => (
 
                 <SidebarContent id='payment-agents'>
                     <PaymentAgents />
+                </SidebarContent>
+
+                <SidebarContent id='api'>
+                    <Api />
+                </SidebarContent>
+
+                <SidebarContent id='introducing-brokers'>
+                    <IntroducingBrokers />
                 </SidebarContent>
             </SidebarContentContainer>
         </div>

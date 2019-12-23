@@ -12,12 +12,11 @@ const Language = (() => {
         // DE   : 'Deutsch', // TODO: uncomment to enable German language
         ES   : 'Español',
         FR   : 'Français',
-        ID   : 'Indonesia',
         IT   : 'Italiano',
         PL   : 'Polish',
         PT   : 'Português',
         RU   : 'Русский',
-        TH   : 'Thai',
+        // TH   : 'Thai', // TODO: uncomment to enable Thai language
         VI   : 'Tiếng Việt',
         ZH_CN: '简体中文',
         ZH_TW: '繁體中文',

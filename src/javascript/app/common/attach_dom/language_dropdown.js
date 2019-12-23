@@ -15,10 +15,15 @@ const createLanguageDropDown = (website_status) => {
         .find('span.language')
         .text(mapCodeToLanguage(current_language));
 
+    // TODO: REMOVE/CHANGE this after addition of DE or TH languages
+    const unsupported_languages = ['de', 'id', 'th'];
+
     const languages        = website_status.supported_languages.sort((a, b) => ((a === 'EN' || a < b) ? -1 : 1));
     const $select_language = $languages.find(select_language_id);
     languages.forEach((language) => {
-        $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
+        if (unsupported_languages.indexOf(language.toLowerCase()) === -1) {
+            $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
+        }
     });
 
     $select_language.find(`.${current_language}:eq(1)`).setVisibility(0);

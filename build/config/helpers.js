@@ -1,4 +1,4 @@
-const isRelease = (grunt) => grunt.cli.tasks[0] === 'release';
+const isRelease = (grunt) => ['release', 'releaseci'].indexOf(grunt.cli.tasks[0]) != -1;
 
 const getReleaseTarget = (grunt) => {
     const release_target = Object.keys(global.release_config).find(grunt.option);

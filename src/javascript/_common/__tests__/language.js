@@ -9,12 +9,11 @@ describe('Language', () => {
         // DE   : 'Deutsch', // TODO: uncomment to enable German language
         ES   : 'Español',
         FR   : 'Français',
-        ID   : 'Indonesia',
         IT   : 'Italiano',
         PL   : 'Polish',
         PT   : 'Português',
         RU   : 'Русский',
-        TH   : 'Thai',
+        // TH   : 'Thai', // TODO: uncomment to enable Thai language
         VI   : 'Tiếng Việt',
         ZH_CN: '简体中文',
         ZH_TW: '繁體中文',
@@ -56,8 +55,8 @@ describe('Language', () => {
 
     describe('.urlLang()', () => {
         it('works as expected for current url', () => {
-            setURL(`${website_url}id/home.html`);
-            expect(Language.urlLang()).to.eq('id');
+            setURL(`${website_url}it/home.html`);
+            expect(Language.urlLang()).to.eq('it');
         });
         it('works as expected for custom url', () => {
             expect(Language.urlLang(`${website_url}vi/tour.html`)).to.eq('vi');

@@ -16,7 +16,7 @@ body {
     }
 }
 
-body.EN, body.ID, body.RU {
+body.EN, body.RU {
     .calls_recording {
         display: block !important;
     }
@@ -177,7 +177,6 @@ $list:
     ('DE', 'de'),
     ('ES', 'es'),
     ('FR', 'fr'),
-    ('ID', 'id'),
     ('IT', 'it'),
     ('PL', 'pl'),
     ('PT', 'pt'),

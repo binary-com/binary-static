@@ -3,6 +3,7 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                                 'app/cashier/index',                           'default',    'Cashier'],
     ['cashier/account_transfer',                'app/cashier/account_transfer',                'default',    'Transfer Between Accounts'],
+    ['cashier/dp2p',                            'app/cashier/dp2p',                            'default',    'DP2P'],
     ['cashier/epg_forwardws',                   'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
@@ -38,14 +39,12 @@ module.exports = [
     ['user/security/closure',                   'app/user/security/account_closure',           'default',    'Account Closure'],
     ['user/security/api_tokenws',               'app/user/security/api_token',                 'default',    'API Token'],
     ['user/security/authorised_appsws',         'app/user/security/authorised_apps',           'default',    'Authorised Applications'],
-    ['user/security/cashier_passwordws',        'app/user/security/cashier_password',          'default',    'Cashier Password'],
     ['user/security/change_passwordws',         'app/user/security/change_password',           'default',    'Change Password'],
     ['user/security/iphistoryws',               'app/user/security/iphistory',                 'default',    'Login History'],
     ['user/security/limitsws',                  'app/user/security/limits',                    'default',    'Account Limits'],
     ['user/security/self_exclusionws',          'app/user/security/self_exclusion',            'default',    'Self Exclusion'],
     ['user/security/two_factor_authentication', 'app/user/security/two_factor_authentication', 'default',    'Two-Factor Authentication'],
     ['user/security/cloudflare_dns',            'app/user/security/cloudflare_dns',            'default',    'Binary.com recommends 1.1.1.1'],
-    ['user/security/vpn_app',                   'app/user/security/vpn_app',                   'default',    'VPN app'],
     ['user/set-currency',                       'app/user/set_currency',                       'default',    'Set Currency'],
     ['user/settingsws',                         'app/user/settings',                           'default',    'Settings'],
     ['user/settings/assessmentws',              'app/user/settings/financial_assessment',      'default',    'Financial Assessment'],
@@ -98,7 +97,6 @@ module.exports = [
     ['terms-and-conditions',                    'static/legal/tac',                            'default',    'Terms and Conditions'],
 
     ['liquidity-solutions',                     'static/partners/liquidity_solutions',         'full_width', 'Multi-asset Liquidity Solutions'],
-    ['multiple-accounts-manager',               'static/partners/multiple_accounts_manager',   'full_width', 'Multiple Accounts Manager'],
     ['open-source-projects',                    'static/partners/open_source_projects',        'full_width', 'Open-Source Projects'],
     ['partners',                                'static/partners/partners',                    'full_width', 'Partners'],
     ['payment-agent',                           'static/partners/payment_agent',               'full_width', 'Payment Agents'],
@@ -119,5 +117,4 @@ module.exports = [
     ['graduates',                               'landing_pages/graduate_program',                 null,        'Binary.com Graduate Program',        'NOT-en'],
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
-    ['binary-grid',                                'landing_pages/binary_grid',                   null,        'Our New Mobile Trading App',         'NOT-en'],
 ];

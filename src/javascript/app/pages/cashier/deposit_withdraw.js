@@ -1,4 +1,3 @@
-const setShouldRedirect      = require('../user/account/settings/cashier_password').setShouldRedirect;
 const BinaryPjax             = require('../../base/binary_pjax');
 const Client                 = require('../../base/client');
 const BinarySocket           = require('../../base/socket');
@@ -27,13 +26,7 @@ const DepositWithdraw = (() => {
 
     const container = '#deposit_withdraw';
 
-    const init = (cashier_password) => {
-        if (cashier_password) {
-            showMessage('cashier_locked_message');
-            setShouldRedirect(true);
-            return;
-        }
-
+    const init = () => {
         if (!Client.get('currency')) {
             BinaryPjax.load(`${Url.urlFor('user/set-currency')}#redirect_${cashier_type}`);
             return;
@@ -214,12 +207,13 @@ const DepositWithdraw = (() => {
         } else {
             const popup_valid_for_url = `${Url.urlFor('cashier/forwardws')}?action=deposit`;
             const popup_valid = popup_valid_for_url === window.location.href;
+            const client_currency = Client.get('currency');
             if (popup_valid && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 Dialog.confirm({
                     id                : 'deposit_currency_change_popup_container',
                     ok_text           : localize('Yes I\'m sure'),
                     cancel_text       : localize('Cancel'),
-                    localized_title   : localize('Are you sure?'),
+                    localized_title   : localize('Are you sure you want to deposit in [_1]?', [client_currency]),
                     localized_message : localize('You will not be able to change your fiat account\'s currency after making this deposit. Are you sure you want to proceed?'),
                     localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
                     onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
@@ -228,7 +222,7 @@ const DepositWithdraw = (() => {
 
             $iframe = $(container).find('#cashier_iframe');
 
-            if (Currency.isCryptocurrency(Client.get('currency'))) {
+            if (Currency.isCryptocurrency(client_currency)) {
                 $iframe.height(default_iframe_height);
             } else {
                 // Automatically adjust iframe height based on contents
@@ -252,20 +246,14 @@ const DepositWithdraw = (() => {
     const onLoad = () => {
         $loading = $('#loading_cashier');
         getCashierType();
-        const req_cashier_password   = BinarySocket.send({ cashier_password: 1 });
         const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
         const req_statement          = BinarySocket.send({ statement: 1, limit: 1 });
         const req_mt5_login_list     = BinarySocket.send({ mt5_login_list: 1 });
 
-        Promise.all([req_cashier_password, req_get_account_status, req_statement, req_mt5_login_list]).then(() => {
+        Promise.all([req_get_account_status, req_statement, req_mt5_login_list]).then(() => {
             // cannot use State.getResponse because we want to check error which is outside of response[msg_type]
-            const response_cashier_password   = State.get(['response', 'cashier_password']);
             const response_get_account_status = State.get(['response', 'get_account_status']);
-            if ('error' in response_cashier_password) {
-                showError('custom_error', response_cashier_password.error.code === 'RateLimit' ? localize('You have reached the rate limit of requests per second. Please try later.') : response_cashier_password.error.message);
-            } else if (response_cashier_password.cashier_password === 1) {
-                showMessage('cashier_locked_message'); // Locked by client
-            } else if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {
+            if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {
                 showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
             } else {
                 const limit = State.getResponse('get_limits.remainder');
@@ -273,7 +261,7 @@ const DepositWithdraw = (() => {
                     showError('custom_error', localize('You have reached the withdrawal limit.'));
                 } else {
                     BinarySocket.wait('get_settings').then(() => {
-                        init(response_cashier_password.cashier_password);
+                        init();
                     });
                 }
             }

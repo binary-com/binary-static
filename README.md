@@ -81,18 +81,19 @@ In order to remove the created folders from your gh-pages, you can use either:
 ## Release
 
 ```
-grunt release --{release type}=1 [--cleanup] [--reset]
+git tag ${RELEASE_TARGET}_vYYYYMMDD_${INTEGER} -m 'some message'
 ```
-(The value is needed when more than one option is used)
 
-### Parameters:
-- `{release type}` (mandatory)
-  - Should be one of `staging`, `production`, `translations`, `nex_beta`, `nex_production`.
-  - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
-  - Your remote origin will be checked to be the correct target of the given parameter.
-  - Your current branch will be checked to be the correct branch of the given parameter.
-- `--cleanup` [optional]
-  - Create CNAME file with proper value according to remote origin
-  - Deploy to gh-pages with the option `add: false`
-- `--reset` [optional]
-  - Removes all commits from `gh-pages` branch before release (staging only)
+> `RELEASE_TARGET` could be one of **staging** or **production** for staging and production release respectively.
+
+Example: 
+
+```
+git tag production_v20191010_0 -m 'release fixes to production'
+```
+
+Push the tag:
+
+```
+git push origin staging_v20191010_0
+```

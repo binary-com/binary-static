@@ -3,6 +3,10 @@
     <head>
         <style id="antiClickjack">body{display:none !important;}</style>
         <script type="text/javascript">
+            /* hardcode redirect for crawlers */
+            if (/ia_archiver|bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) {
+                window.location = '/en/home.html';
+            }
             if (self === top) {
                 var antiClickjack = document.getElementById("antiClickjack");
                 antiClickjack.parentNode.removeChild(antiClickjack);
@@ -13,6 +17,7 @@
         <title>Binary.com</title>
         <meta charset="utf-8" />
         <meta name="google-site-verification" content="Myh35QddfEArh0686LcO2zMjrgv0C7L4FCBU0k0oZvU" />
+        <meta name='referrer' content='origin' />
         <script type="text/javascript">
             var redirectTimeOut,
                 lang;
@@ -26,7 +31,6 @@
                     'de': 'de|at|li',
                     'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
                     'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
-                    'id': 'id',
                     'it': 'it',
                     'ko': 'kr',
                     'pl': 'po',

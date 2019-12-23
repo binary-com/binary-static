@@ -114,6 +114,7 @@ fieldset {
     border: 1px solid $COLOR_GRAY;
     padding: 5px;
     margin-bottom: 10px;
+    word-break: break-word;
 
     legend {
         color: $COLOR_DARK_GRAY;
@@ -184,7 +185,6 @@ fieldset {
 }
 
 .error-msg {
-    width: 100%;
     text-align: left;
     margin-top: 5px;
 }
@@ -574,6 +574,7 @@ ul.bullet.gr-row > li {
 
                     &, a {
                         color: $COLOR_BLUE;
+                        text-transform: initial;
                     }
                     > a, > span {
                         display: block;
@@ -608,6 +609,7 @@ ul.bullet.gr-row > li {
 .foot-note {
     font-size: $FONT_SIZE_XS;
     color: $COLOR_GRAY_SHADE;
+    display: inline-block;
 }
 
 .button + .button {

@@ -1,11 +1,12 @@
-const MetaTraderConfig = require('./metatrader.config');
-const MetaTraderUI     = require('./metatrader.ui');
-const Client           = require('../../../base/client');
-const BinarySocket     = require('../../../base/socket');
-const Validation       = require('../../../common/form_validation');
-const localize         = require('../../../../_common/localize').localize;
-const State            = require('../../../../_common/storage').State;
-const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
+const MetaTraderConfig   = require('./metatrader.config');
+const MetaTraderUI       = require('./metatrader.ui');
+const Client             = require('../../../base/client');
+const BinarySocket       = require('../../../base/socket');
+const Validation         = require('../../../common/form_validation');
+const localize           = require('../../../../_common/localize').localize;
+const State              = require('../../../../_common/storage').State;
+const isEmptyObject      = require('../../../../_common/utility').isEmptyObject;
+const applyToAllElements = require('../../../../_common/utility').applyToAllElements;
 
 const MetaTrader = (() => {
     let mt_companies;
@@ -19,12 +20,23 @@ const MetaTrader = (() => {
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
-            const is_eligible = await isEligible();
-            if (is_eligible) {
+            if (isEligible()) {
                 if (Client.get('is_virtual')) {
+                    try {
+                        await addAllAccounts();
+                    } catch (error) {
+                        MetaTraderUI.displayPageError(error.message);
+                    }
                     getAllAccountsInfo();
                 } else {
-                    BinarySocket.send({ get_limits: 1 }).then(getAllAccountsInfo);
+                    BinarySocket.send({ get_limits: 1 }).then(async () => {
+                        try {
+                            await addAllAccounts();
+                        } catch (error) {
+                            MetaTraderUI.displayPageError(error.message);
+                        }
+                        getAllAccountsInfo();
+                    });
                     getExchangeRates();
                 }
             } else {
@@ -38,10 +50,7 @@ const MetaTrader = (() => {
 
     const setMTCompanies = () => {
         const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
-
-        const has_iom_gaming_company = State.getResponse('landing_company.gaming_company.shortcode') === 'iom';
-
-        const mt_gaming_company = has_iom_gaming_company ? State.getResponse('landing_company.mt_gaming_company') : {};
+        const mt_gaming_company    = State.getResponse('landing_company.mt_gaming_company');
 
         // Check if mt_gaming_company is offered, if not found, switch to mt_financial_company
         const mt_landing_company = isEmptyObject(mt_gaming_company) ? mt_financial_company : mt_gaming_company;
@@ -53,59 +62,82 @@ const MetaTrader = (() => {
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
-    const isEligible = () => (
-        new Promise((resolve) => {
-            const financial_company = State.getResponse('landing_company.financial_company.shortcode');
-            // client is currently IOM landing company
-            // or has IOM landing company and doesn't have a non-IOM financial company
-            const has_iom_gaming_company = Client.get('landing_company_shortcode') === 'iom' ||
-                (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && financial_company && financial_company === 'iom');
-            if (has_iom_gaming_company) {
-                if (Client.isLoggedIn()) {
-                    BinarySocket.wait('mt5_login_list').then((response_login_list) => {
-                        // don't allow account opening for IOM accounts but let them see the dashboard if they have existing MT5 accounts
-                        resolve(response_login_list.mt5_login_list.length ? hasMTCompany() : false);
-                    });
-                } else {
-                    resolve(false);
+    const isEligible = () => {
+        // hide MT5 dashboard for IOM account or VRTC of IOM landing company
+        if (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && !Client.isAccountOfType('financial')) {
+            return false;
+        }
+        setMTCompanies();
+        return Object.keys(mt_companies).find((company) =>
+            !!Object.keys(mt_companies[company]).find((acc_type) =>
+                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`)
+            )
+        );
+    };
+
+    const addAllAccounts = () => (
+        new Promise((resolve, reject) => {
+            BinarySocket.wait('mt5_login_list').then((response) => {
+                if (response.error) {
+                    reject(response.error);
+                    return;
                 }
-            } else {
-                resolve(hasMTCompany());
-            }
+                const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
+                    Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
+
+                const vanuatu_standard_real_account = response.mt5_login_list.find(account =>
+                    Client.getMT5AccountType(account.group) === 'real_vanuatu_standard');
+
+                // Explicitly add (demo|real)_vanuatu_standard if it exist in API.
+                if (vanuatu_standard_demo_account) {
+                    accounts_info.demo_vanuatu_standard = {
+                        is_demo     : true,
+                        account_type: 'demo',
+                        ...mt_companies.financial.demo_standard,
+                    };
+                }
+                if (vanuatu_standard_real_account) {
+                    accounts_info.real_vanuatu_standard = {
+                        is_demo     : false,
+                        account_type: 'financial',
+                        ...mt_companies.financial.real_standard,
+                    };
+                }
+
+                Object.keys(mt_companies).forEach((company) => {
+                    Object.keys(mt_companies[company]).forEach((acc_type) => {
+                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+
+                        // If vanuatu exists, don't add svg anymore unless it's for volatility.
+                        const vanuatu_and_svg_exists = (
+                            (vanuatu_standard_demo_account && /demo_standard/.test(acc_type)) ||
+                            (vanuatu_standard_real_account && /real_standard/.test(acc_type))
+                        ) &&
+                        /svg/.test(mt_company[company]) &&
+                        mt_companies[company][acc_type].mt5_account_type;
+
+                        if (mt_company[company] && !vanuatu_and_svg_exists) addAccount(company, acc_type);
+                    });
+                });
+                resolve();
+            });
         })
     );
 
-    const hasMTCompany = () => {
-        setMTCompanies();
-        let has_mt_company = false;
-        Object.keys(mt_companies).forEach((company) => {
-            Object.keys(mt_companies[company]).forEach((acc_type) => {
-                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
-                if (mt_company[company]) {
-                    has_mt_company = true;
-                    addAccount(company);
-                }
-            });
-        });
-        return has_mt_company;
-    };
+    const addAccount = (company, acc_type) => {
+        const company_info     = mt_companies[company][acc_type];
+        const mt5_account_type = company_info.mt5_account_type;
+        const is_demo          = /^demo_/.test(acc_type);
+        const type             = is_demo ? 'demo' : 'real';
 
-    const addAccount = (company) => {
-        Object.keys(mt_companies[company]).forEach((acc_type) => {
-            const company_info     = mt_companies[company][acc_type];
-            const mt5_account_type = company_info.mt5_account_type;
-            const is_demo          = /^demo_/.test(acc_type);
-            const type             = is_demo ? 'demo' : 'real';
-
-            accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
-                is_demo,
-                mt5_account_type,
-                account_type: is_demo ? 'demo' : company,
-                max_leverage: company_info.max_leverage,
-                short_title : company_info.short_title,
-                title       : company_info.title,
-            };
-        });
+        accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
+            account_type: is_demo ? 'demo' : company,
+            is_demo,
+            max_leverage: company_info.max_leverage,
+            mt5_account_type,
+            short_title : company_info.short_title,
+            title       : company_info.title,
+        };
     };
 
     const getAllAccountsInfo = () => {
@@ -150,9 +182,9 @@ const MetaTrader = (() => {
             }
         });
 
-        if (!/^(verify_password_reset|revoke_mam)$/.test(action)) {
+        if (!/^(verify_password_reset)$/.test(action)) {
             // set main command
-            req[`mt5_${action.replace(action === 'new_account_mam' ? '_mam' : '', '')}`] = 1;
+            req[`mt5_${action}`] = 1;
         }
 
         // add additional fields
@@ -209,7 +241,7 @@ const MetaTrader = (() => {
                     } else {
                         if (accounts_info[acc_type].info) {
                             const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
-                            MetaTraderUI.loadAction(action === 'revoke_mam' ? action : parent_action);
+                            MetaTraderUI.loadAction(parent_action);
                             MetaTraderUI.enableButton(action, response);
                             MetaTraderUI.refreshAction();
                         }
@@ -229,11 +261,6 @@ const MetaTrader = (() => {
                             MetaTraderUI.refreshAction();
                             allAccountsResponseHandler(response_login_list);
                             MetaTraderUI.setAccountType(acc_type, true);
-
-                            if (/^(revoke_mam|new_account_mam)/.test(action)) {
-                                MetaTraderUI.showHideMAM(acc_type);
-                            }
-
                             MetaTraderUI.loadAction(null, acc_type);
                         });
                     }
@@ -261,7 +288,6 @@ const MetaTrader = (() => {
 
         const current_acc_type = getDefaultAccount();
         Client.set('mt5_account', current_acc_type);
-        MetaTraderUI.showHideMAM(current_acc_type);
 
         // Update types with no account
         Object.keys(accounts_info)
@@ -296,6 +322,17 @@ const MetaTrader = (() => {
         });
     };
 
+    const metatraderMenuItemVisibility = () => {
+        BinarySocket.wait('landing_company', 'get_account_status').then(async () => {
+            if (isEligible()) {
+                const mt_visibility = document.getElementsByClassName('mt_visibility');
+                applyToAllElements(mt_visibility, (el) => {
+                    el.setVisibility(1);
+                });
+            }
+        });
+    };
+
     const onUnload = () => {
         MetaTraderUI.refreshAction();
     };
@@ -304,6 +341,7 @@ const MetaTrader = (() => {
         onLoad,
         onUnload,
         isEligible,
+        metatraderMenuItemVisibility,
     };
 })();
 

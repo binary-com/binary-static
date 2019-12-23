@@ -57,7 +57,7 @@ const WhyUs = () => (
                     <img className='responsive' src={it.url_for('images/pages/tour/trade-tutorial_1.svg')} />
                     <ul className='checked'>
                         <li>{it.L('Choose a payout from $1 to $50,000.')}</li>
-                        <li>{it.L('Trade all major currencies, indices, commodities, and volatility indices.')}</li>
+                        <li>{it.L('Trade all major currencies, indices, commodities, and synthetic indices.')}</li>
                         <li>{it.L('Choose a duration from 10 seconds to 365 days.')}</li>
                         <li>{it.L('Choose your own strike.')}</li>
                     </ul>

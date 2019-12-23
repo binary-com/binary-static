@@ -140,9 +140,9 @@ const Download = () => {
                 <AlternativeDescription system='mac' alt1={windows_link} alt2={linux_link} />
                 <AlternativeDescription system='windows' alt1={linux_link} alt2={mac_link} />
                 <AlternativeDescription system='linux' alt1={mac_link} alt2={windows_link} />
-                <p className='foot-note'>
+                <p className='foot-note notice-msg'>
                     {it.L(
-                        'The MetaTrader platform will no longer support Windows XP, Windows 2003, and Windows Vista after 01 October, 2017.'
+                        'The MT5 platform is not supported by macOS Catalina, Windows XP, Windows 2003, and Windows Vista.'
                     )}
                 </p>
                 <SeparatorLine no_wrapper />

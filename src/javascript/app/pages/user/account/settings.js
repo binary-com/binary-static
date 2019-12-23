@@ -1,7 +1,11 @@
-const Client       = require('../../../base/client');
-const BinarySocket = require('../../../base/socket');
-const localize     = require('../../../../_common/localize').localize;
-const State        = require('../../../../_common/storage').State;
+const Client                  = require('../../../base/client');
+const BinaryPjax              = require('../../../base/binary_pjax');
+const BinarySocket            = require('../../../base/socket');
+const Dialog                  = require('../../../common/attach_dom/dialog');
+const isAuthenticationAllowed = require('../../../../_common/base/client_base').isAuthenticationAllowed;
+const localize                = require('../../../../_common/localize').localize;
+const State                   = require('../../../../_common/storage').State;
+const Url                     = require('../../../../_common/url');
 
 const Settings = (() => {
     const onLoad = () => {
@@ -9,8 +13,23 @@ const Settings = (() => {
             $('.real').setVisibility(!Client.get('is_virtual'));
 
             const status = State.getResponse('get_account_status.status') || [];
+
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
+            }
+
+            if (!isAuthenticationAllowed()) {
+                $('#authenticate a')
+                    .attr('href', '#')
+                    .on('click',  () => {
+                        Dialog.alert({
+                            id               : 'authorize_svg_error',
+                            localized_message: localize('You do not need to authenticate your account at this time.[_1]We will inform you when your account needs to be authenticated.', '<br />'),
+                            localized_title  : localize('No authentication required'),
+                            ok_text          : localize('Back to trading'),
+                            onConfirm        : () => { BinaryPjax.load(Url.urlFor('trading')); },
+                        });
+                    });
             }
 
             // Professional Client menu should only be shown to maltainvest accounts.

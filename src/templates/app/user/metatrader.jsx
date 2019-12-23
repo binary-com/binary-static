@@ -4,7 +4,6 @@ import {
     FormRow,
     SubmitButton }       from '../../_common/components/forms.jsx';
 import Loading           from '../../_common/components/loading.jsx';
-import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items }) => {
@@ -13,8 +12,6 @@ const AccountDesc = ({ title, description, account_type, items }) => {
         account_type.forEach((type) => {
             types += ` demo_${type} real_${type}`;
         });
-    } else {
-        types = 'new_account new_account_mam';
     }
 
     return (
@@ -42,7 +39,10 @@ const TypeGroup = ({ title, children, types }) => (
             {children}
         </div>
         { types.map((box, i) => (
-            <div key={i} className={box.title ? 'gr-6' : 'gr-3 gr-6-p gr-6-m gr-centered'}>
+            <div
+                key={i}
+                className={`${box.title ? 'gr-6' : 'gr-3 gr-6-p gr-6-m gr-centered'}${/template_(demo|real)/.test(box.type) ? ` invisible ${box.type}` : ''}`}
+            >
                 <div id={box.id || `rbtn_${box.type}`} className='mt5_type_box' data-acc-type={box.type}>
                     {box.title ?
                         <div>{box.title}</div>
@@ -128,18 +128,11 @@ const Metatrader = () => (
                             <a href='javascript:;' className='act_new_account new-account center-text invisible'>
                                 <span>{it.L('Create MetaTrader 5 account')}</span>
                             </a>
-                            {/* toEnableMAM: add 'new-account' to className */}
-                            <a href='javascript:;' className='act_new_account_mam center-text invisible'>
-                                <span>{it.L('Create MAM account')}</span>
-                            </a>
                             <a href='javascript:;' className='act_cashier has-account center-text invisible'>
                                 <span>{it.L('Manage funds')}</span>
                             </a>
                             <a href='javascript:;' className='act_manage_password has-account center-text invisible'>
                                 <span>{it.L('Manage MT5 password')}</span>
-                            </a>
-                            <a href='javascript:;' className='act_revoke_mam has-mam center-text invisible'>
-                                <span>{it.L('Manage MAM account')}</span>
                             </a>
                         </div>
                         <div className='fst-container mt-container'>
@@ -199,7 +192,7 @@ const Metatrader = () => (
                             description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                         />
                         <AccountDesc
-                            account_type={['vanuatu_standard']}
+                            account_type={['vanuatu_standard', 'svg_standard']}
                             title={it.L('Standard Account')}
                             description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
                             items={[
@@ -246,7 +239,7 @@ const Metatrader = () => (
                         />
                         */}
                         <AccountDesc
-                            account_type={['svg', 'malta', 'iom']}
+                            account_type={['svg', 'malta']}
                             title={it.L('Synthetic Indices Account')}
                             description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
@@ -254,26 +247,6 @@ const Metatrader = () => (
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
-                            ]}
-                        />
-                        <AccountDesc
-                            account_type={['vanuatu_mamm_advanced']}
-                            title={it.L('MAM Advanced account')}
-                            description={it.L('Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account.')}
-                            items={[
-                                it.L('Leverage up to [_1]', '1:300'),
-                                it.L('Over 70 available assets'),
-                                it.L('Market execution'),
-                            ]}
-                        />
-                        <AccountDesc
-                            account_type={['svg_mamm']}
-                            title={it.L('MAM Synthetic Indices Account')}
-                            description={it.L('Our MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}
-                            items={[
-                                it.L('Leverage up to [_1]', '1:1000'),
-                                it.L('Fixed spreads'),
-                                it.L('Market execution'),
                             ]}
                         />
                     </div>
@@ -296,14 +269,14 @@ const Metatrader = () => (
                                         <TypeGroup
                                             title={it.L('Step 2: Choose account type')}
                                             types={[
-                                                { type: 'template', desc: 'standard' },
+                                                { type: 'template_demo', desc: 'standard' },
+                                                { type: 'template_real', desc: 'standard' },
                                             ]}
                                         >
                                             <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
                                         </TypeGroup>
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
-                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please [_1]authenticate[_2] your account within 10 days to continue trading, otherwise your account will be disabled and any open positions will be closed.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
                                         <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
                                     </p>
@@ -321,63 +294,12 @@ const Metatrader = () => (
                                         <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                         <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password')}     tooltip={it.L('Access your account with full trading permission.')}             hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
-                                        <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password')} tooltip={it.L('Share access to your account without any permission to trade.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <SubmitButton
                                             is_centered
                                             type='submit'
                                             id='btn_submit_new_account'
                                             text={it.L('Create account')}
                                             attributes={{ action: 'new_account' }}
-                                            custom_btn_text={it.L('Back')}
-                                            custom_btn_id='btn_back'
-                                            custom_btn_class='button-secondary'
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <form id='frm_new_account_mam'>
-                            <div id='mv_new_account'>
-                                <div id='view_1' className='center-text'>
-                                    <div className='step-2'>
-                                        <TypeGroup
-                                            types={[
-                                                { type: 'template', desc: 'standard' },
-                                            ]}
-                                        />
-                                    </div>
-                                    <p id='new_account_msg' className='notice-msg center-text invisible' />
-                                    <div className='center-text'>
-                                        <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
-                                            <span>{it.L('Cancel')}</span>
-                                        </a>
-                                        <a id='btn_next' className='button button-disabled' href='javascript:;'>
-                                            <span>{it.L('Next')}</span>
-                                        </a>
-                                    </div>
-                                    <SeparatorLine className='gr-padding-30 margin-left-right-20' />
-                                    <div className='center-text'>
-                                        <h2>{it.L('What is a MAM account?')}</h2>
-                                        <p>{it.L('A MAM account can be assigned to a money manager who will trade on your behalf. You can view all the trades executed by a money manager.')}</p>
-                                        <div className='gr-padding-30 fill-bg-color margin-left-right-20'>
-                                            <a href={it.url_for('multiple-accounts-manager')} target='_blank'>{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id='view_2' className='gr-row invisible'>
-                                    <div className='gr-8 gr-12-m'>
-                                        <FormRow is_two_rows type='text'     id='txt_mam_name'          label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
-                                        <FormRow is_two_rows type='text'     id='txt_manager_id'        label={it.L('Manager ID')} tooltip={it.L('Login ID of money manager who will trade on your behalf')} attributes={{ maxLength: 15, autoComplete: 'off' }} />
-                                        <FormRow is_two_rows type='password' id='txt_mam_main_pass'     label={it.L('Main password (trading access)')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
-                                        <FormRow is_two_rows type='password' id='txt_mam_re_main_pass'  label={it.L('Verify main password')} />
-                                        <FormRow is_two_rows type='password' id='txt_mam_investor_pass' label={it.L('Investor password (read-only access)')} />
-                                        <FormRow type='checkbox' id='chk_tnc' label={it.L('I understand the risks involved and agree to the [_1]Terms & Conditions of the MAM facility[_2]', `<a href="${it.url_for('terms-and-conditions')}#mam" target="_blank">`, '</a>')} />
-                                        <SubmitButton
-                                            no_wrapper
-                                            type='submit'
-                                            id='btn_submit_new_account_mam'
-                                            text={it.L('Create MAM account')}
-                                            attributes={{ action: 'new_account_mam' }}
                                             custom_btn_text={it.L('Back')}
                                             custom_btn_id='btn_back'
                                             custom_btn_class='button-secondary'
@@ -481,19 +403,6 @@ const Metatrader = () => (
                         </div>
                     </div>
 
-                    <form className='center-text' id='frm_revoke_mam'>
-                        <h2>{it.L('Revoke manager')}</h2>
-                        <p>{it.L('You may revoke the current manager\'s access.')}</p>
-                        <p>{it.L('Assigned manager\'s account ID:')}&nbsp;<span id='mam_id' /></p>
-                        <SubmitButton
-                            no_wrapper
-                            type='submit'
-                            id='btn_revoke_mam'
-                            text={it.L('Revoke manager')}
-                            attributes={{ action: 'revoke_mam' }}
-                        />
-                    </form>
-
                     <div id='frm_cashier'>
                         <div className='gr-row gr-row-align-center demo-only invisible'>
                             <Loading id={'demo_topup_loading'} />
@@ -576,21 +485,15 @@ const Metatrader = () => (
                             <br />
                             {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">` , '</a>')}
                         </div>
-                        <div id='msg_switch_financial'>
-                            {it.L('To perform this action, please switch to your [_1] financial account.', it.website_name)}
-                            <br />
-                            {it.L('If you do not have a [_1] financial account yet, please create one.', it.website_name)}
-                        </div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account:')}</span>
-                            <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
                             <ul className='bullet'>
                                 <li className='maltainvest invisible'>{it.L('Upgrade to [_1] [_2]Financial Account[_3].', it.website_name, `<a href="${it.url_for('new_account/maltainvestws')}">`, '</a>')}</li>
                                 <li className='trading_experience invisible'>{it.L('Please [_1]complete the trading experience section[_2] in the financial assessment to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                                 <li className='assessment invisible'>{it.L('Please [_1]complete the financial assessment[_2] to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                                 <li className='tax invisible'>{it.L('Complete your [_1]Tax Information[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                                 <li className='citizen invisible'>{it.L('Select [_1]Citizenship[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
-                                <li className='authenticate invisible'>{it.L('Please [_1]authenticate your account[_2] before creating an MT5 account.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</li>
+                                <li className='authenticate invisible'>{it.L('Please [_1]authenticate your account[_2] before creating an MT5 account.', `<a href="${it.url_for('user/authenticate')}?from_mt5=true">`, '</a>')}</li>
                             </ul>
                         </div>
                         <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please [_1]Authenticate[_2] your Binary account.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</div>
