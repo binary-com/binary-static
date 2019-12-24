@@ -65,9 +65,9 @@ const AccountClosure = () => (
                         is_trading_limit
                     />
                     <ClosureDescription
-                        id='fiat_unset' // only fiat
-                        title={it.L('I want to change my currency instead')}
-                        subtitle={it.L('You may [_2]change your currency[_3] to any of the following as long as you haven\'t made a deposit or created an MT5 account:', '<span id="current_currency_fiat"></span>', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
+                        id='real_unset' // real without currency
+                        title={it.L('I want to set my currency instead')}
+                        subtitle={it.L('You have an account but have not set a currency. You may [_1]choose one[_2] of these as your account currency', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                         list_items={[]}
                     />
                     <ClosureDescription

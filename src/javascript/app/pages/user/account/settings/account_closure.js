@@ -19,7 +19,7 @@ const AccountClosure = (() => {
         $submit_loading,
         $closure_container,
         $trading_limit,
-        $fiat_unset,
+        $real_unset,
         $fiat_1,
         $fiat_2,
         $crypto_1,
@@ -39,7 +39,7 @@ const AccountClosure = (() => {
         $virtual            = $('.virtual');
         $crypto_1           = $('.crypto_1');
         $crypto_2           = $('.crypto_2');
-        $fiat_unset         = $('.fiat_unset');
+        $real_unset         = $('.real_unset');
         $fiat_1             = $('.fiat_1');
         $fiat_2             = $('.fiat_2');
         $form               = $(form_selector);
@@ -49,6 +49,7 @@ const AccountClosure = (() => {
         const is_virtual        = !hasAccountType('real');
         const is_svg            = Client.get('landing_company_shortcode') === 'svg';
         const has_trading_limit = hasAccountType('real');
+        const is_real_unset     = hasOnlyCurrencyType('unset');
         const is_fiat           = hasOnlyCurrencyType('fiat');
         const is_crypto         = hasOnlyCurrencyType('crypto');
         const is_both           = hasCurrencyType('fiat') && hasCurrencyType('crypto');
@@ -66,6 +67,20 @@ const AccountClosure = (() => {
                 });
                 
             } else {
+                if (is_real_unset) {
+                    $real_unset.setVisibility(1);
+                    currencies.forEach((currency) => {
+                        let is_allowed = true;
+                        other_currencies.forEach((other_currency) => {
+                            if (currency === other_currency) {
+                                is_allowed = false;
+                            }
+                        });
+                        if (is_allowed) {
+                            $real_unset.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                        }
+                    });
+                }
                 if (is_fiat) {
                     $fiat_1.setVisibility(1);
                     if (is_svg) {
@@ -73,21 +88,17 @@ const AccountClosure = (() => {
                     }
 
                     let fiat_currency = Client.get('currency');
-                    if (!fiat_currency) {
-                        $fiat_1.setVisibility(0);
-                        $fiat_unset.setVisibility(1);
-                    } else {
-                        if (Client.get('is_virtual')) {
-                            other_currencies.forEach((currency) => {
-                                if (!isCryptocurrency(currency)) {
-                                    fiat_currency = currency;
-                                }
-                            });
-                        }
-    
-                        $('#current_currency_fiat').text(fiat_currency);
-                        $('.current_currency').text(fiat_currency);
+
+                    if (Client.get('is_virtual')) {
+                        other_currencies.forEach((currency) => {
+                            if (!isCryptocurrency(currency)) {
+                                fiat_currency = currency;
+                            }
+                        });
                     }
+
+                    $('#current_currency_fiat').text(fiat_currency);
+                    $('.current_currency').text(fiat_currency);
 
                     currencies.forEach((currency) => {
                         let is_allowed = true;
