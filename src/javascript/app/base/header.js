@@ -3,6 +3,7 @@ const Client                   = require('./client');
 const BinarySocket             = require('./socket');
 const showHidePulser           = require('../common/account_opening').showHidePulser;
 const getLandingCompanyValue   = require('../../_common/base/client_base').getLandingCompanyValue;
+const isAuthenticationAllowed  = require('../../_common/base/client_base').isAuthenticationAllowed;
 const GTM                      = require('../../_common/base/gtm');
 const Login                    = require('../../_common/base/login');
 const SocketCache              = require('../../_common/base/socket_cache');
@@ -279,7 +280,7 @@ const Header = (() => {
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
             const hasVerification = (string) => {
                 const { identity, document, needs_verification } = authentication;
-                if (!identity || !document || !needs_verification) {
+                if (!identity || !document || !needs_verification || !isAuthenticationAllowed()) {
                     return false;
                 }
                 const verification_length = needs_verification.length;
