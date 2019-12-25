@@ -68,7 +68,8 @@ const AccountOpening = (() => {
                 if (residence_value === res.value) {
                     residence_text = res.text;
                     if (res.phone_idd && !$phone.val()) {
-                        $phone.val(`+${res.phone_idd}`);
+                        const phone = State.getResponse('get_settings.phone');
+                        $phone.val(phone || `+${res.phone_idd}`);
                     }
                 }
             });
@@ -137,6 +138,13 @@ const AccountOpening = (() => {
                         .trigger('change');
                     CommonFunctions.getElementById('row_tax_residence').setVisibility(1);
                 }
+
+                Object.keys(response.get_settings).forEach((key) => {
+                    const $el = $(`#${key}`);
+                    if (response.get_settings[key] && $el) {
+                        $el.val(response.get_settings[key]);
+                    }
+                });
             });
             BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         }
