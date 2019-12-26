@@ -80,6 +80,7 @@ const AccountClosure = () => (
                         id='fiat_2' // only fiat
                         title={it.L('I want to open a cryptocurrency account instead')}
                         subtitle={it.L('You can [_1]open a cryptocurrency[_2] account without closing your fiat currency account.', `<a href="${it.url_for('user/accounts')}">`, '</a>')}
+                        list_title={it.L('Choose one or more cryptocurrency accounts:')}
                         list_items={[]}
                     />
                     <ClosureDescription

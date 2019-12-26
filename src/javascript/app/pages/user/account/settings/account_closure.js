@@ -67,8 +67,13 @@ const AccountClosure = (() => {
                 });
                 
             } else {
+                if (has_trading_limit) {
+                    $trading_limit.setVisibility(1);
+                    $('#closing_steps').setVisibility(1);
+                }
                 if (is_real_unset) {
                     $real_unset.setVisibility(1);
+                    $trading_limit.setVisibility(0);
                     currencies.forEach((currency) => {
                         let is_allowed = true;
                         other_currencies.forEach((other_currency) => {
@@ -270,10 +275,6 @@ const AccountClosure = (() => {
                         $crypto_2.setVisibility(0);
                     }
 
-                }
-                if (has_trading_limit) {
-                    $trading_limit.setVisibility(1);
-                    $('#closing_steps').setVisibility(1);
                 }
                 
                 BinarySocket.send({ statement: 1, limit: 1 });
