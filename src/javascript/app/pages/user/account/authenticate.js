@@ -919,7 +919,6 @@ const Authenticate = (() => {
 
     const initAuthentication = async () => {
         const authentication_status = await getAuthenticationStatus();
-        const onfido_token = await getOnfidoServiceToken();
 
         if (!authentication_status || authentication_status.error) {
             $('#authentication_tab').setVisibility(0);
@@ -927,10 +926,11 @@ const Authenticate = (() => {
             return;
         }
         
+        const onfido_token = await getOnfidoServiceToken();
         const { identity, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
-        onfido_unsupported = !!identity.services.onfido.is_country_supported;
+        onfido_unsupported = !identity.services.onfido.is_country_supported;
         const documents_supported = identity.services.onfido.documents_supported;
 
         if (is_fully_authenticated) {
