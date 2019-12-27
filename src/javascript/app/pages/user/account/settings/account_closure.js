@@ -350,6 +350,7 @@ const AccountClosure = (() => {
                     $success_msg.setVisibility(1);
                     $.scrollTo(0, 500);
 
+                    sessionStorage.setItem('closingAccount', 1);
                     setTimeout(() => window.location.href = Url.urlFor('home'), 10000);
                 }
             });

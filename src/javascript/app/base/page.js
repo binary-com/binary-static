@@ -96,7 +96,7 @@ const Page = (() => {
         }
         Contents.onLoad();
 
-        if (sessionStorage.getItem('showLoginPage')) {
+        if (sessionStorage.getItem('showLoginPage') && !sessionStorage.getItem('closingAccount')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
         }
