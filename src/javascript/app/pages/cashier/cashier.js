@@ -43,11 +43,18 @@ const Cashier = (() => {
         });
     };
 
-    const showP2PNote = (currency) => {
-        const is_currency_allowed = currency === 'USD';
+    const showP2PNote = async () => {
+        const is_agent = !(await BinarySocket.send({ p2p_agent_info: 1 })).error;
+        const has_buy = await checkP2PHasOffer('buy');
+        const has_sell = await checkP2PHasOffer('sell');
 
-        $('#dp2p_info').setVisibility(is_currency_allowed);
+        if (is_agent || has_buy || has_sell) $('#dp2p_info').setVisibility(true);
     };
+
+    const checkP2PHasOffer = (offer_type) => new Promise(async (resolve) => {
+        const offer_list_response = await BinarySocket.send({ p2p_offer_list: 1, type: offer_type });
+        resolve(getPropertyValue(offer_list_response, ['p2p_offer_list', 'list']).length);
+    });
 
     const displayTopUpButton = () => {
         BinarySocket.wait('balance').then((response) => {
@@ -155,7 +162,7 @@ const Cashier = (() => {
                         State.getResponse('statement'),
                         State.getResponse('mt5_login_list')
                     );
-                    showP2PNote(currency);
+                    showP2PNote();
                 }
 
                 if (residence) {
