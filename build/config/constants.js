@@ -39,6 +39,7 @@ const release_config = {
 
 const node_modules_paths = {
     binary_style: 'node_modules/@binary-com/binary-style',
+    deriv_p2p   : 'node_modules/@deriv/p2p',
 };
 
 const config = {

@@ -3,6 +3,10 @@
     <head>
         <style id="antiClickjack">body{display:none !important;}</style>
         <script type="text/javascript">
+            /* hardcode redirect for crawlers */
+            if (/ia_archiver|bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) {
+                window.location = '/en/home.html';
+            }
             if (self === top) {
                 var antiClickjack = document.getElementById("antiClickjack");
                 antiClickjack.parentNode.removeChild(antiClickjack);

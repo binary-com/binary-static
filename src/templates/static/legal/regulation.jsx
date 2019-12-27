@@ -118,17 +118,17 @@ const Regulation = () => {
                                     { name: 'Italy',          x: 14.2,  y: 168.5, width: 27.3 },
                                     { name: 'Austria',        x: 100.4, y: 185.3 },
                                     { name: 'Slovenia',       x: 109.4, y: 201.5, width: 37.8 },
-                                    { name: 'Croatia',        x: 142.6, y: 215.2,                       link: 'http://www.hanfa.hr/capital-market/registers/notifications-from-eu-member-states' },
+                                    { name: 'Croatia',        x: 142.6, y: 215.2 },
                                     { name: 'Greece',         x: 199.4, y: 215.3 },
-                                    { name: 'Cyprus',         x: 257.8, y: 221.8, width: (48.4 - 10.6), link: 'http://www.cysec.gov.cy/en-GB/entities/investment-firms/member-states/Cross-Border/43503/' },
+                                    { name: 'Cyprus',         x: 257.8, y: 221.8, width: (48.4 - 10.6) },
                                     { name: 'Bulgaria',       x: 254.3, y: 159.5, width: (48.4 - 10.6) },
                                     { name: 'Romania',        x: 254.3, y: 147.7 },
-                                    { name: 'Hungary',        x: 254.2, y: 135.9,                       link: 'https://alk.mnb.hu/en/left_menu/market_participants/kereso/kereses?ktasearch_value=&ktasearch_label=&ktasearch_prev_value=&pmod=simpleSearch&n=Binary+Investments+%28Europe%29+Ltd&st=0&i=&a=1&x=56&y=8' },
+                                    { name: 'Hungary',        x: 254.2, y: 135.9 },
                                     { name: 'Slovakia',       x: 254.3, y: 124.2 },
                                     { name: 'Czech Republic', x: 238.9, y: 112.4, width: 53.2 },
                                     { name: 'Poland',         x: 258,   y: 95.3,  width: 34.2 },
-                                    { name: 'Lithuania',      x: 252.9, y: 83.5,  width: 39.3,          link: 'https://www.lb.lt/en/sfi-financial-market-participants?query=binary&ff=1' },
-                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2,          link: 'https://www.fktk.lv/en/market/investment-service-providers/service-providers-from-the-eea/freedom-to-provide-services/binary-investments-europe-ltd/' },
+                                    { name: 'Lithuania',      x: 252.9, y: 83.5,  width: 39.3 },
+                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2 },
                                     { name: 'Estonia',        x: 258,   y: 60.0,  width: 34.2 },
                                     { name: 'Finland',        x: 258,   y: 13.9,  width: 34.2 },
                                 ]}
@@ -154,11 +154,9 @@ const Regulation = () => {
                     <div>
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>
-                            <FillBox id='up-down_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' text={it.L('Up/Down')} />
-                            <FillBox id='touch-no-touch_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' text={it.L('Touch/No Touch')} />
-                            <FillBox id='in-and-out_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' text={it.L('In/Out')} />
-                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' text={it.L('CFD')} />
-                            <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' text={it.L('FX')} />
+                            <FillBox id='crypto_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Crypto.pdf`)} target='_blank' text={it.L('Cryptocurrencies')} />
+                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Commodities.pdf`)} target='_blank' text={it.L('CFD')} />
+                            <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Forex.pdf`)} target='_blank' text={it.L('Forex')} />
                         </div>
                     </div>
 

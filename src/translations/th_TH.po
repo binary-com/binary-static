@@ -2,14 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-12-12 06:30\n"
-"Last-Translator: binarycom\n"
+"PO-Revision-Date: 2019-12-20 02:38\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: crowdin.com\n"
 "X-Crowdin-Project: binary-static\n"
 "X-Crowdin-Language: th\n"
 "X-Crowdin-File: messages.pot\n"
@@ -1857,6 +1856,9 @@ msgstr "กลับไปที่เมนู"
 msgid "Back to statement"
 msgstr "กลับไปที่รายงานในบัญชี"
 
+msgid "Back to trading"
+msgstr ""
+
 msgid "Back-End Developer"
 msgstr "ผู้พัฒนา Back-End"
 
@@ -2592,6 +2594,9 @@ msgstr "การถอนเงินของลูกค้า"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "การถอนเงินของลูกค้าปีที่ผ่านมา มีมูลค่าเกือบ 500 ล้านดอลลาร์สหรัฐ ในปีนี้คาดว่า จะมีการถอนเงินของลูกค้ามูลค่ามากกว่า 140 ล้านดอลลาร์สหรัฐ"
 
+msgid "Client's demo accounts will be deleted after 365 days of inactivity."
+msgstr ""
+
 msgid "Client's liability"
 msgstr "หนี้สินของลูกค้า"
 
@@ -2628,7 +2633,7 @@ msgstr "ลูกค้าสามารถสอบถามข้อมูล
 msgid "Clients hereby declare that they are dealing with BIEL outside the scope of their economic or professional activity, and BIEL will therefore treat the client as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
 msgstr "ลูกค้ายืนยันว่า ลูกค้ากำลังติดต่อกับ BIEL นอกจากขอบเขตของกิจกรรมทางเศรษฐกิจ และ วิชาชีพของเขา ดังนั้น BIEL จะปฏิบัติกับลูกค้าเสมือนเป็นลูกค้ารายย่อยส่วนบุคคลเพื่อจุดประสงค์ในการปฏิบัติตามหลักเกณฑ์ EMIR เว้นแต่จะมีการแจ้งเป็นอย่างอื่น"
 
-msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2compliance@binary.com%3 management will decide what information needs to be reported to government officials and through what channels."
+msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2 management will decide what information needs to be reported to government officials and through what channels."
 msgstr ""
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
@@ -3305,6 +3310,9 @@ msgstr "ง. การบริหารลูกค้า"
 
 msgid "D. Client instructions"
 msgstr "D. วิธีการใช้งานของลูกค้า"
+
+msgid "DP2P"
+msgstr ""
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively"
 msgstr "ดัชนีถูกตั้งค่าใหม่รายวัน - ดัชนีถูกตั้งค่าใหม่รายวันจำลองสภาพตลาดที่มีแนวโน้มความตื่นตัวและความซบเซาของตลาดด้วยความผันผวนที่คงที่ ดัชนีกระทิง และดัชนีหมี เริ่มที่ 00:00 GMT ในแต่ละวัน เพื่อจำลองสภาพตลาดกระทิงและตลาดหมีตามลำดับ"
@@ -4370,9 +4378,6 @@ msgstr "ฉ. มาร์จินและเลเวอเลจ"
 
 msgid "FIX API"
 msgstr "FIX API"
-
-msgid "FX"
-msgstr "FX"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -5925,9 +5930,6 @@ msgstr "นักลงทุน"
 msgid "Investor Compensation Scheme"
 msgstr "แผนผลประโยชน์ของนักลงทุน"
 
-msgid "Investor password"
-msgstr "รหัสผ่านของผู้ลงทุน"
-
 msgid "Ireland"
 msgstr "ประเทศไอร์แลนด์"
 
@@ -7164,6 +7166,9 @@ msgstr "การซื้อขายแบบไม่แตะเส้น"
 msgid "No advice"
 msgstr "ไม่มีคำแนะนำ"
 
+msgid "No authentication required"
+msgstr ""
+
 msgid "No bribery"
 msgstr ""
 
@@ -7478,6 +7483,9 @@ msgstr "เปิดสัญญา"
 
 msgid "Open positions"
 msgstr "ตำแหน่งงานที่เปิดรับ"
+
+msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
+msgstr ""
 
 msgid "Open-Source Projects"
 msgstr "โครงการโอเพ่นซอส"
@@ -8585,6 +8593,9 @@ msgstr "มาตรฐานจริง"
 
 msgid "Real Synthetic Indices"
 msgstr "ดัชนีสังเคราะห์จริง"
+
+msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "บัญชีเงินจริง"
@@ -11675,6 +11686,9 @@ msgstr "สภาพคล่องในระดับสูง"
 msgid "Top-up successful"
 msgstr "การเติมเงินสำเร็จ"
 
+msgid "TopFX"
+msgstr ""
+
 msgid "Total"
 msgstr "ผลรวม"
 
@@ -13129,6 +13143,9 @@ msgstr "ท่านสามารถใช้ตัวแทนรับชำ
 
 msgid "You did not change anything."
 msgstr "ท่านไม่ได้แก้ไขค่าใดๆ"
+
+msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
+msgstr ""
 
 msgid "You expect the %1 to fall in value so you can buy it back at a lower price (and make a profit)"
 msgstr "ท่านคาดว่า มูลค่าของ %1จะตกลง ดังนั้นท่านจะได้ซื้อคืนที่ราคาที่ต่ำกว่า (และทำกำไร)"
