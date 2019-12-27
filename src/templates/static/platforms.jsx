@@ -200,7 +200,7 @@ const Platform = () => (
                                 header={it.L('DP2P app')}
                                 description={it.L('Peer-to-peer fiat exchange')}
                                 text={it.L('The fast, easy, and convenient way to make deposits and withdrawals with zero commission fees.')}
-                                url='https://to-be-announced.apk'
+                                url=''
                                 button_text={it.L('Download DP2P app')}
                                 download='true'
                             /> */}
