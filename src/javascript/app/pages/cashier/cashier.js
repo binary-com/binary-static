@@ -44,8 +44,9 @@ const Cashier = (() => {
     };
 
     const showP2PNote = (currency) => {
-        const is_usd_account = currency === 'USD';
-        $('#dp2p_info').setVisibility(is_usd_account);
+        const is_currency_allowed = currency === 'USD';
+
+        $('#dp2p_info').setVisibility(is_currency_allowed);
     };
 
     const displayTopUpButton = () => {
