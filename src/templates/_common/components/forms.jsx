@@ -19,7 +19,7 @@ export const FormRow = ({
     row_class,
     row_id,
     sub_row_class,
-    label_row_id,
+    label_row_class,
     is_two_rows,
     is_bold,
     tooltip,
@@ -42,7 +42,7 @@ export const FormRow = ({
         if (type === 'radio') {
             return (
                 <div id={id} className={className}>
-                    {options.map(({ value, label: label_text, data_balloon_text }, i) => {
+                    {options.map(({ value, label: label_text, data_balloon_text, textfield_id }, i) => {
                         const option_id = `${id}_option_${i}`;
                         return (
                             <div key={value}>
@@ -58,6 +58,12 @@ export const FormRow = ({
                                         {label_text}
                                     </span>
                                 </label>
+                                {textfield_id &&
+                                    <input
+                                        type='text'
+                                        id={textfield_id}
+                                    />
+                                }
                             </div>
                         );
                     })}
@@ -125,7 +131,7 @@ export const FormRow = ({
             className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
             id={row_id}
         >
-            <div className={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id}>
+            <div className={`${is_two_rows ? `gr-12 ${label_row_class}` : `gr-4 gr-12-m ${label_row_class}`}`}>
                 <label htmlFor={type !== 'label' ? id : undefined}>
                     {tooltip ?
                         <span data-balloon-length='xlarge' data-balloon={tooltip}>
@@ -162,6 +168,7 @@ export const SubmitButton = ({
     custom_btn_class,
     custom_btn_href,
     custom_btn_id,
+    custom_msg_text,
 }) => {
     const content =
         <React.Fragment>
@@ -180,6 +187,9 @@ export const SubmitButton = ({
                     >
                         <span className='button'>{custom_btn_text}</span>
                     </a>
+                }
+                { custom_msg_text &&
+                    <p className={`${is_centered ? 'center-text' : ''}`}>{custom_msg_text}</p>
                 }
                 <button
                     id={id || 'btn_submit'}

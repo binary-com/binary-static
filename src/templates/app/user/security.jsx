@@ -53,6 +53,8 @@ const Security = () => (
                 <Column url='authorised_appsws' image='applications' header={it.L('Authorised Applications')} text={it.L('Manage your authorised applications.')} />
 
                 <Column url='two_factor_authentication' image='2fa' header={it.L('Two-Factor Authentication')} text={it.L('Enable two-factor authentication for an extra layer of security.')} />
+
+                <Column url='closure' image='close' header={it.L('Account Closure')} text={it.L('Close your [_1] account.', it.website_name)} />
             </div>
         </div>
     </React.Fragment>
