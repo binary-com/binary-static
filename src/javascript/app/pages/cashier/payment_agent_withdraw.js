@@ -22,16 +22,18 @@ const PaymentAgentWithdraw = (() => {
         form   : '#viewForm',
     };
     const field_ids = {
-        ddl_agents: '#ddlAgents',
-        frm_msg   : '#form-error',
-        txt_agents: '#txtAgents',
-        txt_amount: '#txtAmount',
+        ddl_agents     : '#ddlAgents',
+        frm_msg        : '#form-error',
+        txt_agents     : '#txtAgents',
+        txt_amount     : '#txtAmount',
+        txt_payment_ref: '#txtPaymentRef',
     };
 
     let $agent_error,
         $ddl_agents,
         $txt_agents,
         $txt_amount,
+        $txt_payment_ref,
         $views,
         agent_name,
         agent_website,
@@ -91,14 +93,16 @@ const PaymentAgentWithdraw = (() => {
             const min = () => getAPILimit('min');
             const max = () => getAPILimit('max');
 
-            $agent_error = $('.row-agent').find('.error-msg');
-            $txt_agents  = $(field_ids.txt_agents);
-            $txt_amount  = $(field_ids.txt_amount);
+            $agent_error     = $('.row-agent').find('.error-msg');
+            $txt_agents      = $(field_ids.txt_agents);
+            $txt_amount      = $(field_ids.txt_amount);
+            $txt_payment_ref = $(field_ids.txt_payment_ref);
 
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
             FormManager.init(form_id, [
-                { selector: field_ids.txt_amount, validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_amount,      validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_payment_ref, validations: [['regular', { regex: /^[0-9A-Za-z .,'-]{0,30}$/, message: localize('Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed.') }], ['length', { min: 0, max: 30 }]],                 request_field: 'description' },
 
                 { request_field: 'currency',              value: currency },
                 { request_field: 'paymentagent_loginid',  value: getPALoginID },
@@ -134,8 +138,18 @@ const PaymentAgentWithdraw = (() => {
                 validateAmount();
             });
 
+            $txt_payment_ref.on('change', () => {
+                validatePaymentRef();
+            });
+
             const validateAmount = () => {
                 if ($txt_amount.val()) {
+                    Validation.validate(form_id);
+                }
+            };
+
+            const validatePaymentRef = () => {
+                if ($txt_payment_ref.val()) {
                     Validation.validate(form_id);
                 }
             };
@@ -174,6 +188,11 @@ const PaymentAgentWithdraw = (() => {
                 $('#lblAgentName').text(agent_name);
                 $('#lblCurrency').text(request.currency);
                 $('#lblAmount').text(getNumberFormat(request.amount, request.currency));
+
+                if (request.description) {
+                    $('#lblPaymentRef').text(request.description);
+                    $('#lblPaymentRefContainer').setVisibility(1);
+                }
 
                 FormManager.init(view_ids.confirm, [
                     { request_field: 'paymentagent_loginid',  value: request.paymentagent_loginid },
