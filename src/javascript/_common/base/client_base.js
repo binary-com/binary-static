@@ -112,6 +112,20 @@ const ClientBase = (() => {
             !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
+    const hasOnlyCurrencyType = (type = 'fiat') => {
+        const loginids = getAllLoginids();
+        const real_loginid = new RegExp('^(MX|MF|MLT|CR|FOG)[0-9]+$', 'i');
+        const only_real_loginids = loginids.filter((loginid) => real_loginid.test(loginid));
+        if (type === 'crypto') {
+            return only_real_loginids.every(loginid => isCryptocurrency(get('currency', loginid)));
+        }
+        if (type === 'unset') {
+            return only_real_loginids.every(loginid => !get('currency', loginid));
+        }
+
+        return only_real_loginids.every(loginid => get('currency', loginid) && !isCryptocurrency(get('currency', loginid)));
+    };
+
     const TypesMapConfig = (() => {
         let types_map_config;
 
@@ -343,6 +357,7 @@ const ClientBase = (() => {
         getAccountOfType,
         hasAccountType,
         hasCurrencyType,
+        hasOnlyCurrencyType,
         getAccountTitle,
         responseAuthorize,
         shouldAcceptTnc,
