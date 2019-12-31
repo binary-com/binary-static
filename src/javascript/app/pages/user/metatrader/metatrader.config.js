@@ -276,6 +276,8 @@ const MetaTraderConfig = (() => {
                 BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                     Header.displayAccountStatus();
                 });
+
+                $('#financial_authenticate_msg').setVisibility(isAuthenticationPromptNeeded());
             },
         },
 
@@ -465,8 +467,14 @@ const MetaTraderConfig = (() => {
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
     const isAuthenticationPromptNeeded = () => {
-        const get_account_status = State.getResponse('get_account_status');
-        return get_account_status ? get_account_status.authentication.needs_verification.length : false;
+        const authentication = State.getResponse('get_account_status.authentication');
+        const need_verification = authentication.needs_verification.length;
+        const { identity } = authentication;
+        const is_rejected_or_expired = identity.status === 'rejected' || identity.status === 'expired';
+
+        if (is_rejected_or_expired) return false;
+
+        return need_verification.length;
     };
 
     return {

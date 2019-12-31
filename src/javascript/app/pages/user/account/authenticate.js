@@ -25,6 +25,7 @@ const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
     let onfido_unsupported       = false;
+    let from_mt5                 = false;
     let file_checks          = {};
     let file_checks_uns      = {};
     let onfido,
@@ -992,9 +993,12 @@ const Authenticate = (() => {
     const onLoad = async () => {
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
-        const is_from_mt5 = Url.param('from_mt5');
+        
+        if (!from_mt5) {
+            from_mt5 = Url.param('from_mt5');
+        }
 
-        if (!isAuthenticationAllowed() && !is_from_mt5) {
+        if (!isAuthenticationAllowed() && !from_mt5) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
             $('#authentication_unneeded').setVisibility(1);
@@ -1005,7 +1009,7 @@ const Authenticate = (() => {
             initTab();
             initAuthentication();
 
-            if (is_from_mt5) {
+            if (from_mt5) {
                 $('#authenticate_only_real_mt5_advanced').setVisibility(1);
             }
         } else {
