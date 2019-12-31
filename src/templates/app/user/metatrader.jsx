@@ -76,7 +76,7 @@ const Metatrader = () => (
             </div>
             <p id='page_msg' className='notice-msg center-text invisible' />
             <p id='financial_authenticate_msg' className='notice-msg center-text invisible'>
-                {it.L('Please [_1]authenticate[_2] your account to continue trading.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}
+                {it.L('Please [_1]authenticate[_2] your account to continue trading.', `<a href="${it.url_for('user/authenticate')}?from_mt5=true">`, '</a>')}
             </p>
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
@@ -496,7 +496,7 @@ const Metatrader = () => (
                                 <li className='authenticate invisible'>{it.L('Please [_1]authenticate your account[_2] before creating an MT5 account.', `<a href="${it.url_for('user/authenticate')}?from_mt5=true">`, '</a>')}</li>
                             </ul>
                         </div>
-                        <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please [_1]Authenticate[_2] your Binary account.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</div>
+                        <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please [_1]Authenticate[_2] your Binary account.', `<a href="${it.url_for('user/authenticate')}?from_mt5=true">`, '</a>')}</div>
                     </div>
                 </div>
             </div>
