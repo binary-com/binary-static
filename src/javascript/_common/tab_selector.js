@@ -156,6 +156,7 @@ const TabSelector = (() => {
 
     const onUnload = () => {
         window.removeEventListener('resize', repositionSelector);
+        obj_tabs = {};
 
         applyToAllElements('.tm-li', (element) => {
             element.removeEventListener('click', slideSelectorOnMenuClick);

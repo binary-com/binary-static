@@ -24,6 +24,7 @@ const showLoadingImage        = require('../../../../_common/utility').showLoadi
 const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
+    let is_from_mt5              = false;
     let onfido_unsupported       = false;
     let file_checks          = {};
     let file_checks_uns      = {};
@@ -998,9 +999,10 @@ const Authenticate = (() => {
     };
 
     const onLoad = async () => {
+        is_from_mt5 = Url.paramsHash().is_from_mt5;
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
-        if (!isAuthenticationAllowed()) {
+        if (!isAuthenticationAllowed() && !is_from_mt5) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
             $('#authentication_unneeded').setVisibility(1);
@@ -1010,7 +1012,9 @@ const Authenticate = (() => {
         if (is_required || has_svg_account){
             initTab();
             initAuthentication();
-            $('#authenticate_only_real_mt5_advanced').setVisibility(1);
+            if (is_from_mt5) {
+                $('#authenticate_only_real_mt5_advanced').setVisibility(1);
+            }
         } else {
             $('#authentication_tab').setVisibility(0);
             $('#not_required_msg').setVisibility(1);
@@ -1024,6 +1028,7 @@ const Authenticate = (() => {
         }
 
         TabSelector.onUnload();
+        is_from_mt5 = false;
     };
 
     return {
