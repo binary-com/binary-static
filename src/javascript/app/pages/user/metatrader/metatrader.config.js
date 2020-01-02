@@ -470,7 +470,7 @@ const MetaTraderConfig = (() => {
         const authentication = State.getResponse('get_account_status.authentication');
         const need_verification = authentication.needs_verification.length;
         const { identity } = authentication;
-        const is_rejected_or_expired = identity.status === 'rejected' || identity.status === 'expired';
+        const is_rejected_or_expired = /^(rejected|expired)$/.test(authentication.identity);
 
         if (is_rejected_or_expired) return false;
 
