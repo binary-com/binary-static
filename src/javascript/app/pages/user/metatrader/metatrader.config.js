@@ -188,6 +188,7 @@ const MetaTraderConfig = (() => {
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
                                 $message.find('.authenticate').setVisibility(1);
+                                setLabuanAdvancedIntention();
                                 is_ok = false;
                             }
 
@@ -220,6 +221,19 @@ const MetaTraderConfig = (() => {
             }
         })
     );
+
+    const setLabuanAdvancedIntention = () => {
+        const req = {
+            mt5_new_account : 1,
+            account_type    : 'financial',
+            email           : Client.get('email'),
+            leverage        : 100,
+            name            : 'test real labuan advanced',
+            mainPassword    : 'Test1234',
+            mt5_account_type: 'advanced',
+        };
+        BinarySocket.send(req);
+    };
 
     const actions_info = {
         new_account: {

@@ -993,11 +993,7 @@ const Authenticate = (() => {
     const onLoad = async () => {
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
-        if (!is_from_mt5) {
-            is_from_mt5 = Url.param('is_from_mt5');
-        }
-
-        if (!isAuthenticationAllowed() && !is_from_mt5) {
+        if (!isAuthenticationAllowed()) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
             $('#authentication_unneeded').setVisibility(1);
@@ -1007,10 +1003,7 @@ const Authenticate = (() => {
         if (is_required || has_svg_account){
             initTab();
             initAuthentication();
-
-            if (is_from_mt5) {
-                $('#authenticate_only_real_mt5_advanced').setVisibility(1);
-            }
+            $('#authenticate_only_real_mt5_advanced').setVisibility(1);
         } else {
             $('#authentication_tab').setVisibility(0);
             $('#not_required_msg').setVisibility(1);
