@@ -600,7 +600,7 @@ const PaymentMethods = () => {
             </div>
 
             <div className='gr-padding-10'>
-                <p className='hint'>Note:</p>
+                <p className='hint'>{it.L('Note:')}</p>
                 <ol>
                     <li className='hint' data-show='-eucountry'>{it.L('The minimum amount for withdrawal will vary depending on the latest exchange rates.')}</li>
                     <li className='hint'>{it.L('Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise.')}</li>
