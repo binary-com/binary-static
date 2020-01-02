@@ -1,6 +1,5 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
-const BinarySocket       = require('../../../base/socket');
 const Dialog           = require('../../../common/attach_dom/dialog');
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');

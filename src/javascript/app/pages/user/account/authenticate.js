@@ -24,7 +24,6 @@ const showLoadingImage        = require('../../../../_common/utility').showLoadi
 const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
-    let is_from_mt5              = false;
     let onfido_unsupported       = false;
     let file_checks          = {};
     let file_checks_uns      = {};
