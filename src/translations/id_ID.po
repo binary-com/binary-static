@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-12-20 02:37\n"
+"PO-Revision-Date: 2020-01-02 02:04\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -425,6 +425,9 @@ msgstr "Sejarah %1 yang luar biasa"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pada akun virtual)."
 
+msgid "%1Choose a currency%2 for your fiat currency account:"
+msgstr ""
+
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Hubungi kami%2 untuk mengatur tanggal dan waktu panggilan video."
 
@@ -439,6 +442,9 @@ msgstr "%1Kelola akun Anda%2"
 
 msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1Tidak, rubah mata uang akun fiat saya sekarang%2"
+
+msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
+msgstr ""
 
 msgid "%1Return to trading page%2"
 msgstr "%1Kembali ke halaman trading%2"
@@ -917,6 +923,9 @@ msgstr "Saldo Akun"
 msgid "Account Categorisation"
 msgstr "Kategorisasi Akun"
 
+msgid "Account Closure"
+msgstr ""
+
 msgid "Account Deposit Currency"
 msgstr "Mata Uang Akun Deposit"
 
@@ -1039,6 +1048,9 @@ msgstr "Menambah dana"
 
 msgid "Additional business exposure:"
 msgstr "Paparan bisnis tambahan:"
+
+msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
+msgstr ""
 
 msgid "Address"
 msgstr "Alamat"
@@ -1240,9 +1252,6 @@ msgstr "Semua versi Android"
 
 msgid "All versions for iOS"
 msgstr "Semua versi iOS"
-
-msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
-msgstr "Semua deposit dan penarikan akan diproses oleh %1 dalam tempo 24 jam. Namun, mungkin akan terdapat proses lebih lanjut yang diperlukan oleh bank Anda atau layanan transfer dana."
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Memberi Klien untuk mendeposit dengan jumlah lebih rendah (mata uang lokal)"
@@ -2357,6 +2366,9 @@ msgstr "Dapat digunakan untuk mendaftar akun, menyeting, mengelola penggunaan to
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "Dapat digunakan untuk melihat aktivitas akun, termasuk pengaturan, batas, saldo, sejarah pembelian trading, dan banyak lagi."
 
+msgid "Can be used to view the trading history of an account."
+msgstr ""
+
 msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
 msgstr "Dapat digunakan untuk menarik dana ke agen pembayaran dan mentransfer dana antar akun."
 
@@ -2492,6 +2504,9 @@ msgstr "Memeriksa"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Kepala Eksekutif, Pejabat Senior dan Legislator"
 
+msgid "Choose a currency for your real account:"
+msgstr ""
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Pilih durasi kontrak dari 10 detik hingga 365 hari."
 
@@ -2518,6 +2533,9 @@ msgstr "Pilih dari satu juta lebih kemungkinan variasi trading kapan saja, dan s
 
 msgid "Choose from three main trade types:"
 msgstr "Pilih dari tiga jenis trading utama:"
+
+msgid "Choose one or more cryptocurrency accounts:"
+msgstr ""
 
 msgid "Choose scopes:"
 msgstr "Pilih cangkupan:"
@@ -2687,6 +2705,12 @@ msgstr "Waktu Tutup"
 msgid "Close all or any of the client's Open Positions at a closing level that is reasonably available"
 msgstr "Menutup semua atau salah satu Open Posisi klien pada tingkat penutupan yang cukup tersedia"
 
+msgid "Close my account"
+msgstr ""
+
+msgid "Close your %1 account."
+msgstr ""
+
 msgid "Close-Low"
 msgstr "Close-Low"
 
@@ -2719,6 +2743,9 @@ msgstr "Menutup atau menutup sebagian dari Open Posisi klien berdasarkan harga y
 
 msgid "Closing price"
 msgstr "Harga penutupan"
+
+msgid "Closing your %1 accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts."
+msgstr ""
 
 msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
 msgstr "Layanan DNS publik Cloudfare memberi Anda penjelajahan web yang lebih cepat dan aman."
@@ -4502,6 +4529,9 @@ msgstr "Persetujuan pada risiko keuangan diperlukan. Silahkan hubungi %1customer
 msgid "Financial assessment"
 msgstr "Penilaian keuangan"
 
+msgid "Financial concerns"
+msgstr ""
+
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Derivatif finansial yang memungkinkan Anda bertrading pada pergerakan aset dasar."
 
@@ -4895,6 +4925,15 @@ msgstr "Kunjungi dashboard MetaTrader 5"
 msgid "Go to statement"
 msgstr "Kunjungi pernyataan"
 
+msgid "Go to the %1Cashier%2 to withdraw funds from your %3 accounts."
+msgstr ""
+
+msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
+msgstr ""
+
+msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
+msgstr ""
+
 msgid "Go with the leader"
 msgstr "Ikuti pemimpin"
 
@@ -5204,8 +5243,35 @@ msgstr "Saya telah membaca dan menyetujui %1syarat dan kondisi%2 situs ini."
 msgid "I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information."
 msgstr "Dengan ini saya mengkonfirmasikan bahwa informasi pajak yang saya berikan adalah benar dan lengkap. Saya juga akan menginformasikan kepada Binary Investments (Europe) Ltd. jika terdapat perubahan pada informasi ini."
 
+msgid "I want to change my affiliate instead"
+msgstr ""
+
+msgid "I want to change my currency instead"
+msgstr ""
+
+msgid "I want to close my account"
+msgstr ""
+
+msgid "I want to limit my trading activity instead"
+msgstr ""
+
+msgid "I want to open a cryptocurrency account instead"
+msgstr ""
+
+msgid "I want to open a fiat currency account instead"
+msgstr ""
+
+msgid "I want to open a real account instead"
+msgstr ""
+
+msgid "I want to open another cryptocurrency account instead"
+msgstr ""
+
 msgid "I want to reapply"
 msgstr "Saya ingin mendaftar kembali"
+
+msgid "I want to set my currency instead"
+msgstr ""
 
 msgid "I would like to be treated as a professional client."
 msgstr "Saya ingin diperlakukan sebagai klien profesional."
@@ -5430,6 +5496,9 @@ msgstr "Jika Anda belum menerima e-mail setelah beberapa menit mendatang, silaka
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Jika Anda menemukan kerentanan pada %1kode open-source%2 kami, silahkan ajukan permohonan pada GitHub."
 
+msgid "If you have opened positions in your MT5 account, please close them too."
+msgstr ""
+
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Jika Anda menjaga posisi Anda terbuka dalam semalam, penyesuaian bunga akan dilakukan ke akun trading Anda sebagai indikasi biaya yang diperlukan untuk menjaga posisi Anda tetap terbuka."
 
@@ -5549,6 +5618,9 @@ msgstr "Jika anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <stron
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong>waktu berakhir</strong> adalah waktu yang dipilih."
+
+msgid "If you want to change your affiliate, contact %1affiliates@binary.com%2 for more information on how you can do this."
+msgstr ""
 
 msgid "If you wish to seek guidance on any aspect these Business Principles, you should contact %1compliance@binary.com%2"
 msgstr ""
@@ -7237,6 +7309,9 @@ msgstr "Tidak diumumkan untuk mata uang ini."
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "Tidak sama sekali. Bergabung dengan program afiliasi kami benar-benar gratis dan akan selalu akan seperti itu."
 
+msgid "Not interested in trading"
+msgstr ""
+
 msgid "Not sure how margin works? Read our margin policy and learn how to calculate the margin for our CFDs."
 msgstr "Tidak yakin mengenai cara kerja margin? Baca kebijakan margin kami dan pelajari cara menghitung margin untuk CFD Anda."
 
@@ -7251,9 +7326,6 @@ msgstr "Tidak yakin mengenai cara kerja margin? Baca kebijakan margin kami dan p
 
 msgid "Note"
 msgstr "Catatan"
-
-msgid "Note : The minimum amount for withdrawal will vary depending on the latest exchange rates."
-msgstr "Catatan: Jumlah minimum penarikan adalah bervariasi tergantung pada nilai tukar terbaru."
 
 msgid "Note:"
 msgstr "Catatan:"
@@ -7435,6 +7507,9 @@ msgstr "Hanya huruf, angka, spasi, dan karakter khusus yang diperbolehkan: %1"
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "Hanya huruf, angka, ruang, tanda hubung, periode, dan apostrof diperbolehkan."
 
+msgid "Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed."
+msgstr ""
+
 msgid "Only letters, numbers, space, underscore, and hyphen are allowed for ID number (%1)."
 msgstr "Hanya huruf, angka, spasi, garis bawah, dan tanda hubung yang diizinkan untuk nomor Identitas (%1)."
 
@@ -7510,6 +7585,9 @@ msgstr "Harge pembukaan"
 msgid "Opens"
 msgstr "Dibuka"
 
+msgid "Optional: type in your payment reference"
+msgstr ""
+
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "Opsi yang memberi Anda kesempatan untuk \"melihat kembali\" nilai optimal tinggi dan rendah yang telah dicapai pasar untuk menentukan jumlah hasil."
 
@@ -7560,6 +7638,9 @@ msgstr "Risiko lain: Terdapat risiko lain yang terkait dengan memperdagangkan Pr
 
 msgid "Other than the payment of Commissions, Binary is not liable to the Introducing Broker or their Associates or any other person for any matter arising out of or in relation to this Agreement whether under the law of tort, contract, or equity or otherwise for any loss."
 msgstr "Selain dari pembayaran Komisi, Binary tidak bertanggung jawab kepada Introducing Broker atau Asosiasi mereka atau orang lain apa pun atas masalah apa pun yang timbul dari atau sehubungan dengan Perjanjian ini baik berdasarkan hukum gugatan, kontrak, atau ekuitas atau dengan kata lain atas kerugian."
+
+msgid "Others (please specify)"
+msgstr ""
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "Tim Accounting &amp; Payments mengelola berbagai macam rekening bank dan sistem e-currency kami, serta volume transaksi besar yang terjadi setiap hari."
@@ -7782,6 +7863,9 @@ msgstr "Metode pembayaran"
 
 msgid "Payment of commission earned for the previous calendar month will be made as soon as practicable after the 15th day of each month."
 msgstr "Pembayaran komisi yang diperoleh untuk bulan kalender sebelumnya akan dilakukan sesegera mungkin setelah hari ke 15 setiap bulan."
+
+msgid "Payment reference"
+msgstr ""
 
 msgid "Payments"
 msgstr "Pembayaran"
@@ -8080,6 +8164,9 @@ msgstr "Tolong pilih"
 msgid "Please select a country"
 msgstr "Silakan pilih negara"
 
+msgid "Please select a reason."
+msgstr ""
+
 msgid "Please select a valid time."
 msgstr "Silahkan pilih waktu yang berlaku."
 
@@ -8110,6 +8197,9 @@ msgstr "Silahkan susun batasan turnover %130-hari%2 Anda untuk mengakses kasir."
 msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
 msgstr "Pilih %1batasan 30-hari total pembelian%2 untuk menghapus batasan deposit."
 
+msgid "Please specify the reasons for closing your accounts"
+msgstr ""
+
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 
@@ -8130,6 +8220,9 @@ msgstr "Mohon diperhatikan bahwa nilai tukar kami juga tergantung pada waktu dan
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "Mohon perhatikan bahwa harga swap kami juga tergantung pada waktu dan hari Anda memegang posisi berjalan:"
+
+msgid "Please tell us why you are closing your account (please select one):"
+msgstr ""
 
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "Mohon untuk menunggu konfirmasi. Tim Customer Support kami akan menghubungi Anda kembali mengenai status akun Anda melalui email dalam empat jam mendatang."
@@ -8247,6 +8340,9 @@ msgstr "Analisa arah<br />dan beli"
 
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Prediksikan angka desimal terakhir dari harga spot dengan Digit. Ada tiga jenis perdagangan Digit:"
+
+msgid "Prefer another trading website"
+msgstr ""
 
 msgid "Preferences:"
 msgstr "Preferensi:"
@@ -9457,6 +9553,9 @@ msgstr "Langkah 1"
 msgid "Step 1: Choose demo or real account"
 msgstr "Langkah 1: Pilih akun demo atau riil"
 
+msgid "Step 1: Close all open positions"
+msgstr ""
+
 msgid "Step 1: Define your position"
 msgstr "Langkah 1: Tentukan posisi Anda"
 
@@ -9474,6 +9573,9 @@ msgstr "Langkah 2: Dapatkan harga Anda"
 
 msgid "Step 2: Understand when to buy and when to sell"
 msgstr "Langkah 2: Pahami kapan harus membeli dan menjual"
+
+msgid "Step 2: Withdraw your funds"
+msgstr ""
 
 msgid "Step 3"
 msgstr "Langkah 3"
@@ -11030,6 +11132,9 @@ msgstr "Kerugian maksimum yang mungkin ditanggung oleh klien adalah jumlah dana 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Jumlah maksimum token (%1) telah tercapai."
 
+msgid "The minimum amount for withdrawal will vary depending on the latest exchange rates."
+msgstr ""
+
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Jumlah minimum untuk menggunakan fasilitas transfer antar akun adalah %1."
 
@@ -11107,6 +11212,9 @@ msgstr "Ketentuan layanan trading yang diuraikan dalam perjanjian ini menggunaka
 
 msgid "The provisions of this agreement or any orders and any applicable laws will not be breached or violated."
 msgstr "Ketentuan perjanjian ini atau perintah apa pun dan hukum apa pun yang berlaku tidak akan dilanggar atau disalahgunakan."
+
+msgid "The reason should be between 5 and 250 characters"
+msgstr ""
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
 msgstr "Transfer yang diminta akan mengurangi Saldo Akun klien menjadi berkurang dari Margin yang diperlukan untuk Open Posisi klien."
@@ -11498,6 +11606,9 @@ msgstr "Penawaran ini tidak dapat digunakan bersamaan pada penawaran lainnya."
 msgid "This page is only available to logged out clients."
 msgstr "Halaman ini hanya tersedia untuk akses keluar klien."
 
+msgid "This page will redirect to the %1 homepage after 10 seconds."
+msgstr ""
+
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "Kebijakan ini berlaku untuk klien yang diklasifikasikan sebagai ritel atau profesional. Klien yang diklasifikasikan sebagai mitra yang memenuhi syarat berada di luar ruang lingkup kebijakan ini."
 
@@ -11594,6 +11705,9 @@ msgstr "Untuk dapat bertrading instrumen OTC yang tersedia pada platform trading
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr "Untuk merubah nama, tanggal lahir, negara domisili, email atau informasi pajak Anda, silahkan hubungi %1Customer Support%2."
 
+msgid "To close your account, complete the following steps:"
+msgstr ""
+
 msgid "To create a MetaTrader 5 account:"
 msgstr "Untuk mendaftar akun MetaTrader 5:"
 
@@ -11665,6 +11779,9 @@ msgstr "Token"
 
 msgid "Token name"
 msgstr "Nama token"
+
+msgid "Too addictive"
+msgstr ""
 
 msgid "Top Up Virtual Account"
 msgstr "Isi Ulang Akun Virtual"
@@ -11887,6 +12004,9 @@ msgstr "Trading guru"
 
 msgid "Trading in binary options is speculative and involves a high degree of risk that can result in the loss of the client's entire investment. Therefore, trading in binary options is appropriate only for persons that understand and are willing to assume the economic, legal, and other risks involved in such transactions. The client should be satisfied that binary options trading is suitable for the client in light of the client's investment circumstances and attitude towards risk before trading. The client should not engage in speculative binary options trading unless the client understands the basic aspects of such trading and its risks. If the client is in any doubt as to whether Binary Option trading is appropriate and suitable for the client, the client should seek independent advice from an investment consulting professional. %1 does not provide such advice. It is the client's responsibility, taking into account the client's personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in binary options with %1 and prior to making any individual order. Where the client does not understand the risks involved in applying for a trading account with %1 or in making any individual order, the client should seek advice and consultation from an independent investment advisor. If the client continues to not understand the risks involved in trading in binary options, the client should not trade at all."
 msgstr "Trading opsi binary bersifat spekulatif dan melibatkan tingkat risiko tinggi yang dapat mengakibatkan hilangnya seluruh investasi klien. Oleh karena itu, trading opsi binary hanya sesuai untuk orang yang memahami dan bersedia menanggung risiko ekonomi, hukum, dan risiko lain yang terlibat dalam transaksi tersebut. Klien harus memahami bahwa trading opsi binary hanya cocok untuk klien yang mengetahui dengan tepat keadaan investasi dan memahami dengan penuh berbagai risiko sebelum melakukan trading. Klien tidak dapat terlibat pada trading opsi binary yang spekulatif kecuali jika klien sudah memahami aspek dasar dari trading tersebut dan berbagai risikonya. Jika klien ragu apakah trading opsi binary sesuai dan cocok untuk klien, maka klien perlu mencari saran independen dari profesional konsultan investasi. %1 tidak menyediakan saran sedemikian. Merupakan tanggung jawab klien, untuk mempertimbangkan keadaan pribadi klien dan sumber daya investasi, untuk berhati-hati dan membuat pertimbangan secara mandiri, baik sebelum mengajukan permohonan untuk terlibat dalam opsi binary pada %1 dan sebelum membuat order individu. Jika klien tidak memahami risiko yang terlibat dalam pengajuan akun trading pada %1 atau dalam membuat pesanan individu, klien harus mencari saran dan konsultasi dari penasihat investasi independen. Jika klien terus tidak memahami risiko yang terlibat dalam trading opsi binary, klien tidak dapat melakukan trading sama sekali."
+
+msgid "Trading information"
+msgstr ""
 
 msgid "Trading is unavailable at this time."
 msgstr "Trading tidak tersedia untuk saat ini."
@@ -12545,6 +12665,9 @@ msgstr "Kami menghargai anggota tim yang positif yang dapat bekerja sama untuk m
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level"
 msgstr "Kami akan terus menutup open position hingga level margin Anda menjadi lebih tinggi dari level stop out"
 
+msgid "We will inform you when your account needs to be authenticated."
+msgstr ""
+
 msgid "We will not disclose any confidential information that comes into our possession through our client relationships unless required to do so by a regulator or law enforcement authority."
 msgstr ""
 
@@ -13103,6 +13226,12 @@ msgstr "Anda bertanggung jawab untuk mengurangi risiko dan penyalahgunaan yang k
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "Anda menjual mata uang dasar dan membeli mata uang kutipan."
 
+msgid "You can %1open a cryptocurrency%2 account without closing your fiat currency account."
+msgstr ""
+
+msgid "You can %1open a real account%2 without closing your demo account."
+msgstr ""
+
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
 msgstr "Anda dapat %1memilih mata uang baru%2 jika belum melakukan deposit perdana atau mendaftar akun MT5."
 
@@ -13130,8 +13259,14 @@ msgstr "Anda tidak dapat lagi mengubah mata uang karena Anda telah mendaftar aku
 msgid "You can no longer change the currency because you've made a first-time deposit."
 msgstr "Anda tidak dapat lagi mengubah mata uang karena sudah melakjukan deposit perdana."
 
+msgid "You can open a fiat currency account without closing your cryptocurrency account."
+msgstr ""
+
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Anda berkesempatan untuk menutup kontrak sebelum berakhir untuk mengurangkan risiko kerugian Anda."
+
+msgid "You can set limits to your account and trading activities. Go to the %1self-exclusion page%2 to manage your account limits."
+msgstr ""
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "Anda dapat mengisi ulang akun demo Anda dengan tambahan %1 jika saldo Anda %2 atau kurang."
@@ -13145,6 +13280,9 @@ msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana
 msgid "You did not change anything."
 msgstr "Anda tidak melakukan perubahan."
 
+msgid "You do not need to authenticate your account at this time"
+msgstr ""
+
 msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
 msgstr ""
 
@@ -13154,6 +13292,12 @@ msgstr "Anda mengharapkan %1 turun nilainya sehingga Anda dapat membelinya kemba
 msgid "You expect the %1 to rise in value so you can sell it back for a profit"
 msgstr "Anda mengharapkan %1 naik nilainya sehingga Anda bisa menjualnya kembali untuk mendapatkan keuntungan"
 
+msgid "You have %1. You may open one or %2more cryptocurrency%3 accounts:"
+msgstr ""
+
+msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
+msgstr ""
+
 msgid "You have already withdrawn %1 %2."
 msgstr "Anda telah menarik dana sebesar %1 %2."
 
@@ -13162,6 +13306,9 @@ msgstr "Anda telah menarik dana sebesar %1 %2 dalam tempo %3 hari terakhir."
 
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "Anda telah melakukan penarikan setara dengan %1 %2."
+
+msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
+msgstr ""
 
 msgid "You have created all accounts available to you."
 msgstr "Anda telah mendaftar berbagai akun yang tersedia bagi Anda."
@@ -13349,6 +13496,9 @@ msgstr "Akun Anda tidak memiliki aktivitas trading."
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
 
+msgid "Your account is now closed"
+msgstr ""
+
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Akun Anda memiliki akses terbatas. Silahkan %1hubungi customer support%2 untuk bantuan."
 
@@ -13490,6 +13640,12 @@ msgstr "Batas penarikan Anda adalah %1 %2 (atau setara dengan mata uang lain)."
 msgid "Your withdrawal limit is %1 %2."
 msgstr "Batas penarikan Anda adalah %1 %2."
 
+msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
+msgstr ""
+
+msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
+msgstr ""
+
 msgid "a client that is not a Professional client or Eligible Counterparty"
 msgstr "klien yang bukan merupakan klien Profesional atau Mitra yang Memenuhi Syarat"
 
@@ -13519,6 +13675,12 @@ msgstr "unit transaksi yang mewakili kuantitas standar dari Instrumen Dasar, seb
 
 msgid "a. Access the MT5 trading platform through the direct link %1 from BIEL's web interface, or"
 msgstr "a. Mengakses platform trading MT5 melalui tautan langsung %1 dari situs web BIEL, atau"
+
+msgid "account"
+msgstr ""
+
+msgid "accounts"
+msgstr ""
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "order untuk melakukan transaksi guna menutup Open Posisi ketika harga mencapai harga yang telah ditentukan oleh klien"
