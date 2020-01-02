@@ -79,9 +79,10 @@ const TabSelector = (() => {
 
     const setMobileHeader = () => {
         const el_mobile_tab = getElementById('tab_mobile_header');
+
         if (el_mobile_tab) {
             const active_tab = document.getElementsByClassName('a-active');
-            el_mobile_tab.innerHTML = active_tab[0].innerHTML;
+            if (active_tab) el_mobile_tab.innerHTML = active_tab[0].innerHTML;
         }
     };
 

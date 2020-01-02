@@ -468,13 +468,13 @@ const MetaTraderConfig = (() => {
 
     const isAuthenticationPromptNeeded = () => {
         const authentication = State.getResponse('get_account_status.authentication');
-        const need_verification = authentication.needs_verification.length;
-        const { identity } = authentication;
+        const { identity, needs_verification } = authentication;
+        const is_need_verification = needs_verification.length;
         const is_rejected_or_expired = identity.status === 'rejected' || identity.status === 'expired';
 
         if (is_rejected_or_expired) return false;
 
-        return need_verification.length;
+        return is_need_verification;
     };
 
     return {

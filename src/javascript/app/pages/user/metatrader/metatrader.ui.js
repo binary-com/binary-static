@@ -558,11 +558,7 @@ const MetaTraderUI = (() => {
     };
 
     const showFinancialAuthentication = (should_show) => {
-        if (should_show) {
-            $('#financial_authenticate_msg').setVisibility(MetaTraderConfig.isAuthenticationPromptNeeded());
-        } else {
-            $('#financial_authenticate_msg').setVisibility(should_show);
-        }
+        $('#financial_authenticate_msg').setVisibility(should_show ? MetaTraderConfig.isAuthenticationPromptNeeded() : 0);
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
