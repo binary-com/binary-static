@@ -30,6 +30,9 @@ const ApiToken = () => (
 
                             <input id='chk_scopes_admin' type='checkbox' value='admin' />
                             <label htmlFor='chk_scopes_admin'><span data-balloon={it.L('Can be used to open accounts, set settings, manage token usage, and more.')} data-balloon-length='xlarge'>{it.L('Admin')}</span></label>
+
+                            <input id='chk_scopes_trading_information' type='checkbox' value='trading_information' />
+                            <label htmlFor='chk_scopes_trading_information'><span data-balloon={it.L('Can be used to view the trading history of an account.')} data-balloon-length='xlarge'>{it.L('Trading information')}</span></label>
                         </FormRow>
 
                         <SubmitButton text={it.L('Create')} type='submit' />

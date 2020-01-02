@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-12-20 02:37\n"
+"PO-Revision-Date: 2020-01-02 02:03\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -425,6 +425,9 @@ msgstr "%1的辉煌发展历程"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1 系统每天处理超过百万笔交易（包括虚拟账户）。"
 
+msgid "%1Choose a currency%2 for your fiat currency account:"
+msgstr ""
+
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1联系我们%2 安排视频通话日期和时间。"
 
@@ -439,6 +442,9 @@ msgstr "%1管理您的账户%2"
 
 msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1不，请立刻更改我的法定账户的币种%2"
+
+msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
+msgstr ""
 
 msgid "%1Return to trading page%2"
 msgstr "%1返回交易页面%2"
@@ -917,6 +923,9 @@ msgstr "账户余额"
 msgid "Account Categorisation"
 msgstr "账户分类"
 
+msgid "Account Closure"
+msgstr ""
+
 msgid "Account Deposit Currency"
 msgstr "账户存款币种"
 
@@ -1039,6 +1048,9 @@ msgstr "添加基金"
 
 msgid "Additional business exposure:"
 msgstr "附加商业风险："
+
+msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
+msgstr ""
 
 msgid "Address"
 msgstr "地址"
@@ -1240,9 +1252,6 @@ msgstr "所有适用于Android的版本"
 
 msgid "All versions for iOS"
 msgstr "所有适用于iOS的版本"
-
-msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
-msgstr "%1将于24小时内处理您的所有存取款。但您的银行或汇款服务商可能需要额外的处理时间。"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允许客户以较少金额（通过本地货币）充值"
@@ -2357,6 +2366,9 @@ msgstr "可用于开账户、设置、代币用法管理等。"
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "可用于查看账户活动，包括设置、限额、资产负债表、交易购入历史等。"
 
+msgid "Can be used to view the trading history of an account."
+msgstr ""
+
 msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
 msgstr "用途包括为付款代理取款和账户转账。"
 
@@ -2492,6 +2504,9 @@ msgstr "检查中"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "首席执行官、高级官员和立法会议员"
 
+msgid "Choose a currency for your real account:"
+msgstr ""
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "合约期限的选择范围为10 秒到 365 天。"
 
@@ -2518,6 +2533,9 @@ msgstr "随时从一百多万个交易选项中挑选并按照您倾向的策略
 
 msgid "Choose from three main trade types:"
 msgstr "从三种主要交易类型中挑选："
+
+msgid "Choose one or more cryptocurrency accounts:"
+msgstr ""
 
 msgid "Choose scopes:"
 msgstr "选择范围:"
@@ -2595,7 +2613,7 @@ msgid "Client withdrawals prior to this year amounted to almost USD 500 million.
 msgstr "今年前的客户提款总额将近5亿美元。预计今年的客户提款总额将超过1.4亿美元。"
 
 msgid "Client's demo accounts will be deleted after 365 days of inactivity."
-msgstr ""
+msgstr "如果连续365天没有活动，客户的虚拟账户将被删除。"
 
 msgid "Client's liability"
 msgstr "客户的责任"
@@ -2688,6 +2706,12 @@ msgstr "收盘时间"
 msgid "Close all or any of the client's Open Positions at a closing level that is reasonably available"
 msgstr "以合理可用的平仓水平将客户所有或任何未平仓头寸平仓"
 
+msgid "Close my account"
+msgstr ""
+
+msgid "Close your %1 account."
+msgstr ""
+
 msgid "Close-Low"
 msgstr "收盘-最低值"
 
@@ -2720,6 +2744,9 @@ msgstr "基于相关市场当前可用的价格将客户的所有或任何未平
 
 msgid "Closing price"
 msgstr "平仓价"
+
+msgid "Closing your %1 accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts."
+msgstr ""
 
 msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
 msgstr "Cloudflare 的公共 DNS 服务为您提供更安全、更快的 web 浏览功能。"
@@ -3313,7 +3340,7 @@ msgid "D. Client instructions"
 msgstr "四、客户的指示"
 
 msgid "DP2P"
-msgstr ""
+msgstr "DP2P"
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively"
 msgstr "每日重置指数 - 每日重置指数复制具看涨和看跌走势与持续波动的市场。牛市和熊市指数每天从格林威治时间00:00开始，分别复制看涨和看跌市场"
@@ -4503,6 +4530,9 @@ msgstr "需要通过金融风险批准。欲知详情，请联系%1客服部%2�
 msgid "Financial assessment"
 msgstr "财务评估"
 
+msgid "Financial concerns"
+msgstr ""
+
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "金融衍生产品让您交易标的资产的走势。"
 
@@ -4896,6 +4926,15 @@ msgstr "前往MetaTrader 5 仪表板"
 msgid "Go to statement"
 msgstr "前往月结单"
 
+msgid "Go to the %1Cashier%2 to withdraw funds from your %3 accounts."
+msgstr ""
+
+msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
+msgstr ""
+
+msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
+msgstr ""
+
 msgid "Go with the leader"
 msgstr "选择行业领军企业"
 
@@ -5205,8 +5244,35 @@ msgstr "我已阅读并同意本网站的%1条款和条件%2。"
 msgid "I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information."
 msgstr "我特此确认, 我提供的税务信息是真实和完整的。将来如果此信息有任何更改，我将会通知Binary投资 (欧洲) 有限公司。"
 
+msgid "I want to change my affiliate instead"
+msgstr ""
+
+msgid "I want to change my currency instead"
+msgstr ""
+
+msgid "I want to close my account"
+msgstr ""
+
+msgid "I want to limit my trading activity instead"
+msgstr ""
+
+msgid "I want to open a cryptocurrency account instead"
+msgstr ""
+
+msgid "I want to open a fiat currency account instead"
+msgstr ""
+
+msgid "I want to open a real account instead"
+msgstr ""
+
+msgid "I want to open another cryptocurrency account instead"
+msgstr ""
+
 msgid "I want to reapply"
 msgstr "我想重新申请"
+
+msgid "I want to set my currency instead"
+msgstr ""
 
 msgid "I would like to be treated as a professional client."
 msgstr "我要被视为专业客户。"
@@ -5430,6 +5496,9 @@ msgstr "如果在几分钟内未收到电子邮件，请检查您的垃圾/广�
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "如您在我们的%1开源代码%2中发现任何漏洞， 请随时在GitHub提交引入请求。"
 
+msgid "If you have opened positions in your MT5 account, please close them too."
+msgstr ""
+
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "如果您持仓隔夜，需付持仓费。此费用将以利息名义在您的交易账户中扣除。"
 
@@ -5549,6 +5618,9 @@ msgstr "如果您选择的 <strong>开始时间</strong> 是“现在”，交�
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "如果您选择具体的<strong>结束时间</strong>，交易<strong>结束时间</strong>就是您选择的时间。"
+
+msgid "If you want to change your affiliate, contact %1affiliates@binary.com%2 for more information on how you can do this."
+msgstr ""
 
 msgid "If you wish to seek guidance on any aspect these Business Principles, you should contact %1compliance@binary.com%2"
 msgstr "如果您要得到这些业务原则的任何指导，请联系%1compliance@binary.com%2"
@@ -7236,6 +7308,9 @@ msgstr "此货币未公布。"
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "不收任何费用。加入我们的联盟计划是完全免费的, 将来也是如此。"
 
+msgid "Not interested in trading"
+msgstr ""
+
 msgid "Not sure how margin works? Read our margin policy and learn how to calculate the margin for our CFDs."
 msgstr "不知道保证金是怎么一回事？请阅读我们的保证金政策，了解计算差价合约保证金的方法。"
 
@@ -7250,9 +7325,6 @@ msgstr "不知道保证金是怎么一回事？请阅读我们的保证金政策
 
 msgid "Note"
 msgstr "附注"
-
-msgid "Note : The minimum amount for withdrawal will vary depending on the latest exchange rates."
-msgstr "注意：取款最小金额会随着最新兑换率改变。"
 
 msgid "Note:"
 msgstr "附注:"
@@ -7434,6 +7506,9 @@ msgstr "仅允许字母、数字、空格和这些特殊字符：%1"
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "只允许使用字母、数字、空格、连字符、句点和省略号。"
 
+msgid "Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed."
+msgstr ""
+
 msgid "Only letters, numbers, space, underscore, and hyphen are allowed for ID number (%1)."
 msgstr "ID 号(%1) 只允许字母、数字、空格、下划线和连字符。"
 
@@ -7486,7 +7561,7 @@ msgid "Open positions"
 msgstr "空缺"
 
 msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr ""
+msgstr "如果连续180天没有活动，虚拟账户持仓头寸和待处理订单将被删除。"
 
 msgid "Open-Source Projects"
 msgstr "开源项目"
@@ -7508,6 +7583,9 @@ msgstr "开盘价"
 
 msgid "Opens"
 msgstr "开盘"
+
+msgid "Optional: type in your payment reference"
+msgstr ""
 
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "此选项让您\"回顾\"市场达到的最高或最低价, 以确定赔付额。"
@@ -7559,6 +7637,9 @@ msgstr "其他风险: 关于投资产品交易和外汇的其他风险无法在�
 
 msgid "Other than the payment of Commissions, Binary is not liable to the Introducing Broker or their Associates or any other person for any matter arising out of or in relation to this Agreement whether under the law of tort, contract, or equity or otherwise for any loss."
 msgstr "除了佣金支付，Binary不对推介经纪或其伙伴或任何其他人因本协议产生的或与本协议有关的任何事项，无论是根据侵权法、合约或权益法还是其他所造成的任何损失承担责任。"
+
+msgid "Others (please specify)"
+msgstr ""
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "我们的账户处理和款项支付团队管理广泛的银行账户和电子货币系统以及每天进行的大量交易。"
@@ -7781,6 +7862,9 @@ msgstr "支付方式"
 
 msgid "Payment of commission earned for the previous calendar month will be made as soon as practicable after the 15th day of each month."
 msgstr "上个月的佣金将尽快于每月15日过后支付。"
+
+msgid "Payment reference"
+msgstr ""
 
 msgid "Payments"
 msgstr "支付"
@@ -8079,6 +8163,9 @@ msgstr "请选择"
 msgid "Please select a country"
 msgstr "请选择国家"
 
+msgid "Please select a reason."
+msgstr ""
+
 msgid "Please select a valid time."
 msgstr "请选择有效时间。"
 
@@ -8109,6 +8196,9 @@ msgstr "请设置%130天交易限额%2，以访问收银台。"
 msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
 msgstr "请设置 %130 天交易额限制%2 以移除存款限额。"
 
+msgid "Please specify the reasons for closing your accounts"
+msgstr ""
+
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "请指定您的优选实况调查间隔时间分钟数"
 
@@ -8129,6 +8219,9 @@ msgstr "请注意，我们的掉期率也取决于您的持仓时间和天数。
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "请注意，我们的掉期率也取决于您的持仓时间和天数︰"
+
+msgid "Please tell us why you are closing your account (please select one):"
+msgstr ""
 
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "请等待确认。我们的客服团队将于四小时内将账户状态以电子邮件方式通知您。"
@@ -8247,6 +8340,9 @@ msgstr "预测价格走向<br />并购入"
 
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "预测现货即期价格最后小数点数值的数字。共有三种数字交易："
+
+msgid "Prefer another trading website"
+msgstr ""
 
 msgid "Preferences:"
 msgstr "首选项:"
@@ -8597,7 +8693,7 @@ msgid "Real Synthetic Indices"
 msgstr "真实综合指数"
 
 msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr ""
+msgstr "如果连续180天没有活动，真实账户将被封闭。请通过%1%1support@binary.com%2与binary.com客服部联系，以重启真实账户"
 
 msgid "Real-Money Account"
 msgstr "真实资金账户"
@@ -9457,6 +9553,9 @@ msgstr "步骤1"
 msgid "Step 1: Choose demo or real account"
 msgstr "步骤 1: 选择模拟或真实账户"
 
+msgid "Step 1: Close all open positions"
+msgstr ""
+
 msgid "Step 1: Define your position"
 msgstr "步骤 1：设置您的头寸参数"
 
@@ -9474,6 +9573,9 @@ msgstr "步骤 2：获取报价"
 
 msgid "Step 2: Understand when to buy and when to sell"
 msgstr "步骤 2: 了解何时买入及何时卖出"
+
+msgid "Step 2: Withdraw your funds"
+msgstr ""
 
 msgid "Step 3"
 msgstr "步骤3"
@@ -11030,6 +11132,9 @@ msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已达令牌 (%1) 最大限数。"
 
+msgid "The minimum amount for withdrawal will vary depending on the latest exchange rates."
+msgstr ""
+
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "使用账户资金转移设施的最小金额为 %1。"
 
@@ -11107,6 +11212,9 @@ msgstr "本协议所述交易服务由第三方系统提供, 通过第三方系�
 
 msgid "The provisions of this agreement or any orders and any applicable laws will not be breached or violated."
 msgstr "不得违反或侵犯本协议或任何法令及任何适用法律的规定。"
+
+msgid "The reason should be between 5 and 250 characters"
+msgstr ""
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
 msgstr "要求的转账将使客户的账户余额低于其未平仓头寸所需的保证金。"
@@ -11498,6 +11606,9 @@ msgstr "本优惠不能和其他任何优惠一起使用。"
 msgid "This page is only available to logged out clients."
 msgstr "此页面仅适用于已登出的客户。"
 
+msgid "This page will redirect to the %1 homepage after 10 seconds."
+msgstr ""
+
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "本政策适用于归类为零售或专业的客户。被列为符合条件的交易对手的客户不在本政策的范围之内。"
 
@@ -11594,6 +11705,9 @@ msgstr "想在MT5交易平台进行可用的场外工具交易，首先客户须
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr "如需更改姓名、生日、居住国、电子邮件或税务信息，请与%1客服人员%2联系。"
 
+msgid "To close your account, complete the following steps:"
+msgstr ""
+
 msgid "To create a MetaTrader 5 account:"
 msgstr "想要开立 MetaTrader 5 账户:"
 
@@ -11666,6 +11780,9 @@ msgstr "令牌"
 msgid "Token name"
 msgstr "令牌名称"
 
+msgid "Too addictive"
+msgstr ""
+
 msgid "Top Up Virtual Account"
 msgstr "虚拟账户充值"
 
@@ -11688,7 +11805,7 @@ msgid "Top-up successful"
 msgstr "充值成功"
 
 msgid "TopFX"
-msgstr ""
+msgstr "TopFX"
 
 msgid "Total"
 msgstr "总计"
@@ -11887,6 +12004,9 @@ msgstr "交易大师"
 
 msgid "Trading in binary options is speculative and involves a high degree of risk that can result in the loss of the client's entire investment. Therefore, trading in binary options is appropriate only for persons that understand and are willing to assume the economic, legal, and other risks involved in such transactions. The client should be satisfied that binary options trading is suitable for the client in light of the client's investment circumstances and attitude towards risk before trading. The client should not engage in speculative binary options trading unless the client understands the basic aspects of such trading and its risks. If the client is in any doubt as to whether Binary Option trading is appropriate and suitable for the client, the client should seek independent advice from an investment consulting professional. %1 does not provide such advice. It is the client's responsibility, taking into account the client's personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in binary options with %1 and prior to making any individual order. Where the client does not understand the risks involved in applying for a trading account with %1 or in making any individual order, the client should seek advice and consultation from an independent investment advisor. If the client continues to not understand the risks involved in trading in binary options, the client should not trade at all."
 msgstr "二元期权交易属投机行为，涉及高风险，可能导致客户损失全部投资。因此，二元期权交易仅适用于理解并愿意承担此类交易所涉及的经济、法律和其他风险的人。交易前客户须先评估其投资环境和风险，并确定自己适合二元期权交易。除非客户理解此类交易的基本情况及其风险，否则客户不应参与投机性二元期权交易。如果客户对自己是否适合二元期权交易有任何疑问，客户须寻求投资咨询专业人士的独立意见。%1不提供此类建议。在考虑客户的个人情况和投资资源时，在申请与%1进行二元期权之前以及下任何个别订单之前，客户有责任特别注意并做出慎重考虑。如果客户不了解申请%1交易账户或执行任何个别订单所涉及的风险，客户须寻求独立投资顾问的建议和咨询。如果客户仍然不了解二元期权交易所涉及的风险，客户不应该进行任何交易。"
+
+msgid "Trading information"
+msgstr ""
 
 msgid "Trading is unavailable at this time."
 msgstr "此时无法交易。"
@@ -12545,6 +12665,9 @@ msgstr "我们珍视积极的、可以共同努力、克服挑战并实现共同
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level"
 msgstr "我们将继续关闭未平仓合约，直到您的保证金水平高于强制平仓水平"
 
+msgid "We will inform you when your account needs to be authenticated."
+msgstr ""
+
 msgid "We will not disclose any confidential information that comes into our possession through our client relationships unless required to do so by a regulator or law enforcement authority."
 msgstr "除非监管机构或执法机构要求，否则我们不会披露通过客户关系拥有的任何机密信息。"
 
@@ -13103,6 +13226,12 @@ msgstr "您将负责减低我们因欺诈和洗钱而面临的风险和弊端行
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "您正在卖出基本货币并买入报价货币。"
 
+msgid "You can %1open a cryptocurrency%2 account without closing your fiat currency account."
+msgstr ""
+
+msgid "You can %1open a real account%2 without closing your demo account."
+msgstr ""
+
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
 msgstr "首次存款或开立 MT5 账户之前, 您可以 %1设定新币种%2。"
 
@@ -13130,8 +13259,14 @@ msgstr "您已开立了MT5 账户，因此不能再更改币种。"
 msgid "You can no longer change the currency because you've made a first-time deposit."
 msgstr "您已存入第一笔资金，因此不能再更改币种。"
 
+msgid "You can open a fiat currency account without closing your cryptocurrency account."
+msgstr ""
+
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "您可在合约到期前卖出交易合约，以锁定利润或将亏损减至最低。"
+
+msgid "You can set limits to your account and trading activities. Go to the %1self-exclusion page%2 to manage your account limits."
+msgstr ""
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "如果您的余额为 %2 或更低, 您可以在模拟账户内添加 %1。"
@@ -13145,6 +13280,9 @@ msgstr "对于 %1 不支持的支付方式或货币， 您可以授权给支付�
 msgid "You did not change anything."
 msgstr "您没作任何更改。"
 
+msgid "You do not need to authenticate your account at this time"
+msgstr ""
+
 msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
 msgstr "此时您的账户还不需要验证。%1我们将通知您何时需通过账户验证。"
 
@@ -13154,6 +13292,12 @@ msgstr "您预计%1的价值会下跌，因此您可以以较低的价格买回�
 msgid "You expect the %1 to rise in value so you can sell it back for a profit"
 msgstr "您预计%1将升值，因此您可将其卖出赚取利润"
 
+msgid "You have %1. You may open one or %2more cryptocurrency%3 accounts:"
+msgstr ""
+
+msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
+msgstr ""
+
 msgid "You have already withdrawn %1 %2."
 msgstr "您已提取%1 %2。"
 
@@ -13162,6 +13306,9 @@ msgstr "过去 %3 天里您已累计提取 %1 %2 的等值。"
 
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "您已提取 %1 %2 的等值。"
+
+msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
+msgstr ""
 
 msgid "You have created all accounts available to you."
 msgstr "您已开立所有可用的账户。"
@@ -13349,6 +13496,9 @@ msgstr "您的账户无交易活动。"
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的账户已经得到完全验证，且您的取款限额已经取消。"
 
+msgid "Your account is now closed"
+msgstr ""
+
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "您的账户已被限制。请%1联系客服部%2，以获得帮助。"
 
@@ -13490,6 +13640,12 @@ msgstr "您的取款限额为 %1 %2 (或其他货币的等值 ）。"
 msgid "Your withdrawal limit is %1 %2."
 msgstr "您的取款限额是 %1 %2。"
 
+msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
+msgstr ""
+
+msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
+msgstr ""
+
 msgid "a client that is not a Professional client or Eligible Counterparty"
 msgstr "非专业客户或有资格当交易对手的客户"
 
@@ -13519,6 +13675,12 @@ msgstr "代表产品披露和规范规定的标的工具的标准化数量的交
 
 msgid "a. Access the MT5 trading platform through the direct link %1 from BIEL's web interface, or"
 msgstr "a. 通过BIEL的网络界面上的直接链接 %1 访问 MT5 交易平台，或"
+
+msgid "account"
+msgstr ""
+
+msgid "accounts"
+msgstr ""
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "当价格达到客户指定的水平时对持仓头寸执行平仓交易的指令"
