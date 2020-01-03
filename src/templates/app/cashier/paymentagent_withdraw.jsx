@@ -125,7 +125,7 @@ const PaymentAgentWithdraw = () => (
                         <div className='gr-9 gr-centered'>
                             <SeparatorLine className='gr-padding-10' show_mobile />
                         </div>
-                        <FormRow label={it.L('Optional: type in your payment reference')} id='txtPaymentRef' type='text' />
+                        <FormRow label={it.L('Payment reference')} id='txtPaymentRef' type='text' hint={it.L('If you have a payment reference (for example 122), you can enter it here.')} />
                         <p id='form-error' className='error-msg center-text invisible' />
                         <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
                         <div className='gr-8 gr-centered gr-padding-20'>
