@@ -23,6 +23,7 @@ const PaymentAgentTransfer    = require('../pages/user/account/payment_agent_tra
 const Portfolio               = require('../pages/user/account/portfolio/portfolio.init');
 const ProfitTable             = require('../pages/user/account/profit_table/profit_table.init');
 const Settings                = require('../pages/user/account/settings');
+const AccountClosure          = require('../pages/user/account/settings/account_closure');
 const APIToken                = require('../pages/user/account/settings/api_token');
 const AuthorisedApps          = require('../pages/user/account/settings/authorised_apps');
 const FinancialAssessment     = require('../pages/user/account/settings/financial_assessment');
@@ -77,6 +78,7 @@ const pages_config = {
     cfds                     : { module: GetStarted.CFDs },
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
+    closure                  : { module: AccountClosure,             is_authenticated: true },
     contact                  : { module: Contact },
     cryptocurrencies         : { module: GetStarted.Cryptocurrencies },
     cyberjaya                : { module: StaticPages.Locations },

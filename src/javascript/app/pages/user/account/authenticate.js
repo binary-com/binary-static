@@ -833,9 +833,10 @@ const Authenticate = (() => {
         });
     });
 
-    const initOnfido = async (sdk_token) => {
+    const initOnfido = async (sdk_token, documents_supported) => {
         if (!$('#onfido').is(':parent')) {
             $('#onfido').setVisibility(1);
+
             try {
                 onfido = Onfido.init({
                     containerId: 'onfido',
@@ -846,7 +847,16 @@ const Authenticate = (() => {
                     useModal  : false,
                     onComplete: handleComplete,
                     steps     : [
-                        'document',
+                        {
+                            type   : 'document',
+                            options: {
+                                documentTypes: {
+                                    passport              : documents_supported.some(doc => /Passport/g.test(doc)),
+                                    driving_licence       : documents_supported.some(doc => /Driving Licence/g.test(doc)),
+                                    national_identity_card: documents_supported.some(doc => /National Identity Card/g.test(doc)),
+                                },
+                            },
+                        },
                         'face',
                     ],
                 });
@@ -884,12 +894,8 @@ const Authenticate = (() => {
                 service_token: 1,
                 service      : 'onfido',
             }).then((response) => {
-                if (response.error || !response.service_token) {
-                    if (response.error.code === 'UnsupportedCountry') {
-                        onfido_unsupported = true;
-                    }
+                if (response.error) {
                     resolve();
-                    return;
                 }
                 const token = response.service_token.token;
                 const in_90_minutes = 1 / 16;
@@ -913,7 +919,6 @@ const Authenticate = (() => {
 
     const initAuthentication = async () => {
         const authentication_status = await getAuthenticationStatus();
-        const onfido_token = await getOnfidoServiceToken();
 
         if (!authentication_status || authentication_status.error) {
             $('#authentication_tab').setVisibility(0);
@@ -921,9 +926,12 @@ const Authenticate = (() => {
             return;
         }
         
+        const onfido_token = await getOnfidoServiceToken();
         const { identity, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
+        onfido_unsupported = !identity.services.onfido.is_country_supported;
+        const documents_supported = identity.services.onfido.documents_supported;
 
         if (is_fully_authenticated) {
             $('#authentication_tab').setVisibility(0);
@@ -937,7 +945,7 @@ const Authenticate = (() => {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
-                        initOnfido(onfido_token);
+                        initOnfido(onfido_token, documents_supported);
                     }
                     break;
                 case 'pending':
@@ -959,7 +967,7 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido(onfido_token);
+            initOnfido(onfido_token, documents_supported);
         }
         switch (document.status) {
             case 'none': {
