@@ -43,7 +43,7 @@ const Cashier = (() => {
         });
     };
 
-    const showP2PVisibility = async () => {
+    const setP2PVisibility = async () => {
         const is_agent = !(await BinarySocket.send({ p2p_agent_info: 1 })).error;
         if (is_agent) {
             $('#dp2p_info').setVisibility(1);
@@ -173,7 +173,7 @@ const Cashier = (() => {
                         State.getResponse('statement'),
                         State.getResponse('mt5_login_list')
                     );
-                    showP2PVisibility();
+                    setP2PVisibility();
                 }
 
                 if (residence) {
