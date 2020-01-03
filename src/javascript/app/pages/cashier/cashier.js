@@ -43,12 +43,23 @@ const Cashier = (() => {
         });
     };
 
-    const showP2PNote = async () => {
+    const showP2PVisibility = async () => {
         const is_agent = !(await BinarySocket.send({ p2p_agent_info: 1 })).error;
-        const has_buy = await checkP2PHasOffer('buy');
-        const has_sell = await checkP2PHasOffer('sell');
+        if (is_agent) {
+            $('#dp2p_info').setVisibility(true);
+            return;
+        }
 
-        if (is_agent || has_buy || has_sell) $('#dp2p_info').setVisibility(true);
+        const has_buy = await checkP2PHasOffer('buy');
+        if (has_buy) {
+            $('#dp2p_info').setVisibility(true);
+            return;
+        }
+
+        const has_sell = await checkP2PHasOffer('sell');
+        if (has_sell) {
+            $('#dp2p_info').setVisibility(true);
+        }
     };
 
     const checkP2PHasOffer = (offer_type) => new Promise(async (resolve) => {
@@ -162,7 +173,7 @@ const Cashier = (() => {
                         State.getResponse('statement'),
                         State.getResponse('mt5_login_list')
                     );
-                    showP2PNote();
+                    showP2PVisibility();
                 }
 
                 if (residence) {
