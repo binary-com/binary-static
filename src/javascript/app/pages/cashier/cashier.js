@@ -58,7 +58,7 @@ const Cashier = (() => {
 
         const has_sell = await checkP2PHasOffer('sell');
         if (has_sell) {
-            $('#dp2p_info').setVisibility(true);
+            $('#dp2p_info').setVisibility(1);
         }
     };
 
