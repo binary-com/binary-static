@@ -50,20 +50,14 @@ const Cashier = (() => {
             return;
         }
 
-        const has_buy = await checkP2PHasOffer('buy');
-        if (has_buy) {
-            $('#dp2p_info').setVisibility(1);
-            return;
-        }
-
-        const has_sell = await checkP2PHasOffer('sell');
-        if (has_sell) {
+        const has_offer = await checkP2PHasOffer();
+        if (has_offer) {
             $('#dp2p_info').setVisibility(1);
         }
     };
 
-    const checkP2PHasOffer = (offer_type) => new Promise(async (resolve) => {
-        const offer_list_response = await BinarySocket.send({ p2p_offer_list: 1, type: offer_type });
+    const checkP2PHasOffer = () => new Promise(async (resolve) => {
+        const offer_list_response = await BinarySocket.send({ p2p_offer_list: 1 });
         resolve(getPropertyValue(offer_list_response, ['p2p_offer_list', 'list']).length);
     });
 
