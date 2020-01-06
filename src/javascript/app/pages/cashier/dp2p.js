@@ -68,6 +68,7 @@ const DP2P = (() => {
                     client       : {
                         currency  : Client.get('currency'),
                         is_virtual: Client.get('is_virtual'),
+                        residence : Client.get('residence'),
                     },
                 };
 
