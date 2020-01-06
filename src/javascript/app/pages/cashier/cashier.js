@@ -168,12 +168,17 @@ const Cashier = (() => {
                 if (Client.get('is_virtual')) {
                     displayTopUpButton();
                 } else if (currency) {
+                    const is_p2p_allowed_currency = currency === 'USD';
+
                     showCurrentCurrency(
                         currency,
                         State.getResponse('statement'),
                         State.getResponse('mt5_login_list')
                     );
-                    setP2PVisibility();
+                    if (is_p2p_allowed_currency) {
+                        setP2PVisibility();
+                    }
+                    
                 }
 
                 if (residence) {
