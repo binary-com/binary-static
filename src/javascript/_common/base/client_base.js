@@ -112,6 +112,20 @@ const ClientBase = (() => {
             !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
+    const hasOnlyCurrencyType = (type = 'fiat') => {
+        const loginids = getAllLoginids();
+        const real_loginid = new RegExp('^(MX|MF|MLT|CR|FOG)[0-9]+$', 'i');
+        const only_real_loginids = loginids.filter((loginid) => real_loginid.test(loginid));
+        if (type === 'crypto') {
+            return only_real_loginids.every(loginid => isCryptocurrency(get('currency', loginid)));
+        }
+        if (type === 'unset') {
+            return only_real_loginids.every(loginid => !get('currency', loginid));
+        }
+
+        return only_real_loginids.every(loginid => get('currency', loginid) && !isCryptocurrency(get('currency', loginid)));
+    };
+
     const TypesMapConfig = (() => {
         let types_map_config;
 
@@ -201,6 +215,8 @@ const ClientBase = (() => {
 
     const shouldCompleteTax = () => isAccountOfType('financial') &&
         !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
+
+    const isAuthenticationAllowed = () => /allow_document_upload/.test(State.getResponse('get_account_status.status'));
 
     // remove manager id or master distinction from group
     // remove EUR or GBP distinction from group
@@ -337,9 +353,11 @@ const ClientBase = (() => {
         getAllLoginids,
         getAccountType,
         isAccountOfType,
+        isAuthenticationAllowed,
         getAccountOfType,
         hasAccountType,
         hasCurrencyType,
+        hasOnlyCurrencyType,
         getAccountTitle,
         responseAuthorize,
         shouldAcceptTnc,

@@ -1605,7 +1605,40 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.account-closure {
+    &-form {
+        text-align: left;
+        line-height: 40px;
+
+        span {
+            padding-left: 15px;
+        }
+    }
+    &-subtitle {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    &-close-title {
+        margin-bottom: 0;
+    }
+    & .ui-accordion .ui-accordion-icons {
+        padding-right: 1.2em;
+    }
+}
+
+.reason-textfield {
+    border-color: $COLOR_GRAY;
+    color: $COLOR_BLACK;
+}
+
 .paymentagent_description {
     height: 4em;
     width: 206px;
+}
+
+#binary-dp2p {
+    margin: 0 auto;
+    width: 1008px;
+    font-size: 10px;
+    position: relative;
 }

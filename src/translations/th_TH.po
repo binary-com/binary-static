@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-12-19 07:14\n"
+"PO-Revision-Date: 2020-01-03 08:20\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -425,6 +425,9 @@ msgstr "ประวัติศาสตร์อันน่าจดจำข
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีการประมวลผลมากกว่า 1 ล้านธุรกรรมต่อวัน (รวมประเภทบัญชีเสมือน หรือ บัญชีทดลองใช้)"
 
+msgid "%1Choose a currency%2 for your fiat currency account:"
+msgstr ""
+
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1ติดต่อเรา%2 เพื่อจัดหาวันและเวลาสำหรับการสนทนาทางวีดีโอ"
 
@@ -439,6 +442,9 @@ msgstr "%1จัดการบัญชีของท่าน%2"
 
 msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1ไม่ เปลี่ยนสกุลเงินบัญชีเงินกระดาษของฉัน ตอนนี้%2"
+
+msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
+msgstr ""
 
 msgid "%1Return to trading page%2"
 msgstr "%1กลับไปสู่หน้าซื้อขาย%2"
@@ -917,6 +923,9 @@ msgstr "ยอดคงเหลือในบัญชี"
 msgid "Account Categorisation"
 msgstr "การจัดหมวดหมู่บัญชี"
 
+msgid "Account Closure"
+msgstr ""
+
 msgid "Account Deposit Currency"
 msgstr "สกุลเงินฝากของบัญชี"
 
@@ -1039,6 +1048,9 @@ msgstr "ฝากเงิน"
 
 msgid "Additional business exposure:"
 msgstr "การเปิดทางธุรกิจเพิ่มเติม"
+
+msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
+msgstr ""
 
 msgid "Address"
 msgstr "ที่อยู่"
@@ -1240,9 +1252,6 @@ msgstr "ทุกเวอร์ชันของระบบปฏิบัต
 
 msgid "All versions for iOS"
 msgstr "ทุกเวอร์ชันของระบบปฏิบัติการ iOS"
-
-msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
-msgstr "%1 จะจัดการเงินฝากและถอนทั้งหมดของท่านภายใน 24 ชั่วโมง อย่างไรก็ตามธนาคารของท่าน หรือ บริการโอนเงินอาจจะต้องการเวลาในการดำเนินการเพิ่มเติม"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "ยินยอมให้ลูกค้าฝากเงินในจำนวนที่ต่ำกว่า (ผ่านสกุลเงินท้องถิ่น)"
@@ -2357,6 +2366,9 @@ msgstr "สามารถใช้เพื่อเปิดบัญชี �
 msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
 msgstr "สามารถใช้ในการดูกิจกรรมที่เกิดขึ้นของบัญชี รวมถึงการตั้งค่า วงเงิน งบดุล ประวัติการซื้อขาย และอื่นๆ"
 
+msgid "Can be used to view the trading history of an account."
+msgstr ""
+
 msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
 msgstr ""
 
@@ -2492,6 +2504,9 @@ msgstr "กำลังตรวจสอบ"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "ผู้บริหารระดับสูง เจ้าหน้าที่อาวุโส และสมาชิกของสภานิติบัญญัติ"
 
+msgid "Choose a currency for your real account:"
+msgstr ""
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "กำหนด ระยะเวลา จาก 10 วินาที ถึง 365 วัน"
 
@@ -2518,6 +2533,9 @@ msgstr "เลือกจากการซื้อขายหลากหล
 
 msgid "Choose from three main trade types:"
 msgstr "เลือกจากประเภทการซื้อขายหลักสามประเภท"
+
+msgid "Choose one or more cryptocurrency accounts:"
+msgstr ""
 
 msgid "Choose scopes:"
 msgstr "กำหนดขอบเขต:"
@@ -2687,6 +2705,12 @@ msgstr "เวลาปิด"
 msgid "Close all or any of the client's Open Positions at a closing level that is reasonably available"
 msgstr "การปิดโพซิชั่นเปิดของลูกค้าทั้งหมด หรือ เฉพาะบางราย ที่ระดับปิดอย่างสมเหตุสมผล"
 
+msgid "Close my account"
+msgstr ""
+
+msgid "Close your %1 account."
+msgstr ""
+
 msgid "Close-Low"
 msgstr "ปิด-ต่ำ"
 
@@ -2719,6 +2743,9 @@ msgstr "การปิดทั้งหมด หรือ การปิด�
 
 msgid "Closing price"
 msgstr "ราคาปิด"
+
+msgid "Closing your %1 accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts."
+msgstr ""
 
 msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
 msgstr "บริการ DNS สาธารณะของ Cloudflare ช่วยให้ท่านค้นดูบนเว็บไซต์ได้ปลอดภัยกว่าและรวดเร็วกว่า"
@@ -3310,6 +3337,9 @@ msgstr "ง. การบริหารลูกค้า"
 
 msgid "D. Client instructions"
 msgstr "D. วิธีการใช้งานของลูกค้า"
+
+msgid "DP2P"
+msgstr ""
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively"
 msgstr "ดัชนีถูกตั้งค่าใหม่รายวัน - ดัชนีถูกตั้งค่าใหม่รายวันจำลองสภาพตลาดที่มีแนวโน้มความตื่นตัวและความซบเซาของตลาดด้วยความผันผวนที่คงที่ ดัชนีกระทิง และดัชนีหมี เริ่มที่ 00:00 GMT ในแต่ละวัน เพื่อจำลองสภาพตลาดกระทิงและตลาดหมีตามลำดับ"
@@ -4499,6 +4529,9 @@ msgstr "ต้องมีการอนุมัติความเสี่
 msgid "Financial assessment"
 msgstr "การประเมินทางการเงิน"
 
+msgid "Financial concerns"
+msgstr ""
+
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "อนุพันธ์ทางการเงินที่อนุญาตให้ท่านซื้อขายตามการเคลื่อนไหวของผลิตภัณฑ์อ้างอิง"
 
@@ -4892,6 +4925,15 @@ msgstr "ไปยังรายงานสรุปภาพรวม MetaTrad
 msgid "Go to statement"
 msgstr "กลับไปที่รายงานเดินบัญชี"
 
+msgid "Go to the %1Cashier%2 to withdraw funds from your %3 accounts."
+msgstr ""
+
+msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
+msgstr ""
+
+msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
+msgstr ""
+
 msgid "Go with the leader"
 msgstr "ก้าวไปกับผู้นำ"
 
@@ -5201,8 +5243,35 @@ msgstr "ฉันได้อ่านและยอมรับ ข้อต�
 msgid "I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information."
 msgstr "ข้าพเจ้าขอยืนยันในที่นี้ว่า ข้อมูลภาษีที่ให้ไว้นั้นถูกต้องและสมบูรณ์ ข้าพเจ้าจะนำเรียนแก่ Binary Investments (Europe) Ltd. หากข้อมูลนี้มีการเปลี่ยนแปลง"
 
+msgid "I want to change my affiliate instead"
+msgstr ""
+
+msgid "I want to change my currency instead"
+msgstr ""
+
+msgid "I want to close my account"
+msgstr ""
+
+msgid "I want to limit my trading activity instead"
+msgstr ""
+
+msgid "I want to open a cryptocurrency account instead"
+msgstr ""
+
+msgid "I want to open a fiat currency account instead"
+msgstr ""
+
+msgid "I want to open a real account instead"
+msgstr ""
+
+msgid "I want to open another cryptocurrency account instead"
+msgstr ""
+
 msgid "I want to reapply"
 msgstr "ฉันต้องการสมัครอีกครั้ง"
+
+msgid "I want to set my currency instead"
+msgstr ""
 
 msgid "I would like to be treated as a professional client."
 msgstr "ฉันต้องการได้รับการปฏิบัติเสมือนเป็นลูกค้ามืออาชีพคนหนึ่ง"
@@ -5426,6 +5495,12 @@ msgstr "หากท่านไม่ได้รับอีเมล์ใน
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "หากท่านพบความเปราะบาง หรือ ช่องโหว่ของระบบ %1 โอเพ่นซอสของเรา %2 โปรดส่งข้อมูลการเปลี่ยนแปลงให้เราทราบทาง GitHub"
 
+msgid "If you have a payment reference (for example 122), you can enter it here."
+msgstr ""
+
+msgid "If you have opened positions in your MT5 account, please close them too."
+msgstr ""
+
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "ถ้าท่านเก็บตำแหน่งเปิดใดๆ เอาไว้ข้ามคืน จะมีการปรับดอกเบี้ยในบัญชีซื้อขายของท่านเพื่อแสดงต้นทุนในการเก็บรักษาตำแหน่งเปิด"
 
@@ -5545,6 +5620,9 @@ msgstr "หากท่านกำหนด<strong>เวลาเริ่ม�
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "หากท่านกำหนดเจาะจง<strong>เวลาสิ้นสุด</strong> แล้ว<strong>เวลาสิ้นสุด</strong> คือ เวลาที่ถูกกำหนด"
+
+msgid "If you want to change your affiliate, contact %1affiliates@binary.com%2 for more information on how you can do this."
+msgstr ""
 
 msgid "If you wish to seek guidance on any aspect these Business Principles, you should contact %1compliance@binary.com%2"
 msgstr ""
@@ -5926,9 +6004,6 @@ msgstr "นักลงทุน"
 
 msgid "Investor Compensation Scheme"
 msgstr "แผนผลประโยชน์ของนักลงทุน"
-
-msgid "Investor password"
-msgstr "รหัสผ่านของผู้ลงทุน"
 
 msgid "Ireland"
 msgstr "ประเทศไอร์แลนด์"
@@ -7235,6 +7310,9 @@ msgstr "ไม่มีการประกาศสำหรับเงิน
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "การเข้าร่วมโปรแกรมพันธมิตรนายหน้าออนไลน์ของเราไม่มีเสียค่าใช้จ่าย และจะฟรีตลอดไป แน่นอน"
 
+msgid "Not interested in trading"
+msgstr ""
+
 msgid "Not sure how margin works? Read our margin policy and learn how to calculate the margin for our CFDs."
 msgstr "ไม่แน่ใจ หรือสงสัยว่า มาร์จินทำงานอย่างไร? อ่านนโยบายมาร์จินของเรา และเรียนรู้วิธีการคำนวณมาร์จินของ CFD"
 
@@ -7249,9 +7327,6 @@ msgstr "หรือสงสัยว่า มาร์จินทำงา�
 
 msgid "Note"
 msgstr "หมายเหตุ"
-
-msgid "Note : The minimum amount for withdrawal will vary depending on the latest exchange rates."
-msgstr ""
 
 msgid "Note:"
 msgstr "หมายเหตุ"
@@ -7433,6 +7508,9 @@ msgstr "เฉพาะตัวอักษร ตัวเลข ช่อง�
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "ตัวอักษร ตัวเลข ช่องว่าง ขีดกลาง จุด และ เครื่องหมายอัญประกาศ ( ' ) เท่านั้น ที่สามารถใช้ได้"
 
+msgid "Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed."
+msgstr ""
+
 msgid "Only letters, numbers, space, underscore, and hyphen are allowed for ID number (%1)."
 msgstr "เฉพาะตัวอักษร ตัวเลข เว้นวรรค ขีดล่าง และขีดกลางเท่านั้นที่อนุญาตให้ใช้ได้สำหรับหมายเลขประจำตัว (%1)"
 
@@ -7558,6 +7636,9 @@ msgstr "<strong>ความเสี่ยงอื่นๆ</strong>: ยั�
 
 msgid "Other than the payment of Commissions, Binary is not liable to the Introducing Broker or their Associates or any other person for any matter arising out of or in relation to this Agreement whether under the law of tort, contract, or equity or otherwise for any loss."
 msgstr "นอกจากการจ่ายค่าคอมมิชชั่นแล้ว Binary ไม่รับผิดชอบใดๆ ต่อโบรกเกอร์แนะนำ หรือ ผู้มีความสัมพันธ์กับโบรกเกอร์แนะนำ หรือ บุคคลอื่นๆ ในเรื่องที่เกิดจาก หรือเกี่ยวข้องกับสัญญานี้ ไม่ว่าจะเป็นการละเมิด สัญญา เงินทุน หรือความเสียหายใดๆ"
+
+msgid "Others (please specify)"
+msgstr ""
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "ทีมบัญชี&amp; การจ่ายเงินของเราจัดการบัญชีธนาคาร และระบบสกุลเงินอิเล็กทรอนิกส์ที่หลากหลาย และธุรกิจจำนวนมากที่เกิดขึ้นทุกวัน"
@@ -7780,6 +7861,9 @@ msgstr "วิธีการชำระเงิน"
 
 msgid "Payment of commission earned for the previous calendar month will be made as soon as practicable after the 15th day of each month."
 msgstr "การจ่ายค่าคอมมิชชั่นที่ได้รับในเดือนก่อนหน้าจะดำเนินการในทันทีหลังจากวันที่ 15 ในแต่ละเดือน"
+
+msgid "Payment reference"
+msgstr ""
 
 msgid "Payments"
 msgstr "การชำระเงิน"
@@ -8078,6 +8162,9 @@ msgstr "โปรดระบุ"
 msgid "Please select a country"
 msgstr "โปรดระบุประเทศ"
 
+msgid "Please select a reason."
+msgstr ""
+
 msgid "Please select a valid time."
 msgstr "โปรดระบุเวลาที่ถูกต้อง"
 
@@ -8108,6 +8195,9 @@ msgstr "โปรดตั้งค่า %1วงเงินหมุนเว
 msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
 msgstr "โปรดตั้งค่าวงเงินซื้อขายต่อวัน %130 ของท่าน %2 เพื่อลบวงเงินฝาก"
 
+msgid "Please specify the reasons for closing your accounts"
+msgstr ""
+
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
 
@@ -8128,6 +8218,9 @@ msgstr "โปรดทราบว่าอัตราในการแลก
 
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "โปรดทราบว่า อัตราในการแลกเปลี่ยนดอกเบี้ย (Swap Rate) ของเราขึ้นอยู่กับเวลาและวันที่ท่านถือโพซิชั่นเปิดของท่าน"
+
+msgid "Please tell us why you are closing your account (please select one):"
+msgstr ""
 
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "โปรดรอการยืนยัน ฝ่ายลูกค้าสัมพันธ์ของเราจะติดต่อกลับเพื่อแจ้งสถานะของบัญชีของท่านผ่านทางอีเมล์ภายในสี่ชั่วโมง"
@@ -8245,6 +8338,9 @@ msgstr "พยากรณ์ทิศทาง<br />และซื้อ"
 
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "คาดการณ์ถึงตัวเลขหลักทศนิยมสุดท้ายของราคาสปอตที่มีหลักตัวเลข มีการซื้อขายแบบหลักตัวเลขอยู่สามประเภท"
+
+msgid "Prefer another trading website"
+msgstr ""
 
 msgid "Preferences:"
 msgstr "คุณสมบัติที่ต้องการ:"
@@ -9455,6 +9551,9 @@ msgstr "ขั้นตอนที่ 1"
 msgid "Step 1: Choose demo or real account"
 msgstr "ขั้นตอนที่ 1: เลือกบัญชีทดลอง หรือ บัญชีจริง"
 
+msgid "Step 1: Close all open positions"
+msgstr ""
+
 msgid "Step 1: Define your position"
 msgstr "ขั้นตอนที่ 1: กำหนดโพซิชั่นของท่าน"
 
@@ -9472,6 +9571,9 @@ msgstr "ขั้นตอนที่ 2: ตั้งราคา"
 
 msgid "Step 2: Understand when to buy and when to sell"
 msgstr "ขั้นตอนที่ 2: เข้าใจว่าเมื่อไรจะซื้อ และ เมื่อไรจะขาย"
+
+msgid "Step 2: Withdraw your funds"
+msgstr ""
 
 msgid "Step 3"
 msgstr "ขั้นตอนที่ 3"
@@ -11029,6 +11131,9 @@ msgstr "จำนวนเงินขาดทุนที่มากที่
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "จำนวนมากที่สุดของโทเค่น (%1) ถูกใช้หมดแล้ว"
 
+msgid "The minimum amount for withdrawal will vary depending on the latest exchange rates."
+msgstr ""
+
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "จำนวนขั้นต่ำที่จำเป็นในการโอนบัญชี คือ %1"
 
@@ -11106,6 +11211,9 @@ msgstr "เงื่อนไขของการให้บริการต
 
 msgid "The provisions of this agreement or any orders and any applicable laws will not be breached or violated."
 msgstr "ข้อกำหนดของสัญญานี้ หรือ คำสั่งใดๆ และกฎหมายที่บังคับใช้ใดๆ จะไม่ถือว่า ถูกละเมิด หรือ ฝ่าฝืน"
+
+msgid "The reason should be between 5 and 250 characters"
+msgstr ""
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
 msgstr "ความประสงค์ในการโอนจะลดยอดคงเหลือของบัญชีของลูกค้าให้ลดลงน้อยกว่ามาร์จินที่กำหนดไว้สำหรับโพซิชั่นที่เปิดอยู่ของลูกค้า"
@@ -11497,6 +11605,9 @@ msgstr "ข้อเสนอนี้ไม่สามารถใช้ร่
 msgid "This page is only available to logged out clients."
 msgstr "หน้านี้สำหรับแสดงให้กับผู้ใช้งานที่ออกจากระบบแล้ว"
 
+msgid "This page will redirect to the %1 homepage after 10 seconds."
+msgstr ""
+
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "นโยบายนี้ใช้กับลูกค้าในกลุ่มลูกค้ารายย่อย (Retail) หรือ ลูกค้าผู้เชี่ยวชาญ (Professional) ไม่สามารถใช้กับลูกค้าพึงมีคุณสมบัติ (Eligible Counterparty)"
 
@@ -11593,6 +11704,9 @@ msgstr "เพื่อการซื้อขายเครืองมือ
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr "โปรดติดต่อ %1เจ้าหน้าที่ลูกค้าสัมพันธ์ %2 ในการเปลี่ยนแปลง ชื่อ วันเกิด ประเทศที่พำนัก อีเมล์ของท่าน หรือ ข้อมูลภาษี "
 
+msgid "To close your account, complete the following steps:"
+msgstr ""
+
 msgid "To create a MetaTrader 5 account:"
 msgstr "สร้างบัญชี MetaTrader 5:"
 
@@ -11664,6 +11778,9 @@ msgstr "โทเค่น"
 
 msgid "Token name"
 msgstr "ชื่อโทเค่น"
+
+msgid "Too addictive"
+msgstr ""
 
 msgid "Top Up Virtual Account"
 msgstr "เพิ่มเงินในบัญชีทดลองใช้"
@@ -11886,6 +12003,9 @@ msgstr "ผู้เชี่ยวชาญการซื้อขาย"
 
 msgid "Trading in binary options is speculative and involves a high degree of risk that can result in the loss of the client's entire investment. Therefore, trading in binary options is appropriate only for persons that understand and are willing to assume the economic, legal, and other risks involved in such transactions. The client should be satisfied that binary options trading is suitable for the client in light of the client's investment circumstances and attitude towards risk before trading. The client should not engage in speculative binary options trading unless the client understands the basic aspects of such trading and its risks. If the client is in any doubt as to whether Binary Option trading is appropriate and suitable for the client, the client should seek independent advice from an investment consulting professional. %1 does not provide such advice. It is the client's responsibility, taking into account the client's personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in binary options with %1 and prior to making any individual order. Where the client does not understand the risks involved in applying for a trading account with %1 or in making any individual order, the client should seek advice and consultation from an independent investment advisor. If the client continues to not understand the risks involved in trading in binary options, the client should not trade at all."
 msgstr "การซื้อขายไบนารีออปชันถือเป็นการเก็งกำไร และมีความเสี่ยงระดับสูง ซึ่งอาจทำให้ลูกค้าสูญเสียเงินจากการลงทุนทั้งหมดได้ ดังนั้น การซื้อขายไบนารีออปชันเหมาะสำหรับผู้ที่มีความเข้าใจและพร้อมที่จะรับความเสี่ยงทางด้านเศรษฐกิจ กฎหมาย และความเสี่ยงอื่นๆ ที่เกี่ยวข้องกับธุรกรรมดังกล่าว ลูกค้าพึงรับทราบว่าการซื้อขายไบนารีออปชันนั้นจะเหมาะสมสำหรับลูกค้าหรือไม่นั้นขึ้นอยู่กับสภาพการลงทุน และทัศนคติของลูกค้าต่อความเสี่ยงก่อนการลงทุน ลูกค้าไม่ควรทำการซื้อขายไบนารีออปชันที่เป็นการเก็งกำไร ยกเว้นว่า ลูกค้าได้มีความเข้าใจในพื้นฐานของการซื้อขายดังกล่าวและความเสี่ยงที่เกี่ยวข้อง หากลูกค้ามีข้อสงสัยว่า การซื้อขายไบนารีออปชันนั้นเหมาะสมกับลูกค้าหรือไม่นั้น ลูกค้าควรขอคำแนะนำจากที่ปรึกษาอิสระด้านการลงทุน %1 ไม่ได้ให้บริการด้านคำปรึกษาดังกล่าว การมีความรู้ความเข้าใจในการลงทุนถือเป็นความรับผิดชอบของลูกค้าที่จะพิจารณาอย่างถี่ถ้วนและรอบคอบ โดยคำนึงถึงสถานการณ์ส่วนบุคคลและแหล่งเงินทุนสำหรับการลงทุน ทั้งก่อนที่จะสมัครเข้าร่วมการซื้อขายไบนารีออปชันกับ %1 และก่อนที่จะทำการซื้อขายแต่ละครั้ง หากลูกค้าไม่เข้าใจถึงความเสี่ยงที่เกี่ยวข้องในการสมัครเพื่อเปิดบัญชีการซื้อขายกับ %1 หรือในการซื้อขายแต่ละครั้ง ลูกค้าควรขอคำแนะนำจากที่ปรึกษาอิสระด้านการลงทุน หากลูกค้ายังคงไม่เข้าใจถึงความเสี่ยงที่เกี่ยวข้องในการซื้อขายไบนารีออปชันแล้ว ลูกค้าไม่ควรทำการซื้อขายใดๆ ทั้งสิ้น"
+
+msgid "Trading information"
+msgstr ""
 
 msgid "Trading is unavailable at this time."
 msgstr "ไม่สามารถทำการซื้อขายได้ในขณะนี้"
@@ -12544,6 +12664,9 @@ msgstr "เราให้คุณค่ากับทีมงานผู้
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level"
 msgstr "เราจะปิดสถานะเปิดของท่านต่อไปจนกระทั่ง ระดับมาร์จินของท่านสูงกว่าระดับยุติการซื้อขาย"
 
+msgid "We will inform you when your account needs to be authenticated."
+msgstr ""
+
 msgid "We will not disclose any confidential information that comes into our possession through our client relationships unless required to do so by a regulator or law enforcement authority."
 msgstr ""
 
@@ -13102,6 +13225,12 @@ msgstr "ท่านจะได้รับหน้าที่ในการ
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "ท่านกำลังขายสกุลเงินฐานและซื้อสกุลเงินที่มีการเสนอราคา"
 
+msgid "You can %1open a cryptocurrency%2 account without closing your fiat currency account."
+msgstr ""
+
+msgid "You can %1open a real account%2 without closing your demo account."
+msgstr ""
+
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
 msgstr "ท่านสามารถ %1ตั้งค่าสกุลเงินใหม่%2 ก่อนท่านดำเนินการฝากเงินครั้งแรก หรือ ก่อนเปิดบัญชี MT5"
 
@@ -13129,8 +13258,14 @@ msgstr "ท่านไม่สามารถแก้ไขสกุลเง
 msgid "You can no longer change the currency because you've made a first-time deposit."
 msgstr "ท่านไม่สามารถแก้ไขสกุลเงิน เนื่องจากท่านได้ฝากเงินครั้งแล้วไปแล้ว"
 
+msgid "You can open a fiat currency account without closing your cryptocurrency account."
+msgstr ""
+
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "ท่านสามารถขายสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านที่พึงได้ หรือ เพื่อย่อภาวะขาดทุนของท่าน"
+
+msgid "You can set limits to your account and trading activities. Go to the %1self-exclusion page%2 to manage your account limits."
+msgstr ""
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "ท่านสามารถเติมเงินในบัญชีทดลอง จำนวน %1 หากมียอดคงเหลือในบัญชี %2 หรือน้อยกว่า"
@@ -13144,6 +13279,9 @@ msgstr "ท่านสามารถใช้ตัวแทนรับชำ
 msgid "You did not change anything."
 msgstr "ท่านไม่ได้แก้ไขค่าใดๆ"
 
+msgid "You do not need to authenticate your account at this time"
+msgstr ""
+
 msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
 msgstr ""
 
@@ -13153,6 +13291,12 @@ msgstr "ท่านคาดว่า มูลค่าของ %1จะต�
 msgid "You expect the %1 to rise in value so you can sell it back for a profit"
 msgstr "ท่านคาดว่า มูลค่าของ%1จะเพิ่มขึ้น ดังนั้นท่านจะได้ขายออกไปเพื่อทำกำไร"
 
+msgid "You have %1. You may open one or %2more cryptocurrency%3 accounts:"
+msgstr ""
+
+msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
+msgstr ""
+
 msgid "You have already withdrawn %1 %2."
 msgstr "ท่านได้ถอน %1 %2 เรียบร้อยแล้ว"
 
@@ -13161,6 +13305,9 @@ msgstr "ท่านได้ถอน %1 %2 หรือเทียบเท�
 
 msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "ท่านได้ถอน %1 %2 หรือเทียบเท่า"
+
+msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
+msgstr ""
 
 msgid "You have created all accounts available to you."
 msgstr "ท่านได้สร้างบัญชีทั้งหมดแล้ว"
@@ -13348,6 +13495,9 @@ msgstr "บัญชีของท่านไม่มีประวัติ
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว และวงเงินการถอนเงินของท่านได้รับการยกระดับโดยการเพิ่มวงเงินแล้ว"
 
+msgid "Your account is now closed"
+msgstr ""
+
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "บัญชีของท่านถูกระงับ โปรด %1ติดต่อฝ่ายลูกค้าสัมพันธ์%2 เพื่อดำเนินการต่อไป"
 
@@ -13489,6 +13639,12 @@ msgstr "วงเงินการถอนของท่าน คือ %1 %
 msgid "Your withdrawal limit is %1 %2."
 msgstr "วงเงินการถอนของท่าน คือ %1 %2"
 
+msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
+msgstr ""
+
+msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
+msgstr ""
+
 msgid "a client that is not a Professional client or Eligible Counterparty"
 msgstr "ลูกค้าที่ไม่ใช่ประเภท Professional Client หรือ ประเภท Eligible Counterparty"
 
@@ -13518,6 +13674,12 @@ msgstr "หน่วยของหนึ่งธุรกรรมแสดง
 
 msgid "a. Access the MT5 trading platform through the direct link %1 from BIEL's web interface, or"
 msgstr "ก. การเข้าถึงแพลตฟอร์มการซื้อขาย MT5 โดยตรงผ่านลิงค์ %1 ของเว็บของ BIEL หรือ"
+
+msgid "account"
+msgstr ""
+
+msgid "accounts"
+msgstr ""
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "คำสั่งในการสั่งดำเนินการธุรกรรมใดๆ เพื่อปิดโพซิชั่นที่เปิดอยู่ เมื่อราคาถึงระดับราคาที่ลูกค้าระบุเอาไว้"

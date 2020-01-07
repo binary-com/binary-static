@@ -188,6 +188,7 @@ const MetaTraderConfig = (() => {
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
                                 $message.find('.authenticate').setVisibility(1);
+                                // setLabuanAdvancedIntention();
                                 is_ok = false;
                             }
 
@@ -220,6 +221,20 @@ const MetaTraderConfig = (() => {
             }
         })
     );
+
+    // TODO: add this line when dry_run API ready
+    // const setLabuanAdvancedIntention = () => {
+    //     const req = {
+    //         mt5_new_account : 1,
+    //         account_type    : 'financial',
+    //         email           : Client.get('email'),
+    //         leverage        : 100,
+    //         name            : 'test real labuan advanced',
+    //         mainPassword    : 'Test1234',
+    //         mt5_account_type: 'advanced',
+    //     };
+    //     BinarySocket.send(req);
+    // };
 
     const actions_info = {
         new_account: {
@@ -276,6 +291,8 @@ const MetaTraderConfig = (() => {
                 BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                     Header.displayAccountStatus();
                 });
+
+                $('#financial_authenticate_msg').setVisibility(isAuthenticationPromptNeeded());
             },
         },
 
@@ -369,7 +386,6 @@ const MetaTraderConfig = (() => {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
-            txt_investor_pass: { id: '#txt_investor_pass', request_field: 'investPassword' },
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields:
                 acc_type => ($.extend(
@@ -435,7 +451,6 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-            { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
@@ -467,8 +482,14 @@ const MetaTraderConfig = (() => {
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
     const isAuthenticationPromptNeeded = () => {
-        const get_account_status = State.getResponse('get_account_status');
-        return get_account_status ? get_account_status.authentication.needs_verification.length : false;
+        const authentication = State.getResponse('get_account_status.authentication');
+        const { identity, needs_verification } = authentication;
+        const is_need_verification = needs_verification.length;
+        const is_rejected_or_expired = /^(rejected|expired)$/.test(identity.status);
+
+        if (is_rejected_or_expired) return false;
+
+        return is_need_verification;
     };
 
     return {
