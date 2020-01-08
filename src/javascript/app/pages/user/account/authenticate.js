@@ -896,7 +896,7 @@ const Authenticate = (() => {
                 service      : 'onfido',
             }).then((response) => {
                 if (response.error) {
-                    resolve();
+                    resolve(response.error);
                 }
                 const token = response.service_token.token;
                 const in_90_minutes = 1 / 16;
@@ -946,6 +946,11 @@ const Authenticate = (() => {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
+                        if (onfido_token === 'MissingPersonalDetails') {
+                            $('#personal_details_error').setVisibility(1);
+                            break;
+                        }
+
                         initOnfido(onfido_token, documents_supported);
                     }
                     break;
@@ -968,7 +973,13 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido(onfido_token, documents_supported);
+            const missing_personal_details = onfido_token === 'MissingPersonalDetails';
+
+            if (missing_personal_details) {
+                $('#personal_details_error').setVisibility(1);
+            } else {
+                initOnfido(onfido_token, documents_supported);
+            }
         }
         switch (document.status) {
             case 'none': {
