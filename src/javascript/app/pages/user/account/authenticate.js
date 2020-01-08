@@ -896,7 +896,8 @@ const Authenticate = (() => {
                 service      : 'onfido',
             }).then((response) => {
                 if (response.error) {
-                    resolve(response.error);
+                    resolve(response.error.code);
+                    return;
                 }
                 const token = response.service_token.token;
                 const in_90_minutes = 1 / 16;
@@ -939,8 +940,10 @@ const Authenticate = (() => {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }
-
-        if (!identity.further_resubmissions_allowed) {
+        
+        if (is_onfido_pob_error) {
+            $('#personal_details_error').setVisibility(1);
+        } else if (!identity.further_resubmissions_allowed) {
             switch (identity.status) {
                 case 'none':
                     if (onfido_unsupported) {
@@ -973,8 +976,6 @@ const Authenticate = (() => {
                 default:
                     break;
             }
-        } else if (is_onfido_pob_error) {
-            $('#personal_details_error').setVisibility(1);
         } else {
             initOnfido(onfido_token, documents_supported);
         }
