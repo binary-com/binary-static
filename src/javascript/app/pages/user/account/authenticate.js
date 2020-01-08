@@ -36,6 +36,12 @@ const Authenticate = (() => {
         $submit_status_uns,
         $submit_table_uns;
 
+    const personal_details_map = {
+        place_of_birth: localize('Place of birth'),
+        residence     : localize('Country of residence'),
+        phone         : localize('Phone number'),
+    };
+
     const init = () => {
         file_checks    = {};
         $submit_status = $('.submit-status');
@@ -896,7 +902,7 @@ const Authenticate = (() => {
                 service      : 'onfido',
             }).then((response) => {
                 if (response.error) {
-                    resolve(response.error.code);
+                    resolve({ error: response.error });
                     return;
                 }
                 const token = response.service_token.token;
@@ -905,10 +911,10 @@ const Authenticate = (() => {
                     expires: in_90_minutes,
                     secure : true,
                 });
-                resolve(token);
+                resolve({ token });
             });
         } else {
-            resolve(onfido_cookie);
+            resolve({ token: onfido_cookie });
         }
     });
 
@@ -920,6 +926,7 @@ const Authenticate = (() => {
     };
 
     const initAuthentication = async () => {
+        let has_personal_details_error = false;
         const authentication_status = await getAuthenticationStatus();
 
         if (!authentication_status || authentication_status.error) {
@@ -927,9 +934,22 @@ const Authenticate = (() => {
             $('#error_occured').setVisibility(1);
             return;
         }
+
+        const service_token_response = await getOnfidoServiceToken();
         
-        const onfido_token = await getOnfidoServiceToken();
-        const is_onfido_pob_error = onfido_token === 'MissingPersonalDetails';
+        if (
+            service_token_response.error &&
+            service_token_response.error.code === 'MissingPersonalDetails'
+        ) {
+            has_personal_details_error = true;
+            let missing_personal_fields = '';
+            Object.keys(service_token_response.required_fields).forEach(field => {
+                missing_personal_fields += !missing_personal_fields ? personal_details_map[field] : `, ${personal_details_map[field]}`;
+            });
+
+            $('#missing_personal_fields').html(missing_personal_fields);
+        }
+        
         const { identity, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
@@ -941,7 +961,7 @@ const Authenticate = (() => {
             $('#authentication_verified').setVisibility(1);
         }
         
-        if (is_onfido_pob_error) {
+        if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
         } else if (!identity.further_resubmissions_allowed) {
             switch (identity.status) {
@@ -950,12 +970,7 @@ const Authenticate = (() => {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
-                        if (is_onfido_pob_error) {
-                            $('#personal_details_error').setVisibility(1);
-                            break;
-                        }
-
-                        initOnfido(onfido_token, documents_supported);
+                        initOnfido(service_token_response.token, documents_supported);
                     }
                     break;
                 case 'pending':
@@ -977,7 +992,7 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido(onfido_token, documents_supported);
+            initOnfido(service_token_response.token, documents_supported);
         }
         switch (document.status) {
             case 'none': {
