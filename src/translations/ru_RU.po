@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-07 02:49\n"
+"PO-Revision-Date: 2020-01-08 05:02\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1071,7 +1071,7 @@ msgid "Administer overall payment systems, including monitoring and reporting cl
 msgstr "Администрирование общих платёжных систем, включая мониторинг и создание отчётов о клиентской активности, а также уровне их успеха"
 
 msgid "Advanced"
-msgstr "Для опытных"
+msgstr "Расширенный"
 
 msgid "Advanced Account"
 msgstr "Расширенный счёт"
@@ -3398,6 +3398,9 @@ msgstr "Ваша дата рождения"
 msgid "Dated within the last six months"
 msgstr "Датирован не позднее, чем за последние 6 месяцев"
 
+msgid "Deal Cancel. Fee"
+msgstr ""
+
 msgid "Debt-free"
 msgstr "Никаких долгов"
 
@@ -4407,7 +4410,7 @@ msgid "FIX API"
 msgstr "FIX API"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "Основные валютные пары (стандартные/микро лоты), минорные валютные пары, сырьевые товары, криптовалюты"
 
 msgid "FXOpen"
 msgstr "FXOpen,"
@@ -7078,6 +7081,12 @@ msgstr "Множество возможностей заработка"
 
 msgid "Multiplier"
 msgstr "Множитель"
+
+msgid "Multiplier Down"
+msgstr ""
+
+msgid "Multiplier Up"
+msgstr ""
 
 msgid "Must be a clear, colour photo"
 msgstr "Фото должно быть чётким"
@@ -9789,7 +9798,7 @@ msgid "Synthetic indices that mimic market volatility."
 msgstr "Синтетические индексы, имитирующие волатильность рынка."
 
 msgid "Synthetics"
-msgstr ""
+msgstr "Синтетические активы"
 
 msgid "System Administrator"
 msgstr "Системный администратор"
@@ -10014,7 +10023,7 @@ msgid "The <strong>start time</strong> is when the contract is processed by our 
 msgstr "<strong>Временем начала</strong> считается момент, когда контракт был обработан нашим сервером."
 
 msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr ""
+msgstr "Расширенный счет работает исключительно по модели A-book, а это значит, что мы передаем ваши контракты напрямую к нашим поставщикам ликвидности. Расширенный счет позволяет вам торговать основными и экзотическими валютными парами в больших объемах и с более узкими спредами."
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "Партнёр и Компания являются независимыми контрагентами, и ни один пункт в данном Соглашении не подразумевает создания между ними франшизы, совместного предприятия, агентства, филиала, деятельности торгового агента или установления отношений работодателя и работника. У Партнёра нет права создавать или принимать предложения от имени Компании, а также представлять её. Партнёр обязуется не делать на своём сайте или других ресурсах заявлений и утверждений, противоречащих данному положению."
@@ -10692,13 +10701,13 @@ msgid "The Standard account (available in EUR and GBP) is suitable for a wide ra
 msgstr ""
 
 msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr ""
+msgstr "Стандартный счет подходит как для новичков, так и для опытных трейдеров. Переменные спреды и гибкие настройки счета позволят вам заключать контракты с высоким кредитным плечом на сырьевых товарах, криптовалютах, минорных и основных валютных парах (стандартные и микро лоты)."
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "Уровень стоп-аут, относящийся к Реальному счёту MT5 клиента, может отличаться от уровня стоп-аут по умолчанию, опубликованного на вебсайте Компании."
 
 msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr ""
+msgstr "Счет на Синтетических индексах позволяет вам торговать контрактами на разницу (CFD) на активах, имитирующих движение реальных рынков. Синтетические индексы доступны для торговли 24/7 и регулярно проверяются независимой третьей стороной."
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "Команда системных администраторов несёт ответственность за поддержание, конфигурацию и надёжную работу компьютерного и программного обеспечения нашего оборудования и сетей."
@@ -12012,7 +12021,7 @@ msgid "Trading information"
 msgstr ""
 
 msgid "Trading instruments"
-msgstr ""
+msgstr "Торговые инструменты"
 
 msgid "Trading is unavailable at this time."
 msgstr "В данное время торговля недоступна."
@@ -12417,7 +12426,7 @@ msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr "Счета за коммунальные услуги (электричество, вода, газ, интернет и стационарный телефон)"
 
 msgid "Variable"
-msgstr "Переменная"
+msgstr "Переменный"
 
 msgid "Variable spreads"
 msgstr "Переменные спреды"
@@ -12753,7 +12762,7 @@ msgid "Well-honed organisational, administrative, and accounting skills"
 msgstr "Отличные организационные, административные навыки и знание бухгалтерского учёта"
 
 msgid "What about instant execution? In this case, your order is placed at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
-msgstr "А как насчёт мгновенного исполнения? В данном случае, Ваш ордер будет размещён по цене, доступной в данный момент времени. Изменение котировки возможно, если цена слишком сильно колеблется до исполнения ордера."
+msgstr "При мгновенном исполнении, Ваш ордер будет размещён по цене, доступной в данный момент времени. Изменение котировки возможно, если цена слишком сильно колеблется до исполнения ордера."
 
 msgid "What are binary options"
 msgstr "Что такое бинарные опционы"
