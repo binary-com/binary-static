@@ -928,6 +928,7 @@ const Authenticate = (() => {
         }
         
         const onfido_token = await getOnfidoServiceToken();
+        const is_onfido_pob_error = onfido_token === 'MissingPersonalDetails';
         const { identity, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
@@ -946,7 +947,7 @@ const Authenticate = (() => {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
-                        if (onfido_token === 'MissingPersonalDetails') {
+                        if (is_onfido_pob_error) {
                             $('#personal_details_error').setVisibility(1);
                             break;
                         }
@@ -972,14 +973,10 @@ const Authenticate = (() => {
                 default:
                     break;
             }
+        } else if (is_onfido_pob_error) {
+            $('#personal_details_error').setVisibility(1);
         } else {
-            const missing_personal_details = onfido_token === 'MissingPersonalDetails';
-
-            if (missing_personal_details) {
-                $('#personal_details_error').setVisibility(1);
-            } else {
-                initOnfido(onfido_token, documents_supported);
-            }
+            initOnfido(onfido_token, documents_supported);
         }
         switch (document.status) {
             case 'none': {
