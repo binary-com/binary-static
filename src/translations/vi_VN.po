@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-08 05:02\n"
+"PO-Revision-Date: 2020-01-09 08:53\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -426,7 +426,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "Hệ thống của %1 hiện tại đang vượt quá 1 triệu giao dịch một ngày ( bao gồm tài khoản ảo)."
 
 msgid "%1Choose a currency%2 for your fiat currency account:"
-msgstr ""
+msgstr "%1Chọn một loại tiền tệ%2 làm đơn vị tiền tệ mặc định cho tài khoản của bạn:"
 
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Liên hệ với chúng tôi%2 để sắp xếp một ngày và thời gian cho cuộc gọi video."
@@ -444,7 +444,7 @@ msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1Không, thay đổi tài khoản tiền fiat bây giờ%2"
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
-msgstr ""
+msgstr "%1Lưu Ý%2: Các giới hạn này chỉ áp dụng cho tài khoản thực %3 của bạn. Để đặt giới hạn, đổi sang tài khoản tương ứng và đặt giới hạn phù hợp."
 
 msgid "%1Return to trading page%2"
 msgstr "%1Trở về trang giao dịch%2"
@@ -924,7 +924,7 @@ msgid "Account Categorisation"
 msgstr "Phân loại tài khoản"
 
 msgid "Account Closure"
-msgstr ""
+msgstr "Đóng tài khoản"
 
 msgid "Account Deposit Currency"
 msgstr "Tài khoản tiền gửi tiền tệ"
@@ -1050,7 +1050,7 @@ msgid "Additional business exposure:"
 msgstr "Sự tiếp xúc kinh doanh bổ sung:"
 
 msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
-msgstr ""
+msgstr "Ngân hàng hoặc dịch vụ chuyển tiền của bạn có thể yêu cầu kéo dài thời gian xử lý cho đến khi vốn được thêm vào tài khoản của bạn."
 
 msgid "Address"
 msgstr "Địa chỉ"
@@ -2368,7 +2368,7 @@ msgid "Can be used to view account activity, including settings, limits, balance
 msgstr "Có thể được sử dụng để xem hoạt động của tài khoản, bao gồm cài đặt, giới hạn, số dư, lịch sử giao dịch, và nhiều hơn thế nữa."
 
 msgid "Can be used to view the trading history of an account."
-msgstr ""
+msgstr "Có thể được sử dụng để xem lịch sử giao dịch của một tài khoản."
 
 msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
 msgstr "Có thể được sử dụng để rút tiền qua các đại lý thanh khoản và chuyển khoản giữa các tài khoản."
@@ -2506,7 +2506,7 @@ msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Giám đốc điều hành, quan chức cấp cao và các nhà lập pháp"
 
 msgid "Choose a currency for your real account:"
-msgstr ""
+msgstr "Chọn đơn vị tiền tệ cho tài khoản thực của bạn:"
 
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Chọn thời hạn từ 10 giây tới 365 ngày."
@@ -2536,7 +2536,7 @@ msgid "Choose from three main trade types:"
 msgstr "Chọn từ ba loại giao dịch chính:"
 
 msgid "Choose one or more cryptocurrency accounts:"
-msgstr ""
+msgstr "Chọn một hoặc nhiều tài khoản cryptocurrency:"
 
 msgid "Choose scopes:"
 msgstr "Chọn loại:"
@@ -2707,10 +2707,10 @@ msgid "Close all or any of the client's Open Positions at a closing level that i
 msgstr "Đóng tất cả hoặc bất kỳ Phiên Mở nào của khách hàng ở một mức đóng hợp lý có sẵn"
 
 msgid "Close my account"
-msgstr ""
+msgstr "Đóng tài khoản"
 
 msgid "Close your %1 account."
-msgstr ""
+msgstr "Đóng tài khoản %1 của bạn."
 
 msgid "Close-Low"
 msgstr "Đóng-Thấp"
@@ -4412,6 +4412,9 @@ msgstr "FIX API"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Hàng hóa thương mại, tiền điện tử, FX-majors (standard/micro lots), FX-minors"
+
+msgid "FX-majors, FX-minors, FX-exotics"
+msgstr ""
 
 msgid "FXOpen"
 msgstr "FXOpen"
