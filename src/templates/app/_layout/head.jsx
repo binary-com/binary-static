@@ -32,7 +32,6 @@ const Head = () => (
         <Favicons />
 
         { it.languages
-            .filter(lang => lang !== it.language)
             .map((lang, inx) => (
                 <link key={inx} rel='alternate' href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
             ))
