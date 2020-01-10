@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-08 05:02\n"
+"PO-Revision-Date: 2020-01-09 08:52\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -924,7 +924,7 @@ msgid "Account Categorisation"
 msgstr "Категоризация счетов"
 
 msgid "Account Closure"
-msgstr ""
+msgstr "Закрытие счета"
 
 msgid "Account Deposit Currency"
 msgstr "Валюта пополнения счёта"
@@ -4412,6 +4412,9 @@ msgstr "FIX API"
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Основные валютные пары (стандартные/микро лоты), минорные валютные пары, сырьевые товары, криптовалюты"
 
+msgid "FX-majors, FX-minors, FX-exotics"
+msgstr ""
+
 msgid "FXOpen"
 msgstr "FXOpen,"
 
@@ -5256,10 +5259,10 @@ msgid "I want to change my currency instead"
 msgstr ""
 
 msgid "I want to close my account"
-msgstr ""
+msgstr "Я хочу закрыть счет"
 
 msgid "I want to limit my trading activity instead"
-msgstr ""
+msgstr "Я хотел бы установить ограничения на свою торговую деятельность."
 
 msgid "I want to open a cryptocurrency account instead"
 msgstr ""
@@ -7521,7 +7524,7 @@ msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed.
 msgstr "Разрешены только буквы, цифры, пробелы, дефис, точки и апостроф."
 
 msgid "Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed."
-msgstr ""
+msgstr "Разрешены только буквы, цифры, пробелы, дефисы, точки, запятые и апострофы."
 
 msgid "Only letters, numbers, space, underscore, and hyphen are allowed for ID number (%1)."
 msgstr "Для номера ID разрешены только буквы, цифры, пробел, нижнее подчёркивание, и дефис (%1)."
@@ -9564,7 +9567,7 @@ msgid "Step 1: Choose demo or real account"
 msgstr "Шаг 1: Выберите реальный или демо-счёт"
 
 msgid "Step 1: Close all open positions"
-msgstr ""
+msgstr "Шаг 1: Закройте все открытые позиции"
 
 msgid "Step 1: Define your position"
 msgstr "Шаг 1: Выберите условия"
@@ -9585,7 +9588,7 @@ msgid "Step 2: Understand when to buy and when to sell"
 msgstr "Шаг 2: Понимайте, когда покупать и продавать"
 
 msgid "Step 2: Withdraw your funds"
-msgstr ""
+msgstr "Шаг 2: Выведите средства"
 
 msgid "Step 3"
 msgstr "Шаг 3"
@@ -11145,7 +11148,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Достигнуто максимальное число ключей (%1)."
 
 msgid "The minimum amount for withdrawal will vary depending on the latest exchange rates."
-msgstr ""
+msgstr "Минимальная сумма для вывода средств будет варьироваться, в зависимости от валютных курсов."
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Минимальная сумма для для перевода: %1."
@@ -13512,7 +13515,7 @@ msgid "Your account is fully authenticated and your withdrawal limits have been 
 msgstr "Ваш счет полностью авторизован, и лимит на вывод был снят."
 
 msgid "Your account is now closed"
-msgstr ""
+msgstr "Ваш счет успешно закрыт"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Ваш счёт заблокирован. Пожалуйста, свяжитесь с нашей %1cлужбой поддержки%2 для получения дальнейшей помощи."
@@ -13659,7 +13662,7 @@ msgid "Your withdrawal will be processed in one business day (Monday to Friday 9
 msgstr ""
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
-msgstr ""
+msgstr "Вы успешно закрыли счет. Мы отправим письмо с подтверждением на %1."
 
 msgid "a client that is not a Professional client or Eligible Counterparty"
 msgstr "клиент, не являющийся профессиональным клиентом или полноправным контрагентом"
@@ -13692,10 +13695,10 @@ msgid "a. Access the MT5 trading platform through the direct link %1 from BIEL's
 msgstr "a) зайти на торговую платформу MT5 по прямой ссылке %1 через веб интерфейс BIEL; или"
 
 msgid "account"
-msgstr ""
+msgstr "счёт"
 
 msgid "accounts"
-msgstr ""
+msgstr "счета"
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "инструкция исполнить контракт с целью закрыть открытую позицию, когда цена достигнет уровня, указанного клиентом"
