@@ -129,7 +129,7 @@ const Forex = () => (
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the margin for our currency pairs by using the formula below:')}</p>
 
-                    <MtBox icon_1='l1-icon' icon_2='l2-icon' text={it.L('For example, if you buy one lot of the EUR/USD pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lot of EUR/USD will be calculated as follows:')} />
+                    <MtBox icon_1='l1-icon' icon_2='l2-icon' text={it.L('For example, if you buy one lot of the USD/JPY pair with a contract size of 100,000 and leverage of 100:1, the margin that you need to purchase one lot of USD/JPY will be calculated as follows:')} />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
