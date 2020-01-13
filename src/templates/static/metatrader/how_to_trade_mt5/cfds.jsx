@@ -26,7 +26,8 @@ const CFDs = () => (
             <SeparatorLine className='gr-padding-30' />
 
             <h2>{it.L('How to close a position')}</h2>
-            <p>{it.L('When you decide to close an open contract, you only need to choose “Close Position” option from context menu.')}</p>
+            <p>{it.L('When you decide to close an open contract, you only need to take the opposite position in order to close the contract.')}</p>
+            <p>{it.L('For example, if you buy a USD 100 contract and it\'s not going as planned, you just need to sell it to cut your losses at the current market price.')}</p>
         </div>
     </div>
 );
