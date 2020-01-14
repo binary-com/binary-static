@@ -36,12 +36,12 @@ const BinaryInNumbers = () => (
                 text={it.L('We\'re expected to generate over USD 1 billion in turnover this year, bringing our total turnover since inception to over USD 5.7 billion.')}
                 image='chart-turnover'
             />
-            <Numbers
+            {/* <Numbers
                 className='withdrawal'
                 header={it.L('Client withdrawals')}
                 text={it.L('Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year.')}
                 image='chart-client-withdrawals'
-            />
+            /> */}
             <Numbers
                 className='employee'
                 header={it.L('Number of employees and contractors')}
