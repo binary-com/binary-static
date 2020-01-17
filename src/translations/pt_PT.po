@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-09 08:52\n"
+"PO-Revision-Date: 2020-01-17 09:29\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -2038,9 +2038,6 @@ msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Doug
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Binary (IOM) Ltd, ou"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
 
@@ -2335,6 +2332,9 @@ msgstr "Frequência de negociação de CFDs"
 msgid "CFDs"
 msgstr "CFDs"
 
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr ""
+
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFDs são instrumentos complexos e implicam um elevado risco de perda rápida de dinheiro devido à alavancagem. 78.6% das contas de investidores particulares perdem dinheiro quando negociam CFDs. Você deve pensar bem sobre se compreende como funcionam os CFDs e se pode arriscar de perder todo o seu dinheiro."
 
@@ -2614,7 +2614,7 @@ msgstr "Retiradas de cliente"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "Retiradas de clientes antes destes ano totalizaram quase 500 milhões de USD. Mais de 140 milhões de USD em retiradas de clientes estão previstos para este ano."
 
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
 msgstr ""
 
 msgid "Client's liability"
@@ -8709,7 +8709,7 @@ msgstr "Padrão real"
 msgid "Real Synthetic Indices"
 msgstr "Índices sintéticos Real"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
 msgstr ""
 
 msgid "Real-Money Account"
@@ -10188,8 +10188,8 @@ msgstr "A empresa não tolera qualquer forma de comportamento inapropriado. Isso
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "A Empresa se esforça para abrir ou fechar a transação à qual o Pedido do cliente está relacionado a um preço razoavelmente disponível para a Empresa, agindo de acordo com o dever de execução da Empresa. Melhor execução significa que, ao executar Ordens, a Empresa deve tomar todas as medidas necessárias para obter o melhor resultado possível para o cliente, levando em consideração o preço, custos, velocidade, probabilidade de execução e liquidação, tamanho, natureza ou qualquer outra consideração. relevantes para a execução da Ordem."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "A empresa possui uma política de Stop Out que evita que o cliente perca mais do que depositou. No entanto, caso as posições em aberto do cliente não sejam fechadas quando o nível de margem da conta Real MT5 atingir o nível de parada, a empresa, a seu exclusivo critério, poderá renunciar ao saldo negativo do cliente creditando sua conta se o saldo da conta entra em um saldo negativo. O saldo negativo é determinado pela agregação de todos os saldos negativos incorridos durante um período de 24 horas em todas as contas mantidas pelo cliente. O cliente reconhece que, a menos que seja um cliente de varejo da Binary Investments (Europe) Ltd ou um cliente da Binary (Europe) Ltd ou Binary (IOM) Ltd, a oferta da proteção de saldo negativo pela Empresa ao cliente está a critério exclusivo da Empresa, a Empresa reserva-se o direito de alterar os recursos e os critérios de elegibilidade da proteção de saldo negativo a qualquer momento. As disposições da proteção do saldo negativo não se aplicam nas seguintes situações:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "A Empresa tem o dever geral de conduzir seus negócios com o cliente de forma honesta, justa e profissional e agir no melhor interesse do cliente ao abrir e fechar negócios de opções binárias com o cliente."
