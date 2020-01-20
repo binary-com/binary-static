@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-07 02:48\n"
+"PO-Revision-Date: 2020-01-20 03:57\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2036,9 +2036,6 @@ msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Doug
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary(IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Binary (IOM) Ltd, 或"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
 
@@ -2333,6 +2330,9 @@ msgstr "差價合約交易頻率"
 msgid "CFDs"
 msgstr "差價合約"
 
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr "差價合約是複雜的工具, 並且由於槓桿作用，資金迅速虧損的風險很高。透過Binary Investments (Europe) Ltd進行差價合約交易時有%1的零售投資者帳戶蒙受虧損。您必須考慮自己是否了解差價合約的運作方式, 以及是否能夠承擔資金虧損的高風險。"
+
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "差價合約是複雜的工具, 並且由於槓桿作用，資金迅速虧損的風險很高。進行差價合約交易時有78.6-% 的零售投資者帳戶蒙受虧損。 您必須考慮自己是否了解差價合約的運作方式, 以及是否能夠承擔資金虧損的高風險。"
 
@@ -2612,8 +2612,8 @@ msgstr "客戶提款"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "今年前的客戶提款總額將近5億美元。預計今年的客戶提款總額將超過1.4億美元。"
 
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
-msgstr "如果連續365天沒有活動，客戶的虛擬帳戶將被刪除。"
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
+msgstr "如果連續30天沒有活動，客戶的虛擬帳戶將被刪除。"
 
 msgid "Client's liability"
 msgstr "客戶的責任"
@@ -3397,6 +3397,9 @@ msgstr "出生日期"
 
 msgid "Dated within the last six months"
 msgstr "過去六個月內的日期"
+
+msgid "Deal Cancel. Fee"
+msgstr "交易取消. 費用"
 
 msgid "Debt-free"
 msgstr "無負債"
@@ -4407,7 +4410,10 @@ msgid "FIX API"
 msgstr "FIX API"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "外匯-主要貨幣對（標準/微手）， 外匯-次要貨幣對， 大宗商品， 加密貨幣"
+
+msgid "FX-majors, FX-minors, FX-exotics"
+msgstr "外匯-主要貨幣對，外匯-次要貨幣對，外匯-奇異貨幣對"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -7079,6 +7085,12 @@ msgstr "多重收入機會"
 msgid "Multiplier"
 msgstr "倍數值"
 
+msgid "Multiplier Down"
+msgstr "倍數值下跌"
+
+msgid "Multiplier Up"
+msgstr "倍數值上漲"
+
 msgid "Must be a clear, colour photo"
 msgstr "必須是清晰的彩色照片"
 
@@ -7564,9 +7576,6 @@ msgstr "訂立合約"
 
 msgid "Open positions"
 msgstr "空缺"
-
-msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr "如果連續180天沒有活動，虛擬帳戶的持倉頭寸和待處理訂單將被刪除。"
 
 msgid "Open-Source Projects"
 msgstr "開源專案"
@@ -8693,8 +8702,8 @@ msgstr "真實標準"
 msgid "Real Synthetic Indices"
 msgstr "真實綜合指數"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "如果連續180天沒有活動，真實帳戶將被封閉。請通過%1%1support@binary.com%2與binary.com客服部聯繫，以重啟真實帳戶"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr "如果連續90天沒有活動，真實帳戶將被封閉。請通過%1support@binary.com%2與binary.com客服部聯繫，以重啟真實帳戶"
 
 msgid "Real-Money Account"
 msgstr "真實資金帳戶"
@@ -9789,7 +9798,7 @@ msgid "Synthetic indices that mimic market volatility."
 msgstr "類比市場波動性的綜合指數。"
 
 msgid "Synthetics"
-msgstr ""
+msgstr "綜合"
 
 msgid "System Administrator"
 msgstr "系統管理員"
@@ -10014,7 +10023,7 @@ msgid "The <strong>start time</strong> is when the contract is processed by our 
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
 
 msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr ""
+msgstr "高級帳戶是100%A Book帳戶。讓您直接進入市場交易，您也可直接存取外匯流動量提供商，並進行緊密利差、高交易量的主要、次要和特異貨幣對外匯交易。"
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "聯盟會員與公司都為獨立訂約人，本協議的任何規定均不能建立雙方之間的任何合作夥伴、合資、代理、加盟、業務代表或僱傭關係。聯盟會員無權代表公司做出或接受任何要約或陳述。聯盟會員不得作出與本條任何內容不一致的聲明（無論是否在其網站上）。"
@@ -10172,8 +10181,8 @@ msgstr "公司不容忍任何形式的不當行為，包括使用冒犯性語言
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "公司按照最佳執行責任行事，努力以與客戶的訂單相關的合理可用價格開盤或平倉交易。最佳執行意味著公司在執行訂單時必須採取足夠措施，考慮價格、成本、速度、執行和結算的可能性、大小、性質或任何其他考慮因素以為客戶獲取最大效益。"
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "公司制定了「強制平倉」政策，可以防止客戶的損失超過其存入的金額。但是，當客戶的MT5真實帳戶的保證金水平達到止損水平時其持倉頭寸未平倉，而且如果客戶的帳戶餘額已是負餘額，則公司可以自行決定是否通過貸記其帳戶來免除客戶的負餘額。負餘額是通過匯總客戶持有的所有帳戶在24小時內發生的所有負餘額而確定的。除非客戶是 Binary (Europe) Ltd 或 Binary (IOM) Ltd 或 Binary Investments (Europe) Ltd 的零售客戶，客戶確認公司提供的負餘額保護是由公司自行決定的，公司保留隨時更改負餘額保護的功能和資格標準的權利。負餘額保護的規定不適用於以下情況："
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr "公司制定了「強制平倉」政策，可以防止客戶的損失超過其存入的金額。但是，當客戶的MT5真實帳戶的保證金水平達到止損水平時其持倉頭寸未平倉，而且如果客戶的帳戶餘額已是負餘額，則公司可以自行決定是否通過貸記其帳戶來免除客戶的負餘額。負餘額是通過匯總客戶持有的所有帳戶在24小時內發生的所有負餘額而確定的。除非客戶是Binary投資（歐洲）有限公司的零售客戶或Binary（歐洲）有限公司的客戶，客戶確認公司提供的負餘額保護是由公司自行決定的，公司保留隨時更改負餘額保護的功能和資格標準的權利。負餘額保護的規定不適用於以下情況："
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "公司的常規義務是以誠實、公正和專業的方式對客戶提供業務上的服務，並在與客戶開立和結束二元期權交易時替客戶爭取最大的利益。"
@@ -10689,16 +10698,16 @@ msgid "The Spread is subject to alteration, at the Company's absolute discretion
 msgstr "價差可由公司全權酌情決定更改。客戶確認，雖然公司努力維持價差的競爭力，但在某些情況下可能會大幅擴大，而這些數字將由公司合理酌情決定。每日銀行轉帳可能會造成價差擴大。"
 
 msgid "The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr ""
+msgstr "標準帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。以微小和可變的差價進行大宗商品、加密貨幣、主要和次要貨幣對交易, 不收佣金費，也沒有最低存款限制。"
 
 msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr ""
+msgstr "標準帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性，進行高槓桿大宗商品、加密貨幣、主要（標準和微手）和次要貨幣對交易。"
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "適用於客戶MT5真實帳戶的強制平倉層級可能與公司網站公佈的預設強制平倉層級不一樣。"
 
 msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr ""
+msgstr "綜合指數帳戶讓您以最低真實市場波動率進行差價合約綜合指數交易。全年無休，全天候交易，公平審計由第三方獨立機構監控。"
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "系統管理團隊負責維護、配置和可靠運行我們的電腦軟體、硬體和網路。"
@@ -12012,7 +12021,7 @@ msgid "Trading information"
 msgstr "交易資訊"
 
 msgid "Trading instruments"
-msgstr ""
+msgstr "交易工具"
 
 msgid "Trading is unavailable at this time."
 msgstr "此時無法交易。"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-07 02:49\n"
+"PO-Revision-Date: 2020-01-20 03:58\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -2037,9 +2037,6 @@ msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Doug
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, Primer piso, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Binary (IOM) Ltd, o"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
 
@@ -2334,6 +2331,9 @@ msgstr "Frecuencia en operación con CFD"
 msgid "CFDs"
 msgstr "CFD"
 
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr "Los CFDs son instrumentos complejos e implican un alto riesgo de perder dinero rápidamente debido al apalancamiento. El %1 de las cuentas de inversores minoristas pierden dinero cuando operan los CFDs con Binary Investments (Europe) Ltd. Usted debe considerar si entiende cómo funcionan los CFDs y si puede permitirse el riesgo de perder su dinero."
+
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "Los CFD son instrumentos complejos e implican un alto riesgo de perder dinero rápidamente debido al apalancamiento. El 78.6% de las cuentas de inversores minoristas pierden dinero cuando operan con CFD. Usted debe considerar si entiende cómo funcionan los CFD y si puede permitirse el riesgo de perder su dinero."
 
@@ -2613,8 +2613,8 @@ msgstr "Retiros del cliente"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "Los retiros de clientes previos a este año ascendieron a casi USD 500 millones. Se esperan más de USD 140 millones en retiros de clientes para este año."
 
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
-msgstr "Las cuentas demo del cliente se eliminarán después de 365 días de inactividad."
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
+msgstr "Las cuentas demo del cliente se eliminarán después de 30 días de inactividad."
 
 msgid "Client's liability"
 msgstr "Responsabilidad del Cliente"
@@ -3398,6 +3398,9 @@ msgstr "Fecha de nacimiento"
 
 msgid "Dated within the last six months"
 msgstr "Con fecha de los últimos seis meses"
+
+msgid "Deal Cancel. Fee"
+msgstr "Cuota de cancelación de contrato"
 
 msgid "Debt-free"
 msgstr "Libre de deuda"
@@ -4408,7 +4411,10 @@ msgid "FIX API"
 msgstr "API FIX"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "FX-mayores (lotes estándar / micro), FX-menores, materias primas, criptomonedas"
+
+msgid "FX-majors, FX-minors, FX-exotics"
+msgstr "FX-mayores, FX-menores, FX-exóticos"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -7081,6 +7087,12 @@ msgstr "Múltiples oportunidades de ingresos"
 msgid "Multiplier"
 msgstr "Multiplicador"
 
+msgid "Multiplier Down"
+msgstr "Multiplicador Abajo"
+
+msgid "Multiplier Up"
+msgstr "Multiplicador Arriba"
+
 msgid "Must be a clear, colour photo"
 msgstr "Debe ser una fotografía nítida y a color"
 
@@ -7566,9 +7578,6 @@ msgstr "Contratos abiertos"
 
 msgid "Open positions"
 msgstr "Posiciones abiertas"
-
-msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr "Las posiciones abiertas y las órdenes pendientes para cuentas demo se eliminarán después de 180 días de inactividad."
 
 msgid "Open-Source Projects"
 msgstr "Proyectos de código abierto"
@@ -8695,8 +8704,8 @@ msgstr "Cuenta real estándar"
 msgid "Real Synthetic Indices"
 msgstr "Índices sintéticos reales"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Las cuentas reales se archivarán después de 180 días de inactividad. Para reactivar una cuenta real, comuníquese con servicio de asistencia de Binary.com en %1support@binary.com%2"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr "Las cuentas reales se archivarán después de 90 días de inactividad. Para reactivar una cuenta real, comuníquese con servicio de asistencia de Binary.com en %1support@binary.com%2"
 
 msgid "Real-Money Account"
 msgstr "Cuenta de dinero real"
@@ -9791,7 +9800,7 @@ msgid "Synthetic indices that mimic market volatility."
 msgstr "Índices sintéticos que emulan la volatilidad del mercado."
 
 msgid "Synthetics"
-msgstr ""
+msgstr "Sintéticos"
 
 msgid "System Administrator"
 msgstr "Administrador del Sistema"
@@ -10017,7 +10026,7 @@ msgid "The <strong>start time</strong> is when the contract is processed by our 
 msgstr "El <strong>inicio</strong> es cuando el contrato esté procesado por nuestros servidores."
 
 msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr ""
+msgstr "La cuenta avanzada es una cuenta de A Book 100% donde sus operaciones se transfieren directamente al mercado, lo que le brinda acceso directo a proveedores de liquidez de forex. Negocie pares de divisas mayores, menores y exóticos con diferenciales ajustados y mayores volúmenes comerciales."
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "El Afiliado y la Empresa son contratistas independientes, y nada en el presente Acuerdo creará una asociación, empresa conjunta, agencia, franquicia, representación de ventas o relación laboral entre ellos. El Afiliado no tendrá autoridad alguna para hacer o aceptar ofertas o representaciones a nombre de la Empresa. El Afiliado no hará declaración alguna, ya sea en su sitio web o no, que contradiga razonablemente algún estipulado en este párrafo."
@@ -10175,8 +10184,8 @@ msgstr "La Empresa no tolera cualquier tipo de comportamiento inapropiado. Esto 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "La Empresa se esfuerza en abrir o cerrar la transacción relacionada a la Orden del cliente a un precio razonable disponible a la Empresa, actuando de acuerdo a su deber de mejor ejecución. Mejor ejecución se refiere a que, cuando se ejecutan Órdenes, la Empresa deberá tomar todas las medidas necesarias para obtener el mejor resultado posible para el cliente, teniendo en cuenta el precio, los costos, la velocidad, la probabilidad de ejecución y liquidación, la dimensión, la naturaleza o cualquier otra consideración relevante a la ejecución de la Orden."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "La Empresa tiene una política de Stop Out que evita que el cliente pierda más de lo que ha depositado. Sin embargo, en el caso que las Posiciones Abiertas del cliente no se cierren cuando el Nivel de Margen para su Cuenta Real MT5 alcance el Nivel de Stop Out, la Empresa, a su entera discreción, puede renunciar al saldo negativo del cliente acreditando su cuenta si el Saldo de su Cuenta entra en un balance negativo. El saldo negativo se determina agregando todos los saldos negativos incurridos durante un período de 24 horas en todas las cuentas mantenidas por el cliente. El cliente reconoce que, a menos que sea un cliente minorista de Binary Investments (Europe) Ltd o un cliente de Binary (Europe) Ltd o Binary (IOM) Ltd, la oferta de la protección del saldo negativo por parte de la Empresa al cliente se realiza bajo la entera discreción de la Empresa y esta se reserva el derecho de cambiar las características y los criterios de elegibilidad de la protección del saldo negativo en cualquier momento. Las disposiciones de la protección del saldo negativo no se aplican en las siguientes situaciones:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr "La Empresa tiene una política de Stop Out que evita que el cliente pierda más de lo que ha depositado. Sin embargo, en el caso de que las Posiciones Abiertas del cliente no se cierren cuando el Nivel de Margen para su Cuenta Real MT5 alcance el Nivel Stop Out, la Empresa, a su entera discreción, puede renunciar al saldo negativo del cliente acreditando su cuenta si el Saldo de su Cuenta entra en un balance negativo. El saldo negativo se determina agregando todos los saldos negativos incurridos durante un período de 24 horas en todas las cuentas mantenidas por el cliente. El cliente reconoce que, a menos que sea un cliente minorista de Binary Investments (Europe) Ltd o un cliente de Binary (Europe) Ltd, la oferta de la protección del saldo negativo por parte de la Compañía al cliente se realiza a la única discreción de la Empresa y esta se reserva el derecho de cambiar las características y los criterios de elegibilidad de la protección del saldo negativo en cualquier momento. Las disposiciones de la protección del saldo negativo no se aplican en las siguientes situaciones:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "La Empresa tiene el deber general de llevar sus negocios con el cliente con honestidad, imparcialidad y profesionalismo y de actuar en el mejor interés del cliente al abrir y cerrar contratos en opciones binarias con él mismo."
@@ -10692,16 +10701,16 @@ msgid "The Spread is subject to alteration, at the Company's absolute discretion
 msgstr "El Spread está sujeto cambios, a la entera discreción de la Empresa. El cliente reconoce que si bien la Empresa se esfuerza por mantener un Spread competitivo, éste puede ampliarse considerablemente en algunas circunstancias, y tales cifras serán determinadas por la Empresa a su discreción. Los Spreads pueden ampliarse durante el roll-over bancario diario."
 
 msgid "The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr ""
+msgstr "La cuenta estándar (disponible en EUR y GBP) es adecuada para una amplia gama de traders, tanto nuevos como experimentados. Opere con materias primas, criptomonedas, pares de divisas mayores y menores con diferenciales ajustados y variables sin comisiones y un depósito mínimo."
 
 msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr ""
+msgstr "La cuenta estándar ofrece a los traders nuevos y experimentados un alto apalancamiento y diferenciales variables para una máxima flexibilidad. Opere con materias primas, criptomonedas, pares de divisas mayores (estándar y micro lotes) y menores con alto apalancamiento."
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "El nivel de Stop Out aplicable a la Cuenta Real MT5 del cliente puede ser diferente al Nivel de Stop Out por defecto publicado en la pagina web de la Empresa."
 
 msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr ""
+msgstr "La cuenta de Índices sintéticos le permite intercambiar contratos por diferencia (CFDs) en índices sintéticos que imitan movimientos del mundo real. Disponibles para operar 24/7 y auditados para transparencia por un tercero independiente."
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "El equipo de Administración de Sistemas es responsable del mantenimiento, la configuración y el funcionamiento fiable de nuestro software, hardware y redes de sistemas informáticos."
@@ -12015,7 +12024,7 @@ msgid "Trading information"
 msgstr "Información sobre trading"
 
 msgid "Trading instruments"
-msgstr ""
+msgstr "Instrumentos comerciales"
 
 msgid "Trading is unavailable at this time."
 msgstr "No se puede operar en este momento."
