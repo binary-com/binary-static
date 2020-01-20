@@ -66,8 +66,10 @@ const DP2P = (() => {
                     websocket_api: BinarySocket,
                     lang         : getLanguage(),
                     client       : {
-                        currency  : Client.get('currency'),
-                        is_virtual: Client.get('is_virtual'),
+                        currency             : Client.get('currency'),
+                        is_virtual           : Client.get('is_virtual'),
+                        local_currency_config: Client.get('local_currency_config'),
+                        residence            : Client.get('residence'),
                     },
                 };
 
