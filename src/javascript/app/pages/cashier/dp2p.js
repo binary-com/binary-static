@@ -1,9 +1,10 @@
-const React        = require('react');
-const ReactDOM     = require('react-dom');
-const Client       = require('../../base/client');
-const BinarySocket = require('../../base/socket');
-const getLanguage  = require('../../../_common/language').get;
-const urlForStatic = require('../../../_common/url').urlForStatic;
+const React               = require('react');
+const ReactDOM            = require('react-dom');
+const Client              = require('../../base/client');
+const BinarySocket        = require('../../base/socket');
+const getLanguage         = require('../../../_common/language').get;
+const urlForStatic        = require('../../../_common/url').urlForStatic;
+const SubscriptionManager = require('../../../_common/base/subscription_manager').default;
 
 const DP2P = (() => {
 
@@ -61,9 +62,22 @@ const DP2P = (() => {
                 `;
                 el_main_css.rel = 'stylesheet';
 
+                const binary_websocket = {
+                    send        : BinarySocket.send,
+                    wait        : BinarySocket.wait,
+                    p2pSubscribe: subscribe,
+                };
+
+                const subscribe = (request, cb) => {
+                    SubscriptionManager.subscribe(Object.keys(request)[0], request, cb);
+                    return {
+                        unsubscribe: () => SubscriptionManager.forget(Object.keys(request)[0]),
+                    };
+                };
+
                 const dp2p_props = {
                     className    : 'theme--light',
-                    websocket_api: BinarySocket,
+                    websocket_api: binary_websocket,
                     lang         : getLanguage(),
                     client       : {
                         currency             : Client.get('currency'),
