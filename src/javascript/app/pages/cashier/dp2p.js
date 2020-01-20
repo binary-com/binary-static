@@ -62,17 +62,17 @@ const DP2P = (() => {
                 `;
                 el_main_css.rel = 'stylesheet';
 
-                const binary_websocket = {
-                    send        : BinarySocket.send,
-                    wait        : BinarySocket.wait,
-                    p2pSubscribe: subscribe,
-                };
-
-                const subscribe = (request, cb) => {
+                const p2pSubscribe = (request, cb) => {
                     SubscriptionManager.subscribe(Object.keys(request)[0], request, cb);
                     return {
                         unsubscribe: () => SubscriptionManager.forget(Object.keys(request)[0]),
                     };
+                };
+
+                const binary_websocket = {
+                    send: BinarySocket.send,
+                    wait: BinarySocket.wait,
+                    p2pSubscribe,
                 };
 
                 const dp2p_props = {
