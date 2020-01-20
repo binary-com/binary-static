@@ -233,10 +233,10 @@ const MetaTraderConfig = (() => {
             mt5_new_account : 1,
             name            : 'test real labuan advanced',
         };
-        BinarySocket.send(req);
-
-        // update account status authentication info
-        BinarySocket.send({ get_account_status: 1 }, { forced: true });
+        BinarySocket.send(req).then(() => {
+            // update account status authentication info
+            BinarySocket.send({ get_account_status: 1 }, { forced: true });
+        });
     };
 
     const actions_info = {
