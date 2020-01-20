@@ -63,28 +63,31 @@ const DP2P = (() => {
                 el_main_css.rel = 'stylesheet';
 
                 const p2pSubscribe = (request, cb) => {
-                    SubscriptionManager.subscribe(Object.keys(request)[0], request, cb);
+                    // Request object first key will be the msg_type
+                    const msg_type = Object.keys(request)[0];
+
+                    SubscriptionManager.subscribe(msg_type, request, cb);
                     return {
-                        unsubscribe: () => SubscriptionManager.forget(Object.keys(request)[0]),
+                        unsubscribe: () => SubscriptionManager.forget(msg_type),
                     };
                 };
 
-                const binary_websocket = {
+                const websocket_api = {
                     send: BinarySocket.send,
                     wait: BinarySocket.wait,
                     p2pSubscribe,
                 };
 
                 const dp2p_props = {
-                    className    : 'theme--light',
-                    websocket_api: binary_websocket,
-                    lang         : getLanguage(),
-                    client       : {
+                    className: 'theme--light',
+                    client   : {
                         currency             : Client.get('currency'),
                         is_virtual           : Client.get('is_virtual'),
                         local_currency_config: Client.get('local_currency_config'),
                         residence            : Client.get('residence'),
                     },
+                    lang: getLanguage(),
+                    websocket_api,
                 };
 
                 ReactDOM.render(
