@@ -101,7 +101,7 @@ const Authenticate = () => (
                         <div id='personal_details_error' className='center-text gr-padding-20 invisible'>
                             <h2 className='gr-padding-10'>{it.L('Update your personal details')}</h2>
                             <p>{it.L('We can\'t validate your personal details because there is some information missing.')}</p>
-                            <p>{it.L('Please update your [_1] to continue.', '<span id="missing_personal_fields" />')}</p>
+                            <p>{it.L('Please update your [_1] to continue.', '<span id="missing_personal_fields"></span>')}</p>
                             <Button
                                 className='button'
                                 href={it.url_for('user/settings/detailsws')}
