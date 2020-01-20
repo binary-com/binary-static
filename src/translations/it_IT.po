@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-09 08:52\n"
+"PO-Revision-Date: 2020-01-20 03:57\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -2036,9 +2036,6 @@ msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Doug
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, primo piano, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Binary (IOM) Ltd, oppure"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
 
@@ -2333,6 +2330,9 @@ msgstr "Frequenza del trading di CFD"
 msgid "CFDs"
 msgstr "CFD"
 
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr "I CFD sono strumenti complessi che implicano un rischio elevato di perdite rapide di denaro a causa della leva finanziaria. %1 degli investitori al dettaglio subisce perdite effettuando trading su CFD con Binary Investments (Europe) Ltd. Ti invitiamo a valutare se sei effettivamente in grado di comprendere il funzionamento dei CFD e nelle condizioni di correre l'elevato rischio di perdere del denaro."
+
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "I CFD sono strumenti complessi che implicano un rischio elevato di perdite rapide di denaro a causa della leva finanziaria. Il 78.6% degli investitori al dettaglio subisce perdite effettuando trading su CFD. Ti invitiamo a valutare se sei effettivamente in grado di comprendere il funzionamento dei CFD e nelle condizioni di correre l'elevato rischio di perdere del denaro."
 
@@ -2612,8 +2612,8 @@ msgstr "Prelievi del cliente"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "I prelievi effettuati dai clienti prima di quest'anno ammontavano a quasi 500 milioni USD. Quest'anno sono attesi prelievi dai clienti per oltre 140 milioni USD."
 
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
-msgstr "I conti di prova dei clienti verranno eliminati dopo 365 giorni di inattività."
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
+msgstr "I conti di prova dei clienti verranno eliminati dopo 30 giorni di inattività."
 
 msgid "Client's liability"
 msgstr "Responsabilità del cliente"
@@ -4413,7 +4413,7 @@ msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies
 msgstr "Maggiori FX (standard/micro-lotti), minori FX, materie prime, criptovalute"
 
 msgid "FX-majors, FX-minors, FX-exotics"
-msgstr ""
+msgstr "Maggiori FX, minori FX, esotiche FX"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -7577,9 +7577,6 @@ msgstr "Apri contratti"
 msgid "Open positions"
 msgstr "Posizioni aperte"
 
-msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr "Le posizioni aperte e dipendenti dai conti di prova verranno cancellate dopo 180 giorni di inattività."
-
 msgid "Open-Source Projects"
 msgstr "Progetti open-source"
 
@@ -7653,7 +7650,7 @@ msgid "Other than the payment of Commissions, Binary is not liable to the Introd
 msgstr "Oltre al pagamento delle commissioni, Binary non è responsabile verso l'Introducing Broker, i suoi Associati o altri individui per questioni derivanti dal presente Contratto o correlate ad esso, siano esse soggette a diritto civile, contratti, equity o altro e dovute a qualsiasi perdita."
 
 msgid "Others (please specify)"
-msgstr "Altro (specificare quale/i)"
+msgstr "Altro (specificare)"
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "Il nostro team Contabilità e pagamenti gestisce tutti i nostri numerosi conti bancari e sistemi di valuta elettronica, così come un ampio volume di operazioni quotidiane."
@@ -8705,8 +8702,8 @@ msgstr "Standard reale"
 msgid "Real Synthetic Indices"
 msgstr "Indici sintetici reali"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Il conto reale verrà archiviato dopo 180 giorni di inattività. Per riattivarlo, scrivi al supporto di binary.com all'indirizzo %1support@binary.com%2"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr "Il conto reale verrà archiviato dopo 90 giorni di inattività. Per riattivarlo, contatta il supporto di binary.com scrivendo all'indirizzo %1support@binary.com%2"
 
 msgid "Real-Money Account"
 msgstr "Conto monetario reale"
@@ -10184,8 +10181,8 @@ msgstr "La Società rifiuta ogni forma di comportamento inadeguato, come l'utili
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "La Società cerca di aprire o chiudere l'operazione relativa all'ordine del cliente ad un prezzo ragionevolmente disponibile alla Società, operando in conformità all'obbligo di esecuzione alle migliori condizioni. Miglior esecuzione significa che, al momento di esecuzione di un Ordine, la Società dovrà adottare tutte le misure necessarie ad ottenere il miglior risultato possibile per il cliente, tenendo conto del prezzo, costi, velocità, probabilità di esecuzione e di regolamento, dimensione, natura e ogni altra considerazione pertinente all'esecuzione dell'ordine."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "La Società adotta una politica di Stop Out che impedisce al cliente di perdere più di quanto è stato depositato. Tuttavia, nel caso in cui le posizioni aperte non fossero chiuse quando il livello di margine per il conto reale MT5 raggiunge il livello di Stop Out, la Società potrebbe rinunciare, a sua esclusiva discrezione, al saldo negativo del conto effettuando un accredito, qualora il saldo del conto risultasse negativo. Il saldo negativo è determinato dalla somma di tutti i saldi negativi registrati nell'arco di 24 ore in tutti i conti detenuti dal cliente. Il cliente riconosce che l'offerta di protezione dal saldo negativo della Società è a esclusiva discrezione della Società stessa, ad eccezione dei clienti al dettaglio di Binary Investments (Europe) Ltd, dei clienti di Binary (Europe) Ltd o Binary (IOM) Ltd. La Società si riserva inoltre il diritto di modificare in qualsiasi momento le caratteristiche e i criteri di idoneità della protezione da saldo negativo. Le disposizioni della protezione dal saldo negativo non sono valide nei seguenti casi:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr "La Società adotta una politica di Stop Out che impedisce di perdere più di quanto è stato depositato. Tuttavia, nel caso in cui le posizioni aperte non fossero chiuse quando il livello di margine per il conto reale MT5 raggiunge il livello di Stop Out, la Società potrebbe rinunciare, a sua esclusiva discrezione, al saldo negativo del conto effettuando un accredito, qualora il saldo del conto risultasse negativo. Il saldo negativo è determinato dalla somma di tutti i saldi negativi registrati nelle 24 ore precedenti in tutti i conti detenuti dal cliente. Il cliente riconosce che l'offerta di protezione dal saldo negativo della Società è a esclusiva discrezione della Società stessa, ad eccezione dei clienti al dettaglio di Binary Investments (Europe) Ltd, dei clienti di Binary (Europe) Ltd. La Società si riserva inoltre il diritto di modificare in qualsiasi momento le caratteristiche e i criteri di idoneità della protezione da saldo negativo. Le disposizioni della protezione dal saldo negativo non sono valide nei seguenti casi:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "La Società ha il dovere generale di condurre la propria attività con il cliente in modo onesto, equo e professionale e di agire nei migliori interessi del cliente quando apre e chiude trade di opzioni binarie con quest'ultimo."
@@ -11148,7 +11145,7 @@ msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Il numero massimo di token (%1) è stato raggiunto."
 
 msgid "The minimum amount for withdrawal will vary depending on the latest exchange rates."
-msgstr ""
+msgstr "L'importo minimo per il prelievo dipende dai tassi di cambio più recenti."
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "L'importo minimo richiesto per utilizzare la funzione di trasferimento tra conti è %1."
@@ -11229,7 +11226,7 @@ msgid "The provisions of this agreement or any orders and any applicable laws wi
 msgstr "Le disposizioni del presente contratto ed eventuali ordinamenti e leggi applicabili non verranno violati."
 
 msgid "The reason should be between 5 and 250 characters"
-msgstr ""
+msgstr "La motivazione deve essere compresa tra i 5 e i 250 caratteri"
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
 msgstr "il trasferimento richiesto ridurrebbe il saldo del conto del cliente a un importo inferiore al margine richiesto per sue le posizioni aperte;"
@@ -11622,7 +11619,7 @@ msgid "This page is only available to logged out clients."
 msgstr "La pagina è disponibile solo per i clienti che non hanno effettuato log-in."
 
 msgid "This page will redirect to the %1 homepage after 10 seconds."
-msgstr ""
+msgstr "Questa pagina ti reindirizza alla homepage di %1 dopo 10 secondi."
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "La presente politica riguarda i clienti al dettaglio o professionisti, non comprende invece i clienti classificati come controparti autorizzate."
@@ -11721,7 +11718,7 @@ msgid "To change your name, date of birth, country of residence, email, or tax i
 msgstr "Per modificare nome, data di nascita, paese di residenza, e-mail o informazioni fiscali, contatta l'%1assistenza clienti%2."
 
 msgid "To close your account, complete the following steps:"
-msgstr ""
+msgstr "Per chiudere il conto, completa la seguente procedura:"
 
 msgid "To create a MetaTrader 5 account:"
 msgstr "Per aprire un conto MetaTrader 5:"
@@ -11796,7 +11793,7 @@ msgid "Token name"
 msgstr "Nome del token"
 
 msgid "Too addictive"
-msgstr ""
+msgstr "Crea dipendenza"
 
 msgid "Top Up Virtual Account"
 msgstr "Ricarica il conto virtuale"
@@ -12021,7 +12018,7 @@ msgid "Trading in binary options is speculative and involves a high degree of ri
 msgstr "Il trading di opzioni binarie è speculativo e implica un elevato livello di rischio che potrebbe portare alla perdita totale degli investimenti. Di conseguenza, il trading di opzioni binarie è adatto solo per le persone che comprendono e intendono assumersi i rischi economici, legali e di altro tipo correlati a tali operazioni. Prima di fare trading, il cliente dovrebbe accertarsi che il trading di opzioni binarie sia accessibile sulla base delle proprie condizioni di investimento e della propria attitudine verso il rischio; a meno di non comprendere a pieno i concetti di base e i rischi correlati, non dovrebbe effettuare questo tipo di trading. Inoltre, in caso di dubbio circa l'appropriatezza e adeguatezza del trading di opzioni binarie rispetto alla propria posizione, il cliente dovrebbe richiedere una consulenze professionale esterna, poiché %1 non fornisce tale servizio. Alla luce delle propria situazione personale e di investimento, è responsabilità del cliente fare valutazioni in modo accurato e indipendente prima di sottoscrivere contratti di opzioni binarie con %1 e di effettuare ordini individuali. Qualora non fosse in grado di comprendere i rischi correlati a un conto di trading con %1 o a un ordine individuale, dovrebbe rivolgersi a un consulente in investimenti esterno; se anche dopo essersi rivolto a un consulente non è in grado di comprendere i rischi legati alle opzioni binarie, dovrebbe astenersi dall'effettuare trading."
 
 msgid "Trading information"
-msgstr ""
+msgstr "Informazioni sul trading"
 
 msgid "Trading instruments"
 msgstr "Strumenti per il trading"
@@ -12684,7 +12681,7 @@ msgid "We will continue to close open positions until your margin level becomes 
 msgstr "Continueremo a chiudere le posizioni aperte finché il livello del margine non sarà superiore al livello di stop out"
 
 msgid "We will inform you when your account needs to be authenticated."
-msgstr ""
+msgstr "Verrai informato da noi quando dovrai autenticare il conto."
 
 msgid "We will not disclose any confidential information that comes into our possession through our client relationships unless required to do so by a regulator or law enforcement authority."
 msgstr "La Società non diffonde le informazioni di cui entra in possesso attraverso i rapporti con i clienti, salvo ove richiesto dalle autorità di regolamentazione o di applicazione della legge."
@@ -13245,10 +13242,10 @@ msgid "You are selling the base currency and buying the quote currency."
 msgstr "Stai vendendo la valuta base e comprando la valuta di quotazione."
 
 msgid "You can %1open a cryptocurrency%2 account without closing your fiat currency account."
-msgstr ""
+msgstr "Puoi %1aprire un conto per criptovalute%2 senza chiudere il conto per valute fiat."
 
 msgid "You can %1open a real account%2 without closing your demo account."
-msgstr ""
+msgstr "Puoi %1aprire un conto reale%2 senza chiudere il conto di prova."
 
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
 msgstr "È possibile %1impostare una nuova valuta%2 prima di effettuare il primo deposito o di creare un conto MT5."
@@ -13278,13 +13275,13 @@ msgid "You can no longer change the currency because you've made a first-time de
 msgstr "Non è più possibile modificare la valuta perché hai già effettuato il primo deposito."
 
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
-msgstr ""
+msgstr "Puoi aprire un conto per valuta fiat senza chiudere il conto per criptovalute."
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Puoi vendere i tuoi contratti prima della scadenza in modo da realizzare eventuali guadagni oppure ridurre eventuali perdite."
 
 msgid "You can set limits to your account and trading activities. Go to the %1self-exclusion page%2 to manage your account limits."
-msgstr ""
+msgstr "Puoi impostare dei limiti per il conto e le attività di trading. Vai alla %1pagina di autoesclusione%2 per gestire i limiti sul conto."
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "Puoi ricaricare il tuo conto demo con un importo aggiuntivo di %1 se il saldo è inferiore o uguale a %2."
@@ -13299,7 +13296,7 @@ msgid "You did not change anything."
 msgstr "Non è stata apportata alcuna modifica."
 
 msgid "You do not need to authenticate your account at this time"
-msgstr ""
+msgstr "Ora non è necessario autenticare il conto"
 
 msgid "You do not need to authenticate your account at this time.%1We will inform you when your account needs to be authenticated."
 msgstr "Non è ancora il momento di autenticare il conto. %1Ti avviseremo quando sarà necessario farlo."
@@ -13311,10 +13308,10 @@ msgid "You expect the %1 to rise in value so you can sell it back for a profit"
 msgstr "Prevedi che il valore di %1 aumenterà, in modo da poterlo rivendere e realizzare un profitto"
 
 msgid "You have %1. You may open one or %2more cryptocurrency%3 accounts:"
-msgstr ""
+msgstr "Hai %1. Puoi aprire uno o %2più conti per criptovalute%3:"
 
 msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
-msgstr ""
+msgstr "Hai un conto %1. Puoi %2cambiare la valuta%3 selezionando una delle seguenti se non hai effettuato un deposito o creato un conto MT5:"
 
 msgid "You have already withdrawn %1 %2."
 msgstr "Il prelievo di %1 %2 è già stato effettuato."
@@ -13326,7 +13323,7 @@ msgid "You have already withdrawn the equivalent of %1 %2."
 msgstr "È già stato prelevato l'equivalente di %1 %2."
 
 msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
-msgstr ""
+msgstr "Non hai ancora selezionato una valuta per il conto: puoi %1scegliere una delle seguenti valute%2"
 
 msgid "You have created all accounts available to you."
 msgstr "Hai creato tutti i conti per te disponibili."
@@ -13515,7 +13512,7 @@ msgid "Your account is fully authenticated and your withdrawal limits have been 
 msgstr "Il conto è stato completamente autenticato e sono stati rimossi i limiti di prelievo."
 
 msgid "Your account is now closed"
-msgstr ""
+msgstr "Il tuo conto è stato chiuso"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Il tuo conto è sottoposto a restrizioni. Per ricevere assistenza, %1contatta l'assistenza clienti%2."
@@ -13659,10 +13656,10 @@ msgid "Your withdrawal limit is %1 %2."
 msgstr "Il limite di prelievo è %1 %2."
 
 msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
-msgstr ""
+msgstr "Il prelievo verrà effettuato entro un giorno lavorativo (da lunedì a venerdì, 9.00 - 17.00 GMT+8) salvo ove diversamente specificato."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
-msgstr ""
+msgstr "Il conto è stato chiuso. Riceverai un'e-mail di conferma all'indirizzo %1."
 
 msgid "a client that is not a Professional client or Eligible Counterparty"
 msgstr "Un cliente che non è un cliente professionista o una controparte autorizzata"
@@ -13695,10 +13692,10 @@ msgid "a. Access the MT5 trading platform through the direct link %1 from BIEL's
 msgstr "a. accedere alla piattaforma di trading MT5 attraverso il link diretto %1 dall'interfaccia web di BIEL, oppure"
 
 msgid "account"
-msgstr ""
+msgstr "conto"
 
 msgid "accounts"
-msgstr ""
+msgstr "conti"
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "L'ordine di eseguire un'operazione per chiudere una posizione aperta quando il prezzo raggiunge quello specificato dal cliente"

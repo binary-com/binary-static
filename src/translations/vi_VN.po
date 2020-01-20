@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-09 08:53\n"
+"PO-Revision-Date: 2020-01-20 03:58\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -2037,9 +2037,6 @@ msgstr "Công ty TNHH Binary (IOM), Tầng 1, Tòa nhà Millennium, Đường Vi
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Công ty TNHH Binary (IOM), Tầng 1, Nhà Millennium, Đường Victoria, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Công ty TNHH Binary (IOM), hoặc"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Công ty TNHH Binary (IOM)."
 
@@ -2334,6 +2331,9 @@ msgstr "Tần xuất giao dịch CFD"
 msgid "CFDs"
 msgstr "Các thị trường CFD"
 
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr ""
+
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFDs là công cụ phức tạp và đi kèm với rủi ro cao do áp dụng đòn bẩy tài chính. Khoảng 78.6% các tài khoản đầu tư lẻ đều mất tiền khi giao dịch CFDs. bạn nên cân nhắc kỹ lưỡng liệu mình đã đủ am hiểu về CFDs và sãn sàng chấp nhận rủi ro thua lỗ cao."
 
@@ -2613,8 +2613,8 @@ msgstr "Khách hàng rút tiền"
 msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
 msgstr "Khách hàng rút tiền trước năm nay lên tới gần 500 triệu USD. Hơn 140 triệu USD giá trị của khách hàng rút tiền được dự kiến năm nay."
 
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
-msgstr "Tài khoản dùng thử sẽ bị xóa sau 365 ngày không hoạt động."
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "Trách nhiệm của Khách hàng"
@@ -7580,9 +7580,6 @@ msgstr "Hợp đồng mở"
 msgid "Open positions"
 msgstr "Tuyển Dụng"
 
-msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr "Các vị trí mở và lệnh chờ của tài khoản dùng thử sẽ bị xóa sau 180 ngày không hoạt động."
-
 msgid "Open-Source Projects"
 msgstr "Các Dự Án Nguồn Mở"
 
@@ -8708,8 +8705,8 @@ msgstr "Tiêu chuẩn thực"
 msgid "Real Synthetic Indices"
 msgstr "Chỉ số Tổng Hợp Thực"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Tài khoản thật sẽ được lưu trữ sau 180 ngày không hoạt động. Để tái kích hoạt tài khoản thật, liên hệ đội ngũ hỗ trợ binary.com tại %1support@binary.com%2"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Tài khoản tiền thật"
@@ -10187,8 +10184,8 @@ msgstr "Công ty không cho phép bất cứ hành vi thiếu chuẩn mự
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Công ty cố gắng để mở hoặc đóng các giao dịch mà Lệnh của khách hàng được đưa ra với mức giá hợp lý có thể chấp nhận với Công ty, phù hợp với nhiệm vụ mang lại dịch vụ tốt nhất cho khách hàng của Công ty. Nghĩa là Công ty phải thực hiện đầy đủ nghĩa vụ, khi lệnh đang được thực hiện để mang lại kết quả tốt nhất có thể cho các khách hàng, khi tính đến giá cả, chi phí, tốc độ, khả năng thực hiện và giải quyết, kích thước, tính tự nhiên hay bất kỳ điều gì khác liên quan đến việc thực hiện Lệnh giao dịch."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "Công Ty có chính sách Dừng khi khách hàng mất nhiều hơn số tiền họ đã ký gửi. Tuy nhiên, trong trường hợp các Phiên mở của khách hàng không được đóng khi Mức ký quỹ cho Tài khoản Thực MT5 đạt đến Mức Dừng, Công ty có thể từ bỏ số dư âm của khách hàng bằng cách ghi thêm vào tài khoản của mình nếu Số dư Tài khoản của khách hàng đi vào số dư âm. Số dư âm được xác định bằng cách tổng hợp tất cả số dư âm phát sinh trong khoảng thời gian 24 giờ trên tất cả các tài khoản do khách hàng nắm giữ. khách hàng chấp nhận, trừ khi họ là khách hàng bán lẻ của Công ty Binary Investments (Europe) Ltd hoặc của Binary (Châu Âu) hoặc Binary (IOM), việc Công Ty bảo vệ Số Dư Âm cho khách hàng là được quyết định hoàn toàn bởi Công ty và chúng tôi có quyền thay đổi các tính năng và tiêu chí để đáp ứng điều kiện của Bảo Vệ Số Dư Âm bất cứ lúc nào. Các điều khoản của Bảo Vệ Số Dư Âm không áp dụng cho các trường hợp sau:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Nhiệm vụ chung của Công Ty là hoạt động kinh doanh trung thực, công bằng, chuyên nghiệp, và mang lại cho khách hàng mức lãi suất tốt nhất khi mở và đóng những giao dịch binary options."
