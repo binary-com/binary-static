@@ -943,11 +943,11 @@ const Authenticate = (() => {
                 address_state   : localize('State/Province'),
                 email           : localize('Email address'),
                 phone           : localize('Telephone'),
+                place_of_birth  : localize('Place of birth'),
                 residence       : localize('Country of Residence'),
             };
 
-            const missing_personal_fields = service_token_response
-                .required_fields
+            const missing_personal_fields = Object.keys(service_token_response.error.details)
                 .map(field => (personal_fields_errors[field] || field));
 
             const error_msgs = missing_personal_fields ? missing_personal_fields.join(', ') : '';
