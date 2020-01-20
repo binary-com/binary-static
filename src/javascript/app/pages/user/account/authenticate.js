@@ -36,12 +36,6 @@ const Authenticate = (() => {
         $submit_status_uns,
         $submit_table_uns;
 
-    const personal_details_map = {
-        place_of_birth: localize('Place of birth'),
-        residence     : localize('Country of residence'),
-        phone         : localize('Phone number'),
-    };
-
     const init = () => {
         file_checks    = {};
         $submit_status = $('.submit-status');
@@ -942,12 +936,23 @@ const Authenticate = (() => {
             service_token_response.error.code === 'MissingPersonalDetails'
         ) {
             has_personal_details_error = true;
-            let missing_personal_fields = '';
-            Object.keys(service_token_response.required_fields).forEach(field => {
-                missing_personal_fields += !missing_personal_fields ? personal_details_map[field] : `, ${personal_details_map[field]}`;
-            });
+            const personal_fields_errors = {
+                address_city    : localize('Town/City'),
+                address_line_1  : localize('First line of home address'),
+                address_postcode: localize('Postal Code/ZIP'),
+                address_state   : localize('State/Province'),
+                email           : localize('Email address'),
+                phone           : localize('Telephone'),
+                residence       : localize('Country of Residence'),
+            };
 
-            $('#missing_personal_fields').html(missing_personal_fields);
+            const missing_personal_fields = service_token_response
+                .required_fields
+                .map(field => (personal_fields_errors[field] || field));
+
+            const error_msgs = missing_personal_fields ? missing_personal_fields.join(', ') : '';
+
+            $('#missing_personal_fields').html(error_msgs);
         }
         
         const { identity, document } = authentication_status;
