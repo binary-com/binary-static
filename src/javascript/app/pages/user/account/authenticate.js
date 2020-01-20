@@ -1011,7 +1011,10 @@ const Authenticate = (() => {
             initTab();
             initAuthentication();
 
-            if (Client.get('is_from_mt5')) {
+            const { identity, document } = authentication_status;
+            const is_not_fully_authenticated = identity.status !== 'verified' && document.status !== 'verified';
+            const is_not_high_risk = !/high/.test(State.getResponse('get_account_status.risk_classification'));
+            if (is_not_fully_authenticated && has_svg_account && is_not_high_risk) {
                 $('#authenticate_only_real_mt5_advanced').setVisibility(1);
             }
         } else {

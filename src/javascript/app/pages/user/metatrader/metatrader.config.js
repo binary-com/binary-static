@@ -235,8 +235,8 @@ const MetaTraderConfig = (() => {
         };
         BinarySocket.send(req);
 
-        // This is to show the banner in authentication page
-        Client.set('is_from_mt5', 1);
+        // update account status authentication info
+        BinarySocket.send({ get_account_status: 1 }, { forced: true });
     };
 
     const actions_info = {
