@@ -948,7 +948,7 @@ const Authenticate = (() => {
             };
 
             const missing_personal_fields = Object.keys(service_token_response.error.details)
-                .map(field => (personal_fields_errors[field] || field));
+                .map(field => (personal_fields_errors[field].toLowerCase() || field));
 
             const error_msgs = missing_personal_fields ? missing_personal_fields.join(', ') : '';
 
