@@ -257,7 +257,7 @@ const ViewPopup = (() => {
             const total_pnl = +profit - deal_cancellation_price;
             containerSetText('trade_details_deal_cancellation', deal_cancellation_price ? formatMoney(contract.currency, deal_cancellation_price) : '-');
             containerSetText('trade_details_total_pnl',
-                `${formatMoney(contract.currency, total_pnl)}<span class="percent"> (${localize('including Deal Cancel. Fee')})</span>`,
+                `${formatMoney(contract.currency, total_pnl)}${deal_cancellation_price ? `<span class="percent"> (${localize('including Deal Cancel. Fee')})</span>` : ''}`,
                 { class: (total_pnl >= 0 ? 'profit' : 'loss') }
             );
         }
@@ -335,8 +335,10 @@ const ViewPopup = (() => {
         if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
             TickDisplay.plotResetSpot(barrier);
         }
-        // next line is responsible for 'sell at market' flashing on the last tick
-        sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
+        if (!is_multiplier_contract) {
+            // next line is responsible for 'sell at market' flashing on the last tick
+            sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
+        }
         contract.chart_validation_error = contract.validation_error;
         contract.validation_error       = '';
     };
