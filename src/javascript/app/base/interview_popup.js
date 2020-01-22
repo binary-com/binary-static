@@ -22,13 +22,15 @@ const InterviewPopup = (() => {
                     $interview_popup.removeClass('invisible');
                 }, 2000);
                 $interview_no_thanks.one('click', () => {
-                    Cookies.set('InterviewConsent', 1);
+                    Cookies.set('InterviewConsent', 1, { sameSite: 'strict', secure: true });
                     $interview_popup.addClass('invisible');
                 });
                 $interview_ask_later.one('click', () => {
                     const interval_time = 1 / 12;
                     Cookies.set('InterviewConsent', 1, {
-                        expires: interval_time,
+                        expires : interval_time,
+                        sameSite: 'strict',
+                        secure  : true,
                     });
                     $interview_popup.addClass('invisible');
                 });
@@ -42,7 +44,7 @@ const InterviewPopup = (() => {
                         const pre_phone   = `&entry.1442583433=${get_settings.phone}`;
                         const encode_uri  =  (`${url}${pre_name}${pre_email}${pre_country}${pre_phone}`).replace(/\+/g, '%2B');
                         $interview_popup.addClass('invisible');
-                        Cookies.set('InterviewConsent', 1);
+                        Cookies.set('InterviewConsent', 1, { sameSite: 'strict', secure: true });
                         window.open(encode_uri, '_blank');
                     });
                 });
