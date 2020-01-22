@@ -37,11 +37,15 @@ const DP2P = (() => {
                     --state-active: #2a3052;
                     --general-section-1: #ffffff;
                     --text-profit-success: #2e8836;
+                    --text-loss-danger: #ff444f;
                 }
 
                 .dc-button-menu__wrapper
                 .dc-button-menu__button:not(.dc-button-menu__button--active) {
                     background-color: #f2f2f2 !important;
+                }
+                .dc-field-error {
+                    color: var(--text-loss-danger);
                 }
 
                 .link {
@@ -68,6 +72,9 @@ const DP2P = (() => {
                 }
                 .deriv-p2p {
                     height: 80vh;
+                }
+                .orders__table-row {
+                    padding-left: 0;
                 }
                 `;
         el_main_css.rel = 'stylesheet';
