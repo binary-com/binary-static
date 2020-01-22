@@ -2,6 +2,7 @@ const React               = require('react');
 const ReactDOM            = require('react-dom');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
+const ServerTime          = require('../../../_common/base/server_time');
 const getLanguage         = require('../../../_common/language').get;
 const urlForStatic        = require('../../../_common/url').urlForStatic;
 const SubscriptionManager = require('../../../_common/base/subscription_manager').default;
@@ -65,6 +66,9 @@ const DP2P = (() => {
                     text-decoration: underline;
                     cursor: pointer;
                 }
+                .deriv-p2p {
+                    height: 80vh;
+                }
                 `;
         el_main_css.rel = 'stylesheet';
 
@@ -92,7 +96,8 @@ const DP2P = (() => {
                 local_currency_config: Client.get('local_currency_config'),
                 residence            : Client.get('residence'),
             },
-            lang: getLanguage(),
+            lang       : getLanguage(),
+            server_time: ServerTime,
             websocket_api,
         };
 
