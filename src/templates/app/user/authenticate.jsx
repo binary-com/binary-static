@@ -1,14 +1,14 @@
 import React             from 'react';
+import {
+    AuthenticateMessage,
+    UnsupportedMessage } from '../_includes/authenticate_message.jsx';
+import { Button }        from '../../_common/components/elements.jsx';
 import Loading           from '../../_common/components/loading.jsx';
 import {
     TabContainer,
     TabContent,
     TabContentContainer,
     TabsSubtabs }        from '../../_common/components/tabs.jsx';
-import { Button }        from '../../_common/components/elements.jsx';
-import {
-    AuthenticateMessage,
-    UnsupportedMessage } from '../_includes/authenticate_message.jsx';
 
 const ArrowsMobile = ({ direction, parent }) => (
     <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
