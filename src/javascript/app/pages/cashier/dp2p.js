@@ -71,7 +71,7 @@ const DP2P = (() => {
                     cursor: pointer;
                 }
                 .deriv-p2p {
-                    height: 80vh;
+                    height: 800px;
                 }
                 .orders__table-row {
                     padding-left: 0;
