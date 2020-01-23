@@ -27,13 +27,13 @@ const BinaryInNumbers = () => (
             <Numbers
                 className='transaction'
                 header={it.L('Number of transactions')}
-                text={it.L('Our customers bought more than 275 million contracts on Binary.com in 2019, bringing the total number of contracts sold to over 1 billion since commencing business.')}
+                text={it.L('Our customers bought more than 275 million contracts on [_1] in 2019, bringing the total number of contracts sold to over 1 billion since commencing business.', it.website_name)}
                 image='chart-num-transactions'
             />
             <Numbers
                 className='turnover'
                 header={it.L('Turnover')}
-                text={it.L('In 2019, Binary.com generated more than USD 1.5 billion in turnover, bringing our total turnover since our inception to over USD 7.1 billion.')}
+                text={it.L('In 2019, [_1] generated more than USD 1.5 billion in turnover, bringing our total turnover since our inception to over USD 7.1 billion.', it.website_name)}
                 image='chart-turnover'
             />
             {/* <Numbers
