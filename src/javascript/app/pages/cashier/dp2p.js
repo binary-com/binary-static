@@ -40,6 +40,10 @@ const DP2P = (() => {
                     --text-loss-danger: #ff444f;
                 }
 
+                .dc-list__item--selected .dc-list__item-text {
+                    color: var(--text-colored-background);
+                }
+
                 .dc-button-menu__wrapper
                 .dc-button-menu__button:not(.dc-button-menu__button--active) {
                     background-color: #f2f2f2 !important;
