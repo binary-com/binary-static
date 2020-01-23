@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-20 09:37\n"
+"PO-Revision-Date: 2020-01-22 02:59\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -286,7 +286,7 @@ msgid "%1 offers new ways to trade"
 msgstr "%1은 거래에 대한 새로운 방법을 제공합니다."
 
 msgid "%1 offers the following trade types that will help you execute your market view or strategy:"
-msgstr ""
+msgstr "%1은 귀하의 시장 관점 또는 전략을 수행함에 있어서 도움이 될 다음 종류들의 거래를 제공합니다:"
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1은 단순하고, 사용자 친화적인 플랫폼을 통해 세계적인 금융 시장을 제공합니다."
@@ -2313,9 +2313,6 @@ msgstr "C. 최선집행의무의 정의"
 msgid "C. Provision of services"
 msgstr "C. 서비스의 제공"
 
-msgid "CFD"
-msgstr "CFD"
-
 msgid "CFD contract specifications"
 msgstr "CFD 계약 세부사항"
 
@@ -2548,7 +2545,7 @@ msgid "Choose the payment method you'd like to use."
 msgstr "사용하시고자 하는 지불 방법을 선택하세요."
 
 msgid "Choose the payout you wish to receive from correctly predicting this contract."
-msgstr ""
+msgstr "계약을 올바르게 예측함으로써 받고자 하는 지불금을 선택하세요."
 
 msgid "Choose the platforms and accounts you need, based on your personal trading style"
 msgstr "고객님의 개인적 거래 스타일에 맞추어 필요한 플랫폼과 계좌를 선택하세요."
@@ -7128,6 +7125,9 @@ msgstr ""
 msgid "Natural wonders"
 msgstr "자연의 경이로움"
 
+msgid "Need help? %1Contact us%2."
+msgstr ""
+
 msgid "Need more information?"
 msgstr ""
 
@@ -8229,6 +8229,9 @@ msgstr ""
 msgid "Please tell us why you are closing your account (please select one):"
 msgstr ""
 
+msgid "Please update your %1 to continue."
+msgstr ""
+
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr ""
 
@@ -8320,13 +8323,13 @@ msgid "Predict that the market stays inside or goes outside two price targets an
 msgstr ""
 
 msgid "Predict that the market stops inside or outside two price targets at the end of the time period"
-msgstr ""
+msgstr "종료시점에 시장이 두 가격 목표의 안쪽 또는 바깥쪽에서 멈출지에 대해 예측하세요"
 
 msgid "Predict that the market will end higher or lower than a price target"
-msgstr ""
+msgstr "시장이 목표가격보다 더 높게 또는 더 낮게 종료될지에 대해 예측하세요"
 
 msgid "Predict that the market will end higher or lower than the average price."
-msgstr ""
+msgstr "시장이 평균 가격보다 더 높게 또는 더 낮게 종료될지에 대해 예측하세요."
 
 msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
 msgstr ""
@@ -8335,7 +8338,7 @@ msgid "Predict that the market will end up lower than either the current level o
 msgstr ""
 
 msgid "Predict that the market will rise or fall from its current level"
-msgstr ""
+msgstr "시장이 현재 수준에서 상승할지 또는 하락할지에 대해 에측하세요"
 
 msgid "Predict that the market will touch or not touch a target any time during the contract period."
 msgstr "시장이 계약 기간동안의 그 어느때에 목표를 터치 또는 터치하지 않을 것인지에 대하여 예측하세요"
@@ -11197,7 +11200,7 @@ msgid "The price of the client's chosen investment appears on the platform/on th
 msgstr ""
 
 msgid "The price of the contract is automatically calculated by our patented pricing technology based on the parameters you've defined in Step 1. Our prices are benchmarked against the interbank options market, so you always get the most competitive prices. This means that you'll always receive fair and transparent pricing, whatever your position."
-msgstr ""
+msgstr "계약의 가격은 귀하께서 1단계에서 설정한 파라미터에 근거하여 우리의 특허받은 가격 기술에 의해 자동적으로 계산됩니다. 우리의 가격은 인터뱅크 옵션 시장에 대하여 벤치마크되었습니다. 그렇기 때문에 귀하께서는 항상 가장 경쟁력 있는 가격을 적용받습니다. 이는 귀하께서 포지션에 관계없이 항상 공정하고 투명한 가격측정을 적용받는다는 것을 의미합니다."
 
 msgid "The price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr ""
@@ -11353,7 +11356,7 @@ msgid "There are two types of In/Out trades:"
 msgstr "인/아웃 트레이드에는 두 종류가 있습니다:"
 
 msgid "There are two types of Up/Down trades:"
-msgstr ""
+msgstr "두 종류의 업/다운 거래가 있습니다:"
 
 msgid "There are two types of reset trades:"
 msgstr ""
@@ -12330,7 +12333,13 @@ msgstr "예정된 행사"
 msgid "Update"
 msgstr "업데이트"
 
+msgid "Update my details"
+msgstr ""
+
 msgid "Update settings"
+msgstr ""
+
+msgid "Update your personal details"
 msgstr ""
 
 msgid "Upgrade now"
@@ -12587,6 +12596,9 @@ msgstr ""
 
 msgid "We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood."
 msgstr "저희는 항상 올바른 일을 해야한다고 믿습니다. 이는 정직함과 투명성으로 고객님들을 위해 일하는 것과, 규칙대로 모든 계약을 체결하는 것이며, 그리고 이해하기 쉬운 평이한 언어로 의사소통하는 것을 포함합니다."
+
+msgid "We can't validate your personal details because there is some information missing."
+msgstr ""
 
 msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
 msgstr ""
@@ -12880,7 +12892,7 @@ msgid "When using the MT5 trading platform, all BIEL's clients will be provided 
 msgstr ""
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there's no risk of 'slippage' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions."
-msgstr ""
+msgstr "귀하께서 받으시는 가격이 만족스러우시다면 귀하의 거래를 즉시 수행하세요. 우리의 특별한 플랫폼과 함께, '슬리피지' 또는 틈새시장의 위험이 없습니다. 또한 가장 중요하게, 숨어있는 비용이 없습니다. 귀하는 또한 호의적인 시장 상황으로부터 이익을 보기위해 장기 거래를 언제든지 되팔수 있습니다."
 
 msgid "When you are trading CFDs, you can choose to open a buy position (if you think that the price will rise) or a sell position (if you think that the price will fall)."
 msgstr ""

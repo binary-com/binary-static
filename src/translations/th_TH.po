@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-03 08:20\n"
+"PO-Revision-Date: 2020-01-22 03:00\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2036,9 +2036,6 @@ msgstr "Binary (IOM) Limited ชั้น 1 มิลิเนียมเฮ้
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd ชั้น 1 มิลิเนียมเฮ้าส์ ถนนวิกตอเรีย ดักลาส IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Binary (IOM) Ltd หรือ"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
 
@@ -2315,9 +2312,6 @@ msgstr "C. นิยามของการดำเนินการที่
 msgid "C. Provision of services"
 msgstr "ค. เงื่อนไขของการบริการ (Provision of Service)"
 
-msgid "CFD"
-msgstr "CFD"
-
 msgid "CFD contract specifications"
 msgstr "ข้อกำหนดสัญญา CFD"
 
@@ -2332,6 +2326,9 @@ msgstr "ความถี่ในการซื้อขาย CFD"
 
 msgid "CFDs"
 msgstr "CFD"
+
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr ""
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFD คือเครื่องมือทางการเงินที่มีความซับซ้อน และมีความเสี่ยงสูงในการสูญเสียเงินอย่างรวดเร็วตามอัตราเลเวอเรจ 78.6% ของบัญชีนักลงทุนรายย่อยขาดทุน ท่านจึงควรพิจารณาว่า ท่านมีความเข้าใจในการซื้อขาย CFD และท่านสามารถรับความเสี่ยงระดับสูงจากการขาดทุนหรือไม่"
@@ -2606,13 +2603,7 @@ msgstr "เงินของลูกค้า"
 msgid "Client reporting"
 msgstr "รายงานของลูกค้า"
 
-msgid "Client withdrawals"
-msgstr "การถอนเงินของลูกค้า"
-
-msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
-msgstr "การถอนเงินของลูกค้าปีที่ผ่านมา มีมูลค่าเกือบ 500 ล้านดอลลาร์สหรัฐ ในปีนี้คาดว่า จะมีการถอนเงินของลูกค้ามูลค่ามากกว่า 140 ล้านดอลลาร์สหรัฐ"
-
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
 msgstr ""
 
 msgid "Client's liability"
@@ -3397,6 +3388,9 @@ msgstr "วันเกิด"
 
 msgid "Dated within the last six months"
 msgstr "ลงวันที่ภายในหกเดือนที่ผ่านมา"
+
+msgid "Deal Cancel. Fee"
+msgstr ""
 
 msgid "Debt-free"
 msgstr "ไม่มีหนี้"
@@ -4405,6 +4399,12 @@ msgstr "ฉ. มาร์จินและเลเวอเลจ"
 
 msgid "FIX API"
 msgstr "FIX API"
+
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
+msgstr ""
+
+msgid "FX-majors, FX-minors, FX-exotics"
+msgstr ""
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -7076,6 +7076,12 @@ msgstr "โอกาสของรายได้หลายช่องทา
 msgid "Multiplier"
 msgstr "ตัวคูณ"
 
+msgid "Multiplier Down"
+msgstr ""
+
+msgid "Multiplier Up"
+msgstr ""
+
 msgid "Must be a clear, colour photo"
 msgstr "ต้องเป็นภาพถ่ายสีที่มีความชัดเจน"
 
@@ -7117,6 +7123,9 @@ msgstr "บัตรประจำตัวประชาชน หนัง�
 
 msgid "Natural wonders"
 msgstr "สิ่งมหัศจรรย์ทางธรรมชาติ"
+
+msgid "Need help? %1Contact us%2."
+msgstr ""
 
 msgid "Need more information?"
 msgstr "ต้องการข้อมูลเพิ่มไหม?"
@@ -7412,8 +7421,8 @@ msgstr "ต.ค."
 msgid "October"
 msgstr "ตุลาคม"
 
-msgid "Offices in Malaysia, Malta, Paraguay and UAE"
-msgstr "สำนักงานในมาเลเซีย มอลตา ปารากวัย และ สหรัฐอาหรับเอมิเรตส์"
+msgid "Offices in Malaysia, Malta, Paraguay and the UAE"
+msgstr ""
 
 msgid "Offline"
 msgstr "ออฟไลน์"
@@ -7561,9 +7570,6 @@ msgstr "เปิดสัญญา"
 
 msgid "Open positions"
 msgstr "ตำแหน่งงานที่เปิดรับ"
-
-msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr ""
 
 msgid "Open-Source Projects"
 msgstr "โครงการโอเพ่นซอส"
@@ -8222,6 +8228,9 @@ msgstr "โปรดทราบว่า อัตราในการแล�
 msgid "Please tell us why you are closing your account (please select one):"
 msgstr ""
 
+msgid "Please update your %1 to continue."
+msgstr ""
+
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "โปรดรอการยืนยัน ฝ่ายลูกค้าสัมพันธ์ของเราจะติดต่อกลับเพื่อแจ้งสถานะของบัญชีของท่านผ่านทางอีเมล์ภายในสี่ชั่วโมง"
 
@@ -8690,7 +8699,7 @@ msgstr "มาตรฐานจริง"
 msgid "Real Synthetic Indices"
 msgstr "ดัชนีสังเคราะห์จริง"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
 msgstr ""
 
 msgid "Real-Money Account"
@@ -9785,6 +9794,9 @@ msgstr ""
 msgid "Synthetic indices that mimic market volatility."
 msgstr "ดัชนีที่ทำขึ้นเองโดยจำลองความผันผวนของตลาด"
 
+msgid "Synthetics"
+msgstr ""
+
 msgid "System Administrator"
 msgstr "ผู้ดูแลรักษาระบบ"
 
@@ -10007,8 +10019,8 @@ msgstr "<strong>เวลาเริ่มต้น</strong>คือ เวล
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>เวลาเริ่มต้น</strong> คือ เวลาที่สัญญาถูกนำเข้าประมวลผลโดยระบบของเรา"
 
-msgid "The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
-msgstr "บัญชีก้าวหน้ารองรับสเปรดแคบ ขนากทิกเก็ตสูงกว่า และมีคู่ FX ที่หลากหลายจากคู่หลักและคู่ต่างประเทศ เป็นบัญชีที่ใช้การประมวลผลโดยตรงกับสภาพคล่องของ FX จากผู้ให้บริการต่างๆ"
+msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
+msgstr ""
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "พันธมิตรนายหน้าออนไลน์และบริษัทฯ เป็นผู้รับจ้างอิสระ และไม่มีส่วนใดของข้อตกลงนี้จะสร้างความเป็นหุ้นส่วน การร่วมทุน ตัวแทน แฟรนไชส์ ตัวแทนขาย หรือ ความสัมพันธ์ในการจ้างงานระหว่างกัน พันธมิตรนายหน้าออนไลน์ไม่มีอำนาจในการสร้าง หรือ ยอมรับข้อเสนอใดๆ หรือ เป็นตัวแทนใดๆ ของบริษัทฯ พันธมิตรนายหน้าออนไลน์จะไม่กำหนดถ้อยแถลงใดๆ ไม่ว่าในเว็บไซต์ของพันธมิตรนายหน้าออนไลน์ หรือ ที่อื่นๆ เพื่อสร้างความขัดแย้งต่อใจความในอนุเฉทนี้"
@@ -10166,8 +10178,8 @@ msgstr "บริษัทฯ ไม่ส่งเสริมพฤติก�
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "บริษัทฯ พยายามที่จะเปิด หรือปิดธุรกรรมของการสั่งซื้อของลูกค้าในราคาสมเหตุสมผลที่บริษัทฯ มี ด้วยการปฏิบัติหน้าที่ในการดำเนินการที่ดีที่สุด การประมวลผลคำสั่งซื้อที่ดีที่สุด หมายถึง เมื่อประมวลผลคำสั่งซื้อ บริษัทฯ จะดำเนินการตามขั้นตอนทั้งหมด เพื่อให้ได้ผลลัพธ์ที่ดีที่สุดแก่ลูกค้า โดยพิจารณาราคา ต้นทุน ความเร็ว ความเป็นไปได้ในการประมวลผลและการชำระราคา ขนาด ลักษณะ หรือ ข้อพิจารณาอื่นๆ ที่เกี่ยวข้องกับการประมวลผลคำสั่งซื้อ"
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "บริษัทฯ มีนโยบายการยุติการซื้อขาย ซึ่งป้องกันไม่ให้ลูกค้าสูญเสียเงินมากกว่าจำนวนที่ฝากไว้ อย่างไรก็ตาม ในกรณีที่โพซิชั่นเปิดของลูกค้าไม่ถูกปิดเมื่อระดับมาร์จินของบัญชี MT5 จริงไปถึงระดับยุติการซื้อขาย บริษัทฯ อาจละเว้นยอดคงเหลือที่ติดลบของลูกค้าโดยการเครดิตบัญชีของลูกค้าหากยอดคงเหลือในบัญชีติดลบ ยอดคงเหลือติดลบจะถูกพิจารณาโดยการคำนวณรวมยอดคงเหลือติดลบทั้งหมดที่เกิดขึ้นในทุกๆ บัญชีของลูกค้าภายในระยะเวลา 24 ชั่วโมง ลูกค้ายอมรับว่า เว้นแต่ลูกค้าเป็นลูกค้ารายย่อยของ Binary Investments (Europe) Ltd หรือ ลูกค้าของ Binary (Europe) Ltd หรือ Binary (IOM) Ltd ข้อเสนอกลไกการป้องกันยอดคงเหลือติดลบของบริษัทฯ ที่ให้แก่ลูกค้านี้ จะเป็นไปตามดุลยพินิจของบริษัทฯ เท่านั้น และบริษัทฯ สงวนสิทธิ์ในการเปลี่ยนแปลงคุณลักษณะและหลักเกณฑ์การคัดเลือกของกลไกการป้องกันยอดคงเหลือติดลบเมื่อใดก็ได้ หากแต่จะไม่มีบริการป้องกันยอดคงเหลือติดลบในสถานการณ์ดังต่อไปนี้"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "บริษัทฯ มีหน้าที่ทั่วๆ ไป ในการจัดการธุรกิจของเรากับลูกค้าด้วยความซื่อสัตย์ เป็นธรรม และอย่างมืออาชีพ และเพื่อปฏิบัติอย่างเหมาะสมที่สุดเพื่อดำเนินการในการเปิดและปิดการซื้อขายไบนารีออปชั่นกับลูกค้า"
@@ -10682,17 +10694,17 @@ msgstr "สาธารณรัฐมอลตาเป็นประเทศ
 msgid "The Spread is subject to alteration, at the Company's absolute discretion. The client acknowledges that whilst the Company endeavours to maintain a competitive Spread, it may widen significantly in some circumstances, and such figures will be determined by the Company at its reasonable discretion. Spreads may be widened at the daily bank rollovers."
 msgstr "สเปรดอาจมีการเปลี่ยนแปลง ตามแต่ดุลยพินิจของบริษัทฯ ลูกค้าทราบว่า ถึงแม้บริษัทฯ พยายามที่จะรักษาสเปรดให้อยู่ในระดับที่เหมาะสม อาจมีในบางสถานการณ์ที่ทำให้สเปรดเพิ่มขึ้นอย่างมีนัยสำคัญ และบริษัทฯ จะพิจารณาตัวเลขดังกล่าวอย่างสมเหตุสมผล สเปรดอาจจะมีเพิ่มขึ้นเมื่อมีการโรลโอเวอร์จากธนาคารในทุกๆ วัน"
 
-msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr "บัญชีมาตรฐานเหมาะสมกับนักลงทุนหลากหลาย ทั้งมือใหม่และที่มีประสบการณ์ ซึ่งจะให้เลเวอเรจระดับสูงสุดและสเปรดที่เปลี่ยนแปลงได้ซึ่งให้ความยืดหยุ่นไม่ว่าท่านต้องการจะอยู่ตำแหน่งใดในตลาด"
+msgid "The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
+msgstr ""
 
-msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
-msgstr "บัญชีมาตรฐานมีความเหมาะสมกับนักลงทุนหลากหลายประเภท ทั้งนักลงทุนใหม่ หรือ นักลงทุนที่มีประสบการณ์ ซึ่งมีในรูปของสกุลเงิน EUR และ GBP และให้สเปรดทั้งคงที่และยืดหยุ่น ปราศจากค่าคอมมิชชั่นและจำนวนเงินที่ต้องฝากเป็นหลักประกันขั้นต่ำ"
+msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
+msgstr ""
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "ระดับยุติการซื้อขายที่ใช้กับบัญชี MT5 จริงของลูกค้า อาจจะแตกต่างจากระดับยุติการซื้อขายที่แจ้งไว้บนเว็บไซต์ของบริษัทฯ"
 
-msgid "The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
-msgstr "บัญชีดัชนีสังเคราะห์อนุญาตให้ท่านได้ซื้อขาย CFD จากดัชนีสังเคราะห์ ซึ่งเป็นดัชนีสังเคราะห์ของเราที่จำลองความผันผวนของตลาดจริง และเปิดให้ท่านได้ซื้อขายตลอด 24 ชั่วโมง 7 วัน"
+msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr ""
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "ทีมเจ้าหน้าที่ดูแลระบบรับผิดชอบในการดูแล ตั้งค่า และดำเนินการงานปฏิบัติการที่เกี่ยวข้องกับงานซอฟท์แวร์ ฮาร์ดแวร์ และเครือข่าย"
@@ -12007,6 +12019,9 @@ msgstr "การซื้อขายไบนารีออปชันถื
 msgid "Trading information"
 msgstr ""
 
+msgid "Trading instruments"
+msgstr ""
+
 msgid "Trading is unavailable at this time."
 msgstr "ไม่สามารถทำการซื้อขายได้ในขณะนี้"
 
@@ -12319,8 +12334,14 @@ msgstr "กิจกรรมในอนาคต"
 msgid "Update"
 msgstr "การปรับปรุง"
 
+msgid "Update my details"
+msgstr ""
+
 msgid "Update settings"
 msgstr "การปรับปรุงการตั้งค่า"
+
+msgid "Update your personal details"
+msgstr ""
 
 msgid "Upgrade now"
 msgstr "อัพเกรดเดี๋ยวนี้"
@@ -12577,6 +12598,9 @@ msgstr "พวกเราปฏิบัติตามเงื่อนไข
 msgid "We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood."
 msgstr "เราเชื่อว่า เราทำในสิ่งที่ถูกต้องเสมอ รวมถึงการบริการลูกค้าของเราอย่างโปร่งใสและซื่อสัตย์ มีการซื้อขายสัญญาตามกระดาน และใช้การสื่อสารระหว่างกันด้วยภาษาธรรมดาที่เข้าใจได้ง่าย"
 
+msgid "We can't validate your personal details because there is some information missing."
+msgstr ""
+
 msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
 msgstr "บริษัทฯ ไม่สามารถยอมรับที่อยู่ของท่าน ท่านอาจจะได้ดำเนินการแล้ว หากแต่โปรดแน่ใจว่า ที่อยู่ของท่านถูกต้อง"
 
@@ -12697,8 +12721,8 @@ msgstr "เราคาดการณ์ว่า จะมีธุรกร�
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "พวกเรามีความภูมิใจในรางวัลนี้มาก พวกเราให้คำสัญญาอย่างแน่วแน่ในการทำให้ท่านมีประสบการณ์การซื้อขายอย่างมีจริยธรรม รางวัลนี้แสดงว่า BetOnMarkets เป็นแบรนด์ที่ได้รับความไว้วางใจ รับฟังและดูแลลูกค้า ผู้ซึ่งมีประสบการณ์ในการลงทุนมาแล้ว หรือ นักลงทุนมือใหม่ พวกเรามีทีมงานลูกค้าสัมพันธ์ที่สามารถสื่อสารกับท่านได้ด้วยภาษาอังกฤษ ภาษาอินโดนีเซีย ภาษารัสเซีย ภาษาจีน และภาษาสเปน"
 
-msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "เราเจริญเติบโตในช่วงเวลาหลายปี ทั้งด้านกำลังคนและสำนักงาน ขณะนี้เรามีพนักงานมากกว่า %1 คน จากสำนักงาน 3 แห่งในประเทศมาเลเซีย และประเทศมอลตา เราคาดการณ์ถึงการเติบโตของจำนวนพนักงานต่อไปในปีนี้เพื่อรองรับปริมาณความต้องการของสินค้าและบริการของเราที่เพิ่มมากขึ้น"
+msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across four offices in Malaysia, Malta, Paraguay and the UAE. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "Web and software developer"
 msgstr "นักพัฒนาเว็บและซอฟต์แวร์"
