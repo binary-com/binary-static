@@ -8,6 +8,7 @@ const urlForStatic        = require('../../../_common/url').urlForStatic;
 const SubscriptionManager = require('../../../_common/base/subscription_manager').default;
 
 const DP2P = (() => {
+    let shadowed_el_dp2p;
 
     const onLoad = () => {
         const is_svg = Client.get('landing_company_shortcode') === 'svg';
@@ -20,7 +21,7 @@ const DP2P = (() => {
 
     const renderP2P = (module) => {
         const el_dp2p_container = document.getElementById('binary-dp2p');
-        const shadowed_el_dp2p = el_dp2p_container.attachShadow({ mode: 'closed' });
+        shadowed_el_dp2p = el_dp2p_container.attachShadow({ mode: 'open' });
 
         const el_main_css = document.createElement('style');
         // These are styles that are to be injected into the Shadow DOM, so they are in JS and not stylesheets
@@ -121,7 +122,7 @@ const DP2P = (() => {
     };
 
     const onUnload = () => {
-        // TODO: Look into clearance
+        ReactDOM.unmountComponentAtNode(shadowed_el_dp2p);
     };
 
     return {
