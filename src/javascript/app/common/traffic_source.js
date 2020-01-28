@@ -51,7 +51,7 @@ const TrafficSource = (() => {
         if (params.utm_source) { // url params can be stored only if utm_source is available
             param_keys.map((key) => {
                 if (params[key] && !current_values[key]) {
-                    cookie.set(key, params[key]);
+                    cookie.set(key, params[key], { sameSite: 'none', secure: true });
                 }
             });
         }
@@ -68,7 +68,7 @@ const TrafficSource = (() => {
             referrer = doc_ref;
         }
         if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (Url.getLocation(referrer)).hostname);
+            cookie.set('referrer', (Url.getLocation(referrer)).hostname, { sameSite: 'none', secure: true });
         }
     };
 
