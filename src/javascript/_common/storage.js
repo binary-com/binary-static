@@ -8,8 +8,27 @@ const getObject = function (key) {
 };
 
 const setObject = function (key, value) {
-    if (value && value instanceof Object) {
-        this.setItem(key, JSON.stringify(value));
+    try {
+        if (value && value instanceof Object) {
+            this.setItem(key, JSON.stringify(value));
+        }
+    } catch (e) {
+        const quota_exceeded_error = e.name === (
+            'QuotaExceededError' ||
+            'QUOTA_EXCEEDED_ERR' ||
+            'NS_ERROR_DOM_QUOTA_REACHED' ||
+            'W3CException_DOM_QUOTA_EXCEEDED_ERR'
+        );
+
+        if (quota_exceeded_error) {
+            // Quota has been exceeded, keep client authorization, and clear others.
+            const client_accounts = localStorage.getItem('client.accounts');
+            const active_loginid  = localStorage.getItem('active_loginid');
+            localStorage.clear();
+            localStorage.setItem('client.accounts', client_accounts);
+            localStorage.setItem('active_loginid', active_loginid);
+            location.reload();
+        }
     }
 };
 
