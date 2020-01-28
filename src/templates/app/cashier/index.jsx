@@ -155,7 +155,7 @@ const Cashier = () => (
                         <div className='gr-adapt'>
                             <Button
                                 className='toggle button'
-                                href={it.url_for('cashier/dp2p')}
+                                href={`${it.url_for('cashier/dp2p')}#show_dp2p`}
                                 text={it.L('Buy or Sell')}
                             />
                         </div>

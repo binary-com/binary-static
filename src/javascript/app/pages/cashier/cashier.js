@@ -163,16 +163,16 @@ const Cashier = (() => {
                     displayTopUpButton();
                 } else if (currency) {
                     const is_p2p_allowed_currency = currency === 'USD';
+                    const is_show_dp2p = /show_dp2p/.test(window.location.hash);
 
                     showCurrentCurrency(
                         currency,
                         State.getResponse('statement'),
                         State.getResponse('mt5_login_list')
                     );
-                    if (is_p2p_allowed_currency) {
+                    if (is_p2p_allowed_currency && is_show_dp2p) {
                         setP2PVisibility();
                     }
-                    
                 }
 
                 if (residence) {
