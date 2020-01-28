@@ -1,23 +1,32 @@
-const React        = require('react');
-const ReactDOM     = require('react-dom');
-const Client       = require('../../base/client');
-const BinarySocket = require('../../base/socket');
-const getLanguage  = require('../../../_common/language').get;
-const urlForStatic = require('../../../_common/url').urlForStatic;
+const React               = require('react');
+const ReactDOM            = require('react-dom');
+const Client              = require('../../base/client');
+const BinarySocket        = require('../../base/socket');
+const ServerTime          = require('../../../_common/base/server_time');
+const getLanguage         = require('../../../_common/language').get;
+const urlForStatic        = require('../../../_common/url').urlForStatic;
+const SubscriptionManager = require('../../../_common/base/subscription_manager').default;
 
 const DP2P = (() => {
+    let shadowed_el_dp2p;
 
     const onLoad = () => {
         const is_svg = Client.get('landing_company_shortcode') === 'svg';
         if (is_svg) {
-            import('@deriv/p2p').then((module) => {
-                const el_dp2p_container = document.getElementById('binary-dp2p');
-                const shadowed_el_dp2p = el_dp2p_container.attachShadow({ mode: 'closed' });
+            require.ensure([], (require) => renderP2P(require('@deriv/p2p')), 'dp2p');
+        } else {
+            document.getElementById('message_cashier_unavailable').setVisibility(1);
+        }
+    };
 
-                const el_main_css = document.createElement('style');
-                // These are styles that are to be injected into the Shadow DOM, so they are in JS and not stylesheets
-                // They are to be applied to the `:host` selector
-                el_main_css.innerHTML = `
+    const renderP2P = (module) => {
+        const el_dp2p_container = document.getElementById('binary-dp2p');
+        shadowed_el_dp2p = el_dp2p_container.attachShadow({ mode: 'open' });
+
+        const el_main_css = document.createElement('style');
+        // These are styles that are to be injected into the Shadow DOM, so they are in JS and not stylesheets
+        // They are to be applied to the `:host` selector
+        el_main_css.innerHTML = `
                 @import url(${urlForStatic('css/p2p.min.css')});
                 :host {
                     --hem:10px;
@@ -29,11 +38,19 @@ const DP2P = (() => {
                     --state-active: #2a3052;
                     --general-section-1: #ffffff;
                     --text-profit-success: #2e8836;
+                    --text-loss-danger: #ff444f;
+                }
+
+                .dc-list__item--selected .dc-list__item-text {
+                    color: var(--text-colored-background);
                 }
 
                 .dc-button-menu__wrapper
                 .dc-button-menu__button:not(.dc-button-menu__button--active) {
                     background-color: #f2f2f2 !important;
+                }
+                .dc-field-error {
+                    color: var(--text-loss-danger);
                 }
 
                 .link {
@@ -58,34 +75,54 @@ const DP2P = (() => {
                     text-decoration: underline;
                     cursor: pointer;
                 }
+                .deriv-p2p {
+                    height: 800px;
+                }
+                .orders__table-row {
+                    padding-left: 0;
+                }
                 `;
-                el_main_css.rel = 'stylesheet';
+        el_main_css.rel = 'stylesheet';
 
-                const dp2p_props = {
-                    className    : 'theme--light',
-                    websocket_api: BinarySocket,
-                    lang         : getLanguage(),
-                    client       : {
-                        currency  : Client.get('currency'),
-                        is_virtual: Client.get('is_virtual'),
-                    },
-                };
+        const p2pSubscribe = (request, cb) => {
+            // Request object first key will be the msg_type
+            const msg_type = Object.keys(request)[0];
 
-                ReactDOM.render(
-                    // eslint-disable-next-line no-console
-                    React.createElement(module.default, dp2p_props),
-                    shadowed_el_dp2p
-                );
+            SubscriptionManager.subscribe(msg_type, request, cb);
+            return {
+                unsubscribe: () => SubscriptionManager.forget(msg_type),
+            };
+        };
 
-                shadowed_el_dp2p.prepend(el_main_css);
-            });
-        } else {
-            document.getElementById('message_cashier_unavailable').setVisibility(1);
-        }
+        const websocket_api = {
+            send: BinarySocket.send,
+            wait: BinarySocket.wait,
+            p2pSubscribe,
+        };
+
+        const dp2p_props = {
+            className: 'theme--light',
+            client   : {
+                currency             : Client.get('currency'),
+                is_virtual           : Client.get('is_virtual'),
+                local_currency_config: Client.get('local_currency_config'),
+                residence            : Client.get('residence'),
+            },
+            lang       : getLanguage(),
+            server_time: ServerTime,
+            websocket_api,
+        };
+
+        ReactDOM.render(
+            React.createElement(module, dp2p_props),
+            shadowed_el_dp2p
+        );
+
+        shadowed_el_dp2p.prepend(el_main_css);
     };
 
     const onUnload = () => {
-        // TODO: Look into clearance
+        ReactDOM.unmountComponentAtNode(shadowed_el_dp2p);
     };
 
     return {

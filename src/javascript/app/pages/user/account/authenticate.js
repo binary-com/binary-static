@@ -902,8 +902,9 @@ const Authenticate = (() => {
                 const token = response.service_token.token;
                 const in_90_minutes = 1 / 16;
                 Cookies.set('onfido_token', token, {
-                    expires: in_90_minutes,
-                    secure : true,
+                    expires : in_90_minutes,
+                    secure  : true,
+                    sameSite: 'strict',
                 });
                 resolve({ token });
             });
@@ -930,7 +931,7 @@ const Authenticate = (() => {
         }
 
         const service_token_response = await getOnfidoServiceToken();
-        
+
         if (
             service_token_response.error &&
             service_token_response.error.code === 'MissingPersonalDetails'
@@ -954,7 +955,7 @@ const Authenticate = (() => {
 
             $('#missing_personal_fields').html(error_msgs);
         }
-        
+
         const { identity, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
@@ -965,7 +966,7 @@ const Authenticate = (() => {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }
-        
+
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
         } else if (!identity.further_resubmissions_allowed) {
@@ -1036,7 +1037,7 @@ const Authenticate = (() => {
             $('#authentication_loading').setVisibility(0);
             $('#authentication_unneeded').setVisibility(1);
         }
-        
+
         const has_svg_account = Client.hasSvgAccount();
         if (is_required || has_svg_account){
             initTab();

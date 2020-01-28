@@ -61,7 +61,7 @@ const Guide = (() => {
     const setDisabled = () => {
         if (!isDisabled()) {
             const disabled = Cookies.get(cookie_name);
-            Cookies.set(cookie_name, (!disabled ? opt.script : `${disabled},${opt.script}`));
+            Cookies.set(cookie_name, (!disabled ? opt.script : `${disabled},${opt.script}`), { sameSite: 'strict', secure: true });
         }
     };
 
