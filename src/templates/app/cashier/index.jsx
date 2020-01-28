@@ -143,7 +143,7 @@ const Cashier = () => (
         <div className='gr-padding-10' />
 
         <div className='gr-padding-10 table-body invisible gr-parent' id='dp2p_info'>
-            <h3 className='gr-padding-10'>{it.L('DP2P')}</h3>
+            <h3 className='gr-padding-10'>{it.L('P2P')}</h3>
             <div className='gr-row'>
                 <IconWithLink img_src={it.url_for('images/pages/cashier/dp2p-logo.svg')} />
                 <div className='gr-6 gr-8-m'>
