@@ -155,7 +155,7 @@ const Regulation = () => {
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>
                             <FillBox id='crypto_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Crypto.pdf`)} target='_blank' text={it.L('Cryptocurrencies')} />
-                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Commodities.pdf`)} target='_blank' text={it.L('CFD')} />
+                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Commodities.pdf`)} target='_blank' text={it.L('Commodities')} />
                             <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Forex.pdf`)} target='_blank' text={it.L('Forex')} />
                         </div>
                     </div>

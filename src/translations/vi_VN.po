@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-02 02:04\n"
+"PO-Revision-Date: 2020-01-22 03:00\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -426,7 +426,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "Hệ thống của %1 hiện tại đang vượt quá 1 triệu giao dịch một ngày ( bao gồm tài khoản ảo)."
 
 msgid "%1Choose a currency%2 for your fiat currency account:"
-msgstr ""
+msgstr "%1Chọn một loại tiền tệ%2 làm đơn vị tiền tệ mặc định cho tài khoản của bạn:"
 
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Liên hệ với chúng tôi%2 để sắp xếp một ngày và thời gian cho cuộc gọi video."
@@ -444,7 +444,7 @@ msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1Không, thay đổi tài khoản tiền fiat bây giờ%2"
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
-msgstr ""
+msgstr "%1Lưu Ý%2: Các giới hạn này chỉ áp dụng cho tài khoản thực %3 của bạn. Để đặt giới hạn, đổi sang tài khoản tương ứng và đặt giới hạn phù hợp."
 
 msgid "%1Return to trading page%2"
 msgstr "%1Trở về trang giao dịch%2"
@@ -924,7 +924,7 @@ msgid "Account Categorisation"
 msgstr "Phân loại tài khoản"
 
 msgid "Account Closure"
-msgstr ""
+msgstr "Đóng tài khoản"
 
 msgid "Account Deposit Currency"
 msgstr "Tài khoản tiền gửi tiền tệ"
@@ -1050,7 +1050,7 @@ msgid "Additional business exposure:"
 msgstr "Sự tiếp xúc kinh doanh bổ sung:"
 
 msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
-msgstr ""
+msgstr "Ngân hàng hoặc dịch vụ chuyển tiền của bạn có thể yêu cầu kéo dài thời gian xử lý cho đến khi vốn được thêm vào tài khoản của bạn."
 
 msgid "Address"
 msgstr "Địa chỉ"
@@ -2037,9 +2037,6 @@ msgstr "Công ty TNHH Binary (IOM), Tầng 1, Tòa nhà Millennium, Đường Vi
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Công ty TNHH Binary (IOM), Tầng 1, Nhà Millennium, Đường Victoria, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Công ty TNHH Binary (IOM), hoặc"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Công ty TNHH Binary (IOM)."
 
@@ -2316,9 +2313,6 @@ msgstr "C. Định nghĩa về quá trình thực thi tốt nhất"
 msgid "C. Provision of services"
 msgstr "C. Các điều khoản về dịch vụ"
 
-msgid "CFD"
-msgstr "CFD"
-
 msgid "CFD contract specifications"
 msgstr "Điều khoản đặc biệt của CFD"
 
@@ -2333,6 +2327,9 @@ msgstr "Tần xuất giao dịch CFD"
 
 msgid "CFDs"
 msgstr "Các thị trường CFD"
+
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr ""
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFDs là công cụ phức tạp và đi kèm với rủi ro cao do áp dụng đòn bẩy tài chính. Khoảng 78.6% các tài khoản đầu tư lẻ đều mất tiền khi giao dịch CFDs. bạn nên cân nhắc kỹ lưỡng liệu mình đã đủ am hiểu về CFDs và sãn sàng chấp nhận rủi ro thua lỗ cao."
@@ -2368,7 +2365,7 @@ msgid "Can be used to view account activity, including settings, limits, balance
 msgstr "Có thể được sử dụng để xem hoạt động của tài khoản, bao gồm cài đặt, giới hạn, số dư, lịch sử giao dịch, và nhiều hơn thế nữa."
 
 msgid "Can be used to view the trading history of an account."
-msgstr ""
+msgstr "Có thể được sử dụng để xem lịch sử giao dịch của một tài khoản."
 
 msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
 msgstr "Có thể được sử dụng để rút tiền qua các đại lý thanh khoản và chuyển khoản giữa các tài khoản."
@@ -2506,7 +2503,7 @@ msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Giám đốc điều hành, quan chức cấp cao và các nhà lập pháp"
 
 msgid "Choose a currency for your real account:"
-msgstr ""
+msgstr "Chọn đơn vị tiền tệ cho tài khoản thực của bạn:"
 
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Chọn thời hạn từ 10 giây tới 365 ngày."
@@ -2536,7 +2533,7 @@ msgid "Choose from three main trade types:"
 msgstr "Chọn từ ba loại giao dịch chính:"
 
 msgid "Choose one or more cryptocurrency accounts:"
-msgstr ""
+msgstr "Chọn một hoặc nhiều tài khoản cryptocurrency:"
 
 msgid "Choose scopes:"
 msgstr "Chọn loại:"
@@ -2607,14 +2604,8 @@ msgstr "Tiền của khách hàng"
 msgid "Client reporting"
 msgstr "Báo Cáo Khách Hàng"
 
-msgid "Client withdrawals"
-msgstr "Khách hàng rút tiền"
-
-msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
-msgstr "Khách hàng rút tiền trước năm nay lên tới gần 500 triệu USD. Hơn 140 triệu USD giá trị của khách hàng rút tiền được dự kiến năm nay."
-
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
-msgstr "Tài khoản dùng thử sẽ bị xóa sau 365 ngày không hoạt động."
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "Trách nhiệm của Khách hàng"
@@ -2707,10 +2698,10 @@ msgid "Close all or any of the client's Open Positions at a closing level that i
 msgstr "Đóng tất cả hoặc bất kỳ Phiên Mở nào của khách hàng ở một mức đóng hợp lý có sẵn"
 
 msgid "Close my account"
-msgstr ""
+msgstr "Đóng tài khoản"
 
 msgid "Close your %1 account."
-msgstr ""
+msgstr "Đóng tài khoản %1 của bạn."
 
 msgid "Close-Low"
 msgstr "Đóng-Thấp"
@@ -3398,6 +3389,9 @@ msgstr "Ngày sinh"
 
 msgid "Dated within the last six months"
 msgstr "Ngày trong sáu tháng qua"
+
+msgid "Deal Cancel. Fee"
+msgstr ""
 
 msgid "Debt-free"
 msgstr "Không dư nợ"
@@ -4406,6 +4400,12 @@ msgstr "F. Biên và Đòn Bẩy"
 
 msgid "FIX API"
 msgstr "FIX API"
+
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
+msgstr "Hàng hóa thương mại, tiền điện tử, FX-majors (standard/micro lots), FX-minors"
+
+msgid "FX-majors, FX-minors, FX-exotics"
+msgstr ""
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -5496,6 +5496,9 @@ msgstr "Nếu trong vòng vài phút tới bạn không nhận được e
 
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Nếu bạn tìm thấy bất kỳ lỗ hổng trong mã nguồn mở của chúng tôi, vui lòng gửi một yêu cầu trên GitHub."
+
+msgid "If you have a payment reference (for example 122), you can enter it here."
+msgstr ""
 
 msgid "If you have opened positions in your MT5 account, please close them too."
 msgstr ""
@@ -7076,6 +7079,12 @@ msgstr "Vô vàn các cơ hội để tăng nguồn thu nhập"
 msgid "Multiplier"
 msgstr "Số nhân"
 
+msgid "Multiplier Down"
+msgstr ""
+
+msgid "Multiplier Up"
+msgstr ""
+
 msgid "Must be a clear, colour photo"
 msgstr "Phải có một bức ảnh màu sắc rõ ràng,"
 
@@ -7117,6 +7126,9 @@ msgstr "Chứng minh thư, Passport hoặc bất kỳ tài liệu nào do chính
 
 msgid "Natural wonders"
 msgstr "Kỳ quan thiên nhiên"
+
+msgid "Need help? %1Contact us%2."
+msgstr ""
 
 msgid "Need more information?"
 msgstr "Cần thêm thông tin?"
@@ -7412,8 +7424,8 @@ msgstr "Tháng Mười"
 msgid "October"
 msgstr "Tháng Mười"
 
-msgid "Offices in Malaysia, Malta, Paraguay and UAE"
-msgstr "Văn phòng tại Malaysia, Malta, Paraquay và Tiểu các vương quốc Ả-rập"
+msgid "Offices in Malaysia, Malta, Paraguay and the UAE"
+msgstr ""
 
 msgid "Offline"
 msgstr "Ngoại tuyến"
@@ -7562,9 +7574,6 @@ msgstr "Hợp đồng mở"
 msgid "Open positions"
 msgstr "Tuyển Dụng"
 
-msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr "Các vị trí mở và lệnh chờ của tài khoản dùng thử sẽ bị xóa sau 180 ngày không hoạt động."
-
 msgid "Open-Source Projects"
 msgstr "Các Dự Án Nguồn Mở"
 
@@ -7585,9 +7594,6 @@ msgstr "Giá mở"
 
 msgid "Opens"
 msgstr "Mở"
-
-msgid "Optional: type in your payment reference"
-msgstr ""
 
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "Các tùy chọn cho phép bạn \"nhìn lại\" trên điểm cao tối ưu hoặc điểm thấp của thị trường để xác định khoảng được trả."
@@ -8225,6 +8231,9 @@ msgstr "Xin hãy lưu ý rằng tỷ lệ trao đổi của chúng tôi cũng ph
 msgid "Please tell us why you are closing your account (please select one):"
 msgstr ""
 
+msgid "Please update your %1 to continue."
+msgstr ""
+
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "Xin vui lòng chờ đợi để xác nhận. Nhóm hỗ trợ khách hàng của chúng tôi sẽ liên lạc với bạn về trạng thái tài khoản thông qua email trong vòng bốn giờ."
 
@@ -8693,8 +8702,8 @@ msgstr "Tiêu chuẩn thực"
 msgid "Real Synthetic Indices"
 msgstr "Chỉ số Tổng Hợp Thực"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Tài khoản thật sẽ được lưu trữ sau 180 ngày không hoạt động. Để tái kích hoạt tài khoản thật, liên hệ đội ngũ hỗ trợ binary.com tại %1support@binary.com%2"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Tài khoản tiền thật"
@@ -9788,6 +9797,9 @@ msgstr "Chỉ Số Tổng Hợp cho phép bạn được độc quyền tru
 msgid "Synthetic indices that mimic market volatility."
 msgstr "Các chỉ số tổng hợp mô phỏng các biến động thị trường."
 
+msgid "Synthetics"
+msgstr "Chỉ số tổng hợp"
+
 msgid "System Administrator"
 msgstr "Quản trị viên hệ thống"
 
@@ -10010,8 +10022,8 @@ msgstr "<strong>thời gian bắt đầu</strong> là khi hợp đồng được
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Thời gian bắt đầu</strong> là lúc hợp đồng được xử lý bởi máy chủ."
 
-msgid "The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
-msgstr "Tài khoản cao cấp cung cấp cho bạn với biên lãi chặt chẽ, cao hơn kích thước vé và cung cấp một loạt các cặp FX từ các cặp phổ biến đến các cặp hiếm. Đây là tài khoảng thông qua xử lý trực tiếp (STP) có quyền truy cập trực tiếp vào thanh khoản FX từ các nhà cung cấp."
+msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
+msgstr "Tài khoản Nâng cao là tài khoản A Book 100% trong đó các giao dịch của bạn được chuyển thẳng ra thị trường, cho phép bạn truy cập trực tiếp vào các nhà cung cấp thanh khoản ngoại hối. Các cặp tiền tệ chính, phụ và ngoại tệ với chênh lệch giá cao và khối lượng giao dịch cao hơn."
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "Bên liên kết và Công ty là những bên độc lập, và không có điều gì trong Hiệp định này sẽ tạo mối quan hệ hợp tác, liên doanh, đại lý, nhượng quyền thương mại, đại diện bán hàng, hoặc quan hệ công việc giữa hai bên. Bên liên kết sẽ không có thẩm quyền để thực hiện hoặc nhận bất cứ đề nghị hoặc đại diện nào thay mặt Công ty. Bên liên kết sẽ không phải thực hiện bất kỳ báo cáo nào ở trang web của họ hoặc nếu không, sẽ nảy sinh mâu thuẫn với bản hiệp định này."
@@ -10169,8 +10181,8 @@ msgstr "Công ty không cho phép bất cứ hành vi thiếu chuẩn mự
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Công ty cố gắng để mở hoặc đóng các giao dịch mà Lệnh của khách hàng được đưa ra với mức giá hợp lý có thể chấp nhận với Công ty, phù hợp với nhiệm vụ mang lại dịch vụ tốt nhất cho khách hàng của Công ty. Nghĩa là Công ty phải thực hiện đầy đủ nghĩa vụ, khi lệnh đang được thực hiện để mang lại kết quả tốt nhất có thể cho các khách hàng, khi tính đến giá cả, chi phí, tốc độ, khả năng thực hiện và giải quyết, kích thước, tính tự nhiên hay bất kỳ điều gì khác liên quan đến việc thực hiện Lệnh giao dịch."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "Công Ty có chính sách Dừng khi khách hàng mất nhiều hơn số tiền họ đã ký gửi. Tuy nhiên, trong trường hợp các Phiên mở của khách hàng không được đóng khi Mức ký quỹ cho Tài khoản Thực MT5 đạt đến Mức Dừng, Công ty có thể từ bỏ số dư âm của khách hàng bằng cách ghi thêm vào tài khoản của mình nếu Số dư Tài khoản của khách hàng đi vào số dư âm. Số dư âm được xác định bằng cách tổng hợp tất cả số dư âm phát sinh trong khoảng thời gian 24 giờ trên tất cả các tài khoản do khách hàng nắm giữ. khách hàng chấp nhận, trừ khi họ là khách hàng bán lẻ của Công ty Binary Investments (Europe) Ltd hoặc của Binary (Châu Âu) hoặc Binary (IOM), việc Công Ty bảo vệ Số Dư Âm cho khách hàng là được quyết định hoàn toàn bởi Công ty và chúng tôi có quyền thay đổi các tính năng và tiêu chí để đáp ứng điều kiện của Bảo Vệ Số Dư Âm bất cứ lúc nào. Các điều khoản của Bảo Vệ Số Dư Âm không áp dụng cho các trường hợp sau:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Nhiệm vụ chung của Công Ty là hoạt động kinh doanh trung thực, công bằng, chuyên nghiệp, và mang lại cho khách hàng mức lãi suất tốt nhất khi mở và đóng những giao dịch binary options."
@@ -10686,17 +10698,17 @@ msgstr "Cộng hòa Malta là một đảo quốc ở Nam Âu — khoảng 80 km
 msgid "The Spread is subject to alteration, at the Company's absolute discretion. The client acknowledges that whilst the Company endeavours to maintain a competitive Spread, it may widen significantly in some circumstances, and such figures will be determined by the Company at its reasonable discretion. Spreads may be widened at the daily bank rollovers."
 msgstr "Chênh lêch giá mua/bán có thể thay đổi, tùy theo quyết định của Công ty. Khách hàng chấp nhận rằng trong khi Công ty cố gắng để đưa ra các Chênh lệch giá mua/bán có tính cạnh tranh, nó có thể sẽ được nới rộng lên rất nhiều trong một số trường hợp và các chỉ số đó sẽ được quyết định bởi Công ty. Chênh lệch giá mua/bán có thể được mở rộng mỗi ngày khi ngân hàng gia hạn cho các hợp đồng."
 
-msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr "Tài khoản Tiêu Chuẩn thích hợp với diện rộng đa số người giao dịch, bao gồm cả người mới và người đã có kinh nghiệm. Nó cho phép bạn tận dụng biên lãi tầm trung đa dạng, mang lại cho bạn rất nhiều sự linh hoạt trong bất cứ Phiên thị trường nào bạn muốn tham gia vào."
+msgid "The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
+msgstr ""
 
-msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
-msgstr "Tài khoản chuẩn thích hợp cho một loạt các nhà giao dịch, không kinh và có kinh nghiệm. Nó có sẵn trong EUR và GBP và có biến chặt chẽ và lây lan không kèm hoa hồng và một khoản tiền gửi tối thiểu."
+msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
+msgstr "Tài khoản Tiêu chuẩn cung cấp cho các nhà giao dịch mới và có kinh nghiệm đòn bẩy cao và chênh lệch biến đổi linh hoạt một cách tối đa. Giao dịch hàng hóa thương mại, tiền điện tử, các cặp tiền tệ chính (tiêu chuẩn và siêu nhỏ) và các cặp tiền tệ phụ có đòn bẩy cao."
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "Mức Dừng áp dụng đối với Tài Khoản Thực MT5 của khách hàng có thể khác với Mức Dừng mặc định được công bố trên trang web của Công ty."
 
-msgid "The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
-msgstr "Tài khoản Chỉ Số Biến Động cho phép bạn giao dịch CFDs trên Chỉ Số Biến Động - tổng hợp tài sản thuộc quyền sở hữu của chúng tôi mô phỏng theo các biến động thực của thị trường thế giới và có sẵn cho các giao dịch 24/7."
+msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr "Tài khoản Chỉ số tổng hợp cho phép bạn giao dịch các hợp đồng chênh lệch (CFD) trên các chỉ số tổng hợp dựa trên các chuyển động trong thế giới thực. Thị trường giao dịch 24/7 và được kiểm toán về sự công bằng bởi một bên thứ ba độc lập."
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "Đội ngũ Quản Trị Viên Hệ Thống có trách nhiệm cho việc bảo trì, chỉnh sửa và hoạt động ổn định của phần mềm, phần cứng máy tính và mạng lưới của chúng tôi."
@@ -12009,6 +12021,9 @@ msgstr "Việc giao dịch qua các tùy chọn nhị phân mang tính may r
 msgid "Trading information"
 msgstr ""
 
+msgid "Trading instruments"
+msgstr "Thị trường giao dịch"
+
 msgid "Trading is unavailable at this time."
 msgstr "Giao dịch không khả dụng tại thời điểm này."
 
@@ -12321,8 +12336,14 @@ msgstr "Sự kiện sắp diễn ra"
 msgid "Update"
 msgstr "Cập nhật"
 
+msgid "Update my details"
+msgstr ""
+
 msgid "Update settings"
 msgstr "Cập nhật cài đặt"
+
+msgid "Update your personal details"
+msgstr ""
 
 msgid "Upgrade now"
 msgstr "Nâng cấp ngay bây giờ"
@@ -12579,6 +12600,9 @@ msgstr "Chúng tôi có trách nhiệm phải thông báo cho bạn về như
 msgid "We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood."
 msgstr "Chúng tôi tin rằng chúng tôi nên luôn làm điều đúng đắn. Điều này bao gồm phục vụ khách hàng của chúng tôi với sự trung thực và minh bạch, giải quyết tất cả các hợp đồng theo đúng luật, và giao tiếp bằng ngôn ngữ đơn giản có thể dễ dàng hiểu được."
 
+msgid "We can't validate your personal details because there is some information missing."
+msgstr ""
+
 msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
 msgstr "Chúng tôi không thể định vị được vị trí địa chỉ của bạn. Bạn được thông qua, nhưng hãy đảm bảo rằng địa chỉ mà bạn đã điền là đầy đủ và chính xác."
 
@@ -12699,8 +12723,8 @@ msgstr "Chúng tôi đang dự kiến sẽ thực hiện trên 197 triệu gia
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Chúng tôi thực sự tự hào về giải thưởng này. Chúng tôi cam kết cung cấp cho quý khách một trải nghiệm giao dịch có đạo đức và lấy khách hàng làm trung tâm, và các giải thưởng này cho thấy BetOnMarkets là một thương hiệu đáng tin cậy, luôn lắng nghe và phục vụ khách hàng, cho dù họ là nhà giao dịch có kinh nghiệm hay người mới. Chúng tôi cung cấp dịch vụ khách hàng bằng tiếng Anh, Indonesia, Nga, Trung Quốc và Tây Ban Nha."
 
-msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "Chúng tôi đã phát triển mạnh trong những năm qua – cả về nguồn nhân lực và khối văn phòng. Chúng tôi hiện có hơn %1 nhân viên trên ba văn phòng ở Malaysia, Malta. Và dự kiến năm nay sẽ tiếp tục tăng trưởng về nhân sự để phục vụ cho nhu cầu ngày càng tăng trong các sản phẩm và dịch vụ của mình."
+msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across four offices in Malaysia, Malta, Paraguay and the UAE. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "Web and software developer"
 msgstr "Vận hành web và phần mềm"

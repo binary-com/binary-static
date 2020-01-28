@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-02 02:04\n"
+"PO-Revision-Date: 2020-01-22 02:59\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -2038,9 +2038,6 @@ msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Doug
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd, or"
-msgstr "Binary (IOM) Ltd, ou"
-
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
 
@@ -2317,9 +2314,6 @@ msgstr "C. Definição de melhor execução"
 msgid "C. Provision of services"
 msgstr "C. Prestação de serviços"
 
-msgid "CFD"
-msgstr "CFD"
-
 msgid "CFD contract specifications"
 msgstr "Especificações de contrato do CFD"
 
@@ -2334,6 +2328,9 @@ msgstr "Frequência de negociação de CFDs"
 
 msgid "CFDs"
 msgstr "CFDs"
+
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr ""
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFDs são instrumentos complexos e implicam um elevado risco de perda rápida de dinheiro devido à alavancagem. 78.6% das contas de investidores particulares perdem dinheiro quando negociam CFDs. Você deve pensar bem sobre se compreende como funcionam os CFDs e se pode arriscar de perder todo o seu dinheiro."
@@ -2608,13 +2605,7 @@ msgstr "Dinheiro de clientes"
 msgid "Client reporting"
 msgstr "Relatórios de clientes"
 
-msgid "Client withdrawals"
-msgstr "Retiradas de cliente"
-
-msgid "Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year."
-msgstr "Retiradas de clientes antes destes ano totalizaram quase 500 milhões de USD. Mais de 140 milhões de USD em retiradas de clientes estão previstos para este ano."
-
-msgid "Client's demo accounts will be deleted after 365 days of inactivity."
+msgid "Client's demo accounts will be deleted after 30 days of inactivity."
 msgstr ""
 
 msgid "Client's liability"
@@ -3399,6 +3390,9 @@ msgstr "Data de nascimento"
 
 msgid "Dated within the last six months"
 msgstr "Datado dos últimos seis meses"
+
+msgid "Deal Cancel. Fee"
+msgstr ""
 
 msgid "Debt-free"
 msgstr "Sem dívidas"
@@ -4407,6 +4401,12 @@ msgstr "F. Margem e Alavancagem"
 
 msgid "FIX API"
 msgstr "API FIX"
+
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
+msgstr "Pares de Forex Principais (lotes padrão/micro), Pares de Forex Secundários, Commodities, Criptomoedas"
+
+msgid "FX-majors, FX-minors, FX-exotics"
+msgstr ""
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -5498,6 +5498,9 @@ msgstr "Caso você não receba o e-mail dentro dos próximos minutos, verifique 
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Caso você descubra quaisquer vulnerabilidades no nosso %1código-fonte aberto%2, não hesite em enviar uma solicitação pull no GitHub."
 
+msgid "If you have a payment reference (for example 122), you can enter it here."
+msgstr ""
+
 msgid "If you have opened positions in your MT5 account, please close them too."
 msgstr ""
 
@@ -5643,7 +5646,7 @@ msgid "If your account currency is EUR or GBP, your commission will be converted
 msgstr "Se a moeda padrão da sua conta for EUR ou GBP, as suas comissões serão convertidas com base na taxa de câmbio atual."
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
-msgstr "Se a sua conta estiver sob uma chamada de margens durante um período de tempo prolongado, ela atingirá o nível de interrupção onde não poderá suster uma posição em aberto. Isto levará a que a sua ordem seja cancelada e as suas posições em aberto serem forçosamente fechadas (também conhecido como \"liquidação forçada\")."
+msgstr "Se a sua conta estiver sob uma chamada de margens durante um período de tempo prolongado, ela atingirá o nível de interrupção onde não poderá manter uma posição em aberto. Isto levará a que a sua ordem seja cancelada e as suas posições em aberto serem forçosamente fechadas (também conhecido como \"liquidação forçada\")."
 
 msgid "If your documents cannot be verified over video call for any reason, you will be required to send your documents to %1"
 msgstr "Caso não seja possível verificar os seus documentos através de chamada de vídeo por qualquer motivo, será necessário enviar os documentos para %1"
@@ -7077,6 +7080,12 @@ msgstr "Múltiplas oportunidades de lucro"
 msgid "Multiplier"
 msgstr "Multiplicador"
 
+msgid "Multiplier Down"
+msgstr ""
+
+msgid "Multiplier Up"
+msgstr ""
+
 msgid "Must be a clear, colour photo"
 msgstr "Deve ser uma fotografia clara e colorida"
 
@@ -7118,6 +7127,9 @@ msgstr "Cartão de identidade nacional ou qualquer documento emitido pelo govern
 
 msgid "Natural wonders"
 msgstr "Maravilhas naturais"
+
+msgid "Need help? %1Contact us%2."
+msgstr ""
 
 msgid "Need more information?"
 msgstr "Necessita de mais informações?"
@@ -7413,8 +7425,8 @@ msgstr "Out"
 msgid "October"
 msgstr "Outubro"
 
-msgid "Offices in Malaysia, Malta, Paraguay and UAE"
-msgstr "Escritórios em Malásia, Malta, Paraguai e Emirados Árabes Unidos"
+msgid "Offices in Malaysia, Malta, Paraguay and the UAE"
+msgstr ""
 
 msgid "Offline"
 msgstr "Offline"
@@ -7563,9 +7575,6 @@ msgstr "Abrir contratos"
 msgid "Open positions"
 msgstr "Vagas em aberto"
 
-msgid "Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity."
-msgstr ""
-
 msgid "Open-Source Projects"
 msgstr "Projetos de código aberto"
 
@@ -7586,9 +7595,6 @@ msgstr "Preço de abertura"
 
 msgid "Opens"
 msgstr "Abre"
-
-msgid "Optional: type in your payment reference"
-msgstr ""
 
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "Opções que permitem que você tenha uma retrospectiva sobre a alta ou baixa ótima alcançada pelo mercado para determinar o prêmio."
@@ -8226,6 +8232,9 @@ msgstr "Note que a nossa taxa de swap também depende do tempo e dos dias em que
 msgid "Please tell us why you are closing your account (please select one):"
 msgstr ""
 
+msgid "Please update your %1 to continue."
+msgstr ""
+
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "Aguarde confirmação. A nossa equipe de apoio ao cliente lhe responderá sobre o status da sua conta por e-mail dentro de 4 horas."
 
@@ -8694,7 +8703,7 @@ msgstr "Padrão real"
 msgid "Real Synthetic Indices"
 msgstr "Índices sintéticos Real"
 
-msgid "Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
 msgstr ""
 
 msgid "Real-Money Account"
@@ -9789,6 +9798,9 @@ msgstr "Os Índices Sintéticos oferecem acesso exclusivo a vários tipos de neg
 msgid "Synthetic indices that mimic market volatility."
 msgstr "Índices sintéticos que imitam a volatilidade do mercado."
 
+msgid "Synthetics"
+msgstr "Sintéticos"
+
 msgid "System Administrator"
 msgstr "Administrador de sistemas"
 
@@ -10011,8 +10023,8 @@ msgstr "A <strong>hora de início</strong> quando o contrato é processado pelos
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "A <strong>hora de início</strong> é quando o contrato é processado pelos nossos servidores."
 
-msgid "The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
-msgstr "A conta Avançada oferece spreads estreitos, maior tamanho de pedido e oferece uma variedade de pares, dos mais comuns aos mais exóticos. É uma conta de processamento direto (STP) com acesso direto à liquidez de câmbio de vários provedores."
+msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
+msgstr "A conta Avançada é uma conta 100% A Book, na qual seus negócios são repassados ​​diretamente ao mercado, fornecendo acesso direto a fornecedores de liquidez cambial. Negocie pares de moedas principais, secundárias e exóticas com spreads baixos e volumes comerciais mais altos."
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "O Afiliado e a Empresa são contratantes independentes, e nada neste Contrato criará qualquer parceria, empreendimento conjunto, agência, franquia, representante de vendas ou relação de emprego entre eles. O Afiliado não terá autoridade para fazer ou aceitar quaisquer ofertas ou representações em nome da Empresa. O Afiliado não fará declarações, seja no site do Afiliado ou de outra forma, que contradigam razoavelmente qualquer coisa neste parágrafo."
@@ -10170,8 +10182,8 @@ msgstr "A empresa não tolera qualquer forma de comportamento inapropriado. Isso
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "A Empresa se esforça para abrir ou fechar a transação à qual o Pedido do cliente está relacionado a um preço razoavelmente disponível para a Empresa, agindo de acordo com o dever de execução da Empresa. Melhor execução significa que, ao executar Ordens, a Empresa deve tomar todas as medidas necessárias para obter o melhor resultado possível para o cliente, levando em consideração o preço, custos, velocidade, probabilidade de execução e liquidação, tamanho, natureza ou qualquer outra consideração. relevantes para a execução da Ordem."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "A empresa possui uma política de Stop Out que evita que o cliente perca mais do que depositou. No entanto, caso as posições em aberto do cliente não sejam fechadas quando o nível de margem da conta Real MT5 atingir o nível de parada, a empresa, a seu exclusivo critério, poderá renunciar ao saldo negativo do cliente creditando sua conta se o saldo da conta entra em um saldo negativo. O saldo negativo é determinado pela agregação de todos os saldos negativos incorridos durante um período de 24 horas em todas as contas mantidas pelo cliente. O cliente reconhece que, a menos que seja um cliente de varejo da Binary Investments (Europe) Ltd ou um cliente da Binary (Europe) Ltd ou Binary (IOM) Ltd, a oferta da proteção de saldo negativo pela Empresa ao cliente está a critério exclusivo da Empresa, a Empresa reserva-se o direito de alterar os recursos e os critérios de elegibilidade da proteção de saldo negativo a qualquer momento. As disposições da proteção do saldo negativo não se aplicam nas seguintes situações:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "A Empresa tem o dever geral de conduzir seus negócios com o cliente de forma honesta, justa e profissional e agir no melhor interesse do cliente ao abrir e fechar negócios de opções binárias com o cliente."
@@ -10686,17 +10698,17 @@ msgstr "A República de Malta é um país insular no Sul da Europa — situada a
 msgid "The Spread is subject to alteration, at the Company's absolute discretion. The client acknowledges that whilst the Company endeavours to maintain a competitive Spread, it may widen significantly in some circumstances, and such figures will be determined by the Company at its reasonable discretion. Spreads may be widened at the daily bank rollovers."
 msgstr "O Spread está sujeito a alterações, a critério absoluto da Empresa. O cliente reconhece que, embora a Empresa se esforce para manter um Spread competitivo, ele pode aumentar significativamente em algumas circunstâncias, e esses valores serão determinados pela Empresa a seu critério razoável. Os spreads podem ser ampliados nas rolagens bancárias diárias."
 
-msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr "A conta padrão é adequada para um amplo conjunto de negociadores, tantos novos como experientes. Permite-lhe alavancagem de nível médio e spreads variáveis que lhe proporcionam ampla flexibilidade para qualquer posição que você deseje assumir no mercado."
+msgid "The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
+msgstr "A conta Padrão (disponível em EUR e GBP) é adequada para uma grande variedade de traders, novos ou experientes. Negocie commodities, criptomoedas, pares de moedas principais e secundários com spreads baixos e variáveis, sem comissões e sem depósito mínimo."
 
-msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
-msgstr "A conta padrão é adequada para um amplo conjunto de negociadores, tantos novos como experientes. Está disponível em EUR e GBP e oferece spreads baixas e variáveis sem comissões nem depósitos mínimos."
+msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
+msgstr "A conta Standard oferece aos comerciantes novos e experientes alta alavancagem e spreads variáveis ​​para máxima flexibilidade. Negocie commodities, criptomoedas, pares principais de moeda (lotes padrão e micro) e moedas menores com alta alavancagem."
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "O Nível de Stop Out aplicável à Conta Real MT5 do cliente pode diferir do nível de Stop Out publicado no site da Empresa."
 
-msgid "The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
-msgstr "A conta de Índices Sintéticos permite que você negocie CFDs em Índices Sintéticos - nossos ativos sintéticos proprietários que imitam a volatilidade do mercado real e estão disponíveis para negociação 24 horas por dia, sete dias por semana."
+msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr "A conta de Índices Sintéticos permite negociar contratos por diferença (CFDs) em índices sintéticos que imitam os movimentos do mundo real. Disponível para negociação 24 horas por dia, 7 dias por semana e auditados quanto à imparcialidade por terceiros independentes."
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "A equipe de Administração do Sistema é responsável pela manutenção, configuração e operação confiável de nosso software, hardware e redes."
@@ -12009,6 +12021,9 @@ msgstr "Negociar em opções binárias é especulativo e envolve um alto grau de
 msgid "Trading information"
 msgstr ""
 
+msgid "Trading instruments"
+msgstr "Instrumentos de Negociação"
+
 msgid "Trading is unavailable at this time."
 msgstr "As negociações estão atualmente indisponíveis."
 
@@ -12321,8 +12336,14 @@ msgstr "Próximos Eventos"
 msgid "Update"
 msgstr "Atualizar"
 
+msgid "Update my details"
+msgstr ""
+
 msgid "Update settings"
 msgstr "Atualizar configurações"
+
+msgid "Update your personal details"
+msgstr ""
 
 msgid "Upgrade now"
 msgstr "Atualize já"
@@ -12579,6 +12600,9 @@ msgstr "Somos obrigados pela nossa licença a informá-lo sobre o que acontece c
 msgid "We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood."
 msgstr "Acreditamos que devemos sempre fazer o que é certo. Isso inclui servir os nossos clientes com honestidade e transparência, liquidando todos os contratos ao pé da letra e comunicando tudo numa linguagem simples que todos entendem."
 
+msgid "We can't validate your personal details because there is some information missing."
+msgstr ""
+
 msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
 msgstr "Não foi possível reconhecer o seu endereço. Você pode proceder mas certifique-se de que o seu endereço esteja completo e correto."
 
@@ -12699,8 +12723,8 @@ msgstr "Projeta-se que vamos registar mais de 197 milhões de transações este 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Estamos muito orgulhosos deste prêmio. Estamos fortemente empenhados em oferecer uma experiência de negociação ética e com foco no cliente, e o prêmio mostra que a BetOnMarkets é uma marca confiável que escuta e atende aos clientes, sejam eles negociadores experientes ou iniciantes. Oferecemos serviços ao cliente em inglês, indonésio, russo, chinês e espanhol."
 
-msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "Crescemos ao longo dos anos - tanto em termos de recursos humanos como em escritórios. Temos atualmente mais de %1 funcionários distribuídos por três escritórios na Malásia e em Malta. Prevemos que o número de colaboradores cresça ainda mais este ano para fazer face ao aumento na demanda dos nossos produtos e serviços."
+msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across four offices in Malaysia, Malta, Paraguay and the UAE. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "Web and software developer"
 msgstr "Desenvolvedores da Web e de software"

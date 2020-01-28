@@ -18,6 +18,7 @@ const LoggedIn = () => (
                 #login_loading {text-align: center; padding-top: 90px;}
             `}
             </style>
+            <meta name='referrer' content='origin' />
         </head>
         <body>
             <div id='header-binary'>
