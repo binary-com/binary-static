@@ -109,7 +109,6 @@ const DP2P = (() => {
         };
 
         ReactDOM.render(
-            // eslint-disable-next-line no-console
             React.createElement(module, dp2p_props),
             shadowed_el_dp2p
         );
