@@ -154,9 +154,12 @@ const ClientBase = (() => {
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
         const local_currency_config = {};
-        local_currency_config.currency = Object.keys(authorize.local_currencies)[0];
-        local_currency_config.decimal_places =
-            +authorize.local_currencies[local_currency_config.currency].fractional_digits;
+        const local_currencies = Object.keys(authorize.local_currencies);
+        if (local_currencies.length) {
+            local_currency_config.currency = local_currencies[0];
+            local_currency_config.decimal_places =
+                +authorize.local_currencies[local_currency_config.currency].fractional_digits;
+        }
         set('email',      authorize.email);
         set('currency',   authorize.currency);
         set('is_virtual', +authorize.is_virtual);
