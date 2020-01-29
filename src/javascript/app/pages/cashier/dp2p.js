@@ -36,7 +36,7 @@ const DP2P = (() => {
                     --button-primary-hover: #14602b;
                     --brand-red-coral: #2a3052;
                     --state-active: #2a3052;
-                    --general-section-1: #ffffff;
+                    --general-section-1: rgba(0, 0, 0, 0.05);
                     --text-profit-success: #2e8836;
                     --text-loss-danger: #ff444f;
                 }
@@ -51,6 +51,13 @@ const DP2P = (() => {
                 }
                 .dc-field-error {
                     color: var(--text-loss-danger);
+                }
+                .dc-table__row {
+                    padding: 0 calc(2.4*var(--hem));
+                    border-bottom: 1px solid var(--general-section-1);
+                }
+                .dc-table__cell {
+                    border-bottom: none;
                 }
 
                 .link {
@@ -81,6 +88,18 @@ const DP2P = (() => {
                 .orders__table-row {
                     padding-left: 0;
                 }
+                .orders {
+                    padding: calc(2.4*var(--hem)) 0;
+                }
+
+                .buy-sell__header {
+                    padding: 0;
+                    border: 1px solid var(--brand-red-coral);
+                    border-radius: 5px;
+                }
+                .buy-sell__dialog {
+                    z-index: 2;
+                }
                 `;
         el_main_css.rel = 'stylesheet';
 
@@ -107,6 +126,9 @@ const DP2P = (() => {
                 is_virtual           : Client.get('is_virtual'),
                 local_currency_config: Client.get('local_currency_config'),
                 residence            : Client.get('residence'),
+            },
+            custom_strings: {
+                email_domain: 'binary.com',
             },
             lang       : getLanguage(),
             server_time: ServerTime,
