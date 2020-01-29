@@ -391,6 +391,7 @@ module.exports = [
     'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2].',
     'This account is disabled',
     'This account is excluded until [_1]',
+    'This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.',
     'This contract lost',
     'This contract won',
     'This feature is not relevant to virtual-money accounts.',

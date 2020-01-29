@@ -1641,4 +1641,15 @@ body #not_authenticated_financial ul.checked > li {
     width: 1008px;
     font-size: 10px;
     position: relative;
+
+    @media screen and (max-width: 1023px) {
+        display: none;
+    }
+}
+
+#message_dp2p_mobile_view {
+    @media screen and (max-width: 1023px) {
+        display: block !important;
+        visibility: visible;
+    }
 }

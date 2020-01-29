@@ -1,9 +1,11 @@
 const React               = require('react');
 const ReactDOM            = require('react-dom');
+const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
 const ServerTime          = require('../../../_common/base/server_time');
 const getLanguage         = require('../../../_common/language').get;
+const urlFor              = require('../../../_common/url').urlFor;
 const urlForStatic        = require('../../../_common/url').urlForStatic;
 const SubscriptionManager = require('../../../_common/base/subscription_manager').default;
 
@@ -12,11 +14,18 @@ const DP2P = (() => {
 
     const onLoad = () => {
         const is_svg = Client.get('landing_company_shortcode') === 'svg';
-        if (is_svg) {
-            require.ensure([], (require) => renderP2P(require('@deriv/p2p')), 'dp2p');
+        const is_show_dp2p = /show_dp2p/.test(window.location.hash);
+
+        if (is_show_dp2p) {
+            if (is_svg) {
+                require.ensure([], (require) => renderP2P(require('@deriv/p2p')), 'dp2p');
+            } else {
+                document.getElementById('message_cashier_unavailable').setVisibility(1);
+            }
         } else {
-            document.getElementById('message_cashier_unavailable').setVisibility(1);
+            BinaryPjax.load(urlFor('cashier'));
         }
+
     };
 
     const renderP2P = (module) => {
