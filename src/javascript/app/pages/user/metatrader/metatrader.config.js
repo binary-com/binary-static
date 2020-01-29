@@ -480,7 +480,7 @@ const MetaTraderConfig = (() => {
 
     // if you have acc_type, use accounts_info[acc_type].info.display_login
     // otherwise, use this function to format login into display login
-    const getDisplayLogin = login => login.replace(/^MT(D|R)/i, '');
+    const getDisplayLogin = login => login.replace(/^MT[DR]?/i, '');
 
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
