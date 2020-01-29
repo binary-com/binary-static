@@ -107,10 +107,10 @@ const DP2P = (() => {
                 is_virtual           : Client.get('is_virtual'),
                 local_currency_config: Client.get('local_currency_config'),
                 residence            : Client.get('residence'),
-                custom_object        : { domain: 'binary.com' },
             },
-            lang       : getLanguage(),
-            server_time: ServerTime,
+            custom_strings: { domain: 'binary.com' },
+            lang          : getLanguage(),
+            server_time   : ServerTime,
             websocket_api,
         };
 
