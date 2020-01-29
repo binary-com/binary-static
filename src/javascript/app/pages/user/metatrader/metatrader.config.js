@@ -330,10 +330,10 @@ const MetaTraderConfig = (() => {
         },
         deposit: {
             title      : localize('Deposit'),
-            success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
+            success_msg: (response, acc_type) => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
                 Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_binary,
-                response.echo_req.to_mt5,
+                accounts_info[acc_type].info.display_login,
                 response.binary_transaction_id,
             ]),
             prerequisites: () => new Promise((resolve) => {
@@ -359,7 +359,7 @@ const MetaTraderConfig = (() => {
             title      : localize('Withdraw'),
             success_msg: (response, acc_type) => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
                 Currency.formatMoney(getCurrency(acc_type), response.echo_req.amount),
-                response.echo_req.from_mt5,
+                accounts_info[acc_type].info.display_login,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
             ]),
