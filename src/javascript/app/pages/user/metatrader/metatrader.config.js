@@ -101,7 +101,7 @@ const MetaTraderConfig = (() => {
     // or 1 of donor currency if both accounts have the same currency
     const getMinMT5TransferValue = (currency) => {
         const client_currency = Client.get('currency');
-        const mt5_currency    = MetaTraderConfig.getCurrency(Client.get('mt5_account'));
+        const mt5_currency    = getCurrency(Client.get('mt5_account'));
         if (client_currency === mt5_currency) return 1;
         return (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency));
     };
@@ -298,7 +298,7 @@ const MetaTraderConfig = (() => {
 
         password_change: {
             title        : localize('Change Password'),
-            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
+            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, getDisplayLogin(response.echo_req.login)]),
             prerequisites: () => new Promise(resolve => resolve('')),
         },
         password_reset: {
@@ -478,6 +478,10 @@ const MetaTraderConfig = (() => {
 
     const getCurrency = acc_type => accounts_info[acc_type].info.currency;
 
+    // if you have acc_type, use accounts_info[acc_type].info.display_login
+    // otherwise, use this function to format login into display login
+    const getDisplayLogin = login => login.replace(/^MT(D|R)/i, '');
+
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
@@ -501,6 +505,7 @@ const MetaTraderConfig = (() => {
         needsRealMessage,
         hasAccount,
         getCurrency,
+        getDisplayLogin,
         isAuthenticated,
         isAuthenticationPromptNeeded,
         configMtCompanies   : configMtCompanies.get,
