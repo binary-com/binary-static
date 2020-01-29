@@ -153,12 +153,18 @@ const ClientBase = (() => {
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
+        const local_currency_config = {};
+        local_currency_config.currency = Object.keys(authorize.local_currencies)[0];
+        local_currency_config.decimal_places =
+            +authorize.local_currencies[local_currency_config.currency].fractional_digits;
         set('email',      authorize.email);
         set('currency',   authorize.currency);
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
         set('user_id', authorize.user_id);
+        set('local_currency_config', local_currency_config);
+
         updateAccountList(authorize.account_list);
     };
 

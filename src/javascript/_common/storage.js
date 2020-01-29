@@ -136,28 +136,30 @@ CookieStorage.prototype = {
         }
         this.initialized = true;
     },
-    write(val, expireDate, isSecure) {
+    write(val, expireDate, isSecure, sameSite) {
         if (!this.initialized) this.read();
         this.value = val;
         if (expireDate) this.expires = expireDate;
         Cookies.set(this.cookie_name, this.value, {
-            expires: this.expires,
-            path   : this.path,
-            domain : this.domain,
-            secure : !!isSecure,
+            expires : this.expires,
+            path    : this.path,
+            domain  : this.domain,
+            secure  : !!isSecure,
+            sameSite: sameSite || 'strict',
         });
     },
     get(key) {
         if (!this.initialized) this.read();
         return this.value[key];
     },
-    set(key, val) {
+    set(key, val, options) {
         if (!this.initialized) this.read();
         this.value[key] = val;
         Cookies.set(this.cookie_name, this.value, {
             expires: new Date(this.expires),
             path   : this.path,
             domain : this.domain,
+            ...options,
         });
     },
     remove() {
