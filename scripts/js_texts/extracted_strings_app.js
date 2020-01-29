@@ -530,6 +530,7 @@ module.exports = [
     'for account [_1]',
     'hour',
     'hours',
+    'including Deal Cancel. Fee',
     'letters',
     'million',
     'minute',

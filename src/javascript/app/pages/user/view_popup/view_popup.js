@@ -257,7 +257,7 @@ const ViewPopup = (() => {
             const total_pnl = +profit - deal_cancellation_price;
             containerSetText('trade_details_deal_cancellation', deal_cancellation_price ? formatMoney(contract.currency, deal_cancellation_price) : '-');
             containerSetText('trade_details_total_pnl',
-                `${formatMoney(contract.currency, total_pnl)}<span class="percent"> (${localize('including Deal Cancel. Fee')})</span>`,
+                `${formatMoney(contract.currency, total_pnl)}${deal_cancellation_price ? `<span class="percent"> (${localize('including Deal Cancel. Fee')})</span>` : ''}`,
                 { class: (total_pnl >= 0 ? 'profit' : 'loss') }
             );
         }
@@ -271,6 +271,12 @@ const ViewPopup = (() => {
                 containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : contract.entry_spot_display_value);
             }
             containerSetText('trade_details_message', contract.validation_error && !is_multiplier_contract ? contract.validation_error : '&nbsp;');
+            if (is_multiplier_contract) {
+                containerSetText('trade_details_bottom', localize(
+                    'This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.',
+                    ['<br/>', '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">', '</a>']
+                ));
+            }
         }
 
         const is_digit = /digit/i.test(contract.contract_type);
@@ -335,8 +341,10 @@ const ViewPopup = (() => {
         if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
             TickDisplay.plotResetSpot(barrier);
         }
-        // next line is responsible for 'sell at market' flashing on the last tick
-        sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
+        if (!is_multiplier_contract) {
+            // next line is responsible for 'sell at market' flashing on the last tick
+            sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
+        }
         contract.chart_validation_error = contract.validation_error;
         contract.validation_error       = '';
     };
