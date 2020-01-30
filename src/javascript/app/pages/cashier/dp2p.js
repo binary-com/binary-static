@@ -29,7 +29,8 @@ const DP2P = (() => {
     };
 
     const renderP2P = (module) => {
-        const el_dp2p_container = document.getElementById('binary-dp2p');
+        const el_loading = document.getElementById('loading_p2p');
+        const el_dp2p_container = document.getElementById('binary_dp2p');
         shadowed_el_dp2p = el_dp2p_container.attachShadow({ mode: 'open' });
 
         const el_main_css = document.createElement('style');
@@ -180,6 +181,8 @@ const DP2P = (() => {
         );
 
         shadowed_el_dp2p.prepend(el_main_css);
+        el_loading.parentNode.removeChild(el_loading);
+        el_dp2p_container.classList.remove('invisible');
     };
 
     const onUnload = () => {
