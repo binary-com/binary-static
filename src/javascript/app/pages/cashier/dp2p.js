@@ -38,15 +38,15 @@ const DP2P = (() => {
         el_main_css.innerHTML = `
                 @import url(${urlForStatic('css/p2p.min.css')});
                 :host {
-                    --hem:10px;
+                    --hem: 10px;
                 }
                 :host .theme--light {
                     --button-primary-default: #2e8836;
                     --button-primary-hover: #14602b;
                     --brand-red-coral: #2a3052;
                     --state-active: #2a3052;
-                    --text-general: #333;
                     --general-section-1: #f2f2f2;
+                    --text-general: #333333;
                     --text-profit-success: #2e8836;
                     --text-loss-danger: #ff444f;
                 }
@@ -62,6 +62,14 @@ const DP2P = (() => {
                 .dc-field-error {
                     color: var(--text-loss-danger);
                 }
+                .dc-input__field {
+                    box-sizing:border-box;
+                }
+                .dc-button-menu__wrapper
+                .dc-button-menu__button--active
+                .btn__text {
+                    color: #ffffff;
+                }
                 .dc-table__header {
                     border: none;
                     background: var(--general-section-1);
@@ -73,22 +81,14 @@ const DP2P = (() => {
                 .dc-table__cell {
                     border-bottom: none;
                 }
-                .dc-button-menu__wrapper
-                .dc-button-menu__button--active
-                .dc-input__field {
-                    box-sizing:border-box;
-                }
                 .dc-tabs {
                     --tab-width: 150px !important;
                 }
                 .dc-tabs__list {
                     width: fit-content;
                 }
-                .btn__text {
-                    color: #ffffff;
-                }
                 .link {
-                    color: #e88024;
+                    color: #e88024 !important;
                     font-weight: bold;
                     text-decoration: none;
                 }
@@ -97,7 +97,7 @@ const DP2P = (() => {
                     cursor: pointer;
                 }
 
-                /* overrides layout */
+                /* override layouts */
                 .deriv-p2p {
                     height: 800px;
                 }
