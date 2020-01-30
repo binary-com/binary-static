@@ -169,9 +169,6 @@ const DP2P = (() => {
                 local_currency_config: Client.get('local_currency_config'),
                 residence            : Client.get('residence'),
             },
-            custom_strings: {
-                email_domain: 'binary.com',
-            },
             lang       : getLanguage(),
             server_time: ServerTime,
             websocket_api,
