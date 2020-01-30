@@ -45,15 +45,16 @@ const DP2P = (() => {
                     --button-primary-hover: #14602b;
                     --brand-red-coral: #2a3052;
                     --state-active: #2a3052;
+                    --text-general: #333;
                     --general-section-1: #f2f2f2;
                     --text-profit-success: #2e8836;
                     --text-loss-danger: #ff444f;
                 }
 
+                /* overrides components */
                 .dc-list__item--selected .dc-list__item-text {
                     color: var(--text-colored-background);
                 }
-
                 .dc-button-menu__wrapper
                 .dc-button-menu__button:not(.dc-button-menu__button--active) {
                     background-color: #f2f2f2 !important;
@@ -72,22 +73,22 @@ const DP2P = (() => {
                 .dc-table__cell {
                     border-bottom: none;
                 }
-
-                .link {
-                    color: #E88024 !important;
-                }
-
                 .dc-button-menu__wrapper
                 .dc-button-menu__button--active
-                .btn__text {
-                    color: #ffffff;
-                }
-
                 .dc-input__field {
                     box-sizing:border-box;
                 }
+                .dc-tabs {
+                    --tab-width: 150px !important;
+                }
+                .dc-tabs__list {
+                    width: fit-content;
+                }
+                .btn__text {
+                    color: #ffffff;
+                }
                 .link {
-                    color: var(--brand-red-coral);
+                    color: #e88024;
                     font-weight: bold;
                     text-decoration: none;
                 }
@@ -95,16 +96,38 @@ const DP2P = (() => {
                     text-decoration: underline;
                     cursor: pointer;
                 }
+
+                /* overrides layout */
                 .deriv-p2p {
                     height: 800px;
+                }
+                .footer-actions {
+                    bottom: calc(18*var(--hem));
+                    flex-direction: row-reverse;
+                }
+                .footer-actions--bordered {
+                    bottom: 0 !important;
+                }
+
+                /* overrides orders */
+                .orders {
+                    padding: calc(2.4*var(--hem)) 0;
                 }
                 .orders__table-row {
                     padding-left: 0;
                 }
-                .orders {
-                    padding: calc(2.4*var(--hem)) 0;
+
+                /* overrides order-details */
+                .order-details__wrapper--inner {
+                    height: calc(36*var(--hem));
+                    overflow-y: scroll;
                 }
 
+                /* overrides buy-sell */
+                .buy-sell {
+                    margin: 0;
+                    padding: calc(1.6*var(--hem)) 0
+                }
                 .buy-sell__header {
                     padding: 0;
                     border: 1px solid var(--brand-red-coral);
@@ -114,15 +137,10 @@ const DP2P = (() => {
                 .buy-sell__dialog {
                     z-index: 2;
                 }
-                .buy-sell {
-                    margin: 0;
-                    padding: calc(1.6*var(--hem)) 0
-                }
-                .dc-tabs {
-                    --tab-width: 150px !important;
-                }
-                .dc-tabs__list {
-                    width: fit-content;
+
+                /* overrides my-ads */
+                .p2p-my-ads__form-error {
+                    color: var(--text-loss-danger);
                 }
                 `;
         el_main_css.rel = 'stylesheet';
