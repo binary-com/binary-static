@@ -3,7 +3,7 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                                 'app/cashier/index',                           'default',    'Cashier'],
     ['cashier/account_transfer',                'app/cashier/account_transfer',                'default',    'Transfer Between Accounts'],
-    ['cashier/dp2p',                            'app/cashier/dp2p',                            'default',    'DP2P'],
+    ['cashier/dp2p',                            'app/cashier/dp2p',                            'default',    'P2P'],
     ['cashier/epg_forwardws',                   'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
