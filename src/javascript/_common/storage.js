@@ -62,6 +62,8 @@ const setObject = function(key, value) {
         if (quota_exceeded_error) {
             handlesQuotaExceededErrorException();
         }
+
+        throw e; // re-throw the error unchanged
     }
 };
 
