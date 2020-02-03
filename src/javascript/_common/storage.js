@@ -19,38 +19,30 @@ const keepUserAndClean = () => {
     location.reload();
 };
 
-const getTotalStorageUsage = (storage) => {
-    let total = 0;
-    for (const x in storage) {
-        if (!storage.hasOwnProperty(x)) {
-            continue;
-        }
-        total += storage.length;
-    }
-    return total;
-};
+const getTotalStorageUsage = (storage) => Object.keys(storage).reduce((acc, cur) => acc + localStorage[cur].length, 0);
 
 const handlesQuotaExceededErrorException = () => {
+    if (!window.trackJs) return;
     // Check if the browser supports Storage Quota API
     if (navigator.storage && typeof navigator.storage.estimate === 'function') {
         navigator.storage.estimate().then(estimate => {
-            if (window.trackJs) {
-                window.trackJs.addMetadata('storage_usage', estimate.usage);
-                window.trackJs.addMetadata('storage_quota', estimate.quota);
-                window.trackJs.addMetadata('has_localstorage', isStorageSupported(window.localStorage));
-                window.trackJs.addMetadata('has_sessionstorage', isStorageSupported(window.sessionStorage));
-            }
+            window.trackJs.addMetadata('storage_usage', estimate.usage);
+            window.trackJs.addMetadata('storage_quota', estimate.quota);
+            window.trackJs.addMetadata('has_localstorage', isStorageSupported(window.localStorage));
+            window.trackJs.addMetadata('has_sessionstorage', isStorageSupported(window.sessionStorage));
+
             keepUserAndClean();
         });
     } else {
-        // Rest (IE & Safari)
-        if (window.trackJs) {
-            window.trackJs.addMetadata('has_localstorage', isStorageSupported(window.localStorage));
-            window.trackJs.addMetadata('has_sessionstorage', isStorageSupported(window.sessionStorage));
-            window.trackJs.addMetadata('storage_usage', (has_localstorage ? getTotalStorageUsage(window.localStorage) : 0) * 2);
-            window.trackJs.addMetadata('storage_quota', 'unknown');
-            keepUserAndClean();
-        }
+        // IE & Safari
+        window.trackJs.addMetadata('has_localstorage', isStorageSupported(window.localStorage));
+        window.trackJs.addMetadata('has_sessionstorage', isStorageSupported(window.sessionStorage));
+        window.trackJs.addMetadata(
+            'storage_usage',
+            (isStorageSupported(window.localStorage) ? getTotalStorageUsage(window.localStorage) : 0) * 2,
+        );
+        window.trackJs.addMetadata('storage_quota', 'unknown');
+        keepUserAndClean();
     }
 };
 
