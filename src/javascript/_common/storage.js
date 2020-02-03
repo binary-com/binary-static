@@ -3,11 +3,58 @@ const getPropertyValue       = require('./utility').getPropertyValue;
 const isEmptyObject          = require('./utility').isEmptyObject;
 const getCurrentBinaryDomain = require('../config').getCurrentBinaryDomain;
 
-const getObject = function (key) {
+const getObject = function(key) {
     return JSON.parse(this.getItem(key) || '{}');
 };
 
-const setObject = function (key, value) {
+/**
+ * Removing all but user details
+ */
+const keepUserAndClean = () => {
+    const client_accounts = localStorage.getItem('client.accounts');
+    const active_loginid  = localStorage.getItem('active_loginid');
+    localStorage.clear();
+    localStorage.setItem('client.accounts', client_accounts);
+    localStorage.setItem('active_loginid', active_loginid);
+    location.reload();
+};
+
+const getTotalStorageUsage = (storage) => {
+    let total = 0;
+    for (const x in storage) {
+        if (!storage.hasOwnProperty(x)) {
+            continue;
+        }
+        total += storage.length;
+    }
+    return total;
+};
+
+const handlesQuotaExceededErrorException = () => {
+    // Check if the browser supports Storage Quota API
+    if (navigator.storage && typeof navigator.storage.estimate === 'function') {
+        navigator.storage.estimate().then(estimate => {
+            if (window.trackJs) {
+                window.trackJs.addMetadata('storage_usage', estimate.usage);
+                window.trackJs.addMetadata('storage_quota', estimate.quota);
+                window.trackJs.addMetadata('has_localstorage', isStorageSupported(window.localStorage));
+                window.trackJs.addMetadata('has_sessionstorage', isStorageSupported(window.sessionStorage));
+            }
+            keepUserAndClean();
+        });
+    } else {
+        // Rest (IE & Safari)
+        if (window.trackJs) {
+            window.trackJs.addMetadata('has_localstorage', isStorageSupported(window.localStorage));
+            window.trackJs.addMetadata('has_sessionstorage', isStorageSupported(window.sessionStorage));
+            window.trackJs.addMetadata('storage_usage', (has_localstorage ? getTotalStorageUsage(window.localStorage) : 0) * 2);
+            window.trackJs.addMetadata('storage_quota', 'unknown');
+            keepUserAndClean();
+        }
+    }
+};
+
+const setObject = function(key, value) {
     try {
         if (value && value instanceof Object) {
             this.setItem(key, JSON.stringify(value));
@@ -21,13 +68,7 @@ const setObject = function (key, value) {
         );
 
         if (quota_exceeded_error) {
-            // Quota has been exceeded, keep client authorization, and clear others.
-            const client_accounts = localStorage.getItem('client.accounts');
-            const active_loginid  = localStorage.getItem('active_loginid');
-            localStorage.clear();
-            localStorage.setItem('client.accounts', client_accounts);
-            localStorage.setItem('active_loginid', active_loginid);
-            location.reload();
+            handlesQuotaExceededErrorException();
         }
     }
 };
@@ -52,7 +93,7 @@ const isStorageSupported = (storage) => {
     }
 };
 
-const Store = function (storage) {
+const Store = function(storage) {
     this.storage           = storage;
     this.storage.getObject = getObject;
     this.storage.setObject = setObject;
@@ -80,7 +121,7 @@ Store.prototype = {
         }
     },
     remove(key) { this.storage.removeItem(key); },
-    clear()     { this.storage.clear(); },
+    clear() { this.storage.clear(); },
 };
 
 const InScriptStore = function (object) {
@@ -124,22 +165,23 @@ State.prototype = InScriptStore.prototype;
  * @param {String} pathname
  *     e.g. getResponse('authorize.currency') == get(['response', 'authorize', 'authorize', 'currency'])
  */
-State.prototype.getResponse = function (pathname) {
+State.prototype.getResponse = function(pathname) {
     let path = pathname;
     if (typeof path === 'string') {
         const keys = path.split('.');
-        path = ['response', keys[0]].concat(keys);
+        path       = ['response', keys[0]].concat(keys);
     }
     return this.get(path);
 };
 State.set('response', {});
 
-const CookieStorage = function (cookie_name, cookie_domain) {
+const CookieStorage = function(cookie_name, cookie_domain) {
     const hostname = window.location.hostname;
 
     this.initialized = false;
     this.cookie_name = cookie_name;
-    this.domain      = cookie_domain || (getCurrentBinaryDomain() ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
+    this.domain      =
+        cookie_domain || (getCurrentBinaryDomain() ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
     this.path        = '/';
     this.expires     = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
     this.value       = {};
