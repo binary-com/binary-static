@@ -87,6 +87,7 @@ const DP2P = (() => {
                 }
                 .dc-tabs__list {
                     width: fit-content;
+                    width: -moz-fit-content;
                 }
                 .link {
                     color: #e88024 !important;
