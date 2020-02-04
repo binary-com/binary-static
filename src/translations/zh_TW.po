@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-01-28 04:26\n"
+"PO-Revision-Date: 2020-02-04 06:42\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2240,6 +2240,9 @@ msgstr "買入"
 msgid "Buy = go long"
 msgstr "買入 = 多頭頭寸"
 
+msgid "Buy or Sell"
+msgstr "買入或賣出"
+
 msgid "Buy or sell all four available precious metals – depending on your market view. Also, learn what factors affect prices."
 msgstr "買入或賣出所有四種可用的貴重金屬 - 取決於您的市場觀點。另外，了解影響價格的因素。"
 
@@ -3328,9 +3331,6 @@ msgstr "四、帳戶管理"
 
 msgid "D. Client instructions"
 msgstr "四、客戶的指示"
-
-msgid "DP2P"
-msgstr "DP2P"
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively"
 msgstr "每日重置指數 - 每日重置指數複製具看漲和看跌走勢與持續波動的市場。牛市和熊市指數每天從格林威治時間00:00開始，分別複製看漲和看跌市場"
@@ -5682,7 +5682,7 @@ msgid "Improvements"
 msgstr "改進"
 
 msgid "In 2019, %1 generated more than USD 1.5 billion in turnover, bringing our total turnover since our inception to over USD 7.1 billion."
-msgstr ""
+msgstr "%1 2019年的營業額超過15億美元，自成立以來總營業額超過71億美元。"
 
 msgid "In April, %1Betonmarkets.com%2 (formerly known as %3Xodds.com%2) goes live, establishing a round-the-clock financial trading service on a variety of financial indices. Business grows quickly, and we soon become the market leader in fixed-odds financial trading."
 msgstr "今年四月，%1Betonmarkets.com%2（原名%3Xodds.com%2）正式上線，提供基於各種金融指數的全天侯金融交易服務。公司業務快速增長，我們很快即成為固定賠率金融交易的市場領導者。"
@@ -6658,6 +6658,9 @@ msgstr "存入資金"
 
 msgid "Make a deposit"
 msgstr "存入資金"
+
+msgid "Make a deposit or withdrawal on your account by buying and selling fiat currencies from anywhere in the world."
+msgstr "通過帳戶在世界任何地方買賣法定貨幣，並存款或取款。"
 
 msgid "Make another transfer"
 msgstr "進行另一次轉移"
@@ -7665,7 +7668,7 @@ msgid "Our Synthetic Indices account allows you to trade CFDs on Synthetic Indic
 msgstr "我們的綜合指數帳戶允許您對綜合指數進行差價交易 - 這是我們專有的綜合資產，可模擬市場力量。"
 
 msgid "Our active client base exceeded %1 clients in %2."
-msgstr ""
+msgstr "%2我們的客戶端群體擁有超過%1名客戶。"
 
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "我們的業務建立在合作基礎上，我們旨在與合作夥伴建立長期的互利關係。但是，我們絕不會對業務誠信的堅持作出妥協。如果我們的合作夥伴不願意或無法遵守我們的原則，我們保留退出業務關係的權利。"
@@ -7680,7 +7683,7 @@ msgid "Our company continues to thrive and obtains a license in the Isle of Man 
 msgstr "我們公司繼續茁壯成長，並在曼島獲得執照，可以為我們的英國客戶提供更好的服務。"
 
 msgid "Our customers bought more than 275 million contracts on %1 in 2019, bringing the total number of contracts sold to over 1 billion since commencing business."
-msgstr ""
+msgstr "2019年我們的客戶為%1帶來2億7千5百萬宗合約，自開始營業以來合約總數超出10億宗。"
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我們深受客戶喜愛。 2014年中旬，%1的歷史交易數量和每日新交易數量分別超過1億筆和13萬筆。"
@@ -7765,6 +7768,9 @@ msgstr "聯盟網站的所有權、內容和法律責任均由聯盟會員全權
 
 msgid "P. Miscellaneous"
 msgstr "十六、 雜項"
+
+msgid "P2P"
+msgstr "P2P"
 
 msgid "PEP Declaration"
 msgstr "PEP聲明"
@@ -9433,6 +9439,9 @@ msgstr "對不起，您的金融帳戶無法進行二元期權交易。"
 
 msgid "Sorry, live chat is currently unavailable. Please email us at %1."
 msgstr "對不起, 即時聊天目前不可用。請發送電子郵件到 %1給我們。"
+
+msgid "Sorry, mobile version is not available yet."
+msgstr "對不起，手機版本還不可用。"
 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "對不起，此功能僅適用虛擬帳戶。"
@@ -11543,6 +11552,9 @@ msgstr "本獎金僅適用於新客戶。現有或以往客戶不符合條件。
 msgid "This bonus will be processed and credited to a client's account when both of the following cases are true:"
 msgstr "當以下兩種情況均屬實時，此獎金將被處理並記入客戶的帳戶："
 
+msgid "This contract is only available on DTrader.%1%2Go to Dtrader%3 to close or cancel this contract."
+msgstr "此合約只能通過DTrader執行。 %1%2前往 Dtrader%3 終止或取消此合約。"
+
 msgid "This contract lost"
 msgstr "此合約虧損"
 
@@ -12720,7 +12732,7 @@ msgid "We're really proud of this award. We're strongly committed to offering an
 msgstr "獲得這個獎項，我們真的很自豪。我們堅定地致力於提供一個合乎道德和以客戶為中心的交易體驗。獲取獎項表明 BetOnMarkets 是一個值得信賴的品牌，接受客戶意見，能夠滿足客戶的需求，無論他們是經驗豐富的交易者還是交易新手。我們為客戶提供英語、印尼語、俄語、中文和西班牙語服務。"
 
 msgid "We've grown over the years - both in human resources and offices. Currently, over %1 employees are spread across four offices in Malaysia, Malta, Paraguay and the UAE. We're expecting to expand even more to support the demand for our products and services."
-msgstr ""
+msgstr "多年來，無論在人力資源和辦事處方面， 我們的規模不斷擴大。目前在馬來西亞、馬爾他、巴拉圭和阿拉伯聯合大公國有四個辦事處和%1多名員工。預計將繼續增長, 以滿足我們產品和服務的需求。"
 
 msgid "Web and software developer"
 msgstr "網路和軟體編程員"
