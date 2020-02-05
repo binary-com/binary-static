@@ -16,7 +16,6 @@ const keepUserAndClean = () => {
     localStorage.clear();
     localStorage.setItem('client.accounts', client_accounts);
     localStorage.setItem('active_loginid', active_loginid);
-    location.reload();
 };
 
 const getTotalStorageUsage = (storage) => Object.keys(storage).reduce((acc, cur) => acc + localStorage[cur].length, 0);
