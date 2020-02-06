@@ -163,6 +163,7 @@ const MetaTrader = (() => {
             const info = data.mt5_login_list.find(mt5_account => mt5_account.login === login);
             if (info) {
                 accounts_info[acc_type].info = info;
+                accounts_info[acc_type].info.display_login = MetaTraderConfig.getDisplayLogin(info.login);
                 MetaTraderUI.updateAccount(acc_type);
             }
         }
@@ -282,7 +283,10 @@ const MetaTrader = (() => {
         // Update account info
         mt5_login_list.forEach((obj) => {
             const acc_type = Client.getMT5AccountType(obj.group);
-            accounts_info[acc_type].info = { login: obj.login };
+            accounts_info[acc_type].info = {
+                display_login: MetaTraderConfig.getDisplayLogin(obj.login),
+                login        : obj.login,
+            };
             setAccountDetails(obj.login, acc_type, response);
         });
 
@@ -298,10 +302,9 @@ const MetaTrader = (() => {
     const sendTopupDemo = () => {
         MetaTraderUI.setTopupLoading(true);
         const acc_type = Client.get('mt5_account');
-        const login    = accounts_info[acc_type].info.login;
         const req      = {
             mt5_deposit: 1,
-            to_mt5     : login,
+            to_mt5     : accounts_info[acc_type].info.login,
         };
 
         BinarySocket.send(req).then((response) => {
@@ -312,7 +315,7 @@ const MetaTrader = (() => {
                 MetaTraderUI.displayMainMessage(
                     localize(
                         '[_1] has been credited into your MT5 Demo Account: [_2].',
-                        [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, login.toString()]
+                        [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, accounts_info[acc_type].info.display_login]
                     ));
                 BinarySocket.send({ mt5_login_list: 1 }).then((res) => {
                     allAccountsResponseHandler(res);
