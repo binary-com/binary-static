@@ -8,9 +8,9 @@ const shouldForceReload = last_reload => !last_reload || +last_reload + (10 * 60
 
 // calling this method is handled by GTM tags
 const checkNewRelease = () => {
-    const last_reload = LocalStore.getItem('new_release_reload_time');
+    const last_reload = LocalStore.get('new_release_reload_time');
     if (!shouldForceReload(last_reload)) return false;
-    LocalStore.setItem('new_release_reload_time', moment().valueOf());
+    LocalStore.set('new_release_reload_time', moment().valueOf());
 
     const current_hash = getStaticHash();
     const xhttp        = new XMLHttpRequest();
