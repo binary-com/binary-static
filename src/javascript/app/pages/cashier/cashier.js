@@ -152,7 +152,7 @@ const Cashier = (() => {
         });
     };
 
-    const disableLockedAreasBtn = ({ status }) => {
+    const checkStatusIsLocked = ({ status }) => {
         const is_cashier_locked = status.includes('cashier_locked');
         const is_withdrawal_locked = status.includes('withdrawal_locked');
         if (is_cashier_locked) {
@@ -168,7 +168,7 @@ const Cashier = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
             BinarySocket.wait('authorize', 'mt5_login_list', 'statement').then(() => {
-                disableLockedAreasBtn(State.getResponse('get_account_status'));
+                checkStatusIsLocked(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
                 if (Client.get('is_virtual')) {
