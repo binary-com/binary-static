@@ -152,7 +152,7 @@ const Cashier = (() => {
         });
     };
 
-    const disableLockedAreasBtn = ({status}) => {
+    const disableLockedAreasBtn = ({ status }) => {
         const is_cashier_locked = status.includes('cashier_locked');
         const is_withdrawal_locked = status.includes('withdrawal_locked');
         if (is_cashier_locked) {
