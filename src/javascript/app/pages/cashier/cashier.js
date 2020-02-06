@@ -152,13 +152,25 @@ const Cashier = (() => {
         });
     };
 
+    const disableLockedAreasBtn = ({status}) => {
+        const is_cashier_locked = status.includes('cashier_locked');
+        const is_withdrawal_locked = status.includes('withdrawal_locked');
+        if (is_cashier_locked) {
+            $('#deposit_btn_cashier').addClass('button-disabled').click(false);
+            $('#withdraw_btn_cashier').addClass('button-disabled').click(false);
+        }
+        if (is_withdrawal_locked) {
+            $('#withdraw_btn_cashier').addClass('button-disabled').click(false);
+        }
+    };
+
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
             BinarySocket.wait('authorize', 'mt5_login_list', 'statement').then(() => {
+                disableLockedAreasBtn(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
-
                 if (Client.get('is_virtual')) {
                     displayTopUpButton();
                 } else if (currency) {

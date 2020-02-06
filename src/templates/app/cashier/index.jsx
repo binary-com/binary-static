@@ -14,7 +14,7 @@ const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
     </div>
 );
 
-const DepositWithdrawButton = ({ id, is_payment_agent, is_virtual }) => (
+const DepositWithdrawButton = ({ is_payment_agent, is_virtual }) => (
     <div className='gr-2 gr-12-m'>
         <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
         <div className='gr-row gr-row-align-left gr-row-align-right-m'>
@@ -27,7 +27,7 @@ const DepositWithdrawButton = ({ id, is_payment_agent, is_virtual }) => (
                     <div className='gr-adapt gr-no-gutter-m client_real invisible gr-parent'>
                         <Button
                             className='toggle button client_real invisible'
-                            id={id}
+                            id='deposit_btn_cashier'
                             href={it.url_for(is_payment_agent ? '/cashier/payment_agent_listws' : '/cashier/forwardws?action=deposit')}
                             text={it.L('Deposit')}
                             text_className='deposit'
@@ -36,7 +36,7 @@ const DepositWithdrawButton = ({ id, is_payment_agent, is_virtual }) => (
                     <div className='gr-adapt client_real invisible'>
                         <Button
                             className='toggle button client_real invisible'
-                            id={id}
+                            id='withdraw_btn_cashier'
                             href={it.url_for(is_payment_agent ? '/paymentagent/withdrawws' : '/cashier/forwardws?action=withdraw')}
                             text={it.L('Withdraw')}
                             text_className='withdraw'
@@ -116,7 +116,7 @@ const Cashier = () => (
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
                 </div>
                 <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
-                <DepositWithdrawButton id='deposit_btn_cashier' />
+                <DepositWithdrawButton />
             </div>
         </div>
 
