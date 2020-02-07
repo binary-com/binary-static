@@ -163,12 +163,12 @@ const Metatrader = () => (
                         </div>
                         <div className='mt-sidebar-button'>
                             <div className='small-icon'>
-                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade' target='_blank' rel='noopener noreferrer'>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
                                 </a>
                             </div>
                             <div className='mt-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade' target='_blank' rel='noopener noreferrer'>
                                     {it.L('MT5 Web platform')}
                                 </a>
                             </div>
