@@ -156,11 +156,11 @@ const Cashier = (() => {
         const is_cashier_locked = status.includes('cashier_locked');
         const is_withdrawal_locked = status.includes('withdrawal_locked');
         if (is_cashier_locked) {
-            $('#deposit_btn_cashier').addClass('button-disabled').click(false);
-            $('#withdraw_btn_cashier').addClass('button-disabled').click(false);
+            $('.deposit_btn_cashier').addClass('button-disabled').click(false);
+            $('.withdraw_btn_cashier').addClass('button-disabled').click(false);
         }
         if (is_withdrawal_locked) {
-            $('#withdraw_btn_cashier').addClass('button-disabled').click(false);
+            $('.withdraw_btn_cashier').addClass('button-disabled').click(false);
         }
     };
 

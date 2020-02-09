@@ -26,8 +26,7 @@ const DepositWithdrawButton = ({ is_payment_agent, is_virtual }) => (
                 <React.Fragment>
                     <div className='gr-adapt gr-no-gutter-m client_real invisible gr-parent'>
                         <Button
-                            className='toggle button client_real invisible'
-                            id='deposit_btn_cashier'
+                            className='toggle button client_real invisible deposit_btn_cashier'
                             href={it.url_for(is_payment_agent ? '/cashier/payment_agent_listws' : '/cashier/forwardws?action=deposit')}
                             text={it.L('Deposit')}
                             text_className='deposit'
@@ -35,8 +34,7 @@ const DepositWithdrawButton = ({ is_payment_agent, is_virtual }) => (
                     </div>
                     <div className='gr-adapt client_real invisible'>
                         <Button
-                            className='toggle button client_real invisible'
-                            id='withdraw_btn_cashier'
+                            className='toggle button client_real invisible withdraw_btn_cashier'
                             href={it.url_for(is_payment_agent ? '/paymentagent/withdrawws' : '/cashier/forwardws?action=withdraw')}
                             text={it.L('Withdraw')}
                             text_className='withdraw'
