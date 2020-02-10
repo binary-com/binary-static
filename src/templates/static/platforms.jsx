@@ -15,12 +15,9 @@ const Platforms = ({
     description,
     text,
     status,
-    buttons
+    buttons,
 }) => {
-    const btnStyle = {
-        display: 'inline-block',
-        marginRight: '5px',
-    };
+    const btnStyle = { display: 'inline-block', marginRight: '5px' };
     return (
         <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
             <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
@@ -32,7 +29,7 @@ const Platforms = ({
                 <p>{text}</p>
                 <div className='gr-row'>
                     <div className='gr-12'>
-                        {buttons && buttons.map(button => 
+                        {buttons && buttons.map(button =>
                             <a
                                 key={button.text}
                                 className='button-secondary'
@@ -48,7 +45,7 @@ const Platforms = ({
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 const PlatformsDesktop = ({
@@ -60,24 +57,24 @@ const PlatformsDesktop = ({
     description,
     text,
 }) => (
-        <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-            <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
-                <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.svg`)} />
-            </div>
-            <div className='gr-8 gr-12-m gr-12-p'>
-                <h3>{header}</h3>
-                <strong>{description}</strong>
-                <p>{text}</p>
-                <div className='gr-row'>
-                    <div className='gr-12'>
-                        <DownloadApp push='4' image='mac' />
-                        <DownloadApp push='6' image='windows' />
-                        {/* <DownloadApp image='linux' /> */}
-                    </div>
+    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
+        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
+            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.svg`)} />
+        </div>
+        <div className='gr-8 gr-12-m gr-12-p'>
+            <h3>{header}</h3>
+            <strong>{description}</strong>
+            <p>{text}</p>
+            <div className='gr-row'>
+                <div className='gr-12'>
+                    <DownloadApp push='4' image='mac' />
+                    <DownloadApp push='6' image='windows' />
+                    {/* <DownloadApp image='linux' /> */}
                 </div>
             </div>
         </div>
-    );
+    </div>
+);
 
 const PlatformsSmall = ({
     className,
@@ -92,24 +89,24 @@ const PlatformsSmall = ({
     button_text,
     download = '',
 }) => (
-        <div className={`gr-6 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
-            <div className='gr-12 gr-centered-m gr-centered-p'>
-                <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
-            </div>
-            <div className='gr-padding-30'>
-                <h3>{header}</h3>
-                <strong>{description}</strong>
-                <p>{text}</p>
-                <div className='gr-row'>
-                    <div className='gr-12'>
-                        {url &&
-                            <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
-                        }
-                    </div>
+    <div className={`gr-6 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
+        <div className='gr-12 gr-centered-m gr-centered-p'>
+            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
+        </div>
+        <div className='gr-padding-30'>
+            <h3>{header}</h3>
+            <strong>{description}</strong>
+            <p>{text}</p>
+            <div className='gr-row'>
+                <div className='gr-12'>
+                    {url &&
+                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                    }
                 </div>
             </div>
         </div>
-    );
+    </div>
+);
 
 const DownloadApp = ({ image }) => (
     <div className='download-app'>
@@ -186,11 +183,7 @@ const Platform = () => (
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
                                 buttons={[
-                                    {
-                                        text: it.L('Trade now'),
-                                        url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page',
-                                        target: '_blank',
-                                    }
+                                    { text: it.L('Trade now'), url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page', target: '_blank' },
                                 ]}
                             />
                             <Platforms
@@ -199,10 +192,7 @@ const Platform = () => (
                                 description={it.L('Premier binary options trading platform')}
                                 text={it.L('Trade in the world\'s financial markets with a simple and user-friendly online platform.')}
                                 buttons={[
-                                    {
-                                        text: it.L('Trade now'),
-                                        url: it.url_for('trading'),
-                                    }
+                                    { text: it.L('Trade now'), url: it.url_for('trading') },
                                 ]}
                             />
                             <Platforms
@@ -211,11 +201,7 @@ const Platform = () => (
                                 description={it.L('Ultra fast on-the-go trading')}
                                 text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                                 buttons={[
-                                    {
-                                        text: it.L('Download Tick Trade App'),
-                                        url: 'https://ticktrade.binary.com/download/ticktrade-app.apk',
-                                        download: 'true'
-                                    }
+                                    { text: it.L('Download Tick Trade App'), url: 'https://ticktrade.binary.com/download/ticktrade-app.apk', download: 'true' },
                                 ]}
                             />
                             {/* TODO: Uncomment this when P2P Mobile app is ready */}
@@ -243,15 +229,8 @@ const Platform = () => (
                                 description={it.L('Advanced multi-asset trading platform')}
                                 text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
                                 buttons={[
-                                    {
-                                        text: it.L('Access MT5 dashboard'),
-                                        url: it.url_for('user/metatrader'),
-                                    },
-                                    {
-                                        text: it.L('Download MT5'),
-                                        url: 'https://www.binary.com/en/metatrader/download.html',
-                                        target: '_blank',
-                                    }
+                                    { text: it.L('Access MT5 dashboard'), url: it.url_for('user/metatrader') },
+                                    { text: it.L('Download MT5'), url: 'https://www.binary.com/en/metatrader/download.html', target: '_blank' },
                                 ]}
                             />
                             <Platforms
@@ -260,11 +239,7 @@ const Platform = () => (
                                 description={it.L('Advanced binary options trading interface')}
                                 text={it.L('Monitor the movements of your favourite assets and markets at the same time.')}
                                 buttons={[
-                                    {
-                                        text: it.L('Try WebTrader'),
-                                        url: 'https://webtrader.binary.com',
-                                        target: '_blank',
-                                    }
+                                    { text: it.L('Try WebTrader'), url: 'https://webtrader.binary.com', target: '_blank' },
                                 ]}
                             />
                             <Platforms
@@ -273,11 +248,7 @@ const Platform = () => (
                                 description={it.L('Auto-trader programming tool')}
                                 text={it.L('Automate your trading strategies with our simple, "drag-and-drop" bot creation tool.')}
                                 buttons={[
-                                    {
-                                        text: it.L('Try Binary Bot'),
-                                        url: 'https://bot.binary.com',
-                                        target: '_blank',
-                                    }
+                                    { text: it.L('Try Binary Bot'), url: 'https://bot.binary.com', target: '_blank' },
                                 ]}
                             />
                         </TabContent>
