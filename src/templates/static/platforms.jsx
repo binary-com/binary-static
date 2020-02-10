@@ -15,29 +15,41 @@ const Platforms = ({
     description,
     text,
     status,
-    url = '',
-    target,
-    button_text,
-    download = '',
-}) => (
-    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
-            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
-        </div>
-        <div className='gr-8 gr-12-m gr-12-p'>
-            <h3 className={`section-title ${status === 'beta' ? '' : status || ''}`}>{header}{status === 'beta' ? <span className='beta'>{it.L('BETA')}</span> : ''}</h3>
-            <strong>{description}</strong>
-            <p>{text}</p>
-            <div className='gr-row'>
-                <div className='gr-12'>
-                    { url &&
-                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
-                    }
+    buttons
+}) => {
+    const btnStyle = {
+        display: 'inline-block',
+        marginRight: '5px',
+    };
+    return (
+        <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
+            <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
+                <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
+            </div>
+            <div className='gr-8 gr-12-m gr-12-p'>
+                <h3 className={`section-title ${status === 'beta' ? '' : status || ''}`}>{header}{status === 'beta' ? <span className='beta'>{it.L('BETA')}</span> : ''}</h3>
+                <strong>{description}</strong>
+                <p>{text}</p>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        {buttons && buttons.map(button => 
+                            <a
+                                key={button.text}
+                                className='button-secondary'
+                                style={btnStyle}
+                                download={button.download || undefined}
+                                href={button.url}
+                                target={button.target || undefined}
+                                rel={/http/.test(button.url) ? 'noopener noreferrer' : undefined}
+                            ><span>{button.text}</span>
+                            </a>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-);
+    )
+};
 
 const PlatformsDesktop = ({
     className,
@@ -48,24 +60,24 @@ const PlatformsDesktop = ({
     description,
     text,
 }) => (
-    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
-            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.svg`)} />
-        </div>
-        <div className='gr-8 gr-12-m gr-12-p'>
-            <h3>{header}</h3>
-            <strong>{description}</strong>
-            <p>{text}</p>
-            <div className='gr-row'>
-                <div className='gr-12'>
-                    <DownloadApp push='4' image='mac' />
-                    <DownloadApp push='6' image='windows' />
-                    {/* <DownloadApp image='linux' /> */}
+        <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
+            <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
+                <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.svg`)} />
+            </div>
+            <div className='gr-8 gr-12-m gr-12-p'>
+                <h3>{header}</h3>
+                <strong>{description}</strong>
+                <p>{text}</p>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <DownloadApp push='4' image='mac' />
+                        <DownloadApp push='6' image='windows' />
+                        {/* <DownloadApp image='linux' /> */}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-);
+    );
 
 const PlatformsSmall = ({
     className,
@@ -80,24 +92,24 @@ const PlatformsSmall = ({
     button_text,
     download = '',
 }) => (
-    <div className={`gr-6 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
-        <div className='gr-12 gr-centered-m gr-centered-p'>
-            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
-        </div>
-        <div className='gr-padding-30'>
-            <h3>{header}</h3>
-            <strong>{description}</strong>
-            <p>{text}</p>
-            <div className='gr-row'>
-                <div className='gr-12'>
-                    { url &&
-                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
-                    }
+        <div className={`gr-6 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
+            <div className='gr-12 gr-centered-m gr-centered-p'>
+                <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
+            </div>
+            <div className='gr-padding-30'>
+                <h3>{header}</h3>
+                <strong>{description}</strong>
+                <p>{text}</p>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        {url &&
+                            <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-);
+    );
 
 const DownloadApp = ({ image }) => (
     <div className='download-app'>
@@ -157,8 +169,8 @@ const Platform = () => (
                     id='platforms_tabs'
                     className='gr-padding-20 gr-parent tab-selector-wrapper'
                     items={[
-                        { id: 'beginner',                text: it.L('Beginner') },
-                        { id: 'advanced',                text: it.L('Advanced') },
+                        { id: 'beginner', text: it.L('Beginner') },
+                        { id: 'advanced', text: it.L('Advanced') },
                         { id: 'platforms_tabs_selector', className: 'tab-selector' },
                     ]}
                 />
@@ -173,26 +185,38 @@ const Platform = () => (
                                 className='mobile-hide'
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
-                                url='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page'
-                                target='_blank'
-                                button_text={it.L('Trade now')}
+                                buttons={[
+                                    {
+                                        text: it.L('Trade now'),
+                                        url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page',
+                                        target: '_blank',
+                                    }
+                                ]}
                             />
                             <Platforms
                                 image='trading-page'
                                 header='SmartTrader'
                                 description={it.L('Premier binary options trading platform')}
                                 text={it.L('Trade in the world\'s financial markets with a simple and user-friendly online platform.')}
-                                url={it.url_for('trading')}
-                                button_text={it.L('Trade now')}
+                                buttons={[
+                                    {
+                                        text: it.L('Trade now'),
+                                        url: it.url_for('trading'),
+                                    }
+                                ]}
                             />
                             <Platforms
                                 image='tick-trade'
                                 header={it.L('Tick Trade Android App')}
                                 description={it.L('Ultra fast on-the-go trading')}
                                 text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
-                                url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                                button_text={it.L('Download Tick Trade App')}
-                                download='true'
+                                buttons={[
+                                    {
+                                        text: it.L('Download Tick Trade App'),
+                                        url: 'https://ticktrade.binary.com/download/ticktrade-app.apk',
+                                        download: 'true'
+                                    }
+                                ]}
                             />
                             {/* TODO: Uncomment this when P2P Mobile app is ready */}
                             {/* <Platforms
@@ -218,26 +242,43 @@ const Platform = () => (
                                 header={it.L('MetaTrader 5')}
                                 description={it.L('Advanced multi-asset trading platform')}
                                 text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
-                                url={it.url_for('user/metatrader')}
-                                button_text={it.L('Access MT5 dashboard')}
+                                buttons={[
+                                    {
+                                        text: it.L('Access MT5 dashboard'),
+                                        url: it.url_for('user/metatrader'),
+                                    },
+                                    {
+                                        text: it.L('Download MT5'),
+                                        url: 'https://www.binary.com/en/metatrader/download.html',
+                                        target: '_blank',
+                                    }
+                                ]}
                             />
                             <Platforms
                                 image='webtrader'
                                 header={it.L('Binary WebTrader')}
                                 description={it.L('Advanced binary options trading interface')}
                                 text={it.L('Monitor the movements of your favourite assets and markets at the same time.')}
-                                url='https://webtrader.binary.com'
-                                target='_blank'
-                                button_text={it.L('Try WebTrader')}
+                                buttons={[
+                                    {
+                                        text: it.L('Try WebTrader'),
+                                        url: 'https://webtrader.binary.com',
+                                        target: '_blank',
+                                    }
+                                ]}
                             />
                             <Platforms
                                 image='binarybot'
                                 header={it.L('Binary Bot')}
                                 description={it.L('Auto-trader programming tool')}
                                 text={it.L('Automate your trading strategies with our simple, "drag-and-drop" bot creation tool.')}
-                                url='https://bot.binary.com'
-                                target='_blank'
-                                button_text={it.L('Try Binary Bot')}
+                                buttons={[
+                                    {
+                                        text: it.L('Try Binary Bot'),
+                                        url: 'https://bot.binary.com',
+                                        target: '_blank',
+                                    }
+                                ]}
                             />
                         </TabContent>
                     </TabContentContainer>
