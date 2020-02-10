@@ -200,7 +200,7 @@ const Download = () => {
                 <div className='center-text'>
                     <a
                         className='button'
-                        href='https://trade.mql5.com/trade'
+                        href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server'
                         target='_blank'
                         rel='noopener noreferrer'
                     >
