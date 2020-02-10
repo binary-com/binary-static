@@ -230,7 +230,7 @@ const Platform = () => (
                                 text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
                                 buttons={[
                                     { text: it.L('Access MT5 dashboard'), url: it.url_for('user/metatrader') },
-                                    { text: it.L('Download MT5'), url: 'https://www.binary.com/en/metatrader/download.html', target: '_blank' },
+                                    { text: it.L('Download MT5'), url: 'https://www.binary.com/en/metatrader/download.html' },
                                 ]}
                             />
                             <Platforms
