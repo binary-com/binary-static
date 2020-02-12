@@ -356,7 +356,7 @@ const Home = () => {
             </div>
 
             <div className='container gr-padding-30 gr-child'>
-                <h2 className='center-text gr-padding-20'>{it.L('[_1] Academy', it.website_name)}</h2>
+                {/* <h2 className='center-text gr-padding-20'>{it.L('[_1] Academy', it.website_name)}</h2>
                 <p className='center-text'>{it.L('Learn to be a better trader and keep up with the latest news and trends in financial trading - all for free.')}</p>
                 <div className='gr-row gr-row-align-center'>
                     <AcademySection
@@ -381,7 +381,7 @@ const Home = () => {
                     </a>
                 </div>
 
-                <SeparatorLine className='gr-padding-30' show_mobile />
+                <SeparatorLine className='gr-padding-30' show_mobile /> */}
 
                 <div id='payment_methods'>
                     <div className='gr-12 gr-padding-20'>
