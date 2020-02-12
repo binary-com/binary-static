@@ -133,19 +133,19 @@ const AccountsTabContent = ({
     </React.Fragment>
 );
 
-const AcademySection = ({ image, header, text }) => (
-    <div className='gr-5 gr-12-m'>
-        <div className='gr-row gr-padding-30'>
-            <div className='gr-3'>
-                <img className='responsive' src={it.url_for(image)} />
-            </div>
-            <div className='gr-9 gr-padding-10'>
-                <strong>{header}</strong>
-                <p>{text}</p>
-            </div>
-        </div>
-    </div>
-);
+// const AcademySection = ({ image, header, text }) => (
+//     <div className='gr-5 gr-12-m'>
+//         <div className='gr-row gr-padding-30'>
+//             <div className='gr-3'>
+//                 <img className='responsive' src={it.url_for(image)} />
+//             </div>
+//             <div className='gr-9 gr-padding-10'>
+//                 <strong>{header}</strong>
+//                 <p>{text}</p>
+//             </div>
+//         </div>
+//     </div>
+// );
 
 const TabCircles = ({ id, number }) => (
     <div className='gr-hide gr-show-m gr-show-p center-text'>
