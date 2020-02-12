@@ -3,7 +3,8 @@ import {
     TabContainer,
     TabContent,
     TabContentContainer,
-    TabsSubtabs }        from '../_common/components/tabs.jsx';
+    TabsSubtabs,
+} from '../_common/components/tabs.jsx';
 import { SeparatorLine } from '../_common/components/separator_line.jsx';
 
 const Platforms = ({
@@ -16,37 +17,35 @@ const Platforms = ({
     text,
     status,
     buttons,
-}) => {
-    const btnStyle = { display: 'inline-block', marginRight: '5px' };
-    return (
-        <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-            <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
-                <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
-            </div>
-            <div className='gr-8 gr-12-m gr-12-p'>
-                <h3 className={`section-title ${status === 'beta' ? '' : status || ''}`}>{header}{status === 'beta' ? <span className='beta'>{it.L('BETA')}</span> : ''}</h3>
-                <strong>{description}</strong>
-                <p>{text}</p>
-                <div className='gr-row'>
-                    <div className='gr-12'>
-                        {buttons && buttons.map(button =>
-                            <a
-                                key={button.text}
-                                className='button-secondary'
-                                style={btnStyle}
-                                download={button.download || undefined}
-                                href={button.url}
-                                target={button.target || undefined}
-                                rel={/http/.test(button.url) ? 'noopener noreferrer' : undefined}
-                            ><span>{button.text}</span>
-                            </a>
-                        )}
-                    </div>
+}) => (
+    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
+        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
+            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
+        </div>
+        <div className='gr-8 gr-12-m gr-12-p'>
+            <h3 className={`section-title ${status === 'beta' ? '' : status || ''}`}>{header}{status === 'beta' ? <span className='beta'>{it.L('BETA')}</span> : ''}</h3>
+            <strong>{description}</strong>
+            <p>{text}</p>
+            <div className='gr-row'>
+                <div className='gr-12'>
+                    {buttons && buttons.map(button =>
+                        <a
+                            key={button.text}
+                            style={{ display: 'inline-block', marginRight: '5px' }}
+                            className='button-secondary'
+                            download={button.download || undefined}
+                            href={button.url}
+                            target={button.target || undefined}
+                            rel={/http/.test(button.url) ? 'noopener noreferrer' : undefined}
+                        >
+                            <span>{button.text}</span>
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
-    );
-};
+    </div>
+);
 
 const PlatformsDesktop = ({
     className,
@@ -230,7 +229,7 @@ const Platform = () => (
                                 text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
                                 buttons={[
                                     { text: it.L('Access MT5 dashboard'), url: it.url_for('user/metatrader') },
-                                    { text: it.L('Download MT5'), url: 'https://www.binary.com/en/metatrader/download.html' },
+                                    { text: it.L('Download MT5'), url: it.url_for('metatrader/download') },
                                 ]}
                             />
                             <Platforms
