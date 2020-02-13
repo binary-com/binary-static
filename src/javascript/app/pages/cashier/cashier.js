@@ -152,16 +152,33 @@ const Cashier = (() => {
         });
     };
 
+    const setBtnDisable = selector => $(selector).addClass('button-disabled').click(false);
+    
+    const applyStateLockLogic = (status, deposit, withdraw) => {
+        const cashier_lock = { isOn: status.includes('cashier_locked'), selectors: [deposit, withdraw] };
+        const withdrawal_locked = { isOn: status.includes('withdrawal_locked'), selectors: [withdraw] };
+        const no_withdrawal_or_trading = { isOn: status.includes('no_withdrawal_or_trading'), selectors: [withdraw] };
+        const unwelcome = { isOn: status.includes('unwelcome'), selectors: [deposit] };
+        if (cashier_lock.isOn) {
+            cashier_lock.selectors.forEach(selector => setBtnDisable(selector));
+        }
+        if (unwelcome.isOn) {
+            unwelcome.selectors.forEach(selector => setBtnDisable(selector));
+        }
+        if (withdrawal_locked.isOn || no_withdrawal_or_trading.isOn) {
+            withdrawal_locked.selectors.forEach(selector => setBtnDisable(selector));
+        }
+    };
+
     const checkStatusIsLocked = ({ status }) => {
-        const is_cashier_locked = status.includes('cashier_locked');
-        const is_withdrawal_locked = status.includes('withdrawal_locked');
-        if (is_cashier_locked) {
-            $('.deposit_btn_cashier').addClass('button-disabled').click(false);
-            $('.withdraw_btn_cashier').addClass('button-disabled').click(false);
-        }
-        if (is_withdrawal_locked) {
-            $('.withdraw_btn_cashier').addClass('button-disabled').click(false);
-        }
+        applyStateLockLogic(status, '.deposit_btn_cashier', '.withdraw_btn_cashier');
+    };
+
+    const checkLockStatusPA = () => {
+        BinarySocket.wait('get_account_status').then(() => {
+            const { status } = State.getResponse('get_account_status');
+            applyStateLockLogic(status, '.deposit', '.withdraw');
+        });
     };
 
     const onLoad = () => {
@@ -217,6 +234,7 @@ const Cashier = (() => {
         PaymentMethods: {
             onLoad: () => {
                 showContent();
+                checkLockStatusPA();
                 setCryptoMinimumWithdrawal();
             },
         },

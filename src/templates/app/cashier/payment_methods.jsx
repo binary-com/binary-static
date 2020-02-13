@@ -3,8 +3,8 @@ import { CashierNote } from './index.jsx';
 import { Table } from '../../_common/components/elements.jsx';
 
 const Button = ({ url, real, className, text }) => (
-    <a href={it.url_for(url)} className={`toggle button ${real ? 'client_real' : 'client_logged_out'} invisible`}>
-        <span className={className || undefined}>{text}</span>
+    <a href={it.url_for(url)} className={`toggle button ${real ? 'client_real' : 'client_logged_out'} invisible ${className || undefined}`}>
+        <span>{text}</span>
     </a>
 );
 
