@@ -63,8 +63,8 @@ const Footer = () => (
                                     { text: it.L('Getting Started'), href: it.url_for('get-started') },
                                     { text: it.L('Platform Tour'),   href: it.url_for('tour') },
                                     { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', dataShow: 'eucountry' },
-                                    { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
-                                    { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
+                                    // { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
+                                    // { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
                                     { text: it.L('Keep Safe'),       href: it.url_for('keep-safe'),                 className: 'client_logged_out invisible' },
                                 ]}
                             />
