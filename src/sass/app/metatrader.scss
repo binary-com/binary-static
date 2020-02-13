@@ -378,6 +378,38 @@
             width: 76px;
         }
     }
+    .mt-link-download {
+        background-color: $COLOR_LIGHT_GRAY;
+        width: 100%;
+        height: inherit;
+        border-top: 1px solid $COLOR_GRAY;
+
+        .mt-link-button {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    }
+    .mt-title-mt5-web {
+        font-weight: bold;
+    }
+    .mt-link-web {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        height: 40px;
+
+        .mt5-web-link {
+            flex: 50%;
+            background-color: $COLOR_LIGHT_GRAY;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid $COLOR_GRAY;
+        }
+    }
+}
+
+.mt-sidebar-button.mt5-web {
+    height: 140px;
 }
 
 tbody#instruments > tr > td {

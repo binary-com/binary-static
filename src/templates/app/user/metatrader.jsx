@@ -155,22 +155,34 @@ const Metatrader = () => (
                                     <img src={it.url_for('images/pages/metatrader/dashboard/mt5.png')} />
                                 </a>
                             </div>
-                            <div className='mt-link'>
-                                <a href={it.url_for('metatrader/download')}>
+                            <div className='mt-link-download'>
+                                <a href={it.url_for('metatrader/download')} className='mt-link-button'>
                                     {it.L('Go to MT5 download page')}
                                 </a>
                             </div>
                         </div>
-                        <div className='mt-sidebar-button'>
+                    </div>
+                    <div className='mt-panel'>
+                        <div className='mt-sidebar-button mt5-web'>
                             <div className='small-icon'>
                                 <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
                                 </a>
                             </div>
-                            <div className='mt-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
-                                    {it.L('MT5 Web platform')}
-                                </a>
+                            <div className='mt-title-mt5-web'>
+                                {it.L('MT5 Web platform')}
+                            </div>
+                            <div className='mt-link-web'>
+                                <div className='mt5-web-link'>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo' target='_blank' rel='noopener noreferrer'>
+                                        {it.L('Demo')}
+                                    </a>
+                                </div>
+                                <div className='mt5-web-link'>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
+                                        {it.L('Real')}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
