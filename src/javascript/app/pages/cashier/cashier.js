@@ -155,17 +155,17 @@ const Cashier = (() => {
     const setBtnDisable = selector => $(selector).addClass('button-disabled').click(false);
     
     const applyStateLockLogic = (status, deposit, withdraw) => {
-        const cashier_lock = { isOn: status.includes('cashier_locked'), selectors: [deposit, withdraw] };
-        const withdrawal_locked = { isOn: status.includes('withdrawal_locked'), selectors: [withdraw] };
-        const no_withdrawal_or_trading = { isOn: status.includes('no_withdrawal_or_trading'), selectors: [withdraw] };
-        const unwelcome = { isOn: status.includes('unwelcome'), selectors: [deposit] };
-        if (cashier_lock.isOn) {
+        const cashier_lock = { is_on: status.includes('cashier_locked'), selectors: [deposit, withdraw] };
+        const withdrawal_lock = { is_on: status.includes('withdrawal_locked'), selectors: [withdraw] };
+        const no_withdrawal_or_trading = { is_on: status.includes('no_withdrawal_or_trading'), selectors: [withdraw] };
+        const unwelcome = { is_on: status.includes('unwelcome'), selectors: [deposit] };
+        if (cashier_lock.is_on) {
             cashier_lock.selectors.forEach(selector => setBtnDisable(selector));
         }
-        if (unwelcome.isOn) {
+        if (unwelcome.is_on) {
             unwelcome.selectors.forEach(selector => setBtnDisable(selector));
         }
-        if (withdrawal_locked.isOn || no_withdrawal_or_trading.isOn) {
+        if (withdrawal_lock.is_on || no_withdrawal_or_trading.is_on) {
             withdrawal_locked.selectors.forEach(selector => setBtnDisable(selector));
         }
     };
