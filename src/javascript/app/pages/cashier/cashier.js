@@ -166,7 +166,7 @@ const Cashier = (() => {
             unwelcome.selectors.forEach(selector => setBtnDisable(selector));
         }
         if (withdrawal_lock.is_on || no_withdrawal_or_trading.is_on) {
-            withdrawal_locked.selectors.forEach(selector => setBtnDisable(selector));
+            withdrawal_lock.selectors.forEach(selector => setBtnDisable(selector));
         }
     };
 
