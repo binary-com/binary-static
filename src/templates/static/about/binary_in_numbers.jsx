@@ -21,7 +21,7 @@ const BinaryInNumbers = () => (
             <Numbers
                 className='client'
                 header={it.L('Active trading clients')}
-                text={it.L('Our active client base is expected to reach over 100,000 total clients this year.')}
+                text={it.L('Our active client base is expected to reach over 175,000 total clients this year.')}
                 image='chart-active-trading-clients'
             />
             <Numbers
