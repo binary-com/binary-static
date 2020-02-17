@@ -63,8 +63,8 @@ const Footer = () => (
                                     { text: it.L('Getting Started'), href: it.url_for('get-started') },
                                     { text: it.L('Platform Tour'),   href: it.url_for('tour') },
                                     { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', dataShow: 'eucountry' },
-                                    { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
-                                    { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
+                                    // { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
+                                    // { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
                                     { text: it.L('Keep Safe'),       href: it.url_for('keep-safe'),                 className: 'client_logged_out invisible' },
                                 ]}
                             />
@@ -150,7 +150,7 @@ const Footer = () => (
                         </p>
                         <p>
                             {it.L('Outside the EU, financial products are offered by Binary (SVG) Ltd, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]); Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6]).',
-                                '<a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank" rel="noopener noreferrer">', '</a>',
+                                '<a href="https://www.vfsc.vu/financial-dealers-licensee-lists/" target="_blank" rel="noopener noreferrer">', '</a>',
                                 `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>',
                                 `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
                         </p>
