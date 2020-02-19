@@ -80,7 +80,7 @@ const PaymentAgent = () => (
                     <p>{it.L('As a first step, please send us an application with:')}</p>
                     <ul className='checked'>
                         <li>{it.L('Your name, email address and contact number')}</li>
-                        <li>{it.L('Your website request.url (if you have one)')}</li>
+                        <li>{it.L('Your website address (if you have one)')}</li>
                         <li>{it.L('A list of payment methods you will accept from Clients')}</li>
                         <li>{it.L('The commission you will charge Clients on deposits and withdrawals')}</li>
                     </ul>
