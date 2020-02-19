@@ -1,11 +1,14 @@
-import React                                       from 'react';
-import Loading                                     from '../../_common/components/loading.jsx';
+import React             from 'react';
+import {
+    AuthenticateMessage,
+    UnsupportedMessage } from '../_includes/authenticate_message.jsx';
+import { Button }        from '../../_common/components/elements.jsx';
+import Loading           from '../../_common/components/loading.jsx';
 import {
     TabContainer,
     TabContent,
     TabContentContainer,
-    TabsSubtabs }                                  from '../../_common/components/tabs.jsx';
-import { AuthenticateMessage, UnsupportedMessage } from '../_includes/authenticate_message.jsx';
+    TabsSubtabs }        from '../../_common/components/tabs.jsx';
 
 const ArrowsMobile = ({ direction, parent }) => (
     <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
@@ -93,6 +96,18 @@ const Authenticate = () => (
                         <div id='verified' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Your proof of identity has been verified successfully')}</h1>
+                        </div>
+
+                        <div id='personal_details_error' className='center-text gr-padding-20 invisible'>
+                            <h2 className='gr-padding-10'>{it.L('Update your personal details')}</h2>
+                            <p>{it.L('We can\'t validate your personal details because there is some information missing.')}</p>
+                            <p>{it.L('Please update your [_1] to continue.', '<span id="missing_personal_fields"></span>')}</p>
+                            <Button
+                                className='button'
+                                href={it.url_for('user/settings/detailsws')}
+                                text={it.L('Update my details')}
+                            />
+                            <p>{it.L('Need help? [_1]Contact us[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
                         </div>
                     </TabContent>
                     <TabContent id='poa'>

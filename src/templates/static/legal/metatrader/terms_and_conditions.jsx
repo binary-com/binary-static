@@ -27,7 +27,6 @@ const TermsAndConditions = () => (
                 <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Binary (FX) Ltd,')}&nbsp;</span>
                 <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
-                <span>{it.L('Binary (IOM) Ltd, or')}&nbsp;</span>
                 <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
 
@@ -133,9 +132,8 @@ const TermsAndConditions = () => (
                 <ol>
                     <li>{it.L('If the client wishes to withdraw funds from their MT5 Real Account and close their MT5 Real Account, they may notify the Company by contacting [_1] helpdesk [_2]. The client\'s MT5 Real Account may be closed if they do not have any Open Positions and all the amounts that were due to the Company have been settled.', it.website_name, '<a href=\'mailto:support@binary.com\'>support@binary.com</a>')}</li>
                     <li>{it.L('If the client\'s [_1] account is closed, their MT5 Real Account will be automatically closed as well.', it.website_name)}</li>
-                    <li>{it.L('Client\'s demo accounts will be deleted after 365 days of inactivity.')}</li>
-                    <br />{it.L('Open positions and pending orders for demo accounts will be deleted after 180 days of inactivity.')}
-                    <li>{it.L('Real accounts will be archived after 180 days of inactivity. To re-activate a real account, contact binary.com help desk at [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com">', '</a>')}</li>
+                    <li>{it.L('Client\'s demo accounts will be deleted after 30 days of inactivity.')}</li>
+                    <li>{it.L('Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com">', '</a>')}</li>
                 </ol>
             </li>
         </ol>
@@ -206,7 +204,7 @@ const TermsAndConditions = () => (
             </li>
             <li>
                 {it.L('Negative Balance Protection')}
-                <p>{it.L('The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client\'s Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client\'s negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd or Binary (IOM) Ltd, the offer of the negative balance protection by the Company to the client is at the Company\'s sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:')}
+                <p>{it.L('The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client\'s Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client\'s negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Binary Investments (Europe) Ltd or a client of Binary (Europe) Ltd, the offer of the negative balance protection by the Company to the client is at the Company\'s sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:')}
                     <ol>
                         <li>{it.L('When a force majeure event occurs')}</li>
                         <li>{it.L('When the market conditions or market movements/volatility are abnormal')}</li>

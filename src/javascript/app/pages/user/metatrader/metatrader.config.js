@@ -101,7 +101,7 @@ const MetaTraderConfig = (() => {
     // or 1 of donor currency if both accounts have the same currency
     const getMinMT5TransferValue = (currency) => {
         const client_currency = Client.get('currency');
-        const mt5_currency    = MetaTraderConfig.getCurrency(Client.get('mt5_account'));
+        const mt5_currency    = getCurrency(Client.get('mt5_account'));
         if (client_currency === mt5_currency) return 1;
         return (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency));
     };
@@ -188,7 +188,7 @@ const MetaTraderConfig = (() => {
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
                                 $message.find('.authenticate').setVisibility(1);
-                                // setLabuanAdvancedIntention();
+                                setLabuanAdvancedIntention();
                                 is_ok = false;
                             }
 
@@ -222,19 +222,24 @@ const MetaTraderConfig = (() => {
         })
     );
 
-    // TODO: add this line when dry_run API ready
-    // const setLabuanAdvancedIntention = () => {
-    //     const req = {
-    //         mt5_new_account : 1,
-    //         account_type    : 'financial',
-    //         email           : Client.get('email'),
-    //         leverage        : 100,
-    //         name            : 'test real labuan advanced',
-    //         mainPassword    : 'Test1234',
-    //         mt5_account_type: 'advanced',
-    //     };
-    //     BinarySocket.send(req);
-    // };
+    const setLabuanAdvancedIntention = () => {
+        const req = {
+            account_type    : 'financial',
+            dry_run         : 1,
+            email           : Client.get('email'),
+            leverage        : 100,
+            mainPassword    : 'Test1234',
+            mt5_account_type: 'advanced',
+            mt5_new_account : 1,
+            name            : 'test real labuan advanced',
+        };
+        BinarySocket.send(req).then((response) => {
+            if (response.error) {
+                // update account status authentication info
+                BinarySocket.send({ get_account_status: 1 }, { forced: true });
+            }
+        });
+    };
 
     const actions_info = {
         new_account: {
@@ -298,7 +303,7 @@ const MetaTraderConfig = (() => {
 
         password_change: {
             title        : localize('Change Password'),
-            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
+            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, getDisplayLogin(response.echo_req.login)]),
             prerequisites: () => new Promise(resolve => resolve('')),
         },
         password_reset: {
@@ -330,10 +335,10 @@ const MetaTraderConfig = (() => {
         },
         deposit: {
             title      : localize('Deposit'),
-            success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
+            success_msg: (response, acc_type) => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
                 Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_binary,
-                response.echo_req.to_mt5,
+                accounts_info[acc_type].info.display_login,
                 response.binary_transaction_id,
             ]),
             prerequisites: () => new Promise((resolve) => {
@@ -359,7 +364,7 @@ const MetaTraderConfig = (() => {
             title      : localize('Withdraw'),
             success_msg: (response, acc_type) => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
                 Currency.formatMoney(getCurrency(acc_type), response.echo_req.amount),
-                response.echo_req.from_mt5,
+                accounts_info[acc_type].info.display_login,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
             ]),
@@ -478,6 +483,10 @@ const MetaTraderConfig = (() => {
 
     const getCurrency = acc_type => accounts_info[acc_type].info.currency;
 
+    // if you have acc_type, use accounts_info[acc_type].info.display_login
+    // otherwise, use this function to format login into display login
+    const getDisplayLogin = login => login.replace(/^MT[DR]?/i, '');
+
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
@@ -501,6 +510,7 @@ const MetaTraderConfig = (() => {
         needsRealMessage,
         hasAccount,
         getCurrency,
+        getDisplayLogin,
         isAuthenticated,
         isAuthenticationPromptNeeded,
         configMtCompanies   : configMtCompanies.get,
