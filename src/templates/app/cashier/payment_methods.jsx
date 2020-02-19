@@ -93,6 +93,7 @@ const PaymentMethods = () => {
     const withdrawal               = 'Withdrawal: ';
     const working_day              = '[_1] working day';
     const instant                  = 'Instant';
+    const instant_with_mins        = 'Instant to [_1] min';
     const not_applicable           = 'Not applicable';
     const blockchain_confirmations = '[_1] blockchain confirmations';
 
@@ -147,7 +148,7 @@ const PaymentMethods = () => {
                                             { text: 'USD GBP EUR' },
                                             { text: '25 - 10,000' },
                                             { text: '25 - 10,000' },
-                                            { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant_with_mins}`, 15), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
                                         },
