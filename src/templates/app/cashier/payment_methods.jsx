@@ -414,9 +414,8 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id      : 'jeton',
-                                dataShow: '-eucountry',
-                                row     : [
+                                id : 'jeton',
+                                row: [
                                     { text: <PaymentLogo logo='jeton' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Jeton is an international e-wallet for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.jeton.com/" target="_blank">www.jeton.com</a>') },
