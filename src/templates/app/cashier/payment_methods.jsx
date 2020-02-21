@@ -93,6 +93,7 @@ const PaymentMethods = () => {
     const withdrawal               = 'Withdrawal: ';
     const working_day              = '[_1] working day';
     const instant                  = 'Instant';
+    const instant_with_mins        = 'Instant to [_1] min';
     const not_applicable           = 'Not applicable';
     const blockchain_confirmations = '[_1] blockchain confirmations';
 
@@ -147,7 +148,7 @@ const PaymentMethods = () => {
                                             { text: 'USD GBP EUR' },
                                             { text: '25 - 10,000' },
                                             { text: '25 - 10,000' },
-                                            { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant_with_mins}`, 15), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
                                         },
@@ -197,7 +198,7 @@ const PaymentMethods = () => {
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                            { text: <ReferenceLinks pdf_file='Binary.com_Credit_Debit.pdf' video_link='https://youtu.be/n_qQbML_qAI' /> },
+                                            { text: <ReferenceLinks /* pdf_file='Binary.com_Credit_Debit.pdf' */ video_link='https://youtu.be/n_qQbML_qAI' /> },
                                         ],
                                         },
                                     ]}
@@ -216,7 +217,7 @@ const PaymentMethods = () => {
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                            { text: <ReferenceLinks pdf_file='Binary.com_Credit_Debit.pdf' video_link='https://youtu.be/n_qQbML_qAI' /> },
+                                            { text: <ReferenceLinks /* pdf_file='Binary.com_Credit_Debit.pdf' */ video_link='https://youtu.be/n_qQbML_qAI' /> },
                                         ],
                                         },
                                     ]}
@@ -413,9 +414,8 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id      : 'jeton',
-                                dataShow: '-eucountry',
-                                row     : [
+                                id : 'jeton',
+                                row: [
                                     { text: <PaymentLogo logo='jeton' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Jeton is an international e-wallet for money transfers and online payments. For more information, please visit [_1].', '<a href="https://www.jeton.com/" target="_blank">www.jeton.com</a>') },
