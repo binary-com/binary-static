@@ -27,7 +27,6 @@ const MetaTrader = (() => {
                     } catch (error) {
                         MetaTraderUI.displayPageError(error.message);
                     }
-                    getAllAccountsInfo();
                 } else {
                     BinarySocket.send({ get_limits: 1 }).then(async () => {
                         try {
@@ -35,7 +34,6 @@ const MetaTrader = (() => {
                         } catch (error) {
                             MetaTraderUI.displayPageError(error.message);
                         }
-                        getAllAccountsInfo();
                     });
                     getExchangeRates();
                 }
@@ -82,6 +80,7 @@ const MetaTrader = (() => {
                     reject(response.error);
                     return;
                 }
+                
                 const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
                     Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
 
@@ -120,6 +119,7 @@ const MetaTrader = (() => {
                     });
                 });
                 resolve();
+                getAllAccountsInfo(response);
             });
         })
     );
@@ -140,12 +140,10 @@ const MetaTrader = (() => {
         };
     };
 
-    const getAllAccountsInfo = () => {
+    const getAllAccountsInfo = (response) => {
         MetaTraderUI.init(submit, sendTopupDemo);
-        BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
-            show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
-            allAccountsResponseHandler(response);
-        });
+        show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
+        allAccountsResponseHandler(response);
     };
 
     const getDefaultAccount = () => {

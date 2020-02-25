@@ -152,13 +152,42 @@ const Cashier = (() => {
         });
     };
 
+    const setBtnDisable = selector => $(selector).addClass('button-disabled').click(false);
+    
+    const applyStateLockLogic = (status, deposit, withdraw) => {
+        // statuses to check with their corresponding selectors
+        const statuses_to_check = [
+            { lock: 'cashier_locked', selectors: [deposit, withdraw] },
+            { lock: 'withdrawal_locked', selectors: [withdraw] },
+            { lock: 'no_withdrawal_or_trading', selectors: [withdraw] },
+            { lock: 'unwelcome', selectors: [deposit] },
+        ];
+
+        statuses_to_check.forEach(item => {
+            if (status.includes(item.lock)) {
+                item.selectors.forEach(selector => setBtnDisable(selector));
+            }
+        });
+    };
+
+    const checkStatusIsLocked = ({ status }) => {
+        applyStateLockLogic(status, '.deposit_btn_cashier', '.withdraw_btn_cashier');
+    };
+
+    const checkLockStatusPA = () => {
+        BinarySocket.wait('get_account_status').then(() => {
+            const { status } = State.getResponse('get_account_status');
+            applyStateLockLogic(status, '.deposit', '.withdraw');
+        });
+    };
+
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
-            BinarySocket.wait('authorize', 'mt5_login_list', 'statement').then(() => {
+            BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status').then(() => {
+                checkStatusIsLocked(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
-
                 if (Client.get('is_virtual')) {
                     displayTopUpButton();
                 } else if (currency) {
@@ -205,6 +234,7 @@ const Cashier = (() => {
         PaymentMethods: {
             onLoad: () => {
                 showContent();
+                checkLockStatusPA();
                 setCryptoMinimumWithdrawal();
             },
         },

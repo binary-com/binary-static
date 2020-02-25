@@ -21,19 +21,19 @@ const BinaryInNumbers = () => (
             <Numbers
                 className='client'
                 header={it.L('Active trading clients')}
-                text={it.L('Our active client base exceeded [_1] clients in [_2].', '127,000', '2019')}
+                text={it.L('Our active client base is expected to reach over 175,000 total clients this year.')}
                 image='chart-active-trading-clients'
             />
             <Numbers
                 className='transaction'
                 header={it.L('Number of transactions')}
-                text={it.L('Our customers bought more than 275 million contracts on [_1] in 2019, bringing the total number of contracts sold to over 1 billion since commencing business.', it.website_name)}
+                text={it.L('We\'re projected to register over 377 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 1.42 billion.')}
                 image='chart-num-transactions'
             />
             <Numbers
                 className='turnover'
                 header={it.L('Turnover')}
-                text={it.L('In 2019, [_1] generated more than USD 1.5 billion in turnover, bringing our total turnover since our inception to over USD 7.1 billion.', it.website_name)}
+                text={it.L('We\'re expected to generate over USD 2 billion in turnover this year, bringing our total turnover since inception to over USD 9.2 billion.')}
                 image='chart-turnover'
             />
             {/* <Numbers
@@ -45,7 +45,7 @@ const BinaryInNumbers = () => (
             <Numbers
                 className='employee'
                 header={it.L('Number of employees and contractors')}
-                text={it.L('We\'ve grown over the years - both in human resources and offices. Currently, over [_1] employees are spread across four offices in Malaysia, Malta, Paraguay and the UAE. We\'re expecting to expand even more to support the demand for our products and services.', '250')}
+                text={it.L('We\'ve grown in size over the years - both in terms of manpower and offices. We currently have over [_1] employees across four offices in Malaysia, Malta, Paraguay and Dubai. Further growth in headcount is expected this year to cater to the increased demand in our products and services.', '250')}
                 image='chart-num-employees'
             />
         </div>

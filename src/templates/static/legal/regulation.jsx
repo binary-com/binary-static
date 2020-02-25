@@ -435,7 +435,7 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Binary (V) Ltd')} >
-                <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', '<a href="https://www.vfsc.vu/financial-dealers-licensee-lists/" target="_blank">', '</a>')}</p>
+                <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
