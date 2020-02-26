@@ -23,7 +23,7 @@ const TermsAndConditions = () => (
             <li>
                 {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote either', it.website_name)}&nbsp;
                 <span data-show='-eucountry'>{it.L('Binary (V) Ltd,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Binary (SVG) Ltd,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (SVG) LLC,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Binary (FX) Ltd,')}&nbsp;</span>
                 <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
