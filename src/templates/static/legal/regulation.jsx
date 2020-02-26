@@ -429,9 +429,9 @@ const Regulation = () => {
                 </Box>
             </div>
 
-            <Box header={it.L('Binary (SVG) Ltd')} >
-                <p>{it.L('Binary (SVG) Ltd, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) Ltd.')}</p>
+            <Box header={it.L('Binary (SVG) LLC')} >
+                <p>{it.L('Binary (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC.')}</p>
             </Box>
 
             <Box header={it.L('Binary (V) Ltd')} >
