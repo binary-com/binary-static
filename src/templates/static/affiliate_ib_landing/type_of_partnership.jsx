@@ -94,7 +94,7 @@ const TypesOfPartnership = () => (
                                                     tbody: [
                                                         [
                                                             { text: it.L('0 – 19.999%') },
-                                                            { text: it.L('1.25%') },
+                                                            { text: it.L('1.5%') },
                                                         ],
                                                         [
                                                             { text: it.L('20 – 39.999%') },
@@ -110,7 +110,7 @@ const TypesOfPartnership = () => (
                                                         ],
                                                         [
                                                             { text: it.L('80 – 94.999%') },
-                                                            { text: it.L('0.25%') },
+                                                            { text: it.L('0.4%') },
                                                         ],
                                                         [
                                                             { text: it.L('95%+') },
@@ -144,7 +144,7 @@ const TypesOfPartnership = () => (
 
                         <div className='gr-10 gr-12-m gr-parent gr-centered'>
                             <h3 id='ib_header' className='secondary-color'>{it.L('Commision structure')}</h3>
-                            
+
                             <h3>{it.L('Synthetic Indices Account')}</h3>
                             <Table
                                 data={{
@@ -217,7 +217,7 @@ const TypesOfPartnership = () => (
                             <p className='text-align-left'>{it.L('For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of USD 125,000 would pay USD 12.5.')}</p>
                             <p className='text-align-left'><strong>{it.L('USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5')}</strong></p>
                             <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current forex rate.')}</p>
-                            
+
                             <h3>{it.L('Standard account')}</h3>
                             <Table
                                 data={{
