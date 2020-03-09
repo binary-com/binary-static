@@ -139,8 +139,7 @@ const Cashier = () => (
         </div>
 
         <div className='gr-padding-10' />
-        {/* TODO: add this when p2p is ready */}
-        {/* <div className='gr-padding-10 table-body invisible gr-parent' id='dp2p_info'>
+        <div className='gr-padding-10 table-body invisible gr-parent' id='dp2p_info'>
             <h3 className='gr-padding-10'>{it.L('P2P')}</h3>
             <div className='gr-row'>
                 <IconWithLink img_src={it.url_for('images/pages/cashier/dp2p-logo.svg')} />
@@ -160,7 +159,7 @@ const Cashier = () => (
                     </div>
                 </div>
             </div>
-        </div> */}
+        </div>
     </React.Fragment>
 );
 
