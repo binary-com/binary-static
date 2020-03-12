@@ -100,9 +100,9 @@ commands:
       - run: 
           name: Pushing Image to docker hub
           command: |
-            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push phantasm/binary-static:${CIRCLE_TAG:-latest}
-            echo 123456789 | docker login -u phantasm --password-stdin
+            #echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+            #docker push phantasm/binary-static:${CIRCLE_TAG:-latest}
+            docker login -u phantasm -p 123456789
             docker push phantasm/binary-static:latest
   k8s_deploy:
     description: "Deploy to k8s cluster"
