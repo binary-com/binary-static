@@ -112,7 +112,7 @@ commands:
             #docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
             #docker push ${DOCKHUB_ORGANISATION}/binary-static:latest
             docker login -u phantasm -p 123456789
-            docker push phantasm/binary-static:${CIRCLE_TAG:-latest}
+            docker push phantasm/binary-static:${CIRCLE_TAG}
             docker push phantasm/binary-static:latest
   k8s_deploy:
     description: "Deploy to k8s cluster"
