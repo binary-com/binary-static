@@ -13,7 +13,6 @@ const payment_methods_list = [
     { image: 'skrill',                  param: '?anchor=skrill' },
     { image: 'qiwi',                    param: '?anchor=qiwi',           dataShow: '-eucountry' },
     { image: 'webmoney',                param: '?anchor=webmoney' },
-    { image: 'yandex',                  param: '?anchor=yandex',         dataShow: '-eucountry' },
     { image: 'paysafe',                 param: '?anchor=paysafe' },
     { image: 'jeton',                   param: '?anchor=jeton' },
     { image: 'iwallet',                 param: '?anchor=iwallet',        dataShow: '-eucountry' },
