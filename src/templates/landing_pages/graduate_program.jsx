@@ -57,7 +57,7 @@ const GraduateProgram = () => {
                 </div>
                 <div className='intro-bg' />
                 <div id='register' className='primary-bg-color-dark section-title-inverse'>
-                    <a href='mailto:hr@binary.com' target='_blank' rel='noopener noreferrer' className='button'><span>Apply now</span></a>
+                    <a href='mailto:recruitment@binary.com' target='_blank' rel='noopener noreferrer' className='button'><span>Apply now</span></a>
                 </div>
             </section>
 
