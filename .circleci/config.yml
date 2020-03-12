@@ -100,7 +100,7 @@ commands:
           command: |
             # This just for test on my branch
             #docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} -t ${DOCKHUB_ORGANISATION}/binary-static:latest .
-            docker build -t phantasm/binary-static:${CIRCLE_TAG:-latest} -t phantasm/binary-static:latest .
+            docker build -t phantasm/binary-static:${CIRCLE_SHA1} -t phantasm/binary-static:latest .
   docker_push:
     description: "Push image to docker hub"
     steps:
