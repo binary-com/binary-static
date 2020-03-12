@@ -311,7 +311,7 @@ const Careers = () => {
             </div>
             <div className='footer-email secondary-bg-color'>
                 <div className='container'>
-                    <p>{it.L('To apply, please submit your CV and a cover letter to [_1]','<a href="mailto:hr@binary.com" rel="nofollow">hr@binary.com.</a>')}</p>
+                    <p>{it.L('To apply, please submit your CV and a cover letter to [_1]','<a href="mailto:recruitment@binary.com" rel="nofollow">recruitment@binary.com.</a>')}</p>
                 </div>
             </div>
         </div>
