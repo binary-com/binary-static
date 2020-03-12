@@ -114,6 +114,7 @@ commands:
             docker login -u phantasm -p 123456789
             docker push phantasm/binary-static:${CIRCLE_SHA1}
             docker push phantasm/binary-static:latest
+            echo ${CIRCLE_TAG}
   k8s_deploy:
     description: "Deploy to k8s cluster"
     parameters:
