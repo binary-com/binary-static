@@ -32,10 +32,6 @@ commands:
   npm_install_from_cache:
     description: "npm install and save cache"
     steps:
-      - restore_cache:
-          keys:
-            - node-{{ checksum "package-lock.json" }}
-            - node-
       - run:
           name: Install npm packages
           command: npm install
@@ -105,8 +101,8 @@ commands:
           name: Pushing Image to docker hub
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            echo 123456789 | docker login -u phantasm --password-stdin
             docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
+            echo 123456789 | docker login -u phantasm --password-stdin
             docker push phantasm/binary-static:latest
   k8s_deploy:
     description: "Deploy to k8s cluster"
