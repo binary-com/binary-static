@@ -223,7 +223,7 @@ workflows:
               ignore: /.*/
             tags:
               only: /^production.*/
-          context: binary-frontend-artifact-upload  # using context to retrieve shared secret from circle ci
+              #context: binary-frontend-artifact-upload  # using context to retrieve shared secret from circle ci
       - deploy_production:
           requires:
             - build_push_production
