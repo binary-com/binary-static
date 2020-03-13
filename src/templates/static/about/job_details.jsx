@@ -1153,7 +1153,7 @@ const JobDetails = () => (
                 <div className='gr-3 gr-hide-m gr-hide-p' />
                 <div className='gr-9 gr-12-m gr-12-p center-text gr-centered'>
                     <div className='gr-12'>
-                        <a className='button' href='mailto:hr@binary.com'>
+                        <a className='button' href='mailto:recruitment@binary.com'>
                             <span>{it.L('Submit your CV and Cover Letter')}</span>
                         </a>
                     </div>

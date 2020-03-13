@@ -90,22 +90,40 @@ commands:
           aws-access-key-id: env_CONTEXT_ARTIFACT_S3_AWS_ACCESS_KEY_ID
           aws-secret-access-key: env_CONTEXT_ARTIFACT_S3_AWS_SECRET_ACCESS_KEY
           aws-region: env_CONTEXT_ARTIFACT_S3_AWS_REGION
-  docker_build:
+  docker_build_staging:
     description: "Build Docker image"
     steps:
       - setup_remote_docker
       - run: 
           name: Building docker image
           command: |
-            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest} .
-  docker_push:
+            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG} -t ${DOCKHUB_ORGANISATION}/binary-static:staging-latest .
+  docker_build_production:
+    description: "Build Docker image"
+    steps:
+      - setup_remote_docker
+      - run: 
+          name: Building docker image
+          command: |
+            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG} -t ${DOCKHUB_ORGANISATION}/binary-static:production-latest .
+  docker_push_staging:
     description: "Push image to docker hub"
     steps:
       - run: 
           name: Pushing Image to docker hub
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG:-latest}
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:staging-latest
+  docker_push_production:
+    description: "Push image to docker hub"
+    steps:
+      - run: 
+          name: Pushing Image to docker hub
+          command: |
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:production-latest
   k8s_deploy:
     description: "Deploy to k8s cluster"
     parameters:
@@ -139,8 +157,8 @@ jobs:
          target: 'staging'
       - grunt_release:
           target: 'translations'
-      - docker_build
-      - docker_push
+      - docker_build_staging
+      - docker_push_staging
       
   build_push_production:
     docker:
@@ -153,8 +171,8 @@ jobs:
       - compress
       - upload_artifact  # uploading the built code to s3 to create a backup of key services separate from Kubernetes deployment
       - upload_checksum  # uploading compressed artifact checksum to cross match artifact fingerprint
-      - docker_build
-      - docker_push
+      - docker_build_production
+      - docker_push_production
 
   deploy_staging:
     docker:

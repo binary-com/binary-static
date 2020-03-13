@@ -375,26 +375,6 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
-                                id      : 'yandex',
-                                dataShow: '-eucountry',
-                                row     : [
-                                    { text: <PaymentLogo logo='yandex' /> },
-                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more information, please visit [_1].', `${createLink('https://money.yandex.ru')}`) },
-                                        { td_list: [
-                                            { text: 'USD' },
-                                            { text: '25 - 10,000' },
-                                            { text: 'N/A' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
-                                            { text: <ReferenceLinks /> },
-                                        ],
-                                        },
-                                    ]}
-                                    />,
-                                    },
-                                ],
-                            },
-                            {
                                 id : 'paysafe',
                                 row: [
                                     { text: <PaymentLogo logo='paysafe' /> },
