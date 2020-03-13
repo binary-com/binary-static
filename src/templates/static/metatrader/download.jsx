@@ -124,7 +124,7 @@ const Download = () => {
                 <div className='gr-row'>
                     <DesktopDownloadBlock
                         id='windows'
-                        href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe'
+                        href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
                     />
                     <DesktopDownloadBlock
                         id='mac'
