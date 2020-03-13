@@ -1,4 +1,4 @@
-const pt = {
+module.exports = {
     document_selector: {
         identity: {
             title                      : 'Verifique sua identidade',
@@ -10,411 +10,163 @@ const pt = {
     },
     capture: {
         driving_licence: {
-        front: {
-            title: "Submit license (front)",
-            instructions: "Upload front of license from your computer",
-            webcam:
-            "Position the front of license in the frame (it will be automatically detected)"
-        },
-        back: {
-            title: "Submit license (back)",
-            instructions: "Upload back of license from your computer",
-            webcam:
-            "Position the back of license in the frame (it will be automatically detected)"
-        }
+            front: {
+                title       : 'Enviar carteira de condução (frente)',
+                instructions: 'Enviar a frente da carteira de condução direto do seu computador',
+                webcam      : 'Posicione a frente da cateira de condução no quadro (ela será detectada automaticamente)',
+            },
+            back: {
+                title       : 'Enviar carteira de condução (verso)',
+                instructions: 'Enviar o verso da carteira de condução direto do seu computador',
+                webcam      : 'Posicione o verso da cateira de condução no quadro (ela será detectada automaticamente)',
+            },
         },
         national_identity_card: {
-        front: {
-            title: "Submit identity card (front)",
-            instructions: "Upload front of card from your computer",
-            webcam:
-            "Position the front of card in the frame (it will be automatically detected)"
-        },
-        back: {
-            title: "Submit identity card (back)",
-            instructions: "Upload back of card from your computer",
-            webcam:
-            "Position the back of card in the frame (it will be automatically detected)"
-        }
+            front: {
+                title       : 'Enviar carteira de identidade nacional (frente)',
+                instructions: 'Enviar a frente da carteira nacional direto do seu computador',
+                webcam      : 'Posicione a frente da carteira nacional no quadro (ela será detectada automaticamente)',
+            },
+            back: {
+                title       : 'Enviar carteira de identidade nacional (verso)',
+                instructions: 'Enviar o verso da carteira nacional direto do seu computador',
+                webcam      : 'Posicione o verso da carteira nacional no quadro (ela será detectada automaticamente)',
+            },
         },
         passport: {
-        front: {
-            title: "Submit passport photo page",
-            instructions: "Upload passport photo page from your computer",
-            webcam:
-            "Position your passport photo page in the frame (it will be automatically detected)"
-        }
-        },
-        bank_building_society_statement: {
-        front: {
-            title: "Submit statement",
-            sub_title: "Must be issued in the <strong>last 3 months</strong>",
-            instructions: "Provide the whole document page for best results",
-            webcam:
-            "Position your bank statement in the frame (it will be automatically detected)"
-        }
-        },
-        utility_bill: {
-        front: {
-            title: "Submit bill",
-            sub_title: "Must be issued in the <strong>last 3 months</strong>",
-            instructions: "Provide the whole document page for best results",
-            webcam:
-            "Position your utility bill in the frame (it will be automatically detected)"
-        }
-        },
-        benefit_letters: {
-        front: {
-            title: "Submit letter",
-            sub_title: "Must be issued in the <strong>last 12 months</strong>",
-            instructions: "Provide the whole document page for best results",
-            webcam:
-            "Position your benefits letter in the frame (it will be automatically detected)"
-        }
-        },
-        council_tax: {
-        front: {
-            title: "Submit letter",
-            sub_title: "Must be issued in the <strong>last 12 months</strong>",
-            instructions: "Provide the whole document page for best results",
-            webcam:
-            "Position your council tax letter in the frame (it will be automatically detected)"
-        }
-        },
-        government_letter: {
-        front: {
-            title: "Government Letter",
-            sub_title: "Must be issued in the <strong>last 12 months</strong>",
-            instructions: "Provide the whole document page for best results",
-            webcam:
-            "Position your government letter in the frame (it will be automatically detected)"
-        }
+            front: {
+                title       : 'Enviar foto da página do passaporte',
+                instructions: 'Enviar a página do passaporte (a que mostra sua foto) direto do seu computador',
+                webcam      : 'Posicione a página do passaporte (a que mostra sua foto) no quadro (ela será detectada automaticamente)',
+            },
         },
         face: {
-        title: "Take a selfie",
-        upload_title: "Selfie",
-        instructions: "Upload a selfie from your computer",
-        intro: {
-            title: "Take a selfie",
-            subtitle: "We'll compare it with your document",
-            selfie_instruction:
-            "Face forward and make sure your eyes are clearly visible",
-            glasses_instruction: "Remove your glasses, if necessary",
-            accessibility: {
-            selfie_capture_tips: "Tips to take a good selfie"
-            }
-        }
+            title       : 'Tire uma selfie',
+            upload_title: 'Selfie',
+            instructions: 'Enviar uma selfie direto do seu computador',
+            intro       : {
+                title              : 'Tire uma selfie',
+                subtitle           : 'Carregar uma selfie do seu computador',
+                selfie_instruction : 'Olhe para frente e verifique se seus olhos estão claramente visíveis',
+                glasses_instruction: 'Retire os óculos, se necessário',
+                accessibility      : {
+                    selfie_capture_tips: 'Dicas para tirar uma boa selfie',
+                },
+            },
         },
-        liveness: {
-        start: "Start",
-        stop: "Stop",
-        recording: "Recording",
-        press_record: "Press record and follow the instructions",
-        intro: {
-            title: "Let's make sure nobody's impersonating you",
-            two_actions:
-            "We'll ask you to film yourself performing <strong>2 simple actions</strong>",
-            speak_out_loud: "One will involve <strong>speaking out loud</strong>",
-            continue: "Continue"
-        },
-        challenges: {
-            position_face: "Position your face in the oval",
-            recite: "Say each digit out loud",
-            movement: "Look over your %{side} shoulder",
-            right: "right",
-            left: "left",
-            done_next: "When you're done, press next",
-            done_stop: "When you're done, press stop",
-            next: "Next"
-        }
-        },
-        upload_document: "Upload",
-        upload_file: "or upload photo – no scans or photocopies",
-        take_photo: "Take photo",
-        switch_device: "Continue on phone"
+        upload_document: 'Enviar',
+        upload_file    : 'ou fazer upload de foto - (não envie digitalizações)',
+        take_photo     : 'Tirar uma foto',
+        switch_device  : 'Continue no telefone',
     },
     confirm: {
         document: {
-        title: "Check readability",
-        alt: "Photo of your document"
+            title: 'Verificar legibilidade',
+            alt  : 'Foto do seu documento',
         },
         driving_licence: {
-        message:
-            "Make sure your license details are clear to read, with no blur or glare"
+            message: 'Certifique-se de que todos os detalhes da sua carteira de condução estejam visíveis, sem borrões ou reflexos',
         },
         national_identity_card: {
-        message:
-            "Make sure your card details are clear to read, with no blur or glare"
+            message: 'Certifique-se de que todos os detalhes da sua ID nacional estejam visíveis, sem borrões ou reflexos',
         },
         passport: {
-        message:
-            "Make sure your passport details are clear to read, with no blur or glare"
-        },
-        bank_building_society_statement: {
-        message: "Make sure details are clear to read, with no blur or glare"
-        },
-        utility_bill: {
-        message: "Make sure details are clear to read, with no blur or glare"
-        },
-        benefit_letters: {
-        message: "Make sure details are clear to read, with no blur or glare"
-        },
-        council_tax: {
-        message: "Make sure details are clear to read, with no blur or glare"
+            message: 'Certifique-se de que todos os detalhes da seu passaporte estejam visíveis, sem borrões ou reflexos',
         },
         face: {
-        standard: {
-            title: "Check selfie",
-            message: "Make sure your selfie clearly shows your face",
-            alt: "Photo of your face"
+            standard: {
+                title  : 'Verifique sua selfie',
+                message: 'Verifique se a sua selfie mostra claramente o seu rosto',
+                alt    : 'Foto do seu rosto',
+            },
         },
-        video: {
-            title: "Check selfie video"
-        }
-        },
-        confirm: "Confirm",
-        continue: "Continue",
-        redo: "Redo",
+        confirm      : 'Confirmar',
+        continue     : 'Continuar',
+        redo         : 'Voltar',
         enlarge_image: {
-        enlarge: "Enlarge image",
-        close: "Close"
-        }
-    },
-    complete: {
-        message: "Verification complete",
-        submessage: "Thank you"
+            close: 'Fechar',
+        },
     },
     cross_device: {
         intro: {
-        title: "Continue on your phone",
-        sub_title: "Here's how to do it:",
-        description_li_1: "Send a secure link to your phone",
-        description_li_2: "Open the link and complete the tasks",
-        description_li_3: "Check back here to finish the submission",
-        action: "Get secure link"
+            title           : 'Continue no telefone',
+            sub_title       : 'Veja como fazer:',
+            description_li_1: 'Envie um link seguro para o seu telefone',
+            description_li_2: 'Abra o link e conclua as tarefas',
+            description_li_3: 'Volte aqui para finalizar o envio',
+            action          : 'Obter link seguro',
         },
         client_success: {
-        title: "Uploads successful",
-        sub_title: "You can now return to your computer to continue",
-        body: "Your computer may take a few seconds to update"
+            title    : 'Envios bem-sucedidos',
+            sub_title: 'Agora você pode retornar ao seu computador para continuar',
+            body     : 'O seu computador pode demorar alguns segundos para atualizar',
         },
         link: {
-        title: "Get your secure link",
-        qr_code_sub_title: "Scan the QR code with your phone",
-        sms_sub_title: "Send this one-time link to your phone",
-        copy_link_sub_title: "Open the link on your mobile",
-        options_divider_label: "or",
-        sms_option: "Get link via SMS",
-        copy_link_option: "Copy link",
-        qr_code_option: "Scan QR code",
-        copy_link: {
-            action: "Copy",
-            success: "Copied"
+            title                : 'Obtenha seu link seguro',
+            qr_code_sub_title    : 'Digitalize o código QR com o seu telefone',
+            sms_sub_title        : 'Envie este link único para o seu telefone',
+            copy_link_sub_title  : 'Abra o link no seu celular',
+            options_divider_label: 'ou',
+            sms_option           : 'Obter link via SMS',
+            copy_link_option     : 'Copiar link',
+            qr_code_option       : 'Digitalizar código QR',
+            copy_link            : {
+                action : 'Copiar',
+                success: 'Copiado',
+            },
+            qr_code: {
+                help_label : 'Como digitalizar um código QR',
+                help_step_1: 'Aponte a câmera do seu telefone para o código QR',
+                help_step_2: 'Se não funcionar, baixe um scanner de código QR no Google Play ou na App Store',
+            },
+            sms_label      : 'Digite seu número de celular:',
+            copy_link_label: 'Copie o link para o seu navegador no celular',
         },
-        button_copy: {
-            action: "Send link",
-            status: "Sending"
-        },
-        qr_code: {
-            help_label: "How to scan a QR code",
-            help_step_1: "Point your phone’s camera at the QR code",
-            help_step_2:
-            "If it doesn’t work, download a QR code scanner from Google Play or the App Store"
-        },
-        sms_label: "Enter your mobile number:",
-        copy_link_label: "Copy the link to your mobile browser"
-        },
-        submit: {
-        title: "Great, that's everything we need",
-        sub_title: "We're now ready to verify your identity",
-        selfie_uploaded: "Selfie uploaded",
-        video_uploaded: "Video uploaded",
-        action: "Submit verification",
-        multiple_docs_uploaded: "Documents uploaded",
-        one_doc_uploaded: "Document uploaded"
-        },
-        phone_number_placeholder: "Enter mobile number",
-        loading: "Loading...",
-        mobile_connected: {
-        title: {
-            message: "Connected to your mobile",
-            submessage: "Once you've finished we'll take you to the next step"
-        },
-        tips: {
-            item_1: "Keep this window open while using your mobile",
-            item_2: "Your mobile link will expire in one hour",
-            item_3: "Don't refresh this page"
-        }
+        phone_number_placeholder: 'insira o número do celular',
+        loading                 : 'Carregando...',
+        mobile_connected        : {
+            title: {
+                message   : 'Conectado ao seu celular',
+                submessage: 'Quando terminar, levaremos você para a próxima etapa',
+            },
+            tips: {
+                item_1: 'Mantenha essa janela aberta enquanto estiver usando seu celular',
+                item_2: 'Seu link para celular expirará em uma hora',
+                item_3: 'Não atualize esta página',
+            },
         },
         mobile_notification_sent: {
-        title: "Check your mobile",
-        submessage: "We've sent a secure link to %{number}",
-        bold_message: "It may take a few minutes to arrive",
-        tips: {
-            item_1: "Keep this window open while using your mobile",
-            item_2: "Your link will expire in one hour"
-        },
-        resend_link: "Resend link"
+            title       : 'Verifique seu celular',
+            submessage  : 'Enviamos um link seguro para %{number}',
+            bold_message: 'It may take a few minutes to arrive',
+            tips        : {
+                item_1: 'Pode demorar alguns minutos para chegar',
+                item_2: 'Seu link expirará em uma hora',
+            },
+            resend_link: 'Reenviar link',
         },
         switch_device: {
-        header: "Take a photo with your phone"
+            header: 'Tire uma foto com seu telefone',
         },
-        tips: "Tips"
+        tips: 'Dicas',
     },
     webcam_permissions: {
-        allow_access: "Allow camera access",
-        enable_webcam_for_selfie:
-        "When prompted, you must enable camera access to continue",
-        click_allow: "We cannot verify you without using your camera",
-        allow: "Allow",
-        why: "Why do I need to do this?",
-        if_denied:
-        "If you deny camera access, you won't be able to take pictures and complete verification process.",
-        enable_webcam: "Enable camera",
-        access_denied: "Camera access is denied",
-        recover_access: "Recover camera access to continue face verification",
-        recovery: "Recovery",
-        follow_steps: "Follow these steps to recover camera access:",
-        grant_access: "Grant access to your camera from your browser settings",
-        refresh_page:
-        "Refresh this page to restart the identity verification process",
-        refresh: "Refresh"
+        allow_access            : 'Permitir acesso à câmera',
+        enable_webcam_for_selfie: 'Quando solicitado, você deve habilitar o acesso à câmera para continuar',
+        click_allow             : 'Não podemos verificar você sem usar sua câmera',
+        allow                   : 'Permitir',
+        why                     : 'Por que eu preciso fazer isso?',
+        if_denied               : 'Se você negar o acesso à câmera, não poderá tirar fotos e concluir o processo de verificação.',
     },
-    proof_of_address: {
-        intro: {
-        title: "Let's verify your %{country} address",
-        requirements: "You'll need a document that:",
-        shows_address: "Shows your <strong>current</strong> address",
-        matches_signup: "<strong>Matches</strong> the address you used on signup",
-        is_recent: "Is your most <strong>recent</strong> document",
-        start: "Start verification"
-        },
-        guidance: {
-        logo: "Logo",
-        full_name: "Full name",
-        make_sure_it_shows: "Make sure it clearly shows:",
-        current_address: "Current address",
-        issue_date: "Issue date or summary period",
-        continue: "Continue"
-        }
-    },
-    errors: {
-        invalid_capture: {
-        message: "No document detected",
-        instruction: "Make sure all the document is in the photo"
-        },
-        invalid_type: {
-        message: "File not uploaded.",
-        instruction: "Try using another file type."
-        },
-        unsupported_file: {
-        message: "File type not supported",
-        instruction: "Try using a JPG or PNG file"
-        },
-        invalid_size: {
-        message: "File size exceeded.",
-        instruction: "Must be under 10MB."
-        },
-        no_face: {
-        message: "No face found",
-        instruction: "Your face is needed in the selfie"
-        },
-        multiple_faces: {
-        message: "Multiple faces found",
-        instruction: "Only your face can be in the selfie"
-        },
-        server_error: {
-        message: "Connection lost",
-        instruction: "Please try again"
-        },
-        glare_detected: {
-        message: "Glare detected",
-        instruction: "All details should be clear and readable"
-        },
-        sms_failed: {
-        message: "Something's gone wrong",
-        instruction: "Copy the link to your phone"
-        },
-        sms_overuse: {
-        message: "Too many failed attempts",
-        instruction: "Copy the link to your phone"
-        },
-        lazy_loading: {
-        message: "An error occurred while loading the component"
-        },
-        invalid_number: {
-        message: "Check that your number is correct"
-        },
-        generic_client_error: {
-        message: "Something's gone wrong",
-        instruction: "You'll need to restart your verification on your computer"
-        },
-        forbidden_client_error: {
-        message: "Something's gone wrong",
-        instruction: "The link only works on mobile devices"
-        },
-        camera_not_working: {
-        message: "Camera not working",
-        instruction:
-            "It may be disconnected. <fallback>Try using your phone instead</fallback>."
-        },
-        camera_not_working_no_fallback: {
-        instruction: "Make sure your device's camera works"
-        },
-        liveness_timeout: {
-        message: "Looks like you took too long",
-        instruction:
-            "Remember to press stop when you're done. <fallback>Redo video actions</fallback>"
-        },
-        camera_inactive: {
-        message: "Having camera problems?",
-        instruction:
-            "<fallback>Use your mobile</fallback> to continue face verification"
-        },
-        camera_inactive_no_fallback: {
-        instruction: "Make sure your device has a working camera"
-        },
-        interrupted_flow_error: {
-        message: "Camera not detected",
-        instruction: "Restart process on a different device"
-        },
-        unsupported_android_browser: {
-        message: "Unsupported browser",
-        instruction: "Restart the process on the latest version of Google Chrome"
-        },
-        unsupported_ios_browser: {
-        message: "Unsupported browser",
-        instruction: "Restart the process on the latest version of Safari"
-        }
-    },
-    accessibility: {
-        close_sdk_screen: "Close identity verification screen",
-        dismiss_alert: "Dismiss alert",
-        camera_view: "View from camera",
-        shutter: "Take a photo",
-        start_recording: "Start recording",
-        stop_recording: "Stop recording",
-        replay_video: "Replay your recorded video",
-        document_types: "Documents you can use to verify your identity",
-        selfie_video_actions: "Actions to record a selfie video",
-        cross_device_verification:
-        "Steps required to continue verification on your mobile",
-        country_select: "Select country"
-    },
-    passport: "Passport",
-    driving_licence: "Driver's license",
-    national_identity_card: "Identity Card",
-    short_passport: "passport",
-    short_driving_licence: "license",
-    short_national_identity_card: "card",
-    bank_building_society_statement: "Bank or building society statement",
-    utility_bill: "Utility Bill",
-    benefit_letters: "Benefits Letter",
-    government_letter: "Government Letter",
-    council_tax: "Council Tax Letter",
-    loading: "Loading",
-    back: "back",
-    cancel: "Cancel",
-    close: "close",
-    continue: "Continue"
+    passport                    : 'Passaporte',
+    driving_licence             : 'Carteira de condução',
+    national_identity_card      : 'Carteira de identidade',
+    short_passport              : 'passaporte',
+    short_driving_licence       : 'Carteira de condução',
+    short_national_identity_card: 'ID nacional',
+    loading                     : 'Carregando',
+    back                        : 'verso',
+    cancel                      : 'Cancelar',
+    close                       : 'Fechar',
+    continue                    : 'Continuar',
 };
