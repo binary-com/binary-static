@@ -249,7 +249,7 @@ const ViewPopup = (() => {
 
         if (is_multiplier_contract) {
             const {
-                deal_cancellation: {
+                cancellation: {
                     ask_price: deal_cancellation_price = 0,
                 } = {},
                 profit,
