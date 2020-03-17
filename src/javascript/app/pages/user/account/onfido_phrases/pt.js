@@ -84,7 +84,8 @@ module.exports = {
         continue     : 'Continuar',
         redo         : 'Voltar',
         enlarge_image: {
-            close: 'Fechar',
+            enlarge: 'Ampliar imagem',
+            close  : 'Fechar',
         },
     },
     cross_device: {
@@ -114,6 +115,10 @@ module.exports = {
                 action : 'Copiar',
                 success: 'Copiado',
             },
+            button_copy: {
+                action: 'Enviar link',
+                status: 'Enviando',
+            },
             qr_code: {
                 help_label : 'Como digitalizar um código QR',
                 help_step_1: 'Aponte a câmera do seu telefone para o código QR',
@@ -122,12 +127,21 @@ module.exports = {
             sms_label      : 'Digite seu número de celular:',
             copy_link_label: 'Copie o link para o seu navegador no celular',
         },
-        phone_number_placeholder: 'insira o número do celular',
+        submit: {
+            title                 : 'Ótimo, é tudo o que precisamos',
+            sub_title             : 'Agora estamos prontos para verificar sua identidade',
+            selfie_uploaded       : 'Selfie enviada',
+            video_uploaded        : 'Video enviado',
+            action                : 'Enviar verificação',
+            multiple_docs_uploaded: 'Documentos enviados',
+            one_doc_uploaded      : 'Documento enviado',
+        },
+        phone_number_placeholder: 'Digite o número do celular',
         loading                 : 'Carregando...',
         mobile_connected        : {
             title: {
                 message   : 'Conectado ao seu celular',
-                submessage: 'Quando terminar, levaremos você para a próxima etapa',
+                submessage: 'Quando terminar, levaremos você para o próximo passo',
             },
             tips: {
                 item_1: 'Mantenha essa janela aberta enquanto estiver usando seu celular',
@@ -138,9 +152,9 @@ module.exports = {
         mobile_notification_sent: {
             title       : 'Verifique seu celular',
             submessage  : 'Enviamos um link seguro para %{number}',
-            bold_message: 'It may take a few minutes to arrive',
+            bold_message: 'Pode demorar alguns minutos para chegar',
             tips        : {
-                item_1: 'Pode demorar alguns minutos para chegar',
+                item_1: 'Mantenha essa janela aberta enquanto estiver usando seu celular',
                 item_2: 'Seu link expirará em uma hora',
             },
             resend_link: 'Reenviar link',
@@ -157,6 +171,100 @@ module.exports = {
         allow                   : 'Permitir',
         why                     : 'Por que eu preciso fazer isso?',
         if_denied               : 'Se você negar o acesso à câmera, não poderá tirar fotos e concluir o processo de verificação.',
+        enable_webcam           : 'Ativar câmera',
+        access_denied           : 'Acesso à câmera negado',
+        recover_access          : 'Recupere o acesso da câmera para continuar a verificação de rosto',
+        recovery                : 'Recuperação',
+        follow_steps            : 'Siga estas etapas para recuperar o acesso da câmera:',
+        grant_access            : 'Conceda acesso à sua câmera a partir das configurações do navegador',
+        refresh_page            : 'Atualize esta página para reiniciar o processo de verificação de identidade',
+        refresh                 : 'Atualizar',
+    },
+    errors: {
+        invalid_capture: {
+            message    : 'Nenhum documento detectado',
+            instruction: 'Verifique se todo o documento está na foto',
+        },
+        invalid_type: {
+            message    : 'Arquivo não carregado.',
+            instruction: 'Tente enviar outro tipo de arquivo.',
+        },
+        unsupported_file: {
+            message    : 'Tipo de arquivo não suportado',
+            instruction: 'Tente usar um arquivo JPG ou PNG',
+        },
+        invalid_size: {
+            message    : 'Tamanho do arquivo excedido.',
+            instruction: 'Deve ter menos de 10 MB.',
+        },
+        no_face: {
+            message    : 'Nenhum rosto encontrado',
+            instruction: 'Seu rosto é necessário na selfie',
+        },
+        multiple_faces: {
+            message    : 'Mais de um rosto encontrado',
+            instruction: 'Somente seu rosto pode estar na selfie',
+        },
+        server_error: {
+            message    : 'Conexão perdida',
+            instruction: 'Por favor, tente novamente',
+        },
+        glare_detected: {
+            message    : 'Brilho detectado',
+            instruction: 'Todos os detalhes devem ser nítidos e legíveis',
+        },
+        sms_failed: {
+            message    : 'Algo deu errado',
+            instruction: 'Copie o link para o seu telefone',
+        },
+        sms_overuse: {
+            message    : 'Muitas tentativas falhas',
+            instruction: 'Copie o link para o seu telefone',
+        },
+        lazy_loading: {
+            message: 'Ocorreu um erro ao carregar o componente',
+        },
+        invalid_number: {
+            message: 'Verifique se o seu número está correto',
+        },
+        generic_client_error: {
+            message    : 'Algo deu errado',
+            instruction: 'Você precisará reiniciar sua verificação no seu computador',
+        },
+        forbidden_client_error: {
+            message    : 'Algo deu errado',
+            instruction: 'O link funciona apenas em dispositivos móveis',
+        },
+        camera_not_working: {
+            message    : 'A câmera não está funcionando',
+            instruction: 'Pode estar desconectado. <fallback>Tente usar seu telefone</fallback>.',
+        },
+        camera_inactive: {
+            message    : 'Está tendo problemas com a câmera?',
+            instruction: '<fallback>Use seu celular</fallback> para continuar a verificação de rosto',
+        },
+        interrupted_flow_error: {
+            message    : 'Câmera não detectada',
+            instruction: 'Reinicie o processo em um dispositivo diferente',
+        },
+        unsupported_android_browser: {
+            message    : 'Navegador não suportado',
+            instruction: 'Reinicie o processo na versão mais recente do Google Chrome',
+        },
+        unsupported_ios_browser: {
+            message    : 'Navegador não suportado',
+            instruction: 'Reinicie o processo na versão mais recente do Safari',
+        },
+    },
+    accessibility: {
+        close_sdk_screen         : 'Fechar tela de verificação de identidade',
+        dismiss_alert            : 'Fechar alerta',
+        camera_view              : 'Vista da câmera',
+        shutter                  : 'Tire uma foto',
+        document_types           : 'Documentos que você pode usar para verificar sua identidade',
+        selfie_video_actions     : 'Ações para gravar uma selfie em vídeo',
+        cross_device_verification: 'Etapas necessárias para continuar a verificação no seu celular',
+        country_select           : 'Selecione o país',
     },
     passport                    : 'Passaporte',
     driving_licence             : 'Carteira de condução',
