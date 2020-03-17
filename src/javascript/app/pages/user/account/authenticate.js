@@ -1,6 +1,7 @@
 const DocumentUploader        = require('@binary-com/binary-document-uploader');
 const Cookies                 = require('js-cookie');
 const Onfido                  = require('onfido-sdk-ui');
+const onfido_phrases          = require('./onfido_phrases');
 const Client                  = require('../../../base/client');
 const Header                  = require('../../../base/header');
 const BinarySocket            = require('../../../base/socket');
@@ -841,7 +842,8 @@ const Authenticate = (() => {
                 onfido = Onfido.init({
                     containerId: 'onfido',
                     language   : {
-                        locale: getLanguage().toLowerCase() || 'en',
+                        locale : getLanguage().toLowerCase() || 'en',
+                        phrases: onfido_phrases[getLanguage().toLowerCase()],
                     },
                     token     : sdk_token,
                     useModal  : false,
