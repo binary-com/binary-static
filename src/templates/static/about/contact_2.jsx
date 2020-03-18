@@ -26,7 +26,7 @@ const Contact2 = () => (
                                                 options={[
                                                     { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (2) 8294 5448') },
                                                     { text: it.L('Ireland'),        value: it.L('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') },
-                                                    { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 1666 800042, +44 800 011 9847'), selected: true },
+                                                    { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 1666 800042, +44 1942 316229'), selected: true },
                                                 ]}
                                             />
                                         </div>
@@ -37,7 +37,7 @@ const Contact2 = () => (
                                                 {('+44 1666 800042')}
                                             </a>
                                             <br />
-                                            {it.L('[_1] (Toll Free)', '<a href="tel:+44 800 011 9847">+44 800 011 9847</a>')}
+                                            {it.L('[_1] (Toll Free)', '<a href="tel:+44 1942 316229">+44 1942 316229</a>')}
                                         </div>
                                     </div>
                                 </div>
