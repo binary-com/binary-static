@@ -146,14 +146,41 @@ const Cashier = (() => {
                         .crypto_config[shortname]
                         .minimum_withdrawal;
 
-                    $crypto_min_withdrawal.text(minimum_withdrawal);
+                    let to_fixed = 0;
+                    // cut long numbers off after two non-zero decimals
+                    // examples: 0.00123456 -> 0.0012, 0.01234567 -> 0.012, 0.12345678 -> 0.12, 0.00102345 -> 0.00102
+                    // first check if number has any decimal places
+                    if (/\./.test(minimum_withdrawal)) {
+                        let count_non_zero = 0;
+
+                        // change number to string so we can use split on it
+                        // split by . separator to only parse the decimal places
+                        // split to array so we can parse each number one by one
+                        const array_decimals = minimum_withdrawal.toString().split('.')[1].split('');
+
+                        to_fixed = array_decimals.findIndex((n) => {
+                            // if current number is not a zero
+                            // and we have parsed more than 2 non-zero numbers
+                            // cut off the number here
+                            if (+n !== 0 && count_non_zero >= 2) {
+                                return true;
+                            }
+                            // otherwise add to the count if current number is not zero and move to the next number
+                            if (+n !== 0) {
+                                count_non_zero += 1;
+                            }
+                            return false;
+                        });
+                    }
+
+                    $crypto_min_withdrawal.text(minimum_withdrawal.toFixed(to_fixed));
                 }
             });
         });
     };
 
     const setBtnDisable = selector => $(selector).addClass('button-disabled').click(false);
-    
+
     const applyStateLockLogic = (status, deposit, withdraw) => {
         // statuses to check with their corresponding selectors
         const statuses_to_check = [
