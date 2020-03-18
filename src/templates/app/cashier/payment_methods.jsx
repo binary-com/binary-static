@@ -577,6 +577,10 @@ const PaymentMethods = () => {
                         ],
                     }}
                 />
+
+                <div className='gr-padding-10' data-show='-eucountry'>
+                    <p className='hint'>{it.L('Note:')} {it.L('Figures have been rounded.')}</p>
+                </div>
             </div>
 
             <div className='gr-padding-10'>
