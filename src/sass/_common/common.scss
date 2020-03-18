@@ -557,11 +557,6 @@ ul.bullet.gr-row > li {
             }
         }
     }
-    .select-disabled div.select {
-        cursor: not-allowed;
-        color: $COLOR_GRAY;
-        pointer-events: none;
-    }
     .light {
         .tab-menu-wrap {
             text-align: center;

@@ -1,5 +1,4 @@
 import React      from 'react';
-import { Select } from '../../_common/components/elements.jsx';
 import Loading    from '../../_common/components/loading.jsx';
 
 const Contact = () => (
@@ -31,17 +30,11 @@ const Contact = () => (
                             </div>
                             <div className='gr-10 gr-11-m gr-8-p gr-8-t number-container'>
                                 <div className='gr-row gr-centered-m'>
-                                    <div className='gr-adapt select-disabled'>
+                                    <div className='gr-adapt'>
                                         <label htmlFor='cs_telephone_number'><strong>{it.L('Telephone:')}</strong></label>
-                                        <Select
-                                            id='cs_telephone_number'
-                                            options={[
-                                                { text: it.L('United Kingdom'), value: it.L('[_1]', '+44 1942 316229'), selected: true },
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='gr-adapt' id='display_cs_telephone'>
-                                        <span>{it.L('[_1]', '<a href="tel:+44 1942 316229">+44 1942 316229</a>')}</span>
+                                        <div className='gr-adapt' id='display_cs_telephone'>
+                                            <span>{it.L('[_1] (United Kingdom)', '<a href="tel:+44 1942 316229">+44 1942 316229</a>')}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
