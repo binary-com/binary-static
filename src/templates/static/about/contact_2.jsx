@@ -1,5 +1,5 @@
-import React               from 'react';
-import { Select, InfoBox } from '../../_common/components/elements.jsx';
+import React       from 'react';
+import { InfoBox } from '../../_common/components/elements.jsx';
 
 const support_email = 'support@binary.com';
 
