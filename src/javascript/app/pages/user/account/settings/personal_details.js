@@ -110,13 +110,17 @@ const PersonalDetails = (() => {
                 $options.append(CommonFunctions.makeOption({ text: res.text, value: res.value }));
             });
             $options.prepend($('<option/>', { value: '', text: localize('Please select') }));
-            $('#place_of_birth')
-                .html($options.html())
-                .val(get_settings.place_of_birth);
+            if (changeable_fields.includes('place_of_birth')) {
+                $('#place_of_birth')
+                    .html($options.html())
+                    .val(get_settings.place_of_birth);
+            }
 
-            $('#citizen')
-                .html($options.html())
-                .val(get_settings.citizen);
+            if (changeable_fields.includes('citizen')) {
+                $('#citizen')
+                    .html($options.html())
+                    .val(get_settings.citizen);
+            }
         }
     };
 
@@ -130,13 +134,13 @@ const PersonalDetails = (() => {
             get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
-        if (get_settings.place_of_birth && !has_changeable_fields) {
+        if (get_settings.place_of_birth && !changeable_fields.includes('place_of_birth')) {
             get_settings.place_of_birth =
                 (residence_list.find(obj => obj.value === get_settings.place_of_birth) || {}).text ||
                 get_settings.place_of_birth;
         }
 
-        if (get_settings.citizen && !has_changeable_fields) {
+        if (get_settings.citizen && !changeable_fields.includes('citizen')) {
             get_settings.citizen =
                 (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
                 get_settings.citizen;
