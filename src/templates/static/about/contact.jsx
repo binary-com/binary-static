@@ -1,5 +1,4 @@
 import React      from 'react';
-import { Select } from '../../_common/components/elements.jsx';
 import Loading    from '../../_common/components/loading.jsx';
 
 const Contact = () => (
@@ -33,26 +32,14 @@ const Contact = () => (
                                 <div className='gr-row gr-centered-m'>
                                     <div className='gr-adapt'>
                                         <label htmlFor='cs_telephone_number'><strong>{it.L('Telephone:')}</strong></label>
-                                        <Select
-                                            id='cs_telephone_number'
-                                            options={[
-                                                { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (2) 8294 5448') },
-                                                { text: it.L('South Africa'),   value: it.L('[_1] (Toll Free)', '+27 80 099 0561') },
-                                                { text: it.L('United Kingdom'), value: it.L('[_1] (Toll Free)', '+44 1666 800042, +44 800 011 9847'), selected: true },
-                                            ]}
-                                        />
-                                    </div>
-                                    <div className='gr-adapt' id='display_cs_telephone'>
-                                        <a href='tel: +44 1666 800042'>{('+44 1666 800042')}</a>
-                                        <span>{it.L('[_1] (Toll Free)', '<a href="tel:+44 800 011 9847">+44 800 011 9847</a>')}</span>
+                                        <div className='gr-adapt' id='display_cs_telephone'>
+                                            <span>{it.L('[_1] (United Kingdom)', '<a href="tel:+44 1942 316229">+44 1942 316229</a>')}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='center-text'>
-                            <p>{it.L('If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help.')}</p>
-                        </div>
-                        <div className='hint center-text calls_recording'>
+                        <div className='hint center-text calls_recording gr-padding-10'>
                             * {it.L('All calls are recorded for training and monitoring purposes')}
                         </div>
                     </div>
