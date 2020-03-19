@@ -62,11 +62,11 @@ const Client = (() => {
         }
     };
 
-    const sendLogoutRequest = (show_login_page) => {
+    const sendLogoutRequest = (show_login_page, redirect_to) => {
         if (show_login_page) {
             sessionStorage.setItem('showLoginPage', 1);
         }
-        BinarySocket.send({ logout: '1' }).then((response) => {
+        BinarySocket.send({ logout: '1', passthrough: { redirect_to } }).then((response) => {
             if (response.logout === 1) {
                 GTM.pushDataLayer({ event: 'log_out' });
             }
