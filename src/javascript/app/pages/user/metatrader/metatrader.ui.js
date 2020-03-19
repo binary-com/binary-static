@@ -159,7 +159,10 @@ const MetaTraderUI = (() => {
         }
     };
     const displayAccountDescription = (acc_type) => {
-        $container.find('#account_desc').html($templates.find(`.account-desc .${acc_type}`).clone());
+        const $account_desc = $templates.find('.account-desc');
+        const $account_type_desc = $account_desc.find(`.${acc_type}`);
+        const $el_to_clone = $account_type_desc.length ? $account_type_desc : $account_desc.find('#general_desc');
+        $container.find('#account_desc').html($el_to_clone.clone());
     };
 
     const setCurrentAccount = (acc_type) => {
