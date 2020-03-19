@@ -6,7 +6,7 @@ import {
 import Loading           from '../../_common/components/loading.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */
-const AccountDesc = ({ title, description, account_type, items }) => {
+const AccountDesc = ({ title, description, account_type, items, id = undefined }) => {
     let types = '';
     if (account_type) {
         account_type.forEach((type) => {
@@ -15,7 +15,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
     }
 
     return (
-        <div className={types}>
+        <div className={types} id={id}>
             <h3>{title}</h3>
             <p>{description}</p>
             <ul className='checked small no-padding'>
@@ -200,6 +200,7 @@ const Metatrader = () => (
 
                     <div className='account-desc'>
                         <AccountDesc
+                            id='general_desc'
                             title={it.L('Choose an account')}
                             description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                         />
