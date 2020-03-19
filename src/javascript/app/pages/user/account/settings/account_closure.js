@@ -65,7 +65,7 @@ const AccountClosure = (() => {
                 currencies.forEach((currency) => {
                     $virtual.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
                 });
-                
+
             } else {
                 if (has_trading_limit) {
                     $trading_limit.setVisibility(1);
@@ -153,7 +153,7 @@ const AccountClosure = (() => {
                     } else {
                         crypto_currencies += ` ${localize('account')}`;
                     }
-                
+
                     $('.current_currency').text(crypto_currencies);
                     $('#current_currency_crypto').text(crypto_currencies);
                     currencies.forEach((currency) => {
@@ -276,14 +276,14 @@ const AccountClosure = (() => {
                     }
 
                 }
-                
+
                 BinarySocket.send({ statement: 1, limit: 1 });
                 BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
                     const is_eligible = await Metatrader.isEligible();
                     if (is_eligible) {
                         $('.metatrader-link').setVisibility(1);
                     }
-                    
+
                 });
             }
 
@@ -351,7 +351,11 @@ const AccountClosure = (() => {
                     $.scrollTo(0, 500);
 
                     sessionStorage.setItem('closingAccount', 1);
-                    setTimeout(() => window.location.href = Url.urlFor('home'), 10000);
+                    setTimeout(() => {
+                        // we need to clear all stored client data by performing a logout action and then redirect to home
+                        // otherwise it will think that client is still logged in and redirect to trading page
+                        Client.sendLogoutRequest(false, Url.urlFor('home'));
+                    }, 10000);
                 }
             });
         } else {
