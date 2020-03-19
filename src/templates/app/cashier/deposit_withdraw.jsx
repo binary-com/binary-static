@@ -28,6 +28,7 @@ const DepositWithdraw = () => (
                 <span id='tnc_error'>{it.L('Please [_1]accept the updated Terms and Conditions[_2].', `<a href="${it.url_for('user/tnc_approvalws')}">`, '</a>')}</span>
                 <span id='limits_error'>{it.L('Please set your [_1]30-day turnover limit[_2] to access the cashier.', `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>')}</span>
                 <span id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</span>
+                <sapn id='no_balance_error'>{it.L('Please [_1]deposit[_2] to your account.',  `<a href="${it.url_for('cashier/forwardws')}?action=deposit">`, '</a>')}</sapn>
                 <span id='custom_error'>{it.L('Sorry, an error occurred while processing your request.')}</span>
             </p>
         </div>
