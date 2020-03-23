@@ -12,6 +12,8 @@ const Geocoder         = require('../../../../../_common/geocoder');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const toISOFormat      = require('../../../../../_common/string_util').toISOFormat;
+const getHashValue     = require('../../../../../_common/url').getHashValue;
+const urlFor           = require('../../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
@@ -265,7 +267,7 @@ const PersonalDetails = (() => {
         } else {
             const is_financial      = Client.isAccountOfType('financial');
             const is_gaming         = Client.isAccountOfType('gaming');
-            const mt_acct_type      = localStorage.getItem('personal_details_redirect');
+            const mt_acct_type      = getHashValue('mt5_redirect');
             const is_for_mt_citizen = !!mt_acct_type;                                                   // all mt account opening requires citizen
             const is_for_mt_tax     = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2;  // demo and volatility mt accounts do not require tax info
             const is_tax_req        = is_financial || (is_for_mt_tax && +State.getResponse('landing_company.config.tax_details_required') === 1);
@@ -322,7 +324,7 @@ const PersonalDetails = (() => {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
         if (!is_error) {
-            const redirect_url = localStorage.getItem('personal_details_redirect');
+            const redirect_url = getHashValue('mt5_redirect') ? urlFor('user/metatrader') : undefined;
             // to update tax information message for financial clients
             BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
@@ -351,7 +353,6 @@ const PersonalDetails = (() => {
                     get_settings.citizen // only check Citizen if user selects mt volatility account
                 );
                 if (redirect_url && has_required_mt) {
-                    localStorage.removeItem('personal_details_redirect');
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
                     $(form_id).setVisibility(0);
                     $('#missing_details_notice').setVisibility(0);
@@ -525,7 +526,6 @@ const PersonalDetails = (() => {
 
     const onUnload = () => {
         is_for_new_account = false;
-        localStorage.removeItem('personal_details_redirect');
     };
 
     return {

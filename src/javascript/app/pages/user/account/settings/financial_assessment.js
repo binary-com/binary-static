@@ -6,6 +6,8 @@ const getElementById   = require('../../../../../_common/common_functions').getE
 const isVisible        = require('../../../../../_common/common_functions').isVisible;
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
+const getHashValue     = require('../../../../../_common/url').getHashValue;
+const urlFor           = require('../../../../../_common/url').urlFor;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../../../../_common/utility').showLoadingImage;
 
@@ -49,7 +51,7 @@ const FinancialAssessment = (() => {
         }
 
         // display Trading Experience only for financial & MT5 financial accounts
-        const is_mt5_financial = /labuan_advanced/.test(localStorage.getItem('financial_assessment_redirect'));
+        const is_mt5_financial = /labuan_advanced/.test(getHashValue('mt5_redirect'));
         $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
         Object.keys(financial_assessment).forEach((key) => {
@@ -124,9 +126,8 @@ const FinancialAssessment = (() => {
     };
 
     const showFormMessage = (localized_msg, is_success) => {
-        const redirect_url = localStorage.getItem('financial_assessment_redirect');
-        if (is_success && /metatrader/i.test(redirect_url)) {
-            localStorage.removeItem('financial_assessment_redirect');
+        const redirect_url = getHashValue('mt5_redirect') ? urlFor('user/metatrader') : undefined;
+        if (is_success && redirect_url) {
             $.scrollTo($('h1#heading'), 500, { offset: -10 });
             $(form_selector).setVisibility(0);
             $('#msg_main').setVisibility(1);
@@ -140,13 +141,8 @@ const FinancialAssessment = (() => {
         }
     };
 
-    const onUnload = () => {
-        localStorage.removeItem('financial_assessment_redirect');
-    };
-
     return {
         onLoad,
-        onUnload,
     };
 })();
 
