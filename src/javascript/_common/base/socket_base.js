@@ -8,6 +8,7 @@ const isEmptyObject    = require('../utility').isEmptyObject;
 const PromiseClass     = require('../utility').PromiseClass;
 const getAppId         = require('../../config').getAppId;
 const getSocketURL     = require('../../config').getSocketURL;
+const isLoginPages     = require('../../_common/utility').isLoginPages;
 
 /*
  * An abstraction layer over native javascript WebSocket,
@@ -208,7 +209,9 @@ const BinarySocketBase = (() => {
 
         binary_socket.onopen = () => {
             config.wsEvent('open');
-            if (ClientBase.isLoggedIn()) {
+            // check is not on login page in case client is logged in and now logging in with another account
+            // without logging out first by going to the oauth login page directly
+            if (ClientBase.isLoggedIn() && !isLoginPages()) {
                 send({ authorize: ClientBase.get('token') }, { forced: true });
             } else {
                 sendBufferedRequests();
