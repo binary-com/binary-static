@@ -177,7 +177,7 @@ const Highchart = (() => {
         show_end_time       : contract.contract_type !== 'highlowticks',
     });
 
-    // type 'x' is used to draw lines such as start and end times
+    // type 'x' is used to draw lines such as start and exit times
     // type 'y' is used to draw lines such as barrier
     const addPlotLine = (params, type) => {
         chart[(`${type}Axis`)][0].addPlotLine(HighchartUI.getPlotlineOptions(params, type));
