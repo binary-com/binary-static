@@ -125,25 +125,11 @@ const MetaTraderConfig = (() => {
                 resolve(needsRealMessage());
             } else {
                 BinarySocket.wait('get_settings').then(() => {
-                    const showCitizenshipMessage = () => {
-                        $message
-                            .find('.citizen')
-                            .setVisibility(1)
-                            .find('a')
-                            .attr(
-                                'onclick',
-                                `localStorage.setItem('personal_details_redirect', '${acc_type}')`
-                            );
-                    };
-                    const showAssessment = (selector) => {
-                        $message
-                            .find(selector)
-                            .setVisibility(1)
-                            .find('a')
-                            .attr(
-                                'onclick',
-                                `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`
-                            );
+                    const showElementSetRedirect = (selector) => {
+                        const $el = $message.find(selector);
+                        $el.setVisibility(1);
+                        const $link = $el.find('a');
+                        $link.attr('href', `${$link.attr('href')}#mt5_redirect=${acc_type}`);
                     };
                     const resolveWithMessage = () => {
                         $message.find(message_selector).setVisibility(1);
@@ -172,18 +158,18 @@ const MetaTraderConfig = (() => {
 
                             const response_get_account_status = State.getResponse('get_account_status');
                             if (/financial_information_not_complete/.test(response_get_account_status.status)) {
-                                showAssessment('.assessment');
+                                showElementSetRedirect('.assessment');
                                 is_ok = false;
                             } else if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
-                                showAssessment('.trading_experience');
+                                showElementSetRedirect('.trading_experience');
                                 is_ok = false;
                             }
                             if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
-                                $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
+                                showElementSetRedirect('.tax');
                                 is_ok = false;
                             }
                             if (!response_get_settings.citizen) {
-                                showCitizenshipMessage();
+                                showElementSetRedirect('.citizen');
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
@@ -203,13 +189,13 @@ const MetaTraderConfig = (() => {
                                 && !accounts_info[acc_type].mt5_account_type // is_volatility
                                 && /high/.test(response_get_account_status.risk_classification)
                             ) {
-                                showAssessment('.assessment');
+                                showElementSetRedirect('.assessment');
                                 is_ok = false;
                             }
                             if (!response_get_settings.citizen
                                 && !(is_maltainvest && !has_financial_account)
                                 && accounts_info[acc_type].mt5_account_type) {
-                                showCitizenshipMessage();
+                                showElementSetRedirect('.citizen');
                                 is_ok = false;
                             }
 
