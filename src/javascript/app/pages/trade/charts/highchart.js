@@ -431,12 +431,12 @@ const Highchart = (() => {
                     addPlotLine({ id: 'barrier',           value: +barrier,    label: `${localized_label} (${addComma(barrier)})`,           dashStyle: 'Dot'   }, 'y');
                 } else if (Reset.isReset(contract_type)) {
                     if (Reset.isNewBarrier(entry_spot, barrier)) {
+                        prev_barriers[1] = entry_spot;
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot',   textBottom: contract_type !== 'RESETCALL', x: -60, align: 'right' }, 'y');
                         addPlotLine({ id: 'reset_barrier', value: +barrier,    label: `${localize('Reset Barrier')} (${addComma(barrier)})`, dashStyle: 'Solid', textBottom: contract_type === 'RESETCALL', x: -60, align: 'right' }, 'y');
                         HighchartUI.updateLabels(chart, getHighchartLabelParams(true));
                     } else {
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot', x: -60, align: 'right' }, 'y');
-
                     }
                 } else {
                     addPlotLine({ id: 'barrier',           value: +barrier,    label: `${localize('Barrier')} (${addComma(barrier)})`,       dashStyle: 'Dot' },   'y');
@@ -458,9 +458,17 @@ const Highchart = (() => {
 
     // Update barriers if needed.
     const updateBarrier = () => {
-        const { barrier, high_barrier, low_barrier } = contract;
+        const { barrier, contract_type, entry_spot, high_barrier, low_barrier } = contract;
         // Update barrier only if it doesn't equal previous value
-        if (barrier && barrier !== prev_barriers[0]) { // Batman: Good boy!
+        // Batman: Good boy!
+        if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)
+            && (barrier !== prev_barriers[0] || entry_spot !== prev_barriers[1])) {
+            prev_barriers[0] = barrier;
+            prev_barriers[1] = entry_spot;
+            removePlotLine('barrier', 'y');
+            removePlotLine('reset_barrier', 'y');
+            drawBarrier();
+        } else if (barrier && barrier !== prev_barriers[0]) {
             prev_barriers[0] = barrier;
             removePlotLine('barrier', 'y');
             drawBarrier();
