@@ -230,7 +230,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='maestro' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Maestro is an international debit card service by Mastercard. For more information, please visit [_1].', '<a href="http://stage.maestrocard.com/" target="_blank">stage.maestrocard.com</a>') },
+                                        { td: it.L('Maestro is an international debit card service by Mastercard. For more information, please visit [_1].', `${createLink('https://brand.mastercard.com/brandcenter/more-about-our-brands.html')}`) },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '10 - 10,000' },
