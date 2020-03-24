@@ -120,13 +120,16 @@ const TermsAndConditions = (() => {
     };
 
     const stickySidebar = () => {
-        const $sidebar   = $('.sidebar-collapsible');
-        const $content   = $('.sidebar-collapsible-content');
-        const $container = $('.sidebar-collapsible-container');
-
+        const $sidebar = $('.sidebar-collapsible');
         if (!$sidebar.is(':visible')) return;
 
-        if (window.scrollY < $content.offset().top) {
+        const $content   = $('.sidebar-collapsible-content');
+        const $container = $('.sidebar-collapsible-container');
+        const $content_height = $('.toggle-content:not(.invisible)')[0].offsetHeight;
+
+        // if scroll has not passed end of the sidebar yet or if text content is too short
+        // scrollbar should remain relative otherwise it will break the page
+        if (window.scrollY < $content.offset().top || $content_height < $sidebar[0].offsetHeight) {
             $sidebar.css({ position: 'relative' });
         } else if (window.scrollY + $sidebar[0].offsetHeight + 20 >=
             $container[0].offsetHeight + $container.offset().top) { // 20 is the padding for content from bottom, to avoid menu snapping back up
