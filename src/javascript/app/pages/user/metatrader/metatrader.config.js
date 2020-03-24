@@ -153,7 +153,7 @@ const MetaTraderConfig = (() => {
                         if (is_svg) resolve();
 
                         let is_ok = true;
-                        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                        BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
                             if (is_maltainvest && !has_financial_account) resolve();
 
                             const response_get_account_status = State.getResponse('get_account_status');
@@ -173,8 +173,8 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
+                                await setLabuanAdvancedIntention();
                                 $message.find('.authenticate').setVisibility(1);
-                                setLabuanAdvancedIntention();
                                 is_ok = false;
                             }
 
@@ -208,7 +208,7 @@ const MetaTraderConfig = (() => {
         })
     );
 
-    const setLabuanAdvancedIntention = () => {
+    const setLabuanAdvancedIntention = new Promise((resolve) => {
         const req = {
             account_type    : 'financial',
             dry_run         : 1,
@@ -223,9 +223,10 @@ const MetaTraderConfig = (() => {
             if (response.error) {
                 // update account status authentication info
                 BinarySocket.send({ get_account_status: 1 }, { forced: true });
+                resolve();
             }
         });
-    };
+    });
 
     const actions_info = {
         new_account: {
