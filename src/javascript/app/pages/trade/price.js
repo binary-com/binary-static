@@ -255,7 +255,7 @@ const Price = (() => {
             const old_payout = purchase.getAttribute('data-payout');
             if (amount) displayPriceMovement(amount, old_price, proposal.display_value);
             if (payout_amount) displayPriceMovement(payout_amount, old_payout, proposal.payout);
-            Array.prototype.slice.call(purchase.attributes).filter(attr => {
+            Array.from(purchase.attributes).filter(attr => {
                 if (!/^data/.test(attr.name) ||
                     /^data-balloon$/.test(attr.name) ||
                     /data-balloon/.test(attr.name) ||
