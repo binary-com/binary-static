@@ -208,7 +208,7 @@ const MetaTraderConfig = (() => {
         })
     );
 
-    const setLabuanAdvancedIntention = new Promise(async (resolve) => {
+    const setLabuanAdvancedIntention = () => new Promise((resolve) => {
         const req = {
             account_type    : 'financial',
             dry_run         : 1,
@@ -219,13 +219,16 @@ const MetaTraderConfig = (() => {
             mt5_new_account : 1,
             name            : 'test real labuan advanced',
         };
-        const dry_run_response = await BinarySocket.send(req);
-        
-        if (dry_run_response.error) {
-            // update account status authentication info
-            await BinarySocket.send({ get_account_status: 1 }, { forced: true });
-            resolve();
-        }
+        BinarySocket.send(req).then((dry_run_response) => {
+
+            if (dry_run_response.error) {
+                // update account status authentication info
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    resolve();
+                });
+
+            }
+        });
     });
 
     const actions_info = {
