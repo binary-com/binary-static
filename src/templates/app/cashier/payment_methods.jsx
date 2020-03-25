@@ -169,7 +169,7 @@ const PaymentMethods = () => {
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day_range}`, 1, 2)]} /> },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day_range}`, 1, 3)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
                                         },
