@@ -130,6 +130,7 @@ const PaymentMethods = () => {
                                             { text: '500 - 100,000' },
                                             { text: '500 - 100,000' },
                                             { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
                                         ],
                                         },
                                     ]}
@@ -169,6 +170,7 @@ const PaymentMethods = () => {
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day_range}`, 1, 2)]} /> },
+                                            { text: <ReferenceLinks /> },
                                         ],
                                         },
                                     ]}
@@ -187,6 +189,7 @@ const PaymentMethods = () => {
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day_range}`, 1, 2)]} /> },
+                                            { text: <ReferenceLinks /> },
                                         ],
                                         },
                                     ]}
@@ -205,6 +208,7 @@ const PaymentMethods = () => {
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day_range}`, 1, 2)]} /> },
+                                            { text: <ReferenceLinks /> },
                                         ],
                                         },
                                     ]}
