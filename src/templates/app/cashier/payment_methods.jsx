@@ -187,7 +187,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '10 - 10,000' },
-                                            { text: '10 - 10,000' },
+                                            { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
@@ -206,7 +206,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '10 - 10,000' },
-                                            { text: '10 - 10,000' },
+                                            { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
