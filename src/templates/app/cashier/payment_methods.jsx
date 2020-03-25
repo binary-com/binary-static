@@ -185,10 +185,10 @@ const PaymentMethods = () => {
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Help2Pay is a payment facility that allows online bank transfers for clients across Southeast Asia.') },
                                         { td_list: [
-                                            { text: 'USD GBP EUR AUD' },
+                                            { text: 'USD' },
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day_range}`, 1, 2)]} /> },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
                                         },
@@ -204,10 +204,10 @@ const PaymentMethods = () => {
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('DragonPhoenix is a payment facility that allows online bank transfers for clients across Southeast Asia.') },
                                         { td_list: [
-                                            { text: 'USD GBP EUR AUD' },
+                                            { text: 'USD' },
                                             { text: '10 - 10,000' },
                                             { text: '10 - 10,000' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day_range}`, 1, 2)]} /> },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
                                         },
