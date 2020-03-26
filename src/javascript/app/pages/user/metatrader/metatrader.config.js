@@ -173,6 +173,8 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
+                                // disable button must occur before loading
+                                $('#view_1 #btn_next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 await setLabuanAdvancedIntention();
                                 $('#authenticate_loading').setVisibility(0);
