@@ -1,15 +1,15 @@
-const BinaryPjax   = require('../../../base/binary_pjax');
-const Client       = require('../../../base/client');
-const Header       = require('../../../base/header');
-const BinarySocket = require('../../../base/socket');
-const Dialog       = require('../../../common/attach_dom/dialog');
-const Currency     = require('../../../common/currency');
-const Validation   = require('../../../common/form_validation');
-const GTM          = require('../../../../_common/base/gtm');
-const localize     = require('../../../../_common/localize').localize;
-const State        = require('../../../../_common/storage').State;
-const urlFor       = require('../../../../_common/url').urlFor;
-const isBinaryApp  = require('../../../../config').isBinaryApp;
+const BinaryPjax             = require('../../../base/binary_pjax');
+const Client                 = require('../../../base/client');
+const Header                 = require('../../../base/header');
+const BinarySocket           = require('../../../base/socket');
+const Dialog                 = require('../../../common/attach_dom/dialog');
+const Currency               = require('../../../common/currency');
+const Validation             = require('../../../common/form_validation');
+const GTM                    = require('../../../../_common/base/gtm');
+const localize               = require('../../../../_common/localize').localize;
+const State                  = require('../../../../_common/storage').State;
+const urlFor                 = require('../../../../_common/url').urlFor;
+const isBinaryApp            = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
     const configMtCompanies = (() => {
@@ -173,7 +173,9 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
+                                $('#authenticate_loading').setVisibility(1);
                                 await setLabuanAdvancedIntention();
+                                $('#authenticate_loading').setVisibility(0);
                                 $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
@@ -226,7 +228,6 @@ const MetaTraderConfig = (() => {
                 BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                     resolve();
                 });
-
             }
         });
     });
