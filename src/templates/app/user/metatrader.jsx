@@ -289,6 +289,8 @@ const Metatrader = () => (
                                             <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
                                         </TypeGroup>
                                     </div>
+                                    <div id='authenticate_loading' className='invisible'><Loading /></div>
+                                    
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
                                         <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
@@ -490,7 +492,6 @@ const Metatrader = () => (
                             </div>
                         </div>
                     </div>
-
                     <div id='messages'>
                         <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
                         <div id='msg_switch'>
