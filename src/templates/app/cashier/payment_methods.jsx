@@ -402,7 +402,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'USD EUR' },
                                             { text: <TableValues value={['5 - 200 (USD)', '5 - 150 (EUR)']} /> },
-                                            { text: <TableValues value={['5 - 200 (USD)', '5 - 150 (EUR)']} /> },
+                                            { text: <TableValues value={['5 - 180 (USD)', '5 - 150 (EUR)']} /> },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Qiwi.pdf' video_link='https://youtu.be/CMAF29cn9XQ' /> },
                                         ],
