@@ -3,9 +3,7 @@ const updateWarmChart = require('./common').updateWarmChart;
 const DigitInfo       = require('./charts/digit_info');
 const Defaults        = require('./defaults');
 const getActiveTab    = require('./get_active_tab').getActiveTab;
-const Purchase        = require('./purchase');
 const Tick            = require('./tick');
-const TickDisplay     = require('./tick_trade');
 const BinarySocket    = require('../../base/socket');
 
 const GetTicks = (() => {
@@ -61,8 +59,6 @@ const GetTicks = (() => {
         if (tick.echo_req.ticks === symbol || (tick.tick && tick.tick.symbol === symbol)) {
             Tick.details(tick);
             Tick.display();
-            TickDisplay.updateChart(tick);
-            Purchase.updateSpotList();
             if (!Barriers.isBarrierUpdated()) {
                 Barriers.display();
                 Barriers.setBarrierUpdate(true);

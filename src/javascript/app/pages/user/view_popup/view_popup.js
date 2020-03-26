@@ -23,8 +23,6 @@ const ViewPopup = (() => {
         is_sell_clicked,
         chart_started,
         chart_init,
-        chart_updated,
-        ticks_requested,
         sell_text_updated,
         btn_view,
         multiplier,
@@ -45,8 +43,6 @@ const ViewPopup = (() => {
         is_sell_clicked      = false;
         chart_started        = false;
         chart_init           = false;
-        chart_updated        = false;
-        ticks_requested      = false;
         sell_text_updated    = false;
         $container           = '';
 
@@ -158,7 +154,7 @@ const ViewPopup = (() => {
         ViewPopupUI.repositionConfirmation();
     };
 
-    const update = () => {
+    const update = async () => {
         const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended         = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
         const indicative_price = contract.sell_price || (contract.bid_price || null);
@@ -299,18 +295,17 @@ const ViewPopup = (() => {
             if (contract.entry_tick_time) {
                 chart_started = true;
             }
-        } else if (contract.tick_count && !chart_updated) {
-            TickDisplay.updateChart({ id_render: id_tick_chart, request_ticks: !ticks_requested }, contract);
-            ticks_requested = true;
-            if ('barrier' in contract) {
-                chart_updated = true;
+        } else if (contract.tick_count) {
+            if (!chart_init) {
+                chart_init = true;
+                TickDisplay.init(id_tick_chart);
             }
+            TickDisplay.updateChart(contract);
         }
 
         if (!is_sold && contract.status === 'sold') {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
-            else TickDisplay.updateChart({ is_sold: true }, contract);
         }
         if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
             ViewPopupUI.forgetStreams();
@@ -324,8 +319,6 @@ const ViewPopup = (() => {
                 DigitDisplay.end(contract);
             } else if (!contract.tick_count) {
                 Highchart.showChart(contract, 'update');
-            } else {
-                TickDisplay.updateChart({ is_sold: true }, contract);
             }
             containerSetText('trade_details_live_remaining', '-');
             Clock.setExternalTimer(); // stop timer
@@ -337,10 +330,6 @@ const ViewPopup = (() => {
             $container.find('#errMsg').setVisibility(0);
         }
 
-        const { barrier, contract_type, entry_spot } = contract;
-        if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
-            TickDisplay.plotResetSpot(barrier);
-        }
         if (!is_multiplier_contract) {
             // next line is responsible for 'sell at market' flashing on the last tick
             sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);

@@ -53,8 +53,8 @@ const DigitDisplay = (() => {
             DigitTicker.update(
                 poc.tick_stream.length,
                 {
-                    quote: poc.status !== 'open' ? poc.exit_tick_display_value : poc.current_spot_display_value,
-                    epoch: +poc.exit_tick_time || +poc.current_spot_time,
+                    tick_display_value: poc.status !== 'open' ? poc.exit_tick_display_value : poc.current_spot_display_value,
+                    epoch             : +poc.exit_tick_time || +poc.current_spot_time,
                 }
             );
         }
@@ -147,7 +147,7 @@ const DigitDisplay = (() => {
     const end = (proposal_open_contract) => {
         if (proposal_open_contract.status !== 'open') {
             DigitTicker.update(proposal_open_contract.tick_count, {
-                quote: proposal_open_contract.exit_tick_display_value
+                tick_display_value: proposal_open_contract.exit_tick_display_value
                     || proposal_open_contract.tick_stream.slice(-1).tick_display_value,
                 epoch: +proposal_open_contract.exit_tick_time,
             });
