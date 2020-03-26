@@ -112,6 +112,20 @@ const ClientBase = (() => {
             !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
+    const hasOnlyCurrencyType = (type = 'fiat') => {
+        const loginids = getAllLoginids();
+        const real_loginid = new RegExp('^(MX|MF|MLT|CR|FOG)[0-9]+$', 'i');
+        const only_real_loginids = loginids.filter((loginid) => real_loginid.test(loginid));
+        if (type === 'crypto') {
+            return only_real_loginids.every(loginid => isCryptocurrency(get('currency', loginid)));
+        }
+        if (type === 'unset') {
+            return only_real_loginids.every(loginid => !get('currency', loginid));
+        }
+
+        return only_real_loginids.every(loginid => get('currency', loginid) && !isCryptocurrency(get('currency', loginid)));
+    };
+
     const TypesMapConfig = (() => {
         let types_map_config;
 
@@ -139,12 +153,21 @@ const ClientBase = (() => {
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
+        const local_currency_config = {};
+        const local_currencies = Object.keys(authorize.local_currencies);
+        if (local_currencies.length) {
+            local_currency_config.currency = local_currencies[0];
+            local_currency_config.decimal_places =
+                +authorize.local_currencies[local_currency_config.currency].fractional_digits;
+        }
         set('email',      authorize.email);
         set('currency',   authorize.currency);
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
         set('user_id', authorize.user_id);
+        set('local_currency_config', local_currency_config);
+
         updateAccountList(authorize.account_list);
     };
 
@@ -201,6 +224,8 @@ const ClientBase = (() => {
 
     const shouldCompleteTax = () => isAccountOfType('financial') &&
         !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
+
+    const isAuthenticationAllowed = () => /allow_document_upload/.test(State.getResponse('get_account_status.status'));
 
     // remove manager id or master distinction from group
     // remove EUR or GBP distinction from group
@@ -316,7 +341,7 @@ const ClientBase = (() => {
 
     const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
         const currency             = get('currency');
-        const has_no_mt5           = mt5_login_list.length === 0;
+        const has_no_mt5           = !mt5_login_list || !mt5_login_list.length;
         const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
         const has_account_criteria = has_no_transaction && has_no_mt5;
 
@@ -337,9 +362,11 @@ const ClientBase = (() => {
         getAllLoginids,
         getAccountType,
         isAccountOfType,
+        isAuthenticationAllowed,
         getAccountOfType,
         hasAccountType,
         hasCurrencyType,
+        hasOnlyCurrencyType,
         getAccountTitle,
         responseAuthorize,
         shouldAcceptTnc,

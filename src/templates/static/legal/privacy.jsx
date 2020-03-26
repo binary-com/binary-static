@@ -24,6 +24,12 @@ const Privacy = () => (
         <p>{it.L('The client should note that the Company\'s website generates log files that record the IP addresses of accesses to the client\'s account, login attempts, and device information such as the manufacturer, model, operating system, and browser. This information is gathered for the sole purpose of providing assistance with investigating a client\'s account in the unlikely event that the account is accessed by unauthorised users. Information supplied by some cookies also helps the Company understand how visitors use the website, so that the Company can improve how it presents its content.')}</p>
         <p>{it.L('The Company\'s cookies are not deemed dangerous and cannot access any other information on the client\'s computer.')}</p>
         <p>{it.L('By using or interacting with the [_1] website, the client is giving permission to the use of the Google Analytics User ID Feature, which allows Google to capture the client\'s [_1] login ID such as VRTC1234 and MT1234. When this feature is enabled, no personally identifiable information other than the client\'s [_1] login ID, or other data that can be linked to such information by Google, is shared with or disclosed to Google.', it.website_name)}</p>
+        <p>{it.L('To provide the client with a better experience, some of the services offered by [_1] may require permission to access the client\'s cloud storage services, such as Google Drive, to save or load DBot trading strategies. In such instances', it.website_name)}</p>
+        <ul className='bullet'>
+            <li>{it.L('The Company does not store any data related to the client\'s cloud storage service on any of the Company\'s servers. All files are downloaded on the client\'s local machines.')}</li>
+            <li>{it.L('The Company does not share any data related to the client\'s cloud storage service with anyone.')}</li>
+            <li>{it.L('The Company only accesses the client\'s cloud storage when the client\'s action initiates it. Clients can disconnect their storage service at any time.')}</li>
+        </ul>
 
         <div data-show='eucountry'>
             <h2 data-anchor='transfer-of-data'>{it.L('Transfer of data')}</h2>

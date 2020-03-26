@@ -79,7 +79,9 @@ const SocketCache = (() => {
         const key          = makeKey(request, msg_type);
         const response_obj = getPropertyValue(data_obj, key) || {};
 
-        if (moment().isBefore(response_obj.expires)) {
+        if (!response_obj.expires && !key) { // Do nothing if there is nothing to validate/invalidate
+            return undefined;
+        } else if (moment().isBefore(response_obj.expires)) {
             response = response_obj.value;
         } else { // remove if expired
             remove(key);

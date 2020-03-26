@@ -7,6 +7,7 @@ const Redirect                = require('./redirect');
 const AccountTransfer         = require('../pages/cashier/account_transfer');
 const Cashier                 = require('../pages/cashier/cashier');
 const DepositWithdraw         = require('../pages/cashier/deposit_withdraw');
+const DP2P                    = require('../pages/cashier/dp2p');
 const PaymentAgentList        = require('../pages/cashier/payment_agent_list');
 const PaymentAgentWithdraw    = require('../pages/cashier/payment_agent_withdraw');
 const Endpoint                = require('../pages/endpoint');
@@ -22,6 +23,7 @@ const PaymentAgentTransfer    = require('../pages/user/account/payment_agent_tra
 const Portfolio               = require('../pages/user/account/portfolio/portfolio.init');
 const ProfitTable             = require('../pages/user/account/profit_table/profit_table.init');
 const Settings                = require('../pages/user/account/settings');
+const AccountClosure          = require('../pages/user/account/settings/account_closure');
 const APIToken                = require('../pages/user/account/settings/api_token');
 const AuthorisedApps          = require('../pages/user/account/settings/authorised_apps');
 const FinancialAssessment     = require('../pages/user/account/settings/financial_assessment');
@@ -53,7 +55,6 @@ const Contact             = require('../../static/pages/contact');
 const Contact2            = require('../../static/pages/contact_2');
 const GetStarted          = require('../../static/pages/get_started');
 const Home                = require('../../static/pages/home');
-const KeepSafe            = require('../../static/pages/keep_safe');
 const JobDetails          = require('../../static/pages/job_details');
 const Platforms           = require('../../static/pages/platforms');
 const Regulation          = require('../../static/pages/regulation');
@@ -77,11 +78,13 @@ const pages_config = {
     cfds                     : { module: GetStarted.CFDs },
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
+    closure                  : { module: AccountClosure,             is_authenticated: true },
     contact                  : { module: Contact },
     cryptocurrencies         : { module: GetStarted.Cryptocurrencies },
     cyberjaya                : { module: StaticPages.Locations },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
     download                 : { module: MetatraderDownloadUI },
+    dp2p                     : { module: DP2P,                       is_authenticated: true },
     dubai                    : { module: StaticPages.Locations },
     economic_calendar        : { module: EconomicCalendar },
     endpoint                 : { module: Endpoint },
@@ -133,7 +136,6 @@ const pages_config = {
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
     'job-details'            : { module: JobDetails },
-    'keep-safe'              : { module: KeepSafe },
     'new-account'            : { module: NewAccount,                     not_authenticated: true },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },

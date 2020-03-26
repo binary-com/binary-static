@@ -1,11 +1,14 @@
-import React                                       from 'react';
-import Loading                                     from '../../_common/components/loading.jsx';
+import React             from 'react';
+import {
+    AuthenticateMessage,
+    UnsupportedMessage } from '../_includes/authenticate_message.jsx';
+import { Button }        from '../../_common/components/elements.jsx';
+import Loading           from '../../_common/components/loading.jsx';
 import {
     TabContainer,
     TabContent,
     TabContentContainer,
-    TabsSubtabs }                                  from '../../_common/components/tabs.jsx';
-import { AuthenticateMessage, UnsupportedMessage } from '../_includes/authenticate_message.jsx';
+    TabsSubtabs }        from '../../_common/components/tabs.jsx';
 
 const ArrowsMobile = ({ direction, parent }) => (
     <div className='align-self-center gr-2 gr-hide gr-show-m gr-no-gutter'>
@@ -27,13 +30,15 @@ const Authenticate = () => (
             <p>{it.L('Your account does not need authentication at this time.[_1]We will inform you if authentication is required in the future.', '<br />')}</p>
         </div>
 
-        <div id='authenticate_only_real_mt5_advanced' className='notice-msg center-text gr-padding-10 invisible'>
-            <p>{it.L('This authentication step is required only if you’re opening a Real MT5 Advanced account.')}</p>
-        </div>
-
         <div id='authentication_verified' className='center-text gr-padding-20 invisible'>
             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
             <h1 className='gr-padding-10'>{it.L('Your account has been verified successfully')}</h1>
+        </div>
+
+        <div id='authentication_unneeded' className='center-text gr-padding-20 invisible'>
+            <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
+            <h1 className='gr-padding-10'>{it.L('You do not need to authenticate your account at this time')}</h1>
+            <p>{it.L('We will inform you when your account needs to be authenticated.')}</p>
         </div>
 
         <div id='authentication_tab' className='gr-padding-20'>
@@ -88,6 +93,18 @@ const Authenticate = () => (
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Your proof of identity has been verified successfully')}</h1>
                         </div>
+
+                        <div id='personal_details_error' className='center-text gr-padding-20 invisible'>
+                            <h2 className='gr-padding-10'>{it.L('Update your personal details')}</h2>
+                            <p>{it.L('We can\'t validate your personal details because there is some information missing.')}</p>
+                            <p>{it.L('Please update your [_1] to continue.', '<span id="missing_personal_fields"></span>')}</p>
+                            <Button
+                                className='button'
+                                href={it.url_for('user/settings/detailsws')}
+                                text={it.L('Update my details')}
+                            />
+                            <p>{it.L('Need help? [_1]Contact us[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+                        </div>
                     </TabContent>
                     <TabContent id='poa'>
                         <div id='authentication'>
@@ -95,12 +112,12 @@ const Authenticate = () => (
                                 <div id='not_authenticated' className='invisible'>
                                     <AuthenticateMessage />
                                 </div>
-    
+
                                 <div id='verified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/valid.svg')} />
                                     <h1>{it.L('Your proof of address has been verified successfully')}</h1>
                                 </div>
-    
+
                                 <div id='pending_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/letter.svg')} />
                                     <h1 className='gr-padding-10'>{it.L('Your proof of address was submitted successfully')}</h1>
@@ -112,13 +129,13 @@ const Authenticate = () => (
                                     <h1 className='gr-padding-10'>{it.L('Your proof of address has expired')}</h1>
                                     <p>{it.L('Kindly send a scan of a valid proof of address to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
                                 </div>
-    
+
                                 <div id='unverified_poa' className='center-text gr-gutter gr-padding-20 invisible'>
                                     <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                                     <h1 className='gr-padding-10'>{it.L('Proof of address verification failed')}</h1>
                                     <p>{it.L('Please check your email for details')}</p>
                                 </div>
-    
+
                                 <p className='center-text notice-msg invisible' id='error_message' />
                             </div>
                         </div>

@@ -116,18 +116,18 @@ const Index = () => (
                             <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] [_2]staff[_3] and contractors worldwide', '200', `<a href="${it.url_for('binary-in-numbers?anchor=employee')}">`, '</a>')} />
+                            <BoxInner className='border-right-top' href='/binary-in-numbers?anchor=employee' image='staff' text={it.L('Over [_1] [_2]staff[_3] and contractors worldwide', '300', `<a href="${it.url_for('binary-in-numbers?anchor=employee')}">`, '</a>')} />
                             <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
                         </Box>
                     </div>
                     <div className='gr-row gr-parent'>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' href='https://binarycom.statuspage.io/#system-metrics' target='_blank' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href="https://binarycom.statuspage.io/#system-metrics" target="_blank" rel="noopener noreferrer">', '</a>')} />
-                            <BoxInner className='border-right-bottom gr-padding-30' image='locations' text={it.L('Offices in Malaysia, Malta, Paraguay and UAE')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' image='locations' text={it.L('Offices in Malaysia, Malta, Paraguay and the UAE')} />
                         </Box>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' href='regulation' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. [_1]Learn more[_2]', `<a href="${ it.url_for('regulation') }">`, '</a>')} />
-                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in Chinese, English, French, German, Indonesian, Italian, Polish, Portuguese, Russian, Spanish, Thai and Vietnamese')} />
+                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in Chinese, English, French, German, Italian, Polish, Portuguese, Russian, Spanish, Thai and Vietnamese')} />
                         </Box>
                     </div>
                 </div>
@@ -136,7 +136,7 @@ const Index = () => (
         <div className='container'>
             <div className='gr-parent'>
                 <p>{it.L('[_1] is owned and operated by the Binary Group Ltd. group of companies. For more information, [_2]visit our history page[_3].', it.website_name, `<a href="${ it.url_for('group-history') }">`, '</a>')}</p>
-                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) Ltd, Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd.')}</p>
+                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) LLC, Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd.')}</p>
             </div>
         </div>
     </div>

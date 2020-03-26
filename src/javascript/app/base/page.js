@@ -96,7 +96,7 @@ const Page = (() => {
         }
         Contents.onLoad();
 
-        if (sessionStorage.getItem('showLoginPage')) {
+        if (sessionStorage.getItem('showLoginPage') && !sessionStorage.getItem('closingAccount')) {
             sessionStorage.removeItem('showLoginPage');
             Login.redirectToLogin();
         }
@@ -146,9 +146,11 @@ const Page = (() => {
         }
 
         Cookies.set('affiliate_tracking', cookie_hash, {
-            expires: 365, // expires in 365 days
-            path   : '/',
-            domain : `.${location.hostname.split('.').slice(-2).join('.')}`,
+            expires : 365, // expires in 365 days
+            path    : '/',
+            domain  : `.${location.hostname.split('.').slice(-2).join('.')}`,
+            sameSite: 'none',
+            secure  : true,
         });
         return true;
     };

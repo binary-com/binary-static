@@ -133,19 +133,19 @@ const AccountsTabContent = ({
     </React.Fragment>
 );
 
-const AcademySection = ({ image, header, text }) => (
-    <div className='gr-5 gr-12-m'>
-        <div className='gr-row gr-padding-30'>
-            <div className='gr-3'>
-                <img className='responsive' src={it.url_for(image)} />
-            </div>
-            <div className='gr-9 gr-padding-10'>
-                <strong>{header}</strong>
-                <p>{text}</p>
-            </div>
-        </div>
-    </div>
-);
+// const AcademySection = ({ image, header, text }) => (
+//     <div className='gr-5 gr-12-m'>
+//         <div className='gr-row gr-padding-30'>
+//             <div className='gr-3'>
+//                 <img className='responsive' src={it.url_for(image)} />
+//             </div>
+//             <div className='gr-9 gr-padding-10'>
+//                 <strong>{header}</strong>
+//                 <p>{text}</p>
+//             </div>
+//         </div>
+//     </div>
+// );
 
 const TabCircles = ({ id, number }) => (
     <div className='gr-hide gr-show-m gr-show-p center-text'>
@@ -356,7 +356,7 @@ const Home = () => {
             </div>
 
             <div className='container gr-padding-30 gr-child'>
-                <h2 className='center-text gr-padding-20'>{it.L('[_1] Academy', it.website_name)}</h2>
+                {/* <h2 className='center-text gr-padding-20'>{it.L('[_1] Academy', it.website_name)}</h2>
                 <p className='center-text'>{it.L('Learn to be a better trader and keep up with the latest news and trends in financial trading - all for free.')}</p>
                 <div className='gr-row gr-row-align-center'>
                     <AcademySection
@@ -381,7 +381,7 @@ const Home = () => {
                     </a>
                 </div>
 
-                <SeparatorLine className='gr-padding-30' show_mobile />
+                <SeparatorLine className='gr-padding-30' show_mobile /> */}
 
                 <div id='payment_methods'>
                     <div className='gr-12 gr-padding-20'>
@@ -389,7 +389,7 @@ const Home = () => {
                         <p className='center-text'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
 
                         <div className='gr-12 gr-padding-30'>
-                            <div className='gr-row gr-row-align-center'>
+                            <div className='gr-row'>
                                 <PaymentLogo />
                             </div>
                         </div>

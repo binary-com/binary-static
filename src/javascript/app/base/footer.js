@@ -77,7 +77,7 @@ const Footer = (() => {
                         $dialog_notification.slideUp(200);
                         el_footer.style.paddingBottom = '0px';
                         $status_notification.css('bottom', `${gap_to_notification}px`);
-                        Cookies.set('CookieConsent', 1);
+                        Cookies.set('CookieConsent', 1, { sameSite: 'strict', secure: true });
                     });
                 window.addEventListener('resize', () => {
                     adjustElevioAndScrollup($dialog_notification.height() + gap_dialog_to_elevio,

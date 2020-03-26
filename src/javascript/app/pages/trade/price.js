@@ -255,6 +255,20 @@ const Price = (() => {
             const old_payout = purchase.getAttribute('data-payout');
             if (amount) displayPriceMovement(amount, old_price, proposal.display_value);
             if (payout_amount) displayPriceMovement(payout_amount, old_payout, proposal.payout);
+            Array.from(purchase.attributes).filter(attr => {
+                if (!/^data/.test(attr.name) ||
+                    /^data-balloon$/.test(attr.name) ||
+                    /data-balloon/.test(attr.name) ||
+                    /^data-passthrough$/.test(attr.name)) {
+                    return false;
+                }
+                return true;
+            })
+                .forEach(attr=> {
+                    // remove all params before setting new ones
+                    // to remove any leftover ones like barrier2
+                    purchase.removeAttribute(attr.name);
+                });
             purchase.setAttribute('data-purchase-id', id);
             purchase.setAttribute('data-ask-price', proposal.ask_price);
             purchase.setAttribute('data-display_value', proposal.display_value);

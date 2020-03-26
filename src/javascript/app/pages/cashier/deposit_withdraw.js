@@ -246,6 +246,12 @@ const DepositWithdraw = (() => {
     const onLoad = () => {
         $loading = $('#loading_cashier');
         getCashierType();
+
+        if (cashier_type === 'withdraw' && +Client.get('balance') === 0) {
+            showError('no_balance_error');
+            return;
+        }
+
         const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
         const req_statement          = BinarySocket.send({ statement: 1, limit: 1 });
         const req_mt5_login_list     = BinarySocket.send({ mt5_login_list: 1 });

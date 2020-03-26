@@ -1,19 +1,21 @@
-const DocumentUploader    = require('@binary-com/binary-document-uploader');
-const Cookies             = require('js-cookie');
-const Onfido              = require('onfido-sdk-ui');
-const Client              = require('../../../base/client');
-const Header              = require('../../../base/header');
-const BinarySocket        = require('../../../base/socket');
-const CompressImage       = require('../../../../_common/image_utility').compressImg;
-const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
-const isImageType         = require('../../../../_common/image_utility').isImageType;
-const getLanguage         = require('../../../../_common/language').get;
-const localize            = require('../../../../_common/localize').localize;
-const State               = require('../../../../_common/storage').State;
-const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
-const TabSelector         = require('../../../../_common/tab_selector');
-const Url                 = require('../../../../_common/url');
-const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
+const DocumentUploader        = require('@binary-com/binary-document-uploader');
+const Cookies                 = require('js-cookie');
+const Onfido                  = require('onfido-sdk-ui');
+const onfido_phrases          = require('./onfido_phrases');
+const Client                  = require('../../../base/client');
+const Header                  = require('../../../base/header');
+const BinarySocket            = require('../../../base/socket');
+const isAuthenticationAllowed = require('../../../../_common/base/client_base').isAuthenticationAllowed;
+const CompressImage           = require('../../../../_common/image_utility').compressImg;
+const ConvertToBase64         = require('../../../../_common/image_utility').convertToBase64;
+const isImageType             = require('../../../../_common/image_utility').isImageType;
+const getLanguage             = require('../../../../_common/language').get;
+const localize                = require('../../../../_common/localize').localize;
+const State                   = require('../../../../_common/storage').State;
+const toTitleCase             = require('../../../../_common/string_util').toTitleCase;
+const TabSelector             = require('../../../../_common/tab_selector');
+const Url                     = require('../../../../_common/url');
+const showLoadingImage        = require('../../../../_common/utility').showLoadingImage;
 
 /*
     To handle onfido unsupported country, we handle the functions separately,
@@ -832,20 +834,31 @@ const Authenticate = (() => {
         });
     });
 
-    const initOnfido = async (sdk_token) => {
+    const initOnfido = async (sdk_token, documents_supported) => {
         if (!$('#onfido').is(':parent')) {
             $('#onfido').setVisibility(1);
+
             try {
                 onfido = Onfido.init({
                     containerId: 'onfido',
                     language   : {
-                        locale: getLanguage().toLowerCase() || 'en',
+                        locale : getLanguage().toLowerCase() || 'en',
+                        phrases: onfido_phrases[getLanguage().toLowerCase()],
                     },
                     token     : sdk_token,
                     useModal  : false,
                     onComplete: handleComplete,
                     steps     : [
-                        'document',
+                        {
+                            type   : 'document',
+                            options: {
+                                documentTypes: {
+                                    passport              : documents_supported.some(doc => /Passport/g.test(doc)),
+                                    driving_licence       : documents_supported.some(doc => /Driving Licence/g.test(doc)),
+                                    national_identity_card: documents_supported.some(doc => /National Identity Card/g.test(doc)),
+                                },
+                            },
+                        },
                         'face',
                     ],
                 });
@@ -883,23 +896,21 @@ const Authenticate = (() => {
                 service_token: 1,
                 service      : 'onfido',
             }).then((response) => {
-                if (response.error || !response.service_token) {
-                    if (response.error.code === 'UnsupportedCountry') {
-                        onfido_unsupported = true;
-                    }
-                    resolve();
+                if (response.error) {
+                    resolve({ error: response.error });
                     return;
                 }
                 const token = response.service_token.token;
                 const in_90_minutes = 1 / 16;
                 Cookies.set('onfido_token', token, {
-                    expires: in_90_minutes,
-                    secure : true,
+                    expires : in_90_minutes,
+                    secure  : true,
+                    sameSite: 'strict',
                 });
-                resolve(token);
+                resolve({ token });
             });
         } else {
-            resolve(onfido_cookie);
+            resolve({ token: onfido_cookie });
         }
     });
 
@@ -911,32 +922,62 @@ const Authenticate = (() => {
     };
 
     const initAuthentication = async () => {
+        let has_personal_details_error = false;
         const authentication_status = await getAuthenticationStatus();
-        const onfido_token = await getOnfidoServiceToken();
 
         if (!authentication_status || authentication_status.error) {
             $('#authentication_tab').setVisibility(0);
             $('#error_occured').setVisibility(1);
             return;
         }
-        
+
+        const service_token_response = await getOnfidoServiceToken();
+
+        if (
+            service_token_response.error &&
+            service_token_response.error.code === 'MissingPersonalDetails'
+        ) {
+            has_personal_details_error = true;
+            const personal_fields_errors = {
+                address_city    : localize('Town/City'),
+                address_line_1  : localize('First line of home address'),
+                address_postcode: localize('Postal Code/ZIP'),
+                address_state   : localize('State/Province'),
+                email           : localize('Email address'),
+                phone           : localize('Telephone'),
+                place_of_birth  : localize('Place of birth'),
+                residence       : localize('Country of Residence'),
+            };
+
+            const missing_personal_fields = Object.keys(service_token_response.error.details)
+                .map(field => (personal_fields_errors[field].toLowerCase() || field));
+
+            const error_msgs = missing_personal_fields ? missing_personal_fields.join(', ') : '';
+
+            $('#missing_personal_fields').html(error_msgs);
+        }
+
         const { identity, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
+        onfido_unsupported = !identity.services.onfido.is_country_supported;
+        const documents_supported = identity.services.onfido.documents_supported;
 
         if (is_fully_authenticated) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }
 
-        if (!identity.further_resubmissions_allowed) {
+        if (has_personal_details_error) {
+            $('#personal_details_error').setVisibility(1);
+        } else if (!identity.further_resubmissions_allowed) {
             switch (identity.status) {
                 case 'none':
                     if (onfido_unsupported) {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
-                        initOnfido(onfido_token);
+                        initOnfido(service_token_response.token, documents_supported);
                     }
                     break;
                 case 'pending':
@@ -958,7 +999,7 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido(onfido_token);
+            initOnfido(service_token_response.token, documents_supported);
         }
         switch (document.status) {
             case 'none': {
@@ -991,18 +1032,16 @@ const Authenticate = (() => {
     const onLoad = async () => {
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
-        
+        if (!isAuthenticationAllowed()) {
+            $('#authentication_tab').setVisibility(0);
+            $('#authentication_loading').setVisibility(0);
+            $('#authentication_unneeded').setVisibility(1);
+        }
+
         const has_svg_account = Client.hasSvgAccount();
         if (is_required || has_svg_account){
             initTab();
             initAuthentication();
-
-            const { identity, document } = authentication_status;
-            const is_not_fully_authenticated = identity.status !== 'verified' && document.status !== 'verified';
-            const is_not_high_risk = !/high/.test(State.getResponse('get_account_status.risk_classification'));
-            if (is_not_fully_authenticated && has_svg_account && is_not_high_risk) {
-                $('#authenticate_only_real_mt5_advanced').setVisibility(1);
-            }
         } else {
             $('#authentication_tab').setVisibility(0);
             $('#not_required_msg').setVisibility(1);

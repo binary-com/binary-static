@@ -3,6 +3,7 @@ module.exports = [
     // ==================== Section: "app" ====================
     ['cashier',                                 'app/cashier/index',                           'default',    'Cashier'],
     ['cashier/account_transfer',                'app/cashier/account_transfer',                'default',    'Transfer Between Accounts'],
+    ['cashier/dp2p',                            'app/cashier/dp2p',                            'default',    'P2P'],
     ['cashier/epg_forwardws',                   'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
@@ -35,6 +36,7 @@ module.exports = [
     ['user/reality_check_summary',              'app/user/reality_check/summary',              'default',    'Reality Check'],
     ['user/reset_passwordws',                   'app/user/reset_password',                     'default',    'Password Reset'],
     ['user/securityws',                         'app/user/security',                           'default',    'Security'],
+    ['user/security/closure',                   'app/user/security/account_closure',           'default',    'Account Closure'],
     ['user/security/api_tokenws',               'app/user/security/api_token',                 'default',    'API Token'],
     ['user/security/authorised_appsws',         'app/user/security/authorised_apps',           'default',    'Authorised Applications'],
     ['user/security/change_passwordws',         'app/user/security/change_password',           'default',    'Change Password'],
@@ -115,5 +117,4 @@ module.exports = [
     ['graduates',                               'landing_pages/graduate_program',                 null,        'Binary.com Graduate Program',        'NOT-en'],
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
-    ['binary-grid',                                'landing_pages/binary_grid',                   null,        'Our New Mobile Trading App',         'NOT-en'],
 ];

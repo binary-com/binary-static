@@ -124,7 +124,7 @@ const Download = () => {
                 <div className='gr-row'>
                     <DesktopDownloadBlock
                         id='windows'
-                        href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe'
+                        href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
                     />
                     <DesktopDownloadBlock
                         id='mac'
@@ -177,7 +177,7 @@ const Download = () => {
             <SeparatorLine no_wrapper />
 
             <div className='gr-padding-20'>
-                <h1>{it.L('MT5 for web platform')}</h1>
+                <h1>{it.L('MT5 web platform')}</h1>
                 <p className='no-margin'>
                     {it.L(
                         'Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required.'
@@ -204,7 +204,15 @@ const Download = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        <span>{it.L('Start trading MT5 on web platform')}</span>
+                        <span>{it.L('Trade with Real account')}</span>
+                    </a>
+                    <a
+                        className='button button-secondary'
+                        href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        <span>{it.L('Trade with Demo account')}</span>
                     </a>
                 </div>
             </div>

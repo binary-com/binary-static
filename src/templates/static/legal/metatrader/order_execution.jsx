@@ -67,6 +67,7 @@ const OrderExecution = () => (
             <li>{it.L('GBE Brokers')}</li>
             <li>{it.L('FXOpen')}</li>
             <li>{it.L('CFH Clearing Limited')}</li>
+            <li>{it.L('TopFX')}</li>
         </ul>
 
         <h2 data-anchor='order-handling'>{it.L('G. Order handling')}</h2>

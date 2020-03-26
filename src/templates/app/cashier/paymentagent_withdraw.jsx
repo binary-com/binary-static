@@ -78,7 +78,15 @@ const PaymentAgentWithdraw = () => (
             <form id='viewConfirm' className='viewItem invisible'>
                 <p>{it.L('Please confirm the transaction details in order to complete the transfer:')} </p>
 
-                <p>{it.L('Transfer to')}: <span id='lblAgentName' /><br />{it.L('Amount')}: <span id='lblCurrency' /> <span id='lblAmount' /></p>
+                <p>
+                    {it.L('Transfer to')}: <span id='lblAgentName' />
+                    <br />
+                    {it.L('Amount')}: <span id='lblCurrency' /> <span id='lblAmount' />
+                    <br />
+                    <span id='lblPaymentRefContainer' className='invisible'>
+                        {it.L('Payment reference')}: <span id='lblPaymentRef' />
+                    </span>
+                </p>
 
                 <SubmitButton
                     custom_btn_id='btnBack'
@@ -114,6 +122,11 @@ const PaymentAgentWithdraw = () => (
                             <SeparatorLine className='gr-padding-10' show_mobile />
                         </div>
                         <FormRow label={it.L('Amount')} id='txtAmount' type='text' />
+                        <div className='gr-9 gr-centered'>
+                            <SeparatorLine className='gr-padding-10' show_mobile />
+                        </div>
+                        <FormRow label={it.L('Payment reference')} id='txtPaymentRef' type='text' hint={it.L('If you have a payment reference (for example 122), you can enter it here.')} />
+                        <p id='form-error' className='error-msg center-text invisible' />
                         <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
                         <div className='gr-8 gr-centered gr-padding-20'>
                             {it.L('Note: [_1] does not charge any transfer fees.', it.website_name)}

@@ -3,7 +3,8 @@ import {
     TabContainer,
     TabContent,
     TabContentContainer,
-    TabsSubtabs }        from '../_common/components/tabs.jsx';
+    TabsSubtabs,
+} from '../_common/components/tabs.jsx';
 import { SeparatorLine } from '../_common/components/separator_line.jsx';
 
 const Platforms = ({
@@ -15,10 +16,7 @@ const Platforms = ({
     description,
     text,
     status,
-    url = '',
-    target,
-    button_text,
-    download = '',
+    buttons,
 }) => (
     <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
         <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
@@ -30,42 +28,19 @@ const Platforms = ({
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    { url &&
-                        <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
-);
-
-const PlatformsGridApp = ({
-    className,
-    data_show,
-    image_path = 'platforms',
-    image,
-    header,
-    status,
-    description,
-    text,
-    url = '',
-    target,
-}) => (
-    <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
-        <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m align-self-center'>
-            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
-        </div>
-        <div className='gr-8 gr-12-m gr-12-p'>
-            <h3 className={`section-title ${status || ''}`}>{header}</h3>
-            <strong>{description}</strong>
-            <p>{text}</p>
-            <div className='gr-row'>
-                <div className='gr-12'>
-                    <p>
-                        <a className='button-secondary android-download-grid-app download-grid-app' href={url} target={target || undefined}><span>{it.L('Download for Android')}</span></a>
-                        <span className='ios-download-grid-app invisible'>{it.L('Binary Grid is currently only available on Android devices.')}</span>
-                        <span className='divider-sm' />
-                    </p>
+                    {buttons && buttons.map(button =>
+                        <a
+                            key={button.text}
+                            style={{ display: 'inline-block', marginRight: '5px' }}
+                            className='button-secondary'
+                            download={button.download || undefined}
+                            href={button.url}
+                            target={button.target || undefined}
+                            rel={/http/.test(button.url) ? 'noopener noreferrer' : undefined}
+                        >
+                            <span>{button.text}</span>
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
@@ -123,7 +98,7 @@ const PlatformsSmall = ({
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    { url &&
+                    {url &&
                         <a className='button-secondary' download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
@@ -190,8 +165,8 @@ const Platform = () => (
                     id='platforms_tabs'
                     className='gr-padding-20 gr-parent tab-selector-wrapper'
                     items={[
-                        { id: 'beginner',                text: it.L('Beginner') },
-                        { id: 'advanced',                text: it.L('Advanced') },
+                        { id: 'beginner', text: it.L('Beginner') },
+                        { id: 'advanced', text: it.L('Advanced') },
                         { id: 'platforms_tabs_selector', className: 'tab-selector' },
                     ]}
                 />
@@ -215,32 +190,33 @@ const Platform = () => (
                                 header='SmartTrader'
                                 description={it.L('Premier binary options trading platform')}
                                 text={it.L('Trade in the world\'s financial markets with a simple and user-friendly online platform.')}
-                                url={it.url_for('trading')}
-                                button_text={it.L('Trade now')}
-                            />
-                            <PlatformsGridApp
-                                image='grid-app-sm'
-                                data_show='-eucountry'
-                                status='new'
-                                header={it.L('Binary Grid')}
-                                description={it.L('An exciting mobile trading experience')}
-                                text={it.L('Just tap or swipe to open Rise/Fall, Ends Outside, and Ends Between contracts with our fun mobile trading app.')}
-                                url={it.url_for('binary-grid')}
-                                target='_blank'
+                                buttons={[
+                                    { text: it.L('Trade now'), url: it.url_for('trading') },
+                                ]}
                             />
                             <Platforms
                                 image='tick-trade'
                                 header={it.L('Tick Trade Android App')}
                                 description={it.L('Ultra fast on-the-go trading')}
                                 text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
-                                url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                                button_text={it.L('Download Tick Trade App')}
-                                download='true'
+                                buttons={[
+                                    { text: it.L('Download Tick Trade App'), url: 'https://ticktrade.binary.com/download/ticktrade-app.apk', download: 'true' },
+                                ]}
                             />
+                            {/* TODO: Uncomment this when P2P Mobile app is ready */}
+                            {/* <Platforms
+                                image='dp2p-app'
+                                header={it.L('DP2P app')}
+                                description={it.L('Peer-to-peer fiat exchange')}
+                                text={it.L('The fast, easy, and convenient way to make deposits and withdrawals with zero commission fees.')}
+                                url=''
+                                button_text={it.L('Download DP2P app')}
+                                download='true'
+                            /> */}
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}
-                                className='desktop-app invisible financial-only'
+                                className='invisible financial-only'
                                 description={it.L('Enhanced performance. Intuitively simple.')}
                                 text={it.L('Access our products and services from a single app.')}
                             />
@@ -251,26 +227,28 @@ const Platform = () => (
                                 header={it.L('MetaTrader 5')}
                                 description={it.L('Advanced multi-asset trading platform')}
                                 text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
-                                url={it.url_for('user/metatrader')}
-                                button_text={it.L('Access MT5 dashboard')}
+                                buttons={[
+                                    { text: it.L('Access MT5 dashboard'), url: it.url_for('user/metatrader') },
+                                    { text: it.L('Download MT5'), url: it.url_for('metatrader/download') },
+                                ]}
                             />
                             <Platforms
                                 image='webtrader'
                                 header={it.L('Binary WebTrader')}
                                 description={it.L('Advanced binary options trading interface')}
                                 text={it.L('Monitor the movements of your favourite assets and markets at the same time.')}
-                                url='https://webtrader.binary.com'
-                                target='_blank'
-                                button_text={it.L('Try WebTrader')}
+                                buttons={[
+                                    { text: it.L('Try WebTrader'), url: 'https://webtrader.binary.com', target: '_blank' },
+                                ]}
                             />
                             <Platforms
                                 image='binarybot'
                                 header={it.L('Binary Bot')}
                                 description={it.L('Auto-trader programming tool')}
                                 text={it.L('Automate your trading strategies with our simple, "drag-and-drop" bot creation tool.')}
-                                url='https://bot.binary.com'
-                                target='_blank'
-                                button_text={it.L('Try Binary Bot')}
+                                buttons={[
+                                    { text: it.L('Try Binary Bot'), url: 'https://bot.binary.com', target: '_blank' },
+                                ]}
                             />
                         </TabContent>
                     </TabContentContainer>

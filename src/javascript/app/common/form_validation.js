@@ -142,8 +142,8 @@ const Validation = (() => {
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
     const validAddress      = value => !/[`~!$%^&*_=+[}{\]\\"?><|]+/.test(value);
-    const validPostCode     = value => /^[a-zA-Z\d-\s]*$/.test(value);
-    const validPhone        = value => /^\+?((-|\s)*[0-9])*$/.test(value);
+    const validPostCode     = value => /^[\w\s-]*$/.test(value);
+    const validPhone        = value => /^\+((-|\s)*[0-9])*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;
     const validTaxID        = value => /^[a-zA-Z0-9]*[\w-]*$/.test(value);
@@ -211,7 +211,7 @@ const Validation = (() => {
             address      : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: [_1]', '- . \' # ; : ( ) , @ /') },
             letter_symbol: { func: validLetterSymbol, message: localize('Only letters, space, hyphen, period, and apostrophe are allowed.') },
             postcode     : { func: validPostCode,     message: localize('Only letters, numbers, space, and hyphen are allowed.') },
-            phone        : { func: validPhone,        message: localize('Only numbers, hyphens, and spaces are allowed.') },
+            phone        : { func: validPhone,        message: localize('Please enter a valid phone number, including the country code (e.g. +15417541234).') },
             compare      : { func: validCompare,      message: localize('The two passwords that you entered do not match.') },
             not_equal    : { func: validNotEqual,     message: localizeKeepPlaceholders('[_1] and [_2] cannot be the same.') },
             min          : { func: validMin,          message: localizeKeepPlaceholders('Minimum of [_1] characters required.') },
