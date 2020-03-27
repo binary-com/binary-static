@@ -123,7 +123,7 @@ const BinaryOptions = () => {
                         <HeaderSecondary header={it.L('Advantages of binary options trading')} />
                         <p>{it.L('Aside from the simplicity of its \'yes or no\' proposition, binary options trading is also very flexible. It gives you the ability to trade:')}</p>
                         <div className='gr-row gr-parent gr-padding-10'>
-                            <SectionTicked header={it.L('All markets')}           text={it.L('Trade on underlying markets that include Forex, indices, commodities, and more.')} />
+                            <SectionTicked header={it.L('All markets')}           text={it.L('Trade on underlying markets that include Forex, stock indices, commodities, and more.')} />
                             <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
                             <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from 10 seconds to 365 days.')} />
                             <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts up to USD 50,000. Losses are limited to your initial stake and nothing more.')} />
@@ -141,7 +141,7 @@ const BinaryOptions = () => {
                         </ul>
                         <strong>{it.L('All conditions and durations')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('All markets and conditions')}   text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
+                            <ListStrong header={it.L('All markets and conditions')}   text={it.L('Trade currencies, stock indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
                             <ListStrong header={it.L('Short to long-term durations')} text={it.L('Choose timeframes from 10 seconds to 365 days')} />
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
@@ -179,7 +179,7 @@ const BinaryOptions = () => {
                         <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from four available markets:')}>
                             <ul className='checked'>
                                 <ListStrong header={it.L('Forex')}             text={it.L('Major and minor pairs, plus Smart FX indices')} />
-                                <ListStrong header={it.L('Indices')}           text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
+                                <ListStrong header={it.L('Stock Indices')}     text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
                                 <ListStrong header={it.L('Commodities')}       text={it.L('Major commodities such as gold, silver, and oil')} />
                                 <ListStrong header={it.L('Synthetic Indices')} text={it.L('Our proprietary synthetic indices that simulate market forces')} />
                             </ul>
@@ -257,10 +257,10 @@ const BinaryOptions = () => {
 
                         <HeaderSecondary header={it.L('Available markets')} data-anchor='available-markets' />
                         <div className='gr-row'>
-                            <SectionSmall image='range-of-markets/forex'   header={it.L('Forex')}   text={it.L('Major pairs, minor pairs, and Smart FX indices.')} />
-                            <SectionSmall image='range-of-markets/indices' header={it.L('Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market.')} />
+                            <SectionSmall image='range-of-markets/forex'   header={it.L('Forex')}         text={it.L('Major pairs, minor pairs, and Smart FX indices.')} />
+                            <SectionSmall image='range-of-markets/indices' header={it.L('Stock Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market.')} />
 
-                            <SectionSmall image='range-of-markets/commodities' header={it.L('Commodities')}        text={it.L('All four precious metals, plus energy.')} />
+                            <SectionSmall image='range-of-markets/commodities' header={it.L('Commodities')}       text={it.L('All four precious metals, plus energy.')} />
                             <SectionSmall image='range-of-markets/volatility'  header={it.L('Synthetic Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
                         </div>
 
@@ -274,9 +274,9 @@ const BinaryOptions = () => {
                             <li>{it.L('USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
                         </ul>
 
-                        <HeaderSecondary header={it.L('Indices')} data-anchor='indices' />
-                        <p>{it.L('Enjoy exciting opportunities to trade indices with the benefit of real-time charts and pricing.')}</p>
-                        <p>{it.L('Our indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges.')}</p>
+                        <HeaderSecondary header={it.L('Stock Indices')} data-anchor='indices' />
+                        <p>{it.L('Enjoy exciting opportunities to trade stock indices with the benefit of real-time charts and pricing.')}</p>
+                        <p>{it.L('Our stock indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges.')}</p>
 
                         <HeaderSecondary header={it.L('Commodities')} data-anchor='commodities' />
                         <p>{it.L('We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities.')}</p>
@@ -307,7 +307,7 @@ const BinaryOptions = () => {
                                 { word: it.L('Forex'),               dataAnchor: 'forex',               definition: it.L('In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.') },
                                 { word: it.L('GMT'),                 dataAnchor: 'gmt',                 definition: it.L('GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.', it.website_name) },
                                 { word: it.L('Higher/Lower trades'), dataAnchor: 'barriers',            definition: it.L('These are trades where the trader predicts if a market will finish higher or lower than a specified price target.') },
-                                { word: it.L('Indices'),             dataAnchor: 'indices',             definition: it.L('Stock market indices measure the value of a selection of companies in the stock market.') },
+                                { word: it.L('Stock Indices'),       dataAnchor: 'indices',             definition: it.L('Stock market indices measure the value of a selection of companies in the stock market.') },
                                 { word: it.L('In/Out trades'),       dataAnchor: 'in-out-trades',       definition: it.L('These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also \'Stays Between/Goes Outside trades\').') },
                                 { word: it.L('Market exit price'),   dataAnchor: 'market-exit-price',   definition: it.L('The market exit price is the price in effect at the end of the contract period.') },
                                 { word: it.L('No Touch trades'),     dataAnchor: 'no-touch-trades',     definition: it.L('These are trades where the trader selects a price target, and predicts that the market will never touch the target before the expiry of the trade.') },
