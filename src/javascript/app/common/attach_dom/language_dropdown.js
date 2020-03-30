@@ -16,7 +16,7 @@ const createLanguageDropDown = (website_status) => {
         .text(mapCodeToLanguage(current_language));
 
     // TODO: REMOVE/CHANGE this after addition of DE or TH languages
-    const unsupported_languages = ['de', 'id', 'th'];
+    const unsupported_languages = ['de', 'th'];
 
     const languages        = website_status.supported_languages.sort((a, b) => ((a === 'EN' || a < b) ? -1 : 1));
     const $select_language = $languages.find(select_language_id);

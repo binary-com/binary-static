@@ -9,6 +9,7 @@ describe('Language', () => {
         // DE   : 'Deutsch', // TODO: uncomment to enable German language
         ES   : 'Español',
         FR   : 'Français',
+        ID   : 'Indonesia',
         IT   : 'Italiano',
         PL   : 'Polish',
         PT   : 'Português',
@@ -55,8 +56,8 @@ describe('Language', () => {
 
     describe('.urlLang()', () => {
         it('works as expected for current url', () => {
-            setURL(`${website_url}it/home.html`);
-            expect(Language.urlLang()).to.eq('it');
+            setURL(`${website_url}id/home.html`);
+            expect(Language.urlLang()).to.eq('id');
         });
         it('works as expected for custom url', () => {
             expect(Language.urlLang(`${website_url}vi/tour.html`)).to.eq('vi');

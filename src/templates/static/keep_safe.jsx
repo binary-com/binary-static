@@ -28,6 +28,7 @@ const KeepSafe = () => (
                     <p>{it.L('Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:')}</p>
                 </div>
                 <div className='gr-row'>
+                    <Box icon='desktop_app'      text={it.L('Download the [_1]desktop app[_2] for the most secure way to access the [_3] website.', `<a href="${it.url_for('platforms')}">`, '</a>', it.website_name)} className='desktop-app invisible' />
                     <Box icon='two_factor'       text={it.L('Enable [_1]two-factor authentication[_2] on your account.', `<a href="${it.url_for('user/security/two_factor_authentication')}">`, '</a>')} />
                     <Box icon='cloudfare'        text={it.L('Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at [_1].', `<a href="${it.url_for('user/security/cloudflare_dns')}">https://1.1.1.1/</a>`)} />
                     <Box icon='login_history'    text={it.L('Monitor recent logins to your account using the [_1]login history[_2] facility.', `<a href="${it.url_for('user/security/iphistoryws')}">`, '</a>')} />
