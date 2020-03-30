@@ -276,7 +276,7 @@ const BinaryOptions = () => {
 
                         <HeaderSecondary header={it.L('Stock Indices')} data-anchor='indices' />
                         <p>{it.L('Enjoy exciting opportunities to trade stock indices with the benefit of real-time charts and pricing.')}</p>
-                        <p>{it.L('Our stock indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges.')}</p>
+                        <p>{it.L('Our stock indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stock indices may differ from their counterparts on centralised exchanges.')}</p>
 
                         <HeaderSecondary header={it.L('Commodities')} data-anchor='commodities' />
                         <p>{it.L('We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities.')}</p>
