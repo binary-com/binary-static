@@ -27,6 +27,12 @@ describe('IPHistoryData', () => {
                 version: '12.246',
             },
             {
+                // the new edge doesn't have e at the end
+                ua     : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36 Edg/80.0.361.69',
+                name   : 'Edge',
+                version: '80.0.361.69',
+            },
+            {
                 ua     : 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko',
                 name   : 'IE',
                 version: '11.0',

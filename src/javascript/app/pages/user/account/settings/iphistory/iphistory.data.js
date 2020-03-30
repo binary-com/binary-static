@@ -5,7 +5,7 @@ const IPHistoryData = (() => {
         // Regexes stolen from:
         //  https://github.com/biggora/express-useragent/blob/master/lib/express-useragent.js
         const lookup = [
-            { name: 'Edge',       regex: /Edge\/([\d\w.-]+)/i },
+            { name: 'Edge',       regex: /(?:edge|edga|edgios|edg)\/([\d\w.-]+)/i },
             { name: 'SeaMonkey',  regex: /seamonkey\/([\d\w.-]+)/i },
             { name: 'Opera',      regex: /(?:opera|opr)\/([\d\w.-]+)/i },
             { name: 'Chromium',   regex: /(?:chromium|crios)\/([\d\w.-]+)/i },
