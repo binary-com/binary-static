@@ -15,9 +15,16 @@ program
 
 const config = [
     {
-        url_prefix: 'https://www.binary.com/',
-        filename  : 'sitemap.xml',
-        section   : 'app',
+        url_prefix : 'https://www.binary.com/',
+        filename   : 'sitemap.xml',
+        lang_filter: '^(?!id$)',
+        section    : 'app',
+    },
+    {
+        url_prefix : 'https://www.binary.me/',
+        filename   : 'sitemap.id.xml',
+        lang_filter: '^id$',
+        section    : 'app',
     },
 ];
 let excluded;

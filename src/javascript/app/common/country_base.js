@@ -18,6 +18,8 @@ const isEuCountry = () => {
     );
 };
 
+const isIndonesia = () => State.getResponse('website_status.clients_country') === 'id';
+
 const isExcludedFromCfd = () => {
     const cfd_excluded_regex = new RegExp('^fr$');
     const clients_country = Client.get('residence') || State.getResponse('website_status.clients_country');
@@ -26,5 +28,6 @@ const isExcludedFromCfd = () => {
 
 module.exports = {
     isEuCountry,
+    isIndonesia,
     isExcludedFromCfd,
 };
