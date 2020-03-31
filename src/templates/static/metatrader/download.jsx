@@ -105,7 +105,7 @@ const DesktopDownloadBlock = ({
 
 const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => (
     <div className={`gr-padding-20 desktop-apps${is_first_child ? ' gr-parent' : ''}`}>
-        {has_desktop_app ?
+        {has_desktop_app &&
             <React.Fragment>
                 <Heading system='windows' />
                 <Heading system='linux'>{it.L('MT5 for Linux')}</Heading>
@@ -128,12 +128,10 @@ const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => (
                 <AlternativeDescription system='windows' alt1={`<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`} />
                 <AlternativeDescription system='linux' alt1={`<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows')}</a>`} />
             </React.Fragment>
-            :
-            <h1>{it.L('Looking for Desktop apps?')}</h1>
         }
         <p className='foot-note notice-msg'>
             {it.L(
-                'The MT5 platform is not supported by macOS Catalina, Windows XP, Windows 2003, and Windows Vista.'
+                'The MT5 platform is not supported by macOS, Windows XP, Windows 2003, and Windows Vista.'
             )}
         </p>
     </div>
