@@ -188,7 +188,7 @@ jobs:
           k8s_svc_name: "production-binary-com"
       
 workflows:
-  build_and_push_master:
+  test:
     jobs:
       - test
   tagged_release_staging:
