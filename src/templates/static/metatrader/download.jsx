@@ -103,39 +103,40 @@ const DesktopDownloadBlock = ({
     </div>
 );
 
-const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => (
-    <div className={`gr-padding-20 desktop-apps${is_first_child ? ' gr-parent' : ''}`}>
-        {has_desktop_app &&
-            <React.Fragment>
-                <Heading system='windows' />
-                <Heading system='linux'>{it.L('MT5 for Linux')}</Heading>
-                <p>
-                    {it.L(
-                        'Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.'
-                    )}
-                </p>
-                <div className='gr-row'>
-                    <DesktopDownloadBlock
-                        id='windows'
-                        href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
-                    />
-                    <DesktopDownloadBlock
-                        id='linux'
-                        href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux'
-                        target='_blank'
-                    />
-                </div>
-                <AlternativeDescription system='windows' alt1={`<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`} />
-                <AlternativeDescription system='linux' alt1={`<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows')}</a>`} />
-            </React.Fragment>
-        }
-        <p className='foot-note notice-msg'>
-            {it.L(
-                'The MT5 platform is not supported by macOS, Windows XP, Windows 2003, and Windows Vista.'
-            )}
-        </p>
-    </div>
-);
+const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
+    const txt_unsupported = it.L('The MT5 desktop app is not supported by macOS, Windows XP, Windows 2003, and Windows Vista.');
+    return (
+        <div className={`gr-padding-20 desktop-apps${is_first_child ? ' gr-parent' : ''}`}>
+            {has_desktop_app ?
+                <React.Fragment>
+                    <Heading system='windows' />
+                    <Heading system='linux'>{it.L('MT5 for Linux')}</Heading>
+                    <p>
+                        {it.L(
+                            'Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.'
+                        )}
+                    </p>
+                    <div className='gr-row'>
+                        <DesktopDownloadBlock
+                            id='windows'
+                            href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
+                        />
+                        <DesktopDownloadBlock
+                            id='linux'
+                            href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux'
+                            target='_blank'
+                        />
+                    </div>
+                    <AlternativeDescription system='windows' alt1={`<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`} />
+                    <AlternativeDescription system='linux' alt1={`<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows')}</a>`} />
+                    <p className='foot-note notice-msg'>{txt_unsupported}</p>
+                </React.Fragment>
+                :
+                <p className='foot-note notice-msg'>{it.L('Looking for desktop apps?')}{' '}{txt_unsupported}</p>
+            }
+        </div>
+    );
+};
 
 const MT5ForMobile = ({ is_first_child }) => (
     <div className={`gr-padding-30${is_first_child ? ' gr-parent' : ''}`}>
