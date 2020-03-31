@@ -108,6 +108,11 @@ const AccountTransfer = (() => {
         if (/iom|malta/.test(Client.get('landing_company_shortcode'))) {
             el_transfer_fee.setVisibility(0);
         }
+
+        // transfer limit is calculated by USD, so for USD the amount will not vary based on exchange rates
+        if (client_currency !== 'USD') {
+            getElementById('exchange_rate_vary').setVisibility(1);
+        }
         setLoadingVisibility(0);
     };
 
