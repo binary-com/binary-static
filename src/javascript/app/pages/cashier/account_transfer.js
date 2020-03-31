@@ -111,7 +111,7 @@ const AccountTransfer = (() => {
 
         // transfer limit is calculated by USD, so for USD the amount will not vary based on exchange rates
         if (client_currency !== 'USD') {
-            document.getElementsByClassName('exchange-rate-vary')[0].setVisibility(1);
+            getElementById('exchange_rate_vary').setVisibility(1);
         }
         setLoadingVisibility(0);
     };
