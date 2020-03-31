@@ -1,6 +1,7 @@
 const countDecimalPlaces = require('./common_independent').countDecimalPlaces;
 const ActiveSymbols      = require('../../common/active_symbols');
 const BinarySocket       = require('../../base/socket');
+const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 /*
  * Symbols object parses the active_symbols json that we get from socket.send({active_symbols: 'brief'}
@@ -42,7 +43,10 @@ const Symbols = (() => {
                 const market             = ActiveSymbols.getSymbols(active_symbols);
                 is_active_symbols_cached = true;
 
-                resolve(countDecimalPlaces(market[underlying].pip));
+                // if we disable a symbol in API, pipsize won't be available
+                // but we can still draw historical trades' charts
+                // so we should handle getting undefined from this function
+                resolve(countDecimalPlaces(getPropertyValue(market[underlying], ['pip'])));
             });
         })
     );
