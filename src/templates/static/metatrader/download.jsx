@@ -8,15 +8,14 @@ const Heading = ({ system, children }) => (
     > {children || it.L(`MT5 for ${system.replace(/^\w/, c => c.toUpperCase())}`)}
     </h1>
 );
-const AlternativeDescription = ({ system, alt1, alt2 }) => (
+const AlternativeDescription = ({ system, alt1 }) => (
     <p
         className='alternative-download-description invisible'
         id={`${system}-alternative-description`}
     >
         {it.L(
-            'Looking for [_1] or [_2] Desktop apps?',
+            'Looking for the [_1] Desktop app?',
             alt1,
-            alt2
         )}
     </p>
 );
@@ -104,17 +103,11 @@ const DesktopDownloadBlock = ({
     </div>
 );
 
-const Download = () => {
-    const windows_link = `<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows')}</a>`;
-    const linux_link   = `<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`;
-    const mac_link     = `<a data-type='alt-link' data-target='mac' id='enable-mac-alt-link'>${it.L('Mac')}</a>`;
-    return (
-        <div id='mt_download' className='static_full center-text'>
-            <div className='gr-padding-20 desktop-apps'>
-                <h1>{it.L('Start Trading with MetaTrader 5')}</h1>
-                <h3>{it.L('Trade with a powerful interface known as the global industry standard.')}</h3>
+const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => (
+    <div className={`gr-padding-20 desktop-apps${is_first_child ? ' gr-parent' : ''}`}>
+        {has_desktop_app ?
+            <React.Fragment>
                 <Heading system='windows' />
-                <Heading system='mac'>{it.L('MT5 for Mac')}</Heading>
                 <Heading system='linux'>{it.L('MT5 for Linux')}</Heading>
                 <p>
                     {it.L(
@@ -127,98 +120,126 @@ const Download = () => {
                         href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
                     />
                     <DesktopDownloadBlock
-                        id='mac'
-                        href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg'
-                        download='true'
-                    />
-                    <DesktopDownloadBlock
                         id='linux'
                         href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux'
                         target='_blank'
                     />
                 </div>
-                <AlternativeDescription system='mac' alt1={windows_link} alt2={linux_link} />
-                <AlternativeDescription system='windows' alt1={linux_link} alt2={mac_link} />
-                <AlternativeDescription system='linux' alt1={mac_link} alt2={windows_link} />
-                <p className='foot-note notice-msg'>
-                    {it.L(
-                        'The MT5 platform is not supported by macOS Catalina, Windows XP, Windows 2003, and Windows Vista.'
-                    )}
-                </p>
-                <SeparatorLine no_wrapper />
-            </div>
+                <AlternativeDescription system='windows' alt1={`<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`} />
+                <AlternativeDescription system='linux' alt1={`<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows')}</a>`} />
+            </React.Fragment>
+            :
+            <h1>{it.L('Looking for Desktop apps?')}</h1>
+        }
+        <p className='foot-note notice-msg'>
+            {it.L(
+                'The MT5 platform is not supported by macOS Catalina, Windows XP, Windows 2003, and Windows Vista.'
+            )}
+        </p>
+    </div>
+);
 
-            <div className='gr-padding-30'>
-                <h1 className='desktop-apps'>{it.L('MT5 for Mobile')}</h1>
-                <p className='desktop-apps'>{it.L('Access the markets anytime, anywhere using native apps for your iOS or Android devices.')}</p>
-                <div className='gr-row' id='mobile-apps'>
-                    <Heading system='android'>{it.L('MT5 for Android')}</Heading>
-                    <Heading system='ios'>{it.L('MT5 for iOS')}</Heading>
-                    <p id='ios-description' className='ios-description invisible gr-gutter-m'>{it.L('Access the markets anytime, anywhere from your iOS device.')}</p>
-                    <p id='android-description' className='android-description invisible gr-gutter-m'>{it.L('Access the markets anytime, anywhere from your Android device.')}</p>
-                    <div className='gr-2 gr-hide-m' />
-                    <DownloadBlock
-                        image='ios-device.png'
-                        os='ios'
-                        desc={it.L('All versions for iOS')}
-                        target='_blank'
-                        badge='app-store-badge'
-                    />
-                    <DownloadBlock
-                        image='android-device.png'
-                        os='android'
-                        desc={it.L('All versions for Android')}
-                        target='_blank'
-                        badge='google-play-badge'
-                    />
+const MT5ForMobile = ({ is_first_child }) => (
+    <div className={`gr-padding-30${is_first_child ? ' gr-parent' : ''}`}>
+        <h1 className='desktop-apps'>{it.L('MT5 for Mobile')}</h1>
+        <p className='desktop-apps'>{it.L('Access the markets anytime, anywhere using native apps for your iOS or Android devices.')}</p>
+        <div className='gr-row' id='mobile-apps'>
+            <Heading system='android'>{it.L('MT5 for Android')}</Heading>
+            <Heading system='ios'>{it.L('MT5 for iOS')}</Heading>
+            <p id='ios-description' className='ios-description invisible gr-gutter-m'>{it.L('Access the markets anytime, anywhere from your iOS device.')}</p>
+            <p id='android-description' className='android-description invisible gr-gutter-m'>{it.L('Access the markets anytime, anywhere from your Android device.')}</p>
+            <div className='gr-2 gr-hide-m' />
+            <DownloadBlock
+                image='ios-device.png'
+                os='ios'
+                desc={it.L('All versions for iOS')}
+                target='_blank'
+                badge='app-store-badge'
+            />
+            <DownloadBlock
+                image='android-device.png'
+                os='android'
+                desc={it.L('All versions for Android')}
+                target='_blank'
+                badge='google-play-badge'
+            />
+        </div>
+    </div>
+);
+
+const MT5WebPlatform = ({ is_first_child }) => (
+    <div className={`gr-padding-20${is_first_child ? ' gr-parent' : ''}`}>
+        <h1>{it.L('MT5 web platform')}</h1>
+        <p className='no-margin'>
+            {it.L(
+                'Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required.'
+            )}
+        </p>
+        <p className='no-margin'>{it.L('We support the following web browsers:')}</p>
+        <div className='gr-row'>
+            <div className='gr-10 gr-push-1 gr-10-p gr-push-1-p gr-12-m gr-push-0-m gr-padding-30'>
+                <div className='gr-row browsers'>
+                    {['chrome', 'safari', 'firefox', 'opera'].map((browser, idx) => (
+                        <img
+                            key={idx}
+                            className='gr-centered mt-browser-icon'
+                            src={it.url_for(`images/pages/metatrader/icons/${browser}.svg`)}
+                        />
+                    ))}
                 </div>
             </div>
+        </div>
+        <div className='center-text'>
+            <a
+                className='button'
+                href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server'
+                target='_blank'
+                rel='noopener noreferrer'
+            >
+                <span>{it.L('Trade with Real account')}</span>
+            </a>
+            <a
+                className='button button-secondary'
+                href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo'
+                target='_blank'
+                rel='noopener noreferrer'
+            >
+                <span>{it.L('Trade with Demo account')}</span>
+            </a>
+        </div>
+    </div>
+);
+
+const Download = () => (
+    <div id='mt_download' className='static_full center-text'>
+        <div className='gr-padding-20 gr-child'>
+            <h1>{it.L('Start Trading with MetaTrader 5')}</h1>
+            <h3>{it.L('Trade with a powerful interface known as the global industry standard.')}</h3>
+        </div>
+        <div className='invisible' id='mt5_download_platforms'>
+            <MT5DesktopApp is_first_child has_desktop_app />
 
             <SeparatorLine no_wrapper />
 
-            <div className='gr-padding-20'>
-                <h1>{it.L('MT5 web platform')}</h1>
-                <p className='no-margin'>
-                    {it.L(
-                        'Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required.'
-                    )}
-                </p>
-                <p className='no-margin'>{it.L('We support the following web browsers:')}</p>
-                <div className='gr-row'>
-                    <div className='gr-10 gr-push-1 gr-10-p gr-push-1-p gr-12-m gr-push-0-m gr-padding-30'>
-                        <div className='gr-row browsers'>
-                            {['chrome', 'safari', 'firefox', 'opera'].map((browser, idx) => (
-                                <img
-                                    key={idx}
-                                    className='gr-centered mt-browser-icon'
-                                    src={it.url_for(`images/pages/metatrader/icons/${browser}.svg`)}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <div className='center-text'>
-                    <a
-                        className='button'
-                        href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <span>{it.L('Trade with Real account')}</span>
-                    </a>
-                    <a
-                        className='button button-secondary'
-                        href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <span>{it.L('Trade with Demo account')}</span>
-                    </a>
-                </div>
-            </div>
-            <div className='gr-padding-30' />
+            <MT5ForMobile />
+
+            <SeparatorLine no_wrapper />
+
+            <MT5WebPlatform />
         </div>
-    );
-};
+        <div className='invisible' id='mt5_download_mac_platforms'>
+            <MT5WebPlatform is_first_child />
+
+            <SeparatorLine no_wrapper />
+
+            <MT5ForMobile />
+
+            <SeparatorLine no_wrapper />
+
+            <MT5DesktopApp />
+        </div>
+        <div className='gr-padding-30' />
+    </div>
+);
 
 export default Download;
