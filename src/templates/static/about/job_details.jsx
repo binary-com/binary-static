@@ -348,7 +348,7 @@ const JobDetails = () => (
                             <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
-                                text={it.L('You will:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Design and develop applications and platforms based on blockchain technology') },
