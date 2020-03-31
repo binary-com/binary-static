@@ -12,8 +12,6 @@ const toggleDownloadPage = target => {
         document.querySelectorAll('.alternative-download-description').forEach(text => {
             text.setVisibility(text.getAttribute('id') === `${target}-alternative-description`);
         });
-
-        getElementById(`mt5_download_${target === 'mac' ? 'mac_' : ''}platforms`).setVisibility(1);
     } else {
         document.querySelectorAll('.mobile-alternative-download-description')
             .forEach(text => {
@@ -27,6 +25,7 @@ const toggleDownloadPage = target => {
         getElementById(`${target}-heading`).setVisibility(1);
         getElementById(`${target}-description`).setVisibility(1);
     }
+    getElementById(`mt5_download_${target === 'mac' ? 'mac_' : ''}platforms`).setVisibility(1);
 };
 const DownloadMetatrader = (() => {
     const onLoad = () => {
