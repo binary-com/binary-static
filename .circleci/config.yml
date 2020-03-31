@@ -190,10 +190,7 @@ jobs:
 workflows:
   test:
     jobs:
-      - test:
-          filters:
-            branches:
-              only: /.*/
+      - test
   tagged_release_staging:
     jobs:
       - build_push_staging:
