@@ -354,9 +354,7 @@ const MetaTraderConfig = (() => {
                 }
             }),
             onSuccess: (response, $form) => {
-                BinarySocket.send({ get_limits: 1 }).then(() => {
-                    setRemainingTransfer($form);
-                });
+                setRemainingTransfer($form);
             },
         },
         withdrawal: {
@@ -383,9 +381,7 @@ const MetaTraderConfig = (() => {
                 }
             }),
             onSuccess: (response, $form) => {
-                BinarySocket.send({ get_limits: 1 }).then(() => {
-                    setRemainingTransfer($form);
-                });
+                setRemainingTransfer($form);
             },
         },
     };
@@ -505,10 +501,21 @@ const MetaTraderConfig = (() => {
         return is_need_verification;
     };
 
-    const setRemainingTransfer = ($form) => {
-        const remaining_transfers = getPropertyValue(State.getResponse('get_limits'), ['daily_transfers', 'mt5', 'available']);
+    const setRemainingTransfer = async ($form) => {
+        const get_limits = (await BinarySocket.send({ get_limits: 1 })).get_limits;
+
+        const remaining_transfers = getPropertyValue(get_limits, ['daily_transfers', 'mt5', 'available']);
+
         if (typeof remaining_transfers !== 'undefined') {
-            $form.find('#mt5_remaining_transfers').setVisibility(1).find('strong').text(remaining_transfers).addClass(+remaining_transfers ? '' : 'empty');
+            const $remaining_container = $form.find('#mt5_remaining_transfers');
+            $remaining_container.setVisibility(1);
+            const $remaining_number = $remaining_container.find('strong');
+            $remaining_number.text(remaining_transfers);
+            if (+remaining_transfers) {
+                $remaining_number.removeClass('empty');
+            } else {
+                $remaining_number.addClass('empty');
+            }
         }
     };
 
