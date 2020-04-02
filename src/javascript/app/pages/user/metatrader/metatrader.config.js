@@ -1,15 +1,15 @@
-const BinaryPjax       = require('../../../base/binary_pjax');
-const Client           = require('../../../base/client');
-const Header           = require('../../../base/header');
-const BinarySocket     = require('../../../base/socket');
-const Dialog           = require('../../../common/attach_dom/dialog');
-const Currency         = require('../../../common/currency');
-const Validation       = require('../../../common/form_validation');
-const GTM              = require('../../../../_common/base/gtm');
-const localize         = require('../../../../_common/localize').localize;
-const State            = require('../../../../_common/storage').State;
-const urlFor           = require('../../../../_common/url').urlFor;
-const isBinaryApp      = require('../../../../config').isBinaryApp;
+const BinaryPjax   = require('../../../base/binary_pjax');
+const Client       = require('../../../base/client');
+const Header       = require('../../../base/header');
+const BinarySocket = require('../../../base/socket');
+const Dialog       = require('../../../common/attach_dom/dialog');
+const Currency     = require('../../../common/currency');
+const Validation   = require('../../../common/form_validation');
+const GTM          = require('../../../../_common/base/gtm');
+const localize     = require('../../../../_common/localize').localize;
+const State        = require('../../../../_common/storage').State;
+const urlFor       = require('../../../../_common/url').urlFor;
+const isBinaryApp  = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
     const configMtCompanies = (() => {
