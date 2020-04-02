@@ -85,6 +85,7 @@ const JobDetails = () => (
                                 { href: 'security_researcher',                 string: it.L('Security Researcher') },
                                 { href: 'postgresql_database_administrator',   string: it.L('PostgreSQL Database Administrator (DBA)') },
                                 { href: 'ui_ux_designer',                      string: it.L('UI/UX Designer') },
+                                { href: 'technical_writer',                    string: it.L('Technical Writer') },
                             ]}
                         />
 
@@ -347,7 +348,7 @@ const JobDetails = () => (
                             <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
-                                text={it.L('You will:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Design and develop applications and platforms based on blockchain technology') },
@@ -500,6 +501,40 @@ const JobDetails = () => (
                                     { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software') },
                                     { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps') },
                                     { text: it.L('Bachelor\'s degree in graphic design, interaction design, visual communication, multimedia, or equivalent') },
+                                ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='technical_writer'>
+                            <h1>{it.L('Technical Writer')}</h1>
+
+                            <p>{it.L('You will combine your excellent command of English and your strong understanding of the technology we use to produce well-structured, concise, and easy-to-understand technical documentation as well as project and architectural plans.')}</p>
+
+                            <UlText
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Develop an in-depth understanding of our products and services to condense information into simple, accurate, and polished documents tailored to their target audience') },
+                                    { text: it.L('Document our current and intended future systems and software architecture') },
+                                    { text: it.L('Produce coding standards, training manuals, and other technical documents for our Back-end, Front-end, Quants, Business Intelligence, and Quality Assurance teams as well as for the third-party developers who use our API') },
+                                    { text: it.L('Refine and polish engineer-generated documents and open source projects to imbue them with clarity and consistency') },
+                                    { text: it.L('Work with project managers to create detailed technical guidelines for achieving our short-term and long-term goals') },
+                                    { text: it.L('Generate documentation for our internal and public-facing APIs') },
+                                    { text: it.L('Identify and remedy content gaps and requirements to insert visual aids such as diagrams or videos to assist comprehension') },
+                                    { text: it.L('Set the standard for our technical documentation by creating a technical style guide that can be followed across the company') },
+                                    { text: it.L('Make sure that production and publication of content are technically accurate, well-written, and easily understandable') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Good fundamental knowledge of software development, preferably with the programming languages, platforms, and systems that we use, such as Perl, Python, PHP, C/C++, Go, Ruby, Redis, Docker, Kubernetes, and AWS') },
+                                    { text: it.L('Familiarity with relational database design and/or open-source RDBMS systems such as MySQL and PostgreSQL') },
+                                    { text: it.L('Good knowledge of Linux and other open-source platforms') },
+                                    { text: it.L('Outstanding written and verbal communication skills and excellent command of English') },
+                                    { text: it.L('More than 3 years of experience in technical content creation') },
                                 ]}
                             />
                         </div>

@@ -127,7 +127,7 @@ const TypesOfPartnership = () => (
                                     <TabContent id='cpa'>
                                         <div className='gr-11 gr-centered text-align-left'>
                                             <h3 className='no-margin'>{it.L('Cost per acquisition (CPA) for EU Affiliates only')}</h3>
-                                            <p>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a [_1]real money investment account[_2] through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to Affiliates based in the EU.', '<strong>', '</strong>')}</p>
+                                            <p>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a [_1]real account[_2] through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available for clients based in the EU.', '<strong>', '</strong>')}</p>
                                             <a href={it.affiliate_signup_url} className='button center-text gr-centered gr-padding-20' target='_blank' rel='noopener noreferrer'>
                                                 <span>{it.L('Sign up now')}</span>
                                             </a>
