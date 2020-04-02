@@ -145,7 +145,7 @@ const TypesOfPartnership = () => (
                         <div className='gr-10 gr-12-m gr-parent gr-centered'>
                             <h3 id='ib_header' className='secondary-color'>{it.L('Commision structure')}</h3>
 
-                            <h3>{it.L('Synthetic Indices Account')}</h3>
+                            <h3>{it.L('Synthetic Account')}</h3>
                             <Table
                                 data={{
                                     thead: [
@@ -218,7 +218,7 @@ const TypesOfPartnership = () => (
                             <p className='text-align-left'><strong>{it.L('USD 10 x 1 lot x USD 125,000/100,000 = USD 12.5')}</strong></p>
                             <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current forex rate.')}</p>
 
-                            <h3>{it.L('Standard account')}</h3>
+                            <h3>{it.L('Financial account')}</h3>
                             <Table
                                 data={{
                                     thead: [
@@ -243,7 +243,7 @@ const TypesOfPartnership = () => (
                                 }}
                             />
 
-                            <h3>{it.L('Advanced account')}</h3>
+                            <h3>{it.L('Financial Pro account')}</h3>
                             <Table
                                 data={{
                                     thead: [
