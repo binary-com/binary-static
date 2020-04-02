@@ -9,7 +9,6 @@ const GTM              = require('../../../../_common/base/gtm');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const isBinaryApp      = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
@@ -353,9 +352,6 @@ const MetaTraderConfig = (() => {
                     });
                 }
             }),
-            onSuccess: (response, $form) => {
-                setRemainingTransfer($form);
-            },
         },
         withdrawal: {
             title      : localize('Withdraw'),
@@ -380,9 +376,6 @@ const MetaTraderConfig = (() => {
                     resolve();
                 }
             }),
-            onSuccess: (response, $form) => {
-                setRemainingTransfer($form);
-            },
         },
     };
 
@@ -501,24 +494,6 @@ const MetaTraderConfig = (() => {
         return is_need_verification;
     };
 
-    const setRemainingTransfer = async ($form) => {
-        const get_limits = (await BinarySocket.send({ get_limits: 1 })).get_limits;
-
-        const remaining_transfers = getPropertyValue(get_limits, ['daily_transfers', 'mt5', 'available']);
-
-        if (typeof remaining_transfers !== 'undefined') {
-            const $remaining_container = $form.find('#mt5_remaining_transfers');
-            $remaining_container.setVisibility(1);
-            const $remaining_number = $remaining_container.find('strong');
-            $remaining_number.text(remaining_transfers);
-            if (+remaining_transfers) {
-                $remaining_number.removeClass('empty');
-            } else {
-                $remaining_number.addClass('empty');
-            }
-        }
-    };
-
     return {
         accounts_info,
         actions_info,
@@ -531,7 +506,6 @@ const MetaTraderConfig = (() => {
         getDisplayLogin,
         isAuthenticated,
         isAuthenticationPromptNeeded,
-        setRemainingTransfer,
         configMtCompanies   : configMtCompanies.get,
         configMtFinCompanies: configMtFinCompanies.get,
         setMessages         : ($msg) => { $messages = $msg; },

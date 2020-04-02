@@ -283,8 +283,6 @@ const MetaTraderUI = (() => {
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
-            MetaTraderConfig.setRemainingTransfer($form);
-
             const should_show_transfer_fee = client_currency !== mt_currency;
             if (should_show_transfer_fee) {
                 $('#transfer_fee_amount_to').text(getTransferFee(client_currency, mt_currency));
@@ -315,6 +313,21 @@ const MetaTraderUI = (() => {
                     $action.find('#frm_cashier').setVisibility(0);
                 }
             }
+
+            const remaining_transfers = getPropertyValue(State.getResponse('get_limits'), ['daily_transfers', 'mt5', 'available']);
+
+            if (typeof remaining_transfers !== 'undefined') {
+                const $remaining_container = $form.find('#mt5_remaining_transfers');
+                $remaining_container.setVisibility(1);
+                const $remaining_number = $remaining_container.find('strong');
+                $remaining_number.text(remaining_transfers);
+                if (+remaining_transfers) {
+                    $remaining_number.removeClass('empty');
+                } else {
+                    $remaining_number.addClass('empty');
+                }
+            }
+
             return;
         }
 
