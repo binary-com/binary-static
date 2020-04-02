@@ -257,7 +257,7 @@ const Accounts = (() => {
         const initMarketsConfig = () => ({
             commodities    : localize('Commodities'),
             forex          : localize('Forex'),
-            indices        : localize('Indices'),
+            indices        : localize('Stock Indices'),
             stocks         : localize('Stocks'),
             synthetic_index: localize('Synthetic Indices'),
         });
