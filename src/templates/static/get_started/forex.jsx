@@ -23,8 +23,8 @@ const Forex = () => (
                     <List
                         id='sidebar-nav'
                         items={[
-                            { id: 'what-forex-trading',     href: '#what-forex-trading',     text: it.L('What is Forex trading') },
-                            { id: 'how-to-trade-forex',     href: '#how-to-trade-forex',     text: it.L('How to trade Forex') },
+                            { id: 'what-forex-trading',     href: '#what-forex-trading',     text: it.L('What is forex trading') },
+                            { id: 'how-to-trade-forex',     href: '#how-to-trade-forex',     text: it.L('How to trade forex') },
                             { id: 'margin-policy',          href: '#margin-policy',          text: it.L('Forex margin policy') },
                             { id: 'contract-specification', href: '#contract-specification', text: it.L('Forex contract specifications') },
                         ]}
@@ -34,8 +34,8 @@ const Forex = () => (
                 <MTAccountOpeningButton />
             </div>
             <div className='gr-9 gr-12-m'>
-                <Section id='what-forex-trading' header={it.L('What is Forex trading')}>
-                    <p>{it.L('The foreign exchange market (Forex) is the world\'s most liquid and most traded market, where trades worth trillions are completed each day.')}</p>
+                <Section id='what-forex-trading' header={it.L('What is forex trading')}>
+                    <p>{it.L('The foreign exchange market (forex) is the world\'s most liquid and most traded market, where trades worth trillions are completed each day.')}</p>
                     <p>{it.L('Forex trading involves buying one currency and selling another currency at the same time. This is why you always see them quoted in pairs. For example: EUR/USD and GBP/USD.')}</p>
 
                     <HeaderSecondary header={it.L('Which currencies can I trade')} />
@@ -79,16 +79,16 @@ const Forex = () => (
                     <Box text={`${it.L('Ask price')} – ${it.L('Bid price')} = ${it.L('Spread')}`} text_two='1.05653 – 1.05652 = 0.00001' />
 
                     <HeaderSecondary header={it.L('What time is the market open for me to trade')} />
-                    <p>{it.L('The Forex is an over-the-counter market where trading takes place between two parties, and not with a centralised exchange or marketplace.')}</p>
+                    <p>{it.L('The forex is an over-the-counter market where trading takes place between two parties, and not with a centralised exchange or marketplace.')}</p>
                     <p>{it.L('Depending on your broker or trading platform, you can start trading from the time the Sydney market opens on Monday morning to the time the New York market closes on Friday evening – up to 24 hours a day, five days a week.')}</p>
-                    <p>{it.L('[_1] clients can trade Forex from Sunday 21:00 GMT to Friday 21:00 GMT.', it.website_name)}</p>
+                    <p>{it.L('[_1] clients can trade forex from Sunday 21:00 GMT to Friday 21:00 GMT.', it.website_name)}</p>
                 </Section>
-                <Section id='how-to-trade-forex' header={it.L('How to trade Forex')}>
-                    <p>{it.L('A Forex trader always has one objective in mind when trading: to exchange one currency for another in order to make a profit.')}</p>
+                <Section id='how-to-trade-forex' header={it.L('How to trade forex')}>
+                    <p>{it.L('A forex trader always has one objective in mind when trading: to exchange one currency for another in order to make a profit.')}</p>
                     <p>{it.L('This is why we\'ve come up with the following three-step tutorial to help you bridge that gap and make your first trade:')}</p>
 
                     <HeaderSecondary header={it.L('Step 1: Learn to read currency pairs')} />
-                    <p>{it.L('One of the first things most Forex traders learn is how to read a currency pair. There are two parts to a currency pair')}</p>
+                    <p>{it.L('One of the first things most forex traders learn is how to read a currency pair. There are two parts to a currency pair')}</p>
                     <h1 className='center-text'><strong><span className='primary-color'>EUR /</span> USD</strong></h1>
                     <div className='gr-row'>
                         <div className='gr-6 align-end'>
@@ -251,8 +251,8 @@ const Forex = () => (
                     />
 
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
-                    <p>{it.L('The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>
-                    <p>{it.L('For information about Forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
+                    <p>{it.L('The forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>
+                    <p>{it.L('For information about forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
@@ -261,7 +261,7 @@ const Forex = () => (
                     <p>{it.L('Please take note that our swap rate also depends on the time and days you hold your positions open:')}</p>
                     <ul className='bullet'>
                         <li>{it.L('You will be subjected to swap rates if you keep a position open past 23:59:59 GMT.')}</li>
-                        <li>{it.L('Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all Forex brokers.')}</li>
+                        <li>{it.L('Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all forex brokers.')}</li>
                         <li>{it.L('Our swap rate may also be adjusted to take holidays into account.')}</li>
                     </ul>
                 </Section>
