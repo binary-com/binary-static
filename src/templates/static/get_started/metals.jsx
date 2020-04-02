@@ -127,10 +127,10 @@ const Metals = () => (
                     <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We delete an order with the largest margin reserved')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
-                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
+                        <li>{it.L('We delete an order with the largest margin reserved.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss.')}</li>
+                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level.')}</li>
                     </ol>
                 </Section>
                 <Section id='contract-specification' header={it.L('Metals contract specifications')}>
@@ -145,17 +145,17 @@ const Metals = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'XAG/USD' }, { text: it.L('Silver vs US Dollar')    }, { text: five_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'XAU/USD' }, { text: it.L('Gold vs US Dollar')      }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US Dollar') }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US Dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XAG/USD' }, { text: it.L('Silver vs US dollar')    }, { text: five_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XAU/USD' }, { text: it.L('Gold vs US dollar')      }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US dollar') }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
                             ],
                         }}
                     />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.')}</p>
-                    <p>{it.L('For information about Forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
+                    <p>{it.L('For information about forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>

@@ -218,7 +218,7 @@ const Home = () => {
                             </TabContent>
                             <TabContent id='mt5'>
                                 <AccountsTabContent
-                                    header={it.L('Trade Forex and CFDs on our popular multi-asset platform.')}
+                                    header={it.L('Trade forex and CFDs on our popular multi-asset platform.')}
                                     mobile_class='padding-top-20'
                                     mobile_header={it.L('MetaTrader 5')}
                                     image='images/pages/home/MT5.svg'
@@ -227,7 +227,7 @@ const Home = () => {
                                     list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
                                     image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
-                                    list_text_two={it.L('MT5 real-money account for Forex and CFDs.')}
+                                    list_text_two={it.L('MT5 real-money account for forex and CFDs.')}
                                     image_three='images/pages/home/icons/mt5_volatility.svg'
                                     list_header_three={it.L('MT5 Synthetic Indices')}
                                     list_text_three={it.L('MT5 real-money account for Synthetic Indices only.')}

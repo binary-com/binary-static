@@ -169,7 +169,7 @@ const GraduateProgram = () => {
                                 <div className='gr-7 gr-12-m'>
                                     <h2>{('Quants')}</h2>
                                     <div className='box fill-bg-color'>
-                                        <p>{('Manage and optimise pricing and risk management software for exotic options, Forex, and CFDs.')}</p>
+                                        <p>{('Manage and optimise pricing and risk management software for exotic options, forex, and CFDs.')}</p>
                                         <p>{('Develop risk management models and algorithms.')}</p>
                                         <p>{('Develop software to study market microstructure and manage financial data feeds.')}</p>
                                         <p>{('Software development stack: Perl, R, Python, MATLAB')}</p>

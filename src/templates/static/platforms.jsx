@@ -226,7 +226,7 @@ const Platform = () => (
                                 image='mt5'
                                 header={it.L('MetaTrader 5')}
                                 description={it.L('Advanced multi-asset trading platform')}
-                                text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
+                                text={it.L('Trade forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
                                 buttons={[
                                     { text: it.L('Access MT5 dashboard'), url: it.url_for('user/metatrader') },
                                     { text: it.L('Download MT5'), url: it.url_for('metatrader/download') },

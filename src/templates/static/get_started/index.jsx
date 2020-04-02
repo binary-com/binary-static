@@ -200,7 +200,7 @@ const Index = () => (
                         <GetStartedSectionWrapper
                             section_id='cfds'
                             section_header={it.L('CFDs')}
-                            section_description={it.L('Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them.')}
+                            section_description={it.L('Contracts for difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them.')}
                         >
                             <div className='gr-row'>
                                 <GetStartedSection

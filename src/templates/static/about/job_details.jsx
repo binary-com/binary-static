@@ -629,7 +629,7 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs') },
+                                    { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs') },
                                     { text: it.L('Create data analytics tools for trading/quantitative analysis') },
                                     { text: it.L('Conduct performance testing including backtesting, stress testing analysis, and benchmarking') },
                                     { text: it.L('Develop risk management models and algorithms using MATLAB/Python/R/C++') },
@@ -649,7 +649,7 @@ const JobDetails = () => (
                                 className='bullet'
                                 items={[
                                     { text: it.L('An advanced university degree in physics, financial engineering, or mathematics is preferred') },
-                                    { text: it.L('Experience in Forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
+                                    { text: it.L('Experience in forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
                                     { text: it.L('Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc.') },
                                     { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
                                     { text: it.L('Strong analytical skills and the ability to communicate your findings in a clear, concise, and effective manner') },

@@ -123,7 +123,7 @@ const BinaryOptions = () => {
                         <HeaderSecondary header={it.L('Advantages of binary options trading')} />
                         <p>{it.L('Aside from the simplicity of its \'yes or no\' proposition, binary options trading is also very flexible. It gives you the ability to trade:')}</p>
                         <div className='gr-row gr-parent gr-padding-10'>
-                            <SectionTicked header={it.L('All markets')}           text={it.L('Trade on underlying markets that include Forex, stock indices, commodities, and more.')} />
+                            <SectionTicked header={it.L('All markets')}           text={it.L('Trade on underlying markets that include forex, stock indices, commodities, and more.')} />
                             <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
                             <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from 10 seconds to 365 days.')} />
                             <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts up to USD 50,000. Losses are limited to your initial stake and nothing more.')} />
@@ -268,10 +268,10 @@ const BinaryOptions = () => {
                         <p>{it.L('Trade popular major and minor currency pairs, plus Smart FX indices – weighted indices that measure the value of a currency against a basket of major currencies.')}</p>
                         <p>{it.L('There are four types of Smart FX indices that you can trade:')}</p>
                         <ul className='bullet'>
-                            <li>{it.L('AUD Index – Measures the value of the Australian Dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%')}</li>
+                            <li>{it.L('AUD Index – Measures the value of the Australian dollar against a basket of five global currencies (USD, EUR, GBP, JPY, CAD), each weighted by 20%')}</li>
                             <li>{it.L('EUR Index – Measures the value of the Euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%')}</li>
                             <li>{it.L('GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%')}</li>
-                            <li>{it.L('USD Index – Measures the value of the US Dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
+                            <li>{it.L('USD Index – Measures the value of the US dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%')}</li>
                         </ul>
 
                         <HeaderSecondary header={it.L('Stock Indices')} data-anchor='indices' />

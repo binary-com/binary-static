@@ -34,10 +34,10 @@ const Forex = () => (
     <div id='forex_how_to'>
         <div className='gr-row'>
             <div className='gr-10 gr-push-1 center-text'>
-                <h2>{it.L('How to trade Forex')}</h2>
-                <p>{it.L('A Forex trader has one objective in mind when trading which is:')}</p>
+                <h2>{it.L('How to trade forex')}</h2>
+                <p>{it.L('A forex trader has one objective in mind when trading which is:')}</p>
                 <p className='border-box'>{it.L('To exchange one currency for another in order to make profit.')}</p>
-                <p>{it.L('But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade.')}</p>
+                <p>{it.L('But if you are new to forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade.')}</p>
             </div>
         </div>
 
@@ -77,7 +77,7 @@ const Forex = () => (
         <Step title={it.L('Understand when to buy and sell')} step={it.L('Step 2')} number={2}>
             <div>{it.L('You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:')}</div>
             <p className='border-box'>{it.L('You want to sell that currency pair if you think the base currency will go down.')}</p>
-            <p>{it.L('You have probably seen the terms \'going long\' and \'going short\' being used by a lot of Forex brokers and traders. Let\'s compare the differences between the two terms:')}</p>
+            <p>{it.L('You have probably seen the terms \'going long\' and \'going short\' being used by a lot of forex brokers and traders. Let\'s compare the differences between the two terms:')}</p>
             <p>{it.L('Long:')}</p>
             <List
                 className='checked'

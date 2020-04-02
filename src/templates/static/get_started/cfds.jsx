@@ -31,7 +31,7 @@ const Cfds = () => (
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-cfds-trading' header={it.L('What is CFD trading')}>
-                    <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset.')}</p>
+                    <p>{it.L('A Contract for difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset.')}</p>
                     <p>{it.L('The movement of the underlying asset determines your profit or loss – depending on the position that you have taken.')}</p>
                     <HeaderSecondary header={it.L('Advantages of CFD trading')} />
                     <ul className='checked'>
@@ -80,10 +80,10 @@ const Cfds = () => (
                     <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We delete an order with the largest margin reserved')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
-                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
+                        <li>{it.L('We delete an order with the largest margin reserved.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss.')}</li>
+                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level.')}</li>
                     </ol>
                 </Section>
 
@@ -166,7 +166,7 @@ const Cfds = () => (
                     />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
-                    <p>{it.L('A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
+                    <p>{it.L('A Contract for difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
                     <p>{it.L('With Crash 1000 (500) Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
                     <p>{it.L('With Boom 1000 (500) Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
