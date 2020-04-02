@@ -11,6 +11,7 @@ const handleVerifyCode     = require('../../common/verification_code').handleVer
 const getCurrencies        = require('../../../_common/base/currency_base').getCurrencies;
 const getElementById       = require('../../../_common/common_functions').getElementById;
 const localize             = require('../../../_common/localize').localize;
+const State                = require('../../../_common/storage').State;
 const Url                  = require('../../../_common/url');
 const getPropertyValue     = require('../../../_common/utility').getPropertyValue;
 const isBinaryApp          = require('../../../config').isBinaryApp;
@@ -271,16 +272,17 @@ const PaymentAgentWithdraw = (() => {
             BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
             return;
         }
-        BinarySocket.wait('website_status', 'get_account_status').then((data) => {
+        BinarySocket.wait('website_status', 'get_account_status').then(() => {
             $views = $('#paymentagent_withdrawal').find('.viewItem');
             $views.setVisibility(0);
 
-            if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
+            const get_account_status = State.getResponse('get_account_status');
+            if (/(withdrawal|cashier)_locked/.test(get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');
                 return;
             }
             currency = Client.get('currency');
-            const experimental_suspended = getPropertyValue(data.get_account_status, ['experimental_suspended', currency]) || {};
+            const experimental_suspended = getPropertyValue(get_account_status, ['experimental_suspended', currency]) || {};
             if (experimental_suspended.is_withdrawal_suspended) {
                 // Experimental currency is suspended
                 showPageError(localize('Please note that the selected currency is allowed for limited accounts only.'));
