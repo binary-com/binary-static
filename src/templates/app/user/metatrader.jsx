@@ -123,6 +123,12 @@ const Metatrader = () => (
                         </div>
                     </div>
 
+                    <div className='hint gr-padding-20 gr-parent no-margin'>
+                        <p className='no-margin'>
+                            {it.L('Server maintenance starting 03:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time.')}
+                        </p>
+                    </div>
+
                     <div className='mt-panel'>
                         <div className='acc-actions'>
                             <a href='javascript:;' className='act_new_account new-account center-text invisible'>
