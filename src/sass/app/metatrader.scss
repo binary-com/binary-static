@@ -225,11 +225,6 @@
                 height: 13px;
                 margin: 3px;
             }
-            #frm_deposit {
-                #mt5_remaining_transfers .empty {
-                    color: $COLOR_RED;
-                }
-            }
             #frm_cashier {
                 .mt-panel {
                     margin-bottom: 0;
@@ -239,6 +234,9 @@
                 .binary-balance, .mt5-balance {
                     font-weight: bold;
                     color: $COLOR_GRAY_SHADE;
+                }
+                #mt5_remaining_transfers .empty {
+                    color: $COLOR_RED;
                 }
             }
             #frm_manage_password {
