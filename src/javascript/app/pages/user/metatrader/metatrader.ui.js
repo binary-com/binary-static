@@ -283,6 +283,8 @@ const MetaTraderUI = (() => {
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
+            MetaTraderConfig.setRemainingTransfer($form);
+
             const should_show_transfer_fee = client_currency !== mt_currency;
             if (should_show_transfer_fee) {
                 $('#transfer_fee_amount_to').text(getTransferFee(client_currency, mt_currency));

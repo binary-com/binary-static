@@ -1,15 +1,16 @@
-const BinaryPjax   = require('../../../base/binary_pjax');
-const Client       = require('../../../base/client');
-const Header       = require('../../../base/header');
-const BinarySocket = require('../../../base/socket');
-const Dialog       = require('../../../common/attach_dom/dialog');
-const Currency     = require('../../../common/currency');
-const Validation   = require('../../../common/form_validation');
-const GTM          = require('../../../../_common/base/gtm');
-const localize     = require('../../../../_common/localize').localize;
-const State        = require('../../../../_common/storage').State;
-const urlFor       = require('../../../../_common/url').urlFor;
-const isBinaryApp  = require('../../../../config').isBinaryApp;
+const BinaryPjax       = require('../../../base/binary_pjax');
+const Client           = require('../../../base/client');
+const Header           = require('../../../base/header');
+const BinarySocket     = require('../../../base/socket');
+const Dialog           = require('../../../common/attach_dom/dialog');
+const Currency         = require('../../../common/currency');
+const Validation       = require('../../../common/form_validation');
+const GTM              = require('../../../../_common/base/gtm');
+const localize         = require('../../../../_common/localize').localize;
+const State            = require('../../../../_common/storage').State;
+const urlFor           = require('../../../../_common/url').urlFor;
+const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
+const isBinaryApp      = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
     const configMtCompanies = (() => {
@@ -352,6 +353,11 @@ const MetaTraderConfig = (() => {
                     });
                 }
             }),
+            onSuccess: (response, $form) => {
+                BinarySocket.send({ get_limits: 1 }).then(() => {
+                    setRemainingTransfer($form);
+                });
+            },
         },
         withdrawal: {
             title      : localize('Withdraw'),
@@ -376,6 +382,11 @@ const MetaTraderConfig = (() => {
                     resolve();
                 }
             }),
+            onSuccess: (response, $form) => {
+                BinarySocket.send({ get_limits: 1 }).then(() => {
+                    setRemainingTransfer($form);
+                });
+            },
         },
     };
 
@@ -494,6 +505,13 @@ const MetaTraderConfig = (() => {
         return is_need_verification;
     };
 
+    const setRemainingTransfer = ($form) => {
+        const remaining_transfers = getPropertyValue(State.getResponse('get_limits'), ['daily_transfers', 'mt5', 'available']);
+        if (typeof remaining_transfers !== 'undefined') {
+            $form.find('#mt5_remaining_transfers').setVisibility(1).find('strong').text(remaining_transfers).addClass(+remaining_transfers ? '' : 'empty');
+        }
+    };
+
     return {
         accounts_info,
         actions_info,
@@ -506,6 +524,7 @@ const MetaTraderConfig = (() => {
         getDisplayLogin,
         isAuthenticated,
         isAuthenticationPromptNeeded,
+        setRemainingTransfer,
         configMtCompanies   : configMtCompanies.get,
         configMtFinCompanies: configMtFinCompanies.get,
         setMessages         : ($msg) => { $messages = $msg; },
