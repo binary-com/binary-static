@@ -153,7 +153,7 @@ const MetaTraderConfig = (() => {
                         if (is_svg) resolve();
 
                         let is_ok = true;
-                        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                        BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
                             if (is_maltainvest && !has_financial_account) resolve();
 
                             const response_get_account_status = State.getResponse('get_account_status');
@@ -173,8 +173,12 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
+                                // disable button must occur before loading
+                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#authenticate_loading').setVisibility(1);
+                                await setLabuanAdvancedIntention();
+                                $('#authenticate_loading').setVisibility(0);
                                 $message.find('.authenticate').setVisibility(1);
-                                setLabuanAdvancedIntention();
                                 is_ok = false;
                             }
 
@@ -208,7 +212,7 @@ const MetaTraderConfig = (() => {
         })
     );
 
-    const setLabuanAdvancedIntention = () => {
+    const setLabuanAdvancedIntention = () => new Promise((resolve) => {
         const req = {
             account_type    : 'financial',
             dry_run         : 1,
@@ -219,13 +223,16 @@ const MetaTraderConfig = (() => {
             mt5_new_account : 1,
             name            : 'test real labuan advanced',
         };
-        BinarySocket.send(req).then((response) => {
-            if (response.error) {
+        BinarySocket.send(req).then((dry_run_response) => {
+
+            if (dry_run_response.error) {
                 // update account status authentication info
-                BinarySocket.send({ get_account_status: 1 }, { forced: true });
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    resolve();
+                });
             }
         });
-    };
+    });
 
     const actions_info = {
         new_account: {

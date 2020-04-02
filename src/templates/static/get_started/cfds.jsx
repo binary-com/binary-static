@@ -2,11 +2,13 @@ import React from 'react';
 import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, NavButtons, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
-const hundredth  = '0.01';
-const tenth      = '0.10';
-const two_tenth  = '0.20';
-const five_tenth = '0.50';
-const three      = '3.00';
+const hundredth       = '0.01';
+const thousandth      = '0.001';
+const tenth           = '0.10';
+const two_tenth       = '0.20';
+const five_tenth      = '0.50';
+const five_thousandth = '0.005';
+const three           = '3.00';
 
 const Cfds = () => (
     <div className='static_full get-started'>
@@ -114,16 +116,16 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Volatility 10 Index'       }, { text: '1' }, { text: two_tenth  }, { text: hundredth }],
-                                [{ text: 'Volatility 25 Index'       }, { text: '1' }, { text: five_tenth }, { text: hundredth }],
-                                [{ text: 'Volatility 50 Index'       }, { text: '1' }, { text: three      }, { text: hundredth }],
-                                [{ text: 'Volatility 75 Index'       }, { text: '1' }, { text: hundredth  }, { text: hundredth }],
-                                [{ text: 'Volatility 100 Index'      }, { text: '1' }, { text: tenth      }, { text: hundredth }],
-                                [{ text: 'HF Volatility 10 Index'    }, { text: '1' }, { text: two_tenth  }, { text: hundredth }],
-                                [{ text: 'HF Volatility 50 Index'    }, { text: '1' }, { text: three      }, { text: hundredth }],
-                                [{ text: 'HF Volatility 100 Index'   }, { text: '1' }, { text: three      }, { text: hundredth }],
-                                [{ text: 'Volatility 10 (1s) Index'  }, { text: '1' }, { text: tenth      }, { text: hundredth }],
-                                [{ text: 'Volatility 100 (1s) Index' }, { text: '1' }, { text: hundredth  }, { text: hundredth }],
+                                [{ text: 'Volatility 10 Index'       }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'Volatility 25 Index'       }, { text: '1' }, { text: five_tenth      }, { text: hundredth }],
+                                [{ text: 'Volatility 50 Index'       }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'Volatility 75 Index'       }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
+                                [{ text: 'Volatility 100 Index'      }, { text: '1' }, { text: tenth           }, { text: hundredth }],
+                                [{ text: 'HF Volatility 10 Index'    }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'HF Volatility 50 Index'    }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'HF Volatility 100 Index'   }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'Volatility 10 (1s) Index'  }, { text: '1' }, { text: tenth           }, { text: hundredth }],
+                                [{ text: 'Volatility 100 (1s) Index' }, { text: '1' }, { text: hundredth       }, { text: hundredth }],
                             ],
                         }}
                     />

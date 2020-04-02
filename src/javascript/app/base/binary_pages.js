@@ -55,6 +55,7 @@ const Contact             = require('../../static/pages/contact');
 const Contact2            = require('../../static/pages/contact_2');
 const GetStarted          = require('../../static/pages/get_started');
 const Home                = require('../../static/pages/home');
+const KeepSafe            = require('../../static/pages/keep_safe');
 const JobDetails          = require('../../static/pages/job_details');
 const Platforms           = require('../../static/pages/platforms');
 const Regulation          = require('../../static/pages/regulation');
@@ -136,6 +137,7 @@ const pages_config = {
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
     'job-details'            : { module: JobDetails },
+    'keep-safe'              : { module: KeepSafe },
     'new-account'            : { module: NewAccount,                     not_authenticated: true },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },

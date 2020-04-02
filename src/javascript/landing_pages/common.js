@@ -68,7 +68,7 @@ function getParamValue(url, key) {
 }
 
 function allLanguages() {
-    return [ 'en', 'de', 'es', 'fr', 'it', 'ko', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
+    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
 }
 
 function getLanguage() {

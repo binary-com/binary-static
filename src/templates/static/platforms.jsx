@@ -216,7 +216,7 @@ const Platform = () => (
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}
-                                className='invisible financial-only'
+                                className='desktop-app invisible financial-only'
                                 description={it.L('Enhanced performance. Intuitively simple.')}
                                 text={it.L('Access our products and services from a single app.')}
                             />

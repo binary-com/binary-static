@@ -1,4 +1,5 @@
 import { OSDetect, isDesktop } from '../../../../_common/os_detect';
+import { getElementById } from '../../../../_common/common_functions';
 
 const toggleDownloadPage = target => {
     if (isDesktop()) {
@@ -20,10 +21,11 @@ const toggleDownloadPage = target => {
         document.querySelector('#mobile-apps')
             .childNodes
             .forEach(child => child.setVisibility(0));
-        document.querySelector(`#${target}-app`).setVisibility(1);
-        document.querySelector(`#${target}-heading`).setVisibility(1);
-        document.querySelector(`#${target}-description`).setVisibility(1);
+        getElementById(`${target}-app`).setVisibility(1);
+        getElementById(`${target}-heading`).setVisibility(1);
+        getElementById(`${target}-description`).setVisibility(1);
     }
+    getElementById(`mt5_download_${target === 'mac' ? 'mac_' : ''}platforms`).setVisibility(1);
 };
 const DownloadMetatrader = (() => {
     const onLoad = () => {
