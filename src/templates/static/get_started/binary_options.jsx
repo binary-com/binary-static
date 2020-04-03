@@ -126,7 +126,7 @@ const BinaryOptions = () => {
                             <SectionTicked header={it.L('All markets')}           text={it.L('Trade on underlying markets that include forex, stock indices, commodities, and more.')} />
                             <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
                             <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from 10 seconds to 365 days.')} />
-                            <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts up to USD 50,000. Losses are limited to your initial stake and nothing more.')} />
+                            <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts up to 50,000 USD. Losses are limited to your initial stake and nothing more.')} />
                         </div>
 
                         <HeaderSecondary header={it.L('Why you should trade binary options with [_1]', it.website_name)} />

@@ -210,7 +210,7 @@ const Home = () => {
                                     image='images/pages/home/binary_options.svg'
                                     image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('Virtual Account')}
-                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
+                                    list_text_one={it.L('Practice account with replenishable 10,000 USD virtual credit.')}
                                     image_two='images/pages/home/icons/real.svg'
                                     list_header_two={it.L('Real Account')}
                                     list_text_two={it.L('Real-money accounts with your choice of fiat and crypto currency.')}
@@ -224,7 +224,7 @@ const Home = () => {
                                     image='images/pages/home/MT5.svg'
                                     image_one='images/pages/home/icons/demo.svg'
                                     list_header_one={it.L('MT5 Demo')}
-                                    list_text_one={it.L('Practice account with replenishable USD 10,000 virtual credit.')}
+                                    list_text_one={it.L('Practice account with replenishable 10,000 USD virtual credit.')}
                                     image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
                                     list_text_two={it.L('MT5 real-money account for forex and CFDs.')}

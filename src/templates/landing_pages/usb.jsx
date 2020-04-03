@@ -114,7 +114,7 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-peaceofmind' />
                         <h3 className='ft-400'>{('Peace of mind')}</h3>
-                        <p>{('USB is backed by ')}{it.broker_name}{(' – a profitable, 18-year-old company with')} <a href={it.url_for('binary-in-numbers')}>{('annual turnover exceeding USD 1 billion')}</a>.</p>
+                        <p>{('USB is backed by ')}{it.broker_name}{(' – a profitable, 18-year-old company with')} <a href={it.url_for('binary-in-numbers')}>{('annual turnover exceeding 1 USD billion')}</a>.</p>
                     </div>
                 </div>
             </div>

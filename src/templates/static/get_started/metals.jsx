@@ -99,7 +99,7 @@ const Metals = () => (
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s use the XAU/USD metal pair again as an example.')}</p>
                     <p>{it.L('Due to market volatility and gold\'s reputation as a safe-haven asset, you predict that the price of gold will rise.')}</p>
-                    <p>{it.L('After you purchase one lot of XAU/USD at a price of USD 1,255.06, the price of gold increases and you decide to sell when it reaches USD 1,255.80. Your profit or loss comes down to the price difference multiplied by the total lots you purchased.')}</p>
+                    <p>{it.L('After you purchase one lot of XAU/USD at a price of 1,255.06 USD, the price of gold increases and you decide to sell when it reaches 1,255.80 USD. Your profit or loss comes down to the price difference multiplied by the total lots you purchased.')}</p>
                     <p>{it.L('Your profit or loss is calculated as follows:')}</p>
                     <Box text={`(${it.L('Closing price')} – ${it.L('Opening price')}) x ${it.L('Lot units')} = ${it.L('Profit/Loss')}`} text_two={`(1,255.80 – 1,255.06) x 100 = ${it.L('USD')} 74`} />
 
@@ -107,13 +107,13 @@ const Metals = () => (
                 </Section>
                 <Section id='margin-policy' header={it.L('Metals margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
-                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
+                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at 50 USD per unit through a traditional broker, it would cost you 5,000 USD for this transaction.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the required margin for our metal pairs by using the formula below:')}</p>
 
-                    <MtBox icon_1='l1-icon' icon_2='metal-icon' text={it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of USD 1,250.15, the margin required to purchase that one lot will be calculated as follows:')} />
+                    <MtBox icon_1='l1-icon' icon_2='metal-icon' text={it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of 1,250.15 USD, the margin required to purchase that one lot will be calculated as follows:')} />
 
                     <p>{it.L('Without margin, purchasing one lot of the XAU/USD pair will cost you:')}</p>
                     <Box text={`100 * 1250.15 = ${it.L('USD')} 125,015`} />

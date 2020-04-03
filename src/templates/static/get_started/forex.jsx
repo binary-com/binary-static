@@ -105,8 +105,8 @@ const Forex = () => (
                         <li>{it.L('The base currency is always equal to one unit.')}</li>
                         <li>{it.L('The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate.')}</li>
                     </ul>
-                    <p>{it.L('For example, if you see that the EUR/USD has an ask price of 1.05382, you\'ll sell USD 1.05382 (quote currency) for every EUR 1 (base currency) you buy.')}</p>
-                    <p>{it.L('If the bid price is 1.05229, you\'ll buy USD 1.05229 for every EUR 1 you sell.')}</p>
+                    <p>{it.L('For example, if you see that the EUR/USD has an ask price of 1.05382, you\'ll sell 1.05382 USD (quote currency) for every 1 EUR (base currency) you buy.')}</p>
+                    <p>{it.L('If the bid price is 1.05229, you\'ll buy 1.05229 USD for every 1 EUR you sell.')}</p>
 
                     <HeaderSecondary header={it.L('Step 2: Understand when to buy and when to sell')} />
                     <p>{it.L('Think that a certain currency will go up or down? Learn when you should buy (or "go long") and when to sell (or "go short").')}</p>
@@ -118,12 +118,12 @@ const Forex = () => (
                     <p>{it.L('After you\'ve decided which position you want to take, your next step is to purchase that currency pair on MetaTrader 5')}.</p>
                     <p>{it.L('Here\'s an example of the EUR/USD currency pair and its bid-ask price:')}</p>
                     <img className='gr-6 gr-12-m gr-no-gutter' src={it.url_for('images/pages/get-started/mt5/forex/price.png')} />
-                    <p>{it.L('To go long, you\'ll want to click on \'Buy\' to purchase EUR 1 for USD 1.17726')}</p>
-                    <p>{it.L('To go short, you\'ll click on \'Sell\' to sell EUR 1 and receive USD 1.17725 in return.')}</p>
+                    <p>{it.L('To go long, you\'ll want to click on \'Buy\' to purchase 1 EUR for 1.17726 USD')}</p>
+                    <p>{it.L('To go short, you\'ll click on \'Sell\' to sell 1 EUR and receive 1.17725 USD in return.')}</p>
                 </Section>
                 <Section id='margin-policy' header={it.L('Forex margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – meaning your existing capital can give you a much higher level of market exposure.')}</p>
-                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset that\'s trading at USD 50 per unit through a traditional broker, it would typically cost you USD 5,000 for this transaction.')}</p>
+                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset that\'s trading at 50 USD per unit through a traditional broker, it would typically cost you 5,000 USD for this transaction.')}</p>
                     <p>{it.L('However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />

@@ -71,7 +71,7 @@ const Forex = () => (
                 ]}
             />
             <p>{it.L('Example:')}</p>
-            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell.')}</p>
+            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will buy 1.05229 USD for every 1 EUR that you sell.')}</p>
         </Step>
 
         <Step title={it.L('Understand when to buy and sell')} step={it.L('Step 2')} number={2}>
@@ -110,7 +110,7 @@ const Forex = () => (
                 </div>
                 <div className='gr-grow gr-12-m'>{it.L('GBP/USD currency pair and its bid-ask price.')}</div>
             </div>
-            <p>{it.L('To go long, you will click on \'Buy\' to purchase GBP 1 for USD 1.22781. To go short, you will click on \'Sell\' to sell GBP 1 and receive USD 1.22771 in return.')}</p>
+            <p>{it.L('To go long, you will click on \'Buy\' to purchase 1 GBP for 1.22781 USD. To go short, you will click on \'Sell\' to sell 1 GBP and receive 1.22771 USD in return.')}</p>
         </Step>
     </div>
 );

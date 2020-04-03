@@ -33,13 +33,13 @@ const BinaryInNumbers = () => (
             <Numbers
                 className='turnover'
                 header={it.L('Turnover')}
-                text={it.L('We\'re expected to generate over USD 2 billion in turnover this year, bringing our total turnover since inception to over USD 9.2 billion.')}
+                text={it.L('We\'re expected to generate over 2 USD billion in turnover this year, bringing our total turnover since inception to over 9.2 USD billion.')}
                 image='chart-turnover'
             />
             {/* <Numbers
                 className='withdrawal'
                 header={it.L('Client withdrawals')}
-                text={it.L('Client withdrawals prior to this year amounted to almost USD 500 million. More than USD 140 million worth of client withdrawals is expected this year.')}
+                text={it.L('Client withdrawals prior to this year amounted to almost 500 USD million. More than 140 USD million worth of client withdrawals is expected this year.')}
                 image='chart-client-withdrawals'
             /> */}
             <Numbers

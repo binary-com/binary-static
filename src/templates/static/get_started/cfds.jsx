@@ -55,8 +55,8 @@ const Cfds = () => (
                     <p>{it.L('The opposite is true if you decide to sell or \'go short\' on the US 100 index. This means that your profit will continue to increase as long as the price of the US 100 index keeps falling. However, if the price rises, the losses you incur will also increase.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
-                    <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
-                    <p>{it.L('However, if the asset price falls by 10 points, that represents a USD 10 loss for you.')}</p>
+                    <p>{it.L('Let\'s say a US 100 contract is worth 1 USD per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a 10 USD profit for you.')}</p>
+                    <p>{it.L('However, if the asset price falls by 10 points, that represents a 10 USD loss for you.')}</p>
                     <p>{it.L('To learn more, please read our [_1]CFD contract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('How to close a position')} />
@@ -66,12 +66,12 @@ const Cfds = () => (
 
                 <Section id='margin-policy' header={it.L('CFD margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
-                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
+                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at 50 USD per unit through a traditional broker, it would cost you 5,000 USD for this transaction.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the margin for our CFDs by using the formula below:')}</p>
-                    <MtBox icon_1='mr1-icon' icon_2='mr2-icon' text={it.L('For example, if you buy one lot of an underlying asset at a price of USD 20,000 and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:')} />
+                    <MtBox icon_1='mr1-icon' icon_2='mr2-icon' text={it.L('For example, if you buy one lot of an underlying asset at a price of 20,000 USD and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:')} />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
