@@ -169,9 +169,9 @@ const Forex = () => (
                                 [{ text: 'EUR/JPY' }, { text: it.L('Euro vs Japanese yen')                    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'EUR/NZD' }, { text: it.L('Euro vs New Zealand dollar')              }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'EUR/USD' }, { text: it.L('Euro vs US dollar')                       }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/CHF' }, { text: it.L('British Pound vs Swiss franc')            }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/JPY' }, { text: it.L('British Pound vs Japanese yen')           }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/USD' }, { text: it.L('British Pound vs US dollar')              }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/CHF' }, { text: it.L('British pound vs Swiss franc')            }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/JPY' }, { text: it.L('British pound vs Japanese yen')           }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/USD' }, { text: it.L('British pound vs US dollar')              }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'NZD/USD' }, { text: it.L('New Zealand dollar vs US dollar')         }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'USD/CAD' }, { text: it.L('US dollar vs Canadian dollar')            }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'USD/CHF' }, { text: it.L('US dollar vs Swiss franc')                }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
@@ -197,11 +197,11 @@ const Forex = () => (
                                 [{ text: 'EUR/NOK' }, { text: it.L('Euro vs Norwegian krone')               }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'EUR/PLN' }, { text: it.L('Euro vs Polish zloty')                  }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'EUR/SEK' }, { text: it.L('Euro vs Swedish krona')                 }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/AUD' }, { text: it.L('British Pound vs Australian dollar')    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/CAD' }, { text: it.L('British Pound vs Canadian dollar')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/NOK' }, { text: it.L('British Pound vs Norwegian krone')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/NZD' }, { text: it.L('British Pound vs New Zealand dollar')   }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/SEK' }, { text: it.L('British Pound vs Swedish krona')        }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/AUD' }, { text: it.L('British pound vs Australian dollar')    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/CAD' }, { text: it.L('British pound vs Canadian dollar')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/NOK' }, { text: it.L('British pound vs Norwegian krone')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/NZD' }, { text: it.L('British pound vs New Zealand dollar')   }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/SEK' }, { text: it.L('British pound vs Swedish krona')        }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'NZD/CAD' }, { text: it.L('New Zealand dollar vs Canadian dollar') }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'NZD/JPY' }, { text: it.L('New Zealand dollar vs Japanese yen')    }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'USD/CNH' }, { text: it.L('US dollar vs Chinese renminbi')         }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
@@ -234,8 +234,8 @@ const Forex = () => (
                                 [{ text: 'EUR/SGD' }, { text: it.L('Euro vs Singapore dollar')               }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'EUR/TRY' }, { text: it.L('Euro vs Turkish lira')                   }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'EUR/ZAR' }, { text: it.L('Euro vs South African rand')             }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/SGD' }, { text: it.L('British Pound vs Singapore dollar')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'GBP/TRY' }, { text: it.L('British Pound vs Turkish lira')          }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/SGD' }, { text: it.L('British pound vs Singapore dollar')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'GBP/TRY' }, { text: it.L('British pound vs Turkish lira')          }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'HKD/JPY' }, { text: it.L('Hong Kong dollar vs Japanese yen')       }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'NZD/CHF' }, { text: it.L('New Zealand dollar vs Swiss franc')      }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
                                 [{ text: 'NZD/SGD' }, { text: it.L('New Zealand dollar vs Singapore dollar') }, { text: hundred_thousand }, { text: hundredth }, { text: hundredth }],
@@ -252,7 +252,7 @@ const Forex = () => (
 
                     <HeaderSecondary header={it.L('How to read the contract specifications table')} />
                     <p>{it.L('The forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>.')}</p>
-                    <p>{it.L('For information about forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
+                    <p>{it.L('For information about forex leverage, refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>

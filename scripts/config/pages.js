@@ -66,7 +66,7 @@ module.exports = [
 
     // ==================== Section: "static" ====================
     ['404',                                     'static/404',                                  'full_width', '404'],
-    ['home',                                    'static/home',                                 'full_width', 'Online Trading platform for binary options on forex, stock indices, commodities and Synthetic indices'],
+    ['home',                                    'static/home',                                 'full_width', 'Online trading platform for binary options on forex, stock indices, commodities and Synthetic indices'],
     ['keep-safe',                               'static/keep_safe',                            'full_width', 'Keep Safe'],
     ['tour',                                    'static/tour',                                 'full_width', 'Tour'],
     ['why-us',                                  'static/why_us',                               'full_width', 'Why Us'],

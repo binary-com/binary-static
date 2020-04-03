@@ -153,7 +153,7 @@ const BinaryOptions = () => {
                         </ul>
                         <strong>{it.L('Ideal for new and experienced traders')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('Low minimum stakes')}                         text={it.L('Deposit as little as USD 5 to start trading.')} />
+                            <ListStrong header={it.L('Low minimum stakes')}                         text={it.L('Deposit as little as 5 USD to start trading.')} />
                             <ListStrong header={it.L('Trade according to your preferred strategy')} text={it.L('Trade based on "gut feel" or rely on technical and fundamental analysis.')} />
                             <ListStrong header={it.L('Flexible')}                                   text={it.L('Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy.')} />
                             <ListStrong header={it.L('Scalable')}                                   text={it.L('Earn the same proportional return on stakes of all values.')} />
