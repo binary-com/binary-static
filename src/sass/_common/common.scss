@@ -448,10 +448,6 @@ button .barspinner.white {
     align-self: center;
 }
 
-.center-text-m {
-    text-align-last: center;
-}
-
 .align-start {
     @include BIDIR_VALUE (text-align, left, right);
 }

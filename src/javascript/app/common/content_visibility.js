@@ -49,6 +49,8 @@ const mt_company_rule   = 'mtcompany';
 const eu_country_rule   = 'eucountry';
 
 const ContentVisibility = (() => {
+    let $center_select_m;
+
     const init = () => {
         let arr_mt5fin_shortcodes;
 
@@ -178,7 +180,39 @@ const ContentVisibility = (() => {
         updateTabDisplay();
     };
 
+    // if text is hidden, we need to append it to body to be able to get its width
+    const getTextWidth = (text) => {
+        const $el = $('<span />', { text });
+        $el.prependTo('body');
+        const el_width = $el.width();
+        $el.remove();
+        return el_width;
+    };
+
+    const centerSelect = ($el) => {
+        const option_width = getTextWidth($el.children(':selected').html());
+        const empty_space = '280' - option_width; // in mobile all select drop-downs are hardcoded to be at 280px in css
+        $el.css('text-indent', (empty_space / 2) - 7); // 7px is for the drop-down arrow
+    };
+
+    const centerAlignSelect = (should_init) => {
+        $(window).off('resize', centerAlignSelect);
+        $center_select_m = ((typeof should_init === 'boolean' && should_init) || !$center_select_m) ? $('.center-select-m') : $center_select_m;
+
+        if ($(window).width() <= 480) {
+            $center_select_m.on('change', function() {
+                centerSelect($(this));
+            });
+        } else {
+            $center_select_m.each(function() {
+                $(this).css('text-indent', 0);
+            });
+            $(window).resize(centerAlignSelect);
+        }
+    };
+
     return {
+        centerAlignSelect,
         init,
         __test__: {
             parseAttributeString,
