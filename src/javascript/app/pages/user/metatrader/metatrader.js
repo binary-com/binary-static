@@ -238,6 +238,7 @@ const MetaTrader = (() => {
                         }
                         MetaTraderUI.enableButton(action, response);
                     } else {
+                        await BinarySocket.send({ get_account_status: 1 });
                         if (accounts_info[acc_type].info) {
                             const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
                             if (parent_action === 'cashier') {
