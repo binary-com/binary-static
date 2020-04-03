@@ -97,6 +97,7 @@ export const AddressLine1 = ({ hint }) => (
     <FormRow
         type='text'
         id='address_line_1'
+        className='center-text-m'
         label={it.L('First line')}
         attributes={{ maxLength: '70', 'data-lpignore': true }}
         hint={hint}
@@ -107,6 +108,7 @@ export const AddressLine2 = ({ hint }) => (
     <FormRow
         type='text'
         id='address_line_2'
+        className='center-text-m'
         label={it.L('Second line')}
         attributes={{ maxLength: '70', 'data-lpignore': true }}
         hint={hint}
@@ -117,6 +119,7 @@ export const AddressCity = ({ hint }) => (
     <FormRow
         type='text'
         id='address_city'
+        className='center-text-m'
         label={it.L('Town/City')}
         attributes={{ maxLength: 35, 'data-lpignore': true }}
         hint={hint}
@@ -131,6 +134,7 @@ export const AddressPostcode = ({ children, hint }) => (
     <FormRow
         type='text'
         id='address_postcode'
+        className='center-text-m'
         label={it.L('Postal/ZIP code')}
         attributes={{ maxLength: '20', 'data-lpignore': true }}
         hint={hint}
@@ -145,6 +149,7 @@ export const Phone = ({ hint, row_class, row_id }) => (
     <FormRow
         type='text'
         id='phone'
+        className='center-text-m'
         label={it.L('Mobile number')}
         attributes={{ 'data-lpignore': true }}
         hint={hint}
