@@ -456,6 +456,11 @@ const Metatrader = () => (
                                     </div>
                                 </div>
                             </div>
+
+                            <div className='gr-padding-20 gr-parent no-margin hint center-text invisible' id='mt5_remaining_transfers'>
+                                {it.L('Remaining MT5 fund transfers for today: [_1]', '<strong />')}
+                            </div>
+
                             <div className='gr-row'>
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>
