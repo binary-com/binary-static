@@ -55,7 +55,7 @@ const RegulatorText = () => (
 const Area = ({ items }) => {
     const square_wh = 10.6;
     const default_width = 37.8;
-    const svg_width = 320;
+    const svg_width = 300;
     const svg_scale = 900 / svg_width;
     const normalize = n => n.toFixed(2);
     return (
@@ -106,31 +106,31 @@ const Regulation = () => {
                         <map name='planetmap' id='planetmap'>
                             <Area
                                 items={[
-                                    { name: 'Sweden',         x: 127.7, y: 7.6 },
-                                    { name: 'Denmark',        x: 120.4, y: 19.7 },
-                                    { name: 'Germany',        x: 112,   y: 31.8 },
-                                    { name: 'Netherlands',    x: 92.8,  y: 43.9,  width: 46.2 },
-                                    { name: 'United Kingdom', x: 2.7,   y: 86.6,  width: 55.7 },
-                                    { name: 'Luxembourg',     x: 11.6,  y: 114.5, width: 46.9 },
-                                    { name: 'France',         x: 20.6,  y: 126.3 },
-                                    { name: 'Spain',          x: 3.6,   y: 144.3 },
-                                    { name: 'Portugal',       x: 3.6,   y: 156.3 },
-                                    { name: 'Italy',          x: 14.2,  y: 168.5, width: 27.3 },
-                                    { name: 'Austria',        x: 100.4, y: 185.3 },
-                                    { name: 'Slovenia',       x: 109.4, y: 201.5, width: 37.8 },
-                                    { name: 'Croatia',        x: 142.6, y: 215.2 },
-                                    { name: 'Greece',         x: 199.4, y: 215.3 },
-                                    { name: 'Cyprus',         x: 257.8, y: 221.8, width: (48.4 - 10.6) },
-                                    { name: 'Bulgaria',       x: 254.3, y: 159.5, width: (48.4 - 10.6) },
-                                    { name: 'Romania',        x: 254.3, y: 147.7 },
-                                    { name: 'Hungary',        x: 254.2, y: 135.9 },
-                                    { name: 'Slovakia',       x: 254.3, y: 124.2 },
-                                    { name: 'Czech Republic', x: 238.9, y: 112.4, width: 53.2 },
-                                    { name: 'Poland',         x: 258,   y: 95.3,  width: 34.2 },
-                                    { name: 'Lithuania',      x: 252.9, y: 83.5,  width: 39.3 },
-                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2 },
-                                    { name: 'Estonia',        x: 258,   y: 60.0,  width: 34.2 },
-                                    { name: 'Finland',        x: 258,   y: 13.9,  width: 34.2 },
+                                    { name: 'Sweden',         x: 105.561, y: 13.568 },
+                                    { name: 'Denmark',        x: 102.461, y: 25.638 },
+                                    { name: 'Germany',        x: 94.944,  y: 37.872 },
+                                    { name: 'Netherlands',    x: 79.061,  y: 50.038,  width: 46.2 },
+                                    { name: 'United Kingdom', x: 0.461,   y: 102.368, width: 55.7 },
+                                    { name: 'Luxembourg',     x: 0,       y: 114.931, width: 46.9 },
+                                    { name: 'France',         x: 0.434,   y: 136.647 },
+                                    { name: 'Spain',          x: 0.25,    y: 152.315 },
+                                    { name: 'Italy',          x: 0.184,   y: 164.056, width: 27.3 },
+                                    { name: 'Portugal',       x: 0.25,    y: 178.256 },
+                                    { name: 'Austria',        x: 108.926, y: 179.94 },
+                                    { name: 'Slovenia',       x: 100.733, y: 205.64 },
+                                    { name: 'Croatia',        x: 167.224, y: 212.34 },
+                                    { name: 'Greece',         x: 187.154, y: 193.083 },
+                                    { name: 'Cyprus',         x: 236,     y: 219.5,   width: (48.4 - 10.6) },
+                                    { name: 'Bulgaria',       x: 253,     y: 145.5,   width: (48.4 - 10.6) },
+                                    { name: 'Romania',        x: 251.6,   y: 133.59 },
+                                    { name: 'Hungary',        x: 254.2,   y: 122 },
+                                    { name: 'Slovakia',       x: 251.6,   y: 110.279 },
+                                    { name: 'Czech Republic', x: 236.2,   y: 97.306,  width: 53.2 },
+                                    { name: 'Poland',         x: 255.3,   y: 83.549,  width: 34.2 },
+                                    { name: 'Lithuania',      x: 250.348, y: 68.383,  width: 39.3 },
+                                    { name: 'Latvia',         x: 255.321, y: 53.293,  width: 34.2 },
+                                    { name: 'Estonia',        x: 255.3,   y: 38.361,  width: 34.2 },
+                                    { name: 'Finland',        x: 247.873, y: 13.568,  width: 34.2 },
                                 ]}
                             />
                         </map>
