@@ -5,7 +5,7 @@ import { Fieldset, FormRow } from './forms.jsx';
 export const Salutation = ({ className, row_class, row_id }) => (
     <FormRow
         type='select'
-        className={className}
+        className={`center-text-m ${className}`}
         id='salutation'
         label={it.L('Title')}
         row_class={row_class}
@@ -23,7 +23,7 @@ export const FirstName = ({ className, hint, row_class, row_id }) => (
         type='text'
         id='first_name'
         label={it.L('First name')}
-        attributes={{ maxLength: '50', className: className || undefined, 'data-lpignore': true }}
+        attributes={{ maxLength: '50', className: `center-text-m ${className || ''}`, 'data-lpignore': true }}
         row_class={row_class}
         row_id={row_id}
         hint={hint}
@@ -35,7 +35,7 @@ export const LastName = ({ className, hint, row_class, row_id }) => (
         type='text'
         id='last_name'
         label={it.L('Family name')}
-        attributes={{ maxLength: '50', className: className || undefined, 'data-lpignore': true }}
+        attributes={{ maxLength: '50', className: `center-text-m ${className || ''}`, 'data-lpignore': true }}
         hint={hint}
         row_id={row_id}
         row_class={row_class}
@@ -49,7 +49,7 @@ export const DateOfBirth = ({ className, row_class, row_id }) => (
         label={it.L('Date of birth')}
         row_class={row_class}
         row_id={row_id}
-        attributes={{ size: '12', readOnly: true, className: className || undefined, 'data-lpignore': true }}
+        attributes={{ size: '12', readOnly: true, className: `center-text-m ${className || ''}`, 'data-lpignore': true }}
     />
 );
 
@@ -82,6 +82,7 @@ export const AccountOpeningReason  = ({ row_id, row_class }) => (
     <FormRow
         type='select'
         id='account_opening_reason'
+        className='center-text-m'
         label={it.L('Account opening reason')}
         row_id={row_id}
         row_class={row_class}
@@ -269,6 +270,7 @@ export const TaxInformationForm = () => (
             label={it.L('Tax identification number')}
             tooltip={it.L('Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team.')}
             id='tax_identification_number'
+            className='center-text-m'
             row_id='row_tax_identification_number'
             row_class='invisible'
             attributes={{ maxLength: 20, 'data-lpignore': true }}
