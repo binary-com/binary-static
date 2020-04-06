@@ -120,7 +120,7 @@ const Regulation = () => {
                                     { name: 'Slovenia',       x: 100.733, y: 205.64 },
                                     { name: 'Croatia',        x: 167.224, y: 212.34 },
                                     { name: 'Greece',         x: 187.154, y: 193.083 },
-                                    { name: 'Cyprus',         x: 236,     y: 219.5,   width: (48.4 - 10.6) },
+                                    { name: 'Cyprus',         x: 245,     y: 219,     width: (48.4 - 10.6) },
                                     { name: 'Bulgaria',       x: 253,     y: 145.5,   width: (48.4 - 10.6) },
                                     { name: 'Romania',        x: 251.6,   y: 133.59 },
                                     { name: 'Hungary',        x: 254.2,   y: 122 },
