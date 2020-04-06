@@ -50,7 +50,7 @@ export const DateOfBirth = ({ className, row_class, row_id }) => (
         label={it.L('Date of birth')}
         row_class={row_class}
         row_id={row_id}
-        attributes={{ size: '12', readOnly: true, className: `center-text-m ${className || ''}`, 'data-lpignore': true }}
+        attributes={{ size: '12', readOnly: true, className: `center-text-m ${className || ''}`, 'data-lpignore': true, required: true }}
     />
 );
 
