@@ -20,8 +20,8 @@ const CFDs = () => (
             <SeparatorLine className='gr-padding-30' />
 
             <h2>{it.L('How to calculate your profits and losses')}</h2>
-            <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
-            <p>{it.L('However, if the asset price falls by 10 points, that represents a USD 10 loss for you.')}</p>
+            <p>{it.L('Let\'s say a US 100 contract is worth 1 USD per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a 10 USD profit for you.')}</p>
+            <p>{it.L('However, if the asset price falls by 10 points, that represents a 10 USD loss for you.')}</p>
 
             <SeparatorLine className='gr-padding-30' />
 
