@@ -33,15 +33,15 @@ const MetaTraderConfig = (() => {
             };
 
             return ({
+                gaming: {
+                    demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Synthetic Indices'), short_title: volatility_config.short_title },
+                    real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Synthetic Indices'), short_title: volatility_config.short_title },
+                },
                 financial: {
                     demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
                     demo_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Demo Advanced'), short_title: advanced_config.short_title },
                     real_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Real Advanced'), short_title: advanced_config.short_title },
-                },
-                gaming: {
-                    demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Synthetic Indices'), short_title: volatility_config.short_title },
-                    real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Synthetic Indices'), short_title: volatility_config.short_title },
                 },
             });
         };
@@ -101,7 +101,7 @@ const MetaTraderConfig = (() => {
     // or 1 of donor currency if both accounts have the same currency
     const getMinMT5TransferValue = (currency) => {
         const client_currency = Client.get('currency');
-        const mt5_currency    = MetaTraderConfig.getCurrency(Client.get('mt5_account'));
+        const mt5_currency    = getCurrency(Client.get('mt5_account'));
         if (client_currency === mt5_currency) return 1;
         return (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency));
     };
@@ -125,25 +125,11 @@ const MetaTraderConfig = (() => {
                 resolve(needsRealMessage());
             } else {
                 BinarySocket.wait('get_settings').then(() => {
-                    const showCitizenshipMessage = () => {
-                        $message
-                            .find('.citizen')
-                            .setVisibility(1)
-                            .find('a')
-                            .attr(
-                                'onclick',
-                                `localStorage.setItem('personal_details_redirect', '${acc_type}')`
-                            );
-                    };
-                    const showAssessment = (selector) => {
-                        $message
-                            .find(selector)
-                            .setVisibility(1)
-                            .find('a')
-                            .attr(
-                                'onclick',
-                                `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`
-                            );
+                    const showElementSetRedirect = (selector) => {
+                        const $el = $message.find(selector);
+                        $el.setVisibility(1);
+                        const $link = $el.find('a');
+                        $link.attr('href', `${$link.attr('href')}#mt5_redirect=${acc_type}`);
                     };
                     const resolveWithMessage = () => {
                         $message.find(message_selector).setVisibility(1);
@@ -167,28 +153,32 @@ const MetaTraderConfig = (() => {
                         if (is_svg) resolve();
 
                         let is_ok = true;
-                        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                        BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
                             if (is_maltainvest && !has_financial_account) resolve();
 
                             const response_get_account_status = State.getResponse('get_account_status');
                             if (/financial_information_not_complete/.test(response_get_account_status.status)) {
-                                showAssessment('.assessment');
+                                showElementSetRedirect('.assessment');
                                 is_ok = false;
                             } else if (/trading_experience_not_complete/.test(response_get_account_status.status)) {
-                                showAssessment('.trading_experience');
+                                showElementSetRedirect('.trading_experience');
                                 is_ok = false;
                             }
                             if (+State.getResponse('landing_company.config.tax_details_required') === 1 && (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number)) {
-                                $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${acc_type}')`);
+                                showElementSetRedirect('.tax');
                                 is_ok = false;
                             }
                             if (!response_get_settings.citizen) {
-                                showCitizenshipMessage();
+                                showElementSetRedirect('.citizen');
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
+                                // disable button must occur before loading
+                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#authenticate_loading').setVisibility(1);
+                                await setLabuanAdvancedIntention();
+                                $('#authenticate_loading').setVisibility(0);
                                 $message.find('.authenticate').setVisibility(1);
-                                // setLabuanAdvancedIntention();
                                 is_ok = false;
                             }
 
@@ -203,13 +193,13 @@ const MetaTraderConfig = (() => {
                                 && !accounts_info[acc_type].mt5_account_type // is_volatility
                                 && /high/.test(response_get_account_status.risk_classification)
                             ) {
-                                showAssessment('.assessment');
+                                showElementSetRedirect('.assessment');
                                 is_ok = false;
                             }
                             if (!response_get_settings.citizen
                                 && !(is_maltainvest && !has_financial_account)
                                 && accounts_info[acc_type].mt5_account_type) {
-                                showCitizenshipMessage();
+                                showElementSetRedirect('.citizen');
                                 is_ok = false;
                             }
 
@@ -222,19 +212,27 @@ const MetaTraderConfig = (() => {
         })
     );
 
-    // TODO: add this line when dry_run API ready
-    // const setLabuanAdvancedIntention = () => {
-    //     const req = {
-    //         mt5_new_account : 1,
-    //         account_type    : 'financial',
-    //         email           : Client.get('email'),
-    //         leverage        : 100,
-    //         name            : 'test real labuan advanced',
-    //         mainPassword    : 'Test1234',
-    //         mt5_account_type: 'advanced',
-    //     };
-    //     BinarySocket.send(req);
-    // };
+    const setLabuanAdvancedIntention = () => new Promise((resolve) => {
+        const req = {
+            account_type    : 'financial',
+            dry_run         : 1,
+            email           : Client.get('email'),
+            leverage        : 100,
+            mainPassword    : 'Test1234',
+            mt5_account_type: 'advanced',
+            mt5_new_account : 1,
+            name            : 'test real labuan advanced',
+        };
+        BinarySocket.send(req).then((dry_run_response) => {
+
+            if (dry_run_response.error) {
+                // update account status authentication info
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    resolve();
+                });
+            }
+        });
+    });
 
     const actions_info = {
         new_account: {
@@ -250,7 +248,7 @@ const MetaTraderConfig = (() => {
                     if (is_volatility && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id               : 'confirm_new_account',
-                            localized_message: localize(['Trading Contracts for Difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
+                            localized_message: localize(['Trading contracts for difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
                         }).then((is_ok) => {
                             if (!is_ok) {
                                 BinaryPjax.load(Client.defaultRedirectUrl());
@@ -262,7 +260,7 @@ const MetaTraderConfig = (() => {
                             const { cfd_score, trading_score } = response.get_financial_assessment;
                             const passed_financial_assessment = cfd_score === 4 || trading_score >= 8;
                             let message = [
-                                localize('{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.'),
+                                localize('{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for difference and forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.'),
                                 localize('{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.'),
                             ];
                             if (passed_financial_assessment) {
@@ -298,7 +296,7 @@ const MetaTraderConfig = (() => {
 
         password_change: {
             title        : localize('Change Password'),
-            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]),
+            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, getDisplayLogin(response.echo_req.login)]),
             prerequisites: () => new Promise(resolve => resolve('')),
         },
         password_reset: {
@@ -330,17 +328,17 @@ const MetaTraderConfig = (() => {
         },
         deposit: {
             title      : localize('Deposit'),
-            success_msg: response => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
+            success_msg: (response, acc_type) => localize('[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]', [
                 Currency.formatMoney(State.getResponse('authorize.currency'), response.echo_req.amount),
                 response.echo_req.from_binary,
-                response.echo_req.to_mt5,
+                accounts_info[acc_type].info.display_login,
                 response.binary_transaction_id,
             ]),
             prerequisites: () => new Promise((resolve) => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else {
-                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                    BinarySocket.wait('get_account_status').then((response_status) => {
                         if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                             resolve(localize('Your cashier is locked.')); // Locked from BO
                         } else {
@@ -359,7 +357,7 @@ const MetaTraderConfig = (() => {
             title      : localize('Withdraw'),
             success_msg: (response, acc_type) => localize('[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]', [
                 Currency.formatMoney(getCurrency(acc_type), response.echo_req.amount),
-                response.echo_req.from_mt5,
+                accounts_info[acc_type].info.display_login,
                 response.echo_req.to_binary,
                 response.binary_transaction_id,
             ]),
@@ -367,7 +365,7 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
-                    BinarySocket.send({ get_account_status: 1 }).then(() => {
+                    BinarySocket.wait('get_account_status').then(() => {
                         if (!/svg_standard/.test(acc_type) && isAuthenticationPromptNeeded()) {
                             resolve($messages.find('#msg_authenticate').html());
                         }
@@ -478,6 +476,10 @@ const MetaTraderConfig = (() => {
 
     const getCurrency = acc_type => accounts_info[acc_type].info.currency;
 
+    // if you have acc_type, use accounts_info[acc_type].info.display_login
+    // otherwise, use this function to format login into display login
+    const getDisplayLogin = login => login.replace(/^MT[DR]?/i, '');
+
     const isAuthenticated = () =>
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
@@ -501,6 +503,7 @@ const MetaTraderConfig = (() => {
         needsRealMessage,
         hasAccount,
         getCurrency,
+        getDisplayLogin,
         isAuthenticated,
         isAuthenticationPromptNeeded,
         configMtCompanies   : configMtCompanies.get,

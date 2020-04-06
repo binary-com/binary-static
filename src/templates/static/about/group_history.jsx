@@ -39,7 +39,7 @@ const GroupHistory = () => (
             <div className='timeline'>
                 <UL items={[
                     { className: 'year center-text',                                                           text: '2019' },
-                    { className: 'event featured',       header: it.L('Deriv.com launched'),                   text: it.L('[_1] was launched as the next-generation online trading platform. [_2] and Deriv collectively handle over 200 million transactions, with a turnover of over USD 1 billion a year.', '<a target=\'_blank\' href=\'https://deriv.com\' rel=\'noopener noreferrer\'>Deriv.com</a>', it.website_name) },
+                    { className: 'event featured',       header: it.L('Deriv.com launched'),                   text: it.L('[_1] was launched as the next-generation online trading platform. [_2] and Deriv collectively handle over 200 million transactions, with a turnover of over 1 USD billion a year.', '<a target=\'_blank\' href=\'https://deriv.com\' rel=\'noopener noreferrer\'>Deriv.com</a>', it.website_name) },
                     { className: 'event right',          header: it.L('New office in Dubai, UAE'),             text: it.L('[_1] opens a new office at the world-class Jumeirah Lake Towers free zone to expand our reach in the region.', it.website_name) },
                     { className: 'event',                header: it.L('New office in Asunción, Paraguay'),     text: it.L('[_1] opens new hub of operations in the capital of Paraguay to drive our growth in South America.', it.website_name) },
                     { className: 'year center-text',                                                           text: '2018' },

@@ -1,15 +1,16 @@
 const moment        = require('moment');
 const urlForStatic  = require('./url').urlForStatic;
 const getStaticHash = require('./utility').getStaticHash;
+const LocalStore    = require('../_common/storage').LocalStore;
 
 // only reload if it's more than 10 minutes since the last reload
 const shouldForceReload = last_reload => !last_reload || +last_reload + (10 * 60 * 1000) < moment().valueOf();
 
 // calling this method is handled by GTM tags
 const checkNewRelease = () => {
-    const last_reload = localStorage.getItem('new_release_reload_time');
+    const last_reload = LocalStore.get('new_release_reload_time');
     if (!shouldForceReload(last_reload)) return false;
-    localStorage.setItem('new_release_reload_time', moment().valueOf());
+    LocalStore.set('new_release_reload_time', moment().valueOf());
 
     const current_hash = getStaticHash();
     const xhttp        = new XMLHttpRequest();

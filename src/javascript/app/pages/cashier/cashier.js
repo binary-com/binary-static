@@ -43,6 +43,24 @@ const Cashier = (() => {
         });
     };
 
+    const setP2PVisibility = async () => {
+        const is_agent = !(await BinarySocket.send({ p2p_agent_info: 1 })).error;
+        if (is_agent) {
+            $('#dp2p_info').setVisibility(1);
+            return;
+        }
+
+        const has_offer = await checkP2PHasOffer();
+        if (has_offer) {
+            $('#dp2p_info').setVisibility(1);
+        }
+    };
+
+    const checkP2PHasOffer = () => new Promise(async (resolve) => {
+        const offer_list_response = await BinarySocket.send({ p2p_offer_list: 1 });
+        resolve(getPropertyValue(offer_list_response, ['p2p_offer_list', 'list']).length);
+    });
+
     const displayTopUpButton = () => {
         BinarySocket.wait('balance').then((response) => {
             const el_virtual_topup_info = getElementById('virtual_topup_info');
@@ -128,27 +146,89 @@ const Cashier = (() => {
                         .crypto_config[shortname]
                         .minimum_withdrawal;
 
-                    $crypto_min_withdrawal.text(minimum_withdrawal);
+                    let to_fixed = 0;
+                    // cut long numbers off after two non-zero decimals
+                    // examples: 0.00123456 -> 0.0012, 0.01234567 -> 0.012, 0.12345678 -> 0.12, 0.00102345 -> 0.00102
+                    // first check if number has any decimal places
+                    if (/\./.test(minimum_withdrawal)) {
+                        let count_non_zero = 0;
+
+                        // change number to string so we can use split on it
+                        // split by . separator to only parse the decimal places
+                        // split to array so we can parse each number one by one
+                        const array_decimals = minimum_withdrawal.toString().split('.')[1].split('');
+
+                        to_fixed = array_decimals.findIndex((n) => {
+                            // if current number is not a zero
+                            // and we have parsed more than 2 non-zero numbers
+                            // cut off the number here
+                            if (+n !== 0 && count_non_zero >= 2) {
+                                return true;
+                            }
+                            // otherwise add to the count if current number is not zero and move to the next number
+                            if (+n !== 0) {
+                                count_non_zero += 1;
+                            }
+                            return false;
+                        });
+                    }
+
+                    $crypto_min_withdrawal.text(minimum_withdrawal.toFixed(to_fixed));
                 }
             });
+        });
+    };
+
+    const setBtnDisable = selector => $(selector).addClass('button-disabled').click(false);
+
+    const applyStateLockLogic = (status, deposit, withdraw) => {
+        // statuses to check with their corresponding selectors
+        const statuses_to_check = [
+            { lock: 'cashier_locked', selectors: [deposit, withdraw] },
+            { lock: 'withdrawal_locked', selectors: [withdraw] },
+            { lock: 'no_withdrawal_or_trading', selectors: [withdraw] },
+            { lock: 'unwelcome', selectors: [deposit] },
+        ];
+
+        statuses_to_check.forEach(item => {
+            if (status.includes(item.lock)) {
+                item.selectors.forEach(selector => setBtnDisable(selector));
+            }
+        });
+    };
+
+    const checkStatusIsLocked = ({ status }) => {
+        applyStateLockLogic(status, '.deposit_btn_cashier', '.withdraw_btn_cashier');
+    };
+
+    const checkLockStatusPA = () => {
+        BinarySocket.wait('get_account_status').then(() => {
+            const { status } = State.getResponse('get_account_status');
+            applyStateLockLogic(status, '.deposit', '.withdraw');
         });
     };
 
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
-            BinarySocket.wait('authorize', 'mt5_login_list', 'statement').then(() => {
+            BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status').then(() => {
+                checkStatusIsLocked(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
-
                 if (Client.get('is_virtual')) {
                     displayTopUpButton();
                 } else if (currency) {
+                    const is_p2p_allowed_currency = currency === 'USD';
+                    const is_show_dp2p = /show_dp2p/.test(window.location.hash);
+
                     showCurrentCurrency(
                         currency,
                         State.getResponse('statement'),
                         State.getResponse('mt5_login_list')
                     );
+                    if (is_p2p_allowed_currency && is_show_dp2p) {
+                        setP2PVisibility();
+                    }
                 }
 
                 if (residence) {
@@ -181,6 +261,7 @@ const Cashier = (() => {
         PaymentMethods: {
             onLoad: () => {
                 showContent();
+                checkLockStatusPA();
                 setCryptoMinimumWithdrawal();
             },
         },

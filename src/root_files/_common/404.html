@@ -14,6 +14,7 @@
         'de': 'de|at|li',
         'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
         'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+        'id': 'id',
         'it': 'it',
         'ko': 'kr',
         'pl': 'po',
@@ -42,7 +43,7 @@
         var base = /^(.+?).github.io$/.test(window.location.hostname) ? window.location.origin + '/binary-static' : window.location.origin;
 
         // TODO: REMOVE/CHANGE this after addition of DE or TH languages
-        var unsupported_languages = ['de', 'id', 'th'];
+        var unsupported_languages = ['de', 'th'];
         if (unsupported_languages.indexOf(lang.toLowerCase()) >= 0) {
             lang = 'en';
             window.location.href = base + '/' + lang.toLowerCase() + '/' + 'home.html';

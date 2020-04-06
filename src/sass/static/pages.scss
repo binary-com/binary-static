@@ -1413,24 +1413,6 @@ body #not_authenticated_financial ul.checked > li {
             }
         }
     }
-    .two-fa-status {
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
-        margin-bottom: 50px;
-
-        &-container {
-            display: flex;
-            align-items: center;
-            padding: 10px 30px 10px 15px;
-            background: $COLOR_LIGHT_GRAY;
-        }
-        &-icon {
-            max-width: 55px;
-            max-height: 55px;
-            padding-right: 15px;
-        }
-    }
 }
 
 #signup_form {
@@ -1636,9 +1618,20 @@ body #not_authenticated_financial ul.checked > li {
     width: 206px;
 }
 
-#binary-dp2p {
+#binary_dp2p {
     margin: 0 auto;
     width: 1008px;
     font-size: 10px;
     position: relative;
+
+    @media screen and (max-width: 1023px) {
+        display: none;
+    }
+}
+
+#message_dp2p_mobile_view {
+    @media screen and (max-width: 1023px) {
+        display: block !important;
+        visibility: visible;
+    }
 }

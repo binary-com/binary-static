@@ -162,9 +162,10 @@ const TickDisplay = (() => {
         }
     };
 
+    const hasResetBarrier = () => contract.entry_spot && contract.barrier &&
+        Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier);
+
     const initializeChart = (config, data) => {
-        const has_reset_barrier = contract.entry_spot && contract.barrier &&
-            Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier);
         Highcharts.setOptions({
             lang: { thousandsSep: ',' },
         });
@@ -173,7 +174,7 @@ const TickDisplay = (() => {
         HighchartUI.updateLabels(chart, {
             contract_type   : contract_category,
             has_barrier     : should_set_barrier && contract_category !== 'highlowticks',
-            is_reset_barrier: has_reset_barrier,
+            is_reset_barrier: hasResetBarrier(),
             is_tick_trade   : true,
             shortcode       : contract.shortcode,
             show_end_time   : true,
@@ -426,8 +427,8 @@ const TickDisplay = (() => {
                     } else if (current_tick_count === ticks_needed) {
                         HighchartUI.updateLabels(chart, {
                             contract_type   : contract_category,
-                            has_barrier     : false,
-                            is_reset_barrier: false,
+                            has_barrier     : !contract_category.match('digits|runs|highlowticks'),
+                            is_reset_barrier: hasResetBarrier(),
                             is_tick_trade   : true,
                             shortcode       : contract.shortcode,
                             show_end_time   : true,

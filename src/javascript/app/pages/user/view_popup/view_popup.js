@@ -249,11 +249,17 @@ const ViewPopup = (() => {
 
         if (is_multiplier_contract) {
             const {
-                deal_cancellation: {
+                cancellation: {
                     ask_price: deal_cancellation_price = 0,
                 } = {},
+                profit,
             } = contract;
+            const total_pnl = +profit - deal_cancellation_price;
             containerSetText('trade_details_deal_cancellation', deal_cancellation_price ? formatMoney(contract.currency, deal_cancellation_price) : '-');
+            containerSetText('trade_details_total_pnl',
+                `${formatMoney(contract.currency, total_pnl)}${deal_cancellation_price ? `<span class="percent"> (${localize('including Deal Cancel. Fee')})</span>` : ''}`,
+                { class: (total_pnl >= 0 ? 'profit' : 'loss') }
+            );
         }
 
         if (!is_started) {
@@ -264,7 +270,13 @@ const ViewPopup = (() => {
                 // only show entry spot if available and contract was not sold before start time
                 containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : contract.entry_spot_display_value);
             }
-            containerSetText('trade_details_message', contract.validation_error ? contract.validation_error : '&nbsp;');
+            containerSetText('trade_details_message', contract.validation_error && !is_multiplier_contract ? contract.validation_error : '&nbsp;');
+            if (is_multiplier_contract) {
+                containerSetText('trade_details_bottom', localize(
+                    'This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.',
+                    ['<br/>', '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">', '</a>']
+                ));
+            }
         }
 
         const is_digit = /digit/i.test(contract.contract_type);
@@ -329,8 +341,10 @@ const ViewPopup = (() => {
         if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
             TickDisplay.plotResetSpot(barrier);
         }
-        // next line is responsible for 'sell at market' flashing on the last tick
-        sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
+        if (!is_multiplier_contract) {
+            // next line is responsible for 'sell at market' flashing on the last tick
+            sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
+        }
         contract.chart_validation_error = contract.validation_error;
         contract.validation_error       = '';
     };
@@ -367,7 +381,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_indicative_label', localize('Payout'));
         containerSetText('trade_details_profit_loss_label', localize('Profit/Loss'));
         if (contract.status === 'sold') {
-            containerSetText('trade_details_end_label', localize('End Time'));
+            containerSetText('trade_details_end_label', localize('Exit Time'));
             containerSetText('trade_details_end_date', epochToDateTime(contract.sell_time), '', true);
         }
         if (Lookback.isLookback(contract.contract_type)) {
@@ -545,7 +559,7 @@ const ViewPopup = (() => {
 
     const createAuditRow = (table, date, tick, tick_display, remark, td_class) => {
         // if we have already added this timestamp in first table, skip adding it again to second table
-        // unless it is a highlighted tick like entry or exit spot, or start or end time
+        // unless it is a highlighted tick like entry or exit spot, or start or exit time
         if (document.querySelector(`.audit-dates[data-value='${date}']`) && !remark) {
             return;
         }
@@ -665,6 +679,7 @@ const ViewPopup = (() => {
             ${createRow(localize('Indicative'), 'trade_details_indicative_label', 'trade_details_indicative_price')}
             ${createRow(localize('Potential Profit/Loss'), 'trade_details_profit_loss_label', 'trade_details_profit_loss')}
             ${is_multiplier_contract ? createRow(localize('Deal Cancel. Fee'), 'trade_details_deal_cancellation_label', 'trade_details_deal_cancellation') : ''}
+            ${is_multiplier_contract ? createRow(localize('Total Profit/Loss'), 'trade_details_total_pnl_label', 'trade_details_total_pnl') : ''}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
             </table>
             <div id="errMsg" class="notice-msg ${hidden_class}"></div>

@@ -2,7 +2,7 @@ import React    from 'react';
 import { List } from '../../_common/components/elements.jsx';
 
 const InvisibleHeading = ({ headers = [] }) => (
-    <div className='center-text' id='title'>
+    <div className='center-text gr-row gr-centered' id='title'>
         { headers.map((header, idx) => (
             <h1 className={`${header.className} invisible`} key={idx}>{header.string}</h1>
         ))}
@@ -18,7 +18,7 @@ const UlText = ({ text, paragraph, className, items = [] }) => (
 );
 
 const SideBar = ({ className, sidebar_items = [] }) => (
-    <div className={`sidebar invisible ${className}`}>
+    <div className={`sidebar gr-row invisible ${className}`}>
         <ul id='sidebar-nav'>
             { sidebar_items.map((sidebar_item, idx) => (
                 <li key={idx}><a href={`#${sidebar_item.href}`}>{sidebar_item.string}</a></li>
@@ -28,9 +28,9 @@ const SideBar = ({ className, sidebar_items = [] }) => (
 );
 
 const InvisibleImage = ({ classNames = [] }) => (
-    <div className='gr-12 center-text' id='image'>
+    <div className='gr-12' id='image'>
         { classNames.map((className,idx) => (
-            <img className={`responsive invisible dept-image ${className}`} src={it.url_for(`images/pages/careers/${className}.svg`)} key={idx} />
+            <img className={`responsive gr-row gr-centered invisible dept-image ${className}`} src={it.url_for(`images/pages/careers/${className}.svg`)} key={idx} />
         ))}
     </div>
 );
@@ -85,6 +85,7 @@ const JobDetails = () => (
                                 { href: 'security_researcher',                 string: it.L('Security Researcher') },
                                 { href: 'postgresql_database_administrator',   string: it.L('PostgreSQL Database Administrator (DBA)') },
                                 { href: 'ui_ux_designer',                      string: it.L('UI/UX Designer') },
+                                { href: 'technical_writer',                    string: it.L('Technical Writer') },
                             ]}
                         />
 
@@ -347,7 +348,7 @@ const JobDetails = () => (
                             <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
-                                text={it.L('You will:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Design and develop applications and platforms based on blockchain technology') },
@@ -504,6 +505,40 @@ const JobDetails = () => (
                             />
                         </div>
 
+                        <div className='invisible' id='technical_writer'>
+                            <h1>{it.L('Technical Writer')}</h1>
+
+                            <p>{it.L('You will combine your excellent command of English and your strong understanding of the technology we use to produce well-structured, concise, and easy-to-understand technical documentation as well as project and architectural plans.')}</p>
+
+                            <UlText
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Develop an in-depth understanding of our products and services to condense information into simple, accurate, and polished documents tailored to their target audience') },
+                                    { text: it.L('Document our current and intended future systems and software architecture') },
+                                    { text: it.L('Produce coding standards, training manuals, and other technical documents for our Back-end, Front-end, Quants, Business Intelligence, and Quality Assurance teams as well as for the third-party developers who use our API') },
+                                    { text: it.L('Refine and polish engineer-generated documents and open source projects to imbue them with clarity and consistency') },
+                                    { text: it.L('Work with project managers to create detailed technical guidelines for achieving our short-term and long-term goals') },
+                                    { text: it.L('Generate documentation for our internal and public-facing APIs') },
+                                    { text: it.L('Identify and remedy content gaps and requirements to insert visual aids such as diagrams or videos to assist comprehension') },
+                                    { text: it.L('Set the standard for our technical documentation by creating a technical style guide that can be followed across the company') },
+                                    { text: it.L('Make sure that production and publication of content are technically accurate, well-written, and easily understandable') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Good fundamental knowledge of software development, preferably with the programming languages, platforms, and systems that we use, such as Perl, Python, PHP, C/C++, Go, Ruby, Redis, Docker, Kubernetes, and AWS') },
+                                    { text: it.L('Familiarity with relational database design and/or open-source RDBMS systems such as MySQL and PostgreSQL') },
+                                    { text: it.L('Good knowledge of Linux and other open-source platforms') },
+                                    { text: it.L('Outstanding written and verbal communication skills and excellent command of English') },
+                                    { text: it.L('More than 3 years of experience in technical content creation') },
+                                ]}
+                            />
+                        </div>
+
                     </div>
 
                     <div className='quality_assurance'>
@@ -594,7 +629,7 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs') },
+                                    { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs') },
                                     { text: it.L('Create data analytics tools for trading/quantitative analysis') },
                                     { text: it.L('Conduct performance testing including backtesting, stress testing analysis, and benchmarking') },
                                     { text: it.L('Develop risk management models and algorithms using MATLAB/Python/R/C++') },
@@ -614,7 +649,7 @@ const JobDetails = () => (
                                 className='bullet'
                                 items={[
                                     { text: it.L('An advanced university degree in physics, financial engineering, or mathematics is preferred') },
-                                    { text: it.L('Experience in Forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
+                                    { text: it.L('Experience in forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
                                     { text: it.L('Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc.') },
                                     { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
                                     { text: it.L('Strong analytical skills and the ability to communicate your findings in a clear, concise, and effective manner') },
@@ -693,6 +728,7 @@ const JobDetails = () => (
                             <p>{it.L('You are also expected to help us promote our cutting-edge trading platform that has been one of the most recognised in the binary options trading industry for over 18 years.')}</p>
 
                             <UlText
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market') },
@@ -1081,6 +1117,7 @@ const JobDetails = () => (
                             <p>{it.L('The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth.')}</p>
 
                             <UlText
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Support our global recruitment and talent management needs') },
@@ -1153,7 +1190,7 @@ const JobDetails = () => (
                 <div className='gr-3 gr-hide-m gr-hide-p' />
                 <div className='gr-9 gr-12-m gr-12-p center-text gr-centered'>
                     <div className='gr-12'>
-                        <a className='button' href='mailto:hr@binary.com'>
+                        <a className='button' href='mailto:recruitment@binary.com'>
                             <span>{it.L('Submit your CV and Cover Letter')}</span>
                         </a>
                     </div>

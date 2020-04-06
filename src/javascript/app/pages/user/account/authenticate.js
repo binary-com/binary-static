@@ -1,6 +1,7 @@
 const DocumentUploader        = require('@binary-com/binary-document-uploader');
 const Cookies                 = require('js-cookie');
 const Onfido                  = require('onfido-sdk-ui');
+const onfido_phrases          = require('./onfido_phrases');
 const Client                  = require('../../../base/client');
 const Header                  = require('../../../base/header');
 const BinarySocket            = require('../../../base/socket');
@@ -24,7 +25,6 @@ const showLoadingImage        = require('../../../../_common/utility').showLoadi
 const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
-    let is_from_mt5              = false;
     let onfido_unsupported       = false;
     let file_checks          = {};
     let file_checks_uns      = {};
@@ -842,7 +842,8 @@ const Authenticate = (() => {
                 onfido = Onfido.init({
                     containerId: 'onfido',
                     language   : {
-                        locale: getLanguage().toLowerCase() || 'en',
+                        locale : getLanguage().toLowerCase() || 'en',
+                        phrases: onfido_phrases[getLanguage().toLowerCase()],
                     },
                     token     : sdk_token,
                     useModal  : false,
@@ -896,18 +897,20 @@ const Authenticate = (() => {
                 service      : 'onfido',
             }).then((response) => {
                 if (response.error) {
-                    resolve();
+                    resolve({ error: response.error });
+                    return;
                 }
                 const token = response.service_token.token;
                 const in_90_minutes = 1 / 16;
                 Cookies.set('onfido_token', token, {
-                    expires: in_90_minutes,
-                    secure : true,
+                    expires : in_90_minutes,
+                    secure  : true,
+                    sameSite: 'strict',
                 });
-                resolve(token);
+                resolve({ token });
             });
         } else {
-            resolve(onfido_cookie);
+            resolve({ token: onfido_cookie });
         }
     });
 
@@ -919,6 +922,7 @@ const Authenticate = (() => {
     };
 
     const initAuthentication = async () => {
+        let has_personal_details_error = false;
         const authentication_status = await getAuthenticationStatus();
 
         if (!authentication_status || authentication_status.error) {
@@ -926,8 +930,33 @@ const Authenticate = (() => {
             $('#error_occured').setVisibility(1);
             return;
         }
-        
-        const onfido_token = await getOnfidoServiceToken();
+
+        const service_token_response = await getOnfidoServiceToken();
+
+        if (
+            service_token_response.error &&
+            service_token_response.error.code === 'MissingPersonalDetails'
+        ) {
+            has_personal_details_error = true;
+            const personal_fields_errors = {
+                address_city    : localize('Town/City'),
+                address_line_1  : localize('First line of home address'),
+                address_postcode: localize('Postal Code/ZIP'),
+                address_state   : localize('State/Province'),
+                email           : localize('Email address'),
+                phone           : localize('Telephone'),
+                place_of_birth  : localize('Place of birth'),
+                residence       : localize('Country of Residence'),
+            };
+
+            const missing_personal_fields = Object.keys(service_token_response.error.details)
+                .map(field => (personal_fields_errors[field].toLowerCase() || field));
+
+            const error_msgs = missing_personal_fields ? missing_personal_fields.join(', ') : '';
+
+            $('#missing_personal_fields').html(error_msgs);
+        }
+
         const { identity, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
@@ -939,14 +968,16 @@ const Authenticate = (() => {
             $('#authentication_verified').setVisibility(1);
         }
 
-        if (!identity.further_resubmissions_allowed) {
+        if (has_personal_details_error) {
+            $('#personal_details_error').setVisibility(1);
+        } else if (!identity.further_resubmissions_allowed) {
             switch (identity.status) {
                 case 'none':
                     if (onfido_unsupported) {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
-                        initOnfido(onfido_token, documents_supported);
+                        initOnfido(service_token_response.token, documents_supported);
                     }
                     break;
                 case 'pending':
@@ -968,7 +999,7 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido(onfido_token, documents_supported);
+            initOnfido(service_token_response.token, documents_supported);
         }
         switch (document.status) {
             case 'none': {
@@ -999,22 +1030,18 @@ const Authenticate = (() => {
     };
 
     const onLoad = async () => {
-        is_from_mt5 = Url.paramsHash().is_from_mt5;
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
-        if (!isAuthenticationAllowed() && !is_from_mt5) {
+        if (!isAuthenticationAllowed()) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
             $('#authentication_unneeded').setVisibility(1);
         }
-        
+
         const has_svg_account = Client.hasSvgAccount();
         if (is_required || has_svg_account){
             initTab();
             initAuthentication();
-            if (is_from_mt5) {
-                $('#authenticate_only_real_mt5_advanced').setVisibility(1);
-            }
         } else {
             $('#authentication_tab').setVisibility(0);
             $('#not_required_msg').setVisibility(1);
@@ -1028,7 +1055,6 @@ const Authenticate = (() => {
         }
 
         TabSelector.onUnload();
-        is_from_mt5 = false;
     };
 
     return {

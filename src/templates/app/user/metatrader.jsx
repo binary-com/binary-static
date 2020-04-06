@@ -6,7 +6,7 @@ import {
 import Loading           from '../../_common/components/loading.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */
-const AccountDesc = ({ title, description, account_type, items }) => {
+const AccountDesc = ({ title, description, account_type, items, id = undefined }) => {
     let types = '';
     if (account_type) {
         account_type.forEach((type) => {
@@ -15,7 +15,7 @@ const AccountDesc = ({ title, description, account_type, items }) => {
     }
 
     return (
-        <div className={types}>
+        <div className={types} id={id}>
             <h3>{title}</h3>
             <p>{description}</p>
             <ul className='checked small no-padding'>
@@ -76,7 +76,7 @@ const Metatrader = () => (
             </div>
             <p id='page_msg' className='notice-msg center-text invisible' />
             <p id='financial_authenticate_msg' className='notice-msg center-text invisible'>
-                {it.L('Please [_1]authenticate[_2] your account to continue trading.', `<a href="${it.url_for('user/authenticate')}?is_from_mt5=true">`, '</a>')}
+                {it.L('Please [_1]authenticate[_2] your account to continue trading.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}
             </p>
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
@@ -102,7 +102,7 @@ const Metatrader = () => (
                                 <div className='acc-info has-account invisible'>
                                     <div className='gr-row gr-padding-10'>
                                         <div className='gr-3'>{it.L('MT5 Account:')}</div>
-                                        <div data='login' />
+                                        <div data='display_login' />
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-3'>{it.L('Name:')}</div>
@@ -121,6 +121,12 @@ const Metatrader = () => (
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div className='hint gr-padding-20 gr-parent no-margin'>
+                        <p className='no-margin'>
+                            {it.L('Server maintenance starting 03:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time.')}
+                        </p>
                     </div>
 
                     <div className='mt-panel'>
@@ -155,22 +161,34 @@ const Metatrader = () => (
                                     <img src={it.url_for('images/pages/metatrader/dashboard/mt5.png')} />
                                 </a>
                             </div>
-                            <div className='mt-link'>
-                                <a href={it.url_for('metatrader/download')}>
+                            <div className='mt-link-download'>
+                                <a href={it.url_for('metatrader/download')} className='mt-link-button'>
                                     {it.L('Go to MT5 download page')}
                                 </a>
                             </div>
                         </div>
-                        <div className='mt-sidebar-button'>
+                    </div>
+                    <div className='mt-panel'>
+                        <div className='mt-sidebar-button mt5-web'>
                             <div className='small-icon'>
                                 <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
                                 </a>
                             </div>
-                            <div className='mt-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
-                                    {it.L('MT5 Web platform')}
-                                </a>
+                            <div className='mt-title-mt5-web'>
+                                {it.L('MT5 Web platform')}
+                            </div>
+                            <div className='mt-link-web'>
+                                <div className='mt5-web-link'>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo' target='_blank' rel='noopener noreferrer'>
+                                        {it.L('Demo')}
+                                    </a>
+                                </div>
+                                <div className='mt5-web-link'>
+                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
+                                        {it.L('Real')}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -188,6 +206,7 @@ const Metatrader = () => (
 
                     <div className='account-desc'>
                         <AccountDesc
+                            id='general_desc'
                             title={it.L('Choose an account')}
                             description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                         />
@@ -276,9 +295,11 @@ const Metatrader = () => (
                                             <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
                                         </TypeGroup>
                                     </div>
+                                    <div id='authenticate_loading' className='invisible'><Loading /></div>
+
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
-                                        <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
+                                        <strong>{it.L('Note: A no deposit bonus worth 10 USD will be credited into your account within 24 hours after registration.')}</strong>
                                     </p>
                                     <div className='center-text'>
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
@@ -435,6 +456,11 @@ const Metatrader = () => (
                                     </div>
                                 </div>
                             </div>
+
+                            <div className='gr-padding-20 gr-parent no-margin hint center-text invisible' id='mt5_remaining_transfers'>
+                                {it.L('Remaining MT5 fund transfers for today: [_1]', '<strong />')}
+                            </div>
+
                             <div className='gr-row'>
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>
@@ -477,7 +503,6 @@ const Metatrader = () => (
                             </div>
                         </div>
                     </div>
-
                     <div id='messages'>
                         <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
                         <div id='msg_switch'>
@@ -493,10 +518,10 @@ const Metatrader = () => (
                                 <li className='assessment invisible'>{it.L('Please [_1]complete the financial assessment[_2] to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                                 <li className='tax invisible'>{it.L('Complete your [_1]Tax Information[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                                 <li className='citizen invisible'>{it.L('Select [_1]Citizenship[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
-                                <li className='authenticate invisible'>{it.L('Please [_1]authenticate your account[_2] before creating an MT5 account.', `<a href="${it.url_for('user/authenticate')}?is_from_mt5=true">`, '</a>')}</li>
+                                <li className='authenticate invisible'>{it.L('Please [_1]authenticate your account[_2] before creating an MT5 account.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</li>
                             </ul>
                         </div>
-                        <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please [_1]Authenticate[_2] your Binary account.', `<a href="${it.url_for('user/authenticate')}?is_from_mt5=true">`, '</a>')}</div>
+                        <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please [_1]Authenticate[_2] your Binary account.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</div>
                     </div>
                 </div>
             </div>

@@ -6,10 +6,12 @@ const Currency               = require('../../common/currency');
 const FormManager            = require('../../common/form_manager');
 const validEmailToken        = require('../../common/form_validation').validEmailToken;
 const handleVerifyCode       = require('../../common/verification_code').handleVerifyCode;
+const getCurrencies          = require('../../../_common/base/currency_base').getCurrencies;
 const localize               = require('../../../_common/localize').localize;
 const State                  = require('../../../_common/storage').State;
 const Url                    = require('../../../_common/url');
 const template               = require('../../../_common/utility').template;
+const getPropertyValue       = require('../../../_common/utility').getPropertyValue;
 const isEmptyObject          = require('../../../_common/utility').isEmptyObject;
 const getCurrentBinaryDomain = require('../../../config').getCurrentBinaryDomain;
 const isBinaryApp            = require('../../../config').isBinaryApp;
@@ -27,11 +29,6 @@ const DepositWithdraw = (() => {
     const container = '#deposit_withdraw';
 
     const init = () => {
-        if (!Client.get('currency')) {
-            BinaryPjax.load(`${Url.urlFor('user/set-currency')}#redirect_${cashier_type}`);
-            return;
-        }
-
         if (cashier_type === 'deposit') {
             token = '';
             getCashierURL();
@@ -205,10 +202,8 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
-            const popup_valid_for_url = `${Url.urlFor('cashier/forwardws')}?action=deposit`;
-            const popup_valid = popup_valid_for_url === window.location.href;
             const client_currency = Client.get('currency');
-            if (popup_valid && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
+            if (cashier_type === 'deposit' && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 Dialog.confirm({
                     id                : 'deposit_currency_change_popup_container',
                     ok_text           : localize('Yes I\'m sure'),
@@ -243,28 +238,71 @@ const DepositWithdraw = (() => {
         }
     };
 
-    const onLoad = () => {
+    const onLoad = async () => {
         $loading = $('#loading_cashier');
         getCashierType();
-        const req_get_account_status = BinarySocket.send({ get_account_status: 1 });
-        const req_statement          = BinarySocket.send({ statement: 1, limit: 1 });
-        const req_mt5_login_list     = BinarySocket.send({ mt5_login_list: 1 });
 
-        Promise.all([req_get_account_status, req_statement, req_mt5_login_list]).then(() => {
-            // cannot use State.getResponse because we want to check error which is outside of response[msg_type]
-            const response_get_account_status = State.get(['response', 'get_account_status']);
-            if (!response_get_account_status.error && /cashier_locked/.test(response_get_account_status.get_account_status.status)) {
+        if (!Client.get('currency')) {
+            BinaryPjax.load(`${Url.urlFor('user/set-currency')}#redirect_${cashier_type}`);
+            return;
+        }
+
+        if (cashier_type === 'withdraw' && +Client.get('balance') === 0) {
+            showError('no_balance_error');
+            return;
+        }
+
+        await BinarySocket.send({ get_account_status: 1 });
+
+        // cannot use State.getResponse because we want to check error which is outside of response[msg_type]
+        const response_get_account_status = State.get(['response', 'get_account_status']);
+        if (!response_get_account_status.error) {
+            if (/cashier_locked/.test(response_get_account_status.get_account_status.status)) {
                 showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
-            } else {
+                return;
+            }
+            const experimental_suspended = getPropertyValue(response_get_account_status.get_account_status, ['experimental_suspended', Client.get('currency')]) || {};
+            if ((cashier_type === 'deposit' && experimental_suspended.is_deposit_suspended) ||
+                (cashier_type === 'withdraw' && experimental_suspended.is_withdrawal_suspended)) {
+                // Experimental currency is suspended
+                showError('custom_error', localize('Please note that the selected currency is allowed for limited accounts only.'));
+                return;
+            }
+        }
+
+        await BinarySocket.wait('website_status');
+        const currency_config = getPropertyValue(getCurrencies(), [Client.get('currency')]) || {};
+        if (cashier_type === 'deposit') {
+            if (currency_config.is_deposit_suspended) {
+                // Currency deposit is suspended
+                showError('custom_error', localize('Sorry, deposits for this currency are currently disabled.'));
+                return;
+            }
+        } else if (currency_config.is_withdrawal_suspended) { // type is withdrawal
+            // Currency withdrawal is suspended
+            showError('custom_error', localize('Sorry, withdrawals for this currency are currently disabled.'));
+            return;
+        }
+
+        const promises = [];
+        if (cashier_type === 'deposit') {
+            promises.push(BinarySocket.send({ statement: 1, limit: 1 }));
+            promises.push(BinarySocket.send({ mt5_login_list: 1 }));
+        } else {
+            promises.push(BinarySocket.send({ get_limits: 1 }));
+        }
+
+        Promise.all(promises).then(() => {
+            if (cashier_type === 'withdraw') {
                 const limit = State.getResponse('get_limits.remainder');
-                if (cashier_type === 'withdraw' && typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
+                if (typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
                     showError('custom_error', localize('You have reached the withdrawal limit.'));
-                } else {
-                    BinarySocket.wait('get_settings').then(() => {
-                        init();
-                    });
+                    return;
                 }
             }
+            BinarySocket.wait('get_settings').then(() => {
+                init();
+            });
         });
     };
 

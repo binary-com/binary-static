@@ -125,7 +125,8 @@ const Highchart = (() => {
 
         HighchartUI.updateLabels(chart, getHighchartLabelParams());
 
-        // const display_decimals = (history ? history.prices[0] : candles[0].open).toString().split('.')[1].length || 3;
+        // if we disable a symbol in API, it will be missing from active symbols so we can't retrieve its pip
+        // so we should handle getting an undefined display_decimals
         const display_decimals = await getUnderlyingPipSize(contract.underlying);
         chart_options = {
             data,
@@ -138,8 +139,9 @@ const Highchart = (() => {
             radius    : 2,
             title     : init_options.title,
             tooltip   : {
-                valueDecimals: display_decimals,
-                xDateFormat  : '%A, %b %e, %H:%M:%S GMT',
+                xDateFormat: '%A, %b %e, %H:%M:%S GMT',
+                // if display_decimals is undefined, don't change the tooltips' decimals
+                ...(display_decimals && { valueDecimals: display_decimals }),
             },
             user_sold: contract.status === 'sold',
             x_axis   : { label: { format: '{value:%H:%M:%S}', overflow: 'justify' } },
@@ -177,7 +179,7 @@ const Highchart = (() => {
         show_end_time       : contract.contract_type !== 'highlowticks',
     });
 
-    // type 'x' is used to draw lines such as start and end times
+    // type 'x' is used to draw lines such as start and exit times
     // type 'y' is used to draw lines such as barrier
     const addPlotLine = (params, type) => {
         chart[(`${type}Axis`)][0].addPlotLine(HighchartUI.getPlotlineOptions(params, type));
@@ -431,12 +433,12 @@ const Highchart = (() => {
                     addPlotLine({ id: 'barrier',           value: +barrier,    label: `${localized_label} (${addComma(barrier)})`,           dashStyle: 'Dot'   }, 'y');
                 } else if (Reset.isReset(contract_type)) {
                     if (Reset.isNewBarrier(entry_spot, barrier)) {
+                        prev_barriers[1] = entry_spot;
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot',   textBottom: contract_type !== 'RESETCALL', x: -60, align: 'right' }, 'y');
                         addPlotLine({ id: 'reset_barrier', value: +barrier,    label: `${localize('Reset Barrier')} (${addComma(barrier)})`, dashStyle: 'Solid', textBottom: contract_type === 'RESETCALL', x: -60, align: 'right' }, 'y');
                         HighchartUI.updateLabels(chart, getHighchartLabelParams(true));
                     } else {
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot', x: -60, align: 'right' }, 'y');
-
                     }
                 } else {
                     addPlotLine({ id: 'barrier',           value: +barrier,    label: `${localize('Barrier')} (${addComma(barrier)})`,       dashStyle: 'Dot' },   'y');
@@ -458,9 +460,17 @@ const Highchart = (() => {
 
     // Update barriers if needed.
     const updateBarrier = () => {
-        const { barrier, high_barrier, low_barrier } = contract;
+        const { barrier, contract_type, entry_spot, high_barrier, low_barrier } = contract;
         // Update barrier only if it doesn't equal previous value
-        if (barrier && barrier !== prev_barriers[0]) { // Batman: Good boy!
+        // Batman: Good boy!
+        if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)
+            && (barrier !== prev_barriers[0] || entry_spot !== prev_barriers[1])) {
+            prev_barriers[0] = barrier;
+            prev_barriers[1] = entry_spot;
+            removePlotLine('barrier', 'y');
+            removePlotLine('reset_barrier', 'y');
+            drawBarrier();
+        } else if (barrier && barrier !== prev_barriers[0]) {
             prev_barriers[0] = barrier;
             removePlotLine('barrier', 'y');
             drawBarrier();

@@ -57,7 +57,7 @@ const GraduateProgram = () => {
                 </div>
                 <div className='intro-bg' />
                 <div id='register' className='primary-bg-color-dark section-title-inverse'>
-                    <a href='mailto:hr@binary.com' target='_blank' rel='noopener noreferrer' className='button'><span>Apply now</span></a>
+                    <a href='mailto:recruitment@binary.com' target='_blank' rel='noopener noreferrer' className='button'><span>Apply now</span></a>
                 </div>
             </section>
 
@@ -169,7 +169,7 @@ const GraduateProgram = () => {
                                 <div className='gr-7 gr-12-m'>
                                     <h2>{('Quants')}</h2>
                                     <div className='box fill-bg-color'>
-                                        <p>{('Manage and optimise pricing and risk management software for exotic options, Forex, and CFDs.')}</p>
+                                        <p>{('Manage and optimise pricing and risk management software for exotic options, forex, and CFDs.')}</p>
                                         <p>{('Develop risk management models and algorithms.')}</p>
                                         <p>{('Develop software to study market microstructure and manage financial data feeds.')}</p>
                                         <p>{('Software development stack: Perl, R, Python, MATLAB')}</p>

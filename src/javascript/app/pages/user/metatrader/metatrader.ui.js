@@ -124,8 +124,8 @@ const MetaTraderUI = (() => {
     const setMTAccountText = () => {
         const acc_type = $mt5_account.attr('value');
         if (acc_type) {
-            const login = getPropertyValue(accounts_info[acc_type], ['info', 'login']);
-            const title = `${accounts_info[acc_type].title}${ login ? ` (${login})` : '' }`;
+            const display_login = getPropertyValue(accounts_info[acc_type], ['info', 'display_login']);
+            const title = `${accounts_info[acc_type].title}${ display_login ? ` (${display_login})` : '' }`;
             if (!new RegExp(title).test($mt5_account.text())) {
                 $mt5_account.html(title);
             }
@@ -137,7 +137,7 @@ const MetaTraderUI = (() => {
         $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
         if (accounts_info[acc_type].info) {
             setMTAccountText();
-            $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.login})`);
+            $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
             $acc_item.setVisibility(1);
             if (/demo/.test(accounts_info[acc_type].account_type)) {
                 $list.find('#acc_group_demo').setVisibility(1);
@@ -159,7 +159,10 @@ const MetaTraderUI = (() => {
         }
     };
     const displayAccountDescription = (acc_type) => {
-        $container.find('#account_desc').html($templates.find(`.account-desc .${acc_type}`).clone());
+        const $account_desc = $templates.find('.account-desc');
+        const $account_type_desc = $account_desc.find(`.${acc_type}`);
+        const $el_to_clone = $account_type_desc.length ? $account_type_desc : $account_desc.find('#general_desc');
+        $container.find('#account_desc').html($el_to_clone.clone());
     };
 
     const setCurrentAccount = (acc_type) => {
@@ -175,14 +178,14 @@ const MetaTraderUI = (() => {
                 const key     = $(this).attr('data');
                 const info    = accounts_info[acc_type].info[key];
                 const mapping = {
-                    balance : () => (isNaN(info) ? '' : Currency.formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
-                    leverage: () => `1:${info}`,
-                    login   : () => (`${info} (${/demo/.test(accounts_info[acc_type].account_type) ? localize('Demo Account') : localize('Real-Money Account')})`),
+                    balance      : () => (isNaN(info) ? '' : Currency.formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
+                    display_login: () => (`${info} (${/demo/.test(accounts_info[acc_type].account_type) ? localize('Demo Account') : localize('Real-Money Account')})`),
+                    leverage     : () => `1:${info}`,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
 
-            setCounterpartyAndJurisdictionTooltip($('.acc-info div[data="login"]'), acc_type);
+            setCounterpartyAndJurisdictionTooltip($('.acc-info div[data="display_login"]'), acc_type);
 
             // $container.find('.act_cashier').setVisibility(!types_info[acc_type].is_demo);
             if (current_action_ui !== 'new_account') {
@@ -239,7 +242,7 @@ const MetaTraderUI = (() => {
                 .setVisibility(1);
 
             if (action === 'manage_password') {
-                $form.find('button[type="submit"]').append(accounts_info[acc_type].info.login ? ` ${localize('for account [_1]', accounts_info[acc_type].info.login)}` : '');
+                $form.find('button[type="submit"]').append(accounts_info[acc_type].info.display_login ? ` ${localize('for account [_1]', accounts_info[acc_type].info.display_login)}` : '');
                 if (!token) {
                     $form.find('#frm_verify_password_reset').setVisibility(1);
                 } else if (!Validation.validEmailToken(token)) {
@@ -275,7 +278,7 @@ const MetaTraderUI = (() => {
             setDemoTopupStatus();
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
             $form.find('.binary-balance').html(`${Currency.formatMoney(client_currency, Client.get('balance'))}`);
-            $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
+            $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.display_login])}`);
             $form.find('.mt5-balance').html(`${Currency.formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
@@ -310,6 +313,21 @@ const MetaTraderUI = (() => {
                     $action.find('#frm_cashier').setVisibility(0);
                 }
             }
+
+            const remaining_transfers = getPropertyValue(State.getResponse('get_limits'), ['daily_transfers', 'mt5', 'available']);
+
+            if (typeof remaining_transfers !== 'undefined') {
+                const $remaining_container = $form.find('#mt5_remaining_transfers');
+                $remaining_container.setVisibility(1);
+                const $remaining_number = $remaining_container.find('strong');
+                $remaining_number.text(remaining_transfers);
+                if (+remaining_transfers) {
+                    $remaining_number.removeClass('empty');
+                } else {
+                    $remaining_number.addClass('empty');
+                }
+            }
+
             return;
         }
 
@@ -542,7 +560,7 @@ const MetaTraderUI = (() => {
             if (action === 'password_reset') { // go back to verify reset password form
                 loadAction('manage_password');
                 if (!response.error) {
-                    displayMainMessage(localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, response.echo_req.login]));
+                    displayMainMessage(localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, MetaTraderConfig.getDisplayLogin(response.echo_req.login)]));
                 } else if (has_invalid_token) {
                     $form.find('#frm_verify_password_reset #token_error').setVisibility(1);
                 }

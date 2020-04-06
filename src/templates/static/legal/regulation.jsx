@@ -55,7 +55,7 @@ const RegulatorText = () => (
 const Area = ({ items }) => {
     const square_wh = 10.6;
     const default_width = 37.8;
-    const svg_width = 320;
+    const svg_width = 300;
     const svg_scale = 900 / svg_width;
     const normalize = n => n.toFixed(2);
     return (
@@ -106,31 +106,31 @@ const Regulation = () => {
                         <map name='planetmap' id='planetmap'>
                             <Area
                                 items={[
-                                    { name: 'Sweden',         x: 127.7, y: 7.6 },
-                                    { name: 'Denmark',        x: 120.4, y: 19.7 },
-                                    { name: 'Germany',        x: 112,   y: 31.8 },
-                                    { name: 'Netherlands',    x: 92.8,  y: 43.9,  width: 46.2 },
-                                    { name: 'United Kingdom', x: 2.7,   y: 86.6,  width: 55.7 },
-                                    { name: 'Luxembourg',     x: 11.6,  y: 114.5, width: 46.9 },
-                                    { name: 'France',         x: 20.6,  y: 126.3 },
-                                    { name: 'Spain',          x: 3.6,   y: 144.3 },
-                                    { name: 'Portugal',       x: 3.6,   y: 156.3 },
-                                    { name: 'Italy',          x: 14.2,  y: 168.5, width: 27.3 },
-                                    { name: 'Austria',        x: 100.4, y: 185.3 },
-                                    { name: 'Slovenia',       x: 109.4, y: 201.5, width: 37.8 },
-                                    { name: 'Croatia',        x: 142.6, y: 215.2 },
-                                    { name: 'Greece',         x: 199.4, y: 215.3 },
-                                    { name: 'Cyprus',         x: 257.8, y: 221.8, width: (48.4 - 10.6) },
-                                    { name: 'Bulgaria',       x: 254.3, y: 159.5, width: (48.4 - 10.6) },
-                                    { name: 'Romania',        x: 254.3, y: 147.7 },
-                                    { name: 'Hungary',        x: 254.2, y: 135.9 },
-                                    { name: 'Slovakia',       x: 254.3, y: 124.2 },
-                                    { name: 'Czech Republic', x: 238.9, y: 112.4, width: 53.2 },
-                                    { name: 'Poland',         x: 258,   y: 95.3,  width: 34.2 },
-                                    { name: 'Lithuania',      x: 252.9, y: 83.5,  width: 39.3 },
-                                    { name: 'Latvia',         x: 258,   y: 71.7,  width: 34.2 },
-                                    { name: 'Estonia',        x: 258,   y: 60.0,  width: 34.2 },
-                                    { name: 'Finland',        x: 258,   y: 13.9,  width: 34.2 },
+                                    { name: 'Sweden',         x: 105.561, y: 13.568 },
+                                    { name: 'Denmark',        x: 102.461, y: 25.638 },
+                                    { name: 'Germany',        x: 94.944,  y: 37.872 },
+                                    { name: 'Netherlands',    x: 79.061,  y: 50.038,  width: 46.2 },
+                                    { name: 'United Kingdom', x: 0.461,   y: 102.368, width: 55.7 },
+                                    { name: 'Luxembourg',     x: 0,       y: 114.931, width: 46.9 },
+                                    { name: 'France',         x: 0.434,   y: 136.647 },
+                                    { name: 'Spain',          x: 0.25,    y: 152.315 },
+                                    { name: 'Italy',          x: 0.184,   y: 164.056, width: 27.3 },
+                                    { name: 'Portugal',       x: 0.25,    y: 178.256 },
+                                    { name: 'Austria',        x: 108.926, y: 179.94 },
+                                    { name: 'Slovenia',       x: 100.733, y: 205.64 },
+                                    { name: 'Croatia',        x: 167.224, y: 212.34 },
+                                    { name: 'Greece',         x: 187.154, y: 193.083 },
+                                    { name: 'Cyprus',         x: 245,     y: 219,     width: (48.4 - 10.6) },
+                                    { name: 'Bulgaria',       x: 253,     y: 145.5,   width: (48.4 - 10.6) },
+                                    { name: 'Romania',        x: 251.6,   y: 133.59 },
+                                    { name: 'Hungary',        x: 254.2,   y: 122 },
+                                    { name: 'Slovakia',       x: 251.6,   y: 110.279 },
+                                    { name: 'Czech Republic', x: 236.2,   y: 97.306,  width: 53.2 },
+                                    { name: 'Poland',         x: 255.3,   y: 83.549,  width: 34.2 },
+                                    { name: 'Lithuania',      x: 250.348, y: 68.383,  width: 39.3 },
+                                    { name: 'Latvia',         x: 255.321, y: 53.293,  width: 34.2 },
+                                    { name: 'Estonia',        x: 255.3,   y: 38.361,  width: 34.2 },
+                                    { name: 'Finland',        x: 247.873, y: 13.568,  width: 34.2 },
                                 ]}
                             />
                         </map>
@@ -155,7 +155,7 @@ const Regulation = () => {
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>
                             <FillBox id='crypto_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Crypto.pdf`)} target='_blank' text={it.L('Cryptocurrencies')} />
-                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Commodities.pdf`)} target='_blank' text={it.L('CFD')} />
+                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Commodities.pdf`)} target='_blank' text={it.L('Commodities')} />
                             <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Forex.pdf`)} target='_blank' text={it.L('Forex')} />
                         </div>
                     </div>
@@ -319,6 +319,49 @@ const Regulation = () => {
                                 text={it.L('Table 6 - Likelihood of execution information')}
                             />
                         </div>
+                        <div className='gr-6 gr-12-m gr-padding-30'>
+                            <h3>{it.L('Q4 2019')}</h3>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2019/Q4/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2019/Q4/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2019/Q4/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2019/Q4/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
+                            />
+                        </div>
                     </div>
 
                     <h3>{it.L('RTS 27 2018')}</h3>
@@ -429,13 +472,13 @@ const Regulation = () => {
                 </Box>
             </div>
 
-            <Box header={it.L('Binary (SVG) Ltd')} >
-                <p>{it.L('Binary (SVG) Ltd, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) Ltd.')}</p>
+            <Box header={it.L('Binary (SVG) LLC')} >
+                <p>{it.L('Binary (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC.')}</p>
             </Box>
 
             <Box header={it.L('Binary (V) Ltd')} >
-                <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', '<a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank">', '</a>')}</p>
+                <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />

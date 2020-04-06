@@ -12,6 +12,7 @@ const Language = (() => {
         // DE   : 'Deutsch', // TODO: uncomment to enable German language
         ES   : 'Español',
         FR   : 'Français',
+        ID   : 'Indonesia',
         IT   : 'Italiano',
         PL   : 'Polish',
         PT   : 'Português',
@@ -26,7 +27,7 @@ const Language = (() => {
     const setCookieLanguage = (lang) => {
         if (!Cookies.get('language') || lang) {
             const cookie = new CookieStorage('language');
-            cookie.write((lang || getLanguage()).toUpperCase());
+            cookie.write((lang || getLanguage()).toUpperCase(), undefined, true, 'none');
         }
     };
 

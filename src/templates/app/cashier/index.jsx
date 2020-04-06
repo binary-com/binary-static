@@ -14,20 +14,19 @@ const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
     </div>
 );
 
-const DepositWithdrawButton = ({ id, is_payment_agent, is_virtual }) => (
+const DepositWithdrawButton = ({ is_payment_agent, is_virtual }) => (
     <div className='gr-2 gr-12-m'>
         <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
         <div className='gr-row gr-row-align-left gr-row-align-right-m'>
             { is_virtual ?
                 <div className='gr-adapt'>
-                    <Button className='toggle button' id='VRT_topup_link' text={it.L('Get USD 10,000.00')} />
+                    <Button className='toggle button' id='VRT_topup_link' text={it.L('Get 10,000.00 USD')} />
                 </div>
                 :
                 <React.Fragment>
                     <div className='gr-adapt gr-no-gutter-m client_real invisible gr-parent'>
                         <Button
-                            className='toggle button client_real invisible'
-                            id={id}
+                            className='toggle button client_real invisible deposit_btn_cashier'
                             href={it.url_for(is_payment_agent ? '/cashier/payment_agent_listws' : '/cashier/forwardws?action=deposit')}
                             text={it.L('Deposit')}
                             text_className='deposit'
@@ -35,8 +34,7 @@ const DepositWithdrawButton = ({ id, is_payment_agent, is_virtual }) => (
                     </div>
                     <div className='gr-adapt client_real invisible'>
                         <Button
-                            className='toggle button client_real invisible'
-                            id={id}
+                            className='toggle button client_real invisible withdraw_btn_cashier'
                             href={it.url_for(is_payment_agent ? '/paymentagent/withdrawws' : '/cashier/forwardws?action=withdraw')}
                             text={it.L('Withdraw')}
                             text_className='withdraw'
@@ -116,7 +114,7 @@ const Cashier = () => (
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
                 </div>
                 <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
-                <DepositWithdrawButton id='deposit_btn_cashier' />
+                <DepositWithdrawButton />
             </div>
         </div>
 
@@ -137,6 +135,29 @@ const Cashier = () => (
                 </div>
                 <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
                 <DepositWithdrawButton is_payment_agent />
+            </div>
+        </div>
+
+        <div className='gr-padding-10' />
+        <div className='gr-padding-10 table-body invisible gr-parent' id='dp2p_info'>
+            <h3 className='gr-padding-10'>{it.L('P2P')}</h3>
+            <div className='gr-row'>
+                <IconWithLink img_src={it.url_for('images/pages/cashier/dp2p-logo.svg')} />
+                <div className='gr-6 gr-8-m'>
+                    <span>{it.L('Make a deposit or withdrawal on your account by buying and selling fiat currencies from anywhere in the world.')}</span>
+                </div>
+                <div className='gr-2 gr-12-m'>
+                    <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
+                    <div className='gr-row gr-row-align-left gr-row-align-right-m'>
+                        <div className='gr-adapt'>
+                            <Button
+                                className='toggle button'
+                                href={`${it.url_for('cashier/dp2p')}#show_dp2p`}
+                                text={it.L('Buy or Sell')}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </React.Fragment>

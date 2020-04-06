@@ -13,7 +13,7 @@ const ProfessionalClient = () => (
                     <p>{it.L('Clients need to satisfy at least two of the following criteria in order to receive Professional Client status:')}</p>
                     <ul className='checked'>
                         <li>{it.L('You\'ve carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters')}</li>
-                        <li>{it.L('The size of your instrument portfolio exceeds EUR 500,000 or its equivalent')}</li>
+                        <li>{it.L('The size of your instrument portfolio exceeds 500,000 EUR or its equivalent')}</li>
                         <li>{it.L('You\'ve worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform')}</li>
                     </ul>
                     <p>{it.L('If you choose to be treated as a Professional Client, we\'ll regard you as having the required market knowledge and experience. As such, we\'ll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:')}</p>

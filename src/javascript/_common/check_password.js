@@ -11,7 +11,7 @@ const checkPassword = (password_selector) => {
 
     const daysToCrack = Mellt.checkPassword(el_password.value.trim());
     if (daysToCrack < 0) {
-        div.textContent = localize('The password you entered is one of the world\'s most commonly used passwords. You should not be using this password.');
+        div.textContent = localize('Your password is one of the most commonly used passwords on the internet. Please choose a unique password.');
     } else {
         let years;
         if (daysToCrack > 365) {
@@ -23,7 +23,7 @@ const checkPassword = (password_selector) => {
             }
         }
         div.textContent = localize(
-            'Hint: it would take approximately [_1][_2] to crack this password.', [
+            'Hint: it would take approximately [_1][_2] to crack your password.', [
                 (daysToCrack === 1000000000 ? '>' : ''),
                 years ? `${years} ${localize('years')}` : `${daysToCrack} ${localize('days')}`,
             ]);

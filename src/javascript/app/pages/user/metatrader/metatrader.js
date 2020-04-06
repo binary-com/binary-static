@@ -27,7 +27,6 @@ const MetaTrader = (() => {
                     } catch (error) {
                         MetaTraderUI.displayPageError(error.message);
                     }
-                    getAllAccountsInfo();
                 } else {
                     BinarySocket.send({ get_limits: 1 }).then(async () => {
                         try {
@@ -35,7 +34,6 @@ const MetaTrader = (() => {
                         } catch (error) {
                             MetaTraderUI.displayPageError(error.message);
                         }
-                        getAllAccountsInfo();
                     });
                     getExchangeRates();
                 }
@@ -82,6 +80,7 @@ const MetaTrader = (() => {
                     reject(response.error);
                     return;
                 }
+
                 const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
                     Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
 
@@ -120,6 +119,7 @@ const MetaTrader = (() => {
                     });
                 });
                 resolve();
+                getAllAccountsInfo(response);
             });
         })
     );
@@ -140,12 +140,10 @@ const MetaTrader = (() => {
         };
     };
 
-    const getAllAccountsInfo = () => {
+    const getAllAccountsInfo = (response) => {
         MetaTraderUI.init(submit, sendTopupDemo);
-        BinarySocket.send({ mt5_login_list: 1 }).then((response) => {
-            show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
-            allAccountsResponseHandler(response);
-        });
+        show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
+        allAccountsResponseHandler(response);
     };
 
     const getDefaultAccount = () => {
@@ -163,6 +161,7 @@ const MetaTrader = (() => {
             const info = data.mt5_login_list.find(mt5_account => mt5_account.login === login);
             if (info) {
                 accounts_info[acc_type].info = info;
+                accounts_info[acc_type].info.display_login = MetaTraderConfig.getDisplayLogin(info.login);
                 MetaTraderUI.updateAccount(acc_type);
             }
         }
@@ -228,7 +227,7 @@ const MetaTrader = (() => {
                 }
 
                 const req = makeRequestObject(acc_type, action);
-                BinarySocket.send(req).then((response) => {
+                BinarySocket.send(req).then(async (response) => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);
                         if (typeof actions_info[action].onError === 'function') {
@@ -239,8 +238,12 @@ const MetaTrader = (() => {
                         }
                         MetaTraderUI.enableButton(action, response);
                     } else {
+                        await BinarySocket.send({ get_account_status: 1 });
                         if (accounts_info[acc_type].info) {
                             const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
+                            if (parent_action === 'cashier') {
+                                await BinarySocket.send({ get_limits: 1 });
+                            }
                             MetaTraderUI.loadAction(parent_action);
                             MetaTraderUI.enableButton(action, response);
                             MetaTraderUI.refreshAction();
@@ -282,7 +285,10 @@ const MetaTrader = (() => {
         // Update account info
         mt5_login_list.forEach((obj) => {
             const acc_type = Client.getMT5AccountType(obj.group);
-            accounts_info[acc_type].info = { login: obj.login };
+            accounts_info[acc_type].info = {
+                display_login: MetaTraderConfig.getDisplayLogin(obj.login),
+                login        : obj.login,
+            };
             setAccountDetails(obj.login, acc_type, response);
         });
 
@@ -298,10 +304,9 @@ const MetaTrader = (() => {
     const sendTopupDemo = () => {
         MetaTraderUI.setTopupLoading(true);
         const acc_type = Client.get('mt5_account');
-        const login    = accounts_info[acc_type].info.login;
         const req      = {
             mt5_deposit: 1,
-            to_mt5     : login,
+            to_mt5     : accounts_info[acc_type].info.login,
         };
 
         BinarySocket.send(req).then((response) => {
@@ -312,7 +317,7 @@ const MetaTrader = (() => {
                 MetaTraderUI.displayMainMessage(
                     localize(
                         '[_1] has been credited into your MT5 Demo Account: [_2].',
-                        [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, login.toString()]
+                        [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, accounts_info[acc_type].info.display_login]
                     ));
                 BinarySocket.send({ mt5_login_list: 1 }).then((res) => {
                     allAccountsResponseHandler(res);

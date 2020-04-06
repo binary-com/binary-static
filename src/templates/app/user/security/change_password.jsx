@@ -9,7 +9,7 @@ const ChangePassword = () => (
                 <FormRow type='password' id='old_password' label={it.L('Current password')} />
                 <FormRow type='password' id='new_password' label={it.L('New password')} hint={it.L('Minimum of six lower and uppercase letters with numbers')} />
                 <FormRow type='password' id='repeat_password' label={it.L('Verify new password')} />
-                <SubmitButton type='submit' msg_id='form_error' text={it.L('Change password')} />
+                <SubmitButton type='submit' msg_id='frm_change_password_error' text={it.L('Change password')} />
             </Fieldset>
         </form>
 
