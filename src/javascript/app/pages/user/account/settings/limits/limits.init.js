@@ -30,6 +30,8 @@ const LimitsInit = (() => {
                 exchange_rate = getPropertyValue(response_exchange_rates, ['exchange_rates', 'rates', currency]);
             }
 
+            const getCoversionText = (amount) => should_convert ? ` (${amount} ${base_currency})` : '';
+
             const days_limit = formatMoney(currency, limits.num_of_days_limit, 1);
             const days_limit_converted = formatMoney(base_currency, limits.num_of_days_limit / exchange_rate, 1);
 
@@ -42,12 +44,12 @@ const LimitsInit = (() => {
                     localize('Your [_1] day withdrawal limit is currently [_2][_3].', [
                         limits.num_of_days,
                         `${days_limit} ${currency}`,
-                        should_convert ? ` (${days_limit_converted} ${base_currency})` : '',
+                        getCoversionText(days_limit_converted),
                     ]));
                 elementTextContent(el_withdrawn,
                     localize('You have already withdrawn [_1][_2] in aggregate over the last [_3] days.', [
                         `${withdrawal_for_days} ${currency}`,
-                        should_convert ? ` (${withdrawal_for_days_converted} ${base_currency})` : '',
+                        getCoversionText(withdrawal_for_days_converted),
                         limits.num_of_days,
                     ]));
             } else {
@@ -64,12 +66,12 @@ const LimitsInit = (() => {
                 elementTextContent(el_withdraw_limit,
                     localize('Your withdrawal limit is [_1][_2].', [
                         `${days_limit} ${currency}`,
-                        should_convert ? ` (${days_limit_converted} ${base_currency})` : '',
+                        getCoversionText(days_limit_converted),
                     ]));
                 elementTextContent(el_withdrawn,
                     localize('You have already withdrawn [_1][_2].', [
                         `${withdrawal_since_inception} ${currency}`,
-                        should_convert ? ` (${withdrawal_since_inception_converted} ${base_currency})` : '',
+                        getCoversionText(withdrawal_since_inception_converted),
                     ]));
             }
 
@@ -80,7 +82,7 @@ const LimitsInit = (() => {
             elementTextContent(el_withdraw_limit_agg,
                 localize('Hence, your withdrawable balance is only up to [_1][_2], subject to your account’s available funds.', [
                     `${remainder} ${currency}`,
-                    should_convert ? ` (${remainder_converted} ${base_currency})` : '',
+                    getCoversionText(remainder_converted),
                 ]));
 
             if (should_convert) {
