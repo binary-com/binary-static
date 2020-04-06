@@ -63,7 +63,7 @@ const Cryptocurrencies = () => (
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the margin for our cryptocurrency pairs by using the formula below:')}</p>
 
-                    <MtBox icon_1='mr1-icon' icon_2='crypto-icon' text={it.L('For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of 4831.400 USD and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:')} />
+                    <MtBox icon_1='mr1-icon' icon_2='crypto-icon' text={it.L('For example, if you wanted to buy one unit of the BTC/USD cryptocurrency pair at a price of 4831.400 USD and at a margin rate of 10%, the margin that you need to purchase one lot of BTC/USD will be calculated as follows:')} />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>

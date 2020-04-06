@@ -60,8 +60,7 @@ const Cfds = () => (
                     <p>{it.L('To learn more, please read our [_1]CFD contract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('How to close a position')} />
-                    <p>{it.L('When you decide to close an open contract, you only need to take the opposite position in order to close the contract.')}</p>
-                    <p>{it.L('For example, if you buy a US 100 contract and it\'s not going as planned, you just need to sell it to cut your losses at the current market price.')}</p>
+                    <p>{it.L('When you decide to close an open contract, you only need to choose “Close Position” option from context menu.')}</p>
                 </Section>
 
                 <Section id='margin-policy' header={it.L('CFD margin policy')}>
