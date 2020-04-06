@@ -198,6 +198,7 @@ const MT5WebPlatform = ({ is_first_child }) => (
                 <span>{it.L('Trade with Real account')}</span>
             </a>
             <a
+                id='btn_trade_with_demo'
                 className='button button-secondary'
                 href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo'
                 target='_blank'

@@ -338,7 +338,7 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else {
-                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
+                    BinarySocket.wait('get_account_status').then((response_status) => {
                         if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                             resolve(localize('Your cashier is locked.')); // Locked from BO
                         } else {
@@ -365,7 +365,7 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
-                    BinarySocket.send({ get_account_status: 1 }).then(() => {
+                    BinarySocket.wait('get_account_status').then(() => {
                         if (!/svg_standard/.test(acc_type) && isAuthenticationPromptNeeded()) {
                             resolve($messages.find('#msg_authenticate').html());
                         }
