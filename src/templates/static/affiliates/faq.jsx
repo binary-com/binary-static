@@ -29,7 +29,7 @@ const FAQ = () => (
 
                     <h3>{it.L('Who can apply as a [_1] affiliate?', it.website_name)}</h3>
                     <ul className='bullet'>
-                        <ListStrong header={it.L('Webmaster')}                  text={it.L('Do you run a website that promotes Forex or binary options? Join our global network of affiliates and turn your online traffic into revenue.')} />
+                        <ListStrong header={it.L('Webmaster')}                  text={it.L('Do you run a website that promotes forex or binary options? Join our global network of affiliates and turn your online traffic into revenue.')} />
                         <ListStrong header={it.L('Trading guru')}               text={it.L('Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship.')} />
                         <ListStrong header={it.L('Webinar speaker')}            text={it.L('Monetise your online trading discussions with your audience of trading enthusiasts while helping them improve their trading experience.')} />
                         <ListStrong header={it.L('Web and software developer')} text={it.L('Receive commission when you bring in new clients through trading applications and interfaces you build using the [_1] API.', it.website_name)} />

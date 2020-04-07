@@ -49,7 +49,7 @@ const Cryptocurrencies = () => (
                 </Section>
                 <Section id='how-trade-crypto' header={it.L('How to trade cryptocurrencies')}>
                     <p>{it.L('Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar.')}</p>
-                    <p>{it.L('Similar to Forex trading, you must understand when to buy (or "go long") and when to sell (or "go short"). In Forex trading, you\'ll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall.')}</p>
+                    <p>{it.L('Similar to forex trading, you must understand when to buy (or "go long") and when to sell (or "go short"). In forex trading, you\'ll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall.')}</p>
                     <p>{it.L('The same concept applies to our cryptocurrency pairs.')}</p>
                     <p>{it.L('Let\'s compare the differences between buying and selling, using the BTC/USD as an example:')}</p>
                     <BuySellCurrency currency_one={it.L('BTC')} currency_two={it.L('USD')} />
@@ -57,13 +57,13 @@ const Cryptocurrencies = () => (
                 </Section>
                 <Section id='margin-policy' header={it.L('Cryptocurrency margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – meaning your existing capital can give you a much higher level of market exposure.')}</p>
-                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset that\'s trading at USD 50 per unit through a traditional broker, it would typically cost you USD 5,000 for this transaction.')}</p>
+                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset that\'s trading at 50 USD per unit through a traditional broker, it would typically cost you 5,000 USD for this transaction.')}</p>
                     <p>{it.L('However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the margin for our cryptocurrency pairs by using the formula below:')}</p>
 
-                    <MtBox icon_1='mr1-icon' icon_2='crypto-icon' text={it.L('For example, if you wanted to buy one volume of the BTC/EUR cryptocurrency pair at a price of USD 4831.400 and at a margin rate of 10%, the margin that you need to purchase one lof of BTC/EUR will be calculated as follows:')} />
+                    <MtBox icon_1='mr1-icon' icon_2='crypto-icon' text={it.L('For example, if you wanted to buy one unit of the BTC/USD cryptocurrency pair at a price of 4831.400 USD and at a margin rate of 10%, the margin that you need to purchase one lot of BTC/USD will be calculated as follows:')} />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
@@ -72,10 +72,10 @@ const Cryptocurrencies = () => (
                     <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We delete an order with the largest margin reserved')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
-                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
+                        <li>{it.L('We delete an order with the largest margin reserved.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss.')}</li>
+                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level.')}</li>
                     </ol>
                 </Section>
                 <Section id='contract-specification' header={it.L('Cryptocurrency contract specifications and commission scheme')}>
@@ -91,13 +91,13 @@ const Cryptocurrencies = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US Dollar')      }, { text: one }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US Dollar')     }, { text: one }, { text: tenth     }, { text: hundredth }],
-                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US Dollar')     }, { text: one }, { text: tenth     }, { text: hundredth }],
-                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US Dollar') }, { text: one }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US Dollar')       }, { text: one }, { text: hundred   }, { text: hundred   }],
-                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')         }, { text: one }, { text: one       }, { text: one       }],
-                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US Dollar')          }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')      }, { text: one }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar')     }, { text: one }, { text: tenth     }, { text: hundredth }],
+                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar')     }, { text: one }, { text: tenth     }, { text: hundredth }],
+                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US dollar') }, { text: one }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')       }, { text: one }, { text: hundred   }, { text: hundred   }],
+                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')         }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US dollar')          }, { text: one }, { text: one       }, { text: one       }],
                             ],
                         }}
                     />
@@ -117,13 +117,13 @@ const Cryptocurrencies = () => (
                                 { text: it.L('Swaps short (per annum)'),   className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US Dollar')      }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US Dollar')     }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US Dollar')     }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US Dollar') }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US Dollar')       }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US Dollar')         }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US Dollar')          }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')      }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar')     }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar')     }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US dollar') }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')       }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')         }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US dollar')          }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
                             ],
                         }}
                     />

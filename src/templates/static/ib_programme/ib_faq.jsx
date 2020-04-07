@@ -22,10 +22,10 @@ const FAQ = () => (
             <div className='gr-9 gr-12-m'>
                 <Section id='general' header={it.L('General')}>
                     <h3>{it.L('What is the [_1] IB Programme all about?', it.website_name)}</h3>
-                    <p>{it.L('Refer new clients to our MetaTrader 5 platform and earn a commission on their Forex and CFD trading activity.')}</p>
+                    <p>{it.L('Refer new clients to our MetaTrader 5 platform and earn a commission on their forex and CFD trading activity.')}</p>
 
                     <h3>{it.L('How much do I get paid if I refer clients onto your MT5 platform?')}</h3>
-                    <p>{it.L('You will earn a fixed payout based on the volume of individual trades purchased by each referred client. Please refer to our IB commission structure for Forex, metals, and Synthetic Indices.')}</p>
+                    <p>{it.L('You will earn a fixed payout based on the volume of individual trades purchased by each referred client. Please refer to our IB commission structure for forex, metals, and Synthetic Indices.')}</p>
 
                     <h3>{it.L('Is there a fee to join the [_1] IB Programme?', it.website_name)}</h3>
                     <p>{it.L('It\'s completely free to join our IB programme. We\'ve never charged a fee and we never will.')}</p>
