@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from '../../../_common/components/elements.jsx';
+import Loading from '../../../_common/components/loading.jsx';
 
 const Limits = () => {
     const data_balloon = `<a href="javascript:;" data-balloon-length="xlarge" class='no-underline' data-balloon="%"><img src="${it.url_for('images/common/question_1.png')}"></a>`;
@@ -65,15 +66,17 @@ const Limits = () => {
                 </div>
                 <div id='limits_error' />
             </div>
-            <div className='invisible' id='withdrawal-limits'>
-                <h2 id='withdrawal-title'>{it.L('Withdrawal Limits')}</h2>
-                <div>
-                    <p id='withdrawal-limit' />
-                    <p id='already-withdraw' />
-                    <p id='withdrawal-limit-aggregate' />
-                    <p id='already-withdraw-aggregate' />
-                </div>
+            <h2 id='withdrawal-title'>{it.L('Withdrawal Limits')}</h2>
+            <div id='loading'>
+                <Loading />
             </div>
+            <div>
+                <p id='withdrawal-limit' />
+                <p id='already-withdraw' />
+                <p id='withdrawal-limit-aggregate' />
+                <p id='already-withdraw-aggregate' />
+            </div>
+            <p className='hint invisible' id='withdrawal-limits'><strong>{it.L('Note:')}</strong>{' '}{it.L('These limits will change due to fluctuation in currency exchange rates.')}</p>
         </React.Fragment>
     );
 };

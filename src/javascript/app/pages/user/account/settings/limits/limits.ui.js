@@ -69,16 +69,23 @@ const LimitsUI = (() => {
             $('#withdrawal-title').prepend(`${login_id} - `);
         }
         $('#limits-title').setVisibility(1);
-        $('#withdrawal-limits').setVisibility(1);
     };
 
     const clearTableContent = () => {
         Table.clearTableBody('client-limits');
     };
 
+    const limitsError = (error = {}) => {
+        getElementById('withdrawal-title').setVisibility(0);
+        getElementById('limits-title').setVisibility(0);
+        $('#loading').remove();
+        $('#limits_error').html($('<p/>', { class: 'center-text notice-msg', text: error.message || localize('Sorry, an error occurred while processing your request.') }));
+    };
+
     return {
         clearTableContent,
         fillLimitsTable,
+        limitsError,
     };
 })();
 
