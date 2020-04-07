@@ -76,7 +76,7 @@ const Limits = () => {
                 <p id='withdrawal-limit-aggregate' />
                 <p id='already-withdraw-aggregate' />
             </div>
-            <p className='hint' id='withdrawal-limits'><strong>{it.L('Note:')}</strong>{' '}{it.L('These limits will change due to fluctuation in currency exchange rates.')}</p>
+            <p className='hint invisible' id='withdrawal-limits'><strong>{it.L('Note:')}</strong>{' '}{it.L('These limits will change due to fluctuation in currency exchange rates.')}</p>
         </React.Fragment>
     );
 };
