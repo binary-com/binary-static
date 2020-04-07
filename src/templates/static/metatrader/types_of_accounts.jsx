@@ -124,7 +124,7 @@ const TypesOfAccounts = () => (
                 </div>
             </div>
 
-            <p className='hint'>{`${it.L('Note:')} ${it.L('At bank rollover, liquidity in the Forex market is reduced and may increase the spread and processing time for client orders. This happens around 21:00 GMT during daylight saving time, and 22:00 GMT during non-daylight saving time.')}`}</p>
+            <p className='hint'>{`${it.L('Note:')} ${it.L('At bank rollover, liquidity in the forex market is reduced and may increase the spread and processing time for client orders. This happens around 21:00 GMT during daylight saving time, and 22:00 GMT during non-daylight saving time.')}`}</p>
 
             <div className='gr-padding-10' />
 

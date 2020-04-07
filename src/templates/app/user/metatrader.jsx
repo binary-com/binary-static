@@ -299,7 +299,7 @@ const Metatrader = () => (
 
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
-                                        <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
+                                        <strong>{it.L('Note: A no deposit bonus worth 10 USD will be credited into your account within 24 hours after registration.')}</strong>
                                     </p>
                                     <div className='center-text'>
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
