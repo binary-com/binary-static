@@ -350,6 +350,10 @@ const Home = () => {
                                 <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2018.svg')} alt='Global Brands Magazine 2018' />
                                 <span className='caption'>{it.L('Global Brands Magazine')}</span>
                             </div>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2019.svg')} alt='Global Brands Magazine 2019' />
+                                <span className='caption'>{it.L('Global Brands Magazine')}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

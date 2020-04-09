@@ -156,6 +156,10 @@ const WhyUs = () => (
                             <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2018.svg')} alt='Global Brands Magazine 2018' />
                             <span className='caption'>{it.L('Global Brands Magazine')}</span>
                         </div>
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2019.svg')} alt='Global Brands Magazine 2019' />
+                            <span className='caption'>{it.L('Global Brands Magazine')}</span>
+                        </div>
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast:', it.website_name)}</p>
                     <ul className='checked'>
