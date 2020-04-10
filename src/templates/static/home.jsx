@@ -322,6 +322,11 @@ const Home = () => {
                             <h3 className='no-margin'>{it.L('Award-winning trading excellence')}</h3>
                         </div>
                         <div className='award-icons'>
+                            {/* TODO: add this later when we have sufficient awards for two lines */}
+                            {/* <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/t2w-2010.svg')} alt='Trade2Win Award' />
+                                <span className='caption'>{it.L('Trade2Win')}</span>
+                            </div> */}
                             <div className='award-icon'>
                                 <img className='responsive' src={it.url_for('images/pages/home/awards/gbfr-2012.svg')} alt='Global Banking and Finance Review 2012' />
                                 <span className='caption'>{it.L('Global Banking and Finance Review')}</span>
