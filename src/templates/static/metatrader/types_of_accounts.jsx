@@ -62,8 +62,8 @@ const TypesOfAccounts = () => (
             <Box
                 className='hide-maltainvest'
                 image='advanced'
-                title={it.L('Financial Pro')}
-                text={it.L('The Financial Pro account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
+                title={it.L('Financial STP')}
+                text={it.L('The Financial STP account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
             />
             <Box
                 image='volatility_indices'
@@ -80,7 +80,7 @@ const TypesOfAccounts = () => (
                         scroll
                         data={{
                             thead: [
-                                [{ text: '' }, { text: it.L('Financial') }, { text: it.L('Financial Pro') }, { text: it.L('Synthetic') }],
+                                [{ text: '' }, { text: it.L('Financial') }, { text: it.L('Financial STP') }, { text: it.L('Synthetic') }],
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                                                                       { text: it.L('USD') },                               { text: it.L('USD') }],

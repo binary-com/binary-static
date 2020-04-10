@@ -243,7 +243,7 @@ const TypesOfPartnership = () => (
                                 }}
                             />
 
-                            <h3>{it.L('Financial Pro account')}</h3>
+                            <h3>{it.L('Financial STP account')}</h3>
                             <Table
                                 data={{
                                     thead: [

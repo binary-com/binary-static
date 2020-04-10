@@ -24,7 +24,7 @@ const MetaTraderConfig = (() => {
             const advanced_config = {
                 account_type: 'advanced',
                 leverage    : 100,
-                short_title : localize('Financial Pro'),
+                short_title : localize('Financial STP'),
             };
             const volatility_config = {
                 account_type: '',
@@ -40,8 +40,8 @@ const MetaTraderConfig = (() => {
                 financial: {
                     demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Financial'), short_title: standard_config.short_title },
                     real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Financial'), short_title: standard_config.short_title },
-                    demo_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Demo Financial Pro'), short_title: advanced_config.short_title },
-                    real_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Real Financial Pro'), short_title: advanced_config.short_title },
+                    demo_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Demo Financial STP'), short_title: advanced_config.short_title },
+                    real_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Real Financial STP'), short_title: advanced_config.short_title },
                 },
             });
         };

@@ -235,8 +235,8 @@ const Metatrader = () => (
                         />
                         <AccountDesc
                             account_type={['labuan_advanced']}
-                            title={it.L('Financial Pro Account')}
-                            description={it.L('Our MetaTrader 5 Financial Pro account provides you with tight spreads, higher ticket size and offers more products.')}
+                            title={it.L('Financial STP Account')}
+                            description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to [_1]', '1:100'),
                                 it.L('Variable spreads'),
@@ -247,8 +247,8 @@ const Metatrader = () => (
                         {/*
                         <AccountDesc
                             account_type={['vanuatu_advanced']}
-                            title={it.L('Financial Pro Account')}
-                            description={it.L('Our MetaTrader 5 Financial Pro account provides you with tight spreads, higher ticket size and offers more products.')}
+                            title={it.L('Financial STP Account')}
+                            description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to [_1]', '1:100'),
                                 it.L('Variable spreads'),
