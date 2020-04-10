@@ -323,10 +323,6 @@ const Home = () => {
                         </div>
                         <div className='award-icons'>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/t2w-2010.svg')} alt='Trade2Win Award' />
-                                <span className='caption'>{it.L('Trade2Win')}</span>
-                            </div>
-                            <div className='award-icon'>
                                 <img className='responsive' src={it.url_for('images/pages/home/awards/gbfr-2012.svg')} alt='Global Banking and Finance Review 2012' />
                                 <span className='caption'>{it.L('Global Banking and Finance Review')}</span>
                             </div>
