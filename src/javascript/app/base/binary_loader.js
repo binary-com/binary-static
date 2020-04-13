@@ -85,6 +85,8 @@ const BinaryLoader = (() => {
                 }
 
                 ScrollToAnchor.init();
+
+                ContentVisibility.centerAlignSelect(true);
             });
         });
 
