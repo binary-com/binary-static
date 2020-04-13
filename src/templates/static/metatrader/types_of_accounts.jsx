@@ -63,7 +63,7 @@ const TypesOfAccounts = () => (
                 className='hide-maltainvest'
                 image='advanced'
                 title={it.L('Financial STP')}
-                text={it.L('The Financial STP account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
+                text={it.L('The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
             />
             <Box
                 image='volatility_indices'
