@@ -235,6 +235,9 @@
                     font-weight: bold;
                     color: $COLOR_GRAY_SHADE;
                 }
+                #mt5_remaining_transfers .empty {
+                    color: $COLOR_RED;
+                }
             }
             #frm_manage_password {
                 #token_error {

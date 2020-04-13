@@ -299,7 +299,7 @@ const Metatrader = () => (
 
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
                                     <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
-                                        <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
+                                        <strong>{it.L('Note: A no deposit bonus worth 10 USD will be credited into your account within 24 hours after registration.')}</strong>
                                     </p>
                                     <div className='center-text'>
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
@@ -456,6 +456,11 @@ const Metatrader = () => (
                                     </div>
                                 </div>
                             </div>
+
+                            <div className='gr-padding-20 gr-parent no-margin hint center-text invisible' id='mt5_remaining_transfers'>
+                                {it.L('Remaining MT5 fund transfers for today: [_1]', '<strong />')}
+                            </div>
+
                             <div className='gr-row'>
                                 <div className='gr-6 gr-12-m flex'>
                                     <div className='mt-panel mt-container'>

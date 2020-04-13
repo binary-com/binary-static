@@ -2,7 +2,7 @@ import React    from 'react';
 import { List } from '../../_common/components/elements.jsx';
 
 const InvisibleHeading = ({ headers = [] }) => (
-    <div className='center-text' id='title'>
+    <div className='center-text gr-row gr-centered' id='title'>
         { headers.map((header, idx) => (
             <h1 className={`${header.className} invisible`} key={idx}>{header.string}</h1>
         ))}
@@ -18,7 +18,7 @@ const UlText = ({ text, paragraph, className, items = [] }) => (
 );
 
 const SideBar = ({ className, sidebar_items = [] }) => (
-    <div className={`sidebar invisible ${className}`}>
+    <div className={`sidebar gr-row invisible ${className}`}>
         <ul id='sidebar-nav'>
             { sidebar_items.map((sidebar_item, idx) => (
                 <li key={idx}><a href={`#${sidebar_item.href}`}>{sidebar_item.string}</a></li>
@@ -28,9 +28,9 @@ const SideBar = ({ className, sidebar_items = [] }) => (
 );
 
 const InvisibleImage = ({ classNames = [] }) => (
-    <div className='gr-12 center-text' id='image'>
+    <div className='gr-12' id='image'>
         { classNames.map((className,idx) => (
-            <img className={`responsive invisible dept-image ${className}`} src={it.url_for(`images/pages/careers/${className}.svg`)} key={idx} />
+            <img className={`responsive gr-row gr-centered invisible dept-image ${className}`} src={it.url_for(`images/pages/careers/${className}.svg`)} key={idx} />
         ))}
     </div>
 );
@@ -629,7 +629,7 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs') },
+                                    { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs') },
                                     { text: it.L('Create data analytics tools for trading/quantitative analysis') },
                                     { text: it.L('Conduct performance testing including backtesting, stress testing analysis, and benchmarking') },
                                     { text: it.L('Develop risk management models and algorithms using MATLAB/Python/R/C++') },
@@ -649,7 +649,7 @@ const JobDetails = () => (
                                 className='bullet'
                                 items={[
                                     { text: it.L('An advanced university degree in physics, financial engineering, or mathematics is preferred') },
-                                    { text: it.L('Experience in Forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
+                                    { text: it.L('Experience in forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
                                     { text: it.L('Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc.') },
                                     { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
                                     { text: it.L('Strong analytical skills and the ability to communicate your findings in a clear, concise, and effective manner') },
@@ -728,6 +728,7 @@ const JobDetails = () => (
                             <p>{it.L('You are also expected to help us promote our cutting-edge trading platform that has been one of the most recognised in the binary options trading industry for over 18 years.')}</p>
 
                             <UlText
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market') },
@@ -1116,6 +1117,7 @@ const JobDetails = () => (
                             <p>{it.L('The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth.')}</p>
 
                             <UlText
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Support our global recruitment and talent management needs') },

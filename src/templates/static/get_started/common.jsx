@@ -74,16 +74,16 @@ export const BuySellCurrency = ({ currency_one, currency_two }) => (
         <div className='gr-6 gr-12-m'>
             <h2 className='primary-color'>{it.L('Buy')}</h2>
             <ul className='bullet'>
-                <li>{it.L('You\'re buying the [_1] and selling the [_2]', currency_one, currency_two)}</li>
-                <li>{it.L('You expect the [_1] to rise in value so you can sell it back for a profit', currency_one)}</li>
+                <li>{it.L('You\'re buying the [_1] and selling the [_2].', currency_one, currency_two)}</li>
+                <li>{it.L('You expect the [_1] to rise in value so you can sell it back for a profit.', currency_one)}</li>
                 <li>{it.L('Buy = go long')}</li>
             </ul>
         </div>
         <div className='gr-6 gr-12-m'>
             <h2 className='primary-color'>{it.L('Sell')}</h2>
             <ul className='bullet'>
-                <li>{it.L('You\'re selling the [_1] and buying the [_2]', currency_one, currency_two)}</li>
-                <li>{it.L('You expect the [_1] to fall in value so you can buy it back at a lower price (and make a profit)', currency_one)}</li>
+                <li>{it.L('You\'re selling the [_1] and buying the [_2].', currency_one, currency_two)}</li>
+                <li>{it.L('You expect the [_1] to fall in value so you can buy it back at a lower price (and make a profit).', currency_one)}</li>
                 <li>{it.L('Sell = go short')}</li>
             </ul>
         </div>

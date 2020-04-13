@@ -120,28 +120,28 @@ const Index = () => (
                     </TabContent>
                     <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
-                        <p>{it.L('Trade forex and contracts for difference (CFDs) on MetaTrader 5 - a multi-asset platform that offers outstanding trading possibilities and technical analysis tools.')}</p>
+                        <p>{it.L('Trade forex and contracts for difference (CFDs) on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools.')}</p>
 
                         <SeparatorLine invisible className='gr-padding-30' />
 
                         <GetStartedSectionWrapper
                             section_id='forex'
                             section_header={it.L('Forex')}
-                            section_description={it.L('The Foreign Exchange Market (Forex) is the world\'s largest and most liquid market – where anyone can buy, sell, and exchange currencies.')}
+                            section_description={it.L('The Foreign Exchange Market (forex) is the world\'s largest and most liquid market – where anyone can buy, sell, and exchange currencies.')}
                         >
                             <div className='gr-row'>
                                 <GetStartedSection
                                     link='get-started/forex'
                                     hash='what-forex-trading'
                                     image='mt5/what-forex-trading'
-                                    header={it.L('What is Forex trading')}
-                                    text={it.L('New to Forex? We explain the basics of the world\'s largest and most liquid market.')}
+                                    header={it.L('What is forex trading')}
+                                    text={it.L('New to forex? We explain the basics of the world\'s largest and most liquid market.')}
                                 />
                                 <GetStartedSection
                                     link='get-started/forex'
                                     hash='how-to-trade-forex'
                                     image='mt5/how-to-trade-forex'
-                                    header={it.L('How to trade Forex')}
+                                    header={it.L('How to trade forex')}
                                     text={it.L('Learn how to read currency pairs, when to go long or short, and how to buy your first currency pair.')}
                                 />
                                 <GetStartedSection
@@ -200,7 +200,7 @@ const Index = () => (
                         <GetStartedSectionWrapper
                             section_id='cfds'
                             section_header={it.L('CFDs')}
-                            section_description={it.L('Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them.')}
+                            section_description={it.L('Contracts for difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them.')}
                         >
                             <div className='gr-row'>
                                 <GetStartedSection
