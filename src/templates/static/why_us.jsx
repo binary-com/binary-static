@@ -128,10 +128,11 @@ const WhyUs = () => (
 
                 <Section id='trust' header={it.L('Go with the leader')}>
                     <div className='gr-row awards-section'>
-                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                        {/* TODO: add this later when we have sufficient awards for two lines */}
+                        {/* <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
                             <img className='responsive' src={it.url_for('images/pages/home/awards/t2w-2010.svg')} alt='Trade2Win Award' />
                             <span className='caption'>{it.L('Trade2Win')}</span>
-                        </div>
+                        </div> */}
                         <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
                             <img className='responsive' src={it.url_for('images/pages/home/awards/gbfr-2012.svg')} alt='Global Banking and Finance Review 2012' />
                             <span className='caption'>{it.L('Global Banking and Finance Review')}</span>
@@ -154,6 +155,10 @@ const WhyUs = () => (
                         </div>
                         <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
                             <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2018.svg')} alt='Global Brands Magazine 2018' />
+                            <span className='caption'>{it.L('Global Brands Magazine')}</span>
+                        </div>
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2019.svg')} alt='Global Brands Magazine 2019' />
                             <span className='caption'>{it.L('Global Brands Magazine')}</span>
                         </div>
                     </div>

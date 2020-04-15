@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-06 04:49\n"
+"PO-Revision-Date: 2020-04-13 04:48\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -3128,8 +3128,8 @@ msgstr "crwdns38155:0crwdne38155:0"
 msgid "Copywriter"
 msgstr "crwdns38156:0crwdne38156:0"
 
-msgid "Cost per acquisition (CPA) for EU Affiliates only"
-msgstr "crwdns66534:0crwdne66534:0"
+msgid "Cost per acquisition (CPA) for EU clients only"
+msgstr "crwdns90236:0crwdne90236:0"
 
 msgid "Costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's Bid and the Company's Ask"
 msgstr "crwdns66746:0crwdne66746:0"
@@ -5059,6 +5059,9 @@ msgstr "crwdns52084:0crwdne52084:0"
 
 msgid "Help2Pay is a payment facility that allows online bank transfers for clients across Southeast Asia."
 msgstr "crwdns89756:0crwdne89756:0"
+
+msgid "Hence, your withdrawable balance is only up to %1%2, subject to your account’s available funds."
+msgstr "crwdns90238:0%1crwdnd90238:0%2crwdne90238:0"
 
 msgid "Here is some information about the data feeds used by the Company."
 msgstr "crwdns56226:0crwdne56226:0"
@@ -11444,12 +11447,6 @@ msgstr "crwdns40121:0crwdne40121:0"
 msgid "There will be no charges for fund transfers from the client's %1 account to their MT5 Real Account in the same currency. Should the client's %1 account and MT5 Real Account be in different currencies, the Company reserves the right to charge a currency conversion fee."
 msgstr "crwdns56514:0%1crwdnd56514:0%1crwdne56514:0"
 
-msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
-msgstr "crwdns40125:0%1crwdnd40125:0%2crwdne40125:0"
-
-msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2."
-msgstr "crwdns40126:0%1crwdnd40126:0%2crwdne40126:0"
-
 msgid "These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non-exclusive jurisdiction of the Maltese courts."
 msgstr "crwdns44515:0crwdne44515:0"
 
@@ -11479,6 +11476,9 @@ msgstr "crwdns40138:0crwdne40138:0"
 
 msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
 msgstr "crwdns42932:0crwdne42932:0"
+
+msgid "These limits will change due to fluctuation in currency exchange rates."
+msgstr "crwdns90240:0crwdne90240:0"
 
 msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
 msgstr "crwdns40140:0crwdne40140:0"
@@ -12028,9 +12028,6 @@ msgstr "crwdns90130:0crwdne90130:0"
 
 msgid "Trade your way"
 msgstr "crwdns40254:0crwdne40254:0"
-
-msgid "Trade2Win"
-msgstr "crwdns51438:0crwdne51438:0"
 
 msgid "Trademark"
 msgstr "crwdns55802:0crwdne55802:0"
@@ -13379,14 +13376,11 @@ msgstr "crwdns85315:0%1crwdnd85315:0%2crwdnd85315:0%3crwdne85315:0"
 msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
 msgstr "crwdns85317:0%1crwdnd85317:0%2ccrwdnd85317:0%3crwdne85317:0"
 
-msgid "You have already withdrawn %1 %2."
-msgstr "crwdns40635:0%1crwdnd40635:0%2crwdne40635:0"
+msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
+msgstr "crwdns90242:0%1crwdnd90242:0%2crwdnd90242:0%3crwdne90242:0"
 
-msgid "You have already withdrawn the equivalent of %1 %2 in aggregate over the last %3 days."
-msgstr "crwdns40636:0%1crwdnd40636:0%2crwdnd40636:0%3crwdne40636:0"
-
-msgid "You have already withdrawn the equivalent of %1 %2."
-msgstr "crwdns40637:0%1crwdnd40637:0%2crwdne40637:0"
+msgid "You have already withdrawn %1%2."
+msgstr "crwdns90244:0%1crwdnd90244:0%2crwdne90244:0"
 
 msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
 msgstr "crwdns85319:0%1ccrwdnd85319:0%2crwdne85319:0"
@@ -13535,8 +13529,8 @@ msgstr "crwdns53550:0crwdne53550:0"
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "crwdns53552:0crwdne53552:0"
 
-msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
-msgstr "crwdns40720:0%1crwdnd40720:0%2crwdnd40720:0%3crwdne40720:0"
+msgid "Your %1 day withdrawal limit is currently %2%3."
+msgstr "crwdns90246:0%1crwdnd90246:0%2crwdnd90246:0%3crwdne90246:0"
 
 msgid "Your %1proof of address%2 has expired."
 msgstr "crwdns68460:0%1pcrwdnd68460:0%2crwdne68460:0"
@@ -13718,11 +13712,8 @@ msgstr "crwdns40767:0crwdne40767:0"
 msgid "Your website address (if you have one)"
 msgstr "crwdns86266:0crwdne86266:0"
 
-msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
-msgstr "crwdns40769:0%1crwdnd40769:0%2crwdne40769:0"
-
-msgid "Your withdrawal limit is %1 %2."
-msgstr "crwdns40770:0%1crwdnd40770:0%2crwdne40770:0"
+msgid "Your withdrawal limit is %1%2."
+msgstr "crwdns90248:0%1crwdnd90248:0%2crwdne90248:0"
 
 msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
 msgstr "crwdns85323:0crwdne85323:0"

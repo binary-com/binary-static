@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-06 04:48\n"
+"PO-Revision-Date: 2020-04-13 04:47\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -3128,8 +3128,8 @@ msgstr "Prawa autorskie"
 msgid "Copywriter"
 msgstr "Copywriter"
 
-msgid "Cost per acquisition (CPA) for EU Affiliates only"
-msgstr "Prowizja za Polecenie (CPA) tylko dla Partnerów z UE"
+msgid "Cost per acquisition (CPA) for EU clients only"
+msgstr ""
 
 msgid "Costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's Bid and the Company's Ask"
 msgstr "Koszty - koszty wykonywania zleceń klientów, składające się głównie ze spreadu, t.j. różnicy między Ceną oferowaną Firmy i Ceną ofertową Firmy"
@@ -5059,6 +5059,9 @@ msgstr "Pomoc w tworzeniu zaawansowanych narzędzi do zarządzania ryzykiem na p
 
 msgid "Help2Pay is a payment facility that allows online bank transfers for clients across Southeast Asia."
 msgstr "Help2Pay to funkcja płatności umożliwiająca klientom w południowo-wschodniej Azji wykonywanie przelewów bankowych on-line."
+
+msgid "Hence, your withdrawable balance is only up to %1%2, subject to your account’s available funds."
+msgstr ""
 
 msgid "Here is some information about the data feeds used by the Company."
 msgstr "Tutaj znajdują się informacje o źródłach danych, z których korzysta Firma."
@@ -11445,12 +11448,6 @@ msgstr "Nieprawidłowy znak w polu formularza."
 msgid "There will be no charges for fund transfers from the client's %1 account to their MT5 Real Account in the same currency. Should the client's %1 account and MT5 Real Account be in different currencies, the Company reserves the right to charge a currency conversion fee."
 msgstr "Za przelewy środków z konta klienta %1 na Prawdziwe konto MT5 klienta prowadzone w tej samej walucie nie będą pobierane żadne opłaty. Jeśli konto klienta %1 i Prawdziwe konto MT5 są prowadzone w innych walutach, Firma zastrzega sobie prawo do pobrania opłaty za wymianę waluty."
 
-msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
-msgstr "Dlatego w chwili obecnej Twoja maksymalna natychmiastowa wypłata (o ile posiadasz na koncie wystarczające środki) wynosi %2 %1 (lub równowartość tej kwoty w innej walucie)."
-
-msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2."
-msgstr "Dlatego w chwili obecnej Twoja maksymalna natychmiastowa wypłata (o ile posiadasz na koncie wystarczające środki) wynosi %2 %1."
-
 msgid "These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non-exclusive jurisdiction of the Maltese courts."
 msgstr "Niniejsze DW podlegają przepisom prawa maltańskiego i strony zgadzają się poddać niewyłącznej jurysdykcji sądów maltańskich."
 
@@ -11480,6 +11477,9 @@ msgstr "Są to zakłady, w których gracz wybiera cenę docelową oraz prognozuj
 
 msgid "These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products."
 msgstr "Niniejsze dokumenty zawierają kluczowe informacje dotyczące naszych produktów inwestycyjnych. Przekazanie tych informacji jest wymagane na mocy prawa i ma pomóc Ci zrozumieć naturę tych produktów, związane z nimi ryzyko, koszty oraz potencjalny zysk i stratę oraz pomóc Ci porównać je z innymi produktami."
+
+msgid "These limits will change due to fluctuation in currency exchange rates."
+msgstr ""
 
 msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
 msgstr "Zabrania się kopiowania i rozpowszechniania tych materiałów w jakichkolwiek celach handlowych lub zarobkowych bez uprzedniej pisemnej zgody spółki Binary Group."
@@ -12029,9 +12029,6 @@ msgstr ""
 
 msgid "Trade your way"
 msgstr "Handluj na swój sposób"
-
-msgid "Trade2Win"
-msgstr "Trade2Win"
 
 msgid "Trademark"
 msgstr "Znak towarowy"
@@ -13380,14 +13377,11 @@ msgstr "Masz %1. Możesz otworzyć jedno lub więcej kont w %2kryptowalucie%3:"
 msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
 msgstr "Masz konto %1. Możesz %2zmienić swoją walutę%3 na dowolną walutę z niżej wymienionych, pod warunkiem, że nie dokonałeś/-aś wpłaty ani nie utworzyłeś/-aś konta MT5:"
 
-msgid "You have already withdrawn %1 %2."
-msgstr "Wypłacono już %2 %1."
+msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
+msgstr ""
 
-msgid "You have already withdrawn the equivalent of %1 %2 in aggregate over the last %3 days."
-msgstr "Łączny ekwiwalent %2 %1 został już wypłacony w ciągu ostatnich %3 dni."
-
-msgid "You have already withdrawn the equivalent of %1 %2."
-msgstr "Już wypłaciłeś/aś ekwiwalent %2 %1."
+msgid "You have already withdrawn %1%2."
+msgstr ""
 
 msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
 msgstr "Masz konto, ale nie wybrałeś/-aś waluty. Możesz %1wybrać jedną%2 z poniższych walut jako walutę swojego konta"
@@ -13536,8 +13530,8 @@ msgstr "Zawierałeś/-aś już duże transakcje na rynkach podobnych do tych ofe
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Pracowałeś/-aś w sektorze finansowym przez co najmniej rok na stanowisku wymagającym wiedzy o transakcjach, które chcesz zawierać na naszej platformie"
 
-msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
-msgstr "Twój %1-dniowy limit wypłat wynosi obecnie %3 %2 (lub jego równowartość w innej walucie)."
+msgid "Your %1 day withdrawal limit is currently %2%3."
+msgstr ""
 
 msgid "Your %1proof of address%2 has expired."
 msgstr "Twoje %1potwierdzenie adresu%2 jest już nieważne."
@@ -13719,11 +13713,8 @@ msgstr "Twoja kamera internetowa i mikrofon muszą być w pełni sprawne"
 msgid "Your website address (if you have one)"
 msgstr "Adres Twojej strony (jeśli ją posiadasz)"
 
-msgid "Your withdrawal limit is %1 %2 (or equivalent in other currency)."
-msgstr "Twój limit wypłat to %2 %1 (lub jego ekwiwalent w innej walucie)."
-
-msgid "Your withdrawal limit is %1 %2."
-msgstr "Twój limit wypłat wynosi %2 %1."
+msgid "Your withdrawal limit is %1%2."
+msgstr ""
 
 msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
 msgstr "Twoja wypłata zostanie przetworzona w ciągu jednego dnia roboczego (od poniedziałku do piątku 9:00–17:00 GMT+8), chyba że określono inaczej."
