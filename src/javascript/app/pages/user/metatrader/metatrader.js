@@ -80,7 +80,7 @@ const MetaTrader = (() => {
                     reject(response.error);
                     return;
                 }
-                
+
                 const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
                     Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
 
@@ -227,7 +227,7 @@ const MetaTrader = (() => {
                 }
 
                 const req = makeRequestObject(acc_type, action);
-                BinarySocket.send(req).then((response) => {
+                BinarySocket.send(req).then(async (response) => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);
                         if (typeof actions_info[action].onError === 'function') {
@@ -238,8 +238,12 @@ const MetaTrader = (() => {
                         }
                         MetaTraderUI.enableButton(action, response);
                     } else {
+                        await BinarySocket.send({ get_account_status: 1 });
                         if (accounts_info[acc_type].info) {
                             const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
+                            if (parent_action === 'cashier') {
+                                await BinarySocket.send({ get_limits: 1 });
+                            }
                             MetaTraderUI.loadAction(parent_action);
                             MetaTraderUI.enableButton(action, response);
                             MetaTraderUI.refreshAction();

@@ -52,7 +52,7 @@ const LimitsUI = (() => {
             Object.keys(limits.market_specific).forEach((market) => {
                 appendRowTable(markets[market].name, '', 'auto', 'bold');
                 limits.market_specific[market].forEach((submarket) => {
-                    // submarket name could be (Commodities|Minor Pairs|Major Pairs|Smart FX|Indices|Synthetic Indices)
+                    // submarket name could be (Commodities|Minor Pairs|Major Pairs|Smart FX|Stock Indices|Synthetic Indices)
                     appendRowTable(localize(submarket.name /* localize-ignore */), submarket.turnover_limit !== 'null' ? formatMoney(currency, submarket.turnover_limit, 1) : 0, '25px', 'normal');
                 });
             });
@@ -69,16 +69,23 @@ const LimitsUI = (() => {
             $('#withdrawal-title').prepend(`${login_id} - `);
         }
         $('#limits-title').setVisibility(1);
-        $('#withdrawal-limits').setVisibility(1);
     };
 
     const clearTableContent = () => {
         Table.clearTableBody('client-limits');
     };
 
+    const limitsError = (error = {}) => {
+        getElementById('withdrawal-title').setVisibility(0);
+        getElementById('limits-title').setVisibility(0);
+        $('#loading').remove();
+        $('#limits_error').html($('<p/>', { class: 'center-text notice-msg', text: error.message || localize('Sorry, an error occurred while processing your request.') }));
+    };
+
     return {
         clearTableContent,
         fillLimitsTable,
+        limitsError,
     };
 })();
 

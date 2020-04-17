@@ -34,10 +34,10 @@ const Forex = () => (
     <div id='forex_how_to'>
         <div className='gr-row'>
             <div className='gr-10 gr-push-1 center-text'>
-                <h2>{it.L('How to trade Forex')}</h2>
-                <p>{it.L('A Forex trader has one objective in mind when trading which is:')}</p>
+                <h2>{it.L('How to trade forex')}</h2>
+                <p>{it.L('A forex trader has one objective in mind when trading which is:')}</p>
                 <p className='border-box'>{it.L('To exchange one currency for another in order to make profit.')}</p>
-                <p>{it.L('But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade.')}</p>
+                <p>{it.L('But if you are new to forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade.')}</p>
             </div>
         </div>
 
@@ -71,13 +71,13 @@ const Forex = () => (
                 ]}
             />
             <p>{it.L('Example:')}</p>
-            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell.')}</p>
+            <p>{it.L('If you see EUR/USD has a bid price of 1.05229, you will buy 1.05229 USD for every 1 EUR that you sell.')}</p>
         </Step>
 
         <Step title={it.L('Understand when to buy and sell')} step={it.L('Step 2')} number={2}>
             <div>{it.L('You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:')}</div>
             <p className='border-box'>{it.L('You want to sell that currency pair if you think the base currency will go down.')}</p>
-            <p>{it.L('You have probably seen the terms \'going long\' and \'going short\' being used by a lot of Forex brokers and traders. Let\'s compare the differences between the two terms:')}</p>
+            <p>{it.L('You have probably seen the terms \'going long\' and \'going short\' being used by a lot of forex brokers and traders. Let\'s compare the differences between the two terms:')}</p>
             <p>{it.L('Long:')}</p>
             <List
                 className='checked'
@@ -110,7 +110,7 @@ const Forex = () => (
                 </div>
                 <div className='gr-grow gr-12-m'>{it.L('GBP/USD currency pair and its bid-ask price.')}</div>
             </div>
-            <p>{it.L('To go long, you will click on \'Buy\' to purchase GBP 1 for USD 1.22781. To go short, you will click on \'Sell\' to sell GBP 1 and receive USD 1.22771 in return.')}</p>
+            <p>{it.L('To go long, you will click on \'Buy\' to purchase 1 GBP for 1.22781 USD. To go short, you will click on \'Sell\' to sell 1 GBP and receive 1.22771 USD in return.')}</p>
         </Step>
     </div>
 );

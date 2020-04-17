@@ -99,7 +99,7 @@ const Metals = () => (
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s use the XAU/USD metal pair again as an example.')}</p>
                     <p>{it.L('Due to market volatility and gold\'s reputation as a safe-haven asset, you predict that the price of gold will rise.')}</p>
-                    <p>{it.L('After you purchase one lot of XAU/USD at a price of USD 1,255.06, the price of gold increases and you decide to sell when it reaches USD 1,255.80. Your profit or loss comes down to the price difference multiplied by the total lots you purchased.')}</p>
+                    <p>{it.L('After you purchase one lot of XAU/USD at a price of 1,255.06 USD, the price of gold increases and you decide to sell when it reaches 1,255.80 USD. Your profit or loss comes down to the price difference multiplied by the total lots you purchased.')}</p>
                     <p>{it.L('Your profit or loss is calculated as follows:')}</p>
                     <Box text={`(${it.L('Closing price')} – ${it.L('Opening price')}) x ${it.L('Lot units')} = ${it.L('Profit/Loss')}`} text_two={`(1,255.80 – 1,255.06) x 100 = ${it.L('USD')} 74`} />
 
@@ -107,13 +107,13 @@ const Metals = () => (
                 </Section>
                 <Section id='margin-policy' header={it.L('Metals margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
-                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
+                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at 50 USD per unit through a traditional broker, it would cost you 5,000 USD for this transaction.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the required margin for our metal pairs by using the formula below:')}</p>
 
-                    <MtBox icon_1='l1-icon' icon_2='metal-icon' text={it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of USD 1,250.15, the margin required to purchase that one lot will be calculated as follows:')} />
+                    <MtBox icon_1='l1-icon' icon_2='metal-icon' text={it.L('For example, if you buy one lot of the XAU/USD pair at 300:1 leverage and a market price of 1,250.15 USD, the margin required to purchase that one lot will be calculated as follows:')} />
 
                     <p>{it.L('Without margin, purchasing one lot of the XAU/USD pair will cost you:')}</p>
                     <Box text={`100 * 1250.15 = ${it.L('USD')} 125,015`} />
@@ -127,10 +127,10 @@ const Metals = () => (
                     <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We delete an order with the largest margin reserved')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
-                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
+                        <li>{it.L('We delete an order with the largest margin reserved.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss.')}</li>
+                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level.')}</li>
                     </ol>
                 </Section>
                 <Section id='contract-specification' header={it.L('Metals contract specifications')}>
@@ -145,17 +145,17 @@ const Metals = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'XAG/USD' }, { text: it.L('Silver vs US Dollar')    }, { text: five_thousand }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'XAU/USD' }, { text: it.L('Gold vs US Dollar')      }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US Dollar') }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US Dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XAG/USD' }, { text: it.L('Silver vs US dollar')    }, { text: five_thousand }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XAU/USD' }, { text: it.L('Gold vs US dollar')      }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XPD/USD' }, { text: it.L('Palladium vs US dollar') }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'XPT/USD' }, { text: it.L('Platinum vs US dollar')  }, { text: hundred       }, { text: hundredth }, { text: hundredth }],
                             ],
                         }}
                     />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('Our metal pairs are typically traded in lots. One standard lot is equivalent to 100 units except silver where 1 lot equals 5,000 units. Each time you open a position on a symbol, you can start with a minimum transaction of 0.01 lots.')}</p>
-                    <p>{it.L('For information about Forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
+                    <p>{it.L('For information about forex leverage refer to our [_1]Margin Policy[_2].', '<a href="#margin-policy">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>

@@ -30,7 +30,7 @@ const TermsAndConditions = () => (
                 <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
 
-            <li data-show='eucountry default'>{it.L('The client understands that products based on a random number generator (the "Synthetic Indices") are gaming products whereas products based on financial market indices (forex, indices, and commodities) are financial instruments.')}</li>
+            <li data-show='eucountry default'>{it.L('The client understands that products based on a random number generator (the "Synthetic Indices") are gaming products whereas products based on financial market indices (forex, stock indices, and commodities) are financial instruments.')}</li>
             <li>{it.L('All products traded on Margin carry a high degree of risk and can result in losses that exceed the client\'s initial deposit. The Margin trading services described in this agreement are not suitable for everyone. The client acknowledges that the Margin trading services described in this agreement are designed for the clients who are knowledgeable and experienced in the types of transactions described in this agreement, and the client fully understands the associated risks before entering into this agreement with the Company.')}</li>
             <li>{it.L('The client should not sign up to receive the Margin trading services described in this agreement without understanding their nature and the associated risks.')}</li>
             <li>{it.L('This agreement is supplied to the client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail.')}</li>

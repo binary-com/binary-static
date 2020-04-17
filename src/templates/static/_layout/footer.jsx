@@ -49,7 +49,7 @@ const Footer = () => (
                                 items={[
                                     { text: it.L('About Us'),               href: it.url_for('about-us') },
                                     { text: it.L('Group History'),          href: it.url_for('group-history') },
-                                    { text: it.L('Binary in Numbers'),      href: it.url_for('binary-in-numbers') },
+                                    { text: it.L('Binary.com in Numbers'),  href: it.url_for('binary-in-numbers') },
                                     { text: it.L('Careers'),                href: it.url_for('careers') },
                                     { text: it.L('Patents'),                href: it.url_for('legal/us_patents') },
                                     { text: it.L('Contact Us'),             href: it.url_for('contact') },
@@ -105,9 +105,9 @@ const Footer = () => (
                                 items={[
                                     { text: it.L('Affiliate and IB Programmes'), href: it.url_for('affiliate-ib') },
                                     { text: it.L('API'),                        href: 'https://developers.binary.com', target: '_blank' },
-                                    { text: it.L('Binary Shop'),                href: 'https://shop.binary.com',       target: '_blank' },
+                                    { text: it.L('Binary.com Shop'),            href: 'https://shop.binary.com',       target: '_blank' },
                                     /* { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
-                                    { text: it.L('Other Partnership Options'),    href: it.url_for('partners') },
+                                    { text: it.L('All Partnership Options'),    href: it.url_for('partners') },
                                 ]}
                             />
                         </div>
@@ -225,7 +225,7 @@ const Footer = () => (
                                 {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
                             </p>
                             <p className='eu-only invisible'>
-                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 78.6% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.')}
+                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. [_1] of retail investor accounts lose money when trading CFDs with Binary Investments (Europe) Ltd. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.', '72%')}
                             </p>
                         </div>
                     </div>

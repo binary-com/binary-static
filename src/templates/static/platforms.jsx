@@ -216,7 +216,7 @@ const Platform = () => (
                             <PlatformsDesktop
                                 image='devices'
                                 header={it.L('[_1] desktop app', it.website_name)}
-                                className='invisible financial-only'
+                                className='desktop-app invisible financial-only'
                                 description={it.L('Enhanced performance. Intuitively simple.')}
                                 text={it.L('Access our products and services from a single app.')}
                             />
@@ -226,7 +226,7 @@ const Platform = () => (
                                 image='mt5'
                                 header={it.L('MetaTrader 5')}
                                 description={it.L('Advanced multi-asset trading platform')}
-                                text={it.L('Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
+                                text={it.L('Trade forex, CFDs, and binary options with a powerful platform recognised as the global standard.')}
                                 buttons={[
                                     { text: it.L('Access MT5 dashboard'), url: it.url_for('user/metatrader') },
                                     { text: it.L('Download MT5'), url: it.url_for('metatrader/download') },
