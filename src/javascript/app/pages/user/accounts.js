@@ -105,8 +105,8 @@ const Accounts = (() => {
             $(form_id).find('tbody')
                 .append($('<tr/>')
                     .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
-                        text                 : new_account_title,
-                        'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize(
+                        text          : new_account_title,
+                        'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize(
                             'Jurisdiction')}: ${getCompanyCountry(account)}`,
                         'data-balloon-length': 'large',
                     })))
@@ -116,7 +116,12 @@ const Accounts = (() => {
                         { text: currencies_name_list.join(', '), datath: table_headers.available_currencies },
                     ))
                     .append($('<td/>')
-                        .html($('<a/>', { class: 'button', href: urlFor(upgrade_info.upgrade_links[upgrade_info.can_upgrade_to[index]]) })
+                        .html($('<a/>',
+                            {
+                                class: 'button',
+                                href : urlFor(upgrade_info.upgrade_links[upgrade_info.can_upgrade_to[index]]),
+                            },
+                        )
                             .html($('<span/>', { text: localize('Create') })))));
         });
     };

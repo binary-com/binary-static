@@ -107,15 +107,24 @@ const Client = (() => {
                 if (res) {
                     upgrade_links = {
                         ...upgrade_links,
-                        [res]: `new_account/${link}`,
+                        [res]: link,
                     };
                 }
             });
         }
 
+        let transformed_upgrade_links = {};
+        Object.keys(upgrade_links).forEach(link => {
+            transformed_upgrade_links = {
+                ...transformed_upgrade_links,
+                [link]: `new_account/${upgrade_links[link]}`,
+            };
+        });
+
         return Object.assign(upgrade_info, {
-            upgrade_links,
-            is_current_path: upgrade_links ? new RegExp(upgrade_links, 'i').test(window.location.pathname) : undefined,
+            upgrade_links  : transformed_upgrade_links,
+            is_current_path: !!Object.values(upgrade_links)
+                .find(link => new RegExp(link, 'i').test(window.location.pathname)),
         });
     };
 

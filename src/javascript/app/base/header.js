@@ -184,7 +184,7 @@ const Header = (() => {
                     const upgrade_url = upgrade_info.can_upgrade_to.length > 1
                         ? 'user/accounts'
                         : upgrade_info.upgrade_links[0];
-                        showUpgrade(upgrade_url, upgrade_link_txt);
+                    showUpgrade(upgrade_url, upgrade_link_txt);
                     showUpgradeBtn(upgrade_url, upgrade_btn_txt);
                 } else {
                     applyToAllElements(upgrade_msg, (el) => {

@@ -23,7 +23,12 @@ const AccountOpening = (() => {
         }
 
         if (!upgrade_info.is_current_path) {
-            BinaryPjax.load(upgrade_info.upgrade_link);
+            const upgradable_accounts_count = Object.keys(upgrade_info.upgrade_links).length;
+            if (upgradable_accounts_count > 1) {
+                BinaryPjax.load('user/accounts');
+            } else if (upgradable_accounts_count === 1) {
+                BinaryPjax.load(upgrade_info.upgrade_links[0]);
+            }
             return 1;
         }
         return 0;
