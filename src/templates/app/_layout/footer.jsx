@@ -49,7 +49,7 @@ const Footer = () => (
                                 items={[
                                     { text: it.L('About Us'),               href: it.url_for('about-us') },
                                     { text: it.L('Group History'),          href: it.url_for('group-history') },
-                                    { text: it.L('Binary in Numbers'),      href: it.url_for('binary-in-numbers') },
+                                    { text: it.L('Binary.com in Numbers'),  href: it.url_for('binary-in-numbers') },
                                     { text: it.L('Careers'),                href: it.url_for('careers') },
                                     { text: it.L('Patents'),                href: it.url_for('legal/us_patents') },
                                     { text: it.L('Contact Us'),             href: it.url_for('contact') },
@@ -105,7 +105,7 @@ const Footer = () => (
                                 items={[
                                     { text: it.L('Affiliate and IB Programme'), href: it.url_for('affiliate-ib') },
                                     { text: it.L('API'),                        href: 'https://developers.binary.com', target: '_blank' },
-                                    { text: it.L('Binary Shop'),                href: 'https://shop.binary.com',       target: '_blank' },
+                                    { text: it.L('Binary.com Shop'),            href: 'https://shop.binary.com',       target: '_blank' },
                                     /* { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
                                     { text: it.L('All Partnership Options'),    href: it.url_for('partners') },
                                 ]}
@@ -155,7 +155,7 @@ const Footer = () => (
                                 `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18.')}
+                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18.')}
                         </p>
                         <fieldset className='fld-risk-warning'>
                             <legend>{it.L('Risk Warning')}</legend>
