@@ -54,7 +54,7 @@ const AccountTransfer = (() => {
         el_transfer_from = getElementById('lbl_transfer_from');
         el_transfer_to   = getElementById('transfer_to');
 
-        elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${client_currency})` : ''}`);
+        elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${Currency.getCurrencyDisplayCode(client_currency)})` : ''}`);
 
         const fragment_transfer_to = document.createElement('select');
 
@@ -66,7 +66,7 @@ const AccountTransfer = (() => {
                 const option = document.createElement('option');
                 option.setAttribute('data-currency', account.currency);
                 option.setAttribute('data-loginid', account.loginid);
-                option.appendChild(document.createTextNode(`${account.loginid}${account.currency ? ` (${account.currency})` : ''}`));
+                option.appendChild(document.createTextNode(`${account.loginid}${account.currency ? ` (${Currency.getCurrencyDisplayCode(account.currency)})` : ''}`));
                 fragment_transfer_to.appendChild(option);
             }
         });
@@ -146,7 +146,7 @@ const AccountTransfer = (() => {
     };
 
     const showForm = () => {
-        elementTextContent(document.querySelector(`${form_id_hash} #currency`), client_currency);
+        elementTextContent(document.querySelector(`${form_id_hash} #currency`), Currency.getCurrencyDisplayCode(client_currency));
 
         getElementById(form_id).setVisibility(1);
 
@@ -183,11 +183,11 @@ const AccountTransfer = (() => {
         response.accounts.forEach((account) => {
             if (account.loginid === client_loginid) {
                 elementTextContent(getElementById('transfer_success_from'), localize('From account: '));
-                elementTextContent(getElementById('from_loginid'), `${account.loginid} (${account.currency})`);
+                elementTextContent(getElementById('from_loginid'), `${account.loginid} (${Currency.getCurrencyDisplayCode(account.currency)})`);
                 getElementById('from_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
             } else if (account.loginid === response.client_to_loginid) {
                 elementTextContent(getElementById('transfer_success_to'), localize('To account: '));
-                elementTextContent(getElementById('to_loginid'), `${account.loginid} (${account.currency})`);
+                elementTextContent(getElementById('to_loginid'), `${account.loginid} (${Currency.getCurrencyDisplayCode(account.currency)})`);
                 getElementById('to_current_balance').innerText = Currency.getTextFormat(account.balance, account.currency);
             }
         });
@@ -224,7 +224,7 @@ const AccountTransfer = (() => {
                 setLoadingVisibility(0);
                 getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
-                    elementTextContent(getElementById('min_required_amount'), `${client_currency} ${min_amount}`);
+                    elementTextContent(getElementById('min_required_amount'), Currency.getTextFormat(min_amount, client_currency));
                     getElementById(messages.balance).setVisibility(1);
                 }
                 getElementById(messages.deposit).setVisibility(1);

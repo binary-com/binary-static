@@ -32,10 +32,15 @@ const SetCurrency = (() => {
         if (Client.get('currency') || popup_action) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
-                $('#deposit_btn, #set_currency').setVisibility(1);
+                $('#set_currency').setVisibility(1);
+                $('#deposit_btn')
+                    .on('click', () => {
+                        BinaryPjax.load(`${Url.urlFor('cashier/forwardws')}?action=deposit`);
+                    })
+                    .setVisibility(1);
                 localStorage.removeItem('is_new_account');
             } else if (popup_action) {
-                const currencies = popup_action === 'multi_account' ?
+                const currencies = /multi_account|set_currency/.test(popup_action) ?
                     GetCurrency.getCurrencies(landing_company) :
                     getCurrencyChangeOptions(landing_company);
                 $('#hide_new_account').setVisibility(0);
