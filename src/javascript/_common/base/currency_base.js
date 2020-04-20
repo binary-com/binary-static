@@ -62,12 +62,12 @@ const CryptoConfig = (() => {
     let crypto_config;
 
     const initCryptoConfig = () => ({
-        BTC: { name: localize('Bitcoin'),       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        ETH: { name: localize('Ether'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        ETC: { name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        LTC: { name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        UST: { name: localize('Tether'),        min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
-        USB: { name: localize('Binary Coin'),   min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        BTC: { display_code: 'BTC',  name: localize('Bitcoin'),       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETH: { display_code: 'ETH',  name: localize('Ether'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETC: { display_code: 'ETC',  name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        LTC: { display_code: 'LTC',  name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        UST: { display_code: 'USDT', name: localize('Tether'),        min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        USB: { display_code: 'USB',  name: localize('Binary Coin'),   min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
     });
 
     return {
@@ -117,6 +117,8 @@ const getPaWithdrawalLimit = (currency, limit) => {
     return limit === 'max' ? 2000 : 10; // limits for fiat currency
 };
 
+const getCurrencyDisplayCode = currency => getPropertyValue(CryptoConfig.get(), [currency, 'display_code']) || '';
+
 const getCurrencyName = currency => getPropertyValue(CryptoConfig.get(), [currency, 'name']) || '';
 
 const getMinPayout = currency => getPropertyValue(currencies_config, [currency, 'stake_default']);
@@ -128,6 +130,7 @@ module.exports = {
     getDecimalPlaces,
     setCurrencies,
     isCryptocurrency,
+    getCurrencyDisplayCode,
     getCurrencyName,
     getMinWithdrawal,
     getNumberFormat,

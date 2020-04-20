@@ -580,7 +580,7 @@ const PaymentMethods = () => {
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more information, please visit [_1].', `${createLink('https://www.tether.to')}`) },
                                         { td_list: [
-                                            { text: 'UST' },
+                                            { text: 'USDT' },
                                             { text: '—' },
                                             { text: '' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },

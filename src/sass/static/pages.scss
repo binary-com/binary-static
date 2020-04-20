@@ -809,9 +809,6 @@ body #not_authenticated_financial ul.checked > li {
             max-width: 500px;
         }
     }
-}
-
-.set-currency-content {
     .currency_list > div {
         padding: 15px;
         background-image: url('../images/pages/set_currency/tick-normal.svg');
@@ -832,6 +829,20 @@ body #not_authenticated_financial ul.checked > li {
     }
     .list-style-inside {
         list-style-position: inside;
+    }
+}
+
+.lightbox #set_currency {
+    padding: 25px;
+    width: 40em;
+
+    #set_currency_text {
+        margin-top: 0;
+    }
+    #fiat_currencies, #crypto_currencies {
+        + div {
+            max-width: 30em;
+        }
     }
 }
 
