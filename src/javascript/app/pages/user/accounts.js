@@ -86,7 +86,6 @@ const Accounts = (() => {
     const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
 
     const populateNewAccounts = (upgrade_info) => {
-        // TODO Populate multiple account opening.
         const table_headers = TableHeaders.get();
         upgrade_info.type.forEach((new_account_type, index) => {
             const account = {
