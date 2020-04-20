@@ -2,11 +2,13 @@ import React from 'react';
 import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, NavButtons, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
-const hundredth  = '0.01';
-const tenth      = '0.10';
-const two_tenth  = '0.20';
-const five_tenth = '0.50';
-const three      = '3.00';
+const hundredth       = '0.01';
+const thousandth      = '0.001';
+const tenth           = '0.10';
+const two_tenth       = '0.20';
+const five_tenth      = '0.50';
+const five_thousandth = '0.005';
+const three           = '3.00';
 
 const Cfds = () => (
     <div className='static_full get-started'>
@@ -29,7 +31,7 @@ const Cfds = () => (
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-cfds-trading' header={it.L('What is CFD trading')}>
-                    <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset.')}</p>
+                    <p>{it.L('A Contract for difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset.')}</p>
                     <p>{it.L('The movement of the underlying asset determines your profit or loss – depending on the position that you have taken.')}</p>
                     <HeaderSecondary header={it.L('Advantages of CFD trading')} />
                     <ul className='checked'>
@@ -53,23 +55,22 @@ const Cfds = () => (
                     <p>{it.L('The opposite is true if you decide to sell or \'go short\' on the US 100 index. This means that your profit will continue to increase as long as the price of the US 100 index keeps falling. However, if the price rises, the losses you incur will also increase.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
-                    <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
-                    <p>{it.L('However, if the asset price falls by 10 points, that represents a USD 10 loss for you.')}</p>
+                    <p>{it.L('Let\'s say a US 100 contract is worth 1 USD per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a 10 USD profit for you.')}</p>
+                    <p>{it.L('However, if the asset price falls by 10 points, that represents a 10 USD loss for you.')}</p>
                     <p>{it.L('To learn more, please read our [_1]CFD contract specifications[_2].', '<a href="#contract-specification">', '</a>')}</p>
 
                     <HeaderSecondary header={it.L('How to close a position')} />
-                    <p>{it.L('When you decide to close an open contract, you only need to take the opposite position in order to close the contract.')}</p>
-                    <p>{it.L('For example, if you buy a US 100 contract and it\'s not going as planned, you just need to sell it to cut your losses at the current market price.')}</p>
+                    <p>{it.L('When you decide to close an open contract, you only need to choose “Close Position” option from context menu.')}</p>
                 </Section>
 
                 <Section id='margin-policy' header={it.L('CFD margin policy')}>
                     <p>{it.L('Margin allows you to trade on leverage – giving you the same level of market exposure using much less capital.')}</p>
-                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at USD 50 per unit through a traditional broker, it would cost you USD 5,000 for this transaction.')}</p>
+                    <p>{it.L('For example, if you wanted to purchase 100 units of a particular asset trading at 50 USD per unit through a traditional broker, it would cost you 5,000 USD for this transaction.')}</p>
                     <p>{it.L('With leverage, you can purchase 100 units of the same asset at a fraction of the cost.')}</p>
 
                     <HeaderSecondary header={it.L('How to calculate margin')} />
                     <p>{it.L('You can determine the margin for our CFDs by using the formula below:')}</p>
-                    <MtBox icon_1='mr1-icon' icon_2='mr2-icon' text={it.L('For example, if you buy one lot of an underlying asset at a price of USD 20,000 and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:')} />
+                    <MtBox icon_1='mr1-icon' icon_2='mr2-icon' text={it.L('For example, if you buy one lot of an underlying asset at a price of 20,000 USD and a margin rate of 0.01, the margin required to purchase that one lot will be calculated as follows:')} />
 
                     <HeaderSecondary header={it.L('What\'s a margin call and how is it applied')} />
                     <p>{it.L('Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions.')}</p>
@@ -78,10 +79,10 @@ const Cfds = () => (
                     <p>{it.L('If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as "forced liquidation").')}</p>
                     <p>{it.L('When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:')}</p>
                     <ol>
-                        <li>{it.L('We delete an order with the largest margin reserved')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted')}</li>
-                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss')}</li>
-                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level')}</li>
+                        <li>{it.L('We delete an order with the largest margin reserved.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted.')}</li>
+                        <li>{it.L('If your margin level is still under the stop out level, we will close an open position with the largest loss.')}</li>
+                        <li>{it.L('We will continue to close open positions until your margin level becomes higher than the stop out level.')}</li>
                     </ol>
                 </Section>
 
@@ -114,16 +115,16 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Volatility 10 Index'       }, { text: '1' }, { text: two_tenth  }, { text: hundredth }],
-                                [{ text: 'Volatility 25 Index'       }, { text: '1' }, { text: five_tenth }, { text: hundredth }],
-                                [{ text: 'Volatility 50 Index'       }, { text: '1' }, { text: three      }, { text: hundredth }],
-                                [{ text: 'Volatility 75 Index'       }, { text: '1' }, { text: hundredth  }, { text: hundredth }],
-                                [{ text: 'Volatility 100 Index'      }, { text: '1' }, { text: tenth      }, { text: hundredth }],
-                                [{ text: 'HF Volatility 10 Index'    }, { text: '1' }, { text: two_tenth  }, { text: hundredth }],
-                                [{ text: 'HF Volatility 50 Index'    }, { text: '1' }, { text: three      }, { text: hundredth }],
-                                [{ text: 'HF Volatility 100 Index'   }, { text: '1' }, { text: three      }, { text: hundredth }],
-                                [{ text: 'Volatility 10 (1s) Index'  }, { text: '1' }, { text: tenth      }, { text: hundredth }],
-                                [{ text: 'Volatility 100 (1s) Index' }, { text: '1' }, { text: hundredth  }, { text: hundredth }],
+                                [{ text: 'Volatility 10 Index'       }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'Volatility 25 Index'       }, { text: '1' }, { text: five_tenth      }, { text: hundredth }],
+                                [{ text: 'Volatility 50 Index'       }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'Volatility 75 Index'       }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
+                                [{ text: 'Volatility 100 Index'      }, { text: '1' }, { text: tenth           }, { text: hundredth }],
+                                [{ text: 'HF Volatility 10 Index'    }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'HF Volatility 50 Index'    }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'HF Volatility 100 Index'   }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'Volatility 10 (1s) Index'  }, { text: '1' }, { text: tenth           }, { text: hundredth }],
+                                [{ text: 'Volatility 100 (1s) Index' }, { text: '1' }, { text: hundredth       }, { text: hundredth }],
                             ],
                         }}
                     />
@@ -164,7 +165,7 @@ const Cfds = () => (
                     />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
-                    <p>{it.L('A Contract for Difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
+                    <p>{it.L('A Contract for difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
                     <p>{it.L('With Crash 1000 (500) Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
                     <p>{it.L('With Boom 1000 (500) Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 (500) ticks.')}</p>

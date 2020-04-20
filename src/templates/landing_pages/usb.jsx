@@ -49,7 +49,7 @@ const UsbPage = () => (
             <div className='header-content'>
                 <h1 className='header-title content-inverse-color ft-300'>{('Welcome to the future')}</h1>
                 <span className='header-sub secondary-color'>{('Introducing USB')}</span>
-                <span className='header-sub content-inverse-color'>{('A stablecoin backed by the US Dollar')}</span>
+                <span className='header-sub content-inverse-color'>{('A stablecoin backed by the US dollar')}</span>
             </div>
         </div>
         <div className='section-md primary-bg-color coin-section'>
@@ -59,7 +59,7 @@ const UsbPage = () => (
                         <img className='usb-coin' src={it.url_for('images/usb_page/usb-coin-logo.png')} alt='USB' />
                     </div>
                     <div className='gr-10 gr-12-m gr-12-p'>
-                        <p className='content-inverse-color ft-400'>{('Guaranteed by ')}{it.broker_name}{(', USB is a digital currency pegged to the US Dollar on a one-to-one basis. Send and receive payments with the peace of mind that your currency is backed by the strength of ')}{it.broker_name}{(' balance sheet.')}</p>
+                        <p className='content-inverse-color ft-400'>{('Guaranteed by ')}{it.broker_name}{(', USB is a digital currency pegged to the US dollar on a one-to-one basis. Send and receive payments with the peace of mind that your currency is backed by the strength of ')}{it.broker_name}{(' balance sheet.')}</p>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,7 @@ const UsbPage = () => (
                 <div className='gr-row'>
                     <div className='gr-12 center-text bottom-50'>
                         <h2 className='section-title'>{('Why USB?')}</h2>
-                        <p>{('The value of USB is pegged to the US Dollar, so you get the best of both worlds: the benefits of decentralised digital assets and the stability of fiat currencies.')}</p>
+                        <p>{('The value of USB is pegged to the US dollar, so you get the best of both worlds: the benefits of decentralised digital assets and the stability of fiat currencies.')}</p>
                     </div>
                 </div>
             </div>
@@ -103,8 +103,8 @@ const UsbPage = () => (
                 <div className='gr-row gr-row-align-between'>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-redeem' />
-                        <h3 className='ft-400'>{('Fully backed by US Dollar')}</h3>
-                        <p>{('USB is a stable coin pegged to the US Dollar on a one-to-one basis. ')}{it.broker_name}{(' guarantees that 1 USB will always be worth 1 USD.')}</p>
+                        <h3 className='ft-400'>{('Fully backed by US dollar')}</h3>
+                        <p>{('USB is a stable coin pegged to the US dollar on a one-to-one basis. ')}{it.broker_name}{(' guarantees that 1 USB will always be worth 1 USD.')}</p>
                     </div>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-redeem-usd' />
@@ -114,7 +114,7 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-peaceofmind' />
                         <h3 className='ft-400'>{('Peace of mind')}</h3>
-                        <p>{('USB is backed by ')}{it.broker_name}{(' – a profitable, 18-year-old company with')} <a href={it.url_for('binary-in-numbers')}>{('annual turnover exceeding USD 1 billion')}</a>.</p>
+                        <p>{('USB is backed by ')}{it.broker_name}{(' – a profitable, 18-year-old company with')} <a href={it.url_for('binary-in-numbers')}>{('annual turnover exceeding 1 USD billion')}</a>.</p>
                     </div>
                 </div>
             </div>
@@ -241,7 +241,7 @@ const UsbPage = () => (
                                 <ol>
                                     <li>{('Create an ERC-20 compatible wallet to carry your USB')}</li>
                                     <li>{('Purchase USB on ')}{it.broker_name}</li>
-                                    <li>{('Use your USB to trade binary options, Forex, CFDs, and more at ')}{it.broker_name}</li>
+                                    <li>{('Use your USB to trade binary options, forex, CFDs, and more at ')}{it.broker_name}</li>
                                 </ol>
                             </div>
                         </div>

@@ -71,6 +71,8 @@ const JobDescriptions = () => (
                     { header: it.L('PostgreSQL Database Administrator (DBA)'), subsection: 'postgresql_database_administrator', text: it.L('As our PostgreSQL Database Administrator, you will plan, implement, and manage the database systems that are essential to the architecture of our high-traffic binary options trading platform.') },
 
                     { header: it.L('UI/UX Designer'), subsection: 'ui_ux_designer', text: it.L('As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.'), className: 'one-line gr-nowrap gr-wrap-p' },
+
+                    { header: it.L('Technical Writer'), subsection: 'technical_writer', text: it.L('You will combine your excellent command of English and your strong understanding of the technology we use to produce well-structured, concise, and easy-to-understand technical documentation as well as project and architectural plans.'), className: 'one-line gr-nowrap gr-wrap-p' },
                 ]}
             />
 

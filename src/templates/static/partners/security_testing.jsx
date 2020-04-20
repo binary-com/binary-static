@@ -13,7 +13,7 @@ const SecurityTesting = () => (
                 <ul className='bullet'>
                     <li>{it.L('Hone your security testing skills.')}</li>
                     <li>{it.L('Increase your HackerOne reputation to build up credibility and profile visibility.')}</li>
-                    <li>{it.L('Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to USD 1,000 for high-risk security vulnerabilities.')}</li>
+                    <li>{it.L('Earn a monetary reward for any verifiable issues that you find, with a bounty worth up to 1,000 USD for high-risk security vulnerabilities.')}</li>
                 </ul>
 
                 <h2>{it.L('Getting started')}</h2>
