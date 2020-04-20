@@ -54,7 +54,7 @@ const SetCurrency = () => (
                     <Currencies id='fiat' text={it.L('Fiat Currency')} />
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
 
-                    <div className='invisible show_change_currency show_multi_account show_set_currency'>
+                    <div className='invisible show_change_currency show_multi_account show_set_currency' id='submit_section'>
                         <a className='button button-secondary btn_cancel' href='javascript:;'><span>{it.L('Cancel')}</span></a>
                         <a className='button' id='btn_ok' href='javascript:;'><span /></a>
                     </div>

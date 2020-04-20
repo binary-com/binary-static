@@ -844,6 +844,13 @@ body #not_authenticated_financial ul.checked > li {
             max-width: 30em;
         }
     }
+    .section-divider {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    #submit_section {
+        margin-top: 20px;
+    }
 }
 
 .platforms-content {
