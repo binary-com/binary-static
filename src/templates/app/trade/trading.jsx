@@ -6,7 +6,7 @@ import Loading from '../../_common/components/loading.jsx';
 const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container'>
-            <div id='deriv_banner_container'>
+            <div id='deriv_banner_container' data-show='-eucountry'>
                 <a target='_blank' rel='noopener noreferrer' href='https://www.deriv.com'>
                     <img className='deriv_banner_background' src={it.url_for('images/deriv/deriv-banner-bg.png')} />
                     <img className='deriv_banner_background deriv_banner_background_mobile' src={it.url_for('images/deriv/deriv-banner-bg-mobile.png')} />
