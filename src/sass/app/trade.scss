@@ -1064,79 +1064,79 @@
 }
 
 #deriv_banner_container {
+    position: relative;
     display: flex;
     width: 100%;
-    height: 200px;
-    position: relative;
-    margin-bottom: 40px;
+    align-items: center;
+    min-height: 100px;
+    margin-bottom: 24px;
+    justify-content: center;
 
     .deriv_banner_background {
-        object-fit: fill;
+        position: absolute;
         width: 100%;
-        height: 200px;
+        height: 100%;
+        z-index: -1;
+        opacity: 1;
+    }
+    .deriv_banner_background_mobile {
+        opacity: 0;
+    }
+    .deriv_banner_platform {
+        max-width: 139px;
+        max-height: 80px;
+        margin: 0 40px 0 52px;
+    }
+    .deriv_banner_chevron {
         position: absolute;
+        right: 29px;
     }
-    .platform_image {
-        max-height: 157px;
-        max-width: 245px;
-        margin-top: 22px;
-        margin-left: 16px;
-        z-index: 10;
-
-        @media (max-width: 768px) {
-            display: none;
-        }
+    .deriv_banner_explore {
+        max-width: 253px;
     }
-    .watermark_background {
-        position: absolute;
-        right: 12.3%;
-        top: 19.5%;
-
-        @media (max-width: 425px) {
-            transform: scale(0.7, 1);
-            right: -10%;
-            width: 450px;
-        }
-        @media (max-width: 325px) {
-            transform: scale(0.7, 1);
-            right: -20%;
-            width: 450px;
+    .deriv_banner_standards {
+        max-width: 296px;
+    }
+    h3 {
+        font-size: $FONT_SIZE_XXL;
+        font-weight: bold;
+        margin: 0;
+        color: $COLOR_WHITE;
+        line-height: 1.5;
+    }
+    @media (max-width: 860px) {
+        .deriv_banner_platform {
+            margin: 0;
         }
     }
-    div {
-        margin: 49px 0 10px 16px;
-        z-index: 1;
+    @media (max-width: 768px) {
+        min-height: 72px;
 
-        h2, h5 {
-            color: $COLOR_WHITE;
+        .deriv_banner_background_mobile {
+            opacity: 1;
         }
-        h2 {
-            font-weight: bold;
-            margin-bottom: 10px;
-
-            @media (max-width: 768px) {
-                font-size: $FONT_SIZE_N;
-            }
+        .deriv_banner_background {
+            opacity: 1;
         }
-        h5 {
-            @media (max-width: 768px) {
-                font-size: $FONT_SIZE_S;
-            }
+        .deriv_banner_platform {
+            margin: 0 4px 0 0;
+            width: 78px;
+            height: 45.2px;
         }
-    }
-    div.button_container {
-        margin: 30px 0 0;
-
-        a.deriv_button {
-            background-color: $COLOR_SHARP_RED;
-            width: 123px;
-            height: 40px;
-            color: $COLOR_WHITE;
-            padding: 10px 16px;
-            font-size: $FONT_SIZE_S;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 4px;
+        h3 {
+            font-size: $FONT_SIZE_XS;
+            line-height: $FONT_SIZE_S;
+        }
+        .deriv_banner_standards {
+            max-width: 98px;
+        }
+        .deriv_banner_explore {
+            max-width: 124px;
+        }
+        .deriv_banner_chevron {
+            width: 16px;
+            height: 16px;
+            right: 2px;
         }
     }
 }
