@@ -17,7 +17,16 @@ const WelcomePage = (() => {
 
             const upgrade_info = Client.getUpgradeInfo();
             const el_upgrade_title = getElementById('upgrade_title');
-            el_upgrade_title.html(upgrade_info.type === 'financial' ? localize('Financial Account') : localize('Real Account'));
+            let upgrade_btn_txt = '';
+
+            if (upgrade_info.can_upgrade_to.length > 1) {
+                upgrade_btn_txt = localize('Open a Real Account');
+            } else if (upgrade_info.can_upgrade_to.length === 1) {
+                upgrade_btn_txt = upgrade_info.type[0] === 'financial'
+                    ? localize('Open a Financial Account')
+                    : localize('Open a Real Account');
+            }
+            el_upgrade_title.html(upgrade_btn_txt);
             el_welcome_container.setVisibility(1);
 
             if (upgrade_info.can_upgrade) {
