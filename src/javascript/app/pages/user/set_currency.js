@@ -18,6 +18,7 @@ const SetCurrency = (() => {
 
     const onLoad = async () => {
         is_new_account = localStorage.getItem('is_new_account');
+        localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
 
@@ -38,7 +39,6 @@ const SetCurrency = (() => {
                         BinaryPjax.load(`${Url.urlFor('cashier/forwardws')}?action=deposit`);
                     })
                     .setVisibility(1);
-                localStorage.removeItem('is_new_account');
             } else if (popup_action) {
                 const currencies = /multi_account|set_currency/.test(popup_action) ?
                     GetCurrency.getCurrencies(landing_company) :
@@ -191,7 +191,6 @@ const SetCurrency = (() => {
                         $error.text(response_c.error.message).setVisibility(1);
                     }
                 } else {
-                    localStorage.removeItem('is_new_account');
                     const previous_currency = Client.get('currency');
                     Client.set('currency', selected_currency);
                     BinarySocket.send({ balance: 1 });
@@ -215,14 +214,16 @@ const SetCurrency = (() => {
                             redirect_url = Url.urlFor('cashier');
                         }
                     } else if (/[set|change]_currency/.test(popup_action)) {
+                        const previous_currency_display = Currency.getCurrencyDisplayCode(previous_currency);
+                        const selected_currency_display = Currency.getCurrencyDisplayCode(selected_currency);
                         $('.select_currency').setVisibility(0);
                         $('#congratulations_message').html(
                             popup_action === 'set_currency' ?
-                                localize('You have successfully set your account currency to [_1].', [`<strong>${selected_currency}</strong>`]) :
-                                localize('You have successfully changed your account currency from [_1] to [_2].', [ `<strong>${previous_currency}</strong>`, `<strong>${selected_currency}</strong>` ])
+                                localize('You have successfully set your account currency to [_1].', [`<strong>${selected_currency_display}</strong>`]) :
+                                localize('You have successfully changed your account currency from [_1] to [_2].', [ `<strong>${previous_currency_display}</strong>`, `<strong>${selected_currency_display}</strong>` ])
                         );
                         $('.btn_cancel, #deposit_btn, #set_currency, #show_new_account').setVisibility(1);
-                        $(`#${Client.get('loginid')}`).find('td[datath="Currency"]').text(Client.get('currency'));
+                        $(`#${Client.get('loginid')}`).find('td[datath="Currency"]').text(selected_currency_display);
                     } else if (popup_action === 'multi_account') {
                         const new_account = response_c.new_account_real;
                         localStorage.setItem('is_new_account', 1);
