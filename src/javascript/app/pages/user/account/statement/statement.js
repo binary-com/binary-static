@@ -1,9 +1,8 @@
-const moment         = require('moment');
-const Client         = require('../../../../base/client');
-const formatCurrency = require('../../../../common/currency').formatCurrency;
-const formatMoney    = require('../../../../common/currency').formatMoney;
-const localize       = require('../../../../../_common/localize').localize;
-const toTitleCase    = require('../../../../../_common/string_util').toTitleCase;
+const moment      = require('moment');
+const Client      = require('../../../../base/client');
+const Currency    = require('../../../../common/currency');
+const localize    = require('../../../../../_common/localize').localize;
+const toTitleCase = require('../../../../../_common/string_util').toTitleCase;
 
 const Statement = (() => {
     const getStatementData = (statement, currency) => {
@@ -27,9 +26,9 @@ const Statement = (() => {
             action_type: statement.action_type,
             date       : `${date_str}\n${time_str}`,
             ref        : statement.transaction_id,
-            payout     : isNaN(payout) || is_ico_bid || !+payout ? '-' : formatMoney(currency, payout, true),
-            amount     : isNaN(amount) ? '-' : formatMoney(currency, amount, true),
-            balance    : isNaN(balance) ? '-' : formatMoney(currency, balance, true),
+            payout     : isNaN(payout) || is_ico_bid || !+payout ? '-' : Currency.formatMoney(currency, payout, true),
+            amount     : isNaN(amount) ? '-' : Currency.formatMoney(currency, amount, true),
+            balance    : isNaN(balance) ? '-' : Currency.formatMoney(currency, balance, true),
             desc       : localize(statement.longcode.replace(/\n/g, '<br />') /* localize-ignore */), // untranslated desc
             id         : statement.contract_id,
             app_id     : statement.app_id,
@@ -40,12 +39,12 @@ const Statement = (() => {
         const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'];
         const header   = localize(['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit']);
         const currency = Client.get('currency');
-        header.push(localize('Balance') + (currency ? ` (${currency})` : ''));
+        header.push(localize('Balance') + (currency ? ` (${Currency.getCurrencyDisplayCode(currency)})` : ''));
         const sep = ',';
         let csv   = [header.join(sep)];
         if (all_data && all_data.length > 0) {
             // eslint-disable-next-line no-control-regex
-            csv = csv.concat(all_data.map(data => columns.map(key => (data[key] ? data[key].replace(formatCurrency(currency), '¥').replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '')).join(sep)));
+            csv = csv.concat(all_data.map(data => columns.map(key => (data[key] ? data[key].replace(Currency.formatCurrency(currency), '¥').replace(new RegExp(sep, 'g'), '').replace(new RegExp('\n|<br />', 'g'), ' ') : '')).join(sep)));
         }
         return csv.join('\r\n');
     };
