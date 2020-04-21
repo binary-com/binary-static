@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-13 04:48\n"
+"PO-Revision-Date: 2020-04-21 06:34\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1766,9 +1766,6 @@ msgstr "Автоматическая коррекция уровней тэйк-
 msgid "Available 24/7"
 msgstr "Доступно 24/7"
 
-msgid "Available Currencies"
-msgstr "Доступные валюты"
-
 msgid "Available Markets"
 msgstr "Доступные рынки"
 
@@ -2102,17 +2099,11 @@ msgstr "Компания Binary Limited, зарегистрированная п
 msgid "Binary Options"
 msgstr "Бинарные опционы"
 
-msgid "Binary Shop"
-msgstr "Магазин Binary"
-
 msgid "Binary WebTrader"
 msgstr "WebTrader от Binary"
 
 msgid "Binary granted Investment Services license"
 msgstr "Binary получает лицензию на оказание инвестиционных услуг"
-
-msgid "Binary in Numbers"
-msgstr "Binary в цифрах"
 
 msgid "Binary may assign any or all of its rights under this Agreement to a third party."
 msgstr "Binary может уступить часть или все свои права в рамках данного Соглашения третьей стороне."
@@ -2161,6 +2152,15 @@ msgstr "В среднем, платформа Binary исполняет %1 %2к�
 
 msgid "Binary.com Graduate Program"
 msgstr "Программа стажировки Binary.com"
+
+msgid "Binary.com Shop"
+msgstr ""
+
+msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
+msgstr ""
+
+msgid "Binary.com in Numbers"
+msgstr ""
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com рекомендует 1.1.1.1"
@@ -2468,9 +2468,6 @@ msgstr "Сессия в разделе Касса истекла"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Налагаются определенные ограничения на приемлемые уровни рыночных цен для выигрыша контрактов. Обычно уровень рынка для выигрыша не может быть слишком близок к настоящему уровню рынка."
 
-msgid "Change"
-msgstr "Изменить"
-
 msgid "Change API Endpoint"
 msgstr "Изменить конечную точку API"
 
@@ -2479,6 +2476,9 @@ msgstr "Изменить пароль MT5"
 
 msgid "Change Password"
 msgstr "Сменить пароль"
+
+msgid "Change currency"
+msgstr ""
 
 msgid "Change password"
 msgstr "Изменение пароля"
@@ -2657,8 +2657,8 @@ msgstr "Счета клиентов из других стран мира (за 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC."
 msgstr "Счета для клиентов из других стран мира (за исключением США, Канады и Гонконга) будут открыты в компании Binary (SVG) LLC."
 
-msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr "Счета клиентов из других стран (за исключением ряда юрисдикций: США, Канады, Японии и ЕС), желающих начать торговлю CFD на платформе MetaTrader 5, будут открыты в рамках компании Binary (FX) Ltd. Услуги %1 недоступны в Малайзии."
+msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
+msgstr ""
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
 msgstr "Клиенты могут запросить дополнительную информацию, отправив электронное письмо по адресу compliance@binary.com . В данном случае Вы получите дополнительные сведения о политике в отношении конфликта интересов."
@@ -9296,6 +9296,9 @@ msgstr "Укажите валюту"
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Установите барьер(ы), чтобы определить позицию и узнать возможную выплату."
 
+msgid "Set currency"
+msgstr ""
+
 msgid "Set off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company"
 msgstr "производить взаимозачёт в отношении любой комиссии, выплачиваемой Binary Представляющему брокеру в отношении любых сумм, находящихся на любых счетах Компании"
 
@@ -11693,8 +11696,8 @@ msgstr "Данное уведомление о риске не является 
 msgid "This section on force majeure events does not apply to Synthetic Indices."
 msgstr "Раздел Форс-мажорные обстоятельства не распространяется на Синтетические индексы."
 
-msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
-msgstr "Услуги данного вебсайта недоступны в ряде стран, включая США, Канаду, Гонконг, Японию, а также для лиц моложе 18 лет."
+msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "Хорошее знание скриптов bash scripting, а также хороший опыт работы со скриптом Perl"
@@ -13426,6 +13429,9 @@ msgstr "Вы успешно отключили двухступенчатую а
 
 msgid "You have successfully enabled two-factor authentication for your account."
 msgstr "Вы успешно включили двухступенчатую аутентификацию на Вашем счету."
+
+msgid "You have successfully set your account currency to %1."
+msgstr ""
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr "Чтобы использовать для авторизации другой сервер OAuth, Вы должны зарегистрироваться и получить ID приложения. Дополнительную информацию об OAuth можно узнать на странице https://developers.binary.com/."
