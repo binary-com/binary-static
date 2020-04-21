@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-13 04:47\n"
+"PO-Revision-Date: 2020-04-21 06:33\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -1766,9 +1766,6 @@ msgstr "Ajustement automatique des niveaux de Prise de Bénéfices"
 msgid "Available 24/7"
 msgstr "Disponible 24 heures sur 24, 7 jours sur 7"
 
-msgid "Available Currencies"
-msgstr "Devises disponibles"
-
 msgid "Available Markets"
 msgstr "Marchés disponibles"
 
@@ -2103,17 +2100,11 @@ msgstr "Binary Limited, dont les bureaux officiels se situent au 47 Esplanade, S
 msgid "Binary Options"
 msgstr "Options binaires"
 
-msgid "Binary Shop"
-msgstr "Boutique Binary.com"
-
 msgid "Binary WebTrader"
 msgstr "Binary WebTrader"
 
 msgid "Binary granted Investment Services license"
 msgstr "Binary obtient une licence en tant que fournisseur de services d'investissement"
-
-msgid "Binary in Numbers"
-msgstr "Binary en chiffres"
 
 msgid "Binary may assign any or all of its rights under this Agreement to a third party."
 msgstr "Binary peut céder tout ou partie de ses droits en vertu de cet Accord à un tiers."
@@ -2162,6 +2153,15 @@ msgstr "La plate-forme Binary traite en moyenne %1 %2transactions%3 par seconde,
 
 msgid "Binary.com Graduate Program"
 msgstr "Programme pour diplômés de Binary.com"
+
+msgid "Binary.com Shop"
+msgstr ""
+
+msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
+msgstr ""
+
+msgid "Binary.com in Numbers"
+msgstr ""
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com recommande 1.1.1.1"
@@ -2469,9 +2469,6 @@ msgstr "La session de la caisse a expiré"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Certaines limites sont imposées comme étant les niveaux acceptables pour les prix barrière/prix d'exercice des contrats. Typiquement, le prix barrière/prix d'exercice ne doit pas être trop proche ni trop éloignée du niveau actuel du marché sous-jacent."
 
-msgid "Change"
-msgstr "Changer"
-
 msgid "Change API Endpoint"
 msgstr "Modifier le point terminal de l'API"
 
@@ -2480,6 +2477,9 @@ msgstr "Changer le mot de passe MT5"
 
 msgid "Change Password"
 msgstr "Modifier le mot de passe"
+
+msgid "Change currency"
+msgstr ""
 
 msgid "Change password"
 msgstr "Modifier le mot de passe"
@@ -2658,8 +2658,8 @@ msgstr "Les clients basés dans le reste du monde (sauf dans certains pays : É
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC."
 msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr "Les Clients du reste du monde (à l’exception de certains pays comme les EU, le Canada, le Japon, et l’Union Européenne), qui souhaitent trader les CFDs auront leur compte MetaTrader 5 ouvert avec Binary (FX) Ltd. %1 n’est pas disponible en Malaisie."
+msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
+msgstr ""
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
 msgstr "Les clients ont la possibilité de demander plus d’informations en envoyant un email à compliance@binary.com, auquel cas de plus amples détails concernant la politique de conflits d’intérêts seront mis à votre disposition."
@@ -9297,6 +9297,9 @@ msgstr "Définir la devise"
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Sélectionnez des barrières pour définir votre position et visualiser le paiement que vous percevrez."
 
+msgid "Set currency"
+msgstr ""
+
 msgid "Set off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company"
 msgstr "Imputer toute commission payée ou payable par Binary au Courtier Introducteur sur tout montant détenu dans les comptes de la Compagnie"
 
@@ -11694,8 +11697,8 @@ msgstr "Cette déclaration de divulgation des risques n'est pas exhaustive et n'
 msgid "This section on force majeure events does not apply to Synthetic Indices."
 msgstr "Cette section sur les événements de force majeure ne s'applique pas aux Indices Synthétiques."
 
-msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
-msgstr "Les services de ce site Web ne sont pas offerts dans certains pays comme les États-Unis, le Canada, le Hong Kong, le Japon ou aux personnes âgées de moins de 18 ans."
+msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "Connaissance approfondie de script bash et expérience avec le langage de script Perl"
@@ -13427,6 +13430,9 @@ msgstr "Vous avez désactivé l’authentification deux facteurs avec succès po
 
 msgid "You have successfully enabled two-factor authentication for your account."
 msgstr "Vous avez activé avec succès l’authentification deux facteurs pour votre compte."
+
+msgid "You have successfully set your account currency to %1."
+msgstr ""
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr "Vous devez enregistrer webtrader et obtenir un identifiant d'application avant de pouvoir utiliser un autre serveur OAuth pour l'authentification. Pour en savoir plus, consultez les informations concernant le protocole OAuth sur https://developers.binary.com/."

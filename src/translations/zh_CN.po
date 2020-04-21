@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-13 04:47\n"
+"PO-Revision-Date: 2020-04-21 06:33\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1766,9 +1766,6 @@ msgstr "赢取利润水平的自动调整"
 msgid "Available 24/7"
 msgstr "全天候无休"
 
-msgid "Available Currencies"
-msgstr "可用的货币"
-
 msgid "Available Markets"
 msgstr "可用的市场"
 
@@ -2102,17 +2099,11 @@ msgstr "Binary有限公司的注册办事处位于 47 Esplanade, St. Helier, Jer
 msgid "Binary Options"
 msgstr "二元期权"
 
-msgid "Binary Shop"
-msgstr "Binary商店"
-
 msgid "Binary WebTrader"
 msgstr "Binary WebTrader"
 
 msgid "Binary granted Investment Services license"
 msgstr "Binary 被授予投资服务牌照"
-
-msgid "Binary in Numbers"
-msgstr "Binary的统计数字"
 
 msgid "Binary may assign any or all of its rights under this Agreement to a third party."
 msgstr "Binary 可将本协议项下的任何或所有权利转让给第三方。"
@@ -2161,6 +2152,15 @@ msgstr "Binary 平台平均每秒钟进行 %1宗%2交易%3，全天候提供服�
 
 msgid "Binary.com Graduate Program"
 msgstr "Binary.com 研究生课程"
+
+msgid "Binary.com Shop"
+msgstr ""
+
+msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
+msgstr ""
+
+msgid "Binary.com in Numbers"
+msgstr ""
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com推荐 1.1.1.1"
@@ -2468,9 +2468,6 @@ msgstr "收银台时段已过期"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "合约障碍/行权价格的可接受水平存在特定限制。一般来说，障碍或行权价格不能离标的资产当前价格水平太近或太远。"
 
-msgid "Change"
-msgstr "更改"
-
 msgid "Change API Endpoint"
 msgstr "更改 API 端点"
 
@@ -2479,6 +2476,9 @@ msgstr "更改MT5密码"
 
 msgid "Change Password"
 msgstr "更改密码"
+
+msgid "Change currency"
+msgstr ""
 
 msgid "Change password"
 msgstr "更改密码"
@@ -2657,8 +2657,8 @@ msgstr "全球其他地区的客户 (不包括某些国家如美国、加拿大�
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC."
 msgstr "全球其他地区的客户 (不包括某些国家如美国、加拿大和香港) 可在 Binary (SVG) LLC 开设账户。"
 
-msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr "全球其他地区想要进行差价合约交易的客户 (不包括某些管辖区如美国、加拿大、日本和欧盟国家) 可在 Binary (FX) Ltd. 开设MetaTrader 5账户。%1不可在马来西亚使用。"
+msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
+msgstr ""
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
 msgstr "客户可考虑是否通过向 compliance@binary.com 发送电子邮件询问更多信息, 在这种情况下, 将提供有关利益冲突政策的进一步细节。"
@@ -9297,6 +9297,9 @@ msgstr "设置货币"
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "您可设置用于确认头寸参数以及触发赔付的障碍水平。"
 
+msgid "Set currency"
+msgstr ""
+
 msgid "Set off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company"
 msgstr "将Binary支付或应付给推介经纪的任何佣金取消，以抵消任何公司账户中持有的任何金额"
 
@@ -11695,8 +11698,8 @@ msgstr "此风险披露声明并非详尽无遗，也并非包含客户可能会
 msgid "This section on force majeure events does not apply to Synthetic Indices."
 msgstr "此不可抗力事件章节不适用于综合指数。"
 
-msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
-msgstr "某些国家如美国、加拿大、香港、日本或18岁以下人士无法使用本网站的服务。"
+msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "全面了解 bash 脚本编写, 并具有 Perl 脚本语言的编写经验"
@@ -13428,6 +13431,9 @@ msgstr "您已成功禁用账户的双因素身份验证。"
 
 msgid "You have successfully enabled two-factor authentication for your account."
 msgstr "您已成功启用账户的双因素身份验证。"
+
+msgid "You have successfully set your account currency to %1."
+msgstr ""
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr "使用各OAuth服务器进行验证前须先注册并领取应用程序ID。欲知详情，请到https://developers.binary.com/参阅 OAuth信息。"
