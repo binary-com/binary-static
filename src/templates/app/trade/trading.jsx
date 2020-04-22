@@ -13,7 +13,7 @@ const Trading = () => (
                     <img className='deriv_banner_chevron' src={it.url_for('images/deriv/chevron_right.svg')} />
                     <h3 className='deriv_banner_standards'>{it.L('Simple. Flexible. Reliable.')}</h3>
                     <img className='deriv_banner_platform' src={it.url_for('images/deriv/deriv-platform.png')} />
-                    <h3 className='deriv_banner_explore'>{it.L('Explore Binary.com’s new creation — Deriv')}</h3>
+                    <h3 className='deriv_banner_explore'>{it.L('Explore [_1]’s new creation — Deriv', it.website_name)}</h3>
                 </a>
             </div>
             <div id='notifications_wrapper' />
