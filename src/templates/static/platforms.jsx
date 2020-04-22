@@ -152,7 +152,7 @@ const Platform = () => (
                 </div>
                 <div className='center-text'>
                     <p>{it.L('Go ahead, experience it for yourself.')}</p>
-                    <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
+                    <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-try-deriv-now' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
                 </div>
             </div>
         </div>
@@ -181,9 +181,9 @@ const Platform = () => (
                                 className='mobile-hide'
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
-                                buttons={[
-                                    { text: it.L('Trade now'), url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=platforms_page', target: '_blank' },
-                                ]}
+                                url='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-trade-now'
+                                target='_blank'
+                                button_text={it.L('Trade now')}
                             />
                             <Platforms
                                 image='trading-page'
