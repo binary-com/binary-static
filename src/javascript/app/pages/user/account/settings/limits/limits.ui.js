@@ -1,7 +1,7 @@
 const Client           = require('../../../../../base/client');
 const getMarkets       = require('../../../../../common/active_symbols').getMarkets;
 const Table            = require('../../../../../common/attach_dom/table');
-const formatMoney      = require('../../../../../common/currency').formatMoney;
+const Currency         = require('../../../../../common/currency');
 const elementInnerHtml = require('../../../../../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../../../_common/localize').localize;
@@ -34,7 +34,7 @@ const LimitsUI = (() => {
         const currency = Client.get('currency');
 
         if (currency) {
-            $('.limit').append(` (${currency})`);
+            $('.limit').append(` (${Currency.getCurrencyDisplayCode(currency)})`);
         }
 
         const open_position   = getElementById('open-positions');
@@ -44,8 +44,8 @@ const LimitsUI = (() => {
         $client_limits = $('#client-limits');
 
         setText(open_position, 'open_positions' in limits ? limits.open_positions : '');
-        setText(account_balance, 'account_balance' in limits ? formatMoney(currency, limits.account_balance, 1) : '');
-        setText(payout, 'payout' in limits ? formatMoney(currency, limits.payout, 1) : '');
+        setText(account_balance, 'account_balance' in limits ? Currency.formatMoney(currency, limits.account_balance, 1) : '');
+        setText(payout, 'payout' in limits ? Currency.formatMoney(currency, limits.payout, 1) : '');
 
         if (limits.market_specific) {
             const markets = getMarkets(response_active_symbols.active_symbols);
@@ -53,7 +53,7 @@ const LimitsUI = (() => {
                 appendRowTable(markets[market].name, '', 'auto', 'bold');
                 limits.market_specific[market].forEach((submarket) => {
                     // submarket name could be (Commodities|Minor Pairs|Major Pairs|Smart FX|Stock Indices|Synthetic Indices)
-                    appendRowTable(localize(submarket.name /* localize-ignore */), submarket.turnover_limit !== 'null' ? formatMoney(currency, submarket.turnover_limit, 1) : 0, '25px', 'normal');
+                    appendRowTable(localize(submarket.name /* localize-ignore */), submarket.turnover_limit !== 'null' ? Currency.formatMoney(currency, submarket.turnover_limit, 1) : 0, '25px', 'normal');
                 });
             });
         } else {
