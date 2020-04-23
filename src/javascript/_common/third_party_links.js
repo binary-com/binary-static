@@ -81,6 +81,7 @@ const ThirdPartyLinks = (() => {
             && !new RegExp(`^.*\\.${getCurrentBinaryDomain() || 'binary\\.com'}$`).test(destination.host) // destination host is not binary subdomain
             && !new RegExp('^.*\\.binary\\.bot$').test(destination.host) // destination host is not binary subdomain
             && !/www.(betonmarkets|xodds).com/.test(destination.host) // destination host is not binary old domain
+            && !/deriv.(app|com)/.test(destination.host) // destination host is not deriv
             && window.location.host !== destination.host;
     };
 

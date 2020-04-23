@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-21 06:34\n"
+"PO-Revision-Date: 2020-04-22 04:13\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -183,7 +183,7 @@ msgid "%1 desktop app"
 msgstr "Aplicación de escritorio de %1"
 
 msgid "%1 employees and affiliates must avoid conflicts of interest. For example, they may not compete with the company, either directly or indirectly, or use knowledge gained while working for %1 to help anyone else compete with it."
-msgstr "Empleados y afiliados de %1 deben evitar conflictos de intereses. Por ejemplo, no pueden competir con la empresa, directa o indirectamente, o utilizar el conocimiento adquirido mientras trabajan para %1 para ayudar a cualquier otra persona a competir con la empresa."
+msgstr "Empleados y afiliados de %1 deben evitar conflictos de intereses. Por ejemplo, no pueden competir con la empresa, directa o indirectamente, o utilizar el conocimiento adquirido mientras trabajan con %1 para ayudar a cualquier otra persona a competir con la empresa."
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stock indices, commodities, and synthetic indices."
 msgstr "%1 proporciona a todo el mundo una forma fácil de participar en los mercados financieros. Opere con tan poco como $1 en las principales divisas, acciones, índices bursátiles, materias primas e índices sintéticos."
@@ -588,7 +588,7 @@ msgid "30-day limit on losses"
 msgstr "El límite de pérdidas de 30 días"
 
 msgid "30-day turnover limit"
-msgstr "El límite de volumen de transacciones de 30 días"
+msgstr "Límite de volumen de facturación de 30 días"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "40 transacciones o más en los últimos 12 meses"
@@ -615,7 +615,7 @@ msgid "7-day limit on losses"
 msgstr "El límite de pérdidas de 7 días"
 
 msgid "7-day turnover limit"
-msgstr "El límite de volumen de transacciones de 7 días"
+msgstr "Límite de volumen de facturación de 7 días"
 
 msgid "7.50"
 msgstr "7.50"
@@ -2155,13 +2155,13 @@ msgid "Binary.com Graduate Program"
 msgstr "Programa de Graduados de Binary.com"
 
 msgid "Binary.com Shop"
-msgstr ""
+msgstr "Tienda Binary.com"
 
 msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
 msgstr ""
 
 msgid "Binary.com in Numbers"
-msgstr ""
+msgstr "Binary en números"
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com recomienda 1.1.1.1"
@@ -3961,7 +3961,7 @@ msgid "Enable two-factor authentication for an extra layer of security."
 msgstr "Habilite la autenticación de dos factores para una capa adicional de seguridad."
 
 msgid "End Time"
-msgstr "Hora de finalización"
+msgstr "Hora de término"
 
 msgid "Endpoint"
 msgstr "Punto final"
@@ -3973,7 +3973,7 @@ msgid "Ends Between/Ends Outside"
 msgstr "Finaliza dentro/Finaliza fuera"
 
 msgid "Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Los contratos Termina entre/Termina fuera serán reembolsados al precio de compra si hay menos de 2 intervalos entre el inicio y el final del contrato."
+msgstr "Los contratos Termina entre/Termina fuera serán reembolsados al precio de compra si hay menos de 2 ticks entre la hora de inicio y término."
 
 msgid "Ends Between/Ends Outside trades"
 msgstr "Contratos Finaliza dentro/Finaliza fuera"
@@ -4382,6 +4382,9 @@ msgstr "Precio de expiración"
 
 msgid "Explanation"
 msgstr "Explicación"
+
+msgid "Explore %1’s new creation — Deriv"
+msgstr ""
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "Explore todas las plataformas de operaciones, aplicaciones y herramientas que ofrecemos"
@@ -5125,7 +5128,7 @@ msgid "Higher/Lower"
 msgstr "Superior/Inferior"
 
 msgid "Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times."
-msgstr "Los contratos Superiores/Inferiores serán reembolsados con el precio de compra si hay menos de 2 ticks entre el tiempo de inicio y el tiempo final."
+msgstr "Los contratos Superiores/Inferiores serán reembolsados al precio de compra si hay menos de 2 ticks entre la hora de inicio y la de término."
 
 msgid "Higher/Lower trades"
 msgstr "Contratos Superior/Inferior"
@@ -5386,7 +5389,7 @@ msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong
 msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>barrera</strong> o a la <stronm g>nueva barrera (en caso de un reset)</stronmg>, usted no gana el pago."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
-msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>barrera</strong>, no recibirá el premio."
+msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>barrera</strong>, no ganará el contrato."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>barrera</strong>, sólo recibirá el premio para los contratos de tipo \"Superior\""
@@ -5542,7 +5545,7 @@ msgid "If you see EUR/USD has a bid price of 1.05229, you will buy 1.05229 USD f
 msgstr "Si el precio de compra del par EUR/USD es 1,05229, usted comprará 1,05229 USD por cada euro que venda."
 
 msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
-msgstr "Si selecciona \"Permitir valores iguales\", usted ganará si el punto de salida es superior o igual al punto de entrada en el caso de un contrato \"Superior\". Del mismo modo, usted ganará si el punto de salida es inferior o igual al punto de entrada en un contrato \"Inferior\"."
+msgstr "Si selecciona \"Permitir valores iguales\", ganará si el punto de salida es superior o igual al punto de entrada en el caso de un contrato \"Superior\". Del mismo modo, ganará si el punto de salida es inferior o igual al punto de entrada en un contrato \"Inferior\"."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Si selecciona \"Asiáticas - Baja\", ganará el pago si el <strong>último intervalo</strong> es <strong>inferior</strong> a la <strong>media</strong> de los intervalos."
@@ -5557,7 +5560,7 @@ msgid "If you select \"Does Not Touch\", you win the payout if the market never 
 msgstr "Si selecciona \"No toca\", ganará el pago si el mercado nunca toca la <strong>barrera</strong> de precio especificada durante el <strong>plazo del contrato</strong>."
 
 msgid "If you select \"Ends Between\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>Low barrier</strong> AND strictly lower than the <strong>High barrier</strong>."
-msgstr "Si selecciona \"Finaliza dentro\", ganará el pago si el <strong>precio de salida</strong> es estrictamente superior a la <strong>barrera inferior</strong> Y estrictamente inferior a la <strong>barrera superior</strong>."
+msgstr "Si selecciona \"Termina entre\", ganará el pago si el <strong>punto de salida</strong> es estrictamente superior a la <strong>barrera inferior</strong> Y estrictamente inferior a la <strong>barrera superior</strong>."
 
 msgid "If you select \"Ends Outside\", you win the payout if the <strong>exit spot</strong> is EITHER strictly higher than the <strong>High barrier</strong>, OR strictly lower than the <strong>Low barrier</strong>."
 msgstr "Si selecciona \"Finaliza fuera\", ganará el pago si el <strong>precio de salida</strong> es O BIEN estrictamente superior a la <strong>barrera superior</strong> O estrictamente inferior a la <strong>barrera inferior</strong>."
@@ -5575,13 +5578,13 @@ msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</st
 msgstr "Si selecciona \"Superior\", recibirá el pago si el <strong>precio de salida</strong> es superior a la <strong>barrera</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
-msgstr "Si selecciona \"Superior\", ganará el pago si el <strong>precio de salida</strong> es estrictamente superior a la <strong>barrera</strong>."
+msgstr "Si selecciona \"Superior\", ganará el pago si el <strong>punto de salida</strong> es estrictamente superior a la <strong>barrera</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Si selecciona \"Superior\", ganará si el <strong>precio de salida</strong> es estrictamente superior al <strong>precio de entrada</strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
-msgstr "Si selecciona \"Inferior\", ganará el pago si el <strong>precio de salida</strong> es estrictamente inferior a la <strong>barrera</strong>."
+msgstr "Si selecciona \"Inferior\", ganará el pago si el <strong>punto de salida</strong> es estrictamente inferior a la <strong>barrera</strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
 msgstr "Si selecciona \"Inferior\", ganará si el <strong>precio de salida</strong> es estrictamente inferior al <strong>punto de entrada</strong>."
@@ -5638,13 +5641,13 @@ msgid "If you select %1\"Only Ups\"%2, you win the payout if consecutive ticks r
 msgstr "Si selecciona %1\"Sólo Abajo\"%2, usted gana el pago si los ticks consecutivos suben sucesivamente después del %1precio de entrada%2.%3No se gana el pago si algun tick cae o es igual a cualquier de los ticks anteriores."
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
-msgstr "Si selecciona una <strong>hora de comienzo</strong> en el futuro, la <strong>hora de comienzo</strong> es la seleccionada y el <strong>precio de entrada</strong> es el precio efectivo a esa hora."
+msgstr "Si selecciona una <strong>hora de inicio</strong> en el futuro, la <strong>hora de comienzo</strong> es la seleccionada y el <strong>punto de entrada</strong> es el precio efectivo a esa hora."
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "Si selecciona como <strong>hora de comienzo</strong> \"ahora\", la <strong>hora de finalización</strong> es el número seleccionado de minutos/horas tras la <strong>hora de comienzo</strong> (si la duración es inferior a un día), o al final del día de comercio (si la duración es de un día o más)."
+msgstr "Si selecciona \"ahora\" como <strong>hora de inicio</strong>, la <strong>hora de término</strong> es el número seleccionado de minutos/horas tras la <strong>hora de comienzo</strong> (si la duración es inferior a un día), o al final del día de comercio (si la duración es de un día o más)."
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
-msgstr "Si selecciona una <strong>hora de finalización</strong> específica, la <strong>hora de finalización</strong> es la hora seleccionada."
+msgstr "Si selecciona una <strong>hora de término </strong> específica, la <strong>hora de término</strong> es la hora seleccionada."
 
 msgid "If you want to change your affiliate, contact %1affiliates@binary.com%2 for more information on how you can do this."
 msgstr "Si desea cambiar su afiliado, comuníquese con %1affiliates@binary.com%2 para obtener más información sobre cómo puede hacerlo."
@@ -9409,6 +9412,9 @@ msgstr "Al igual que en el comercio de forex, usted debe entender cuándo compra
 msgid "Simple and intuitive"
 msgstr "Simple e intuitivo"
 
+msgid "Simple. Flexible. Reliable."
+msgstr ""
+
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr "Simplemente cambie alguno de sus parámetros y el precio del contrato cambia al instante, mostrando el pago potencial en tiempo real. %1 garantiza precios justos y transparentes, mostrando las dos posibles direcciones del contrato."
 
@@ -9551,7 +9557,7 @@ msgid "Standard account"
 msgstr "Cuenta estándar"
 
 msgid "Start Time"
-msgstr "Hora de comienzo"
+msgstr "Hora de inicio"
 
 msgid "Start Trading with %1"
 msgstr "Comenzar a operar con %1"
@@ -9560,7 +9566,7 @@ msgid "Start Trading with MetaTrader 5"
 msgstr "Empiece a operar ahora con MetaTrader 5"
 
 msgid "Start time"
-msgstr "Hora de comienzo"
+msgstr "Hora de inicio"
 
 msgid "Start trading"
 msgstr "Comience a operar"
@@ -10058,7 +10064,7 @@ msgid "The <strong>contract period</strong> is the period between the <strong>ne
 msgstr "El <strong>período contractual</strong> es aquel entre el <strong>siguiente intervalo</strong> posterior al <strong>inicio</strong> y la <strong>finalización</strong>."
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr "La <strong>hora de finalización</strong> es la cantidad de minutos/horas después del <strong>inicio</strong> (en caso de tener menos de un día de duración) o al final del día de contratación (en caso de tener un día o más de duración)."
+msgstr "La <strong>hora de término</strong> es la cantidad de minutos/horas después del <strong>inicio</strong> (en caso de tener menos de un día de duración) o al final del día de comercio (en caso de tener un día o más de duración)."
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
 msgstr "La <strong>hora de término</strong> es la cantidad de minutos/horas seleccionada luego de la <strong>hora de inicio</strong>."
@@ -10067,17 +10073,16 @@ msgid "The <strong>entry spot</strong> is the first tick after the contract is p
 msgstr "El <strong>punto de entrada</strong> es el primer intervalo luego de que el contrato es procesado por nuestros servidores."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
-msgstr "El <strong>precio de salida</strong> corresponde al último valor en efecto al momento de la <strong>finalización del contrato</strong> o justo antes de esta."
+msgstr "El <strong>punto de salida</strong> es el último tick al momento de o justo antes de la <strong>hora de término</strong>."
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "El <strong>tiempo restante</strong> se refiere al tiempo restante antes del término del contrato."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "La <strong>hora de comienzo</ strong> es cuando nuestros servidores procesan el contrato y <strong>el \n"
-" precio de entrada</ strong> es <strong>el siguiente tick</ strong> después de eso. "
+msgstr "La <strong>hora de inicio</strong> es cuando nuestros servidores procesan el contrato y <strong>el precio de entrada</strong> es <strong>el siguiente tick</strong> después de eso. "
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
-msgstr "El <strong>inicio</strong> es cuando el contrato esté procesado por nuestros servidores."
+msgstr "La <strong>hora de inicio</strong> es cuando nuestros servidores procesan el contrato."
 
 msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
 msgstr "La cuenta avanzada es una cuenta de A Book 100% donde sus operaciones se transfieren directamente al mercado, lo que le brinda acceso directo a proveedores de liquidez de forex. Negocie pares de divisas mayores, menores y exóticos con diferenciales ajustados y mayores volúmenes comerciales."
@@ -11700,7 +11705,7 @@ msgid "This section on force majeure events does not apply to Synthetic Indices.
 msgstr "Esta sección sobre eventos de fuerza mayor no aplica a los Índices sintéticos."
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
-msgstr ""
+msgstr "Los servicios de este sitio web puede no estar disponible en algunos países como los Estados Unidos, Canadá, Hong Kong, o para las personas menores de 18 años."
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "Conocimiento profundo de scripts de bash y experiencia con el lenguaje de scripts de Perl"
