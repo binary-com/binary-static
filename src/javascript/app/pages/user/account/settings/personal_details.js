@@ -34,8 +34,7 @@ const PersonalDetails = (() => {
     const init = () => {
         editable_fields   = {};
         get_settings_data = {};
-        // TODO: remove tax_id and tax_residence when api is fixed.
-        changeable_fields = ['tax_identification_number', 'tax_residence'];
+        changeable_fields = [];
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
     };
@@ -56,6 +55,12 @@ const PersonalDetails = (() => {
             $tax_information_info.setVisibility(0); // hide tax info
             $tax_info_declaration.setVisibility(0); // hide tax info declaration
         }
+    };
+
+    const showHideTaxForm = (get_settings) => {
+        const should_show_tax = isTaxReq() || /tax_identification_number|tax_residence]/.test(changeable_fields);
+        const has_set_tax = get_settings.tax_identification_number || get_settings.tax_residence;
+        CommonFunctions.getElementById('tax_information_form').setVisibility(should_show_tax || has_set_tax);
     };
 
     const showHideMissingDetails = () => {
@@ -152,14 +157,15 @@ const PersonalDetails = (() => {
 
         if (has_changeable_fields) {
             displayChangeableFields(data);
-            CommonFunctions.getElementById('tax_information_form').setVisibility(1);
             CommonFunctions.getElementById('address_form').setVisibility(1);
             showHideTaxMessage();
+            showHideTaxForm(get_settings);
         } else if (is_virtual) {
             $(real_acc_elements).remove();
         } else {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
+            showHideTaxForm(get_settings);
         }
 
         $(form_id).setVisibility(1);
@@ -257,6 +263,16 @@ const PersonalDetails = (() => {
         ));
     };
 
+    const isForMtTax = () => {
+        const mt_acct_type = getHashValue('mt5_redirect');
+        // demo and volatility mt accounts do not require tax info
+        return /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2;
+    };
+
+    const isTaxReq = () =>
+        Client.isAccountOfType('financial') ||
+        (isForMtTax() && +State.getResponse('landing_company.config.tax_details_required') === 1);
+
     const getValidations = () => {
         let validations;
         if (is_virtual) {
@@ -268,9 +284,8 @@ const PersonalDetails = (() => {
             const is_financial      = Client.isAccountOfType('financial');
             const is_gaming         = Client.isAccountOfType('gaming');
             const mt_acct_type      = getHashValue('mt5_redirect');
-            const is_for_mt_citizen = !!mt_acct_type;                                                   // all mt account opening requires citizen
-            const is_for_mt_tax     = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2;  // demo and volatility mt accounts do not require tax info
-            const is_tax_req        = is_financial || (is_for_mt_tax && +State.getResponse('landing_company.config.tax_details_required') === 1);
+            const is_for_mt_citizen = !!mt_acct_type; // all mt account opening requires citizen
+            const is_tax_req        = isTaxReq();
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
