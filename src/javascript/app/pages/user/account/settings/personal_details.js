@@ -58,7 +58,7 @@ const PersonalDetails = (() => {
     };
 
     const showHideTaxForm = (get_settings) => {
-        const should_show_tax = isTaxReq() || /tax_identification_number|tax_residence]/.test(changeable_fields);
+        const should_show_tax = isTaxEditable();
         const has_set_tax = get_settings.tax_identification_number || get_settings.tax_residence;
         CommonFunctions.getElementById('tax_information_form').setVisibility(should_show_tax || has_set_tax);
     };
@@ -181,11 +181,14 @@ const PersonalDetails = (() => {
         showHideMissingDetails();
     };
 
-    const show_label_if_any_value   = ['account_opening_reason', 'citizen', 'place_of_birth', 'tax_residence', 'tax_identification_number', 'date_of_birth', 'first_name', 'last_name', 'salutation'];
-    const force_update_fields       = ['tax_residence', 'tax_identification_number'];
+    const show_label_if_any_value = ['account_opening_reason', 'citizen', 'place_of_birth', 'date_of_birth', 'first_name', 'last_name', 'salutation'];
+    const force_update_fields     = ['tax_residence', 'tax_identification_number'];
 
     const displayGetSettingsData = (get_settings) => {
         Object.keys(get_settings).forEach((key) => {
+            if (!isTaxEditable()) {
+                show_label_if_any_value.push('tax_residence', 'tax_identification_number');
+            }
             // If there are changeable fields, show input instead of labels instead.
             const has_label         = show_label_if_any_value.includes(key) &&
                 (has_changeable_fields ? !changeable_fields.includes(key) : true);
@@ -270,8 +273,12 @@ const PersonalDetails = (() => {
     };
 
     const isTaxReq = () =>
-        Client.isAccountOfType('financial') ||
+        Client.shouldCompleteTax() ||
         (isForMtTax() && +State.getResponse('landing_company.config.tax_details_required') === 1);
+
+    const isTaxEditable = () =>
+        isTaxReq() ||
+        /tax_identification_number|tax_residence]/.test(changeable_fields);
 
     const getValidations = () => {
         let validations;

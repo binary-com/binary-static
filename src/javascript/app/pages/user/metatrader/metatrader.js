@@ -231,7 +231,7 @@ const MetaTrader = (() => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);
                         if (typeof actions_info[action].onError === 'function') {
-                            actions_info[action].onError(response, MetaTraderUI.$form());
+                            actions_info[action].onError(response, MetaTraderUI.$form(), acc_type);
                         }
                         if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
                             getExchangeRates();
