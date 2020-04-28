@@ -27,6 +27,7 @@ const PersonalDetails = (() => {
         is_virtual,
         is_fully_authenticated,
         residence,
+        obj_current_residence,
         get_settings_data,
         has_changeable_fields,
         changeable_fields;
@@ -274,11 +275,12 @@ const PersonalDetails = (() => {
 
     const isTaxReq = () =>
         Client.shouldCompleteTax() ||
+        'tin_format' in obj_current_residence ||
         (isForMtTax() && +State.getResponse('landing_company.config.tax_details_required') === 1);
 
     const isTaxEditable = () =>
         isTaxReq() ||
-        /tax_identification_number|tax_residence]/.test(changeable_fields);
+        /tax_identification_number|tax_residence/.test(changeable_fields);
 
     const getValidations = () => {
         let validations;
@@ -293,22 +295,43 @@ const PersonalDetails = (() => {
             const mt_acct_type      = getHashValue('mt5_redirect');
             const is_for_mt_citizen = !!mt_acct_type; // all mt account opening requires citizen
             const is_tax_req        = isTaxReq();
+            const tax_regex         = (obj_current_residence.tin_format || []).map((format) => new RegExp(format));
+
+            const $tax_identification_number = $('#tax_identification_number');
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
                 { selector: '#address_line_2',         validations: ['address'] },
                 { selector: '#address_city',           validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
-                { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#address_postcode',       validations: [residence === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#email_consent' },
                 { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
                 { selector: '#date_of_birth',          validations: ['req'] },
 
-                { selector: '#tax_residence',  validations: (is_tax_req) ? ['req'] : '' },
-                { selector: '#citizen',        validations: (is_financial || is_gaming || is_for_mt_citizen) ? ['req'] : '' },
-                { selector: '#chk_tax_id',     validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
+                { selector: '#tax_residence',             validations: (is_tax_req) ? ['req'] : '' },
+                {
+                    selector   : '#tax_identification_number',
+                    validations: [
+                        is_tax_req ? 'req' : undefined,
+                        'tax_id',
+                        ['length', { min: is_tax_req ? 1 : 0, max: 20 }],
+                        tax_regex.length ?
+                            ['custom', {
+                                func: () => {
+                                    const tax_id = $tax_identification_number.val();
+                                    // as long as tax id value matches some acceptable regex from the tax_regex array
+                                    return tax_regex.find(regex => regex.test(tax_id));
+                                },
+                                message: localize('Invalid tax identification number.'),
+                            }] : undefined,
+                    ].filter(item => item),
+                },
+
+                { selector: '#citizen',    validations: (is_financial || is_gaming || is_for_mt_citizen) ? ['req'] : '' },
+                { selector: '#chk_tax_id', validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
             // Push validations for changeable fields.
@@ -331,13 +354,6 @@ const PersonalDetails = (() => {
                     });
                 }
             });
-
-            const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            if (is_tax_req) {
-                tax_id_validation.validations[1][1].min = 1;
-                tax_id_validation.validations.unshift('req');
-            }
-            validations.push(tax_id_validation);
         }
         return validations;
     };
@@ -421,13 +437,16 @@ const PersonalDetails = (() => {
                         value      : res.value,
                         is_disabled: res.disabled,
                     }));
+                    if (res.value === residence) {
+                        obj_current_residence = res;
+                    }
                 });
                 if (residence) {
                     const $tax_residence = $('#tax_residence');
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                         setTimeout(() => {
                             const residence_value = get_settings_data.tax_residence ?
-                                get_settings_data.tax_residence.split(',') : Client.get('residence') || '';
+                                get_settings_data.tax_residence.split(',') : residence || '';
                             $tax_residence.select2()
                                 .val(residence_value)
                                 .trigger('change')
