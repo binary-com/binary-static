@@ -8,6 +8,7 @@ const Reset                    = require('../../trade/reset');
 const TickDisplay              = require('../../trade/tick_trade');
 const Clock                    = require('../../../base/clock');
 const BinarySocket             = require('../../../base/socket');
+const getCurrencyDisplayCode   = require('../../../common/currency').getCurrencyDisplayCode;
 const changePocNumbersToString = require('../../../common/request_middleware').changePocNumbersToString;
 const getElementById           = require('../../../../_common/common_functions').getElementById;
 const localize                 = require('../../../../_common/localize').localize;
@@ -826,7 +827,7 @@ const ViewPopup = (() => {
         if (is_sell_clicked) {
             const formatted_sell_price = formatMoney(contract.currency, response.sell.sold_for, true);
             containerSetText('contract_sell_message',
-                `${localize('You have sold this contract at [_1] [_2]', [contract.currency, formatted_sell_price])}
+                `${localize('You have sold this contract at [_1] [_2]', [getCurrencyDisplayCode(contract.currency), formatted_sell_price])}
                 <br />
                 ${localize('Your transaction reference number is [_1]', response.sell.transaction_id)}`);
         }

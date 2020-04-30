@@ -1,7 +1,7 @@
 const CurrencyBase = require('../../_common/base/currency_base');
 const localize     = require('../../_common/localize').localize;
 
-const getCurrencyFullName = (currency) => CurrencyBase.isCryptocurrency(currency) ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
+const getCurrencyFullName = (currency) => CurrencyBase.isCryptocurrency(currency) ? `${CurrencyBase.getCurrencyName(currency)} (${CurrencyBase.getCurrencyDisplayCode(currency)})` : currency;
 
 const getCurrencyList = (currencies) => {
     const $currencies       = $('<select/>');

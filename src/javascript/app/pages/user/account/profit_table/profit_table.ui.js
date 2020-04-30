@@ -1,7 +1,7 @@
 const ProfitTable = require('./profit_table');
 const Client      = require('../../../../base/client');
 const Table       = require('../../../../common/attach_dom/table');
-const formatMoney = require('../../../../common/currency').formatMoney;
+const Currency    = require('../../../../common/currency');
 const showTooltip = require('../../../../common/get_app_details').showTooltip;
 const localize    = require('../../../../../_common/localize').localize;
 
@@ -29,7 +29,7 @@ const ProfitTableUI = (() => {
 
         currency = Client.get('currency');
 
-        header[7] += currency ? ` (${currency})` : '';
+        header[7] += currency ? ` (${Currency.getCurrencyDisplayCode(currency)})` : '';
 
         const footer = [localize('Total Profit/Loss'), '', '', '', '', '', '', '', ''];
 
@@ -59,7 +59,7 @@ const ProfitTableUI = (() => {
 
         const sub_total_type = (total_profit >= 0) ? 'profit' : 'loss';
 
-        $('#pl-day-total').find(' > .pl').html(formatMoney(currency, Number(total_profit), true))
+        $('#pl-day-total').find(' > .pl').html(Currency.formatMoney(currency, Number(total_profit), true))
             .removeClass('profit loss')
             .addClass(sub_total_type);
     };

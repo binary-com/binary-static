@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-13 04:48\n"
+"PO-Revision-Date: 2020-04-24 04:13\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1766,9 +1766,6 @@ msgstr "การปรับระดับการทำกำไรอย่
 msgid "Available 24/7"
 msgstr "ตลอด 24 ชั่วโมง 7 วัน"
 
-msgid "Available Currencies"
-msgstr "สกุลเงินที่มีอยู่"
-
 msgid "Available Markets"
 msgstr "ตลาดที่เปิดบริการ"
 
@@ -2102,17 +2099,11 @@ msgstr "Binary Limited ขึ้นทะเบียนที่อยู่ส
 msgid "Binary Options"
 msgstr "ไบนารีออปชั่น (Binary Options)"
 
-msgid "Binary Shop"
-msgstr "ร้านไบนารี"
-
 msgid "Binary WebTrader"
 msgstr "ไบนารีเว็บเทรดเดอร์ (Binary Webtrader)"
 
 msgid "Binary granted Investment Services license"
 msgstr "ไบนารีได้รับใบอนุญาตการให้บริการการลงทุน"
-
-msgid "Binary in Numbers"
-msgstr "สถิติที่สำคัญของเรา"
 
 msgid "Binary may assign any or all of its rights under this Agreement to a third party."
 msgstr "Binary อาจมอบอำนาจใดๆ หรือทั้งหมดภายใต้สัญญาฉบับนี้ให้แก่บุคคลภายนอก"
@@ -2161,6 +2152,15 @@ msgstr "แพลตฟอร์มของ Binary ดำเนินการ�
 
 msgid "Binary.com Graduate Program"
 msgstr "โปรแกรมบัณฑิต Binary.com"
+
+msgid "Binary.com Shop"
+msgstr ""
+
+msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
+msgstr ""
+
+msgid "Binary.com in Numbers"
+msgstr ""
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com แนะนำ 1.1.1.1"
@@ -2468,9 +2468,6 @@ msgstr "เซสชันสำหรับการชำระเงินห
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "ขอบเขตที่แน่นอนถูกกำหนดอยู่ในระดับที่ยอมรับได้สำหรับราคา Barrier และ Strike ของแต่ละสัญญา โดยทั่วไปแล้ว Barrier/Strike อาจจะไม่เข้าใกล้ และไม่ห่างไปจากระดับปัจจุบันของตลาดผลิตภัณฑ์อ้างอิง"
 
-msgid "Change"
-msgstr "เปลี่ยนแปลง"
-
 msgid "Change API Endpoint"
 msgstr "เปลี่ยน API ปลายทาง"
 
@@ -2479,6 +2476,9 @@ msgstr "เปลี่ยนรหัสผ่าน MT5"
 
 msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
+
+msgid "Change currency"
+msgstr ""
 
 msgid "Change password"
 msgstr "เปลี่ยนรหัสผ่าน"
@@ -2657,8 +2657,8 @@ msgstr "ลูกค้าจากประเทศอื่นๆ ทั่�
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC."
 msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr "ลูกค้าจากประเทศอื่นๆ ทั่วโลก (ยกเว้นบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ญี่ปุ่น และสหภาพยุโรป) ที่ต้องการซื้อขาย CFD จะมีบัญชี CFD Metatrader 5 ที่เปิดกับ Binary (FX) Ltd. หากแต่ %1 จะไม่มีบริการในประเทศมาเลเซีย"
+msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
+msgstr ""
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
 msgstr "ลูกค้าสามารถสอบถามข้อมูล โดยส่งอีเมล์มายัง compliance@binary.com ในกรณีใดๆ หรือ ท่านสามารถใช้ทางเลือกนี้ในการให้รายละเอียดเกี่ยวกับผลประโยชน์ทับซ้อนที่ท่านประสบ"
@@ -4381,6 +4381,9 @@ msgstr "ราคาที่หมดอายุ"
 
 msgid "Explanation"
 msgstr "คำอธิบาย"
+
+msgid "Explore %1’s new creation — Deriv"
+msgstr ""
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "สำรวจทุกแพลตฟอร์มซื้อขาย แอพพลิเคชัน และเครื่องมือของเรา"
@@ -9296,6 +9299,9 @@ msgstr "ตั้งค่าสกุลเงิน"
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "ตั้งค่า Barrier เพื่อกำหนดตำแหน่งของท่าน และกำหนดผลของตัวเงินที่ท่านจะได้รับ"
 
+msgid "Set currency"
+msgstr ""
+
 msgid "Set off any Commission paid or payable by Binary to the Introducing Broker against any amounts held in any accounts of the Company"
 msgstr "หักค่าคอมมิชชั่นที่ Binary ได้จ่ายให้กับโบรกเกอร์แนะนำไปแล้วจากจำนวนที่คงเหลือในบัญชีที่ถือไว้กับบริษัทฯ"
 
@@ -9403,6 +9409,9 @@ msgstr ""
 
 msgid "Simple and intuitive"
 msgstr "ใช้งานง่าย"
+
+msgid "Simple. Flexible. Reliable."
+msgstr ""
 
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr "ท่านสามารถแก้ไขตัวแปรได้โดยง่ายและกำหนดราคาซื้อขายได้ทันที วางเงินได้อย่างเรียลไทม์ %1 ทำให้ท่านมั่นใจในราคาที่ยุติธรรมและโปร่งใสในการซื้อขาย"
@@ -11695,8 +11704,8 @@ msgstr "ข้อตกลงการสงวนสิทธิ์ด้าน
 msgid "This section on force majeure events does not apply to Synthetic Indices."
 msgstr ""
 
-msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18."
-msgstr "บริการต่างๆ ของเว็บไซต์นี้ไม่ได้มีให้บริการในบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ฮ่องกง ญี่ปุ่น หรือ ให้บริการต่อบุคคลที่อายุต่ำกว่า 18 ปี"
+msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "ตลอดจนทักษะความรู้ในการทำสคริปต์แบช (Bash) และประสบการณ์ในการใช้ภาษาเพิร์ล (Perl)"
@@ -13428,6 +13437,9 @@ msgstr "ระบบได้ปิดการใช้งานการรั
 
 msgid "You have successfully enabled two-factor authentication for your account."
 msgstr "ระบบได้เปิดการใช้งานการรับรองโดยใช้ 2 ตัวแปรผูกกับบัญชีของท่านเรียบร้อยแล้ว"
+
+msgid "You have successfully set your account currency to %1."
+msgstr ""
 
 msgid "You have to register and get App ID before you can use different OAuth server for authentication. For more information refer to OAuth details on https://developers.binary.com/."
 msgstr "ท่านต้องลงทะเบียน และขอรหัส App ID ก่อนที่ท่านจะใช้เซิร์ฟเวอร์ OAuth ที่ต่างกันในการพิสูจน์ตัวตน สำหรับข้อมูลเพิ่มเติมสามารถอ้างอิงรายละเอียด OAuth จาก https://developers.binary.com"
