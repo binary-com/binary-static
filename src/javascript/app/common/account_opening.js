@@ -101,7 +101,10 @@ const AccountOpening = (() => {
                     });
                 }
 
-                if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+                if (
+                    State.getResponse('authorize.upgradeable_landing_companies')
+                        .some(item => ['malta', 'maltainvest', 'iom'].some(lc => lc === item))
+                ) {
                     const $citizen = $('#citizen');
                     CommonFunctions.getElementById('citizen_row').setVisibility(1);
                     if ($citizen.length) {
@@ -236,7 +239,7 @@ const AccountOpening = (() => {
             { selector: '#address_line_2',              validations: ['address', ['length', { min: 0, max: 70 }]] },
             { selector: '#address_city',                validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
             { selector: '#address_state',               validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',            validations: [Client.get('residence') === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').indexOf('iom') > -1 ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#address_postcode',            validations: [Client.get('residence') === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').includes('iom') ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',                       validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
             { selector: '#secret_question',             validations: ['req'] },
             { selector: '#secret_answer',               validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
