@@ -2,20 +2,12 @@ import React from 'react';
 import Analysis from './analysis.jsx';
 import Portfolio from '../user/portfolio.jsx';
 import Loading from '../../_common/components/loading.jsx';
+import DerivBanner from '../../_common/components/deriv_banner.jsx';
 
 const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container'>
-            <div id='deriv_banner_container' data-show='-eucountry'>
-                <a target='_blank' rel='noopener noreferrer' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-trading-banner'>
-                    <img className='deriv_banner_background' src={it.url_for('images/deriv/deriv-banner-bg.png')} />
-                    <img className='deriv_banner_background deriv_banner_background_mobile' src={it.url_for('images/deriv/deriv-banner-bg-mobile.png')} />
-                    <img className='deriv_banner_chevron' src={it.url_for('images/deriv/chevron_right.svg')} />
-                    <h3 className='deriv_banner_standards'>{it.L('[_1] is rebranding to Deriv.com', it.website_name)}</h3>
-                    <img className='deriv_banner_platform' src={it.url_for('images/deriv/deriv-platform.png')} />
-                    <h3 className='deriv_banner_explore'>{it.L('Discover what’s new')}</h3>
-                </a>
-            </div>
+            <DerivBanner />
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />
             <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws?action=deposit')}>
