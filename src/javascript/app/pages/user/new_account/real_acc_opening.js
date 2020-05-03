@@ -16,7 +16,7 @@ const RealAccOpening = (() => {
             BinarySocket.wait('landing_company', 'get_account_status').then(() => {
                 const is_unwelcome_uk = State.getResponse('get_account_status.status').some(status => status === 'unwelcome') && (/gb/.test(Client.get('residence')));
 
-                if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('svg') !== -1) {
+                if (State.getResponse('authorize.upgradeable_landing_companies').some(item => item === 'svg')) {
                     getElementById('risk_disclaimer').setVisibility(1);
                 }
                 if (is_unwelcome_uk) {
@@ -44,7 +44,10 @@ const RealAccOpening = (() => {
         if (place_of_birth) {
             validations = validations.concat([{ request_field: 'place_of_birth', value: place_of_birth }]);
         }
-        if (/^(malta|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+        if (
+            State.getResponse('authorize.upgradeable_landing_companies')
+                .some(item => ['malta', 'iom'].some(lc => lc === item))
+        ) {
             validations = validations.concat([{ selector: '#citizen', validations: ['req'] }]);
         }
         return validations;
