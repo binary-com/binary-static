@@ -87,7 +87,7 @@ const FinancialAccOpening = (() => {
     const getValidations = () => {
         let validations =
               AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
-                  { selector: '#citizen',                   validations: ['req'] },
+                  { selector: '#/home/mamali/www/binary-static/src/javascript/app/common/account_opening.js',                   validations: ['req'] },
                   { selector: '#tax_residence',             validations: ['req'] },
                   { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
                   { selector: '#chk_tax_id',                validations: [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]], exclude_request: 1 },
