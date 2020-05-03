@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DMT5Banner = () => (
-    <div className='dmt5_banner'>
+    <div className='dmt5_banner' data-show='-eucountry'>
         <img className='dmt5_banner__background dmt5_banner__background--desktop' src={it.url_for('images/dmt5_banner/dmt5_banner_bg.png')} />
         <img className='dmt5_banner__background dmt5_banner__background--mobile' src={it.url_for('images/dmt5_banner/dmt5_banner_bg_mobile.png')} />
         <h3 className='dmt5_banner__content'>{it.L('Binary.com MT5 is moving to Deriv')}</h3>
