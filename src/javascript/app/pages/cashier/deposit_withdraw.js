@@ -84,7 +84,8 @@ const DepositWithdraw = (() => {
         const action   = Url.param('action');
         if (/^(withdraw|deposit)$/.test(action)) {
             cashier_type = action;
-            $heading.text(`${action === 'withdraw' ? localize('Withdraw') : localize('Deposit')} ${Client.get('currency') || ''}`);
+            const currency = Client.get('currency') || '';
+            $heading.text(`${action === 'withdraw' ? localize('Withdraw') : localize('Deposit')} ${Currency.getCurrencyDisplayCode(currency)}`);
         }
     };
 

@@ -23,7 +23,6 @@ const Accounts = () => (
                                 [
                                     { text: it.L('Account') },
                                     { text: it.L('Available Markets') },
-                                    { text: it.L('Available Currencies') },
                                     { text: it.L('Action') },
                                 ],
                             ],
