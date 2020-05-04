@@ -131,13 +131,14 @@
     }
 }
 
-.dmt5_banner {
+.mt5_banner {
     width: 100%;
     position: relative;
     max-width: 940px;
     height: 100px;
     display: flex;
     justify-content: flex-start;
+    text-decoration: none !important;
 
     &__background {
         position: absolute;
