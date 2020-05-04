@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-05-04 03:03\n"
+"PO-Revision-Date: 2020-05-04 06:44\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -3246,8 +3246,8 @@ msgstr "加密"
 msgid "Cryptocurrencies"
 msgstr "加密货币"
 
-msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on standard accounts."
-msgstr "每回合交易的加密货币佣金。例如: 1手比特币/美元的一回合交易, 如现货价格为 10,000美元，标准账户将支付30美元。"
+msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts."
+msgstr ""
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "像比特币和以太币这样的加密货币是分散式的数字资产，可以在全世界任何地方即时支付。"
@@ -3451,13 +3451,13 @@ msgid "Demo Accounts"
 msgstr "模拟账户"
 
 msgid "Demo Financial"
-msgstr ""
+msgstr "演示财务"
 
 msgid "Demo Financial STP"
-msgstr ""
+msgstr "演示财务 STP"
 
 msgid "Demo Synthetic"
-msgstr ""
+msgstr "模拟综合"
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "根据网站的开户程式对客户账户所附的管辖权和“关于我们”部分的详细说明以及提供的产品类型, “公司”一词应表示,"
@@ -4540,7 +4540,7 @@ msgid "Finance"
 msgstr "金融"
 
 msgid "Financial"
-msgstr ""
+msgstr "财务"
 
 msgid "Financial Account"
 msgstr "金融账户"
@@ -4558,16 +4558,16 @@ msgid "Financial Risk approval is required. Please contact %1customer support%2 
 msgstr "需要通过金融风险批准。欲知详情，请联系%1客服部%2。"
 
 msgid "Financial STP"
-msgstr ""
+msgstr "财务 STP"
 
 msgid "Financial STP Account"
-msgstr ""
+msgstr "财务 STP 账户"
 
 msgid "Financial STP account"
-msgstr ""
+msgstr "财务 STP 账户"
 
 msgid "Financial account"
-msgstr ""
+msgstr "财务账户"
 
 msgid "Financial assessment"
 msgstr "财务评估"
@@ -6589,7 +6589,7 @@ msgid "MT5 Real Account"
 msgstr "MT5真实账户"
 
 msgid "MT5 Synthetic"
-msgstr ""
+msgstr "MT5 综合"
 
 msgid "MT5 Web platform"
 msgstr "网络平台版MT5"
@@ -7675,13 +7675,13 @@ msgid "Our Company"
 msgstr "我们公司"
 
 msgid "Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products."
-msgstr ""
+msgstr "我们的 MetaTrader 5 财务 STP 账户为您提供极低的差价, 更高的票证大小, 并提供更多的产品。"
 
 msgid "Our MetaTrader 5 Financial account is suitable for both new and experienced traders."
-msgstr ""
+msgstr "我们的 MetaTrader 5 财务账户适用于新手和经验丰富的交易者。"
 
 msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
-msgstr ""
+msgstr "公司的综合账户允许客户对波动率指数进行差价交易 - 这是公司专有的综合资产，可模拟市场力量。"
 
 msgid "Our active client base is expected to reach over 175,000 total clients this year."
 msgstr "我们今年的预计活跃客户总数将超过17万5千人。"
@@ -8728,16 +8728,16 @@ msgid "Real Estate"
 msgstr "房地产"
 
 msgid "Real Financial"
-msgstr ""
+msgstr "真实财务"
 
 msgid "Real Financial STP"
-msgstr ""
+msgstr "真实财务 STP"
 
 msgid "Real Money Account Opening"
 msgstr "开立真实资金账户"
 
 msgid "Real Synthetic"
-msgstr ""
+msgstr "真实综合"
 
 msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
 msgstr "如果连续90天没有活动，真实账户将被封闭。请通过%1support@binary.com%2与binary.com客服部联系，以重启真实账户"
@@ -8904,8 +8904,8 @@ msgstr "在公司的广告活动中代表公司作为代表或获授权人。"
 msgid "Representations and warranties"
 msgstr "陈述和保证"
 
-msgid "Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on standard accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on advanced accounts."
-msgstr "表示每回合交易的基础货币金额。例如: 1手欧元/美元的一回合交易将在标准账户上支付10欧元。1手美元/加元的一回合交易将在高级账户上支付5美元。"
+msgid "Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on financial accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on financial STP accounts."
+msgstr ""
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "代表您的账户中可持有的最高现金额度。如果达到该最高额度，您将被要求提取资金。"
@@ -9838,10 +9838,10 @@ msgid "Symbol"
 msgstr "符号"
 
 msgid "Synthetic"
-msgstr ""
+msgstr "综合"
 
 msgid "Synthetic Account"
-msgstr ""
+msgstr "综合账户"
 
 msgid "Synthetic Indices"
 msgstr "综合指数"
@@ -10591,13 +10591,13 @@ msgid "The Financial Products that BIEL offers to deal in are contracts entered 
 msgstr "BIEL提供的金融产品交易为客户和BIEL之间的合约。在这些合约和相关的特定条款约束下，由于客户向BIEL支付了费用或价格，当相关资产或测量具备某些特定指标时，BIEL也承诺向客户支付相应的金额。BIEL不会代替客户拥有这些合约，如果BIEL破产，也不会从提供给客户的资产保护中获利。同样的，客户所支付的交易费用或价格并不属于客户，而是对BIEL承诺支付的报酬。"
 
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr ""
+msgstr "财务直通式处理系统 （STP）账户是100% A Book 账户。让您直接进入市场交易，您也可直接访问外汇流动量提供商，并进行紧密利差、高交易量的主要、次要和特异货币对外汇交易。"
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr ""
+msgstr "财务账户（可用欧元和英镑）适用于各种新手或有经验的交易者。以微小和可变的差价进行大宗商品、加密货币、主要和次要货币对交易, 不收佣金费，也没有最低存款限制。"
 
 msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr ""
+msgstr "财务账户为新手或有经验的交易者提供高杠杆率和可变的差价，达到最大的灵活性，进行高杠杆大宗商品、加密货币、主要（标准和微手）和次要货币对交易。"
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "外汇市场（forex）是世界上最大、流动性最高的市场 - 任何人都可以买、卖、交易货币。\n"
@@ -10772,7 +10772,7 @@ msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ
 msgstr "适用于客户MT5真实账户的强制平仓水平可能与公司网站公布的默认强制平仓水平不一样。"
 
 msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr ""
+msgstr "综合账户让您以最低真实市场波动率进行差价合约综合指数交易。全年无休，全天候交易，公平审计由第三方独立机构监控。"
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "系统管理团队负责维护、配置和可靠运行我们的计算机软件、硬件和网络。"
