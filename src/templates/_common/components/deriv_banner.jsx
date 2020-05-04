@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const DerivBanner = () => (
+const DerivBanner = ({ dynamic_link }) => (
     <React.Fragment>
         <div id='deriv_banner_container' data-show='-eucountry'>
-            <a target='_blank' rel='noopener noreferrer' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-trading-banner'>
+            <a target='_blank' rel='noopener noreferrer' href={`https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=${dynamic_link}`}>
                 <img className='deriv_banner_background' src={it.url_for('images/deriv/deriv-banner-bg.png')} />
                 <img className='deriv_banner_background deriv_banner_background_mobile' src={it.url_for('images/deriv/deriv-banner-bg-mobile.png')} />
                 <img className='deriv_banner_chevron' src={it.url_for('images/deriv/chevron_right.svg')} />
@@ -14,5 +15,9 @@ const DerivBanner = () => (
         </div>
     </React.Fragment>
 );
+
+DerivBanner.propTypes = {
+    dynamic_link: PropTypes.string,
+};
 
 export default DerivBanner;
