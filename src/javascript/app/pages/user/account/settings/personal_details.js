@@ -30,7 +30,8 @@ const PersonalDetails = (() => {
         obj_current_residence,
         get_settings_data,
         has_changeable_fields,
-        changeable_fields;
+        changeable_fields,
+        $tax_residence;
 
     const init = () => {
         editable_fields   = {};
@@ -285,6 +286,11 @@ const PersonalDetails = (() => {
         isTaxReq() ||
         (has_changeable_fields && /tax_identification_number|tax_residence/.test(changeable_fields)); // only allow changing if not fully authenticated
 
+    const getTaxRegex = (residence_list, tax_residence) => {
+        const tin_format = (residence_list.find(res =>  res.value === tax_residence) || []).tin_format;
+        return (tin_format || []).map((format) => new RegExp(format));
+    };
+
     const getValidations = () => {
         let validations;
         if (is_virtual) {
@@ -298,7 +304,7 @@ const PersonalDetails = (() => {
             const mt_acct_type      = getHashValue('mt5_redirect');
             const is_for_mt_citizen = !!mt_acct_type; // all mt account opening requires citizen
             const is_tax_req        = isTaxReq();
-            const tax_regex         = (obj_current_residence.tin_format || []).map((format) => new RegExp(format));
+            const residence_list    = State.getResponse('residence_list');
 
             const $tax_identification_number = $('#tax_identification_number');
 
@@ -314,22 +320,25 @@ const PersonalDetails = (() => {
                 { selector: '#account_opening_reason', validations: ['req'] },
                 { selector: '#date_of_birth',          validations: ['req'] },
 
-                { selector: '#tax_residence',             validations: (is_tax_req) ? ['req'] : '' },
+                // recheck tax_identiciation_number after tax_residence is selected as the validation regex is taken from API based on tax residence
+                { selector: '#tax_residence',             validations: (is_tax_req) ? ['req'] : '', re_check_field: '#tax_identification_number' },
                 {
                     selector   : '#tax_identification_number',
                     validations: [
                         is_tax_req ? 'req' : undefined,
                         'tax_id',
                         ['length', { min: is_tax_req ? 1 : 0, max: 20 }],
-                        tax_regex.length ?
-                            ['custom', {
-                                func: () => {
-                                    const tax_id = $tax_identification_number.val();
-                                    // as long as tax id value matches some acceptable regex from the tax_regex array
-                                    return tax_regex.find(regex => regex.test(tax_id));
-                                },
-                                message: localize('Invalid tax identification number.'),
-                            }] : undefined,
+                        ['custom', {
+                            func: () => {
+                                // get the tax id regex validation of currently selected tax residence
+                                const tax_regex = getTaxRegex(residence_list, $tax_residence.val());
+                                const tax_id    = $tax_identification_number.val();
+                                // return true if no validation is needed, or
+                                // tax id value matches some acceptable regex from the tax_regex array
+                                return !tax_regex.length || tax_regex.find(regex => regex.test(tax_id));
+                            },
+                            message: localize('Invalid tax identification number.'),
+                        }],
                     ].filter(item => item),
                 },
 
@@ -445,7 +454,7 @@ const PersonalDetails = (() => {
                     }
                 });
                 if (residence) {
-                    const $tax_residence = $('#tax_residence');
+                    $tax_residence = $('#tax_residence');
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                         setTimeout(() => {
                             const residence_value = get_settings_data.tax_residence ?
