@@ -15,7 +15,6 @@ const Platforms = ({
     header,
     description,
     text,
-    status,
     buttons,
 }) => (
     <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
@@ -23,7 +22,7 @@ const Platforms = ({
             <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
-            <h3 className={`section-title ${status === 'beta' ? '' : status || ''}`}>{header}{status === 'beta' ? <span className='beta'>{it.L('BETA')}</span> : ''}</h3>
+            <h3 className='section-title'>{header}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
             <div className='gr-row'>
@@ -123,7 +122,6 @@ const Platform = () => (
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
                     {it.L('Deriv — an all-new trading experience')}
-                    <span className='beta'>{it.L('BETA')}</span>
                 </h2>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
@@ -177,7 +175,6 @@ const Platform = () => (
                                 image='deriv-app'
                                 data_show='-eucountry'
                                 header='Deriv'
-                                status='beta'
                                 className='mobile-hide'
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
