@@ -139,6 +139,7 @@
     display: flex;
     justify-content: flex-start;
     text-decoration: none !important;
+    margin-bottom: 3rem;
 
     &__background {
         position: absolute;
@@ -195,6 +196,7 @@
     @media (max-width: 768px) {
         height: 70px;
         justify-content: center;
+        margin-bottom: 2rem;
 
         &__content {
             font-size: $FONT_SIZE_XS;
