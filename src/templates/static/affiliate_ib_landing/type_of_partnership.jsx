@@ -264,8 +264,8 @@ const TypesOfPartnership = () => (
                                 }}
                             />
 
-                            <p className='text-align-left'>*{it.L('Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on standard accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on advanced accounts.')}</p>
-                            <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on standard accounts.')}</p>
+                            <p className='text-align-left'>*{it.L('Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on financial accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on financial STP accounts.')}</p>
+                            <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts.')}</p>
                         </div>
 
                         <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
