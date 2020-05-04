@@ -212,8 +212,8 @@ const Metatrader = () => (
                         />
                         <AccountDesc
                             account_type={['vanuatu_standard', 'svg_standard']}
-                            title={it.L('Standard Account')}
-                            description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
+                            title={it.L('Financial Account')}
+                            description={it.L('Our MetaTrader 5 Financial account is suitable for both new and experienced traders.')}
                             items={[
                                 it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Variable spreads'),
@@ -223,8 +223,8 @@ const Metatrader = () => (
                         />
                         <AccountDesc
                             account_type={['maltainvest_standard']}
-                            title={it.L('Standard Account')}
-                            description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
+                            title={it.L('Financial Account')}
+                            description={it.L('Our MetaTrader 5 Financial account is suitable for both new and experienced traders.')}
                             items={[
                                 it.L('Leverage up to [_1]', '1:30'),
                                 it.L('Variable spreads'),
@@ -235,8 +235,8 @@ const Metatrader = () => (
                         />
                         <AccountDesc
                             account_type={['labuan_advanced']}
-                            title={it.L('Advanced Account')}
-                            description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
+                            title={it.L('Financial STP Account')}
+                            description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to [_1]', '1:100'),
                                 it.L('Variable spreads'),
@@ -247,8 +247,8 @@ const Metatrader = () => (
                         {/*
                         <AccountDesc
                             account_type={['vanuatu_advanced']}
-                            title={it.L('Advanced Account')}
-                            description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
+                            title={it.L('Financial STP Account')}
+                            description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
                                 it.L('Leverage up to [_1]', '1:100'),
                                 it.L('Variable spreads'),
@@ -259,8 +259,8 @@ const Metatrader = () => (
                         */}
                         <AccountDesc
                             account_type={['svg', 'malta']}
-                            title={it.L('Synthetic Indices Account')}
-                            description={it.L('Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
+                            title={it.L('Synthetic Account')}
+                            description={it.L('Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
                             items={[
                                 it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Fixed spreads'),

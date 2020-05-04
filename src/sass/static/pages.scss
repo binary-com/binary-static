@@ -857,21 +857,6 @@ body #not_authenticated_financial ul.checked > li {
     h2 {
         line-height: 36px;
     }
-    .beta {
-        position: relative;
-        top: -15px;
-        left: 5px;
-        background-color: rgb(42, 48, 82);
-        border-radius: 10px;
-        color: $COLOR_WHITE;
-        display: inline-block;
-        font-size: 10px;
-        font-weight: 400;
-        height: 16px;
-        line-height: 1.8;
-        text-align: center;
-        width: 34px;
-    }
     .new:after {
         content: url('../images/pages/platforms/new_badge.svg');
         position: relative;

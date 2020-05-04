@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-24 04:13\n"
+"PO-Revision-Date: 2020-05-04 03:04\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1070,12 +1070,6 @@ msgstr "จัดการระบบชำระเงินทั้งหม
 msgid "Advanced"
 msgstr "ขั้นสูง"
 
-msgid "Advanced Account"
-msgstr "บัญชีขั้นสูง"
-
-msgid "Advanced account"
-msgstr "บัญชีขั้นสูง"
-
 msgid "Advanced binary options trading interface"
 msgstr "ส่วนเชื่อมต่อการซื้อขายไบนารีออปชั่นขั้นสูง"
 
@@ -1795,9 +1789,6 @@ msgstr "ข. การเริ่มต้น"
 
 msgid "B. Scope"
 msgstr "B. ขอบเขต"
-
-msgid "BETA"
-msgstr "เบต้า"
 
 msgid "BIEL RTS28 for 2017"
 msgstr "BIEL RTS28 สำหรับ 2017"
@@ -3458,14 +3449,14 @@ msgstr "บัญชีทดลองใช้"
 msgid "Demo Accounts"
 msgstr "บัญชีทดลองใช้"
 
-msgid "Demo Advanced"
-msgstr "การสาธิตขั้นสูง"
+msgid "Demo Financial"
+msgstr ""
 
-msgid "Demo Standard"
-msgstr "การสาธิตตามมาตรฐาน"
+msgid "Demo Financial STP"
+msgstr ""
 
-msgid "Demo Synthetic Indices"
-msgstr "สาธิตดัชนีสังเคราะห์"
+msgid "Demo Synthetic"
+msgstr ""
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "ขึ้นอยู่กับเขตอำนาจศาลที่บัญชีของลูกค้าที่ได้เปิดไว้ ตามขั้นตอนในการเปิดบัญชีของเว็บไซต์ และตามที่ได้ให้รายละเอียดไว้ในส่วนเกี่ยวกับเราในเว็บไซต์ และประเภทของผลิตภัณฑ์ที่นำเสนอ คำว่า \"บริษัทฯ\" จะหมายถึงอย่างใดอย่างหนึ่งต่อไปนี้"
@@ -4547,6 +4538,9 @@ msgstr "ราคาสุดท้าย"
 msgid "Finance"
 msgstr "การเงิน"
 
+msgid "Financial"
+msgstr ""
+
 msgid "Financial Account"
 msgstr "บัญชีการเงิน"
 
@@ -4561,6 +4555,18 @@ msgstr "นักวิเคราะห์ตลาดการเงิน"
 
 msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
 msgstr "ต้องมีการอนุมัติความเสี่ยงทางการเงิน โปรดติดต่อ %1ฝ่ายลูกค้าสัมพันธ์%2 สำหรับข้อมูลเพิ่มเติม"
+
+msgid "Financial STP"
+msgstr ""
+
+msgid "Financial STP Account"
+msgstr ""
+
+msgid "Financial STP account"
+msgstr ""
+
+msgid "Financial account"
+msgstr ""
 
 msgid "Financial assessment"
 msgstr "การประเมินทางการเงิน"
@@ -6581,8 +6587,8 @@ msgstr "การเงิน MT5"
 msgid "MT5 Real Account"
 msgstr "บัญชี MT5 จริง"
 
-msgid "MT5 Synthetic Indices"
-msgstr "ดัชนีสังเคราะห์ MT5"
+msgid "MT5 Synthetic"
+msgstr ""
 
 msgid "MT5 Web platform"
 msgstr "MT5 สำหรับเว็บ"
@@ -7667,14 +7673,14 @@ msgstr "ทีมบัญชี&amp; การจ่ายเงินของ
 msgid "Our Company"
 msgstr "บริษัทฯ ของเรา"
 
-msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
-msgstr "บัญชี MetaTrader 5 ขั้นสูงของเรามีสเปรดน้อย ขนาดทิกเก็ตสูงกว่า และมีผลิตภัณฑ์มากกว่า"
+msgid "Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products."
+msgstr ""
 
-msgid "Our MetaTrader 5 Standard account is suitable for both new and experienced traders."
-msgstr "บัญชีมาตรฐาน MetaTrader 5 ของเราเหมาะสมกับทั้งนักลงทุนหน้าใหม่ และนักลงทุนที่มีประสบการณ์"
+msgid "Our MetaTrader 5 Financial account is suitable for both new and experienced traders."
+msgstr ""
 
-msgid "Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
-msgstr "บัญชีดัชนีสังเคราะห์ของเราอนุญาตให้ท่านได้ซื้อขาย CFD จากดัชนีสังเคราะห์ ซึ่งเป็นดัชนีสังเคราะห์ที่เป็นกรรมสิทธิ์ของบริษัทฯ ที่จำลองเหตุการณ์ที่เป็นไปตามกลไกตลาด"
+msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
+msgstr ""
 
 msgid "Our active client base is expected to reach over 175,000 total clients this year."
 msgstr ""
@@ -8717,20 +8723,20 @@ msgstr "จริง"
 msgid "Real Account"
 msgstr "บัญชีจริง"
 
-msgid "Real Advanced"
-msgstr "จริงขั้นสูง"
-
 msgid "Real Estate"
 msgstr "อสังหาริมทรัพย์"
+
+msgid "Real Financial"
+msgstr ""
+
+msgid "Real Financial STP"
+msgstr ""
 
 msgid "Real Money Account Opening"
 msgstr "การเปิดบัญชีเงินจริง"
 
-msgid "Real Standard"
-msgstr "มาตรฐานจริง"
-
-msgid "Real Synthetic Indices"
-msgstr "ดัชนีสังเคราะห์จริง"
+msgid "Real Synthetic"
+msgstr ""
 
 msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
 msgstr ""
@@ -9545,15 +9551,6 @@ msgstr "ประชาสัมพันธ์ให้กับลูกค้
 msgid "Stake"
 msgstr "วางเงิน"
 
-msgid "Standard"
-msgstr "มาตรฐาน"
-
-msgid "Standard Account"
-msgstr "บัญชีมาตรฐาน"
-
-msgid "Standard account"
-msgstr "บัญชีมาตรฐาน"
-
 msgid "Start Time"
 msgstr "เวลาเริ่ม"
 
@@ -9839,11 +9836,14 @@ msgstr ""
 msgid "Symbol"
 msgstr "สัญลักษณ์"
 
+msgid "Synthetic"
+msgstr ""
+
+msgid "Synthetic Account"
+msgstr ""
+
 msgid "Synthetic Indices"
 msgstr "ดัชนีสังเคราะห์"
-
-msgid "Synthetic Indices Account"
-msgstr "บัญชีดัชนีสังเคราะห์"
 
 msgid "Synthetic Indices are further categorised into two classes:"
 msgstr ""
@@ -10081,9 +10081,6 @@ msgstr "<strong>เวลาเริ่มต้น</strong>คือ เวล
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>เวลาเริ่มต้น</strong> คือ เวลาที่สัญญาถูกนำเข้าประมวลผลโดยระบบของเรา"
-
-msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr ""
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "พันธมิตรนายหน้าออนไลน์และบริษัทฯ เป็นผู้รับจ้างอิสระ และไม่มีส่วนใดของข้อตกลงนี้จะสร้างความเป็นหุ้นส่วน การร่วมทุน ตัวแทน แฟรนไชส์ ตัวแทนขาย หรือ ความสัมพันธ์ในการจ้างงานระหว่างกัน พันธมิตรนายหน้าออนไลน์ไม่มีอำนาจในการสร้าง หรือ ยอมรับข้อเสนอใดๆ หรือ เป็นตัวแทนใดๆ ของบริษัทฯ พันธมิตรนายหน้าออนไลน์จะไม่กำหนดถ้อยแถลงใดๆ ไม่ว่าในเว็บไซต์ของพันธมิตรนายหน้าออนไลน์ หรือ ที่อื่นๆ เพื่อสร้างความขัดแย้งต่อใจความในอนุเฉทนี้"
@@ -10592,6 +10589,15 @@ msgstr "ระบบชื่อโดเมน (DNS) ช่วยให้ค�
 msgid "The Financial Products that BIEL offers to deal in are contracts entered into between clients and BIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay BIEL, BIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that BIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of BIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for BIEL's undertaking to pay."
 msgstr "ผลิตภัณฑ์ทางการเงินที่ BIEL นำเสนอ เป็นสัญญาระหว่างลูกค้าและ BIEL ภายใต้สัญญาเหล่านี้ และขึ้นอยู่กับข้อตกลงที่ระบุเฉพาะของสัญญาที่เกี่ยวข้อง ในการพิจารณาค่าบริการ หรือ ราคาที่ลูกค้าชำระให้ BIEL โดย BIEL สัญญาที่จะชำระให้ลูกค้า ด้วยเงินจำนวนหนึ่งหากสินทรัพย์อ้างอิงปรับตัวไปในทิศทางเฉพาะที่ระบุไว้ สัญญาต่างๆ นั้นไม่ได้เป็นเครื่องมือที่ BIEL ถือในนามของลูกค้า และไม่ใช่ผลประโยชน์จากการป้องกันทรัพย์สินของลูกค้าในกรณีที่ BIEL ล้มละลาย ในทำนองเดียวกัน ค่าบริการ หรือ ราคาที่ลูกค้าชำระให้เรา ไม่ถือเป็นเงินของลูกค้า แต่ถูกพิจารณาเป็นภาระหน้าที่ความรับผิดชอบในการชำระของเรา"
 
+msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
+msgstr ""
+
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
+msgstr ""
+
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
+msgstr ""
+
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr ""
 
@@ -10760,16 +10766,10 @@ msgstr "สาธารณรัฐมอลตาเป็นประเทศ
 msgid "The Spread is subject to alteration, at the Company's absolute discretion. The client acknowledges that whilst the Company endeavours to maintain a competitive Spread, it may widen significantly in some circumstances, and such figures will be determined by the Company at its reasonable discretion. Spreads may be widened at the daily bank rollovers."
 msgstr "สเปรดอาจมีการเปลี่ยนแปลง ตามแต่ดุลยพินิจของบริษัทฯ ลูกค้าทราบว่า ถึงแม้บริษัทฯ พยายามที่จะรักษาสเปรดให้อยู่ในระดับที่เหมาะสม อาจมีในบางสถานการณ์ที่ทำให้สเปรดเพิ่มขึ้นอย่างมีนัยสำคัญ และบริษัทฯ จะพิจารณาตัวเลขดังกล่าวอย่างสมเหตุสมผล สเปรดอาจจะมีเพิ่มขึ้นเมื่อมีการโรลโอเวอร์จากธนาคารในทุกๆ วัน"
 
-msgid "The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr ""
-
-msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr ""
-
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "ระดับยุติการซื้อขายที่ใช้กับบัญชี MT5 จริงของลูกค้า อาจจะแตกต่างจากระดับยุติการซื้อขายที่แจ้งไว้บนเว็บไซต์ของบริษัทฯ"
 
-msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
 msgstr ""
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
