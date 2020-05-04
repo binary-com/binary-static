@@ -2,7 +2,7 @@ import React from 'react';
 
 const JobApplicantPrivacyPolicy = () =>  (
     <div className='container'>
-        <h2 data-anchor='job-applicant-policy'>{it.L('Job application privacy policy')}</h2>
+        <h2 data-anchor='job-application-policy'>{it.L('Job application privacy policy')}</h2>
         <p>{it.L('Binary Group of companies (hereafter referred to as \'the Company\' and \'It\') is committed to protecting the privacy and security of the applicant\'s personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collects and uses the applicant\'s personal data, how long it keeps them, and other relevant information about the applicant\'s data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as \'GDPR\') and Data Protection Act 2018.')}</p>
         <p>{it.L('This privacy notice only applies to job applicants residing in the EU.')}</p>
         <p>{it.L('The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collecting or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information.')}</p>
@@ -16,7 +16,7 @@ const JobApplicantPrivacyPolicy = () =>  (
         <h2 data-anchor='types-of-personal-data-collected'>{it.L('Types of personal data collected')}</h2>
         <p>{it.L('The Company collects, stores, and processes a range of information about the applicant, including but not limited to the following:')}</p>
         <ul className='bullet'>
-            <li>{it.L('The applicant\'s personal details, including name, address, date of birth, nationality,gender, and contact details, comprising email address and telephone number')}</li>
+            <li>{it.L('The applicant\'s personal details, including name, address, date of birth, nationality, gender, and contact details, comprising email address and telephone number')}</li>
             <li>{it.L('The applicant\'s qualifications, skills, education, experience, and employment history')}</li>
             <li>{it.L('Details of the applicant\'s current level of remuneration, including entitlement to benefits such as pensions or insurance cover, if applicable')}</li>
             <li>{it.L('Information about the applicant\'s medical or health conditions, including whether or not the applicant has a disability for which the Company needs to make reasonable adjustments')}</li>
