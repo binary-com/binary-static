@@ -31,7 +31,7 @@ const WelcomePage = (() => {
 
             const upgrade_url = upgrade_info.can_upgrade_to.length > 1
                 ? 'user/accounts'
-                : upgrade_info.upgrade_links[0];
+                : Object.values(upgrade_info.upgrade_links)[0];
 
             if (upgrade_info.can_upgrade) {
                 const upgrade_btn = getElementById('upgrade_btn');

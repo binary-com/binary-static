@@ -86,8 +86,8 @@ const Accounts = (() => {
                 real     : new_account_type === 'real',
                 financial: new_account_type === 'financial',
             };
-            const new_account_title = new_account_type === 'financial' ? localize('Financial Account') : localize(
-                'Real Account');
+            const new_account_title = new_account_type === 'financial' ? localize('Financial Account') :
+                upgrade_info.can_upgrade_to[index] === 'malta' ? localize('Gaming Account') : localize('Real Account');
             $(form_id).find('tbody')
                 .append($('<tr/>')
                     .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {

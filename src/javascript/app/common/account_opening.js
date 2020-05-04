@@ -27,7 +27,7 @@ const AccountOpening = (() => {
             if (upgradable_accounts_count > 1) {
                 BinaryPjax.load('user/accounts');
             } else if (upgradable_accounts_count === 1) {
-                BinaryPjax.load(upgrade_info.upgrade_links[0]);
+                BinaryPjax.load(Object.values(upgrade_info.upgrade_links)[0]);
             }
             return 1;
         }

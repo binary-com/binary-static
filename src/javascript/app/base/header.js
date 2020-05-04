@@ -165,7 +165,9 @@ const Header = (() => {
             } else if (upgrade_info.can_upgrade_to.length === 1) {
                 upgrade_link_txt = upgrade_info.type[0] === 'financial'
                     ? localize('Click here to open a Financial Account')
-                    : localize('Click here to open a Real Account');
+                    : upgrade_info.can_upgrade_to[0] === 'malta' ?
+                        localize('Click here to open a Gaming account') :
+                        localize('Click here to open a Real Account');
                 upgrade_btn_txt = upgrade_info.type[0] === 'financial'
                     ? localize('Open a Financial Account')
                     : localize('Open a Real Account');
@@ -184,7 +186,7 @@ const Header = (() => {
                 if (show_upgrade_msg) {
                     const upgrade_url = upgrade_info.can_upgrade_to.length > 1
                         ? 'user/accounts'
-                        : upgrade_info.upgrade_links[0];
+                        : Object.values(upgrade_info.upgrade_links)[0];
                     showUpgrade(upgrade_url, upgrade_link_txt);
                     showUpgradeBtn(upgrade_url, upgrade_btn_txt);
                 } else {
@@ -196,8 +198,11 @@ const Header = (() => {
                 }
             } else if (show_upgrade_msg) {
                 getElementById('virtual-wrapper').setVisibility(0);
-                showUpgrade(upgrade_info.upgrade_link, upgrade_link_txt);
-                showUpgradeBtn(upgrade_info.upgrade_link, upgrade_btn_txt);
+                const upgrade_url = upgrade_info.can_upgrade_to.length > 1
+                    ? 'user/accounts'
+                    : Object.values(upgrade_info.upgrade_links)[0];
+                showUpgrade(upgrade_url, upgrade_link_txt);
+                showUpgradeBtn(upgrade_url, upgrade_btn_txt);
 
                 if (/new_account/.test(window.location.href)) {
                     showHidePulser(0);
