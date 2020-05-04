@@ -166,7 +166,7 @@ const Home = () => {
     return (
         <React.Fragment>
             <div className='container gr-parent gr-padding-30'>
-                <DerivBanner dynamic_link='binary-home-page' />
+                <DerivBanner content_name='binary-home-page' />
             </div>
             <div id='banner'>
                 <div className='container gr-padding-20'>
