@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-04-22 04:13\n"
+"PO-Revision-Date: 2020-05-04 03:03\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -1070,12 +1070,6 @@ msgstr "管理整體支付系統，包括監控和報告客戶活動以及成功
 msgid "Advanced"
 msgstr "高階"
 
-msgid "Advanced Account"
-msgstr "高級帳戶"
-
-msgid "Advanced account"
-msgstr "高級帳戶"
-
 msgid "Advanced binary options trading interface"
 msgstr "進階二元期權交易介面"
 
@@ -1795,9 +1789,6 @@ msgstr "二、開始"
 
 msgid "B. Scope"
 msgstr "二、範圍"
-
-msgid "BETA"
-msgstr "BETA"
 
 msgid "BIEL RTS28 for 2017"
 msgstr "2017年 BIEL RTS28"
@@ -3458,14 +3449,14 @@ msgstr "模擬帳戶"
 msgid "Demo Accounts"
 msgstr "模擬帳戶"
 
-msgid "Demo Advanced"
-msgstr "模擬高級帳戶"
+msgid "Demo Financial"
+msgstr ""
 
-msgid "Demo Standard"
-msgstr "模擬標準"
+msgid "Demo Financial STP"
+msgstr ""
 
-msgid "Demo Synthetic Indices"
-msgstr "演示綜合指數"
+msgid "Demo Synthetic"
+msgstr ""
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "根據網站的開戶程式對客戶帳戶所附的管轄權和「關於我們」部分的詳細說明以及提供的產品類型, 「公司」一詞應表示,"
@@ -4383,7 +4374,7 @@ msgid "Explanation"
 msgstr "說明"
 
 msgid "Explore %1’s new creation — Deriv"
-msgstr ""
+msgstr "探索 %1 的新建立平台 — Deriv"
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "探索我們提供的所有交易平台、應用程式和工具"
@@ -4547,6 +4538,9 @@ msgstr "最終價格"
 msgid "Finance"
 msgstr "金融"
 
+msgid "Financial"
+msgstr ""
+
 msgid "Financial Account"
 msgstr "金融帳戶"
 
@@ -4561,6 +4555,18 @@ msgstr "金融市場分析師"
 
 msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
 msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫%1客服部%2。"
+
+msgid "Financial STP"
+msgstr ""
+
+msgid "Financial STP Account"
+msgstr ""
+
+msgid "Financial STP account"
+msgstr ""
+
+msgid "Financial account"
+msgstr ""
 
 msgid "Financial assessment"
 msgstr "財務評估"
@@ -6581,8 +6587,8 @@ msgstr "MT5 金融"
 msgid "MT5 Real Account"
 msgstr "MT5真實帳戶"
 
-msgid "MT5 Synthetic Indices"
-msgstr "MT5綜合指數"
+msgid "MT5 Synthetic"
+msgstr ""
 
 msgid "MT5 Web platform"
 msgstr "網路平台版 MT5"
@@ -7667,14 +7673,14 @@ msgstr "我們的帳戶處理和款項支付團隊管理廣泛的銀行帳戶和
 msgid "Our Company"
 msgstr "我們公司"
 
-msgid "Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products."
-msgstr "我們的 MetaTrader 5 高級帳戶為您提供極低的差價, 更高的票證大小, 並提供更多的產品。"
+msgid "Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products."
+msgstr ""
 
-msgid "Our MetaTrader 5 Standard account is suitable for both new and experienced traders."
-msgstr "我們的 MetaTrader 5 標準帳戶適用于新手和經驗豐富的交易者。"
+msgid "Our MetaTrader 5 Financial account is suitable for both new and experienced traders."
+msgstr ""
 
-msgid "Our Synthetic Indices account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
-msgstr "我們的綜合指數帳戶允許您對綜合指數進行差價交易 - 這是我們專有的綜合資產，可模擬市場力量。"
+msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
+msgstr ""
 
 msgid "Our active client base is expected to reach over 175,000 total clients this year."
 msgstr "我們今年的預計活躍客戶總數將超過17萬5千人。"
@@ -8717,20 +8723,20 @@ msgstr "真實"
 msgid "Real Account"
 msgstr "真實帳戶"
 
-msgid "Real Advanced"
-msgstr "真實高級帳戶"
-
 msgid "Real Estate"
 msgstr "房地產"
+
+msgid "Real Financial"
+msgstr ""
+
+msgid "Real Financial STP"
+msgstr ""
 
 msgid "Real Money Account Opening"
 msgstr "真實資金帳戶開立"
 
-msgid "Real Standard"
-msgstr "真實標準"
-
-msgid "Real Synthetic Indices"
-msgstr "真實綜合指數"
+msgid "Real Synthetic"
+msgstr ""
 
 msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
 msgstr "如果連續90天沒有活動，真實帳戶將被封閉。請通過%1support@binary.com%2與binary.com客服部聯繫，以重啟真實帳戶"
@@ -9411,7 +9417,7 @@ msgid "Simple and intuitive"
 msgstr "簡單和直觀化"
 
 msgid "Simple. Flexible. Reliable."
-msgstr ""
+msgstr "簡易、靈活、可靠。"
 
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr "只要改變任一參數，交易報價就會立刻更新，您可以實時掌握您的資金狀況。 %1 同時向您顯示買入和賣出價格，以確保報價的公平和透明。"
@@ -9544,15 +9550,6 @@ msgstr "向您的受眾傳播消息。用您專用的推薦連結和我們久經
 
 msgid "Stake"
 msgstr "投注資金"
-
-msgid "Standard"
-msgstr "標準"
-
-msgid "Standard Account"
-msgstr "標準帳戶"
-
-msgid "Standard account"
-msgstr "標準帳戶"
 
 msgid "Start Time"
 msgstr "開始時間"
@@ -9839,11 +9836,14 @@ msgstr "瑞士法郎兌日圓"
 msgid "Symbol"
 msgstr "符號"
 
+msgid "Synthetic"
+msgstr ""
+
+msgid "Synthetic Account"
+msgstr ""
+
 msgid "Synthetic Indices"
 msgstr "綜合指數"
-
-msgid "Synthetic Indices Account"
-msgstr "綜合指數帳戶"
 
 msgid "Synthetic Indices are further categorised into two classes:"
 msgstr "綜合指數進一步分為兩種級別 ："
@@ -10081,9 +10081,6 @@ msgstr "<strong>開始時間</strong>就是我們的伺服器處理合約交易�
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
-
-msgid "The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr "高級帳戶是100%A Book帳戶。讓您直接進入市場交易，您也可直接存取外匯流動量提供商，並進行緊密利差、高交易量的主要、次要和特異貨幣對外匯交易。"
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "聯盟會員與公司都為獨立訂約人，本協議的任何規定均不能建立雙方之間的任何合作夥伴、合資、代理、加盟、業務代表或僱傭關係。聯盟會員無權代表公司做出或接受任何要約或陳述。聯盟會員不得作出與本條任何內容不一致的聲明（無論是否在其網站上）。"
@@ -10592,6 +10589,15 @@ msgstr "網域名稱系統 (DNS) 允許您通過方便使用的 web 位址 (如 
 msgid "The Financial Products that BIEL offers to deal in are contracts entered into between clients and BIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay BIEL, BIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that BIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of BIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for BIEL's undertaking to pay."
 msgstr "BIEL提供的金融產品交易為客戶和BIEL之間的合約。在這些合約和相關的指定條款約束下，由於客戶支付了費用或價格給BIEL，當相關資產或測量表現了某種指定方式，BIEL承諾會支付客戶。這些合約並不是BIEL替客戶保留的工具，且當BIEL破產時並不從對客戶提供資產保護中獲取利益。同樣的，客戶所支付的交易費用或價格並不存為客戶的錢，而是對BIEL承諾支付的報酬。"
 
+msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
+msgstr ""
+
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
+msgstr ""
+
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
+msgstr ""
+
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "外匯市場（forex）是世界上最大、流動性最高的市場 ​​- 任何人都可以買、賣、交易貨幣。"
 
@@ -10760,17 +10766,11 @@ msgstr "馬爾他共和國是南歐的島國, 距意大利南部約80公里。�
 msgid "The Spread is subject to alteration, at the Company's absolute discretion. The client acknowledges that whilst the Company endeavours to maintain a competitive Spread, it may widen significantly in some circumstances, and such figures will be determined by the Company at its reasonable discretion. Spreads may be widened at the daily bank rollovers."
 msgstr "價差可由公司全權酌情決定更改。客戶確認，雖然公司努力維持價差的競爭力，但在某些情況下可能會大幅擴大，而這些數字將由公司合理酌情決定。每日銀行轉帳可能會造成價差擴大。"
 
-msgid "The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "標準帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。以微小和可變的差價進行大宗商品、加密貨幣、主要和次要貨幣對交易, 不收佣金費，也沒有最低存款限制。"
-
-msgid "The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "標準帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性，進行高槓桿大宗商品、加密貨幣、主要（標準和微手）和次要貨幣對交易。"
-
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "適用於客戶MT5真實帳戶的強制平倉層級可能與公司網站公佈的預設強制平倉層級不一樣。"
 
-msgid "The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr "綜合指數帳戶讓您以最低真實市場波動率進行差價合約綜合指數交易。全年無休，全天候交易，公平審計由第三方獨立機構監控。"
+msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr ""
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "系統管理團隊負責維護、配置和可靠運行我們的電腦軟體、硬體和網路。"
