@@ -5,7 +5,7 @@ import {
     SubmitButton,
 }                 from '../../_common/components/forms.jsx';
 import Loading    from '../../_common/components/loading.jsx';
-import DMT5Banner from '../../_common/components/dmt5_banner.jsx';
+import MT5Banner  from '../../_common/components/mt5_banner.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items, id = undefined }) => {
@@ -72,7 +72,7 @@ const CashierDesc = ({ title, desc, arrow_direction }) => (
 
 const Metatrader = () => (
     <React.Fragment>
-        <DMT5Banner />
+        <MT5Banner />
         <div className='static_full'>
             <h1>{it.L('MetaTrader 5 dashboard')}</h1>
         </div>
