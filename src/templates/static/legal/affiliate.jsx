@@ -8,7 +8,7 @@ const Affiliate = () => (
             <ListNested
                 header={it.L('This document')}
                 items={[
-                    { text: it.L('This document (the "Agreement") sets out the terms and conditions between "the Company", which is Binary Services Ltd, and the person who has applied for this programme ("the Affiliate"), in relation to the Affiliate\'s application to set up an affiliate account (and membership of the affiliate programme if the Affiliate\'s application is deemed successful).') },
+                    { text: it.L('This document (the "Agreement") sets out the terms and conditions between "the Company", which is Deriv Services Ltd, and the person who has applied for this programme ("the Affiliate"), in relation to the Affiliate\'s application to set up an affiliate account (and membership of the affiliate programme if the Affiliate\'s application is deemed successful).') },
                     { text: it.L('The Company reserves the right to change any part of this Agreement at any time. The Company will endeavour to ensure that Affiliates are notified when changes have been made to this Agreement, but it is ultimately the Affiliate\'s responsibility to check these terms and conditions regularly. The Affiliate\'s continued participation in the Company\'s Affiliate Programme after the Company has posted the changes will constitute binding acceptance of such changes.') },
                 ]}
             />
