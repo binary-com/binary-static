@@ -54,7 +54,7 @@ const JobApplicantPrivacyPolicy = () =>  (
         </ul>
 
         <p>{it.L('The applicant also has the right to restrict the further processing of their personal data.')}</p>
-        <p>{it.L('In some circumstances, the applicant has the right to data portability, which is the right to request a copy of their personal data in a digital format, and, where possible, ask the Company to transfer it to another company.')}</p>
+        <p>{it.L('In some circumstances, the applicant has the right to data portability, which is the right to request a copy of their personal data in a digital format and, where possible, ask the Company to transfer it to another company.')}</p>
         <p>{it.L('The applicant has the right to lodge a complaint to the Data Protection Commissioner in Malta if the applicant believes that the Company has failed to comply with the requirements of EU General Data Protection Regulation 2016/679 or the Data Protection Act 2018 with regards to the applicant\'s personal data.')}</p>
 
         <h2 data-anchor='automated-decision-making'>{it.L('Automated decision-making')}</h2>
