@@ -71,7 +71,7 @@ const TypesOfAccounts = () => (
                 text={it.L('The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party.')}
             />
            
-            <p className='hint'>{`${it.L('Note:')} ${it.L('Note: To protect your portfolio from adverse market movements due to the market opening gap, we reserve the right to decrease leverage on all offered symbols for financial accounts before market close and increase it again after market open. Please make sure that you have enough funds available in your MT5 account to support your positions at all times.')}`}</p>
+            <p className='hint'>{`${it.L('Note:')} ${it.L('To protect your portfolio from adverse market movements due to the market opening gap, we reserve the right to decrease leverage on all offered symbols for financial accounts before market close and increase it again after market open. Please make sure that you have enough funds available in your MT5 account to support your positions at all times.')}`}</p>
            
             <div className='gr-padding-30' />
 
