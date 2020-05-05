@@ -75,7 +75,7 @@ const TypesOfAccounts = () => (
            
             <div className='gr-padding-30' />
 
-             <h2 className='center-text'>{it.L('Account comparison')}</h2>
+            <h2 className='center-text'>{it.L('Account comparison')}</h2>
             <div className='gr-padding-10'>
                 <div className='hide-maltainvest'>
                     <Table
