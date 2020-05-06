@@ -150,7 +150,7 @@ const Platform = () => (
                 </div>
                 <div className='center-text'>
                     <p>{it.L('Go ahead, experience it for yourself.')}</p>
-                    <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-try-deriv-now' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
+                    <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
                 </div>
             </div>
         </div>
