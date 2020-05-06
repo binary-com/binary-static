@@ -14,7 +14,8 @@ const Url                = require('../../../_common/url');
 
 const SetCurrency = (() => {
     let is_new_account,
-        popup_action;
+        popup_action,
+        $submit;
 
     const onLoad = async () => {
         is_new_account = localStorage.getItem('is_new_account');
@@ -56,7 +57,7 @@ const SetCurrency = (() => {
                 };
 
                 $('.btn_cancel').off('click dblclick').on('click dblclick', cleanupPopup);
-                const $submit = $('#btn_ok');
+                $submit = $('#btn_ok');
                 $submit
                     .off('click dblclick')
                     .on('click dblclick', () => {
@@ -189,6 +190,9 @@ const SetCurrency = (() => {
                 request = { set_account_currency: selected_currency };
             }
             BinarySocket.send(request).then((response_c) => {
+                if ($submit) {
+                    $submit.removeClass('button-disabled');
+                }
                 if (response_c.error) {
                     if (popup_action === 'multi_account' && /InsufficientAccountDetails|InputValidationFailed/.test(response_c.error.code)) {
                         cleanupPopup();
@@ -266,6 +270,9 @@ const SetCurrency = (() => {
                 }
             });
         } else {
+            if ($submit) {
+                $submit.removeClass('button-disabled');
+            }
             $error.text(localize('Please choose a currency')).setVisibility(1);
         }
     };
