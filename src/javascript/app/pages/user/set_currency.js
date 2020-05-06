@@ -35,7 +35,8 @@ const SetCurrency = (() => {
                 $('#set_currency_loading').remove();
                 $('#set_currency').setVisibility(1);
                 $('#deposit_btn')
-                    .on('click', () => {
+                    .off('click dblclick')
+                    .on('click dblclick', () => {
                         BinaryPjax.load(`${Url.urlFor('cashier/forwardws')}?action=deposit`);
                     })
                     .setVisibility(1);
@@ -54,9 +55,10 @@ const SetCurrency = (() => {
                     multi_account  : localize('Create account'),
                 };
 
-                $('.btn_cancel').on('click', cleanupPopup);
+                $('.btn_cancel').off('click dblclick').on('click dblclick', cleanupPopup);
                 $('#btn_ok')
-                    .on('click', () => onConfirm($currency_list, $error, popup_action === 'multi_account'))
+                    .off('click dblclick')
+                    .on('click dblclick', () => onConfirm($currency_list, $error, popup_action === 'multi_account'))
                     .find('span')
                     .text(action_map[popup_action]);
             } else {
@@ -136,7 +138,7 @@ const SetCurrency = (() => {
     };
 
     const onSelection = ($currency_list, $error, should_show_confirmation) => {
-        $('.currency_wrapper').on('click', function () {
+        $('.currency_wrapper').off('click dblclick').on('click dblclick', function () {
             $error.setVisibility(0);
             const $clicked_currency = $(this);
             $currency_list.find('> div').removeClass('selected');
@@ -246,7 +248,8 @@ const SetCurrency = (() => {
                         Header.populateAccountsList(); // update account title
                         $('.select_currency').setVisibility(0);
                         $('#deposit_btn')
-                            .on('click', () => {
+                            .off('click dblclick')
+                            .on('click dblclick', () => {
                                 if (popup_action) {
                                     cleanupPopup();
                                 }
