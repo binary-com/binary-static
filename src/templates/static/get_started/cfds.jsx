@@ -163,6 +163,23 @@ const Cfds = () => (
                             ],
                         }}
                     />
+                    
+                    <HeaderSecondary header={it.L('Range break indices')} />
+                    <Table
+                        scroll
+                        data={{
+                            thead: [[
+                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                                { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                                { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
+                            ]],
+                            tbody: [
+                                [{ text: 'Range break 100 indices' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'Range break 200 indices' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
+                            ],
+                        }}
+                    />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
