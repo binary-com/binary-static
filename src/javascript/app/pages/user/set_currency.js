@@ -56,9 +56,15 @@ const SetCurrency = (() => {
                 };
 
                 $('.btn_cancel').off('click dblclick').on('click dblclick', cleanupPopup);
-                $('#btn_ok')
+                const $submit = $('#btn_ok');
+                $submit
                     .off('click dblclick')
-                    .on('click dblclick', () => onConfirm($currency_list, $error, popup_action === 'multi_account'))
+                    .on('click dblclick', () => {
+                        if (!$submit.hasClass('button-disabled')) {
+                            onConfirm($currency_list, $error, popup_action === 'multi_account');
+                        }
+                        $submit.addClass('button-disabled');
+                    })
                     .find('span')
                     .text(action_map[popup_action]);
             } else {
