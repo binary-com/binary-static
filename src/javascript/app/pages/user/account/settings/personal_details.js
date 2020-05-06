@@ -187,12 +187,13 @@ const PersonalDetails = (() => {
     const force_update_fields     = ['tax_residence', 'tax_identification_number'];
 
     const displayGetSettingsData = (get_settings) => {
+        const show_label = [].concat(show_label_if_any_value);
         if (!is_virtual && !isTaxEditable()) {
-            show_label_if_any_value.push('tax_residence', 'tax_identification_number');
+            show_label.push('tax_residence', 'tax_identification_number');
         }
         Object.keys(get_settings).forEach((key) => {
             // If there are changeable fields, show input instead of labels instead.
-            const has_label         = show_label_if_any_value.includes(key) &&
+            const has_label         = show_label.includes(key) &&
                 (has_changeable_fields ? !changeable_fields.includes(key) : true);
             const force_update      = force_update_fields.concat(changeable_fields).includes(key);
             const should_show_label = has_label && get_settings[key];
