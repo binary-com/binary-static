@@ -1,7 +1,7 @@
 const getCurrencies    = require('../user/get_currency').getCurrencies;
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
+const Currency         = require('../../common/currency');
 const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
@@ -38,7 +38,7 @@ const Cashier = (() => {
             $('.cashier_note').setVisibility(
                 Client.isLoggedIn() &&                          // only show to logged-in clients
                 !Client.get('is_virtual') &&                    // only show to real accounts
-                !isCryptocurrency(Client.get('currency'))       // only show to fiat currencies
+                !Currency.isCryptocurrency(Client.get('currency'))       // only show to fiat currencies
             );
         });
     };
@@ -108,14 +108,14 @@ const Cashier = (() => {
         // Set messages based on currency being crypto or fiat
         // If fiat, set message based on if they're allowed to change currency or not
         // Condition is to have no MT5 accounts *and* have no transactions
-        const currency_message = isCryptocurrency(currency)
-            ? localize('This is your [_1] account.', `${currency}`)
+        const currency_message = Currency.isCryptocurrency(currency)
+            ? localize('This is your [_1] account.', `${Currency.getCurrencyDisplayCode(currency)}`)
             : has_no_mt5 && has_no_transaction
                 ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
                 : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
 
-        const currency_hint = isCryptocurrency(currency)
-            ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${currency}`) + account_action_text
+        const currency_hint = Currency.isCryptocurrency(currency)
+            ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${Currency.getCurrencyDisplayCode(currency)}`) + account_action_text
             : has_no_mt5 && has_no_transaction
                 ? localize('You can [_1]set a new currency[_2] before you deposit for the first time or create an MT5 account.', can_change ? [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'] : ['', ''])
                 : missingCriteria(!has_no_mt5, !has_no_transaction);
@@ -125,8 +125,11 @@ const Cashier = (() => {
         el_currency_image.src = Url.urlForStatic(`/images/pages/cashier/icons/icon-${currency}.svg`);
 
         const available_currencies  = getCurrencies(State.getResponse('landing_company'));
-        const has_more_crypto       = (available_currencies.find(cur => isCryptocurrency(cur)) || []).length > 0;
-        const show_current_currency = !isCryptocurrency(currency) || (isCryptocurrency(currency) && has_more_crypto);
+
+        const has_more_crypto = (available_currencies.find(cur => Currency.isCryptocurrency(cur)) || []).length > 0;
+
+        const show_current_currency = !Currency.isCryptocurrency(currency) ||
+            (Currency.isCryptocurrency(currency) && has_more_crypto);
 
         el_acc_currency.setVisibility(show_current_currency);
     };
@@ -243,7 +246,7 @@ const Cashier = (() => {
                     });
                 }
 
-                if (isCryptocurrency(currency)) {
+                if (Currency.isCryptocurrency(currency)) {
                     $('.crypto_currency').setVisibility(1);
 
                     const previous_href = $('#view_payment_methods').attr('href');

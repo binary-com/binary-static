@@ -144,7 +144,7 @@ const Regulation = () => {
                             center
                             border='border-dark-gray'
                             image='images/pages/regulation/pdf-icon.svg'
-                            href={it.url_for('/download/BIEL_Pillar_3_Report_20190403.pdf')}
+                            href={it.url_for('/download/BIEL_Pillar_3_Report_20200421.pdf')}
                             target='_blank'
                             text={it.L('Pillar 3 disclosure report')}
                         />
@@ -493,7 +493,7 @@ const Regulation = () => {
 
             <Box header={it.L('Binary (FX) Ltd')} last>
                 <p>{it.L('Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business [_1](licence no. MB/18/0024)[_2].', `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. [_1] is not available in Malaysia.', it.website_name)}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. [_1] is not available in Malaysia.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.labuanibfc.com/' image='images/pages/regulation/labuan-logo.png' />
             </Box>
