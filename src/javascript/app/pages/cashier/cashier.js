@@ -140,14 +140,11 @@ const Cashier = (() => {
                 const $row = $(this);
                 const $columns = $row.find('td:nth-child(2) div:nth-child(2)');
 
-                const shortname = $columns.find('p:nth-child(1)').text();
-                const $crypto_min_withdrawal = $columns.find('p:nth-child(3)');
+                const $crypto_min_withdrawal = $columns.find('span[data-currency]');
+                const shortname = $crypto_min_withdrawal.attr('data-currency');
 
                 if (shortname && $crypto_min_withdrawal) {
-                    const minimum_withdrawal = response
-                        .website_status
-                        .crypto_config[shortname]
-                        .minimum_withdrawal;
+                    const minimum_withdrawal = getPropertyValue(response, ['website_status', 'crypto_config', shortname, 'minimum_withdrawal']);
 
                     let to_fixed = 0;
                     // cut long numbers off after two non-zero decimals
