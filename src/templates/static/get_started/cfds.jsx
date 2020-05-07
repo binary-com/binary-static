@@ -175,8 +175,8 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Range break 100 indices' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
-                                [{ text: 'Range break 200 indices' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'Range break 100 index' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'Range break 200 index' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
                             ],
                         }}
                     />
