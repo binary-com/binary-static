@@ -124,6 +124,11 @@ const DP2P = (() => {
                 .buy-sell__dialog {
                     z-index: 2;
                 }
+                .buy-sell__icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
                 /* overrides my-ads */
                 .p2p-my-ads {
