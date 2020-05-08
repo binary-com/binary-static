@@ -57,8 +57,8 @@ const Cashier = (() => {
     };
 
     const checkP2PHasOffer = () => new Promise(async (resolve) => {
-        const offer_list_response = await BinarySocket.send({ p2p_offer_list: 1 });
-        resolve(getPropertyValue(offer_list_response, ['p2p_offer_list', 'list']).length);
+        const p2p_advert_list_response = await BinarySocket.send({ p2p_advert_list: 1 });
+        resolve(getPropertyValue(p2p_advert_list_response, ['p2p_advert_list', 'list']).length);
     });
 
     const displayTopUpButton = () => {
