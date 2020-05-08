@@ -85,6 +85,9 @@ const DP2P = (() => {
                 .dc-tabs {
                     --tab-width: 150px !important;
                 }
+                .dc-tabs__content {
+                    margin-right: calc(2.4*var(--hem));
+                }
                 .dc-tabs__list {
                     width: fit-content;
                     width: -moz-fit-content;
@@ -103,26 +106,8 @@ const DP2P = (() => {
                 .deriv-p2p {
                     height: 800px;
                 }
-                .footer-actions {
-                    bottom: calc(18*var(--hem));
-                    flex-direction: row-reverse;
-                }
                 .footer-actions--bordered {
                     bottom: 0 !important;
-                }
-
-                /* overrides orders */
-                .orders {
-                    padding: calc(2.4*var(--hem)) 0;
-                }
-                .orders__table-row {
-                    padding-left: 0;
-                }
-
-                /* overrides order-details */
-                .order-details__wrapper--inner {
-                    height: calc(36*var(--hem));
-                    overflow-y: scroll;
                 }
 
                 /* overrides buy-sell */
@@ -141,8 +126,17 @@ const DP2P = (() => {
                 }
 
                 /* overrides my-ads */
+                .p2p-my-ads {
+                    padding: calc(2.4*var(--hem)) 0 0;
+                }
                 .p2p-my-ads__form-error {
                     color: var(--text-loss-danger);
+                }
+                .p2p-my-ads__form > form {
+                    min-height: 450px;
+                }
+                .p2p-my-ads .dc-progress-indicator__bar {
+                    background-color: var(--text-profit-success);
                 }
                 `;
         el_main_css.rel = 'stylesheet';
