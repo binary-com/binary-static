@@ -28,7 +28,10 @@ module.exports = function (grunt) {
                 // binary-style
                 { expand: true, cwd: `${global.node_modules_paths.binary_style}/src/images/favicons`, src: ['**'], dest: `${global.dist}/images/favicons/` },
                 { expand: true, cwd: `${global.node_modules_paths.binary_style}/src/images/logo`,     src: ['**'], dest: `${global.dist}/images/logo/` },
+                
+                // deriv-components icon sprites
+                { expand: true, cwd: `${global.node_modules_paths.deriv_p2p}/lib/sprites`, src: ['**'], dest: `${global.dist}/public/images/sprite/` },
             ],
-        }
-    }
+        },
+    };
 };
