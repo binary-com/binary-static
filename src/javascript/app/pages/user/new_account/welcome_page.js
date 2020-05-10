@@ -20,11 +20,11 @@ const WelcomePage = (() => {
             let upgrade_btn_txt = '';
 
             if (upgrade_info.can_upgrade_to.length > 1) {
-                upgrade_btn_txt = localize('Open a Real Account');
+                upgrade_btn_txt = localize('Real Account');
             } else if (upgrade_info.can_upgrade_to.length === 1) {
                 upgrade_btn_txt = upgrade_info.type[0] === 'financial'
-                    ? localize('Open a Financial Account')
-                    : localize('Open a Real Account');
+                    ? localize('Financial Account')
+                    : localize('Real Account');
             }
             el_upgrade_title.html(upgrade_btn_txt);
             el_welcome_container.setVisibility(1);
