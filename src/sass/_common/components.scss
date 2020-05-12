@@ -131,11 +131,192 @@
     }
 }
 
+.mt5_banner {
+    width: 100%;
+    position: relative;
+    max-width: 940px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none !important;
+    margin-bottom: 3rem;
+
+    &__background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        &--desktop {
+            opacity: 1;
+        }
+        &--mobile {
+            opacity: 0;
+        }
+    }
+    &__platform {
+        width: 175px;
+        height: 130px;
+        margin: -22px 84px 0 41px;
+
+        @media (max-width: 900px) {
+            margin: -22px 0 0;
+        }
+    }
+    &__platform_mobile {
+        display: none;
+    }
+    &__content {
+        font-size: $FONT_SIZE_XXL;
+        color: $COLOR_WHITE;
+        font-weight: bold;
+        margin: 0;
+        display: flex;
+        margin-left: 56px;
+        padding-top: 24px;
+        line-height: 1.5;
+    }
+    &__learn_more {
+        color: $COLOR_WHITE;
+        line-height: 1.43;
+        font-weight: bold;
+        font-size: $FONT_SIZE_S;
+        width: 107px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: rgb(255, 68, 79);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto 0;
+    }
+
+    @media (max-width: 768px) {
+        height: 70px;
+        justify-content: center;
+        margin-bottom: 2rem;
+
+        &__content {
+            font-size: $FONT_SIZE_XS;
+            padding: 0;
+            margin: auto 0;
+            line-height: 1.2;
+            max-width: 101px;
+        }
+        &__platform {
+            display: none;
+        }
+        &__platform_mobile {
+            width: 100px;
+            height: 70px;
+            display: flex;
+            margin: 0 7.2px 0 9.2px;
+        }
+        &__background {
+            &--desktop {
+                opacity: 0;
+            }
+            &--mobile {
+                opacity: 1;
+            }
+        }
+        &__learn_more {
+            height: 24px;
+            width: 80px;
+            font-size: $FONT_SIZE_XS;
+        }
+    }
+}
+
 #reality_check_content {
     td {
         width: 12.5%;
     }
     [data-balloon] {
         border-bottom: none;
+    }
+}
+
+#deriv_banner_container {
+    a {
+        text-decoration: none;
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        min-height: 100px;
+        margin-bottom: 24px;
+        justify-content: center;
+
+        .deriv_banner_background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 1;
+        }
+        .deriv_banner_background_mobile {
+            opacity: 0;
+        }
+        .deriv_banner_platform {
+            max-width: 139px;
+            max-height: 80px;
+            margin: 0 56px 0 48px;
+        }
+        .deriv_banner_chevron {
+            position: absolute;
+            right: 29px;
+        }
+        .deriv_banner_explore {
+            max-width: 253px;
+            width: 100%;
+        }
+        .deriv_banner_standards {
+            max-width: 296px;
+        }
+        h3 {
+            font-size: $FONT_SIZE_XXL;
+            font-weight: bold;
+            margin: 0;
+            color: $COLOR_WHITE;
+            line-height: 1.5;
+        }
+        @media (max-width: 860px) {
+            .deriv_banner_platform {
+                margin: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            min-height: 72px;
+
+            .deriv_banner_background_mobile {
+                opacity: 1;
+            }
+            .deriv_banner_background {
+                opacity: 1;
+            }
+            .deriv_banner_platform {
+                margin: 0 16px 0 0;
+                width: 78px;
+                height: 45.2px;
+            }
+            h3 {
+                font-size: $FONT_SIZE_XS;
+                line-height: $FONT_SIZE_S !important;
+            }
+            .deriv_banner_standards {
+                max-width: 88px;
+            }
+            .deriv_banner_explore {
+                max-width: 93.2px;
+            }
+            .deriv_banner_chevron {
+                width: 16px;
+                height: 16px;
+                right: 2px;
+            }
+        }
     }
 }

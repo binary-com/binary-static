@@ -14,7 +14,8 @@ const Url                = require('../../../_common/url');
 
 const SetCurrency = (() => {
     let is_new_account,
-        popup_action;
+        popup_action,
+        $submit;
 
     const onLoad = async () => {
         is_new_account = localStorage.getItem('is_new_account');
@@ -35,7 +36,8 @@ const SetCurrency = (() => {
                 $('#set_currency_loading').remove();
                 $('#set_currency').setVisibility(1);
                 $('#deposit_btn')
-                    .on('click', () => {
+                    .off('click dblclick')
+                    .on('click dblclick', () => {
                         BinaryPjax.load(`${Url.urlFor('cashier/forwardws')}?action=deposit`);
                     })
                     .setVisibility(1);
@@ -54,9 +56,16 @@ const SetCurrency = (() => {
                     multi_account  : localize('Create account'),
                 };
 
-                $('.btn_cancel').on('click', cleanupPopup);
-                $('#btn_ok')
-                    .on('click', () => onConfirm($currency_list, $error, popup_action === 'multi_account'))
+                $('.btn_cancel').off('click dblclick').on('click dblclick', cleanupPopup);
+                $submit = $('#btn_ok');
+                $submit
+                    .off('click dblclick')
+                    .on('click dblclick', () => {
+                        if (!$submit.hasClass('button-disabled')) {
+                            onConfirm($currency_list, $error, popup_action === 'multi_account');
+                        }
+                        $submit.addClass('button-disabled');
+                    })
                     .find('span')
                     .text(action_map[popup_action]);
             } else {
@@ -136,7 +145,7 @@ const SetCurrency = (() => {
     };
 
     const onSelection = ($currency_list, $error, should_show_confirmation) => {
-        $('.currency_wrapper').on('click', function () {
+        $('.currency_wrapper').off('click dblclick').on('click dblclick', function () {
             $error.setVisibility(0);
             const $clicked_currency = $(this);
             $currency_list.find('> div').removeClass('selected');
@@ -181,6 +190,9 @@ const SetCurrency = (() => {
                 request = { set_account_currency: selected_currency };
             }
             BinarySocket.send(request).then((response_c) => {
+                if ($submit) {
+                    $submit.removeClass('button-disabled');
+                }
                 if (response_c.error) {
                     if (popup_action === 'multi_account' && /InsufficientAccountDetails|InputValidationFailed/.test(response_c.error.code)) {
                         cleanupPopup();
@@ -246,7 +258,8 @@ const SetCurrency = (() => {
                         Header.populateAccountsList(); // update account title
                         $('.select_currency').setVisibility(0);
                         $('#deposit_btn')
-                            .on('click', () => {
+                            .off('click dblclick')
+                            .on('click dblclick', () => {
                                 if (popup_action) {
                                     cleanupPopup();
                                 }
@@ -257,6 +270,9 @@ const SetCurrency = (() => {
                 }
             });
         } else {
+            if ($submit) {
+                $submit.removeClass('button-disabled');
+            }
             $error.text(localize('Please choose a currency')).setVisibility(1);
         }
     };
