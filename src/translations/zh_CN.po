@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-05-04 06:44\n"
+"PO-Revision-Date: 2020-05-12 03:21\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -251,8 +251,11 @@ msgstr "%1 与上述所有支付代理不存在附属关系。各支付代理均
 msgid "%1 is one of the oldest and most successful online trading companies in the world. Our commitment to high standards of ethics is one of the key factors that will ensure our continuing success.  Our Business Principles summarise the values that underpin our work."
 msgstr "%1是全球历史最悠久及最成功的在线交易公司之一。我们对保持高道德标准的承诺是确保我们持续成功的关键因素之一。 我们的业务原则总结了支撑我们工作的价值观。"
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
-msgstr "%1 由 Binary 集团有限公司拥有和经营。欲了解更多信息，请%2访问我们的历史页面%3。"
+msgid "%1 is owned and operated by the Deriv Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr ""
+
+msgid "%1 is rebranding to Deriv.com"
+msgstr "%1 的品牌改成 Deriv.com"
 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 是在线期权交易领域屡获殊荣的领先企业。我们拥有："
@@ -1754,6 +1757,9 @@ msgstr "自动交易编程工具"
 msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
 msgstr "使用我们简单的\"拖放\"式建设运营移交创建工具，将您的交易策略自动化。"
 
+msgid "Automated decision-making"
+msgstr ""
+
 msgid "Automatic adjustments of Take Profit levels"
 msgstr "赢取利润水平的自动调整"
 
@@ -2048,14 +2054,8 @@ msgstr "Binary Bot 已发布"
 msgid "Binary Coin"
 msgstr "Binary 币"
 
-msgid "Binary Group (hereinafter referred to as 'Binary Group companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
-msgstr "Binary集团 (以下简称 \"Binary集团\"、\"公司\") 致力于保护申请人个人信息的隐私和安全。本隐私声明列出了公司向申请人收集的数据类型。同时还列出了公司如何根据(EU) 2016/679《一般数据保护条例》 (以下简称为 \"GDPR ') 和2018数据保护法收集和使用申请人的个人数据、保存期限以及关于申请人数据的其他相关信息。"
-
 msgid "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
-
-msgid "Binary Group members are sometimes referred to collectively as \"%1\" or \"the Company\"."
-msgstr "Binary 集团成员有时统称为 \"%1\" 或 \"公司\"。"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limited 有权通过欧盟金融护照权利在另一欧盟成员国提供服务。请参阅以下地图查看有权通过欧盟金融护照（自由提供跨国界服务）权利访问%1的欧盟国家列表。"
@@ -2080,12 +2080,6 @@ msgstr "Binary Investments (Europe) Ltd. 需要收集您的税务信息。"
 
 msgid "Binary KK granted Japan license"
 msgstr "Binary KK 被授予日本牌照"
-
-msgid "Binary Limited"
-msgstr "Binary有限公司"
-
-msgid "Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
-msgstr "Binary有限公司的注册办事处位于 47 Esplanade, St. Helier, Jersey, JE 0BD Channel Islands，为 Binary 集团的控股公司。"
 
 msgid "Binary Options"
 msgstr "二元期权"
@@ -2143,6 +2137,9 @@ msgstr "Binary 平台平均每秒钟进行 %1宗%2交易%3，全天候提供服�
 
 msgid "Binary.com Graduate Program"
 msgstr "Binary.com 研究生课程"
+
+msgid "Binary.com MT5 is moving to Deriv"
+msgstr "Binary.com MT5 将移至 Deriv"
 
 msgid "Binary.com Shop"
 msgstr "Binary.com 商店"
@@ -3247,7 +3244,7 @@ msgid "Cryptocurrencies"
 msgstr "加密货币"
 
 msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts."
-msgstr ""
+msgstr "每回合交易的加密货币佣金。例如: 1手比特币/美元的一回合交易, 如现货价格为 10,000美元，财务账户将支付30美元。"
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "像比特币和以太币这样的加密货币是分散式的数字资产，可以在全世界任何地方即时支付。"
@@ -3360,9 +3357,6 @@ msgstr "达世币兑美元"
 msgid "Data Analytics"
 msgstr "数据分析学"
 
-msgid "Data Controller"
-msgstr "数据控制器"
-
 msgid "Data Feed"
 msgstr "数据源"
 
@@ -3371,9 +3365,6 @@ msgstr "数据保护条例 (DPA)"
 
 msgid "Data Scientist"
 msgstr "数据科学家"
-
-msgid "Data Subject"
-msgstr "数据主题"
 
 msgid "Data feed"
 msgstr "数据源"
@@ -3513,6 +3504,18 @@ msgstr "到期的存款和/或付款将定时以客户从BIEL指定币种中选�
 msgid "Deriv"
 msgstr "Deriv"
 
+msgid "Deriv Group members are sometimes referred to collectively as \"%1\" or \"the Company\"."
+msgstr ""
+
+msgid "Deriv Group of companies (hereafter referred to as 'the Company' and 'It') is committed to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collects and uses the applicant's personal data, how long it keeps them, and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
+msgstr ""
+
+msgid "Deriv Limited"
+msgstr ""
+
+msgid "Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
+msgstr ""
+
 msgid "Deriv — an all-new trading experience"
 msgstr "Deriv — 全新的交易体验"
 
@@ -3536,6 +3539,9 @@ msgstr "为我们的网站和应用程序设计包括标识和图标等可视元
 
 msgid "Details"
 msgstr "详情"
+
+msgid "Details of the applicant's current level of remuneration, including entitlement to benefits such as pensions or insurance cover, if applicable"
+msgstr ""
 
 msgid "DevOps Engineer"
 msgstr "开发运营工程师"
@@ -3611,6 +3617,9 @@ msgstr "免责声明"
 
 msgid "Disclaimers"
 msgstr "免责声明"
+
+msgid "Discover what’s new"
+msgstr "探索新增内容"
 
 msgid "Display your proof of address when prompted."
 msgstr "出现提示时请提交地址证明。"
@@ -4373,9 +4382,6 @@ msgstr "到期价格"
 
 msgid "Explanation"
 msgstr "说明"
-
-msgid "Explore %1’s new creation — Deriv"
-msgstr "探索 %1 的新创建平台 — Deriv"
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "探索我们提供的所有交易平台、应用程序和工具"
@@ -5436,6 +5442,12 @@ msgstr "如果程序员正代表公司或其他实体使用公司的API，程序
 msgid "If the Programmer is entering into this Agreement on behalf of the Programmer's employer or other entity, the Programmer represents and warrants that the Programmer has full legal authority to bind the Programmer's employer or such entity to this Agreement."
 msgstr "如果程序员代表雇主或其他实体签订本协议，程序员确认并保证其有充分的法律权限可代表雇主或实体接受本协议。"
 
+msgid "If the applicant has any questions about this privacy policy or if the applicant would like to exercise any of their rights, they should contact the Company's Data Protection Officer (DPO) by emailing %1."
+msgstr ""
+
+msgid "If the applicant's application is successful and an offer of employment with the Company is accepted, the applicant's data will be retained until the cessation of their employment. In this case, a separate privacy policy for employees will be made available to the applicant."
+msgstr ""
+
 msgid "If the bid price is 1.05229, you'll buy 1.05229 USD for every 1 EUR you sell."
 msgstr "如果卖价是1.05229，那么您每卖出1欧元就会买入1.05229美元。"
 
@@ -5763,8 +5775,8 @@ msgstr "代客户执行订单时，为了替客户争取最佳成果，%1将考�
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "在外汇市场中，交易者可以根据一种货币对另一种货币的价格变动交易合约。例如，交易者选择欧元/美元“上涨”期权，即预测欧元的价值相对美元的价值将会上涨。"
 
-msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to a number of rights with regards to the applicant's personal data; namely, the following rights:"
-msgstr "根据欧盟2016/679一般数据保护条例 和2018数据保护法, 申请人对其个人资料有以下权利:"
+msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to the following rights with regards to the applicant's personal data:"
+msgstr ""
 
 msgid "In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
 msgstr "英国居民必须通过年龄验证才能够使用虚拟账户。使用真实资金账户前，客户还必须通过全面验证。验证可以通过电子方式或提交KYC文件完成。"
@@ -5795,6 +5807,12 @@ msgstr "根据5.2条款，公司还保留基于公司对客户的评估，有期
 
 msgid "In relation to Contracts that the client enters into with the Company, the Company acts as principal and not as agent on the client's behalf; therefore, the Company acts as the sole execution venue for the execution of the client's Contracts."
 msgstr "关于客户与公司共同修订的合约, 公司是委托人，而不是客户的代理人，因此公司是客户的合约的唯一执行者。"
+
+msgid "In some cases, the Company needs to process the applicant’s personal data to comply with the Company’s legal obligations, for example conducting necessary checks in relation to the right to work in a specific jurisdiction."
+msgstr ""
+
+msgid "In some circumstances, the applicant has the right to data portability, which is the right to request a copy of their personal data in a digital format and, where possible, ask the Company to transfer it to another company."
+msgstr ""
 
 msgid "In such an event, the Company may at its sole discretion (with or without notice) close out  the client's open financial contracts at prices it considers fair and reasonable."
 msgstr "在此情况下，公司可以自行决定（无论是否给予通知）以其认为公平合理的价格对客户的未结金融合约强行平仓。"
@@ -5838,8 +5856,8 @@ msgstr "如果客户不汇资金入其MT5真实账户，公司可完全自主决
 msgid "In the event that the Company does not receive Orders from the client to close an Open Position by the close of a business day, the Company will roll over the said Open Position to the following business day."
 msgstr "交易日结束前如果公司没有收到客户对持仓头寸决定平仓的订单，公司将把所述持仓头寸推到下一个交易日。"
 
-msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
-msgstr "如公司发现联盟会员违反任何上述规定，除了拥有根据本协议或适用法律的任何其他权利或赔偿权利，公司有权立即阻止该联盟会员对公司的访问。该联盟会员因此不可撤销地放弃其权利，而且如果公司撤销该联盟会员对公司的访问，联盟会员须对公司及任何Binary集团公司成员、其董事、职员、股东、雇员或由公司针对%1网站的任何索赔或要求索赔作出赔偿。"
+msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Deriv group of companies for, any claims or demands made against the Company or any member of the Deriv group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
+msgstr ""
 
 msgid "In the rest of the EU, Synthetic Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
 msgstr "欧盟其它国家的综合指数交易由Binary (Europe) Ltd提供，地址为 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta。由(1) 马耳他的马耳他博彩局授予牌照并受其监管（%1牌照号MGA/B2C/102/2000%4, 发照日期为2018年8月01日）。英国客户由(2) 英国博彩委员会授予牌照和监管 (牌照 %2编号: 39495%4)， 及爱尔兰客户由(3) 爱尔兰的税务局授予牌照和监管 (远程博彩公司牌照号: 1010285，发照日期为2017年7月1日)。查阅完整的%3监管信息%4。"
@@ -5912,6 +5930,9 @@ msgstr "通知任何经过介绍的Binary客户，交易服务和产品由Binary
 
 msgid "Information & Communications Technology"
 msgstr "信息和通信技术"
+
+msgid "Information about the applicant's medical or health conditions, including whether or not the applicant has a disability for which the Company needs to make reasonable adjustments"
+msgstr ""
 
 msgid "Information of the previous performance of any underlying instrument or asset does not guarantee its current and/or future performance. Past performance is not a reliable indicator of future results."
 msgstr "任何标的工具或资产上一次的表现不可保证其当前或未来的表现。以前的表现并不能作为未来结果的可靠指标。"
@@ -6132,8 +6153,8 @@ msgstr "求职者隐私政策"
 msgid "Job Details"
 msgstr "工作详情"
 
-msgid "Job applicant privacy policy"
-msgstr "求职者隐私政策"
+msgid "Job application privacy policy"
+msgstr ""
 
 msgid "Join our global network of partners now"
 msgstr "立刻加入我们的全球合作伙伴网络"
@@ -6686,6 +6707,12 @@ msgstr "确保内容的生产和发布在技术上准确，写得好并且易于
 
 msgid "Make your trade"
 msgstr "执行交易"
+
+msgid "Making any reasonable adjustments for disabled employees"
+msgstr ""
+
+msgid "Making decisions about who to employ and what salary and benefits to offer"
+msgstr ""
 
 msgid "Malaysia"
 msgstr "马来西亚"
@@ -7980,9 +8007,6 @@ msgstr "权限"
 msgid "Personal Care, Sales and Service Workers"
 msgstr "个人护理、销售及服务员工"
 
-msgid "Personal Data"
-msgstr "个人资料"
-
 msgid "Personal Details"
 msgstr "个人资料"
 
@@ -8628,8 +8652,8 @@ msgstr "买入时间"
 msgid "Purchase request sent"
 msgstr "采购请求已发送"
 
-msgid "Purpose of collecting Personal Data"
-msgstr "收集个人资料的目的"
+msgid "Purpose of collecting personal data"
+msgstr ""
 
 msgid "Put Spread"
 msgstr "卖权价差"
@@ -8793,8 +8817,8 @@ msgstr "认识到金融市场的复杂性，我们公平及详细地描述了我
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "推荐冗余或过时系统的替代品"
 
-msgid "Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market"
-msgstr "利用您在本地市场的直接知识和经验，负责对Binary集团活跃的国家招聘、培训和培养联盟会员和推介经纪(IB)"
+msgid "Recruit, train, and nurture affiliates and IBs in countries where Deriv Group is active, leveraging your direct knowledge and experience of the local market"
+msgstr ""
 
 msgid "Recruitment Process"
 msgstr "招聘流程"
@@ -8905,7 +8929,7 @@ msgid "Representations and warranties"
 msgstr "陈述和保证"
 
 msgid "Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on financial accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on financial STP accounts."
-msgstr ""
+msgstr "表示每回合交易的基础货币金额。例如: 1手欧元/美元的一回合交易将在财务账户上支付10欧元。1手美元/加元的一回合交易将在财务STP 账户上支付5美元。"
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "代表您的账户中可持有的最高现金额度。如果达到该最高额度，您将被要求提取资金。"
@@ -8978,6 +9002,9 @@ msgstr "资源"
 
 msgid "Respond to customer enquiries by phone, email, social media, and live chat daily"
 msgstr "每日用电话、电子邮件、社交媒体和在线聊天方式回复客户查询"
+
+msgid "Responding to and defending against legal claims"
+msgstr ""
 
 msgid "Responsibilities:"
 msgstr "职责："
@@ -9384,12 +9411,6 @@ msgstr "如果不可抗力事件持续超过三十（30）个工作日，没遭�
 msgid "Should start with letter or number, and may contain hyphen and underscore."
 msgstr "应以字母或数字开始，可包含连字符和下划线。"
 
-msgid "Should the applicant have any questions about this privacy policy or if the applicant would like to exercise any of their rights, they should contact the Company's Data Protection Officer (DPO) by %1."
-msgstr "如果申请人对本隐私政策有任何疑问或者申请人想要行使其任何权利，必须透过%1联系公司的数据保护官（DPO）。"
-
-msgid "Should the applicant's application be successful and an employment with the Binary Group be accepted, the applicant's data will be retained until the cessation of their employment. A separate privacy policy for employees will be made available to the applicant after entering employment with the Company."
-msgstr "如果申请人成功被Binary集团录取聘用，申请人的资料将被保留，直到终止工作为止。开始工作后，公司将向申请人提供另一份员工隐私政策。"
-
 msgid "Should these expenses not be covered by funds in the Affiliate's account, the Company reserves the right to investigate alternative means for obtaining payment. For example, should the Affiliate's account have generated purchasing accounts, the Company will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "如果联盟会员账户的资金不足以覆盖这些费用，公司有权考虑其他替代方法：如果联盟会员的账户产生了购买账户，公司将会截留此等账户的佣金款项，直至损害赔偿的账户结清。"
 
@@ -9416,9 +9437,6 @@ msgstr "与外汇交易类似，您必须了解何时买入（或“开多头仓
 
 msgid "Simple and intuitive"
 msgstr "简单和直观化"
-
-msgid "Simple. Flexible. Reliable."
-msgstr "简易、灵活、可靠。"
 
 msgid "Simply change any of your parameters and the trade price instantly changes, giving you real-time knowledge of your stake. %1 ensures fair and transparent pricing by showing you both sides of the trade."
 msgstr "只要改变任一参数，交易报价就会立刻更新，您可以实时掌握您的资金状况。 %1 同时向您显示买入和卖出价格，以确保报价的公平和透明。"
@@ -10200,6 +10218,9 @@ msgstr "公司在参考了由公司自主经%1选定的外部交易所或交易�
 msgid "The Company aims to keep a record of the kinds of activity that the Company carries on in which a material conflict could arise or has arisen. The Company also maintains procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence among members of the Company's staff who are involved in potentially conflicting activities. Such independence-upholding procedures can be followed, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities, and the maintenance of a policy of independence, which requires the Company's staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest, or in some circumstances, to decline to act for a client or potential client in order to avoid conflicts of interest."
 msgstr "公司希望记录持续运行并可能发生利益冲突的活动。公司也持续管理实际或潜在冲突，包括让与潜在冲突活动相关的员工保持适当的独立性，例如：通过信息障碍、员工隔离、责任分离制度和保持政策独立性。这需要公司的员工在服务时以客户的最佳利益为主，忽略利益冲突，并在某些情况下拒绝为客户或潜在客户采取行动。"
 
+msgid "The Company also collects and processes the applicant’s data to decide whether to enter into a contract with the applicant."
+msgstr ""
+
 msgid "The Company also collects basic tax residence information for the purposes of CRS/FATCA compliance. The tax information that the client provides may only be disclosed to the authorities who are legally charged with collecting this information for CRS/FATCA reporting, and %1 will only do so to the extent that it is legally obliged to collect it from the clients and disclose it to the authorities. The Company does not use, disclose, or process this information in any other way at any time."
 msgstr "为了符合CRS/FATCA 法规，公司也收集基本税务和居留信息 。客户提供的税务信息将仅对合法收集信息并向 CRS/FATCA 报告的政府当局公开， 其收集和公开程度的法律责任由%1承担。公司不得于任何时间以任何其他方式使用、公开或处理此信息。"
 
@@ -10212,8 +10233,8 @@ msgstr "公司和代理 （以下简称\"双方\"） 同意签订协议，公司
 msgid "The Company collects and assesses the client's data to profile the client in relation to the Company's products. The Company does this manually with the assistance of automated processing. By categorisation, the Company will be able to provide the most appropriate products and services to the client."
 msgstr "作为公司的客户，公司收集并评估客户的数据，以便分析并根据产品类型向客户介绍最合适的交易。在自动处理程序的帮助下，公司以手动完成此工作。通过分类，公司将能够为客户提供最合适的产品和服务。"
 
-msgid "The Company collects, stores, and processes a range of information about the applicant, such as, but not limited to:"
-msgstr "公司将收集、保存和处理申请人有关的一系列信息，包括但不限于："
+msgid "The Company collects, stores, and processes a range of information about the applicant, including but not limited to the following:"
+msgstr ""
 
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "公司并不保证所提供的 %1 API运行时功能不会中断或出现错误。特别是，%1 API操作时可能会由于维护、更新或系统及网络故障而中断。公司不承担任何上述运作中断或错误所引起的赔偿责任。"
@@ -10299,8 +10320,8 @@ msgstr "根据任何相关法律或法规，公司需要这样做。"
 msgid "The Company is required to take a number of factors into account when considering how to give the client best execution, specifically:"
 msgstr "公司向客户提供最佳执行方案时, 必须考虑许多因素, 特别是:"
 
-msgid "The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collectiong or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information."
-msgstr "根据数据保护法规要求，公司必须将本隐私权声明所载信息通知申请人。因此, 当公司特地向申请人收集或处理个人资料时, 申请人必须阅读本通知以及本公司为申请人提供的任何其他隐私声明, 以便申请人了解公司使用此类信息的方式和原因。"
+msgid "The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collecting or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information."
+msgstr ""
 
 msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, e-mail, and email management software, along with any modifications."
 msgstr "公司是所有 %1 电子系统，包括但不限于任何所有软件、电子邮件和电子邮件管理软件，包括任何修改的所有权利、所有权或利益的唯一拥有人。"
@@ -10314,14 +10335,14 @@ msgstr "公司为客户保管现金或现金等价物余额。公司保证每位
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error-free service and will not be liable for the consequences of any such errors or interruptions."
 msgstr "公司并未宣称%1 网站不会中断服务或提供无差错服务，也不承担任何因此类中断或错误导致的后果。"
 
-msgid "The Company may also collect personal data about the applicant from third parties, such as further references supplied by former employers and information from criminal records checks. "
-msgstr "公司还可能从第三方收集有关申请人的个人资料, 如前雇主提供的进一步参考资料和犯罪记录检查的信息。 "
+msgid "The Company may also collect personal data about the applicant from third parties, such as further references supplied by former employers and information from criminal records checks permitted by law."
+msgstr ""
 
 msgid "The Company may also impose volume trading limits on clients' accounts at its sole discretion. Trading volume limits can be viewed in the Security & limits section of the client's account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
 msgstr "公司还可自行决定对客户账户实行批量交易限制。交易量限制详情可以在账户的 \"安全和限制\" 部分查看。如果账户余额超过最大账户限额, 则必须提款以使余额小于限额。"
 
-msgid "The Company may also transfer relevant personal and financial data to any company within the Binary Group companies. This includes any of the Company's business associates or payment providers within or outside of the EEA, including countries that might not offer an equivalent level of protection of personal data. In all instances, the Company places a contractual obligation on such third parties to offer the same level of rights and protection as stipulated in the GDPR."
-msgstr "公司也可能会将相关的个人和财务数据传输给Binary 集团内的任何公司。这包括公司在EEA内部或外部的任何商业伙伴或支付提供商，包括那些可能不提供同等级别的个人数据保护的国家。在所有情况下，公司与这些第三方签立合同义务，以提供与GDPR规定相同的权利和保护水平。"
+msgid "The Company may also transfer relevant personal and financial data to any company within the Deriv Group companies. This includes any of the Company's business associates or payment providers within or outside of the EEA, including countries that might not offer an equivalent level of protection of personal data. In all instances, the Company places a contractual obligation on such third parties to offer the same level of rights and protection as stipulated in the GDPR."
+msgstr ""
 
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. The Company will endeavour to ensure that Affiliates are notified when changes have been made to the commission structure."
 msgstr "公司可能随时以其唯一、绝对自主权改变佣金结构。佣金结构发生更正时，公司将努力通知所有联盟会员。"
@@ -10329,8 +10350,8 @@ msgstr "公司可能随时以其唯一、绝对自主权改变佣金结构。佣
 msgid "The Company may change, suspend, terminate, or discontinue any aspect of the %1 API, including the availability of any services, information, features, or functions accessible by means of the %1 API, on no less than seven days' advance notice to the Programmer."
 msgstr "公司可能会预先7天通知程序员之后对%1 API服务，包括通过%1 API所提供的任何服务、信息、功能或可访问与可用性作出更改、暂停、终止或中断措施。"
 
-msgid "The Company may collect this information in a variety of ways. Data is collected and contained in CVs or resumes, via Self-Assessment Topgrading Questionnaires/Interview (SATI), or through interviews or other forms of assessment, including online tests."
-msgstr "公司可能会以多种方式收集这些信息。通过自我评估调查问卷 (SATI), 或通过访谈或其他评估方式, 包括在线测试收集资料并包含在简历里。"
+msgid "The Company may collect this information in a variety of ways. Data is collected and contained in CVs or resumes, cover letters, and identity documents, via Self-Assessment Topgrading Questionnaires/Interview (SATI), or through interviews or other forms of assessment, including online tests."
+msgstr ""
 
 msgid "The Company may from time to time inform clients about changes on the website, new services, and promotions. If, however, the client wishes to opt out of such a service and does not wish to receive any direct marketing data, the client can either unsubscribe from the service directly or email the Company's customer support team. If the client decides to opt in again into receiving promotional material, the client can also do so by contacting the customer support team."
 msgstr "公司可能会就网站的变化、新的服务和促销活动向客户发送通知。如果客户不愿接受此服务或不希望收到任何直接营销数据，可以退订该服务，或发送电子邮件到公司的客服团队。之后，如果客户决定再次接收促销资料，也可以随时联系客服团队。"
@@ -10443,14 +10464,14 @@ msgstr "公司保留随时更新本隐私政策的权利，并在进行重大修
 msgid "The Company reserves the right to void, delay, or withhold payment of commission fees to the Affiliate in situations involving a suspected breach of a law or a breach of the terms and conditions of this Agreement."
 msgstr "公司有权在联盟会员涉嫌违法或违反本协议条款和条件的情况下撤消、延缓或中止支付佣金。"
 
-msgid "The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies."
-msgstr "公司有权通过Binary集团各成员公司行使以下任何权利或履行义务（包括但不限于支付义务）。"
+msgid "The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Deriv group of companies."
+msgstr ""
 
-msgid "The Company shall ensure the confidentiality of all Personal Data provided by the applicant at all times and is protected against any accidental loss or disclosure, destruction, and abuse. The Company shall also ensure that such Personal Data is only processed and stored as necessary for the purposes specified in this privacy policy and all applicable Data Protection Laws."
-msgstr "公司须随时确保申请人提供的所有个人资料的机密性，并防止任何意外丢失或泄露、破坏和滥用。 公司还须确保此类个人资料仅在本隐私政策和所有适用的资料保护法规定的用途下进行必要的处理和保存。"
+msgid "The Company shall ensure the confidentiality of all personal data provided by the applicant at all times and is protected against any accidental loss or disclosure, destruction, and abuse. The Company shall also ensure that such personal data is only processed and stored as necessary for the purposes specified in this privacy policy and all applicable Data Protection Laws."
+msgstr ""
 
-msgid "The Company shall further disclose information about the applicant to any third-party parties' service providers within the Binary Group. The Company shall ensure that a data sharing agreement is in place and that the applicant's data is held securely and in line with GDPR requirements. The Company shall further disclose information about the applicant when it is legally obligated to do so."
-msgstr "公司须进一步向Binary集团内的任何第三方服务提供商披露有关申请人的信息。公司须确保数据共享协议已到位, 并且申请人的数据是安全的, 同时也符合 GDPR 要求。在法律需要的情况下, 公司须进一步披露申请人的信息。"
+msgid "The Company shall further disclose information about the applicant internally within the Deriv Group of companies for the purpose of the recruitment exercise. The Company shall ensure that a data-sharing agreement is in place and that the applicant's data is held securely and in line with GDPR requirements. The Company shall further disclose information about the applicant when It is legally obligated to do so."
+msgstr ""
 
 msgid "The Company shall have no liability arising from orders, investment decisions, or purchases of third-party goods or services (including financial instruments and currency) based on information published on or furnished through the %1 API."
 msgstr "公司对所有通过%1 API发布或提供信息导致的第三方商品或服务（包括金融工具和货币）的交易、投资决定或购买不承担任何责任。"
@@ -10491,8 +10512,8 @@ msgstr "公司市场数据源自充当流动性提供商的主要经纪人，因
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "公司努力确保所有订单都能执行。然而, 有时会碰到重大困难或不寻常的情况, 因此并不一定每次都能够办到。一旦公司意识到与正确执行订单有关的任何重大困难的任何情况, 公司会迅速将问题通知客户。"
 
-msgid "The Company typically collects and uses the applicant's Personal Data for the purposes of the legitimate interests pursued by the Binary Group, such as making decisions about the person to employ and the salary and other benefits to offer; and complying with our the Company's legal obligations, such as conducting necessary checks in relation to the right to work in the a specific jurisdiction and making any reasonable adjustments for disabled employees. "
-msgstr "公司通常会收集和使用申请人的个人数据，以达到Binary集团追求合法权益的目的，例如人员雇用的决定以及提供的工资和其他福利; 并遵守公司的法律义务，例如对特定司法管辖区的工作权利进行必要的检查，并对残疾员工进行任何合理的调整。 "
+msgid "The Company typically collects and processes the applicant's personal data for the purposes of the legitimate interests that It pursues. Here are some examples of such interests:"
+msgstr ""
 
 msgid "The Company uses identity verification services and real-time fraud detection measures to help protect the client from unauthorised access to the client's account. The Company also monitors account activity for signs of unusual activity that might indicate fraud and work with collection and law-enforcement agencies to address fraud issues."
 msgstr "公司通过身份核实服务和实时防欺诈措施防止客户的账户遭到非法访问。另外，公司还会对客户的账户活动进行监控，来发现不正常的欺诈活动迹象。公司还会和征管机构及执法机关合作，应对欺诈问题。"
@@ -10581,8 +10602,8 @@ msgstr "公司的网站包含其他网站链接，并可能含有第三方网站
 msgid "The Company, exercising its absolute discretion, may accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
 msgstr "公司拥有绝对自主权，可自行决定接受或拒绝代理的申请。如代理的申请被接受，公司须将代理使用的所有相关的适用信息，包括但不限于姓名、地址、网址（如有）、电子邮件地址、电话号码、佣金率和付款方法列入付款代理列表中，并在公司的网站%1www.binary.com%2上披露。"
 
-msgid "The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Binary Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide."
-msgstr "区域经理负责在Binary集团视为目标的国家收购、服务、管理和扩大我们的活跃联盟网络。您也将贡献精力、技能和对当地商业文化的知识, 以促进我们在全球范围内的快速增长。"
+msgid "The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Deriv Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide."
+msgstr ""
 
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "域名系统 (DNS) 允许您通过方便使用的 web 地址 (如 %1) 而不是复杂的 IP 地址访问网站。"
@@ -10789,17 +10810,26 @@ msgstr "即使基于有限的信息，也能够做出理性的决定"
 msgid "The anti-money laundering processes have the following effects on clients:"
 msgstr "反洗钱程序对客户有以下影响："
 
-msgid "The applicant has the right to lodge a complaint to the Data Protection Commissioner in Malta should the applicant believe that the Company has failed to comply with the requirements of EU General Data Protection Regulation 2016/679 or the Data Protection Act 2018 with regards to the applicant's personal data."
-msgstr "关于申请人的个人资料，如果申请人认为公司未能遵守欧盟通用数据保护条例2016/679或2018年数据保护法案的要求，申请人有权向马耳他数据保护委员提出投诉。"
+msgid "The applicant also has the right to restrict the further processing of their personal data."
+msgstr ""
 
-msgid "The applicant is further afforded the rights to:"
-msgstr "申请人还享有以下权利："
+msgid "The applicant has the right to lodge a complaint to the Data Protection Commissioner in Malta if the applicant believes that the Company has failed to comply with the requirements of EU General Data Protection Regulation 2016/679 or the Data Protection Act 2018 with regards to the applicant's personal data."
+msgstr ""
 
-msgid "The applicant is under no statutory or contractual obligation to provide data to Binary Group during the recruitment process. However, should the applicant elect not to provide any necessary information, the Company may not be able to proceed with their application."
-msgstr "招聘过程中，申请人没有法定或合同义务向Binary集团提供数据。但是，如果申请人选择不提供任何必要信息，公司可能无法继续处理其申请。"
+msgid "The applicant is under no statutory or contractual obligation to provide data to the Company during the recruitment process. However, if the applicant chooses not to provide any necessary information, the Company may not be able to proceed with their application."
+msgstr ""
 
-msgid "The applicant's personal data shall be stored for a period of six months should the applicant be unsuccessful or decline in accepting employment with the Binary Group. At the expiry of that period, the applicant's data is deleted or destroyed unless the Company is required to further retain the applicant's information to exercise or defend any legal claims."
-msgstr "如果申请人不被Binary集团录取，申请人的个人资料须保存六个月 。除非公司需要继续保留申请人的资料以进行或抗辩任何法律诉讼，期限届满时, 申请人的资料将被删除或销毁 。"
+msgid "The applicant will not be subject to any recruitment decisions based solely on automated decision-making that will have a significant impact on the applicant."
+msgstr ""
+
+msgid "The applicant's personal data shall be stored for a period of six months after the end of the relevant recruitment process if the applicant is unsuccessful in their job application or if they have declined an offer of employment with the Deriv Group of companies. At the expiry of that period, the applicant's data is deleted or destroyed unless the Company is required to further retain the applicant's information to exercise or defend any legal claims."
+msgstr ""
+
+msgid "The applicant's personal details, including name, address, date of birth, nationality, gender, and contact details, comprising email address and telephone number"
+msgstr ""
+
+msgid "The applicant's qualifications, skills, education, experience, and employment history"
+msgstr ""
 
 msgid "The application shall be reviewed and assessed by the Company's compliance and marketing departments. It is noted that, following and implementing the anti-money laundering policy and conducting due diligence in accordance with the law and regulations, the Company's compliance department shall request and collect all required information and documentation as per Section H."
 msgstr "申请须由公司的合规及市场部审核及评估。公司注意到, 遵守和执行反洗钱政策并按照法律和条例进行尽职调查的合规部门须按照H章节规定要求和收集所有必要的资料和文件 。"
@@ -11155,8 +11185,8 @@ msgstr "以下是导致终止的各种原因："
 msgid "The following are conditions of using the website:"
 msgstr "以下是使用网站的条件："
 
-msgid "The following terms shall have the meaning set out below and cognate terms shall be construed accordingly:"
-msgstr "以下术语具有以下含义, 同源条款须据此解释:"
+msgid "The following terms shall have the meanings set out below and cognate terms shall be construed accordingly:"
+msgstr ""
 
 msgid "The foreign exchange market (forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "外汇交易市场（forex）是世界上流动性最强、交易量最大的市场，每天交易额高达数兆美元。"
@@ -11206,8 +11236,8 @@ msgstr "与客户的订单有关的金融工具市场条件，其中包括及时
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "市场平仓价为合约到期时的有效价格。"
 
-msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Binary Group companies with all rights reserved."
-msgstr "%1 网站所包含的各种材料（包括但不限于所有文章、文字、图片、标识、整理材料、系统、代码和设计）版权归由 Binary 集团（1999-%2 年）所有 。公司保留所有权利。"
+msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Deriv Group companies with all rights reserved."
+msgstr ""
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
 msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。"
@@ -11314,17 +11344,17 @@ msgstr "收益指当合约到期时实现的收益（参阅“赔付金额”）
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such a change. It is the Company's responsibility to notify clients before any changes to its terms come into effect."
 msgstr "公司也保留不定时修订或更换服务规则和范围的权利。网站运营期间作出的任何规则修改都不会进行追溯调整，且只适用于更改之后发生的金融合约购买行为。在任何修改条款生效前，公司有责任通知客户。"
 
-msgid "The right to be informed of the use of their personal data. This privacy policy is dedicated for this purpose."
-msgstr "被告知使用其个人资料的权利。本隐私政策专用于此目的。"
+msgid "The right to be informed of the use of their personal data, as reflected in this privacy policy"
+msgstr ""
 
-msgid "The right to erase or delete their personal information subject to the data retention practice of the Binary Group."
-msgstr "根据Binary集团的资料保留惯例清除或删除其个人信息的权利。"
+msgid "The right to delete their personal information, subject to the data retention practice of the Company"
+msgstr ""
 
-msgid "The right to rectify their personal data should the Company hold any information about the applicant that is incomplete or inaccurate."
-msgstr "如果申请人提供任何不完整或不准确信息, 公司有权纠正其个人数据。"
+msgid "The right to rectify their personal data if the Company holds any information about the applicant that is incomplete or inaccurate"
+msgstr ""
 
-msgid "The right to request access to their data from the Company."
-msgstr "公司有权请求访问其数据。"
+msgid "The right to request access to their data from the Company"
+msgstr ""
 
 msgid "The same concept applies to our cryptocurrency pairs."
 msgstr "同样的概念适用于我们的加密货币对。"
@@ -11491,8 +11521,8 @@ msgstr "这些文件为您提供关于我们投资产品的关键信息。根据
 msgid "These limits will change due to fluctuation in currency exchange rates."
 msgstr "这些限额将因货币汇率的波动而改变。"
 
-msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Binary Group company."
-msgstr "在未得到 Binary Group 公司书面许可的情况下，用户不得因商业目的以其他任何有偿方式复制或者传播这些材料。"
+msgid "These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a Deriv Group company."
+msgstr ""
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the client of Binary Investments (Europe) Ltd (\"BIEL\") and will govern the relationship between clients and BIEL when trading Financial Products (as defined in the Key information documents %1here%2) with BIEL."
 msgstr "这些补充条款和条件(“ST&Cs”) 仅适用于 Binary Investments (Europe) Ltd（即：“BIEL”) 的客户，并将在金融产品（如%1此处%2的关键信息文件所定义）交易中约束客户和BIEL之间的关系。"
@@ -11617,11 +11647,11 @@ msgstr "此合约获利"
 msgid "This document"
 msgstr "本文件"
 
-msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between Binary Services Ltd (“the Company”) and the person who registered for the %1 Application Programming Interface (“the Programmer”)."
-msgstr "本文件（“协议”）规定了 Binary Services Ltd.（“公司”）与%1 应用程序接口注册者（“程序员”）之间的条款和条件（”条款“）。"
+msgid "This document (the \"Agreement\") sets out the terms and conditions (\"Terms\") between Deriv Services Ltd (“the Company”) and the person who registered for the %1 Application Programming Interface (“the Programmer”)."
+msgstr ""
 
-msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Binary Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
-msgstr "本文件（“协议”）规定了“公司”（即 Binary Services Ltd.）与本项目申请人（“联盟会员”）之间关于联盟会员申请设立联盟会员账户（申请成功后还包括联盟项目的会员资格）以推广网站的条款和条件。"
+msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
+msgstr ""
 
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "此功能不适用于虚拟资金账户。"
@@ -11823,6 +11853,9 @@ msgstr "要执行此操作, 请设置账户的%1货币%2。"
 
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "如要执行此操作，请切换到 %1 真实账户。"
+
+msgid "To protect your portfolio from adverse market movements due to the market opening gap, we reserve the right to decrease leverage on all offered symbols for financial accounts before market close and increase it again after market open. Please make sure that you have enough funds available in your MT5 account to support your positions at all times."
+msgstr ""
 
 msgid "To provide the client with a better experience, some of the services offered by %1 may require permission to access the client's cloud storage services, such as Google Drive, to save or load DBot trading strategies. In such instances"
 msgstr "为了给客户提供更好的体验，％1提供的某些服务可能需要客户的云存储服务（例如Google Drive）的访问权限，以保存或加载DBot交易策略。在这种情况下"
@@ -12649,8 +12682,8 @@ msgstr "我们接受"
 msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
 msgstr "我们以客户为中心，致力于打造最佳交易体验的产品和服务。"
 
-msgid "We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Binary group of companies in collaboration with the Marketing team."
-msgstr "我们是PayOps，是法律合规部门的一部分。我们的团队通过与营销团队合作实施Binary集团公司的支付策略以加强业务发展。"
+msgid "We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Deriv group of companies in collaboration with the Marketing team."
+msgstr ""
 
 msgid "We are licensed and regulated in the British Isles and in Malta since 2015."
 msgstr "自2015年，我们在不列颠群岛及马耳他已获得授权并受监管。"
@@ -12901,8 +12934,8 @@ msgstr "使用A-book模式执行客户订单时，公司将客户的交易导引
 msgid "When it comes to food, you'll be spoilt for choice. Cuisine from every part of the world can be found in Dubai, but that doesn't mean that local flavours should be ignored: chebab (saffron pancakes), khameer (puffed flatbreads), harees (savoury porridge), tender roasted meats, and pistachio-stuffed sweets are some of the local dishes that will excite your taste buds. There are also numerous economical options in the form of chain restaurants that cater to a variety of tastes."
 msgstr "谈到食物，您将因为种类太多而无从选择。来自世界各地的美食都可以在迪拜找到，但这并不意味着您应该忽略当地的风味：一些当地的菜肴包括烧烤（藏红花煎饼）、khameer（膨化扁面包）、harees（咸味粥）、嫩烤肉和开心果甜品等，随时能激发您的味蕾。还有许多可以满足各种口味的连锁餐厅提供比较经济的选择。"
 
-msgid "When the Affiliate's referred clients open an account with any member of the Binary group, the Company assumes ownership of the database of names and contact information and any other data of the Affiliate's referred clients."
-msgstr "联盟会员的推荐客户在Binary集团任何成员公司开账户时，公司承担此联盟会员的推荐客户名称和联系信息数据库以及任何其他数据的所有权。"
+msgid "When the Affiliate's referred clients open an account with any member of the Deriv group, the Company assumes ownership of the database of names and contact information and any other data of the Affiliate's referred clients."
+msgstr ""
 
 msgid "When the Company accepts an order from the client to open or close a transaction, or any other specific instructions in relation to the client's order, the Company will endeavour to follow the client's instructions as far as reasonably possible, acting in accordance with the Company's duty of best execution in accordance with the client's instructions. These specific instructions include, but are not limited to, the following:"
 msgstr "当公司收到客户给的开盘或收盘交易订单或任何其他关于客户订单的具体指示，公司会努力尽可能合理地遵照客户的指示并根据公司最佳执行责任行事。这些具体的指示包括，但不限于以下各项︰"
@@ -13801,12 +13834,6 @@ msgstr "天"
 msgid "details"
 msgstr "详情"
 
-msgid "details of the applicant's about the applicant's remuneration, including entitlement to benefits such as pensions or insurance cover, if applicable;"
-msgstr "申请人有关其薪酬的详情, 包括退休金或保险金等福利的权利（如适用）。"
-
-msgid "details of the identity of the the applicant's reference, including their name and contract details, comprising email address and telephone number; and"
-msgstr "申请人推荐者的身分详细资料, 包括其姓名及联系方式, 包含电子邮件地址及电话号码; 和"
-
 msgid "e.g. frontend.binaryws.com"
 msgstr "例如 frontend.binaryws.com"
 
@@ -13828,12 +13855,6 @@ msgstr "iOS"
 msgid "including Deal Cancel. Fee"
 msgstr "包含交易取消. 费用"
 
-msgid "information about medical or health conditions, including whether or not the applicant has a disability for which the Company needs to make reasonable adjustments."
-msgstr "医疗或健康状况的相关信息, 包括申请人是否有残疾, 公司是否需要作出合理调整。"
-
-msgid "information about the applicant's nationality;"
-msgstr "申请人国籍信息;"
-
 msgid "letters"
 msgstr "字母"
 
@@ -13842,9 +13863,6 @@ msgstr "登录"
 
 msgid "logout"
 msgstr "注销"
-
-msgid "means any identifiable information relating to the applicant."
-msgstr "指与申请人有关的任何身分识别信息。"
 
 msgid "million"
 msgstr "百万"
@@ -13873,9 +13891,6 @@ msgstr "每手"
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "账户资金与保证金总额的比率，以百分比表示"
 
-msgid "restrict the further processing of their personal data, as well as in certain circumstances; and"
-msgstr "限制对其个人数据以及某些情况下的进一步处理; 和"
-
 msgid "second"
 msgstr "秒"
 
@@ -13888,14 +13903,8 @@ msgstr "应指马耳他法令《2018数据保护法》第440章。"
 msgid "shall mean EU General Data Protection Regulation 2016/679."
 msgstr "应指欧盟一般数据保护条例2016/679。"
 
-msgid "shall mean any operation which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, restriction, erasure, or destruction, etc.."
-msgstr "指对个人数据或个人数据集执行任何操作, 无论是否使用自动措施, 如收集、记录、组织、整构、存储、改编或更改、限制、删除或破坏等。"
-
-msgid "shall mean the Binary Group companies. This means that the Company is responsible for deciding how it holds and uses any personal data about the applicant."
-msgstr "指Binary集团公司。这表示由公司负责决定如何保存和使用申请人的任何个人数据。"
-
-msgid "shall mean the applicant, whose personal data is collected by the Company."
-msgstr "指公司收集其个人资料的申请人。"
+msgid "shall mean any operation which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, restriction, erasure, or destruction, etc."
+msgstr ""
 
 msgid "space"
 msgstr "空间"
@@ -13909,9 +13918,6 @@ msgstr "客户的MT5真实账户的所有保证金要求累计金额"
 msgid "the amount set aside by the Company from the client's Account Balance in order to open and maintain a transaction, to cover the client's potential loss, if it occurs"
 msgstr "公司从客户的账户余额拨出进行开盘持仓交易, 以弥补客户可能会产生的潜在损失的金额"
 
-msgid "the applicant's personal details, including name, address, and contract details, comprising email address and telephone number, date of birth, and gender;"
-msgstr "申请人的个人详细信息, 包括姓名、地址和联系方法, 包含电子邮件地址和电话号码、出生日期和性别;"
-
 msgid "the currency in which the client's MT5 Real Account will be operated"
 msgstr "客户的 MT5 真实账户运作的币种"
 
@@ -13923,9 +13929,6 @@ msgstr "市场开盘交易下购入或卖出单后参照基础工具所创建，
 
 msgid "the price specified in the client's Limit Order"
 msgstr "客户的限价单指定的价格"
-
-msgid "the right to data portability"
-msgstr "数据可携权"
 
 msgid "the underlying currency, or financial instrument, on which the price of the CFD is based"
 msgstr "差价合约价格采用的基础货币或金融工具"

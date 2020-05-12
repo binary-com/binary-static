@@ -150,7 +150,7 @@ const Platform = () => (
                 </div>
                 <div className='center-text'>
                     <p>{it.L('Go ahead, experience it for yourself.')}</p>
-                    <p><a className='button' href='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-try-deriv-now' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
+                    <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
                 </div>
             </div>
         </div>
@@ -178,9 +178,9 @@ const Platform = () => (
                                 className='mobile-hide'
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
-                                url='https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-trade-now'
-                                target='_blank'
-                                button_text={it.L('Trade now')}
+                                buttons={[
+                                    { text: it.L('Trade now'), url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-trade-now', target: '_blank' },
+                                ]}
                             />
                             <Platforms
                                 image='trading-page'
@@ -206,9 +206,9 @@ const Platform = () => (
                                 header={it.L('DP2P app')}
                                 description={it.L('Peer-to-peer fiat exchange')}
                                 text={it.L('The fast, easy, and convenient way to make deposits and withdrawals with zero commission fees.')}
-                                url=''
-                                button_text={it.L('Download DP2P app')}
-                                download='true'
+                                buttons={[
+                                    { text: it.L('Download DP2P app'), url: '', download: 'true' },
+                                ]}
                             /> */}
                             <PlatformsDesktop
                                 image='devices'
