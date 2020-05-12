@@ -14,7 +14,6 @@ const State            = require('../../../../../_common/storage').State;
 const toISOFormat      = require('../../../../../_common/string_util').toISOFormat;
 const getHashValue     = require('../../../../../_common/url').getHashValue;
 const urlFor           = require('../../../../../_common/url').urlFor;
-const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
     const form_id           = '#frmPersonalDetails';
@@ -24,6 +23,7 @@ const PersonalDetails = (() => {
     let is_for_new_account = false;
 
     let editable_fields,
+        error_code,
         is_virtual,
         is_fully_authenticated,
         residence,
@@ -37,6 +37,7 @@ const PersonalDetails = (() => {
         editable_fields   = {};
         get_settings_data = {};
         changeable_fields = [];
+        error_code        = '';
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
     };
@@ -284,6 +285,7 @@ const PersonalDetails = (() => {
         (isForMtTax() && +State.getResponse('landing_company.config.tax_details_required') === 1); // for accounts trying to open mt5 advanced that need to set tax
 
     const isTaxEditable = () =>
+        /^TINWrongFormat$/i.test(error_code) ||
         isTaxReq() ||
         (has_changeable_fields && /tax_identification_number|tax_residence/.test(changeable_fields)); // only allow changing if not fully authenticated
 
@@ -374,6 +376,7 @@ const PersonalDetails = (() => {
     const setDetailsResponse = (response) => {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
+        error_code = '';
         if (!is_error) {
             const redirect_url = getHashValue('mt5_redirect') ? urlFor('user/metatrader') : undefined;
             // to update tax information message for financial clients
@@ -423,7 +426,16 @@ const PersonalDetails = (() => {
                 }
             });
         } else { // is_error
-            showFormMessage((getPropertyValue(response, ['error', 'message']) || localize('Sorry, an error occurred while processing your account.')), false);
+            const error = response.error || {};
+            error_code = error.code;
+            if (/^TINWrongFormat$/i.test(error.code)) {
+                // make tax fields editable on error
+                $('#row_lbl_tax_identification_number, #row_lbl_tax_residence').setVisibility(0);
+                $('#row_tax_identification_number, #row_tax_residence').setVisibility(1);
+                // repopulate validations
+                getDetailsResponse(get_settings_data);
+            }
+            showFormMessage(error.message || localize('Sorry, an error occurred while processing your account.'), false);
         }
     };
 
