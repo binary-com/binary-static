@@ -89,8 +89,8 @@ const Regulation = () => {
                 <SeparatorLine className='gr-parent gr-padding-20' invisible />
             </div>
 
-            <Box header={it.L('Binary Limited')} first>
-                <p>{it.L('Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
+            <Box header={it.L('Deriv Limited')} first>
+                <p>{it.L('Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
             <Box header={it.L('Binary Investments (Europe) Ltd')} >
