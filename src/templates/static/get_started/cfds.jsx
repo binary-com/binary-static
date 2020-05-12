@@ -187,9 +187,9 @@ const Cfds = () => (
                     <p><strong>{it.L('Crash/boom indices')}</strong></p>
                     <p>{it.L('With Crash 1000 (500) Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
                     <p>{it.L('With Boom 1000 (500) Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
-                    <p><strong>{it.L('Step indices')}</strong></p>                   
+                    <p><strong>{it.L('Step indices')}</strong></p>
                     <p>{it.L('With Step Index, there is equal probability of up/down movement in the price series with fixed step size of 0.1.')}</p>
-                    <p><strong>{it.L('Range break indices')}</strong></p>   
+                    <p><strong>{it.L('Range break indices')}</strong></p> 
                     <p>{it.L('Range Break index fluctuates within a range between an upper and lower price level, also known as borders. When it hits either border, the index occasionally breaks through the range with a jump or crash, creating a new range. There are two types:')}</p>
                     <p>{it.L('Range Break 100 breaks through the range on average once every 100 times that it hits the border.')}</p>
                     <p>{it.L('Range Break 200 breaks through the range on average once every 200 times that it hits the border.')}</p>
