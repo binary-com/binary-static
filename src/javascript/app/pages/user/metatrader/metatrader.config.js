@@ -283,18 +283,6 @@ const MetaTraderConfig = (() => {
                     }
                 })
             ),
-            onError: (response, $form, acc_type) => {
-                if (response.error.code === 'TINWrongFormat') {
-                    $form
-                        .find('#msg_form')
-                        .html(localize('Your tax number is not in the correct format. Please [_1]update your tax number[_2] correctly. If you need help, please [_3]contact us[_4].', [
-                            `<a href='${urlFor('user/settings/detailsws')}#mt5_redirect=${acc_type}'>`,
-                            '</a>',
-                            `<a href='${urlFor('contact')}'>`,
-                            '</a>',
-                        ]));
-                }
-            },
             onSuccess: (response) => {
                 GTM.mt5NewAccount(response);
 
