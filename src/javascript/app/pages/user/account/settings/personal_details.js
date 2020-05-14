@@ -13,7 +13,6 @@ const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const toISOFormat      = require('../../../../../_common/string_util').toISOFormat;
 const getHashValue     = require('../../../../../_common/url').getHashValue;
-const urlFor           = require('../../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
@@ -30,6 +29,8 @@ const PersonalDetails = (() => {
         get_settings_data,
         has_changeable_fields,
         changeable_fields,
+        mt_acct_type,
+        is_mt_tax_required,
         $tax_residence;
 
     const init = () => {
@@ -38,6 +39,9 @@ const PersonalDetails = (() => {
         changeable_fields = [];
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
+        mt_acct_type      = getHashValue('mt5_redirect');
+        // demo and volatility mt accounts do not require tax info
+        is_mt_tax_required = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2 && +State.getResponse('landing_company.config.tax_details_required') === 1;
     };
 
     const checkStatus = (status, string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
@@ -268,7 +272,9 @@ const PersonalDetails = (() => {
         ));
     };
 
-    const isTaxReq = () => Client.isAccountOfType('financial') && Client.shouldCompleteTax();
+    const isTaxReq = () =>
+        (Client.isAccountOfType('financial') && Client.shouldCompleteTax()) ||
+        is_mt_tax_required;
 
     const isTaxEditable = () =>
         !is_virtual &&
@@ -290,8 +296,6 @@ const PersonalDetails = (() => {
         } else {
             const is_financial      = Client.isAccountOfType('financial');
             const is_gaming         = Client.isAccountOfType('gaming');
-            const mt_acct_type      = getHashValue('mt5_redirect');
-            const is_for_mt_citizen = !!mt_acct_type; // all mt account opening requires citizen
             const is_tax_req        = isTaxReq();
             const residence_list    = State.getResponse('residence_list');
 
@@ -331,7 +335,8 @@ const PersonalDetails = (() => {
                     ].filter(item => item),
                 },
 
-                { selector: '#citizen',    validations: (is_financial || is_gaming || is_for_mt_citizen) ? ['req'] : '' },
+                // all mt account opening requires citizen
+                { selector: '#citizen',    validations: (is_financial || is_gaming || mt_acct_type) ? ['req'] : '' },
                 { selector: '#chk_tax_id', validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
@@ -363,7 +368,6 @@ const PersonalDetails = (() => {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
         if (!is_error) {
-            const redirect_url = getHashValue('mt5_redirect') ? urlFor('user/metatrader') : undefined;
             // to update tax information message for financial clients
             BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
@@ -383,15 +387,12 @@ const PersonalDetails = (() => {
                     BinaryPjax.loadPreviousUrl();
                     return;
                 }
-                const get_settings        = data.get_settings;
-                const is_tax_req          = +State.getResponse('landing_company.config.tax_details_required') === 1;
-                const is_for_mt_financial = /real_svg_standard|labuan_advanced/.test(redirect_url);
-                const has_required_mt     = ((is_for_mt_financial && is_tax_req) ?
+                const get_settings    = data.get_settings;
+                const has_required_mt = is_mt_tax_required ?
                     (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen)
                     :
-                    get_settings.citizen // only check Citizen if user selects mt volatility account
-                );
-                if (redirect_url && has_required_mt) {
+                    get_settings.citizen; // only check Citizen if user selects mt volatility account
+                if (mt_acct_type && has_required_mt) {
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
                     $(form_id).setVisibility(0);
                     $('#missing_details_notice').setVisibility(0);
