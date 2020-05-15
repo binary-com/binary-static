@@ -33,7 +33,7 @@ const Privacy = () => (
 
         <div data-show='eucountry'>
             <h2 data-anchor='transfer-of-data'>{it.L('Transfer of data')}</h2>
-            <p>{it.L('The Company may also transfer relevant personal and financial data to any company within the Binary Group companies. This includes any of the Company\'s business associates or payment providers within or outside of the EEA, including countries that might not offer an equivalent level of protection of personal data. In all instances, the Company places a contractual obligation on such third parties to offer the same level of rights and protection as stipulated in the GDPR.')}</p>
+            <p>{it.L('The Company may also transfer relevant personal and financial data to any company within the Deriv Group companies. This includes any of the Company\'s business associates or payment providers within or outside of the EEA, including countries that might not offer an equivalent level of protection of personal data. In all instances, the Company places a contractual obligation on such third parties to offer the same level of rights and protection as stipulated in the GDPR.')}</p>
             <p>{it.L('The client also has the right to request copies of any personal information that the client has provided to the Company and to request that the Company transmit such information to other service providers.')}</p>
 
             <h2 data-anchor='consent'>{it.L('Consent')}</h2>

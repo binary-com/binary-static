@@ -4,7 +4,7 @@ import ListNested from '../../_common/components/list_nested.jsx';
 const Api = () => (
     <div>
         <h2 data-anchor='api'>{it.L('[_1] Application Programming Interface ("API")', it.website_name)}</h2>
-        <p>{it.L('This document (the "Agreement") sets out the terms and conditions ("Terms") between Binary Services Ltd (“the Company”) and the person who registered for the [_1] Application Programming Interface (“the Programmer”).', it.website_name)}</p>
+        <p>{it.L('This document (the "Agreement") sets out the terms and conditions ("Terms") between Deriv Services Ltd (“the Company”) and the person who registered for the [_1] Application Programming Interface (“the Programmer”).', it.website_name)}</p>
         <ol className='reset_ol'>
             <ListNested
                 strong='1'
