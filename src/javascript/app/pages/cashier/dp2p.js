@@ -115,12 +115,6 @@ const DP2P = (() => {
                     margin: 0;
                     padding: calc(1.6*var(--hem)) 0
                 }
-                .buy-sell__header {
-                    padding: 0;
-                    border: 1px solid var(--brand-red-coral);
-                    border-radius: 5px;
-                    margin: calc(0.8*var(--hem)) 0 calc(1.6*var(--hem));
-                }
                 .buy-sell__dialog {
                     z-index: 2;
                 }
