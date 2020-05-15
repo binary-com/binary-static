@@ -152,7 +152,7 @@ const DP2P = (() => {
 
             SubscriptionManager.subscribe(msg_type, request, cb);
             return {
-                unsubscribe: () => SubscriptionManager.forget(msg_type),
+                unsubscribe: () => SubscriptionManager.forget(msg_type, cb),
             };
         };
 
