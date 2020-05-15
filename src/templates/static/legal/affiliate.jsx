@@ -8,7 +8,7 @@ const Affiliate = () => (
             <ListNested
                 header={it.L('This document')}
                 items={[
-                    { text: it.L('This document (the "Agreement") sets out the terms and conditions between "the Company", which is Binary Services Ltd, and the person who has applied for this programme ("the Affiliate"), in relation to the Affiliate\'s application to set up an affiliate account (and membership of the affiliate programme if the Affiliate\'s application is deemed successful).') },
+                    { text: it.L('This document (the "Agreement") sets out the terms and conditions between "the Company", which is Deriv Services Ltd, and the person who has applied for this programme ("the Affiliate"), in relation to the Affiliate\'s application to set up an affiliate account (and membership of the affiliate programme if the Affiliate\'s application is deemed successful).') },
                     { text: it.L('The Company reserves the right to change any part of this Agreement at any time. The Company will endeavour to ensure that Affiliates are notified when changes have been made to this Agreement, but it is ultimately the Affiliate\'s responsibility to check these terms and conditions regularly. The Affiliate\'s continued participation in the Company\'s Affiliate Programme after the Company has posted the changes will constitute binding acceptance of such changes.') },
                 ]}
             />
@@ -49,7 +49,7 @@ const Affiliate = () => (
                 ]}
             >
                 <ul>
-                    <li>{it.L('In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate\'s access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, or employees or against the [_1] website if the Company revokes the Affiliate\'s access to the programme.', it.website_name)}</li>
+                    <li>{it.L('In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate\'s access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Deriv group of companies for, any claims or demands made against the Company or any member of the Deriv group of companies, their directors, officers, shareholders, or employees or against the [_1] website if the Company revokes the Affiliate\'s access to the programme.', it.website_name)}</li>
                 </ul>
             </ListNested>
 
@@ -60,7 +60,7 @@ const Affiliate = () => (
                     { text: it.L('The Company reserves the right to refuse the Affiliate\'s referrals\' application to open an account (or to close the Affiliate\'s account), as deemed necessary, to comply with any requirements that the Company may periodically establish and/or that may be required under applicable laws, rules, and regulations.') },
                     { text: it.L('The Company will provide advertising collaterals with links containing affiliate IDs which may be modified by the Company from time to time.') },
                     { text: it.L('With regards to tracking the Affiliate\'s referrals accessing [_1] via the links on the Affiliate\'s website or by quoting affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to [_1] through these links or affiliate IDs and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from the Affiliate\'s referral. However, the Company shall not be liable to the Affiliate in any way if the Company is unable to identify a client as originating from the Affiliate\'s referral. Only properly tagged clients can be assigned to the Affiliate. It is the Affiliate\'s responsibility to ensure that all links are properly tagged.', it.website_name) },
-                    { text: it.L('The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies.') },
+                    { text: it.L('The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Deriv group of companies.') },
                     { text: it.L('The Company reserves the right to void, delay, or withhold payment of commission fees to the Affiliate in situations involving a suspected breach of a law or a breach of the terms and conditions of this Agreement.') },
                     { text: it.L('The Company may change the commission structure at any time at its sole and absolute discretion. The Company will endeavour to ensure that Affiliates are notified when changes have been made to the commission structure.') },
                 ]}
@@ -71,7 +71,7 @@ const Affiliate = () => (
                 items={[
                     { text: it.L('Ownership and content of the [_1] website remains the Company\'s respective properties and shall not be deemed to have been transferred to the Affiliate through any act or omission in respect of this Agreement.', it.website_name) },
                     { text: it.L('Ownership, content, and liability of the Affiliate\'s websites are the sole responsibility of the Affiliate. The Affiliate will be solely responsible for the development, operation, and maintenance of the Affiliate\'s website and for all materials that appear on the Affiliate\'s website. The Affiliate will indemnify and hold the Company harmless from all claims, damages, and expenses (including, without limitation to, attorneys\' fees) relating to the development, operation, maintenance, and contents of the Affiliate\'s website.') },
-                    { text: it.L('When the Affiliate\'s referred clients open an account with any member of the Binary group, the Company assumes ownership of the database of names and contact information and any other data of the Affiliate\'s referred clients.') },
+                    { text: it.L('When the Affiliate\'s referred clients open an account with any member of the Deriv group, the Company assumes ownership of the database of names and contact information and any other data of the Affiliate\'s referred clients.') },
                 ]}
             />
 
