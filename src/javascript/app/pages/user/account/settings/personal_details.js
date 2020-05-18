@@ -279,7 +279,7 @@ const PersonalDetails = (() => {
     const isTaxEditable = () =>
         !is_virtual &&
         (isTaxReq() ||
-        (has_changeable_fields && /tax_identification_number|tax_residence/.test(changeable_fields))); // only allow changing if not fully authenticated
+        (!is_fully_authenticated && /tax_identification_number|tax_residence/.test(changeable_fields))); // only allow changing if not fully authenticated
 
     const getTaxRegex = (residence_list, tax_residence) => {
         const tin_format = (residence_list.find(res =>  res.value === tax_residence) || []).tin_format;
