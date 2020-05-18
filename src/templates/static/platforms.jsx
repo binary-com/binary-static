@@ -127,7 +127,7 @@ const Platform = () => (
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
                         <ul className='bullet b-m-md'>
-                           <li>
+                            <li>
                                 {it.L('A single, comprehensive trading service with ')}
                                 <strong>{it.L('4 advanced platforms')}</strong>
                             </li>
