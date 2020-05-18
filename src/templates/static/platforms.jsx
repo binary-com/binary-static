@@ -121,25 +121,29 @@ const Platform = () => (
         <div className='fill-bg-color gr-padding-30 mobile-hide' data-show='-eucountry'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
-                    {it.L('Deriv — an all-new trading experience')}
+                    {it.L('Introducing Deriv.com')}
                 </h2>
+                <p className='center-text gr-padding-20 gr-child'>{it.L('A rebranding of Binary.com to an all-new trading experience')}</p>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
                         <ul className='bullet b-m-md'>
-                            <li>
-                                <strong>{it.L('Powerful and intuitive')}</strong>
-                                <br />
-                                {it.L('Easy to use and feature-rich.')}
+                           <li>
+                                {it.L('A single, comprehensive trading service with ')}
+                                <strong>{it.L('4 advanced platforms')}</strong>
                             </li>
                             <li>
-                                <strong>{it.L('Quick access to your favourite markets')}</strong>
-                                <br />
-                                {it.L('World markets at your fingertips.')}
+                                {it.L('A sharp design with')}
+                                <strong>{it.L('user-friendly')}</strong>
+                                {it.L('interface')}
                             </li>
                             <li>
-                                <strong>{it.L('Easily monitor your open positions')}</strong>
-                                <br />
-                                {it.L('Keep track of all ongoing contracts.')}
+                                {it.L('More')}
+                                <strong>{it.L('financial instruments')}</strong>
+                                {it.L('to trade as you please')}
+                            </li>
+                            <li>
+                                <strong>{it.L('24/7 customer support')}</strong>
+                                {it.L('to enhance your trading experience')}
                             </li>
                         </ul>
                     </div>
@@ -149,8 +153,8 @@ const Platform = () => (
 
                 </div>
                 <div className='center-text'>
-                    <p>{it.L('Go ahead, experience it for yourself.')}</p>
-                    <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
+                    <p>{it.L('No sign up required. Easily log in with your Binary.com credentials.')}</p>
+                    <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Learn more about Deriv.com')}</span></a></p>
                 </div>
             </div>
         </div>
