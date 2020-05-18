@@ -123,7 +123,7 @@ const Platform = () => (
                 <h2 className='primary-color center-text'>
                     {it.L('Introducing Deriv.com')}
                 </h2>
-                <p className='center-text gr-padding-20 gr-child'>{it.L('A rebranding of Binary.com to an all-new trading experience')}</p>
+                <p className='center-text gr-child'>{it.L('A rebranding of Binary.com to an all-new trading experience')}</p>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
                         <ul className='bullet b-m-md'>
@@ -132,17 +132,17 @@ const Platform = () => (
                                 <strong>{it.L('4 advanced platforms')}</strong>
                             </li>
                             <li>
-                                {it.L('A sharp design with')}
-                                <strong>{it.L('user-friendly')}</strong>
+                                {it.L('A sharp design with ')}
+                                <strong>{it.L('user-friendly ')}</strong>
                                 {it.L('interface')}
                             </li>
                             <li>
-                                {it.L('More')}
-                                <strong>{it.L('financial instruments')}</strong>
+                                {it.L('More ')}
+                                <strong>{it.L('financial instruments ')}</strong>
                                 {it.L('to trade as you please')}
                             </li>
                             <li>
-                                <strong>{it.L('24/7 customer support')}</strong>
+                                <strong>{it.L('24/7 customer support ')}</strong>
                                 {it.L('to enhance your trading experience')}
                             </li>
                         </ul>
