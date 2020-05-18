@@ -27,7 +27,6 @@ const PersonalDetails = (() => {
         is_fully_authenticated,
         residence,
         get_settings_data,
-        has_changeable_fields,
         changeable_fields,
         mt_acct_type,
         is_mt_tax_required,
@@ -75,7 +74,7 @@ const PersonalDetails = (() => {
     };
 
     const populateChangeableFields = () => {
-        if (!has_changeable_fields) return;
+        if (is_fully_authenticated) return;
 
         const loginid         = Client.get('loginid');
         const landing_company = State.getResponse('landing_company');
@@ -91,7 +90,7 @@ const PersonalDetails = (() => {
      * @param {get_settings} to prepopulate some of the values.
      */
     const displayChangeableFields = (get_settings) => {
-        if (!has_changeable_fields) return;
+        if (is_fully_authenticated) return;
         changeable_fields.forEach(field => {
             CommonFunctions.getElementById(`row_${field}`).setVisibility(1);
             CommonFunctions.getElementById(`row_lbl_${field}`).setVisibility(0);
@@ -160,7 +159,7 @@ const PersonalDetails = (() => {
 
         displayGetSettingsData(get_settings);
 
-        if (has_changeable_fields) {
+        if (!is_fully_authenticated) {
             displayChangeableFields(data);
             CommonFunctions.getElementById('address_form').setVisibility(1);
             showHideTaxMessage();
@@ -197,7 +196,7 @@ const PersonalDetails = (() => {
         Object.keys(get_settings).forEach((key) => {
             // If there are changeable fields, show input instead of labels instead.
             const has_label         = show_label.includes(key) &&
-                (has_changeable_fields ? !changeable_fields.includes(key) : true);
+                (!is_fully_authenticated ? !changeable_fields.includes(key) : true);
             const force_update      = force_update_fields.concat(changeable_fields).includes(key);
             const should_show_label = has_label && get_settings[key];
             const element_id        = `${should_show_label ? 'lbl_' : ''}${key}`;
@@ -404,7 +403,7 @@ const PersonalDetails = (() => {
                     getDetailsResponse(get_settings);
 
                     // Re-populate changeable fields based on incoming data
-                    if (has_changeable_fields) {
+                    if (!is_fully_authenticated) {
                         displayChangeableFields(get_settings);
                     }
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
@@ -521,21 +520,17 @@ const PersonalDetails = (() => {
             const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
             is_fully_authenticated = checkStatus(account_status , 'authenticated');
-            has_changeable_fields = (Client.get('landing_company_shortcode') === 'svg') && !is_fully_authenticated;
 
             if (!residence) {
                 displayResidenceList();
             } else if (is_virtual) {
                 getDetailsResponse(get_settings_data);
-            } else if (has_changeable_fields) {
-                populateChangeableFields();
-                displayResidenceList();
             } else if (is_fully_authenticated) {
                 displayResidenceList();
                 name_fields.forEach(field => CommonFunctions.getElementById(`row_${field}`).classList.add('invisible'));
             } else {
+                populateChangeableFields();
                 displayResidenceList();
-                // getDetailsResponse(get_settings_data);
             }
         });
     };
