@@ -97,7 +97,7 @@ const PersonalDetails = (() => {
 
             DatePicker.init({
                 selector: '#date_of_birth',
-                minDate : -100 * 365,
+                minDate : -100 * 365 + 1,
                 maxDate : (
                     -18 * 365
                 ) - 5,
