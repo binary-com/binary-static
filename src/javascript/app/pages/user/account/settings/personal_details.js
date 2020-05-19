@@ -100,7 +100,7 @@ const PersonalDetails = (() => {
                 minDate : -100 * 365,
                 maxDate : (
                     -18 * 365
-                ) - 5,
+                ) - 6,
                 yearRange: '-100:-18',
             });
         }
