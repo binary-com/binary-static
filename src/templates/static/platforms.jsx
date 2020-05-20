@@ -123,21 +123,21 @@ const Platform = () => (
                 <h2 className='primary-color center-text'>
                     {it.L('Introducing Deriv.com')}
                 </h2>
-                <p className='center-text gr-child'>{it.L('A rebranding of Binary.com to an all-new trading experience')}</p>
+                <p className='center-text gr-child'>{it.L('A rebranding of [_1] to an all-new trading experience', it.website_name)}</p>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
                         <ul className='bullet b-m-md'>
                             <li>
-                                {it.L('A single, comprehensive trading service with ')}<strong>{it.L('4 advanced platforms')}</strong>
+                                {it.L('A single, comprehensive trading service with [_1]4 advanced platforms[_2]', '<strong>', '</strong>')}
                             </li>
                             <li>
-                                {it.L('A sharp design with ')}<strong>{it.L('user-friendly ')}</strong>{it.L('interface')}
+                                {it.L('A sharp design with [_1]user-friendly[_2] interface', '<strong>', '</strong>')}
                             </li>
                             <li>
-                                {it.L('More ')}<strong>{it.L('financial instruments ')}</strong>{it.L('to trade as you please')}
+                                {it.L('More [_1]financial instruments[_2] to trade as you please', '<strong>', '</strong>')}
                             </li>
                             <li>
-                                <strong>{it.L('24/7 customer support ')}</strong>{it.L('to enhance your trading experience')}
+                                {it.L('[_1]24/7 customer support[_2] to enhance your trading experience', '<strong>', '</strong>')}
                             </li>
                         </ul>
                     </div>
