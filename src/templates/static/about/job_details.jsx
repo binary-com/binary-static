@@ -901,7 +901,7 @@ const JobDetails = () => (
                                     { text: it.L('Track and manage transactions and accounts using proprietary and non-proprietary software and systems') },
                                     { text: it.L('Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency') },
                                     { text: it.L('Perform reconciliations of all transactions that take place through third-party payment services and banks') },
-                                    { text: it.L('Assist in management accounting for all companies within the Binary Ltd. group') },
+                                    { text: it.L('Assist in management accounting for all companies within the Deriv Ltd. group') },
                                     { text: it.L('Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis') },
                                     { text: it.L('Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters') },
                                 ]}
