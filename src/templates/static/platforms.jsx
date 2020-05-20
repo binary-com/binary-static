@@ -128,22 +128,16 @@ const Platform = () => (
                     <div className='gr-5 gr-12-p gr-12-m'>
                         <ul className='bullet b-m-md'>
                             <li>
-                                {it.L('A single, comprehensive trading service with ')}
-                                <strong>{it.L('4 advanced platforms')}</strong>
+                                {it.L('A single, comprehensive trading service with ')}<strong>{it.L('4 advanced platforms')}</strong>
                             </li>
                             <li>
-                                {it.L('A sharp design with ')}
-                                <strong>{it.L('user-friendly ')}</strong>
-                                {it.L('interface')}
+                                {it.L('A sharp design with ')}<strong>{it.L('user-friendly ')}</strong>{it.L('interface')}
                             </li>
                             <li>
-                                {it.L('More ')}
-                                <strong>{it.L('financial instruments ')}</strong>
-                                {it.L('to trade as you please')}
+                                {it.L('More ')}<strong>{it.L('financial instruments ')}</strong>{it.L('to trade as you please')}
                             </li>
                             <li>
-                                <strong>{it.L('24/7 customer support ')}</strong>
-                                {it.L('to enhance your trading experience')}
+                                <strong>{it.L('24/7 customer support ')}</strong>{it.L('to enhance your trading experience')}
                             </li>
                         </ul>
                     </div>
@@ -153,7 +147,7 @@ const Platform = () => (
 
                 </div>
                 <div className='center-text'>
-                    <p>{it.L('No sign up required. Easily log in with your Binary.com credentials.')}</p>
+                    <p>{it.L('No sign up required. Easily log in with your [_1] credentials.', it.website_name)}</p>
                     <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Learn more about Deriv.com')}</span></a></p>
                 </div>
             </div>
