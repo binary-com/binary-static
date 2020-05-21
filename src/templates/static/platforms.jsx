@@ -173,7 +173,6 @@ const Platform = () => (
                                 image='deriv-app'
                                 data_show='-eucountry'
                                 header='Deriv.com'
-                                className='mobile-hide'
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
                                 buttons={[
