@@ -144,10 +144,11 @@ const BinarySocketGeneral = (() => {
         const msg_type   = response.msg_type;
         const error_code = getPropertyValue(response, ['error', 'code']);
         switch (error_code) {
+            case 'AuthorizationRequired':
             case 'WrongResponse':
             case 'InternalServerError':
             case 'OutputValidationFailed': {
-                if (msg_type !== 'mt5_login_list') {
+                if (msg_type !== 'mt5_login_list' && msg_type !== 'buy') {
                     showNoticeMessage(response.error.message);
                 }
                 break;
