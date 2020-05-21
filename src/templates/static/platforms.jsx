@@ -118,7 +118,7 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 mobile-hide' data-show='-eucountry'>
+        <div className='fill-bg-color gr-padding-30' data-show='-eucountry'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
                     {it.L('Introducing Deriv.com')}
