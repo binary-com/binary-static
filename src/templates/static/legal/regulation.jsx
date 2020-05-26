@@ -193,7 +193,7 @@ const Regulation = () => {
                         <div className='gr-6 gr-12-m gr-padding-30'>
                             <h3>{it.L('Q1 2020')}</h3>
                             <FillBox
-                                align_left
+                                padding='5'
                                 center
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
