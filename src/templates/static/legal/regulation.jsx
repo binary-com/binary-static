@@ -208,7 +208,7 @@ const Regulation = () => {
                             href={it.url_for('/download/rts27_2019/Q1/Table_1.xlsx')}
                             target='_blank'
                             text={it.L('Table 3 - Intra-Day Price information')}
-                        />  
+                        />
                         <FillBox
                             padding='5'
                             center
@@ -217,7 +217,7 @@ const Regulation = () => {
                             href={it.url_for('/download/rts27_2019/Q1/Table_1.xlsx')}
                             target='_blank'
                             text={it.L('Table 4 - Daily Price information')}
-                        />  
+                        />
                         <FillBox
                             padding='5'
                             center
@@ -226,7 +226,7 @@ const Regulation = () => {
                             href={it.url_for('/download/rts27_2019/Q1/Table_1.xlsx')}
                             target='_blank'
                             text={it.L('Table 6 - Likelihood of execution information')}
-                        />                                                                 
+                        />                                                              
                     </div>
 
                     <h3>{it.L('RTS 27 2019')}</h3>
