@@ -198,7 +198,7 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_1.xlsx')}
+                                href={it.url_for('/download/rts27_2020/Q1/Table_1.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 1 - Type of execution venue')}
                             />
@@ -208,7 +208,7 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_3.xlsx')}
+                                href={it.url_for('/download/rts27_2020/Q1/Table_3.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 3 - Intra-Day Price information')}
                             />
@@ -218,7 +218,7 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_4.xlsx')}
+                                href={it.url_for('/download/rts27_2020/Q1/Table_4.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 4 - Daily Price information')}
                             />
@@ -228,7 +228,7 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_6.xlsx')}
+                                href={it.url_for('/download/rts27_2020/Q1/Table_6.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 6 - Likelihood of execution information')}
                             />
