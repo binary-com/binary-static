@@ -188,6 +188,47 @@ const Regulation = () => {
                         </div>
                     </div>
 
+                    <h3>{it.L('RTS 27 2020')}</h3>
+                    <div>
+                        <h3>{it.L('Q1')}</h3>
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27_2019/Q1/Table_1.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 1 - Type of execution venue')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27_2019/Q1/Table_1.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 3 - Type of execution venue')}
+                        />  
+                         <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27_2019/Q1/Table_1.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 4 - Type of execution venue')}
+                        />  
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27_2019/Q1/Table_1.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 6 - Type of execution venue')}
+                        />                                                                 
+                    </div>
+
                     <h3>{it.L('RTS 27 2019')}</h3>
                     <div className='gr-row'>
                         <div className='gr-6 gr-12-m gr-padding-30'>
