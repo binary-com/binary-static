@@ -196,7 +196,6 @@ const Regulation = () => {
                                 padding='5'
                                 center
                                 border='border-dark-gray'
-                                className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27_2020/Q1/Table_1.xlsx')}
                                 target='_blank'
