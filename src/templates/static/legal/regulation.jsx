@@ -209,7 +209,7 @@ const Regulation = () => {
                             target='_blank'
                             text={it.L('Table 3 - Intra-Day Price information')}
                         />  
-                         <FillBox
+                        <FillBox
                             padding='5'
                             center
                             border='border-dark-gray'
