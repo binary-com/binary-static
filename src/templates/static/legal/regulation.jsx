@@ -189,8 +189,7 @@ const Regulation = () => {
                     </div>
 
                     <h3>{it.L('RTS 27 2020')}</h3>
-                    <div className='gr-row'>
-                        <div className='gr-6 gr-12-m gr-padding-30'>
+                    <div>
                             <h3>{it.L('Q1 2020')}</h3>
                             <FillBox
                                 padding='5'
