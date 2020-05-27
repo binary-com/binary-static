@@ -1,8 +1,7 @@
 version: 2.1
 orbs:
   k8s: circleci/kubernetes@0.7.0
-  s3: circleci/aws-s3@1.0.13
-commands:
+but commands:
   git_checkout_from_cache:
     description: "Git checkout and save cache"
     steps:
@@ -29,7 +28,7 @@ commands:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
             - ".git"
-  npm_install_from_cache:
+  npm_install:
     description: "npm install and save cache"
     steps:
       - restore_cache:
@@ -43,13 +42,13 @@ commands:
           key: node-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-  npm_test:
+  test:
     description: "Run npm test"
     steps:
       - run:
           name: "Run test"
           command: npm test
-  grunt_release:
+  build:
     description: "Build for release target"
     parameters:
       target:
@@ -59,46 +58,31 @@ commands:
       - run:
           name: Building dist for << parameters.target >>
           command: node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
-  compress:
-    description: "Compress"
+  deploy:
+    description: "Deploy to static branches"
+    parameters:
+      target_branch:
+        type: string
     steps:
+      - checkout
+      - attach_workspace:
+          at: dist
       - run:
-          name: "Compress"
-          command: |
-            pushd dist/
-            tar -cvf artifact.tar *
-            mv artifact.tar ${OLDPWD}/
+          name: Tag build
+          command: echo "<< parameters.target_branch >> $(date)" > dist/version
       - run:
-          name: "Tag commit id as artifact identifer"
-          command: echo "${CIRCLE_TAG}" > artifact-info.txt
-  upload_artifact:
-    description: "upload build artifact to s3 bucket"
-    steps:
-      - s3/copy:
-          from: artifact.tar
-          to: 's3://${CONTEXT_ARTIFACT_S3_BUCKET}/${CIRCLE_PROJECT_REPONAME}/'
-          aws-access-key-id: env_CONTEXT_ARTIFACT_S3_AWS_ACCESS_KEY_ID
-          aws-secret-access-key: env_CONTEXT_ARTIFACT_S3_AWS_SECRET_ACCESS_KEY
-          aws-region: env_CONTEXT_ARTIFACT_S3_AWS_REGION
-          arguments: '--metadata "{\"x-amz-artifact-id\": \"${CIRCLE_TAG}\" }"'
-  upload_checksum:
-    description: "upload artifact checksum to s3"
-    steps:
-      - s3/copy:
-          from: artifact-info.txt
-          to: 's3://${CONTEXT_ARTIFACT_S3_BUCKET}/${CIRCLE_PROJECT_REPONAME}/'
-          aws-access-key-id: env_CONTEXT_ARTIFACT_S3_AWS_ACCESS_KEY_ID
-          aws-secret-access-key: env_CONTEXT_ARTIFACT_S3_AWS_SECRET_ACCESS_KEY
-          aws-region: env_CONTEXT_ARTIFACT_S3_AWS_REGION
-  docker_build_staging:
-    description: "Build Docker image"
-    steps:
-      - setup_remote_docker
-      - run: 
-          name: Building docker image
+          name: Install and configure dependencies
           command: |
-            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG} -t ${DOCKHUB_ORGANISATION}/binary-static:staging-latest .
-  docker_build_production:
+            sudo npm install -g gh-pages@2.0.1
+            git config user.email "ci-build@binary.com"
+            git config user.name "ci-build"
+      - add_ssh_keys:
+          fingerprints:
+            - "95:22:af:3a:82:d8:21:a5:e1:d9:79:52:89:50:2f:17"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages -d dist --branch << parameters.target_branch >>  
+  docker_build_push:
     description: "Build Docker image"
     steps:
       - setup_remote_docker
@@ -106,18 +90,6 @@ commands:
           name: Building docker image
           command: |
             docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG} -t ${DOCKHUB_ORGANISATION}/binary-static:production-latest .
-  docker_push_staging:
-    description: "Push image to docker hub"
-    steps:
-      - run: 
-          name: Pushing Image to docker hub
-          command: |
-            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
-            docker push ${DOCKHUB_ORGANISATION}/binary-static:staging-latest
-  docker_push_production:
-    description: "Push image to docker hub"
-    steps:
       - run: 
           name: Pushing Image to docker hub
           command: |
@@ -153,49 +125,41 @@ commands:
 jobs:
   test:
     docker:
-      - image: circleci/node:9.8.0-stretch
+      - image: circleci/node:8.10.0-stretch
     steps:
       - git_checkout_from_cache
       - npm_install_from_cache
-      - npm_test
+      - test
+  release_beta:
+    docker:
+      - image: circleci/node:8.10.0-stretch
+    steps:
+      - git_checkout_from_cache
+      - npm_install
+      - build
+      - deploy:
+          target_branch: "staging"
 
-  build_push_staging:
+  release_production:
     docker:
-      - image: circleci/node:9.8.0-stretch
+      - image: circleci/node:8.10.0-stretch
     steps:
       - git_checkout_from_cache
-      - npm_install_from_cache
-      - grunt_release:
-         target: 'staging'
-      - grunt_release:
-          target: 'translations'
-      - docker_build_staging
-      - docker_push_staging
+      - npm_install
+      - build
+      - deploy:
+          target_branch: "production"
       
-  build_push_production:
+  release_aws_production:
     docker:
       - image: circleci/node:9.8.0-stretch
     steps:
       - git_checkout_from_cache
       - npm_install_from_cache
+      - build
       - grunt_release:
           target: 'production'
-      - compress
-      - upload_artifact  # uploading the built code to s3 to create a backup of key services separate from Kubernetes deployment
-      - upload_checksum  # uploading compressed artifact checksum to cross match artifact fingerprint
-      - docker_build_production
-      - docker_push_production
-
-  deploy_staging:
-    docker:
-      - image: circleci/node:9.8.0-stretch
-    steps:
-      - k8s_deploy
-      
-  deploy_production:
-    docker:
-      - image: circleci/node:9.8.0-stretch
-    steps:
+      - docker_build_push
       - k8s_deploy:
           k8s_svc_name: "production-binary-com"
       
@@ -203,39 +167,21 @@ workflows:
   test:
     jobs:
       - test
-  tagged_release_staging:
+  release:
     jobs:
-      - build_push_staging:
+      - release_beta:
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^staging.*/
-          context: binary-frontend-artifact-upload
-      - deploy_staging:
-          requires:
-            - build_push_staging
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^staging.*/
-          context: binary-frontend-artifact-upload
-  tagged_release_production:
-    jobs:
-      - build_push_production:
+              only: /^master$/
+      - release_production:
           filters:
             branches:
               ignore: /.*/
             tags:
               only: /^production.*/
-          context: binary-frontend-artifact-upload
-      - deploy_production:
-          requires:
-            - build_push_production
-          filters:
+      - release_aws_production:
             branches:
               ignore: /.*/
             tags:
-              only: /^production.*/
+              only: /^aws\-production.*/
           context: binary-frontend-artifact-upload
