@@ -39,7 +39,7 @@ const AccountOpening = (() => {
         if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
-        generateBirthDate(landing_company.minimum_age);
+        generateBirthDate();
     };
 
     const getResidence = (form_id, getValidations) => {
