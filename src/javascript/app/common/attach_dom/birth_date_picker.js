@@ -5,7 +5,7 @@ const toISOFormat      = require('../../../_common/string_util').toISOFormat;
 
 const generateBirthDate = () => {
     const date_of_birth = '#date_of_birth';
-    //test
+    // test
     if (!$(date_of_birth).val()) {
         DatePicker.init({
             selector : date_of_birth,
