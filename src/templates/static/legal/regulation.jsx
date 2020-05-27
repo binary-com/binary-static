@@ -531,9 +531,9 @@ const Regulation = () => {
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
             </Box>
 
-            <Box header={it.L('Binary (BVI) Ltd')} >
-                <p>{it.L('Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
+            <Box header={it.L('Deriv (BVI) Ltd')} >
+                <p>{it.L('Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />
             </Box>
