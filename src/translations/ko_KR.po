@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-05-18 03:14\n"
+"PO-Revision-Date: 2020-05-28 02:48\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -1474,7 +1474,7 @@ msgid "Are you sure that you want to permanently delete the token"
 msgstr "귀하께서는 토큰을 영구적으로 삭제하기를 확실히 원하십니까"
 
 msgid "Are you sure that you want to permanently revoke access to the application"
-msgstr ""
+msgstr "귀하께서는 해당 앱으로의 접근권한이 영구적으로 취소되는것을 확실히 원하십니까?"
 
 msgid "Are you sure you want to create a fiat account in %1?"
 msgstr "귀하께서는 %1 피앗 계좌를 개설하기를 원하십니까?"
@@ -1653,8 +1653,8 @@ msgstr "프로덕션-레디 SQL 코드 작성에 관하여 백엔드 개발자�
 msgid "Assist cashier providers in setting up new payment systems and risk management settings"
 msgstr "새로운 결제 시스템 및 위험 관리 세팅을 적용시키기는데에 있어 캐셔 제공자를 지원"
 
-msgid "Assist in management accounting for all companies within the Binary Ltd. group"
-msgstr "Binary Ltd. 그룹 내의 모든 회사를 위해 관리 회계 지원"
+msgid "Assist in management accounting for all companies within the Deriv Ltd. group"
+msgstr ""
 
 msgid "Assist in organizing online technical tests"
 msgstr ""
@@ -1977,14 +1977,8 @@ msgstr "가격책정 당시에 견적된 시장가와 거래 시스템에서의 
 msgid "Bid price"
 msgstr "매수 호가"
 
-msgid "Binary (BVI) Ltd"
-msgstr "Binary (BVI) Ltd"
-
 msgid "Binary (BVI) Ltd,"
 msgstr "Binary (BVI) Ltd,"
-
-msgid "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
-msgstr "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. 영국령 버진아일랜드 금융 위원회로부터 라이센스화되고 규제됩니다 - %1 라이센스 보기%2."
 
 msgid "Binary (Europe) Limited"
 msgstr "Binary (유럽) 유한 책임회사"
@@ -2637,11 +2631,11 @@ msgstr "고객은 해당 고객이 이 조항을 따르고 있는지에 대해 �
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "고객은 고객이 잘못된 정보를 제공하여 본 회사가 고객을 위해 최선집행의 의무가 없는 위치에 있게 됨에 따라 고객의 권리가 침해될 수 있다는 것을 충고받았습니다."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
-msgstr "나머지 국가출신의 고객들은 (미국, 캐나다, 홍콩같은 특정 국가들은 제외) FX 및 CFD Metatrader 5 계좌를 Binary (BVI) Ltd를 통해 개설할 것입니다. %1은 바누아투 공화국에서는 이용할 수 없습니다."
-
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
 msgstr "나머지 국가출신의 고객들은 (미국, 캐나다, 홍콩같은 특정 국가들은 제외) FX 및 CFD Metatrader 5 계좌를 Binary (V) Ltd를 통해 개설할 것입니다. %1은 바누아투 공화국에서는 이용할 수 없습니다."
+
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
+msgstr ""
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC."
 msgstr "나머지 국가출신의 고객들은 (미국, 캐나다 및 홍콩같은 특정 국가들은 제외) Binary (SVG) LLC를 통해 계좌가 개설될 것입니다."
@@ -2676,7 +2670,7 @@ msgstr ""
 msgid "Clients registered with Binary (IOM) Ltd can formally submit a complaint to their local Supervisory Authority."
 msgstr ""
 
-msgid "Clients registered with Binary (IOM) Ltd or Binary (Europe) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2. Alternatively, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %3here%4."
+msgid "Clients registered with Binary (IOM) Ltd or Binary (Europe) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2. Alternatively, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %3here%4. Clients registered with Binary (Europe) Ltd can also refer their unresolved disputes to the Malta Gaming Authority via the %5Player Support Unit%6."
 msgstr ""
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter's Office can be found %1here%2."
@@ -3506,6 +3500,12 @@ msgstr "처리되어져야 하는 예금 및/또는 지불은 때때로 BIEL이 
 
 msgid "Deriv"
 msgstr "Deriv"
+
+msgid "Deriv (BVI) Ltd"
+msgstr ""
+
+msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
+msgstr ""
 
 msgid "Deriv Group members are sometimes referred to collectively as \"%1\" or \"the Company\"."
 msgstr ""
@@ -5832,8 +5832,8 @@ msgstr "유럽연합에서 금융 상품들은 몰타 금융 서비스 당국으
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "맨섬과 영국의 경우, 종합 지수는 First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles에 위치한 Binary (IOM) Ltd.으로부터 제공되며 (1) 맨섬의 도박 위원회 (현재의 라이센스는 2017년 8월 31일에 발급받은 것입니다) 및 (2) 영국 도박 위원회 (라이센스 %1참조 번호: 39172%2)에 의해 각각 라이센스화되고 규제됩니다."
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) LLC, Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
-msgstr "영국에서 우리의 고객분들은 Binary (IOM) Ltd 및 Binary Investments (Europe) Ltd를 통해 거래합니다. 맨섬에서는, Binary (IOM) Ltd를 통해 거래합니다. 유럽연합(영국 제외)에서는, Binary (Europe) Ltd 및 Binary Investments (Europe) Ltd를 통해 거래합니다. 그 이외의 국가에서는, Binary (SVG) LLC, Binary (V) Ltd, Binary (BVI) Ltd 및 Binary (FX) Ltd를 통해 거래합니다."
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr "지정가주문의 경우, 지정가의 적용가능성에 따라 본 회사는 고객이 제시한 지정가와 같거나 또는 그보다 더 나은 수준으로 주문을 맞출 수 있도록 노력한다는 것에 대해 고객은 인정합니다."
@@ -7767,8 +7767,8 @@ msgstr "우리의 가치"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "우리 웹사이트는 최상의 사용자 경험을 위해 쿠키를 사용합니다. 더 많은 정보를 위해서, %1우리 정책을 확인하세요%2."
 
-msgid "Outside the EU, financial products are offered by Binary (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "자금중개 비즈니스를 수행하기 위해 유럽연합 밖의 경우에는 Hinds Building, Kingstown, St. Vincent and the Grenadines에 위치한 Binary (SVG) LLC, 바누아투 금융서비스 위원회로부터 규제받는(%1라이센스 보기%2) Govant Building, Port Vila, PO Box 1276, Vanuatu에 위치한 Binary (V) Ltd, 영국령 버진 아일랜드 금융서비스 위원회로부터 규제받는 (%3라이센스 번호 SIBA/L/18/1114%4)  Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands에 위치한 Binary (BVI) Ltd 및 라부안 금융서비스 당국으로부터 규제받는 Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia에 위치한 Binary (FX) Ltd.로부터 금융상품들이 제공되어집니다."
+msgid "Outside the EU, financial products are offered by Binary (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr ""
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "훌륭한 작문 및 구두 의사소통 능력 및 뛰어난 영어실력"
@@ -8673,6 +8673,9 @@ msgstr "Q. 용어의 해석"
 msgid "Q1 2019"
 msgstr "Q1 2019"
 
+msgid "Q1 2020"
+msgstr ""
+
 msgid "Q2 2019"
 msgstr "Q2 2019"
 
@@ -8714,6 +8717,9 @@ msgstr "RTS 27 2018"
 
 msgid "RTS 27 2019"
 msgstr "RTS 27 2019"
+
+msgid "RTS 27 2020"
+msgstr ""
 
 msgid "RTS 28"
 msgstr "RTS 28"
@@ -9810,8 +9816,8 @@ msgstr ""
 msgid "Such a withdrawal would result in the client's Account Equity being less than zero."
 msgstr "인출이 고객의 계좌 가치가 0보다 작게 되는 결과를 야기하는 경우."
 
-msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Binary Ltd. All rights reserved.&rdquo;"
-msgstr "이러한 자료들은 제한된 범위 내에서 단지 비영리 목적으로만 복사 및 분배될 수 있으며, 제공된 자료들은 다음의 문구를 포함하며 온전해야 합니다: &ldquo;저작권 1999-<span class='currentYear'></span> Binary Ltd. 모든 권리는 저작권자에게 있습니다.&rdquo;"
+msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
+msgstr ""
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
 msgstr "감사 결과물 요약 및 제안된 해결방안에 대하여 부서장들과의 협력"
