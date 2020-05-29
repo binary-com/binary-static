@@ -239,24 +239,29 @@ const ClientBase = (() => {
             can_upgrade_to;
         if ((upgradeable_landing_companies || []).length) {
             const current_landing_company = get('landing_company_shortcode');
-
             can_open_multi = upgradeable_landing_companies.indexOf(current_landing_company) !== -1;
 
             // only show upgrade message to landing companies other than current
-            const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
-                landing_company !== current_landing_company &&
-                upgradeable_landing_companies.indexOf(landing_company) !== -1
-            ));
+            const canUpgrade = (...landing_companies) => {
+                const result = landing_companies.filter(landing_company => (
+                    landing_company !== current_landing_company &&
+                    upgradeable_landing_companies.indexOf(landing_company) !== -1
+                ));
+
+                return result.length ? result : undefined;
+            };
 
             can_upgrade_to = canUpgrade('iom', 'svg', 'malta', 'maltainvest');
             if (can_upgrade_to) {
-                type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
+                type = can_upgrade_to.map(
+                    landing_company_shortcode => landing_company_shortcode === 'maltainvest' ? 'financial' : 'real',
+                );
             }
         }
 
         return {
             type,
-            can_upgrade: !!can_upgrade_to,
+            can_upgrade: !!can_upgrade_to && !!can_upgrade_to.length,
             can_upgrade_to,
             can_open_multi,
         };

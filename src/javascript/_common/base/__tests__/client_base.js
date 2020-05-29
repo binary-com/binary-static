@@ -151,8 +151,8 @@ describe('ClientBase', () => {
                 State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ lc ]);
                 const ugprade_info = Client.getBasicUpgradeInfo();
                 expect(ugprade_info.can_upgrade).to.eq(true);
-                expect(ugprade_info.can_upgrade_to).to.eq(lc);
-                expect(ugprade_info.type).to.eq('real');
+                expect(ugprade_info.can_upgrade_to).to.deep.equal([lc]);
+                expect(ugprade_info.type).to.deep.equal(['real']);
                 expect(ugprade_info.can_open_multi).to.eq(false);
             });
         });
@@ -160,8 +160,8 @@ describe('ClientBase', () => {
             State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'maltainvest' ]);
             const ugprade_info = Client.getBasicUpgradeInfo();
             expect(ugprade_info.can_upgrade).to.eq(true);
-            expect(ugprade_info.can_upgrade_to).to.eq('maltainvest');
-            expect(ugprade_info.type).to.eq('financial');
+            expect(ugprade_info.can_upgrade_to).to.deep.equal(['maltainvest']);
+            expect(ugprade_info.type).to.deep.equal(['financial']);
             expect(ugprade_info.can_open_multi).to.eq(false);
         });
         it('returns as expected for multi account opening', () => {
