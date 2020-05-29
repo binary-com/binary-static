@@ -92,7 +92,7 @@ const Cfds = () => (
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-270' },
                                 { text: it.L('Description'),    className: 'gr-padding-10' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
