@@ -89,8 +89,8 @@ const Regulation = () => {
                 <SeparatorLine className='gr-parent gr-padding-20' invisible />
             </div>
 
-            <Box header={it.L('Binary Limited')} first>
-                <p>{it.L('Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
+            <Box header={it.L('Deriv Limited')} first>
+                <p>{it.L('Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
             <Box header={it.L('Binary Investments (Europe) Ltd')} >
@@ -184,6 +184,53 @@ const Regulation = () => {
                                 href={it.url_for('/download/BIEL-RTS28-for-2018.pdf')}
                                 target='_blank'
                                 text={it.L('BIEL RTS28 for 2018')}
+                            />
+                        </div>
+                    </div>
+
+                    <h3>{it.L('RTS 27 2020')}</h3>
+                    <div className='gr-row'>
+                        <div className='gr-6 gr-12-m gr-padding-30 gr-centered'>
+                            <h3>{it.L('Q1 2020')}</h3>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
                             />
                         </div>
                     </div>
@@ -484,9 +531,9 @@ const Regulation = () => {
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
             </Box>
 
-            <Box header={it.L('Binary (BVI) Ltd')} >
-                <p>{it.L('Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
+            <Box header={it.L('Deriv (BVI) Ltd')} >
+                <p>{it.L('Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />
             </Box>

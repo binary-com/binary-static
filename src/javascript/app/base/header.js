@@ -410,30 +410,6 @@ const Header = (() => {
                 'risk',
                 'tax',
                 'currency',
-                'cashier_locked',
-                'withdrawal_locked',
-                'mt5_withdrawal_locked',
-                'unwelcome',
-                'no_withdrawal_or_trading',
-                'unsubmitted',
-                'expired',
-                'expired_identity',
-                'expired_document',
-                'rejected',
-                'rejected_identity',
-                'rejected_document',
-                'identity',
-                'document',
-            ];
-
-            const check_statuses_mf_mlt = [
-                'excluded_until',
-                'tnc',
-                'required_fields',
-                'financial_limit',
-                'risk',
-                'tax',
-                'currency',
                 'unsubmitted',
                 'expired',
                 'expired_identity',
@@ -474,11 +450,7 @@ const Header = (() => {
                     authentication = State.getResponse('get_account_status.authentication') || {};
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
-                    if (Client.get('landing_company_shortcode') === 'maltainvest' || Client.get('landing_company_shortcode') === 'malta' || Client.get('landing_company_shortcode') === 'iom') {
-                        checkStatus(check_statuses_mf_mlt);
-                    } else {
-                        checkStatus(check_statuses_real);
-                    }
+                    checkStatus(check_statuses_real);
                     const is_fully_authenticated = hasStatus('authenticated') && !+get_account_status.prompt_client_to_authenticate;
                     $('.account-id')[is_fully_authenticated ? 'append' : 'remove'](el_account_status);
                 });

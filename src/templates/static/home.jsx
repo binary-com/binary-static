@@ -10,6 +10,7 @@ import {
     TabContentContainer,
     TabsSubtabs,
     TabContent }            from  '../_common/components/tabs.jsx';
+import DerivBanner          from '../_common/components/deriv_banner.jsx';
 
 const Arrows = ({ direction, parent }) => (
     <div className='align-self-center gr-1 gr-hide-p'>
@@ -164,6 +165,9 @@ const Home = () => {
 
     return (
         <React.Fragment>
+            <div className='container gr-parent gr-padding-30'>
+                <DerivBanner content_name='binary-home-page' />
+            </div>
             <div id='banner'>
                 <div className='container gr-padding-20'>
                     <h1 className='dark center-text gr-padding-20 gr-child'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
@@ -229,7 +233,7 @@ const Home = () => {
                                     list_header_two={it.L('MT5 Financial')}
                                     list_text_two={it.L('MT5 real-money account for forex and CFDs.')}
                                     image_three='images/pages/home/icons/mt5_volatility.svg'
-                                    list_header_three={it.L('MT5 Synthetic Indices')}
+                                    list_header_three={it.L('MT5 Synthetic')}
                                     list_text_three={it.L('MT5 real-money account for Synthetic Indices only.')}
                                 />
                             </TabContent>

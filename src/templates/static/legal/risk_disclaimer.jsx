@@ -4,7 +4,7 @@ const RiskDisclaimer = () => (
     <div>
         <h2 data-anchor='risk-disclaimer'>{it.L('Risk disclaimer')}</h2>
         <p>{it.L('This notice provides the client with information about the risks associated with the contracts the client may purchase through services provided by [_1] services.', it.website_name)}</p>
-        <p>{it.L('Binary Group members are sometimes referred to collectively as "[_1]" or "the Company".', it.website_name)}</p>
+        <p>{it.L('Deriv Group members are sometimes referred to collectively as "[_1]" or "the Company".', it.website_name)}</p>
         <p>{it.L('This notice does not explain all of the risks involved in investments or similar products or how such risks relate to the client\'s personal circumstances. It is important that the client fully understands the risks involved before making a decision to enter into a trade with the Company[_1]. If the client is in any doubt about the risks involved, the client should seek professional advice[_2].', '<span data-show="eucountry">','</span>')}</p>
         <p>{it.L('If the client chooses to enter into a contract with the Company, it is important that the client remains aware of the risks involved, that the client has adequate investment resources to bear such risks, and that the client monitors the client\'s positions carefully.')}</p>
 
