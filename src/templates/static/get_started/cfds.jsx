@@ -92,9 +92,9 @@ const Cfds = () => (
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-148' },
                                 { text: it.L('Description'),    className: 'gr-padding-10' },
-                                { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10 w-112' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
@@ -109,7 +109,7 @@ const Cfds = () => (
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
@@ -134,7 +134,7 @@ const Cfds = () => (
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
@@ -153,7 +153,7 @@ const Cfds = () => (
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
@@ -169,7 +169,7 @@ const Cfds = () => (
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
