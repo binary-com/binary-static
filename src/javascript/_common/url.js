@@ -56,7 +56,7 @@ const Url = (() => {
             domain = domain.replace(/\/app/,'');
         }
         const new_url = `${domain}${(normalizePath(path) || 'home')}.html${(pars ? `?${pars}` : '')}`;
-        // replace old lang with new lang
+        // replace  old lang with new lang
         return urlForLanguage(lang, new_url);
     };
 
