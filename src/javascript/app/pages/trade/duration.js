@@ -18,7 +18,7 @@ const createElement      = require('../../../_common/utility').createElement;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 /*
- * Handles duration processing display
+ *  Handles duration processing display
  *
  * It process `Contract.durations()` and display them according to
  * the current `Contract.form()` and `Contract.barriers()`
