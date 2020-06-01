@@ -32,9 +32,11 @@ describe('Statement', () => {
         expect(statement_data).to.have.property('balance')
             .and.to.be.a('string');
         expect(statement_data).to.have.property('desc')
-            .and.to.be.a('string');
-        expect(statement_data).to.have.property('id')
-            .and.to.be.a('number');
+            .and.to.be.a('string');       
+        if (/buy|sell/.test(statement_data.action_type)) {
+             expect(statement_data).to.have.property('id')
+                  .and.to.be.a('number');
+            }
         }
     });
 });
