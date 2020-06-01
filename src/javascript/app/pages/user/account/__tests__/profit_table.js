@@ -14,6 +14,7 @@ describe('Profit Table', () => {
         });
     });
     it('Should have all expected data', () => {
+        if (profit_table.transactions.length) {
         const profit_table_data = profitTable.getProfitTabletData(profit_table.transactions[0]);
         expect(profit_table_data).to.be.an('Object')
             .and.to.have.property('buyDate')
@@ -34,5 +35,6 @@ describe('Profit Table', () => {
             .and.to.be.a('string');
         expect(profit_table_data).to.have.property('id')
             .and.to.be.a('number');
+        }
     });
 });

@@ -14,6 +14,7 @@ describe('Statement', () => {
         });
     });
     it('Should have all expected data', () => {
+        if (profit_table.transactions.length) {
         const statement_data = statement.getStatementData(statement_ws.transactions[0]);
         expect(statement_data).to.be.an('Object')
             .and.to.have.property('date')
@@ -34,5 +35,6 @@ describe('Statement', () => {
             .and.to.be.a('string');
         expect(statement_data).to.have.property('id')
             .and.to.be.a('number');
+        }
     });
 });
