@@ -280,8 +280,8 @@ const PaymentAgentWithdraw = (() => {
                 return;
             }
             currency = Client.get('currency');
-            const experimental_suspended = getPropertyValue(get_account_status, ['experimental_suspended', currency]) || {};
-            if (experimental_suspended.is_withdrawal_suspended) {
+            const account_currency_config = getPropertyValue(get_account_status, ['currency_config', currency]) || {};
+            if (account_currency_config.is_withdrawal_suspended) {
                 // Experimental currency is suspended
                 showPageError(localize('Please note that the selected currency is allowed for limited accounts only.'));
                 return;

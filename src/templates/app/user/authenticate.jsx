@@ -86,7 +86,7 @@ const Authenticate = () => (
                         <div id='unverified' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Proof of identity verification failed')}</h1>
-                            <p>{it.L('Please check your email for details')}</p>
+                            <p>{it.L('We were unable to verify your document automatically. We will try to verify your document manually. Please check back in 1-3 days.')}</p>
                         </div>
 
                         <div id='verified' className='center-text gr-padding-20 invisible'>
