@@ -95,36 +95,20 @@ const Client = (() => {
     const getUpgradeInfo = () => {
         const upgrade_info = ClientBase.getBasicUpgradeInfo();
 
-        let upgrade_links = {};
+        let upgrade_link;
         if (upgrade_info.can_upgrade_to) {
             const upgrade_link_map = {
                 realws       : ['svg', 'iom', 'malta'],
                 maltainvestws: ['maltainvest'],
             };
-
-            Object.keys(upgrade_link_map).forEach(link => {
-                const res = upgrade_link_map[link].find(lc => upgrade_info.can_upgrade_to.includes(lc));
-                if (res) {
-                    upgrade_links = {
-                        ...upgrade_links,
-                        [res]: link,
-                    };
-                }
-            });
+            upgrade_link = Object.keys(upgrade_link_map).find(link =>
+                upgrade_link_map[link].indexOf(upgrade_info.can_upgrade_to) !== -1
+            );
         }
 
-        let transformed_upgrade_links = {};
-        Object.keys(upgrade_links).forEach(link => {
-            transformed_upgrade_links = {
-                ...transformed_upgrade_links,
-                [link]: `new_account/${upgrade_links[link]}`,
-            };
-        });
-
         return Object.assign(upgrade_info, {
-            upgrade_links  : transformed_upgrade_links,
-            is_current_path: !!Object.values(upgrade_links)
-                .find(link => new RegExp(link, 'i').test(window.location.pathname)),
+            upgrade_link   : upgrade_link ? `new_account/${upgrade_link}` : undefined,
+            is_current_path: upgrade_link ? new RegExp(upgrade_link, 'i').test(window.location.pathname) : undefined,
         });
     };
 
