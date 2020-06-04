@@ -89,7 +89,14 @@ const FinancialAccOpening = (() => {
               AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
                   { selector: '#citizen',                   validations: ['req'] },
                   { selector: '#tax_residence',             validations: ['req'] },
-                  { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
+                  {
+                      selector   : '#tax_identification_number',
+                      validations: [
+                          'req',
+                          ['tax_id', { residence_list: State.getResponse('residence_list'), $warning: $('#tax_id_warning'), $tax_residence: $('#tax_residence') }],
+                          ['length', { min: 1, max: 20 }],
+                      ],
+                  },
                   { selector: '#chk_tax_id',                validations: [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]], exclude_request: 1 },
               ]);
         const place_of_birth = State.getResponse('get_settings.place_of_birth');

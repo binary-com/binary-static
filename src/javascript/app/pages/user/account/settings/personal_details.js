@@ -62,7 +62,7 @@ const PersonalDetails = (() => {
     };
 
     const showHideTaxForm = (get_settings) => {
-        const should_show_tax = isTaxEditable();
+        const should_show_tax = isTaxReq();
         const has_set_tax = get_settings.tax_identification_number || get_settings.tax_residence;
         CommonFunctions.getElementById('tax_information_form').setVisibility(should_show_tax || has_set_tax);
     };
@@ -190,7 +190,7 @@ const PersonalDetails = (() => {
 
     const displayGetSettingsData = (get_settings) => {
         const show_label = [].concat(show_label_if_any_value);
-        if (!isTaxEditable()) {
+        if (is_fully_authenticated) {
             show_label.push('tax_residence', 'tax_identification_number');
         }
         Object.keys(get_settings).forEach((key) => {
@@ -275,16 +275,6 @@ const PersonalDetails = (() => {
         (Client.isAccountOfType('financial') && Client.shouldCompleteTax()) ||
         is_mt_tax_required;
 
-    const isTaxEditable = () =>
-        !is_virtual &&
-        (isTaxReq() ||
-        (!is_fully_authenticated && /tax_identification_number|tax_residence/.test(changeable_fields))); // only allow changing if not fully authenticated
-
-    const getTaxRegex = (residence_list, tax_residence) => {
-        const tin_format = (residence_list.find(res =>  res.value === tax_residence) || []).tin_format;
-        return (tin_format || []).map((format) => new RegExp(format));
-    };
-
     const getValidations = () => {
         let validations;
         if (is_virtual) {
@@ -296,9 +286,6 @@ const PersonalDetails = (() => {
             const is_financial      = Client.isAccountOfType('financial');
             const is_gaming         = Client.isAccountOfType('gaming');
             const is_tax_req        = isTaxReq();
-            const residence_list    = State.getResponse('residence_list');
-
-            const $tax_identification_number = $('#tax_identification_number');
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -318,19 +305,8 @@ const PersonalDetails = (() => {
                     selector   : '#tax_identification_number',
                     validations: [
                         is_tax_req ? 'req' : undefined,
-                        'tax_id',
+                        ['tax_id', { residence_list: State.getResponse('residence_list'), $warning: $('#tax_id_warning'), $tax_residence: $('#tax_residence') }],
                         ['length', { min: is_tax_req ? 1 : 0, max: 20 }],
-                        ['custom', {
-                            func: () => {
-                                // get the tax id regex validation of currently selected tax residence
-                                const tax_regex = getTaxRegex(residence_list, $tax_residence.val());
-                                const tax_id    = $tax_identification_number.val();
-                                // return true if no validation is needed, or
-                                // tax id value matches some acceptable regex from the tax_regex array
-                                return !tax_regex.length || tax_regex.find(regex => regex.test(tax_id));
-                            },
-                            message: localize('Invalid tax identification number.'),
-                        }],
                     ].filter(item => item),
                 },
 
