@@ -486,7 +486,7 @@ module.exports = [
     'Your [_1]proof of address[_2] has expired.',
     'Your [_1]proof of address[_2] has not been verified. Please check your email for details.',
     'Your [_1]proof of identity[_2] has expired.',
-    'Your [_1]proof of identity[_2] has not been verified. Please check your email for details.',
+    'Your [_1]proof of identity[_2] has not been verified.',
     'Your [_1]proof of identity[_3] and [_2]proof of address[_3] have expired.',
     'Your [_1]proof of identity[_3] and [_2]proof of address[_3] have not been verified. Please check your email for details.',
     'Your account has no Login/Logout activity.',

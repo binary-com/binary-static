@@ -118,28 +118,26 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 mobile-hide' data-show='-eucountry'>
+        <div className='fill-bg-color gr-padding-30' data-show='-eucountry'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
-                    {it.L('Deriv — an all-new trading experience')}
+                    {it.L('Introducing Deriv.com')}
                 </h2>
+                <p className='center-text gr-child'>{it.L('A rebranding of [_1] to an all-new trading experience', it.website_name)}</p>
                 <div className='gr-row gr-row-align-around'>
                     <div className='gr-5 gr-12-p gr-12-m'>
                         <ul className='bullet b-m-md'>
                             <li>
-                                <strong>{it.L('Powerful and intuitive')}</strong>
-                                <br />
-                                {it.L('Easy to use and feature-rich.')}
+                                {it.L('A single, comprehensive trading service with [_1]4 advanced platforms[_2]', '<strong>', '</strong>')}
                             </li>
                             <li>
-                                <strong>{it.L('Quick access to your favourite markets')}</strong>
-                                <br />
-                                {it.L('World markets at your fingertips.')}
+                                {it.L('A sharp design with [_1]user-friendly[_2] interface', '<strong>', '</strong>')}
                             </li>
                             <li>
-                                <strong>{it.L('Easily monitor your open positions')}</strong>
-                                <br />
-                                {it.L('Keep track of all ongoing contracts.')}
+                                {it.L('More [_1]financial instruments[_2] to trade as you please', '<strong>', '</strong>')}
+                            </li>
+                            <li>
+                                {it.L('[_1]24/7 customer support[_2] to enhance your trading experience', '<strong>', '</strong>')}
                             </li>
                         </ul>
                     </div>
@@ -149,8 +147,8 @@ const Platform = () => (
 
                 </div>
                 <div className='center-text'>
-                    <p>{it.L('Go ahead, experience it for yourself.')}</p>
-                    <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Try Deriv now')}</span></a></p>
+                    <p>{it.L('No sign up required. Easily log in with your [_1] credentials.', it.website_name)}</p>
+                    <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Learn more about Deriv.com')}</span></a></p>
                 </div>
             </div>
         </div>
@@ -174,12 +172,11 @@ const Platform = () => (
                             <Platforms
                                 image='deriv-app'
                                 data_show='-eucountry'
-                                header='Deriv'
-                                className='mobile-hide'
+                                header='Deriv.com'
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
                                 buttons={[
-                                    { text: it.L('Trade now'), url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-trade-now', target: '_blank' },
+                                    { text: it.L('Try Deriv.com now'), url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-trade-now', target: '_blank' },
                                 ]}
                             />
                             <Platforms

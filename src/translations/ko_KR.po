@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-05-12 03:21\n"
+"PO-Revision-Date: 2020-06-02 06:01\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -253,10 +253,10 @@ msgid "%1 is one of the oldest and most successful online trading companies in t
 msgstr "%1은 세계에서 가장 오래되고 가장 성공적인 온라인 거래 회사입니다. 높은 수준의 윤리 기준을 위한 우리의 헌신은 우리의 지속적인 성공을 확실시 해주는 핵심 요소중 하나입니다. 우리의 비즈니스 원리는 우리의 일을 뒷받침해주는 가치를 요약합니다."
 
 msgid "%1 is owned and operated by the Deriv Group Ltd. group of companies. For more information, %2visit our history page%3."
-msgstr ""
+msgstr "%1은 Deriv Group Ltd. 회사그룹에 의해 소유되고 운영됩니다. 더 자세한 정보를 위해서, %2우리의 역사페이지를 방문해주세요%3. "
 
 msgid "%1 is rebranding to Deriv.com"
-msgstr ""
+msgstr "%1은 Deriv.com으로 리브랜딩됩니다"
 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1는 온라인 옵션 거래에 있어 수상실적과 함께 업계에서 선구적인 역할을 합니다. 저희는 자랑합니다:"
@@ -337,7 +337,7 @@ msgid "%1 reaches 1 million registered users"
 msgstr "%1에 백만명의 이용자가 등록되었습니다."
 
 msgid "%1 requires your browser's web storage to be enabled in order to function properly. Please enable it or exit private browsing mode."
-msgstr ""
+msgstr "%1은 기능을 제대로 하기 위해 귀하의 브라우저 웹 저장소가 활성화되는것이 요구됩니다. 이를 활성화하시거나 개인정보 보호 브라우징 모드에서 나와주시기 바랍니다."
 
 msgid "%1 reserves the right to void or amend the contractual terms of any transactions that the Company reasonably believes are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a \"Manifest Error\"). In deciding whether an error is a Manifest Error, the Company may take into account any relevant information, including the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. The client has a duty to report to the Company any such problems, errors, or suspected system inadequacies that The client may experience and may not abuse or arbitrage such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible."
 msgstr "명백하거나 또는 뚜렷한 오류(\"분명한 오류\")로 인해 거래가 공정 시장 가격이 반영되지 않거나 비정상적으로 낮은 위험수준에서 거래가 체결된다고 본 회사가 합리적으로 믿는 경우 %1은 계약 조건을 무효화하거나 수정할 권리가 있습니다. 명백한 오류인지 아닌지를 결정하는 과정에서, 본 회사는 그 어떠한 정보자료 또는 표명의 명확성 부족 또는 해당 오류가 발생된 시간 또는 오류가 일어난 시점까지의 기초시장 상황을 포함하여 관련 정보를 고려할 것입니다. 고객은 고객이 겪을 수 있는 이러한 문제점, 오류, 의심되는 시스템 부적절성을 본 회사로 보고할 의무가 있으며, 이러한 시스템 문제 또는 오류를 이익을 위해 오용 또는 차익거래를 해서는 안됩니다. 본 회사는 가능한 최대한 빠르게 이러한 어려운 점을 해결할 수 있도록 노력할 것입니다."
@@ -426,6 +426,9 @@ msgstr "%1의 놀라운 역사"
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
 msgstr "%1은 이제 하루당 백만거래를 초과하는 양을 처리합니다. (가상계좌 포함)"
 
+msgid "%124/7 customer support%2 to enhance your trading experience"
+msgstr ""
+
 msgid "%1Choose a currency%2 for your fiat currency account:"
 msgstr "귀하의 피앗 통화 계좌를 위해 %1통화선택%2을 해주세요:"
 
@@ -445,7 +448,7 @@ msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1아니오, 지금 바로 제 피앗 계좌의 통화를 변경합니다%2"
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
-msgstr ""
+msgstr "%1공지%2: 이러한 제한들은 오직 귀하의 %3 실제 계좌로만 적용가능합니다. 제한을 설정하기 위해, 각각의 계좌로 전환하시고 따라서 귀하의 제한을 설정하세요."
 
 msgid "%1Return to trading page%2"
 msgstr "%1트레이딩 페이지로 돌아가기%2"
@@ -759,11 +762,20 @@ msgstr "정치적 주요인물 (PEP)는 저명한 공공기능으로써 위임�
 msgid "A proactive approach in problem-solving"
 msgstr "문제해결을 위한 주도적인 접근방법"
 
+msgid "A rebranding of %1 to an all-new trading experience"
+msgstr ""
+
 msgid "A referred client is someone who has been referred through your unique affiliate link and who has deposited money into their %1 account. They must fulfil the following criteria:"
 msgstr "추천된 고갹은 귀하의 특별한 제휴링크를 통해 추천되어지고 그들의 %1 계좌에 자금을 입금한 사람입니다. 이들은 다음의 기준을 반드시 충족해야 합니다:"
 
 msgid "A regulator or law enforcement authority might ask us to share otherwise confidential information in connection with investigations into a suspected criminal offence, particularly money-laundering (see below). If you receive a request to share confidential information, you should immediately inform %1compliance@binary.com%2 who will give guidance on how to respond."
 msgstr "규제자 또는 법률 기관이 특히 자금 세탁 (아래를 참고하세요), 의심되는 범죄 행위에 대한 조사와 연계하여 기밀사항을 공유할 것을 우리에게 요청할 수 있습니다. 만약 귀하께서 기밀정보 공유에 대한 요청을 받을 경우, 귀하는 즉시 %1compliance@binary.com%2에게 알려야 하며 그들은 어떻게 반응해야 할지에 대하여 지침을 내려줄 것입니다."
+
+msgid "A sharp design with %1user-friendly%2 interface"
+msgstr ""
+
+msgid "A single, comprehensive trading service with %14 advanced platforms%2"
+msgstr ""
 
 msgid "A strong background in statistics, mathematics or engineering."
 msgstr "통계학, 수학 또는 공학 분야에 대한 탄탄한 배경."
@@ -1039,7 +1051,7 @@ msgid "Adapt brand messaging, voice, and tone of content as needed to suit speci
 msgstr "특정 독자들, 비즈니스 목표 및 channel of delivery에 맞추기 위해 필요에 따라 브랜드 메시지, 목소리 및 내용의 분위기에 맞추기"
 
 msgid "Add"
-msgstr ""
+msgstr "추가"
 
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "장벽 오프셋을 정의하기 위해 +/–를 추가하세요. 예를 들어서 +0.005는 엔트리 스팟보다 0.005가 더 높은 장벽을 의미합니다."
@@ -1162,7 +1174,7 @@ msgid "Airtm is a global e-wallet service for money transfers and online payment
 msgstr "Airtm은 자금의 송금 및 온라인 결제를 위한 글로벌 전자지갑 서비스입니다. 더 많은 정보를 위해서는 %1을 방문해주세요."
 
 msgid "Alerting clients of a potential trading opportunity"
-msgstr ""
+msgstr "잠재적인 거래 기회가 있는 고객들을 위한 알림"
 
 msgid "All %1's registered or unregistered proprietary rights, including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programmes, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company."
 msgstr "특허, 상표, 영업 비밀, 도메인 명칭, URL, 가격책정 정보 또는 다른 소유권 자료, 아이디어, 컨셉트, 형식, 제안, 개발, 방식, 프로그램, 기술, 방법론, 노하우, 장비, 처리, 절차에만 국한되지 않는 등록되어 있거나 등록되어 있지 않은 모든 %1의 소유권은 본 회사의 단독 소유로 남습니다."
@@ -1255,7 +1267,7 @@ msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "%1에서는 직접적으로 사용할 수 없는 전자지갑을 고객께서 사용할 수 있습니다"
 
 msgid "Allow equals"
-msgstr ""
+msgstr "equals 허용하기"
 
 msgid "Already have an account?"
 msgstr "이미 계좌를 가지고 있으신가요?"
@@ -1288,7 +1300,7 @@ msgid "Amount"
 msgstr ""
 
 msgid "Amount in"
-msgstr ""
+msgstr "표시되는 화폐"
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "Ends Between 거래는 시장의 출구가가 저가의 목표보다 엄격히 높거나 높은 가격 목표보다 엄격히 낮은 경우에 지불됩니다. Ends Outside 바이너리는 만약 시장의 출구가가 높은 가격 목표보다 엄격히 높거나 또는 낮은 가격 목표보다 낮은 경우 지불됩니다."
@@ -1474,7 +1486,7 @@ msgid "Are you sure that you want to permanently delete the token"
 msgstr "귀하께서는 토큰을 영구적으로 삭제하기를 확실히 원하십니까"
 
 msgid "Are you sure that you want to permanently revoke access to the application"
-msgstr ""
+msgstr "귀하께서는 해당 앱으로의 접근권한이 영구적으로 취소되는것을 확실히 원하십니까?"
 
 msgid "Are you sure you want to create a fiat account in %1?"
 msgstr "귀하께서는 %1 피앗 계좌를 개설하기를 원하십니까?"
@@ -1585,7 +1597,7 @@ msgid "As soon as you click on the 'PURCHASE' button, your trade registers in yo
 msgstr "귀하께서 '구매' 버튼을 클릭하면, 귀하의 거래는 귀하의 계좌에 등록됩니다. 귀하의 거래가격은 실시간으로 업데이트됩니다."
 
 msgid "As the country's cultural heartbeat and economic centre, Asunción is undergoing an impressive economic boom that's resulting in widespread development across the city. Today, you'll find charming colonial buildings intermingling with modern office buildings, bustling shopping malls, and trendy eateries."
-msgstr ""
+msgstr "국가의 문화 및 경제적 중심지임에 따라, 아순시온은 놀라운 경제활성이 이루어지고 있으며 결과적으로 이 도시의 전반적인 부분에 걸쳐 발전을 이루고 있습니다. 오늘날에는, 현대 사무건물들과 함께 섞여있는 매력적인 식민지 시대 건물과 부산한 쇼핑몰들 및 트렌디한 식당들을 찾을 수 있습니다."
 
 msgid "Asian Down"
 msgstr "아시안 다운"
@@ -1597,7 +1609,7 @@ msgid "Asian contracts will be refunded at the purchase price if the contract do
 msgstr "아시안 컨트랙트는 해당 계약이 5분 안으로 종료되지 않을 경우 구매한 가격으로 환불받게 됩니다."
 
 msgid "Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period."
-msgstr ""
+msgstr "아시안 옵션은 해당 기간에 걸쳐 평균적인 스팟을 <strong>가장 최근의 틱</strong>과 함께 비교함으로써 정산됩니다."
 
 msgid "Asians"
 msgstr "아시안"
@@ -1639,7 +1651,7 @@ msgid "Asset Index"
 msgstr "자산 지수"
 
 msgid "Asset index is unavailable in this country. If you have an active %1 account, please %2log in%3 for full access."
-msgstr ""
+msgstr "자산 지수는 해당 국가에서 이용할 수 없습니다. 만약 귀하께서 활성화되어 있는 %1 계좌를 가지고 있으시다면, 완전한 접근을 위해 %2로그인%3을 해 주세요."
 
 msgid "Assignment"
 msgstr "양도"
@@ -1653,8 +1665,8 @@ msgstr "프로덕션-레디 SQL 코드 작성에 관하여 백엔드 개발자�
 msgid "Assist cashier providers in setting up new payment systems and risk management settings"
 msgstr "새로운 결제 시스템 및 위험 관리 세팅을 적용시키기는데에 있어 캐셔 제공자를 지원"
 
-msgid "Assist in management accounting for all companies within the Binary Ltd. group"
-msgstr "Binary Ltd. 그룹 내의 모든 회사를 위해 관리 회계 지원"
+msgid "Assist in management accounting for all companies within the Deriv Ltd. group"
+msgstr ""
 
 msgid "Assist in organizing online technical tests"
 msgstr ""
@@ -1759,7 +1771,7 @@ msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot c
 msgstr "저희의 간단한 \"드래그-앤드-드롭\" 봇 설치 도구와 함께 귀하의 전략을 자동화하세요."
 
 msgid "Automated decision-making"
-msgstr ""
+msgstr "자동의사결정"
 
 msgid "Automatic adjustments of Take Profit levels"
 msgstr ""
@@ -1888,7 +1900,7 @@ msgid "Barrier"
 msgstr "장벽"
 
 msgid "Barrier Change"
-msgstr ""
+msgstr "장벽 변동"
 
 msgid "Barrier offset"
 msgstr "배리어 오프셋"
@@ -1977,14 +1989,8 @@ msgstr "가격책정 당시에 견적된 시장가와 거래 시스템에서의 
 msgid "Bid price"
 msgstr "매수 호가"
 
-msgid "Binary (BVI) Ltd"
-msgstr "Binary (BVI) Ltd"
-
 msgid "Binary (BVI) Ltd,"
 msgstr "Binary (BVI) Ltd,"
-
-msgid "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
-msgstr "Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. 영국령 버진아일랜드 금융 위원회로부터 라이센스화되고 규제됩니다 - %1 라이센스 보기%2."
 
 msgid "Binary (Europe) Limited"
 msgstr "Binary (유럽) 유한 책임회사"
@@ -2143,13 +2149,13 @@ msgid "Binary.com MT5 is moving to Deriv"
 msgstr ""
 
 msgid "Binary.com Shop"
-msgstr ""
+msgstr "Binary.com 숍"
 
 msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
-msgstr ""
+msgstr "Binary.com은 현재 테더 (USDT)를 지원합니다. 귀하께서는 귀하의 옴니레이어가 활성화된 지갑에서 귀하의 Binary.com 계좌로 오직 USDT만을 예금할 수 있습니다. "
 
 msgid "Binary.com in Numbers"
-msgstr ""
+msgstr "숫자로 보는 Binary.com"
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com은 1.1.1.1을 추천합니다"
@@ -2254,13 +2260,13 @@ msgid "Buy = go long"
 msgstr "구매 = 길게 가는것"
 
 msgid "Buy or Sell"
-msgstr ""
+msgstr "구매 또는 판매"
 
 msgid "Buy or sell all four available precious metals – depending on your market view. Also, learn what factors affect prices."
 msgstr "귀하의 시장 분석력에 따라 이용가능한 모든 4가지 귀금속을 매도 또는 매수 하세요. 또한, 어떤 요소들이 가격에 영향을 끼치는지 배워보세요."
 
 msgid "Buy price"
-msgstr ""
+msgstr "구매 가격"
 
 msgid "Buy the contract or re-define your position."
 msgstr "계약을 구매하거나 또는 귀하의 포지션을 재정립하세요."
@@ -2383,10 +2389,10 @@ msgid "Can be used to withdraw to payment agents and transfer funds between acco
 msgstr ""
 
 msgid "Can you spare 15 minutes?"
-msgstr ""
+msgstr "15분을 할애하실 수 있으신가요?"
 
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
-msgstr ""
+msgstr "언제 구매 또는 판매하실지 알 수 없으신가요? 여기 알수 있는 간단한 방법이 있습니다:"
 
 msgid "Can't find what you're searching for?"
 msgstr "원하시는것을 못찾고 계신가요?"
@@ -2398,13 +2404,13 @@ msgid "Can't miss in Asunción"
 msgstr ""
 
 msgid "Can't miss in Cyberjaya"
-msgstr ""
+msgstr "사이버자야에서는 놓칠 수 없습니다"
 
 msgid "Can't miss in Dubai "
-msgstr ""
+msgstr "두바이에서는 놓칠 수 없습니다"
 
 msgid "Can't miss in Labuan"
-msgstr ""
+msgstr "라부안섬에서는 놓칠 수 없습니다"
 
 msgid "Can't miss in Malta"
 msgstr "몰타에서 놓치지 말아야 할 것"
@@ -2445,8 +2451,8 @@ msgstr "신중하게 선택된 유동성 제공자의 네트워크는 소매 및
 msgid "Cash Business"
 msgstr "현금 거래"
 
-msgid "Cash Indices"
-msgstr "캐쉬목록"
+msgid "Cash indices"
+msgstr "캐쉬 지수"
 
 msgid "Cashier"
 msgstr "캐쉬어"
@@ -2488,7 +2494,7 @@ msgid "Chart is not available for this underlying."
 msgstr ""
 
 msgid "Charting for this underlying is delayed"
-msgstr ""
+msgstr "이 언더라잉을 위한 차팅은 지연되었습니다"
 
 msgid "Charting platforms"
 msgstr "차팅 플랫폼"
@@ -2503,7 +2509,7 @@ msgid "Check out some technical terms before you start."
 msgstr "시작전 기술적 용어들을 살펴보세요."
 
 msgid "Check out the payment methods accepted by the payment agents in the list below."
-msgstr ""
+msgstr "아래에 있는 목록에 있는 지불 에이전트들로부터 수락되어진 지불방식을 확인하세요."
 
 msgid "Checked"
 msgstr ""
@@ -2581,7 +2587,7 @@ msgid "Citizenship"
 msgstr "국적"
 
 msgid "City of Gold"
-msgstr ""
+msgstr "금의 도시"
 
 msgid "Classes of instruments"
 msgstr "상품의 분류"
@@ -2637,11 +2643,11 @@ msgstr "고객은 해당 고객이 이 조항을 따르고 있는지에 대해 �
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "고객은 고객이 잘못된 정보를 제공하여 본 회사가 고객을 위해 최선집행의 의무가 없는 위치에 있게 됨에 따라 고객의 권리가 침해될 수 있다는 것을 충고받았습니다."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
-msgstr "나머지 국가출신의 고객들은 (미국, 캐나다, 홍콩같은 특정 국가들은 제외) FX 및 CFD Metatrader 5 계좌를 Binary (BVI) Ltd를 통해 개설할 것입니다. %1은 바누아투 공화국에서는 이용할 수 없습니다."
-
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
 msgstr "나머지 국가출신의 고객들은 (미국, 캐나다, 홍콩같은 특정 국가들은 제외) FX 및 CFD Metatrader 5 계좌를 Binary (V) Ltd를 통해 개설할 것입니다. %1은 바누아투 공화국에서는 이용할 수 없습니다."
+
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
+msgstr ""
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC."
 msgstr "나머지 국가출신의 고객들은 (미국, 캐나다 및 홍콩같은 특정 국가들은 제외) Binary (SVG) LLC를 통해 계좌가 개설될 것입니다."
@@ -2676,7 +2682,7 @@ msgstr ""
 msgid "Clients registered with Binary (IOM) Ltd can formally submit a complaint to their local Supervisory Authority."
 msgstr ""
 
-msgid "Clients registered with Binary (IOM) Ltd or Binary (Europe) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2. Alternatively, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %3here%4."
+msgid "Clients registered with Binary (IOM) Ltd or Binary (Europe) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2. Alternatively, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %3here%4. Clients registered with Binary (Europe) Ltd can also refer their unresolved disputes to the Malta Gaming Authority via the %5Player Support Unit%6."
 msgstr ""
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter's Office can be found %1here%2."
@@ -2983,7 +2989,7 @@ msgid "Contact Us"
 msgstr "문의하기"
 
 msgid "Contact the payment agent directly for more information on how to transfer money to them."
-msgstr ""
+msgstr "이들에 자금을 어떻게 전송할 수 있는지에 대한 더 많은 정보를 위해 지불 에이전트에 직접 연락하세요."
 
 msgid "Contact us"
 msgstr "문의하세요"
@@ -3127,7 +3133,7 @@ msgid "Costs and charges"
 msgstr "비용과 요금"
 
 msgid "Counterparty"
-msgstr ""
+msgstr "카운터파티"
 
 msgid "Countries"
 msgstr "국가"
@@ -3153,8 +3159,11 @@ msgstr "Crash 1000 지수"
 msgid "Crash 500 Index"
 msgstr "Crash 500 지수"
 
-msgid "Crash/Boom Indices"
-msgstr "Crash/Boom 지수"
+msgid "Crash/Boom indices"
+msgstr ""
+
+msgid "Crash/boom indices"
+msgstr ""
 
 msgid "Create"
 msgstr ""
@@ -3504,6 +3513,12 @@ msgstr "처리되어져야 하는 예금 및/또는 지불은 때때로 BIEL이 
 msgid "Deriv"
 msgstr "Deriv"
 
+msgid "Deriv (BVI) Ltd"
+msgstr ""
+
+msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
+msgstr ""
+
 msgid "Deriv Group members are sometimes referred to collectively as \"%1\" or \"the Company\"."
 msgstr ""
 
@@ -3515,9 +3530,6 @@ msgstr ""
 
 msgid "Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
 msgstr ""
-
-msgid "Deriv — an all-new trading experience"
-msgstr "Deriv — 새로운 트레이딩 경험"
 
 msgid "Deriv.com launched"
 msgstr "Deriv.com이 나왔습니다"
@@ -3893,12 +3905,6 @@ msgstr "모든 지분가치에 대해 균등하게 비례한 수익을 얻으세
 
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr "귀하의 고객에 의해 발생되어진 총 순이익에 따라 최대 45%까지 수수료를 받으세요. 수수료는 매달의 15일이 지난 후 귀하의 계좌에 입금됩니다."
-
-msgid "Easily monitor your open positions"
-msgstr "귀하의 오픈 포지션을 쉽게 모니터링하세요"
-
-msgid "Easy to use and feature-rich."
-msgstr "사용하기 쉬우며 기능이 풍부합니다."
 
 msgid "Economic Calendar"
 msgstr ""
@@ -4956,9 +4962,6 @@ msgstr "용어 해설"
 msgid "Go"
 msgstr ""
 
-msgid "Go ahead, experience it for yourself."
-msgstr "시작하세요, 그리고 직접 경험하세요."
-
 msgid "Go long = buy"
 msgstr ""
 
@@ -5308,7 +5311,7 @@ msgid "I would like to be treated as a professional client."
 msgstr ""
 
 msgid "I'm interested"
-msgstr ""
+msgstr "저는 관심이 있습니다"
 
 msgid "I. Trading"
 msgstr "I. 트레이딩"
@@ -5829,8 +5832,8 @@ msgstr "유럽연합에서 금융 상품들은 몰타 금융 서비스 당국으
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "맨섬과 영국의 경우, 종합 지수는 First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles에 위치한 Binary (IOM) Ltd.으로부터 제공되며 (1) 맨섬의 도박 위원회 (현재의 라이센스는 2017년 8월 31일에 발급받은 것입니다) 및 (2) 영국 도박 위원회 (라이센스 %1참조 번호: 39172%2)에 의해 각각 라이센스화되고 규제됩니다."
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) LLC, Binary (V) Ltd, Binary (BVI) Ltd and Binary (FX) Ltd."
-msgstr "영국에서 우리의 고객분들은 Binary (IOM) Ltd 및 Binary Investments (Europe) Ltd를 통해 거래합니다. 맨섬에서는, Binary (IOM) Ltd를 통해 거래합니다. 유럽연합(영국 제외)에서는, Binary (Europe) Ltd 및 Binary Investments (Europe) Ltd를 통해 거래합니다. 그 이외의 국가에서는, Binary (SVG) LLC, Binary (V) Ltd, Binary (BVI) Ltd 및 Binary (FX) Ltd를 통해 거래합니다."
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr "지정가주문의 경우, 지정가의 적용가능성에 따라 본 회사는 고객이 제시한 지정가와 같거나 또는 그보다 더 나은 수준으로 주문을 맞출 수 있도록 노력한다는 것에 대해 고객은 인정합니다."
@@ -6005,6 +6008,9 @@ msgstr "브로커 소개인 보증"
 
 msgid "Introducing Brokers"
 msgstr "브로커 소개인"
+
+msgid "Introducing Deriv.com"
+msgstr ""
 
 msgid "Introducing USB"
 msgstr ""
@@ -6189,9 +6195,6 @@ msgstr "우리의 기반 시설을 최첨단 및 최신의 개발요소들로 �
 msgid "Keep safe"
 msgstr "보안 유지"
 
-msgid "Keep track of all ongoing contracts."
-msgstr "현재 진행되고 있는 모든 계약에 대해 파악하세요."
-
 msgid "Keep track of your authorised applications."
 msgstr ""
 
@@ -6338,6 +6341,9 @@ msgstr "본 사의 이 간단한 단계별 안내를 통해 수상경력이 있�
 
 msgid "Learn more"
 msgstr "더 보기"
+
+msgid "Learn more about Deriv.com"
+msgstr ""
 
 msgid "Learn more about our corporate culture"
 msgstr "우리의 기업 문화에 대해 더 알아보세요"
@@ -7080,6 +7086,9 @@ msgstr "귀하의 증권 일람표를 실시간으로 확인하세요."
 msgid "Monitoring and review of this policy"
 msgstr "본 정책의 모니터링 및 검토"
 
+msgid "More %1financial instruments%2 to trade as you please"
+msgstr ""
+
 msgid "More benefits"
 msgstr "더 많은 혜택"
 
@@ -7153,7 +7162,7 @@ msgid "N/A"
 msgstr ""
 
 msgid "NEED HELP?"
-msgstr ""
+msgstr "도움이 필요하신가요?"
 
 msgid "NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more information, please visit %1."
 msgstr ""
@@ -7353,8 +7362,11 @@ msgstr ""
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering, which may have several effects on clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "어느 누구도 자금세탁의 목적으로 이 사이트를 남용해서는 안됩니다. 본 회사는 자금세탁 절차에 있어 모범규준을 도입합니다. 고객에게 다양한 영향을 줄 수 있는 자금세탁을 방지하기 위해 모든 거래는 검사되어집니다. 본 회사는 이러한 자금세탁 방지 절차를 고수하지 않거나 받아들이지 않는 고객과의 거래에 대해서 비즈니스 관계를 거절하거나 중지하거나 되돌릴 수 있는 권한이 있습니다. 접근가능한 자금은 불법적인 행위로부터 나온 자금이 아니어야 합니다. 본 회사는 의심스러운 거래에 대하여 관련 기관에 보고할 것입니다."
 
-msgid "No thanks"
+msgid "No sign up required. Easily log in with your %1 credentials."
 msgstr ""
+
+msgid "No thanks"
+msgstr "아니오 괜찮습니다"
 
 msgid "No, there are no minimum requirements to withdraw your IB commissions."
 msgstr "아니오, 귀하의 IB 수수료를 인출하기 위한 최소한의 요구사항은 없습니다."
@@ -7764,8 +7776,8 @@ msgstr "우리의 가치"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "우리 웹사이트는 최상의 사용자 경험을 위해 쿠키를 사용합니다. 더 많은 정보를 위해서, %1우리 정책을 확인하세요%2."
 
-msgid "Outside the EU, financial products are offered by Binary (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "자금중개 비즈니스를 수행하기 위해 유럽연합 밖의 경우에는 Hinds Building, Kingstown, St. Vincent and the Grenadines에 위치한 Binary (SVG) LLC, 바누아투 금융서비스 위원회로부터 규제받는(%1라이센스 보기%2) Govant Building, Port Vila, PO Box 1276, Vanuatu에 위치한 Binary (V) Ltd, 영국령 버진 아일랜드 금융서비스 위원회로부터 규제받는 (%3라이센스 번호 SIBA/L/18/1114%4)  Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands에 위치한 Binary (BVI) Ltd 및 라부안 금융서비스 당국으로부터 규제받는 Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia에 위치한 Binary (FX) Ltd.로부터 금융상품들이 제공되어집니다."
+msgid "Outside the EU, financial products are offered by Binary (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr "자금중개 비즈니스를 수행하기 위해 유럽 밖의 경우에는 Hinds Building, Kingstown, St. Vincent and the Grenadines에 위치한 Binary (SVG) LLC로부터; 바누아투 금융 금융서비스 위원회로부터 규제받는 Govant Building, Port Vila, PO Box 1276, Vanuatu에 위치한 Binary (V) Ltd로부터 (%1라이센스 보기%2); 영국령 버진 아일랜드 금융서비스 위원회로부터 규제받는 (%3라이센스 번호. SIBA/L/18/1114%4) Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands에 위치한 Deriv (BVI) Ltd로부터; 라부안 금융서비스 당국으로부터 규제받는 Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia에 위치한 Binary (FX) Ltd.로부터 금융상품들이 제공됩니다 (%5라이센스 번호. MB/18/0024%6)."
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "훌륭한 작문 및 구두 의사소통 능력 및 뛰어난 영어실력"
@@ -8293,7 +8305,7 @@ msgid "Please wait for confirmation. Our customer support team will get back to 
 msgstr ""
 
 msgid "Portfolio"
-msgstr ""
+msgstr "포트폴리오"
 
 msgid "Positions that are still open on Wednesday at 23:59:59 GMT will be charged three times the swap rate to account for weekends – a standard practice for all brokers."
 msgstr "수요일 23:59:59 GMT에 열려져 있는 포지션은 주말 이자율스왑 가격의 세배에 해당하는 비용이 청구되어지며 이는 모든 프로커들에게 표준적으로 시행되는 것입니다."
@@ -8327,9 +8339,6 @@ msgstr ""
 
 msgid "Power & simplicity"
 msgstr "능력 & 단순성"
-
-msgid "Powerful and intuitive"
-msgstr "강력하며 이해하기 쉽습니다"
 
 msgid "Powerful charting and technical analysis"
 msgstr "강력한 차팅 및 기술적 분석"
@@ -8542,7 +8551,7 @@ msgid "Profit / Loss"
 msgstr ""
 
 msgid "Profit Table"
-msgstr ""
+msgstr "이익표"
 
 msgid "Profit or Loss"
 msgstr ""
@@ -8670,6 +8679,9 @@ msgstr "Q. 용어의 해석"
 msgid "Q1 2019"
 msgstr "Q1 2019"
 
+msgid "Q1 2020"
+msgstr ""
+
 msgid "Q2 2019"
 msgstr "Q2 2019"
 
@@ -8697,9 +8709,6 @@ msgstr "계량 분석"
 msgid "Quantitative Analyst"
 msgstr "계량 분석가"
 
-msgid "Quick access to your favourite markets"
-msgstr "귀하께서 가장 좋아하는 시장에 빠른 접근을 할 수 있습니다"
-
 msgid "Quote currency"
 msgstr "상대통화"
 
@@ -8712,8 +8721,23 @@ msgstr "RTS 27 2018"
 msgid "RTS 27 2019"
 msgstr "RTS 27 2019"
 
+msgid "RTS 27 2020"
+msgstr ""
+
 msgid "RTS 28"
 msgstr "RTS 28"
+
+msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
+msgstr ""
+
+msgid "Range break 200 breaks through the range on average once every 200 times that it hits the border."
+msgstr ""
+
+msgid "Range break index fluctuates within a range between an upper and lower price level, also known as borders. When it hits either border, the index occasionally breaks through the range with a jump or crash, creating a new range. There are two types:"
+msgstr ""
+
+msgid "Range break indices"
+msgstr ""
 
 msgid "Range of markets"
 msgstr "다양한 시장"
@@ -9472,7 +9496,7 @@ msgid "SmartCharts"
 msgstr "SmartCharts"
 
 msgid "SmartTrader"
-msgstr ""
+msgstr "SmartTrader"
 
 msgid "Social & Cultural"
 msgstr ""
@@ -9669,8 +9693,8 @@ msgstr "3단계: 거래하세요"
 msgid "Step Index"
 msgstr "Step 지수"
 
-msgid "Step Indices"
-msgstr "Step 지수"
+msgid "Step indices"
+msgstr ""
 
 msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
 msgstr ""
@@ -9795,8 +9819,8 @@ msgstr ""
 msgid "Such a withdrawal would result in the client's Account Equity being less than zero."
 msgstr "인출이 고객의 계좌 가치가 0보다 작게 되는 결과를 야기하는 경우."
 
-msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Binary Ltd. All rights reserved.&rdquo;"
-msgstr "이러한 자료들은 제한된 범위 내에서 단지 비영리 목적으로만 복사 및 분배될 수 있으며, 제공된 자료들은 다음의 문구를 포함하며 온전해야 합니다: &ldquo;저작권 1999-<span class='currentYear'></span> Binary Ltd. 모든 권리는 저작권자에게 있습니다.&rdquo;"
+msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
+msgstr ""
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
 msgstr "감사 결과물 요약 및 제안된 해결방안에 대하여 부서장들과의 협력"
@@ -9869,6 +9893,9 @@ msgstr "종합지수는 나아가 두가지 종류로 분류됩니다:"
 
 msgid "Synthetic Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more."
 msgstr "종합지수는 귀하에게 Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs 등과 같은 다양한 거래종류로의 독점적인 접근을 제공합니다."
+
+msgid "Synthetic indices"
+msgstr ""
 
 msgid "Synthetic indices that mimic market volatility."
 msgstr "시장 변동성을 흉내내는 종합지수."
@@ -11734,7 +11761,7 @@ msgid "This section on force majeure events does not apply to Synthetic Indices.
 msgstr "불가항력 상황의 이 부분은 종합지수에 적용되지 않습니다."
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
-msgstr ""
+msgstr "이 웹사이트의 서비스는 미국, 캐나다, 홍콩 같은 특정 국가에서 또는 18세 미만의 사람들이 이용가능할 수 있도록 만들어지지 않았습니다."
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "베시 스크립팅에 대한 철저한 지식 및 Perl 스크립팅 언어에 대한 경험"
@@ -12240,8 +12267,8 @@ msgstr "신뢰"
 msgid "Try Binary Bot"
 msgstr "바이너리 봇을 이용해보세요"
 
-msgid "Try Deriv now"
-msgstr "지금 Deriv를 시도해 보세요"
+msgid "Try Deriv.com now"
+msgstr ""
 
 msgid "Try SmartCharts"
 msgstr "SmartCharts를 이용해보세요"
@@ -12780,6 +12807,9 @@ msgstr "우리는 우리의 비즈니스 거래를 반영하는 장부와 기록
 msgid "We value positive team players who can work together to overcome challenges and achieve common goals."
 msgstr "우리는 협력하며 도전을 극복할 수 있고 공동의 목표를 성취할 수 있는 긍정적인 팀플레이어를 가치있게 봅니다."
 
+msgid "We were unable to verify your document automatically. We will try to verify your document manually. Please check back in 1-3 days."
+msgstr ""
+
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level."
 msgstr "우리는 귀하의 마진 레벨이 스탑아웃 레벨보다 더 높아질 때까지 계속해서 오픈 포지션을 닫을 것입니다."
 
@@ -12793,7 +12823,7 @@ msgid "We will not permit our products or payment facilities to be used to facil
 msgstr "우리는 우리의 상품 또는 지불시스템이 자금세탁, 테러자금조달 또는 다른 범죄행위에 사용되는 것을 허락하지 않을 것입니다. 적절한 경우, 우리는 고객에게 고객알기제도 (KYC)를 수행할 것입니다. 우리는 관련 기관에 의심되는 거래를 보고할 것입니다."
 
 msgid "We'd love to hear what you think."
-msgstr ""
+msgstr "저희는 귀하께서 무엇을 생각하시는지에 대해 듣고싶습니다."
 
 msgid "We're almost there"
 msgstr ""
@@ -12805,7 +12835,7 @@ msgid "We're granted patents for 'Computer trading system and method for specula
 msgstr "우리는 '컴퓨터 거래 시스템 및 금융 시장에서의 투기방법' 및 '커스텀 금융 시장 투기 제공을 위한 컴퓨터 거래 시스템'에 대하여 특허를 부여 받습니다. 해당 특허들은 우리의 혁신 및 앞서가는 능력을 보여줍니다."
 
 msgid "We're looking to improve our products and services, and we want to understand your needs better. We'd like to interview you via phone, to know what you like about us, what you don't like, and where we can do better."
-msgstr ""
+msgstr "우리는 우리의 상품들과 서비스의 발전을 위해 생각을 하고 있으며, 귀하의 요구사항들을 더 잘 이해하고 싶습니다. 우리는 귀하께서 우리에 대한 어떤 점을 좋아하시는지와 어떠한 점을 좋아하시지 않는지 및 우리가 어떠한 점을 개선할 수 있는지를 알기 위해 전화를 통해 귀하와 인터뷰를 진행하고 싶습니다."
 
 msgid "We're not obliged to conduct an appropriateness test, nor provide you with any risk warnings"
 msgstr ""
@@ -13203,14 +13233,14 @@ msgstr "%1과 함께라면, 귀하께서는 귀하께서 만들어 놓은 이익
 msgid "With %1, you'll know the risk and potential reward before you purchase a contract."
 msgstr "%1과 함께라면, 귀하께서는 계약을 구매하기 이전에 위험과 잠재적인 보상에 대해 알 수 있습니다."
 
-msgid "With Boom 1000 (500) Index, there's an average of one spike in the price series that occurs at anytime within 1000 (500) ticks."
-msgstr "Boom 1000 (500) 지수와 함께, 1000 (500) ticks 이내 그 어느때에 발생하는 가격 시리즈에 평균적으로 1스파이크가 있습니다."
+msgid "With Boom 1000 (500) index, there's an average of one spike in the price series that occurs at anytime within 1000 (500) ticks."
+msgstr ""
 
-msgid "With Crash 1000 (500) Index, there's an average of one drop in the price series that occurs at anytime within 1000 (500) ticks."
-msgstr "Crash 1000 (500) 지수와 함께, 1000 (500) 틱 내에 그 어느때에 발생되는 가격 시리즈에 평균적으로 1 드롭이 있습니다."
+msgid "With Crash 1000 (500) index, there's an average of one drop in the price series that occurs at anytime within 1000 (500) ticks."
+msgstr ""
 
-msgid "With Step Index, there is equal probability of up/down movement in the price series with fixed step size of 0.1."
-msgstr "Step 지수에는 0.1로 고정된 스텝사이즈와 함께 가격 시리즈에 있어서 동등한 확률의 업/다운 동향이 있습니다."
+msgid "With Step index, there is equal probability of up/down movement in the price series with fixed step size of 0.1."
+msgstr ""
 
 msgid "With insider knowledge of any financial market or instrument"
 msgstr "그 어떠한 금융시장 또는 상품에 대한 내부자 지식으로 거래행위 하는 경우"
@@ -13298,9 +13328,6 @@ msgstr "우리의 단기 및 장기 목표를 달성하기 위한 상세 기술 
 
 msgid "Work with the Head of Compliance to ensure group of companies comply with AML, KYC, and Data Protection laws and regulations"
 msgstr "회사의 그룹이 AML, KYC 및 데이터 보호법 및 규정을 준수하고 있는지 확인하기 위해 컴플라이언스 장과의 협력"
-
-msgid "World markets at your fingertips."
-msgstr "귀하의 손가락 끝에서 세계의 시장이 있습니다."
 
 msgid "Write robust, high-quality, and production-ready code for our websites and applications"
 msgstr "우리 웹사이트 및 응용프로그램을 위해 탄탄하고, 고품질 및 실사용 가능한 코드를 작성합니다"
@@ -13587,7 +13614,7 @@ msgstr ""
 msgid "Your %1proof of identity%2 has expired."
 msgstr ""
 
-msgid "Your %1proof of identity%2 has not been verified. Please check your email for details."
+msgid "Your %1proof of identity%2 has not been verified."
 msgstr ""
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."

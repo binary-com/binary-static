@@ -87,79 +87,96 @@ const Cfds = () => (
                 </Section>
 
                 <Section id='contract-specification' header={it.L('CFD contract specifications')}>
-                    <HeaderSecondary header={it.L('Cash Indices')} />
+                    <HeaderSecondary header={it.L('Cash indices')} />
                     <Table
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-148' },
                                 { text: it.L('Description'),    className: 'gr-padding-10' },
-                                { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10 w-112' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'DAX_30' }, { text: 'Germany 30 Cash Index' }, { text: '1' }, { text: tenth }, { text: tenth }],
+                                [{ text: 'DAX_30' }, { text: 'Germany 30 Cash index' }, { text: '1' }, { text: tenth }, { text: tenth }],
                             ],
                         }}
                     />
 
-                    <HeaderSecondary header={it.L('Synthetic Indices')} />
+                    <HeaderSecondary header={it.L('Synthetic indices')} />
                     <Table
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Volatility 10 Index'       }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
-                                [{ text: 'Volatility 25 Index'       }, { text: '1' }, { text: five_tenth      }, { text: hundredth }],
-                                [{ text: 'Volatility 50 Index'       }, { text: '1' }, { text: three           }, { text: hundredth }],
-                                [{ text: 'Volatility 75 Index'       }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
-                                [{ text: 'Volatility 100 Index'      }, { text: '1' }, { text: tenth           }, { text: hundredth }],
-                                [{ text: 'HF Volatility 10 Index'    }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
-                                [{ text: 'HF Volatility 50 Index'    }, { text: '1' }, { text: three           }, { text: hundredth }],
-                                [{ text: 'HF Volatility 100 Index'   }, { text: '1' }, { text: three           }, { text: hundredth }],
-                                [{ text: 'Volatility 10 (1s) Index'  }, { text: '1' }, { text: tenth           }, { text: hundredth }],
-                                [{ text: 'Volatility 100 (1s) Index' }, { text: '1' }, { text: hundredth       }, { text: hundredth }],
+                                [{ text: 'Volatility 10 index'       }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'Volatility 25 index'       }, { text: '1' }, { text: five_tenth      }, { text: hundredth }],
+                                [{ text: 'Volatility 50 index'       }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'Volatility 75 index'       }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
+                                [{ text: 'Volatility 100 index'      }, { text: '1' }, { text: tenth           }, { text: hundredth }],
+                                [{ text: 'HF Volatility 10 index'    }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'HF Volatility 50 index'    }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'HF Volatility 100 index'   }, { text: '1' }, { text: three           }, { text: hundredth }],
+                                [{ text: 'Volatility 10 (1s) index'  }, { text: '1' }, { text: tenth           }, { text: hundredth }],
+                                [{ text: 'Volatility 100 (1s) index' }, { text: '1' }, { text: hundredth       }, { text: hundredth }],
                             ],
                         }}
                     />
 
-                    <HeaderSecondary header={it.L('Crash/Boom Indices')} />
+                    <HeaderSecondary header={it.L('Crash/Boom indices')} />
                     <Table
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Crash 1000 Index' }, { text: '1' }, { text: tenth }, { text: hundredth }],
-                                [{ text: 'Boom 1000 Index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
-                                [{ text: 'Crash 500 Index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
-                                [{ text: 'Boom 500 Index'   }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Crash 1000 index' }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Boom 1000 index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Crash 500 index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Boom 500 index'   }, { text: '1' }, { text: tenth }, { text: hundredth }],
                             ],
                         }}
                     />
 
-                    <HeaderSecondary header={it.L('Step Indices')} />
+                    <HeaderSecondary header={it.L('Step indices')} />
                     <Table
                         scroll
                         data={{
                             thead: [[
-                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
                                 { text: it.L('Lot size'),       className: 'gr-padding-10' },
                                 { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Step Index' }, { text: '10' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Step index' }, { text: '10' }, { text: tenth }, { text: hundredth }],
+                            ],
+                        }}
+                    />
+                    
+                    <HeaderSecondary header={it.L('Range break indices')} />
+                    <Table
+                        scroll
+                        data={{
+                            thead: [[
+                                { text: it.L('Symbol'),         className: 'gr-padding-10 w-262' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                                { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                                { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
+                            ]],
+                            tbody: [
+                                [{ text: 'Range break 100 index' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
+                                [{ text: 'Range break 200 index' }, { text: '1' }, { text: hundredth }, { text: hundredth }],
                             ],
                         }}
                     />
@@ -167,9 +184,15 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above.')}</p>
-                    <p>{it.L('With Crash 1000 (500) Index, there\'s an average of one drop in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
-                    <p>{it.L('With Boom 1000 (500) Index, there\'s an average of one spike in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
-                    <p>{it.L('With Step Index, there is equal probability of up/down movement in the price series with fixed step size of 0.1.')}</p>
+                    <p><strong>{it.L('Crash/boom indices')}</strong></p>
+                    <p>{it.L('With Crash 1000 (500) index, there\'s an average of one drop in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
+                    <p>{it.L('With Boom 1000 (500) index, there\'s an average of one spike in the price series that occurs at anytime within 1000 (500) ticks.')}</p>
+                    <p><strong>{it.L('Step indices')}</strong></p>
+                    <p>{it.L('With Step index, there is equal probability of up/down movement in the price series with fixed step size of 0.1.')}</p>
+                    <p><strong>{it.L('Range break indices')}</strong></p>
+                    <p>{it.L('Range break index fluctuates within a range between an upper and lower price level, also known as borders. When it hits either border, the index occasionally breaks through the range with a jump or crash, creating a new range. There are two types:')}</p>
+                    <p>{it.L('Range break 100 breaks through the range on average once every 100 times that it hits the border.')}</p>
+                    <p>{it.L('Range break 200 breaks through the range on average once every 200 times that it hits the border.')}</p>
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
