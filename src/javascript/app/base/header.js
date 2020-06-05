@@ -273,7 +273,8 @@ const Header = (() => {
                     ] : [];
 
                 const get_settings = State.getResponse('get_settings');
-                return required_fields.some(field => !get_settings[field]);
+                // date_of_birth can be 0 as a valid epoch, so we should only check missing values, '', null, or undefined
+                return required_fields.some(field => !(field in get_settings) || get_settings[field] === '' || get_settings[field] === null || get_settings[field] === undefined);
             };
 
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);

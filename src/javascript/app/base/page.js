@@ -176,7 +176,7 @@ const Page = (() => {
         const src = '//browser-update.org/update.min.js';
         if (document.querySelector(`script[src*="${src}"]`)) return;
         window.$buoop = {
-            vs     : { i: 11, f: -4, o: -4, s: 9, c: 65 },
+            vs     : { i: 17, f: -4, o: -4, s: 9, c: 65 }, // it will support this number and above, or the latest -versions
             api    : 4,
             l      : Language.get().toLowerCase(),
             url    : 'https://browsehappy.com/',
