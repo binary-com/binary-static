@@ -274,10 +274,12 @@ const ViewPopup = (() => {
             }
             containerSetText('trade_details_message', contract.validation_error && !is_unsupported_contract ? contract.validation_error : '&nbsp;');
             if (is_unsupported_contract) {
-                containerSetText('trade_details_bottom', localize(
-                    'This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.',
-                    ['<br/>', '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">', '</a>']
-                ));
+                const redirect = '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">';
+                const redirect_close = '</a>';
+                const message = Callputspread.isCallputspread(contract.contract_type) ?
+                    localize('This contract is only available on [_1]DTrader[_2].', [redirect, redirect_close]) :
+                    localize('This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.', ['<br/>', redirect, redirect_close]);
+                containerSetText('trade_details_bottom', message);
             }
         }
 
