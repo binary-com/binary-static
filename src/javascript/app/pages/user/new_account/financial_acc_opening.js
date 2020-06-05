@@ -43,7 +43,8 @@ const FinancialAccOpening = (() => {
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
                 value    = get_settings[key];
-                if (key === 'date_of_birth' && value) {
+                // date_of_birth can be 0 as a valid epoch
+                if (key === 'date_of_birth' && value !== 'null') {
                     const moment_val = moment.utc(value * 1000);
                     get_settings[key] = moment_val.format('DD MMM, YYYY');
                     $element.attr({
@@ -59,7 +60,10 @@ const FinancialAccOpening = (() => {
         Promise.all([req_settings, req_financial_assessment]).then(() => {
             AccountOpening.populateForm(form_id, getValidations, true);
 
-            $('#date_of_birth').val(get_settings.date_of_birth);
+            // date_of_birth can be 0 as a valid epoch
+            if ('date_of_birth' in get_settings && get_settings.date_of_birth !== 'null') {
+                $('#date_of_birth').val(get_settings.date_of_birth);
+            }
             FormManager.handleSubmit({
                 form_selector       : form_id,
                 obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
