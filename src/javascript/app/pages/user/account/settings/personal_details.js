@@ -159,13 +159,13 @@ const PersonalDetails = (() => {
 
         displayGetSettingsData(get_settings);
 
-        if (!is_fully_authenticated) {
+        if (is_virtual) {
+            $(real_acc_elements).remove();
+        } else if (!is_fully_authenticated) {
             displayChangeableFields(data);
             CommonFunctions.getElementById('address_form').setVisibility(1);
             showHideTaxMessage();
             showHideTaxForm(get_settings);
-        } else if (is_virtual) {
-            $(real_acc_elements).remove();
         } else {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
