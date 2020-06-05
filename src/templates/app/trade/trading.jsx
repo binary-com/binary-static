@@ -2,10 +2,12 @@ import React from 'react';
 import Analysis from './analysis.jsx';
 import Portfolio from '../user/portfolio.jsx';
 import Loading from '../../_common/components/loading.jsx';
+import DerivBanner from '../../_common/components/deriv_banner.jsx';
 
 const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container'>
+            <DerivBanner content_name='page-trading-banner' />
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />
             <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws?action=deposit')}>
@@ -129,7 +131,7 @@ const Trading = () => (
                                         </div>
                                         <div className='big-col'>
                                             <select id='prediction' className='small_width_input'>
-                                                { Array.from(new Array(10)).map((x, idx) => (
+                                                {Array.from(new Array(10)).map((x, idx) => (
                                                     <option key={idx} value={idx}>{idx}</option>
                                                 ))}
                                             </select>
@@ -141,7 +143,7 @@ const Trading = () => (
                                         </div>
                                         <div className='big-col'>
                                             <select id='selected_tick' className='small_width_input'>
-                                                { Array.from(new Array(5)).map((x, idx) => (
+                                                {Array.from(new Array(5)).map((x, idx) => (
                                                     <option key={idx + 1} value={idx + 1}>{idx + 1}</option>
                                                 ))}
                                             </select>

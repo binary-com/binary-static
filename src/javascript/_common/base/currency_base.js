@@ -4,7 +4,7 @@ const getPropertyValue = require('../utility').getPropertyValue;
 
 let currencies_config = {};
 
-const getTextFormat = (number, currency) => `${currency} ${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency))}`;
+const getTextFormat = (number, currency) => `${addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency))} ${getCurrencyDisplayCode(currency)}`;
 
 const getNumberFormat = (number, currency) => addComma(number, getDecimalPlaces(currency), isCryptocurrency(currency));
 
@@ -62,12 +62,12 @@ const CryptoConfig = (() => {
     let crypto_config;
 
     const initCryptoConfig = () => ({
-        BTC: { name: localize('Bitcoin'),       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        ETH: { name: localize('Ether'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        ETC: { name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        LTC: { name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        UST: { name: localize('Tether'),        min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
-        USB: { name: localize('Binary Coin'),   min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        BTC: { display_code: 'BTC',  name: localize('Bitcoin'),       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETH: { display_code: 'ETH',  name: localize('Ether'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETC: { display_code: 'ETC',  name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        LTC: { display_code: 'LTC',  name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        UST: { display_code: 'USDT', name: localize('Tether'),        min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        USB: { display_code: 'USB',  name: localize('Binary Coin'),   min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
     });
 
     return {
@@ -106,7 +106,7 @@ const getTransferFee = (currency_from, currency_to) => {
 // returns in a string format, e.g. '0.00000001'
 const getMinimumTransferFee = (currency) => {
     const decimals = getDecimalPlaces(currency);
-    return `${currency} ${(1 / Math.pow(10, decimals)).toFixed(decimals)}`; // we need toFixed() so that it doesn't display in scientific notation, e.g. 1e-8 for currencies with 8 decimal places
+    return `${(1 / Math.pow(10, decimals)).toFixed(decimals)} ${getCurrencyDisplayCode(currency)}`; // we need toFixed() so that it doesn't display in scientific notation, e.g. 1e-8 for currencies with 8 decimal places
 };
 
 // @param {String} limit = max|min
@@ -116,6 +116,8 @@ const getPaWithdrawalLimit = (currency, limit) => {
     }
     return limit === 'max' ? 2000 : 10; // limits for fiat currency
 };
+
+const getCurrencyDisplayCode = currency => getPropertyValue(CryptoConfig.get(), [currency, 'display_code']) || currency;
 
 const getCurrencyName = currency => getPropertyValue(CryptoConfig.get(), [currency, 'name']) || '';
 
@@ -128,6 +130,7 @@ module.exports = {
     getDecimalPlaces,
     setCurrencies,
     isCryptocurrency,
+    getCurrencyDisplayCode,
     getCurrencyName,
     getMinWithdrawal,
     getNumberFormat,

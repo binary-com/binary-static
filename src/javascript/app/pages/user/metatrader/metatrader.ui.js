@@ -280,7 +280,7 @@ const MetaTraderUI = (() => {
             $form.find('.binary-balance').html(`${Currency.formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.display_login])}`);
             $form.find('.mt5-balance').html(`${Currency.formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
-            $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
+            $form.find('label[for="txt_amount_deposit"]').append(` ${Currency.getCurrencyDisplayCode(client_currency)}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
             const should_show_transfer_fee = client_currency !== mt_currency;
@@ -617,7 +617,7 @@ const MetaTraderUI = (() => {
         const el_loading         = getElementById('demo_topup_loading');
         const acc_type           = Client.get('mt5_account');
         const is_demo            = accounts_info[acc_type].is_demo;
-        const topup_btn_text     = localize('Get [_1]', `${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`);
+        const topup_btn_text     = localize('Get [_1]', `10,000.00 ${MetaTraderConfig.getCurrency(acc_type)}`);
 
         el_loading.setVisibility(0);
         el_demo_topup_btn.firstChild.innerText = topup_btn_text;
@@ -645,8 +645,8 @@ const MetaTraderUI = (() => {
         el_demo_topup_btn.classList.remove(is_enabled ? 'button-disabled' : 'button');
 
         el_demo_topup_info.innerText = is_enabled
-            ? localize('Your demo account balance is currently [_1] or less. You may top up your account with an additional [_2].', [`${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`])
-            : localize('You can top up your demo account with an additional [_1] if your balance is [_2] or less.', [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, `${MetaTraderConfig.getCurrency(acc_type)} 1,000.00`]);
+            ? localize('Your demo account balance is currently [_1] or less. You may top up your account with an additional [_2].', [`1,000.00 ${MetaTraderConfig.getCurrency(acc_type)}`, `10,000.00 ${MetaTraderConfig.getCurrency(acc_type)}`])
+            : localize('You can top up your demo account with an additional [_1] if your balance is [_2] or less.', [`10,000.00 ${MetaTraderConfig.getCurrency(acc_type)}`, `1,000.00 ${MetaTraderConfig.getCurrency(acc_type)}`]);
     };
 
     const setTopupLoading = (is_loading) => {

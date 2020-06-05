@@ -724,14 +724,14 @@ const JobDetails = () => (
                         <div className='invisible' id='affiliate_country_manager'>
                             <h1>{it.L('Affiliate/Country Manager')}</h1>
 
-                            <p>{it.L('The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Binary Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide.')}</p>
+                            <p>{it.L('The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Deriv Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide.')}</p>
                             <p>{it.L('You are also expected to help us promote our cutting-edge trading platform that has been one of the most recognised in the binary options trading industry for over 18 years.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market') },
+                                    { text: it.L('Recruit, train, and nurture affiliates and IBs in countries where Deriv Group is active, leveraging your direct knowledge and experience of the local market') },
                                     { text: it.L('Drive rapid growth and business development to support the company\'s sales and marketing objectives') },
                                     { text: it.L('Coordinate business development activities and generate high-quality partnership leads') },
                                     { text: it.L('Adapt affiliate marketing tactics and promotional materials as needed to localise all content for maximum effectiveness') },
@@ -901,7 +901,7 @@ const JobDetails = () => (
                                     { text: it.L('Track and manage transactions and accounts using proprietary and non-proprietary software and systems') },
                                     { text: it.L('Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency') },
                                     { text: it.L('Perform reconciliations of all transactions that take place through third-party payment services and banks') },
-                                    { text: it.L('Assist in management accounting for all companies within the Binary Ltd. group') },
+                                    { text: it.L('Assist in management accounting for all companies within the Deriv Ltd. group') },
                                     { text: it.L('Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis') },
                                     { text: it.L('Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters') },
                                 ]}
@@ -961,7 +961,7 @@ const JobDetails = () => (
                         <div className='invisible' id='payments_and_compliance_analyst'>
                             <h1>{it.L('Compliance and Payments Analyst')}</h1>
 
-                            <p>{it.L('We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Binary group of companies in collaboration with the Marketing team.')}</p>
+                            <p>{it.L('We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Deriv group of companies in collaboration with the Marketing team.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}

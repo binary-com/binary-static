@@ -1,38 +1,73 @@
-const getCurrencies    = require('./get_currency').getCurrencies;
-const BinaryPjax       = require('../../base/binary_pjax');
-const Client           = require('../../base/client');
-const Header           = require('../../base/header');
-const BinarySocket     = require('../../base/socket');
-const Dialog           = require('../../common/attach_dom/dialog');
-const getCurrencyName  = require('../../common/currency').getCurrencyName;
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const localize         = require('../../../_common/localize').localize;
-const State            = require('../../../_common/storage').State;
-const Url              = require('../../../_common/url');
+const moment             = require('moment');
+const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
+const GetCurrency        = require('./get_currency');
+const BinaryPjax         = require('../../base/binary_pjax');
+const Client             = require('../../base/client');
+const Header             = require('../../base/header');
+const BinarySocket       = require('../../base/socket');
+const Dialog             = require('../../common/attach_dom/dialog');
+const Currency           = require('../../common/currency');
+const isCryptocurrency   = require('../../../_common/base/currency_base').isCryptocurrency;
+const localize           = require('../../../_common/localize').localize;
+const State              = require('../../../_common/storage').State;
+const Url                = require('../../../_common/url');
 
 const SetCurrency = (() => {
-    let is_new_account;
+    let is_new_account,
+        popup_action,
+        $submit;
 
-    const onLoad = () => {
+    const onLoad = async () => {
         is_new_account = localStorage.getItem('is_new_account');
+        localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
 
         const { can_upgrade, type } = Client.getUpgradeInfo();
         $('#upgrade_to_mf').setVisibility(can_upgrade && type === 'financial');
 
-        if (Client.get('currency')) {
-            const has_changed_currency = localStorage.getItem('has_changed_currency');
-            if (has_changed_currency) {
-                const [ from, to ] = has_changed_currency.split('-');
+        const landing_company = (await BinarySocket.wait('landing_company')).landing_company;
+        const $currency_list  = $('.currency_list');
+        const $error          = $('#set_currency').find('.error-msg');
+
+        popup_action = localStorage.getItem('popup_action');
+        if (Client.get('currency') || popup_action) {
+            if (is_new_account) {
                 $('#set_currency_loading').remove();
+                $('#set_currency').setVisibility(1);
+                $('#deposit_btn')
+                    .off('click dblclick')
+                    .on('click dblclick', () => {
+                        BinaryPjax.load(`${Url.urlFor('cashier/forwardws')}?action=deposit`);
+                    })
+                    .setVisibility(1);
+            } else if (popup_action) {
+                const currencies = /multi_account|set_currency/.test(popup_action) ?
+                    GetCurrency.getCurrencies(landing_company) :
+                    getCurrencyChangeOptions(landing_company);
                 $('#hide_new_account').setVisibility(0);
-                $('#congratulations_message').html(localize('You have successfully changed your account currency from [_1] to [_2].', [ `<strong>${from}</strong>`, `<strong>${to}</strong>` ]));
-                $('#deposit_btn, #set_currency, #show_new_account').setVisibility(1);
-                localStorage.removeItem('has_changed_currency');
-            } else if (is_new_account) {
-                $('#set_currency_loading').remove();
-                $('#deposit_btn, #set_currency').setVisibility(1);
+                $(`.show_${popup_action}`).setVisibility(1);
+                populateCurrencies(currencies);
+                onSelection($currency_list, $error, false);
+
+                const action_map = {
+                    set_currency   : localize('Set currency'),
+                    change_currency: localize('Change currency'),
+                    multi_account  : localize('Create account'),
+                };
+
+                $('.btn_cancel').off('click dblclick').on('click dblclick', cleanupPopup);
+                $submit = $('#btn_ok');
+                $submit
+                    .off('click dblclick')
+                    .on('click dblclick', () => {
+                        if (!$submit.hasClass('button-disabled')) {
+                            onConfirm($currency_list, $error, popup_action === 'multi_account');
+                        }
+                        $submit.addClass('button-disabled');
+                    })
+                    .find('span')
+                    .text(action_map[popup_action]);
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -40,101 +75,89 @@ const SetCurrency = (() => {
         }
 
         BinarySocket.wait('payout_currencies', 'landing_company').then(() => {
-            const landing_company = State.getResponse('landing_company');
-            let currencies        = State.getResponse('payout_currencies');
+            let currencies = State.getResponse('payout_currencies');
 
             if (Client.get('landing_company_shortcode') === 'svg') {
-                currencies = getCurrencies(landing_company);
+                currencies = GetCurrency.getCurrencies(landing_company);
             }
-            const $fiat_currencies  = $('<div/>');
-            const $cryptocurrencies = $('<div/>');
-            currencies.forEach((c) => {
-                (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
-                    .append($('<div/>', { class: 'gr-2 gr-3-m currency_wrapper', id: c })
-                        .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
-                        .append($('<div/>', { class: 'currency-name', html: (isCryptocurrency(c) ? `${getCurrencyName(c)}<br />(${c})` : c) })));
-            });
-            const fiat_currencies = $fiat_currencies.html();
-            if (fiat_currencies) {
-                $('#fiat_currencies').setVisibility(1);
-                $('#fiat_currency_list').html(fiat_currencies);
-            }
-            const crypto_currencies = $cryptocurrencies.html();
-            if (crypto_currencies) {
-                $('#crypto_currencies').setVisibility(1);
-                $('#crypto_currency_list').html(crypto_currencies);
-            }
-            const has_one_group = (!fiat_currencies && crypto_currencies) || (fiat_currencies && !crypto_currencies);
-            if (has_one_group) {
-                $('#set_currency_text').text(localize('Please select the currency for this account:'));
+
+            populateCurrencies(currencies);
+
+            onSelection($currency_list, $error, true);
+        });
+    };
+
+    const getCurrencyChangeOptions = (landing_company) => {
+        const allowed_currencies = Client.getLandingCompanyValue(Client.get('loginid'), landing_company, 'legal_allowed_currencies');
+        const current_currencies = GetCurrency.getCurrenciesOfOtherAccounts();
+
+        current_currencies.push(Client.get('currency'));
+
+        return allowed_currencies.filter(
+            currency => !current_currencies.includes(currency) && !isCryptocurrency(currency)
+        );
+    };
+
+    const populateCurrencies = (currencies) => {
+        const $fiat_currencies  = $('<div/>');
+        const $cryptocurrencies = $('<div/>');
+        currencies.forEach((c) => {
+            const $wrapper = $('<div/>', { class: 'gr-2 gr-3-m currency_wrapper', id: c });
+            const $image   = $('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) }));
+            const $name    = $('<div/>', { class: 'currency-name' });
+
+            if (Currency.isCryptocurrency(c)) {
+                const $display_name = $('<span/>', {
+                    text: Currency.getCurrencyName(c) || c,
+                    ...(/^UST$/.test(c) && {
+                        'data-balloon'       : localize('Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account.'),
+                        'data-balloon-length': 'large',
+                    }),
+                });
+
+                $name.append($display_name).append($('<br/>')).append(`(${Currency.getCurrencyDisplayCode(c)})`);
             } else {
-                $('#set_currency_text').text(localize('Do you want this to be a fiat account or crypto account? Please choose one:'));
+                $name.text(c);
             }
 
-            $('#set_currency_loading').remove();
-            $('#set_currency, .select_currency').setVisibility(1);
+            $wrapper.append($image).append($name);
+            (Currency.isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies).append($wrapper);
+        });
+        const fiat_currencies = $fiat_currencies.html();
+        if (fiat_currencies) {
+            $('#fiat_currencies').setVisibility(1);
+            $('#fiat_currency_list').html(fiat_currencies).parent().setVisibility(1);
+        }
+        const crypto_currencies = $cryptocurrencies.html();
+        if (crypto_currencies) {
+            $('#crypto_currencies').setVisibility(1);
+            $('#crypto_currency_list').html(crypto_currencies).parent().setVisibility(1);
+        }
+        const has_one_group = (!fiat_currencies && crypto_currencies) || (fiat_currencies && !crypto_currencies);
+        if (has_one_group) {
+            $('#set_currency_text').text(localize('Please select the currency for this account:'));
+        } else {
+            $('#set_currency_text').text(localize('Do you want this to be a fiat account or crypto account? Please choose one:'));
+        }
 
-            const $currency_list = $('.currency_list');
-            const $error         = $('#set_currency').find('.error-msg');
+        $('#set_currency_loading').remove();
+        $('#set_currency, .select_currency').setVisibility(1);
+    };
 
-            const onConfirm = () => {
-                $error.setVisibility(0);
-                const $selected_currency = $currency_list.find('.selected');
-                if ($selected_currency.length) {
-                    BinarySocket.send({ set_account_currency: $selected_currency.attr('id') }).then((response_c) => {
-                        if (response_c.error) {
-                            $error.text(response_c.error.message).setVisibility(1);
-                        } else {
-                            localStorage.removeItem('is_new_account');
-                            Client.set('currency', response_c.echo_req.set_account_currency);
-                            BinarySocket.send({ balance: 1 });
-                            BinarySocket.send({ payout_currencies: 1 }, { forced: true });
-                            Header.displayAccountStatus();
+    const onSelection = ($currency_list, $error, should_show_confirmation) => {
+        $('.currency_wrapper').off('click dblclick').on('click dblclick', function () {
+            $error.setVisibility(0);
+            const $clicked_currency = $(this);
+            $currency_list.find('> div').removeClass('selected');
+            $clicked_currency.addClass('selected');
 
-                            let redirect_url;
-                            if (is_new_account) {
-                                if (Client.isAccountOfType('financial')) {
-                                    const get_account_status = State.getResponse('get_account_status');
-                                    if (!/authenticated/.test(get_account_status.status)) {
-                                        redirect_url = Url.urlFor('user/authenticate');
-                                    }
-                                }
-                                // Do not redirect MLT clients to cashier, because they need to set self exclusion before trading
-                                if (!redirect_url && /^(malta)$/i.test(Client.get('landing_company_shortcode'))) {
-                                    redirect_url = Url.urlFor('user/security/self_exclusionws');
-                                }
-                                // Do not redirect MX clients to cashier, because they need to set max limit before making deposit
-                                if (!redirect_url && !/^(iom)$/i.test(Client.get('landing_company_shortcode'))) {
-                                    redirect_url = Url.urlFor('cashier');
-                                }
-                            } else {
-                                redirect_url = BinaryPjax.getPreviousUrl();
-                            }
+            if (should_show_confirmation) {
+                const currency         = $clicked_currency.attr('id');
+                let localized_message  = '';
+                let localized_footnote = '';
 
-                            if (redirect_url) {
-                                window.location.href = redirect_url; // load without pjax
-                            } else {
-                                Header.populateAccountsList(); // update account title
-                                $('.select_currency').setVisibility(0);
-                                $('#deposit_btn').setVisibility(1);
-                            }
-                        }
-                    });
-                } else {
-                    $error.text(localize('Please choose a currency')).setVisibility(1);
-                }
-            };
-
-            $('.currency_wrapper').on('click', function () {
-                const $clicked_currency = $(this);
-                const currency          = $clicked_currency.attr('id');
-                let localized_message   = '';
-                let localized_footnote   = '';
-                $error.setVisibility(0);
-                $currency_list.find('> div').removeClass('selected');
-                $clicked_currency.addClass('selected');
-                if (isCryptocurrency(currency)) {
-                    localized_message = localize('Are you sure you want to create your [_1] account now?', `<strong>${getCurrencyName(currency)} (${currency})</strong>`);
+                if (Currency.isCryptocurrency(currency)) {
+                    localized_message = localize('Are you sure you want to create your [_1] account now?', `<strong>${Currency.getCurrencyName(currency)} (${Currency.getCurrencyDisplayCode(currency)})</strong>`);
                     localized_footnote = `${localize('Note:')} ${localize('You may open one account for each supported cryptocurrency.')}`;
                 } else {
                     localized_message = localize('Are you sure you want to create a fiat account in [_1]?', `${currency}`);
@@ -145,18 +168,152 @@ const SetCurrency = (() => {
                     id             : 'set_currency_popup_container',
                     ok_text        : localize('Yes'),
                     cancel_text    : localize('Cancel'),
-                    localized_title: localize('Create [_1] account', `${currency}`),
+                    localized_title: localize('Create [_1] account', `${Currency.getCurrencyDisplayCode(currency)}`),
                     localized_message,
                     localized_footnote,
-                    onConfirm,
+                    onConfirm      : () => onConfirm($currency_list, $error, false),
                     onAbort        : () => $currency_list.find('> div').removeClass('selected'),
                 });
-            });
+            }
         });
+    };
+
+    const onConfirm = ($currency_list, $error, should_create_account) => {
+        $error.setVisibility(0);
+        const $selected_currency = $currency_list.find('.selected');
+        if ($selected_currency.length) {
+            const selected_currency = $selected_currency.attr('id');
+            let request = {};
+            if (should_create_account) {
+                request = populateReqMultiAccount(selected_currency);
+            } else {
+                request = { set_account_currency: selected_currency };
+            }
+            BinarySocket.send(request).then((response_c) => {
+                if ($submit) {
+                    $submit.removeClass('button-disabled');
+                }
+                if (response_c.error) {
+                    if (popup_action === 'multi_account' && /InsufficientAccountDetails|InputValidationFailed/.test(response_c.error.code)) {
+                        cleanupPopup();
+                        setIsForNewAccount(true);
+                        // ask client to set any missing information
+                        BinaryPjax.load(Url.urlFor('user/settings/detailsws'));
+                    } else {
+                        $error.text(response_c.error.message).setVisibility(1);
+                    }
+                } else {
+                    const previous_currency = Client.get('currency');
+                    Client.set('currency', selected_currency);
+                    BinarySocket.send({ balance: 1 });
+                    BinarySocket.send({ payout_currencies: 1 }, { forced: true });
+                    Header.displayAccountStatus();
+
+                    let redirect_url;
+                    if (is_new_account) {
+                        if (Client.isAccountOfType('financial')) {
+                            const get_account_status = State.getResponse('get_account_status');
+                            if (!/authenticated/.test(get_account_status.status)) {
+                                redirect_url = Url.urlFor('user/authenticate');
+                            }
+                        }
+                        // Do not redirect MLT clients to cashier, because they need to set self exclusion before trading
+                        if (!redirect_url && /^(malta)$/i.test(Client.get('landing_company_shortcode'))) {
+                            redirect_url = Url.urlFor('user/security/self_exclusionws');
+                        }
+                        // Do not redirect MX clients to cashier, because they need to set max limit before making deposit
+                        if (!redirect_url && !/^(iom)$/i.test(Client.get('landing_company_shortcode'))) {
+                            redirect_url = Url.urlFor('cashier');
+                        }
+                    } else if (/[set|change]_currency/.test(popup_action)) {
+                        const previous_currency_display = Currency.getCurrencyDisplayCode(previous_currency);
+                        const selected_currency_display = Currency.getCurrencyDisplayCode(selected_currency);
+                        $('.select_currency').setVisibility(0);
+                        $('#congratulations_message').html(
+                            popup_action === 'set_currency' ?
+                                localize('You have successfully set your account currency to [_1].', [`<strong>${selected_currency_display}</strong>`]) :
+                                localize('You have successfully changed your account currency from [_1] to [_2].', [ `<strong>${previous_currency_display}</strong>`, `<strong>${selected_currency_display}</strong>` ])
+                        );
+                        $('.btn_cancel, #deposit_btn, #set_currency, #show_new_account').setVisibility(1);
+                        $(`#${Client.get('loginid')}`).find('td[datath="Currency"]').text(selected_currency_display);
+                    } else if (popup_action === 'multi_account') {
+                        const new_account = response_c.new_account_real;
+                        localStorage.setItem('is_new_account', 1);
+                        cleanupPopup();
+                        // add new account to store and refresh the page
+                        Client.processNewAccount({
+                            email       : Client.get('email'),
+                            loginid     : new_account.client_id,
+                            token       : new_account.oauth_token,
+                            redirect_url: Url.urlFor('user/set-currency'),
+                        });
+                        return;
+                    } else {
+                        redirect_url = BinaryPjax.getPreviousUrl();
+                    }
+
+                    if (redirect_url) {
+                        window.location.href = redirect_url; // load without pjax
+                    } else {
+                        Header.populateAccountsList(); // update account title
+                        $('.select_currency').setVisibility(0);
+                        $('#deposit_btn')
+                            .off('click dblclick')
+                            .on('click dblclick', () => {
+                                if (popup_action) {
+                                    cleanupPopup();
+                                }
+                                BinaryPjax.load(`${Url.urlFor('cashier/forwardws')}?action=deposit`);
+                            })
+                            .setVisibility(1);
+                    }
+                }
+            });
+        } else {
+            if ($submit) {
+                $submit.removeClass('button-disabled');
+            }
+            $error.text(localize('Please choose a currency')).setVisibility(1);
+        }
+    };
+
+    const populateReqMultiAccount = (selected_currency) => {
+        const get_settings = State.getResponse('get_settings');
+
+        return ({
+            new_account_real      : 1,
+            currency              : selected_currency,
+            date_of_birth         : moment.utc(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD'),
+            salutation            : get_settings.salutation,
+            first_name            : get_settings.first_name,
+            last_name             : get_settings.last_name,
+            address_line_1        : get_settings.address_line_1,
+            address_line_2        : get_settings.address_line_2,
+            address_city          : get_settings.address_city,
+            address_state         : get_settings.address_state,
+            address_postcode      : get_settings.address_postcode,
+            phone                 : get_settings.phone,
+            account_opening_reason: get_settings.account_opening_reason,
+            citizen               : get_settings.citizen,
+            place_of_birth        : get_settings.place_of_birth,
+            residence             : Client.get('residence'),
+            ...(get_settings.tax_identification_number && {
+                tax_identification_number: get_settings.tax_identification_number,
+            }),
+            ...(get_settings.tax_residence && {
+                tax_residence: get_settings.tax_residence,
+            }),
+        });
+    };
+
+    const cleanupPopup = () => {
+        localStorage.removeItem('popup_action');
+        $('.lightbox').remove();
     };
 
     return {
         onLoad,
+        cleanupPopup,
     };
 })();
 

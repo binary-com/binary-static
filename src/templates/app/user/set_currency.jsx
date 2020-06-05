@@ -9,7 +9,7 @@ const Currencies = ({ text, id }) => (
             <div className='faded'>{text}</div>
             <div className='align-self-center border-bottom-light-gray' />
         </div>
-        <div className='gr-8 gr-10-p gr-12-m gr-centered'>
+        <div className='gr-8 gr-10-p gr-12-m gr-centered invisible'>
             <div className='gr-row gr-row-align-center gr-padding-20 gr-parent currency_list' id={`${id}_currency_list`} />
         </div>
     </React.Fragment>
@@ -25,19 +25,22 @@ const SetCurrency = () => (
             <div className='center-text'>
                 <div className='invisible' id='hide_new_account'>
                     <h1>{it.L('Select currency')}</h1>
+
+                    <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
                 </div>
                 <div className='invisible' id='show_new_account'>
                     <img src={it.url_for('images/pages/set_currency/account-created.svg')} />
                     <div className='gr-padding-10' />
                     <h1>{it.L('Congratulations!')}</h1>
                     <p id='congratulations_message'>{it.L('You have successfully created your real money [_1]account.', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}</p>
-                </div>
 
-                <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
+                    <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
+                </div>
 
                 <div id='deposit_btn' className='invisible'>
                     <div>
-                        <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a deposit')}</span></a>
+                        <a className='button button-secondary invisible btn_cancel' href='javascript:;'><span>{it.L('Close')}</span></a>
+                        <a className='button' href='javascript:;'><span>{it.L('Make a deposit')}</span></a>
                     </div>
                 </div>
 
@@ -50,6 +53,11 @@ const SetCurrency = () => (
                 <form id='frm_set_currency'>
                     <Currencies id='fiat' text={it.L('Fiat Currency')} />
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
+
+                    <div className='invisible show_change_currency show_multi_account show_set_currency' id='submit_section'>
+                        <a className='button button-secondary btn_cancel' href='javascript:;'><span>{it.L('Cancel')}</span></a>
+                        <a className='button' id='btn_ok' href='javascript:;'><span /></a>
+                    </div>
                 </form>
             </div>
             <p className='invisible error-msg center-text' />

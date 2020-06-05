@@ -84,7 +84,8 @@ const DepositWithdraw = (() => {
         const action   = Url.param('action');
         if (/^(withdraw|deposit)$/.test(action)) {
             cashier_type = action;
-            $heading.text(`${action === 'withdraw' ? localize('Withdraw') : localize('Deposit')} ${Client.get('currency') || ''}`);
+            const currency = Client.get('currency') || '';
+            $heading.text(`${action === 'withdraw' ? localize('Withdraw') : localize('Deposit')} ${Currency.getCurrencyDisplayCode(currency)}`);
         }
     };
 
@@ -261,9 +262,9 @@ const DepositWithdraw = (() => {
                 showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
                 return;
             }
-            const experimental_suspended = getPropertyValue(response_get_account_status.get_account_status, ['experimental_suspended', Client.get('currency')]) || {};
-            if ((cashier_type === 'deposit' && experimental_suspended.is_deposit_suspended) ||
-                (cashier_type === 'withdraw' && experimental_suspended.is_withdrawal_suspended)) {
+            const account_currency_config = getPropertyValue(response_get_account_status.get_account_status, ['currency_config', Client.get('currency')]) || {};
+            if ((cashier_type === 'deposit' && account_currency_config.is_deposit_suspended) ||
+                (cashier_type === 'withdraw' && account_currency_config.is_withdrawal_suspended)) {
                 // Experimental currency is suspended
                 showError('custom_error', localize('Please note that the selected currency is allowed for limited accounts only.'));
                 return;

@@ -50,27 +50,29 @@ const TypesOfAccounts = () => (
             <Box
                 className='invisible show-maltainvest'
                 image='standard'
-                title={it.L('Standard')}
-                text={it.L('The Standard account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit.')}
+                title={it.L('Financial')}
+                text={it.L('The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit.')}
             />
             <Box
                 className='hide-maltainvest'
                 image='standard'
-                title={it.L('Standard')}
-                text={it.L('The Standard account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage.')}
+                title={it.L('Financial')}
+                text={it.L('The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage.')}
             />
             <Box
                 className='hide-maltainvest'
                 image='advanced'
-                title={it.L('Advanced')}
-                text={it.L('The Advanced account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
+                title={it.L('Financial STP')}
+                text={it.L('The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
             />
             <Box
                 image='volatility_indices'
-                title={it.L('Synthetic Indices')}
-                text={it.L('The Synthetic Indices account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party.')}
+                title={it.L('Synthetic')}
+                text={it.L('The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party.')}
             />
-
+           
+            <p className='hint' data-show='-eucountry' >{`${it.L('Note:')} ${it.L('To protect your portfolio from adverse market movements due to the market opening gap, we reserve the right to decrease leverage on all offered symbols for financial accounts before market close and increase it again after market open. Please make sure that you have enough funds available in your MT5 account to support your positions at all times.')}`}</p>
+           
             <div className='gr-padding-30' />
 
             <h2 className='center-text'>{it.L('Account comparison')}</h2>
@@ -80,7 +82,7 @@ const TypesOfAccounts = () => (
                         scroll
                         data={{
                             thead: [
-                                [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Synthetic Indices') }],
+                                [{ text: '' }, { text: it.L('Financial') }, { text: it.L('Financial STP') }, { text: it.L('Synthetic') }],
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                                                                       { text: it.L('USD') },                               { text: it.L('USD') }],
@@ -104,7 +106,7 @@ const TypesOfAccounts = () => (
                         scroll
                         data={{
                             thead: [
-                                [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Synthetic Indices') }],
+                                [{ text: '' }, { text: it.L('Financial') }, { text: it.L('Synthetic') }],
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('EUR/GBP') },                                                                   { text: it.L('EUR') }],

@@ -134,8 +134,8 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
-                                    { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
+                                    { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
+                                    { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
                                     { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
                                 ]}
@@ -149,13 +149,13 @@ const Footer = () => (
                             {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).', `<a href=${it.url_for('download/WS-Binary-Investments-Europe-Limited.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('Outside the EU, financial products are offered by Binary (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]); Binary (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6]).',
+                            {it.L('Outside the EU, financial products are offered by Binary (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6]).',
                                 `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>',
                                 `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>',
                                 `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
-                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, Japan, or to persons under age 18.')}
+                            {it.L('This website\'s services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18.')}
                         </p>
                         <fieldset className='fld-risk-warning'>
                             <legend>{it.L('Risk Warning')}</legend>
@@ -187,8 +187,8 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
-                                    { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
+                                    { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
+                                    { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
                                     { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
                                 ]}

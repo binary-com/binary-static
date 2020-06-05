@@ -2,9 +2,7 @@ const refreshDropdown      = require('@binary-com/binary-style').selectDropdown;
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
-const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
-const getNumberFormat      = require('../../common/currency').getNumberFormat;
-const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
+const Currency             = require('../../common/currency');
 const FormManager          = require('../../common/form_manager');
 const Validation           = require('../../common/form_validation');
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
@@ -90,7 +88,7 @@ const PaymentAgentWithdraw = (() => {
                     const selected_pa = pa_list.find(pa => pa.paymentagent_loginid === selected_val);
                     if (selected_pa) return selected_pa[`${limit}_withdrawal`];
                 }
-                return getPaWithdrawalLimit(currency, limit);
+                return Currency.getPaWithdrawalLimit(currency, limit);
             };
 
             const min = () => getAPILimit('min');
@@ -104,9 +102,9 @@ const PaymentAgentWithdraw = (() => {
             const payment_ref_prefix = 'payment-ref-';
 
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
-            $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${currency}`);
+            $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${Currency.getCurrencyDisplayCode(currency)}`);
             FormManager.init(form_id, [
-                { selector: field_ids.txt_amount,      validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_amount,      validations: ['req', ['number', { type: 'float', decimals: Currency.getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
                 { selector: field_ids.txt_payment_ref, validations: [['length', { min: 0, max: 30 }], ['regular', { regex: /^[0-9A-Za-z .,'-]{0,30}$/, message: localize('Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed.') }]],                 request_field: 'description', value: () => $txt_payment_ref.val() ? payment_ref_prefix + $txt_payment_ref.val() : '' },
 
                 { request_field: 'currency',              value: currency },
@@ -191,8 +189,8 @@ const PaymentAgentWithdraw = (() => {
                 setActiveView(view_ids.confirm);
 
                 $('#lblAgentName').text(agent_name);
-                $('#lblCurrency').text(request.currency);
-                $('#lblAmount').text(getNumberFormat(request.amount, request.currency));
+                $('#lblCurrency').text(Currency.getCurrencyDisplayCode(request.currency));
+                $('#lblAmount').text(Currency.getNumberFormat(request.amount, request.currency));
 
                 if (request.description) {
                     // This Regex operation gets everything after the prefix, and handles the prefix not existing
@@ -201,7 +199,7 @@ const PaymentAgentWithdraw = (() => {
                 }
 
                 FormManager.init(view_ids.confirm, [
-                    { request_field: 'amount',                value: getNumberFormat(request.amount, request.currency) },
+                    { request_field: 'amount',                value: Currency.getNumberFormat(request.amount, request.currency) },
                     { request_field: 'currency',              value: request.currency },
                     { request_field: 'description',           value: request.description },
                     { request_field: 'paymentagent_loginid',  value: request.paymentagent_loginid },
@@ -222,7 +220,7 @@ const PaymentAgentWithdraw = (() => {
                 setActiveView(view_ids.success);
                 $('#successMessage').css('display', '')
                     .attr('class', 'success-msg')
-                    .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [request.currency, getNumberFormat(request.amount, request.currency), Client.get('loginid'), agent_name]) })));
+                    .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize('Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.', [Currency.getNumberFormat(request.amount, request.currency), Currency.getCurrencyDisplayCode(request.currency), Client.get('loginid'), agent_name]) })));
 
                 // Set PA details.
                 if (agent_name && agent_website && agent_email && agent_telephone) {
@@ -282,8 +280,8 @@ const PaymentAgentWithdraw = (() => {
                 return;
             }
             currency = Client.get('currency');
-            const experimental_suspended = getPropertyValue(get_account_status, ['experimental_suspended', currency]) || {};
-            if (experimental_suspended.is_withdrawal_suspended) {
+            const account_currency_config = getPropertyValue(get_account_status, ['currency_config', currency]) || {};
+            if (account_currency_config.is_withdrawal_suspended) {
                 // Experimental currency is suspended
                 showPageError(localize('Please note that the selected currency is allowed for limited accounts only.'));
                 return;
