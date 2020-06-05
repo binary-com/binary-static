@@ -263,6 +263,7 @@ const ViewPopup = (() => {
             );
         }
 
+        const is_unsupported_contract = is_multiplier_contract || Callputspread.isCallputspread(contract.contract_type);
         if (!is_started) {
             containerSetText('trade_details_entry_spot > span', '-');
             containerSetText('trade_details_message', localize('Contract has not started yet'));
@@ -271,8 +272,8 @@ const ViewPopup = (() => {
                 // only show entry spot if available and contract was not sold before start time
                 containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : contract.entry_spot_display_value);
             }
-            containerSetText('trade_details_message', contract.validation_error && !is_multiplier_contract ? contract.validation_error : '&nbsp;');
-            if (is_multiplier_contract) {
+            containerSetText('trade_details_message', contract.validation_error && !is_unsupported_contract ? contract.validation_error : '&nbsp;');
+            if (is_unsupported_contract) {
                 containerSetText('trade_details_bottom', localize(
                     'This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.',
                     ['<br/>', '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">', '</a>']
@@ -342,7 +343,7 @@ const ViewPopup = (() => {
         if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
             TickDisplay.plotResetSpot(barrier);
         }
-        if (!is_multiplier_contract) {
+        if (!is_unsupported_contract) {
             // next line is responsible for 'sell at market' flashing on the last tick
             sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
         }
