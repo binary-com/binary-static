@@ -134,7 +134,7 @@ const Footer = () => (
                             <div className='trustpilot-widget' data-locale='en-US' data-template-id='5419b732fbfb950b10de65e5' data-businessunit-id='58dc92220000ff00059f7dc4' data-style-height='24px' data-style-width='100%' data-theme='light'>
                                 <a href='https://www.trustpilot.com/review/binary.com' target='_blank' rel='noopener noreferrer'>Trustpilot</a>
                             </div>
-                            <script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async>
+                            <script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async></script>
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
@@ -191,7 +191,7 @@ const Footer = () => (
                             <div className='trustpilot-widget' data-locale='en-US' data-template-id='5419b732fbfb950b10de65e5' data-businessunit-id='58dc92220000ff00059f7dc4' data-style-height='24px' data-style-width='100%' data-theme='light'>
                                 <a href='https://www.trustpilot.com/review/binary.com' target='_blank' rel='noopener noreferrer'>Trustpilot</a>
                             </div>
-                            <script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async>
+                            <script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async></script>
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
