@@ -106,7 +106,7 @@ const Footer = () => (
                                     { text: it.L('Affiliate and IB Programmes'), href: it.url_for('affiliate-ib') },
                                     { text: it.L('API'),                        href: 'https://developers.binary.com', target: '_blank' },
                                     { text: it.L('Binary.com Shop'),            href: 'https://shop.binary.com',       target: '_blank' },
-                                    /* { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
+                                    /*  { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
                                     { text: it.L('All Partnership Options'),    href: it.url_for('partners') },
                                 ]}
                             />
