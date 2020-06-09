@@ -190,7 +190,7 @@ const PersonalDetails = (() => {
     const force_update_fields     = ['tax_residence', 'tax_identification_number'];
 
     const displayGetSettingsData = (get_settings) => {
-        const show_label = [].concat(show_label_if_any_value);
+        const show_label = [...show_label_if_any_value];
         if (is_fully_authenticated) {
             show_label.push('tax_residence', 'tax_identification_number');
         }
