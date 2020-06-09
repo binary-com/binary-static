@@ -61,10 +61,10 @@ const PersonalDetails = (() => {
         }
     };
 
-    const showHideTaxForm = (get_settings) => {
-        const should_show_tax = isTaxReq();
+    const shouldShowTax = (get_settings) => {
+        const is_tax_req = isTaxReq();
         const has_set_tax = get_settings.tax_identification_number || get_settings.tax_residence;
-        CommonFunctions.getElementById('tax_information_form').setVisibility(should_show_tax || has_set_tax);
+        return is_tax_req || has_set_tax;
     };
 
     const showHideMissingDetails = () => {
@@ -165,11 +165,11 @@ const PersonalDetails = (() => {
             displayChangeableFields(data);
             CommonFunctions.getElementById('address_form').setVisibility(1);
             showHideTaxMessage();
-            showHideTaxForm(get_settings);
+            CommonFunctions.getElementById('tax_information_form').setVisibility(shouldShowTax(get_settings));
         } else {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
-            showHideTaxForm(get_settings);
+            CommonFunctions.getElementById('tax_information_form').setVisibility(shouldShowTax(get_settings));
         }
 
         $(form_id).setVisibility(1);
@@ -283,9 +283,9 @@ const PersonalDetails = (() => {
                 { selector: '#residence', validations: ['req'] },
             ];
         } else {
-            const is_financial      = Client.isAccountOfType('financial');
-            const is_gaming         = Client.isAccountOfType('gaming');
-            const is_tax_req        = isTaxReq();
+            const is_financial = Client.isAccountOfType('financial');
+            const is_gaming    = Client.isAccountOfType('gaming');
+            const is_tax_req   = isTaxReq();
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -300,7 +300,7 @@ const PersonalDetails = (() => {
                 { selector: '#date_of_birth',          validations: ['req'] },
 
                 // recheck tax_identiciation_number after tax_residence is selected as the validation regex is taken from API based on tax residence
-                { selector: '#tax_residence',             validations: (is_tax_req) ? ['req'] : '', re_check_field: '#tax_identification_number' },
+                { selector: '#tax_residence',             validations: is_tax_req ? ['req'] : '', re_check_field: '#tax_identification_number' },
                 {
                     selector   : '#tax_identification_number',
                     validations: [
@@ -416,17 +416,19 @@ const PersonalDetails = (() => {
                     }));
                 });
                 if (residence) {
-                    $tax_residence = $('#tax_residence');
-                    $tax_residence.html($options_with_disabled.html()).promise().done(() => {
-                        setTimeout(() => {
-                            const residence_value = get_settings_data.tax_residence ?
-                                get_settings_data.tax_residence.split(',') : residence || '';
-                            $tax_residence.select2()
-                                .val(residence_value)
-                                .trigger('change')
-                                .setVisibility(1);
-                        }, 500);
-                    });
+                    if (shouldShowTax(get_settings_data)) {
+                        $tax_residence = $('#tax_residence');
+                        $tax_residence.html($options_with_disabled.html()).promise().done(() => {
+                            setTimeout(() => {
+                                const residence_value = get_settings_data.tax_residence ?
+                                    get_settings_data.tax_residence.split(',') : residence || '';
+                                $tax_residence.select2()
+                                    .val(residence_value)
+                                    .trigger('change')
+                                    .setVisibility(1);
+                            }, 500);
+                        });
+                    }
 
                     if (!get_settings_data.place_of_birth) {
                         $options.prepend($('<option/>', { value: '', text: localize('Please select') }));
