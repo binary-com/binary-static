@@ -72,10 +72,11 @@ const AuthorisedApps = (() => {
 
     const formatApp = (app) => {
         const localized_scopes = {
-            admin   : localize('Admin'),
-            payments: localize('Payments'),
-            read    : localize('Read'),
-            trade   : localize('Trade'),
+            admin              : localize('Admin'),
+            payments           : localize('Payments'),
+            read               : localize('Read'),
+            trade              : localize('Trade'),
+            trading_information: localize('Trading Information'),
         };
         const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
         const scopes    = app.scopes.map(scope => localized_scopes[scope]).join(', ');
