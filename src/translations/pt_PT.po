@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-06-02 06:01\n"
+"PO-Revision-Date: 2020-06-09 10:30\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -6876,12 +6876,6 @@ msgstr "A Mastercard é uma empresa internacional que processa pagamentos feitos
 msgid "Matches/Differs"
 msgstr "Combina/Difere"
 
-msgid "Maximum Payout"
-msgstr "Prêmio máximo"
-
-msgid "Maximum Profit"
-msgstr "Lucro máximo"
-
 msgid "Maximum account cash balance"
 msgstr "Saldo máximo em conta"
 
@@ -7355,12 +7349,6 @@ msgstr "Nenhuma posição em aberto."
 
 msgid "No party shall be deemed liable for a partial or complete failure to meet its obligations under this Agreement, in case of force majeure events, including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalisations, devaluations, forfeitures, natural disasters, act of God, and other inevitable or unforeseeable, unanticipated, and unpredicted events not depending on the will of the parties."
 msgstr "Nenhuma parte será considerada responsável por falha parcial ou total no cumprimento de suas obrigações sob este Contrato, em casos de força maior, incluindo, mas não limitado a guerra civil, agitação, insurreição, intervenção internacional, quaisquer ações governamentais, controles cambiais, nacionalizações., desvalorizações, confiscos, desastres naturais, atos de Deus e outros eventos inevitáveis ​​ou imprevisíveis, imprevistos, que não dependem da vontade das partes."
-
-msgid "No payout if exit spot is above or equal to the upper barrier."
-msgstr "Não haverá prêmio se o preço de saída for superior ou igual à barreira inferior."
-
-msgid "No payout if exit spot is below or equal to the lower barrier."
-msgstr "Não haverá prêmio se o preço de saída for inferior ou igual à barreira inferior."
 
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering, which may have several effects on clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "Ninguém deve utilizar este site para efeitos de lavagem de dinheiro. A Empresa emprega procedimentos de boas práticas contra a lavagem de dinheiro. Todas as transações são controladas de modo a prevenir a lavagem de dinheiro, o que pode dar origem a vários efeitos para Clientes. A Empresa reserva-se o direito de recusar fazer negócio com Clientes, interromper negócio com Clientes e reverter as transações de Clientes que não aceitam ou não aderem a estes processos contra a lavagem de dinheiro. Fundos aceitáveis não devem provir de atividades criminosas. A Empresa irá, por obrigação, comunicar transações suspeitas às autoridades relevantes."
@@ -11661,6 +11649,9 @@ msgstr "Este bônus está disponível apenas para novos clientes. Os clientes j�
 msgid "This bonus will be processed and credited to a client's account when both of the following cases are true:"
 msgstr "Este bônus será processado e creditado na conta de um cliente quando ambos os casos seguintes forem verdadeiros:"
 
+msgid "This contract is only available on %1DTrader%2."
+msgstr ""
+
 msgid "This contract is only available on DTrader.%1%2Go to Dtrader%3 to close or cancel this contract."
 msgstr "Este contrato só está disponível em DTrader. %1%2Vá para o Dtrader%3 para fechar ou cancelar este contrato."
 
@@ -12110,6 +12101,9 @@ msgstr "Os negociadores escolhem comprar um certo par de moedas caso pensem que 
 
 msgid "Trading"
 msgstr "Negociações"
+
+msgid "Trading Information"
+msgstr ""
 
 msgid "Trading Limits"
 msgstr "Limites de Negociação"
@@ -13192,12 +13186,6 @@ msgstr "Por que você deve negociar metais preciosos com a %1"
 msgid "Why you should use %1 instead of your ISP's default DNS service"
 msgstr "Por que deve usar o %1 em vez do serviço DNS padrão do seu provedor de Internet"
 
-msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
-msgstr "Ganhe o prêmio máximo se o preço de saída for superior ou igual à barreira superior."
-
-msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
-msgstr "Ganhe o prêmio máximo se o preço de saída for inferior ou igual à barreira inferior."
-
 msgid "Win payout if consecutive ticks fall successively. Contract is lost when at least one tick rises or is equal to any of the previous ticks."
 msgstr "Ganhe o pagamento se os ticks consecutivos caírem sucessivamente. O contrato é perdido quando pelo menos um tick aumenta ou é igual a qualquer um dos ticks anteriores."
 
@@ -13215,12 +13203,6 @@ msgstr "Ganhe o multiplicador vezes a alta menos o fechamento."
 
 msgid "Win the multiplier times the high minus low."
 msgstr "Ganhe o multiplicador vezes a alta menos a baixa."
-
-msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between exit spot and lower barrier."
-msgstr "Ganhe até o prêmio máximo se o preço de saída for entre a barreira inferior e a barreira superior, em proporção à diferença entre o preço de saída e a barreira inferior."
-
-msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between upper barrier and exit spot."
-msgstr "Ganhe até o prêmio máximo se o preço de saída for entre a barreira inferior e a barreira superior, em proporção à diferença entre a barreira superior e o preço de saída."
 
 msgid "Windows"
 msgstr "Windows"
