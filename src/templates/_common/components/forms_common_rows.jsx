@@ -277,6 +277,10 @@ export const TaxInformationForm = () => (
             attributes={{ maxLength: 20, 'data-lpignore': true }}
         />
 
+        <p id='tax_id_warning' className='notice-msg invisible gr-9 gr-centered'>
+            {it.L('This Tax Identification Number (TIN) is invalid. You may continue, but to facilitate future payment processes, valid tax information will be required.')}
+        </p>
+
         <div id='tax_information_declaration'>
             <div className='gr-12 gr-padding-10'>
                 <input type='checkbox' id='chk_tax_id' />
