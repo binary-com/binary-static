@@ -1,5 +1,4 @@
 const moment                   = require('moment');
-const isCallputspread          = require('./callputspread').isCallputspread;
 const Contract                 = require('./contract');
 const hidePriceOverlay         = require('./common').hidePriceOverlay;
 const countDecimalPlaces       = require('./common_independent').countDecimalPlaces;
@@ -176,10 +175,6 @@ const Purchase = (() => {
             if (isLookback(contract_type)) {
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
                 profit.setVisibility(0);
-            } else if (isCallputspread(contract_type)) {
-                profit.setVisibility(1);
-                CommonFunctions.elementInnerHtml(payout, `${localize('Maximum Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
-                CommonFunctions.elementInnerHtml(profit, `${localize('Maximum Profit')} <p>${potential_profit_value}</p>`);
             } else {
                 profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
