@@ -34,11 +34,7 @@ const AccountOpening = (() => {
         handleTaxIdentificationNumber();
         const landing_company  = State.getResponse('landing_company');
         const lc_to_upgrade_to = landing_company[is_financial ? 'financial_company' : 'gaming_company'] || landing_company.financial_company;
-        if (lc_to_upgrade_to.name === 'Binary (SVG) LLC') {
-            CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), 'Deriv (SVG) LLC');
-        } else {
-            CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), lc_to_upgrade_to.name);
-        }
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), lc_to_upgrade_to.name);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-country'), lc_to_upgrade_to.country);
         if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
             professionalClient.init(is_financial, false);
