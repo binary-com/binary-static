@@ -398,7 +398,7 @@ const Home = () => {
                         <p className='center-text'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
 
                         <div className='gr-12 gr-padding-30'>
-                            <div className='gr-row'>
+                            <div className='gr-row gr-row-align-center'>
                                 <PaymentLogo />
                             </div>
                         </div>
