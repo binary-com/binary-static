@@ -200,14 +200,14 @@ const DigitTicker = (() => {
         }
     };
 
-    const update = (current_tick_count, { quote, epoch }) => {
+    const update = (current_tick_count, { tick_display_value, epoch }) => {
         if (current_tick_count > total_tick_count) {
             return;
         }
         setElements(epoch);
         el_container.classList.remove('invisible');
         adjustBoxSizes();
-        current_spot = quote.substr(-1);
+        current_spot = tick_display_value.substr(-1);
         if (el_mask) el_mask.innerText = `${current_tick_count} / ${total_tick_count}`;
         if (el_peek_box) {
             el_peek_box.classList.add('digit-running');
