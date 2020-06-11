@@ -137,7 +137,7 @@ const Footer = () => (
                                     { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
                                     { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                                    { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
+                                    { media: 'reddit',      href: 'https://www.reddit.com/user/Deriv_official/' },
                                 ]}
                             />
                         </div>
@@ -190,7 +190,7 @@ const Footer = () => (
                                     { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
                                     { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                                    { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
+                                    { media: 'reddit',      href: 'https://www.reddit.com/user/Deriv_official/' },
                                 ]}
                             />
                         </div>

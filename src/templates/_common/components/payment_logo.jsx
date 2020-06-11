@@ -5,7 +5,6 @@ const payment_methods_list = [
     { image: 'mastercard',              param: '?anchor=mastercard' },
     { image: 'maestro',                 param: '?anchor=maestro' },
     { image: 'bank_transfer',           param: '?anchor=bank-transfer' },
-    { image: 'internet_bank_transfer',  param: '?anchor=internet-bank-transfer' },
     { image: 'paytrust',                param: '?anchor=paytrust',       dataShow: '-eucountry' },
     { image: 'neteller',                param: '?anchor=neteller' },
     { image: 'fasapay',                 param: '?anchor=fasapay',        dataShow: '-eucountry' },
@@ -15,7 +14,6 @@ const payment_methods_list = [
     { image: 'webmoney',                param: '?anchor=webmoney' },
     { image: 'paysafe',                 param: '?anchor=paysafe' },
     { image: 'jeton',                   param: '?anchor=jeton' },
-    { image: 'iwallet',                 param: '?anchor=iwallet',        dataShow: '-eucountry' },
     { image: 'sticpay',                 param: '?anchor=sticpay' },
     { image: 'airtm',                   param: '?anchor=airtm' },
 ];
