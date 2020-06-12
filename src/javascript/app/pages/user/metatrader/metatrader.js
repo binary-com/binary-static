@@ -229,6 +229,10 @@ const MetaTrader = (() => {
                         if (typeof actions_info[action].onError === 'function') {
                             actions_info[action].onError(response, MetaTraderUI.$form());
                         }
+                        if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
+                            // update limits if outdated due to exchange rates changing for currency
+                            BinarySocket.send({ website_status: 1 });
+                        }
                         MetaTraderUI.enableButton(action, response);
                     } else {
                         await BinarySocket.send({ get_account_status: 1 });
