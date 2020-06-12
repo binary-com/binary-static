@@ -2,6 +2,7 @@ const MetaTraderConfig   = require('./metatrader.config');
 const MetaTraderUI       = require('./metatrader.ui');
 const Client             = require('../../../base/client');
 const BinarySocket       = require('../../../base/socket');
+const setCurrencies      = require('../../../common/currency').setCurrencies;
 const Validation         = require('../../../common/form_validation');
 const localize           = require('../../../../_common/localize').localize;
 const State              = require('../../../../_common/storage').State;
@@ -231,7 +232,11 @@ const MetaTrader = (() => {
                         }
                         if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
                             // update limits if outdated due to exchange rates changing for currency
-                            BinarySocket.send({ website_status: 1 });
+                            BinarySocket.send({ website_status: 1 }).then((response_w) => {
+                                if (response_w.website_status) {
+                                    setCurrencies(response_w.website_status);
+                                }
+                            });
                         }
                         MetaTraderUI.enableButton(action, response);
                     } else {
