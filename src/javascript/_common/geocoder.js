@@ -2,6 +2,7 @@
 const scriptjs           = require('scriptjs');
 const getElementById     = require('./common_functions').getElementById;
 const applyToAllElements = require('./utility').applyToAllElements;
+const getPropertyValue   = require('./utility').getPropertyValue;
 const Client             = require('../app/base/client');
 
 const Geocoder = (() => {
@@ -97,8 +98,8 @@ const Geocoder = (() => {
 
     const getValue = (selector) => getElementById(selector.split('#')[1]).value || '';
     const getStateText = (selector) => {
-        const states_list_el = getElementById(selector.split('#')[1]);
-        return states_list_el.options[states_list_el.selectedIndex].text;
+        const states_list_el = getElementById(selector.split('#')[1]) || {};
+        return getPropertyValue(states_list_el, ['options', states_list_el.selectedIndex, 'text']);
     };
 
     const validate = (form_id) => {
