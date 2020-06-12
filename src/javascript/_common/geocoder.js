@@ -112,6 +112,7 @@ const Geocoder = (() => {
     const validator = (address) => (
         new Promise((resolve) => {
             scriptjs.ready('gMaps', () => {
+                if (!google) return;
                 const geocoder = new google.maps.Geocoder();
                 el_btn_validate.classList.add('geocode-btn-disabled');
                 el_success.setVisibility(0);
