@@ -451,6 +451,7 @@ module.exports = [
     'When you click "OK" you will be excluded from trading on the site until the selected date.',
     'Withdraw',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
+    'Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified.',
     'Yes',
     'Yes I\'m sure',
     'Yes, I\'m sure',

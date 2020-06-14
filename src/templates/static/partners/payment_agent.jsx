@@ -39,7 +39,7 @@ const PaymentAgent = () => (
                             <img className='responsive' src={it.url_for('images/pages/payment_agent/payment_agents.svg')} />
                         </div>
                     </div>
-                    <p className='faded'>{it.L('Note: Payment Agent transfers are only available for accounts registered with Binary (SVG) LLC. Transactions are accepted only in US dollars.')}</p>
+                    <p className='faded'>{it.L('Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars.')}</p>
                 </Section>
 
                 <Section id='why-choose-payment-agents' header={it.L('Why do Clients choose to use Payment Agents?')}>

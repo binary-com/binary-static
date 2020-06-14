@@ -97,20 +97,6 @@ const MetaTraderConfig = (() => {
     let $messages;
     const needsRealMessage = () => $messages.find('#msg_switch').html();
 
-    // currency equivalent to 1 USD
-    // or 1 of donor currency if both accounts have the same currency
-    const getMinMT5TransferValue = (currency) => {
-        const client_currency = Client.get('currency');
-        const mt5_currency    = getCurrency(Client.get('mt5_account'));
-        if (client_currency === mt5_currency) return 1;
-        return (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency));
-    };
-
-    // currency equivalent to 20000 USD
-    const getMaxMT5TransferValue = (currency) => (
-        (+getMinMT5TransferValue(currency) * 20000).toFixed(Currency.getDecimalPlaces(currency))
-    );
-
     const newAccCheck = (acc_type, message_selector) => (
         new Promise((resolve) => {
             const $message = $messages.find('#msg_real_financial').clone();
@@ -343,7 +329,7 @@ const MetaTraderConfig = (() => {
                             resolve(localize('Your cashier is locked.')); // Locked from BO
                         } else {
                             const limit = State.getResponse('get_limits.remainder');
-                            if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue(Client.get('currency'))) {
+                            if (typeof limit !== 'undefined' && +limit < Currency.getTransferLimits(Client.get('currency'), 'min')) {
                                 resolve(localize('You have reached the limit.'));
                             } else {
                                 resolve();
@@ -465,10 +451,10 @@ const MetaTraderConfig = (() => {
             { selector: fields.verify_password_reset_token.txt_verification_code.id, validations: [['req', { hide_asterisk: true }], 'token'], exclude_request: 1 },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: () => Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')) }]] },
+            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => Currency.getTransferLimits(Client.get('currency'), 'min'), max: () => Math.min(State.getResponse('get_limits.remainder') || Currency.getTransferLimits(Client.get('currency'), 'max'), Currency.getTransferLimits(Client.get('currency'), 'max')).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')) }]] },
         ],
         withdrawal: [
-            { selector: fields.withdrawal.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
+            { selector: fields.withdrawal.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min'), max: () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'max'), decimals: 2 }]] },
         ],
     });
 

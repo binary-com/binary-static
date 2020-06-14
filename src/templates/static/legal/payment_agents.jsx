@@ -6,7 +6,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor='scope-of-agreement'>A. {it.L('Scope of agreement')}</h2>
         <ol>
-            <li>{it.L('This agreement is between Binary (SVG) LLC (hereinafter referred to as "the Company" or "[_1]") and Payment Agent (hereinafter referred to as "the Agent"), both of whom agree to be bound by this agreement.', it.website_name)}</li>
+            <li>{it.L('This agreement is between Deriv (SVG) LLC (hereinafter referred to as "the Company" or "[_1]") and Payment Agent (hereinafter referred to as "the Agent"), both of whom agree to be bound by this agreement.', it.website_name)}</li>
             <li>{it.L('The Company and the Agent (hereinafter referred to as "the Parties") desire to enter into this agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this agreement.')}</li>
         </ol>
 

@@ -247,6 +247,7 @@ const Header = (() => {
         BinarySocket.wait('get_account_status', 'authorize', 'landing_company').then(() => {
             let authentication,
                 get_account_status,
+                is_fully_authenticated,
                 status;
             const is_svg          = Client.get('landing_company_shortcode') === 'svg';
             const loginid         = Client.get('loginid') || {};
@@ -355,6 +356,7 @@ const Header = (() => {
                 risk                    : () => buildMessage(localizeKeepPlaceholders('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),                                   'user/settings/assessmentws'),
                 tax                     : () => buildMessage(localizeKeepPlaceholders('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),                                            'user/settings/detailsws'),
                 unwelcome               : () => buildMessage(localizeKeepPlaceholders('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                    'contact'),
+                withdrawal_locked_review: () => localize('Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified.'),
                 withdrawal_locked       : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
                 tnc                     : () => buildMessage(has_no_tnc_limit
                     ? localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2].')
@@ -383,6 +385,7 @@ const Header = (() => {
                 tax                     : () => Client.shouldCompleteTax(),
                 tnc                     : () => Client.shouldAcceptTnc(),
                 unwelcome               : () => hasStatus('unwelcome'),
+                withdrawal_locked_review: () => hasStatus('withdrawal_locked') && get_account_status.risk_classification === 'high' && !is_fully_authenticated && authentication.document.status === 'pending',
                 withdrawal_locked       : () => hasStatus('withdrawal_locked'),
             };
 
@@ -407,6 +410,7 @@ const Header = (() => {
                 'unwelcome',
                 'no_withdrawal_or_trading',
                 'cashier_locked',
+                'withdrawal_locked_review',
                 'withdrawal_locked',
                 'mt5_withdrawal_locked',
             ];
@@ -436,7 +440,7 @@ const Header = (() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
                     checkStatus(check_statuses_real);
-                    const is_fully_authenticated = hasStatus('authenticated') && !+get_account_status.prompt_client_to_authenticate;
+                    is_fully_authenticated = hasStatus('authenticated') && !+get_account_status.prompt_client_to_authenticate;
                     $('.account-id')[is_fully_authenticated ? 'append' : 'remove'](el_account_status);
                 });
             }
