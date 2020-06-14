@@ -160,19 +160,19 @@ const TypesOfPartnership = () => (
                                     tbody: [
                                         [
                                             { text: it.L('Crash 1000 Index') },
-                                            { text: it.L('0.20') },
+                                            { text: it.L('0.50') },
                                         ],
                                         [
                                             { text: it.L('Crash 500 Index') },
-                                            { text: it.L('0.30') },
+                                            { text: it.L('0.70') },
                                         ],
                                         [
                                             { text: it.L('Boom 1000 Index') },
-                                            { text: it.L('0.20') },
+                                            { text: it.L('0.50') },
                                         ],
                                         [
                                             { text: it.L('Boom 500 Index') },
-                                            { text: it.L('0.30') },
+                                            { text: it.L('0.70') },
                                         ],
                                         [
                                             { text: it.L('Volatility 100 Index') },
@@ -209,6 +209,14 @@ const TypesOfPartnership = () => (
                                         [
                                             { text: it.L('Step Index') },
                                             { text: it.L('0.20') },
+                                        ],
+                                        [
+                                            { text: it.L('Range Break 100 Index') },
+                                            { text: it.L('0.20') },
+                                        ],
+                                        [
+                                            { text: it.L('Range Break 200 Index') },
+                                            { text: it.L('0.10') },
                                         ],
                                     ],
                                 }}
