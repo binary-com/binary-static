@@ -89,7 +89,7 @@ const submarket_order = {
     random_nightly : 21,
 };
 
-const submarketSort = (a, b) => {
+export const submarketSort = (a, b) => {
     if (submarket_order[a] > submarket_order[b]) {
         return 1;
     } else if (submarket_order[a] < submarket_order[b]) {

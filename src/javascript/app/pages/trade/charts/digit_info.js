@@ -1,9 +1,13 @@
 const CreateDropdown = require('@binary-com/binary-style').selectDropdown;
 const getHighstock   = require('../common').requireHighstock;
+const Defaults       = require('../defaults');
+const submarketSort  = require('../markets.jsx').submarketSort;
 const Symbols        = require('../symbols');
 const BinarySocket   = require('../../../base/socket');
+const ActiveSymbols  = require('../../../common/active_symbols');
 const addComma       = require('../../../../_common/base/currency_base').addComma;
 const localize       = require('../../../../_common/localize').localize;
+const State          = require('../../../../_common/storage').State;
 const template       = require('../../../../_common/utility').template;
 
 const DigitInfo = (() => {
@@ -95,21 +99,23 @@ const DigitInfo = (() => {
     };
 
     const addContent = (underlying) => {
-        const domain    = document.domain.split('.').slice(-2).join('.');
-        let underlyings = [];
-        const symbols   = Symbols.getAllSymbols();
-        Object.keys(symbols).forEach((key) => {
-            if (/^(R_|RD)/.test(key)) {
-                underlyings.push(key);
-            }
-        });
-        underlyings = underlyings.sort();
-        underlyings.splice(2, 0, '1HZ10V');  // add Volatility 10 (1s)
-        underlyings.splice(4, 0, '1HZ100V'); // add Volatility 100 (1s)
-        let elem    = '';
-        for (let i = 0; i < underlyings.length; i++) {
-            elem += `<option value="${underlyings[i]}">${symbols[underlyings[i]]}</option>`;
-        }
+        const domain  = document.domain.split('.').slice(-2).join('.');
+        const market  = Defaults.get('market');
+        const symbols = ActiveSymbols.getSymbols(State.getResponse('active_symbols'));
+
+        let elem = '';
+        Object.keys(symbols)
+            // only keep the symbols of the currently selected market
+            .filter(symbol => symbols[symbol].market === market)
+            // sort them by the submarket order defined
+            .sort((symbol_a, symbol_b) =>
+                submarketSort(symbols[symbol_a].submarket, symbols[symbol_b].submarket)
+            )
+            // populate the drop-down with them
+            .forEach((symbol) => {
+                elem += `<option value="${symbol}">${symbols[symbol].display}</option>`;
+            });
+
         $('#digit_underlying').html($(elem)).val(underlying);
         $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
         $('#digit_info_underlying').text($('#digit_underlying option:selected').text());
