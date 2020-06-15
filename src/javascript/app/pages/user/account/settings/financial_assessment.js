@@ -50,7 +50,7 @@ const FinancialAssessment = (() => {
             BinarySocket.wait('get_account_status').then(() => { displayHighRiskClassification(); });
         }
 
-        // display Trading Experience only for financial & MT5 financial accounts
+        // display Trading Experience only for financial & MT5 financial_stp accounts
         const is_mt5_financial = /labuan_financial_stp/.test(getHashValue('mt5_redirect'));
         $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
