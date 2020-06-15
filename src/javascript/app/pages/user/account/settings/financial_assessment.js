@@ -51,7 +51,7 @@ const FinancialAssessment = (() => {
         }
 
         // display Trading Experience only for financial & MT5 financial accounts
-        const is_mt5_financial = /labuan_advanced/.test(getHashValue('mt5_redirect'));
+        const is_mt5_financial = /labuan_financial_stp/.test(getHashValue('mt5_redirect'));
         $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
         Object.keys(financial_assessment).forEach((key) => {

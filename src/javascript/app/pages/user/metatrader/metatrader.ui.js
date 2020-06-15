@@ -438,7 +438,7 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
             // uncomment to show No Deposit Bonus note
-            // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_svg_standard/.test(new_acc_type));
+            // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_svg_financial/.test(new_acc_type));
         }
     };
 
@@ -479,11 +479,11 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !/labuan_standard|svg_advanced|vanuatu_advanced|maltainvest_advanced/.test(acc_type))// toEnableVanuatuAdvanced: remove vanuatu_advanced from regex
+            .filter(acc_type => !/labuan_financial|svg_financial_stp|vanuatu_financial_stp|maltainvest_financial_stp/.test(acc_type))// toEnableVanuatuFinancialSTP: remove vanuatu_financial_stp from regex
             .forEach((acc_type) => {
                 const $acc  = accounts_info[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
-                const image = accounts_info[acc_type].mt5_account_type || 'volatility_indices'; // image name can be (advanced|standard|volatility_indices)
+                const image = accounts_info[acc_type].mt5_account_type || 'synthetic'; // image name can be (financial_stp|financial|synthetic)
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
                     .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
                 $acc.find('p').text(accounts_info[acc_type].short_title);
@@ -588,7 +588,7 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if (/(demo|real)_vanuatu_standard/.test(acc_type)) {
+        if (/(demo|real)_vanuatu_financial/.test(acc_type)) {
             $el.removeAttr('data-balloon data-balloon-length');
             return;
         }
@@ -598,12 +598,12 @@ const MetaTraderUI = (() => {
         const account = accounts_info[acc_type];
         let company;
 
-        if (/standard/.test(account.mt5_account_type)) {
-            company = mt_financial_company.standard;
-        } else if (/advanced/.test(account.mt5_account_type)) {
-            company = mt_financial_company.advanced;
+        if (/financial/.test(account.mt5_account_type)) {
+            company = mt_financial_company.financial;
+        } else if (/financial_stp/.test(account.mt5_account_type)) {
+            company = mt_financial_company.financial_stp;
         } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
-            company = mt_gaming_company.standard;
+            company = mt_gaming_company.financial;
         }
 
         $el.attr({

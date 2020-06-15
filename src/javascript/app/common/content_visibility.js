@@ -63,7 +63,7 @@ const ContentVisibility = (() => {
                 // Check if mt_financial_company is offered, if not found, switch to mt_gaming_company
                 const mt_landing_company = mt_financial_company || mt_gaming_company;
 
-                // Check mt_financial_company by account type, since we are offering different landing companies for standard and advanced
+                // Check mt_financial_company by account type, since we are offering different landing companies for financial and financial_stp
                 arr_mt5fin_shortcodes = mt_landing_company ? Object.keys(mt_landing_company)
                     .map((key) => mt_landing_company[key].shortcode) : [];
 

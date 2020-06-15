@@ -212,7 +212,7 @@ const Metatrader = () => (
                         description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                     />
                     <AccountDesc
-                        account_type={['vanuatu_standard', 'svg_standard']}
+                        account_type={['vanuatu_financial', 'svg_financial']}
                         title={it.L('Financial Account')}
                         description={it.L('Our MetaTrader 5 Financial account is suitable for both new and experienced traders.')}
                         items={[
@@ -223,7 +223,7 @@ const Metatrader = () => (
                         ]}
                     />
                     <AccountDesc
-                        account_type={['maltainvest_standard']}
+                        account_type={['maltainvest_financial']}
                         title={it.L('Financial Account')}
                         description={it.L('Our MetaTrader 5 Financial account is suitable for both new and experienced traders.')}
                         items={[
@@ -235,7 +235,7 @@ const Metatrader = () => (
                         ]}
                     />
                     <AccountDesc
-                        account_type={['labuan_advanced']}
+                        account_type={['labuan_financial_stp']}
                         title={it.L('Financial STP Account')}
                         description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                         items={[
@@ -247,7 +247,7 @@ const Metatrader = () => (
                     />
                     {/*
                         <AccountDesc
-                            account_type={['vanuatu_advanced']}
+                            account_type={['vanuatu_financial_stp']}
                             title={it.L('Financial STP Account')}
                             description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
@@ -288,8 +288,8 @@ const Metatrader = () => (
                                     <TypeGroup
                                         title={it.L('Step 2: Choose account type')}
                                         types={[
-                                            { type: 'template_demo', desc: 'standard' },
-                                            { type: 'template_real', desc: 'standard' },
+                                            { type: 'template_demo', desc: 'financial' },
+                                            { type: 'template_real', desc: 'financial' },
                                         ]}
                                     >
                                         <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>

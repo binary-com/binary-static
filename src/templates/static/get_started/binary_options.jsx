@@ -261,7 +261,7 @@ const BinaryOptions = () => {
                             <SectionSmall image='range-of-markets/indices' header={it.L('Stock Indices')} text={it.L('Major worldwide stock indices sourced from the OTC market.')} />
 
                             <SectionSmall image='range-of-markets/commodities' header={it.L('Commodities')}       text={it.L('All four precious metals, plus energy.')} />
-                            <SectionSmall image='range-of-markets/volatility'  header={it.L('Synthetic Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
+                            <SectionSmall image='range-of-markets/synthetic'  header={it.L('Synthetic Indices')} text={it.L('Synthetic indices that mimic market volatility.')} />
                         </div>
 
                         <HeaderSecondary header={it.L('Forex')} data-anchor='forex' />
