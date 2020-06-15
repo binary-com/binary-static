@@ -179,7 +179,15 @@ const TypesOfPartnership = () => (
                                             { text: it.L('15.00') },
                                         ],
                                         [
+                                            { text: it.L('Volatility 100 (1s) Index') },
+                                            { text: it.L('15.00') },
+                                        ],
+                                        [
                                             { text: it.L('Volatility 75 Index') },
+                                            { text: it.L('10.00') },
+                                        ],
+                                        [
+                                            { text: it.L('Volatility 75 (1s) Index') },
                                             { text: it.L('10.00') },
                                         ],
                                         [
@@ -187,13 +195,25 @@ const TypesOfPartnership = () => (
                                             { text: it.L('7.50') },
                                         ],
                                         [
+                                            { text: it.L('Volatility 50 (1s) Index') },
+                                            { text: it.L('7.50') },
+                                        ],                                       
+                                        [
                                             { text: it.L('Volatility 25 Index') },
                                             { text: it.L('3.50') },
                                         ],
                                         [
+                                            { text: it.L('Volatility 25 (1s) Index') },
+                                            { text: it.L('3.50') },
+                                        ],                                       
+                                        [
                                             { text: it.L('Volatility 10 Index') },
                                             { text: it.L('1.50') },
                                         ],
+                                        [
+                                            { text: it.L('Volatility 10 (1s) Index') },
+                                            { text: it.L('1.50') },
+                                        ],                                       
                                         [
                                             { text: it.L('HF Volatility 100 Index') },
                                             { text: it.L('15.00') },
