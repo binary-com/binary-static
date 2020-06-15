@@ -1,14 +1,13 @@
-const CreateDropdown = require('@binary-com/binary-style').selectDropdown;
-const getHighstock   = require('../common').requireHighstock;
-const Defaults       = require('../defaults');
-const submarketSort  = require('../markets.jsx').submarketSort;
-const Symbols        = require('../symbols');
-const BinarySocket   = require('../../../base/socket');
-const ActiveSymbols  = require('../../../common/active_symbols');
-const addComma       = require('../../../../_common/base/currency_base').addComma;
-const localize       = require('../../../../_common/localize').localize;
-const State          = require('../../../../_common/storage').State;
-const template       = require('../../../../_common/utility').template;
+const CreateDropdown      = require('@binary-com/binary-style').selectDropdown;
+const getHighstock        = require('../common').requireHighstock;
+const Defaults            = require('../defaults');
+const Symbols             = require('../symbols');
+const BinarySocket        = require('../../../base/socket');
+const getSymbolsForMarket = require('../../../common/active_symbols').getSymbolsForMarket;
+const addComma            = require('../../../../_common/base/currency_base').addComma;
+const localize            = require('../../../../_common/localize').localize;
+const State               = require('../../../../_common/storage').State;
+const template            = require('../../../../_common/utility').template;
 
 const DigitInfo = (() => {
     let spots          = [];
@@ -100,21 +99,12 @@ const DigitInfo = (() => {
 
     const addContent = (underlying) => {
         const domain  = document.domain.split('.').slice(-2).join('.');
-        const market  = Defaults.get('market');
-        const symbols = ActiveSymbols.getSymbols(State.getResponse('active_symbols'));
+        const symbols = getSymbolsForMarket(State.getResponse('active_symbols'), Defaults.get('market'));
 
         let elem = '';
-        Object.keys(symbols)
-            // only keep the symbols of the currently selected market
-            .filter(symbol => symbols[symbol].market === market)
-            // sort them by the submarket order defined
-            .sort((symbol_a, symbol_b) =>
-                submarketSort(symbols[symbol_a].submarket, symbols[symbol_b].submarket)
-            )
-            // populate the drop-down with them
-            .forEach((symbol) => {
-                elem += `<option value="${symbol}">${symbols[symbol].display}</option>`;
-            });
+        Object.keys(symbols).forEach((symbol) => {
+            elem += `<option value="${symbol}">${symbols[symbol].display}</option>`;
+        });
 
         $('#digit_underlying').html($(elem)).val(underlying);
         $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
