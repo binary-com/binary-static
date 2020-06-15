@@ -1,12 +1,14 @@
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
+const Dialog             = require('../../common/attach_dom/dialog');
 const Currency           = require('../../common/currency');
 const FormManager        = require('../../common/form_manager');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
+const urlFor             = require('../../../_common/url').urlFor;
 const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const AccountTransfer = (() => {
@@ -166,13 +168,26 @@ const AccountTransfer = (() => {
         });
     };
 
-    const responseHandler = (response) => {
+    const responseHandler = async (response) => {
         if (response.error) {
-            const el_error = getElementById('form_error');
-            elementTextContent(el_error, response.error.message);
-            el_error.setVisibility(1);
-            // Auto hide error after 5 seconds.
-            setTimeout(() => el_error.setVisibility(0), 5000);
+            if (response.error.code === 'Fiat2CryptoTransferOverLimit') {
+                await BinarySocket.send({ get_account_status: 1 });
+                Dialog.confirm({
+                    id               : 'error_transfer',
+                    localized_title  : localize('Verification required'),
+                    localized_message: response.error.message,
+                    ok_text          : localize('Verify identity'),
+                    onConfirm        : () => {
+                        BinaryPjax.load(urlFor('user/authenticate'));
+                    },
+                });
+            } else {
+                const el_error = getElementById('form_error');
+                elementTextContent(el_error, response.error.message);
+                el_error.setVisibility(1);
+                // Auto hide error after 5 seconds.
+                setTimeout(() => el_error.setVisibility(0), 5000);
+            }
         } else {
             populateReceipt(response);
         }
