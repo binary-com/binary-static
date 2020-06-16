@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Symbols from './symbols';
 // Should be remove in the future
 import Defaults from './defaults';
+import { sortSubmarket } from '../../common/active_symbols';
 import { getElementById } from '../../../_common/common_functions';
 import { localize } from '../../../_common/localize';
 
@@ -40,7 +41,7 @@ const List = ({
             <div className='market_name'>
                 {obj.name}
             </div>
-            {Object.entries(obj.submarkets).sort((a, b) => submarketSort(a[0], b[0]))
+            {Object.entries(obj.submarkets).sort((a, b) => sortSubmarket(a[0], b[0]))
                 .map(([key, submarket], idx_2) => ( // eslint-disable-line no-unused-vars
                     <div className='submarket' key={idx_2}>
                         <div className='submarket_name'>
@@ -64,40 +65,6 @@ const List = ({
     ))
 );
 
-const submarket_order = {
-    forex          : 0,
-    major_pairs    : 1,
-    minor_pairs    : 2,
-    smart_fx       : 3,
-    indices        : 4,
-    asia_oceania   : 5,
-    europe_africa  : 6,
-    americas       : 7,
-    otc_index      : 8,
-    stocks         : 9,
-    au_otc_stock   : 10,
-    ge_otc_stock   : 11,
-    india_otc_stock: 12,
-    uk_otc_stock   : 13,
-    us_otc_stock   : 14,
-    commodities    : 15,
-    metals         : 16,
-    energy         : 17,
-    synthetic_index: 18,
-    random_index   : 19,
-    random_daily   : 20,
-    random_nightly : 21,
-};
-
-const submarketSort = (a, b) => {
-    if (submarket_order[a] > submarket_order[b]) {
-        return 1;
-    } else if (submarket_order[a] < submarket_order[b]) {
-        return -1;
-    }
-    return 0;
-};
-
 class Markets extends React.Component {
     constructor (props) {
         super(props);
@@ -107,10 +74,10 @@ class Markets extends React.Component {
         this.underlyings = Symbols.getAllSymbols() || {};
         let underlying_symbol = Defaults.get('underlying');
         if (!underlying_symbol || !this.underlyings[underlying_symbol]) {
-            const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(submarketSort)[0];
+            const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(sortSubmarket)[0];
             underlying_symbol = Object.keys(this.markets[market_symbol].submarkets[submarket].symbols).sort()[0];
         }
-        const markets_arr = Object.entries(this.markets).sort((a, b) => submarketSort(a[0], b[0]));
+        const markets_arr = Object.entries(this.markets).sort((a, b) => sortSubmarket(a[0], b[0]));
         this.markets_all = markets_arr.slice();
         if (!(market_symbol in this.markets)) {
             market_symbol = Object.keys(this.markets).find(m => this.markets[m].submarkets[market_symbol]);
@@ -282,6 +249,8 @@ class Markets extends React.Component {
             node.dataset.offsetTop <= position
                 && +node.dataset.offsetHeight + +node.dataset.offsetTop > position
         ));
+
+        if (!current_viewed_node) return;
 
         if (current_viewed_node !== this.references.last_viewed_node) {
             Object.values(market_nodes).forEach(node => {
