@@ -1,5 +1,30 @@
 const isEmptyObject = require('../../_common/utility').isEmptyObject;
 
+const submarket_order = {
+    forex          : 0,
+    major_pairs    : 1,
+    minor_pairs    : 2,
+    smart_fx       : 3,
+    indices        : 4,
+    asia_oceania   : 5,
+    europe_africa  : 6,
+    americas       : 7,
+    otc_index      : 8,
+    stocks         : 9,
+    au_otc_stock   : 10,
+    ge_otc_stock   : 11,
+    india_otc_stock: 12,
+    uk_otc_stock   : 13,
+    us_otc_stock   : 14,
+    commodities    : 15,
+    metals         : 16,
+    energy         : 17,
+    synthetic_index: 18,
+    random_index   : 19,
+    random_daily   : 20,
+    random_nightly : 21,
+};
+
 const ActiveSymbols = (() => {
     const groupBy = (xs, key) => (
         xs.reduce((rv, x) => {
@@ -111,6 +136,34 @@ const ActiveSymbols = (() => {
         return clone(symbols);
     };
 
+    const getSymbolsForMarket = (active_symbols, market) => {
+        const all_symbols = getSymbols(active_symbols);
+
+        const filtered_symbols = Object.keys(all_symbols)
+            // only keep the symbols of the currently selected market
+            .filter(symbol => all_symbols[symbol].market === market)
+            // sort them by the submarket order defined
+            .sort((symbol_a, symbol_b) =>
+                sortSubmarket(all_symbols[symbol_a].submarket, all_symbols[symbol_b].submarket)
+            )
+            // make it into an object again with all needed data
+            .reduce((obj, symbol) => ({
+                ...obj,
+                [symbol]: all_symbols[symbol],
+            }), {});
+
+        return clone(filtered_symbols);
+    };
+
+    const sortSubmarket = (a, b) => {
+        if (submarket_order[a] > submarket_order[b]) {
+            return 1;
+        } else if (submarket_order[a] < submarket_order[b]) {
+            return -1;
+        }
+        return 0;
+    };
+
     const getMarketsList = (active_symbols) => {
         const trade_markets_list = {};
         extend(trade_markets_list, getMarkets(active_symbols));
@@ -151,6 +204,8 @@ const ActiveSymbols = (() => {
         getSymbolNames,
         clearData,
         getSymbols,
+        getSymbolsForMarket,
+        sortSubmarket,
     };
 })();
 

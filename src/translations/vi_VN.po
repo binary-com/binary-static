@@ -2,16 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-06-12 07:00\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-06-16 07:51\n"
+"Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: binary-static\n"
+"X-Crowdin-Project-ID: 224893\n"
 "X-Crowdin-Language: vi\n"
 "X-Crowdin-File: messages.pot\n"
+"X-Crowdin-File-ID: 111\n"
 "Language: vi_VN\n"
 
 msgid "1"
@@ -521,17 +523,26 @@ msgstr "0.20"
 msgid "0.3%"
 msgstr "0.3%"
 
-msgid "0.30"
-msgstr "0.30"
-
 msgid "0.4%"
 msgstr "0.4%"
+
+msgid "0.40"
+msgstr ""
 
 msgid "0.5%"
 msgstr "0.5%"
 
+msgid "0.50"
+msgstr ""
+
+msgid "0.70"
+msgstr ""
+
 msgid "0.75%"
 msgstr "0.75%"
+
+msgid "0.80"
+msgstr ""
 
 msgid "1 million transactions/day"
 msgstr "1 triệu giao dịch/ ngày"
@@ -2037,14 +2048,8 @@ msgstr "Công ty TNHH Binary (IOM)."
 msgid "Binary (SVG) LLC,"
 msgstr "Công ty TNHH Binary (SVG),"
 
-msgid "Binary (V) Ltd"
-msgstr "Công ty TNHH Binary (V)"
-
 msgid "Binary (V) Ltd,"
 msgstr "Công ty TNHH Binary (V),"
-
-msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
-msgstr "Công ty TNHH Binary (BVI), tòa nhà Govant, Cảng Vila, PO Box 1276, Vanuatu, Cộng hòa Vanuatu. Cấp phép và quy định bởi Ủy Ban Dịch Vụ Tài Chính của quần đảo British Virgin - %1xem giấy phép%2."
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -2634,14 +2639,14 @@ msgstr "Khách hàng đồng ý tuân thủ với các yêu cầu hợp lý củ
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "Khách hàng cũng được khuyên rằng các quyền của họ có thể sẽ bị giới hạn nếu họ cung cấp thông tin sai sự thật và khi đó Công Ty sẽ không ở vị trí để có thể hành động vì lợi ích tốt nhất cho họ."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "Khách hàng từ các khu vực còn lại trên thế giới (trừ một số quốc gia như Hoa Kỳ, Canada, Hồng Kông) sẽ có tài khoản FX và CFD Metatrader 5 mở ra với Binary (V) Ltd. %1 không có sẵn tại nước Cộng Hòa Vanuatu."
-
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
 msgstr "Khách hàng từ các khu vực còn lại trên thế giới (trừ một số quốc gia như Hoa Kỳ, Canada, Hồng Kông) sẽ có thể mở tài khoản FX và CFD Metatrader 5 với Công Ty TNHH Deriv (BVI). %1 không có sẵn tại quần đảo British Virgin."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
 msgstr ""
+
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
+msgstr "Các khách hàng đến từ các khu vực còn lại trên thế giới (trừ một số quốc gia như Mỹ, Canada, và Hồng Kông) thì tài khoản của họ sẽ được mở với Công ty TNHH Deriv (SVG)."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
 msgstr "Các khách hàng từ các khu vực còn lại (không bao gồm các khu vực pháp lý nhất định như Hoa Kỳ, Canada và Liên minh Châu Âu) muốn giao dịch CFD sẽ mở tài khoản MetaTrader 5 với Binary (FX) Ltd. %1 không khả dụng ở Malaysia."
@@ -3511,9 +3516,15 @@ msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Bri
 msgstr "Deriv (BVI) Ltd, Kingston Chambers, P.O Box 173, Road Town, quần đảo British Virgin. Được cấp phép và quản lý bởi Ủy Ban Dịch Vụ Tài Chính của quần đảo British Virgin - %1xem giấy phép%2."
 
 msgid "Deriv (SVG) LLC"
-msgstr ""
+msgstr "Công ty TNHH Deriv (SVG)"
 
 msgid "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019."
+msgstr "Công ty TNHH Deriv (SVG), Tòa Hinds, Kingstown, St. Vincent và quần đảo Grenadines; mã công ty số 25299 BC 2019."
+
+msgid "Deriv (V) Ltd"
+msgstr ""
+
+msgid "Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
 msgstr ""
 
 msgid "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -5833,7 +5844,7 @@ msgstr "Tại EU, các dịch vụ tài chính được cung cấp bởi Công T
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "Tại Isle of Man và UK, các Chỉ Số Tổng Hợp được cung cấp bởi Binary (IOM) Ltd., Tầng 1, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; được cấp phép và quản lý tương ứng bởi (1) Ủy ban giám sát cờ bạc ở Isle of Man (giấy phép hiện hành được cấp ngày 31 tháng 8 năm 2017) và (2) Ủy ban cờ bạc ở Vương quốc Anh (giấy phép %1 số: 39172 %2)."
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
 msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
@@ -7407,7 +7418,7 @@ msgid "Note: For any enquiries regarding disabled or excluded accounts, please c
 msgstr "Lưu ý: Đối với bất kỳ thắc mắc liên quan đến các tài khoản bị vô hiệu hóa hoặc bị loại trừ, xin vui lòng liên hệ với %1Hỗ trợ khách hàng%2."
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr ""
+msgstr "Chú ý: Chuyển tiền qua Đại lý Thanh toán chỉ có cho các tài khoản đã được đăng kí với công ty TNHH Deriv (SVG). Giao dịch chỉ được chấp nhận bằng tiền Đô la Mỹ."
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Lưu ý: Bạn chỉ được phép sở hữu 1 tài khoản tiền thật. Đơn vị tiền tệ của tài khoản tiền thật có thể được thay đổi trước lần gửi tiền đầu tiên hoặc khi bạn tạo tài khoản MT5. Bạn cũng có thể mở một tài khoản cho mỗi loại tiền ảo được hỗ trợ."
@@ -7766,7 +7777,7 @@ msgstr "Giá trị của chúng tôi"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "Trang web của chúng tôi sử dụng cookie để cung cấp cho bạn trải nghiệm người dùng tốt nhất. Để biết thêm thông tin, vui lòng %1 xem chính sách của chúng tôi%2."
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
 msgstr ""
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
@@ -8716,6 +8727,12 @@ msgstr "Tiêu chuẩn quy định kỹ thuật 27 (RTS 27) năm 2020"
 
 msgid "RTS 28"
 msgstr "RTS 28"
+
+msgid "Range Break 100 Index"
+msgstr ""
+
+msgid "Range Break 200 Index"
+msgstr ""
 
 msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
 msgstr "Range break 100 trung bình sẽ phá vỡ khoảng phạm vi mỗi 100 lần chúng chạm vào đường biên."
@@ -11632,7 +11649,7 @@ msgid "This agreement constitutes the entire agreement between the Parties, and 
 msgstr "Thỏa thuận này cấu thành toàn bộ thỏa thuận giữa các Bên và không có đại diện, sư sắp xếp hoặc thỏa thuận viết bằng miệng liên quan đến bất kỳ vấn đề nào xử lý trước đó trong thỏa thuận giữa các Bên này sẽ có hiệu lực trước Ngày Khởi Đầu."
 
 msgid "This agreement is between Deriv (SVG) LLC (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
-msgstr ""
+msgstr "Thỏa thuận này nằm giữa công ty TNHH Deriv (SVG) (sau đây được gọi là \"Công ty\" hoặc \"%1\") và Đại lý thanh toán (sau đây gọi là \"Đại lý\"), cả hai đều đồng ý bị ràng buộc bởi thỏa thuận này."
 
 msgid "This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement."
 msgstr "Thỏa thuận này được cung cấp cho các đại lý bằng tiếng Anh. Trong trường hợp có một sự khác biệt giữa các phiên bản tiếng Anh và bất kỳ phiên bản dịch của tài liệu này, phiên bản tiếng Anh sẽ được áp dụng. Công ty sẽ không chịu trách nhiệm về bất kỳ tổn thất hoặc thiệt hại nào gây ra bởi một lỗi, sự thiếu chính xác hoặc lỗi chính tả và là kết quả do hiểu lầm hoặc giải thích sai của bất kỳ điều khoản hoặc điều kiện hoặc mệnh đề hoặc các điều khoản trong bất kỳ phiên bản dịch thỏa thuận này."
@@ -12570,11 +12587,17 @@ msgstr "Mã xác minh"
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "Mã xác minh sai rồi. Xin vui lòng sử dụng liên kết được gửi tới email của bạn."
 
+msgid "Verification required"
+msgstr ""
+
 msgid "Verify Reset Password"
 msgstr "Xác minh thiết lập lại mật khẩu"
 
 msgid "Verify and approve clients' deposit and withdrawal requests"
 msgstr "Xác minh và chấp thuận các yêu cầu nạp và rút tiền của khách hàng"
+
+msgid "Verify identity"
+msgstr ""
 
 msgid "Verify main password"
 msgstr "Xác minh Mật Khẩu Chính"
@@ -12654,17 +12677,32 @@ msgstr "Tài Khoản Ảo"
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa là một công ty quốc tế hỗ trợ thanh toán kỹ thuật số trên toàn thế giới, nổi tiếng với thương hiệu thẻ tín dụng và thẻ ghi nợ của họ. Để biết thêm thông tin, vui lòng truy cập %1."
 
+msgid "Volatility 10 (1s) Index"
+msgstr ""
+
 msgid "Volatility 10 Index"
 msgstr "Chỉ số biến động 10"
+
+msgid "Volatility 100 (1s) Index"
+msgstr ""
 
 msgid "Volatility 100 Index"
 msgstr "Chỉ số biến động 100"
 
+msgid "Volatility 25 (1s) Index"
+msgstr ""
+
 msgid "Volatility 25 Index"
 msgstr "Chỉ số biến động 25"
 
+msgid "Volatility 50 (1s) Index"
+msgstr ""
+
 msgid "Volatility 50 Index"
 msgstr "Chỉ số biến động 50"
+
+msgid "Volatility 75 (1s) Index"
+msgstr ""
 
 msgid "Volatility 75 Index"
 msgstr "Chỉ số biến động 75"
@@ -13279,7 +13317,7 @@ msgid "Withdrawals have been disabled on your account. Please check your email f
 msgstr "Rút tiền đã bị vô hiệu hoá trên tài khoản của bạn. Vui lòng kiểm tra email của bạn để biết chi tiết."
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
-msgstr ""
+msgstr "Việc rút tiền đã bị vô hiệu hóa trên tài khoản của bạn. Vui lòng đợi đến khi các tài liệu bạn gửi được xác nhận."
 
 msgid "Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
 msgstr "Tiền rút chỉ có thể được trả cho người mở tài khoản. Khi khách hàng duy trì một tài khoản bằng tiền gửi điện tín, tiền rút cược chỉ được trả lại cho người giữ tài khoản ngân hàng gốc, và Khách hàng có trách nhiệm đảm bảo rằng số tài khoản và tên đi cùng đều được gửi cho Công ty. Khi khách hàng duy trì một tài khoản tiền gửi bằng phương tiện thẻ tín dụng / thẻ ghi nợ, tiền rút chỉ được trả trên cùng một thẻ."

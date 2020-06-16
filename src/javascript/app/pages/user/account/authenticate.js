@@ -971,6 +971,10 @@ const Authenticate = (() => {
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
         } else if (!identity.further_resubmissions_allowed) {
+            // if POI is verified and POA is not verified, redirect to POA tab
+            if (identity.status === 'verified' && document.status !== 'verified') {
+                Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
+            }
             switch (identity.status) {
                 case 'none':
                     if (onfido_unsupported) {

@@ -256,6 +256,11 @@
             }
         }
     }
+    &#error_transfer {
+        #dialog_content {
+            max-width: 26em;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
