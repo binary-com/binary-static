@@ -2,16 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-06-12 07:00\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-06-15 02:15\n"
+"Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Crowdin-Project: binary-static\n"
+"X-Crowdin-Project-ID: 224893\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: messages.pot\n"
+"X-Crowdin-File-ID: 111\n"
 "Language: ru_RU\n"
 
 msgid "1"
@@ -426,7 +428,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "Системы %1 обрабатывают более 1 миллиона транзакций в день (включая демо-счета)."
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
-msgstr ""
+msgstr "%1Служба поддержки%2 доступна 24/7, чтобы помочь вам получить максимум от вашего трейдинга."
 
 msgid "%1Choose a currency%2 for your fiat currency account:"
 msgstr "%1Выберите валюту%2 вашего фидуциарного счета:"
@@ -2640,7 +2642,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли на Forex и CFD на платформе Metatrader 5 будут открыты в рамках компании Deriv (BVI) Ltd. Также услуги %1 не действуют на Британских Виргинских островах."
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
-msgstr ""
+msgstr "Счета для клиентов из других стран мира (за исключением США, Канады и Гонконга) будут открыты в компании Deriv (SVG) LLC."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
 msgstr "Счета клиентов из других стран (за исключением ряда юрисдикций: США, Канады и ЕС), желающих начать торговлю CFD на платформе MetaTrader 5, будут открыты в рамках компании Binary (FX) Ltd. Услуги %1 недоступны в Малайзии."
@@ -3510,10 +3512,10 @@ msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Bri
 msgstr "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Компания лицензирована и регулируется Комиссией по предоставлению финансовых услуг Британских Виргинских островов - %1лицензия%2."
 
 msgid "Deriv (SVG) LLC"
-msgstr ""
+msgstr "Deriv (SVG) LLC"
 
 msgid "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019."
-msgstr ""
+msgstr "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; номер компании 25299 BC 2019."
 
 msgid "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -5832,7 +5834,7 @@ msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (I
 msgstr "Синтетические индексы на острове Мэн и в Великобритании предоставлены компанией Binary (IOM) Ltd., расположенной по адресу First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles. Компания лицензирована и регулируется (1) Комиссией по надзору за азартными играм на Острове Мэн (текущая лицензия выдана 31 августа 2017 г.), а также (2) Комиссией по азартным играм Великобритании (номер лицензии: %1 39172%2)."
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
-msgstr ""
+msgstr "Наши клиенты из Великобритании работают через Binary (IOM) Ltd. и Binary Investments (Europe) Ltd. Клиентов с Острова Мэн обслуживает компания Binary (IOM) Ltd. Клиенты из Европейского Союза (за исключением Великобритании) работают через Binary (Europe) Ltd и Binary Investments (Europe) Ltd. Клиенты из других стран мира работают через Deriv (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd и Binary (FX) Ltd."
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr "В случае лимитного ордера, клиент соглашается с тем, что Компания предпримет все разумные усилия, чтобы исполнить ордер на уровне, который будет совпадать или быть выгоднее указанного клиентом лимита, в зависимости от доступной лимитной цены."
@@ -7404,7 +7406,7 @@ msgid "Note: For any enquiries regarding disabled or excluded accounts, please c
 msgstr "Примечание: В отношении любых вопросов о неактивных или исключенных счетах, пожалуйста, свяжитесь со %1службой поддержки клиентов%2."
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr ""
+msgstr "Примечание: Переводы через Платежных агентов доступны только для счетов, зарегистрированных на Deriv (SVG) LLC. Транзакции принимаются только в долларах США."
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Примечание: Вы можете открыть только один счёт в фидуциарной валюте. Валюту фидуциарного счёта можно изменить до того, как Вы первый раз пополните данный счёт или откроете счёт MT5. Также Вы можете открыть по одному счёту в каждой доступной криптовалюте."
@@ -7764,7 +7766,7 @@ msgid "Our website uses cookies to give you the best user experience. For more i
 msgstr "Мы применяем куки, чтобы улучшить Ваш опыт использования сайта. Для получения более подробной информации, %1Посмотреть на нашу политику%2."
 
 msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr ""
+msgstr "За пределами ЕС финансовые продукты предоставляются компанией Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; компанией Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, деятельность которой регулируется Комиссией по предоставлению финансовых услуг Вануату (%1см. лицензию%2); компанией Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, деятельность которой регулируется Комиссией по предоставлению финансовых услуг на Британских Виргинских островах (%3лицензия номер SIBA/L/18/1114%4); а также Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, регулируемой Управлением финансовых услуг Лабуана для ведения брокерской деятельности (%5лицензия номер MB/18/0024%6)."
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "Выдающиеся навыки письменного и устного общения и отличное владение английским языком"
@@ -11628,7 +11630,7 @@ msgid "This agreement constitutes the entire agreement between the Parties, and 
 msgstr "Данный документ составляет полноценное соглашение между Сторонами и никакие более ранние заявления, договорённости или соглашения (письменные или устные), относящиеся к любым аспектам взаимоотношения между сторона в рамках данного соглашения, не должны иметь эффекта до даты вступления в силу данного соглашения."
 
 msgid "This agreement is between Deriv (SVG) LLC (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
-msgstr ""
+msgstr "Данное соглашение действует между Deriv (SVG) LLC (далее именуемой “Компания” или \"%1\") и Платёжным агентом (далее именуемым \"Агент\"), которые берут на себя обязательства выполнять условия данного соглашения."
 
 msgid "This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement."
 msgstr "Данное соглашение предоставляется Агенту на английском языке. В случае обнаружения несоответствия между английской версией и любым переводом данного документа, английская версия должна иметь преимущественную силу. Компания не несёт ответственности за любые потери или убытки, вызванные ошибкой, неточностью данных, а также неправильным или недостаточным пониманием любых правил, условий, а также пунктов или положений в любом переводе данного соглашения."
@@ -13275,7 +13277,7 @@ msgid "Withdrawals have been disabled on your account. Please check your email f
 msgstr "Вывод средств отключен на Вашем счету. Проверьте свою электронную почту для получения более подробной информации."
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
-msgstr ""
+msgstr "На вашем счете временно заблокирован вывод средств. Пожалуйста, подождите, пока загруженные вами документы будут проверены."
 
 msgid "Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
 msgstr "Вывод средств может производиться только на имя владельца счета. Если клиент вносит средства на счет с помощью банковского перевода, средства перечисляются только владельцу данного банковского счета. Клиент обязуется предоставить правильный номер счета и правильно указать своё имя для всех денежных переводов Компании. Если клиент пополняет счет с помощью кредитной/дебетовой карты, средства перечисляются только на ту же карту."
