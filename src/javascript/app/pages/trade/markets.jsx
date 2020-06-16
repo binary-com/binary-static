@@ -250,6 +250,8 @@ class Markets extends React.Component {
                 && +node.dataset.offsetHeight + +node.dataset.offsetTop > position
         ));
 
+        if (!current_viewed_node) return;
+
         if (current_viewed_node !== this.references.last_viewed_node) {
             Object.values(market_nodes).forEach(node => {
                 node.removeAttribute('style');
