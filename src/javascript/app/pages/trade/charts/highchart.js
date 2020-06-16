@@ -152,9 +152,10 @@ const Highchart = (() => {
         HighchartUI.setChartOptions(chart_options);
 
         return getHighstock((Highcharts) => {
-            Highcharts.setOptions(HighchartUI.getHighchartOptions());
             if (!el) chart = null;
             else {
+                Highcharts.setOptions(HighchartUI.getHighchartOptions());
+
                 chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());
                 is_initialized = true;
 
