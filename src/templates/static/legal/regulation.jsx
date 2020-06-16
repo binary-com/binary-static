@@ -519,14 +519,14 @@ const Regulation = () => {
                 </Box>
             </div>
 
-            <Box header={it.L('Binary (SVG) LLC')} >
-                <p>{it.L('Binary (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC.')}</p>
+            <Box header={it.L('Deriv (SVG) LLC')} >
+                <p>{it.L('Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC.')}</p>
             </Box>
 
-            <Box header={it.L('Binary (V) Ltd')} >
-                <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
+            <Box header={it.L('Deriv (V) Ltd')} >
+                <p>{it.L('Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
             </Box>

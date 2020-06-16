@@ -2,6 +2,7 @@ const MetaTraderConfig   = require('./metatrader.config');
 const MetaTraderUI       = require('./metatrader.ui');
 const Client             = require('../../../base/client');
 const BinarySocket       = require('../../../base/socket');
+const setCurrencies      = require('../../../common/currency').setCurrencies;
 const Validation         = require('../../../common/form_validation');
 const localize           = require('../../../../_common/localize').localize;
 const State              = require('../../../../_common/storage').State;
@@ -35,16 +36,12 @@ const MetaTrader = (() => {
                             MetaTraderUI.displayPageError(error.message);
                         }
                     });
-                    getExchangeRates();
                 }
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
             }
         });
     };
-
-    // we need to calculate min/max equivalent to 1 and 20000 USD, so get exchange rates for all currencies based on USD
-    const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const setMTCompanies = () => {
         const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
@@ -234,7 +231,12 @@ const MetaTrader = (() => {
                             actions_info[action].onError(response, MetaTraderUI.$form());
                         }
                         if (/^MT5(Deposit|Withdrawal)Error$/.test(response.error.code)) {
-                            getExchangeRates();
+                            // update limits if outdated due to exchange rates changing for currency
+                            BinarySocket.send({ website_status: 1 }).then((response_w) => {
+                                if (response_w.website_status) {
+                                    setCurrencies(response_w.website_status);
+                                }
+                            });
                         }
                         MetaTraderUI.enableButton(action, response);
                     } else {
