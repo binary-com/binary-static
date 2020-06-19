@@ -9,7 +9,6 @@ import {
     AddressPostcode,
     DateOfBirth,
     FirstName,
-    GeocodeValidation,
     LastName,
     Phone,
     Salutation,
@@ -67,9 +66,7 @@ const PersonalDetails = () => (
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
-                <AddressPostcode>
-                    <GeocodeValidation className='gr-5 geocode-container' />
-                </AddressPostcode>
+                <AddressPostcode />
             </Fieldset>
 
             <Fieldset id='fieldset_email_consent' legend={it.L('Email preference')}>

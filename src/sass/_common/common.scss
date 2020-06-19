@@ -139,49 +139,6 @@ fieldset {
             }
         }
     }
-    #geocode_error, #geocode_success, #geocode_status > .barspinner {
-        margin: 1rem auto;
-    }
-    #geocode_error.notice-msg {
-        font-size: $FONT_SIZE_S;
-    }
-    .geocode-container {
-        display: flex;
-        margin-top: 4px;
-
-        .geocode-btn-container {
-            margin-left: -12px;
-
-            @media screen and (max-width: 860px) {
-                margin-left: unset;
-            }
-        }
-        @media screen and (max-width: 860px) {
-            align-items: center;
-            margin-top: 0.5rem;
-            flex-basis: 100%;
-            max-width: 100%;
-        }
-    }
-    #geocode_validate.geocode-btn {
-        transition: color 0.25s linear;
-        color: $COLOR_BLUE;
-
-        &-disabled {
-            cursor: not-allowed;
-            color: $COLOR_LIGHT_GRAY;
-        }
-    }
-    #geocode_success > div.success-msg {
-        ul.checked {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        p {
-            margin: 0;
-        }
-    }
 }
 
 .error-msg {
