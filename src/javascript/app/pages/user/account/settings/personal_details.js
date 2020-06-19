@@ -8,7 +8,6 @@ const FormManager      = require('../../../../common/form_manager');
 const DatePicker       = require('../../../../components/date_picker');
 const ClientBase       = require('../../../../../_common/base/client_base');
 const CommonFunctions  = require('../../../../../_common/common_functions');
-const Geocoder         = require('../../../../../_common/geocoder');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const toISOFormat      = require('../../../../../_common/string_util').toISOFormat;
@@ -384,7 +383,6 @@ const PersonalDetails = (() => {
                         displayChangeableFields(get_settings);
                     }
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
-                    if (!is_fully_authenticated) Geocoder.validate(form_id);
                 }
             });
         } else { // is_error
@@ -521,9 +519,6 @@ const PersonalDetails = (() => {
                     BinarySocket.send({ states_list: residence }).then(response_state => {
                         populateStates(response_state).then(() => {
                             getDetailsResponse(get_settings_data, response.residence_list);
-                            if (!is_virtual && !is_fully_authenticated) {
-                                Geocoder.validate(form_id);
-                            }
                         });
                     });
                 } else {
