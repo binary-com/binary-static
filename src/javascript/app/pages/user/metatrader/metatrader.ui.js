@@ -479,7 +479,7 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !/labuan_financial|svg_financial_stp|vanuatu_financial_stp|maltainvest_financial_stp/.test(acc_type))// toEnableVanuatuFinancialSTP: remove vanuatu_financial_stp from regex
+            .filter(acc_type => !/^[real|demo]_[labuan_financial|svg_financial_stp|vanuatu_financial_stp|maltainvest_financial_stp]$/.test(acc_type))// toEnableVanuatuFinancialSTP: remove vanuatu_financial_stp from regex
             .forEach((acc_type) => {
                 const $acc  = accounts_info[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
