@@ -55,9 +55,6 @@ const DownloadBlock = ({
     );
 };
 
-const ios_link = 'https://download.mql5.com/cdn/mobile/mt5/ios?server=Deriv-Demo,Deriv-ServerMobile';
-const android_link = 'https://download.mql5.com/cdn/mobile/mt5/android?server=Deriv-Demo,Deriv-Server';
-
 const DownloadButton = ({
     badge,
     href,
@@ -68,7 +65,7 @@ const DownloadButton = ({
 }) => (
     <a
         className={!badge ? 'button' : undefined}
-        href={os ? (os === 'ios' ? ios_link : android_link) : href}
+        href={os ? `https://download.mql5.com/cdn/mobile/mt5/${os}?server=Deriv-Demo,Deriv-Server` : href}
         download={download || undefined}
         target={target || undefined}
     >
@@ -130,7 +127,7 @@ const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
                         <DesktopDownloadBlock
                             dataShow='eucountry'
                             id='windows'
-                            href='https://download.mql5.com/cdn/web/16177/mt5/binarycom5setup.exe'
+                            href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
                         />
                         <DesktopDownloadBlock
                             id='linux'
@@ -202,7 +199,7 @@ const MT5WebPlatform = ({ is_first_child }) => (
         <div className='center-text'>
             <a
                 className='button'
-                href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server'
+                href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server'
                 target='_blank'
                 rel='noopener noreferrer'
             >
@@ -211,7 +208,7 @@ const MT5WebPlatform = ({ is_first_child }) => (
             <a
                 id='btn_trade_with_demo'
                 className='button button-secondary'
-                href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo'
+                href='https://trade.mql5.com/trade?servers=Deriv-Demo&amp;trade_server=Deriv-Demo'
                 target='_blank'
                 rel='noopener noreferrer'
             >
