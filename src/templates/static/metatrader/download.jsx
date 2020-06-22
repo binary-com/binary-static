@@ -55,6 +55,9 @@ const DownloadBlock = ({
     );
 };
 
+const ios_link = 'https://download.mql5.com/cdn/mobile/mt5/ios?server=Deriv-Demo,Deriv-ServerMobile';
+const android_link = 'https://download.mql5.com/cdn/mobile/mt5/android?server=Deriv-Demo,Deriv-Server';
+
 const DownloadButton = ({
     badge,
     href,
@@ -65,7 +68,7 @@ const DownloadButton = ({
 }) => (
     <a
         className={!badge ? 'button' : undefined}
-        href={os ? `https://download.mql5.com/cdn/mobile/mt5/${os}?server=Deriv-Demo,Deriv-Server` : href}
+        href={os ? (os === 'ios' ? ios_link : android_link) : href}
         download={download || undefined}
         target={target || undefined}
     >
