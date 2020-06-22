@@ -93,13 +93,13 @@ const Regulation = () => {
                 <p>{it.L('Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
-            <Box header={it.L('Binary Investments (Europe) Ltd')} >
-                <p>{it.L('Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
-                <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd.')}</p>
+            <Box header={it.L('Deriv Investments (Europe) Ltd')} >
+                <p>{it.L('Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Deriv-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
+                <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Ltd.')}</p>
                 <div className='gr-padding-30 gr-12' id='accordion'>
                     <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
                     <div>
-                        <p>{it.L('Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to [_1] via EU passporting rights - freedom to provide cross border services.', it.website_name)}</p>
+                        <p>{it.L('Deriv Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to [_1] via EU passporting rights - freedom to provide cross border services.', it.website_name)}</p>
                         <div className='center-text gr-padding-10 gr-12'>
                             <img className='responsive' src={it.url_for('images/pages/regulation/map.svg')} useMap='#planetmap' />
                         </div>
@@ -138,7 +138,7 @@ const Regulation = () => {
 
                     <h3>{it.L('Pillar 3 Disclosures')}</h3>
                     <div>
-                        <p>{it.L('The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant.')}</p>
+                        <p>{it.L('The Pillar 3 disclosure report of Deriv Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant.')}</p>
                         <FillBox
                             padding='5'
                             center
