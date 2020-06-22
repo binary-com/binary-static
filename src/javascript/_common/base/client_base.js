@@ -229,7 +229,7 @@ const ClientBase = (() => {
 
     // remove manager id or master distinction from group
     // remove EUR or GBP or Bbook or HighRisk distinction from group
-    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master|EUR|GBP|Bbook|HighRisk)/, '') : '');
+    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master|EUR|GBP|Bbook|HighRisk)/i, '') : '');
 
     const getBasicUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
