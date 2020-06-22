@@ -65,7 +65,7 @@ const DownloadButton = ({
 }) => (
     <a
         className={!badge ? 'button' : undefined}
-        href={os ? `https://download.mql5.com/cdn/mobile/mt5/${os}?server=Binary.com-Server` : href}
+        href={os ? `https://download.mql5.com/cdn/mobile/mt5/${os}?server=Deriv-Demo,Deriv-Server` : href}
         download={download || undefined}
         target={target || undefined}
     >
@@ -75,6 +75,7 @@ const DownloadButton = ({
 
 const DesktopDownloadBlock = ({
     badge,
+    dataShow,
     download,
     href,
     os,
@@ -82,6 +83,7 @@ const DesktopDownloadBlock = ({
     id,
 }) => (
     <div
+        data-show={dataShow}
         className='gr-12 gr-12-m gr-padding-10 invisible download-block'
         id={id}
     >
@@ -118,8 +120,14 @@ const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
                     </p>
                     <div className='gr-row'>
                         <DesktopDownloadBlock
+                            dataShow='-eucountry'
                             id='windows'
-                            href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
+                            href='https://download.mql5.com/cdn/web/deriv.limited/mt5/deriv5setup.exe'
+                        />
+                        <DesktopDownloadBlock
+                            dataShow='eucountry'
+                            id='windows'
+                            href='https://download.mql5.com/cdn/web/16177/mt5/binarycom5setup.exe'
                         />
                         <DesktopDownloadBlock
                             id='linux'
