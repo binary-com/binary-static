@@ -187,7 +187,9 @@ const Metatrader = () => (
                                 </a>
                             </div>
                             <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
+                                {/* TODO: update to the deriv server once real transition is done */}
+                                {/* <a href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'> */}
+                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     {it.L('Real')}
                                 </a>
                             </div>
