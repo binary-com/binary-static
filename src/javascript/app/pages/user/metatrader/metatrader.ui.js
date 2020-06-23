@@ -438,7 +438,8 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
             // uncomment to show No Deposit Bonus note
-            // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_svg_financial/.test(new_acc_type));
+            // TODO: [remove-standard-advanced] remove standard when API groups are updated
+            // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_svg_(standard|financial)/.test(new_acc_type));
         }
     };
 
@@ -479,7 +480,8 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !/^[real|demo]_[labuan_financial|svg_financial_stp|vanuatu_financial_stp|maltainvest_financial_stp]$/.test(acc_type))// toEnableVanuatuFinancialSTP: remove vanuatu_financial_stp from regex
+            // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
+            .filter(acc_type => !/^(real|demo)_(labuan_(standard|financial)|svg_(advanced|financial_stp)|vanuatu_(advanced|financial_stp)|maltainvest_(advanced|financial_stp))$/.test(acc_type))// toEnableVanuatuFinancialSTP: remove vanuatu_financial_stp from regex
             .forEach((acc_type) => {
                 const $acc  = accounts_info[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
@@ -588,7 +590,8 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if (/(demo|real)_vanuatu_financial/.test(acc_type)) {
+        // TODO: [remove-standard-advanced] remove standard when API groups are updated
+        if (/^(demo|real)_vanuatu_(standard|financial)$/.test(acc_type)) {
             $el.removeAttr('data-balloon data-balloon-length');
             return;
         }
@@ -598,12 +601,13 @@ const MetaTraderUI = (() => {
         const account = accounts_info[acc_type];
         let company;
 
-        if (/financial/.test(account.mt5_account_type)) {
-            company = mt_financial_company.financial;
-        } else if (/financial_stp/.test(account.mt5_account_type)) {
-            company = mt_financial_company.financial_stp;
+        // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
+        if (/advanced|financial_stp/.test(account.mt5_account_type)) {
+            company = mt_financial_company.financial_stp || mt_financial_company.advanced;
+        } else if (/standard|financial/.test(account.mt5_account_type)) {
+            company = mt_financial_company.financial || mt_financial_company.standard;
         } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
-            company = mt_gaming_company.financial;
+            company = mt_gaming_company.financial || mt_financial_company.standard;
         }
 
         $el.attr({

@@ -65,7 +65,8 @@ const MetaTrader = (() => {
         setMTCompanies();
         return Object.keys(mt_companies).find((company) =>
             !!Object.keys(mt_companies[company]).find((acc_type) =>
-                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`)
+                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`) ||
+                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getOldMTFinancialAccountType(acc_type)}.shortcode`)
             )
         );
     };
@@ -102,7 +103,8 @@ const MetaTrader = (() => {
 
                 Object.keys(mt_companies).forEach((company) => {
                     Object.keys(mt_companies[company]).forEach((acc_type) => {
-                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`) ||
+                            State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getOldMTFinancialAccountType(acc_type)}.shortcode`);
 
                         // If vanuatu exists, don't add svg anymore unless it's for synthetic.
                         const vanuatu_and_svg_exists = (
@@ -115,8 +117,8 @@ const MetaTrader = (() => {
                         if (mt_company[company] && !vanuatu_and_svg_exists) addAccount(company, acc_type);
                     });
                 });
-                resolve();
                 getAllAccountsInfo(response);
+                resolve();
             });
         })
     );

@@ -90,7 +90,9 @@ const MetaTraderConfig = (() => {
     })();
 
     // we need to check if the account type is financial or financial_stp account before returning landing_company shortcode
-    const getMTFinancialAccountType = acc_type => `${/_financial_stp$/.test(acc_type) ? 'financial_stp' : 'financial'}`;
+    // TODO: [remove-standard-advanced] remove advanced when API groups are updated
+    const getMTFinancialAccountType = acc_type => `${/_(advanced|financial_stp)$/.test(acc_type) ? 'financial_stp' : 'financial'}`;
+    const getOldMTFinancialAccountType = acc_type => `${/_(advanced|financial_stp)$/.test(acc_type) ? 'advanced' : 'standard'}`;
 
     const accounts_info = {};
 
@@ -123,7 +125,8 @@ const MetaTraderConfig = (() => {
                     };
 
                     const has_financial_account = Client.hasAccountType('financial', 1);
-                    const is_maltainvest        = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
+                    const is_maltainvest        = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest' ||
+                        State.getResponse(`landing_company.mt_financial_company.${getOldMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
                     const is_demo_financial     = accounts_info[acc_type].account_type === 'demo' && accounts_info[acc_type].mt5_account_type; // is not demo vol account
                     const is_financial          = accounts_info[acc_type].account_type === 'financial';
 
@@ -135,7 +138,8 @@ const MetaTraderConfig = (() => {
 
                     const response_get_settings = State.getResponse('get_settings');
                     if (is_financial) {
-                        const is_svg = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'svg';
+                        const is_svg = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'svg' ||
+                            State.getResponse(`landing_company.mt_financial_company.${getOldMTFinancialAccountType(acc_type)}.shortcode`) === 'svg';
                         if (is_svg) resolve();
 
                         let is_ok = true;
@@ -352,7 +356,8 @@ const MetaTraderConfig = (() => {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.wait('get_account_status').then(() => {
-                        if (!/svg_financial/.test(acc_type) && isAuthenticationPromptNeeded()) {
+                        // TODO: [remove-standard-advanced] remove standard when API groups are updated
+                        if (!/svg_(standard|financial)/.test(acc_type) && isAuthenticationPromptNeeded()) {
                             resolve($messages.find('#msg_authenticate').html());
                         }
 
@@ -484,6 +489,7 @@ const MetaTraderConfig = (() => {
         accounts_info,
         actions_info,
         getMTFinancialAccountType,
+        getOldMTFinancialAccountType,
         fields,
         validations,
         needsRealMessage,
