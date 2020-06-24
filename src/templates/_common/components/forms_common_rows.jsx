@@ -1,5 +1,4 @@
 import React                 from 'react';
-import Loading               from './loading.jsx';
 import { Fieldset, FormRow } from './forms.jsx';
 
 export const Salutation = ({ className, row_class, row_id }) => (
@@ -287,32 +286,6 @@ export const TaxInformationForm = () => (
                 <label htmlFor='chk_tax_id'>
                     {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
                 </label>
-            </div>
-        </div>
-    </React.Fragment>
-);
-
-export const GeocodeValidation = ({ className }) => (
-    <React.Fragment>
-        <div className={className}>
-            <div className='geocode-btn-container'>
-                <a href='javascript:;' id='geocode_validate' className='geocode-btn invisible' ><span>{it.L('Check address')}</span></a>
-            </div>
-        </div>
-        <div id='geocode_status' className='gr-row'>
-            <div className='gr-10 gr-centered gr-padding-10 center-text'>
-                <Loading is_invisible />
-                <p id='geocode_error' className='notice-msg invisible'>
-                    {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
-                </p>
-                <div id='geocode_success' className='invisible'>
-                    <div className='success-msg'>
-                        <ul className='checked'>
-                            <li>{it.L('Your address has been recognised by our system.')}</li>
-                        </ul>
-                        <p>{it.L('However, we will require further documentation to authenticate your account in the future.')}</p>
-                    </div>
-                </div>
             </div>
         </div>
     </React.Fragment>

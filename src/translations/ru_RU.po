@@ -2,16 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-06-12 07:00\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-06-19 06:43\n"
+"Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Crowdin-Project: binary-static\n"
+"X-Crowdin-Project-ID: 224893\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: messages.pot\n"
+"X-Crowdin-File-ID: 111\n"
 "Language: ru_RU\n"
 
 msgid "1"
@@ -426,7 +428,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "Системы %1 обрабатывают более 1 миллиона транзакций в день (включая демо-счета)."
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
-msgstr ""
+msgstr "%1Служба поддержки%2 доступна 24/7, чтобы помочь вам получить максимум от вашего трейдинга."
 
 msgid "%1Choose a currency%2 for your fiat currency account:"
 msgstr "%1Выберите валюту%2 вашего фидуциарного счета:"
@@ -521,17 +523,26 @@ msgstr "0.20"
 msgid "0.3%"
 msgstr "0.3%"
 
-msgid "0.30"
-msgstr "0.30"
-
 msgid "0.4%"
 msgstr "0.4%"
+
+msgid "0.40"
+msgstr "0.40"
 
 msgid "0.5%"
 msgstr "0.5%"
 
+msgid "0.50"
+msgstr "0.50"
+
+msgid "0.70"
+msgstr "0.70"
+
 msgid "0.75%"
 msgstr "0.75%"
+
+msgid "0.80"
+msgstr "0.80"
 
 msgid "1 million transactions/day"
 msgstr "1 миллион транзакций в день"
@@ -2036,14 +2047,8 @@ msgstr "Binary (IOM) Ltd."
 msgid "Binary (SVG) LLC,"
 msgstr "Binary (SVG) LLC,"
 
-msgid "Binary (V) Ltd"
-msgstr "Binary (V) Ltd"
-
 msgid "Binary (V) Ltd,"
 msgstr "Binary (V) Ltd,"
-
-msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
-msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Компания лицензирована и регулируется Комиссией по предоставлению финансовых услуг Вануату - %1лицензия%2."
 
 msgid "Binary Bot"
 msgstr "Робот Binary Bot"
@@ -2489,9 +2494,6 @@ msgstr "Графики для этого инструмента рисуются
 msgid "Charting platforms"
 msgstr "Графические платформы"
 
-msgid "Check address"
-msgstr "Проверить адрес"
-
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "Проверка наших систем на предмет недавних атак, уязвимостей и слабых мест"
 
@@ -2633,14 +2635,14 @@ msgstr "Клиенты соглашаются выполнять разумны�
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "Клиентам следует помнить, что их права могут быть затронуты в случае предоставления ложной информации, так как Компания не сможет действовать в их лучших интересах."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли на Forex и CFD на платформе Metatrader 5 будут открыты в рамках компании Binary (V) Ltd. Также услуги %1 не действуют в Вануату."
-
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
 msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли на Forex и CFD на платформе Metatrader 5 будут открыты в рамках компании Deriv (BVI) Ltd. Также услуги %1 не действуют на Британских Виргинских островах."
 
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
+msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли на Forex и CFD на платформе Metatrader 5 будут открыты в рамках компании Deriv (V) Ltd. Услуги %1 не действуют в Вануату."
+
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
-msgstr ""
+msgstr "Счета для клиентов из других стран мира (за исключением США, Канады и Гонконга) будут открыты в компании Deriv (SVG) LLC."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
 msgstr "Счета клиентов из других стран (за исключением ряда юрисдикций: США, Канады и ЕС), желающих начать торговлю CFD на платформе MetaTrader 5, будут открыты в рамках компании Binary (FX) Ltd. Услуги %1 недоступны в Малайзии."
@@ -3510,10 +3512,16 @@ msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Bri
 msgstr "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Компания лицензирована и регулируется Комиссией по предоставлению финансовых услуг Британских Виргинских островов - %1лицензия%2."
 
 msgid "Deriv (SVG) LLC"
-msgstr ""
+msgstr "Deriv (SVG) LLC"
 
 msgid "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019."
-msgstr ""
+msgstr "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; номер компании 25299 BC 2019."
+
+msgid "Deriv (V) Ltd"
+msgstr "Deriv (V) Ltd"
+
+msgid "Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
+msgstr "Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Компания лицензирована и регулируется Комиссией по предоставлению финансовых услуг Вануату - %1лицензия%2."
 
 msgid "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -4236,7 +4244,7 @@ msgid "Experience as a Postgres DBA, with advanced hands-on knowledge of"
 msgstr "Опыт в области в качестве администратора БД Postgres, а также практические знания в следующих областях:"
 
 msgid "Experience designing and executing test plans (both automated and manual)"
-msgstr "Опыт в области дизайна и выполнения планов тестирования (автоматического и ручного)"
+msgstr "Опыт в области разработки и выполнения планов тестирования (автоматического и ручного)"
 
 msgid "Experience designing and working with high-availability web service architecture"
 msgstr "Разработка интерфейса и обеспечение бесперебойной работы архитектуры веб сервиса"
@@ -5252,9 +5260,6 @@ msgstr "Тем не менее, Представляющий брокер, за�
 msgid "However, if the asset price falls by 10 points, that represents a 10 USD loss for you."
 msgstr "Тем не менее, если цена актива снижается на 10 пунктов, это означает для Вас потерю 10 USD."
 
-msgid "However, we will require further documentation to authenticate your account in the future."
-msgstr "Тем не менее, в будущем нам понадобятся дополнительные документы для аутентификации Вашего счёта."
-
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "Тем не менее, с кредитным плечом Вы сможете купить 100 единиц актива, имея лишь малую часть их стоимости, в зависимости от размера кредитного плеча, предложенного брокером."
 
@@ -5831,8 +5836,8 @@ msgstr "Компания Binary Investments (Europe) Ltd, расположенн
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "Синтетические индексы на острове Мэн и в Великобритании предоставлены компанией Binary (IOM) Ltd., расположенной по адресу First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles. Компания лицензирована и регулируется (1) Комиссией по надзору за азартными играм на Острове Мэн (текущая лицензия выдана 31 августа 2017 г.), а также (2) Комиссией по азартным играм Великобритании (номер лицензии: %1 39172%2)."
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
-msgstr ""
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgstr "Наши клиенты из Великобритании работают через Binary (IOM) Ltd. и Binary Investments (Europe) Ltd. Клиентов с Острова Мэн обслуживает компания Binary (IOM) Ltd. Клиенты из Европейского Союза (за исключением Великобритании) работают через Binary (Europe) Ltd и Binary Investments (Europe) Ltd. Клиенты из других стран мира работают через Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd и Binary (FX) Ltd."
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr "В случае лимитного ордера, клиент соглашается с тем, что Компания предпримет все разумные усилия, чтобы исполнить ордер на уровне, который будет совпадать или быть выгоднее указанного клиентом лимита, в зависимости от доступной лимитной цены."
@@ -7404,7 +7409,7 @@ msgid "Note: For any enquiries regarding disabled or excluded accounts, please c
 msgstr "Примечание: В отношении любых вопросов о неактивных или исключенных счетах, пожалуйста, свяжитесь со %1службой поддержки клиентов%2."
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr ""
+msgstr "Примечание: Переводы через Платежных агентов доступны только для счетов, зарегистрированных на Deriv (SVG) LLC. Транзакции принимаются только в долларах США."
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Примечание: Вы можете открыть только один счёт в фидуциарной валюте. Валюту фидуциарного счёта можно изменить до того, как Вы первый раз пополните данный счёт или откроете счёт MT5. Также Вы можете открыть по одному счёту в каждой доступной криптовалюте."
@@ -7763,8 +7768,8 @@ msgstr "Наши ценности"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "Мы применяем куки, чтобы улучшить Ваш опыт использования сайта. Для получения более подробной информации, %1Посмотреть на нашу политику%2."
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr ""
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr "За пределами ЕС финансовые продукты предоставляются компанией Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; компанией Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, деятельность которой регулируется Комиссией по предоставлению финансовых услуг Вануату (%1см. лицензию%2); компанией Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, деятельность которой регулируется Комиссией по предоставлению финансовых услуг на Британских Виргинских островах (%3лицензия номер SIBA/L/18/1114%4); а также Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, регулируемой Управлением финансовых услуг Лабуана для ведения брокерской деятельности (%5лицензия номер MB/18/0024%6)."
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "Выдающиеся навыки письменного и устного общения и отличное владение английским языком"
@@ -8158,6 +8163,9 @@ msgstr "Пожалуйста, не делите свой банковский с
 
 msgid "Please ensure that you have the Telegram app installed on your device."
 msgstr "Пожалуйста, убелитесь, что Вы установили приложение Telegram на телефон."
+
+msgid "Please ensure that your address is complete and accurate."
+msgstr "Пожалуйста, убедитесь, что ваш адрес является полным и точным."
 
 msgid "Please enter a valid Login ID."
 msgstr "Пожалуйста, введите правильное имя пользователя."
@@ -8713,6 +8721,12 @@ msgstr "RTS 27 2020"
 
 msgid "RTS 28"
 msgstr "RTS 28"
+
+msgid "Range Break 100 Index"
+msgstr "Индексы Range Break 100"
+
+msgid "Range Break 200 Index"
+msgstr "Индексы Range Break 200"
 
 msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
 msgstr "Индекс Range break 100 пробивает диапазон в среднем каждые 100 касаний границы."
@@ -11628,7 +11642,7 @@ msgid "This agreement constitutes the entire agreement between the Parties, and 
 msgstr "Данный документ составляет полноценное соглашение между Сторонами и никакие более ранние заявления, договорённости или соглашения (письменные или устные), относящиеся к любым аспектам взаимоотношения между сторона в рамках данного соглашения, не должны иметь эффекта до даты вступления в силу данного соглашения."
 
 msgid "This agreement is between Deriv (SVG) LLC (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
-msgstr ""
+msgstr "Данное соглашение действует между Deriv (SVG) LLC (далее именуемой “Компания” или \"%1\") и Платёжным агентом (далее именуемым \"Агент\"), которые берут на себя обязательства выполнять условия данного соглашения."
 
 msgid "This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement."
 msgstr "Данное соглашение предоставляется Агенту на английском языке. В случае обнаружения несоответствия между английской версией и любым переводом данного документа, английская версия должна иметь преимущественную силу. Компания не несёт ответственности за любые потери или убытки, вызванные ошибкой, неточностью данных, а также неправильным или недостаточным пониманием любых правил, условий, а также пунктов или положений в любом переводе данного соглашения."
@@ -12029,11 +12043,11 @@ msgstr "Торгуйте валютами, фондовыми индексами
 msgid "Trade forex and CFDs on our popular multi-asset platform."
 msgstr "Торгуйте валютами и CFD на нашей популярной платформе."
 
+msgid "Trade forex and CFDs with a powerful platform recognised as the global standard."
+msgstr "Торгуйте на форекс и CFD с мощной платформы, по праву считающейся мировым стандартом."
+
 msgid "Trade forex and contracts for difference (CFDs) on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
 msgstr "Торгуйте валютными парами (Forex) и контрактами на разницу (CFD) на платформе MetaTrader 5, предоставляющей непревзойдённые возможности для торговли и технического анализа."
-
-msgid "Trade forex, CFDs, and binary options with a powerful platform recognised as the global standard."
-msgstr "Торгуйте контрактами на форекс, CFD и бинарных опционах, пользуясь мощной платформой, признанной мировым стандартом в данной индустрии."
 
 msgid "Trade in the world's financial markets"
 msgstr "Торгуйте на мировых финансовых рынках"
@@ -12566,11 +12580,17 @@ msgstr "Код проверки"
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "Неправильный проверочный код. Пожалуйста, воспользуйтесь ссылкой, отправленной на Ваш email."
 
+msgid "Verification required"
+msgstr "Требуется проверка"
+
 msgid "Verify Reset Password"
 msgstr "Подтвердите изменение пароля"
 
 msgid "Verify and approve clients' deposit and withdrawal requests"
 msgstr "Проверка и утверждение запросов клиентов на пополнение счетов и вывод средств"
+
+msgid "Verify identity"
+msgstr "Подтвердить личность"
 
 msgid "Verify main password"
 msgstr "Подтвердите основной пароль"
@@ -12650,17 +12670,32 @@ msgstr "Демо-счет"
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa - это международная компания, поддерживающая электронные платежи по всему миру, преимущественно посредством кредитных и дебетовых карт. Более подробная информация: %1."
 
+msgid "Volatility 10 (1s) Index"
+msgstr "Индекс волатильн. 10 (1с)"
+
 msgid "Volatility 10 Index"
 msgstr "Индекс волатильн. 10"
+
+msgid "Volatility 100 (1s) Index"
+msgstr "Индекс волатильн. 100 (1с)"
 
 msgid "Volatility 100 Index"
 msgstr "Индекс волатильн. 100"
 
+msgid "Volatility 25 (1s) Index"
+msgstr "Индекс волатильн. 25 (1с)"
+
 msgid "Volatility 25 Index"
 msgstr "Индекс волатильн. 25"
 
+msgid "Volatility 50 (1s) Index"
+msgstr "Индекс волатильн. 50 (1с)"
+
 msgid "Volatility 50 Index"
 msgstr "Индекс волатильн. 50"
+
+msgid "Volatility 75 (1s) Index"
+msgstr "Индекс волатильн. 75 (1с)"
 
 msgid "Volatility 75 Index"
 msgstr "Индекс волатильн. 75"
@@ -12718,9 +12753,6 @@ msgstr "Мы считаем, что всегда должны поступать
 
 msgid "We can't validate your personal details because there is some information missing."
 msgstr "Мы не можем подтвердить ваши личные данные, потому что отсутствует некоторая информация."
-
-msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
-msgstr "Ваш адрес не найден в нашей системе. Вы можете продолжить, но, пожалуйста, убедитесь, что Вы ввели правильный адрес."
 
 msgid "We delete an order with the largest margin reserved."
 msgstr "Ордер с наибольшим маржевым требованием будет удалён."
@@ -13275,7 +13307,7 @@ msgid "Withdrawals have been disabled on your account. Please check your email f
 msgstr "Вывод средств отключен на Вашем счету. Проверьте свою электронную почту для получения более подробной информации."
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
-msgstr ""
+msgstr "На вашем счете временно заблокирован вывод средств. Пожалуйста, подождите, пока загруженные вами документы будут проверены."
 
 msgid "Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
 msgstr "Вывод средств может производиться только на имя владельца счета. Если клиент вносит средства на счет с помощью банковского перевода, средства перечисляются только владельцу данного банковского счета. Клиент обязуется предоставить правильный номер счета и правильно указать своё имя для всех денежных переводов Компании. Если клиент пополняет счет с помощью кредитной/дебетовой карты, средства перечисляются только на ту же карту."
@@ -13645,9 +13677,6 @@ msgstr "Безопасность Вашего счёта является наш
 
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "Ваш счёт будет открыт через %1, а также будет находиться под юрисдикцией и регулироваться законами %2."
-
-msgid "Your address has been recognised by our system."
-msgstr "Ваш адрес распознан системой."
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Ваша заявка на квалификацию профессионального клиента находится на рассмотрении."

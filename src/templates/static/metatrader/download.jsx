@@ -63,18 +63,31 @@ const DownloadButton = ({
     children,
     os,
 }) => (
-    <a
-        className={!badge ? 'button' : undefined}
-        href={os ? `https://download.mql5.com/cdn/mobile/mt5/${os}?server=Binary.com-Server` : href}
-        download={download || undefined}
-        target={target || undefined}
-    >
-        <span className={badge || undefined}>{children}</span>
-    </a>
+    <React.Fragment>
+        <a
+            data-show='-eucountry'
+            className={!badge ? 'button' : undefined}
+            href={os ? `https://download.mql5.com/cdn/mobile/mt5/${os}?server=Deriv-Demo,Deriv-Server` : href}
+            download={download || undefined}
+            target={target || undefined}
+        >
+            <span className={badge || undefined}>{children}</span>
+        </a>
+        <a
+            data-show='eucountry'
+            className={!badge ? 'button' : undefined}
+            href={os ? `https://download.mql5.com/cdn/mobile/mt5/${os}?server=Binary.com-Demo` : href}
+            download={download || undefined}
+            target={target || undefined}
+        >
+            <span className={badge || undefined}>{children}</span>
+        </a>
+    </React.Fragment>
 );
 
 const DesktopDownloadBlock = ({
     badge,
+    dataShow,
     download,
     href,
     os,
@@ -82,6 +95,7 @@ const DesktopDownloadBlock = ({
     id,
 }) => (
     <div
+        data-show={dataShow}
         className='gr-12 gr-12-m gr-padding-10 invisible download-block'
         id={id}
     >
@@ -118,8 +132,14 @@ const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
                     </p>
                     <div className='gr-row'>
                         <DesktopDownloadBlock
+                            dataShow='-eucountry'
                             id='windows'
-                            href='https://download.mql5.com/cdn/web/binary.limited/mt5/binarycom5setup.exe'
+                            href='https://download.mql5.com/cdn/web/deriv.limited/mt5/deriv5setup.exe'
+                        />
+                        <DesktopDownloadBlock
+                            dataShow='eucountry'
+                            id='windows'
+                            href='https://download.mql5.com/cdn/web/16177/mt5/binarycom5setup.exe'
                         />
                         <DesktopDownloadBlock
                             id='linux'
@@ -188,10 +208,12 @@ const MT5WebPlatform = ({ is_first_child }) => (
                 </div>
             </div>
         </div>
-        <div className='center-text'>
+        <div className='center-text' data-show='-eucountry'>
             <a
                 className='button'
-                href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server'
+                // TODO: update to the deriv server once real transition is done
+                // href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server'
+                href='https://trade.mql5.com/trade?servers=Binary.com-Server&trade_server=Binary.com-Server'
                 target='_blank'
                 rel='noopener noreferrer'
             >
@@ -200,7 +222,26 @@ const MT5WebPlatform = ({ is_first_child }) => (
             <a
                 id='btn_trade_with_demo'
                 className='button button-secondary'
-                href='https://trade.mql5.com/trade?servers=Binary.com-Demo&amp;trade_server=Binary.com-Demo'
+                href='https://trade.mql5.com/trade?servers=Deriv-Demo&trade_server=Deriv-Demo'
+                target='_blank'
+                rel='noopener noreferrer'
+            >
+                <span>{it.L('Trade with Demo account')}</span>
+            </a>
+        </div>
+        <div className='center-text' data-show='eucountry'>
+            <a
+                className='button'
+                href='https://trade.mql5.com/trade?servers=Binary.com-Server&trade_server=Binary.com-Server'
+                target='_blank'
+                rel='noopener noreferrer'
+            >
+                <span>{it.L('Trade with Real account')}</span>
+            </a>
+            <a
+                id='btn_trade_with_demo'
+                className='button button-secondary'
+                href='https://trade.mql5.com/trade?servers=Binary.com-Demo&trade_server=Binary.com-Demo'
                 target='_blank'
                 rel='noopener noreferrer'
             >

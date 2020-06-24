@@ -1,5 +1,6 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
+const BinarySocket     = require('../../../base/socket');
 const Dialog           = require('../../../common/attach_dom/dialog');
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
@@ -596,23 +597,25 @@ const MetaTraderUI = (() => {
             return;
         }
 
-        const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
-        const mt_gaming_company = State.getResponse('landing_company.mt_gaming_company');
-        const account = accounts_info[acc_type];
-        let company;
+        BinarySocket.wait('landing_company').then((response) => {
+            const mt_financial_company = response.landing_company.mt_financial_company;
+            const mt_gaming_company = response.landing_company.mt_gaming_company;
+            const account = accounts_info[acc_type];
+            let company;
 
-        // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
-        if (/advanced|financial_stp/.test(account.mt5_account_type)) {
-            company = mt_financial_company.financial_stp || mt_financial_company.advanced;
-        } else if (/standard|financial/.test(account.mt5_account_type)) {
-            company = mt_financial_company.financial || mt_financial_company.standard;
-        } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
-            company = mt_gaming_company.financial || mt_financial_company.standard;
-        }
+            // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
+            if (/advanced|financial_stp/.test(account.mt5_account_type)) {
+                company = mt_financial_company.financial_stp || mt_financial_company.advanced;
+            } else if (/standard|financial/.test(account.mt5_account_type)) {
+                company = mt_financial_company.financial || mt_financial_company.standard;
+            } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
+                company = mt_financial_company.financial || mt_gaming_company.standard;
+            }
 
-        $el.attr({
-            'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
-            'data-balloon-length': 'large',
+            $el.attr({
+                'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
+                'data-balloon-length': 'large',
+            });
         });
     };
 

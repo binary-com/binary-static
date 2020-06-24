@@ -2,16 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-06-12 07:00\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-06-19 06:43\n"
+"Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: binary-static\n"
+"X-Crowdin-Project-ID: 224893\n"
 "X-Crowdin-Language: th\n"
 "X-Crowdin-File: messages.pot\n"
+"X-Crowdin-File-ID: 111\n"
 "Language: th_TH\n"
 
 msgid "1"
@@ -521,17 +523,26 @@ msgstr "0.20"
 msgid "0.3%"
 msgstr "0.3%"
 
-msgid "0.30"
-msgstr "0.30"
-
 msgid "0.4%"
+msgstr ""
+
+msgid "0.40"
 msgstr ""
 
 msgid "0.5%"
 msgstr "0.5%"
 
+msgid "0.50"
+msgstr ""
+
+msgid "0.70"
+msgstr ""
+
 msgid "0.75%"
 msgstr "0.75%"
+
+msgid "0.80"
+msgstr ""
 
 msgid "1 million transactions/day"
 msgstr "1 ล้านธุรกรรมต่อวัน"
@@ -2036,14 +2047,8 @@ msgstr "Binary (IOM) Ltd."
 msgid "Binary (SVG) LLC,"
 msgstr ""
 
-msgid "Binary (V) Ltd"
-msgstr "Binary (V) Ltd"
-
 msgid "Binary (V) Ltd,"
 msgstr "Binary (V) Ltd,"
-
-msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
-msgstr "Binary (V) Ltd ตั้งอยู่ที่ อาคาร Govant เมือง Port Vila, PO Box 1276 วานูอาตู สาธารณรัฐวานูอาตู ได้รับใบอนุญาตและรับรองโดย Vanuatu Financial Services Commission - %1ดูใบอนุญาต%2"
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -2489,9 +2494,6 @@ msgstr "กราฟของผลิตภัณฑ์อ้างอิงน
 msgid "Charting platforms"
 msgstr "แพลตฟอร์มแผนภูมิ"
 
-msgid "Check address"
-msgstr "ตรวจสอบที่อยู่"
-
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "ตรวจสอบระบบของเราจากการโจมตี จุดอ่อน และการบรรเทาล่าสุด"
 
@@ -2633,10 +2635,10 @@ msgstr "ลูกค้ายินยอมที่จะดำเนินต
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "ลูกค้าพึงทราบว่า อาจเกิดความลำเอียงในสิทธิ์ที่ได้รับ หากลูกค้าให้ข้อมูลที่ไม่ถูกต้อง ทำให้บริษัทฯ ไม่อยู่ในสถานะที่จะดำเนินการเพื่อประโยชน์สูงสุดของลูกค้าได้"
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "ลูกค้าจากประเทศอื่นๆ ทั่วโลก (ยกเว้นบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ฮ่องกง) จะมีบัญชี FX และบัญชี CFD Metatrader 5 ที่เปิดบัญชีกับ Binary (V) Ltd. หากแต่ %1 จะไม่ได้ให้บริการในสาธารณรัฐวานูอาตู"
-
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
+msgstr ""
+
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
 msgstr ""
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
@@ -3513,6 +3515,12 @@ msgid "Deriv (SVG) LLC"
 msgstr ""
 
 msgid "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019."
+msgstr ""
+
+msgid "Deriv (V) Ltd"
+msgstr ""
+
+msgid "Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
 msgstr ""
 
 msgid "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -5252,9 +5260,6 @@ msgstr "อย่างไรก็ตามโบรกเกอร์แนะ
 msgid "However, if the asset price falls by 10 points, that represents a 10 USD loss for you."
 msgstr ""
 
-msgid "However, we will require further documentation to authenticate your account in the future."
-msgstr "อย่างไรก็ตาม บริษัทฯ อาจจะเรียกขอเอกสารเพิ่มเติมในการตรวจสอบเพื่อรับรองบัญชีของท่าน"
-
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "อย่างไรก็ตาม ด้วยเลเวอเรจ ท่านสามารถซื้อ 100 หน่วยเหล่านั้น ที่ราคาเพียงส่วนเดียวของต้นทุนทั่วไป - ขึ้นอยู่กับเลเวอเรจที่ท่านได้จากโบรกเกอร์ หรือ แพลตฟอร์มซื้อขาย"
 
@@ -5831,7 +5836,7 @@ msgstr "ในสหภาพยุโรป Binary Investments (Europe) Ltd ใ
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr ""
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
 msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
@@ -7763,7 +7768,7 @@ msgstr "ค่านิยมของเรา"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "เว็บไซต์ของเราใช้คุกกี้ที่จะให้ประสบการณ์การใช้งานที่ดีที่สุดแก่ท่าน สำหรับข้อมูลเพิ่มเติม %1ดูนโยบาย%2"
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
 msgstr ""
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
@@ -8158,6 +8163,9 @@ msgstr "กรุณาอย่าใช้บัญชีธนาคาร �
 
 msgid "Please ensure that you have the Telegram app installed on your device."
 msgstr "โปรดตรวจให้แน่ใจว่า ท่านมีแอพพลิเคชัน Telegram ติดตั้งในอุปกรณ์ที่ท่านใช้งาน"
+
+msgid "Please ensure that your address is complete and accurate."
+msgstr ""
 
 msgid "Please enter a valid Login ID."
 msgstr "โปรดป้อนรหัสผู้ใช้งานที่ถูกต้อง"
@@ -8713,6 +8721,12 @@ msgstr ""
 
 msgid "RTS 28"
 msgstr "RTS 28"
+
+msgid "Range Break 100 Index"
+msgstr ""
+
+msgid "Range Break 200 Index"
+msgstr ""
 
 msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
 msgstr ""
@@ -12031,10 +12045,10 @@ msgstr ""
 msgid "Trade forex and CFDs on our popular multi-asset platform."
 msgstr ""
 
-msgid "Trade forex and contracts for difference (CFDs) on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
+msgid "Trade forex and CFDs with a powerful platform recognised as the global standard."
 msgstr ""
 
-msgid "Trade forex, CFDs, and binary options with a powerful platform recognised as the global standard."
+msgid "Trade forex and contracts for difference (CFDs) on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
 msgstr ""
 
 msgid "Trade in the world's financial markets"
@@ -12568,11 +12582,17 @@ msgstr "รหัสตรวจสอบ"
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "รหัสยืนยันไม่ถูกต้อง โปรดใช้ลิงค์ที่ส่งไปยังอีเมล์ของท่าน"
 
+msgid "Verification required"
+msgstr ""
+
 msgid "Verify Reset Password"
 msgstr "ตรวจสอบรหัสผ่านใหม่"
 
 msgid "Verify and approve clients' deposit and withdrawal requests"
 msgstr "ตรวจสอบ และอนุมัติคำขอการฝากและถอนเงินของลูกค้า"
+
+msgid "Verify identity"
+msgstr ""
 
 msgid "Verify main password"
 msgstr "ตรวจสอบรหัสผ่านหลัก"
@@ -12652,17 +12672,32 @@ msgstr "บัญชีทดลองใช้"
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "วีซ่า เป็นองค์กรนานาชาติที่ให้บริการการชำระเงินดิจิทัลทั่วโลก ส่วนใหญ่ผ่านทางบัตรเครดิตหรือบัตรเดบิตของแบรนด์ต่างๆ สำหรับข้อมูลเพิ่มเติม โปรดศึกษาจาก %1"
 
+msgid "Volatility 10 (1s) Index"
+msgstr ""
+
 msgid "Volatility 10 Index"
 msgstr "ดัชนีผันผวน 10"
+
+msgid "Volatility 100 (1s) Index"
+msgstr ""
 
 msgid "Volatility 100 Index"
 msgstr "ดัชนีผันผวน 100"
 
+msgid "Volatility 25 (1s) Index"
+msgstr ""
+
 msgid "Volatility 25 Index"
 msgstr "ดัชนีผันผวน 25"
 
+msgid "Volatility 50 (1s) Index"
+msgstr ""
+
 msgid "Volatility 50 Index"
 msgstr "ดัชนีผันผวน 50"
+
+msgid "Volatility 75 (1s) Index"
+msgstr ""
 
 msgid "Volatility 75 Index"
 msgstr "ดัชนีผันผวน 75"
@@ -12720,9 +12755,6 @@ msgstr "เราเชื่อว่า เราทำในสิ่งท�
 
 msgid "We can't validate your personal details because there is some information missing."
 msgstr ""
-
-msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
-msgstr "บริษัทฯ ไม่สามารถยอมรับที่อยู่ของท่าน ท่านอาจจะได้ดำเนินการแล้ว หากแต่โปรดแน่ใจว่า ที่อยู่ของท่านถูกต้อง"
 
 msgid "We delete an order with the largest margin reserved."
 msgstr ""
@@ -13647,9 +13679,6 @@ msgstr "ความปลอดภัยของบัญชีมีควา
 
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "บัญชีของท่านจะเปิดกับ %1 และขึ้นกับเขตพื้นที่ และกฎหมายของ %2"
-
-msgid "Your address has been recognised by our system."
-msgstr "ที่อยู่ของท่านจะได้รับการบันทึกทะเบียนในระบบของบริษัทฯ"
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "ใบสมัครของท่านเพื่อปรับสถานะเป็นลูกค้าผู้เชี่ยวชาญ (Professional Client) กำลังถูกดำเนินการ"

@@ -2,16 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-06-12 07:00\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-06-19 06:42\n"
+"Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Crowdin-Project: binary-static\n"
+"X-Crowdin-Project-ID: 224893\n"
 "X-Crowdin-Language: id\n"
 "X-Crowdin-File: messages.pot\n"
+"X-Crowdin-File-ID: 111\n"
 "Language: id_ID\n"
 
 msgid "1"
@@ -521,17 +523,26 @@ msgstr "0,20"
 msgid "0.3%"
 msgstr "0,3%"
 
-msgid "0.30"
-msgstr "0.30"
-
 msgid "0.4%"
 msgstr "0.4%"
+
+msgid "0.40"
+msgstr "0.40"
 
 msgid "0.5%"
 msgstr "0,5%"
 
+msgid "0.50"
+msgstr "0.50"
+
+msgid "0.70"
+msgstr "0.70"
+
 msgid "0.75%"
 msgstr "0,75%"
+
+msgid "0.80"
+msgstr "0.80"
 
 msgid "1 million transactions/day"
 msgstr "1 juta transaksi/hari"
@@ -2036,14 +2047,8 @@ msgstr "Binary (IOM) Ltd."
 msgid "Binary (SVG) LLC,"
 msgstr "Binary (SVG) LLC,"
 
-msgid "Binary (V) Ltd"
-msgstr "Binary (V) Ltd"
-
 msgid "Binary (V) Ltd,"
 msgstr "Binary (V) Ltd,"
-
-msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
-msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republik Vanuatu. Dilisensikan dan diatur oleh Komisi Layanan Keuangan Vanuatu - %1lihat lisensi%2."
 
 msgid "Binary Bot"
 msgstr "Bot Binary"
@@ -2489,9 +2494,6 @@ msgstr "Charting untuk underlying ini tertunda"
 msgid "Charting platforms"
 msgstr "Platform charting"
 
-msgid "Check address"
-msgstr "Periksa alamat"
-
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "Periksa sistem kami terhadap serangan, kerentanan, dan mitigasi terbaru"
 
@@ -2633,14 +2635,14 @@ msgstr "Klien setuju untuk mematuhi permintaan wajar dari Perusahaan untuk memen
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "Klien juga dinasihati bahwa hak-hak mereka dapat dianggap buruk jika mereka memberikan informasi yang salah karena Perusahaan tidak akan berada dalam posisi untuk bertindak demi kepentingan terbaik mereka."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Kanada, Hong Kong) akan mendaftar akun FX dan CFD Metatrader 5 dibawah Binary (V) Ltd. %1 tidak tersedia untuk warga Republik Vanuatu."
-
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
 msgstr "Klien dari seluruh dunia (tidak termasuk negara-negara tertentu seperti Amerika Serikat, Kanada, Hong Kong) akan memiliki akun FX dan CFD Metatrader 5 yang terdaftar dengan Deriv (BVI) Ltd. %1 tidak tersedia di British Virgin Islands."
 
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
+msgstr "Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Kanada, Hong Kong) akan mendaftar akun FX dan CFD Metatrader 5 dibawah Deriv (V) Ltd. %1 tidak tersedia untuk warga Republik Vanuatu."
+
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
-msgstr ""
+msgstr "Klien dari seluruh dunia (kecuali Amerika Serikat, Kanada, dan Hong Kong) akan mendaftar akun mereka pada Deriv (SVG) LLC."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
 msgstr "Klien dari negara lain (kecuali Amerika Serikat, Kanada, dan Uni Eropa) yang ingin bertrading CFD akan mendaftar akun MetaTrader 5 mereka di bawah Binary (FX) Ltd. %1 tidak tersedia di Malaysia."
@@ -3510,10 +3512,16 @@ msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Bri
 msgstr "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Kepulauan Virgin Britania Raya. Dilisensikan dan diatur oleh Komisi Layanan Keuangan Kepulauan Virgin Britania Raya - %1lihat lisensi%2."
 
 msgid "Deriv (SVG) LLC"
-msgstr ""
+msgstr "Deriv (SVG) LLC"
 
 msgid "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019."
-msgstr ""
+msgstr "Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; nomor perusahaan 25299 BC 2019."
+
+msgid "Deriv (V) Ltd"
+msgstr "Deriv (V) Ltd"
+
+msgid "Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
+msgstr "Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republik Vanuatu. Dilisensikan dan diatur oleh Komisi Layanan Keuangan Vanuatu - %1lihat lisensi%2."
 
 msgid "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Deriv Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
@@ -5252,9 +5260,6 @@ msgstr "Namun, Introducing Broker yang dikontrak oleh Binary Investments (Europe
 msgid "However, if the asset price falls by 10 points, that represents a 10 USD loss for you."
 msgstr "Namun, jika harga aset jatuh lebih dari 10 poin, ini mewakili kerugian USD 10 untuk Anda."
 
-msgid "However, we will require further documentation to authenticate your account in the future."
-msgstr "Namun, kami akan memerlukan dokumentasi lebih lanjut untuk mengautentikasi akun Anda di masa mendatang."
-
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "Namun, dengan leverage Anda dapat membeli seluruh 100 unit tersebut pada fraksi dengan biaya tertentu - tergantung pada leverage yang diberikan oleh broker atau platform trading Anda."
 
@@ -5832,8 +5837,8 @@ msgstr "Di Uni Eropa, produk keuangan ditawarkan oleh Binary Investments (Europe
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "Di negara Isle of Man dan Inggris, Indeks Sintetis disediakan oleh Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; berlisensi dan diatur."
 
-msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Binary (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
-msgstr ""
+msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgstr "Di Inggris, klien kami bertrading melalui Binary (IOM) Ltd dan Binary Investments (Europe) Ltd. Di Isle of Man, mereka bertrading melalui Binary (IOM) Ltd. Di Uni Eropa (kecuali Inggris), mereka bertrading melalui Binary (Europe) Ltd dan Binary Investments (Europe) Ltd. Di seluruh dunia, mereka bertrading melalui Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd dan Binary (FX) Ltd."
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr "Dalam hal Limit Order, klien mengetahui bahwa Perusahaan akan berusaha untuk mengisi Order pada level yang sama atau lebih baik dari Limit yang ditentukan klien, tergantung pada ketersediaan Limit Price."
@@ -7406,7 +7411,7 @@ msgid "Note: For any enquiries regarding disabled or excluded accounts, please c
 msgstr "Nota: Untuk pertanyaan mengenai akun non aktif atau pembatalan akun, silahkan hubungi %1Customer Support%2."
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr ""
+msgstr "Catatan: transfer agen pembayaran hanya tersedia untuk akun yang terdaftar pada Deriv (SVG) LLC. Transaksi diterima hanya dalam mata uang dolar AS."
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Catatan: Anda hanya dapat memiliki satu akun dalam mata uang fiat. Mata uang akun fiat Anda dapat dirubah jika Anda belum melakukan deposit perdana atau mendaftar akun MT5. Anda juga dapat mendaftar pada setiap akun mata uang kripto yang tersedia."
@@ -7765,8 +7770,8 @@ msgstr "Nilai kami"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "Situs web kami menggunakan cookie untuk memberi Anda pengalaman terbaik. Untuk informasi lebih lanjut, %1lihat kebijakan kami%2."
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr ""
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr "Di luar Uni Eropa, produk keuangan yang ditawarkan oleh Deriv (SVG) LLC, yang beralamat di Hinds Building, Kingstown, St. Vincent dan Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, diatur oleh Otoritas Jasa Keuangan Vanuatu (%1lihat lisensi%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, diatur oleh Otoritas Jasa Keuangan Kepulauan Virgin Inggris (%3lihat lisensi. SIBA/L/18/1114%4); dan Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, diatur oleh Otoritas Jasa Keuangan Labuan untuk melakukan bisnis money-broking (%5lihat lisensi. MB/18/0024%6)."
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "Terampil dalam berkomunikasi baik secara lisan dan memberi instruksi dalam bahasa Inggris dengan baik"
@@ -8160,6 +8165,9 @@ msgstr "Mohon untuk tidak berbagi rekening bank, kartu kredit atau e-wallet Anda
 
 msgid "Please ensure that you have the Telegram app installed on your device."
 msgstr "Pastikan bahwa Anda memiliki aplikasi Telegram yang diinstal pada perangkat Anda."
+
+msgid "Please ensure that your address is complete and accurate."
+msgstr ""
 
 msgid "Please enter a valid Login ID."
 msgstr "Masukkan Login ID yang berlaku."
@@ -8715,6 +8723,12 @@ msgstr "RTS 27 2020"
 
 msgid "RTS 28"
 msgstr "RTS 28"
+
+msgid "Range Break 100 Index"
+msgstr "Indeks Range Break 100"
+
+msgid "Range Break 200 Index"
+msgstr "Indeks Range Break 200"
 
 msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
 msgstr "Range break 100 akan menerobos range (rentang) rata-rata satu kali setiap 100 kali menyentuh perbatasan (border)."
@@ -11631,7 +11645,7 @@ msgid "This agreement constitutes the entire agreement between the Parties, and 
 msgstr "Persetujuan ini merupakan keseluruhan perjanjian antara Kedua Belah Pihak, dan tanpa perwakilan, atau pengaturan, atau kesepakatan sebelumnya baik itu secara tertulis, atau lisan yang berhubungan dengan masalah yang diatur dalam perjanjian ini antara Kedua Belah Pihak, harus diselesaikan sebelum Tanggal Mulai."
 
 msgid "This agreement is between Deriv (SVG) LLC (hereinafter referred to as \"the Company\" or \"%1\") and Payment Agent (hereinafter referred to as \"the Agent\"), both of whom agree to be bound by this agreement."
-msgstr ""
+msgstr "Perjanjian ini adalah antara Deriv (SVG) LLC (selanjutnya disebut sebagai  \"perusahaan \" atau  \"%1\") dan agen pembayaran (selanjutnya disebut sebagai  \"agen\"), yang keduanya setuju untuk terikat oleh perjanjian ini."
 
 msgid "This agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy, or misspelling and, as a result, by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this agreement."
 msgstr "Perjanjian ini disampaikan kedapa Agen dalam bahasa Inggris. Jika ada perbedaan antara versi bahasa Inggris dan versi terjemahan dokumen ini, versi Bahasa Inggris yang akan berlaku. Perusahaan tidak bertanggung jawab atas kehilangan, atau kerusakan apapun yang disebabkan oleh kesalahan, ketidakakuratan, atau kesalahan ejaan, dan akibatnya salah paham, atau salah tafsirkan terhadap salah satu syarat, atau ketentuan, atau klausul, atau ketentuan dari versi terjemahan pada perjanjian ini."
@@ -12032,11 +12046,11 @@ msgstr "Trading pada mata uang, indeks saham, komoditas dan lainnya pada kenaika
 msgid "Trade forex and CFDs on our popular multi-asset platform."
 msgstr "Trading forex dan CFD pada platform multi-aset populer kami."
 
+msgid "Trade forex and CFDs with a powerful platform recognised as the global standard."
+msgstr "Trading forex dan CFD dengan platform kokoh diakui oleh standar global."
+
 msgid "Trade forex and contracts for difference (CFDs) on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
 msgstr "Trading forex dan contracts for difference (CFD) pada MetaTrader 5 – sebuah platform multi aset yang menawarkan peluang trading luar biasa dan juga dilengkapi dengan peralatan analisis teknikal."
-
-msgid "Trade forex, CFDs, and binary options with a powerful platform recognised as the global standard."
-msgstr "Trading forex, CFD dan opsi binary dengan platform kokoh yang telah diakui oleh standar global."
 
 msgid "Trade in the world's financial markets"
 msgstr "Bertrading pada pasar keuangan dunia"
@@ -12569,11 +12583,17 @@ msgstr "Kode verifikasi"
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "Kode verifikasi salah. Silahkan gunakan link yang dikirim ke email Anda."
 
+msgid "Verification required"
+msgstr "Verifikasi diperlukan"
+
 msgid "Verify Reset Password"
 msgstr "Verifikasi Reset Kata Sandi"
 
 msgid "Verify and approve clients' deposit and withdrawal requests"
 msgstr "Memverifikasi dan menyetujui permintaan deposit dan penarikan klien"
+
+msgid "Verify identity"
+msgstr "Verifikasi identitas"
 
 msgid "Verify main password"
 msgstr "Verifikasi kata sandi utama"
@@ -12653,17 +12673,32 @@ msgstr "Akun Virtual"
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa adalah perusahaan internasional yang mendukung pembayaran digital di seluruh dunia, biasanya melalui kartu kredit dan debit yang mereka miliki. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
+msgid "Volatility 10 (1s) Index"
+msgstr "Indeks Volatilitas 10 (1s)"
+
 msgid "Volatility 10 Index"
 msgstr "Indeks Volatilitas 10"
+
+msgid "Volatility 100 (1s) Index"
+msgstr "Indeks Volatilitas 100 (1s)"
 
 msgid "Volatility 100 Index"
 msgstr "Indeks Volatilitas 100"
 
+msgid "Volatility 25 (1s) Index"
+msgstr "Indeks Volatilitas 25 (1s)"
+
 msgid "Volatility 25 Index"
 msgstr "Indeks Volatilitas 25"
 
+msgid "Volatility 50 (1s) Index"
+msgstr "Indeks Volatilitas 50 (1s)"
+
 msgid "Volatility 50 Index"
 msgstr "Indeks Volatilitas 50"
+
+msgid "Volatility 75 (1s) Index"
+msgstr "Indeks Volatilitas 75 (1s)"
 
 msgid "Volatility 75 Index"
 msgstr "Indeks Volatilitas 75"
@@ -12721,9 +12756,6 @@ msgstr "Kami percaya bahwa kami harus selalu melakukan hal yang benar. Hal ini t
 
 msgid "We can't validate your personal details because there is some information missing."
 msgstr "Kami tidak dapat memvalidasi data pribadi Anda karena ada beberapa informasi yang hilang."
-
-msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
-msgstr "Kami tidak dapat mengenali alamat Anda. Anda dapat melanjutkan namun mohon pastikan alamat Anda adalah lengkap dan akurat."
 
 msgid "We delete an order with the largest margin reserved."
 msgstr "Kami akan menghapus order dengan margin terbesar."
@@ -13278,7 +13310,7 @@ msgid "Withdrawals have been disabled on your account. Please check your email f
 msgstr "Fasilitas penarikan akun Anda dinonaktifkan. Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
-msgstr ""
+msgstr "Penarikan telah dinonaktifkan pada akun Anda. Mohon tunggu hingga dokumen yang Anda unggah terverifikasi."
 
 msgid "Withdrawals may only be paid to the initiator of an account. When a client maintains an account by means of telegraphic deposits, withdrawals are only paid to the holder of the originating bank account, and it is the onus of the client to ensure that account number and name accompany all transfers to the Company. When a client maintains an account by means of credit/debit card deposits, withdrawals are only paid back to the same card."
 msgstr "Penarikan hanya dapat dilakukan pada pemilik akun. Ketika klien mendanai akun menggunakan bank transfer maka pembayaran hanya dapat dilakukan menggunakan bank transfer kedalam rekening bank yang sama, dan merupakan tanggung jawab klien untuk memastikan dana rekening bank adalah benar. Ketika klien mendanai akun mereka menggunakan kartu kredit/debit, penarikan hanya dapat dikembalikan kedalam kartu yang sama."
@@ -13648,9 +13680,6 @@ msgstr "Keamanan akun Anda sangat penting bagi kami. Mohon pertimbangkan beberap
 
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "Akun Anda akan didaftarkan pada %1, dan akan tunduk pada yurisdiksi dan hukum dari %2."
-
-msgid "Your address has been recognised by our system."
-msgstr "Alamat Anda telah dikenali oleh sistem kami."
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Aplikasi Anda sebagai klien profesional sedang diproses."
