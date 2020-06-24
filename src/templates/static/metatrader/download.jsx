@@ -211,9 +211,7 @@ const MT5WebPlatform = ({ is_first_child }) => (
         <div className='center-text' data-show='-eucountry'>
             <a
                 className='button'
-                // TODO: update to the deriv server once real transition is done
-                // href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server'
-                href='https://trade.mql5.com/trade?servers=Binary.com-Server&trade_server=Binary.com-Server'
+                href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server'
                 target='_blank'
                 rel='noopener noreferrer'
             >

@@ -173,7 +173,7 @@ const Metatrader = () => (
                 <div className='mt-panel'>
                     <div className='mt-sidebar-button mt5-web' data-show='-eucountry'>
                         <div className='small-icon'>
-                            <a href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
+                            <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
                                 <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
                             </a>
                         </div>
@@ -182,14 +182,12 @@ const Metatrader = () => (
                         </div>
                         <div className='mt-link-web'>
                             <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Deriv-Demo&amp;trade_server=Deriv-Demo' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Deriv-Demo&trade_server=Deriv-Demo' target='_blank' rel='noopener noreferrer'>
                                     {it.L('Demo')}
                                 </a>
                             </div>
                             <div className='mt5-web-link'>
-                                {/* TODO: update to the deriv server once real transition is done */}
-                                {/* <a href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'> */}
-                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
                                     {it.L('Real')}
                                 </a>
                             </div>
