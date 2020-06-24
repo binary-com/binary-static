@@ -59,7 +59,7 @@ const MetaTraderUI = (() => {
         let acc_group_demo_set = false;
         let acc_group_real_set = false;
         Object.keys(accounts_info)
-            .sort((a, b) => accounts_info[a].account_type > accounts_info[b].account_type ? 1 : -1)
+            .sort(sortMt5Accounts)
             .forEach((acc_type) => {
                 if ($list.find(`[value="${acc_type}"]`).length === 0) {
                     if (/^demo/.test(acc_type)) {
@@ -457,6 +457,22 @@ const MetaTraderUI = (() => {
         }
     };
 
+    const sortMt5Accounts = (a, b) => {
+        if (/demo/.test(a) && !/demo/.test(b)) {
+            return -1;
+        }
+        if (/demo/.test(b) && !/demo/.test(a)) {
+            return 1;
+        }
+        if (/svg$/.test(a)) {
+            return -1;
+        }
+        if (/vanuatu|svg_standard/.test(a)) {
+            return /svg$/.test(b) ? 1 : -1;
+        }
+        return 1;
+    };
+
     const updateAccountTypesUI = (type) => {
         Object.keys(accounts_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
@@ -483,6 +499,7 @@ const MetaTraderUI = (() => {
         Object.keys(accounts_info)
             // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
             .filter(acc_type => !/^(real|demo)_(labuan_(standard|financial)|svg_(advanced|financial_stp)|vanuatu_(advanced|financial_stp)|maltainvest_(advanced|financial_stp))$/.test(acc_type))// toEnableVanuatuFinancialSTP: remove vanuatu_financial_stp from regex
+            .sort(sortMt5Accounts)
             .forEach((acc_type) => {
                 const $acc  = accounts_info[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
