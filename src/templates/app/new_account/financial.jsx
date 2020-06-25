@@ -24,7 +24,6 @@ import {
     ClientMessage,
     Tnc,
     TaxInformationForm,
-    GeocodeValidation,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Financial = () => (
@@ -54,9 +53,8 @@ const Financial = () => (
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
-                <AddressPostcode>
-                    <GeocodeValidation className='gr-5 geocode-container' />
-                </AddressPostcode>
+                <AddressPostcode />
+                <p className='gr-10 gr-centered notice-msg center-text'>{it.L('Please ensure that your address is complete and accurate.')}</p>
             </Fieldset>
 
             <Fieldset legend={it.L('Security')} className='security'>

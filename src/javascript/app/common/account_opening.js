@@ -7,7 +7,6 @@ const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
 const CommonFunctions    = require('../../_common/common_functions');
-const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -191,7 +190,6 @@ const AccountOpening = (() => {
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
             }
-            Geocoder.init(form_id);
         });
     };
     const handleNewAccount = (response, message_type) => {
