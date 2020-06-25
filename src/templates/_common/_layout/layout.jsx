@@ -3,10 +3,10 @@ import Head from './head.jsx';
 import Header from './header.jsx';
 import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
-import Elevio from '../../_common/includes/elevio.jsx';
-import Gtm from '../../_common/includes/gtm.jsx';
-import InterviewPopup from '../../_common/components/interview_popup.jsx';
-import Title from '../../_common/components/title.jsx';
+import InterviewPopup from '../components/interview_popup.jsx';
+import Title from '../components/title.jsx';
+import Elevio from '../includes/elevio.jsx';
+import Gtm from '../includes/gtm.jsx';
 
 const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
