@@ -158,6 +158,10 @@ const MetaTraderConfig = (() => {
                                 showElementSetRedirect('.citizen');
                                 is_ok = false;
                             }
+                            if (!response_get_settings.account_opening_reason) {
+                                showElementSetRedirect('.acc_opening_reason');
+                                is_ok = false;
+                            }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
                                 // disable button must occur before loading
                                 $('#view_1 #btn_next').addClass('button-disabled');

@@ -128,8 +128,8 @@ export const UnsupportedMessage = () => (
             type='poi'
             accepted_documents={[
                 { name: it.L('Passport'), value: 'passport' },
-                { name: it.L('Identity card'), value: 'proofid' },
-                { name: it.L('Driving licence'), value: 'driverslicense' },
+                { name: it.L('Identity card'), value: 'national_identity_card' },
+                { name: it.L('Driving licence'), value: 'driving_licence' },
             ]}
         />
 
@@ -196,7 +196,7 @@ export const AuthenticateMessage = () => (
             ]}
             type='poa'
             accepted_documents={[
-                { name: it.L('Utility bill'), value: 'proofaddress' },
+                { name: it.L('Utility bill'), value: 'utility_bill' },
                 { name: it.L('Bank statement'), value: 'bankstatement' },
             ]}
         />
