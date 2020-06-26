@@ -696,11 +696,11 @@ const Authenticate = (() => {
 
     // Validate user input
     const validate = (file) => {
-        const required_docs = ['passport', 'proofid', 'driverslicense'];
+        const required_docs = ['passport', 'national_identity_card', 'driving_licence'];
         const doc_name = {
-            passport      : localize('Passport'),
-            proofid       : localize('Identity card'),
-            driverslicense: localize('Driving licence'),
+            passport              : localize('Passport'),
+            national_identity_card: localize('Identity card'),
+            driving_licence       : localize('Driving licence'),
         };
 
         const accepted_formats_regex = /selfie/.test(file.passthrough.class)
@@ -723,7 +723,7 @@ const Authenticate = (() => {
         }
         if (!file.expirationDate
             && required_docs.indexOf(file.documentType.toLowerCase()) !== -1
-            && !(isIdentificationNoExpiry(Client.get('residence')) && file.documentType === 'proofid')
+            && !(isIdentificationNoExpiry(Client.get('residence')) && file.documentType === 'national_identity_card')
         ) {
             onErrorResolved('exp_date', file.passthrough.class);
             return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
