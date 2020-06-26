@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from '../../_common/components/elements.jsx';
+import { List } from '../components/elements.jsx';
 
 const FooterColumn = ({ header, items }) => (
     <div className='gr-4'>
