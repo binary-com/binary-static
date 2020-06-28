@@ -171,9 +171,9 @@ const Metatrader = () => (
                     </div>
                 </div>
                 <div className='mt-panel'>
-                    <div className='mt-sidebar-button mt5-web'>
+                    <div className='mt-sidebar-button mt5-web' data-show='-eucountry'>
                         <div className='small-icon'>
-                            <a href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
+                            <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
                                 <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
                             </a>
                         </div>
@@ -182,12 +182,34 @@ const Metatrader = () => (
                         </div>
                         <div className='mt-link-web'>
                             <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Deriv-Demo&amp;trade_server=Deriv-Demo' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Deriv-Demo&trade_server=Deriv-Demo' target='_blank' rel='noopener noreferrer'>
                                     {it.L('Demo')}
                                 </a>
                             </div>
                             <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Deriv-Server&amp;trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
+                                <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
+                                    {it.L('Real')}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='mt-sidebar-button mt5-web' data-show='eucountry'>
+                        <div className='small-icon'>
+                            <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
+                                <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
+                            </a>
+                        </div>
+                        <div className='mt-title-mt5-web'>
+                            {it.L('MT5 Web platform')}
+                        </div>
+                        <div className='mt-link-web'>
+                            <div className='mt5-web-link'>
+                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Demo&trade_server=Binary.com-Demo' target='_blank' rel='noopener noreferrer'>
+                                    {it.L('Demo')}
+                                </a>
+                            </div>
+                            <div className='mt5-web-link'>
+                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     {it.L('Real')}
                                 </a>
                             </div>
@@ -514,6 +536,7 @@ const Metatrader = () => (
                             <li className='assessment invisible'>{it.L('Please [_1]complete the financial assessment[_2] to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                             <li className='tax invisible'>{it.L('Complete your [_1]Tax Information[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                             <li className='citizen invisible'>{it.L('Select [_1]Citizenship[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
+                            <li className='acc_opening_reason invisible'>{it.L('Select [_1]Account opening reason[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
                             <li className='authenticate invisible'>{it.L('Please [_1]authenticate your account[_2] before creating an MT5 account.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</li>
                         </ul>
                     </div>
