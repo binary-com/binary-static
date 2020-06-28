@@ -255,7 +255,7 @@ async function compile(page) {
         const context     = context_builder.buildFor(model);
         const page_html   = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
         const language    = lang.toLowerCase();
-        const layout_path = `../src/templates/${page.tpl_path.split('/')[0]}/_layout/layout.jsx`;
+        const layout_path = '../src/templates/_common/_layout/layout.jsx';
 
         if (page.layout) {
             const layout_normal     = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;

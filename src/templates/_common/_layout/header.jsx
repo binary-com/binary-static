@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from '../../_common/components/elements.jsx';
+import { List } from '../components/elements.jsx';
 
 const LanguageUl = ({ type, color }) => {
     const id = `${type}_language`;
