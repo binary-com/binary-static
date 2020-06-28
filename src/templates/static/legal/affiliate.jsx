@@ -93,6 +93,7 @@ const Affiliate = () => (
                     { text: it.L('Should any client for whom the Affiliate is receiving commissions process a chargeback, the Company reserves the right to deduct the commission portion of the chargeback from the total balance due to the Affiliate for the current month. Should this deduction of the accumulated revenue exceed the Affiliate\'s current amount due, the Affiliate\'s balance will then revert to a negative balance, and the Affiliate will have to earn revenue to cover the chargeback before the Affiliate can start earning revenue again. The Company reserves the right, in special cases, to exclude revenue sharing on promotional funds deposited into the client\'s account by the Company.') },
                     { text: it.L('Commissions will be earned throughout the life of the client, on all transactions the client undertakes with the Company, for as long as the Affiliate remains a member of this affiliate programme. The Company reserves the right to cancel the commissions that are not reclaimed after 2 years.') },
                     { text: it.L('The Affiliate is not allowed to rebate any part of the commission payment onto the Affiliate\'s referrals, and should the Company realise that the Affiliate is engaged in such actions, the Affiliate\'s account shall be revoked immediately.') },
+                    { text: it.L('A master affiliate is not allowed to own or control any sub-affiliate accounts linked with the master affiliate account. If the Company has reason to believe that the master affiliate has breached this term, the Company reserves the right to reverse or cancel any commissions to the master affiliate and/or terminate all business relationships with the master affiliate.') },
                 ]}
             />
 
@@ -137,6 +138,7 @@ const Affiliate = () => (
                                     { text: it.L('The information provided during the sign-up process warranted by the Affiliate to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement.') },
                                     { text: it.L('The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business.') },
                                     { text: it.L('The Affiliate has placed digital advertisements for the licensed activities on websites providing unauthorised access to copyrighted content.') },
+                                    { text: it.L('The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the affiliate for any commissions for any fraudulent sales or any sales based on abuse.') },
                                 ],
                             },
                         ],
