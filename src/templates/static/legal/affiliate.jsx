@@ -138,7 +138,7 @@ const Affiliate = () => (
                                     { text: it.L('The information provided during the sign-up process warranted by the Affiliate to be true and correct is determined by the Company to be false or incorrect during the term of this Agreement.') },
                                     { text: it.L('The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business.') },
                                     { text: it.L('The Affiliate has placed digital advertisements for the licensed activities on websites providing unauthorised access to copyrighted content.') },
-                                    { text: it.L('The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the affiliate for any commissions for any fraudulent sales or any sales based on abuse.') },
+                                    { text: it.L('The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the Affiliate for any commissions for any fraudulent sales or any sales based on abuse.') },
                                 ],
                             },
                         ],
