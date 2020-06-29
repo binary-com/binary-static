@@ -538,7 +538,7 @@ const Regulation = () => {
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />
             </Box>
 
-            <Box header={it.L('Binary (FX) Ltd')} last>
+            <Box header={it.L('Binary (FX) Ltd')}>
                 <p>{it.L('Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business [_1](licence no. MB/18/0024)[_2].', `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. [_1] is not available in Malaysia.', it.website_name)}</p>
                 <RegulatorText />
@@ -546,10 +546,10 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('The Financial Commission')} last>
-                <p>{it.L('We are registered with The Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry.-[_1]view membership[_2]', `<a href=${it.url_for('download/regulation/Binary_membership.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('The Financial Commission offers Compensation up to 20,000 EUR on a case-to-case basis Unbiased assessment of disputes fast and effective dispute resolution, free of charge')}</p>
+                <p>{it.L('We are registered with The Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry ( [_1]view membership[_2] )', `<a href=${it.url_for('download/regulation/Binary_membership.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('The Financial Commission offers Compensation up to 20,000 EUR on a case-to-case basis, Unbiased assessment of disputes, fast and effective dispute resolution free of charge.')}</p>
                 <RegulatorText />
-                <RegulatorImage padding='4' padding_m='8' href='https://financialcommission.org/' image='images/pages/regulation/financial_commission.svg' />
+                <RegulatorImage padding='4' padding_m='8' href='https://financialcommission.org/' image='images/pages/regulation/financial-commission.svg' />
             </Box>
         </div>
     );
