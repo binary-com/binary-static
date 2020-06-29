@@ -544,6 +544,13 @@ const Regulation = () => {
                 <RegulatorText />
                 <RegulatorImage href='https://www.labuanibfc.com/' image='images/pages/regulation/labuan-logo.png' />
             </Box>
+
+            <Box header={it.L('The Financial Commission')} last>
+                <p>{it.L('We are registered with The Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry.-[_1]view membership[_2]', `<a href=${it.url_for('download/regulation/Binary_membership.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('The Financial Commission offers Compensation up to 20,000 EUR on a case-to-case basis Unbiased assessment of disputes fast and effective dispute resolution, free of charge')}</p>
+                <RegulatorText />
+                <RegulatorImage padding='4' padding_m='8' href='https://financialcommission.org/' image='images/pages/regulation/financial_commission.svg' />
+            </Box>
         </div>
     );
 };
