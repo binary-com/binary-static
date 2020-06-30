@@ -511,9 +511,9 @@ const Regulation = () => {
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
                 </Box>
 
-                <Box header={it.L('Binary (IOM) Limited')} >
-                    <p>{it.L('Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - [_1]view licence[_2] and for UK clients by the UK Gambling Commission - [_3]view licence[_2].', `<a href=${it.url_for('download/regulation/IOM_license.pdf')} target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">')}</p>
-                    <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited.')}</p>
+                <Box header={it.L('Deriv (MX) Limited')} >
+                    <p>{it.L('Deriv (MX) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - [_1]view licence[_2] and for UK clients by the UK Gambling Commission - [_3]view licence[_2].', `<a href=${it.url_for('download/regulation/IOMGSC_Licence.pdf')} target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">')}</p>
+                    <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Deriv (MX) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/regulation/isle-of-man.png' />
                 </Box>
