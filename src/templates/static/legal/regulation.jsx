@@ -551,7 +551,7 @@ const Regulation = () => {
                 <RegulatorText />
                 <RegulatorImage padding='4' padding_m='8' href='https://financialcommission.org/' image='images/pages/regulation/financial-commission.svg' />
             </Box>
-            <div className='separator separator-xl' />
+            <div className='margin-bottom-100' />
         </div>
     );
 };
