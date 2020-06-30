@@ -83,7 +83,7 @@ const Contact2 = () => (
             </div>
             <div className='gr-row'>
                 <InfoBox padding='6' header={it.L('Malta')}       text={it.L('Binary (Europe) Ltd & Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033')} />
-                <InfoBox padding='6' header={it.L('Isle of Man')} text={it.L('Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW')} />
+                <InfoBox padding='6' header={it.L('Isle of Man')} text={it.L('Deriv (MX) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW')} />
             </div>
 
             <div className='gr-hide-p gr-hide-m gr-padding-20' />
