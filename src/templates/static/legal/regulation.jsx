@@ -93,13 +93,13 @@ const Regulation = () => {
                 <p>{it.L('Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
-            <Box header={it.L('Binary Investments (Europe) Ltd')} >
-                <p>{it.L('Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
-                <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd.')}</p>
+            <Box header={it.L('Deriv Investments (Europe) Ltd')} >
+                <p>{it.L('Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Deriv-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
+                <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Ltd.')}</p>
                 <div className='gr-padding-30 gr-12' id='accordion'>
                     <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
                     <div>
-                        <p>{it.L('Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to [_1] via EU passporting rights - freedom to provide cross border services.', it.website_name)}</p>
+                        <p>{it.L('Deriv Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to [_1] via EU passporting rights - freedom to provide cross border services.', it.website_name)}</p>
                         <div className='center-text gr-padding-10 gr-12'>
                             <img className='responsive' src={it.url_for('images/pages/regulation/map.svg')} useMap='#planetmap' />
                         </div>
@@ -138,7 +138,7 @@ const Regulation = () => {
 
                     <h3>{it.L('Pillar 3 Disclosures')}</h3>
                     <div>
-                        <p>{it.L('The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant.')}</p>
+                        <p>{it.L('The Pillar 3 disclosure report of Deriv Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant.')}</p>
                         <FillBox
                             padding='5'
                             center
@@ -169,9 +169,9 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/pdf-icon.svg'
-                                href={it.url_for('/download/BIEL-RTS28-for-2017.pdf')}
+                                href={it.url_for('/download/BIEL-RTS28-for-2018.pdf')}
                                 target='_blank'
-                                text={it.L('BIEL RTS28 for 2017')}
+                                text={it.L('BIEL RTS28 for 2018')}
                             />
                         </div>
                         <div className='gr-6 gr-12-m'>
@@ -181,9 +181,56 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/pdf-icon.svg'
-                                href={it.url_for('/download/BIEL-RTS28-for-2018.pdf')}
+                                href={it.url_for('/download/BIEL-RTS28-for-2019.pdf')}
                                 target='_blank'
-                                text={it.L('BIEL RTS28 for 2018')}
+                                text={it.L('BIEL RTS28 for 2019')}
+                            />
+                        </div>
+                    </div>
+
+                    <h3>{it.L('RTS 27 2020')}</h3>
+                    <div className='gr-row'>
+                        <div className='gr-6 gr-12-m gr-padding-30 gr-centered'>
+                            <h3>{it.L('Q1 2020')}</h3>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q1/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
                             />
                         </div>
                     </div>
@@ -464,22 +511,22 @@ const Regulation = () => {
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
                 </Box>
 
-                <Box header={it.L('Binary (IOM) Limited')} >
-                    <p>{it.L('Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - [_1]view licence[_2] and for UK clients by the UK Gambling Commission - [_3]view licence[_2].', `<a href=${it.url_for('download/regulation/IOM_license.pdf')} target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">')}</p>
-                    <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited.')}</p>
+                <Box header={it.L('Deriv (MX) Limited')} >
+                    <p>{it.L('Deriv (MX) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - [_1]view licence[_2] and for UK clients by the UK Gambling Commission - [_3]view licence[_2].', `<a href=${it.url_for('download/regulation/IOMGSC_Licence.pdf')} target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">')}</p>
+                    <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Deriv (MX) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/regulation/isle-of-man.png' />
                 </Box>
             </div>
 
-            <Box header={it.L('Binary (SVG) LLC')} >
-                <p>{it.L('Binary (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Binary (SVG) LLC.')}</p>
+            <Box header={it.L('Deriv (SVG) LLC')} >
+                <p>{it.L('Deriv (SVG) LLC, Hinds Buildings, Kingstown, St. Vincent and the Grenadines; company number 25299 BC 2019.')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC.')}</p>
             </Box>
 
-            <Box header={it.L('Binary (V) Ltd')} >
-                <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
+            <Box header={it.L('Deriv (V) Ltd')} >
+                <p>{it.L('Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/Vanuatu-license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
             </Box>

@@ -1,5 +1,4 @@
 import React                 from 'react';
-import Loading               from './loading.jsx';
 import { Fieldset, FormRow } from './forms.jsx';
 
 export const Salutation = ({ className, row_class, row_id }) => (
@@ -230,7 +229,7 @@ export const ClientMessage = () => (
 export const TaxInformationForm = () => (
     <React.Fragment>
         <div id='tax_information_info' className='gr-12 gr-padding-10'>
-            <label>{it.L('Binary Investments (Europe) Ltd. is required to collect your tax information.')}&nbsp;
+            <label>{it.L('Deriv Investments (Europe) Ltd. is required to collect your tax information.')}&nbsp;
                 <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
             </label>
 
@@ -277,38 +276,16 @@ export const TaxInformationForm = () => (
             attributes={{ maxLength: 20, 'data-lpignore': true }}
         />
 
+        <p id='tax_id_warning' className='notice-msg invisible gr-9 gr-centered'>
+            {it.L('This Tax Identification Number (TIN) is invalid. You may continue, but to facilitate future payment processes, valid tax information will be required.')}
+        </p>
+
         <div id='tax_information_declaration'>
             <div className='gr-12 gr-padding-10'>
                 <input type='checkbox' id='chk_tax_id' />
                 <label htmlFor='chk_tax_id'>
-                    {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Binary Investments (Europe) Ltd. about any changes to this information.')}
+                    {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Deriv Investments (Europe) Ltd. about any changes to this information.')}
                 </label>
-            </div>
-        </div>
-    </React.Fragment>
-);
-
-export const GeocodeValidation = ({ className }) => (
-    <React.Fragment>
-        <div className={className}>
-            <div className='geocode-btn-container'>
-                <a href='javascript:;' id='geocode_validate' className='geocode-btn invisible' ><span>{it.L('Check address')}</span></a>
-            </div>
-        </div>
-        <div id='geocode_status' className='gr-row'>
-            <div className='gr-10 gr-centered gr-padding-10 center-text'>
-                <Loading is_invisible />
-                <p id='geocode_error' className='notice-msg invisible'>
-                    {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
-                </p>
-                <div id='geocode_success' className='invisible'>
-                    <div className='success-msg'>
-                        <ul className='checked'>
-                            <li>{it.L('Your address has been recognised by our system.')}</li>
-                        </ul>
-                        <p>{it.L('However, we will require further documentation to authenticate your account in the future.')}</p>
-                    </div>
-                </div>
             </div>
         </div>
     </React.Fragment>

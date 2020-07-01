@@ -14,25 +14,27 @@ describe('Profit Table', () => {
         });
     });
     it('Should have all expected data', () => {
-        const profit_table_data = profitTable.getProfitTabletData(profit_table.transactions[0]);
-        expect(profit_table_data).to.be.an('Object')
-            .and.to.have.property('buyDate')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('ref')
-            .and.to.be.a('number');
-        expect(profit_table_data).to.have.property('payout')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('buyPrice')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('sellDate')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('sellPrice')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('pl')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('desc')
-            .and.to.be.a('string');
-        expect(profit_table_data).to.have.property('id')
-            .and.to.be.a('number');
+        if (profit_table.transactions.length) {
+            const profit_table_data = profitTable.getProfitTabletData(profit_table.transactions[0]);
+            expect(profit_table_data).to.be.an('Object')
+                .and.to.have.property('buyDate')
+                .and.to.be.a('string');
+            expect(profit_table_data).to.have.property('ref')
+                .and.to.be.a('number');
+            expect(profit_table_data).to.have.property('payout')
+                .and.to.be.a('string');
+            expect(profit_table_data).to.have.property('buyPrice')
+                .and.to.be.a('string');
+            expect(profit_table_data).to.have.property('sellDate')
+                .and.to.be.a('string');
+            expect(profit_table_data).to.have.property('sellPrice')
+                .and.to.be.a('string');
+            expect(profit_table_data).to.have.property('pl')
+                .and.to.be.a('string');
+            expect(profit_table_data).to.have.property('desc')
+                .and.to.be.a('string');
+            expect(profit_table_data).to.have.property('id')
+                .and.to.be.a('number');
+        }
     });
 });

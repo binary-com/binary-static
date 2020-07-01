@@ -7,7 +7,6 @@ const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
 const CommonFunctions    = require('../../_common/common_functions');
-const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
@@ -32,7 +31,6 @@ const AccountOpening = (() => {
     const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
         handleTaxIdentificationNumber();
-        generateBirthDate();
         const landing_company  = State.getResponse('landing_company');
         const lc_to_upgrade_to = landing_company[is_financial ? 'financial_company' : 'gaming_company'] || landing_company.financial_company;
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), lc_to_upgrade_to.name);
@@ -40,6 +38,7 @@ const AccountOpening = (() => {
         if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
+        generateBirthDate(landing_company.minimum_age);
     };
 
     const getResidence = (form_id, getValidations) => {
@@ -191,7 +190,6 @@ const AccountOpening = (() => {
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
             }
-            Geocoder.init(form_id);
         });
     };
     const handleNewAccount = (response, message_type) => {

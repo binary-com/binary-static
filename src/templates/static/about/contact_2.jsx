@@ -82,14 +82,14 @@ const Contact2 = () => (
                 <h1>{it.L('Company addresses')}</h1>
             </div>
             <div className='gr-row'>
-                <InfoBox padding='6' header={it.L('Malta')}       text={it.L('Binary (Europe) Ltd & Binary Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033')} />
+                <InfoBox padding='6' header={it.L('Malta')}       text={it.L('Binary (Europe) Ltd & Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033')} />
                 <InfoBox padding='6' header={it.L('Isle of Man')} text={it.L('Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW')} />
             </div>
 
             <div className='gr-hide-p gr-hide-m gr-padding-20' />
 
             <div className='gr-row'>
-                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
+                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('Deriv Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
                 <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Labuan')} text={it.L('Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan')} />
             </div>
         </div>

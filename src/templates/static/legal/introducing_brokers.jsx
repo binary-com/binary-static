@@ -104,12 +104,12 @@ const IntroducingBrokers = () => (
                     <li>{it.L('Closed/complete trades')}</li>
                     <li>{it.L('Closed trades made by clients introduced by an Introducing Broker and duly approved by Binary')}</li>
                 </ol>
-                <p>{it.L('However, Introducing Brokers contracted with Binary Investments (Europe) Ltd shall be paid on a Cost Per Acquisition (CPA) deal only, whereby the Introducing Broker shall become eligible for payment of a set amount only upon the introduction of a client to Binary and as long as the Introducing Broker is providing an enhanced service to the clients.')}</p>
+                <p>{it.L('However, Introducing Brokers contracted with Deriv Investments (Europe) Ltd shall be paid on a Cost Per Acquisition (CPA) deal only, whereby the Introducing Broker shall become eligible for payment of a set amount only upon the introduction of a client to Binary and as long as the Introducing Broker is providing an enhanced service to the clients.')}</p>
                 <p>{it.L('Commission will not be paid for Accounts that have been opened or traded by an Associate of the Introducing Broker.')}</p>
                 <p>{it.L('Binary will pay the Commission to the Introducing Broker before or on the 15th day of the month following the calendar month in which the trades were made (Due Date).')}</p>
                 <p>{it.L('The Introducing Broker acknowledges that the Commission received by the Introducing Broker pursuant to this Agreement fully compensates for its obligations under this Agreement.')}</p>
                 <p>{it.L('The Introducing Broker is responsible for the payment of their own taxes, duties, fees, or other governmental levies or charges. Any fees payable by Binary to the Introducing Broker in connection with this Agreement are exclusive of any such taxes, duties, fees, or levies.')}</p>
-                <p>{it.L('The clauses above shall not apply in its entirety to any Introducing Brokers who are contracted to provide Introducing Broker services with Binary Investments (Europe) Ltd.')}</p>
+                <p>{it.L('The clauses above shall not apply in its entirety to any Introducing Brokers who are contracted to provide Introducing Broker services with Deriv Investments (Europe) Ltd.')}</p>
             </Li>
             <Li
                 title={it.L('Introducing Broker warranties')}
@@ -139,7 +139,7 @@ const IntroducingBrokers = () => (
                 <p>{it.L('This Agreement shall be equally terminated in the event of bankruptcy, insolvency, or liquidation of either party. ')}</p>
                 <p>{it.L('On termination of this Agreement')}
                     <ol>
-                        <li>{it.L('Binary shall pay Commissions for any trades placed by clients prior to the date of termination but shall not be liable to pay Commissions for any trades placed by clients on or after the date of termination. In the case of the Introducing Brokers who are contracted with Binary Investments (Europe) Ltd, any pending Commission from the CPA deal prior to the date of termination shall be paid in full.')}</li>
+                        <li>{it.L('Binary shall pay Commissions for any trades placed by clients prior to the date of termination but shall not be liable to pay Commissions for any trades placed by clients on or after the date of termination. In the case of the Introducing Brokers who are contracted with Deriv Investments (Europe) Ltd, any pending Commission from the CPA deal prior to the date of termination shall be paid in full.')}</li>
                         <li>{it.L('The Introducing Broker shall immediately cease using the Marketing Materials whether in hard copy or electronically on any website and return all Marketing Materials to Binary. They shall also cease referring to Binary and shall remove all of the Binary Trademarks, including logos, branding, and other references to Binary from their website and/or marketing materials.')}</li>
                         <li>{it.L('The Introducing Broker acknowledges that on termination, they have no claims against Binary whatsoever and are not entitled to any compensation or claim arising from the termination.')}</li>
                         <li>{it.L('If the Introducing Broker engages in Malicious Activity, Binary, in its absolute discretion, may')}

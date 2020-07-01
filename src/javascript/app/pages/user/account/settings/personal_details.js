@@ -8,12 +8,10 @@ const FormManager      = require('../../../../common/form_manager');
 const DatePicker       = require('../../../../components/date_picker');
 const ClientBase       = require('../../../../../_common/base/client_base');
 const CommonFunctions  = require('../../../../../_common/common_functions');
-const Geocoder         = require('../../../../../_common/geocoder');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const toISOFormat      = require('../../../../../_common/string_util').toISOFormat;
 const getHashValue     = require('../../../../../_common/url').getHashValue;
-const urlFor           = require('../../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
@@ -28,16 +26,20 @@ const PersonalDetails = (() => {
         is_fully_authenticated,
         residence,
         get_settings_data,
-        has_changeable_fields,
-        changeable_fields;
+        changeable_fields,
+        mt_acct_type,
+        is_mt_tax_required,
+        $tax_residence;
 
     const init = () => {
         editable_fields   = {};
         get_settings_data = {};
-        // TODO: remove tax_id and tax_residence when api is fixed.
-        changeable_fields = ['tax_identification_number', 'tax_residence'];
+        changeable_fields = [];
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
+        mt_acct_type      = getHashValue('mt5_redirect');
+        // demo and volatility mt accounts do not require tax info
+        is_mt_tax_required = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2 && +State.getResponse('landing_company.config.tax_details_required') === 1;
     };
 
     const checkStatus = (status, string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
@@ -58,6 +60,12 @@ const PersonalDetails = (() => {
         }
     };
 
+    const shouldShowTax = (get_settings) => {
+        const is_tax_req = isTaxReq();
+        const has_set_tax = get_settings.tax_identification_number || get_settings.tax_residence;
+        return is_tax_req || has_set_tax;
+    };
+
     const showHideMissingDetails = () => {
         const validations = getValidations();
         const has_missing_field = validations.find((validation) => /req/.test(validation.validations) && $(validation.selector).val() === '');
@@ -65,7 +73,7 @@ const PersonalDetails = (() => {
     };
 
     const populateChangeableFields = () => {
-        if (!has_changeable_fields) return;
+        if (is_fully_authenticated) return;
 
         const loginid         = Client.get('loginid');
         const landing_company = State.getResponse('landing_company');
@@ -81,7 +89,7 @@ const PersonalDetails = (() => {
      * @param {get_settings} to prepopulate some of the values.
      */
     const displayChangeableFields = (get_settings) => {
-        if (!has_changeable_fields) return;
+        if (is_fully_authenticated) return;
         changeable_fields.forEach(field => {
             CommonFunctions.getElementById(`row_${field}`).setVisibility(1);
             CommonFunctions.getElementById(`row_lbl_${field}`).setVisibility(0);
@@ -128,7 +136,8 @@ const PersonalDetails = (() => {
 
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
         const get_settings         = $.extend({}, data);
-        get_settings.date_of_birth = 'date_of_birth' in get_settings ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
+        // date_of_birth can be 0 as a valid epoch
+        get_settings.date_of_birth = 'date_of_birth' in get_settings && get_settings.date_of_birth !== 'null' ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
         const accounts             = Client.getAllLoginids();
         // for subaccounts, back-end sends loginid of the master account as name
         const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
@@ -150,16 +159,17 @@ const PersonalDetails = (() => {
 
         displayGetSettingsData(get_settings);
 
-        if (has_changeable_fields) {
+        if (is_virtual) {
+            $(real_acc_elements).remove();
+        } else if (!is_fully_authenticated) {
             displayChangeableFields(data);
-            CommonFunctions.getElementById('tax_information_form').setVisibility(1);
             CommonFunctions.getElementById('address_form').setVisibility(1);
             showHideTaxMessage();
-        } else if (is_virtual) {
-            $(real_acc_elements).remove();
+            CommonFunctions.getElementById('tax_information_form').setVisibility(shouldShowTax(get_settings));
         } else {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
+            CommonFunctions.getElementById('tax_information_form').setVisibility(shouldShowTax(get_settings));
         }
 
         $(form_id).setVisibility(1);
@@ -175,14 +185,18 @@ const PersonalDetails = (() => {
         showHideMissingDetails();
     };
 
-    const show_label_if_any_value   = ['account_opening_reason', 'citizen', 'place_of_birth', 'tax_residence', 'tax_identification_number', 'date_of_birth', 'first_name', 'last_name', 'salutation'];
-    const force_update_fields       = ['tax_residence', 'tax_identification_number'];
+    const show_label_if_any_value = ['account_opening_reason', 'citizen', 'place_of_birth', 'date_of_birth', 'first_name', 'last_name', 'salutation'];
+    const force_update_fields     = ['tax_residence', 'tax_identification_number'];
 
     const displayGetSettingsData = (get_settings) => {
+        const show_label = [...show_label_if_any_value];
+        if (is_fully_authenticated) {
+            show_label.push('tax_residence', 'tax_identification_number');
+        }
         Object.keys(get_settings).forEach((key) => {
             // If there are changeable fields, show input instead of labels instead.
-            const has_label         = show_label_if_any_value.includes(key) &&
-                (has_changeable_fields ? !changeable_fields.includes(key) : true);
+            const has_label         = show_label.includes(key) &&
+                (!is_fully_authenticated ? !changeable_fields.includes(key) : true);
             const force_update      = force_update_fields.concat(changeable_fields).includes(key);
             const should_show_label = has_label && get_settings[key];
             const element_id        = `${should_show_label ? 'lbl_' : ''}${key}`;
@@ -257,6 +271,10 @@ const PersonalDetails = (() => {
         ));
     };
 
+    const isTaxReq = () =>
+        (Client.isAccountOfType('financial') && Client.shouldCompleteTax()) ||
+        is_mt_tax_required;
+
     const getValidations = () => {
         let validations;
         if (is_virtual) {
@@ -265,28 +283,36 @@ const PersonalDetails = (() => {
                 { selector: '#residence', validations: ['req'] },
             ];
         } else {
-            const is_financial      = Client.isAccountOfType('financial');
-            const is_gaming         = Client.isAccountOfType('gaming');
-            const mt_acct_type      = getHashValue('mt5_redirect');
-            const is_for_mt_citizen = !!mt_acct_type;                                                   // all mt account opening requires citizen
-            const is_for_mt_tax     = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2;  // demo and volatility mt accounts do not require tax info
-            const is_tax_req        = is_financial || (is_for_mt_tax && +State.getResponse('landing_company.config.tax_details_required') === 1);
+            const is_financial = Client.isAccountOfType('financial');
+            const is_gaming    = Client.isAccountOfType('gaming');
+            const is_tax_req   = isTaxReq();
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
                 { selector: '#address_line_2',         validations: ['address'] },
                 { selector: '#address_city',           validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
-                { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#address_postcode',       validations: [residence === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#email_consent' },
                 { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
                 { selector: '#date_of_birth',          validations: ['req'] },
 
-                { selector: '#tax_residence',  validations: (is_tax_req) ? ['req'] : '' },
-                { selector: '#citizen',        validations: (is_financial || is_gaming || is_for_mt_citizen) ? ['req'] : '' },
-                { selector: '#chk_tax_id',     validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
+                // recheck tax_identiciation_number after tax_residence is selected as the validation regex is taken from API based on tax residence
+                { selector: '#tax_residence',             validations: is_tax_req ? ['req'] : '', re_check_field: '#tax_identification_number' },
+                {
+                    selector   : '#tax_identification_number',
+                    validations: [
+                        is_tax_req ? 'req' : undefined,
+                        ['tax_id', { residence_list: State.getResponse('residence_list'), $warning: $('#tax_id_warning'), $tax_residence: $('#tax_residence') }],
+                        ['length', { min: is_tax_req ? 1 : 0, max: 20 }],
+                    ].filter(item => item),
+                },
+
+                // all mt account opening requires citizen
+                { selector: '#citizen',    validations: (is_financial || is_gaming || mt_acct_type) ? ['req'] : '' },
+                { selector: '#chk_tax_id', validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
             // Push validations for changeable fields.
@@ -309,13 +335,6 @@ const PersonalDetails = (() => {
                     });
                 }
             });
-
-            const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            if (is_tax_req) {
-                tax_id_validation.validations[1][1].min = 1;
-                tax_id_validation.validations.unshift('req');
-            }
-            validations.push(tax_id_validation);
         }
         return validations;
     };
@@ -324,7 +343,6 @@ const PersonalDetails = (() => {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
         if (!is_error) {
-            const redirect_url = getHashValue('mt5_redirect') ? urlFor('user/metatrader') : undefined;
             // to update tax information message for financial clients
             BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
@@ -344,15 +362,12 @@ const PersonalDetails = (() => {
                     BinaryPjax.loadPreviousUrl();
                     return;
                 }
-                const get_settings        = data.get_settings;
-                const is_tax_req          = +State.getResponse('landing_company.config.tax_details_required') === 1;
-                const is_for_mt_financial = /real_svg_standard|labuan_advanced/.test(redirect_url);
-                const has_required_mt     = ((is_for_mt_financial && is_tax_req) ?
+                const get_settings    = data.get_settings;
+                const has_required_mt = is_mt_tax_required ?
                     (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen)
                     :
-                    get_settings.citizen // only check Citizen if user selects mt volatility account
-                );
-                if (redirect_url && has_required_mt) {
+                    get_settings.citizen; // only check Citizen if user selects mt volatility account
+                if (mt_acct_type && has_required_mt) {
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
                     $(form_id).setVisibility(0);
                     $('#missing_details_notice').setVisibility(0);
@@ -364,11 +379,10 @@ const PersonalDetails = (() => {
                     getDetailsResponse(get_settings);
 
                     // Re-populate changeable fields based on incoming data
-                    if (has_changeable_fields) {
+                    if (!is_fully_authenticated) {
                         displayChangeableFields(get_settings);
                     }
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
-                    if (!is_fully_authenticated) Geocoder.validate(form_id);
                 }
             });
         } else { // is_error
@@ -401,17 +415,19 @@ const PersonalDetails = (() => {
                     }));
                 });
                 if (residence) {
-                    const $tax_residence = $('#tax_residence');
-                    $tax_residence.html($options_with_disabled.html()).promise().done(() => {
-                        setTimeout(() => {
-                            const residence_value = get_settings_data.tax_residence ?
-                                get_settings_data.tax_residence.split(',') : Client.get('residence') || '';
-                            $tax_residence.select2()
-                                .val(residence_value)
-                                .trigger('change')
-                                .setVisibility(1);
-                        }, 500);
-                    });
+                    if (shouldShowTax(get_settings_data)) {
+                        $tax_residence = $('#tax_residence');
+                        $tax_residence.html($options_with_disabled.html()).promise().done(() => {
+                            setTimeout(() => {
+                                const residence_value = get_settings_data.tax_residence ?
+                                    get_settings_data.tax_residence.split(',') : residence || '';
+                                $tax_residence.select2()
+                                    .val(residence_value)
+                                    .trigger('change')
+                                    .setVisibility(1);
+                            }, 500);
+                        });
+                    }
 
                     if (!get_settings_data.place_of_birth) {
                         $options.prepend($('<option/>', { value: '', text: localize('Please select') }));
@@ -481,21 +497,17 @@ const PersonalDetails = (() => {
             const account_status = State.getResponse('get_account_status').status;
             get_settings_data = State.getResponse('get_settings');
             is_fully_authenticated = checkStatus(account_status , 'authenticated');
-            has_changeable_fields = (Client.get('landing_company_shortcode') === 'svg') && !is_fully_authenticated;
 
             if (!residence) {
                 displayResidenceList();
             } else if (is_virtual) {
                 getDetailsResponse(get_settings_data);
-            } else if (has_changeable_fields) {
-                populateChangeableFields();
-                displayResidenceList();
             } else if (is_fully_authenticated) {
                 displayResidenceList();
                 name_fields.forEach(field => CommonFunctions.getElementById(`row_${field}`).classList.add('invisible'));
             } else {
+                populateChangeableFields();
                 displayResidenceList();
-                // getDetailsResponse(get_settings_data);
             }
         });
     };
@@ -507,9 +519,6 @@ const PersonalDetails = (() => {
                     BinarySocket.send({ states_list: residence }).then(response_state => {
                         populateStates(response_state).then(() => {
                             getDetailsResponse(get_settings_data, response.residence_list);
-                            if (!is_virtual && !is_fully_authenticated) {
-                                Geocoder.validate(form_id);
-                            }
                         });
                     });
                 } else {

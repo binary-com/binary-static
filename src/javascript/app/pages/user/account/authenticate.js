@@ -696,11 +696,11 @@ const Authenticate = (() => {
 
     // Validate user input
     const validate = (file) => {
-        const required_docs = ['passport', 'proofid', 'driverslicense'];
+        const required_docs = ['passport', 'national_identity_card', 'driving_licence'];
         const doc_name = {
-            passport      : localize('Passport'),
-            proofid       : localize('Identity card'),
-            driverslicense: localize('Driving licence'),
+            passport              : localize('Passport'),
+            national_identity_card: localize('Identity card'),
+            driving_licence       : localize('Driving licence'),
         };
 
         const accepted_formats_regex = /selfie/.test(file.passthrough.class)
@@ -723,7 +723,7 @@ const Authenticate = (() => {
         }
         if (!file.expirationDate
             && required_docs.indexOf(file.documentType.toLowerCase()) !== -1
-            && !(isIdentificationNoExpiry(Client.get('residence')) && file.documentType === 'proofid')
+            && !(isIdentificationNoExpiry(Client.get('residence')) && file.documentType === 'national_identity_card')
         ) {
             onErrorResolved('exp_date', file.passthrough.class);
             return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
@@ -900,7 +900,7 @@ const Authenticate = (() => {
                     resolve({ error: response.error });
                     return;
                 }
-                const token = response.service_token.token;
+                const token = response.service_token.onfido.token;
                 const in_90_minutes = 1 / 16;
                 Cookies.set('onfido_token', token, {
                     expires : in_90_minutes,
@@ -971,6 +971,10 @@ const Authenticate = (() => {
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
         } else if (!identity.further_resubmissions_allowed) {
+            // if POI is verified and POA is not verified, redirect to POA tab
+            if (identity.status === 'verified' && document.status !== 'verified') {
+                Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
+            }
             switch (identity.status) {
                 case 'none':
                     if (onfido_unsupported) {

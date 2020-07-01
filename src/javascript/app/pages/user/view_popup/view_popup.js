@@ -24,8 +24,6 @@ const ViewPopup = (() => {
         is_sell_clicked,
         chart_started,
         chart_init,
-        chart_updated,
-        ticks_requested,
         sell_text_updated,
         btn_view,
         multiplier,
@@ -46,8 +44,6 @@ const ViewPopup = (() => {
         is_sell_clicked      = false;
         chart_started        = false;
         chart_init           = false;
-        chart_updated        = false;
-        ticks_requested      = false;
         sell_text_updated    = false;
         $container           = '';
 
@@ -159,7 +155,7 @@ const ViewPopup = (() => {
         ViewPopupUI.repositionConfirmation();
     };
 
-    const update = () => {
+    const update = async () => {
         const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended         = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
         const indicative_price = contract.sell_price || (contract.bid_price || null);
@@ -263,6 +259,7 @@ const ViewPopup = (() => {
             );
         }
 
+        const is_unsupported_contract = is_multiplier_contract || Callputspread.isCallputspread(contract.contract_type);
         if (!is_started) {
             containerSetText('trade_details_entry_spot > span', '-');
             containerSetText('trade_details_message', localize('Contract has not started yet'));
@@ -271,12 +268,14 @@ const ViewPopup = (() => {
                 // only show entry spot if available and contract was not sold before start time
                 containerSetText('trade_details_entry_spot > span', is_sold_before_start ? '-' : contract.entry_spot_display_value);
             }
-            containerSetText('trade_details_message', contract.validation_error && !is_multiplier_contract ? contract.validation_error : '&nbsp;');
-            if (is_multiplier_contract) {
-                containerSetText('trade_details_bottom', localize(
-                    'This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.',
-                    ['<br/>', '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">', '</a>']
-                ));
+            containerSetText('trade_details_message', contract.validation_error && !is_unsupported_contract ? contract.validation_error : '&nbsp;');
+            if (is_unsupported_contract) {
+                const redirect = '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">';
+                const redirect_close = '</a>';
+                const message = Callputspread.isCallputspread(contract.contract_type) ?
+                    localize('This contract is only available on [_1]DTrader[_2].', [redirect, redirect_close]) :
+                    localize('This contract is only available on DTrader.[_1][_2]Go to Dtrader[_3] to close or cancel this contract.', ['<br/>', redirect, redirect_close]);
+                containerSetText('trade_details_bottom', message);
             }
         }
 
@@ -300,18 +299,17 @@ const ViewPopup = (() => {
             if (contract.entry_tick_time) {
                 chart_started = true;
             }
-        } else if (contract.tick_count && !chart_updated) {
-            TickDisplay.updateChart({ id_render: id_tick_chart, request_ticks: !ticks_requested }, contract);
-            ticks_requested = true;
-            if ('barrier' in contract) {
-                chart_updated = true;
+        } else if (contract.tick_count) {
+            if (!chart_init) {
+                chart_init = true;
+                TickDisplay.init(id_tick_chart);
             }
+            TickDisplay.updateChart(contract);
         }
 
         if (!is_sold && contract.status === 'sold') {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
-            else TickDisplay.updateChart({ is_sold: true }, contract);
         }
         if (contract.is_valid_to_sell && contract.is_settleable && !contract.is_sold && !is_sell_clicked) {
             ViewPopupUI.forgetStreams();
@@ -325,8 +323,6 @@ const ViewPopup = (() => {
                 DigitDisplay.end(contract);
             } else if (!contract.tick_count) {
                 Highchart.showChart(contract, 'update');
-            } else {
-                TickDisplay.updateChart({ is_sold: true }, contract);
             }
             containerSetText('trade_details_live_remaining', '-');
             Clock.setExternalTimer(); // stop timer
@@ -338,11 +334,7 @@ const ViewPopup = (() => {
             $container.find('#errMsg').setVisibility(0);
         }
 
-        const { barrier, contract_type, entry_spot } = contract;
-        if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
-            TickDisplay.plotResetSpot(barrier);
-        }
-        if (!is_multiplier_contract) {
+        if (!is_unsupported_contract) {
             // next line is responsible for 'sell at market' flashing on the last tick
             sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
         }

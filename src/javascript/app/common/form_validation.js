@@ -146,7 +146,6 @@ const Validation = (() => {
     const validPhone        = value => /^\+((-|\s)*[0-9])*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;
-    const validTaxID        = value => /^[a-zA-Z0-9]*[\w-]*$/.test(value);
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
@@ -199,6 +198,30 @@ const Validation = (() => {
 
     const isMoreThanMax = (value, options) =>
         (options.type === 'float' ? +value > +options.max : compareBigUnsignedInt(value, options.max) === 1);
+
+    const validTaxID = (value, options, field) => {
+        // input is valid in API regex but may not be valid for country regex
+        if (/^[a-zA-Z0-9]*[\w-]*$/.test(value)) {
+            if (options.residence_list && options.$tax_residence && options.$warning) {
+                // get the tax id regex validation of currently selected tax residence dynamically
+                const tax_regex = getTaxRegex(options.residence_list, options.$tax_residence.val());
+                const tax_id    = $(field.selector).val();
+                // consider valid if no validation is needed, or
+                // tax id value matches some acceptable regex from the tax_regex array
+                const is_valid_tax = !tax_regex.length || tax_regex.find(regex => regex.test(tax_id));
+                options.$warning.setVisibility(!is_valid_tax);
+            }
+            // allow to continue with or without warning
+            return true;
+        }
+
+        return false;
+    };
+
+    const getTaxRegex = (residence_list, tax_residence) => {
+        const tin_format = (residence_list.find(residence =>  residence.value === tax_residence) || {}).tin_format;
+        return (tin_format || []).map((format) => new RegExp(format));
+    };
 
     const ValidatorsMap = (() => {
         let validators_map;

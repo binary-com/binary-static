@@ -1,6 +1,8 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
+const BinarySocket     = require('../../../base/socket');
 const Dialog           = require('../../../common/attach_dom/dialog');
+const isEuCountry      = require('../../../common/country_base').isEuCountry;
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
 const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
@@ -173,14 +175,19 @@ const MetaTraderUI = (() => {
         }
 
         if (accounts_info[acc_type].info) {
+            const is_demo = /demo/.test(accounts_info[acc_type].account_type);
+            const is_eu   = isEuCountry();
+            const server_prefix = is_eu ? 'Binary.com' : 'Deriv'; // TODO: update eu to deriv as well once launched
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
                 const key     = $(this).attr('data');
                 const info    = accounts_info[acc_type].info[key];
                 const mapping = {
                     balance      : () => (isNaN(info) ? '' : Currency.formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
-                    display_login: () => (`${info} (${/demo/.test(accounts_info[acc_type].account_type) ? localize('Demo Account') : localize('Real-Money Account')})`),
+                    broker       : () => is_eu ? 'Deriv Ltd.' : 'Deriv Limited',
+                    display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
+                    server       : () => `${server_prefix}-${is_demo ? 'Demo' : 'Server'}`,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
@@ -593,22 +600,24 @@ const MetaTraderUI = (() => {
             return;
         }
 
-        const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
-        const mt_gaming_company = State.getResponse('landing_company.mt_gaming_company');
-        const account = accounts_info[acc_type];
-        let company;
+        BinarySocket.wait('landing_company').then((response) => {
+            const mt_financial_company = response.landing_company.mt_financial_company;
+            const mt_gaming_company = response.landing_company.mt_gaming_company;
+            const account = accounts_info[acc_type];
+            let company;
 
-        if (/standard/.test(account.mt5_account_type)) {
-            company = mt_financial_company.standard;
-        } else if (/advanced/.test(account.mt5_account_type)) {
-            company = mt_financial_company.advanced;
-        } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
-            company = mt_gaming_company.standard;
-        }
+            if (/standard/.test(account.mt5_account_type)) {
+                company = mt_financial_company.standard;
+            } else if (/advanced/.test(account.mt5_account_type)) {
+                company = mt_financial_company.advanced;
+            } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
+                company = mt_gaming_company.standard;
+            }
 
-        $el.attr({
-            'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
-            'data-balloon-length': 'large',
+            $el.attr({
+                'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
+                'data-balloon-length': 'large',
+            });
         });
     };
 
