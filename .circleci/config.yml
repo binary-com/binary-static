@@ -145,7 +145,10 @@ jobs:
       - git_checkout_from_cache
       - npm_install
       - test
-      - build
+      - build:
+         target: 'staging'
+      - build:
+          target: 'translations'
       - deploy:
           target_branch: "staging"
       - notify_slack
@@ -156,7 +159,8 @@ jobs:
       - git_checkout_from_cache
       - npm_install
       - test
-      - build
+      - build:
+          target: 'production'
       - deploy:
           target_branch: "production"
       - notify_slack
@@ -167,7 +171,8 @@ jobs:
       - git_checkout_from_cache
       - npm_install
       - test
-      - build
+      - build:
+          target: 'production'
       - docker_build_push
       - k8s_deploy:
           k8s_svc_name: "production-binary-com"
