@@ -43,7 +43,7 @@ const ResponsibleTrading = () => (
             </div>
 
             <h2>{it.L('Other Warnings & Regulatory Disclosures')}</h2>
-            <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our [_1]Key Information Documents[_2] on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of \'complex products\' and may not be suitable for retail clients.', `<a href='${it.url_for('regulation')}#key_information_documents'>`,'</a>')}</p>
+            <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our [_1]Key Information Documents[_2] on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Deriv Investments (Europe) Ltd fall under the category of \'complex products\' and may not be suitable for retail clients.', `<a href='${it.url_for('regulation')}#key_information_documents'>`,'</a>')}</p>
         </div>
     </div>
 );
