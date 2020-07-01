@@ -82,7 +82,7 @@ commands:
             - "17:6f:1c:8f:d6:05:11:fc:2a:cb:97:81:d7:ca:6d:58"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages -d dist --branch << parameters.target_branch >>  
+          command: gh-pages -d dist --branch << parameters.target_branch >> --message '[skip ci]'
   docker_build_push:
     description: "Build Docker image"
     steps:
@@ -128,8 +128,8 @@ commands:
     steps:
       - slack/status:
           include_project_field: false
-          failure_message: "Release failed for Binary.com with version *$(cat dist/compressed/version)*"
-          success_message: "Release succeeded for Binary.com with version *$(cat dist/compressed/version)*"
+          failure_message: "Release failed for Binary.com with version *$(cat dist/version)*"
+          success_message: "Release succeeded for Binary.com with version *$(cat dist/version)*"
           webhook: ${SLACK_WEBHOOK}
 jobs:
   test:
