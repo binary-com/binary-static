@@ -69,7 +69,7 @@ but commands:
           at: dist
       - run:
           name: Tag build
-          command: echo "<< parameters.target_branch >> $(date)" > dist/version
+          command: echo "<< parameters.target_branch >> $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > dist/version
       - run:
           name: Install and configure dependencies
           command: |
@@ -78,7 +78,7 @@ but commands:
             git config user.name "ci-build"
       - add_ssh_keys:
           fingerprints:
-            - "95:22:af:3a:82:d8:21:a5:e1:d9:79:52:89:50:2f:17"
+            - "17:6f:1c:8f:d6:05:11:fc:2a:cb:97:81:d7:ca:6d:58"
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages -d dist --branch << parameters.target_branch >>  
@@ -122,13 +122,21 @@ but commands:
                 kubectl --server=${KUBE_SERVER} --certificate-authority=ca.crt --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
               fi
             done
+  notify_slack:
+    description: "Notify slack"
+    steps:
+      - slack/status:
+          include_project_field: false
+          failure_message: "Release failed for Binary.com with version *$(cat dist/compressed/version)*"
+          success_message: "Release succeeded for Binary.com with version *$(cat dist/compressed/version)*"
+          webhook: ${SLACK_WEBHOOK}
 jobs:
   test:
     docker:
       - image: circleci/node:8.10.0-stretch
     steps:
       - git_checkout_from_cache
-      - npm_install_from_cache
+      - npm_install
       - test
   release_beta:
     docker:
@@ -136,29 +144,30 @@ jobs:
     steps:
       - git_checkout_from_cache
       - npm_install
+      - test
       - build
       - deploy:
           target_branch: "staging"
-
+      - notify_slack
   release_production:
     docker:
       - image: circleci/node:8.10.0-stretch
     steps:
       - git_checkout_from_cache
       - npm_install
+      - test
       - build
       - deploy:
           target_branch: "production"
-      
+      - notify_slack
   release_aws_production:
     docker:
       - image: circleci/node:9.8.0-stretch
     steps:
       - git_checkout_from_cache
-      - npm_install_from_cache
+      - npm_install
+      - test
       - build
-      - grunt_release:
-          target: 'production'
       - docker_build_push
       - k8s_deploy:
           k8s_svc_name: "production-binary-com"
@@ -166,7 +175,10 @@ jobs:
 workflows:
   test:
     jobs:
-      - test
+      - test:
+          filters:
+            branches:
+              ignore: /^master$/
   release:
     jobs:
       - release_beta:
@@ -183,5 +195,5 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^aws\-production.*/
+              only: /^production.*/
           context: binary-frontend-artifact-upload
