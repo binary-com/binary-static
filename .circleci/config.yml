@@ -1,7 +1,9 @@
 version: 2.1
 orbs:
   k8s: circleci/kubernetes@0.7.0
-but commands:
+  slack: circleci/slack@3.4.2
+
+commands:
   git_checkout_from_cache:
     description: "Git checkout and save cache"
     steps:
@@ -197,6 +199,7 @@ workflows:
             tags:
               only: /^production.*/
       - release_aws_production:
+          filters:
             branches:
               ignore: /.*/
             tags:
