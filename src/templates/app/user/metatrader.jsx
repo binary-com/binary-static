@@ -103,16 +103,24 @@ const Metatrader = () => (
                             </div>
                             <div className='acc-info has-account invisible'>
                                 <div className='gr-row gr-padding-10'>
-                                    <div className='gr-3'>{it.L('MT5 Account:')}</div>
+                                    <div className='gr-3'>{it.L('MT5 Login:')}</div>
                                     <div data='display_login' />
                                 </div>
-                                <div className='gr-row'>
+                                <div className='gr-row gr-padding-10 gr-parent'>
                                     <div className='gr-3'>{it.L('Name:')}</div>
-                                    <div className='gr-9' data='name' />
+                                    <div data='name' />
                                 </div>
-                                <div className='gr-row gr-padding-10 gr-hide mobile-balance'>
+                                <div className='gr-row gr-padding-10 gr-parent gr-hide mobile-balance'>
                                     <div className='gr-3'>{it.L('Balance:')}</div>
-                                    <div className='gr-9' data='balance' />
+                                    <div data='balance' />
+                                </div>
+                                <div className='gr-row gr-padding-10 gr-parent'>
+                                    <div className='gr-3'>{it.L('Broker:')}</div>
+                                    <div data='broker' />
+                                </div>
+                                <div className='gr-row gr-padding-10 gr-parent'>
+                                    <div className='gr-3'>{it.L('Server:')}</div>
+                                    <div data='server' />
                                 </div>
                             </div>
                         </div>
