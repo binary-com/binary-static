@@ -2,7 +2,6 @@ version: 2.1
 orbs:
   k8s: circleci/kubernetes@0.7.0
   slack: circleci/slack@3.4.2
-
 commands:
   git_checkout_from_cache:
     description: "Git checkout and save cache"
@@ -135,14 +134,14 @@ commands:
 jobs:
   test:
     docker:
-      - image: circleci/node:8.10.0-stretch
+      - image: circleci/node:9.8.0-stretch
     steps:
       - git_checkout_from_cache
       - npm_install
       - test
   release_beta:
     docker:
-      - image: circleci/node:8.10.0-stretch
+      - image: circleci/node:9.8.0-stretch
     steps:
       - git_checkout_from_cache
       - npm_install
@@ -156,7 +155,7 @@ jobs:
       - notify_slack
   release_production:
     docker:
-      - image: circleci/node:8.10.0-stretch
+      - image: circleci/node:9.8.0-stretch
     steps:
       - git_checkout_from_cache
       - npm_install
