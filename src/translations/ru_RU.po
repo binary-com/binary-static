@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-07-02 01:57\n"
+"PO-Revision-Date: 2020-07-02 09:27\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1312,6 +1312,9 @@ msgstr "Количество"
 msgid "Amount in"
 msgstr "Сумма в"
 
+msgid "An Affiliate who refers other Affiliates to the Company (\"Master Affiliate\") has an account to which each referred Affiliate's account (\"Sub-affiliate Account\") is tied. The Master Affiliate is not allowed to own or control any Sub-affiliate Accounts linked with the Master Affiliate's account. If the Company has reason to believe that the Master Affiliate has breached this term, the Company reserves the right to reverse or cancel any commissions to the Master Affiliate and/or terminate all business relationships with the Master Affiliate."
+msgstr ""
+
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "Контракт \"Закончится внутри\" приносит прибыль, если выходная цена рынка будет строго выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой барьер. Контракт \"Закончится вне\" приносит прибыль, если выходная цена рынка ЛИБО строго выше, чем верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой барьер."
 
@@ -1996,20 +1999,11 @@ msgstr "Binary (Europe) Ltd,"
 msgid "Binary (Europe) Ltd, or"
 msgstr "Binary (Europe) Ltd или"
 
-msgid "Binary (FX) Ltd"
-msgstr "Binary (FX) Ltd"
-
 msgid "Binary (FX) Ltd,"
 msgstr "Binary (FX) Ltd,"
 
-msgid "Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
-msgstr "Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
-
 msgid "Binary (FX) Ltd, or"
 msgstr "Binary (FX) Ltd или"
-
-msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Компания лицензирована и находится под регулированием Управления финансовых услуг Лабуана в качестве финансового брокера %1(лицензия номер MB/18/0024)%2."
 
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
@@ -2602,8 +2596,8 @@ msgstr "Счета клиентов из других стран мира (за 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
 msgstr "Счета для клиентов из других стран мира (за исключением США, Канады и Гонконга) будут открыты в компании Deriv (SVG) LLC."
 
-msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr "Счета клиентов из других стран (за исключением ряда юрисдикций: США, Канады и ЕС), желающих начать торговлю CFD на платформе MetaTrader 5, будут открыты в рамках компании Binary (FX) Ltd. Услуги %1 недоступны в Малайзии."
+msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Deriv (FX) Ltd. %1 is not available in Malaysia."
+msgstr ""
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
 msgstr "Клиенты могут запросить дополнительную информацию, отправив электронное письмо по адресу compliance@binary.com . В данном случае Вы получите дополнительные сведения о политике в отношении конфликта интересов."
@@ -3490,6 +3484,15 @@ msgstr "Deriv (BVI) Ltd"
 msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
 msgstr "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Компания лицензирована и регулируется Комиссией по предоставлению финансовых услуг Британских Виргинских островов - %1лицензия%2."
 
+msgid "Deriv (FX) Ltd"
+msgstr ""
+
+msgid "Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
+msgstr ""
+
+msgid "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
+msgstr ""
+
 msgid "Deriv (MX) Limited"
 msgstr "Deriv (MX) Limited"
 
@@ -3497,7 +3500,7 @@ msgid "Deriv (MX) Limited, First Floor, Millennium House, Victoria Road, Douglas
 msgstr "Компания Deriv (MX) Limited расположена по адресу First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW, лицензирована и регулируется Комиссией по надзору за азартными играм на Острове Мэн (настоящая лицензия выдана 31 августа 2017 года; %1см. лицензию%2), а для клиентов из Великобритании – Комиссией по азартным играм Великобритании (%3см. лицензию%2)."
 
 msgid "Deriv (MX) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
-msgstr ""
+msgstr "Deriv (MX) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
 msgid "Deriv (SVG) LLC"
 msgstr "Deriv (SVG) LLC"
@@ -3518,19 +3521,19 @@ msgid "Deriv Group of companies (hereafter referred to as 'the Company' and 'It'
 msgstr "Deriv Group (далее именуемая \"Группой компаний Deriv Group\" или \"Компания\") стремится защищать безопасность и конфиденциальность частной информации заявителей. Данное уведомление о конфиденциальности устанавливает виды информации, которые Компания запрашивает у заявителя. Также уведомление определяет порядок сбора и использования личной информации заявителя, как долго хранить эти данные и другие соответствующие сведения о заявителе, согласно Общему регламенту по защите данных (EU) 2016/679 (далее именуемый ОРЗД или GDPR), а также Акту о защите информации от 2018 года."
 
 msgid "Deriv Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
-msgstr ""
+msgstr "Компания Deriv Investments (Europe) Limited уполномочена предоставлять услуги в других государствах-членах ЕС на основании действующих в ЕС паспортных прав. На карте ниже приведён список государств ЕС, имеющих доступ к %1 посредством действующих в ЕС паспортных прав (прав на предоставление международных услуг)."
 
 msgid "Deriv Investments (Europe) Ltd"
-msgstr ""
+msgstr "Deriv Investments (Europe) Ltd"
 
 msgid "Deriv Investments (Europe) Ltd aggregates the Bid and Ask prices from a pool of liquidity providers to determine and offer the client the best available price of the instrument. The Company is always the final counterparty to the client's Transactions. The Company may execute Orders on behalf of its client, wherein the Company will act as a broker and pass on the Order to the liquidity provider for execution. Alternatively, the Company may also keep the client's Order on its own account, wherein the Company will take the other side of the client's trade. It is further noted that the Company may make a profit as a result of the client's losses and vice-versa. Further details can be found under Conflicts of interest policy and Order execution policy."
-msgstr ""
+msgstr "Компания Deriv Investments (Europe) Ltd рассчитывает цену бид и цену аск на основе информации, предоставляемой рядом поставщиков ликвидности, с целью определить и предложить клиенту наилучшую доступную цену для каждого инструмента. Компания всегда выступает финансовым контрагентом по отношению к контрактам клиента. Компания может исполнять ордеры от имени клиентов, выступая при этом в качестве брокера и передавая ордер поставщику ликвидности с целью его исполнения. Также Компания может держать ордер клиента на собственном счету и занять другую сторону в контракте клиента. Примите во внимание, что Компания может получать прибыль в результате потерь клиента и наоборот. Более подробную информацию можно найти в Политике конфликта интересов и Политике исполнения ордеров."
 
 msgid "Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
-msgstr ""
+msgstr "Компания Deriv Investments (Europe) Ltd, расположенная по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, лицензирована и регулируется Мальтийским управлением финансовых услуг в качестве поставщика инвестиционных услуг 3-й категории (%1лицензия номер IS/70156%2)."
 
 msgid "Deriv Investments (Europe) Ltd. is required to collect your tax information."
-msgstr ""
+msgstr "Компания Deriv Investments (Europe) Ltd. обязана собирать вашу налоговую информацию."
 
 msgid "Deriv Limited"
 msgstr "Deriv Limited"
@@ -4127,7 +4130,7 @@ msgid "European Union residents who wish to trade gambling products will have th
 msgstr "Резиденты Евросоюза, желающие работать с продуктами, связанными с азартными играми, могут открыть счета под юрисдикцией Binary (Europe) Limited."
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Ltd."
-msgstr ""
+msgstr "Резиденты Евросоюза, желающие торговать на инвестиционных продуктах, смогут открыть счета под юрисдикцией Deriv Investments (Europe) Ltd."
 
 msgid "Evaluate and improve the effectiveness of internal controls, risk management, regulatory compliance, financial and operational processes"
 msgstr "Оценка и повышение эффективности внутреннего контроля, управления риском, нормативно-правового соответствия, финансовых и оперативных процессов"
@@ -4829,7 +4832,7 @@ msgid "From account: "
 msgstr "Со счёта: "
 
 msgid "From time to time, DIEL may decide to provide the client with written or video information, which DIEL may publish on its website or provide to the client in any other manner. DIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by DIEL to the client."
-msgstr ""
+msgstr "Время от времени DIEL может предоставлять клиенту письменную или видео информацию, которая может быть опубликована на сайте DIEL или передана клиенту в любом другом виде. DIEL обязуется предпринять все разумные усилия, чтобы гарантировать точность и полноту данной информации, которая не должна рассматриваться в качестве инвестиционного совета или рекомендаций DIEL для клиента."
 
 msgid "Front Side"
 msgstr "Лицевая сторона"
@@ -5258,7 +5261,7 @@ msgid "How to use a payment agent?"
 msgstr "Как оплачивать через платежного агента?"
 
 msgid "However, Introducing Brokers contracted with Deriv Investments (Europe) Ltd shall be paid on a Cost Per Acquisition (CPA) deal only, whereby the Introducing Broker shall become eligible for payment of a set amount only upon the introduction of a client to Binary and as long as the Introducing Broker is providing an enhanced service to the clients."
-msgstr ""
+msgstr "Тем не менее, Представляющий брокер, заключивший договор с Deriv Investments (Europe) Ltd, будет получать выплаты только за каждого привлечённого клиента (Cost Per Acquisition или CPA). Представляющий брокер получает выплаты только в установленном размере после привлечения клиента на Binary и до тех пор, пока Представляющий брокер оказывает расширенные услуги клиентам."
 
 msgid "However, if the asset price falls by 10 points, that represents a 10 USD loss for you."
 msgstr "Тем не менее, если цена актива снижается на 10 пунктов, это означает для Вас потерю 10 USD."
@@ -5282,7 +5285,7 @@ msgid "I have read and agree to the %1terms and conditions%2 of the site."
 msgstr "Я прочитал и согласен с %1правилами и условиями%2 сайта."
 
 msgid "I hereby confirm that the tax information I provided is true and complete. I will also inform Deriv Investments (Europe) Ltd. about any changes to this information."
-msgstr ""
+msgstr "Настоящим я подтверждаю, что предоставленная мной налоговая информация является точной и достоверной. Также я обязуюсь уведомить Deriv Investments (Europe) Ltd. о любых изменениях в данной информации."
 
 msgid "I want to change my affiliate instead"
 msgstr "Я хочу указать другого реферера"
@@ -5839,7 +5842,7 @@ msgstr "На территории ЕС финансовые продукты п�
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Deriv (MX) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr ""
 
-msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
@@ -7771,8 +7774,8 @@ msgstr "Наши ценности"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "Мы применяем куки, чтобы улучшить Ваш опыт использования сайта. Для получения более подробной информации, %1Посмотреть на нашу политику%2."
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "За пределами ЕС финансовые продукты предоставляются компанией Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; компанией Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, деятельность которой регулируется Комиссией по предоставлению финансовых услуг Вануату (%1см. лицензию%2); компанией Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, деятельность которой регулируется Комиссией по предоставлению финансовых услуг на Британских Виргинских островах (%3лицензия номер SIBA/L/18/1114%4); а также Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, регулируемой Управлением финансовых услуг Лабуана для ведения брокерской деятельности (%5лицензия номер MB/18/0024%6)."
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr ""
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "Выдающиеся навыки письменного и устного общения и отличное владение английским языком"
@@ -10140,6 +10143,9 @@ msgstr "<strong>Временем начала</strong> считается мом
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "Партнёр и Компания являются независимыми контрагентами, и ни один пункт в данном Соглашении не подразумевает создания между ними франшизы, совместного предприятия, агентства, филиала, деятельности торгового агента или установления отношений работодателя и работника. У Партнёра нет права создавать или принимать предложения от имени Компании, а также представлять её. Партнёр обязуется не делать на своём сайте или других ресурсах заявлений и утверждений, противоречащих данному положению."
+
+msgid "The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the Affiliate for any commissions for any fraudulent sales or any sales based on abuse."
+msgstr ""
 
 msgid "The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
 msgstr "Партнёр не получил и не обладает всеми необходимыми лицензиями и разрешениями, чтобы работать в соответствии с любыми законами, правилами и нормативными требованиями, действующими в рамках любого регулирующего органа в юрисдикции (юрисдикциях), в которой Партнёр ведёт или планирует вести бизнес."

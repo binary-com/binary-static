@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-07-02 01:57\n"
+"PO-Revision-Date: 2020-07-02 09:27\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1312,6 +1312,9 @@ msgstr "จำนวน"
 msgid "Amount in"
 msgstr "ยอดเงินเข้า"
 
+msgid "An Affiliate who refers other Affiliates to the Company (\"Master Affiliate\") has an account to which each referred Affiliate's account (\"Sub-affiliate Account\") is tied. The Master Affiliate is not allowed to own or control any Sub-affiliate Accounts linked with the Master Affiliate's account. If the Company has reason to believe that the Master Affiliate has breached this term, the Company reserves the right to reverse or cancel any commissions to the Master Affiliate and/or terminate all business relationships with the Master Affiliate."
+msgstr ""
+
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "การซื้อขาย Ends Between จะชำระเงิน หากราคาปิดของตลาดมีค่าสูงกว่า หรือ มูลค่าราคาเป้าหมายต่ำ และ ต่ำกว่ามูลค่าราคาเป้าหมายสูง การซื้อขาย Ends Outside จะชำระเงิน หากราคาปิดของตลาดมีค่าใดค่าหนึ่ง สูงกว่ามูลค่าราคาเป้าหมายสูง หรือ ต่ำกว่ามูลค่าราคาเป้าหมายต่ำ"
 
@@ -1996,20 +1999,11 @@ msgstr "Binary (Europe) Ltd,"
 msgid "Binary (Europe) Ltd, or"
 msgstr "Binary (Europe) Ltd หรือ "
 
-msgid "Binary (FX) Ltd"
-msgstr "Binary (FX) Ltd"
-
 msgid "Binary (FX) Ltd,"
 msgstr "Binary (FX) Ltd,"
 
-msgid "Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
-msgstr "Binary (FX) Ltd ตั้งอยู่ที่ F16 ชั้น 1 อาคาร Paragon Labuan ถนน Tun Mustapha รหัสไปรษณีย์ 87000 สหพันธ์ลาบวน"
-
 msgid "Binary (FX) Ltd, or"
 msgstr "Binary (FX) Ltd หรือ"
-
-msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr "Binary (FX) Ltd ตั้งอยู่ที่ ล็อตที่ F16 ชั้น 1 อาคาร Paragon Labuan ถนน Tun Mustapha รหัสไปรษณีย์ 87000 เขต Labuan ประเทศมาเลเซีย ได้รับอนุญาตและกำกับดูแลโดย Labuan Financial Services Authority เพื่อดำเนินธุรกิจซื้อขายทางด้านการเงิน %1(ใบอนุญาตเลขที่ MB/18/0024)%2"
 
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
@@ -2602,7 +2596,7 @@ msgstr ""
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
 msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
+msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Deriv (FX) Ltd. %1 is not available in Malaysia."
 msgstr ""
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
@@ -3488,6 +3482,15 @@ msgid "Deriv (BVI) Ltd"
 msgstr ""
 
 msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
+msgstr ""
+
+msgid "Deriv (FX) Ltd"
+msgstr ""
+
+msgid "Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
+msgstr ""
+
+msgid "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
 msgstr ""
 
 msgid "Deriv (MX) Limited"
@@ -5839,7 +5842,7 @@ msgstr ""
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Deriv (MX) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr ""
 
-msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Binary (FX) Ltd."
+msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
@@ -7771,7 +7774,7 @@ msgstr "ค่านิยมของเรา"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "เว็บไซต์ของเราใช้คุกกี้ที่จะให้ประสบการณ์การใช้งานที่ดีที่สุดแก่ท่าน สำหรับข้อมูลเพิ่มเติม %1ดูนโยบาย%2"
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
 msgstr ""
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
@@ -10140,6 +10143,9 @@ msgstr "<strong>เวลาเริ่มต้น</strong> คือ เว�
 
 msgid "The Affiliate and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between them. The Affiliate will have no authority to make or accept any offers or representations on the Company's behalf. The Affiliate will not make any statement, whether on the Affiliate's website or otherwise, that would reasonably contradict anything in this paragraph."
 msgstr "พันธมิตรนายหน้าออนไลน์และบริษัทฯ เป็นผู้รับจ้างอิสระ และไม่มีส่วนใดของข้อตกลงนี้จะสร้างความเป็นหุ้นส่วน การร่วมทุน ตัวแทน แฟรนไชส์ ตัวแทนขาย หรือ ความสัมพันธ์ในการจ้างงานระหว่างกัน พันธมิตรนายหน้าออนไลน์ไม่มีอำนาจในการสร้าง หรือ ยอมรับข้อเสนอใดๆ หรือ เป็นตัวแทนใดๆ ของบริษัทฯ พันธมิตรนายหน้าออนไลน์จะไม่กำหนดถ้อยแถลงใดๆ ไม่ว่าในเว็บไซต์ของพันธมิตรนายหน้าออนไลน์ หรือ ที่อื่นๆ เพื่อสร้างความขัดแย้งต่อใจความในอนุเฉทนี้"
+
+msgid "The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the Affiliate for any commissions for any fraudulent sales or any sales based on abuse."
+msgstr ""
 
 msgid "The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
 msgstr "พันธมิตรนายหน้าออนไลน์ไม่ได้รับ และไม่ได้ดำเนินการต่อใบอนุญาตที่จำเป็นทั้งหมด หรือ ยินยอมที่จะปฏิบัติตามกฏหมาย ข้อกำหนด และกฎเกณฑ์ที่เป็นไปตามอำนาจและขอบเขตของการบังคับใช้ตามกฎหมายที่พันธมิตรนายหน้าออนไลน์ดำเนินการ หรือ เป้าหมายในธุรกิจ"
