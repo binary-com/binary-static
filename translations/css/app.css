@@ -1,0 +1,2747 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic");
+/* stylelint-disable color-no-hex */
+/* stylelint-enable color-no-hex */
+/* stylelint-disable color-no-hex */
+/* stylelint-enable color-no-hex */
+/* GLOBAL RULES */
+/*
+ * To simplify usage of a property
+ * with different values for LTR and RTL languages
+ * sample usage: @include BIDIR_VALUE(float, left, right);
+ */
+/*
+ * To simplify usage of different properties
+ * with the same value for LTR and RTL languages
+ * sample usage: @include BIDIR_PROP(margin-left, margin-right, 5px);
+ */
+/*
+ * To replace characters in a string
+ */
+/*
+ * To create an optimized svg url
+ */
+/*
+ * return svg url using specified color
+ */
+*, *:after, *:before {
+  -webkit-transition: opacity 0.2s, color 0.2s, background 0.2s;
+  transition: opacity 0.2s, color 0.2s, background 0.2s; }
+
+@keyframes pulsing {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes pulsing {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0);
+            transform: translate(0); } }
+
+.pulser {
+  -webkit-animation: pulsing 3s infinite ease;
+  animation: pulsing 3s infinite ease; }
+
+.blinker {
+  -webkit-animation: pulsing 1.5s infinite ease;
+  animation: pulsing 1.5s infinite ease; }
+
+.price_moved_up {
+  background-color: #29abe2;
+  color: #fff; }
+
+.price_moved_down {
+  background-color: #c03;
+  color: #fff; }
+
+a.close {
+  position: absolute;
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  right: 0;
+  z-index: 1;
+  width: 35px;
+  height: 35px;
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='14' height='14'%3E%3Cpath fill='white' d='M50,5,45,0,25,20,5,0,0,5,20,25,0,45l5,5L25,30,45,50l5-5L30,25Z'/%3E%3C/svg%3E") no-repeat center; }
+  a.close:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' width='14' height='14'%3E%3Cpath fill='%23e98024' d='M50,5,45,0,25,20,5,0,0,5,20,25,0,45l5,5L25,30,45,50l5-5L30,25Z'/%3E%3C/svg%3E"); }
+
+a.previous-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer; }
+  a.previous-wrapper span.previous {
+    display: block;
+    z-index: 1;
+    width: 16px;
+    height: 14px;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='14' viewBox='0 0 16 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='nonzero' fill='%232a3052'%3E%3Cpath d='M7.737 1.676L6.263.324.14 7l6.124 6.676 1.474-1.352L2.853 7z'/%3E%3Cpath d='M2 8h14V6H2z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center; }
+  a.previous-wrapper span.nowrap {
+    padding-left: 5px; }
+  a.previous-wrapper:hover {
+    text-decoration: none; }
+
+.profit {
+  color: #2e8836; }
+
+.loss {
+  color: #c03; }
+
+.pending {
+  color: #000;
+  font-weight: 400;
+  font-style: italic; }
+
+#notifications_wrapper .notice-msg {
+  margin-bottom: 5px;
+  padding: 10px 26px;
+  line-height: 25px;
+  font-size: 0.8695652174rem;
+  position: relative; }
+  #notifications_wrapper .notice-msg.dismissible {
+    cursor: pointer; }
+  #notifications_wrapper .notice-msg .notification-dismiss {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #2a3052;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-family: 'Arial';
+    font-size: 1rem; }
+  #notifications_wrapper .notice-msg:hover .notification-dismiss {
+    color: #e98024; }
+
+#trading_socket_container #notifications_wrapper .notice-msg {
+  margin-bottom: 10px; }
+
+.mt-mobile-phone {
+  height: 397px;
+  width: auto; }
+
+.mt-desktop-screen-app {
+  max-width: 600px;
+  height: auto; }
+  @media screen and (max-width: 480px) {
+    .mt-desktop-screen-app {
+      max-width: 100%; } }
+
+.mt-browser-icon {
+  max-width: 80px; }
+
+.alternative-download-description {
+  margin: 0; }
+
+.android-description, .ios-description {
+  padding: 0 30px; }
+
+#mt_download .app-store-badge, #mt_download .google-play-badge {
+  height: 56px;
+  width: 172px; }
+
+#mt_account_management {
+  margin: 0; }
+  #mt_account_management > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  #mt_account_management .mt-container {
+    padding: 20px; }
+  #mt_account_management .mt-panel {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    margin-bottom: 20px; }
+  #mt_account_management .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  #mt_account_management .get-started-link {
+    display: block;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #2a3052;
+    background: #f2f2f2;
+    font-weight: bold; }
+    #mt_account_management .get-started-link:before {
+      content: '';
+      background-image: url("../images/pages/metatrader/dashboard/get_started.svg");
+      background-size: 16px 16px;
+      height: 16px;
+      width: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px; }
+  #mt_account_management .password-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 8px; }
+    #mt_account_management .password-type > *:not(:last-child) {
+      margin-right: 20px; }
+  #mt_account_management #account_selector {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px; }
+    #mt_account_management #account_selector #mt5_account, #mt_account_management #account_selector #accounts_list {
+      border: 1px solid #394171; }
+    #mt_account_management #account_selector #mt5_account {
+      min-height: 38px;
+      line-height: 38px;
+      padding: 0 10px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      margin: 0;
+      overflow: hidden;
+      background: #394171;
+      color: #fff;
+      border-radius: 4px; }
+      #mt_account_management #account_selector #mt5_account.open {
+        border-radius: 4px 4px 0 0; }
+      #mt_account_management #account_selector #mt5_account:after {
+        content: '';
+        display: block;
+        float: right;
+        margin-top: 17px;
+        margin-bottom: 17px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #fff; }
+    #mt_account_management #account_selector #accounts_list {
+      width: 100%;
+      padding: 5px 0;
+      border-radius: 0 0 4px 4px;
+      border-top: 0;
+      display: none;
+      position: absolute;
+      background: #fff;
+      z-index: 1;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      font-size: 0.8695652174rem; }
+      #mt_account_management #account_selector #accounts_list .acc-group {
+        line-height: 30px;
+        padding: 0 5px;
+        color: #44484c; }
+        #mt_account_management #account_selector #accounts_list .acc-group:hover {
+          cursor: auto; }
+      #mt_account_management #account_selector #accounts_list .acc-name {
+        line-height: 30px;
+        padding: 0 20px; }
+        #mt_account_management #account_selector #accounts_list .acc-name:hover {
+          color: #394171;
+          background: #f2f2f2; }
+        #mt_account_management #account_selector #accounts_list .acc-name.selected {
+          background: #dedede; }
+        #mt_account_management #account_selector #accounts_list .acc-name .mt-balance {
+          float: right;
+          font-size: 0.7561436673rem; }
+        #mt_account_management #account_selector #accounts_list .acc-name .mt-icon {
+          float: right; }
+        #mt_account_management #account_selector #accounts_list .acc-name .mt-login {
+          padding-left: 3px;
+          font-size: 90%; }
+      #mt_account_management #account_selector #accounts_list .separator {
+        margin: 5px 0; }
+  #mt_account_management #mt_right_panel {
+    font-size: 0.8695652174rem; }
+    #mt_account_management #mt_right_panel .platforms {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      @media (min-width: 992px) {
+        #mt_account_management #mt_right_panel .platforms {
+          margin-left: -10px;
+          margin-right: -10px; } }
+      #mt_account_management #mt_right_panel .platforms li {
+        width: 50%;
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0 5px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; }
+        #mt_account_management #mt_right_panel .platforms li img {
+          display: block;
+          height: 30px;
+          margin: 0 auto 10px; }
+    #mt_account_management #mt_right_panel .badges {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      width: 100%; }
+      #mt_account_management #mt_right_panel .badges span {
+        width: 85px;
+        height: 25px;
+        background-size: contain; }
+  #mt_account_management #account_details {
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0; }
+    #mt_account_management #account_details .acc-info {
+      font-size: 0.8695652174rem;
+      word-wrap: break-word; }
+      #mt_account_management #account_details .acc-info [data=login] {
+        margin-left: 10px; }
+      #mt_account_management #account_details .acc-info .balance {
+        font-size: 1.520875rem;
+        color: #2a3052; }
+  #mt_account_management .acc-actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    #mt_account_management .acc-actions * {
+      -webkit-transition: unset !important;
+      transition: unset !important; }
+    #mt_account_management .acc-actions a, #mt_account_management .acc-actions > span {
+      background: #f2f2f2;
+      line-height: 40px;
+      font-weight: normal;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1; }
+      #mt_account_management .acc-actions a:first-child, #mt_account_management .acc-actions > span:first-child {
+        border-radius: 4px 0 0; }
+      #mt_account_management .acc-actions a:last-child, #mt_account_management .acc-actions > span:last-child {
+        border-radius: 0 4px 0 0; }
+      #mt_account_management .acc-actions a.selected, #mt_account_management .acc-actions > span.selected {
+        color: #fff;
+        background: #394171; }
+      #mt_account_management .acc-actions a:hover, #mt_account_management .acc-actions > span:hover {
+        text-decoration: none; }
+  #mt_account_management .fst-container #fst_action {
+    position: relative; }
+    #mt_account_management .fst-container #fst_action h3 {
+      padding-top: 10px;
+      margin-bottom: 5px; }
+    #mt_account_management .fst-container #fst_action .separator, #mt_account_management .fst-container #fst_action #main_msg {
+      margin-bottom: 20px; }
+    #mt_account_management .fst-container #fst_action button .barspinner.white {
+      height: 13px;
+      margin: 3px; }
+    #mt_account_management .fst-container #fst_action #frm_cashier .mt-panel {
+      margin-bottom: 0;
+      padding: 15px;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1; }
+    #mt_account_management .fst-container #fst_action #frm_cashier .binary-balance, #mt_account_management .fst-container #fst_action #frm_cashier .mt5-balance {
+      font-weight: bold;
+      color: #c2c2c2; }
+    #mt_account_management .fst-container #fst_action #frm_cashier #mt5_remaining_transfers .empty {
+      color: #c03; }
+    #mt_account_management .fst-container #fst_action #frm_manage_password #token_error {
+      margin-bottom: 10px; }
+    #mt_account_management .fst-container #fst_action #frm_manage_password select:focus {
+      outline: none; }
+    #mt_account_management .fst-container #fst_action #frm_manage_password button[type='submit'] {
+      line-height: 22px; }
+    #mt_account_management .fst-container #fst_action .type-group .mt5_type_box {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto;
+      border: 1px solid #dedede;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box:hover {
+        border-color: #2a3052; }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box:before {
+        content: '';
+        width: 16px;
+        height: 16px;
+        border: 1px solid #dedede;
+        border-radius: 50%;
+        position: absolute;
+        right: 6px;
+        top: 6px; }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box div {
+        font-weight: bold;
+        color: #2a3052;
+        text-align: center;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box img {
+        height: 65px;
+        margin: auto; }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.disabled, #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.existed {
+        cursor: default; }
+        #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.disabled:hover, #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.existed:hover {
+          border-color: #dedede; }
+        #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.disabled:after, #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.existed:after {
+          content: '';
+          width: 88px;
+          height: 88px;
+          position: absolute;
+          background: rgba(0, 0, 0, 0.05); }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.existed:before {
+        background: url("../images/pages/metatrader/dashboard/tick_gray.svg");
+        border: none; }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.selected {
+        border-color: #2a3052;
+        cursor: default; }
+        #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.selected:before {
+          background: url("../images/pages/metatrader/dashboard/tick.svg");
+          border: none; }
+    #mt_account_management .fst-container #fst_action .type-group p {
+      max-width: 140px;
+      margin: 0 auto; }
+    #mt_account_management .fst-container #fst_action #new_account_msg ul.bullet {
+      margin-top: 0;
+      margin-bottom: 0; }
+  #mt_account_management .txt-left {
+    text-align: left; }
+  #mt_account_management .separator {
+    height: 2px; }
+  #mt_account_management ul.checked.small > li {
+    background-size: 16px;
+    padding-left: 24px; }
+  #mt_account_management #account_desc .button span {
+    padding: 10px 5px;
+    line-height: 18px; }
+
+@media (max-width: 1199px) {
+  #mt_account_management #accounts_list {
+    font-size: 0.8695652174rem; }
+    #mt_account_management #accounts_list .mt-balance {
+      font-size: 0.7561436673rem !important; } }
+
+@media (max-width: 991px) {
+  #mt_account_management .mt-container {
+    padding: 10px; } }
+
+@media (max-width: 768px) {
+  #mt_account_management .mobile-balance {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.mt-sidebar-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center; }
+  .mt-sidebar-button .small-icon img {
+    width: 76px; }
+  .mt-sidebar-button .mt-link-download {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: inherit;
+    border-top: 1px solid #dedede; }
+    .mt-sidebar-button .mt-link-download .mt-link-button {
+      display: inline-block;
+      margin-top: 10px; }
+  .mt-sidebar-button .mt-title-mt5-web {
+    font-weight: bold; }
+  .mt-sidebar-button .mt-link-web {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px; }
+    .mt-sidebar-button .mt-link-web .mt5-web-link {
+      -webkit-box-flex: 50%;
+          -ms-flex: 50%;
+              flex: 50%;
+      background-color: #f2f2f2;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #dedede; }
+
+.mt-sidebar-button.mt5-web {
+  height: 140px; }
+
+tbody#instruments > tr > td {
+  width: 33%; }
+
+#portfolio td {
+  padding: 10px;
+  vertical-align: middle; }
+  #portfolio td.indicative, #portfolio td.purchase {
+    white-space: nowrap; }
+  #portfolio td.indicative.no_resale {
+    color: #c2c2c2; }
+    #portfolio td.indicative.no_resale span.message {
+      font-size: 0.6575162324rem;
+      display: block;
+      margin-top: -5px; }
+  #portfolio td.ref {
+    text-align: left !important; }
+
+#portfolio th {
+  padding: 10px;
+  text-align: left; }
+  #portfolio th.details {
+    width: 45%; }
+
+#portfolio tr.new {
+  background-color: rgba(46, 136, 54, 0.1); }
+
+#portfolio tr.tr-desc {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  #portfolio .details {
+    display: table-column;
+    width: 0 !important; }
+  #portfolio tr td {
+    padding: 10px 5px 5px; }
+  #portfolio tr.tr-first td {
+    border-bottom: none;
+    padding-bottom: 0; }
+  #portfolio tr.tr-desc {
+    display: table-row; }
+    #portfolio tr.tr-desc td {
+      padding-top: 0; } }
+
+#trading-times table, #asset-index table {
+  margin-top: -2px; }
+
+#trading-times tr:nth-child(1) th, #asset-index tr:nth-child(1) th {
+  background-color: #c2c2c2; }
+
+#trading-times th, #asset-index th {
+  line-height: 30px; }
+  #trading-times th.submarket-name, #asset-index th.submarket-name {
+    border-bottom: 1px solid #44484c !important;
+    text-align: center !important; }
+  #trading-times th.asset, #asset-index th.asset {
+    width: 24%; }
+  #trading-times th.opens, #trading-times th.closes, #trading-times th.settles, #asset-index th.opens, #asset-index th.closes, #asset-index th.settles {
+    width: 12%; }
+  #trading-times th.upcomingevents, #asset-index th.upcomingevents {
+    width: 40%; }
+
+#trading-times td.asset, #asset-index td.asset {
+  font-weight: 700; }
+
+#trading-times .ui-tabs-anchor:focus, #asset-index .ui-tabs-anchor:focus {
+  outline: none; }
+
+#asset_index_wrapper {
+  max-width: 1200px; }
+  #asset_index_wrapper #asset-index.has-tabs.ui-tabs .ui-tabs-panel {
+    padding: 0; }
+  #asset_index_wrapper #asset-index .table-container {
+    overflow-x: auto; }
+  #asset_index_wrapper #asset-index th {
+    width: calc(100% / 7); }
+    #asset_index_wrapper #asset-index th:nth-child(2):nth-last-child(1) {
+      width: 24%; }
+    #asset_index_wrapper #asset-index th:nth-child(2):nth-last-child(2), #asset_index_wrapper #asset-index th:nth-child(3):nth-last-child(1) {
+      width: 18%; }
+
+.popup_bet_desc {
+  padding: 5px 0;
+  border: 1px solid #dedede; }
+
+#sell_popup_container {
+  width: 90%;
+  font-size: 0.8695652174rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0; }
+  #sell_popup_container a.close {
+    right: 0;
+    line-height: 30px;
+    width: 30px;
+    height: 30px; }
+  #sell_popup_container .inpage_popup_content {
+    margin: 0; }
+  #sell_popup_container.message_popup {
+    width: 500px;
+    line-height: 25px; }
+
+.inpage_popup_container {
+  border: 2px solid #2a3052;
+  border-top: 1px solid #fff;
+  background-color: #fff; }
+  .inpage_popup_container .inpage_popup_content_box {
+    border: 0; }
+    .inpage_popup_container .inpage_popup_content_box #contract_win_status {
+      line-height: 30px; }
+      .inpage_popup_container .inpage_popup_content_box #contract_win_status.won {
+        background-color: rgba(46, 136, 54, 0.2); }
+      .inpage_popup_container .inpage_popup_content_box #contract_win_status.lost {
+        background-color: rgba(204, 0, 0, 0.1); }
+    .inpage_popup_container .inpage_popup_content_box .popup_bet_desc {
+      border: 0;
+      padding: 5px;
+      line-height: 20px;
+      background-color: #2a3052;
+      color: #fff;
+      padding-right: 30px; }
+    .inpage_popup_container .inpage_popup_content_box td {
+      padding-left: 6%;
+      text-align: left; }
+    .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper {
+      max-height: calc(100vh - 35px);
+      overflow: auto;
+      overflow-x: hidden;
+      -ms-overflow-x: hidden; }
+      .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper {
+        border-right: 1px solid #44484c;
+        margin-right: -1px;
+        padding: 10px 0; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper .error-msg {
+          text-align: center;
+          margin: 1em 0; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper #tick_chart.normal-font {
+          font-size: 0.8695652174rem; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper #tick_chart.normal-font h5 {
+            font-size: 1rem;
+            margin-top: 5px;
+            margin-bottom: 20px; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper #tick_chart.normal-font #table_digits strong {
+            margin-bottom: 10px; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper #tick_chart.normal-font #table_digits p {
+            margin: 10px 0; }
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper #tick_chart.normal-font #table_digits p.gray {
+              color: #c2c2c2; }
+              .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper #tick_chart.normal-font #table_digits p.gray strong {
+                color: #000; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper #table_digits_container {
+          margin-bottom: 20px; }
+        @media screen and (max-width: 768px) {
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_chart_wrapper {
+            border-right: none; } }
+      .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit {
+        padding: 0;
+        border-left: 1px solid #44484c; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table th, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit th {
+          line-height: 24px;
+          border-bottom: #c2c2c2; }
+          @media screen and (max-width: 480px) {
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table th, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit th {
+              line-height: 30px; } }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table td, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table td[data-balloon], .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit td, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit td[data-balloon] {
+          border-bottom: 1px solid #f2f2f2;
+          vertical-align: middle; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_profit_loss, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_total_pnl, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_profit_loss, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_total_pnl {
+          font-weight: bold; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_profit_loss span.percent, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_total_pnl span.percent, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_profit_loss span.percent, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_total_pnl span.percent {
+            font-size: 0.6575162324rem;
+            padding-left: 7px;
+            font-weight: normal; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .last_cell, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .last_cell {
+          border-bottom: 0;
+          min-height: 20px;
+          padding: 5px 15px;
+          text-align: center; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_message, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_message {
+          font-style: italic; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #contract_sell_message, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #contract_sell_message {
+          font-size: 0.8695652174rem;
+          line-height: 20px; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #sell_at_market_wrapper .note, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #sell_at_market_wrapper .note {
+          line-height: 18px;
+          margin-bottom: 10px;
+          font-size: 0.7561436673rem;
+          padding: 3px 10px; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_entry_spot, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_current_spot, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_entry_spot, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_current_spot {
+          line-height: 32px; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_entry_spot span, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_current_spot span, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_entry_spot span, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_current_spot span {
+            padding-right: 20px; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_entry_spot a, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table #trade_details_current_spot a, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_entry_spot a, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit #trade_details_current_spot a {
+            margin-bottom: 0; }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table {
+          padding: 40px; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table:nth-child(2), .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table:nth-child(2) {
+            padding-bottom: 0; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table legend, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table legend {
+            font-size: 1.15rem; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td {
+            text-align: center;
+            line-height: 24px;
+            padding-left: 4px;
+            margin-bottom: 5px;
+            border: none;
+            font-size: 0.8695652174rem; }
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.remark, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.secondary-time, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.secondary-bg-color, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.remark, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.secondary-time, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.secondary-bg-color {
+              font-weight: bold;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center; }
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.secondary-time, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.secondary-time {
+              border-radius: 4px 0 0 4px; }
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.audit-dates, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.audit-dates {
+              border-radius: 0 4px 4px 0; }
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.spot-value, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.spot-value {
+              border-radius: 4px 0 0 4px; }
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.secondary-color, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.secondary-color {
+              font-size: 1rem; }
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table table td.remark, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table table td.remark {
+              text-align: right;
+              padding-right: 20px; }
+          @media screen and (max-width: 768px) {
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table {
+              padding: 20px; } }
+          @media screen and (max-width: 480px) {
+            .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .audit-table, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .audit-table {
+              padding: 5px; } }
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .explanation-section, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .explanation-section {
+          padding: 40px; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table .explanation-section p, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .explanation-section p {
+            line-height: 25px; }
+        @media screen and (max-width: 768px) {
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_table, .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit {
+            border-left: none; } }
+      .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit {
+        border-left: none; }
+        @media screen and (max-width: 480px) {
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .view-chart {
+            display: none; }
+          .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper #sell_details_audit .previous-wrapper {
+            height: 30px;
+            width: 45px; } }
+      @media only screen and (min-width: 767px) and (max-width: 768px) {
+        .inpage_popup_container .inpage_popup_content_box #sell_content_wrapper {
+          /* ipad */
+          max-height: 450px; } }
+
+/* stylelint-disable color-no-hex */
+/* stylelint-enable color-no-hex */
+.digit-ticker {
+  width: 100%;
+  height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  margin-left: auto;
+  margin-bottom: 30px; }
+  .digit-ticker .peek-box {
+    width: 44px;
+    height: 60px;
+    background-color: transparent;
+    display: grid;
+    grid-template-areas: 'topleft top topright' 'left mask right' 'left peek right' 'bottomleft bottom bottomright';
+    grid-template-rows: 4px 19px 36px 4px;
+    grid-template-columns: 4px 1fr 4px;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    justify-items: center;
+    -webkit-transition: all 0.9s ease;
+    transition: all 0.9s ease;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    z-index: 5; }
+    .digit-ticker .peek-box .bottomright {
+      grid-area: bottomright;
+      border-bottom-right-radius: 4px;
+      width: 4px;
+      height: 5px;
+      background-color: #cb0433; }
+    .digit-ticker .peek-box .bottom {
+      grid-area: bottom;
+      height: 5px;
+      width: 100%;
+      background-color: #cb0433; }
+    .digit-ticker .peek-box .bottomleft {
+      grid-area: bottomleft;
+      border-bottom-left-radius: 4px;
+      width: 4px;
+      height: 5px;
+      background-color: #cb0433; }
+    .digit-ticker .peek-box .left {
+      grid-area: left;
+      width: 4px;
+      background-color: #cb0433; }
+    .digit-ticker .peek-box .right {
+      grid-area: right;
+      width: 4px;
+      background-color: #cb0433; }
+    .digit-ticker .peek-box .topright {
+      grid-area: topright;
+      border-top-right-radius: 4px;
+      width: 4px;
+      height: 4px;
+      background-color: #cb0433; }
+    .digit-ticker .peek-box .topleft {
+      grid-area: topleft;
+      border-top-left-radius: 4px;
+      width: 4px;
+      height: 4px;
+      background-color: #cb0433; }
+    .digit-ticker .peek-box .top {
+      grid-area: top;
+      height: 4px;
+      width: 100%;
+      background-color: #cb0433; }
+    @media screen and (max-width: 480px) {
+      .digit-ticker .peek-box {
+        margin-top: 6px;
+        min-width: initial;
+        width: 35px;
+        grid-template-rows: 4px 19px 30px 4px; } }
+  .digit-ticker .mask {
+    grid-area: mask;
+    font-size: 11px;
+    height: 20px;
+    line-height: 16px;
+    width: 100%;
+    color: #fff; }
+    @media screen and (max-width: 480px) {
+      .digit-ticker .mask {
+        font-size: 10px; } }
+  .digit-ticker .peek {
+    grid-area: peek;
+    height: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 8px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    width: 22px;
+    margin: 2px;
+    -webkit-transform: scale(1.3, 1.2);
+            transform: scale(1.3, 1.2); }
+    @media screen and (max-width: 480px) {
+      .digit-ticker .peek {
+        height: 19px;
+        max-height: initial;
+        width: 18px;
+        margin-top: 0;
+        -webkit-transform: scale(1.4, 1.2);
+                transform: scale(1.4, 1.2); } }
+  .digit-ticker .peek-box.digit-running .mask {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .topright {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .topleft {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .top {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .left {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .right {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .bottom {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .bottomleft {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .bottomright {
+    background-color: #454545; }
+  .digit-ticker .peek-box.digit-running .peek {
+    border: 5px solid #454545; }
+  .digit-ticker .peek-box.digit-running .mask {
+    border: 1px solid #454545; }
+  .digit-ticker .peek-box.digit-losing .mask {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .topright {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .topleft {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .top {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .left {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .right {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .bottom {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .bottomleft {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .bottomright {
+    background-color: #cb0433; }
+  .digit-ticker .peek-box.digit-losing .peek {
+    border: 5px solid #cb0433; }
+  .digit-ticker .peek-box.digit-losing .mask {
+    border: 1px solid #cb0433; }
+  .digit-ticker .peek-box.digit-winning .mask {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .topright {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .topleft {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .top {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .left {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .right {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .bottom {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .bottomleft {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .bottomright {
+    background-color: #077453; }
+  .digit-ticker .peek-box.digit-winning .peek {
+    border: 5px solid #077453; }
+  .digit-ticker .peek-box.digit-winning .mask {
+    border: 1px solid #077453; }
+  .digit-ticker .digits {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-width: 360px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0 0 3px 0px;
+    border-radius: 4px;
+    overflow: hidden; }
+    @media screen and (max-width: 480px) {
+      .digit-ticker .digits {
+        min-width: 280px; } }
+  .digit-ticker .digit.digit-winning {
+    background-color: #9ddfcb;
+    color: #67b9a0;
+    border: none; }
+  .digit-ticker .digit.digit-lost {
+    color: #cb0433; }
+  .digit-ticker .digit.digit-won {
+    color: #077453; }
+  .digit-ticker .digit {
+    height: 36px;
+    width: 36px;
+    font-size: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: bold;
+    border-right: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    color: #c2c2c2; }
+    @media screen and (max-width: 480px) {
+      .digit-ticker .digit {
+        height: 28px;
+        width: 28px; } }
+    .digit-ticker .digit:first-child {
+      border-left: 1px solid #dedede;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px; }
+    .digit-ticker .digit:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px; }
+
+.row.digit-trade .col {
+  font-size: 42px;
+  color: #dedede;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .row.digit-trade .col .quote {
+    width: auto;
+    color: #c2c2c2;
+    font-weight: 100;
+    margin-top: 2px; }
+  .row.digit-trade .col .digit-tick-epoch {
+    display: inline-block;
+    vertical-align: top;
+    top: 14px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #454545;
+    padding-left: 14px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    -webkit-transition: height 350ms ease-in-out, opacity 750ms ease-in-out, top 500ms ease-in;
+    transition: height 350ms ease-in-out, opacity 750ms ease-in-out, top 500ms ease-in; }
+    .row.digit-trade .col .digit-tick-epoch:before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 2px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>'); }
+  .row.digit-trade .col .digit-tick-epoch.is-visible {
+    height: auto;
+    opacity: 1;
+    top: -4px; }
+  .row.digit-trade .col strong {
+    color: #454545; }
+
+.won .row.digit-trade .col {
+  color: #454545; }
+  .won .row.digit-trade .col strong {
+    color: #454545; }
+
+.lost .row.digit-trade .col {
+  color: #454545; }
+  .lost .row.digit-trade .col strong {
+    color: #454545; }
+
+#contract_purchase_spots {
+  padding-bottom: 0; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+#trading_init_progress {
+  cursor: pointer;
+  /*background-image: url('../images/pages/binary-symbol-logo.png');
+    background-image: url('../images/pages/binary-symbol-logo.svg'), none;
+    background-size: contain;*/
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  margin-left: -5rem;
+  z-index: 9999; }
+
+#trading_socket_container {
+  font-size: 1rem;
+  position: relative;
+  opacity: 0; }
+  #trading_socket_container #contract_form_name_nav {
+    border-bottom: none;
+    font-size: 1rem; }
+    #trading_socket_container #contract_form_name_nav > li {
+      cursor: pointer;
+      padding: 0; }
+      #trading_socket_container #contract_form_name_nav > li a.tm-a {
+        padding: 0 5px;
+        width: auto;
+        font-size: 0.8695652174rem;
+        line-height: 28px;
+        white-space: nowrap; }
+      #trading_socket_container #contract_form_name_nav > li .tm-ul-2 {
+        top: 29px;
+        margin-top: -1px;
+        border-top: 1px solid #dedede; }
+  #trading_socket_container #spot {
+    line-height: 25px;
+    white-space: nowrap;
+    padding: 3px;
+    border-radius: 5px;
+    margin-left: 8px !important; }
+    #trading_socket_container #spot.error {
+      font-style: italic; }
+  #trading_socket_container.show {
+    -webkit-animation: fade 1s;
+            animation: fade 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  #trading_socket_container select, #trading_socket_container input {
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 28px; }
+  #trading_socket_container div.select-dropdown {
+    line-height: 1.4em; }
+  #trading_socket_container label {
+    line-height: 28px; }
+    #trading_socket_container label[for=digit_underlying], #trading_socket_container label[for=tick_count] {
+      margin-right: 0.5rem; }
+  #trading_socket_container #contract_market_form_container {
+    height: 28px; }
+    #trading_socket_container #contract_market_form_container .tm-li {
+      height: 28px;
+      vertical-align: top; }
+  #trading_socket_container .button button {
+    cursor: pointer; }
+  #trading_socket_container .row, #trading_socket_container .row-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  #trading_socket_container .col, #trading_socket_container .col-inner {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  #trading_socket_container .row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 10px 0; }
+  #trading_socket_container .row-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    #trading_socket_container .row-inner .col-inner {
+      margin-bottom: 5px; }
+  #trading_socket_container .form_label input, #trading_socket_container .form_label select {
+    max-width: 170px; }
+  #trading_socket_container .big-col {
+    -webkit-box-flex: 1.5;
+        -ms-flex: 1.5;
+            flex: 1.5; }
+  #trading_socket_container #expiry_type_endtime {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    #trading_socket_container #expiry_type_endtime div.select ~ #expiry_time_row {
+      margin-top: 5px; }
+      @media (max-width: 768px) {
+        #trading_socket_container #expiry_type_endtime div.select ~ #expiry_time_row {
+          margin-top: 0px;
+          margin-left: 0.5rem; } }
+      @media (max-width: 480px) {
+        #trading_socket_container #expiry_type_endtime div.select ~ #expiry_time_row {
+          margin-left: 0;
+          margin-top: 5px;
+          width: 100%; }
+          #trading_socket_container #expiry_type_endtime div.select ~ #expiry_time_row input {
+            width: 70%; } }
+  #trading_socket_container #contract_form_content_wrapper {
+    padding-top: 0.5em; }
+  #trading_socket_container #contract_symbol_container {
+    padding: 0;
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+    @media (max-width: 768px) {
+      #trading_socket_container #contract_symbol_container span.market, #trading_socket_container #contract_symbol_container span.type {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 90%;
+        white-space: nowrap; } }
+    #trading_socket_container #contract_symbol_container .arrow_down {
+      width: 8px;
+      height: 8px;
+      background: url("../images/pages/trade/ic_arrow_dropdown_light.svg") no-repeat;
+      background-size: contain;
+      position: relative;
+      margin-left: 10px;
+      top: 3px;
+      float: right; }
+      @media (max-width: 768px) {
+        #trading_socket_container #contract_symbol_container .arrow_down {
+          position: absolute;
+          top: 0.9rem;
+          right: 0.6rem; } }
+    #trading_socket_container #contract_symbol_container #contract_markets_container {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto;
+      text-align: right;
+      margin-right: 1rem; }
+      @media (max-width: 768px) {
+        #trading_socket_container #contract_symbol_container #contract_markets_container {
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1; } }
+    #trading_socket_container #contract_symbol_container #contract_type_container {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto;
+      margin-right: 1rem; }
+      @media (max-width: 768px) {
+        #trading_socket_container #contract_symbol_container #contract_type_container {
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1; } }
+      @media (max-width: 480px) {
+        #trading_socket_container #contract_symbol_container #contract_type_container {
+          margin-right: 0; } }
+    #trading_socket_container #contract_symbol_container #underlying_details span {
+      margin: 5px 0; }
+      #trading_socket_container #contract_symbol_container #underlying_details span#trading_worm_chart {
+        display: block; }
+        @media (max-width: 768px) {
+          #trading_socket_container #contract_symbol_container #underlying_details span#trading_worm_chart {
+            display: inline-block; } }
+    @media (max-width: 768px) {
+      #trading_socket_container #contract_symbol_container #underlying_details {
+        margin-left: auto; } }
+    @media (max-width: 480px) {
+      #trading_socket_container #contract_symbol_container #underlying_details {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse; } }
+    @media (max-width: 768px) {
+      #trading_socket_container #contract_symbol_container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start; } }
+  #trading_socket_container #contract_container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 25px;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto; }
+    #trading_socket_container #contract_container #contract_form_container .col {
+      margin-right: 0.5rem; }
+    #trading_socket_container #contract_container .overlay_container {
+      width: 100%;
+      display: none;
+      background: transparent;
+      z-index: 9; }
+      #trading_socket_container #contract_container .overlay_container#loading_container3 {
+        background: #f2f2f2;
+        opacity: 0.5;
+        display: block;
+        position: absolute;
+        height: 100%;
+        top: 0; }
+    #trading_socket_container #contract_container input[type=number] {
+      -moz-appearance: textfield; }
+    #trading_socket_container #contract_container .gr-gutter-left {
+      padding-left: 5px; }
+  #trading_socket_container .contract_heading {
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-top: 2.4em;
+    text-align: center; }
+    #trading_socket_container .contract_heading.ASIANU {
+      background: url("../images/pages/trade/asian-u_1.svg") no-repeat top center; }
+    #trading_socket_container .contract_heading.ASIAND {
+      background: url("../images/pages/trade/asian-d_1.svg") no-repeat top center; }
+    #trading_socket_container .contract_heading.DIGITDIFF {
+      background: url("../images/pages/trade/differs_1.svg") no-repeat top center; }
+    #trading_socket_container .contract_heading.DIGITMATCH {
+      background: url("../images/pages/trade/matches_1.svg") no-repeat top center; }
+    #trading_socket_container .contract_heading.DIGITEVEN {
+      background: url("../images/pages/trade/digits_even_1.svg") no-repeat no-repeat top center;
+      background-size: 40%; }
+    #trading_socket_container .contract_heading.DIGITODD {
+      background: url("../images/pages/trade/digits_odd_1.svg") no-repeat no-repeat top center;
+      background-size: 40%; }
+    #trading_socket_container .contract_heading.DIGITOVER {
+      background: url("../images/pages/trade/digits_over_1.svg") no-repeat no-repeat top center;
+      background-size: 40%; }
+    #trading_socket_container .contract_heading.DIGITUNDER {
+      background: url("../images/pages/trade/digits_under_1.svg") no-repeat no-repeat top center;
+      background-size: 40%; }
+    #trading_socket_container .contract_heading.CALL {
+      background: url("../images/pages/trade/rise_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.PUT {
+      background: url("../images/pages/trade/fall_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.CALLE {
+      background: url("../images/pages/trade/rise_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.PUTE {
+      background: url("../images/pages/trade/fall_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.ONETOUCH {
+      background: url("../images/pages/trade/touch_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.NOTOUCH {
+      background: url("../images/pages/trade/no-touch_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.RANGE {
+      background: url("../images/pages/trade/stay-in-between_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.UPORDOWN {
+      background: url("../images/pages/trade/stay-out_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.EXPIRYRANGEE {
+      background: url("../images/pages/trade/ends-between_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.EXPIRYMISSE {
+      background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.EXPIRYRANGE {
+      background: url("../images/pages/trade/ends-between_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.EXPIRYMISS {
+      background: url("../images/pages/trade/ends-outside_1.png") no-repeat top center; }
+    #trading_socket_container .contract_heading.LBFLOATPUT {
+      background: url("../images/pages/trade/low_icon.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.LBFLOATCALL {
+      background: url("../images/pages/trade/high_icon.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.LBHIGHLOW {
+      background: url("../images/pages/trade/high_low_icon.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.RESETCALL {
+      background: url("../images/pages/trade/reset_call.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.RESETPUT {
+      background: url("../images/pages/trade/reset_put.svg") no-repeat center top;
+      background-size: 50%; }
+    #trading_socket_container .contract_heading.RUNHIGH {
+      background: url("../images/pages/trade/run_high.svg") no-repeat center top; }
+    #trading_socket_container .contract_heading.RUNLOW {
+      background: url("../images/pages/trade/run_low.svg") no-repeat center top; }
+    #trading_socket_container .contract_heading.TICKHIGH {
+      background: url("../images/pages/trade/high_tick.svg") no-repeat center top; }
+    #trading_socket_container .contract_heading.TICKLOW {
+      background: url("../images/pages/trade/low_tick.svg") no-repeat center top; }
+  #trading_socket_container #contract_prices_container {
+    position: relative;
+    margin-left: 1em; }
+    #trading_socket_container #contract_prices_container .price_container {
+      border: 1px solid #dedede;
+      -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch;
+      padding: 0;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 auto;
+              flex: 1 0 auto;
+      display: none;
+      border-radius: 4px; }
+      #trading_socket_container #contract_prices_container .price_container > .col.row {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto; }
+      #trading_socket_container #contract_prices_container .price_container > .row {
+        padding: 0; }
+      #trading_socket_container #contract_prices_container .price_container .big-col {
+        -webkit-box-flex: 3;
+            -ms-flex: 3;
+                flex: 3; }
+      #trading_socket_container #contract_prices_container .price_container .contract_purchase {
+        margin-bottom: 6px;
+        width: 90%;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex; }
+        #trading_socket_container #contract_prices_container .price_container .contract_purchase .purchase_button {
+          cursor: pointer;
+          width: 100%; }
+        #trading_socket_container #contract_prices_container .price_container .contract_purchase.button-disabled .purchase_button {
+          cursor: auto; }
+    #trading_socket_container #contract_prices_container #contract_purchase_reference {
+      padding-top: 7px; }
+    #trading_socket_container #contract_prices_container #confirmation_error {
+      padding: 20px;
+      font-style: italic;
+      vertical-align: middle;
+      line-height: 1.3225rem; }
+    #trading_socket_container #contract_prices_container #authorization_error_container {
+      vertical-align: middle;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin: 0 auto; }
+      #trading_socket_container #contract_prices_container #authorization_error_container .authorization_error {
+        width: 100%; }
+    #trading_socket_container #contract_prices_container .price_container#price_container_top {
+      margin-bottom: 1rem; }
+    #trading_socket_container #contract_prices_container .price_container#price_container_middle .price_wrapper {
+      margin: 25px 0 10px;
+      padding: 0 15px 5px; }
+    #trading_socket_container #contract_prices_container .price_container#price_container_middle .payout_wrapper .contract_quantity {
+      font-weight: 700; }
+    #trading_socket_container #contract_prices_container .price_container#price_container_middle .contract_longcode {
+      text-align: center;
+      margin: 10px 15px;
+      line-height: 1.4em; }
+    #trading_socket_container #contract_prices_container .price_comment, #trading_socket_container #contract_prices_container .contract_error, #trading_socket_container #contract_prices_container #contract_purchase_balance {
+      background-color: #dedede;
+      line-height: 1.5rem;
+      font-size: 0.7561436673rem;
+      padding: 5px;
+      text-align: center;
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto; }
+    #trading_socket_container #contract_prices_container #contract_purchase_balance {
+      position: absolute;
+      bottom: 0;
+      color: #fff;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      background-color: #e98024;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* fix for iOS */
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      @supports (-ms-ime-align: auto) {
+        #trading_socket_container #contract_prices_container #contract_purchase_balance {
+          z-index: 9;
+          /* fix for MSEdge */ } }
+      #trading_socket_container #contract_prices_container #contract_purchase_balance p {
+        margin: 0;
+        padding-left: 3px; }
+    #trading_socket_container #contract_prices_container #confirmation_message {
+      padding-bottom: 34px; }
+      #trading_socket_container #contract_prices_container #confirmation_message div.button {
+        padding-top: 7px; }
+      #trading_socket_container #contract_prices_container #confirmation_message #trade_tick_chart .highcharts-tooltip span {
+        top: 1px !important;
+        left: 2px !important; }
+        #trading_socket_container #contract_prices_container #confirmation_message #trade_tick_chart .highcharts-tooltip span .tooltip-body {
+          background-color: #fff;
+          padding: 6px;
+          margin-bottom: -14px;
+          margin-right: -14px; }
+    #trading_socket_container #contract_prices_container #contract_purchase_descr {
+      background-color: #fff;
+      border: 2px solid #dedede;
+      margin: 0 10px;
+      padding: 10px;
+      text-align: justify;
+      line-height: 1.4em; }
+    #trading_socket_container #contract_prices_container #contract_purchase_button {
+      margin-top: 10px; }
+    #trading_socket_container #contract_prices_container #contract_purchase_profit_list, #trading_socket_container #contract_prices_container #contract_purchase_spots .row {
+      padding: 3px 0;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+    #trading_socket_container #contract_prices_container #contract_purchase_profit_list {
+      margin: 10px 0; }
+      #trading_socket_container #contract_prices_container #contract_purchase_profit_list > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        line-height: 1.4em;
+        padding: 0 10px; }
+    #trading_socket_container #contract_prices_container #contract_purchase_spots {
+      overflow: hidden;
+      padding-top: 10px;
+      padding-bottom: 5px; }
+      #trading_socket_container #contract_prices_container #contract_purchase_spots .col {
+        margin-bottom: 0;
+        line-height: 1.5; }
+      #trading_socket_container #contract_prices_container #contract_purchase_spots.won {
+        background-color: rgba(46, 136, 54, 0.2); }
+      #trading_socket_container #contract_prices_container #contract_purchase_spots.lost {
+        background-color: rgba(204, 0, 0, 0.1); }
+    #trading_socket_container #contract_prices_container #contract_purchase_payout {
+      border-right: 1px solid #dedede; }
+    #trading_socket_container #contract_prices_container #contract_purchase_profit {
+      border-left: 1px solid #dedede; }
+    #trading_socket_container #contract_prices_container .contract_amount, #trading_socket_container #contract_prices_container .contract_payout, #trading_socket_container #contract_prices_container .payout, #trading_socket_container #contract_prices_container .stake {
+      padding: 3px;
+      line-height: 1.5;
+      font-size: 1rem;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 auto;
+              flex: 1 0 auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    #trading_socket_container #contract_prices_container .stake, #trading_socket_container #contract_prices_container .payout {
+      padding: 0;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+    #trading_socket_container #contract_prices_container .contract_amount, #trading_socket_container #contract_prices_container .contract_payout, #trading_socket_container #contract_prices_container .contract_multiplier {
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 5px;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+  #trading_socket_container #expiry_type_duration {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  #trading_socket_container #contracts_list {
+    position: relative; }
+  #trading_socket_container .overlay_container {
+    width: 100%;
+    display: none;
+    background: transparent;
+    z-index: 9; }
+    #trading_socket_container .overlay_container .close {
+      z-index: 10; }
+    #trading_socket_container .overlay_container#loading_container2 {
+      background: #f2f2f2;
+      opacity: 0.5;
+      display: block;
+      position: absolute;
+      height: 100%;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 auto;
+              flex: 1 0 auto; }
+  #trading_socket_container #contract_confirmation_container {
+    background-color: #f2f2f2;
+    text-align: center; }
+    #trading_socket_container #contract_confirmation_container a.close {
+      background-color: #2a3052;
+      border-radius: 0 0 0 4px; }
+    #trading_socket_container #contract_confirmation_container #confirmation_message_container {
+      padding: 15px 0;
+      height: 90%;
+      height: calc(100% - 30px); }
+  #trading_socket_container #contract_prices_container .price_container .price_wrapper {
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 30px; }
+    #trading_socket_container #contract_prices_container .price_container .price_wrapper.small {
+      width: 95px; }
+    #trading_socket_container #contract_prices_container .price_container .price_wrapper div {
+      padding: 0 5px; }
+    #trading_socket_container #contract_prices_container .price_container .price_wrapper .contract_heading {
+      display: block;
+      float: left;
+      width: 80px;
+      padding-left: 5px; }
+    #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper {
+      float: left;
+      width: 100%; }
+      #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper .amount_wrapper_div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-bottom: 10px; }
+        #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper .amount_wrapper_div, #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper .amount_wrapper_div .contract_amount, #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper .amount_wrapper_div .contract_payout {
+          vertical-align: middle; }
+        #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper .amount_wrapper_div div {
+          -webkit-box-flex: 1;
+              -ms-flex-positive: 1;
+                  flex-grow: 1; }
+        #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper .amount_wrapper_div .stake_wrapper {
+          margin-left: 20px; }
+        #trading_socket_container #contract_prices_container .price_container .price_wrapper .amount_wrapper .amount_wrapper_div .payout_wrapper {
+          margin-right: 20px; }
+    #trading_socket_container #contract_prices_container .price_container .price_wrapper .contract_amount, #trading_socket_container #contract_prices_container .price_container .price_wrapper .contract_payout, #trading_socket_container #contract_prices_container .price_container .price_wrapper .stake, #trading_socket_container #contract_prices_container .price_container .price_wrapper .payout {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex; }
+  #trading_socket_container #duration_amount {
+    margin-right: 0.5rem; }
+  #trading_socket_container #duration_units {
+    margin-right: 10px; }
+  #trading_socket_container .small_width_input {
+    width: 70px;
+    margin-right: 5px; }
+  #trading_socket_container #currency {
+    margin-bottom: 5px; }
+  #trading_socket_container #expiry_date {
+    width: 175px;
+    margin-right: 5px;
+    margin-bottom: 5px; }
+  #trading_socket_container #expiry_date, #trading_socket_container #expiry_time {
+    font-size: 1rem; }
+  #trading_socket_container #date_start {
+    margin-bottom: 5px;
+    width: 175px; }
+  #trading_socket_container #time_start_row {
+    white-space: nowrap;
+    margin-top: 5px; }
+    #trading_socket_container #time_start_row .time_start {
+      margin-left: 5px;
+      width: 110px; }
+  #trading_socket_container #payout_row div.select ~ #amount {
+    margin-left: 0.5rem;
+    margin-top: -2px; }
+  #trading_socket_container #multiplier_row div.select ~ #multiplier {
+    margin-left: 0.5rem;
+    margin-top: -2px; }
+  #trading_socket_container .barrier_class input {
+    width: 175px;
+    margin-right: 5px; }
+  #trading_socket_container .medium_width_input {
+    width: 105px; }
+  #trading_socket_container span.currency {
+    margin-left: 0.5rem; }
+  #trading_socket_container #underlying {
+    margin-right: 10px;
+    margin-bottom: 5px; }
+  #trading_socket_container #symbol_tip {
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+    text-decoration: none;
+    font-weight: normal; }
+
+#open_positions_container {
+  display: none; }
+
+@media all and (max-width: 480px) {
+  #trading_socket_container #contract_market_form_container ul#contract_form_name_nav a.tm-a {
+    font-size: 0.6575162324rem; }
+  #trading_socket_container #contract_form_content #expiry_type {
+    max-width: 100%; }
+  #trading_socket_container #contract_form_content #duration_amount {
+    margin-bottom: 5px;
+    margin-right: 0; }
+  #trading_socket_container #multiplier_row span.currency {
+    margin-left: 0; }
+  #trading_socket_container #multiplier_row span.currency ~ input#multiplier {
+    margin-right: 0;
+    width: calc(100% - 30px); }
+  #trading_socket_container #payout_row .select ~ #amount {
+    margin-top: 0.5rem;
+    margin-left: 0; }
+  #trading_socket_container #payout_row .row-inner.big-col input {
+    margin-right: 5px; }
+  #trading_socket_container #payout_row .row-inner.big-col span.currency {
+    margin-left: 0; }
+  #trading_socket_container #payout_row .row-inner.big-col span.currency ~ input {
+    width: calc(100% - 30px);
+    margin-right: 0; }
+  #trading_socket_container #payout_row .row-inner.big-col div.select {
+    width: 10%;
+    min-width: 70px; }
+  #trading_socket_container #payout_row .row-inner.big-col div.select ~ input {
+    width: calc(100% - 70px - 0.5rem);
+    margin-left: 0.5rem;
+    margin-right: 0; }
+  #trading_socket_container #barrier_row label#barrier_label {
+    white-space: nowrap; }
+  #trading_socket_container #barrier_row .big-col > input#barrier {
+    margin-bottom: 0.5rem; }
+  #trading_socket_container #high_barrier_row .big-col > input, #trading_socket_container #low_barrier_row .big-col > input {
+    width: 100%;
+    margin-bottom: 6px; }
+  #trading_socket_container .contract_purchase {
+    width: 70% !important; }
+  #trading_socket_container #date_start {
+    width: 100%; }
+  #trading_socket_container #expiry_date {
+    width: 100%; }
+  #trading_socket_container #expiry_time {
+    width: calc(100% - 40px);
+    margin-bottom: 0.5rem;
+    white-space: nowrap; }
+  #trading_socket_container #symbol_tip {
+    font-size: 1.2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  #trading_socket_container .small_width_input, #trading_socket_container .medium_width_input {
+    width: 100%; }
+  #trading_socket_container #time_start.medium_width_input {
+    width: 70%; }
+  #trading_socket_container .tab-menu-wrap {
+    display: none; } }
+
+@media all and (max-width: 768px) {
+  #trading_socket_container #contract_market_form_container {
+    height: auto; }
+  #trading_socket_container #contract_form_content {
+    margin-top: 0; }
+  #trading_socket_container #contract_form_content_wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  #trading_socket_container #contract_symbol_container {
+    text-align: center; }
+    #trading_socket_container #contract_symbol_container .row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      #trading_socket_container #contract_symbol_container .row .col {
+        margin-bottom: 5px; }
+    #trading_socket_container #contract_symbol_container #contract_markets_container {
+      text-align: inherit; }
+  #trading_socket_container #contract_container {
+    margin-bottom: 1rem; }
+  #trading_socket_container #contract_prices_container #contract_purchase_spots {
+    height: auto; }
+  #trading_socket_container #contract_prices_container #price_container_top {
+    margin-right: 0 !important; }
+  #trading_socket_container #contract_prices_container .price_wrapper {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important; }
+    #trading_socket_container #contract_prices_container .price_wrapper.small {
+      width: auto; }
+    #trading_socket_container #contract_prices_container .price_wrapper .amount_wrapper {
+      width: 70%; }
+  #trading_socket_container #contract_prices_container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    #trading_socket_container #contract_prices_container .row .col {
+      margin-bottom: 5px; }
+      #trading_socket_container #contract_prices_container .row .col.price_comment {
+        margin: 0; }
+  div#contract_market_form_container ul#contract_form_name_nav {
+    white-space: nowrap !important; }
+    div#contract_market_form_container ul#contract_form_name_nav > li.tm-li {
+      /*float: none;
+            width: 100%; */ }
+      div#contract_market_form_container ul#contract_form_name_nav > li.tm-li ul.tm-ul-2 {
+        position: absolute !important;
+        top: 28px !important;
+        display: none !important; }
+      div#contract_market_form_container ul#contract_form_name_nav > li.tm-li.hover ul, div#contract_market_form_container ul#contract_form_name_nav > li.tm-li.active ul {
+        display: block !important; }
+  #trading_socket_container #contract_prices_container .price_container .price_wrapper {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    #trading_socket_container #contract_prices_container .price_container .price_wrapper.small {
+      width: auto; } }
+
+@media all and (max-width: 768px) {
+  #trading_socket_container #contract_form_content_wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    #trading_socket_container #contract_form_content_wrapper > .col {
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 auto;
+              flex: 1 0 auto; }
+  #trading_socket_container #contract_form_content {
+    margin-top: 20px; }
+  #trading_socket_container #contract_prices_container {
+    margin-left: 0; } }
+
+#content ul.tm-ul li.active, #content ul.tm-ul li.ui-tabs-active {
+  background: #2a3052;
+  color: #fff; }
+
+#analysis_daily_prices_form {
+  text-align: center; }
+  #analysis_daily_prices_form input {
+    margin: 0 10px; }
+
+.error-field {
+  border-color: #c03 !important;
+  color: #c03; }
+
+#trading_bottom_content {
+  margin-top: 15px;
+  font-size: 1rem; }
+  #trading_bottom_content #tab_mobile_header {
+    margin: 0 auto; }
+  #trading_bottom_content #trade_analysis a.tm-a.a-active, #trading_bottom_content #trade_analysis .tm-li.active a {
+    display: block;
+    pointer-events: none; }
+  @media screen and (max-width: 480px) {
+    #trading_bottom_content #trade_analysis li.tm-li.tab-selector {
+      top: 26px; } }
+  #trading_bottom_content #trade_bottom_content {
+    padding-top: 1em; }
+  #trading_bottom_content #webtrader_chart {
+    width: 100%;
+    height: 630px;
+    overflow-y: hidden; }
+    #trading_bottom_content #webtrader_chart .row {
+      padding: unset;
+      -webkit-box-pack: unset;
+          -ms-flex-pack: unset;
+              justify-content: unset; }
+  #trading_bottom_content #last_digit_histo_form {
+    margin-bottom: 20px; }
+  #trading_bottom_content div.select > select#digit_underlying {
+    min-width: 170px; }
+  #trading_bottom_content #digit_underlying ~ ul.select-options {
+    font-size: 85%; }
+
+#deposit_btn_trade, #upgrade_btn_trade {
+  float: right;
+  margin: 0 0 0 10px; }
+  #deposit_btn_trade span, #upgrade_btn_trade span {
+    height: 20px;
+    line-height: 20px;
+    background-color: #e98024; }
+    #deposit_btn_trade span:hover, #upgrade_btn_trade span:hover {
+      background-color: #d17320; }
+    #deposit_btn_trade span img, #upgrade_btn_trade span img {
+      margin-right: 5px; }
+
+.show-mb {
+  display: none; }
+
+.api_token fieldset {
+  margin: 20px 0; }
+  .api_token fieldset label {
+    text-decoration: none;
+    margin-right: 15px; }
+
+.api_token table tr.deleting {
+  background-color: #f2f2f2; }
+
+.api_token table tr.new {
+  background-color: rgba(46, 136, 54, 0.2); }
+
+#applications-container table td, #applications-container th, .api_token table td, .api_token th {
+  text-align: center !important;
+  vertical-align: middle;
+  line-height: 30px; }
+  #applications-container table td .button, #applications-container th .button, .api_token table td .button, .api_token th .button {
+    margin: 3px 0; }
+
+.epg_forwardws-content iframe {
+  height: 800px; }
+
+.detailsws-content div.select-dropdown {
+  width: 100%; }
+
+.detailsws-content #address_form select.select-hidden {
+  min-width: 205px; }
+
+@media all and (max-width: 480px) {
+  .detailsws-content #address_form div.select {
+    width: 85%; }
+    .detailsws-content #address_form div.select select.select-hidden {
+      min-width: unset; } }
+
+@media all and (max-width: 480px) {
+  .detailsws-content #frmPersonalDetails div.select {
+    width: 280px !important; }
+  .detailsws-content #frmPersonalDetails .error-msg {
+    text-align: center; } }
+
+#limits-container thead {
+  text-align: left; }
+
+#frm_assessment div.select, #financial-form div.select {
+  min-width: 150px; }
+
+#frm_assessment #source_of_wealth, #financial-form #source_of_wealth {
+  min-width: 300px; }
+
+@media screen and (max-width: 480px) {
+  #frm_assessment label, #financial-form label {
+    text-align: left;
+    margin-bottom: 0.5rem; } }
+
+@media screen and (max-width: 480px) {
+  #financial-form div.select {
+    width: calc(100% - 3rem); } }
+
+#frm_account_transfer div.select select.select-hidden {
+  min-width: 200px; }
+
+@media screen and (max-width: 480px) {
+  #frm_account_transfer div.select {
+    width: calc(100% - 1rem); } }
+
+#profit-table-container th {
+  padding-right: 8px; }
+
+#profit-table-container td {
+  padding-right: 8px; }
+
+#profit-table-container .pl {
+  text-align: right !important; }
+
+#profit-table-container #pl-day-total .buy-date {
+  -webkit-box-flex: 6;
+      -ms-flex-positive: 6;
+          flex-grow: 6;
+  -ms-flex-negative: 6;
+      flex-shrink: 6; }
+
+#profit-table-container .contract {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 100px;
+          flex: 2 1 100px;
+  padding-right: 20px;
+  min-width: 150px; }
+
+#profit-table-container .new-width {
+  min-width: 100px; }
+
+#statement-container #download_csv {
+  line-height: 28px; }
+
+#statement-container .desc {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 100px;
+          flex: 2 1 100px;
+  padding-right: 20px;
+  word-break: break-word;
+  min-width: 130px; }
+
+#statement-container .act {
+  -webkit-box-flex: 0.8;
+      -ms-flex: 0.8 1 35px;
+          flex: 0.8 1 35px; }
+
+#statement-container #account_statistics {
+  border: 1px solid #f2f2f2;
+  margin: 30px 0; }
+  @media (max-width: 480px) {
+    #statement-container #account_statistics {
+      margin-bottom: 20px; } }
+  #statement-container #account_statistics div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px 20px; }
+    @media (max-width: 480px) {
+      #statement-container #account_statistics div {
+        padding: 10px 20px; } }
+    @media (max-width: 576px) {
+      #statement-container #account_statistics div {
+        padding: 10px; } }
+  #statement-container #account_statistics p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.5; }
+    #statement-container #account_statistics p:not(.title) {
+      margin-top: 5px; }
+
+#statement-container #download_statement_btn {
+  margin-bottom: 0;
+  margin-left: auto; }
+  @media (max-width: 480px) {
+    #statement-container #download_statement_btn {
+      margin: 20px 0; } }
+
+#download-statement-container {
+  min-height: 400px; }
+  #download-statement-container #download_to, #download-statement-container #download_from {
+    display: inline;
+    max-width: 220px; }
+    @media (max-width: 480px) {
+      #download-statement-container #download_to, #download-statement-container #download_from {
+        display: block;
+        margin-left: 0;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box; } }
+
+#profit-table-container #date_to, #statement-container #date_to {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+#settings_container .round-box {
+  border-radius: 4px; }
+
+#settings_container .notice-circle {
+  margin: auto 15px; }
+
+.lightbox#top_up_virtual_pop_up > div, .lightbox#top_up_error > div, .lightbox#top_up_success > div {
+  max-width: 25em;
+  padding: 32px; }
+  .lightbox#top_up_virtual_pop_up > div #btn_cancel span, .lightbox#top_up_error > div #btn_cancel span, .lightbox#top_up_success > div #btn_cancel span {
+    width: calc(100% - 50px); }
+  .lightbox#top_up_virtual_pop_up > div #btn_ok, .lightbox#top_up_error > div #btn_ok, .lightbox#top_up_success > div #btn_ok {
+    width: calc(100% - 25px); }
+  .lightbox#top_up_virtual_pop_up > div#dialog_content, .lightbox#top_up_error > div#dialog_content, .lightbox#top_up_success > div#dialog_content {
+    padding: 22px 12px; }
+
+.lightbox#top_up_error > div #frm_confirm {
+  width: 100%;
+  text-align: center; }
+  .lightbox#top_up_error > div #frm_confirm .button span {
+    width: 40%; }
+
+.lightbox#top_up_success > div #frm_confirm {
+  width: 100%;
+  text-align: center; }
+  .lightbox#top_up_success > div #frm_confirm .button span {
+    width: calc(50% - 55px); }
+
+.lightbox#error_transfer #dialog_content {
+  max-width: 26em; }
+
+@media screen and (max-width: 480px) {
+  .api_token table td, .api_token table th, #applications-container table td, #applications-container table th {
+    font-size: 0.7561436673rem; }
+  .api_token table button, #applications-container table button {
+    font-size: 0.7561436673rem;
+    padding: 10px 15px; } }
+
+.cashier_note .notice-circle {
+  color: #e98024;
+  border-color: #e98024; }
+
+.cashier_note p {
+  color: #2a3052; }
+
+.pm-description {
+  color: #2a3052; }
+
+#have_real_account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%; }
+  #have_real_account div {
+    margin-right: 10px; }
+  @media screen and (max-width: 480px) {
+    #have_real_account {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+
+.realws-content div.select-dropdown {
+  width: 100%; }
+
+@media screen and (max-width: 480px) {
+  .realws-content {
+    width: 280px !important; } }
+
+#paymentagent_withdrawal .wrapper-row-agent label {
+  padding-bottom: 10px; }
+
+#paymentagent_withdrawal .wrapper-row-agent .row-agent > div:not(:first-child) {
+  margin-top: 10px; }
+
+#paymentagent_withdrawal .wrapper-row-agent .row-agent > div:nth-child(2) {
+  text-align: center;
+  width: 260px; }
+
+#paymentagent_withdrawal .wrapper-row-agent .row-agent .hint {
+  width: 260px;
+  line-height: 1.4; }
+
+#paymentagent_withdrawal .select-dropdown, #paymentagent_withdrawal #txtAgents, #paymentagent_withdrawal #txtAmount, #paymentagent_withdrawal .row-agent .hint, #paymentagent_withdrawal .row-agent > div:nth-child(2) {
+  min-width: 260px; }
+
+#paymentagent_withdrawal .select-options {
+  min-width: 276px; }
+
+#paymentagent_withdrawal #txtDescription {
+  width: 260px; }
+
+#paymentagent_withdrawal #viewForm .disclaimer {
+  font-size: 1rem; }
+  #paymentagent_withdrawal #viewForm .disclaimer strong {
+    font-style: italic; }
+
+#paymentagent_withdrawal .separator-line {
+  border-color: #f2f2f2; }
+
+@media screen and (max-width: 480px) {
+  #paymentagent_withdrawal .wrapper-row-agent .row-agent {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto; }
+    #paymentagent_withdrawal .wrapper-row-agent .row-agent .hint, #paymentagent_withdrawal .wrapper-row-agent .row-agent > div:nth-child(2) {
+      margin-left: auto;
+      margin-right: auto; }
+  #paymentagent_withdrawal .select {
+    width: 302px; }
+  #paymentagent_withdrawal .row-agent > div:nth-child(2) {
+    width: 100%; }
+  #paymentagent_withdrawal #txtAgents, #paymentagent_withdrawal #txtAmount, #paymentagent_withdrawal #txtDescription, #paymentagent_withdrawal .row-agent .hint {
+    width: 284px; }
+  #paymentagent_withdrawal .select-options {
+    width: 290px; } }
+
+.markets {
+  min-width: 120px;
+  position: relative; }
+  .markets .market_current {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px 10px;
+    text-align: left;
+    cursor: pointer;
+    min-width: 150px; }
+    .markets .market_current:hover {
+      border: 1px solid #2a3052; }
+    .markets .market_current .market {
+      font-size: 14px;
+      font-weight: 400;
+      margin: 5px 0; }
+    .markets .market_current .underlying {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 5px 0; }
+    @media (max-width: 767px) {
+      .markets .market_current {
+        min-width: 120px; } }
+    @media (max-width: 480px) {
+      .markets .market_current {
+        padding: 5px 6px; } }
+  .markets .markets_dropdown {
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 2px 1px #dedede;
+            box-shadow: 0 0 2px 1px #dedede;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 0;
+    -webkit-transition: visibility 0s 0s, opacity 0.15s ease-in;
+    transition: visibility 0s 0s, opacity 0.15s ease-in;
+    width: 600px;
+    z-index: 10000; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .markets .markets_dropdown {
+        width: calc(100vw - 20px); } }
+    .markets .markets_dropdown.hidden {
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: visibility 0s 0.25s, opacity 0.25s ease-in 0.1s;
+      transition: visibility 0s 0.25s, opacity 0.25s ease-in 0.1s; }
+    .markets .markets_dropdown .asset-placeholder.mobile {
+      margin: 10px 15px 0;
+      text-align: left;
+      font-weight: 400;
+      display: none; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .markets .markets_dropdown .asset-placeholder.mobile {
+          display: block; } }
+      .markets .markets_dropdown .asset-placeholder.mobile .close {
+        width: 16px;
+        height: 16px;
+        float: right;
+        background: url("../images/pages/trade/assets/ic-close-normal.svg") 100% 100%; }
+    .markets .markets_dropdown .search {
+      padding: 15px 15px 0;
+      background: #fff;
+      border-radius: 4px 4px 0px 0px;
+      border-bottom: 1px solid #dedede; }
+      .markets .markets_dropdown .search input {
+        outline: none;
+        border: 1px solid #dedede;
+        border-radius: 4px;
+        line-height: 30px;
+        padding: 0 7px;
+        width: 100%; }
+        .markets .markets_dropdown .search input:hover, .markets .markets_dropdown .search input:focus {
+          border: 1px solid #394171; }
+      .markets .markets_dropdown .search .icon {
+        width: 16px;
+        height: 16px;
+        float: right;
+        position: relative;
+        top: -22px;
+        right: 7px;
+        background: url("../images/pages/trade/assets/ic-search-normal.svg") 100% 100%; }
+    .markets .markets_dropdown .markets_view {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      text-align: left; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .markets .markets_dropdown .markets_view {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column; } }
+      .markets .markets_dropdown .markets_view .markets_column {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 auto;
+                flex: 1 0 auto;
+        min-width: 140px;
+        background: #fff;
+        border-right: 1px solid #dedede;
+        border-bottom-left-radius: 4px; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .markets .markets_dropdown .markets_view .markets_column {
+            border-right: 0; } }
+        .markets .markets_dropdown .markets_view .markets_column .desktop .market {
+          font-size: 12px;
+          padding: 8px 10px;
+          color: #2a3052;
+          -webkit-transition: background 0.2s 0.1s;
+          transition: background 0.2s 0.1s;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          cursor: pointer; }
+          .markets .markets_dropdown .markets_view .markets_column .desktop .market:hover {
+            text-decoration: underline; }
+          .markets .markets_dropdown .markets_view .markets_column .desktop .market.active {
+            text-decoration: none;
+            font-weight: 600;
+            border-right: 2px solid #2a3052; }
+          .markets .markets_dropdown .markets_view .markets_column .desktop .market span:nth-of-type(2) {
+            margin-left: 10px; }
+        .markets .markets_dropdown .markets_view .markets_column .mobile {
+          display: none; }
+          .markets .markets_dropdown .markets_view .markets_column .mobile ul {
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            padding: 5px 15px 0;
+            border-bottom: 1px solid #dedede; }
+            .markets .markets_dropdown .markets_view .markets_column .mobile ul li {
+              margin: 0 !important;
+              font-size: 12px;
+              -webkit-transition: background 0.2s 0.1s;
+              transition: background 0.2s 0.1s;
+              cursor: pointer;
+              padding: 0 5px 5px;
+              -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+              -webkit-tap-highlight-color: transparent; }
+              .markets .markets_dropdown .markets_view .markets_column .mobile ul li.active {
+                border-bottom: 2px solid #2a3052; }
+              .markets .markets_dropdown .markets_view .markets_column .mobile ul li .icon {
+                width: 24px;
+                height: 24px; }
+        .markets .markets_dropdown .markets_view .markets_column .icon {
+          display: block;
+          width: 16px;
+          height: 16px;
+          background-repeat: no-repeat;
+          background-size: 100%; }
+          .markets .markets_dropdown .markets_view .markets_column .icon.forex {
+            background: url("../images/pages/trade/assets/ic-forex-normal.svg") no-repeat;
+            background-size: contain;
+            -webkit-transition: none;
+            transition: none; }
+            .markets .markets_dropdown .markets_view .markets_column .icon.forex.active {
+              background: url("../images/pages/trade/assets/ic-forex-active.svg") no-repeat;
+              background-size: contain; }
+          .markets .markets_dropdown .markets_view .markets_column .icon.indices {
+            background: url("../images/pages/trade/assets/ic-indices-normal.svg") no-repeat;
+            background-size: contain;
+            -webkit-transition: none;
+            transition: none; }
+            .markets .markets_dropdown .markets_view .markets_column .icon.indices.active {
+              background: url("../images/pages/trade/assets/ic-indices-active.svg") no-repeat;
+              background-size: contain; }
+          .markets .markets_dropdown .markets_view .markets_column .icon.stocks {
+            background: url("../images/pages/trade/assets/ic-stocks-normal.svg") no-repeat;
+            background-size: contain;
+            -webkit-transition: none;
+            transition: none; }
+            .markets .markets_dropdown .markets_view .markets_column .icon.stocks.active {
+              background: url("../images/pages/trade/assets/ic-stocks-active.svg") no-repeat;
+              background-size: contain; }
+          .markets .markets_dropdown .markets_view .markets_column .icon.commodities {
+            background: url("../images/pages/trade/assets/ic-commodities-normal.svg") no-repeat;
+            background-size: contain;
+            -webkit-transition: none;
+            transition: none; }
+            .markets .markets_dropdown .markets_view .markets_column .icon.commodities.active {
+              background: url("../images/pages/trade/assets/ic-commodities-active.svg") no-repeat;
+              background-size: contain; }
+          .markets .markets_dropdown .markets_view .markets_column .icon.synthetic_index {
+            background: url("../images/pages/trade/assets/ic-synthetic_index-normal.svg") no-repeat;
+            background-size: contain;
+            -webkit-transition: none;
+            transition: none; }
+            .markets .markets_dropdown .markets_view .markets_column .icon.synthetic_index.active {
+              background: url("../images/pages/trade/assets/ic-synthetic_index-active.svg") no-repeat;
+              background-size: contain; }
+        @media (min-width: 320px) and (max-width: 767px) {
+          .markets .markets_dropdown .markets_view .markets_column .desktop {
+            display: none; }
+          .markets .markets_dropdown .markets_view .markets_column .mobile {
+            display: block; } }
+      .markets .markets_dropdown .markets_view .list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        height: 300px;
+        width: calc(100% - 20px);
+        overflow-y: scroll;
+        padding: 0 10px; }
+        .markets .markets_dropdown .markets_view .list .market {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-flex: 0;
+              -ms-flex: 0 0 auto;
+                  flex: 0 0 auto;
+          padding-bottom: 40px; }
+          .markets .markets_dropdown .markets_view .list .market:last-of-type {
+            padding-bottom: 80px; }
+          .markets .markets_dropdown .markets_view .list .market .market_name {
+            font-size: 18px;
+            padding: 10px 0;
+            font-weight: 400;
+            -webkit-box-flex: 1;
+                -ms-flex: 1 0 auto;
+                    flex: 1 0 auto;
+            color: #2a3052;
+            -webkit-transition: none;
+            transition: none; }
+            @media (min-width: 320px) and (max-width: 767px) {
+              .markets .markets_dropdown .markets_view .list .market .market_name {
+                font-size: 20px; } }
+            .markets .markets_dropdown .markets_view .list .market .market_name.sticky {
+              position: absolute;
+              width: 431px;
+              top: 60px;
+              background: #fff; }
+              @media (max-width: 767px) {
+                .markets .markets_dropdown .markets_view .list .market .market_name.sticky {
+                  top: 123px;
+                  width: calc(100% - 20px); } }
+            .markets .markets_dropdown .markets_view .list .market .market_name.put_under {
+              z-index: -1; }
+          .markets .markets_dropdown .markets_view .list .market .submarket {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-flex: 1;
+                -ms-flex: 1 0 auto;
+                    flex: 1 0 auto;
+            margin-bottom: 10px; }
+            .markets .markets_dropdown .markets_view .list .market .submarket .submarket_name {
+              font-size: 12px;
+              padding: 10px 0 0;
+              -webkit-box-flex: 1;
+                  -ms-flex: 1 0 auto;
+                      flex: 1 0 auto;
+              font-weight: 300;
+              color: #e98024; }
+              @media (min-width: 320px) and (max-width: 767px) {
+                .markets .markets_dropdown .markets_view .list .market .submarket .submarket_name {
+                  font-size: 14px; } }
+            .markets .markets_dropdown .markets_view .list .market .submarket .symbols {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-wrap: wrap;
+                  flex-wrap: wrap;
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: row;
+                      flex-direction: row;
+              -webkit-box-flex: 1;
+                  -ms-flex: 1 0 auto;
+                      flex: 1 0 auto; }
+              .markets .markets_dropdown .markets_view .list .market .submarket .symbols .symbol_name {
+                padding: 5px;
+                margin: 10px 0 5px 5px;
+                line-height: 18px;
+                cursor: pointer;
+                width: 162px;
+                font-size: 14px;
+                font-weight: 400;
+                -webkit-transition: all 0.2s;
+                transition: all 0.2s; }
+                @media (min-width: 320px) and (max-width: 767px) {
+                  .markets .markets_dropdown .markets_view .list .market .submarket .symbols .symbol_name {
+                    width: 200px;
+                    font-size: 16px; } }
+                .markets .markets_dropdown .markets_view .list .market .submarket .symbols .symbol_name:hover {
+                  background: #dedede; }
+                .markets .markets_dropdown .markets_view .list .market .submarket .symbols .symbol_name.active {
+                  background: #2a3052;
+                  color: #fff; }
+                  @media (min-width: 320px) and (max-width: 767px) {
+                    .markets .markets_dropdown .markets_view .list .market .submarket .symbols .symbol_name.active {
+                      background: #2a3052;
+                      color: #fff;
+                      font-weight: normal;
+                      padding-left: 5px; } }
+
+.contracts {
+  position: relative; }
+  .contracts .contract_current {
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px 10px;
+    min-width: 100px;
+    text-align: left;
+    cursor: pointer; }
+    .contracts .contract_current:hover {
+      border: 1px solid #2a3052; }
+      .contracts .contract_current:hover.disabled {
+        border: 1px solid #dedede;
+        cursor: not-allowed; }
+    .contracts .contract_current .type {
+      font-size: 14px;
+      font-weight: 400;
+      margin: 5px 0; }
+    .contracts .contract_current .contract {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 5px 0; }
+  .contracts .contracts_dropdown {
+    position: absolute;
+    top: 0;
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 2px 1px #dedede;
+            box-shadow: 0 0 2px 1px #dedede;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-transition: visibility 0s 0s, opacity 0.15s ease-in;
+    transition: visibility 0s 0s, opacity 0.15s ease-in;
+    z-index: 10000;
+    padding: 10px;
+    width: 400px;
+    opacity: 1; }
+    @media (min-width: 320px) and (max-width: 767px) {
+      .contracts .contracts_dropdown {
+        width: calc(100vw - 80px); } }
+    .contracts .contracts_dropdown.hidden {
+      opacity: 0;
+      visibility: hidden;
+      -webkit-transition: visibility 0s 0.25s, opacity 0.25s ease-in 0.1s;
+      transition: visibility 0s 0.25s, opacity 0.25s ease-in 0.1s; }
+    @media (max-width: 767px) {
+      .contracts .contracts_dropdown .mobile_close {
+        display: block !important;
+        visibility: visible;
+        opacity: 1;
+        width: calc(100% - 20px);
+        text-align: left;
+        padding: 0 10px 10px;
+        position: absolute;
+        left: 0;
+        border-bottom: 1px solid #dedede;
+        background: #fff;
+        pointer-events: auto; }
+        .contracts .contracts_dropdown .mobile_close.disabled {
+          pointer-events: none; } }
+    .contracts .contracts_dropdown .mobile_close span {
+      display: inline-block; }
+    .contracts .contracts_dropdown .mobile_close .close {
+      width: 16px;
+      height: 16px;
+      float: right;
+      background: url("../images/pages/trade/assets/ic-close-normal.svg") 100% 100%; }
+    .contracts .contracts_dropdown .list {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      @media (min-width: 320px) and (max-width: 767px) {
+        .contracts .contracts_dropdown .list {
+          padding-top: 41px;
+          max-height: 350px;
+          overflow-x: hidden;
+          overflow-y: scroll; } }
+    .contracts .contracts_dropdown .contract {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      padding: 0 0 10px;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 auto;
+              flex: 1 0 auto;
+      width: 185px;
+      margin-right: 5px;
+      text-align: left; }
+      @media (max-width: 767px) {
+        .contracts .contracts_dropdown .contract {
+          width: 100%; } }
+      .contracts .contracts_dropdown .contract:last-of-type {
+        padding: 0; }
+      .contracts .contracts_dropdown .contract .contract_type {
+        font-size: 12px;
+        font-weight: 300;
+        padding: 0 0 10px;
+        color: #e98024; }
+        @media (max-width: 767px) {
+          .contracts .contracts_dropdown .contract .contract_type {
+            font-size: 14px; } }
+      .contracts .contracts_dropdown .contract .contract_subtypes {
+        font-size: 14px; }
+        @media (max-width: 767px) {
+          .contracts .contracts_dropdown .contract .contract_subtypes {
+            font-size: 16px; } }
+        .contracts .contracts_dropdown .contract .contract_subtypes .sub {
+          padding: 5px 0 5px 5px;
+          margin-bottom: 10px;
+          cursor: pointer; }
+          .contracts .contracts_dropdown .contract .contract_subtypes .sub:hover {
+            background: #dedede; }
+          .contracts .contracts_dropdown .contract .contract_subtypes .sub.active {
+            background: #2a3052;
+            color: #fff; }
+            @media (min-width: 320px) and (max-width: 767px) {
+              .contracts .contracts_dropdown .contract .contract_subtypes .sub.active {
+                background: #2a3052;
+                color: #fff;
+                padding: 5px;
+                margin: 0 0 10px;
+                font-weight: normal; } }
+
+.transfer_form {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse; }
+  .transfer_form p {
+    margin: 0 0 6px; }
+  .transfer_form #transfer_to_select.form-row {
+    padding-top: 0;
+    padding-bottom: 0; }
+  .transfer_form > div {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  .transfer_form__left_pane {
+    padding: 30px;
+    width: 50%;
+    min-height: 266px;
+    background-color: #f2f2f2;
+    color: #000; }
+  .transfer_form__right_pane {
+    padding: 30px;
+    width: 50%;
+    min-height: 266px;
+    border: 1px solid #f2f2f2;
+    border-left: 0; }
+    .transfer_form__right_pane__input_group {
+      width: 100%; }
+      .transfer_form__right_pane__input_group__prefix {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        max-width: 280px; }
+        .transfer_form__right_pane__input_group__prefix .input-add-on {
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          height: 28px;
+          width: 50px;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center; }
+        .transfer_form__right_pane__input_group__prefix input {
+          margin: 0;
+          padding: 0 0 0 5px;
+          height: 28px;
+          max-width: 100%;
+          width: 230px;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box; }
+      .transfer_form__right_pane__input_group .select {
+        width: 100%; }
+    .transfer_form__right_pane .select {
+      width: 280px !important;
+      display: block;
+      margin-bottom: 2px; }
+
+@media screen and (max-width: 480px) {
+  .transfer_form__right_pane, .transfer_form__left_pane {
+    width: 100%; } }
+
+.account_transfer {
+  width: 250px; }
+  .account_transfer__header {
+    padding: 5px !important;
+    font-size: smaller !important; }
+
+.account_transfer-content .hint {
+  font-size: 15px; }
+
+.account_transfer-content .italic {
+  font-style: italic; }
