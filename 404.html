@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binary.com</title>
+    <meta charset="utf-8" />
+    <meta name='referrer' content='origin' />
+    <script type="text/javascript">
+    function getCookieItem(sKey) {
+        'use strict';
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+    }
+
+    var langs = {
+        'de': 'de|at|li',
+        'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
+        'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+        'id': 'id',
+        'it': 'it',
+        'ko': 'kr',
+        'pl': 'po',
+        'pt': 'br|mz|ao|pt|gw|pg|cv|st',
+        'ru': 'ru|ua|by|kz',
+        'th': 'th',
+        'vi': 'vn',
+        'zh_tw': 'tw|mo',
+        'zh_cn': 'cn',
+    };
+    function getLanguage(country) {
+        var conLang = 'en';
+        if (country) {
+            var keys = Object.keys(langs);
+            for (var i = keys.length; i--; ) {
+                var l = keys[i];
+                if ((new RegExp(langs[l], 'i')).test(country)) {
+                    return l;
+                }
+            }
+        }
+        return conLang;
+    }
+
+    function redirect(lang) {
+        var base = /^(.+?).github.io$/.test(window.location.hostname) ? window.location.origin + '/binary-static' : window.location.origin;
+
+        // TODO: REMOVE/CHANGE this after addition of DE or TH languages
+        var unsupported_languages = ['de', 'th'];
+        if (unsupported_languages.indexOf(lang.toLowerCase()) >= 0) {
+            lang = 'en';
+            window.location.href = base + '/' + lang.toLowerCase() + '/' + 'home.html';
+            return;
+        }
+
+        window.location.href = base + '/' + lang.toLowerCase() + '/' + '404.html';
+    }
+
+    function openWSAndGetLanguage(cb) {
+        var ws = new WebSocket('wss://frontend.binaryws.com/websockets/v3?app_id=1');
+
+        ws.onopen = function() {
+            ws.send(JSON.stringify({ website_status: 1 }));
+        };
+
+        ws.onmessage = function(msg) {
+            var response = JSON.parse(msg.data);
+            if (response.msg_type === 'website_status') {
+                var lang;
+                if (!response.error && response.hasOwnProperty('website_status')) {
+                    lang = getLanguage(response.website_status.clients_country);
+                }
+                ws.close();
+                return cb(lang);
+            }
+        };
+    }
+
+    var lang = getCookieItem('language');
+    if (lang) {
+        redirect(lang);
+    } else {
+        openWSAndGetLanguage(function(lang) {
+            if (lang) redirect(lang);
+        });
+    }
+    </script>
+</head>
+<body>
+    <h1>404</h1>
+    <p style='font-size: 1.5em;'><a href='https://binary.com'>https://binary.com</a></p>
+</body>
+</html>
