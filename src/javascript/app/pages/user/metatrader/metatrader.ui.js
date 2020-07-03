@@ -2,7 +2,6 @@ const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
 const Dialog           = require('../../../common/attach_dom/dialog');
-const isEuCountry      = require('../../../common/country_base').isEuCountry;
 const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
 const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
@@ -176,18 +175,16 @@ const MetaTraderUI = (() => {
 
         if (accounts_info[acc_type].info) {
             const is_demo = /demo/.test(accounts_info[acc_type].account_type);
-            const is_eu   = isEuCountry();
-            const server_prefix = is_eu ? 'Binary.com' : 'Deriv'; // TODO: update eu to deriv as well once launched
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
                 const key     = $(this).attr('data');
                 const info    = accounts_info[acc_type].info[key];
                 const mapping = {
                     balance      : () => (isNaN(info) ? '' : Currency.formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
-                    broker       : () => is_eu ? 'Deriv Ltd.' : 'Deriv Limited',
+                    broker       : () => 'Deriv Limited',
                     display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
-                    server       : () => `${server_prefix}-${is_demo ? 'Demo' : 'Server'}`,
+                    server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
