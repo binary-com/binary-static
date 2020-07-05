@@ -103,16 +103,24 @@ const Metatrader = () => (
                             </div>
                             <div className='acc-info has-account invisible'>
                                 <div className='gr-row gr-padding-10'>
-                                    <div className='gr-3'>{it.L('MT5 Account:')}</div>
+                                    <div className='gr-3'>{it.L('MT5 Login:')}</div>
                                     <div data='display_login' />
                                 </div>
-                                <div className='gr-row'>
+                                <div className='gr-row gr-padding-10 gr-parent'>
                                     <div className='gr-3'>{it.L('Name:')}</div>
-                                    <div className='gr-9' data='name' />
+                                    <div data='name' />
                                 </div>
-                                <div className='gr-row gr-padding-10 gr-hide mobile-balance'>
+                                <div className='gr-row gr-padding-10 gr-parent gr-hide mobile-balance'>
                                     <div className='gr-3'>{it.L('Balance:')}</div>
-                                    <div className='gr-9' data='balance' />
+                                    <div data='balance' />
+                                </div>
+                                <div className='gr-row gr-padding-10 gr-parent'>
+                                    <div className='gr-3'>{it.L('Broker:')}</div>
+                                    <div data='broker' />
+                                </div>
+                                <div className='gr-row gr-padding-10 gr-parent'>
+                                    <div className='gr-3'>{it.L('Server:')}</div>
+                                    <div data='server' />
                                 </div>
                             </div>
                         </div>
@@ -171,7 +179,7 @@ const Metatrader = () => (
                     </div>
                 </div>
                 <div className='mt-panel'>
-                    <div className='mt-sidebar-button mt5-web' data-show='-eucountry'>
+                    <div className='mt-sidebar-button mt5-web'>
                         <div className='small-icon'>
                             <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
                                 <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
@@ -188,28 +196,6 @@ const Metatrader = () => (
                             </div>
                             <div className='mt5-web-link'>
                                 <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
-                                    {it.L('Real')}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mt-sidebar-button mt5-web' data-show='eucountry'>
-                        <div className='small-icon'>
-                            <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
-                                <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
-                            </a>
-                        </div>
-                        <div className='mt-title-mt5-web'>
-                            {it.L('MT5 Web platform')}
-                        </div>
-                        <div className='mt-link-web'>
-                            <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Demo&trade_server=Binary.com-Demo' target='_blank' rel='noopener noreferrer'>
-                                    {it.L('Demo')}
-                                </a>
-                            </div>
-                            <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&trade_server=Binary.com-Server' target='_blank' rel='noopener noreferrer'>
                                     {it.L('Real')}
                                 </a>
                             </div>
