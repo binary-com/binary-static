@@ -29,7 +29,6 @@ const LiveChat = (() => {
                         ...residence && { residence },
                     };
 
-                    console.log(session_variables);
                     window.LiveChatWidget.call('set_session_variables', session_variables);
                 }
             });
