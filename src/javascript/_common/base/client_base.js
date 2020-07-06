@@ -160,6 +160,7 @@ const ClientBase = (() => {
             local_currency_config.decimal_places =
                 +authorize.local_currencies[local_currency_config.currency].fractional_digits;
         }
+        console.log(response);
         set('email',      authorize.email);
         set('fullname',   authorize.fullname);
         set('currency',   authorize.currency);
