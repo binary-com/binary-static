@@ -9,7 +9,7 @@ const OrderExecution = () => (
             {it.L('The terms \'the Company\' and \'[_1]\' shall denote', it.website_name)}&nbsp;
             <span data-show='-eucountry'>{it.L('Deriv (V) Ltd,')}&nbsp;</span>
             <span data-show='-eucountry'>{it.L('Deriv (FX) Ltd, or')}&nbsp;</span>
-            <span>{it.L('Deriv Investments (Europe) Ltd.')}</span>
+            <span>{it.L('Deriv Investments (Europe) Limited.')}</span>
         </p>
 
         <p>{it.L('The Company\'s order execution policy (the "Policy") sets out the overview and approach of how [_1] executes orders on behalf of the Company\'s clients.', it.website_name)}</p>
