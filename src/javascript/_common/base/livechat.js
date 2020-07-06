@@ -4,10 +4,6 @@ const LiveChat = (() => {
 
     const init = () => {
         if (window.LiveChatWidget) {
-            // window.LiveChatWidget.on('ready', () => {
-            //     window.LiveChatWidget.call('set_customer_name', 'John Doe');
-            //     // window.LiveChatWidget.call('set_customer_email', authorize.email);
-            // });
             window.LiveChatWidget.on('visibility_changed', ({ visibility }) => {
                 if (visibility === 'maximized' && ClientBase.isLoggedIn()) {
                     const email = ClientBase.get('email');
