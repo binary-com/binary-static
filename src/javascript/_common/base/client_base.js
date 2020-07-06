@@ -161,7 +161,6 @@ const ClientBase = (() => {
                 +authorize.local_currencies[local_currency_config.currency].fractional_digits;
         }
         set('email',      authorize.email);
-        set('fullname',   authorize.fullname);
         set('currency',   authorize.currency);
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
