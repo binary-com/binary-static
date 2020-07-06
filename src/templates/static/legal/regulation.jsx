@@ -93,9 +93,9 @@ const Regulation = () => {
                 <p>{it.L('Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
-            <Box header={it.L('Deriv Investments (Europe) Ltd')} >
-                <p>{it.L('Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Deriv-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
-                <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Ltd.')}</p>
+            <Box header={it.L('Deriv Investments (Europe) Limited')} >
+                <p>{it.L('Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Deriv-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
+                <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Limited.')}</p>
                 <div className='gr-padding-30 gr-12' id='accordion'>
                     <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
                     <div>
