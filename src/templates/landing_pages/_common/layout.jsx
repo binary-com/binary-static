@@ -5,7 +5,6 @@ import AntiClickjack          from '../../_common/includes/anti_clickjack.jsx';
 import Favicons               from '../../_common/includes/favicons.jsx';
 import GoogleOptimizer        from '../../_common/includes/google_optimizer.jsx';
 import Gtm                    from '../../_common/includes/gtm.jsx';
-import LiveChat               from '../../_common/includes/livechat.jsx';
 
 const Layout = ({
     meta_description,
@@ -47,7 +46,6 @@ const Layout = ({
             {children}
 
             <OutdatedBrowserMessage />
-            <LiveChat />
             { js_files.map((js_file, idx) => (
                 <script key={idx} src={`${js_file}?${it.static_hash}`} />
             ))}

@@ -7,7 +7,6 @@ import InterviewPopup from '../components/interview_popup.jsx';
 import Title from '../components/title.jsx';
 import Elevio from '../includes/elevio.jsx';
 import Gtm from '../includes/gtm.jsx';
-import LiveChat from '../includes/livechat.jsx';
 
 const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
@@ -56,7 +55,6 @@ const Layout = () => {
                 </div>
                 <InterviewPopup /> {/* TODO: remove when UX research is finished */}
                 <Elevio />
-                <LiveChat />
             </body>
         </html>
     );
