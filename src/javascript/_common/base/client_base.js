@@ -167,7 +167,6 @@ const ClientBase = (() => {
         set('landing_company_shortcode', authorize.landing_company_name);
         set('user_id', authorize.user_id);
         set('local_currency_config', local_currency_config);
-
         updateAccountList(authorize.account_list);
     };
 

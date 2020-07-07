@@ -8,6 +8,7 @@ const BinarySocket        = require('./socket');
 const ContentVisibility   = require('../common/content_visibility');
 const GTM                 = require('../../_common/base/gtm');
 const Login               = require('../../_common/base/login');
+const LiveChat            = require('../../_common/base/livechat');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const urlLang             = require('../../_common/language').urlLang;
 const localizeForLang     = require('../../_common/localize').forLang;
@@ -47,6 +48,7 @@ const BinaryLoader = (() => {
         BinaryPjax.init(container, '#content');
 
         ThirdPartyLinks.init();
+        LiveChat.init();
     };
 
     const beforeContentChange = () => {

@@ -46,7 +46,6 @@ const Layout = ({
             {children}
 
             <OutdatedBrowserMessage />
-
             { js_files.map((js_file, idx) => (
                 <script key={idx} src={`${js_file}?${it.static_hash}`} />
             ))}
