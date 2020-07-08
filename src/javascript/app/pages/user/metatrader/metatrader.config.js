@@ -16,17 +16,17 @@ const MetaTraderConfig = (() => {
         let mt_companies;
 
         const initMtCompanies = () => {
-            const standard_config = {
-                account_type: 'standard',
+            const financial_config = {
+                account_type: 'financial',
                 leverage    : 1000,
                 short_title : localize('Financial'),
             };
-            const advanced_config = {
-                account_type: 'advanced',
+            const financial_stp_config = {
+                account_type: 'financial_stp',
                 leverage    : 100,
                 short_title : localize('Financial STP'),
             };
-            const volatility_config = {
+            const synthetic_config = {
                 account_type: '',
                 leverage    : 500,
                 short_title : localize('Synthetic'),
@@ -34,14 +34,14 @@ const MetaTraderConfig = (() => {
 
             return ({
                 gaming: {
-                    demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Synthetic'), short_title: volatility_config.short_title },
-                    real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Synthetic'), short_title: volatility_config.short_title },
+                    demo_synthetic: { mt5_account_type: synthetic_config.account_type, max_leverage: synthetic_config.leverage, title: localize('Demo Synthetic'), short_title: synthetic_config.short_title },
+                    real_synthetic: { mt5_account_type: synthetic_config.account_type, max_leverage: synthetic_config.leverage, title: localize('Real Synthetic'), short_title: synthetic_config.short_title },
                 },
                 financial: {
-                    demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Financial'), short_title: standard_config.short_title },
-                    real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Financial'), short_title: standard_config.short_title },
-                    demo_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Demo Financial STP'), short_title: advanced_config.short_title },
-                    real_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Real Financial STP'), short_title: advanced_config.short_title },
+                    demo_financial    : { mt5_account_type: financial_config.account_type, max_leverage: financial_config.leverage, title: localize('Demo Financial'), short_title: financial_config.short_title },
+                    real_financial    : { mt5_account_type: financial_config.account_type, max_leverage: financial_config.leverage, title: localize('Real Financial'), short_title: financial_config.short_title },
+                    demo_financial_stp: { mt5_account_type: financial_stp_config.account_type, max_leverage: financial_stp_config.leverage, title: localize('Demo Financial STP'), short_title: financial_stp_config.short_title },
+                    real_financial_stp: { mt5_account_type: financial_stp_config.account_type, max_leverage: financial_stp_config.leverage, title: localize('Real Financial STP'), short_title: financial_stp_config.short_title },
                 },
             });
         };
@@ -60,21 +60,21 @@ const MetaTraderConfig = (() => {
         let mt_financial_companies;
 
         const initMtFinCompanies = () => {
-            const standard_config = {
-                account_type: 'standard',
+            const financial_config = {
+                account_type: 'financial',
                 leverage    : 30,
                 short_title : localize('Financial'),
             };
 
             return ({
-                // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
+                // for financial mt company with shortcode maltainvest, only offer financial account with different leverage
                 financial: {
-                    demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Financial'), short_title: standard_config.short_title },
-                    real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Financial'), short_title: standard_config.short_title },
+                    demo_financial: { mt5_account_type: financial_config.account_type, max_leverage: financial_config.leverage, title: localize('Demo Financial'), short_title: financial_config.short_title },
+                    real_financial: { mt5_account_type: financial_config.account_type, max_leverage: financial_config.leverage, title: localize('Real Financial'), short_title: financial_config.short_title },
                 },
                 gaming: {
-                    demo_volatility: configMtCompanies.get().gaming.demo_volatility,
-                    real_volatility: configMtCompanies.get().gaming.real_volatility,
+                    demo_synthetic: configMtCompanies.get().gaming.demo_synthetic,
+                    real_synthetic: configMtCompanies.get().gaming.real_synthetic,
                 },
             });
         };
@@ -89,8 +89,10 @@ const MetaTraderConfig = (() => {
         };
     })();
 
-    // we need to check if the account type is standard or advanced account before returning landing_company shortcode
-    const getMTFinancialAccountType = acc_type => `${/_advanced$/.test(acc_type) ? 'advanced' : 'standard'}`;
+    // we need to check if the account type is financial or financial_stp account before returning landing_company shortcode
+    // TODO: [remove-standard-advanced] remove advanced when API groups are updated
+    const getMTFinancialAccountType = acc_type => `${/_(advanced|financial_stp)$/.test(acc_type) ? 'financial_stp' : 'financial'}`;
+    const getOldMTFinancialAccountType = acc_type => `${/_(advanced|financial_stp)$/.test(acc_type) ? 'advanced' : 'standard'}`;
 
     const accounts_info = {};
 
@@ -123,7 +125,8 @@ const MetaTraderConfig = (() => {
                     };
 
                     const has_financial_account = Client.hasAccountType('financial', 1);
-                    const is_maltainvest        = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
+                    const is_maltainvest        = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest' ||
+                        State.getResponse(`landing_company.mt_financial_company.${getOldMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest';
                     const is_demo_financial     = accounts_info[acc_type].account_type === 'demo' && accounts_info[acc_type].mt5_account_type; // is not demo vol account
                     const is_financial          = accounts_info[acc_type].account_type === 'financial';
 
@@ -135,7 +138,8 @@ const MetaTraderConfig = (() => {
 
                     const response_get_settings = State.getResponse('get_settings');
                     if (is_financial) {
-                        const is_svg = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'svg';
+                        const is_svg = State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'svg' ||
+                            State.getResponse(`landing_company.mt_financial_company.${getOldMTFinancialAccountType(acc_type)}.shortcode`) === 'svg';
                         if (is_svg) resolve();
 
                         let is_ok = true;
@@ -162,11 +166,11 @@ const MetaTraderConfig = (() => {
                                 showElementSetRedirect('.acc_opening_reason');
                                 is_ok = false;
                             }
-                            if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'advanced') {
+                            if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'financial_stp') {
                                 // disable button must occur before loading
                                 $('#view_1 #btn_next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
-                                await setLabuanAdvancedIntention();
+                                await setLabuanFinancialSTPIntention();
                                 $('#authenticate_loading').setVisibility(0);
                                 $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
@@ -180,7 +184,7 @@ const MetaTraderConfig = (() => {
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             const response_get_account_status = State.getResponse('get_account_status');
                             if (/financial_assessment_not_complete/.test(response_get_account_status.status)
-                                && !accounts_info[acc_type].mt5_account_type // is_volatility
+                                && !accounts_info[acc_type].mt5_account_type // is_synthetic
                                 && /high/.test(response_get_account_status.risk_classification)
                             ) {
                                 showElementSetRedirect('.assessment');
@@ -202,16 +206,16 @@ const MetaTraderConfig = (() => {
         })
     );
 
-    const setLabuanAdvancedIntention = () => new Promise((resolve) => {
+    const setLabuanFinancialSTPIntention = () => new Promise((resolve) => {
         const req = {
             account_type    : 'financial',
             dry_run         : 1,
             email           : Client.get('email'),
             leverage        : 100,
             mainPassword    : 'Test1234',
-            mt5_account_type: 'advanced',
+            mt5_account_type: 'financial_stp',
             mt5_new_account : 1,
-            name            : 'test real labuan advanced',
+            name            : 'test real labuan financial stp',
         };
         BinarySocket.send(req).then((dry_run_response) => {
 
@@ -233,9 +237,9 @@ const MetaTraderConfig = (() => {
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
-                    const is_volatility = !accounts_info[acc_type].mt5_account_type;
+                    const is_synthetic = !accounts_info[acc_type].mt5_account_type;
 
-                    if (is_volatility && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
+                    if (is_synthetic && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id               : 'confirm_new_account',
                             localized_message: localize(['Trading contracts for difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
@@ -356,7 +360,8 @@ const MetaTraderConfig = (() => {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.wait('get_account_status').then(() => {
-                        if (!/svg_standard/.test(acc_type) && isAuthenticationPromptNeeded()) {
+                        // TODO: [remove-standard-advanced] remove standard when API groups are updated
+                        if (!/svg_(standard|financial)/.test(acc_type) && isAuthenticationPromptNeeded()) {
                             resolve($messages.find('#msg_authenticate').html());
                         }
 
@@ -488,6 +493,7 @@ const MetaTraderConfig = (() => {
         accounts_info,
         actions_info,
         getMTFinancialAccountType,
+        getOldMTFinancialAccountType,
         fields,
         validations,
         needsRealMessage,

@@ -232,7 +232,7 @@ const Home = () => {
                                     image_two='images/pages/home/icons/mt5_financial.svg'
                                     list_header_two={it.L('MT5 Financial')}
                                     list_text_two={it.L('MT5 real-money account for forex and CFDs.')}
-                                    image_three='images/pages/home/icons/mt5_volatility.svg'
+                                    image_three='images/pages/home/icons/mt5_synthetic.svg'
                                     list_header_three={it.L('MT5 Synthetic')}
                                     list_text_three={it.L('MT5 real-money account for Synthetic Indices only.')}
                                 />

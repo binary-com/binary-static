@@ -50,8 +50,9 @@ const FinancialAssessment = (() => {
             BinarySocket.wait('get_account_status').then(() => { displayHighRiskClassification(); });
         }
 
-        // display Trading Experience only for financial & MT5 financial accounts
-        const is_mt5_financial = /labuan_advanced/.test(getHashValue('mt5_redirect'));
+        // display Trading Experience only for financial & MT5 financial_stp accounts
+        // TODO: [remove-standard-advanced] remove labuan_advanced when API groups are updated
+        const is_mt5_financial = /labuan_financial_stp|labuan_advanced/.test(getHashValue('mt5_redirect'));
         $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
         Object.keys(financial_assessment).forEach((key) => {
