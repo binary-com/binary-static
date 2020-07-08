@@ -164,6 +164,7 @@ jobs:
           target: 'production'
       - deploy:
           target_branch: "production"
+      - notify_slack
   release_aws_production:
     docker:
       - image: circleci/node:9.8.0-stretch
@@ -176,7 +177,6 @@ jobs:
       - docker_build_push
       - k8s_deploy:
           k8s_svc_name: "production-binary-com"
-      - notify_slack
       
 workflows:
   test:
