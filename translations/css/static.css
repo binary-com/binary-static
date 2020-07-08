@@ -244,10 +244,10 @@
     .affiliate-ib-content .faq-message {
       color: #fff; }
 
-#forex-specs table td, #volatility-specs table td, #cash-specs table td {
+#forex-specs table td, #synthetic-specs table td, #cash-specs table td {
   font-size: 1rem;
   text-align: center; }
-  #forex-specs table td:first-child, #volatility-specs table td:first-child, #cash-specs table td:first-child {
+  #forex-specs table td:first-child, #synthetic-specs table td:first-child, #cash-specs table td:first-child {
     white-space: nowrap;
     font-size: inherit;
     text-align: left; }
