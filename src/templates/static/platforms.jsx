@@ -176,7 +176,7 @@ const Platform = () => (
                                 description={it.L('The next-gen online trading experience')}
                                 text={it.L('A whole new easy-to-use platform that\'s rich with features.')}
                                 buttons={[
-                                    { text: it.L('Try Deriv.com now'), url: 'https://deriv.app/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-trade-now', target: '_blank' },
+                                    { text: it.L('Try Deriv.com now'), url: 'https://app.deriv.com/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-button-trade-now', target: '_blank' },
                                 ]}
                             />
                             <Platforms
