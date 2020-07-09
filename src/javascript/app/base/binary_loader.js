@@ -8,6 +8,7 @@ const BinarySocket        = require('./socket');
 const ContentVisibility   = require('../common/content_visibility');
 const GTM                 = require('../../_common/base/gtm');
 const Login               = require('../../_common/base/login');
+const LiveChat            = require('../../_common/base/livechat');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const urlLang             = require('../../_common/language').urlLang;
 const localizeForLang     = require('../../_common/localize').forLang;
@@ -75,6 +76,7 @@ const BinaryLoader = (() => {
         ContentVisibility.init().then(() => {
             BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
                 GTM.pushDataLayer({ event: 'page_load' }); // we need website_status.clients_country
+                setTimeout(() => LiveChat.init(), 1500);
 
                 // first time load.
                 const last_image = $('#content img').last();

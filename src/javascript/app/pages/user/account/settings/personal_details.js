@@ -38,7 +38,7 @@ const PersonalDetails = (() => {
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
         mt_acct_type      = getHashValue('mt5_redirect');
-        // demo and volatility mt accounts do not require tax info
+        // demo and synthetic mt accounts do not require tax info
         is_mt_tax_required = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2 && +State.getResponse('landing_company.config.tax_details_required') === 1;
     };
 
@@ -366,7 +366,7 @@ const PersonalDetails = (() => {
                 const has_required_mt = is_mt_tax_required ?
                     (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen)
                     :
-                    get_settings.citizen; // only check Citizen if user selects mt volatility account
+                    get_settings.citizen; // only check Citizen if user selects mt synthetic account
                 if (mt_acct_type && has_required_mt) {
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
                     $(form_id).setVisibility(0);
