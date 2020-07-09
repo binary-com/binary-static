@@ -65,7 +65,8 @@ const MetaTrader = (() => {
         setMTCompanies();
         return Object.keys(mt_companies).find((company) =>
             !!Object.keys(mt_companies[company]).find((acc_type) =>
-                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`)
+                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`) ||
+                !!State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getOldMTFinancialAccountType(acc_type)}.shortcode`)
             )
         );
     };
@@ -78,36 +79,37 @@ const MetaTrader = (() => {
                     return;
                 }
 
-                const vanuatu_standard_demo_account = response.mt5_login_list.find(account =>
-                    Client.getMT5AccountType(account.group) === 'demo_vanuatu_standard');
+                const vanuatu_financial_demo_account = response.mt5_login_list.find(account =>
+                    Client.getMT5AccountType(account.group) === 'demo_vanuatu_financial');
 
-                const vanuatu_standard_real_account = response.mt5_login_list.find(account =>
-                    Client.getMT5AccountType(account.group) === 'real_vanuatu_standard');
+                const vanuatu_financial_real_account = response.mt5_login_list.find(account =>
+                    Client.getMT5AccountType(account.group) === 'real_vanuatu_financial');
 
-                // Explicitly add (demo|real)_vanuatu_standard if it exist in API.
-                if (vanuatu_standard_demo_account) {
-                    accounts_info.demo_vanuatu_standard = {
+                // Explicitly add (demo|real)_vanuatu_financial if it exist in API.
+                if (vanuatu_financial_demo_account) {
+                    accounts_info.demo_vanuatu_financial = {
                         is_demo     : true,
                         account_type: 'demo',
-                        ...mt_companies.financial.demo_standard,
+                        ...mt_companies.financial.demo_financial,
                     };
                 }
-                if (vanuatu_standard_real_account) {
-                    accounts_info.real_vanuatu_standard = {
+                if (vanuatu_financial_real_account) {
+                    accounts_info.real_vanuatu_financial = {
                         is_demo     : false,
                         account_type: 'financial',
-                        ...mt_companies.financial.real_standard,
+                        ...mt_companies.financial.real_financial,
                     };
                 }
 
                 Object.keys(mt_companies).forEach((company) => {
                     Object.keys(mt_companies[company]).forEach((acc_type) => {
-                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                        mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`) ||
+                            State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getOldMTFinancialAccountType(acc_type)}.shortcode`);
 
-                        // If vanuatu exists, don't add svg anymore unless it's for volatility.
+                        // If vanuatu exists, don't add svg anymore unless it's for synthetic.
                         const vanuatu_and_svg_exists = (
-                            (vanuatu_standard_demo_account && /demo_standard/.test(acc_type)) ||
-                            (vanuatu_standard_real_account && /real_standard/.test(acc_type))
+                            (vanuatu_financial_demo_account && /demo_financial/.test(acc_type)) ||
+                            (vanuatu_financial_real_account && /real_financial/.test(acc_type))
                         ) &&
                         /svg/.test(mt_company[company]) &&
                         mt_companies[company][acc_type].mt5_account_type;
@@ -115,8 +117,8 @@ const MetaTrader = (() => {
                         if (mt_company[company] && !vanuatu_and_svg_exists) addAccount(company, acc_type);
                     });
                 });
-                resolve();
                 getAllAccountsInfo(response);
+                resolve();
             });
         })
     );
