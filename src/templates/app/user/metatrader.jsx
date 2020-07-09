@@ -219,8 +219,9 @@ const Metatrader = () => (
                         title={it.L('Choose an account')}
                         description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                     />
+                    {/* TODO: [remove-standard-advanced] remove standards when API groups are updated */}
                     <AccountDesc
-                        account_type={['vanuatu_standard', 'svg_standard']}
+                        account_type={['vanuatu_standard', 'svg_standard', 'vanuatu_financial', 'svg_financial']}
                         title={it.L('Financial Account')}
                         description={it.L('Our MetaTrader 5 Financial account is suitable for both new and experienced traders.')}
                         items={[
@@ -230,8 +231,9 @@ const Metatrader = () => (
                             it.L('No commission (excluding cryptocurrencies)'),
                         ]}
                     />
+                    {/* TODO: [remove-standard-advanced] remove maltainvest_standard when API groups are updated */}
                     <AccountDesc
-                        account_type={['maltainvest_standard']}
+                        account_type={['maltainvest_standard', 'maltainvest_financial']}
                         title={it.L('Financial Account')}
                         description={it.L('Our MetaTrader 5 Financial account is suitable for both new and experienced traders.')}
                         items={[
@@ -242,8 +244,9 @@ const Metatrader = () => (
                             it.L('Negative balance protection'),
                         ]}
                     />
+                    {/* TODO: [remove-standard-advanced] remove labuan_advanced when API groups are updated */}
                     <AccountDesc
-                        account_type={['labuan_advanced']}
+                        account_type={['labuan_financial_stp', 'labuan_advanced']}
                         title={it.L('Financial STP Account')}
                         description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                         items={[
@@ -253,9 +256,10 @@ const Metatrader = () => (
                             it.L('No commission'),
                         ]}
                     />
+                    {/* TODO: [remove-standard-advanced] remove vanuatu_advanced when API groups are updated */}
                     {/*
                         <AccountDesc
-                            account_type={['vanuatu_advanced']}
+                            account_type={['vanuatu_advanced', 'vanuatu_financial_stp']}
                             title={it.L('Financial STP Account')}
                             description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
@@ -296,8 +300,8 @@ const Metatrader = () => (
                                     <TypeGroup
                                         title={it.L('Step 2: Choose account type')}
                                         types={[
-                                            { type: 'template_demo', desc: 'standard' },
-                                            { type: 'template_real', desc: 'standard' },
+                                            { type: 'template_demo', desc: 'financial' },
+                                            { type: 'template_real', desc: 'financial' },
                                         ]}
                                     >
                                         <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
