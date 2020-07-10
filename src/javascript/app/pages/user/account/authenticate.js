@@ -1003,7 +1003,13 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido(service_token_response.token, documents_supported);
+            // eslint-disable-next-line no-lonely-if
+            if (onfido_unsupported) {
+                $('#not_authenticated_uns').setVisibility(1);
+                initUnsupported();
+            } else {
+                initOnfido(service_token_response.token, documents_supported);
+            }
         }
         switch (document.status) {
             case 'none': {
