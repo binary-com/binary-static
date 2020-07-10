@@ -39,10 +39,6 @@ const Home = (() => {
         });
     };
 
-    // const checkElevio = () => {
-        
-    // };
-
     const checkCountry = (req) => {
         if ((clients_country !== 'my') || /@binary\.com$/.test(req.verify_email)) {
             return true;
