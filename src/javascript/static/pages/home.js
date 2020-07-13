@@ -10,7 +10,6 @@ const BinarySocket   = require('../../app/base/socket');
 const FormManager    = require('../../app/common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
 const isBinaryApp    = require('../../config').isBinaryApp;
-const Elevio          = require('../../_common/base/elevio');
 
 const Home = (() => {
     let clients_country;
@@ -18,10 +17,6 @@ const Home = (() => {
     const onLoad = () => {
         Login.initOneAll();
         TabSelector.onLoad();
-        
-        if (window.location.href.indexOf('?data-elevio-article=') > 0) {
-            Elevio.injectElevio();
-        }
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             clients_country = State.getResponse('website_status.clients_country');

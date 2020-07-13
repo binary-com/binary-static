@@ -85,6 +85,9 @@ const Page = (() => {
                     // TODO: uncomment below to enable interview popup dialog
                     // InterviewPopup.onLoad();
                 }
+                if (window.location.href.indexOf('?data-elevio-article=') > 0) {
+                    Elevio.injectElevio();
+                }
             }
             Header.onLoad();
             Footer.onLoad();
