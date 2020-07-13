@@ -1005,30 +1005,36 @@ const Authenticate = (() => {
         } else {
             initOnfido(service_token_response.token, documents_supported);
         }
-        switch (document.status) {
-            case 'none': {
-                init();
-                $('#not_authenticated').setVisibility(1);
-                break;
+        if (!document.further_resubmissions_allowed) {
+            switch (document.status) {
+                case 'none': {
+                    init();
+                    $('#not_authenticated').setVisibility(1);
+                    break;
+                }
+                case 'pending':
+                    $('#pending_poa').setVisibility(1);
+                    break;
+                case 'rejected':
+                    $('#unverified_poa').setVisibility(1);
+                    break;
+                case 'suspected':
+                    $('#unverified_poa').setVisibility(1);
+                    break;
+                case 'verified':
+                    $('#verified_poa').setVisibility(1);
+                    break;
+                case 'expired':
+                    $('#expired_poa').setVisibility(1);
+                    break;
+                default:
+                    break;
             }
-            case 'pending':
-                $('#pending_poa').setVisibility(1);
-                break;
-            case 'rejected':
-                $('#unverified_poa').setVisibility(1);
-                break;
-            case 'suspected':
-                $('#unverified_poa').setVisibility(1);
-                break;
-            case 'verified':
-                $('#verified_poa').setVisibility(1);
-                break;
-            case 'expired':
-                $('#expired_poa').setVisibility(1);
-                break;
-            default:
-                break;
+        } else {
+            init();
+            $('#not_authenticated').setVisibility(1);
         }
+        
         $('#authentication_loading').setVisibility(0);
         TabSelector.updateTabDisplay();
     };
