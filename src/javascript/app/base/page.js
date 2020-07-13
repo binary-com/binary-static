@@ -11,6 +11,7 @@ const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const Elevio           = require('../../_common/base/elevio');
 const Login            = require('../../_common/base/login');
 const ClientBase       = require('../../_common/base/client_base');
+const Elevio           = require('../../_common/base/elevio');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../_common/common_functions').getElementById;
 const Crowdin          = require('../../_common/crowdin');
@@ -84,6 +85,9 @@ const Page = (() => {
                 if (!ClientBase.get('is_virtual')) {
                     // TODO: uncomment below to enable interview popup dialog
                     // InterviewPopup.onLoad();
+                }
+                if (window.location.href.indexOf('?data-elevio-article=') > 0) {
+                    Elevio.injectElevio();
                 }
             }
             Header.onLoad();
