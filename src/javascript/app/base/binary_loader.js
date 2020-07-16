@@ -76,7 +76,7 @@ const BinaryLoader = (() => {
         ContentVisibility.init().then(() => {
             BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
                 GTM.pushDataLayer({ event: 'page_load' }); // we need website_status.clients_country
-                setTimeout(() => LiveChat.init(), 1500);
+                LiveChat.init();
 
                 // first time load.
                 const last_image = $('#content img').last();

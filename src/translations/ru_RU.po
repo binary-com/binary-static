@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-07-02 09:27\n"
+"PO-Revision-Date: 2020-07-14 02:11\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1313,7 +1313,7 @@ msgid "Amount in"
 msgstr "Сумма в"
 
 msgid "An Affiliate who refers other Affiliates to the Company (\"Master Affiliate\") has an account to which each referred Affiliate's account (\"Sub-affiliate Account\") is tied. The Master Affiliate is not allowed to own or control any Sub-affiliate Accounts linked with the Master Affiliate's account. If the Company has reason to believe that the Master Affiliate has breached this term, the Company reserves the right to reverse or cancel any commissions to the Master Affiliate and/or terminate all business relationships with the Master Affiliate."
-msgstr ""
+msgstr "Партнер, который направляет других Партнеров в Компанию («Главный Партнер»), имеет учетную запись, к которой привязан счет каждого направленного им/ей Партнера («Субпартнерский счет»). Главный партнер не имеет права владеть или контролировать любые Субпартнерские счета, связанные со счетом Главного партнера. Если у Компании есть основания полагать, что Главный партнер нарушил это условие, Компания оставляет за собой право отменить или вернуть любые комиссии Главного партнера и/или прекратить все деловые отношения с Главным партнером."
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "Контракт \"Закончится внутри\" приносит прибыль, если выходная цена рынка будет строго выше, чем нижний ценовой барьер И строго ниже, чем верхний ценовой барьер. Контракт \"Закончится вне\" приносит прибыль, если выходная цена рынка ЛИБО строго выше, чем верхний ценовой барьер, ЛИБО строго ниже, чем нижний ценовой барьер."
@@ -1652,10 +1652,10 @@ msgid "Assessment of appropriateness"
 msgstr "Оценка целесообразности"
 
 msgid "Assessment of appropriateness of the requested service or product as DIEL assumes that the client appreciates the risks associated with such investment services and products offered by the Company"
-msgstr ""
+msgstr "оценку на предмет соответствия запрошенным услугам или продуктам, так как DIEL полагает, что клиент в состоянии самостоятельно оценивать риски, сопряжённые с таковыми инвестиционными услугами и продуктами, предоставляемыми Компанией"
 
 msgid "Assessment of appropriateness of the requested service or product, as DIEL assumes that the client appreciates risk disclosures associated with the requested investment services and products offered by the Company"
-msgstr ""
+msgstr "оценку на предмет соответствия запрошенным услугам или продуктам, так как DIEL полагает, что клиент ознакомился с информацией о рисках, сопряжённых с таковыми инвестиционными услугами и продуктами, предоставляемыми Компанией"
 
 msgid "Asset"
 msgstr "Актив"
@@ -1983,15 +1983,6 @@ msgstr "Цена бид"
 
 msgid "Binary (BVI) Ltd,"
 msgstr "Binary (BVI) Ltd,"
-
-msgid "Binary (Europe) Limited"
-msgstr "Binary (Europe) Limited"
-
-msgid "Binary (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. %2) - %3view licence%4 and also maintains an Irish licence. For UK clients by the UK Gambling Commission - %5view licence%4."
-msgstr "Компания Binary (Europe) Limited расположена по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Компания лицензирована и регулируется (исключительно для игорных продуктов – Синтетических индексов %1) Управлением по азартным играм Мальты (номер лицензии %2; %3см. лицензию%4), а также имеет лицензию в Ирландии. Для клиентов из Великобритании компания находится под управлением Комиссии по азартным играм Великобритании (%5см. лицензию%4)."
-
-msgid "Binary (Europe) Ltd & Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033"
-msgstr "Компании Binary (Europe) Ltd и Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033"
 
 msgid "Binary (Europe) Ltd,"
 msgstr "Binary (Europe) Ltd,"
@@ -2341,9 +2332,6 @@ msgstr "Можете уделить 15 минут Вашего времени?"
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
 msgstr "Не знаете, когда покупать или продавать? Предлагаем простое объяснение:"
 
-msgid "Can't find what you're searching for?"
-msgstr "Не можете найти нужную информацию?"
-
 msgid "Can't make heads or tails of currency pairs? Here is a simple way of looking at it:"
 msgstr "Плохо разбираетесь в динамике валютных пар? Прочтите наше пояснение:"
 
@@ -2597,7 +2585,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "Счета для клиентов из других стран мира (за исключением США, Канады и Гонконга) будут открыты в компании Deriv (SVG) LLC."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Deriv (FX) Ltd. %1 is not available in Malaysia."
-msgstr ""
+msgstr "Счета клиентов из других стран (за исключением ряда юрисдикций: США, Канады и ЕС), желающих начать торговлю CFD на платформе MetaTrader 5, будут открыты в рамках компании Deriv (FX) Ltd. Услуги %1 недоступны в Малайзии."
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
 msgstr "Клиенты могут запросить дополнительную информацию, отправив электронное письмо по адресу compliance@binary.com . В данном случае Вы получите дополнительные сведения о политике в отношении конфликта интересов."
@@ -3484,14 +3472,23 @@ msgstr "Deriv (BVI) Ltd"
 msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
 msgstr "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Компания лицензирована и регулируется Комиссией по предоставлению финансовых услуг Британских Виргинских островов - %1лицензия%2."
 
-msgid "Deriv (FX) Ltd"
+msgid "Deriv (Europe) Limited"
 msgstr ""
+
+msgid "Deriv (Europe) Limited & Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033"
+msgstr ""
+
+msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. %2) - %3view licence%4 and also maintains an Irish licence. For UK clients by the UK Gambling Commission - %5view licence%4."
+msgstr ""
+
+msgid "Deriv (FX) Ltd"
+msgstr "Deriv (FX) Ltd"
 
 msgid "Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
-msgstr ""
+msgstr "Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
 
 msgid "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr ""
+msgstr "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Компания лицензирована и находится под регулированием Управление финансовых услуг Лабуана в качестве финансового брокера %1(лицензия номер MB/18/0024)%2."
 
 msgid "Deriv (MX) Limited"
 msgstr "Deriv (MX) Limited"
@@ -4126,8 +4123,8 @@ msgstr "Евро против турецкой лиры"
 msgid "Euro vs US dollar"
 msgstr "Евро против доллара США"
 
-msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited."
-msgstr "Резиденты Евросоюза, желающие работать с продуктами, связанными с азартными играми, могут открыть счета под юрисдикцией Binary (Europe) Limited."
+msgid "European Union residents who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited."
+msgstr ""
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Ltd."
 msgstr "Резиденты Евросоюза, желающие торговать на инвестиционных продуктах, смогут открыть счета под юрисдикцией Deriv Investments (Europe) Ltd."
@@ -5378,7 +5375,7 @@ msgid "If %1 is legally required to disclose the client's personal or financial 
 msgstr "Если %1 обязан раскрыть личную или финансовую информацию клиента в соответствии с законом, распоряжением или приказом суда компетентной юрисдикции или правительственным органом, то Компания, если это не запрещено законом, незамедлительно уведомит об этом клиента, чтобы дать клиенту возможность получить защиту информации. Такое обязательное раскрытие не должно быть истолковано как нарушение правил и условий данного соглашения."
 
 msgid "If DIEL decides to introduce a new trading platform, it shall provide the client with a relevant notice within 30 days before it introduces the new trading platform or the additional trading platform. In such a notice, DIEL will outline information including, but not limited to, features and operations of the new trading platform. Thus, using its backup database on the MT5 trading platform, DIEL shall integrate all data to the new trading platform, including but not limited to open trades, historical trades/data, and accounts."
-msgstr ""
+msgstr "Если DIEL решит внедрить новую торговую платформу, компания предоставит клиенту соответствующее уведомление в течение 30 дней до начала использования новой или дополнительной торговой платформы. Данное уведомление будет содержать всю необходимую информацию, включая, но не ограничиваясь характеристиками и операциями новой торговой платформы. Таким образом, используя резервную базу данных на торговой платформе MT5, DIEL интегрирует все данные на новую торговую платформу, включая, но не ограничиваясь открытыми контрактами, историей торгов/данных, а также информацией о счетах."
 
 msgid "If an actual or potential conflict appears in the course of your work, they must declare it to %1compliance@binary.com%2"
 msgstr "В случае возникновения фактического или потенциального конфликта на протяжении Вашей работы, необходимо сообщить об этом по адресу %1compliance@binary.com%2"
@@ -5813,7 +5810,7 @@ msgid "In providing the Agent's services, the Agent shall do the following:"
 msgstr "При предоставлении услуг, Агент должен выполнить следующие действия:"
 
 msgid "In providing these services, DIEL is bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements, and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
-msgstr ""
+msgstr "При предоставлении этих услуг DIEL обязан действовать в соответствии с законом, применяемыми правилами, подзаконными актами, лицензионными условиями, руководящими принципами, требованиями обмена валют и другими положениями или рыночными практиками (\"Правила\"). В случае конфликта между этими \"Дополнительными правилами и условиями\" и \"Правилами\", превалируют последние."
 
 msgid "In relation to 5.2, the Company also reserves the right to exclude the client definitely or indefinitely, based on the Company's client assessment."
 msgstr "В отношении пункта 5.2, Компания также оставляет за собой право отстранить клиента от торговли на определённый или неопределённый срок, согласно оценке клиента, произведённой Компанией."
@@ -5834,15 +5831,15 @@ msgid "In the EU, financial binary options are only available to professional in
 msgstr "Финансовые контракты на бинарных опционах в ЕС доступны только для профессиональных инвесторов."
 
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
-msgstr ""
+msgstr "Компания Deriv Investments (Europe) Ltd, расположенная по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, лицензирована и регулируется Мальтийским управлением финансовых услуг в качестве поставщика инвестиционных услуг 3-й категории (%1liлицензия номер IS/70156%2)."
 
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "На территории ЕС финансовые продукты предоставляются компанией Deriv Investments (Europe) Ltd, расположенная по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, лицензирована и регулируется Мальтийским управлением финансовых услуг в качестве поставщика инвестиционных услуг 3-й категории (%1лицензия номер IS/70156%2)."
 
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Deriv (MX) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
-msgstr ""
+msgstr "Синтетические индексы на острове Мэн и в Великобритании предоставлены компанией Deriv (MX) Ltd., расположенной по адресу First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles. Компания лицензирована и регулируется (1) Комиссией по надзору за азартными играм на Острове Мэн (текущая лицензия выдана 31 августа 2017 г.), а также (2) Комиссией по азартным играм Великобритании (номер лицензии: %1 39172%2)."
 
-msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
+msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
@@ -5858,7 +5855,7 @@ msgid "In the course of providing services, the Company may, where applicable, c
 msgstr "В процессе предоставления услуг Компания может, при необходимости, провести тест на целесообразность, согласно нормативным обязательствам Компании. Целью данного теста является определить, обладает ли клиент (по мнению Компании и на основании предоставленной клиентом информации) необходимыми знаниями и опытом в сфере инвестиций, чтобы осознавать риски, сопряженные с особым типом предоставляемого продукта или услуги."
 
 msgid "In the course of provision of services, DIEL shall, where applicable, conduct an appropriateness test in order to determine whether, in DIEL's view and on the basis of the information provided by the client, the client has the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
-msgstr ""
+msgstr "В ходе оказания услуг, DIEL, по мере возможности, проводит тест на целесообразность, чтобы определить, обладает ли клиент (на взгляд DIEL и на основе информации, предоставленной клиентом) необходимыми знаниями и опытом в области инвестиций, чтобы понять риски, связанные с конкретным типом продукта или услугами, предлагаемыми или затребованными на сайте."
 
 msgid "In the event of any conflict between the content in this document and the above documents, this document controls the Programmer's use of the %1 API. If the Programmer disagrees with any of the provisions in these Terms, the Programmer must not access or use the %1 API."
 msgstr "В случае возникновения противоречий между содержанием данного документа и вышеперечисленных документов, данный документ будет определять условия использования Программистом API %1. Если Программист не согласен с любым положением данных Правил, Программист должен воздержаться от использования API %1."
@@ -5872,8 +5869,8 @@ msgstr "в случае, когда Компания не получила от 
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Deriv group of companies for, any claims or demands made against the Company or any member of the Deriv group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "Если Компании станет известно о нарушении Партнёром любых вышеперечисленных положений, Компания оставляет за собой право (в дополнение к любым правам и средствам правовой защиты, предоставленным ей в рамках данного Соглашения или применимого законодательства) незамедлительно заблокировать доступ Партнёра к данной программе. Настоящим Партнёр окончательно отказывается от своего права, а также обязуется оградить Компанию и любого члена группы компаний Deriv Group от подачи какой-либо претензии или иска против Компании или любого другого представителя группы компаний Deriv Group, их директоров, акционеров, работников, а также против сайта %1 (в случае, когда Компания заблокировала доступ Партнёра к данной программе)."
 
-msgid "In the rest of the EU, Synthetic Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
-msgstr "В остальной части ЕС Синтетические индексы предоставлены компанией Binary (Europe) Ltd., расположенной по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Компания лицензирована и регулируется (1) Управлением по азартным играм Мальты (%1liлицензия номер MGA/B2C/102/2000%4 выдана 1 августа 2018 г.), для клиентов из Великобритании - (2) Управлением по азартным играм Великобритании (%2лицензия номер 39495%4), а для клиентов из Ирландии - (3) Налоговой службой Ирландии (лицензия удалённого букмекера номер 1010285, выданная 1 июля 2017 г). Ознакомьтесь с %3Информацией о регулировании%4."
+msgid "In the rest of the EU, Synthetic Indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
+msgstr ""
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "В рамках данного соглашения и если контекст не предполагает иного, нижеуказанные термины должны иметь следующее толкование:"
@@ -6059,7 +6056,7 @@ msgid "Investment Income"
 msgstr "Доход от инвестиций"
 
 msgid "Investment Products to EEA residents are provided by Deriv Investments (Europe) Ltd (\"DIEL\"), which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
-msgstr ""
+msgstr "Инвестиционные продукты для резидентов Европейской экономической зоны предоставляются компанией Deriv Investments (Europe) Ltd (\"DIEL\"), которая авторизована и регулируется Мальтийским управлением финансовых услуг (Malta Financial Services Authority) в рамках акта об инвестиционных услугах Мальты (Malta Investment Services Act) для осуществления операций с инвестиционными продуктами на своем счете."
 
 msgid "Investments &amp; Dividends"
 msgstr "Инвестиции и дивиденды"
@@ -6620,7 +6617,7 @@ msgid "MT5 Financial"
 msgstr "MT5 Финансовый"
 
 msgid "MT5 Login:"
-msgstr ""
+msgstr "Логин MT5:"
 
 msgid "MT5 Real Account"
 msgstr "Реальный счет MT5"
@@ -7064,7 +7061,7 @@ msgid "Money collected from clients is not invested in any securities, futures, 
 msgstr "Денежные средства, полученные от клиентов, не могут быть инвестированы в какие-либо ценные бумаги, фьючерсы, валюты, производные и другие активы от имени клиентов."
 
 msgid "Monies deposited by clients with DIEL in advance of a trade or pending withdrawal is treated by DIEL as clients' money. DIEL holds such monies in pooled or omnibus clients' money bank accounts opened with banks or other institutions (\"Institutions\"), segregated from DIEL's own money. Such clients' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients' money is held with non-EEA Institutions, this means that such accounts will be subject to laws other than those of an EEA member state and clients' rights may differ accordingly."
-msgstr ""
+msgstr "Денежные средства, внесенные клиентом на сайт DIEL в счет будущей торговли или в ожидании вывода, считаются клиентскими средствами. DIEL содержит эти деньги на объединенных банковских счетах омнибус, открытых в банках или других финансовых организациях (\"Учреждениях\"), отдельно от собственных средств DIEL. Такие банковские счета для средств клиентов могут быть открыты в учреждениях Европейской Экономической Зоны или организациях за пределами ЕЭЗ. В случаях, когда деньги клиентов содержатся не в учреждениях ЕЭЗ, такие счета будут регулироваться иными законами, отличными от законов в государствах-членах ЕЭЗ, а права клиентов могут отличаться, в соответствии с законом."
 
 msgid "Monitor campaigns using key metrics and submit reports on campaign performance"
 msgstr "Мониторинг кампаний с использованием ключевых показателей и подачей отчётов об эффективности кампаний"
@@ -7607,7 +7604,7 @@ msgid "Open Source"
 msgstr "Открытый код"
 
 msgid "Open a %1 account through DIEL's website %2"
-msgstr ""
+msgstr "Откройте счёт %1 на сайте DIEL %2"
 
 msgid "Open a Financial Account"
 msgstr "Открыть Финансовый счёт"
@@ -7691,7 +7688,7 @@ msgid "Other Warnings & Regulatory Disclosures"
 msgstr "Другие предупреждения и нормативные уведомления"
 
 msgid "Other best execution factors, such as speed of execution, likelihood of execution and settlement, size, nature, or any other considerations relevant to the execution of a particular order, may also be applied by DIEL in order to obtain the best possible results for the client."
-msgstr ""
+msgstr "Другие факторы политики лучшего исполнения включают скорость исполнения, вероятность исполнения и окончания, размер, природу или любые другие факторы, имеющие отношение к исполнению конкретного ордера, которые также могут применяться DIEL для предоставления клиенту наилучших результатов."
 
 msgid "Other obligations"
 msgstr "Другие обязательства"
@@ -7775,7 +7772,7 @@ msgid "Our website uses cookies to give you the best user experience. For more i
 msgstr "Мы применяем куки, чтобы улучшить Ваш опыт использования сайта. Для получения более подробной информации, %1Посмотреть на нашу политику%2."
 
 msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr ""
+msgstr "За пределами ЕС финансовые продукты предоставляются компанией Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; компанией Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, деятельность которой регулируется Комиссией по предоставлению финансовых услуг Вануату (%1см. лицензию%2); компанией Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, деятельность которой регулируется Комиссией по предоставлению финансовых услуг на Британских Виргинских островах (%3лицензия номер SIBA/L/18/1114%4); а также Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, регулируемой Управлением финансовых услуг Лабуана для ведения брокерской деятельности (%5лицензия номер MB/18/0024%6)."
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "Выдающиеся навыки письменного и устного общения и отличное владение английским языком"
@@ -7946,7 +7943,7 @@ msgid "Payments and Compliance Analyst"
 msgstr "Аналитик выплат и нормативных требований"
 
 msgid "Payments made to DIEL will only be deemed to have been received once DIEL receives cleared funds."
-msgstr ""
+msgstr "Платежи, предоставляемые DIEL, будут считаться полученными, как только DIEL получит переведенные средства."
 
 msgid "Payout"
 msgstr "Выплата"
@@ -9023,7 +9020,7 @@ msgid "Reset to original settings"
 msgstr "Восстановить исходные настройки"
 
 msgid "Residents of countries that have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Deriv Investments (Europe) Ltd."
-msgstr ""
+msgstr "Граждане стран, перечисленных FATF (Группой разработки финансовых мер борьбы с отмыванием денег) по причине нормативно-правового регулирования, не могут открыть счёт в компании Deriv Investments (Europe) Ltd."
 
 msgid "Resolve complex customer care issues through careful investigation and in keeping with existing policies and procedures"
 msgstr "Разрешение сложных вопросов, связанных с обслуживанием клиентов посредством тщательного расследования и соблюдения текущей политики и процедур"
@@ -9353,7 +9350,7 @@ msgid "Server maintenance starting 03:00 GMT every Sunday. This process may take
 msgstr "Технические работы на сервере начинаются с 03:00 GMT каждое воскресенье. Этот процесс может занять до 2 часов. Работа сервиса может прерываться в течение этого времени."
 
 msgid "Server:"
-msgstr ""
+msgstr "Сервер:"
 
 msgid "Session duration limit cannot be more than 6 weeks."
 msgstr "Лимит на длительность сессии не может превышать 6 недель."
@@ -9482,7 +9479,7 @@ msgid "Simply click on \"Create\" to generate your token; then copy and paste it
 msgstr "Просто нажмите кнопку \"Создать,\" чтобы сгенерировать ключ; затем скопируйте и вставьте его в приложение."
 
 msgid "Since DIEL exclusively deals on own account in Financial Products, this means that DIEL acts as the execution venue, and accordingly all transactions entered into with DIEL will be executed outside a regulated market (stock exchange) or multilateral trading facility."
-msgstr ""
+msgstr "DIEL совершает сделки на Финансовых продуктах исключительно на своем счете, а это означает, что DIEL выступает в качестве места исполнения, и, соответственно, все сделки, заключенные с DIEL, будут выполняться вне регулируемого рынка (фондовой биржи) или многосторонней торговой системы."
 
 msgid "Since DIEL is a member of the Malta Investor Compensation Scheme, the client is covered for the first €20,000 of any claim that the client may have in the unlikely event of DIEL suffering an investment default and not being able to meet its obligations. This protection is available only to retail clients. Neither professional clients nor eligible counterparties can benefit from this protection."
 msgstr "Поскольку DIEL является членом Мальтийской схемы компенсации инвесторам, первые €20,000 клиента покрываются страховкой по итогам заявления клиента (в том маловероятном случае, если DIEL столкнётся с ситуацией инвестиционного дефолта, когда компания не сможет исполнить собственные обязательства). Данная защита доступна только для индивидуальных клиентов. Профессиональные клиенты и зарегистрированные контрагенты не могут рассчитывать на данный вид защиты."
@@ -9782,7 +9779,7 @@ msgid "Subject to %1 transfer fee or %2, whichever is higher"
 msgstr "Подлежит выплате комиссии за перевод %1 или %2, в зависимости от того, какая сумма окажется выше"
 
 msgid "Subject to any specific instructions which may be provided by the client, when executing client orders, DIEL will take all reasonable steps to obtain the best possible results for the client. The best possible results will be determined in terms of total consideration, that is, the price of the instrument and the costs related to execution, which shall include all expenses incurred by the client that are directly related to the execution of the order."
-msgstr ""
+msgstr "С учетом конкретных инструкций, которые могут быть предоставлены клиентом при выполнении ордеров, DIEL примет все разумные меры для получения наилучших результатов для клиента. Лучшие результаты будут определяться в рамках общего рассмотрения, то есть, цены инструмента и расходов, связанных с исполнением, которые будут включать все расходы, понесенные клиентом и непосредственно связанные с исполнением ордера."
 
 msgid "Subject to network latency, the Company endeavours to execute the client's Order within a reasonable time from the time that they trigger the Order, at the price nearest to the client's specified price. The Company does not guarantee that a transaction will be opened/closed following an Order being triggered by the client at their specified price. This can happen under certain trading conditions when there are sharp price movements in the market. In that case, the Company has the right to execute the Order at the first available price."
 msgstr "В случае задержки сигнала Компания предпримет все возможные усилия, чтобы исполнить ордер клиента в разумные сроки, с момента размещения ордера и по цене, максимально близкой к цене, указанной клиентом. Компания не гарантирует, что контракт будет открыт/закрыт сразу после получения ордера от клиента и по указанной клиентом цене. Это может произойти в ряде торговых условий, при резких ценовых колебаниях на рынке. В данном случае Компания оставляет за собой право исполнить ордер по ближайшей доступной цене."
@@ -9851,7 +9848,7 @@ msgid "Sunday"
 msgstr "Воскресенье"
 
 msgid "Supplementary terms and conditions for Financial Products offered by Deriv Investments (Europe) Ltd"
-msgstr ""
+msgstr "Дополнительные правила и условия для финансовых продуктов, предлагаемых Deriv Investments (Europe) Ltd"
 
 msgid "Supply - Decline or increase in supply"
 msgstr "Предложение, а также его рост и снижение"
@@ -10145,7 +10142,7 @@ msgid "The Affiliate and the Company are independent contractors, and nothing in
 msgstr "Партнёр и Компания являются независимыми контрагентами, и ни один пункт в данном Соглашении не подразумевает создания между ними франшизы, совместного предприятия, агентства, филиала, деятельности торгового агента или установления отношений работодателя и работника. У Партнёра нет права создавать или принимать предложения от имени Компании, а также представлять её. Партнёр обязуется не делать на своём сайте или других ресурсах заявлений и утверждений, противоречащих данному положению."
 
 msgid "The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the Affiliate for any commissions for any fraudulent sales or any sales based on abuse."
-msgstr ""
+msgstr "Партнер совершил мошеннические действия или каким-либо образом нарушил эти деловые отношения. В случае обнаружения такого мошенничества или злоупотреблений, Компания не несет ответственности перед Партнером за комиссионные за любые мошеннические продажи или продажи, основанные на злоупотреблении."
 
 msgid "The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
 msgstr "Партнёр не получил и не обладает всеми необходимыми лицензиями и разрешениями, чтобы работать в соответствии с любыми законами, правилами и нормативными требованиями, действующими в рамках любого регулирующего органа в юрисдикции (юрисдикциях), в которой Партнёр ведёт или планирует вести бизнес."
@@ -10651,8 +10648,14 @@ msgstr "Региональный менеджер отвечает за подд
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "Система Domain Name System (DNS) открывает доступ на вебсайт через простой веб адрес, например, %1, вместо сложного IP адреса."
 
-msgid "The Financial Products that DIEL offers to deal in are contracts entered into between clients and DIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay DIEL, DIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that DIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of DIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for DIEL's undertaking to pay."
+msgid "The Financial Commission"
 msgstr ""
+
+msgid "The Financial Commission offers compensation up to 20,000 EUR on a case-to-case basis, unbiased assessment of disputes, and fast and effective dispute resolution free of charge."
+msgstr ""
+
+msgid "The Financial Products that DIEL offers to deal in are contracts entered into between clients and DIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay DIEL, DIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that DIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of DIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for DIEL's undertaking to pay."
+msgstr "Финансовые продукты, предлагаемые DIEL, являются контрактами между клиентами и DIEL. В этих контрактах, согласно конкретным условиям соответствующего контракта, с учетом комиссии или цены, которую клиент платит DIEL, DIEL обещает выплатить клиентам определенную сумму, если упомянутые активы или измерения ведут себя определенным образом.Эти контракты, соответственно, не являются инструментами, которые DIEL содержит от имени клиентов или от защиты которых DIEL извлекает выгоду в случае своей несостоятельности. Аналогично, комиссия или цена, которую платит клиент, содержится не как деньги клиентов, а в качестве вознаграждения за обязательства выплаты DIEL."
 
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
 msgstr "Финансовый STP счет (Straight-Through Processing — технология сквозной обработки) работает исключительно по модели A-book, а это значит, что мы передаем ваши контракты напрямую к нашим поставщикам ликвидности. Такой счет позволяет вам торговать основными и экзотическими валютными парами в больших объемах и с более узкими спредами."
@@ -10736,7 +10739,7 @@ msgid "The Pearl of Borneo"
 msgstr "Жемчужина Борнео"
 
 msgid "The Pillar 3 disclosure report of Deriv Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr ""
+msgstr "Отчёт о пояснении Принципа 3 от компании Deriv Investments (Europe) Limited был подготовлен в соответствии с Директивой о требованиях к капиталу IV и Нормативным положением о требованиях к капиталу. Прочтите наш Отчёт о пояснении Принципа 3 и узнайте, какие шаги мы предприняли, будучи участником рынка, чтобы соответствовать рыночной дисциплине."
 
 msgid "The Policy is supplemented by Appendix A, which provides further details to the Company's considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
 msgstr "Дополнением к Политике является Приложение A, в котором дана подробная информация о критериях Компании, относящихся к различным классам активов. Нижеследующее Приложение A должно быть прочитано совместно с Политикой."
@@ -10919,7 +10922,7 @@ msgid "The clause above shall not apply to any information to the extent"
 msgstr "Положение выше не относится к любой информации"
 
 msgid "The clauses above shall not apply in its entirety to any Introducing Brokers who are contracted to provide Introducing Broker services with Deriv Investments (Europe) Ltd."
-msgstr ""
+msgstr "Вышеперечисленные положения не распространяются полностью на любых Представляющих брокеров, с которыми заключен договор на оказание услуг Представляющего брокера с Deriv Investments (Europe) Ltd."
 
 msgid "The client acknowledges and accepts that a trade may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body, or any other organisation involved in the execution, clearing, and/or settlement of the said trade. Should any such organisation take decisions or measures which affect a trade or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) that it, at its sole discretion, considers reasonable. "
 msgstr "Клиент соглашается и признаёт, что на все контракты могут распространяться правила работы рынка, изложенные во внутренних документах, правилах, постановлениях, нормах и порядках биржи, рынка, клиринговой компании, органа или любой другой организации, принимающей участие в исполнении, клиринге и/или урегулировании данного контракта. Если таковая организация примет решение или меры, затрагивающие контракт или открытую позицию, Компания должна быть уполномочена предпринять любые действия (в том числе закрыть любую открытую позицию клиента), которые Компания сочтёт необходимыми (по своему единоличному усмотрению). "
@@ -10931,7 +10934,7 @@ msgid "The client acknowledges and agrees to the following:"
 msgstr "Настоящим клиент признаёт и соглашается со следующими положениями:"
 
 msgid "The client acknowledges that any explanations, trading recommendations, independent investment research, market commentary, or any other information provided by DIEL is provided to the client as marketing communication and/or educational material, for information purposes only, and does not construe any personal advice on the merits of investing."
-msgstr ""
+msgstr "Настоящим клиент признаёт, что любые пояснения, торговые рекомендации, независимое инвестиционное исследование, комментарии относительно рынка или любая иная информация, предоставляемая DIEL, доводится до сведения клиента лишь в рамках коммуникации или образовательных материалов, исключительно с информативными целями, и не является личным советом или рекомендацией для инвестирования."
 
 msgid "The client acknowledges that it is their responsibility to cancel the Stop or Limit Order if they do not want the Stop or Limit Order to remain valid. If the client fails to cancel the Stop or Limit Order, the Company shall be entitled, at its absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new transaction for the client if and when the Company quote reaches or goes beyond the level of the Stop or Limit Order."
 msgstr "Клиент обязуется самостоятельно отменять стоп-ордер или лимитный ордер, если клиент хочет прекратить их действие. В случае, когда клиент не смог отменить стоп-ордер или лимитный ордер, Компания по своему единоличному усмотрению может расценивать соответствующий стоп-ордер или лимитный ордер в качестве инструкции для открытия нового контракта для клиента, в случае и когда котировка Компании достигнет или выйдет за пределы уровня стоп-ордера или лимитного ордера."
@@ -10964,7 +10967,7 @@ msgid "The client agrees that in any legal, arbitration, mediation, regulatory, 
 msgstr "Настоящим клиент соглашается, что в случае юридических или судебных разбирательств, урегулирования или решения споров, а также любых других процедур, инициированных клиентом или %1, записи Компании относительно контрактов клиента должны являться доказательствами. В рамках действующих законов, решения любого суда, органа правосудия или любого компетентного органа, а также предписаний или постановлений государственных органов, клиент не должен возражать против ведения таковых записей, так как они не являются оригиналами или письменными документами, не произведены компьютером или любой другой электронной системой. Клиент не должен полагаться на Компанию в вопросах соблюдения рекомендаций из отказов от ответственности или иных обязательств, наложенных любым судом, трибуналом, компетентным органом или государственным органом."
 
 msgid "The client agrees to comply with the following when making payments to DIEL:"
-msgstr ""
+msgstr "Клиент соглашается соответствовать следующим требованиям при перечислении любых средств DIEL:"
 
 msgid "The client also has the right to request copies of any personal information that the client has provided to the Company and to request that the Company transmit such information to other service providers."
 msgstr "Клиент имеет право запросить копии любой личной информации, предоставленной Компании, а также право попросить Компанию направить данную информацию другим поставщикам услуг."
@@ -10976,7 +10979,7 @@ msgid "The client also has the right to request that the Company inform the clie
 msgstr "Также клиент имеет право попросить Компанию проинформировать его/её об имеющихся у Компании личных данных и, при необходимости, внести любые необходимые изменения."
 
 msgid "The client bears the responsibility of ensuring that payments made to DIEL are correctly received with the specified client's account details."
-msgstr ""
+msgstr "Клиент несёт полную ответственность и обязуется убедиться, что платежи, произведённые DIEL, будут должным образом получены с указанием соответствующих данных счёта клиента."
 
 msgid "The client has Open Positions on the account that show a loss."
 msgstr "у клиента на счету есть убыточные открытые позиции."
@@ -11240,7 +11243,7 @@ msgid "The forex is typically traded in <i>lots</i>. One standard <i>lot</i> is 
 msgstr "Как правило, контракты на рынке форекс заключаются в <i>лотах</i>. Один стандартный <i>лот</i> равен 100 000 единицам. Каждый раз, когда Вы открываете контракт на определённой валютной паре, Вы можете разместить минимальную сделку в размере <i>0.01 лота</i>."
 
 msgid "The full version of DIEL's best execution policy is available on request."
-msgstr ""
+msgstr "Полная версия политики наилучшего исполнения DIEL будет предоставлена по требованию."
 
 msgid "The great outdoors"
 msgstr "Отличная возможность"
@@ -11360,7 +11363,7 @@ msgid "The provision of the Margin trading services described in this agreement 
 msgstr "Предоставление услуг торговли с использованием маржи, описанных в данном соглашении, предполагает применение системы, принадлежащей третьей стороне, приобретённой посредством неэксклюзивной лицензии без права передачи и сублицензирования (которая также может быть отозвана) от стороннего поставщика системы/лицензиара (\"Торговая платформа MT5\"). Настоящим клиент признаёт, что Компания оставляет за собой право менять стороннего поставщика системы/лицензиара в процессе предоставления клиенту услуг торговли с использованием маржи, перечисленных в данном Соглашении."
 
 msgid "The provision of the trading services described in this agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 trading platform\"). The client acknowledges that, when providing trading services described in this agreement to the client, DIEL may decide to change its third–party system provider/licensor and use a trading platform other than the MT5 trading platform. Hence, in such cases, DIEL may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the \"new trading platform\") or to introduce an additional third–party system provider/licensor (hereinafter referred to as the \"additional trading platform\")."
-msgstr ""
+msgstr "Предоставление услуг торговли, перечисленных в данном соглашении, предполагает использование систем третьей стороны, приобретаемых в рамках неэксклюзивной, не подлежащей сублицензированию, имеющей срок длительности и непередаваемой иной стороне лицензии от поставщика/лицензиара третьей стороны (\"торговой платформы MT5\"). Клиент признаёт, что при предоставлении ему/ей услуг торговли, перечисленных в данном соглашении, DIEL может изменить своего стороннего поставщика/лицензиара услуг и решить пользоваться другой торговой платформой, отличной от MT5. Таким образом, DIEL может решить прибегнуть к услугам поставщика/лицензиара сторонней системы (далее именуемого как “новая торговая платформа”), а также внедрить дополнительного поставщика/лицензиара сторонней системы (далее именуемого как “дополнительная торговая платформа”)."
 
 msgid "The provisions of this agreement or any orders and any applicable laws will not be breached or violated."
 msgstr "Положения данного соглашения, любые ордеры и любые применимые законы не будут нарушены."
@@ -11447,7 +11450,7 @@ msgid "The timeframe or duration of the contract as defined by the client's orde
 msgstr "сроком действия контракта, указанным при исполнении ордера клиента."
 
 msgid "The trading services described in this agreement are OTC. This means that one or more of the Underlying Instruments in which the client transacts with DIEL, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this agreement."
-msgstr ""
+msgstr "Услуги торговли, перечисленные в данном соглашении, осуществляются на внебиржевом рынке. Это означает, что по условиям данного соглашения, один или несколько инструментов, на которых клиент заключает контракты с DIEL, ссылаются на биржи, но не торгуются непосредственно на бирже во время осуществления контрактов на электронной торговой платформе."
 
 msgid "The transactions performed on this site and the relationship between clients and the Company are to be governed by, and construed in accordance with, the laws of the country of incorporation of the Company (the \"Jurisdiction\"). The client agrees that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, the client irrevocably submits to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and agrees that any claim the client might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and disputes%2 section."
 msgstr "Транзакции, производимые на данном сайте, а также отношения между клиентами и Компанией регулируются и толкуются в соответствии с законодательством страны регистрации Компании (\"Юрисдикции\"). Клиент соглашается, что суды данных стран будут единственными инстанциями, которые имеют право регулировать любые споры и несогласия, которые могут возникнуть между сторонами. С этой целью клиент обязуется безоговорочно подчиняться решению суда определенной Юрисдикции относительного любого иска и соглашаетесь, что любая претензия, которую клиент может иметь к Компании, будет решаться в суде соответствующей Юрисдикции. Для дальнейшей информации по жалобам и искам смотрите раздел %1Жалобы и иски%2."
@@ -11504,7 +11507,7 @@ msgid "There are two types of reset trades:"
 msgstr "Существует два вида контрактов Reset:"
 
 msgid "There is an amount outstanding from the client to DIEL."
-msgstr ""
+msgstr "у клиента есть долг перед DIEL,"
 
 msgid "There is an amount outstanding from the client to the Company."
 msgstr "у клиента есть долг перед Компанией,"
@@ -11537,7 +11540,7 @@ msgid "These ST&Cs are to be governed by and construed in accordance with Maltes
 msgstr "Данные Дополнительные правила и условия регулируются и истолковываются в соответствии с мальтийским законодательством. Стороны настоящего документа соглашаются подчиняться неисключительной юрисдикции мальтийского суда."
 
 msgid "These ST&Cs begin to apply on the date DIEL opens the client's account, and, for any new versions after that, on the date DIEL notifies the client."
-msgstr ""
+msgstr "Данные Дополнительные правила и условия вступают в силу в день, когда DIEL открывает счёт для клиента. DIEL уведомит клиента относительно любых новых версий на момент внесения таковых изменений."
 
 msgid "These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of %1."
 msgstr "Данные Дополнительные правила и условия являются частью и должны рассматриваться вместе с общими правилами и условиями, определяющими порядок использования %1."
@@ -11567,10 +11570,10 @@ msgid "These materials may not be copied or redistributed for commercial purpose
 msgstr "Данные материалы нельзя копировать или распространять в коммерческих целях, а также за любое вознаграждение, без предварительного согласия Deriv Group."
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the client of Deriv Investments (Europe) Ltd (\"DIEL\") and will govern the relationship between clients and DIEL when trading Financial Products (as defined in the Key information documents %1here%2) with DIEL."
-msgstr ""
+msgstr "Данные Дополнительные правила и условия (данные \"ДПУ\") применяются только к клиентам Deriv Investments (Europe) Ltd (\"DIEL\") и будут определять отношения между клиентами и DIEL при торговле на финансовых продуктах (как описано в %1данных%2 основных информационных документах) на сайте DIEL."
 
 msgid "These supplementary terms and conditions (these \"ST&Cs\") apply solely to the clients of Deriv Investments (Europe) Ltd (\"DIEL\") and will govern the relationship between the client and DIEL when trading Financial Products (as defined below) with DIEL."
-msgstr ""
+msgstr "Данные Дополнительные правила и условия (данные \"ДПУ\") применяются только к клиентам Deriv Investments (Europe) Ltd (\"DIEL\") и будут определять отношения между клиентами и DIEL при торговле на финансовых продуктах (как указано ниже) на сайте DIEL."
 
 msgid "These terms and conditions are provided in several different languages for clients' convenience; however, these translations do reflect the same principles. The Company attempts, as much as possible, to provide a faithful translation in English of the official language of several countries. In the event of any differences between the English version of the website and any other language, the English version shall prevail."
 msgstr "Для удобства наших клиентов настоящие правила и условия предоставляются на разных языках. Переводы отражают одни и те же принципы, и компания старается обеспечить как можно более точный перевод с английского на конкретные языки. В случае каких-либо расхождений между английской версией веб-сайта и правилами на любом другом языке, английская версия имеет преимущественную силу."
@@ -12350,7 +12353,7 @@ msgid "UI/UX Designer"
 msgstr "Дизайнер UI/UX"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Deriv (MX) Limited."
-msgstr ""
+msgstr "Резиденты Великобритании и Острова Мэн, желающие торговать на продуктах, связанных с азартными играми, могут открыть счет под юрисдикцией Deriv (MX) Limited."
 
 msgid "US Patents"
 msgstr "Патенты США"
@@ -12760,6 +12763,9 @@ msgstr "Мы представляем PayOps, подразделение отд�
 msgid "We are licensed and regulated in the British Isles and in Malta since 2015."
 msgstr "Наша деятельность лицензирована и регулируется финансовыми органами Британских островов и Мальты с 2015 года."
 
+msgid "We are registered with the Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry (%1view membership%2)."
+msgstr ""
+
 msgid "We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency %1."
 msgstr "Наша лицензия требует от нас, чтобы мы информировали Вас о состоянии средств, которые мы держим на Вашем счету, и о степени защиты средств в случае неплатежеспособности %1."
 
@@ -12986,7 +12992,7 @@ msgid "What's a stop out level and how is it applied"
 msgstr "Что такое уровень принудительного закрытия (уровень стоп-аута) и как он используется"
 
 msgid "When a client is classified as an Eligible Counterparty, DIEL shall not provide them with"
-msgstr ""
+msgstr "Если клиент относится к категории уполномоченных контрагентов, DIEL не будет предоставлять ему/ей следующих услуг"
 
 msgid "When a force majeure event occurs"
 msgstr "при возникновении форс-мажорных обстоятельств,"
@@ -13016,7 +13022,7 @@ msgid "When the Company deals on own account (dealing desk), the Company acts as
 msgstr "Когда Компания совершает операции за свой счет (выступает дилером) она действует в качестве принципала, а не агента, работающего от имени клиента, и таким образом является местом совершения сделок."
 
 msgid "When the Order hits the liquidity provider's server, or the Company's server in case the Order is taken on DIEL's own books, it is fulfilled."
-msgstr ""
+msgstr "Когда ордер поступает на сервер поставщика ликвидности или на сервер Компании, если он размещается на собственном счету DIEL, ордер будет исполнен."
 
 msgid "When the client enters into this agreement, they make the following representations and warranties to the Company and agree that such representations and warranties are deemed repeated each time the client opens or closes a transaction:"
 msgstr "Заключая данное соглашение, клиент принимает следующие обязательства, предоставляет гарантии Компании и соглашается, что данные гарантии и обязательства повторяются каждый раз, когда клиент открывает и закрывает контракт:"
@@ -13037,7 +13043,7 @@ msgid "When the client requests a withdrawal from %1 Client Account, such reques
 msgstr "Когда клиент запрашивает вывод средств со своего Клиентского счёта %1, данный запрос должен быть автоматически передан, а указанная сумма должна быть переведена с Клиентского счёта %1 на счёт Агента %1. Тем не менее, в случае, когда клиент достигает лимита на вывод средств, запрос на вывод не должен быть автоматически обработан до проведения процесса аутентификации."
 
 msgid "When the client transfers their money to DIEL for trading purposes, the client's funds are deposited in their %1 account. If the client chooses to trade FX and CFDs, the client shall transfer funds from their %1 account to their MT5 Real Account. Such a transfer shall not be regarded as a transfer from two different accounts but as a transfer of funds from the client's centralised %1 account to the MT5 Real Account. No fund transfers shall be made to any other account in the name of any third party."
-msgstr ""
+msgstr "Когда клиент перечисляет свои средства DIEL с целью торговли, деньги клиента поступают на счёт %1. Если клиент решает торговать на валютных парах и CFD, необходимо перевести средства со счёта %1 на Реальный счёт MT5. Данный перевод средств будет считаться не переводом с двух разных счетов, а переводом с основного счёта %1 на Реальный счёт MT5. Перечисления средств на любой другой счёт от имени третьего лица недопустимы."
 
 msgid "When the market conditions or market movements/volatility are abnormal"
 msgstr "в случае аномальных рыночных условий или рыночной динамики/волатильности,"
@@ -13055,7 +13061,7 @@ msgid "When to buy and sell?"
 msgstr "Когда покупать и продавать?"
 
 msgid "When using the MT5 trading platform, all DIEL's clients will be provided with Margin monitoring functionality to protect the clients from encountering negative balances when trading under normal market conditions. As a trader, the client should always maintain the appropriate levels of Margin in their trading account as the recommended method of their own risk management."
-msgstr ""
+msgstr "При использовании торговой платформы MT5 всем клиентам DIEL будет предоставлена возможность следить за уровнем маржи с целью защиты от возникновения отрицательного баланса при торговле в нормальных рыночных условиях. Клиент должен всегда и в любое время поддерживать соответствующий уровень маржи на своём торговом счете в качестве рекомендованного метода управления риском."
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there's no risk of 'slippage' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions."
 msgstr "Когда Вы будете довольны предложенной ценой, сразу же покупайте контракт. Благодаря нашей уникальной платформе, Вы никогда не столкнётесь с \"проскальзыванием\" или гэпами на рынке. Самое важное: мы не взимаем никаких скрытых комиссий. Также Вы можете в любое время продать любой долгосрочный контракт до окончания его действия, чтобы зафиксировать прибыль при благоприятных условиях рынка."
@@ -13094,10 +13100,10 @@ msgid "When, as a result of political, economic, military, or monetary events (i
 msgstr "В случае политических, экономических, военных или рыночных событий (в том числе необычной волатильности рынка и неликвидности) или при других обстоятельствах, находящихся вне контроля, ответственности и власти Компании, когда продолжение работы этого сайта неминуемо влечет причинение материального или другого ущерба клиентам, Компании, а также в тех случаях, когда, по мнению Компании, цена на контракты не может быть рассчитана."
 
 msgid "Where DIEL considers, on the basis of the information provided by the client that the client does not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, DIEL will issue a warning to the client. Such a warning shall be displayed on the website."
-msgstr ""
+msgstr "В случае необходимости, DIEL может отправить клиенту предостережение на основании предоставленной информации о том, что клиент не обладает знаниями и опытом для оценки рисков, сопряжённых с инвестициями в предложенный инструмент. Данное предостережение будет размещено на вебсайте."
 
 msgid "Where DIEL does not manage to obtain sufficient information to assess the appropriateness of the product or service for the client, DIEL will similarly inform the client that DIEL is not in a position to assess appropriateness."
-msgstr ""
+msgstr "В случаях, когда DIEL не удаётся получить достаточную информацию для оценки пригодности продукта или услуги для клиента, DIEL проинформирует клиента, что компания не в состоянии оценить целесообразность."
 
 msgid "Where a particular time or timeframe has been specified in a client's instructions with respect to the execution of an order, regardless of the price available, the Company will endeavour to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, the Company will not be responsible for any consequences related to pricing that are resulted from the time or timeframe of the execution."
 msgstr "Если в инструкциях клиента для исполнения ордера было указано определённое время или временные рамки (независимо от действующей цены), Компания предпримет все необходимые усилия, чтобы наилучшим образом исполнить ордер в указанное время или в указанные сроки. Тем не менее, Компания не будет нести ответственности за любые последствия, относящиеся к цене, вызванные временем или сроками исполнения."
@@ -13642,8 +13648,8 @@ msgstr "Ваш %1-дневный лимит на вывод средств со�
 msgid "Your %1proof of address%2 has expired."
 msgstr "Срок действия документа, %1подтверждающего адрес%2, истёк."
 
-msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
-msgstr "Нам не удалось %1подтвердить Ваш адрес%2. Пожалуйста, проверьте электронную почту для получения дополнительной информации."
+msgid "Your %1proof of address%2 has not been verified."
+msgstr ""
 
 msgid "Your %1proof of identity%2 has expired."
 msgstr "Срок действия документа, %1удостоверяющего личность%2, истёк."
@@ -13654,8 +13660,8 @@ msgstr "Ваш документ, %1подтверждающий личность
 msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
 msgstr "Срок действия документов, %1удостоверяющих личность%3 и %2подтверждающих адрес%3, истёк."
 
-msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
-msgstr "Нам не удалось %1удостоверить Вашу личность%3 и %2проверить адрес%3. Пожалуйста, проверьте электронную почту для получения дополнительной информации."
+msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
+msgstr ""
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Ваш клиент получит по электронной почте уведомление о том, что перевод был выполнен."
@@ -13856,7 +13862,7 @@ msgid "a transaction unit representing a standardised quantity of the Underlying
 msgstr "единица контракта, представляющая собой стандартное количество единиц базового инструмента, согласно Заявлению об ограничении ответственности и характеристикам активов. Один лот равен или эквивалентен 100 000 единицам базовой валюты."
 
 msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's web interface, or"
-msgstr ""
+msgstr "a) зайти на торговую платформу MT5 по прямой ссылке %1 через веб интерфейс DIEL; или"
 
 msgid "account"
 msgstr "счёт"

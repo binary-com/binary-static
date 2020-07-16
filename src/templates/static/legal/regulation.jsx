@@ -504,9 +504,9 @@ const Regulation = () => {
             </Box>
 
             <div data-show='eucountry'>
-                <Box header={it.L('Binary (Europe) Limited')} >
-                    <p>{it.L('Binary (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - [_1]\'s Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. [_2]) - [_3]view licence[_4] and also maintains an Irish licence. For UK clients by the UK Gambling Commission - [_5]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', `<a href="${it.url_for('download/regulation/MGA_licence.pdf')}" target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">')}</p>
-                    <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited.')}</p>
+                <Box header={it.L('Deriv (Europe) Limited')} >
+                    <p>{it.L('Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - [_1]\'s Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. [_2]) - [_3]view licence[_4] and also maintains an Irish licence. For UK clients by the UK Gambling Commission - [_5]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', `<a href="${it.url_for('download/regulation/MGA_licence.pdf')}" target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">')}</p>
+                    <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
                 </Box>
@@ -538,12 +538,20 @@ const Regulation = () => {
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />
             </Box>
 
-            <Box header={it.L('Deriv (FX) Ltd')} last>
+            <Box header={it.L('Deriv (FX) Ltd')} >
                 <p>{it.L('Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business [_1](licence no. MB/18/0024)[_2].', `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Deriv (FX) Ltd. [_1] is not available in Malaysia.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='https://www.labuanibfc.com/' image='images/pages/regulation/labuan-logo.png' />
             </Box>
+
+            <Box header={it.L('The Financial Commission')} last>
+                <p>{it.L('We are registered with the Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry ([_1]view membership[_2]).', `<a href=${it.url_for('download/regulation/Binary_membership.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('The Financial Commission offers compensation up to 20,000 EUR on a case-to-case basis, unbiased assessment of disputes, and fast and effective dispute resolution free of charge.')}</p>
+                <RegulatorText />
+                <RegulatorImage padding='4' padding_m='8' href='https://financialcommission.org/' image='images/pages/regulation/financial-commission.svg' />
+            </Box>
+            <div className='gr-padding-30' />
         </div>
     );
 };

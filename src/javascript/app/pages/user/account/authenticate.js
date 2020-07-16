@@ -1003,32 +1003,44 @@ const Authenticate = (() => {
                     break;
             }
         } else {
-            initOnfido(service_token_response.token, documents_supported);
-        }
-        switch (document.status) {
-            case 'none': {
-                init();
-                $('#not_authenticated').setVisibility(1);
-                break;
+            // eslint-disable-next-line no-lonely-if
+            if (onfido_unsupported) {
+                $('#not_authenticated_uns').setVisibility(1);
+                initUnsupported();
+            } else {
+                initOnfido(service_token_response.token, documents_supported);
             }
-            case 'pending':
-                $('#pending_poa').setVisibility(1);
-                break;
-            case 'rejected':
-                $('#unverified_poa').setVisibility(1);
-                break;
-            case 'suspected':
-                $('#unverified_poa').setVisibility(1);
-                break;
-            case 'verified':
-                $('#verified_poa').setVisibility(1);
-                break;
-            case 'expired':
-                $('#expired_poa').setVisibility(1);
-                break;
-            default:
-                break;
         }
+        if (!document.further_resubmissions_allowed) {
+            switch (document.status) {
+                case 'none': {
+                    init();
+                    $('#not_authenticated').setVisibility(1);
+                    break;
+                }
+                case 'pending':
+                    $('#pending_poa').setVisibility(1);
+                    break;
+                case 'rejected':
+                    $('#unverified_poa').setVisibility(1);
+                    break;
+                case 'suspected':
+                    $('#unverified_poa').setVisibility(1);
+                    break;
+                case 'verified':
+                    $('#verified_poa').setVisibility(1);
+                    break;
+                case 'expired':
+                    $('#expired_poa').setVisibility(1);
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            init();
+            $('#not_authenticated').setVisibility(1);
+        }
+        
         $('#authentication_loading').setVisibility(0);
         TabSelector.updateTabDisplay();
     };
