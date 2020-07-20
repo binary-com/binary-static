@@ -88,8 +88,8 @@ const getMinWithdrawal = currency => (isCryptocurrency(currency) ? (getPropertyV
  * @param {string} max|undefined
  * @returns numeric|undefined
  */
-const getTransferLimits = (currency, which) => {
-    const transfer_limits = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits']) || getMinWithdrawal(currency);
+const getTransferLimits = (currency, which, type) => {
+    const transfer_limits = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', type === 'mt5' ? 'limits_mt5' : 'limits']) || getMinWithdrawal(currency);
     const decimals        = getDecimalPlaces(currency);
     if (which === 'max') {
         return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
