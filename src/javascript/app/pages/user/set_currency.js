@@ -43,7 +43,7 @@ const SetCurrency = (() => {
                     .setVisibility(1);
             } else if (popup_action) {
                 const currencies = /multi_account|set_currency/.test(popup_action) ?
-                    GetCurrency.getCurrencies(landing_company) :
+                    GetCurrency.getCurrencies(landing_company, popup_action === 'set_currency') :
                     getCurrencyChangeOptions(landing_company);
                 $('#hide_new_account').setVisibility(0);
                 $(`.show_${popup_action}`).setVisibility(1);

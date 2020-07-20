@@ -65,13 +65,14 @@ const GetCurrency = (() => {
               currency_values.cryptocurrencies.filter(c =>
                   currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0 &&
                   allowed_currencies.indexOf(c) > -1);
-        const can_open_crypto  = available_crypto.length;
+        const can_open_crypto  = available_crypto.length || !currency_values.has_fiat;
+        const can_select_fiat  = all_fiat && allowed_currencies.length;
 
         let currencies_to_show = [];
 
         // only allow client to open more sub accounts if the last currency is not to be reserved for master account
-        if ((client_currency && (can_open_crypto || !currency_values.has_fiat)) ||
-            (!client_currency && (available_crypto.length > 1 || (can_open_crypto && !currency_values.has_fiat)))) {
+        if ((client_currency && can_open_crypto) ||
+            (!client_currency && (available_crypto.length > 1 || can_open_crypto || can_select_fiat))) {
             // if have sub account with fiat currency, or master account is fiat currency, only show cryptocurrencies
             // else show all
             const is_virtual = Client.get('is_virtual');
