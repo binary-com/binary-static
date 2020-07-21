@@ -82,7 +82,7 @@ const Contact2 = () => (
                 <h1>{it.L('Company addresses')}</h1>
             </div>
             <div className='gr-row'>
-                <InfoBox padding='6' header={it.L('Malta')}       text={it.L('Deriv (Europe) Limited & Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033')} />
+                <InfoBox padding='6' header={it.L('Malta')}       text={it.L('Deriv (Europe) Limited & Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033')} />
                 <InfoBox padding='6' header={it.L('Isle of Man')} text={it.L('Deriv (MX) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW')} />
             </div>
 
