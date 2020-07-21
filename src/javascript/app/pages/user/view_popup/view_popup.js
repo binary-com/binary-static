@@ -270,7 +270,7 @@ const ViewPopup = (() => {
             }
             containerSetText('trade_details_message', contract.validation_error && !is_unsupported_contract ? contract.validation_error : '&nbsp;');
             if (is_unsupported_contract) {
-                const redirect = '<a href="https://deriv.app" target="_blank" rel="noopener noreferrer">';
+                const redirect = '<a href="https://app.deriv.com" target="_blank" rel="noopener noreferrer">';
                 const redirect_close = '</a>';
                 const message = Callputspread.isCallputspread(contract.contract_type) ?
                     localize('This contract is only available on [_1]DTrader[_2].', [redirect, redirect_close]) :

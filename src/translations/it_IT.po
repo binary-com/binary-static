@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-07-02 09:26\n"
+"PO-Revision-Date: 2020-07-14 02:11\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -1313,7 +1313,7 @@ msgid "Amount in"
 msgstr "Importo in"
 
 msgid "An Affiliate who refers other Affiliates to the Company (\"Master Affiliate\") has an account to which each referred Affiliate's account (\"Sub-affiliate Account\") is tied. The Master Affiliate is not allowed to own or control any Sub-affiliate Accounts linked with the Master Affiliate's account. If the Company has reason to believe that the Master Affiliate has breached this term, the Company reserves the right to reverse or cancel any commissions to the Master Affiliate and/or terminate all business relationships with the Master Affiliate."
-msgstr ""
+msgstr "L'Associato che porta altri Associati nella Società (\"Associato principale\") possiede un conto a cui ogni associato da lui introdotto è legato (\"conto per sotto-associato). L'Affiliato principale non ha la facoltà di possedere o controllare eventuali conti per sotto-associato legati al proprio conto. Se la Società ha motivo di ritenere che l'Associato principale abbia violato questa condizione, si riserva il diritto di contrastare o annullare eventuali commissioni a favore dell'Associato principale e/o terminare qualsiasi rapporto di business con esso."
 
 msgid "An Ends Between trade pays out if the market exit price is strictly higher than the low price target AND strictly lower than the high price target. An Ends Outside binary pays out if the market exit price is EITHER strictly higher than the high price target OR strictly lower than the low price target."
 msgstr "Un trade Termina Dentro è quello in cui si guadagna se il prezzo d'uscita del mercato è superiore al prezzo obiettivo più basso E inferiore al prezzo obiettivo più alto. Un'opzione binaria Termina Fuori è quella in cui si guadagna se il prezzo d'uscita del mercato è superiore al prezzo obiettivo più alto OPPURE inferiore al prezzo obiettivo più basso."
@@ -1984,15 +1984,6 @@ msgstr "Prezzo dell'offerta"
 msgid "Binary (BVI) Ltd,"
 msgstr "Binary (BVI) Ltd"
 
-msgid "Binary (Europe) Limited"
-msgstr "Binary (Europe) Limited"
-
-msgid "Binary (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. %2) - %3view licence%4 and also maintains an Irish licence. For UK clients by the UK Gambling Commission - %5view licence%4."
-msgstr "Binary (Europe) Limited, W Business Centre, terzo piano, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Autorizzata e regolamentata (solo per i prodotti di gioco d'azzardo - indici sintetici di %1) dalla Malta Gaming Authority di Malta (n. di licenza %2) - %3vedi licenza%4; dispone anche di una licenza irlandese. Per i clienti del Regno Unito è autorizzata e regolamentata dalla UK Gambling Commission - %5vedi licenza%4."
-
-msgid "Binary (Europe) Ltd & Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033"
-msgstr "Binary (Europe) Ltd e Deriv Investments (Europe) Ltd, W Business Centre, terzo piano, Triq Dun Karm, Birkirkara, BKR 9033"
-
 msgid "Binary (Europe) Ltd,"
 msgstr "Binary (Europe) Ltd,"
 
@@ -2000,10 +1991,10 @@ msgid "Binary (Europe) Ltd, or"
 msgstr "Binary (Europe) Ltd, oppure"
 
 msgid "Binary (FX) Ltd,"
-msgstr "Binary (FX) Ltd,"
+msgstr "Deriv (FX) Ltd,"
 
 msgid "Binary (FX) Ltd, or"
-msgstr "Binary (FX) Ltd, oppure"
+msgstr "Deriv (FX) Ltd, oppure"
 
 msgid "Binary (IOM) Ltd."
 msgstr "Binary (IOM) Ltd."
@@ -2341,9 +2332,6 @@ msgstr "Hai 15 minuti per noi?"
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
 msgstr "Non riesci a capire quando comprare e vendere? Ecco un modo semplice per analizzare la situazione:"
 
-msgid "Can't find what you're searching for?"
-msgstr "Non riesci a trovare quello che cerchi?"
-
 msgid "Can't make heads or tails of currency pairs? Here is a simple way of looking at it:"
 msgstr "Coppie di valute: non riesci a venirne a capo? Ecco un semplice modo per analizzarle:"
 
@@ -2597,7 +2585,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "I clienti provenienti dagli altri Paesi (esclusi alcuni come USA, Canada e Hong Kong) potranno aprire il proprio conto con Deriv (SVG) LLC."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Deriv (FX) Ltd. %1 is not available in Malaysia."
-msgstr ""
+msgstr "Per i clienti nel resto del mondo (escluse alcune giurisdizioni come USA, Canada e Unione Europea) che intendono effettuare trading su CFD, il conto MetaTrader 5 verrà aperto con Deriv (FX) Ltd. %1 non è disponibile in Malesia."
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
 msgstr "I clienti possono richiedere maggiori informazioni scrivendo all'indirizzo e-mail compliance@binary.com; in questo caso, riceveranno ulteriori dettagli sulla politica relativa ai conflitti di interesse."
@@ -3484,14 +3472,23 @@ msgstr "Deriv (BVI) Ltd"
 msgid "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
 msgstr "Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Isole Vergini britanniche. Autorizzata e regolamentata dalla British Virgin Islands Financial Services Commission - %1vedi licenza%2."
 
-msgid "Deriv (FX) Ltd"
+msgid "Deriv (Europe) Limited"
 msgstr ""
+
+msgid "Deriv (Europe) Limited & Deriv Investments (Europe) Ltd, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033"
+msgstr ""
+
+msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. %2) - %3view licence%4 and also maintains an Irish licence. For UK clients by the UK Gambling Commission - %5view licence%4."
+msgstr ""
+
+msgid "Deriv (FX) Ltd"
+msgstr "Deriv (FX) Ltd"
 
 msgid "Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
-msgstr ""
+msgstr "Deriv (FX) Ltd, lotto n. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Territorio federale di Labuan"
 
 msgid "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr ""
+msgstr "Deriv (FX) Ltd., Lot No. F16, primo piano, Paragon Labuan, Jalan Tun Mustapha, 87000 Territorio federale di Labuan, Malesia. Autorizzata e regolamentata da Labuan Financial Services Authority per eseguire attività di intermediazione nel mercato monetario %1(licenza n. MB/18/0024)%2."
 
 msgid "Deriv (MX) Limited"
 msgstr "Deriv (MX) Limited"
@@ -4126,8 +4123,8 @@ msgstr "Euro vs lira turca"
 msgid "Euro vs US dollar"
 msgstr "Euro vs dollaro statunitense"
 
-msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited."
-msgstr "I residenti nell'Unione Europea che desiderano fare trading in prodotti da gioco d'azzardo apriranno i loro account con Binary (Europe) Limited."
+msgid "European Union residents who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited."
+msgstr ""
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Ltd."
 msgstr "I soggetti residenti nell'Unione Europea che desiderano fare trading con i prodotti di investimento, apriranno il proprio account con Deriv Investments (Europe) Ltd."
@@ -5842,7 +5839,7 @@ msgstr "Nell'UE, i prodotti finanziari sono offerti da Deriv Investments (Europe
 msgid "In the Isle of Man and the UK, Synthetic Indices are offered by Deriv (MX) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "Nell'Isola di Man e nel Regno Unito, gli indici sintetici sono offerti da Deriv (MX) Ltd., primo piano, Millennium House, Victoria Road, Douglas, IM2 4RW, Isola di Man, Isole Britanniche; autorizzata e regolamentata rispettivamente dalla (1) Gambling Supervision Commission dell'Isola di Man (licenza attuale emessa il 31 agosto 2017) e dalla (2) Gambling Commission del Regno Unito (%1licenza n.: 39172%2)."
 
-msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
+msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Ltd. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Ltd. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
@@ -5872,8 +5869,8 @@ msgstr "Nel caso in cui la Società non riceva indicazione dal cliente di chiude
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Deriv group of companies for, any claims or demands made against the Company or any member of the Deriv group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "Nel caso in cui la Società sia a conoscenza della violazione da parte di un Associato di una qualsiasi delle suddette disposizioni, quest'ultima avrà il diritto, oltre agli altri diritti o rimedi disponibili ai sensi del presente Contratto o della legge applicabile, di bloccare immediatamente l'accesso dell'Associato al presente programma. Con la presente, l'Associato rinuncia irrevocabilmente ai suoi diritti e risarcirà la Società e qualsiasi membro del gruppo di società Deriv per reclami o richieste avanzati nei confronti della Società o di qualsiasi membro del gruppo di società Deriv, dei suoi direttori, funzionari, azionisti, impiegati, o nei confronti del sito internet di %1 qualora la Società revocasse il suo accesso al programa."
 
-msgid "In the rest of the EU, Synthetic Indices are offered by Binary (Europe) Ltd., W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
-msgstr "Nel resto dell'UE, gli indici sintetici sono offerti da Binary (Europe) Ltd., W Business Centre, terzo piano, Triq Dun Karm, Birkirkara, BKR 9033, Malta, autorizzata e regolamentata dalla (1) Malta Gaming Authority di Malta (%1licenza n. MGA/B2C/102/2000%4 rilasciata l'1 agosto 2018); per i clienti nel Regno Unito dalla (2) UK Gambling Commission (licenza %2n. 39495%4) e per i clienti irlandesi dalla (3) Revenue Commissioners di Irlanda (licenza del Remote Bookmaker n. 1010285 emessa l'1 luglio 2017). Consulta le %3informazioni complete sulla regolamentazione%4."
+msgid "In the rest of the EU, Synthetic Indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%4 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %2reference no: 39495%4), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%4."
+msgstr ""
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "Nel presente Contratto, salvo disposizioni contrarie, valgono le seguente definizioni:"
@@ -7775,7 +7772,7 @@ msgid "Our website uses cookies to give you the best user experience. For more i
 msgstr "Il nostro sito utilizza i cookie per offrirti la miglior esperienza utente possibile. Per ulteriori informazioni, %1consulta la nostra politica%2."
 
 msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr ""
+msgstr "Al di fuori dell'UE, i prodotti finanziari sono offerti da Deriv (SVG) LLC, Hinds Building, Kingstown, San Vincenzo e Grenadine; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regolamentata dalla Vanuatu Financial Services Commission (%1vedi licenza%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, Isole Vergini britanniche, regolamentata dalla British Virgin Islands Financial Services Commission (%3licenza n. SIBA/L/18/1114%4); e Deriv (FX) Ltd., lotto n. F16, primo piano, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malesia, regolamentata dalla Labuan Financial Services Authority per svolgere attività di intermediazione nel mercato finanziario(%5licenza n. MB/18/0024%6)."
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "Ottime capacità comunicative scritte e orali, e padronanza della lingua inglese"
@@ -10145,7 +10142,7 @@ msgid "The Affiliate and the Company are independent contractors, and nothing in
 msgstr "L'Associato e la Società sono contraenti indipendenti e nulla del presente Contratto costituirà alcuna collaborazione, joint-venture, agenzia, franchising, rappresentanza commerciale o rapporto di lavoro tra le parti. L'Associato non avrà alcuna autorità nell'effettuare o accettare offerte o rappresentanze nell'interesse della Società. L'Associato non rilascerà alcuna dichiarazione, né sul proprio sito Internet né in altro modo, tale da contraddire in modo ragionevole il contenuto del presente paragrafo."
 
 msgid "The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the Affiliate for any commissions for any fraudulent sales or any sales based on abuse."
-msgstr ""
+msgstr "L'Associato è colpevole di aver commesso atti fraudolenti o abusato di questo rapporto in qualsiasi modo. Se vi fosse evidenza di tali atti fraudolenti o abusi, la Società declina ogni responsabilità rispetto all'Associato per eventuali commissioni relative a vendite fraudolente o basate su abusi."
 
 msgid "The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
 msgstr "L'Associato non ha ottenuto né mantenuto le licenze e permessi necessari a operare in ottemperanza a normative, leggi e regolamenti applicabili sotto l'autorità di eventuali organi di regolamentazione della/e giurisdizione/i in cui opera l'Associato o a cui quest'ultimo rivolge il proprio business."
@@ -10650,6 +10647,12 @@ msgstr "Il dirigente nazionale dovrebbe acquisire, fornire, gestire e ampliare l
 
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "Il Domain Name System (DNS) ti permette di accedere a un sito web attraverso un indirizzo web semplice da utilizzare, come %1, evitando così indirizzi IP complicati."
+
+msgid "The Financial Commission"
+msgstr ""
+
+msgid "The Financial Commission offers compensation up to 20,000 EUR on a case-to-case basis, unbiased assessment of disputes, and fast and effective dispute resolution free of charge."
+msgstr ""
 
 msgid "The Financial Products that DIEL offers to deal in are contracts entered into between clients and DIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay DIEL, DIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that DIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of DIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for DIEL's undertaking to pay."
 msgstr "I prodotti finanziari offerti da DIEL per il trade sono contratti stipulati tra questa e il cliente. In conformità con tali contratti e i termini specifici in essi contenuti, in considerazione dei premi e dei prezzi corrisposti dai clienti a DIEL, quest'ultima garantisce di versare ai clienti un dato importo de gli asset o le misure di riferimento registrano un certo risultato. Tali contratti non sono strumenti che DIEL detiene a nome del cliente, e, in caso di insolvenza da parte della stessa, questa non beneficia in alcun modo della protezione degli asset del cliente. Allo stesso modo, il premio o prezzo versato dal cliente per il proprio trade non viene trattenuto come denaro in suo possesso, bensì come contropartita per le attività di DIEL."
@@ -12760,6 +12763,9 @@ msgstr "Il team PayOps fa parte del reparto compliance; incentiva lo sviluppo de
 msgid "We are licensed and regulated in the British Isles and in Malta since 2015."
 msgstr "Dal 2015 siamo regolamentati e autorizzati nelle Isole Britanniche e a Malta."
 
+msgid "We are registered with the Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry (%1view membership%2)."
+msgstr ""
+
 msgid "We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency %1."
 msgstr "Come richiesto dalla nostra licenza, siamo tenuti a informarti su cosa succede ai fondi che deteniamo per tuo conto e sul livello di protezione dei fondi in caso di insolvenza %1."
 
@@ -13642,8 +13648,8 @@ msgstr "Al momento il limite giornaliero sui prelievi %1 corrisponde a %2%3."
 msgid "Your %1proof of address%2 has expired."
 msgstr "La sessione di %1verifica dell'indirizzo%2 è scaduta."
 
-msgid "Your %1proof of address%2 has not been verified. Please check your email for details."
-msgstr "Il documento di %1verifica dell'indirizzo%2 non è stato preso in esame. Controlla la tua casella di posta per maggiori dettagli."
+msgid "Your %1proof of address%2 has not been verified."
+msgstr ""
 
 msgid "Your %1proof of identity%2 has expired."
 msgstr "La sessione di %1verifica dell'identità%2 è scaduta."
@@ -13654,8 +13660,8 @@ msgstr "Il %1documento di verifica dell'identità%2 non è stato controllato."
 msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
 msgstr "Le sessioni di %1verifica dell'identità%3 e di %2verifica dell'indirizzo%3 sono scadute."
 
-msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified. Please check your email for details."
-msgstr "I documenti di %1verifica dell'identità%3 e di %2verifica dell'indirizzo%3 non sono stati presi in esame. Controlla la tua casella di posta per maggiori dettagli."
+msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
+msgstr ""
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Il tuo Cliente riceverà un'email di notifica in cui gli viene comunicato che il trasferimento è stato elaborato."
