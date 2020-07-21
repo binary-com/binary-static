@@ -229,7 +229,7 @@ export const ClientMessage = () => (
 export const TaxInformationForm = () => (
     <React.Fragment>
         <div id='tax_information_info' className='gr-12 gr-padding-10'>
-            <label>{it.L('Deriv Investments (Europe) Ltd. is required to collect your tax information.')}&nbsp;
+            <label>{it.L('Deriv Investments (Europe) Limited is required to collect your tax information.')}&nbsp;
                 <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
             </label>
 
@@ -284,7 +284,7 @@ export const TaxInformationForm = () => (
             <div className='gr-12 gr-padding-10'>
                 <input type='checkbox' id='chk_tax_id' />
                 <label htmlFor='chk_tax_id'>
-                    {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Deriv Investments (Europe) Ltd. about any changes to this information.')}
+                    {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Deriv Investments (Europe) Limited about any changes to this information.')}
                 </label>
             </div>
         </div>
