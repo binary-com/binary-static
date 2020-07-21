@@ -25,7 +25,12 @@ const ResponsibleTrading = () => (
                 <li>{it.L('a definite or indefinite period during which you wish to exclude yourself from the website.')}</li>
             </ol>
 
-            <p>{it.L('Limits 1 to 3 may only be removed or increased after 24 hours after receiving the notice and the client reconfirms that they wish to amend such limit.')}</p>
+            <div data-show='iom'>
+                <p>{it.L('Limits 1 to 3 may only be removed or increased once the limit date setting has expired.')}</p>
+            </div>
+            <div data-show='-iom'>
+                <p>{it.L('Limits 1 to 3 may only be removed or increased after 24 hours after receiving the notice and the client reconfirms that they wish to amend such limit.')}</p>
+            </div>
             <p>{it.L('Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client\'s account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again.')}</p>
             <p>{it.L('Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient.')}</p>
 
