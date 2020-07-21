@@ -27,7 +27,7 @@ const TermsAndConditions = () => (
                 <span data-show='-eucountry'>{it.L('Deriv (BVI) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Deriv (FX) Ltd,')}&nbsp;</span>
                 <span>{it.L('Deriv (Europe) Limited, or')}&nbsp;</span>
-                <span>{it.L('Deriv Investments (Europe) Limited')}</span>
+                <span>{it.L('Deriv Investments (Europe) Limited.')}</span>
             </li>
 
             <li data-show='eucountry default'>{it.L('The client understands that products based on a random number generator (the "Synthetic Indices") are gaming products whereas products based on financial market indices (forex, stock indices, and commodities) are financial instruments.')}</li>
