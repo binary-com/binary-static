@@ -6,7 +6,7 @@ const TradingRules = () => (
         <p>{it.L('The Company may impose certain rules and restrictions on the placing of market orders on this website. Such rules may change from time to time, according to market conditions and other factors. The following indicative rules are currently in place:')}
             <ul className='bullet'>
                 <li>{it.L('Contracts will not usually be offered at odds under 0.05 to 1 (i.e. payouts of under 1.05 USD/GBP/EUR/AUD for each 1 USD/GBP/EUR/AUD staked).')}</li>
-                <li>{it.L('Contracts offered by Binary Investments (Europe) Ltd have a minimum purchase price of 5 USD/GBP/EUR.')}</li>
+                <li>{it.L('Contracts offered by Deriv Investments (Europe) Limited have a minimum purchase price of 5 USD/GBP/EUR.')}</li>
                 <li>{it.L('Contracts are not usually offered in the last hour of trade of any given market (for foreign exchange markets, the restriction may be extended up to 3 hours).')}</li>
                 <li>{it.L('Contracts will not usually be offered when the underlying market is at its intraday high or intraday low.')}</li>
                 <li>{it.L('Contracts will not usually be offered during the first 10 minutes of market trade.')}</li>

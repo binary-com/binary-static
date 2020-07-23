@@ -25,7 +25,12 @@ const ResponsibleTrading = () => (
                 <li>{it.L('a definite or indefinite period during which you wish to exclude yourself from the website.')}</li>
             </ol>
 
-            <p>{it.L('Limits 1 to 3 may only be removed or increased after 24 hours after receiving the notice and the client reconfirms that they wish to amend such limit.')}</p>
+            <div data-show='iom'>
+                <p>{it.L('Limits 1 to 3 may only be removed or increased once the limit date setting has expired.')}</p>
+            </div>
+            <div data-show='-iom'>
+                <p>{it.L('Limits 1 to 3 may only be removed or increased after 24 hours after receiving the notice and the client reconfirms that they wish to amend such limit.')}</p>
+            </div>
             <p>{it.L('Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client\'s account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again.')}</p>
             <p>{it.L('Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient.')}</p>
 
@@ -43,7 +48,7 @@ const ResponsibleTrading = () => (
             </div>
 
             <h2>{it.L('Other Warnings & Regulatory Disclosures')}</h2>
-            <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our [_1]Key Information Documents[_2] on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Deriv Investments (Europe) Ltd fall under the category of \'complex products\' and may not be suitable for retail clients.', `<a href='${it.url_for('regulation')}#key_information_documents'>`,'</a>')}</p>
+            <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our [_1]Key Information Documents[_2] on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Deriv Investments (Europe) Limited fall under the category of \'complex products\' and may not be suitable for retail clients.', `<a href='${it.url_for('regulation')}#key_information_documents'>`,'</a>')}</p>
         </div>
     </div>
 );
