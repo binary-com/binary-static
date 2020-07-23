@@ -157,7 +157,7 @@ const IntroducingBrokers = () => (
                 <p>{it.L('Any notice required by this Agreement shall be in writing and shall be emailed to the following addresses:')}
                     <ol>
                         <li><a href='mailto:compliance@binary.com'>compliance@binary.com</a></li>
-                        <li><a href='mailto:affiliates@binary.com'>affiliates@binary.com</a></li>
+                        <li><a href='mailto:partners@binary.com'>partners@binary.com</a></li>
                     </ol>
                 </p>
                 <p>{it.L('In any event, an email notice shall be presumably and sufficiently served upon the completion of sending the email. Should the email be sent on a non-Business Day, it shall be presumably and sufficiently served on the next Business Day.')}</p>
