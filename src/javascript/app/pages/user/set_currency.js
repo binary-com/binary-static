@@ -15,9 +15,11 @@ const Url                = require('../../../_common/url');
 const SetCurrency = (() => {
     let is_new_account,
         popup_action,
+        onConfirmAdditional,
         $submit;
 
-    const onLoad = async () => {
+    const onLoad = async (fncOnConfirm) => {
+        onConfirmAdditional = fncOnConfirm;
         is_new_account = localStorage.getItem('is_new_account');
         localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
@@ -204,6 +206,10 @@ const SetCurrency = (() => {
                     BinarySocket.send({ balance: 1 });
                     BinarySocket.send({ payout_currencies: 1 }, { forced: true });
                     Header.displayAccountStatus();
+
+                    if (typeof onConfirmAdditional === 'function') {
+                        onConfirmAdditional();
+                    }
 
                     let redirect_url;
                     if (is_new_account) {

@@ -118,6 +118,13 @@ const Accounts = (() => {
         $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency.')}`);
     };
 
+    const onConfirmSetCurrency = () => {
+        const can_change_currency = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'));
+        if (can_change_currency) {
+            addChangeCurrencyOption();
+        }
+    };
+
     const action_map = {
         create: 'multi_account',
         set   : 'set_currency',
@@ -131,7 +138,7 @@ const Accounts = (() => {
             form_id           : 'frm_set_currency',
             additionalFunction: () => {
                 localStorage.setItem('popup_action', action_map[action]);
-                SetCurrency.onLoad();
+                SetCurrency.onLoad(onConfirmSetCurrency);
             },
         });
     };
