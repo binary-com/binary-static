@@ -1,6 +1,5 @@
 import React from 'react';
 import Biel from './tac_sections/biel.jsx';
-import DepositBonus from './tac_sections/deposit_bonus.jsx';
 import Tac from './tac_sections/tac.jsx';
 import TradingRules from './tac_sections/trading_rules.jsx';
 
@@ -28,10 +27,6 @@ const TermsAndConditions = () => (
 
             <Section sectionNum='2' link_id='trading-rules'>
                 <TradingRules />
-            </Section>
-
-            <Section sectionNum='3' link_id='deposit-bonus' data-show='-eucountry'>
-                <DepositBonus />
             </Section>
 
             <Section sectionNum='5' link_id='biel' data-show='eucountry'>
