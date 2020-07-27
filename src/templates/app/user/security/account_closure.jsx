@@ -105,7 +105,7 @@ const AccountClosure = () => (
                     />
                     <ClosureDescription
                         title={it.L('I want to change my affiliate instead')}
-                        subtitle={it.L('If you want to change your affiliate, contact [_1]affiliates@binary.com[_2] for more information on how you can do this.', '<a href="mailto:affiliates@binary.com">', '</a>')}
+                        subtitle={it.L('If you want to change your affiliate, contact [_1]partners@binary.com[_2] for more information on how you can do this.', '<a href="mailto:partners@binary.com">', '</a>')}
                     />
                 </div>
                 <SeparatorLine className='gr-padding-20' />
