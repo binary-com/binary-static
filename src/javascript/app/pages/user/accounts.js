@@ -101,6 +101,9 @@ const Accounts = (() => {
     };
 
     const addChangeCurrencyOption = () => {
+        if ($(form_id).find('#change_account_currency').length) {
+            return;
+        }
         const table_headers = TableHeaders.get();
         const loginid       = Client.get('loginid');
 
