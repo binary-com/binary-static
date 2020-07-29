@@ -15,9 +15,11 @@ const Url                = require('../../../_common/url');
 const SetCurrency = (() => {
     let is_new_account,
         popup_action,
+        onConfirmAdditional,
         $submit;
 
-    const onLoad = async () => {
+    const onLoad = async (fncOnConfirm) => {
+        onConfirmAdditional = fncOnConfirm;
         is_new_account = localStorage.getItem('is_new_account');
         localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
@@ -26,9 +28,10 @@ const SetCurrency = (() => {
         const { can_upgrade, type } = Client.getUpgradeInfo();
         $('#upgrade_to_mf').setVisibility(can_upgrade && type === 'financial');
 
-        const landing_company = (await BinarySocket.wait('landing_company')).landing_company;
-        const $currency_list  = $('.currency_list');
-        const $error          = $('#set_currency').find('.error-msg');
+        const landing_company   = (await BinarySocket.wait('landing_company')).landing_company;
+        const payout_currencies = (await BinarySocket.wait('payout_currencies')).payout_currencies;
+        const $currency_list    = $('.currency_list');
+        const $error            = $('#set_currency').find('.error-msg');
 
         popup_action = localStorage.getItem('popup_action');
         if (Client.get('currency') || popup_action) {
@@ -43,7 +46,7 @@ const SetCurrency = (() => {
                     .setVisibility(1);
             } else if (popup_action) {
                 const currencies = /multi_account|set_currency/.test(popup_action) ?
-                    GetCurrency.getCurrencies(landing_company) :
+                    getAvailableCurrencies(landing_company, payout_currencies) :
                     getCurrencyChangeOptions(landing_company);
                 $('#hide_new_account').setVisibility(0);
                 $(`.show_${popup_action}`).setVisibility(1);
@@ -74,18 +77,13 @@ const SetCurrency = (() => {
             return;
         }
 
-        BinarySocket.wait('payout_currencies', 'landing_company').then(() => {
-            let currencies = State.getResponse('payout_currencies');
+        populateCurrencies(getAvailableCurrencies(landing_company, payout_currencies));
 
-            if (Client.get('landing_company_shortcode') === 'svg') {
-                currencies = GetCurrency.getCurrencies(landing_company);
-            }
-
-            populateCurrencies(currencies);
-
-            onSelection($currency_list, $error, true);
-        });
+        onSelection($currency_list, $error, true);
     };
+
+    const getAvailableCurrencies = (landing_company, payout_currencies) =>
+        Client.get('landing_company_shortcode') === 'svg' ? GetCurrency.getCurrencies(landing_company) : payout_currencies;
 
     const getCurrencyChangeOptions = (landing_company) => {
         const allowed_currencies = Client.getLandingCompanyValue(Client.get('loginid'), landing_company, 'legal_allowed_currencies');
@@ -208,6 +206,10 @@ const SetCurrency = (() => {
                     BinarySocket.send({ balance: 1 });
                     BinarySocket.send({ payout_currencies: 1 }, { forced: true });
                     Header.displayAccountStatus();
+
+                    if (typeof onConfirmAdditional === 'function') {
+                        onConfirmAdditional();
+                    }
 
                     let redirect_url;
                     if (is_new_account) {
