@@ -92,10 +92,10 @@ const getTransferLimits = (currency, which, type) => {
     const transfer_limits = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', type === 'mt5' ? 'limits_mt5' : 'limits']) || getMinWithdrawal(currency);
     const decimals        = getDecimalPlaces(currency);
     if (which === 'max') {
-        return transfer_limits.max ? transfer_limits.max.toFixed(decimals) : undefined;
+        return transfer_limits.max ? (+transfer_limits.max).toFixed(decimals) : undefined;
     }
 
-    return transfer_limits.min ? transfer_limits.min.toFixed(decimals) : undefined;
+    return transfer_limits.min ? (+transfer_limits.min).toFixed(decimals) : undefined;
 };
 
 const getTransferFee = (currency_from, currency_to) => {
