@@ -9,10 +9,10 @@ const Tac = () => (
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>
             {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term "the Company" shall denote,')}&nbsp;
-            <span data-show='-eucountry'>{it.L('Binary (SVG) LLC,')}&nbsp;</span>
-            <span>{it.L('Binary (Europe) Ltd,')}&nbsp;</span>
-            <span>{it.L('Binary Investments (Europe) Ltd, or')}&nbsp;</span>
-            <span>{it.L('Binary (IOM) Ltd.')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Deriv (SVG) LLC,')}&nbsp;</span>
+            <span>{it.L('Deriv (Europe) Limited,')}&nbsp;</span>
+            <span>{it.L('Deriv Investments (Europe) Limited, or')}&nbsp;</span>
+            <span>{it.L('Deriv (MX) Ltd.')}&nbsp;</span>
         </p>
         <p>{it.L('These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products.')}</p>
 
@@ -37,9 +37,9 @@ const Tac = () => (
         <h2 data-anchor='governing-laws-and-jurisdiction'>D. {it.L('Governing laws and jurisdiction')}</h2>
         <p>{it.L('Laws regarding financial contracts vary throughout the world, and it is the responsibility of clients accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, clients accessing this site are required to inform themselves about, and to observe, such restrictions.')}</p>
         <p>{it.L('The transactions performed on this site and the relationship between clients and the Company are to be governed by, and construed in accordance with, the laws of the country of incorporation of the Company (the "Jurisdiction"). The client agrees that the Jurisdiction\'s courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, the client irrevocably submits to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and agrees that any claim the client might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company\'s [_1]Complaints and disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions#complaints')}>`, '</a>')}</p>
-        <p>{it.L('For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta.')}</p>
-        <p>{it.L('For Binary (IOM) Ltd, the applicable Jurisdiction shall be the Isle of Man.')}</p>
-        <p data-show='-eucountry'>{it.L('For Binary (SVG) LLC, the applicable Jurisdiction shall be St. Vincent and the Grenadines.')}</p>
+        <p>{it.L('For Deriv Investments (Europe) Limited and Deriv (Europe) Limited, the applicable Jurisdiction shall be Malta.')}</p>
+        <p>{it.L('For Deriv (MX) Ltd, the applicable Jurisdiction shall be the Isle of Man.')}</p>
+        <p data-show='-eucountry'>{it.L('For Deriv (SVG) LLC, the applicable Jurisdiction shall be St. Vincent and the Grenadines.')}</p>
 
         <h2 data-anchor='contracts'>E. {it.L('Contracts')}</h2>
         <p>{it.L('The Company does not provide a market amongst or between clients for investments, securities, derivatives, or speculations. Each financial contract purchased by a client via this site is an individual agreement between that client and the Company and is not a security, nor is it transferable, negotiable, or assignable to, or with, any third party.')}</p>
@@ -47,7 +47,7 @@ const Tac = () => (
 
         <h2 data-anchor='clients-liability'>F. {it.L('Client\'s liability')}</h2>
         <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, clients remain fully liable for any and all positions traded on their account and for any credit card transactions entered into the site for their account. Each client also indemnifies the Company against all costs and losses of any kind whatsoever, as may be incurred by the Company as a result, direct or indirect, of the client\'s failure to perform or settle such a transaction.')}</p>
-        <p>{it.L('[_1]In regard to customers of Binary (IOM) Ltd, online gambling debts are enforceable by law in the Isle of Man.[_2]', '<span data-show="eucountry">', '</span>')}</p>
+        <p>{it.L('[_1]In regard to customers of Deriv (MX) Ltd, online gambling debts are enforceable by law in the Isle of Man.[_2]', '<span data-show="eucountry">', '</span>')}</p>
         <p>{it.L('If the client deposits funds via credit or debit card, the client agrees to email or call the Company before placing a chargeback or a retrieval request so the Company can try to retrieve the funds for the client.')}</p>
         <p>{it.L('If the payment processor sends the Company a chargeback or retrieval notification, the Company reserves the right to suspend any or all of the client’s accounts and place a temporary hold on the funds available in it. In that case, any or all of the client’s accounts may remain suspended until the completion of the entire chargeback investigation. The same might apply if the client’s transacting bank initiates the chargeback or retrieval request without the client’s knowledge.')}</p>
         <p>{it.L('If the Company suffers a loss as a result of a chargeback or retrieval request, the client agrees to reimburse the Company the amount before the Company lifts off any limits imposed on any or all of the client’s accounts.')}</p>
@@ -57,7 +57,7 @@ const Tac = () => (
         <p data-show='eucountry'>{it.L('The Company is required by its licence to inform clients about what happens to the funds that the Company holds on account for clients, and the extent to which funds are protected in the event of insolvency. To learn more, please refer [_1]here[_2].',
             '<a href="http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
-        <p data-show='eucountry'>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts. Binary (IOM) Ltd & Binary (Europe) Ltd have arrangements in place so that in the event of insolvency they are able to meet their obligations to clients. These arrangements are in the form of a loan agreement between each respective company and the parent company, Binary Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level of medium protection.')}</p>
+        <p data-show='eucountry'>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (MX) Ltd & Deriv (Europe) Limited have arrangements in place so that in the event of insolvency they are able to meet their obligations to clients. These arrangements are in the form of a loan agreement between each respective company and the parent company, Deriv Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level of medium protection.')}</p>
         <p>{it.L('The Company has various deposit methods available, each with its own timing for deposits, some of which might not be available for withdrawals. Full details of available methods for deposits and withdrawals, including settlement times, can be seen [_1]here[_2].',
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>

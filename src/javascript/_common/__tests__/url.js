@@ -94,7 +94,7 @@ function runTests(url) {
                 });
             });
             it('doesn\'t update email links', () => {
-                ['mailto:affiliates@binary.com', 'mailto:email@otherdomain.com'].forEach(email_link => {
+                ['mailto:partners@binary.com', 'mailto:email@otherdomain.com'].forEach(email_link => {
                     expect(Url.urlForCurrentDomain(email_link)).to.eq(email_link);
                 });
             });
@@ -106,7 +106,7 @@ function runTests(url) {
             });
             it('doesn\'t update when current domain is not supported', () => {
                 setURL('https://user.github.io/');
-                ['https://www.binary.com', 'https://www.binary.com/', 'https://bot.binary.com', 'mailto:affiliates@binary.com'].forEach(u => {
+                ['https://www.binary.com', 'https://www.binary.com/', 'https://bot.binary.com', 'mailto:partners@binary.com'].forEach(u => {
                     expect(Url.urlForCurrentDomain(u)).to.eq(u);
                 });
                 setURL(url); // reset for the next test

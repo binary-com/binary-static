@@ -68,7 +68,7 @@ const FAQ = () => {
                 </div>
             </div>
 
-            <p className='faq-message'>{it.L('For further assistance, email us at [_1]affiliates@binary.com[_2]', '<a href="mailto:affiliates@binary.com">', '</a>')}</p>
+            <p className='faq-message'>{it.L('For further assistance, email us at [_1]partners@binary.com[_2]', '<a href="mailto:partners@binary.com">', '</a>')}</p>
         </section>
     );
 };

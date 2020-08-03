@@ -6,7 +6,12 @@ const SelfExclusion = () => (
     <React.Fragment>
         <div className='invisible' id='description'>
             <h1>{it.L('Self-Exclusion')}</h1>
-            <p>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+            <div data-show='iom'>
+                <p>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. Limits may only be removed or increased, once the limit date setting has expired. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+            </div>
+            <div data-show='-iom'>
+                <p>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+            </div>
             <p>{it.L('You may also instruct us to exclude you from trading on [_1] for a specific period of time. This self-exclusion date cannot be amended once it is set.', it.website_name)}</p>
 
             <div id='gamstop_info_top' className='invisible'>
