@@ -175,14 +175,6 @@ const TypesOfPartnership = () => (
                                             { text: it.L('0.70') },
                                         ],
                                         [
-                                            { text: it.L('Range Break 100 Index') },
-                                            { text: it.L('0.80') },
-                                        ],
-                                        [
-                                            { text: it.L('Range Break 200 Index') },
-                                            { text: it.L('0.40') },
-                                        ],
-                                        [
                                             { text: it.L('Step Index') },
                                             { text: it.L('0.20') },
                                         ],

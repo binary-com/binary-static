@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-07-27 07:37\n"
+"PO-Revision-Date: 2020-08-04 02:23\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -526,9 +526,6 @@ msgstr "0.3%"
 msgid "0.4%"
 msgstr "0.4%"
 
-msgid "0.40"
-msgstr "0.40"
-
 msgid "0.5%"
 msgstr "0.5%"
 
@@ -540,9 +537,6 @@ msgstr "0.70"
 
 msgid "0.75%"
 msgstr "0.75%"
-
-msgid "0.80"
-msgstr "0.80"
 
 msgid "1 million transactions/day"
 msgstr "1 millón de transacciones por día"
@@ -2580,10 +2574,10 @@ msgid "Clients registered with Deriv (MX) Ltd can formally submit a complaint to
 msgstr "Los clientes registrados con Deriv (MX) Ltd pueden presentar una queja formalmente a su Autoridad de Supervisión local."
 
 msgid "Clients registered with Deriv (MX) Ltd or Deriv (Europe) Limited can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2. Alternatively, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %3here%4. Clients registered with Deriv (Europe) Limited can also refer their unresolved disputes to the Malta Gaming Authority via the %5Player Support Unit%6."
-msgstr ""
+msgstr "Los clientes registrados con Deriv (MX) Ltd o Deriv (Europe) Limited pueden plantear sus disputas no resueltas a la entidad alternativa de resolución de conflictos IBAS completando el formulario de adjudicación en el %1sitio web%2 de la entidad. Alternativamente, pueden hacer uso de la plataforma de resolución de disputas en línea (ODR) de la Comisión Europea disponible %3aquí%4. Los clientes registrados en Deriv (Europe) Limited también pueden remitir sus disputas no resueltas a la Autoridad de Juegos de Azar de Malta a través de la %5Unidad de Apoyo al Jugador%6."
 
 msgid "Clients registered with Deriv Investments (Europe) Limited can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter's Office can be found %1here%2."
-msgstr ""
+msgstr "Los clientes registrados con Deriv Investments (Europe) Limited pueden plantear sus disputas no resueltas a la Oficina del Árbitro de Servicios Financieros. Los datos de contacto y la guía para presentar el caso a la oficina del árbitro se encuentra %1aquí%2. "
 
 msgid "Clients shall not hold or pool third-party funds into their own account held with the Company."
 msgstr "Los clientes no retendrán ni juntarán los fondos de otros clientes o de terceros en su propia cuenta con la Empresa."
@@ -3319,6 +3313,9 @@ msgstr "Fecha de nacimiento"
 
 msgid "Dated within the last six months"
 msgstr "Con fecha de los últimos seis meses"
+
+msgid "Deactivate"
+msgstr ""
 
 msgid "Deal Cancel. Fee"
 msgstr "Cuota de cancelación de contrato"
@@ -5519,6 +5516,9 @@ msgstr "Si usted es un \"foodie\", quedará impresionado por la gran cantidad de
 msgid "If you choose to be treated as a Professional Client, we'll regard you as having the required market knowledge and experience. As such, we'll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:"
 msgstr "Si elige ser tratado como cliente profesional, consideraremos que posee el conocimiento y experiencia de mercado necesarios. En tal caso, tomaremos algunas medidas para garantizar que su solicitud cumpla con los criterios mencionados anteriormente, incluyendo la petición de lo siguiente:"
 
+msgid "If you deactivate:"
+msgstr ""
+
 msgid "If you decide to buy or 'go long' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase."
 msgstr "Si decide comprar una participación en el índice US 100, sus ganancias seguirán creciendo mientras el precio del índice siga subiendo. Sin embargo, si el precio cae, sus pérdidas también aumentarán."
 
@@ -7531,7 +7531,7 @@ msgid "Online currency exchangers"
 msgstr "Intercambios de divisas en línea"
 
 msgid "Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. Limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
-msgstr ""
+msgstr "El trading online puede ser adictivo.  La autoexclusión es una facilidad para limitar su actividad comercial en línea, si así lo desea. Puede establecer límites en su cuenta para ayudar a prevenir pérdidas no deseadas. Los límites solo pueden ser removidos o incrementados una vez la fecha de expiración haya pasado. %1Contáctenos%2 para remover o ajustar sus límites."
 
 msgid "Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. %1Contact us%2 to remove or adjust your limits."
 msgstr "El comercio en línea puede ser adictivo. La autoexclusión es una facilidad para limitar su actividad comercial en línea, en caso de que la necesite. Puede establecer límites en su cuenta para ayudar a prevenir pérdidas no deseadas. Puede ajustar estos límites en cualquier momento, pero eliminarlos solo después de 24 horas. %1Contáctenos%2 para eliminar o ajustar sus límites."
@@ -8714,12 +8714,6 @@ msgstr "RTS 27 2020"
 
 msgid "RTS 28"
 msgstr "RTS 28"
-
-msgid "Range Break 100 Index"
-msgstr "Índice Range Break 100"
-
-msgid "Range Break 200 Index"
-msgstr "Índice Range Break 200"
 
 msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
 msgstr "Range break 100 rompe el rango en promedio una vez cada 100 veces que llega al borde."
@@ -10300,7 +10294,7 @@ msgid "The Company endeavours to open or close the transaction to which the clie
 msgstr "La Empresa se esfuerza en abrir o cerrar la transacción relacionada a la Orden del cliente a un precio razonable disponible a la Empresa, actuando de acuerdo a su deber de mejor ejecución. Mejor ejecución se refiere a que, cuando se ejecutan Órdenes, la Empresa deberá tomar todas las medidas necesarias para obtener el mejor resultado posible para el cliente, teniendo en cuenta el precio, los costos, la velocidad, la probabilidad de ejecución y liquidación, la dimensión, la naturaleza o cualquier otra consideración relevante a la ejecución de la Orden."
 
 msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a client of Deriv (Europe) Limited, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr ""
+msgstr "La Empresa tiene una política de Stop Out la cual evita que el cliente pierda más de lo que ha depositado. Sin embargo, en el caso que las Posiciones Abiertas del cliente no se cierren cuando el Nivel de Margen de su cuenta real MT5 alcanza el Nivel Stop Out, la Empresa, a su entera discreción, puede renunciar al saldo negativo del cliente acreditando su cuenta si el saldo de dicha cuenta entra en un balance negativo. El balance negativo se determina agregando todos los balances negativos incurridos durante un período de 24 horas en todas las cuentas mantenidas por el cliente. El cliente reconoce que, a menos que sea un cliente minorista de Deriv Investments (Europe) Limited o un cliente de Deriv (Europe) Limited, la oferta de protección del balance negativo por parte de la Empresa al cliente se realiza solo a discreción de la Empresa y esta se reserva el derecho de cambiar las características y los criterios de elegibilidad de protección del balance negativo en cualquier momento. Las disposiciones de protección del balance negativo no se aplican en las siguientes situaciones:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "La Empresa tiene el deber general de llevar sus negocios con el cliente con honestidad, imparcialidad y profesionalismo y de actuar en el mejor interés del cliente al abrir y cerrar contratos en opciones binarias con él mismo."
@@ -10330,7 +10324,7 @@ msgid "The Company holds customer funds in bank accounts separate from the opera
 msgstr "La Empresa mantiene los fondos de los clientes en cuentas bancarias separadas de las cuentas operativas y se han tomado medidas para garantizar que los activos en las cuentas de los clientes les sean distribuidos en caso de insolvencia."
 
 msgid "The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (MX) Ltd & Deriv (Europe) Limited have arrangements in place so that in the event of insolvency they are able to meet their obligations to clients. These arrangements are in the form of a loan agreement between each respective company and the parent company, Deriv Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission's requirements for the segregation of customer funds at the level of medium protection."
-msgstr ""
+msgstr "La Empresa mantiene los fondos de los clientes en cuentas bancarias separadas de las cuentas operativas. Deriv (MX) Ltd & Deriv (Europe) Limited tienen acuerdos vigentes para que, en caso de insolvencia, puedan cumplir con sus obligaciones ante los clientes. Para tales efectos existen acuerdos de préstamo entre cada empresa respectiva y la empresa matriz, Deriv Limited; el préstamo siempre cubrirá, como mínimo, los pasivos del cliente. Esto cumple con los requisitos de la Comisión de Juego para la segregación de los fondos de los clientes en el nivel de protección media."
 
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr "La Empresa es una entidad jurídica independiente y no está afiliada con la plataforma de trading MT5. La Empresa no es propietaria de MT5, y tampoco la controla o maneja. Por lo tanto, la Empresa no brinda cualquier tipo de garantía con respecto a algún producto o servicio de MT5 y no ha revisado o verificado los resultados de desempeño que puedan ser presentados y/o descritos en este sitio web en relación con MT5."
@@ -12705,6 +12699,9 @@ msgstr "¿Quieres ayudarnos a reforzar la resistencia y la seguridad de nuestra 
 msgid "Want to telecommute?"
 msgstr "¿Quieres trabajar a distancia?"
 
+msgid "Warning!"
+msgstr ""
+
 msgid "Warranties"
 msgstr "Garantías"
 
@@ -13539,6 +13536,9 @@ msgstr "Desea comprar un determinado par de divisas si cree que la divisa base a
 msgid "You want to sell that currency pair if you think the base currency will go down."
 msgstr "Usted debería vender el par de divisas si cree que la moneda base va a bajar."
 
+msgid "You will %1NOT%2 be able to log in again."
+msgstr ""
+
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
 msgstr "También fomentará la conciencia sobre seguridad en toda la organización a través de la comunicación regular sobre las mejores prácticas de seguridad y las últimas amenazas en línea."
 
@@ -13787,6 +13787,9 @@ msgstr "Su límite de retiro es %1%2."
 
 msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
 msgstr "Su retiro se procesará en un día hábil (de lunes a viernes de 9:00 a.m. a 5:00 p.m. GMT + 8) a menos que se indique lo contrario."
+
+msgid "You’ll be logged out automatically."
+msgstr ""
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
 msgstr "Cerró con éxito su cuenta. Le enviaremos un correo electrónico de confirmación a %1."
