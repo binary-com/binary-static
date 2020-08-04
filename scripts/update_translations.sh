@@ -31,10 +31,10 @@ function confirm {
 
 cd $(git rev-parse --show-toplevel) &&
 
-message "Updating dev branch" &&
-git checkout dev &&
-git fetch upstream dev &&
-git reset --hard upstream/dev &&
+message "Updating master branch" &&
+git checkout master &&
+git fetch upstream master &&
+git reset --hard upstream/master &&
 
 confirm "Update the source file (messages.pot) and push to Crowdin?" &&
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -61,7 +61,7 @@ then
     message "Committing"
     git commit -a -m "Update translations" &&
     message "Pushing"
-    git push origin dev
+    git push origin master
 fi &&
 
 echo ${GREEN}"\nSuccessfully Done." &&
