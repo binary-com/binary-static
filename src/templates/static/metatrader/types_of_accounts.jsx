@@ -63,7 +63,7 @@ const TypesOfAccounts = () => (
                 className='hide-maltainvest'
                 image='financial_stp'
                 title={it.L('Financial STP')}
-                text={it.L('The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes.')}
+                text={it.L('The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes.')}
             />
             <Box
                 image='synthetic'
@@ -94,8 +94,8 @@ const TypesOfAccounts = () => (
                                 [{ text: <Row number={5}  text={it.L('Margin call')} /> },            { text: '150%' },                                                                            { text: '150%' },                                    { text: '100%' }],
                                 [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '75%' },                                                                             { text: '75%' },                                     { text: '50%' }],
                                 [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                                                             { text: '50+' },                                     { text: '10+' }],
-                                [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                                                            { text: 'N/A' },                                     { text: it.L('N/A') }],
-                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies') }, { text: it.L('FX-majors, FX-minors, FX-exotics') },  { text: it.L('Synthetics') }],
+                                [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                                                            { text: '24/7' },                                     { text: it.L('N/A') }],
+                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies') }, { text: it.L('FX-majors, FX-minors, FX-exotics, Cryptocurrencies') },  { text: it.L('Synthetics') }],
                             ],
                         }}
                         tbody_id='instruments'
