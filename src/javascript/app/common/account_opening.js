@@ -1,5 +1,6 @@
 const SelectMatcher      = require('@binary-com/binary-style').select2Matcher;
 const Cookies            = require('js-cookie');
+const moment             = require('moment');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
 const BinaryPjax         = require('../base/binary_pjax');
@@ -9,6 +10,8 @@ const professionalClient = require('../pages/user/account/settings/professional_
 const CommonFunctions    = require('../../_common/common_functions');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
+const toISOFormat        = require('../../_common/string_util').toISOFormat;
+const toReadableFormat   = require('../../_common/string_util').toReadableFormat;
 const urlFor             = require('../../_common/url').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
@@ -22,7 +25,12 @@ const AccountOpening = (() => {
         }
 
         if (!upgrade_info.is_current_path) {
-            BinaryPjax.load(upgrade_info.upgrade_link);
+            const upgradable_accounts_count = Object.keys(upgrade_info.upgrade_links).length;
+            if (upgradable_accounts_count > 1) {
+                BinaryPjax.load('user/accounts');
+            } else if (upgradable_accounts_count === 1) {
+                BinaryPjax.load(Object.values(upgrade_info.upgrade_links)[0]);
+            }
             return 1;
         }
         return 0;
@@ -39,6 +47,28 @@ const AccountOpening = (() => {
             professionalClient.init(is_financial, false);
         }
         generateBirthDate(landing_company.minimum_age);
+        BinarySocket.wait('get_settings').then((response) => {
+            const get_settings = response.get_settings;
+            let $element,
+                value;
+            Object.keys(get_settings).forEach((key) => {
+                $element = $(`#${key}`);
+                value    = get_settings[key];
+                if (key === 'date_of_birth' && value) {
+                    const moment_val = moment.utc(value * 1000);
+                    get_settings[key] = moment_val.format('DD MMM, YYYY');
+                    $element.attr({
+                        'data-value': toISOFormat(moment_val),
+                        'value'     : toISOFormat(moment_val),
+                        'type'      : 'text',
+                    });
+                    $('.input-disabled').attr('disabled', 'disabled');
+                } else if (value) $element.val(value);
+            });
+            if (get_settings.has_secret_answer) {
+                $('.security').hide();
+            }
+        });
     };
 
     const getResidence = (form_id, getValidations) => {
@@ -51,6 +81,7 @@ const AccountOpening = (() => {
         if (residence_list.length > 0) {
             const $place_of_birth = $('#place_of_birth');
             const $phone          = $('#phone');
+            const $date_of_birth  = $('#date_of_birth');
             const residence_value = Client.get('residence') || '';
             let residence_text    = '';
 
@@ -67,7 +98,8 @@ const AccountOpening = (() => {
                 if (residence_value === res.value) {
                     residence_text = res.text;
                     if (res.phone_idd && !$phone.val()) {
-                        $phone.val(`+${res.phone_idd}`);
+                        const phone = State.getResponse('get_settings.phone');
+                        $phone.val(phone || `+${res.phone_idd}`);
                     }
                 }
             });
@@ -78,6 +110,13 @@ const AccountOpening = (() => {
                 const citizen = response.get_settings.citizen;
                 const place_of_birth = response.get_settings.place_of_birth;
                 const tax_residence = response.get_settings.tax_residence;
+                const date_of_birth = response.get_settings.date_of_birth;
+                if (date_of_birth) {
+                    const dt_date_of_birth = moment.unix(date_of_birth);
+                    $date_of_birth
+                        .attr('data-value', toISOFormat(dt_date_of_birth))
+                        .val(toReadableFormat(dt_date_of_birth));
+                }
 
                 if ($place_of_birth.length) {
                     if (place_of_birth) {
@@ -94,7 +133,10 @@ const AccountOpening = (() => {
                     });
                 }
 
-                if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+                if (
+                    State.getResponse('authorize.upgradeable_landing_companies')
+                        .some(item => ['malta', 'maltainvest', 'iom'].some(lc => lc === item))
+                ) {
                     const $citizen = $('#citizen');
                     CommonFunctions.getElementById('citizen_row').setVisibility(1);
                     if ($citizen.length) {
@@ -136,6 +178,14 @@ const AccountOpening = (() => {
                         .trigger('change');
                     CommonFunctions.getElementById('row_tax_residence').setVisibility(1);
                 }
+
+                Object.keys(response.get_settings).forEach((key) => {
+                    if (key === 'date_of_birth') return;
+                    const $el = $(`#${key}`);
+                    if (response.get_settings[key] && $el) {
+                        $el.val(response.get_settings[key]);
+                    }
+                });
             });
             BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         }
@@ -221,7 +271,7 @@ const AccountOpening = (() => {
             { selector: '#address_line_2',              validations: ['address', ['length', { min: 0, max: 70 }]] },
             { selector: '#address_city',                validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
             { selector: '#address_state',               validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',            validations: [Client.get('residence') === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').indexOf('iom') > -1 ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#address_postcode',            validations: [Client.get('residence') === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').some(lc => lc === 'iom') ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',                       validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
             { selector: '#secret_question',             validations: ['req'] },
             { selector: '#secret_answer',               validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
@@ -280,3 +330,4 @@ const AccountOpening = (() => {
 })();
 
 module.exports = AccountOpening;
+

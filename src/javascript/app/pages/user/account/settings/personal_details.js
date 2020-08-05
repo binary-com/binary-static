@@ -145,13 +145,13 @@ const PersonalDetails = (() => {
             get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
-        if (get_settings.place_of_birth && !changeable_fields.includes('place_of_birth')) {
+        if (get_settings.place_of_birth && !changeable_fields.includes('place_of_birth') && residence_list) {
             get_settings.place_of_birth =
                 (residence_list.find(obj => obj.value === get_settings.place_of_birth) || {}).text ||
                 get_settings.place_of_birth;
         }
 
-        if (get_settings.citizen && !changeable_fields.includes('citizen')) {
+        if (get_settings.citizen && !changeable_fields.includes('citizen') && residence_list) {
             get_settings.citizen =
                 (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
                 get_settings.citizen;
@@ -500,8 +500,6 @@ const PersonalDetails = (() => {
 
             if (!residence) {
                 displayResidenceList();
-            } else if (is_virtual) {
-                getDetailsResponse(get_settings_data);
             } else if (is_fully_authenticated) {
                 displayResidenceList();
                 name_fields.forEach(field => CommonFunctions.getElementById(`row_${field}`).classList.add('invisible'));

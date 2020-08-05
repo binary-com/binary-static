@@ -166,6 +166,15 @@ const MetaTraderConfig = (() => {
                                 showElementSetRedirect('.acc_opening_reason');
                                 is_ok = false;
                             }
+                            // UK Clients need to be authenticated first before they can proceed with account creation
+                            if (is_ok && !isAuthenticated() && is_maltainvest && accounts_info[acc_type].mt5_account_type === 'financial' && Client.get('residence') === 'gb') {
+                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#authenticate_loading').setVisibility(1);
+                                await setMaltaInvestIntention();
+                                $('#authenticate_loading').setVisibility(0);
+                                $message.find('.authenticate').setVisibility(1);
+                                is_ok = false;
+                            }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].mt5_account_type === 'financial_stp') {
                                 // disable button must occur before loading
                                 $('#view_1 #btn_next').addClass('button-disabled');
@@ -181,7 +190,7 @@ const MetaTraderConfig = (() => {
                         });
                     } else if (accounts_info[acc_type].account_type === 'gaming') {
                         let is_ok = true;
-                        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                        BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
                             const response_get_account_status = State.getResponse('get_account_status');
                             if (/financial_assessment_not_complete/.test(response_get_account_status.status)
                                 && !accounts_info[acc_type].mt5_account_type // is_synthetic
@@ -197,8 +206,21 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
 
-                            if (is_ok) resolve();
-                            else resolveWithMessage();
+                            const should_have_malta = Client.getUpgradeInfo().can_upgrade_to.includes('malta');
+
+                            if (is_ok && is_maltainvest && should_have_malta) {
+                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#authenticate_loading').setVisibility(1);
+                                $message.find('.malta').setVisibility(1);
+                                await setMaltaIntention();
+                                $('#authenticate_loading').setVisibility(0);
+                                is_ok = false;
+                                resolveWithMessage();
+                            } else if (is_ok) {
+                                resolve();
+                            } else {
+                                resolveWithMessage();
+                            }
                         });
                     }
                 });
@@ -219,6 +241,47 @@ const MetaTraderConfig = (() => {
         };
         BinarySocket.send(req).then((dry_run_response) => {
 
+            if (dry_run_response.error) {
+                // update account status authentication info
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    resolve();
+                });
+            }
+        });
+    });
+
+    const setMaltaIntention = () => new Promise((resolve) => {
+        const req = {
+            account_type    : 'gaming',
+            dry_run         : 1,
+            email           : Client.get('email'),
+            leverage        : 100,
+            mainPassword    : 'Test1234',
+            mt5_account_type: 'financial',
+            mt5_new_account : 1,
+            name            : 'test real synthetic',
+        };
+        BinarySocket.send(req).then((dry_run_response) => {
+            if (dry_run_response.error) {
+                // update account status authentication info
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    resolve();
+                });
+            }
+        });
+    });
+    const setMaltaInvestIntention = () => new Promise((resolve) => {
+        const req = {
+            account_type    : 'financial',
+            dry_run         : 1,
+            email           : Client.get('email'),
+            leverage        : 100,
+            mainPassword    : 'Test1234',
+            mt5_account_type: 'financial',
+            mt5_new_account : 1,
+            name            : 'test real financial',
+        };
+        BinarySocket.send(req).then((dry_run_response) => {
             if (dry_run_response.error) {
                 // update account status authentication info
                 BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {

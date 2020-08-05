@@ -61,7 +61,7 @@ then
     message "Committing"
     git commit -a -m "Update translations" &&
     message "Pushing"
-    git push origin master
+    git push origin dev
 fi &&
 
 echo ${GREEN}"\nSuccessfully Done." &&
