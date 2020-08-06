@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-04 02:23\n"
+"PO-Revision-Date: 2020-08-06 05:45\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -2497,6 +2497,9 @@ msgstr "单击 \"确定\" 继续。"
 msgid "Click here to open a Financial Account"
 msgstr "单击此处开立财务账户"
 
+msgid "Click here to open a Gaming account"
+msgstr "单击此处开立博彩账户"
+
 msgid "Click here to open a Real Account"
 msgstr "单击此处开立真实账户"
 
@@ -3315,7 +3318,7 @@ msgid "Dated within the last six months"
 msgstr "过去六个月内的日期"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "停用"
 
 msgid "Deal Cancel. Fee"
 msgstr "交易取消. 费用"
@@ -4436,8 +4439,8 @@ msgstr "FIX API"
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "外汇-主要货币对（标准/微手）， 外汇-次要货币对， 大宗商品， 加密货币"
 
-msgid "FX-majors, FX-minors, FX-exotics"
-msgstr "外汇-主要货币对，外汇-次要货币对，外汇-奇异货币对"
+msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
+msgstr "外汇-主要货币对、外汇-次要货币对、外汇-奇异货币对、加密货币"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -4879,6 +4882,9 @@ msgstr "GamCare赌博关注会"
 
 msgid "Gaming"
 msgstr "游戏"
+
+msgid "Gaming Account"
+msgstr "博彩账户"
 
 msgid "General"
 msgstr "一般条款"
@@ -5517,7 +5523,7 @@ msgid "If you choose to be treated as a Professional Client, we'll regard you as
 msgstr "如果您选择成为专业客户, 我们将视您已具备所需的市场知识和经验。因此, 我们将采取步骤, 确保您对成为专业客户的请求符合上述标准, 包括以下要求:"
 
 msgid "If you deactivate:"
-msgstr ""
+msgstr "如您停用:"
 
 msgid "If you decide to buy or 'go long' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase."
 msgstr "如果您决定买入美国100指数或持“多头”头寸，那么只要美国100指数的价格持续上涨，您的利润就会继续增加。但是，如果价格下跌，您所蒙受的亏损也会增加。"
@@ -10640,8 +10646,8 @@ msgstr "金融委员会根据每一个案的具体情况提供最高20,000欧元
 msgid "The Financial Products that DIEL offers to deal in are contracts entered into between clients and DIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay DIEL, DIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that DIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of DIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for DIEL's undertaking to pay."
 msgstr "DIEL提供的金融产品交易为客户和DIEL之间的合约。在这些合约和相关的特定条款约束下，由于客户向DIEL支付了费用或价格，当相关资产或测量具备某些特定指标时，DIEL也承诺向客户支付相应的金额。DIEL不会代替客户拥有这些合约，如果DIEL破产，也不会从提供给客户的资产保护中获利。同样的，客户所支付的交易费用或价格并不属于客户，而是对DIEL承诺支付的报酬。"
 
-msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr "财务直通式处理系统 （STP）账户是100% A Book 账户。让您直接进入市场交易，您也可直接访问外汇流动量提供商，并进行紧密利差、高交易量的主要、次要和特异货币对外汇交易。"
+msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
+msgstr "财务直通式处理系统 （STP）账户是100% A Book 账户。让您直接进入市场交易，您也可直接访问外汇流动量提供商，并进行紧密利差、高交易量的主要、次要、特异货币对和加密货币外汇交易。"
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
 msgstr "财务账户（可用欧元和英镑）适用于各种新手或有经验的交易者。以微小和可变的差价进行大宗商品、加密货币、主要和次要货币对交易, 不收佣金费，也没有最低存款限制。"
@@ -12456,6 +12462,9 @@ msgstr "立即升级"
 msgid "Upgrade to %1 %2Financial Account%3."
 msgstr "升级为 %1 %2金融账户%3。"
 
+msgid "Upgrade to %1 %2Gaming Account%3."
+msgstr "升级为 %1 %2 博彩账户%3。"
+
 msgid "Upgrade your account and start trading using real money."
 msgstr "升级账户, 并使用真实资金开始交易。"
 
@@ -12700,7 +12709,7 @@ msgid "Want to telecommute?"
 msgstr "想在家办公？"
 
 msgid "Warning!"
-msgstr ""
+msgstr "警告!"
 
 msgid "Warranties"
 msgstr "保证条款"
@@ -13537,7 +13546,7 @@ msgid "You want to sell that currency pair if you think the base currency will g
 msgstr "如果您认为基础货币将下跌，您会卖出此货币对。"
 
 msgid "You will %1NOT%2 be able to log in again."
-msgstr ""
+msgstr "您将%1无法%2 再次登录。"
 
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
 msgstr "您也将通过定期沟通安全又可靠的最佳做法和最新的在线威胁, 鼓励整个组织提高安全意识。"
@@ -13789,7 +13798,7 @@ msgid "Your withdrawal will be processed in one business day (Monday to Friday 9
 msgstr "除非另有说明，您的取款将于一个工作天内处理完毕（周一到周五，早上九点到下午五点，GMT+8）。"
 
 msgid "You’ll be logged out automatically."
-msgstr ""
+msgstr "您将自动注销。"
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
 msgstr "您的账户已成功关闭。我们将传送确认邮件到%1。"

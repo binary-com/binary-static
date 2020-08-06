@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-04 02:23\n"
+"PO-Revision-Date: 2020-08-06 05:45\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -2497,6 +2497,9 @@ msgstr "Cliquez sur OK pour continuer."
 msgid "Click here to open a Financial Account"
 msgstr "Cliquez ici pour ouvrir un Compte Financier"
 
+msgid "Click here to open a Gaming account"
+msgstr ""
+
 msgid "Click here to open a Real Account"
 msgstr "Cliquez ici pour ouvrir un Compte Réel"
 
@@ -3314,7 +3317,7 @@ msgid "Dated within the last six months"
 msgstr "Daté dans les trois derniers mois"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "Désactiver"
 
 msgid "Deal Cancel. Fee"
 msgstr "Offre Annulation. Coût"
@@ -4435,8 +4438,8 @@ msgstr "API FIX"
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Majeures FX (lots standard/micro), Mineures FX, Matières premières, Cryptodevises"
 
-msgid "FX-majors, FX-minors, FX-exotics"
-msgstr "FX-majeures, FX-mineures, FX-exotiques"
+msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
+msgstr ""
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -4878,6 +4881,9 @@ msgstr "GamCare"
 
 msgid "Gaming"
 msgstr "Jeu"
+
+msgid "Gaming Account"
+msgstr "Compte de jeu"
 
 msgid "General"
 msgstr "Généralités"
@@ -5517,7 +5523,7 @@ msgid "If you choose to be treated as a Professional Client, we'll regard you as
 msgstr "Si vous choisissez d’être traité comme un Client professionnel, nous vous considérerons comme ayant la connaissance du marché requise et l’expérience. Par conséquent, nous allons prendre des mesures pour s’assurer que votre demande d’admission au statut professionnel Client répond aux critères ci-dessus, y compris une demande de ce qui suit :"
 
 msgid "If you deactivate:"
-msgstr ""
+msgstr "Si vous désactivez:"
 
 msgid "If you decide to buy or 'go long' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase."
 msgstr "Si vous décidez d’acheter ou 'go long' sur l'indice US 100, votre profit continuera d’augmenter tant que le prix de l'indice US 100 continue à augmenter. Toutefois, si le prix baisse, les pertes que vous subissez vont également augmenter."
@@ -10641,8 +10647,8 @@ msgstr "La Commission financière offre une indemnisation au cas par cas allant 
 msgid "The Financial Products that DIEL offers to deal in are contracts entered into between clients and DIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay DIEL, DIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that DIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of DIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for DIEL's undertaking to pay."
 msgstr "Les produits financiers dans lesquels DIEL propose de traiter sont des contrats conclus entre les clients et DIEL. En vertu de ces contrats et sous réserve des modalités particulières du contrat pertinent, en contrepartie de la prime ou du prix que les clients versent à DIEL, DIEL s'engage à verser aux clients un certain montant si les actifs ou les mesures de référence fonctionnent d'une manière particulière. Ces contrats ne sont donc pas des instruments que DIEL détient pour le compte de clients et ne bénéficient pas non plus de la protection des actifs des clients en cas d'insolvabilité de DIEL. De même, la prime ou le prix que les clients paient pour conclure une transaction n'est pas considéré comme l'argent du client mais comme une contrepartie à l'engagement de DIEL à payer."
 
-msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr "Le compte Financial Straight-Through Processing (STP) est un compte 100% A Book où vos transactions sont transmises directement au marché, vous donnant un accès direct aux fournisseurs de liquidités forex. Négociez des paires de devises majeures, mineures et exotiques avec des spreads serrés et des volumes de trade plus élevés."
+msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
+msgstr ""
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
 msgstr "Le compte financier (disponible en EUR et GBP) convient à un large éventail de traders, débutants ou expérimentés. Tradez des matières premières, des crypto-monnaies, des paires de devises principales et mineures avec des spreads serrés et variables sans commissions et un dépôt minimum."
@@ -12456,6 +12462,9 @@ msgstr "Mettre à jour maintenant"
 msgid "Upgrade to %1 %2Financial Account%3."
 msgstr "Passer au %2Compte Financier%3 %1."
 
+msgid "Upgrade to %1 %2Gaming Account%3."
+msgstr "Passer au %2Compte de jeu%3 %1."
+
 msgid "Upgrade your account and start trading using real money."
 msgstr "Mettre à jour votre compte et commencer à trader à l’aide d’argent réel."
 
@@ -12700,7 +12709,7 @@ msgid "Want to telecommute?"
 msgstr "Vous voulez travailler de chez vous ?"
 
 msgid "Warning!"
-msgstr ""
+msgstr "Avertissement!"
 
 msgid "Warranties"
 msgstr "Garanties"
@@ -13537,7 +13546,7 @@ msgid "You want to sell that currency pair if you think the base currency will g
 msgstr "Vous voulez vendre la paire de devises si vous pensez que la devise de base va baisser."
 
 msgid "You will %1NOT%2 be able to log in again."
-msgstr ""
+msgstr "Vous ne pourrez %1NOT%2 vous reconnecter."
 
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
 msgstr "Vous encouragerez aussi la sensibilisation à la sécurité dans l'ensemble de l’organisation via une communication régulière sur les meilleures pratiques de sécurité et les dernières menaces en ligne."
@@ -13789,7 +13798,7 @@ msgid "Your withdrawal will be processed in one business day (Monday to Friday 9
 msgstr "Votre retrait sera traité en un jour ouvrable (du lundi au vendredi de 9h00 à 17h00 GMT + 8), sauf indication contraire."
 
 msgid "You’ll be logged out automatically."
-msgstr ""
+msgstr "Vous serez déconnecté automatiquement."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
 msgstr "\n"

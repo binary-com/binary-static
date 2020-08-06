@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-04 02:24\n"
+"PO-Revision-Date: 2020-08-06 05:45\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -2498,6 +2498,9 @@ msgstr "Nhấp vào OK để tiến tục."
 msgid "Click here to open a Financial Account"
 msgstr "Nhấp vào đây để mở một Tài Khoản Tài Chính"
 
+msgid "Click here to open a Gaming account"
+msgstr ""
+
 msgid "Click here to open a Real Account"
 msgstr "Nhấp vào đây để mở một Tài Khoản Thực"
 
@@ -4436,8 +4439,8 @@ msgstr "FIX API"
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Cặp tiền tệ chính (lô tiêu chuẩn/nhỏ), Cặp tiền tệ thứ yếu, Hàng hoá thương mại, Tiền điện tử"
 
-msgid "FX-majors, FX-minors, FX-exotics"
-msgstr "Cặp tiền tệ chính, Cặp tiền tệ thứ yếu, Các cặp tỷ giá ngoại lai"
+msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
+msgstr ""
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -4879,6 +4882,9 @@ msgstr "Hội GamCare"
 
 msgid "Gaming"
 msgstr "Chơi Game"
+
+msgid "Gaming Account"
+msgstr ""
 
 msgid "General"
 msgstr "Tổng quan"
@@ -10642,8 +10648,8 @@ msgstr "Ủy ban Tài chính cung cấp khoản bồi thường lên tới 20.00
 msgid "The Financial Products that DIEL offers to deal in are contracts entered into between clients and DIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay DIEL, DIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that DIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of DIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for DIEL's undertaking to pay."
 msgstr "Các Sản phẩm Tài chính mà DIEL cung cấp để giao dịch là các hợp đồng được nhập vào giữa khách hàng và DIEL. Theo các hợp đồng này và theo các điều khoản cụ thể của hơp đồng có liên quan, trong việc xem xét mức phí hoặc mức giá mà khách hàng trả cho DIEL, DIEL hứa sẽ trả cho khách hàng một số tiền nhất định nếu tài sản tham chiếu hoặc các công cụ đo lường hoạt động một cách cụ thể. Theo đó, những hợp đồng này không phải là công cụ mà DIEL nắm giữ cho khách hàng và cũng không phải là lợi ích từ việc bảo vệ tài sản của khách hàng khi DIEL phá sản. Tương tự như vậy mức phí hoặc mức giá mà khách hàng phải trả để đưa ra một giao dịch không chỉ được giữ như tiền của khách hàng mà còn là tiền mà DIEL phải có trách nhiệm trả."
 
-msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr "Tài khoản tài chính Straight-Through Processing (STP) là 100% tài khoản A Book, trong đó các giao dịch của bạn được chuyển thẳng ra thị trường, cho phép bạn truy cập trực tiếp vào các nhà cung cấp thanh khoản ngoại hối. Các cặp tiền tệ chính, phụ và ngoại tệ với giá chênh lệch thấp và khối lượng giao dịch cao hơn."
+msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
+msgstr ""
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
 msgstr "Tài khoản tài chính (có sẵn bằng EUR và GBP) phù hợp với nhiều nhà giao dịch, cả người mới hoặc người có kinh nghiệm. Giao dịch hàng hóa, tiền điện tử, cặp tiền chính và phụ với chênh lệch thấp và linh hoạt mà không có phí hoa hồng và tiền gửi tối thiểu."
@@ -12458,6 +12464,9 @@ msgstr "Nâng cấp ngay bây giờ"
 msgid "Upgrade to %1 %2Financial Account%3."
 msgstr "Nâng cấp thành%1 %2Tài Khoản Tài Chính%3."
 
+msgid "Upgrade to %1 %2Gaming Account%3."
+msgstr ""
+
 msgid "Upgrade your account and start trading using real money."
 msgstr "Nâng cấp tài khoản của bạn và bắt đầu kinh doanh bằng cách sử dụng tiền thật."
 
@@ -12702,7 +12711,7 @@ msgid "Want to telecommute?"
 msgstr "Bạn muốn làm việc từ xa?"
 
 msgid "Warning!"
-msgstr ""
+msgstr "Cảnh báo!"
 
 msgid "Warranties"
 msgstr "Bảo đảm"
@@ -13539,7 +13548,7 @@ msgid "You want to sell that currency pair if you think the base currency will g
 msgstr "Bạn muốn bán cặp tiền tệ nếu bạn nghĩ rằng các loại tiền tệ cơ sở sẽ đi xuống."
 
 msgid "You will %1NOT%2 be able to log in again."
-msgstr ""
+msgstr "Bạn sẽ %1KHÔNG%2 thể đăng nhập được nữa."
 
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
 msgstr "Chúng tôi khuyến khích bạn nên có nhận thức tốt hơn về bảo mật trong toàn tổ chức thông qua liên lạc thường xuyên với chúng tôi để nhận được thông tin về cách thực hiện bảo mật tài khoản tốt nhất và các mối đe dọa trực tuyến mới nhất."
@@ -13791,7 +13800,7 @@ msgid "Your withdrawal will be processed in one business day (Monday to Friday 9
 msgstr "Việc Rút Tiền sẽ được thực hiện vào một ngày làm việc (Thứ 2 đến thứ 6 từ 9 giờ - 17 giờ GMT +8) trừ khi có thông báo khác."
 
 msgid "You’ll be logged out automatically."
-msgstr ""
+msgstr "Bạn sẽ tự động đăng xuất khỏi tài khoản."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
 msgstr "Bạn đã đóng tài khoản thành công. Chúng tôi sẽ gửi email xác nhận tới %1"
