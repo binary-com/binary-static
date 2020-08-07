@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-06 05:45\n"
+"PO-Revision-Date: 2020-08-07 02:47\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -1817,12 +1817,6 @@ msgstr "B. Comienzo"
 msgid "B. Scope"
 msgstr "B. Alcance"
 
-msgid "BIEL RTS28 for 2018"
-msgstr "BIEL RTS28 para 2018"
-
-msgid "BIEL RTS28 for 2019"
-msgstr "BIEL RTS28 para 2019"
-
 msgid "BTC"
 msgstr "BTC"
 
@@ -2499,7 +2493,7 @@ msgid "Click here to open a Financial Account"
 msgstr "Haga clic aquí para abrir una cuenta financiera"
 
 msgid "Click here to open a Gaming account"
-msgstr ""
+msgstr "Haga clic aquí para abrir una cuenta de juego"
 
 msgid "Click here to open a Real Account"
 msgstr "Haga clic aquí para abrir una cuenta real"
@@ -3244,6 +3238,12 @@ msgstr "D. Administración de cuentas"
 
 msgid "D. Client instructions"
 msgstr "D. Instrucciones del Cliente"
+
+msgid "DIEL RTS28 for 2018"
+msgstr ""
+
+msgid "DIEL RTS28 for 2019"
+msgstr ""
 
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL forma parte de %1el Esquema de Indemnización de Inversores%2, o Investor Compensation Scheme, (el \"Esquema\") que es un fondo de rescate para los inversionistas que son clientes de empresas de inversión fallidas con licencia de la MFSA (Autoridad de Servicios Financieros de Malta). El Esquema cubre el 90% del monto neto que la Empresa debe a un cliente en concepto de inversiones que tienen derecho a una indemnización según la ley de servicios de inversión, sujeto a un pago máximo de € 20.000 por persona. El Esquema se basa en la directiva de la Unión Europea número 97/9."
@@ -4436,11 +4436,14 @@ msgstr "F. Margen y Apalancamiento"
 msgid "FIX API"
 msgstr "API FIX"
 
+msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
+msgstr ""
+
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "FX-mayores (lotes estándar / micro), FX-menores, materias primas, criptomonedas"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
-msgstr ""
+msgstr "FX-mayores, FX-menores, FX-exóticos, Criptomonedas"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -4884,7 +4887,7 @@ msgid "Gaming"
 msgstr "Apuestas"
 
 msgid "Gaming Account"
-msgstr ""
+msgstr "Cuenta de juego"
 
 msgid "General"
 msgstr "General"
@@ -10648,7 +10651,7 @@ msgid "The Financial Products that DIEL offers to deal in are contracts entered 
 msgstr "Los productos financieros que DIEL ofrece son contratos celebrados entre los clientes y DIEL. En virtud de estos contratos y sujetos a los términos específicos del contacto pertinente, en consideración de la prima o el precio que el cliente paga a DIEL, DIEL se compromete a pagar a los clientes una cierta cantidad, si los activos de referencia o mediciones realizan de una manera particular. En consecuencia, estos contratos no son instrumentos que DIEL posea en nombre de los clientes y tampoco se benefician de la protección de los activos de clientes en el caso de una insolvencia de DIEL. Del mismo modo, la prima o el precio que los clientes pagan para sacar un contrato, no se considera como el dinero de los clientes sino como contrapartida del compromiso de pago de DIEL."
 
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
-msgstr ""
+msgstr "La cuenta financiera Straight-Through Processing (STP o procesamiento directo) es una cuenta A Book 100% donde sus operaciones se transfieren directamente al mercado, lo que le brinda acceso directo a proveedores de liquidez forex. Opere con pares de divisas mayores, menores, exóticos y criptomonedas con diferenciales ajustados y mayores volúmenes comerciales."
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
 msgstr "La cuenta financiera (disponible en EUR y GBP) es adecuada para una amplia gama de traders, tanto nuevos como experimentados. Opere con productos básicos, criptomonedas, pares de divisas mayores y menores con diferenciales ajustados y variables sin comisiones y un depósito mínimo."
@@ -12463,7 +12466,7 @@ msgid "Upgrade to %1 %2Financial Account%3."
 msgstr "Actualice a %1 %2Cuenta Financiera%3."
 
 msgid "Upgrade to %1 %2Gaming Account%3."
-msgstr ""
+msgstr "Actualice a %1 %2Cuenta de juego%3."
 
 msgid "Upgrade your account and start trading using real money."
 msgstr "Actualice su cuenta y comience a operar con dinero real."
