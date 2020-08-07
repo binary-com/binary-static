@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-06 05:45\n"
+"PO-Revision-Date: 2020-08-07 02:47\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1817,12 +1817,6 @@ msgstr "B. Mở Đầu"
 msgid "B. Scope"
 msgstr "B. Phạm Vi"
 
-msgid "BIEL RTS28 for 2018"
-msgstr "BIEL RTS28 cho năm 2018"
-
-msgid "BIEL RTS28 for 2019"
-msgstr "BIEL RTS28 cho năm 2019"
-
 msgid "BTC"
 msgstr "BTC"
 
@@ -2499,7 +2493,7 @@ msgid "Click here to open a Financial Account"
 msgstr "Nhấp vào đây để mở một Tài Khoản Tài Chính"
 
 msgid "Click here to open a Gaming account"
-msgstr ""
+msgstr "Click vào đây để mở một tài khoản giao dịch"
 
 msgid "Click here to open a Real Account"
 msgstr "Nhấp vào đây để mở một Tài Khoản Thực"
@@ -3245,6 +3239,12 @@ msgstr "D. Quản lý tài khoản"
 msgid "D. Client instructions"
 msgstr "D. Các hướng dẫn khách hàng"
 
+msgid "DIEL RTS28 for 2018"
+msgstr ""
+
+msgid "DIEL RTS28 for 2019"
+msgstr ""
+
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL là một phần của %1Đề án Bồi thường cho Nhà đầu tư%2 (\"Đề án\") là quỹ cứu trợ cho các nhà đầu tư, là khách hàng của công ty đầu tư bị thất bại được cấp phép bởi MFSA. Quỹ bao gồm 90% nợ phải trả thuần của Công ty cho khách hàng đối với đầu tư đủ điều kiện được bồi thường theo Luật đầu tư, chi trả tối đa €20,000 cho mỗi người. Đề án này được dựa trên Chỉ thị EC 97/9."
 
@@ -3318,7 +3318,7 @@ msgid "Dated within the last six months"
 msgstr "Ngày trong sáu tháng qua"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "Hủy tài khoản"
 
 msgid "Deal Cancel. Fee"
 msgstr "Hủy Giao Dịch. Phí"
@@ -4436,11 +4436,14 @@ msgstr "F. Biên và Đòn Bẩy"
 msgid "FIX API"
 msgstr "FIX API"
 
+msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
+msgstr ""
+
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Cặp tiền tệ chính (lô tiêu chuẩn/nhỏ), Cặp tiền tệ thứ yếu, Hàng hoá thương mại, Tiền điện tử"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
-msgstr ""
+msgstr "Các cặp ngoại hối chính, phụ, ngoại lai và tiền điện tử"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -4884,7 +4887,7 @@ msgid "Gaming"
 msgstr "Chơi Game"
 
 msgid "Gaming Account"
-msgstr ""
+msgstr "Tài khoản Cá cược"
 
 msgid "General"
 msgstr "Tổng quan"
@@ -5524,7 +5527,7 @@ msgid "If you choose to be treated as a Professional Client, we'll regard you as
 msgstr "Nếu bạn chọn được chấp nhận như là một khách hàng chuyên nghiệp, chúng tôi sẽ mặc định bạn đã có các kiến thức thị trường và kinh nghiệm yêu cầu. Từ đó, chúng tôi sẽ thực hiện các bước để đảm bảo yêu cầu muốn có tình trạng khách hàng chuyên nghiệp của bạn đáp ứng các tiêu chí nêu trên, bao gồm các yêu cầu sau đây:"
 
 msgid "If you deactivate:"
-msgstr ""
+msgstr "Nếu bạn hủy tài khoản:"
 
 msgid "If you decide to buy or 'go long' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase."
 msgstr "Nếu bạn quyết định mua hoặc 'đi lên' với chỉ số US 100, lợi nhuận của bạn sẽ tiếp tục tăng miễn là giá của chỉ số US 100 tiếp tục tăng. Tuy nhiên, nếu giá rơi, mất mát mà bạn phải trả cũng sẽ tăng."
@@ -10649,7 +10652,7 @@ msgid "The Financial Products that DIEL offers to deal in are contracts entered 
 msgstr "Các Sản phẩm Tài chính mà DIEL cung cấp để giao dịch là các hợp đồng được nhập vào giữa khách hàng và DIEL. Theo các hợp đồng này và theo các điều khoản cụ thể của hơp đồng có liên quan, trong việc xem xét mức phí hoặc mức giá mà khách hàng trả cho DIEL, DIEL hứa sẽ trả cho khách hàng một số tiền nhất định nếu tài sản tham chiếu hoặc các công cụ đo lường hoạt động một cách cụ thể. Theo đó, những hợp đồng này không phải là công cụ mà DIEL nắm giữ cho khách hàng và cũng không phải là lợi ích từ việc bảo vệ tài sản của khách hàng khi DIEL phá sản. Tương tự như vậy mức phí hoặc mức giá mà khách hàng phải trả để đưa ra một giao dịch không chỉ được giữ như tiền của khách hàng mà còn là tiền mà DIEL phải có trách nhiệm trả."
 
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
-msgstr ""
+msgstr "Tài khoản Xử lý Thông qua Tài chính (STP) là một tài khoản A Book 100%, nơi các giao dịch của bạn được chuyển thẳng ra thị trường, cho phép bạn truy cập trực tiếp vào các nhà cung cấp thanh khoản ngoại hối. Giao dịch các cặp tiền tệ chính, phụ, ngoại lai và tiền điện tử với mức chênh lệch thấp và khối lượng giao dịch cao hơn."
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
 msgstr "Tài khoản tài chính (có sẵn bằng EUR và GBP) phù hợp với nhiều nhà giao dịch, cả người mới hoặc người có kinh nghiệm. Giao dịch hàng hóa, tiền điện tử, cặp tiền chính và phụ với chênh lệch thấp và linh hoạt mà không có phí hoa hồng và tiền gửi tối thiểu."
@@ -12465,7 +12468,7 @@ msgid "Upgrade to %1 %2Financial Account%3."
 msgstr "Nâng cấp thành%1 %2Tài Khoản Tài Chính%3."
 
 msgid "Upgrade to %1 %2Gaming Account%3."
-msgstr ""
+msgstr "Nâng cấp lên %1 %2Tài khoản Cá cược%3."
 
 msgid "Upgrade your account and start trading using real money."
 msgstr "Nâng cấp tài khoản của bạn và bắt đầu kinh doanh bằng cách sử dụng tiền thật."
