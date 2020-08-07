@@ -119,7 +119,7 @@ const TypesOfAccounts = () => (
                                 [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '50%' },                                                                             { text: '50%' }],
                                 [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                                                             { text: '10+' }],
                                 [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                                                            { text: it.L('N/A') }],
-                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies') }, { text: it.L('Synthetics') }],
+                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard), FX-minors, Commodities, Cryptocurrencies') }, { text: it.L('Synthetics') }],
                             ],
                         }}
                     />
