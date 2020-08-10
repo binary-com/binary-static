@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-07-27 07:37\n"
+"PO-Revision-Date: 2020-08-07 02:47\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -526,9 +526,6 @@ msgstr "0.3%"
 msgid "0.4%"
 msgstr "0.4%"
 
-msgid "0.40"
-msgstr "0.40"
-
 msgid "0.5%"
 msgstr "0.5%"
 
@@ -540,9 +537,6 @@ msgstr "0.70"
 
 msgid "0.75%"
 msgstr "0.75%"
-
-msgid "0.80"
-msgstr "0.80"
 
 msgid "1 million transactions/day"
 msgstr "1 миллион транзакций в день"
@@ -1822,12 +1816,6 @@ msgstr "B. Начало действия соглашения"
 msgid "B. Scope"
 msgstr "B. Сфера действия Политики"
 
-msgid "BIEL RTS28 for 2018"
-msgstr "BIEL RTS28 за 2018"
-
-msgid "BIEL RTS28 for 2019"
-msgstr "BIEL RTS28 за 2019"
-
 msgid "BTC"
 msgstr "BTC"
 
@@ -2502,6 +2490,9 @@ msgstr "Нажмите OK, чтобы продолжить."
 
 msgid "Click here to open a Financial Account"
 msgstr "Нажмите здесь для открытия Финансового счёта"
+
+msgid "Click here to open a Gaming account"
+msgstr "Нажмите здесь для открытия Игрового счёта"
 
 msgid "Click here to open a Real Account"
 msgstr "Нажмите здесь для открытия Реального счёта"
@@ -3247,6 +3238,12 @@ msgstr "D. Управление счётом"
 msgid "D. Client instructions"
 msgstr "D. Инструкции клиента"
 
+msgid "DIEL RTS28 for 2018"
+msgstr ""
+
+msgid "DIEL RTS28 for 2019"
+msgstr ""
+
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL является частью %1Схемы компенсации инвесторам%2 (далее именуемой \"Схема\"), которая представляет собой пакет помощи для инвесторов, являющихся клиентами закрывшихся инвестиционных фирм, лицензированных Мальтийским управлением финансовых услуг (MFSA). Схема покрывает 90% чистых обязательств Компании перед клиентами в отношении инвестиций, по которым, согласно Акту об Инвестиционных услугах, предусмотрены компенсации, максимальный размер которых составляет €20,000. Схема основана на Директиве Европейского Комитета 97/9."
 
@@ -3318,6 +3315,9 @@ msgstr "Ваша дата рождения"
 
 msgid "Dated within the last six months"
 msgstr "Датирован не позднее, чем за последние 6 месяцев"
+
+msgid "Deactivate"
+msgstr "Деактивировать"
 
 msgid "Deal Cancel. Fee"
 msgstr "Комиссия за отмену сделки"
@@ -4435,11 +4435,14 @@ msgstr "F. Маржа и кредитный рычаг"
 msgid "FIX API"
 msgstr "FIX API"
 
+msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
+msgstr ""
+
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Основные валютные пары (стандартные/микро лоты), минорные валютные пары, сырьевые товары, криптовалюты"
 
-msgid "FX-majors, FX-minors, FX-exotics"
-msgstr "основные пары FX, минорные пары FX, экзотические пары FX"
+msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
+msgstr "Основные пары FX, минорные пары FX, экзотические пары FX, криптовалюты"
 
 msgid "FXOpen"
 msgstr "FXOpen,"
@@ -4881,6 +4884,9 @@ msgstr "GamCare"
 
 msgid "Gaming"
 msgstr "Игры"
+
+msgid "Gaming Account"
+msgstr "Игровой счет"
 
 msgid "General"
 msgstr "Общие положения"
@@ -5517,6 +5523,9 @@ msgstr "Если Вы считаете себя гурманом, Вам неп�
 
 msgid "If you choose to be treated as a Professional Client, we'll regard you as having the required market knowledge and experience. As such, we'll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:"
 msgstr "Если Вы хотите получить статус Профессионального клиента, мы будем считать, что Вы обладаете должным опытом и необходимыми знаниями о рынке. В свою очередь, мы предпримем шаги, чтобы убедиться, что Ваш запрос на приобретение статуса Профессионального клиента соответствует вышеперечисленным критериям, а также запросим следующее:"
+
+msgid "If you deactivate:"
+msgstr "Если вы деактивируете:"
 
 msgid "If you decide to buy or 'go long' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase."
 msgstr "Если Вы хотите купить или открыть \"длинную позицию\" по индексу US 100, Ваша прибыль продолжит расти, пока повышается цена индекса US 100. Тем не менее, если цена снизится, Ваш убыток начнёт расти соответственно."
@@ -8713,12 +8722,6 @@ msgstr "RTS 27 2020"
 msgid "RTS 28"
 msgstr "RTS 28"
 
-msgid "Range Break 100 Index"
-msgstr "Индексы Range Break 100"
-
-msgid "Range Break 200 Index"
-msgstr "Индексы Range Break 200"
-
 msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
 msgstr "Индекс Range break 100 пробивает диапазон в среднем каждые 100 касаний границы."
 
@@ -10645,8 +10648,8 @@ msgstr "Финансовая комиссия предлагает компен�
 msgid "The Financial Products that DIEL offers to deal in are contracts entered into between clients and DIEL. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that clients pay DIEL, DIEL promises to pay clients a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that DIEL holds on clients' behalf and neither benefits from clients' assets protection in the event of DIEL's insolvency. Similarly, the premium or price that clients pay to take out a trade is not held as clients' money but as consideration for DIEL's undertaking to pay."
 msgstr "Финансовые продукты, предлагаемые DIEL, являются контрактами между клиентами и DIEL. В этих контрактах, согласно конкретным условиям соответствующего контракта, с учетом комиссии или цены, которую клиент платит DIEL, DIEL обещает выплатить клиентам определенную сумму, если упомянутые активы или измерения ведут себя определенным образом.Эти контракты, соответственно, не являются инструментами, которые DIEL содержит от имени клиентов или от защиты которых DIEL извлекает выгоду в случае своей несостоятельности. Аналогично, комиссия или цена, которую платит клиент, содержится не как деньги клиентов, а в качестве вознаграждения за обязательства выплаты DIEL."
 
-msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, and exotic currency pairs with tight spreads and higher trade volumes."
-msgstr "Финансовый STP счет (Straight-Through Processing — технология сквозной обработки) работает исключительно по модели A-book, а это значит, что мы передаем ваши контракты напрямую к нашим поставщикам ликвидности. Такой счет позволяет вам торговать основными и экзотическими валютными парами в больших объемах и с более узкими спредами."
+msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
+msgstr "Финансовый STP счет (Straight-Through Processing — технология сквозной обработки) работает исключительно по модели A-book, а это значит, что мы передаем ваши контракты напрямую нашим поставщикам ликвидности. Такой счет позволяет вам торговать основными, минорными, экзотическими и криптовалютными парами в больших объемах и с более узкими спредами."
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
 msgstr "Финансовый счет (доступен в EUR и GBP) подходит для широкого круга трейдеров, как начинающих, так и опытных. Торгуйте сырьевыми товарами, криптовалютами, основными и второстепенными валютными парами с низкими и переменными спредами без комиссий и минимального депозита."
@@ -12460,6 +12463,9 @@ msgstr "Обновить сейчас"
 msgid "Upgrade to %1 %2Financial Account%3."
 msgstr "Обновите счёт %1 до %2Финансового счёта%3."
 
+msgid "Upgrade to %1 %2Gaming Account%3."
+msgstr "Обновите счёт %1 до %2Игрового счёта%3."
+
 msgid "Upgrade your account and start trading using real money."
 msgstr "Обновите счёт и начните торговлю на реальные деньги."
 
@@ -12702,6 +12708,9 @@ msgstr "Хотите помочь нам улучшить надёжность �
 
 msgid "Want to telecommute?"
 msgstr "Хотите работать удалённо?"
+
+msgid "Warning!"
+msgstr "Предупреждение!"
 
 msgid "Warranties"
 msgstr "Гарантии"
@@ -13537,6 +13546,9 @@ msgstr "Вы хотите купить определённую валютную
 msgid "You want to sell that currency pair if you think the base currency will go down."
 msgstr "Вы хотите продать определённую валютную пару, если ожидаете последующего снижения базовой валюты."
 
+msgid "You will %1NOT%2 be able to log in again."
+msgstr "Вы %1НЕ%2 сможете снова войти в систему."
+
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
 msgstr "Также Вы будете поддерживать высокое информирование о системах безопасности в рамках организации посредством регулярного информирования о наилучших методиках безопасности и новейших онлайн угрозах."
 
@@ -13785,6 +13797,9 @@ msgstr "Ваш лимит на вывод составляет %1%2."
 
 msgid "Your withdrawal will be processed in one business day (Monday to Friday 9:00 am–5:00 pm GMT+8) unless stated otherwise."
 msgstr "Ваш вывод будет обработан в течение одного рабочего дня (с понедельника по пятницу с 9:00 до 17:00 GMT+8), если не указано иначе."
+
+msgid "You’ll be logged out automatically."
+msgstr "Вы автоматически выйдете из системы."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
 msgstr "Вы успешно закрыли счет. Мы отправим письмо с подтверждением на %1."

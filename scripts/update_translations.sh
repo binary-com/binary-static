@@ -10,7 +10,7 @@ if ! [ -x "$(command -v crowdin)" ]; then
     if [ -f /usr/local/bin/crowdin-cli.jar ]; then
         alias crowdin="java -jar /usr/local/bin/crowdin-cli.jar"
     else
-        echo ${YELLOW}"crowdin-cli not found. Please follow the instructions here: https://support.crowdin.com/cli-tool/#installation"${RESET}
+        echo ${YELLOW}"crowdin-cli not found. Please follow the instructions here: https://support.crowdin.com/cli-tool-v2/#installation"${RESET}
         exit 1
     fi
 fi
@@ -31,7 +31,7 @@ function confirm {
 
 cd $(git rev-parse --show-toplevel) &&
 
-message "Updating translations branch" &&
+message "Updating master branch" &&
 git checkout master &&
 git fetch upstream master &&
 git reset --hard upstream/master &&

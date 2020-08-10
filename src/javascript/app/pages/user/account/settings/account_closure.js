@@ -302,10 +302,18 @@ const AccountClosure = (() => {
             collapsible: true,
             active     : true,
         });
+        const $account_closure_dialog = $('#account-closure-dialog');
+        $account_closure_dialog.setVisibility(0);
+        $('#back').on('click', () => $account_closure_dialog.setVisibility(0));
+
+        $('#deativate').on('click', () => {
+            $account_closure_dialog.setVisibility(0);
+            submitForm();
+        });
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
-            submitForm();
+            $account_closure_dialog.setVisibility(1);
         });
 
         $txt_other_reason.setVisibility(0);

@@ -32,10 +32,10 @@ const Real = () => (
         </div>
         <form id='frm_real' className='gr-padding-10'>
             <Fieldset legend={it.L('Details')}>
-                <Salutation />
-                <FirstName />
-                <LastName />
-                <DateOfBirth />
+                <Salutation className='input-disabled' />
+                <FirstName className='input-disabled' />
+                <LastName className='input-disabled' />
+                <DateOfBirth className='input-disabled' />
                 <Citizenship row_class='invisible' />
                 <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{ single: 'single' }} />
                 <Residence />
@@ -53,7 +53,7 @@ const Real = () => (
                 <p className='gr-10 gr-centered notice-msg center-text'>{it.L('Please ensure that your address is complete and accurate.')}</p>
             </Fieldset>
 
-            <Fieldset legend={it.L('Security')}>
+            <Fieldset legend={it.L('Security')} className='security'>
                 <SecretQuestion />
                 <SecretAnswer />
             </Fieldset>
