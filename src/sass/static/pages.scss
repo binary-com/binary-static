@@ -1612,10 +1612,10 @@ body #not_authenticated_financial ul.checked > li {
     & .ui-accordion .ui-accordion-icons {
         padding-right: 1.2em;
     }
-    #account-closure-dialog {
+    .account-closure-dialog {
         left: 0;
 
-        #account-closure-dialog-content {
+        .account-closure-dialog-content {
             width: 29rem;
             height: 22.7rem;
             border-radius: 4px;
@@ -1623,6 +1623,29 @@ body #not_authenticated_financial ul.checked > li {
             @media (max-width: 500px) {
                 height: unset;
             }
+        }
+        #account_closure_error {
+            &_content {
+                border-radius: 8px;
+                padding: 24px;
+                width: 28.5rem;
+                height: auto;
+            }
+            &_title {
+                font-size: $FONT_SIZE_N;
+            }
+            &_buttons {
+                text-align: right;
+            }
+        }
+        .account-closure-details {
+            padding-left: 16px;
+            padding-right: 16px;
+            display: flex;
+            width: 307px;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 1.5;
         }
         #ic-emergency {
             width: 6rem;

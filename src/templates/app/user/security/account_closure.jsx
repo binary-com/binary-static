@@ -32,10 +32,10 @@ const ClosureDescription = ({
         </div>
     </React.Fragment>
 );
- 
+
 const AccountClosureDialog = () => (
-    <div id='account-closure-dialog' className='lightbox'>
-        <div id='account-closure-dialog-content' className='gr-padding-10 gr-gutter'>
+    <div id='account_closure_warning' className='account-closure-dialog lightbox'>
+        <div id='account_closure_warning_content' className='account-closure-dialog-content gr-padding-10 gr-gutter'>
             <div className='center-text gr-padding-10'>
                 <img
                     id='ic-emergency'
@@ -48,8 +48,33 @@ const AccountClosureDialog = () => (
                 <p className='warning-msg'>{it.L('You will [_1]NOT[_2] be able to log in again.', '<span id="red-msg">', '</span>')}</p>
             </div>
             <div className='center-text gr-centered gr-padding-10 gr-child'>
-                <a id='back' className='button button-secondary' href='javascript:;'><span id='span-btn'>{it.L('Back')}</span></a>
-                <button id='deativate' className='button btn-size' type='submit'>{it.L('Deactivate')}</button>
+                <a className='back button button-secondary' href='javascript:;'><span id='span-btn'>{it.L('Back')}</span></a>
+                <button id='deactivate' className='button btn-size' type='submit'>{it.L('Deactivate')}</button>
+            </div>
+        </div>
+    </div>
+);
+
+const AccountClosureError = () => (
+    <div id='account_closure_error' className='account-closure-dialog lightbox'>
+        <div id='account_closure_error_content' className='account-closure-dialog-content gr-padding-10 gr-gutter'>
+            <div className='gr-padding-10 gr-parent'>
+                <h3 className='secondary-color'>{it.L('Action required')}</h3>
+                <div className='gr-padding-20 gr-parent invisible' id='account_closure_open'>
+                    {it.L('You have open positions in these Binary accounts:')}
+                </div>
+                <div className='gr-padding-20 gr-parent invisible' id='account_closure_balance'>
+                    {it.L('You have funds in these Binary accounts:')}
+                </div>
+                <div className='gr-padding-20 gr-parent invisible' id='account_closure_open_mt'>
+                    {it.L('You have open positions in these MT5 accounts:')}
+                </div>
+                <div className='gr-padding-20 gr-parent invisible' id='account_closure_balance_mt'>
+                    {it.L('You have funds in these MT5 accounts:')}
+                </div>
+            </div>
+            <div id='account_closure_error_buttons' className='gr-padding-10 gr-child'>
+                <button className='back button no-margin'>{it.L('OK')}</button>
             </div>
         </div>
     </div>
@@ -139,7 +164,7 @@ const AccountClosure = () => (
                         <h3 className='secondary-color'>{it.L('Step 1: Close all open positions')}</h3>
                         <p>{it.L('Go to the [_1]portfolio page[_2] to close all open positions from your Binary.com accounts.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
                         <p className='invisible metatrader-link'>{it.L('If you have opened positions in your MT5 account, please close them too.')}</p>
-                        
+
                     </div>
                     <div className='gr-padding-10'>
                         <h3 className='secondary-color'>{it.L('Step 2: Withdraw your funds')}</h3>
@@ -182,7 +207,7 @@ const AccountClosure = () => (
 
                 <SeparatorLine className='gr-padding-10' />
             </div>
-            
+
             <div className='invisible' id='submit_loading'>
                 <Loading />
             </div>
@@ -195,6 +220,7 @@ const AccountClosure = () => (
                 />
             </form>
             <AccountClosureDialog />
+            <AccountClosureError />
         </div>
     </React.Fragment>
 );
