@@ -385,6 +385,8 @@ const AccountClosure = (() => {
 
     const showErrorPopUp = async (response, $account_closure_error) => {
         const mt5_login_list = (await BinarySocket.wait('mt5_login_list')).mt5_login_list;
+        // clear all previously added details first
+        $account_closure_error.find('.account-closure-details').remove();
         const $parent = $('<div/>', { class: 'gr-padding-10 gr-child account-closure-details' });
         let section_id = '';
         let display_name = '';
