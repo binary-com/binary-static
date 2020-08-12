@@ -81,23 +81,32 @@ const Accounts = (() => {
 
     const populateNewAccounts = (upgrade_info) => {
         const table_headers = TableHeaders.get();
-        const new_account   = upgrade_info;
-        const account       = {
-            real     : new_account.type === 'real',
-            financial: new_account.type === 'financial',
-        };
-        const new_account_title    = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
-        $(form_id).find('tbody')
-            .append($('<tr/>')
-                .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
-                    text                 : new_account_title,
-                    'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
-                    'data-balloon-length': 'large',
-                })))
-                .append($('<td/>', { text: getAvailableMarkets(account), datath: table_headers.available_markets }))
-                .append($('<td/>')
-                    .html($('<a/>', { class: 'button', href: urlFor(new_account.upgrade_link) })
-                        .html($('<span/>', { text: localize('Create account') })))));
+        upgrade_info.type.forEach((new_account_type, index) => {
+            const account           = {
+                real     : new_account_type === 'real',
+                financial: new_account_type === 'financial',
+            };
+            const new_account_title = new_account_type === 'financial' ? localize('Financial Account') :
+                upgrade_info.can_upgrade_to[index] === 'malta' ? localize('Gaming Account') : localize('Real Account');
+            $(form_id).find('tbody')
+                .append($('<tr/>')
+                    .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
+                        text          : new_account_title,
+                        'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize(
+                            'Jurisdiction')}: ${getCompanyCountry(account)}`,
+                        'data-balloon-length': 'large',
+                    })))
+                    .append($('<td/>', { text: getAvailableMarkets(account), datath: table_headers.available_markets }))
+                    .append($('<td/>')
+                        .html($(
+                            '<a/>',
+                            {
+                                class: 'button',
+                                href : urlFor(upgrade_info.upgrade_links[upgrade_info.can_upgrade_to[index]]),
+                            },
+                        )
+                            .html($('<span/>', { text: localize('Create account') })))));
+        });
     };
 
     const addChangeCurrencyOption = () => {

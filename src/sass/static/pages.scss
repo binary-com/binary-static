@@ -1612,6 +1612,44 @@ body #not_authenticated_financial ul.checked > li {
     & .ui-accordion .ui-accordion-icons {
         padding-right: 1.2em;
     }
+    #account-closure-dialog {
+        left: 0;
+
+        #account-closure-dialog-content {
+            width: 29rem;
+            height: 22.7rem;
+            border-radius: 4px;
+            background-color: $COLOR_WHITE;
+            @media (max-width: 500px) {
+                height: unset;
+            }
+        }
+        #ic-emergency {
+            width: 6rem;
+            height: 6rem;
+            object-fit: contain;
+            margin: 0.5em 0em;
+        }
+        .warning-msg {
+            line-height: 0.7em;
+        }
+        .btn-size {
+            width: 12.7rem;
+            height: 2.3rem;
+        }
+        #span-btn {
+            padding-right: 5rem;
+            padding-left: 5rem;
+            @media (max-width: 500px) {
+                margin-bottom: 10px;
+                margin-left: 10px;
+            }
+        }
+        #red-msg {
+            color: $COLOR_RED;
+            font-weight: bold;
+        }
+    }
 }
 
 .reason-textfield {

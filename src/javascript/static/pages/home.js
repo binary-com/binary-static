@@ -35,7 +35,7 @@ const Home = (() => {
     };
 
     const checkCountry = (req) => {
-        if ((clients_country !== 'my') || /@binary\.com$/.test(req.verify_email)) {
+        if ((clients_country !== 'my') || /@((binary|deriv|regentmarkets)\.com|4x\.my|binary\.me)$/.test(req.verify_email)) {
             return true;
         }
         $('#frm_verify_email').find('div')

@@ -253,7 +253,7 @@ const Metatrader = () => (
                             it.L('Leverage up to [_1]', '1:100'),
                             it.L('Variable spreads'),
                             it.L('Market execution'),
-                            it.L('No commission'),
+                            it.L('No commission (excluding cryptocurrencies)'),
                         ]}
                     />
                     {/* TODO: [remove-standard-advanced] remove vanuatu_advanced when API groups are updated */}
@@ -266,7 +266,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:100'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         */}
@@ -516,12 +516,13 @@ const Metatrader = () => (
                     <div id='msg_switch'>
                         {it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}
                         <br />
-                        {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('new_account/realws')}">`, '</a>')}
+                        {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('user/accounts')}">`, '</a>')}
                     </div>
                     <div id='msg_real_financial'>
                         <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account:')}</span>
                         <ul className='bullet'>
-                            <li className='maltainvest invisible'>{it.L('Upgrade to [_1] [_2]Financial Account[_3].', it.website_name, `<a href="${it.url_for('new_account/maltainvestws')}">`, '</a>')}</li>
+                            <li className='malta invisible'>{it.L('Upgrade to [_1] [_2]Gaming Account[_3].', it.website_name, `<a href="${it.url_for('user/accounts')}">`, '</a>')}</li>
+                            <li className='maltainvest invisible'>{it.L('Upgrade to [_1] [_2]Financial Account[_3].', it.website_name, `<a href="${it.url_for('user/accounts')}">`, '</a>')}</li>
                             <li className='trading_experience invisible'>{it.L('Please [_1]complete the trading experience section[_2] in the financial assessment to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                             <li className='assessment invisible'>{it.L('Please [_1]complete the financial assessment[_2] to open an MT5 account.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</li>
                             <li className='tax invisible'>{it.L('Complete your [_1]Tax Information[_2].', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</li>
