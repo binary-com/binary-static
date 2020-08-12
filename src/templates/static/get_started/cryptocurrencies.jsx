@@ -14,8 +14,9 @@ const hundredth = '0.01';
 const tenth     = '0.10';
 const one       = '1';
 const hundred   = '100';
-const pointfive = '0.50%';
-const negtwenty = '-20%';
+const pointthree = '0.30%';
+const negten = '-10%';
+const negfifteen = '-15%';
 
 const Cryptocurrencies = () => (
     <div className='static_full get-started'>
@@ -117,13 +118,13 @@ const Cryptocurrencies = () => (
                                 { text: it.L('Swaps short (per annum)'),   className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')      }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar')     }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar')     }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US dollar') }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')       }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')         }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
-                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US dollar')          }, { text: pointfive }, { text: negtwenty }, { text: negtwenty }],
+                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')      }, { text: pointthree }, { text: negten }, { text: negfifteen }],
+                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar')     }, { text: pointthree }, { text: negfifteen }, { text: negfifteen }],
+                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar')     }, { text: pointthree }, { text: negfifteen }, { text: negfifteen }],
+                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US dollar') }, { text: pointthree }, { text: negfifteen }, { text: negfifteen }],
+                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')       }, { text: pointthree }, { text: negfifteen }, { text: negfifteen }],
+                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')         }, { text: pointthree }, { text: negfifteen }, { text: negfifteen }],
+                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US dollar')          }, { text: pointthree }, { text: negfifteen }, { text: negfifteen }],
                             ],
                         }}
                     />
