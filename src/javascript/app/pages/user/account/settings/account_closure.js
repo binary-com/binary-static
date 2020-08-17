@@ -3,7 +3,7 @@ const getCurrenciesOfOtherAccounts = require('../../get_currency').getCurrencies
 const Metatrader                   = require('../../metatrader/metatrader');
 const BinarySocket                 = require('../../../../base/socket');
 const Client                       = require('../../../../base/client');
-const getCurrencyFullName          = require('../../../../common/currency').getCurrencyFullName;
+const Currency                     = require('../../../../common/currency');
 const localize                     = require('../../../../../_common/localize').localize;
 const Url                          = require('../../../../../_common/url');
 const isCryptocurrency             = require('../../../../../_common/base/currency_base').isCryptocurrency;
@@ -63,7 +63,7 @@ const AccountClosure = (() => {
             if (is_virtual) {
                 $virtual.setVisibility(1);
                 currencies.forEach((currency) => {
-                    $virtual.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                    $virtual.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                 });
 
             } else {
@@ -82,7 +82,7 @@ const AccountClosure = (() => {
                             }
                         });
                         if (is_allowed) {
-                            $real_unset.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                            $real_unset.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                         }
                     });
                 }
@@ -114,9 +114,9 @@ const AccountClosure = (() => {
                         });
                         if (is_allowed) {
                             if (isCryptocurrency(currency)) {
-                                $fiat_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                                $fiat_2.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                             } else {
-                                $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                                $fiat_1.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                             }
                         }
                     });
@@ -166,9 +166,9 @@ const AccountClosure = (() => {
                         if (is_allowed) {
                             if (isCryptocurrency(currency)) {
                                 has_all_crypto = false;
-                                $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                                $crypto_2.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                             } else {
-                                $crypto_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                                $crypto_1.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                             }
                         }
                     });
@@ -264,9 +264,9 @@ const AccountClosure = (() => {
                         if (is_allowed) {
                             if (isCryptocurrency(currency)) {
                                 has_all_crypto = false;
-                                $crypto_2.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                                $crypto_2.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                             } else {
-                                $fiat_1.find('ul').append(`<li>${getCurrencyFullName(currency)}</li>`);
+                                $fiat_1.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
                             }
                         }
                     });
@@ -302,18 +302,30 @@ const AccountClosure = (() => {
             collapsible: true,
             active     : true,
         });
-        const $account_closure_dialog = $('#account-closure-dialog');
-        $account_closure_dialog.setVisibility(0);
-        $('#back').on('click', () => $account_closure_dialog.setVisibility(0));
+        const $account_closure_warning = $('#account_closure_warning');
+        const $account_closure_error = $('#account_closure_error');
 
-        $('#deativate').on('click', () => {
-            $account_closure_dialog.setVisibility(0);
-            submitForm();
+        const hideDialogs = () => {
+            $account_closure_warning.setVisibility(0);
+            $account_closure_error.setVisibility(0);
+        };
+
+        hideDialogs();
+
+        $('.back').on('click', () => {
+            hideDialogs();
+        });
+
+        $('#deactivate').on('click', () => {
+            $account_closure_warning.setVisibility(0);
+            submitForm($account_closure_error);
         });
 
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
-            $account_closure_dialog.setVisibility(1);
+            if (getReason()) {
+                $account_closure_warning.setVisibility(1);
+            }
         });
 
         $txt_other_reason.setVisibility(0);
@@ -339,35 +351,83 @@ const AccountClosure = (() => {
         });
     };
 
-    const submitForm = () => {
+    const submitForm = ($account_closure_error) => {
         const $btn_submit = $form.find('#btn_submit');
-        const reason = getReason();
-        if (reason) {
-            $submit_loading.setVisibility(1);
-            $btn_submit.attr('disabled', true);
+        $submit_loading.setVisibility(1);
+        $btn_submit.attr('disabled', true);
 
-            const data  = { account_closure: 1, reason };
-            BinarySocket.send(data).then((response) => {
-                if (response.error) {
-                    $submit_loading.setVisibility(0);
-                    showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
-                    $btn_submit.attr('disabled', false);
+        const data  = { account_closure: 1, reason: getReason() };
+        BinarySocket.send(data).then(async (response) => {
+            if (response.error) {
+                $submit_loading.setVisibility(0);
+                if (response.error.details) {
+                    await showErrorPopUp(response, $account_closure_error);
+                    $account_closure_error.setVisibility(1);
                 } else {
-                    $submit_loading.setVisibility(0);
-                    $closure_container.setVisibility(0);
-                    $success_msg.setVisibility(1);
-                    $.scrollTo(0, 500);
-
-                    sessionStorage.setItem('closingAccount', 1);
-                    setTimeout(() => {
-                        // we need to clear all stored client data by performing a logout action and then redirect to home
-                        // otherwise it will think that client is still logged in and redirect to trading page
-                        Client.sendLogoutRequest(false, Url.urlFor('home'));
-                    }, 10000);
+                    showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                 }
+                $btn_submit.attr('disabled', false);
+            } else {
+                $submit_loading.setVisibility(0);
+                $closure_container.setVisibility(0);
+                $success_msg.setVisibility(1);
+                $.scrollTo(0, 500);
+
+                sessionStorage.setItem('closingAccount', 1);
+                setTimeout(() => {
+                    // we need to clear all stored client data by performing a logout action and then redirect to home
+                    // otherwise it will think that client is still logged in and redirect to trading page
+                    Client.sendLogoutRequest(false, Url.urlFor('home'));
+                }, 10000);
+            }
+        });
+    };
+
+    const showErrorPopUp = async (response, $account_closure_error) => {
+        const mt5_login_list = (await BinarySocket.wait('mt5_login_list')).mt5_login_list;
+        // clear all previously added details first
+        $account_closure_error.find('.account-closure-details').remove();
+        const $parent = $('<div/>', { class: 'gr-padding-10 gr-child account-closure-details' });
+        let section_id = '';
+        let display_name = '';
+        const addSection = (account, info) => {
+            const $section = $parent.clone();
+            $section
+                .append($('<div />')
+                    .append($('<strong />', { text: display_name }))
+                    .append($('<div />', { text: account.replace(/^MT[DR]?/i, '') })))
+                .append($('<span />', { text: info }));
+            $account_closure_error.find(section_id).setVisibility(1).append($section);
+        };
+        const getMTDisplay = (account) => {
+            const mt5_group = (mt5_login_list.find(acc => acc.login === account) || {}).group;
+            return Client.getMT5AccountDisplay(mt5_group);
+        };
+        if (response.error.details.open_positions) {
+            Object.keys(response.error.details.open_positions).forEach((account) => {
+                const txt_positions = `${response.error.details.open_positions[account]} position(s)`;
+                if (/^MT/.test(account)) {
+                    section_id = '#account_closure_open_mt';
+                    display_name = getMTDisplay(account);
+                } else {
+                    section_id = '#account_closure_open';
+                    display_name = Client.get('currency', account);
+                }
+                addSection(account, txt_positions);
             });
-        } else {
-            setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
+        }
+        if (response.error.details.balance) {
+            Object.keys(response.error.details.balance).forEach((account) => {
+                const txt_balance = `${response.error.details.balance[account].balance} ${response.error.details.balance[account].currency}`;
+                if (/^MT/.test(account)) {
+                    section_id = '#account_closure_balance_mt';
+                    display_name = getMTDisplay(account);
+                } else {
+                    section_id = '#account_closure_balance';
+                    display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);
+                }
+                addSection(account, txt_balance);
+            });
         }
     };
 
