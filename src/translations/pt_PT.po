@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-07 02:46\n"
+"PO-Revision-Date: 2020-08-17 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -1043,6 +1043,9 @@ msgstr "Atuar como suporte de primeiro e segundo nível para nossos clientes, of
 msgid "Action"
 msgstr "Ação"
 
+msgid "Action required"
+msgstr ""
+
 msgid "Active trading clients"
 msgstr "Clientes de negociação ativos"
 
@@ -1430,6 +1433,9 @@ msgstr "Qualquer outra consideração relevante para a execução da transação
 
 msgid "Any other information as requested by the Company"
 msgstr "Qualquer outra informação solicitada pela Empresa"
+
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "Qualquer restrição aos seus Clientes na compra de quaisquer contratos durante algumas horas"
@@ -2514,8 +2520,8 @@ msgstr "Dinheiro de clientes"
 msgid "Client reporting"
 msgstr "Relatórios de clientes"
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
-msgstr "As contas de demonstração do cliente serão excluídas após 30 dias de inatividade."
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "Responsabilidade do Cliente"
@@ -3241,10 +3247,10 @@ msgid "D. Client instructions"
 msgstr "D. Instruções do cliente"
 
 msgid "DIEL RTS28 for 2018"
-msgstr ""
+msgstr "DIEL RTS28 para 2018"
 
 msgid "DIEL RTS28 for 2019"
-msgstr ""
+msgstr "DIEL RTS28 para 2019"
 
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "A DIEL faz parte do %1Programa de Compensação ao Investidor%2 (o \"Programa\"), que é um fundo de resgate para investidores que são clientes de empresas de investimento falidas licenciadas pela MFSA. O Programa abrange 90% do passivo líquido da Empresa para um cliente em relação a investimentos que se qualificam para compensação nos termos da Lei dos Serviços de Investimento, sujeito a um pagamento máximo para qualquer pessoa de € 20.000. O regime baseia-se na Directiva 97/9 CE."
@@ -4438,7 +4444,7 @@ msgid "FIX API"
 msgstr "API FIX"
 
 msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "Pares de Forex Principais (lotes padrão), Pares de Forex Secundários, Commodities, Criptomoedas"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Pares de Forex Principais (lotes padrão/micro), Pares de Forex Secundários, Commodities, Criptomoedas"
@@ -6610,6 +6616,9 @@ msgstr "Prêmio FFXPO do MENA"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "As corretoras de MT4 e MT5 podem se conectar diretamente à nossa liquidez na ponte One Zero ao usar plug-ins internos."
+
+msgid "MT5"
+msgstr ""
 
 msgid "MT5 Demo"
 msgstr "Demo MT5"
@@ -8786,8 +8795,8 @@ msgstr "Abertura de conta de dinheiro real"
 msgid "Real Synthetic"
 msgstr "Real Sintéticos"
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "As contas reais serão desabilitadas após 90 dias de inatividade. Para reativar uma conta real, entre em contato com o suporte em %1support@binary.com%2"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Conta de dinheiro real"
@@ -13470,11 +13479,23 @@ msgstr "Você tem uma conta, mas não definiu sua moeda. Você pode %1escolher u
 msgid "You have created all accounts available to you."
 msgstr "Você já criou todas as contas disponíveis para você."
 
+msgid "You have funds in these Binary accounts:"
+msgstr ""
+
+msgid "You have funds in these MT5 accounts:"
+msgstr ""
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "Você não tem fundos suficientes na sua conta Binary, <a href=\"%1\">adicione  fundos</a>."
 
 msgid "You have not granted access to any applications."
 msgstr "Você não concedeu acesso a nenhum aplicativo."
+
+msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these MT5 accounts:"
+msgstr ""
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "É provável que você tenha visto os termos \"assumir uma posição longa\" e \"assumir uma posição curta\" usados por corretoras e negociadores de Forex. Vamos comparar as diferenças entre os dois termos:"

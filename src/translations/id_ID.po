@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-07 02:46\n"
+"PO-Revision-Date: 2020-08-17 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1042,6 +1042,9 @@ msgstr "Bertindak sebagai dukungan utama dan kedua bagi para trader kami dengan 
 msgid "Action"
 msgstr "Aksi"
 
+msgid "Action required"
+msgstr ""
+
 msgid "Active trading clients"
 msgstr "Klien trading aktif"
 
@@ -1428,6 +1431,9 @@ msgstr "Pertimbangan lainnya berkaitan dengan pelaksanaan transaksi"
 
 msgid "Any other information as requested by the Company"
 msgstr "Informasi lain yang diminta oleh Perusahaan"
+
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "Setiap batasan bagi kliennya dalam pembelian kontrak apa pun selama jam-jam tertentu"
@@ -2512,8 +2518,8 @@ msgstr "Dana klien"
 msgid "Client reporting"
 msgstr "Laporan klien"
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
-msgstr "Akun demo klien akan dihapus setelah tidak aktif selama 30 hari."
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "Tanggung jawab klien"
@@ -3239,10 +3245,10 @@ msgid "D. Client instructions"
 msgstr "D. Instruksi klien"
 
 msgid "DIEL RTS28 for 2018"
-msgstr ""
+msgstr "DIEL RTS28 untuk 2018"
 
 msgid "DIEL RTS28 for 2019"
-msgstr ""
+msgstr "DIEL RTS28 for 2019"
 
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL merupakan bagian dari %1Skema Kompensasi Investor%2 (\"Skema\") yang merupakan dana penyelamat bagi investor yang gagal berinvestasi pada firma yang dilisensi oleh MFSA. Skema ini melindungi 90% kewajiban bersih Perusahaan kepada Klien bagi investasinya yang memenuhi syarat dalam memperoleh kompensasi dibawah Akta Layanan Investasi dengan jumlah maksimal per orang sebesar €20,000. Skema adalah berdasarkan pada EC Directive 97/9."
@@ -4436,7 +4442,7 @@ msgid "FIX API"
 msgstr "API TETAP"
 
 msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "FX-mayor (standar), FX-minor, Komoditas, Mata uang kripto"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "FX-mayor (standar/lot mikro), FX-minor, Komoditas, Mata uang kripto"
@@ -5279,7 +5285,7 @@ msgid "I hereby confirm that the tax information I provided is true and complete
 msgstr "Dengan ini saya mengkonfirmasikan bahwa informasi pajak yang saya berikan adalah benar dan lengkap. Saya juga akan menginformasikan kepada Deriv Investments (Europe) Limited jika terdapat perubahan pada informasi ini."
 
 msgid "I want to change my affiliate instead"
-msgstr "Saya ingin mengubah afiliasi saya sebagai gantinya"
+msgstr "Saya ingin mengganti afiliasi"
 
 msgid "I want to change my currency instead"
 msgstr "Saya ingin mengubah mata uang"
@@ -6608,6 +6614,9 @@ msgstr "Penghargaan MENA FFXPO"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "Broker MT4 dan MT5 dapat menghubungi langsung likuiditas pada jembatan One Zero dengan menggunakan konektor built-in."
+
+msgid "MT5"
+msgstr ""
 
 msgid "MT5 Demo"
 msgstr "MT5 Demo"
@@ -8784,8 +8793,8 @@ msgstr "Pendaftaran Akun Uang Riil"
 msgid "Real Synthetic"
 msgstr "Riil Sintetis"
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Akun riil akan diarsipkan setelah tidak aktif selama 90 hari. Untuk mengaktifkan kembali akun riil, hubungi binary.com help desk di %1support@binary.com%2"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Akun Uang Riil"
@@ -13468,11 +13477,23 @@ msgstr "Anda memiliki akun tetapi belum menetapkan mata uang. Anda dapat %1memil
 msgid "You have created all accounts available to you."
 msgstr "Anda telah mendaftar berbagai akun yang tersedia bagi Anda."
 
+msgid "You have funds in these Binary accounts:"
+msgstr ""
+
+msgid "You have funds in these MT5 accounts:"
+msgstr ""
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "Anda tidak memiliki dana yang cukup di akun Binary Anda, silahkan <a href=\"%1\">tambah dana</a>."
 
 msgid "You have not granted access to any applications."
 msgstr "Anda belum diberikan akses ke dalam aplikasi apapun."
+
+msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these MT5 accounts:"
+msgstr ""
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Anda mungkin pernah melihat istilah 'going long' dan 'going short' digunakan oleh banyak broker dan trader forex. Mari bandingkan perbedaan antara kedua istilah tersebut:"

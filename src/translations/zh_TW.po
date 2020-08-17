@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-07 02:46\n"
+"PO-Revision-Date: 2020-08-17 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -1042,6 +1042,9 @@ msgstr "成為一級和二級支持服務成員，向交易者提供諸如基本
 msgid "Action"
 msgstr "操作"
 
+msgid "Action required"
+msgstr ""
+
 msgid "Active trading clients"
 msgstr "活躍的交易客戶"
 
@@ -1428,6 +1431,9 @@ msgstr "任何其他與交易執行相關的事項"
 
 msgid "Any other information as requested by the Company"
 msgstr "公司要求的任何其他資訊"
+
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "對客戶在某段時間內買入任何合約的限制"
@@ -2201,13 +2207,13 @@ msgid "By opting to be treated as a Professional Client, we shall not presume th
 msgstr "通過選擇被視為專業客戶, 我們將不會假定您擁有「專業客戶」一詞所定義的市場知識和經驗。我們將給您發送有關的表格讓您填寫，並將採取一切合理步驟, 確保您對此分類的請求符合上述標準, 包括但不限於以下內容的副本:"
 
 msgid "By purchasing the %1\"Close-Low\"%2 contract, you'll win the multiplier times the difference between the %1close%2 and %1low%2 over the duration of the contract."
-msgstr "透過購入%1「收盤-最低值」%2 合約，您將贏取合約期間內倍數值乘以%1收盤%2 與 %1最低值%2之間的差額。"
+msgstr "透過購入%1「收盤-最低值」%2 合約，您將贏取合約期間內乘數值乘以%1收盤%2 與 %1最低值%2之間的差額。"
 
 msgid "By purchasing the %1\"High-Close\"%2 contract, you'll win the multiplier times the difference between the %1high%2 and %1close%2 over the duration of the contract."
-msgstr "透過購入%1「最高值-收盤」%2 合約，您將贏取合約期間內倍數值乘以%1最高值%2 與 %1收盤%2之間的差額。"
+msgstr "透過購入%1「最高值-收盤」%2 合約，您將贏取合約期間內乘數值乘以%1最高值%2 與 %1收盤%2之間的差額。"
 
 msgid "By purchasing the %1\"High-Low\"%2 contract, you'll win the multiplier times the difference between the %1high%2 and %1low%2 over the duration of the contract."
-msgstr "透過購入%1「最高值-最低值」%2 合約，您將贏取合約期間內倍數值乘以%1最高值%2 與 %1最低值%2之間的差額。"
+msgstr "透過購入%1「最高值-最低值」%2 合約，您將贏取合約期間內乘數值乘以%1最高值%2 與 %1最低值%2之間的差額。"
 
 msgid "By registering a software application, website, or product that the Programmer creates or a service that the Programmer offers (an \"Application\"), the Programmer acknowledges that the Programmer has read and understood and agreed to be bound by these Terms."
 msgstr "通過註冊應用軟體、網站或程式設計員所建立的產品或所提供服務（簡稱為「應用程式」），程式設計員確認已經閱讀、理解並同意遵守這些條款。"
@@ -2489,7 +2495,7 @@ msgid "Click OK to proceed."
 msgstr "按一下「確定」繼續。"
 
 msgid "Click here to open a Financial Account"
-msgstr "按一下此處開立財務帳戶"
+msgstr "按一下此處開立金融帳戶"
 
 msgid "Click here to open a Gaming account"
 msgstr "按一下此處開立博彩帳戶"
@@ -2512,8 +2518,8 @@ msgstr "客戶資金"
 msgid "Client reporting"
 msgstr "客戶報告"
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
-msgstr "如果連續30天沒有活動，客戶的虛擬帳戶將被刪除。"
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "客戶的責任"
@@ -3239,10 +3245,10 @@ msgid "D. Client instructions"
 msgstr "四、客戶的指示"
 
 msgid "DIEL RTS28 for 2018"
-msgstr ""
+msgstr "2018 年 DIEL RTS28 "
 
 msgid "DIEL RTS28 for 2019"
-msgstr ""
+msgstr "2019 年 DIEL RTS28 "
 
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL 是%1投資者補償方案%2 ( \"方案\") 的一部分，該方案是專為獲得MFSA准證而經營失敗的投資者設立的救濟基金。根據投資服務規定每人最多只補償20,000歐元的限制，此基金向每位合格者提供的補償金額為公司對客戶投資負債淨額的90%。此方案依據歐盟第97/9指令設定。"
@@ -3359,7 +3365,7 @@ msgid "Demand – Driven by industrial and commercial applications, including ne
 msgstr "需求 - 受工業和商業應用、包括新技術產品或時尚趨勢的驅動"
 
 msgid "Demo"
-msgstr "展示"
+msgstr "模擬"
 
 msgid "Demo Account"
 msgstr "模擬帳戶"
@@ -3368,13 +3374,13 @@ msgid "Demo Accounts"
 msgstr "模擬帳戶"
 
 msgid "Demo Financial"
-msgstr "示範財務"
+msgstr "模擬金融"
 
 msgid "Demo Financial STP"
-msgstr "示範財務 STP"
+msgstr "模擬金融 STP"
 
 msgid "Demo Synthetic"
-msgstr "示範綜合"
+msgstr "模擬綜合"
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "根據網站的開戶程式對客戶帳戶所附的管轄權和「關於我們」部分的詳細說明以及提供的產品類型, 「公司」一詞應表示,"
@@ -4436,7 +4442,7 @@ msgid "FIX API"
 msgstr "FIX API"
 
 msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "外匯-主要貨幣對（標準）、外匯-次要貨幣對、大宗商品、加密貨幣"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "外匯-主要貨幣對（標準/微手）， 外匯-次要貨幣對， 大宗商品， 加密貨幣"
@@ -4556,7 +4562,7 @@ msgid "Finance"
 msgstr "金融"
 
 msgid "Financial"
-msgstr "財務"
+msgstr "金融"
 
 msgid "Financial Account"
 msgstr "金融帳戶"
@@ -4574,22 +4580,22 @@ msgid "Financial Risk approval is required. Please contact %1customer support%2 
 msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫%1客服部%2。"
 
 msgid "Financial STP"
-msgstr "財務 STP"
+msgstr "金融 STP"
 
 msgid "Financial STP Account"
-msgstr "財務 STP 帳戶"
+msgstr "金融 STP 帳戶"
 
 msgid "Financial STP account"
-msgstr "財務 STP 帳戶"
+msgstr "金融 STP 帳戶"
 
 msgid "Financial account"
-msgstr "財務帳戶"
+msgstr "金融帳戶"
 
 msgid "Financial assessment"
-msgstr "財務評估"
+msgstr "金融評估"
 
 msgid "Financial concerns"
-msgstr "財務事項"
+msgstr "金融事項"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "金融衍生產品讓你交易基礎資產的走勢。"
@@ -4712,7 +4718,7 @@ msgid "For example, if you wanted to purchase 100 units of a particular asset tr
 msgstr "例如，如果您想通過傳統經紀人以每單位 50 美元的價格購入某資產100 單位，此交易您須支付 5,000 美元。"
 
 msgid "For example, let's say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a \"Close-Low\" lookback with a multiplier of $2 would have a payout of:"
-msgstr "例如, 假設市場在合約持續時間內的最低值為5200和收盤時為 6000, 那麼倍數值為2美元的「收盤-最低值」回望回報為:"
+msgstr "例如, 假設市場在合約持續時間內的最低值為5200和收盤時為 6000, 那麼乘數值為2美元的「收盤-最低值」回望回報為:"
 
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product disclosure statement. This policy is an appendix to, and should be read in conjunction with, the overarching %1's order execution policy."
 msgstr "關於%1提供的Spot FX 特點和交易說明，請參閱產品披露聲明。這項政策是%1綜合性訂單執行政策的附錄，須與此政策一起閱讀。"
@@ -6607,8 +6613,11 @@ msgstr "中東和北非地區 FFXPO 獎"
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "MT4和MT5 經紀商可以使用內置插件直接與One Zero橋樑的流動性連接。"
 
+msgid "MT5"
+msgstr ""
+
 msgid "MT5 Demo"
-msgstr "MT5 演示"
+msgstr "MT5 模擬"
 
 msgid "MT5 Financial"
 msgstr "MT5 金融"
@@ -7136,13 +7145,13 @@ msgid "Multiple income opportunities"
 msgstr "多重收入機會"
 
 msgid "Multiplier"
-msgstr "倍數值"
+msgstr "乘數期權"
 
 msgid "Multiplier Down"
-msgstr "倍數值下跌"
+msgstr "乘數下跌"
 
 msgid "Multiplier Up"
-msgstr "倍數值上漲"
+msgstr "乘數上漲"
 
 msgid "Must be a clear, colour photo"
 msgstr "必須是清晰的彩色照片"
@@ -8771,10 +8780,10 @@ msgid "Real Estate"
 msgstr "房地產"
 
 msgid "Real Financial"
-msgstr "真實財務"
+msgstr "真實金融"
 
 msgid "Real Financial STP"
-msgstr "真實財務 STP"
+msgstr "真實金融 STP"
 
 msgid "Real Money Account Opening"
 msgstr "真實資金帳戶開立"
@@ -8782,8 +8791,8 @@ msgstr "真實資金帳戶開立"
 msgid "Real Synthetic"
 msgstr "真實綜合"
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "如果連續90天沒有活動，真實帳戶將被封閉。請通過%1support@binary.com%2與binary.com客服部聯繫，以重啟真實帳戶"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "真實資金帳戶"
@@ -9656,7 +9665,7 @@ msgid "Step 1"
 msgstr "步驟 1"
 
 msgid "Step 1: Choose demo or real account"
-msgstr "步驟 1: 選擇演示或真實帳戶"
+msgstr "步驟 1: 選擇模擬或真實帳戶"
 
 msgid "Step 1: Close all open positions"
 msgstr "步驟 1：把全部持倉頭寸都平倉"
@@ -13214,13 +13223,13 @@ msgid "Win payout if exit spot is also equal to entry spot."
 msgstr "如果退市現貨價與入市現貨價相同, 則將贏得賠付。"
 
 msgid "Win the multiplier times the close minus low."
-msgstr "贏取倍數值乘以收盤值減去最低值。"
+msgstr "贏取乘數值乘以收盤值減去最低值。"
 
 msgid "Win the multiplier times the high minus close."
-msgstr "贏取倍數值乘以最高值減去收盤值。"
+msgstr "贏取乘數值乘以最高值減去收盤值。"
 
 msgid "Win the multiplier times the high minus low."
-msgstr "贏取倍數值乘以最高值減去最低值。"
+msgstr "贏取乘數值乘以最高值減去最低值。"
 
 msgid "Windows"
 msgstr "Windows"
@@ -13385,7 +13394,7 @@ msgid "You can %1open a cryptocurrency%2 account without closing your fiat curre
 msgstr "您可在無需關閉法定貨幣帳戶的情況下%1開立加密貨幣%2帳戶。"
 
 msgid "You can %1open a real account%2 without closing your demo account."
-msgstr "您可在無需關閉虛擬帳戶的情況下%1開立真實帳戶%2。"
+msgstr "您可在無需關閉模擬帳戶的情況下%1開立真實帳戶%2。"
 
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
 msgstr "首次存款或開立MT5 帳戶之前, 您可以%1設置新幣種%2。"
@@ -13465,11 +13474,23 @@ msgstr "您已經有帳戶，但還未設定幣種。可在這些幣種中%1選�
 msgid "You have created all accounts available to you."
 msgstr "您已開立所有可用的帳戶。"
 
+msgid "You have funds in these Binary accounts:"
+msgstr ""
+
+msgid "You have funds in these MT5 accounts:"
+msgstr ""
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "您的Binary帳戶資金不足，請<a href=\"%1\">增加資金</a>。"
 
 msgid "You have not granted access to any applications."
 msgstr "您未獲權限存取任何應用程式。"
+
+msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these MT5 accounts:"
+msgstr ""
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "您可能看過很多外匯經紀商和交易者使用「開多頭頭寸」和「開空頭頭寸」這兩個術語。讓我們來比較一下兩個術語之間的差異："

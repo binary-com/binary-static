@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-07 02:47\n"
+"PO-Revision-Date: 2020-08-17 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1042,6 +1042,9 @@ msgstr "Оказывать нашим трейдерам поддержку пе
 msgid "Action"
 msgstr "Акт"
 
+msgid "Action required"
+msgstr ""
+
 msgid "Active trading clients"
 msgstr "Активные клиенты"
 
@@ -1429,6 +1432,9 @@ msgstr "любой другой аспект, относящийся к испо
 msgid "Any other information as requested by the Company"
 msgstr "любую другую информацию, запрошенную Компанией."
 
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr ""
+
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "какие-либо ограничения для клиентов в приобретении контрактов в определённые часы."
 
@@ -1622,7 +1628,7 @@ msgid "Asians"
 msgstr "Азиатские"
 
 msgid "Aside from the simplicity of its 'yes or no' proposition, binary options trading is also very flexible. It gives you the ability to trade:"
-msgstr "Помимо простоты - возможны всего два варианта завершения контракта (\"выигрыш\" или \"проигрыш\") - торговля бинарными опционами отличается высокой гибкостью. Это позволяет Вам торговать:"
+msgstr "Помимо простоты - возможны всего два варианта завершения контракта (\"выигрыш\" или \"проигрыш\") - торговля бинарными опционами отличается высокой гибкостью. Это позволяет вам торговать:"
 
 msgid "Aside from the three main trade types above, you also get Asians and Digits trade types exclusively with our Synthetic Indices."
 msgstr "Помимо трёх основных вышеперечисленных видов контрактов, Вы также можете выбрать Азиатские и Цифровые контракты, доступные на наших Синтетических индексах."
@@ -2003,7 +2009,7 @@ msgid "Binary options"
 msgstr "Бинарные опционы"
 
 msgid "Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading."
-msgstr "Бинарные опционы открывают широкие возможности торговли самыми разными активами. Одно из преимуществ торговли бинарными опционами заключается в том, что Вы покупаете и продаёте не сам актив, а контракт, предсказывающий движение данного актива в течение определённого периода времени. Это существенно ограничивает Ваш риск и делает торговлю доступной для всех."
+msgstr "Бинарные опционы открывают широкие возможности торговли самыми разными активами. Одно из преимуществ торговли бинарными опционами заключается в том, что вы покупаете и продаёте не сам актив, а контракт, прогнозирующий движение данного актива в течение определённого периода времени. Это существенно ограничивает ваш риск и делает торговлю доступной для всех."
 
 msgid "Binary options trading experience"
 msgstr "Опыт торговли бинарными опционами"
@@ -2512,8 +2518,8 @@ msgstr "Средства клиента"
 msgid "Client reporting"
 msgstr "клиентская отчётность"
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
-msgstr "Демо-счета клиентов будут удалены после 30 дней неактивности."
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "Ответственность клиента"
@@ -3239,10 +3245,10 @@ msgid "D. Client instructions"
 msgstr "D. Инструкции клиента"
 
 msgid "DIEL RTS28 for 2018"
-msgstr ""
+msgstr "DIEL RTS28 за 2018"
 
 msgid "DIEL RTS28 for 2019"
-msgstr ""
+msgstr "DIEL RTS28 за 2019"
 
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL является частью %1Схемы компенсации инвесторам%2 (далее именуемой \"Схема\"), которая представляет собой пакет помощи для инвесторов, являющихся клиентами закрывшихся инвестиционных фирм, лицензированных Мальтийским управлением финансовых услуг (MFSA). Схема покрывает 90% чистых обязательств Компании перед клиентами в отношении инвестиций, по которым, согласно Акту об Инвестиционных услугах, предусмотрены компенсации, максимальный размер которых составляет €20,000. Схема основана на Директиве Европейского Комитета 97/9."
@@ -4436,7 +4442,7 @@ msgid "FIX API"
 msgstr "FIX API"
 
 msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "Основные валютные пары (стандартные), минорные валютные пары, сырьевые товары, криптовалюты"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Основные валютные пары (стандартные/микро лоты), минорные валютные пары, сырьевые товары, криптовалюты"
@@ -5684,7 +5690,7 @@ msgid "If you would like more information on becoming a Payment Agent, please co
 msgstr "Если Вы хотите получить больше информации о том, как стать Платежным агентом, обратитесь к нам по адресу %1"
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product: the %1 trading platform. Your clients will love the %1 trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders."
-msgstr "Если Вы являетесь брокером, мы будем рады работать с вами. Вы сможете предложить своим клиентам уникальный и инновационный продукт: торговую платформу %1. Ваши клиенты смогут по достоинству оценить преимущества торговой платформы %1, так как мы предоставляем первоклассный опыт торговли бинарными опционами, соответствующий нуждам широкого круга трейдеров."
+msgstr "Если вы являетесь брокером, мы будем рады работать с вами. Вы сможете предложить своим клиентам уникальный и инновационный продукт: торговую платформу %1. Ваши клиенты смогут по достоинству оценить преимущества торговой платформы %1, так как мы предоставляем первоклассный опыт торговли бинарными опционами, соответствующий нуждам широкого круга трейдеров."
 
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
 msgstr "Если Вы войдёте в короткий список кандидатов, мы пригласим Вас на hackathon или отправим Вам тест на способности."
@@ -6119,7 +6125,7 @@ msgid "It is prohibited to sell, transfer, and/or acquire accounts to/from other
 msgstr "Запрещается продавать, передавать и/или приобретать счета от других клиентов или другим клиентам. Передача средств между клиентами также запрещена."
 
 msgid "It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a 'Sell' button inside the popup window, after clicking on the 'View' button next to your trade in the portfolio."
-msgstr "Иногда бывает доступна кнопка досрочной продажи контракта, но только в случаях, когда может быть предложена справедливая рыночная цена. Если данная опция доступна, после нажатия на кнопку \"Просмотр\" (рядом с окном торговли в портфеле) Вы увидите кнопку \"Продать\"."
+msgstr "Иногда бывает доступна кнопка досрочной продажи контракта, но только в случаях, когда может быть предложена справедливая рыночная цена. Если данная опция доступна, после нажатия на кнопку \"Просмотр\" (рядом с окном торговли в портфеле) вы увидите кнопку \"Продать\"."
 
 msgid "It is the Company's commitment to safeguard the client's privacy online at all times. The Company only uses the client's personal information to help the Company service the client's account, to improve the Company's services to the client, and to provide the client with products that the client has requested. The Company does not sell the client's personal information to third parties, but the Company may provide it to payment providers to facilitate transactions on the client's account."
 msgstr "Компания обязуется всегда и при любых обстоятельствах заботиться о сохранности онлайн конфиденциальности клиента. Компания использует личную информацию Клиента с целью обслуживания его счёта, улучшения качества своих услуг, а также для предоставления интересующих клиентов продуктов. Компания не продаёт личные данные клиентов третьим лицам, но может предоставлять эту информацию поставщикам платёжных услуг для проведения транзакций на счёте клиента."
@@ -6338,7 +6344,7 @@ msgid "Learn how to read currency pairs, when to go long or short, and how to bu
 msgstr "Узнайте что такое валютные пары, когда открывать короткие и длинные позиции, а также как заключить свою первую сделку."
 
 msgid "Learn how to trade with our award-winning binary options platform in this simple step-by-step guide."
-msgstr "Наше пошаговое руководство поможет Вам быстро освоить торговлю бинарными опционами на платформе, удостоенной множества наград."
+msgstr "Наше пошаговое руководство поможет вам быстро освоить торговлю бинарными опционами на платформе, удостоенной множества наград."
 
 msgid "Learn more"
 msgstr "Узнать больше"
@@ -6607,6 +6613,9 @@ msgstr "Награда на MENA FFXPO"
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "Брокеры на MT4 и MT5 могут напрямую получать нашу ликвидность на Мосту Один-ноль, воспользовавшись встроенными плагинами."
 
+msgid "MT5"
+msgstr ""
+
 msgid "MT5 Demo"
 msgstr "MT5 Демо"
 
@@ -6674,7 +6683,7 @@ msgid "Maintain trackable records of investigations in AML-CTF-related matters"
 msgstr "Ведение журнала расследования происшествий в рамках политики против отмывания денег и предотвращения мошенничества"
 
 msgid "Maintaining a page or video channel about online trading? Get rewarded when you refer your followers and viewers to trade on our award-winning binary options platform."
-msgstr "У Вас есть страница или видео канал, посвящённый онлайн торговле? Получайте вознаграждение от привлечения Ваших пользователей и посетителей к торговле бинарными опционами на нашей платформе, удостоенной высоких наград."
+msgstr "У вас есть страница или видео канал, посвящённый онлайн торговле? Получайте вознаграждение от привлечения ваших пользователей и посетителей к торговле бинарными опционами на нашей платформе, удостоенной высоких наград."
 
 msgid "Maintains a page or video channel about online trading"
 msgstr "Управляет блогом или видео каналом, посвящённым онлайн торговле"
@@ -7655,7 +7664,7 @@ msgid "Options that offer a fixed payout based on a simple yes/no proposition."
 msgstr "Опционы с фиксированной выплатой и простым выбором: да/нет."
 
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
-msgstr "Торговля бинарными опционами может вызывать зависимость, как и любая другая деятельность, доведенная до крайности. Чтобы избежать опасности возникновения подобной зависимости, мы проводим проверку реальности и предоставляем регулярный отчёт о Ваших сделках и счетах."
+msgstr "Торговля опционами может вызвать зависимость, как и любая другая деятельность, доведенная до крайности. Чтобы избежать опасности возникновения подобной зависимости, мы проводим проверку реальности и предоставляем регулярный отчёт о ваших сделках и счетах."
 
 msgid "Order"
 msgstr "Ордер"
@@ -8782,8 +8791,8 @@ msgstr "Открытие реального счета"
 msgid "Real Synthetic"
 msgstr "Реальный Синтетический"
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Реальные счета будут архивированы после 90 дней неактивности. Чтобы активировать реальный счёт, свяжитесь со службой поддержки binary.com по адресу %1support@binary.com%2"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Реальный счёт"
@@ -8831,7 +8840,7 @@ msgid "Receive your earnings through your favourite payment method"
 msgstr "Получайте прибыль удобным платёжным способом"
 
 msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
-msgstr "Осознавая всю сложность финансовых рынков, мы честно и подробно описываем наши торговые опционы. Мы помещаем чёткое описание продукта на нашем вебсайте, а также в разделе бесплатных вебинаров. Мы предоставляем клиентам возможность открытия демо-счёта, чтобы бесплатно потренироваться торговле. Мы рекомендуем клиентам тщательно изучить все источники информации перед началом торговли."
+msgstr "Осознавая сложность финансовых рынков, мы честно и подробно описываем наши торговые возможности. На нашем сайте мы размещаем точные описания продуктов, а также проводим бесплатные вебинары. Мы предлагаем клиентам возможность открыть демо-счет, чтобы бесплатно потренироваться в торговой системе. Мы рекомендуем нашим клиентам внимательно изучить все эти источники информации перед тем, как приступить к трейдингу."
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "Рекомендация альтернатив для модернизации ненужных или устаревших систем"
@@ -10877,7 +10886,7 @@ msgid "The average is the average of the ticks, including the entry spot and the
 msgstr "Среднее количество тиков, включая точку входа и последний тик."
 
 msgid "The barrier of a binary option trade is the price target you set for the underlying. You can choose trades that stay below or go above a price target, or stay between two targets."
-msgstr "Барьер бинарного опциона – это ценовой уровень, который Вы устанавливаете для данного актива. Вы можете выбрать контракты, которые предполагают, что рынок останется ниже или поднимется по отношению к заданному барьеру, или что он останется между двумя барьерами."
+msgstr "Барьер бинарного опциона – это ценовой уровень, который вы устанавливаете для данного актива. Вы можете выбрать контракты, которые предполагают, что рынок останется ниже или поднимется по отношению к заданному барьеру, или что он останется между двумя барьерами."
 
 msgid "The base currency is always equal to one unit"
 msgstr "Основная валюта всегда представлена одной единицей данной валюты"
@@ -11201,7 +11210,7 @@ msgid "The financial trading services contained within this site are only suitab
 msgstr "Финансовые услуги, предоставляемые в рамках данного сайта, подходят лишь для клиентов, готовых нести ответственность за возможную потерю всех инвестированных средств, а также осознающих риск и имеющих опыт риска, связанного с покупкой финансовых контрактов. Заключение сделок на финансовых контрактах предполагает высокий уровень риска. Если приобретённые контракты истекут, не принеся прибыли, Вы потеряете всю сумму своей инвестиции в контракт."
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
-msgstr "Первый шаг: установите параметры контракта. Настройте пять параметров, чтобы получить цену контракта:"
+msgstr "Первый шаг: установите параметры контракта. Настройте пять параметров, чтобы узнать цену контракта:"
 
 msgid "The following are causes for termination:"
 msgstr "Данное Соглашение может быть расторгнуто по следующим причинам:"
@@ -11312,7 +11321,7 @@ msgid "The patent means Regent Markets is the recognised pioneer of binary tradi
 msgstr "Патент означает признание Regent Markets пионером в сфере торговли бинарными опционами. Он способствует защите наших инноваций."
 
 msgid "The payout is the amount paid to an options trader if their prediction is correct."
-msgstr "Выплата – это сумма, которую трейдер получит в случае правильности своего прогноза."
+msgstr "Выплата – это сумма, которую получит трейдер, если его прогноз окажется верен."
 
 msgid "The premier platform for trading binary options in the world's financial markets"
 msgstr "Ведущая платформа для торговли бинарными опционами на мировых финансовых рынках"
@@ -11330,10 +11339,10 @@ msgid "The price of the currency pair indicates how much of the quote currency i
 msgstr "Цена валютной пары означает, какое количество валюты котировки необходимо для покупки одной единицы основной валюты. Это соотношение называется обменным курсом валют."
 
 msgid "The products offered on the %1 website include binary options, contracts for difference (\"CFDs\") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on the website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved."
-msgstr "Продукты, предоставленные на сайте %1, включают бинарные опционы, контракты на разницу (или \"CFD\"), а также другие комплексные производные продукты. Торговля бинарными опционами подходит далеко не для всех. Торговля CFD предполагает высокий уровень риска, так как кредитный рычаг может сыграть не только в Вашу пользу, но и против Вас. В результате продукты, предложенные на данном сайте, могут подходить не каждому инвестору, ввиду риска потери всего инвестированного капитала. Настоятельно рекомендуем не инвестировать деньги, которые Вы не можете позволить себе потерять, а также не торговать на деньги, взятые в долг. Перед началом работы с предложенными нами комплексными продуктами, пожалуйста, оцените все сопряженные риски."
+msgstr "Продукты, предоставленные на сайте %1, включают бинарные опционы, контракты на разницу (или \"CFD\"), а также другие комплексные производные продукты. Торговля бинарными опционами подходит далеко не для всех. Торговля CFD предполагает высокий уровень риска, так как кредитный рычаг может сыграть не только в вашу пользу, но и против вас. В результате продукты, предложенные на данном сайте, могут подходить не каждому инвестору, ввиду риска потери всего инвестированного капитала. Настоятельно рекомендуем не инвестировать деньги, которые вы не можете позволить себе потерять, а также не торговать на деньги, взятые в долг. Перед началом работы с предложенными нами комплексными продуктами, пожалуйста, оцените все сопряженные риски."
 
 msgid "The products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
-msgstr "Продукты, предоставленные на данном сайте, включают бинарные опционы, контракты на разницу (или \"CFD\"), а также другие комплексные производные продукты. Торговля бинарными опционами подходит далеко не для всех. Торговля CFD предполагает высокий уровень риска, так как кредитный рычаг может сыграть не только в Вашу пользу, но и против Вас. В результате продукты, предложенные на данном сайте, могут подходить не каждому инвестору, ввиду риска потери всего инвестированного капитала. Настоятельно рекомендуем не инвестировать деньги, которые Вы не можете позволить себе потерять, а также не торговать на деньги, взятые в долг. Перед началом работы с предложенными нами комплексными продуктами, пожалуйста, оцените все сопряженные риски и ознакомьтесь с условиями %1ответственной торговли%2."
+msgstr "Продукты, предоставленные на данном сайте, включают бинарные опционы, контракты на разницу (или \"CFD\"), а также другие комплексные производные продукты. Торговля бинарными опционами подходит далеко не для всех. Торговля CFD предполагает высокий уровень риска, так как кредитный рычаг может сыграть не только в вашу пользу, но и против вас. В результате продукты, предложенные на данном сайте, могут подходить не каждому инвестору, ввиду риска потери всего инвестированного капитала. Настоятельно рекомендуем не инвестировать деньги, которые вы не можете позволить себе потерять, а также не торговать на деньги, взятые в долг. Перед началом работы с предложенными нами комплексными продуктами, пожалуйста, оцените все сопряженные риски и ознакомьтесь с условиями %1ответственной торговли%2."
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "Прибыль - это разница между выплатой и ценой покупки (ставкой) выигравшего контракта."
@@ -12119,7 +12128,7 @@ msgid "Trading and withdrawals have been disabled on your account. Kindly %1cont
 msgstr "На Вашем счету заблокирована торговля и вывод средств. Пожалуйста, свяжитесь со %1службой поддержки%2 для получения помощи."
 
 msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
-msgstr "Торговля бинарными опционами и CFD сопряжена с существенными рисками. Не работайте с деньгами, которые Вы не можете позволить себе потерять и никогда не торгуйте на деньги, взятые в долг. Узнайте больше об %1ответственной торговле%2."
+msgstr "Торговля бинарными опционами и CFD сопряжена с существенными рисками. Не работайте с деньгами, которые вы не можете позволить себе потерять и никогда не торгуйте на деньги, взятые в долг. Узнайте больше об %1ответственной торговле%2."
 
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset."
 msgstr "Торговля бинарными опционами подходит далеко не для всех, поэтому просим Вас убедиться, что Вы полностью осознаёте все возможные риски. Ваши убытки могут превысить сумму первоначального пополнения счёта, а Вы не получаете никаких процентов с активов, на которых заключаете контракты."
@@ -12140,7 +12149,7 @@ msgid "Trading guru"
 msgstr "Гуру трейдинга"
 
 msgid "Trading in binary options is speculative and involves a high degree of risk that can result in the loss of the client's entire investment. Therefore, trading in binary options is appropriate only for persons that understand and are willing to assume the economic, legal, and other risks involved in such transactions. The client should be satisfied that binary options trading is suitable for the client in light of the client's investment circumstances and attitude towards risk before trading. The client should not engage in speculative binary options trading unless the client understands the basic aspects of such trading and its risks. If the client is in any doubt as to whether Binary Option trading is appropriate and suitable for the client, the client should seek independent advice from an investment consulting professional. %1 does not provide such advice. It is the client's responsibility, taking into account the client's personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in binary options with %1 and prior to making any individual order. Where the client does not understand the risks involved in applying for a trading account with %1 or in making any individual order, the client should seek advice and consultation from an independent investment advisor. If the client continues to not understand the risks involved in trading in binary options, the client should not trade at all."
-msgstr "Торговля бинарными опционами является спекулятивной деятельностью и подразумевает высокий уровень риска, что может привести к потере всей инвестиции клиента. Таким образом, торговля бинарными опционами подходит лишь для лиц, осознающих и готовых понести экономический, юридический и иные риски, сопряженные с такими контрактами. Перед началом торговли клиент должен убедиться, что ему/ей подходит торговля бинарными опционами, ввиду инвестиционной ситуации клиента и его/её отношения к риску. Клиенту не следует начинать спекулятивную торговлю бинарными опционами, если клиент не понимает основных аспектов данной деятельности и сопряжённых рисков. Если у клиента есть сомнения относительно того, подходит ли ему/ей торговля бинарными опционами, клиенту рекомендуется обратиться за независимым советом к профессиональному инвестиционному консультанту. %1 не предоставляет таких советов. Клиент обязуется, принимая во внимание свои личные обстоятельства и инвестиционные ресурсы, предпринять особые меры и сделать независимое решение перед началом работы с бинарными опционами на %1, а также перед размещением любых индивидуальных ордеров. Если клиент не осознаёт риски, связанные с открытием торгового счёта на %1 или размещением индивидуального ордера, ему/ей необходимо обратиться за советом и консультацией к независимому инвестиционному консультанту. Если клиент продолжает не осознавать риски, связанные с торговлей бинарными опционами, ему рекомендуется воздержаться от торговли."
+msgstr "Торговля бинарными опционами является спекулятивной деятельностью, подразумевает высокий уровень риска и может привести к потере всей инвестиции клиента. Таким образом, торговля бинарными опционами подходит только для лиц, осознающих и готовых понести экономический, юридический и иные риски, сопряженные с такими контрактами. Перед началом торговли клиент должен убедиться, что ему/ей подходит торговля бинарными опционами, ввиду инвестиционной ситуации клиента и его/её отношения к риску. Клиенту не следует начинать спекулятивную торговлю бинарными опционами, если клиент не понимает основных аспектов данной деятельности и сопряжённых рисков. Если у клиента есть сомнения относительно того, подходит ли ему/ей торговля бинарными опционами, клиенту рекомендуется обратиться за независимым советом к профессиональному инвестиционному консультанту. %1 не предоставляет таких советов. Клиент обязуется, принимая во внимание личные обстоятельства и инвестиционные ресурсы, проявлять особую осторожность и принять независимое решение перед началом работы с бинарными опционами на %1, а также перед размещением любых индивидуальных ордеров. Если клиент не осознаёт риски, связанные с открытием торгового счёта на %1 или размещением индивидуального ордера, ему/ей необходимо обратиться за советом к независимому инвестиционному консультанту. Если клиент по-прежнему не осознает риски, связанные с торговлей бинарными опционами, ему следует воздержаться от торговли."
 
 msgid "Trading information"
 msgstr "Торговая информация"
@@ -13058,10 +13067,10 @@ msgid "When you see currency pairs offered by a broker or trading service, there
 msgstr "Когда Вы видите валютные пары, предложенные брокером или торговым сервисом, как правило, Вам доступно две цены: цена аск и цена бид. Также их называют ценой покупки и ценой продажи соответственно."
 
 msgid "When you start trading with %1, you'll be directed to the trading screen, where you set your trading parameters, and choose what you want to trade, how and when."
-msgstr "При начале работы на %1 Вы будете направлены на торговый экран, где можно задать параметры сделки, выбрать нужный актив и сроки контракта."
+msgstr "При начале работы на %1 вы будете направлены на торговый экран, где можно задать параметры контракта, выбрать нужный актив и сроки контракта."
 
 msgid "When you trade with %1, you can be assured that your deposits are held in a separate trust account and are not used for any other purpose."
-msgstr "Торгуя на %1, Вы можете быть абсолютно уверены, что Ваши средства хранятся на отдельных надёжных счетах и не используются для любых других целей."
+msgstr "Торгуя на %1, вы можете быть абсолютно уверены, что ваши средства хранятся на отдельных надёжных счетах и не используются для любых других целей."
 
 msgid "When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
 msgstr "При достижении уровня стоп-аута Ваши текущие позиции будут принудительно закрыты в следующей последовательности:"
@@ -13465,11 +13474,23 @@ msgstr "У вас есть счет, но вы не указали валюту.
 msgid "You have created all accounts available to you."
 msgstr "Вы открыли все доступные счета."
 
+msgid "You have funds in these Binary accounts:"
+msgstr ""
+
+msgid "You have funds in these MT5 accounts:"
+msgstr ""
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "На Вашем счету Binary недостаточно средств. Пожалуйста, <a href=\"%1\">пополните счёт</a>."
 
 msgid "You have not granted access to any applications."
 msgstr "У Вас нет доступа к приложениям."
+
+msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these MT5 accounts:"
+msgstr ""
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Вероятно, вам уже встречались термины \"короткая позиция\" и \"длинная позиция.\" Их часто применяют трейдеры и брокеры на форекс. Давайте сравним эти термины:"
@@ -13859,7 +13880,7 @@ msgid "b. Download and install the MT5 trading platform through the link %1"
 msgstr "b) загрузить и установить торговую платформу MT5 по ссылке %1"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading stock indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
-msgstr "бинарные опционы, форекс, торговля на форекс, онлайн торговля, бинарный трейдинг, торговля на фондовых индексах, трейдинг на фондовых индексах, контракты на форекс, торговля на сырье, стратегия бинарных опционов, бинарный брокер, бинарная ставка, платформа для торговли бинарными опционами, бинарная стратегия, финансы, инвестиции, трейдинг"
+msgstr "бинарные опционы, форекс, торговля на форекс, онлайн торговля, онлайн-трейдинг бинарный трейдинг, торговля на фондовых индексах, трейдинг на фондовых индексах, контракты на форекс, торговля на сырье, стратегия бинарных опционов, бинарный брокер, бинарная ставка, платформа для торговли бинарными опционами, бинарная стратегия, финансы, инвестиции, трейдинг"
 
 msgid "day"
 msgstr "дн."

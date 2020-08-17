@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-07 02:47\n"
+"PO-Revision-Date: 2020-08-17 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -1042,6 +1042,9 @@ msgstr "crwdns51710:0crwdne51710:0"
 msgid "Action"
 msgstr "crwdns37689:0crwdne37689:0"
 
+msgid "Action required"
+msgstr "crwdns124278:0crwdne124278:0"
+
 msgid "Active trading clients"
 msgstr "crwdns37691:0crwdne37691:0"
 
@@ -1428,6 +1431,9 @@ msgstr "crwdns54154:0crwdne54154:0"
 
 msgid "Any other information as requested by the Company"
 msgstr "crwdns54156:0crwdne54156:0"
+
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr "crwdns124280:0crwdne124280:0"
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "crwdns54158:0crwdne54158:0"
@@ -2512,8 +2518,8 @@ msgstr "crwdns54284:0crwdne54284:0"
 msgid "Client reporting"
 msgstr "crwdns54286:0crwdne54286:0"
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
-msgstr "crwdns85667:0crwdne85667:0"
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
+msgstr "crwdns124282:0%1crwdne124282:0"
 
 msgid "Client's liability"
 msgstr "crwdns54288:0crwdne54288:0"
@@ -6607,6 +6613,9 @@ msgstr "crwdns39113:0crwdne39113:0"
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "crwdns39114:0crwdne39114:0"
 
+msgid "MT5"
+msgstr "crwdns124284:0crwdne124284:0"
+
 msgid "MT5 Demo"
 msgstr "crwdns42245:0crwdne42245:0"
 
@@ -8782,8 +8791,8 @@ msgstr "crwdns39616:0crwdne39616:0"
 msgid "Real Synthetic"
 msgstr "crwdns118018:0crwdne118018:0"
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "crwdns85669:0%1scrwdnd85669:0%2crwdne85669:0"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
+msgstr "crwdns124286:0%1crwdnd124286:0%2scrwdnd124286:0%3crwdne124286:0"
 
 msgid "Real-Money Account"
 msgstr "crwdns45921:0crwdne45921:0"
@@ -13465,11 +13474,23 @@ msgstr "crwdns85319:0%1ccrwdnd85319:0%2crwdne85319:0"
 msgid "You have created all accounts available to you."
 msgstr "crwdns40638:0crwdne40638:0"
 
+msgid "You have funds in these Binary accounts:"
+msgstr "crwdns124288:0crwdne124288:0"
+
+msgid "You have funds in these MT5 accounts:"
+msgstr "crwdns124290:0crwdne124290:0"
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "crwdns42960:0%1crwdne42960:0"
 
 msgid "You have not granted access to any applications."
 msgstr "crwdns40642:0crwdne40642:0"
+
+msgid "You have open positions in these Binary accounts:"
+msgstr "crwdns124292:0crwdne124292:0"
+
+msgid "You have open positions in these MT5 accounts:"
+msgstr "crwdns124294:0crwdne124294:0"
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "crwdns90184:0crwdne90184:0"

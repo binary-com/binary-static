@@ -1027,6 +1027,9 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
+msgid "Action required"
+msgstr ""
+
 msgid "Active trading clients"
 msgstr ""
 
@@ -1412,6 +1415,9 @@ msgid "Any other consideration relevant to the execution of the transaction"
 msgstr ""
 
 msgid "Any other information as requested by the Company"
+msgstr ""
+
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
 msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
@@ -2497,7 +2503,7 @@ msgstr ""
 msgid "Client reporting"
 msgstr ""
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
 msgstr ""
 
 msgid "Client's liability"
@@ -6592,6 +6598,9 @@ msgstr ""
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr ""
 
+msgid "MT5"
+msgstr ""
+
 msgid "MT5 Demo"
 msgstr ""
 
@@ -8767,7 +8776,7 @@ msgstr ""
 msgid "Real Synthetic"
 msgstr ""
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
 msgstr ""
 
 msgid "Real-Money Account"
@@ -13450,10 +13459,22 @@ msgstr ""
 msgid "You have created all accounts available to you."
 msgstr ""
 
+msgid "You have funds in these Binary accounts:"
+msgstr ""
+
+msgid "You have funds in these MT5 accounts:"
+msgstr ""
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr ""
 
 msgid "You have not granted access to any applications."
+msgstr ""
+
+msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these MT5 accounts:"
 msgstr ""
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
