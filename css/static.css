@@ -2168,35 +2168,58 @@ body #not_authenticated_financial ul.checked > li {
 .account-closure .ui-accordion .ui-accordion-icons {
   padding-right: 1.2em; }
 
-.account-closure #account-closure-dialog {
+.account-closure .account-closure-dialog {
   left: 0; }
-  .account-closure #account-closure-dialog #account-closure-dialog-content {
+  .account-closure .account-closure-dialog .account-closure-dialog-content {
     width: 29rem;
     height: 22.7rem;
     border-radius: 4px;
     background-color: #fff; }
     @media (max-width: 500px) {
-      .account-closure #account-closure-dialog #account-closure-dialog-content {
+      .account-closure .account-closure-dialog .account-closure-dialog-content {
         height: unset; } }
-  .account-closure #account-closure-dialog #ic-emergency {
+  .account-closure .account-closure-dialog #account_closure_error_content {
+    border-radius: 8px;
+    padding: 24px;
+    width: 28.5rem;
+    height: auto; }
+  .account-closure .account-closure-dialog #account_closure_error_title {
+    font-size: 1rem; }
+  .account-closure .account-closure-dialog #account_closure_error_buttons {
+    text-align: right; }
+  .account-closure .account-closure-dialog .account-closure-details {
+    padding-left: 16px;
+    padding-right: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 307px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    line-height: 1.5; }
+  .account-closure .account-closure-dialog #ic-emergency {
     width: 6rem;
     height: 6rem;
     -o-object-fit: contain;
        object-fit: contain;
     margin: 0.5em 0em; }
-  .account-closure #account-closure-dialog .warning-msg {
+  .account-closure .account-closure-dialog .warning-msg {
     line-height: 0.7em; }
-  .account-closure #account-closure-dialog .btn-size {
+  .account-closure .account-closure-dialog .btn-size {
     width: 12.7rem;
     height: 2.3rem; }
-  .account-closure #account-closure-dialog #span-btn {
+  .account-closure .account-closure-dialog #span-btn {
     padding-right: 5rem;
     padding-left: 5rem; }
     @media (max-width: 500px) {
-      .account-closure #account-closure-dialog #span-btn {
+      .account-closure .account-closure-dialog #span-btn {
         margin-bottom: 10px;
         margin-left: 10px; } }
-  .account-closure #account-closure-dialog #red-msg {
+  .account-closure .account-closure-dialog #red-msg {
     color: #c03;
     font-weight: bold; }
 
