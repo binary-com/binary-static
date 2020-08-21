@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-07 02:47\n"
+"PO-Revision-Date: 2020-08-17 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1042,6 +1042,9 @@ msgstr "Làm việc với tư cách hỗ trợ cấp đầu và cấp thứ cho 
 msgid "Action"
 msgstr "Hành động"
 
+msgid "Action required"
+msgstr ""
+
 msgid "Active trading clients"
 msgstr "Các khách hàng tích cực giao dịch"
 
@@ -1429,6 +1432,9 @@ msgstr "Bất kỳ sự cân nhắc khác có liên quan đến việc thực h
 
 msgid "Any other information as requested by the Company"
 msgstr "Bất kỳ thông tin khác theo yêu cầu của công ty"
+
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "Bất kỳ hạn chế nào cho Khách Hàng của mình từ việc mua bất kỳ hợp đồng nào trong những giờ nhất định"
@@ -2513,8 +2519,8 @@ msgstr "Tiền của khách hàng"
 msgid "Client reporting"
 msgstr "Báo Cáo Khách Hàng"
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
-msgstr "Các tài khoản dùng thử của khách hàng sẽ bị xóa sau 30 ngày không hoạt động."
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "Trách nhiệm của Khách hàng"
@@ -3240,10 +3246,10 @@ msgid "D. Client instructions"
 msgstr "D. Các hướng dẫn khách hàng"
 
 msgid "DIEL RTS28 for 2018"
-msgstr ""
+msgstr "DIEL RTS28 cho năm 2018"
 
 msgid "DIEL RTS28 for 2019"
-msgstr ""
+msgstr "DIEL RTS28 cho năm 2019"
 
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL là một phần của %1Đề án Bồi thường cho Nhà đầu tư%2 (\"Đề án\") là quỹ cứu trợ cho các nhà đầu tư, là khách hàng của công ty đầu tư bị thất bại được cấp phép bởi MFSA. Quỹ bao gồm 90% nợ phải trả thuần của Công ty cho khách hàng đối với đầu tư đủ điều kiện được bồi thường theo Luật đầu tư, chi trả tối đa €20,000 cho mỗi người. Đề án này được dựa trên Chỉ thị EC 97/9."
@@ -4437,7 +4443,7 @@ msgid "FIX API"
 msgstr "FIX API"
 
 msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "Cặp tiền tệ chính (lô tiêu chuẩn), Cặp tiền tệ thứ yếu, Hàng hoá thương mại, Tiền điện tử"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Cặp tiền tệ chính (lô tiêu chuẩn/nhỏ), Cặp tiền tệ thứ yếu, Hàng hoá thương mại, Tiền điện tử"
@@ -6609,6 +6615,9 @@ msgstr "Giải thưởng MENA FFXPO"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "Môi giới MT4 và MT5 có thể kết nối trực tiếp tới tính thanh khoản của chúng tôi trên một số cầu One Zero bằng cách sử dụng các plugin có sẵn."
+
+msgid "MT5"
+msgstr ""
 
 msgid "MT5 Demo"
 msgstr "MT5 Demo"
@@ -8785,8 +8794,8 @@ msgstr "Tài khoản Tiền Thực đang được mở"
 msgid "Real Synthetic"
 msgstr "Tổng hợp thực"
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Tài khoản thật sẽ được tạm đóng sau 90 ngày không hoạt động. Để tái kích hoạt tài khoản thật, liên hệ đội ngũ hỗ trợ binary.com tại %1support@binary.com%2"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Tài khoản tiền thật"
@@ -13469,11 +13478,23 @@ msgstr "Bạn tạo tài khoản nhưng không thể chọn loại tiền tệ. 
 msgid "You have created all accounts available to you."
 msgstr "Bạn đã tạo ra tất cả các tài khoản khả dụng cho bạn."
 
+msgid "You have funds in these Binary accounts:"
+msgstr ""
+
+msgid "You have funds in these MT5 accounts:"
+msgstr ""
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "Bạn không có đủ tiền trong tài khoản Binary, xin vui lòng <a href=\"%1\">thêm quỹ</a>."
 
 msgid "You have not granted access to any applications."
 msgstr "Bạn không được phép truy cập bất kỳ một ứng dụng nào."
+
+msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these MT5 accounts:"
+msgstr ""
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Bạn có thể đã thấy các thuật ngữ 'đi dài' và 'đi ngắn' được sử dụng bởi rất nhiều bởi các nhà môi giới và giao dịch ngoại hối. Hãy so sánh sự khác biệt giữa hai thuật ngữ:"

@@ -142,7 +142,7 @@ const Validation = (() => {
     const validLetterSymbol = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d]+/.test(value);
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
     const validAddress      = value => !/[`~!$%^&*_=+[}{\]\\"?><|]+/.test(value);
-    const validPostCode     = value => /^[\w\s-]*$/.test(value);
+    const validPostCode     = value => value === '' || /^[A-Za-z0-9][A-Za-z0-9\s-]*$/.test(value);
     const validPhone        = value => /^\+((-|\s)*[0-9])*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;

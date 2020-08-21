@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-07 02:46\n"
+"PO-Revision-Date: 2020-08-17 02:14\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -1042,6 +1042,9 @@ msgstr "Operare da supporto di primo e secondo livello per i nostri trader offre
 msgid "Action"
 msgstr "Azione"
 
+msgid "Action required"
+msgstr ""
+
 msgid "Active trading clients"
 msgstr "Clienti di trading attivi"
 
@@ -1428,6 +1431,9 @@ msgstr "eventuali altre considerazioni relative all'esecuzione dell'operazione"
 
 msgid "Any other information as requested by the Company"
 msgstr "eventuali informazioni aggiuntive richieste dalla Società"
+
+msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "tutte le restrizioni poste ai clienti sull'acquisto di qualsiasi contratto durante determinate ore"
@@ -2512,8 +2518,8 @@ msgstr "Denaro dei clienti"
 msgid "Client reporting"
 msgstr "Reporting relativo ai clienti"
 
-msgid "Client's demo accounts will be deleted after 30 days of inactivity."
-msgstr "I conti di prova dei clienti verranno eliminati dopo 30 giorni di inattività."
+msgid "Client's demo accounts will be deleted after %1 days of inactivity."
+msgstr ""
 
 msgid "Client's liability"
 msgstr "Responsabilità del cliente"
@@ -3239,10 +3245,10 @@ msgid "D. Client instructions"
 msgstr "D. Istruzioni dei clienti"
 
 msgid "DIEL RTS28 for 2018"
-msgstr ""
+msgstr "DIEL RTS28 per 2018"
 
 msgid "DIEL RTS28 for 2019"
-msgstr ""
+msgstr "DIEL RTS28 per 2019"
 
 msgid "DIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\"), which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments that qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr "DIEL fa parte dell'Investor Compensation Scheme (il \"sistema\") ossia un fondo di salvataggio per gli investitori che sono clienti di società d'investimento fallite, autorizzato dalla MFSA. Il sistema copre il 90% della responsabilità diretta della Società verso un cliente rispetto a investimenti per cui è previsto un indennizzo secondo l'Investment Services Act, soggetto al pagamento di un importo massimo pari a €20.000 per ciascun soggetto. Il sistema si basa sulla Direttiva 97/9/CE."
@@ -3317,7 +3323,7 @@ msgid "Dated within the last six months"
 msgstr "Con data compresa negli ultimi sei mesi"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "Disattiva"
 
 msgid "Deal Cancel. Fee"
 msgstr "Commissione per la cancellazione"
@@ -4436,13 +4442,13 @@ msgid "FIX API"
 msgstr "FIX API"
 
 msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr ""
+msgstr "Maggiori FX (standard), minori FX, materie prime, criptovalute"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
 msgstr "Maggiori FX (standard/micro-lotti), minori FX, materie prime, criptovalute"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
-msgstr ""
+msgstr "FX-maggiori, FX-minori, FX-esotiche, criptovalute"
 
 msgid "FXOpen"
 msgstr "FXOpen"
@@ -4886,7 +4892,7 @@ msgid "Gaming"
 msgstr "Gioco online"
 
 msgid "Gaming Account"
-msgstr ""
+msgstr "Conto per il gioco online"
 
 msgid "General"
 msgstr "Info generali"
@@ -5525,7 +5531,7 @@ msgid "If you choose to be treated as a Professional Client, we'll regard you as
 msgstr "Se scegli di essere trattato come un Cliente Professionale, considereremo che tu possieda la necessaria esperienza e conoscenza del mercato. Pertanto, adotteremo le misure necessarie a garantire che la tua richiesta per lo status di Cliente Professionale soddisfi i criteri indicati in precedenza, tra cui la richiesta di quanto segue:"
 
 msgid "If you deactivate:"
-msgstr ""
+msgstr "Se decidi di disattivarlo:"
 
 msgid "If you decide to buy or 'go long' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase."
 msgstr "Se decidi di acquistare o \"aprire una posizione lunga\" sull'indice US 100, il tuo profitto continuerà ad aumentare fino a quando il prezzo dell'indice US 100 continua ad aumentare. Tuttavia, se il prezzo scende, le perdite che subirai aumenteranno a loro volta."
@@ -6606,6 +6612,9 @@ msgstr "Riconoscimeno MENA FFXPO"
 
 msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
 msgstr "I broker MT4 and MT5 possono connettersi direttamente alla nostra liquidità sul ponte One Zero utilizzando plug-in integrati."
+
+msgid "MT5"
+msgstr ""
 
 msgid "MT5 Demo"
 msgstr "Demo per MT5"
@@ -8782,8 +8791,8 @@ msgstr "Apertura di un conto reale"
 msgid "Real Synthetic"
 msgstr "Per indici sintetici reali"
 
-msgid "Real accounts will be archived after 90 days of inactivity. To re-activate a real account, contact binary.com help desk at %1support@binary.com%2"
-msgstr "Il conto reale verrà archiviato dopo 90 giorni di inattività. Per riattivarlo, contatta il supporto di binary.com scrivendo all'indirizzo %1support@binary.com%2"
+msgid "Real accounts will be archived after %1 days of inactivity. To re-activate a real account, contact binary.com help desk at %2support@binary.com%3"
+msgstr ""
 
 msgid "Real-Money Account"
 msgstr "Conto monetario reale"
@@ -10649,7 +10658,7 @@ msgid "The Financial Products that DIEL offers to deal in are contracts entered 
 msgstr "I prodotti finanziari offerti da DIEL per il trade sono contratti stipulati tra questa e il cliente. In conformità con tali contratti e i termini specifici in essi contenuti, in considerazione dei premi e dei prezzi corrisposti dai clienti a DIEL, quest'ultima garantisce di versare ai clienti un dato importo de gli asset o le misure di riferimento registrano un certo risultato. Tali contratti non sono strumenti che DIEL detiene a nome del cliente, e, in caso di insolvenza da parte della stessa, questa non beneficia in alcun modo della protezione degli asset del cliente. Allo stesso modo, il premio o prezzo versato dal cliente per il proprio trade non viene trattenuto come denaro in suo possesso, bensì come contropartita per le attività di DIEL."
 
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
-msgstr ""
+msgstr "Il conto finanziario con elaborazione automatica (STP) è della tipologia 100% A Book, in cui i trade arrivano immediatamente sul mercato, garantendoti accesso diretto ai fornitori di liquidità Forex. Consente di fare trading su coppie valutarie maggiori, minori, esotiche e criptovalute con spread ridotti e maggiori volumi di trade."
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
 msgstr "Il conto finanziario (disponibile in EUR e GBP) è pensato per un'ampia gamma di trader con livelli di esperienza diversi. Ti permette di fare trading con materie prime, criptovalute e coppie valutarie maggiori e minori con spread ridotti e variabili, senza commissioni e deposito minimo."
@@ -12464,7 +12473,7 @@ msgid "Upgrade to %1 %2Financial Account%3."
 msgstr "Passa al %2conto finanziario%3 %1."
 
 msgid "Upgrade to %1 %2Gaming Account%3."
-msgstr ""
+msgstr "Passa al %2conto per il gioco d'azzardo%3 %1."
 
 msgid "Upgrade your account and start trading using real money."
 msgstr "Aggiorna il tuo conto e inizia a fare trading utilizzando moneta reale."
@@ -13465,11 +13474,23 @@ msgstr "Non hai ancora selezionato una valuta per il conto: puoi %1scegliere una
 msgid "You have created all accounts available to you."
 msgstr "Hai creato tutti i conti per te disponibili."
 
+msgid "You have funds in these Binary accounts:"
+msgstr ""
+
+msgid "You have funds in these MT5 accounts:"
+msgstr ""
+
 msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
 msgstr "I fondi presenti sul conto Binary non sono sufficienti, <a href=\"%1\">aggiungi fondi</a>."
 
 msgid "You have not granted access to any applications."
 msgstr "Non è possibile accedere ad alcuna applicazione."
+
+msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these MT5 accounts:"
+msgstr ""
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Probabilmente avrai notato che molti broker e trader Forex utilizzano le espressioni \"aprire una posizione long\" e \"aprire una posizione short\". Confrontiamo le differenze:"
@@ -13547,7 +13568,7 @@ msgid "You want to sell that currency pair if you think the base currency will g
 msgstr "Venderai quella coppia valutaria se credi che il valore della valuta base diminuirà."
 
 msgid "You will %1NOT%2 be able to log in again."
-msgstr ""
+msgstr "%1NON%2 potrai effettuare di nuovo l'accesso."
 
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
 msgstr "Ti occuperai anche di rafforzare la consapevolezza sulla sicurezza all'interno dell'organizzazione tramite comunicazioni regolari sulle migliori pratiche in questo ambito e le più recenti minacce online."
@@ -13799,7 +13820,7 @@ msgid "Your withdrawal will be processed in one business day (Monday to Friday 9
 msgstr "Il prelievo verrà effettuato entro un giorno lavorativo (da lunedì a venerdì, 9.00 - 17.00 GMT+8) salvo ove diversamente specificato."
 
 msgid "You’ll be logged out automatically."
-msgstr ""
+msgstr "Verrai disconnesso automaticamente."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
 msgstr "L'operazione di chiusura del conto è andata a buon fine. Riceverai un'e-mail di conferma all'indirizzo %1."

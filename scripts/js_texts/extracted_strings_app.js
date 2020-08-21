@@ -193,6 +193,7 @@ module.exports = [
     'Low Tick',
     'Lower',
     'Lower or equal',
+    'MT5',
     'MT5 withdrawals have been disabled on your account. Please check your email for more details.',
     'Mar',
     'March',
