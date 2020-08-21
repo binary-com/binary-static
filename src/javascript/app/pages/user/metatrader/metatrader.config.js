@@ -523,10 +523,48 @@ const MetaTraderConfig = (() => {
             { selector: fields.verify_password_reset_token.txt_verification_code.id, validations: [['req', { hide_asterisk: true }], 'token'], exclude_request: 1 },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5'), max: () => Math.min(State.getResponse('get_limits.remainder') || Currency.getTransferLimits(Client.get('currency'), 'max', 'mt5'), Currency.getTransferLimits(Client.get('currency'), 'max', 'mt5')).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')) }]] },
+            {
+                selector   : fields.deposit.txt_amount.id,
+                validations: [
+                    ['req', { hide_asterisk: true }],
+                    ['number', {
+                        type: 'float',
+                        min : () => Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5'),
+                        max : () => {
+                            const account_limit = State.getResponse('get_limits.remainder');
+                            const mt5_limit     = Currency.getTransferLimits(Client.get('currency'), 'max', 'mt5');
+                            const balance       = Client.get('balance');
+                            return Math.min(account_limit || mt5_limit, mt5_limit, balance).toFixed(Currency.getDecimalPlaces(Client.get('currency')));
+                        },
+                        decimals: Currency.getDecimalPlaces(Client.get('currency')),
+                    }],
+                    ['custom', {
+                        func: () => {
+                            const balance = Client.get('balance');
+                            return balance && (+balance >= +$(fields.deposit.txt_amount.id).val());
+                        },
+                        message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')),
+                    }],
+                ],
+            },
         ],
         withdrawal: [
-            { selector: fields.withdrawal.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5'), max: () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'max', 'mt5'), decimals: 2 }]] },
+            {
+                selector   : fields.withdrawal.txt_amount.id,
+                validations: [
+                    ['req', { hide_asterisk: true }],
+                    ['number', {
+                        type: 'float',
+                        min : () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5'),
+                        max : () => {
+                            const mt5_limit = Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'max', 'mt5');
+                            const balance   = accounts_info[Client.get('mt5_account')].info.balance;
+                            return Math.min(mt5_limit, balance);
+                        },
+                        decimals: 2,
+                    }],
+                ],
+            },
         ],
     });
 
