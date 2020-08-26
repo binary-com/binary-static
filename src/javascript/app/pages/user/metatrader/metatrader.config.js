@@ -399,12 +399,7 @@ const MetaTraderConfig = (() => {
                         if (!response_status.error && /cashier_locked/.test(response_status.get_account_status.status)) {
                             resolve(localize('Your cashier is locked.')); // Locked from BO
                         } else {
-                            const limit = State.getResponse('get_limits.remainder');
-                            if (typeof limit !== 'undefined' && +limit < Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5')) {
-                                resolve(localize('You have reached the limit.'));
-                            } else {
-                                resolve();
-                            }
+                            resolve();
                         }
                     });
                 }
@@ -531,11 +526,10 @@ const MetaTraderConfig = (() => {
                         type: 'float',
                         min : () => Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5'),
                         max : () => {
-                            const account_limit = State.getResponse('get_limits.remainder');
                             const mt5_limit     = Currency.getTransferLimits(Client.get('currency'), 'max', 'mt5');
                             const balance       = Client.get('balance');
                             // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
-                            return Math.min(account_limit || mt5_limit, mt5_limit, balance || mt5_limit).toFixed(Currency.getDecimalPlaces(Client.get('currency')));
+                            return Math.min(mt5_limit, balance || mt5_limit).toFixed(Currency.getDecimalPlaces(Client.get('currency')));
                         },
                         decimals: Currency.getDecimalPlaces(Client.get('currency')),
                     }],
