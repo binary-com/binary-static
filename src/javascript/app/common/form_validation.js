@@ -15,6 +15,7 @@ const Validation = (() => {
     const forms        = {};
     const error_class  = 'error-msg';
     const hidden_class = 'invisible';
+    const pass_length  = { min: 8, max: 25 };
 
     const events_map = {
         input   : 'input.validation change.validation',
@@ -146,7 +147,7 @@ const Validation = (() => {
     const validPhone        = value => /^\+((-|\s)*[0-9])*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;
-    const compareToEmail    = value => Client.get('email').localeCompare(value);
+    const compareToEmail    = value => Client.get('email').toLowerCase() === value.toLowerCase();
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
@@ -244,7 +245,7 @@ const Validation = (() => {
             regular         : { func: validRegular,      message: '' },
             tax_id          : { func: validTaxID,        message: localize('Should start with letter or number, and may contain hyphen and underscore.') },
             token           : { func: validEmailToken,   message: localize('Invalid verification code.') },
-            compare_to_email: { func: compareToEmail,    message: localize('You cannot use your email address as your password.') },
+            compare_to_email: { func: compareToEmail,    message: localize('Your password cannot be the same as your email address.') },
         });
 
         return {
@@ -256,8 +257,6 @@ const Validation = (() => {
             },
         };
     })();
-
-    const pass_length = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });
 
     // --------------------
     // ----- Validate -----
@@ -284,10 +283,10 @@ const Validation = (() => {
                 options = valid[1];
             }
 
-            if (type === 'password' && !validLength(getFieldValue(field, options), pass_length(options))) {
+            if (type === 'password' && !validLength(getFieldValue(field, options), pass_length)) {
                 field.is_ok = false;
                 type        = 'length';
-                options     = pass_length(options);
+                options     = pass_length;
             } else {
                 const validator = (type === 'custom' ? options.func : ValidatorsMap.get(type).func);
 
