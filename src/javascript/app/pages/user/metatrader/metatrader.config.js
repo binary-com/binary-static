@@ -554,9 +554,17 @@ const MetaTraderConfig = (() => {
                         max : () => {
                             const mt5_limit = Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'max', 'mt5');
                             const balance   = accounts_info[Client.get('mt5_account')].info.balance;
-                            return Math.min(mt5_limit, balance);
+                            // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
+                            return Math.min(mt5_limit, balance || mt5_limit);
                         },
                         decimals: 2,
+                    }],
+                    ['custom', {
+                        func: () => {
+                            const balance = accounts_info[Client.get('mt5_account')].info.balance;
+                            return balance && (+balance >= +$(fields.withdrawal.txt_amount.id).val());
+                        },
+                        message: localize('You have insufficient funds in your MT5 account.'),
                     }],
                 ],
             },
