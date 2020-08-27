@@ -35,7 +35,6 @@ const AccountTransfer = () => (
                         {it.L('Please [_1]deposit[_2] to your account.', `<a href='${it.url_for('cashier/forwardws?action=deposit')}'>`, '</a>')}
                         &nbsp;
                     </span>
-                    <span className='invisible' id='limit_reached'>{it.L('You have reached your withdrawal limit.')}&nbsp;</span>
                 </p>
             </div>
 
