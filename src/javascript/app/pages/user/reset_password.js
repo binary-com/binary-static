@@ -34,7 +34,7 @@ const ResetPassword = (() => {
 
         FormManager.init(form_id, [
             { selector: '#have_real_account',  validations: ['req'], exclude_request: 1 },
-            { selector: '#new_password',       validations: ['req', 'password', 'compare_to_email'], re_check_field: '#repeat_password' },
+            { selector: '#new_password',       validations: ['req', 'password'], re_check_field: '#repeat_password' },
             { selector: '#repeat_password',    validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
             { request_field: 'reset_password', value: 1 },
         ], true);
