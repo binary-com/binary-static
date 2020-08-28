@@ -147,7 +147,10 @@ const Validation = (() => {
     const validPhone        = value => /^\+((-|\s)*[0-9])*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;
-    const compareToEmail    = value => Client.get('email').toLowerCase() !== value.toLowerCase();
+    const compareToEmail    = value => {
+        const email = Client.get('email');
+        return !email || email.toLowerCase() !== value.toLowerCase();
+    };
 
     const validCompare  = (value, options) => value === $(options.to).val();
     const validNotEqual = (value, options) => value !== $(options.to).val();
