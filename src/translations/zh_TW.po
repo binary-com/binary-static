@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-08-28 02:30\n"
+"PO-Revision-Date: 2020-09-01 02:52\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -7003,14 +7003,11 @@ msgstr "存款金額範圍"
 msgid "Minimum deposit"
 msgstr "最小存款額"
 
-msgid "Minimum eight characters. Must contain numbers, and mix of upper and lower case letters."
-msgstr "最少 8 個字元。必須同時包含數字和大小寫字母。"
-
 msgid "Minimum of %1 characters required."
 msgstr "需至少%1 個字元。"
 
-msgid "Minimum of six lower and uppercase letters with numbers"
-msgstr "至少六個大小寫字母和數字"
+msgid "Minimum of eight lower and uppercase English letters with numbers"
+msgstr "至少八個大小寫英文字母和數字"
 
 msgid "Minimum of six months validity"
 msgstr "有效期至少六個月"
@@ -7885,8 +7882,8 @@ msgstr "密碼安全度不夠。"
 msgid "Password reset"
 msgstr "重設密碼"
 
-msgid "Password should have lower and uppercase letters with numbers."
-msgstr "密碼須包含大小寫字母與數字。"
+msgid "Password should have lower and uppercase English letters with numbers."
+msgstr "密碼必須有大小寫英文字母和數字。"
 
 msgid "Password type"
 msgstr "密碼類型"
@@ -8690,7 +8687,7 @@ msgid "Q2 2019"
 msgstr "2019年第2季"
 
 msgid "Q2 2020"
-msgstr ""
+msgstr "2020年第2季"
 
 msgid "Q3 2018"
 msgstr "2018年第三季"
@@ -13734,6 +13731,9 @@ msgstr "您的名字、電子郵件地址和電話號"
 
 msgid "Your partnership with %1 could be a means to promote your product or services for FREE to our 1,000,000+ registered clients, worldwide."
 msgstr "您和 %1 合夥即可免費向我們全世界 1,000,000+ 位註冊客戶推銷您的產品或服務。"
+
+msgid "Your password cannot be the same as your email address."
+msgstr "您的密碼不可與電子郵件地址相同。"
 
 msgid "Your password has been changed. Please log in again."
 msgstr "您的密碼已更改。請重新登入。"
