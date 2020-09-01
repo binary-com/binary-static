@@ -15,7 +15,7 @@ const ResetPassword = () => (
             <div className='gr-parent gr-padding-10' id='container_reset_password'>
                 <form id='frm_reset_password'>
                     <Fieldset legend={it.L('Details')}>
-                        <FormRow type='password' id='new_password' label={it.L('New Password')} hint={it.L('Minimum of six lower and uppercase letters with numbers')} />
+                        <FormRow type='password' id='new_password' label={it.L('New Password')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                         <FormRow type='password' id='repeat_password' label={it.L('Confirm New Password')} />
                         <SubmitButton type='submit' no_error text={it.L('Reset password')} />
                     </Fieldset>

@@ -14,7 +14,7 @@ const Virtual = () => (
                     type='password'
                     id='client_password'
                     label={it.L('Choose a password')}
-                    hint={it.L('Minimum of six lower and uppercase letters with numbers')}
+                    hint={it.L('Minimum of eight lower and uppercase English letters with numbers')}
                 />
 
                 <FormRow type='password' id='repeat_password' label={it.L('Re-enter password')} />

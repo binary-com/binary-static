@@ -325,7 +325,7 @@ const Metatrader = () => (
                             <div id='view_2' className='gr-row invisible'>
                                 <div className='container gr-8 gr-12-m'>
                                     <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
-                                    <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                    <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
                                     <SubmitButton
                                         is_centered
@@ -364,7 +364,7 @@ const Metatrader = () => (
                                         default_option='main'
                                     />
                                     <FormRow is_two_rows type='password' id='txt_old_password' label={it.L('Current MT5 password')} />
-                                    <FormRow is_two_rows type='password' id='txt_new_password' label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                    <FormRow is_two_rows type='password' id='txt_new_password' label={it.L('New MT5 password')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new MT5 password')} />
                                     <SubmitButton
                                         no_wrapper
@@ -420,7 +420,7 @@ const Metatrader = () => (
                                         ]}
                                         default_option='main'
                                     />
-                                    <FormRow is_two_rows type='password' id='txt_reset_new_password' label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                    <FormRow is_two_rows type='password' id='txt_reset_new_password' label={it.L('New MT5 password')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_reset_re_new_password' label={it.L('Verify new MT5 password')} />
                                     <SubmitButton
                                         no_wrapper
