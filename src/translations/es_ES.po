@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-09-01 02:53\n"
+"PO-Revision-Date: 2020-09-03 08:41\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -1976,6 +1976,9 @@ msgstr "El precio (s) de Compra y Venta de cada instrumento financiero en el sis
 msgid "Bid price"
 msgstr "Precio de compra"
 
+msgid "Binance USD"
+msgstr ""
+
 msgid "Binary Bot"
 msgstr "Binary Bot"
 
@@ -2050,9 +2053,6 @@ msgstr "Binary.com MT5 está transitando a Deriv"
 
 msgid "Binary.com Shop"
 msgstr "Tienda Binary.com"
-
-msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
-msgstr "Binary.com actualmente soporta Tether (USDT). Puede depositar USDT solo desde su billetera activa Omni Layer a su cuenta Binary.com."
 
 msgid "Binary.com in Numbers"
 msgstr "Binary en números"
@@ -4061,14 +4061,14 @@ msgstr "El capital corresponde a la suma de su saldo y de sus ganancias y pérdi
 msgid "Estimated net worth"
 msgstr "Patrimonio neto estimado"
 
-msgid "Ether"
-msgstr "Ethereum"
-
 msgid "Ether Classic"
 msgstr "Ethereum Classic"
 
 msgid "Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more information, please visit %1."
 msgstr "Ether es una criptomoneda que se utiliza para pagar transacciones en la plataforma Ethereum. Para más información, visite %1."
+
+msgid "Ethereum"
+msgstr ""
 
 msgid "Ethereum vs US dollar"
 msgstr "Ethereum vs dólar estadounidense"
@@ -5338,6 +5338,9 @@ msgstr "Cédula de identidad"
 
 msgid "ID number is required for %1."
 msgstr "La cédula de identidad es requerida para %1."
+
+msgid "IDK"
+msgstr ""
 
 msgid "IMPORTANT DISCLAIMER"
 msgstr "AVISO IMPORTANTE"
@@ -7009,7 +7012,7 @@ msgid "Minimum of %1 characters required."
 msgstr "Mínimo de %1 caracteres requeridos."
 
 msgid "Minimum of eight lower and uppercase English letters with numbers"
-msgstr ""
+msgstr "Un mínimo de ocho letras minúsculas y mayúsculas, del alfabeto inglés, con los números"
 
 msgid "Minimum of six months validity"
 msgstr "Mínimo de validez de seis meses"
@@ -7127,6 +7130,9 @@ msgstr "Sra."
 
 msgid "Multi award-winning trading platform."
 msgstr "Plataforma de negociación con múltiples galardones."
+
+msgid "Multi-Collateral"
+msgstr ""
 
 msgid "Multi-asset Liquidity Solutions"
 msgstr "Soluciones de liquidez de activos múltiples"
@@ -7885,7 +7891,7 @@ msgid "Password reset"
 msgstr "Contraseña restablecida"
 
 msgid "Password should have lower and uppercase English letters with numbers."
-msgstr ""
+msgstr "La contraseña debe tener letras minúsculas y mayúsculas, del alfabeto inglés, con números."
 
 msgid "Password type"
 msgstr "Tipo de contraseña"
@@ -7895,6 +7901,9 @@ msgstr "Tecnología patentada"
 
 msgid "Patents"
 msgstr "Patentes"
+
+msgid "Paxos Standard"
+msgstr ""
 
 msgid "Pay no commission on all metal contracts."
 msgstr "Todos los contratos sobre metales están libres de comisiones."
@@ -9168,6 +9177,9 @@ msgstr "Administra un sitio web que promueve Forex u opciones binarias"
 msgid "SQL,"
 msgstr "SQL,"
 
+msgid "STASIS Euro"
+msgstr ""
+
 msgid "Sa"
 msgstr "SA"
 
@@ -10035,8 +10047,17 @@ msgstr "Ponga a prueba nuestros productos y servicios en busca de vulnerabilidad
 msgid "Test the %1 website, applications, backend, and back-office systems"
 msgstr "Examinar el sitio web, las aplicaciones y los sistemas backend y back-office de %1"
 
-msgid "Tether"
-msgstr "Tether"
+msgid "Tether ERC20"
+msgstr ""
+
+msgid "Tether ERC20 (eUSDT) is a version of Tether that's pegged to USD and is hosted on the Ethereum platform."
+msgstr ""
+
+msgid "Tether Omni"
+msgstr ""
+
+msgid "Tether Omni (USDT) is a version of Tether that's pegged to USD and is built on the Bitcoin blockchain."
+msgstr ""
 
 msgid "Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more information, please visit %1."
 msgstr "Tether es una criptomoneda basada en una cadena de bloques cuyas criptomonedas en circulación están respaldadas por una cantidad equivalente de monedas fiduciarias tradicionales. Para más información, visite %1."
@@ -12264,6 +12285,9 @@ msgstr "Solucionar y depurar problemas en aplicaciones existentes y encontrar nu
 msgid "Troubleshoot and debug problems in existing database systems, and find new ways to improve their speed, functionality, and scalability"
 msgstr "Solucionar y depurar problemas en sistemas de bases de datos existentes, y encontrar nuevas formas de mejorar su velocidad, funcionalidad y escalabilidad"
 
+msgid "True USD"
+msgstr ""
+
 msgid "Trust"
 msgstr "Confianza"
 
@@ -12381,8 +12405,14 @@ msgstr "Dólar estadounidense vs Lira turca"
 msgid "USD"
 msgstr "USD"
 
+msgid "USD Coin"
+msgstr ""
+
 msgid "USD Index – Measures the value of the US dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "El índice de USD mide el valor del dólar estadounidense frente a una cesta de cinco divisas mundiales (EUR, GBP, JPY, CAD, AUD), cada una ponderada por 20%"
+
+msgid "USDK"
+msgstr ""
 
 msgid "Ultra fast on-the-go trading"
 msgstr "Operaciones ultrarrápidas en cualquier lugar"
@@ -13735,7 +13765,7 @@ msgid "Your partnership with %1 could be a means to promote your product or serv
 msgstr "Su colaboración con %1 podría ser un medio más para promover su producto o servicios de manera GRATIS a nuestra base de 1,000,000 + de clientes registrados en todo el mundo."
 
 msgid "Your password cannot be the same as your email address."
-msgstr ""
+msgstr "Su contraseña no puede ser la misma que la dirección de su correo electrónico."
 
 msgid "Your password has been changed. Please log in again."
 msgstr "Su contraseña ha sido cambiada. Por favor, inicie sesión de nuevo."
