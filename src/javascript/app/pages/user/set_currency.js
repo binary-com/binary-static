@@ -100,7 +100,7 @@ const SetCurrency = (() => {
         const $fiat_currencies  = $('<div/>');
         const $cryptocurrencies = $('<div/>');
         currencies.forEach((c) => {
-            const $wrapper = $('<div/>', { class: 'gr-2 gr-3-m currency_wrapper', id: c });
+            const $wrapper = $('<div/>', { class: 'gr-2 gr-4-m currency_wrapper', id: c });
             const $image   = $('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) }));
             const $name    = $('<div/>', { class: 'currency-name' });
 
@@ -108,7 +108,11 @@ const SetCurrency = (() => {
                 const $display_name = $('<span/>', {
                     text: Currency.getCurrencyName(c) || c,
                     ...(/^UST$/.test(c) && {
-                        'data-balloon'       : localize('Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account.'),
+                        'data-balloon'       : localize('Tether Omni (USDT) is a version of Tether that\'s pegged to USD and is built on the Bitcoin blockchain.'),
+                        'data-balloon-length': 'large',
+                    }),
+                    ...(/^eUSDT/.test(c) && {
+                        'data-balloon'       : localize('Tether ERC20 (eUSDT) is a version of Tether that\'s pegged to USD and is hosted on the Ethereum platform.'),
                         'data-balloon-length': 'large',
                     }),
                 });

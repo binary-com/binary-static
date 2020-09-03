@@ -25,10 +25,10 @@ const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, min
         money = addComma(money, decimal_places);
     }
 
-    return sign + (exclude_currency ? '' : formatCurrency(currency_value)) + money;
+    return sign + (exclude_currency ? money : money + formatCurrency(currency_value));
 };
 
-const formatCurrency = currency => `<span class="symbols ${(currency || '').toLowerCase()}"></span>`; // defined in binary-style
+const formatCurrency = currency => `<span class="symbols">&nbsp;${getCurrencyDisplayCode(currency)}</span>`; // defined in binary-style
 
 const addComma = (num, decimal_points, is_crypto) => {
     let number = String(num || 0).replace(/,/g, '');
@@ -62,12 +62,22 @@ const CryptoConfig = (() => {
     let crypto_config;
 
     const initCryptoConfig = () => ({
-        BTC: { display_code: 'BTC',  name: localize('Bitcoin'),       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        ETH: { display_code: 'ETH',  name: localize('Ether'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        ETC: { display_code: 'ETC',  name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        LTC: { display_code: 'LTC',  name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        UST: { display_code: 'USDT', name: localize('Tether'),        min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
-        USB: { display_code: 'USB',  name: localize('Binary Coin'),   min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        BTC  : { display_code: 'BTC',   name: localize('Bitcoin'),          min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETH  : { display_code: 'ETH',   name: localize('Ethereum'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETC  : { display_code: 'ETC',   name: localize('Ether Classic'),    min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        LTC  : { display_code: 'LTC',   name: localize('Litecoin'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        IDK  : { display_code: 'IDK',   name: localize('IDK'),              min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002  },
+        BUSD : { display_code: 'BUSD',  name: localize('Binance USD'),      min_withdrawal: 0.02, pa_max_withdrawal: 2000,  pa_min_withdrawal: 10 },
+        DAI  : { display_code: 'DAI',   name: localize('Multi-Collateral'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002  },
+        EURS : { display_code: 'EURS',  name: localize('STASIS Euro'),      min_withdrawal: 0.02, pa_max_withdrawal: 2000,  pa_min_withdrawal: 10 },
+        PAX  : { display_code: 'PAX',   name: localize('Paxos Standard'),   min_withdrawal: 0.02, pa_max_withdrawal: 2000,  pa_min_withdrawal: 10 },
+        TUSD : { display_code: 'TUSD',  name: localize('True USD'),         min_withdrawal: 0.02, pa_max_withdrawal: 2000,  pa_min_withdrawal: 10 },
+        USDC : { display_code: 'USDC',  name: localize('USD Coin'),         min_withdrawal: 0.02, pa_max_withdrawal: 2000,  pa_min_withdrawal: 10 },
+        USDK : { display_code: 'USDK',  name: localize('USDK'),             min_withdrawal: 0.02, pa_max_withdrawal: 2000,  pa_min_withdrawal: 10 },
+        UST  : { display_code: 'USDT',  name: localize('Tether Omni'),      min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        USDT : { display_code: 'USDT',  name: localize('Tether Omni'),      min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        eUSDT: { display_code: 'eUSDT', name: localize('Tether ERC20'),     min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        USB  : { display_code: 'USB',   name: localize('Binary Coin'),      min_withdrawal: 0.02,  pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
     });
 
     return {
@@ -117,7 +127,9 @@ const getPaWithdrawalLimit = (currency, limit) => {
     return limit === 'max' ? 2000 : 10; // limits for fiat currency
 };
 
-const getCurrencyDisplayCode = currency => getPropertyValue(CryptoConfig.get(), [currency, 'display_code']) || currency;
+const unifyUST = currency => /UST/.test(currency) ? 'USDT' : currency; // TODO Remove once API sends a unique currency
+
+const getCurrencyDisplayCode = currency => unifyUST(getPropertyValue(CryptoConfig.get(), [currency, 'display_code']) || currency);
 
 const getCurrencyName = currency => getPropertyValue(currencies_config, [currency, 'name']) || getPropertyValue(CryptoConfig.get(), [currency, 'name']) || '';
 

@@ -40,7 +40,7 @@ const SelfExclusion = (() => {
 
         currency = Client.get('currency');
 
-        $('.prepend_currency').parent().prepend(Currency.formatCurrency(currency));
+        $('.append_currency').after(Currency.formatCurrency(currency));
 
         // gamstop is only applicable for UK residence & for MX, MLT clients
         is_gamstop_client = /gb/.test(Client.get('residence')) && /iom|malta/.test(Client.get('landing_company_shortcode'));

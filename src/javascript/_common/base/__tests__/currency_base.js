@@ -17,19 +17,19 @@ describe('Currency', () => {
 
     describe('.formatMoney()', () => {
         it('works as expected', () => {
-            expect(Currency.formatMoney('USD', '123.55')).to.eq(`${Currency.formatCurrency('USD')}123.55`);
-            expect(Currency.formatMoney('GBP', '123.55')).to.eq(`${Currency.formatCurrency('GBP')}123.55`);
-            expect(Currency.formatMoney('EUR', '123.55')).to.eq(`${Currency.formatCurrency('EUR')}123.55`);
-            expect(Currency.formatMoney('AUD', '123.55')).to.eq(`${Currency.formatCurrency('AUD')}123.55`);
-            expect(Currency.formatMoney('BTC', '0.005432110')).to.eq(`${Currency.formatCurrency('BTC')}0.00543211`);
-            expect(Currency.formatMoney('BTC', '0.005432116')).to.eq(`${Currency.formatCurrency('BTC')}0.00543212`);
-            expect(Currency.formatMoney('BTC', '0.00000001')).to.eq(`${Currency.formatCurrency('BTC')}0.00000001`);
+            expect(Currency.formatMoney('USD', '123.55')).to.eq(`123.55${Currency.formatCurrency('USD')}`);
+            expect(Currency.formatMoney('GBP', '123.55')).to.eq(`123.55${Currency.formatCurrency('GBP')}`);
+            expect(Currency.formatMoney('EUR', '123.55')).to.eq(`123.55${Currency.formatCurrency('EUR')}`);
+            expect(Currency.formatMoney('AUD', '123.55')).to.eq(`123.55${Currency.formatCurrency('AUD')}`);
+            expect(Currency.formatMoney('BTC', '0.005432110')).to.eq(`0.00543211${Currency.formatCurrency('BTC')}`);
+            expect(Currency.formatMoney('BTC', '0.005432116')).to.eq(`0.00543212${Currency.formatCurrency('BTC')}`);
+            expect(Currency.formatMoney('BTC', '0.00000001')).to.eq(`0.00000001${Currency.formatCurrency('BTC')}`);
             // don't remove trailing zeroes for now
-            expect(Currency.formatMoney('BTC', '0.00010000')).to.eq(`${Currency.formatCurrency('BTC')}0.00010000`);
+            expect(Currency.formatMoney('BTC', '0.00010000')).to.eq(`0.00010000${Currency.formatCurrency('BTC')}`);
         });
 
         it('works with negative values', () => {
-            expect(Currency.formatMoney('USD', '-123.55')).to.eq(`-${Currency.formatCurrency('USD')}123.55`);
+            expect(Currency.formatMoney('USD', '-123.55')).to.eq(`-123.55${Currency.formatCurrency('USD')}`);
         });
 
         it('works when exclude currency', () => {
@@ -39,7 +39,7 @@ describe('Currency', () => {
 
     describe('.formatCurrency()', () => {
         it('works as expected', () => {
-            expect(Currency.formatCurrency('USD')).to.eq('<span class="symbols usd"></span>');
+            expect(Currency.formatCurrency('USD')).to.eq('<span class="symbols">&nbsp;USD</span>');
         });
     });
 

@@ -34,31 +34,31 @@ const SelfExclusion = () => (
 
         <form id='frm_self_exclusion' className='invisible'>
             <Fieldset>
-                <FormRow type='text' id='max_balance' label={it.L('Maximum account cash balance')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
+                <FormRow type='text' id='max_balance' label={it.L('Maximum account cash balance')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
 
                 <div data-show='iom' className='form-row no-padding'>
-                    <FormRow type='text' id='max_deposit' label={it.L('Maximum deposit limit')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
+                    <FormRow type='text' id='max_deposit' label={it.L('Maximum deposit limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
 
                     <FormRow type='text' id='max_deposit_end_date' label={it.L('Maximum deposit limit expiry')} attributes={{ maxLength: 15, autoComplete: 'off', readOnly: 'readonly' }} className='clearable' hint={it.L('Please enter date in the format DD MMM, YYYY.')} />
                 </div>
 
-                <FormRow type='text' id='max_turnover' label={it.L('Daily turnover limit')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Maximum aggregate contract purchases per day.')} />
+                <FormRow type='text' id='max_turnover' label={it.L('Daily turnover limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate contract purchases per day.')} />
 
-                <FormRow type='text' id='max_losses' label={it.L('Daily limit on losses')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Maximum aggregate loss per day.')} />
+                <FormRow type='text' id='max_losses' label={it.L('Daily limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss per day.')} />
 
-                <FormRow type='text' id='max_7day_turnover' label={it.L('7-day turnover limit')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Maximum aggregate contract purchases over a 7-day period.')} />
+                <FormRow type='text' id='max_7day_turnover' label={it.L('7-day turnover limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate contract purchases over a 7-day period.')} />
 
-                <FormRow type='text' id='max_7day_losses' label={it.L('7-day limit on losses')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Maximum aggregate loss over a 7-day period.')} />
+                <FormRow type='text' id='max_7day_losses' label={it.L('7-day limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss over a 7-day period.')} />
 
                 <FormRow type='custom' row_class='max_30day_turnover' label={it.L('30-day turnover limit')} hint={it.L('Maximum aggregate contract purchases over a 30-day period.')}>
-                    <input id='max_30day_turnover' className='prepend_currency' type='text' maxLength={20} />
+                    <input id='max_30day_turnover' className='append_currency' type='text' maxLength={20} />
                     <div data-show='iom, malta' className=' gr-12-m gr-centered-m inline-flex'>
                         <input id='chk_no_limit' type='checkbox' />
                         <label htmlFor='chk_no_limit'>{it.L('No limit')}</label>
                     </div>
                 </FormRow>
 
-                <FormRow type='text' id='max_30day_losses' label={it.L('30-day limit on losses')} attributes={{ maxLength: 20 }} className='prepend_currency' hint={it.L('Maximum aggregate loss over a 30-day period.')} />
+                <FormRow type='text' id='max_30day_losses' label={it.L('30-day limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss over a 30-day period.')} />
 
                 <FormRow type='text' id='max_open_bets' label={it.L('Maximum number of open positions')} attributes={{ maxLength: 4 }} hint={it.L('Maximum number of contracts that can be open at the same time.')} />
 

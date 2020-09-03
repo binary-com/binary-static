@@ -81,7 +81,7 @@ const PaymentAgentWithdraw = () => (
                 <p>
                     {it.L('Transfer to')}: <span id='lblAgentName' />
                     <br />
-                    {it.L('Amount')}: <span id='lblCurrency' /> <span id='lblAmount' />
+                    {it.L('Amount')}: <span id='lblAmount' /> <span id='lblCurrency' />
                     <br />
                     <span id='lblPaymentRefContainer' className='invisible'>
                         {it.L('Payment reference')}: <span id='lblPaymentRef' />

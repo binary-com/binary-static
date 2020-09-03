@@ -189,8 +189,8 @@ const PaymentAgentWithdraw = (() => {
                 setActiveView(view_ids.confirm);
 
                 $('#lblAgentName').text(agent_name);
-                $('#lblCurrency').text(Currency.getCurrencyDisplayCode(request.currency));
                 $('#lblAmount').text(Currency.getNumberFormat(request.amount, request.currency));
+                $('#lblCurrency').text(Currency.getCurrencyDisplayCode(request.currency));
 
                 if (request.description) {
                     // This Regex operation gets everything after the prefix, and handles the prefix not existing

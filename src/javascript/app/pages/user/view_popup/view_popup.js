@@ -819,7 +819,7 @@ const ViewPopup = (() => {
         if (is_sell_clicked) {
             const formatted_sell_price = formatMoney(contract.currency, response.sell.sold_for, true);
             containerSetText('contract_sell_message',
-                `${localize('You have sold this contract at [_1] [_2]', [getCurrencyDisplayCode(contract.currency), formatted_sell_price])}
+                `${localize('You have sold this contract at [_1] [_2]', [formatted_sell_price, getCurrencyDisplayCode(contract.currency)])}
                 <br />
                 ${localize('Your transaction reference number is [_1]', response.sell.transaction_id)}`);
         }
