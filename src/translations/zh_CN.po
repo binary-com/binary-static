@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-09-01 02:52\n"
+"PO-Revision-Date: 2020-09-03 08:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1975,6 +1975,9 @@ msgstr "每种金融工具在交易系统中报价的时候以市场价格报出
 msgid "Bid price"
 msgstr "标价"
 
+msgid "Binance USD"
+msgstr ""
+
 msgid "Binary Bot"
 msgstr "Binary Bot"
 
@@ -2049,9 +2052,6 @@ msgstr "Binary.com MT5 将移至 Deriv"
 
 msgid "Binary.com Shop"
 msgstr "Binary.com 商店"
-
-msgid "Binary.com currently supports Tether (USDT). You can only deposit USDT from your Omni Layer-enabled wallet into your Binary.com account."
-msgstr "Binary.com 当前支持泰达币（USDT）。您仅可从经启用 Omni Layer 的钱包将 USDT 存入Binary.com 账户。"
 
 msgid "Binary.com in Numbers"
 msgstr "Binary.com 的统计数字"
@@ -4061,14 +4061,14 @@ msgstr "股权是您的余额和浮动盈亏（PnL）的总和。保证金水平
 msgid "Estimated net worth"
 msgstr "估计净值"
 
-msgid "Ether"
-msgstr "以太币"
-
 msgid "Ether Classic"
 msgstr "古典以太币"
 
 msgid "Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more information, please visit %1."
 msgstr "以太币是在以太坊平台交易时使用的一种加密货币。欲了解详情, 请访问 %1。"
+
+msgid "Ethereum"
+msgstr ""
 
 msgid "Ethereum vs US dollar"
 msgstr "以太币兑美元"
@@ -5338,6 +5338,9 @@ msgstr "身份证号码"
 
 msgid "ID number is required for %1."
 msgstr "%1 需要身份证号。"
+
+msgid "IDK"
+msgstr ""
 
 msgid "IMPORTANT DISCLAIMER"
 msgstr "重要免责声明"
@@ -7127,6 +7130,9 @@ msgstr "女士"
 msgid "Multi award-winning trading platform."
 msgstr "屡获殊荣的交易平台。"
 
+msgid "Multi-Collateral"
+msgstr ""
+
 msgid "Multi-asset Liquidity Solutions"
 msgstr "多个资产的流动性解决方案"
 
@@ -7894,6 +7900,9 @@ msgstr "专利保护技术"
 
 msgid "Patents"
 msgstr "专利"
+
+msgid "Paxos Standard"
+msgstr ""
 
 msgid "Pay no commission on all metal contracts."
 msgstr "所有金属合约不需付佣金费。"
@@ -9167,6 +9176,9 @@ msgstr "促进外汇或二元期权的网站运行和管理"
 msgid "SQL,"
 msgstr "SQL,"
 
+msgid "STASIS Euro"
+msgstr ""
+
 msgid "Sa"
 msgstr "星期六"
 
@@ -10034,8 +10046,17 @@ msgstr "对我们的产品和服务进行安全漏洞测试。 在这个过程�
 msgid "Test the %1 website, applications, backend, and back-office systems"
 msgstr "测试 %1 网站、应用程序、后端和后台系统"
 
-msgid "Tether"
-msgstr "Tether"
+msgid "Tether ERC20"
+msgstr ""
+
+msgid "Tether ERC20 (eUSDT) is a version of Tether that's pegged to USD and is hosted on the Ethereum platform."
+msgstr ""
+
+msgid "Tether Omni"
+msgstr ""
+
+msgid "Tether Omni (USDT) is a version of Tether that's pegged to USD and is built on the Bitcoin blockchain."
+msgstr ""
 
 msgid "Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more information, please visit %1."
 msgstr "Tether是基于区块链的加密货币, 其流通由同等数量的传统法定货币提供支持。欲了解更多信息, 请访问 %1。"
@@ -12264,6 +12285,9 @@ msgstr "对现有应用程序中的问题进行故障排除和调试，并找出
 msgid "Troubleshoot and debug problems in existing database systems, and find new ways to improve their speed, functionality, and scalability"
 msgstr "对现有数据库系统中的问题进行故障排除和调试，并找出提高其速度，功能和可伸缩性的新方法"
 
+msgid "True USD"
+msgstr ""
+
 msgid "Trust"
 msgstr "可靠"
 
@@ -12381,8 +12405,14 @@ msgstr "美元兑土耳其里拉"
 msgid "USD"
 msgstr "美元"
 
+msgid "USD Coin"
+msgstr ""
+
 msgid "USD Index – Measures the value of the US dollar against a basket of five global currencies (EUR, GBP, JPY, CAD, AUD), each weighted by 20%"
 msgstr "美元指数 - 衡量美元相对于五种全球货币（欧元、英镑、日元、加元、澳元）的价值，每种货币的权重均为20%。"
+
+msgid "USDK"
+msgstr ""
 
 msgid "Ultra fast on-the-go trading"
 msgstr "超快速交易服务"
