@@ -152,6 +152,10 @@ const SetCurrency = (() => {
             const $clicked_currency = $(this);
             $currency_list.find('> div').removeClass('selected');
             $clicked_currency.addClass('selected');
+            
+            if ($submit) {
+                $submit.removeClass('button-disabled');
+            }
 
             if (should_show_confirmation) {
                 const currency         = $clicked_currency.attr('id');
