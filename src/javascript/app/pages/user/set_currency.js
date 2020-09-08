@@ -283,16 +283,16 @@ const SetCurrency = (() => {
 
     /**
      * Remove error text if $error is defined
-     * Enable confirm button if isBtnEnable is true
+     * Enable confirm button if is_btn_enabled is true
      *
      * @param {object} $error // error text jquery element
-     * @param {boolean} isBtnEnable // Enable button
+     * @param {boolean} is_btn_enabled // Enable button
      */
-    const removeError = ($error, isBtnEnable)=>{
+    const removeError = ($error, is_btn_enabled)=>{
         if ($error){
             $error.setVisibility(0);
         }
-        if ($submit && isBtnEnable) {
+        if ($submit && is_btn_enabled) {
             $submit.removeClass('button-disabled');
         }
     };
