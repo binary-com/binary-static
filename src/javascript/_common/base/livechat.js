@@ -2,14 +2,14 @@ const BinarySocket  = require('./socket_base');
 const ClientBase = require('./client_base');
 
 const LiveChat = (() => {
+    const initial_session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '' };
     const init = () => {
         if (window.LiveChatWidget) {
             // We have to clear the session first on livechat init to prevent
             // getting data from previous session.
-            let session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '' };
             window.LiveChatWidget.call('set_customer_email', ' ');
             window.LiveChatWidget.call('set_customer_name', ' ');
-            window.LiveChatWidget.call('set_session_variables', session_variables);
+            window.LiveChatWidget.call('set_session_variables', initial_session_variables);
             
             BinarySocket.wait('get_settings').then((response) => {
                 const get_settings = response.get_settings || {};
@@ -28,20 +28,20 @@ const LiveChat = (() => {
                     const currency = ClientBase.get('currency');
                     const residence = ClientBase.get('residence');
 
-                    session_variables = {
+                    const client_session_variables = {
                         ...loginid && { loginid },
                         ...landing_company_shortcode && { landing_company_shortcode },
                         ...currency && { currency },
                         ...residence && { residence },
                     };
 
-                    window.LiveChatWidget.call('set_session_variables', session_variables);
+                    window.LiveChatWidget.call('set_session_variables', client_session_variables);
                 }
 
                 if (visibility === 'maximized' && !ClientBase.isLoggedIn()) {
                     window.LiveChatWidget.call('set_customer_email', ' ');
                     window.LiveChatWidget.call('set_customer_name', ' ');
-                    window.LiveChatWidget.call('set_session_variables', session_variables);
+                    window.LiveChatWidget.call('set_session_variables', initial_session_variables);
                 }
             });
         }
