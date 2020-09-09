@@ -20,7 +20,6 @@ const AccountTransfer = (() => {
         error  : 'no_account',
         balance: 'not_enough_balance',
         deposit: 'no_balance',
-        limit  : 'limit_reached',
     };
 
     let el_transfer_from,
@@ -33,7 +32,6 @@ const AccountTransfer = (() => {
         client_balance,
         client_currency,
         client_loginid,
-        withdrawal_limit,
         max_amount,
         transferable_amount,
         to_loginid,
@@ -245,12 +243,10 @@ const AccountTransfer = (() => {
                 getElementById(messages.deposit).setVisibility(1);
             } else {
                 const req_transfer_between_accounts = BinarySocket.send({ transfer_between_accounts: 1 });
-                const req_get_limits                = BinarySocket.send({ get_limits: 1 });
                 const get_account_status            = BinarySocket.send({ get_account_status: 1 });
 
-                Promise.all([req_transfer_between_accounts, req_get_limits, get_account_status]).then(() => {
+                Promise.all([req_transfer_between_accounts, get_account_status]).then(() => {
                     const response_transfer = State.get(['response', 'transfer_between_accounts']);
-                    const response_limits   = State.get(['response', 'get_limits']);
                     const is_authenticated  = State.getResponse('get_account_status.status').some(state => state === 'authenticated');
 
                     if (hasError(response_transfer)) {
@@ -261,18 +257,11 @@ const AccountTransfer = (() => {
                         showError();
                         return;
                     }
-                    if (hasError(response_limits)) {
-                        return;
-                    }
 
                     populateAccounts(accounts);
-                    setLimits(response_limits, min_amount, is_authenticated).then(() => {
+                    setLimits(min_amount, is_authenticated).then(() => {
                         showForm({ is_authenticated });
                         populateHints();
-                    }).catch(() => {
-                        getElementById(messages.limit).setVisibility(1);
-                        getElementById(messages.parent).setVisibility(1);
-                        el_transfer_fee.setVisibility(0);
                     });
 
                 });
@@ -280,12 +269,7 @@ const AccountTransfer = (() => {
         });
     };
 
-    const setLimits = (response, min_amount, is_authenticated) => new Promise((resolve, reject) => {
-        withdrawal_limit = +response.get_limits.remainder;
-        if (withdrawal_limit < +min_amount) {
-            reject(new Error('Withdrawal limit is less than Min amount.'));
-        }
-
+    const setLimits = (min_amount, is_authenticated) => new Promise((resolve) => {
         max_amount = Currency.getTransferLimits(Client.get('currency'), 'max');
 
         const from_currency = Client.get('currency');
@@ -293,10 +277,7 @@ const AccountTransfer = (() => {
         if (!Currency.isCryptocurrency(from_currency) && !Currency.isCryptocurrency(to_currency) && is_authenticated) {
             transferable_amount = client_balance;
         } else {
-            transferable_amount = max_amount ? Math.min(max_amount, withdrawal_limit, client_balance) : Math.min(
-                withdrawal_limit,
-                client_balance,
-            );
+            transferable_amount = max_amount ? Math.min(max_amount, client_balance) : client_balance;
         }
 
         getElementById('range_hint_min').textContent = min_amount;
