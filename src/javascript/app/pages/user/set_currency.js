@@ -288,7 +288,7 @@ const SetCurrency = (() => {
      * @param {object} $error // error text jquery element
      * @param {boolean} is_btn_enabled // Enable button
      */
-    const removeError = ($error, is_btn_enabled)=>{
+    const removeError = ($error, is_btn_enabled) => {
         if ($error){
             $error.setVisibility(0);
         }

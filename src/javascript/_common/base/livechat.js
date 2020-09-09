@@ -4,6 +4,13 @@ const ClientBase = require('./client_base');
 const LiveChat = (() => {
     const init = () => {
         if (window.LiveChatWidget) {
+            // We have to clear the session first on livechat init to prevent
+            // getting data from previous session.
+            let session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '' };
+            window.LiveChatWidget.call('set_customer_email', ' ');
+            window.LiveChatWidget.call('set_customer_name', ' ');
+            window.LiveChatWidget.call('set_session_variables', session_variables);
+            
             BinarySocket.wait('get_settings').then((response) => {
                 const get_settings = response.get_settings || {};
                 const { first_name, last_name } = get_settings;
@@ -15,8 +22,6 @@ const LiveChat = (() => {
 
             window.LiveChatWidget.on('visibility_changed', ({ visibility }) => {
                 // only visible to CS
-                let session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '' };
-
                 if (visibility === 'maximized' && ClientBase.isLoggedIn()) {
                     const loginid = ClientBase.get('loginid');
                     const landing_company_shortcode = ClientBase.get('landing_company_shortcode');
