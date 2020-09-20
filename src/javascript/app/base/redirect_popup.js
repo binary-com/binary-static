@@ -1,35 +1,46 @@
-const Cookies          = require('js-cookie');
 const BinarySocket     = require('./socket');
-const Client           = require('../base/client');
 const isEuCountry      = require('../common/country_base').isEuCountry;
-const RealityCheckData = require('../pages/user/reality_check/reality_check.data');
+const Client           = require('../base/client');
 
 const RedirectPopup = (() => {
     const onLoad = () => {
-        BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
-            const has_dont_show       = Cookies.get('RedirectPopup');
-            const $redirect_popup     = $('#redirect_popup_container');
-            const $redirect_checkbox  = $('#redirect_popup_checkbox');
-            const $redirect_login  = $('#redirect_popup_login');
-            const $redirect_more = $('#redirect_popup_more');
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+            const has_dont_show = localStorage.getItem('redirect_popup');
+            const $popup        = $('#redirect_popup_container');
+            const $checkbox     = $('#redirect_popup_checkbox');
+            const $login        = $('#redirect_popup_login');
+            const $more         = $('#redirect_popup_more');
+            const $close        = $('#redirect_popup_close');
 
-            if (Client.isLoggedIn() && isEuCountry() && !has_dont_show) {
+            if (!Client.isLoggedIn() && isEuCountry() && !has_dont_show) {
                 setTimeout(() => {
-                    $redirect_popup.removeClass('invisible');
+                    $popup.removeClass('invisible');
                 }, 2000);
-                $redirect_checkbox.change( function () {
-                    const is_checked = $(this).is(':checked');
-                    const expires = 3650; // 10 years
 
-                    if (is_checked) {
-                        Cookies.set('RedirectPopup', true, { expires });
-                    } else {
-                        Cookies.remove('RedirectPopup');
-                    }
+                $checkbox.change(function () {
+                    const is_checked = $(this).is(':checked');
                     
+                    if (is_checked) {
+                        localStorage.setItem('redirect_popup', 1);
+                    } else {
+                        localStorage.removeItem('redirect_popup');
+                    }
                 });
-                $redirect_login.click(() => {
-                    $redirect_popup.addClass('invisible');
+
+                $close.click(() => {
+                    $popup.addClass('invisible');
+                });
+                
+                $login.click(() => {
+                    const url = '';
+                    $popup.addClass('invisible');
+                    location.href = url;
+                });
+
+                $more.click(() => {
+                    const url = 'http://deriv.com/interim/faq/';
+                    $popup.addClass('invisible');
+                    location.href = url;
                 });
             }
         });

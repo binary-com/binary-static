@@ -11,6 +11,7 @@ import {
     TabsSubtabs,
     TabContent }            from  '../_common/components/tabs.jsx';
 import DerivBanner          from '../_common/components/deriv_banner.jsx';
+import RedirectPopup        from '../_common/components/redirect_popup.jsx';
 
 const Arrows = ({ direction, parent }) => (
     <div className='align-self-center gr-1 gr-hide-p'>
@@ -405,6 +406,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <RedirectPopup />
         </React.Fragment>
     );
 };

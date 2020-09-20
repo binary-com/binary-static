@@ -10,6 +10,7 @@ const BinarySocket   = require('../../app/base/socket');
 const FormManager    = require('../../app/common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
 const isBinaryApp    = require('../../config').isBinaryApp;
+const RedirectPopup  = require('../../app/base/redirect_popup');
 
 const Home = (() => {
     let clients_country;
@@ -17,6 +18,7 @@ const Home = (() => {
     const onLoad = () => {
         Login.initOneAll();
         TabSelector.onLoad();
+        RedirectPopup.onLoad();
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             clients_country = State.getResponse('website_status.clients_country');

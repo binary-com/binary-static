@@ -1,13 +1,12 @@
 import React from 'react';
 import HTMLComment from './html_comment.jsx';
-import { FormRow } from './forms.jsx';
 
 const RedirectPopup = () => (
     <div id='redirect_popup_container' className='invisible'>
         <HTMLComment>googleoff: all</HTMLComment>{/* https://support.google.com/gsa/answer/6329153?hl=en#82542 */}
         <div className='popup'>
             <div className='popup__inner'>
-                <div className='popup__close' />
+                <div id='redirect_popup_close' className='popup__close' />
                 <h3 className='popup__head'>{it.L('Check out our new home')}</h3>
                 <div className='popup__body'>
                     <p>
@@ -27,7 +26,7 @@ const RedirectPopup = () => (
                     <a id='redirect_popup_login' className='button button-secondary'>
                         <span>{it.L('Log in to Deriv')}</span>
                     </a>
-                    <a id='edirect_popup_more' className='button'>
+                    <a id='redirect_popup_more' className='button'>
                         <span>{it.L('Learn more')}</span>
                     </a>
                 </div>

@@ -26,7 +26,6 @@ const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
 const isLoginPages     = require('../../_common/utility').isLoginPages;
 const isProduction     = require('../../config').isProduction;
-const RedirectPopup    = require('../../app/base/redirect_popup');
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
 
@@ -85,7 +84,6 @@ const Page = (() => {
                 if (!ClientBase.get('is_virtual')) {
                     // TODO: uncomment below to enable interview popup dialog
                     // InterviewPopup.onLoad();
-                    RedirectPopup.onLoad();
                 }
                 if (window.location.href.indexOf('?data-elevio-article=') > 0) {
                     Elevio.injectElevio();
