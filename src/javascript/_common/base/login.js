@@ -17,7 +17,7 @@ const Login = (() => {
         }
     };
 
-    const loginUrl = () => {
+    const loginUrl = (domain) => {
         const server_url = localStorage.getItem('config.server_url');
         const language   = getLanguage();
         const signup_device      = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
@@ -26,7 +26,7 @@ const Login = (() => {
 
         return ((server_url && /qa/.test(server_url)) ?
             `https://${server_url}/oauth2/authorize?app_id=${getAppId()}&l=${language}${marketing_queries}` :
-            urlForCurrentDomain(`https://oauth.binary.com/oauth2/authorize?app_id=${getAppId()}&l=${language}${marketing_queries}`)
+            urlForCurrentDomain(`https://oauth.${ domain || 'binary.com'}/oauth2/authorize?app_id=${getAppId(domain)}&l=${language}${marketing_queries}`)
         );
     };
 
@@ -55,6 +55,7 @@ const Login = (() => {
     };
 
     return {
+        loginUrl,
         redirectToLogin,
         initOneAll,
     };

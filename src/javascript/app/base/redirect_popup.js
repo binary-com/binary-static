@@ -1,6 +1,7 @@
 const BinarySocket     = require('./socket');
 const isEuCountry      = require('../common/country_base').isEuCountry;
 const Client           = require('../base/client');
+const Login            = require('../../_common/base/login');
 
 const RedirectPopup = (() => {
     const onLoad = () => {
@@ -17,7 +18,7 @@ const RedirectPopup = (() => {
                     $popup.removeClass('invisible');
                 }, 2000);
 
-                $checkbox.change(function () {
+                $checkbox.on('change', function () {
                     const is_checked = $(this).is(':checked');
                     
                     if (is_checked) {
@@ -27,17 +28,17 @@ const RedirectPopup = (() => {
                     }
                 });
 
-                $close.click(() => {
+                $close.on('click', () => {
                     $popup.addClass('invisible');
                 });
                 
-                $login.click(() => {
-                    const url = '';
+                $login.one('click', () => {
+                    const url = Login.loginUrl('deriv.com');
                     $popup.addClass('invisible');
                     location.href = url;
                 });
 
-                $more.click(() => {
+                $more.one('click', () => {
                     const url = 'http://deriv.com/interim/faq/';
                     $popup.addClass('invisible');
                     location.href = url;
