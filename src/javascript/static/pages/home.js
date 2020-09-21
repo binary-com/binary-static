@@ -71,6 +71,7 @@ const Home = (() => {
 
     const onUnload = () => {
         TabSelector.onUnload();
+        RedirectPopup.onUnload();
     };
 
     return {
