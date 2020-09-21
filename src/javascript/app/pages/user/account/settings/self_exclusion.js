@@ -14,11 +14,16 @@ const scrollToHashSection = require('../../../../../_common/scroll').scrollToHas
 
 const SelfExclusion = (() => {
     let $form,
+        $warning_ukgc,
+        $timeout_date,
+        $exclude_until,
         fields,
         self_exclusion_data,
         set_30day_turnover,
         currency,
         is_gamstop_client,
+        is_mlt,
+        is_mx,
         has_exclude_until;
 
     const form_id                 = '#frm_self_exclusion';
@@ -32,7 +37,10 @@ const SelfExclusion = (() => {
 
     const onLoad = () => {
         $form = $(form_id);
-
+        $warning_ukgc = $('#self_exclusion_warning');
+        $timeout_date = $(timeout_date_id);
+        $exclude_until = $(exclude_until_id);
+        
         fields = {};
         $form.find('input').each(function () {
             fields[this.name] = '';
@@ -43,8 +51,10 @@ const SelfExclusion = (() => {
         $('.append_currency').after(Currency.formatCurrency(currency));
 
         // gamstop is only applicable for UK residence & for MX, MLT clients
-        is_gamstop_client = /gb/.test(Client.get('residence')) && /iom|malta/.test(Client.get('landing_company_shortcode'));
-
+        is_mlt = Client.get('landing_company_shortcode') === 'malta';
+        is_mx = Client.get('landing_company_shortcode') === 'iom';
+        is_gamstop_client = Client.get('residence') === 'gb' && (is_mx || is_mlt);
+        
         initDatePicker();
         getData(true);
     };
@@ -94,8 +104,7 @@ const SelfExclusion = (() => {
                     if (key === 'exclude_until') {
                         setDateTimePicker(exclude_until_id, value);
                         $form.find('label[for="exclude_until"]').text(localize('Excluded from the website until'));
-                        $('#ukgc_gamstop').setVisibility(is_gamstop_client);
-                        $('#ukgc_requirement_notice').setVisibility(1);
+                        showWarning();
                         return;
                     }
                     if (key === 'max_30day_turnover') {
@@ -253,6 +262,8 @@ const SelfExclusion = (() => {
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
             const date = this.getAttribute('data-value');
+            const timeout_val = $timeout_date.attr('data-value');
+            const exclude_until_val = $exclude_until.attr('data-value');
 
             if (timeout_date_id.indexOf(this.id) > 0) {
                 const disabled_time_options = {
@@ -268,8 +279,14 @@ const SelfExclusion = (() => {
                 });
             }
 
-            $('#gamstop_info_bottom').setVisibility(is_gamstop_client && date);
+            showWarning(timeout_val || exclude_until_val);
         });
+    };
+
+    const showWarning = (is_enabled = true) => {
+        if (is_mx || is_mlt) {
+            $warning_ukgc.setVisibility(is_enabled);
+        }
     };
 
     const additionalCheck = data => (
@@ -308,11 +325,8 @@ const SelfExclusion = (() => {
             return;
         }
         showFormMessage(localize('Your changes have been updated.'), true);
-        if ($('#exclude_until').attr('data-value')) {
-            $('#gamstop_info_bottom').setVisibility(0);
-            $('#ukgc_gamstop').setVisibility(is_gamstop_client);
-            $('#ukgc_requirement_notice').setVisibility(1);
-        }
+        const exclude_until_val = $exclude_until.attr('data-value');
+        showWarning(!!exclude_until_val);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         const { exclude_until, timeout_until } = response.echo_req;
         if (exclude_until || timeout_until) {
