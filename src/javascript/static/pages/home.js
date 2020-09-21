@@ -6,11 +6,11 @@ const State          = require('../../_common/storage').State;
 const TabSelector    = require('../../_common/tab_selector');
 const urlFor         = require('../../_common/url').urlFor;
 const BinaryPjax     = require('../../app/base/binary_pjax');
+const RedirectPopup  = require('../../app/base/redirect_popup');
 const BinarySocket   = require('../../app/base/socket');
 const FormManager    = require('../../app/common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
 const isBinaryApp    = require('../../config').isBinaryApp;
-const RedirectPopup  = require('../../app/base/redirect_popup');
 
 const Home = (() => {
     let clients_country;

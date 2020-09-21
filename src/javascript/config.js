@@ -31,10 +31,10 @@ const getAppId = (domain) => {
     const is_new_app    = /\/app\//.test(window.location.pathname);
     const domain_app_id = domain_app_ids[domain];
 
-    if (domain_app_id) {
-        app_id = domain_app_id;
-    } else if (config_app_id) {
+    if (config_app_id) {
         app_id = config_app_id;
+    } else if (domain_app_id) {
+        app_id = domain_app_id;
     } else if (/desktop-app/i.test(window.location.href) || window.localStorage.getItem('config.is_desktop_app')) {
         window.localStorage.removeItem('config.default_app_id');
         window.localStorage.setItem('config.is_desktop_app', 1);
