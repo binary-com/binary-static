@@ -5,7 +5,7 @@ const getElementById = require('../../_common/common_functions').getElementById;
 const isEuCountry = require('../common/country_base').isEuCountry;
 
 const RedirectPopup = (() => {
-    const learn_more_url = 'http://deriv.com/interim/faq/';
+    const learn_more_url = 'https://deriv.com/interim/faq/';
     let el_popup_container,
         el_checkbox,
         el_link_login,
@@ -49,7 +49,7 @@ const RedirectPopup = (() => {
     };
 
     const redirectToLogin = () => {
-        const url = Login.loginUrl('deriv.com');
+        const url = Login.getLoginUrl('deriv.com');
         hidePopup();
         window.open(url);
     };

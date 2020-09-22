@@ -13,11 +13,11 @@ const Login = (() => {
     const redirectToLogin = () => {
         if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
             sessionStorage.setItem('redirect_url', window.location.href);
-            window.location.href = loginUrl();
+            window.location.href = getLoginUrl();
         }
     };
 
-    const loginUrl = (domain) => {
+    const getLoginUrl = (domain) => {
         const server_url = localStorage.getItem('config.server_url');
         const language   = getLanguage();
         const signup_device      = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
@@ -31,7 +31,7 @@ const Login = (() => {
     };
 
     const socialLoginUrl = (brand, affiliate_token, utm_source, utm_medium, utm_campaign) => (
-        `${loginUrl()}&social_signup=${brand}${affiliate_token}${utm_source}${utm_medium}${utm_campaign}`
+        `${getLoginUrl()}&social_signup=${brand}${affiliate_token}${utm_source}${utm_medium}${utm_campaign}`
     );
 
     const initOneAll = () => {
@@ -55,7 +55,7 @@ const Login = (() => {
     };
 
     return {
-        loginUrl,
+        getLoginUrl,
         redirectToLogin,
         initOneAll,
     };
