@@ -1702,3 +1702,7 @@ body #not_authenticated_financial ul.checked > li {
         visibility: visible;
     }
 }
+
+#self_exclusion_dialog #dialog_content {
+    max-width: 496px;
+}

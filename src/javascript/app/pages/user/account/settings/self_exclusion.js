@@ -22,6 +22,7 @@ const SelfExclusion = (() => {
         set_30day_turnover,
         currency,
         is_gamstop_client,
+        is_svg_client,
         is_mlt,
         is_mx,
         has_exclude_until;
@@ -50,7 +51,9 @@ const SelfExclusion = (() => {
 
         $('.append_currency').after(Currency.formatCurrency(currency));
 
-        // gamstop is only applicable for UK residence & for MX, MLT clients
+        // svg is only applicable for CR clients
+        is_svg_client = Client.get('landing_company_shortcode') === 'svg';
+
         is_mlt = Client.get('landing_company_shortcode') === 'malta';
         is_mx = Client.get('landing_company_shortcode') === 'iom';
         is_gamstop_client = Client.get('residence') === 'gb' && (is_mx || is_mlt);
@@ -153,7 +156,9 @@ const SelfExclusion = (() => {
             const options = { min: 0 };
             if (id in self_exclusion_data) {
                 checks.push('req');
-                options.max = self_exclusion_data[id];
+                if (!is_svg_client) {
+                    options.max = self_exclusion_data[id];
+                }
             } else {
                 options.allow_empty = true;
             }
@@ -294,19 +299,32 @@ const SelfExclusion = (() => {
             const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
                 key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
             ));
+            
             if (!is_changed) {
                 showFormMessage(localize('You did not change anything.'), false);
                 resolve(false);
             }
 
-            if ('timeout_until' in data || 'exclude_until' in data) {
+            if (is_svg_client && is_changed) {
                 Dialog.confirm({
-                    id               : 'timeout_until_dialog',
-                    localized_message: localize('When you click "OK" you will be excluded from trading on the site until the selected date.'),
+                    id               : 'self_exclusion_dialog',
+                    localized_title  : localize('Confirm changes'),
+                    localized_message: localize('We’ll update your limits. Click [_1]Agree and accept[_2] to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss.', ['<strong>', '</strong>']),
+                    ok_text          : localize('Agree and accept'),
+                    cancel_text      : localize('Go back'),
                 }).then((response) => resolve(response));
             } else {
-                resolve(true);
+                const has_timeout = 'timeout_until' in data || 'exclude_until' in data;
+                if (has_timeout) {
+                    Dialog.confirm({
+                        id               : 'timeout_until_dialog',
+                        localized_message: localize('When you click "OK" you will be excluded from trading on the site until the selected date.'),
+                    }).then((response) => resolve(response));
+                } else {
+                    resolve(true);
+                }
             }
+
         })
     );
 
