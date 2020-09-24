@@ -180,6 +180,10 @@
             .balance {
                 font-size: $FONT_SIZE_XXL;
                 color: $COLOR_BLUE;
+
+                .symbols {
+                    display: block;
+                }
             }
         }
     }
