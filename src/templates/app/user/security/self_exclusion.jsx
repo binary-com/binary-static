@@ -9,11 +9,13 @@ const SelfExclusion = () => (
             <div data-show='iom'>
                 <p>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. Limits may only be removed or increased, once the limit date setting has expired. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
             </div>
-            <div data-show='-iom'>
-                <p>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+            <div>
+                <p data-show='svg'>{it.L('Online trading can be addictive. This self-exclusion page is where you manage your online trading activity and exercise [_1]responsible trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}</p>
+                <p data-show='maltainvest'>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
             </div>
-            <p>{it.L('You may also instruct us to exclude you from trading on [_1] for a specific period of time. This self-exclusion date cannot be amended once it is set.', it.website_name)}</p>
-
+            <p data-show='eucountry'>{it.L('You may also instruct us to exclude you from trading on [_1] for a specific period of time. This self-exclusion date cannot be amended once it is set.', it.website_name)}</p>
+            <p data-show='-eucountry'>{it.L('Here, you can set and adjust the amount of money and time you spend trading on SmartTrader, WebTrader, and Binary Bot. Setting your limits is optional and you can adjust them at any time. If you don’t wish to set a specific limit, leave the field blank.')}</p>
+            <p data-show='-eucountry'>{it.L('You can also decide to exclude yourself entirely from our website for a specified duration. Once the self-exclusion period has ended, you can either extend it further or resume trading immediately. If you wish to reduce or remove the self-exclusion period, contact our [_1]Customer Support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
             <div id='gamstop_info_top' className='invisible'>
                 <p>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                 <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain.')}</p>
