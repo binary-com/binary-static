@@ -29,6 +29,29 @@ const makeOption = (options) => {
     return option_el;
 };
 
+const setDerivBannerLanguage = () => {
+    const language = getCurrentLanguage().toLowerCase();
+    const deriv_banner = getElementById('deriv_banner_container');
+    const deriv_banner_link = getFirstChild(deriv_banner);
+    const deriv_banner_link_updated = assembleDerivLink(language, deriv_banner);
+
+    deriv_banner_link.href = deriv_banner_link_updated;
+};
+
+const getCurrentLanguage = () => window.location.href.split('/')[3];
+const getFirstChild = element => element.firstChild;
+
+const assembleDerivLink = (language, deriv_banner) => {
+    const deriv_banner_link = getFirstChild(deriv_banner).href.split('/');
+    let deriv_final_link = deriv_banner_link.join('/');
+
+    if (language === 'en') return deriv_final_link;
+
+    deriv_banner_link.splice(3, 0, language);
+    deriv_final_link = deriv_banner_link.join('/');
+    return deriv_final_link;
+};
+
 /*
  * function to check if element is visible or not
  *
@@ -97,6 +120,7 @@ module.exports = {
     checkInput,
     dateValueChanged,
     selectorExists,
+    setDerivBannerLanguage,
     getElementById,
     getVisibleElement,
     elementTextContent: (element, text) => getSetElementValue(element, text, 'textContent'),

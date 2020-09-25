@@ -1,15 +1,16 @@
-const moment         = require('moment');
-const GTM            = require('../../_common/base/gtm');
-const Login          = require('../../_common/base/login');
-const localize       = require('../../_common/localize').localize;
-const State          = require('../../_common/storage').State;
-const TabSelector    = require('../../_common/tab_selector');
-const urlFor         = require('../../_common/url').urlFor;
-const BinaryPjax     = require('../../app/base/binary_pjax');
-const BinarySocket   = require('../../app/base/socket');
-const FormManager    = require('../../app/common/form_manager');
+const moment = require('moment');
+const GTM = require('../../_common/base/gtm');
+const Login = require('../../_common/base/login');
+const localize = require('../../_common/localize').localize;
+const State = require('../../_common/storage').State;
+const TabSelector = require('../../_common/tab_selector');
+const urlFor = require('../../_common/url').urlFor;
+const BinaryPjax = require('../../app/base/binary_pjax');
+const BinarySocket = require('../../app/base/socket');
+const FormManager = require('../../app/common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
-const isBinaryApp    = require('../../config').isBinaryApp;
+const isBinaryApp = require('../../config').isBinaryApp;
+const setDerivBannerLanguage = require('../../_common/common_functions').setDerivLanguage;
 
 const Home = (() => {
     let clients_country;
@@ -17,6 +18,7 @@ const Home = (() => {
     const onLoad = () => {
         Login.initOneAll();
         TabSelector.onLoad();
+        setDerivBannerLanguage();
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             clients_country = State.getResponse('website_status.clients_country');
