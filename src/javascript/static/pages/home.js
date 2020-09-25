@@ -10,7 +10,7 @@ const BinarySocket = require('../../app/base/socket');
 const FormManager = require('../../app/common/form_manager');
 const getFormRequest = require('../../app/common/verify_email');
 const isBinaryApp = require('../../config').isBinaryApp;
-const setDerivBannerLanguage = require('../../_common/common_functions').setDerivLanguage;
+const setDerivBannerLanguage = require('../../_common/common_functions').setDerivBannerLanguage;
 
 const Home = (() => {
     let clients_country;

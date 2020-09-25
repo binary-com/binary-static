@@ -29,6 +29,7 @@ const makeOption = (options) => {
     return option_el;
 };
 
+// functions to set a language to deriv banner link
 const setDerivBannerLanguage = () => {
     const language = getCurrentLanguage().toLowerCase();
     const deriv_banner = getElementById('deriv_banner_container');
