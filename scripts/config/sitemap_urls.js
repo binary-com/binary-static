@@ -22,7 +22,6 @@ module.exports = {
         ['terms-and-conditions',               'monthly', 0.80],
 
         ['liquidity-solutions',                'monthly', 0.80],
-        ['multiple-accounts-manager',          'monthly', 0.80],
         ['open-source-projects',               'monthly', 0.80],
         ['partners',                           'monthly', 0.80],
         ['payment-agent',                      'monthly', 0.80],
