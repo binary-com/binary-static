@@ -329,6 +329,8 @@ a.previous-wrapper {
       #mt_account_management #account_details .acc-info .balance {
         font-size: 1.520875rem;
         color: #2a3052; }
+        #mt_account_management #account_details .acc-info .balance .symbols {
+          display: block; }
   #mt_account_management .acc-actions {
     display: -webkit-box;
     display: -ms-flexbox;
