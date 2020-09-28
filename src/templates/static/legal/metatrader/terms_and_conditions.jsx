@@ -161,7 +161,7 @@ const TermsAndConditions = () => (
                     <li>{it.L('The Company may, at its absolute discretion, accept a Stop Order, a Limit Order, or a Stop Limit Order from the client.')}</li>
                     <li>{it.L('The client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a "good till cancelled" or "GTC" Order).')}
                         <ol>
-                            <li>{it.L('In the case of a Stop Order, the client acknowledges that the Company will endeavour to fill the Order at a price equal to the one that the client has specified. However, if the specified price is unavailable, a less favourable price may be quoted. In other words, the Order is executed either at the price equal to the specified one or worse than that (slippage). The execution of Stop Orders is guaranteed.')}</li>
+                            <li>{it.L('In the case of a Stop Order, the client acknowledges that the Company will endeavour to fill the Order at a price equal to the one that the client has specified. However, if the price is unavailable, the next available price may be quoted. In other words, the Order is executed at either the price equal to the specified one or the next available price (slippage). The execution of Stop Orders is guaranteed.')}</li>
                             <li>{it.L('In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price.')}</li>
                         </ol>
                     </li>
