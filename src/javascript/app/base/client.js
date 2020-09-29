@@ -8,6 +8,7 @@ const removeCookies      = require('../../_common/storage').removeCookies;
 const urlFor             = require('../../_common/url').urlFor;
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
+const Defaults           = require('../pages/trade/defaults');
 
 const Client = (() => {
     const processNewAccount = (options) => {
@@ -80,6 +81,8 @@ const Client = (() => {
         // clear elev.io session storage
         sessionStorage.removeItem('_elevaddon-6app');
         sessionStorage.removeItem('_elevaddon-6create');
+        // clear trading session
+        Defaults.remove('underlying','market');
         ClientBase.clearAllAccounts();
         ClientBase.set('loginid', '');
         SocketCache.clear();
