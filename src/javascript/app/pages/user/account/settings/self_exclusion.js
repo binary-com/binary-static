@@ -117,7 +117,6 @@ const SelfExclusion = (() => {
                     }
                     $form.find(`#${key}`).attr('disabled', has_exclude_until).val(value);
                 });
-                $form.find('#btn_submit').setVisibility(!has_exclude_until);
 
                 $('#chk_no_limit').on('change', function() {
                     setMax30DayTurnoverLimit($(this).is(':checked'));
