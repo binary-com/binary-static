@@ -1,4 +1,5 @@
 const BinarySocket       = require('./socket');
+const Defaults           = require('../pages/trade/defaults');
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const ClientBase         = require('../../_common/base/client_base');
 const GTM                = require('../../_common/base/gtm');
@@ -8,7 +9,6 @@ const removeCookies      = require('../../_common/storage').removeCookies;
 const urlFor             = require('../../_common/url').urlFor;
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
-const Defaults           = require('../pages/trade/defaults');
 
 const Client = (() => {
     const processNewAccount = (options) => {
@@ -82,7 +82,7 @@ const Client = (() => {
         sessionStorage.removeItem('_elevaddon-6app');
         sessionStorage.removeItem('_elevaddon-6create');
         // clear trading session
-        Defaults.remove('underlying','market');
+        Defaults.remove('underlying', 'market');
         ClientBase.clearAllAccounts();
         ClientBase.set('loginid', '');
         SocketCache.clear();
