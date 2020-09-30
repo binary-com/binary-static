@@ -186,7 +186,7 @@ const Validation = (() => {
         } else if ('min' in options && 'max' in options && +options.min === +options.max && +value !== +options.min) {
             is_ok   = false;
             message = localize('Should be [_1]', addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined));
-        } else if ('min' in options && 'max' in options && (+value <= +options.min || isMoreThanMax(value, options))) {
+        } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
             is_ok   = false;
             message = localize('Should be between [_1] and [_2]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined), addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
         } else if ('min' in options && +value < +options.min) {
