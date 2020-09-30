@@ -7,7 +7,8 @@ const SelfExclusion = () => (
         <div className='invisible' id='description'>
             <h1>{it.L('Self-Exclusion')}</h1>
             <div data-show='iom'>
-                <p>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. Limits may only be removed or increased, once the limit date setting has expired. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+                <p>{it.L('Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. If you are in the UK, your limits may be removed or increased within 24 hours.')}</p>
+                <p>{it.L('If you are in the IOM, your limits may only be removed or increased, once the limit date setting has expired. [_1]Contact us[_2] to remove or adjust your limits.', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
             </div>
             <div>
                 <p data-show='svg'>{it.L('Online trading can be addictive. This self-exclusion page is where you manage your online trading activity and exercise [_1]responsible trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}</p>
