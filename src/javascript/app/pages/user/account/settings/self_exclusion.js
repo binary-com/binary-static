@@ -165,6 +165,12 @@ const SelfExclusion = (() => {
                 options.type     = 'float';
                 options.decimals = decimal_places;
             }
+            if (/max_open_bets/.test(id)) {
+                options.min = 1;
+            }
+            if (/max_balance/.test(id)) {
+                options.min = 0.01;
+            }
             checks.push(['number', options]);
 
             if (id === 'session_duration_limit') {

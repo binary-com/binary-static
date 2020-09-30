@@ -172,10 +172,10 @@ const Cashier = (() => {
                             return false;
                         });
                     }
-                    // if there is not more than 2 non-zero numbers
+                    // if there is not more than 2 non-zero decimals
                     // don't cut off the number
-                    const checked_min_withdrawal = to_fixed === -1 ? minimum_withdrawal : minimum_withdrawal.toFixed(to_fixed);
-                    $crypto_min_withdrawal.text(checked_min_withdrawal);
+                    const min_withdrawal = to_fixed === -1 ? minimum_withdrawal : minimum_withdrawal.toFixed(to_fixed);
+                    $crypto_min_withdrawal.text(min_withdrawal);
                 }
             });
         });
