@@ -536,6 +536,25 @@ const PaymentMethods = () => {
                                 ],
                             },
                             {
+                                id : 'usdc',
+                                row: [
+                                    { text: <PaymentLogo logo='usdc' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('For more information, please visit [_1].', `${createLink('https://www.centre.io/usdc')}`) },
+                                        { td_list: [
+                                            { text: 'USDC' },
+                                            { text: '—' },
+                                            { text: <span data-currency='USDC' /> },
+                                            { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: '—' },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
                                 id : 'ethereum-black',
                                 row: [
                                     { text: <PaymentLogo logo='ethereum_black' /> },
