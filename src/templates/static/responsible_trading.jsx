@@ -41,7 +41,7 @@ const ResponsibleTrading = () => (
 
             <div data-show='eucountry'>
                 <h2>GAMSTOP</h2>
-                <p>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
+                <p>{it.L('If you reside in the UK and are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                 <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain.')}</p>
                 <p>{it.L('To find out more and to sign up with GAMSTOP, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
 
