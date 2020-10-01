@@ -21,7 +21,8 @@ const APIToken = (() => {
 
         const regex_msg = localize('Only [_1] are allowed.', [...localize(['letters', 'numbers', 'space']), '_'].join(', '));
         FormManager.init(form_id, [
-            { selector: '#txt_name',           request_field: 'new_token',        validations: ['req', ['regular', { regex: /^[\w\s]+$/, message: regex_msg }], ['length', { min: 2, max: 32 }]] },
+            // eslint-disable-next-line no-control-regex
+            { selector: '#txt_name',           request_field: 'new_token',        validations: ['req', ['regular', { regex: /^([^\x00-\x7F]|[\w\s])+$/, message: regex_msg }], ['length', { min: 2, max: 32 }]] },
             { selector: '[id*="chk_scopes_"]', request_field: 'new_token_scopes', validations: [['req', { message: localize('Please select at least one scope') }]], value: getScopes },
 
             { request_field: 'api_token', value: 1 },
