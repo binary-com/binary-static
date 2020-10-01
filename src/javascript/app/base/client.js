@@ -1,4 +1,5 @@
 const BinarySocket       = require('./socket');
+const Defaults           = require('../pages/trade/defaults');
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const ClientBase         = require('../../_common/base/client_base');
 const GTM                = require('../../_common/base/gtm');
@@ -80,6 +81,8 @@ const Client = (() => {
         // clear elev.io session storage
         sessionStorage.removeItem('_elevaddon-6app');
         sessionStorage.removeItem('_elevaddon-6create');
+        // clear trading session
+        Defaults.remove('underlying', 'market');
         ClientBase.clearAllAccounts();
         ClientBase.set('loginid', '');
         SocketCache.clear();
