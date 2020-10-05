@@ -5,7 +5,7 @@
 * Install `Homebrew` by `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 * Install and follow the instructions here: https://support.crowdin.com/cli-tool/#installation
 * **Important:** Please use version 3 of the crowdin cli-tool
-* Get [Crowdin API Key](https://crowdin.com/project/binary-static/settings#api) and add this line to your _.bash_profile_: `export BINARY_COM_CROWDIN_API_KEY='put API Key here'`<br/>
+* Get [Crowdin API Key](https://crowdin.com/project/binary-static/settings#api) and add this line to your _.bash_profile_: `export CROWDIN_API_KEY='put API Key here'`<br/>
 **IMPORTANT!** This key gives full access to all your Crowdin project data. Treat this just like a password and never push it to any public repo.
 
 ### To update the translations:
