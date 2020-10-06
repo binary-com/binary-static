@@ -1706,3 +1706,26 @@ body #not_authenticated_financial ul.checked > li {
 #self_exclusion_dialog #dialog_content {
     max-width: 496px;
 }
+
+.tnc {
+    text-align: center;
+    margin-bottom: 96px;
+
+    &_img {
+        display: block;
+        width: 90%;
+        max-width: 270px;
+        height: auto;
+        margin: 0 auto 25px;
+    }
+    &_text {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+    &_btn span {
+        padding: 15px 25px;
+    }
+    &_footer {
+        text-align: center;
+    }
+}

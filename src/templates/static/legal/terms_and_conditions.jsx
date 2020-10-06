@@ -1,7 +1,5 @@
 import React from 'react';
-import Biel from './tac_sections/biel.jsx';
-import Tac from './tac_sections/tac.jsx';
-import TradingRules from './tac_sections/trading_rules.jsx';
+import DerivTnc from './tac_sections/deriv-tnc.jsx';
 
 const Section = ({
     id = '',
@@ -21,24 +19,8 @@ const Section = ({
 const TermsAndConditions = () => (
     <div className='tac-binary gr-row'>
         <div className='gr-12 gr-12-m gr-parent'>
-            <Section sectionNum='1' link_id='tac'>
-                <Tac />
-            </Section>
-
-            <Section sectionNum='2' link_id='trading-rules'>
-                <TradingRules />
-            </Section>
-
-            <Section sectionNum='5' link_id='biel' data-show='eucountry'>
-                <Biel />
-            </Section>
-
-            <Section sectionNum='6' id='tnc_accept' link_id='accept' className='tnc_accept invisible'>
-                <div className='gr-9 gr-12-m gr-centered center-text'>
-                    <p>{it.L('By clicking OK, you confirm that you have read and accepted Terms & Conditions.')}</p>
-                    <button className='button' id='btn_accept'>{it.L('OK')}</button>
-                    <p className='gr-12 error-msg center-text invisible' id='err_message' />
-                </div>
+            <Section sectionNum='1' link_id='deriv-tnc'>
+                <DerivTnc />
             </Section>
         </div>
     </div>
