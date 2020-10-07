@@ -1708,20 +1708,21 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .tnc {
-    margin-bottom: 96px;
+    max-width: 776px;
+    margin: 64px auto 96px;
 
-    &_img {
+    &-img {
         display: block;
         width: 90%;
         max-width: 270px;
         height: auto;
         margin: 0 auto 25px;
     }
-    &_text {
+    &-text {
         font-size: $FONT_SIZE_L;
         margin-bottom: 24px;
     }
-    &_btn span {
+    &-btn span {
         padding: 15px 25px;
     }
 }
