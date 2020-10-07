@@ -63,6 +63,7 @@ const StaticPages         = require('../../static/pages/static_pages');
 const TermsAndConditions  = require('../../static/pages/tnc');
 const WhyUs               = require('../../static/pages/why_us');
 const AffiliatesIBLanding = require('../../static/pages/affiliate_ib_landing');
+const ResponsibleTrading  = require('../../static/pages/responsible_trading');
 
 /* eslint-disable max-len */
 const pages_config = {
@@ -148,6 +149,7 @@ const pages_config = {
     'types-of-accounts'      : { module: TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
+    'responsible_trading'    : { module: ResponsibleTrading },
 };
 /* eslint-enable max-len */
 
