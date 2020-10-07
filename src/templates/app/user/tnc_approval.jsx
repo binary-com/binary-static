@@ -13,7 +13,7 @@ const TncApproval = () => (
                 <div className='gr-10 gr-12-m'>
                     <h2>{it.L('We have updated our terms and conditions')}</h2>
                     <form>
-                        <p id='tnc_message'>{it.L('As part of our rebranding, we have updated our <a href="[_2]">terms and conditions</a> which can be viewed at Deriv.com. Note that all [_1] users are now bound by the terms and conditions of Deriv. Please review and accept them to continue using our services. ', it.website_name, '[_2]')}</p>
+                        <p id='tnc_message'>{it.L('As part of our rebranding, we have updated our [_1]terms and conditions[_2] which can be viewed at Deriv.com. Note that all [_3] users are now bound by the terms and conditions of Deriv. Please review and accept them to continue using our services. ', `<a href='${it.url_for('terms-and-conditions')}'>`, '</a>', it.website_name)}</p>
                         <div className='gr-12 center-text'>
                             <button className='button' id='btn_accept'>{it.L('Agree and continue')}</button>
                         </div>
