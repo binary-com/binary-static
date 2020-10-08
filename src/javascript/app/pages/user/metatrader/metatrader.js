@@ -321,7 +321,7 @@ const MetaTrader = (() => {
                 MetaTraderUI.displayMainMessage(
                     localize(
                         '[_1] has been credited into your MT5 Demo Account: [_2].',
-                        [`${MetaTraderConfig.getCurrency(acc_type)} 10,000.00`, accounts_info[acc_type].info.display_login]
+                        [`10,000.00 ${MetaTraderConfig.getCurrency(acc_type)}`, accounts_info[acc_type].info.display_login]
                     ));
                 BinarySocket.send({ mt5_login_list: 1 }).then((res) => {
                     allAccountsResponseHandler(res);
