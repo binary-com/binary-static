@@ -54,14 +54,19 @@ const AssetIndex = (() => {
                 const asset_cells = asset_item[idx.cells];
                 const values      = {};
                 for (let j = 0; j < asset_cells.length; j++) {
-                    const col = asset_cells[j][idx.cell_props.cell_display_name];
+                    const cell = asset_cells[j];
+                    const cell_name = cell[idx.cell_props.cell_name];
 
-                    values[col] = [asset_cells[j][idx.cell_props.cell_from], asset_cells[j][idx.cell_props.cell_to]].join(' - ');
+                    // Multiplier should be hidden from binary static
+                    if (cell_name !== 'multiplier'){
+                        const col = cell[idx.cell_props.cell_display_name];
+                        values[col] = [cell[idx.cell_props.cell_from], cell[idx.cell_props.cell_to]].join(' - ');
 
-                    const market_cols = market_columns[market];
-                    if (market_cols.columns.indexOf(col) === -1) {
-                        market_cols.header.push(asset_cells[j][idx.cell_props.cell_display_name]);
-                        market_cols.columns.push(col);
+                        const market_cols = market_columns[market];
+                        if (market_cols.columns.indexOf(col) === -1) {
+                            market_cols.header.push(cell[idx.cell_props.cell_display_name]);
+                            market_cols.columns.push(col);
+                        }
                     }
                 }
                 asset_item.push(values);

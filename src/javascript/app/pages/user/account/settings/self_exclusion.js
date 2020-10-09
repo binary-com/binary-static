@@ -14,11 +14,17 @@ const scrollToHashSection = require('../../../../../_common/scroll').scrollToHas
 
 const SelfExclusion = (() => {
     let $form,
+        $warning_ukgc,
+        $timeout_date,
+        $exclude_until,
         fields,
         self_exclusion_data,
         set_30day_turnover,
         currency,
         is_gamstop_client,
+        is_svg_client,
+        is_mlt,
+        is_mx,
         has_exclude_until;
 
     const form_id                 = '#frm_self_exclusion';
@@ -31,7 +37,10 @@ const SelfExclusion = (() => {
 
     const onLoad = () => {
         $form = $(form_id);
-
+        $warning_ukgc = $('#self_exclusion_warning');
+        $timeout_date = $(timeout_date_id);
+        $exclude_until = $(exclude_until_id);
+        
         fields = {};
         $form.find('input').each(function () {
             fields[this.name] = '';
@@ -41,9 +50,13 @@ const SelfExclusion = (() => {
 
         $('.append_currency').after(Currency.formatCurrency(currency));
 
-        // gamstop is only applicable for UK residence & for MX, MLT clients
-        is_gamstop_client = /gb/.test(Client.get('residence')) && /iom|malta/.test(Client.get('landing_company_shortcode'));
+        // svg is only applicable for CR clients
+        is_svg_client = Client.get('landing_company_shortcode') === 'svg';
 
+        is_mlt = Client.get('landing_company_shortcode') === 'malta';
+        is_mx = Client.get('landing_company_shortcode') === 'iom';
+        is_gamstop_client = Client.get('residence') === 'gb' && (is_mx || is_mlt);
+        
         initDatePicker();
         getData(true);
     };
@@ -88,8 +101,7 @@ const SelfExclusion = (() => {
                     if (key === 'exclude_until') {
                         setDateTimePicker(exclude_until_id, value);
                         $form.find('label[for="exclude_until"]').text(localize('Excluded from the website until'));
-                        $('#ukgc_gamstop').setVisibility(is_gamstop_client);
-                        $('#ukgc_requirement_notice').setVisibility(1);
+                        showWarning();
                         return;
                     }
                     if (key === 'max_30day_turnover') {
@@ -99,7 +111,6 @@ const SelfExclusion = (() => {
                     }
                     $form.find(`#${key}`).attr('disabled', has_exclude_until).val(value);
                 });
-                $form.find('#btn_submit').setVisibility(!has_exclude_until);
 
                 $('#chk_no_limit').on('change', function() {
                     setMax30DayTurnoverLimit($(this).is(':checked'));
@@ -112,10 +123,11 @@ const SelfExclusion = (() => {
     };
 
     const setDateTimePicker = (id, data_value, is_timepicker = false) => {
+        const is_mobile = window.innerWidth < 770;
         $form.find(id)
             .attr('disabled', has_exclude_until)
             .attr('data-value', data_value)
-            .val(is_timepicker ? data_value : moment(data_value).format('DD MMM, YYYY')); // display format
+            .val((is_timepicker || is_mobile) ? data_value : moment(data_value).format('DD MMM, YYYY')); // display format
     };
 
     const setMax30DayTurnoverLimit = (is_checked) => {
@@ -138,13 +150,21 @@ const SelfExclusion = (() => {
             const options = { min: 0 };
             if (id in self_exclusion_data) {
                 checks.push('req');
-                options.max = self_exclusion_data[id];
+                if (!is_svg_client) {
+                    options.max = self_exclusion_data[id];
+                }
             } else {
                 options.allow_empty = true;
             }
             if (!/session_duration_limit|max_open_bets/.test(id)) {
                 options.type     = 'float';
                 options.decimals = decimal_places;
+            }
+            if (/max_open_bets/.test(id)) {
+                options.min = 1;
+            }
+            if (/max_balance/.test(id)) {
+                options.min = 0.01;
             }
             checks.push(['number', options]);
 
@@ -234,6 +254,8 @@ const SelfExclusion = (() => {
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
             const date = this.getAttribute('data-value');
+            const timeout_val = $timeout_date.attr('data-value');
+            const exclude_until_val = $exclude_until.attr('data-value');
 
             if (timeout_date_id.indexOf(this.id) > 0) {
                 const disabled_time_options = {
@@ -249,8 +271,14 @@ const SelfExclusion = (() => {
                 });
             }
 
-            $('#gamstop_info_bottom').setVisibility(is_gamstop_client && date);
+            showWarning(timeout_val || exclude_until_val);
         });
+    };
+
+    const showWarning = (is_enabled = true) => {
+        if (is_mx || is_mlt) {
+            $warning_ukgc.setVisibility(is_enabled);
+        }
     };
 
     const additionalCheck = data => (
@@ -258,19 +286,32 @@ const SelfExclusion = (() => {
             const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
                 key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
             ));
+            
             if (!is_changed) {
                 showFormMessage(localize('You did not change anything.'), false);
                 resolve(false);
             }
 
-            if ('timeout_until' in data || 'exclude_until' in data) {
+            if (is_svg_client && is_changed) {
                 Dialog.confirm({
-                    id               : 'timeout_until_dialog',
-                    localized_message: localize('When you click "OK" you will be excluded from trading on the site until the selected date.'),
+                    id               : 'self_exclusion_dialog',
+                    localized_title  : localize('Confirm changes'),
+                    localized_message: localize('We’ll update your limits. Click [_1]Agree and accept[_2] to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss.', ['<strong>', '</strong>']),
+                    ok_text          : localize('Agree and accept'),
+                    cancel_text      : localize('Go back'),
                 }).then((response) => resolve(response));
             } else {
-                resolve(true);
+                const has_timeout = 'timeout_until' in data || 'exclude_until' in data;
+                if (has_timeout) {
+                    Dialog.confirm({
+                        id               : 'timeout_until_dialog',
+                        localized_message: localize('When you click "OK" you will be excluded from trading on the site until the selected date.'),
+                    }).then((response) => resolve(response));
+                } else {
+                    resolve(true);
+                }
             }
+
         })
     );
 
@@ -289,11 +330,8 @@ const SelfExclusion = (() => {
             return;
         }
         showFormMessage(localize('Your changes have been updated.'), true);
-        if ($('#exclude_until').attr('data-value')) {
-            $('#gamstop_info_bottom').setVisibility(0);
-            $('#ukgc_gamstop').setVisibility(is_gamstop_client);
-            $('#ukgc_requirement_notice').setVisibility(1);
-        }
+        const exclude_until_val = $exclude_until.attr('data-value');
+        showWarning(!!exclude_until_val);
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         const { exclude_until, timeout_until } = response.echo_req;
         if (exclude_until || timeout_until) {

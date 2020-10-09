@@ -6,6 +6,7 @@ const hundredth       = '0.01';
 const thousandth      = '0.001';
 const tenth           = '0.10';
 const two_tenth       = '0.20';
+const three_tenth     = '0.30';
 const five_tenth      = '0.50';
 const five_thousandth = '0.005';
 const three           = '3.00';
@@ -115,16 +116,16 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Volatility 10 index'       }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'Volatility 10 index'       }, { text: '1' }, { text: three_tenth     }, { text: hundredth }],
                                 [{ text: 'Volatility 25 index'       }, { text: '1' }, { text: five_tenth      }, { text: hundredth }],
                                 [{ text: 'Volatility 50 index'       }, { text: '1' }, { text: three           }, { text: hundredth }],
-                                [{ text: 'Volatility 75 index'       }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
-                                [{ text: 'Volatility 100 index'      }, { text: '1' }, { text: tenth           }, { text: hundredth }],
-                                [{ text: 'HF Volatility 10 index'    }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
-                                [{ text: 'HF Volatility 50 index'    }, { text: '1' }, { text: three           }, { text: hundredth }],
-                                [{ text: 'HF Volatility 100 index'   }, { text: '1' }, { text: three           }, { text: hundredth }],
-                                [{ text: 'Volatility 10 (1s) index'  }, { text: '1' }, { text: tenth           }, { text: hundredth }],
-                                [{ text: 'Volatility 100 (1s) index' }, { text: '1' }, { text: hundredth       }, { text: hundredth }],
+                                [{ text: 'Volatility 75 index'       }, { text: '1' }, { text: thousandth      }, { text: thousandth }],
+                                [{ text: 'Volatility 100 index'      }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'Volatility 10 (1s) index'  }, { text: '1' }, { text: two_tenth       }, { text: hundredth }],
+                                [{ text: 'Volatility 25 (1s) index'  }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
+                                [{ text: 'Volatility 50 (1s) index'  }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
+                                [{ text: 'Volatility 75 (1s) index'  }, { text: '1' }, { text: five_thousandth }, { text: thousandth }],
+                                [{ text: 'Volatility 100 (1s) index' }, { text: '1' }, { text: tenth           }, { text: hundredth }],
                             ],
                         }}
                     />
@@ -140,10 +141,10 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'Crash 1000 index' }, { text: '1' }, { text: tenth }, { text: hundredth }],
-                                [{ text: 'Boom 1000 index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
-                                [{ text: 'Crash 500 index'  }, { text: '1' }, { text: tenth }, { text: hundredth }],
-                                [{ text: 'Boom 500 index'   }, { text: '1' }, { text: tenth }, { text: hundredth }],
+                                [{ text: 'Crash 1000 index' }, { text: '1' }, { text: two_tenth }, { text: hundredth }],
+                                [{ text: 'Boom 1000 index'  }, { text: '1' }, { text: two_tenth }, { text: hundredth }],
+                                [{ text: 'Crash 500 index'  }, { text: '1' }, { text: two_tenth }, { text: hundredth }],
+                                [{ text: 'Boom 500 index'   }, { text: '1' }, { text: two_tenth }, { text: hundredth }],
                             ],
                         }}
                     />
@@ -196,7 +197,7 @@ const Cfds = () => (
 
                     <HeaderSecondary header={it.L('Important notes on our swap rates (overnight funding)')} />
                     <p>{it.L('If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open.')}</p>
-                    <p>{it.L('The interest adjustment is calculated in annual base for long and short positions according to the formula: (volume in lot *specified swap size/100)/360.')}</p>
+                    <p>{it.L('The interest adjustment is calculated in annual base for long and short positions according to the formula: (current price*contract size*volume in lots*specified swap size/100)/360.')}</p>
                     <p>{it.L('Please take note that our swap rate also depends on the time and days you hold your positions open.')}</p>
                 </Section>
                 <NavButtons parent='mt5' section='cfds' />

@@ -22,6 +22,7 @@ const DepositWithdraw = (() => {
     let response_withdrawal = {};
 
     let cashier_type,
+        has_no_balance,
         token,
         $iframe,
         $loading;
@@ -204,7 +205,7 @@ const DepositWithdraw = (() => {
             }
         } else {
             const client_currency = Client.get('currency');
-            if (cashier_type === 'deposit' && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
+            if (cashier_type === 'deposit' && has_no_balance && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
                 Dialog.confirm({
                     id                : 'deposit_currency_change_popup_container',
                     ok_text           : localize('Yes I\'m sure'),
@@ -248,7 +249,8 @@ const DepositWithdraw = (() => {
             return;
         }
 
-        if (cashier_type === 'withdraw' && +Client.get('balance') === 0) {
+        has_no_balance = +Client.get('balance') === 0;
+        if (cashier_type === 'withdraw' && has_no_balance) {
             showError('no_balance_error');
             return;
         }
@@ -287,8 +289,12 @@ const DepositWithdraw = (() => {
 
         const promises = [];
         if (cashier_type === 'deposit') {
-            promises.push(BinarySocket.send({ statement: 1, limit: 1 }));
-            promises.push(BinarySocket.send({ mt5_login_list: 1 }));
+            // to speed up page load
+            // if client has balance then no need to check their transactions or mt5 accounts
+            if (has_no_balance) {
+                promises.push(BinarySocket.send({ statement: 1, limit: 1 }));
+                promises.push(BinarySocket.send({ mt5_login_list: 1 }));
+            }
         } else {
             promises.push(BinarySocket.send({ get_limits: 1 }));
         }

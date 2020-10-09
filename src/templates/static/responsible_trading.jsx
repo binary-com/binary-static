@@ -9,34 +9,39 @@ const ResponsibleTrading = () => (
                 <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.begambleaware.org/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
             </div>
             <p>{it.L('Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines.')}</p>
-            <ol>
+            <ul className='bullet'>
                 <li>{it.L('Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website.')}</li>
                 <li>{it.L('Trade only with money you can afford to lose. Do not trade with borrowed money.')}</li>
                 <li>{it.L('Do not trade when you are tired or are under the influence of alcohol.')}</li>
                 <li>{it.L('Put a limit on your winnings. Once you have reached it put some aside and trade with the rest of the money.')}</li>
-            </ol>
+            </ul>
 
             <h2>{it.L('Written limits and self-exclusion')}</h2>
-            <p>{it.L('[_1] provides you with the opportunity to either self-exclude or [_2]set limits on your trading activities[_3] on this website. You may also [_4]contact us[_3] to state the limits you wish to set via email or phone. Available limits are:', it.website_name, `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>', `<a href="${it.url_for('contact')}">`)}</p>
-            <ol>
+            <p data-show='eucountry'>{it.L('[_1] provides you with the opportunity to either self-exclude or [_2]set limits on your trading activities[_3] on this website. You may also [_4]contact us[_3] to state the limits you wish to set via email or phone. Available limits are:', it.website_name, `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>', `<a href="${it.url_for('contact')}">`)}</p>
+            <p data-show='-eucountry'>{it.L('You have the opportunity to [_1]set and amend limits[_2] on your trading activities on this website. Available limits are:', `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>')}</p>
+            <ul className='bullet'>
                 <li>{it.L('a limit on the amount you may trade within a specified period of time;')}</li>
                 <li>{it.L('a limit on the losses you may incur within a specified period of time;')}</li>
-                <li>{it.L('a limit on the amount of time you may trade in any given online session;')}</li>
-                <li>{it.L('a definite or indefinite period during which you wish to exclude yourself from the website.')}</li>
-            </ol>
+                <li data-show='-eucountry'>{it.L('a limit on the amount of time you may trade in any given online session.')}</li>
+                <li data-show='eucountry'>{it.L('a limit on the amount of time you may trade in any given online session;')}</li>
+                <li data-show='eucountry'>{it.L('a definite or indefinite period during which you wish to exclude yourself from the website.')}</li>
+            </ul>
 
             <div data-show='iom'>
                 <p>{it.L('Limits 1 to 3 may only be removed or increased once the limit date setting has expired.')}</p>
             </div>
             <div data-show='-iom'>
-                <p>{it.L('Limits 1 to 3 may only be removed or increased after 24 hours after receiving the notice and the client reconfirms that they wish to amend such limit.')}</p>
+                <p>{it.L('You can also decide to exclude yourself entirely from our website for a specified duration. The self-exclusion period is a minimum of 6 months after which you have the option to extend it to a total of 5 years or resume trading immediately.')}</p>
             </div>
-            <p>{it.L('Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client\'s account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again.')}</p>
-            <p>{it.L('Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient.')}</p>
+
+            <p data-show='-eucountry'>{it.L('When the self-exclusion period is set, we will refund the balance of funds in your account.')}</p>
+            <p data-show='-eucountry'>{it.L('If you wish to reduce or remove the self-exclusion period, contact our [_1]Customer Support[_1].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+            <p data-show='eucountry'>{it.L('Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client\'s account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again.')}</p>
+            <p data-show='eucountry'>{it.L('Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient.')}</p>
 
             <div data-show='eucountry'>
                 <h2>GAMSTOP</h2>
-                <p>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
+                <p>{it.L('If you reside in the UK and are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                 <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain.')}</p>
                 <p>{it.L('To find out more and to sign up with GAMSTOP, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
 

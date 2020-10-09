@@ -109,9 +109,9 @@ const Process = (() => {
             getElementById('contract_confirmation_container').style.display      = 'block';
             getElementById('contracts_list').style.display = 'none';
             getElementById('confirmation_message').hide();
-
             const confirmation_error = getElementById('confirmation_error');
-            confirmation_error.show();
+            confirmation_error.setVisibility(1);
+            Defaults.remove('underlying', 'market');
             elementInnerHtml(confirmation_error, `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`);
             return;
         }
