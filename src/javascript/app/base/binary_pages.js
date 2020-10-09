@@ -60,7 +60,6 @@ const JobDetails          = require('../../static/pages/job_details');
 const Platforms           = require('../../static/pages/platforms');
 const Regulation          = require('../../static/pages/regulation');
 const StaticPages         = require('../../static/pages/static_pages');
-const TermsAndConditions  = require('../../static/pages/tnc');
 const WhyUs               = require('../../static/pages/why_us');
 const AffiliatesIBLanding = require('../../static/pages/affiliate_ib_landing');
 
@@ -144,7 +143,6 @@ const pages_config = {
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
-    'terms-and-conditions'   : { module: TermsAndConditions },
     'types-of-accounts'      : { module: TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
