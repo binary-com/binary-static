@@ -21,7 +21,6 @@ const SelfExclusion = (() => {
         self_exclusion_data,
         set_30day_turnover,
         currency,
-        is_gamstop_client,
         is_svg_client,
         is_mlt,
         is_mx,
@@ -40,7 +39,7 @@ const SelfExclusion = (() => {
         $warning_ukgc = $('#self_exclusion_warning');
         $timeout_date = $(timeout_date_id);
         $exclude_until = $(exclude_until_id);
-        
+
         fields = {};
         $form.find('input').each(function () {
             fields[this.name] = '';
@@ -55,8 +54,7 @@ const SelfExclusion = (() => {
 
         is_mlt = Client.get('landing_company_shortcode') === 'malta';
         is_mx = Client.get('landing_company_shortcode') === 'iom';
-        is_gamstop_client = Client.get('residence') === 'gb' && (is_mx || is_mlt);
-        
+
         initDatePicker();
         getData(true);
     };
@@ -286,7 +284,7 @@ const SelfExclusion = (() => {
             const is_changed = Object.keys(data).some(key => ( // using != in next line since response types is inconsistent
                 key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
             ));
-            
+
             if (!is_changed) {
                 showFormMessage(localize('You did not change anything.'), false);
                 resolve(false);
