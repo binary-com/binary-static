@@ -149,7 +149,7 @@ const pages_config = {
     'types-of-accounts'      : { module: TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
-    'responsible_trading'    : { module: ResponsibleTrading },
+    'responsible-trading'    : { module: ResponsibleTrading },
 };
 /* eslint-enable max-len */
 

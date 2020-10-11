@@ -1,6 +1,7 @@
 const tabListener = require('@binary-com/binary-style').tabListener;
 const localize    = require('../../_common/localize').localize;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
+const LocalStore       = require('../../_common/storage').LocalStore;
 
 const TermsAndConditions = (() => {
     let sidebar_width;
@@ -22,6 +23,19 @@ const TermsAndConditions = (() => {
         window.onresize = checkWidth;
 
         $('.currentYear').text(new Date().getFullYear());
+
+        handleContactNumber();
+    };
+
+    const handleContactNumber = () => {
+        const current_loginid = LocalStore.get('active_loginid');
+        const MLT_regex = new RegExp('MLT');
+
+        if (MLT_regex.test(current_loginid)){
+            $('#not-mlt').addClass('invisible');
+        } else {
+            $('#only-mlt').addClass('invisible');
+        }
     };
 
     const handleActiveTab = () => {
