@@ -29,12 +29,10 @@ const TermsAndConditions = (() => {
 
     const handleContactNumber = () => {
         const current_loginid = LocalStore.get('active_loginid');
-        const MLT_regex = new RegExp('MLT');
-
-        if (MLT_regex.test(current_loginid)){
+        
+        if (current_loginid && current_loginid.startsWith('MLT')) {
             $('#not-mlt').addClass('invisible');
-        } else {
-            $('#only-mlt').addClass('invisible');
+            $('#only-mlt').removeClass('invisible');
         }
     };
 
