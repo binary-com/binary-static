@@ -71,7 +71,7 @@ const Table = (() => {
         }
 
         const is_data = (opt === 'data');
-        
+
         const $tr = $('<tr></tr>');
         for (let i = 0; i < data.length; i++) {
             const class_name  = metadata[i].toLowerCase().replace(/\s/g, '-');
