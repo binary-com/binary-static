@@ -129,10 +129,11 @@ const SelfExclusion = (() => {
     };
 
     const setDateTimePicker = (id, data_value, is_timepicker = false) => {
+        const is_mobile = window.innerWidth < 770;
         $form.find(id)
             .attr('disabled', has_exclude_until)
             .attr('data-value', data_value)
-            .val(is_timepicker ? data_value : moment(data_value).format('DD MMM, YYYY')); // display format
+            .val((is_timepicker || is_mobile) ? data_value : moment(data_value).format('DD MMM, YYYY')); // display format
     };
 
     const setMax30DayTurnoverLimit = (is_checked) => {
@@ -164,6 +165,12 @@ const SelfExclusion = (() => {
             if (!/session_duration_limit|max_open_bets/.test(id)) {
                 options.type     = 'float';
                 options.decimals = decimal_places;
+            }
+            if (/max_open_bets/.test(id)) {
+                options.min = 1;
+            }
+            if (/max_balance/.test(id)) {
+                options.min = 0.01;
             }
             checks.push(['number', options]);
 
