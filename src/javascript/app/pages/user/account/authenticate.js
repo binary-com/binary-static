@@ -970,7 +970,7 @@ const Authenticate = (() => {
 
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
-        } else if (needs_verification.includes('identity')) {
+        } else if (!needs_verification.includes('identity')) {
             // if POI is verified and POA is not verified, redirect to POA tab
             if (identity.status === 'verified' && document.status !== 'verified') {
                 Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
@@ -1011,7 +1011,7 @@ const Authenticate = (() => {
                 initOnfido(service_token_response.token, documents_supported);
             }
         }
-        if (needs_verification.includes('document')) {
+        if (!needs_verification.includes('document')) {
             switch (document.status) {
                 case 'none': {
                     init();
