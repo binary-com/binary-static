@@ -41,7 +41,7 @@
             overflow-x: auto;
         }
         th {
-            width: calc(100% / 7);
+            width: calc(100% / var(--number_of_columns));
 
             &:nth-child(2):nth-last-child(1) {
                 width: 24%;
