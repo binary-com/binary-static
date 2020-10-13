@@ -588,7 +588,7 @@ tbody#instruments > tr > td {
   #asset_index_wrapper #asset-index .table-container {
     overflow-x: auto; }
   #asset_index_wrapper #asset-index th {
-    width: calc(100% / 7); }
+    width: calc(100% / var(--number_of_columns)); }
     #asset_index_wrapper #asset-index th:nth-child(2):nth-last-child(1) {
       width: 24%; }
     #asset_index_wrapper #asset-index th:nth-child(2):nth-last-child(2), #asset_index_wrapper #asset-index th:nth-child(3):nth-last-child(1) {
