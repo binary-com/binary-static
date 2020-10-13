@@ -49,6 +49,7 @@ const WebtraderChart = (() => {
                     WebtraderCharts.init({
                         server: Config.getSocketURL(),
                         appId : Config.getAppId(),
+                        brand : 'binary',
                         lang  : getLanguage().toLowerCase(),
                     });
                     is_initialized = true;
