@@ -8,6 +8,11 @@ const popup_queue = [];
 // use this function if you need to show a form with some validations in popup
 // if you need a simple popup with just a confirm or also a cancel button use Dialog instead
 const showPopup = (options) => {
+    const el_popup = document.getElementById(options.popup_id);
+
+    if (el_popup){
+        return;
+    }
     if (cache[options.url]) {
         callback(options);
     } else {
