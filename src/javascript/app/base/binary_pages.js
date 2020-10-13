@@ -143,13 +143,13 @@ const pages_config = {
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
+    'responsible-trading'    : { module: ResponsibleTrading },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'types-of-accounts'      : { module: TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
-    'responsible-trading'    : { module: ResponsibleTrading },
 };
 /* eslint-enable max-len */
 
