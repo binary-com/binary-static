@@ -77,7 +77,7 @@ const Table = (() => {
             const class_name  = metadata[i].toLowerCase().replace(/\s/g, '-');
             const row_element = (is_data) ?
                 $('<td></td>', { class: class_name, html: data[i] }) :
-                $('<th></th>', { class: class_name, html: data[i] });
+                $('<th></th>', { class: class_name, style: `--number_of_columns: ${data.length}`, html: data[i] });
             row_element.appendTo($tr);
         }
 
