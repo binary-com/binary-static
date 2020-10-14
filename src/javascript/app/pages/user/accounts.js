@@ -38,7 +38,8 @@ const Accounts = (() => {
             // ask client to set residence first since cannot wait landing_company otherwise
             BinaryPjax.load(urlFor('user/settings/detailsws'));
         }
-        SetCurrency.cleanupPopup();
+        clearPopup();
+        window.addEventListener('beforeunload', clearPopup);
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list').then(() => {
             landing_company           = State.getResponse('landing_company');
@@ -69,6 +70,10 @@ const Accounts = (() => {
         });
     };
 
+    const clearPopup = () => {
+        SetCurrency.cleanupPopup();
+    };
+    
     const doneLoading = (element_to_show) => {
         $(element_to_show).setVisibility(1);
         $('#accounts_loading').remove();
@@ -263,8 +268,14 @@ const Accounts = (() => {
         doneLoading('#new_accounts_wrapper');
     };
 
+    const onUnload = () =>{
+        clearPopup();
+        window.removeEventListener('beforeunload', clearPopup);
+    };
+    
     return {
         onLoad,
+        onUnload,
     };
 })();
 
