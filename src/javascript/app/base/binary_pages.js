@@ -63,6 +63,7 @@ const StaticPages         = require('../../static/pages/static_pages');
 const TermsAndConditions  = require('../../static/pages/tnc');
 const WhyUs               = require('../../static/pages/why_us');
 const AffiliatesIBLanding = require('../../static/pages/affiliate_ib_landing');
+const ResponsibleTrading  = require('../../static/pages/responsible_trading');
 
 /* eslint-disable max-len */
 const pages_config = {
@@ -142,6 +143,7 @@ const pages_config = {
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
+    'responsible-trading'    : { module: ResponsibleTrading },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
     'terms-and-conditions'   : { module: TermsAndConditions },

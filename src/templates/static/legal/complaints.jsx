@@ -3,7 +3,11 @@ import React from 'react';
 const Complaints = () => (
     <div>
         <h2 data-anchor='complaints-and-disputes'>{it.L('Complaints and disputes')}</h2>
-        <p>{it.L('If the client would like to file a complaint with regards to the Company\'s service, the client can contact the Company at [_1], providing any relevant details relating to the client\'s complaint. The Company will investigate each inquiry and provide a final response in the shortest time possible.', '<a href=\'mailto:complaints@binary.com\'>complaints@binary.com</a>')}</p>
+        
+        <p>{it.L('If the client would like to file a complaint with regards to the Company\'s service, the client can contact the Company at [_1], providing any relevant details relating to the client\'s complaint. [_2]If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling [_3].[_4] The Company will investigate each inquiry and provide a final response in the shortest time possible.',
+            '<a href=\'mailto:complaints@binary.com\'>complaints@binary.com</a>', '<span data-show="malta">', '<a href=\'call:+447723580049\'>+447723580049</a>', '</span>')}
+        </p>
+
         <p data-show='eucountry'>{it.L('If the client\'s complaint relates to the Company\'s data processing practices, the client may formally submit a complaint to the Information and Data Protection Commissioner (Malta) on the entity\'s [_1]website[_2]. Alternatively, the client can make a complaint to any Supervisory Authority within the European Union.',
             '<a href="https://idpc.org.mt/en/Pages/Home.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
