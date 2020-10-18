@@ -39,7 +39,6 @@ const Accounts = (() => {
             BinaryPjax.load(urlFor('user/settings/detailsws'));
         }
         clearPopup();
-        window.addEventListener('beforeunload', clearPopup);
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list').then(() => {
             landing_company           = State.getResponse('landing_company');
@@ -270,7 +269,6 @@ const Accounts = (() => {
 
     const onUnload = () =>{
         clearPopup();
-        window.removeEventListener('beforeunload', clearPopup);
     };
     
     return {
