@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-14 03:15\n"
+"PO-Revision-Date: 2020-10-19 02:25\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -518,7 +518,7 @@ msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 transakcji w ciągu ostatnich 12 miesięcy"
 
 msgid "0.2%"
-msgstr ""
+msgstr "0,2%"
 
 msgid "0.20"
 msgstr "0,20"
@@ -1255,6 +1255,9 @@ msgstr "Wszystkie zakłady zawierane na kredyt wiążą się z wysokim poziomem 
 msgid "All reasonable steps are taken to comply with the law or any rules applicable to the jurisdiction in which the Agent resides."
 msgstr "Wszelkie stosowne kroki zostają podjęte w celu przestrzegania prawa lub wszelkich zasad obowiązujących w jurysdykcji zamieszkania Pośrednika."
 
+msgid "All sales of trades are final. The Company does not refund the price charged for entering a trade if the trade is executed."
+msgstr "Sprzedaż zakładów jest ostateczna. Firma nie zwraca ceny pobranej za zawarcie zakładu, jeśli zakład zostanie zrealizowany."
+
 msgid "All software is to be used at the client's own risk. The Company will not be liable for any financial losses incurred using a third-party software. The Company is not associated with the development of the automated trading software or the Expert Advisors because they are exclusively developed and supported by third parties and not by the Company. The Company does not receive any form of financial and/or other benefits from permitting Expert Advisors to be used."
 msgstr "Wszelkie oprogramowanie jest używane na własne ryzyko klienta. Firma nie ponosi odpowiedzialności za jakiekolwiek straty finansowe poniesione w związku z użytkowaniem oprogramowania stron trzecich. Firmy nie należy utożsamiać z twórcą oprogramowania do automatycznego handlowania ani z twórcą Expert Advisors, gdyż to oprogramowanie jest tworzone i w pełni obsługiwane przez strony trzecie, nie przez Firmę. Firma nie otrzymuje żadnego wynagrodzenia ani żadnych innych korzyści za udzielenie pozwolenia na korzystanie z oprogramowania Expert Advisors."
 
@@ -1440,6 +1443,9 @@ msgstr "Jakiekolwiek inne informacje wymagane przez Firmę"
 
 msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
 msgstr "Wszelkie oczekujące środki znajdujące się na Twoim koncie MT5 zostaną przelane na Twoje konto Binary."
+
+msgid "Any request for a deposit refund for active accounts will be automatically rejected. If the Company has closed, blocked, or suspended the client’s account (see Section J. Fraud and money laundering), the client may request a refund of the client’s deposit. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. "
+msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "w przypadku dowolnego ograniczenie klientom zakupu jakichkolwiek kontraktów w ciągu określonych godzin"
@@ -1817,7 +1823,7 @@ msgid "Avoid the need to have an e-wallet"
 msgstr "Nie trzeba mieć e-portfela"
 
 msgid "Avoiding financial transactions that might reveal valuable passwords or personal information such as credit card numbers"
-msgstr ""
+msgstr "Unikanie transakcji finansowych, które mogą wyjawić hasła lub cenne informacje osobiste, takie jak numery kart kredytowych"
 
 msgid "Award-winning online trading platform"
 msgstr "Nagradzana platforma handlowa on-line"
@@ -2596,8 +2602,8 @@ msgstr "Klienci nie mają prawa przetrzymywać środków należących do osób t
 msgid "Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that DIEL has supplied or in the future supplies to clients."
 msgstr "Klienci powinni dokładnie zapoznać się z niniejszymi DW, jak również ze Streszczeniem polityki dot. realizacji zlecenia oraz Streszczeniem polityki dot. sporów, mającymi zastosowanie Szczegółami kontraktu oraz Informacją o narażeniu na ryzyko oraz wszelkimi innymi dokumentami, które zostały im dostarczone przez DIEL lub zostaną dostarczone w przyszłości."
 
-msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient."
-msgstr "Klientów, którzy nie chcą przedłużyć samodzielnego wykluczenia i chcą złożyć wniosek o ponowne rozpoczęcie handlowania, obowiązuje jednodniowy okres przejściowy, zanim uzyskają dostęp do portalu. Należy pamiętać, że konieczny jest telefoniczny kontakt z naszą obsługą klienta. Kontakt e-mailowy nie jest wystarczający."
+msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling %1. It is not enough to send an email."
+msgstr ""
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "Klienci, którzy chcą skorzystać z opcji samodzielnego wykluczenia muszą być świadomi, że minimalny okres wykluczenia to sześć miesięcy z możliwością przedłużenia tego okresu do co najmniej pięciu lat łącznie, natychmiastowo bez żadnego okresu przejściowego. Jeśli ustawiony zostanie okres samodzielnego wykluczenia, środki zgromadzone na koncie zostaną zwrócone klientowi. Okres samodzielnego wykluczenia zostanie utrzymany do samego końca okresu samodzielnego wykluczenia, chyba że klient podejmie odpowiednie kroki w celu ponownego rozpoczęcia handlowania."
@@ -3158,7 +3164,7 @@ msgid "Cryptocurrencies"
 msgstr "Kryptowaluty"
 
 msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts and 20 USD on financial STP accounts."
-msgstr ""
+msgstr "Prowizja od kryptowaluty za zakład okrężny. Na przykład: zakład okrężny składający się z 1 partii BTC/USD w cenie spot 10 000 USD przyniesie zysk 30 USD na konta finansowe i 20 USD na finansowe konta STP."
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "Kryptowaluty, takie jak Bitcoin czy Ethereum, to zdecentralizowane aktywa cyfrowe, które umożliwiają dokonywanie natychmiastowych płatności na całym świecie."
@@ -5395,6 +5401,9 @@ msgstr "Jeśli %1 będzie zobowiązana do ujawnienia informacji osobowych lub fi
 msgid "If DIEL decides to introduce a new trading platform, it shall provide the client with a relevant notice within 30 days before it introduces the new trading platform or the additional trading platform. In such a notice, DIEL will outline information including, but not limited to, features and operations of the new trading platform. Thus, using its backup database on the MT5 trading platform, DIEL shall integrate all data to the new trading platform, including but not limited to open trades, historical trades/data, and accounts."
 msgstr "Jeśli DIEL zdecyduje się wprowadzić nową platformę handlową, poinformuje o tym klienta z wyprzedzeniem 30 dni przed wprowadzeniem nowej platformy handlowej lub dodatkowej platformy handlowej. W takim powiadomieniu zawarte będą m. in. informacje o funkcjach i działaniu nowej platformy handlowej. Dlatego korzystając z zapasowej bazy danych na platformie handlowej MT5, DIEL musi zintegrować wszystkie dane na nowej platformie handlowej, w tym m. in. otwarte zakłady, zakłady/dane historyczne i konta."
 
+msgid "If a trade becomes unavailable after the transaction is made but before the trade is executed, the client may request a refund of the charged price. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. If technical problems prevent the execution of a trade, for example, if a disruption occurs in the data feeds that the Company cannot readily fix, the Company reserves the right to refund or reverse the trade."
+msgstr ""
+
 msgid "If an actual or potential conflict appears in the course of your work, they must declare it to %1compliance@binary.com%2"
 msgstr "Jeśli istniejący lub potencjalny konflikt pojawi się podczas Twojej pracy, należy go zgłosić do %1compliance@binary.com%2"
 
@@ -5506,8 +5515,8 @@ msgstr "Jeżeli klient chce wypłacić środki ze swojego Prawdziwego konta MT5 
 msgid "If the client wishes to withdraw funds from their MT5 Real Account and/or close their MT5 Real Account, the client may notify the Company by contacting the helpdesk at %1. The client's MT5 Real Account may be closed if the client does not have any Open Positions and all amounts due to the Company have been settled."
 msgstr "Jeżeli klient chce wypłacić środki ze swojego Prawdziwego konta MT5 i/lub zamknąć to konto, może powiadomić Firmę o tym, kontaktując się z naszym działem pomocy pod adresem %1. Prawdziwe konto MT5 klienta może zostać zamknięte, jeśli nie posiada żadnych pozycji zamkniętych, a wszystkie kwoty należne Firmie zostały rozliczone."
 
-msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. The Company will investigate each inquiry and provide a final response in the shortest time possible."
-msgstr "Jeśli klient chce złożyć skargę dotyczącą usługi Firmy, może skontaktować się z Firmą pod adresem: %1 i przekazać wszelkie szczegóły odnoszące się do skargi. Firma zbada każde zgłoszenie i przekaże swoją odpowiedź w najkrótszym możliwym czasie."
+msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. %2If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling %3.%4 The Company will investigate each inquiry and provide a final response in the shortest time possible."
+msgstr ""
 
 msgid "If the client's %1 account is closed, their MT5 Real Account will be automatically closed as well."
 msgstr "Jeśli konto klienta: %1 zostanie zamknięte, jego Prawdziwe konto MT5 również zostanie zamknięte."
@@ -6563,7 +6572,7 @@ msgid "Log out"
 msgstr "Wyloguj się"
 
 msgid "Logging out of account-based websites at the end of the session"
-msgstr ""
+msgstr "Wylogowanie się z kont na stronach internetowych na koniec sesji"
 
 msgid "Login History"
 msgstr "Historia logowania"
@@ -6764,7 +6773,7 @@ msgid "Making decisions about who to employ and what salary and benefits to offe
 msgstr "Podejmowanie decyzji, kogo zatrudnić i jakie wynagrodzenie i benefity zaoferować"
 
 msgid "Making sure of having effective and updated antivirus/antispyware software and firewall in place before using public WiFi"
-msgstr ""
+msgstr "Posiadanie skutecznego i zaktualizowanego oprogramowania antywirusowego i antyszpiegowskiego przed użyciem publicznej sieci WiFi"
 
 msgid "Malaysia"
 msgstr "Malezja"
@@ -7424,13 +7433,13 @@ msgid "Not interested in trading"
 msgstr "Nie interesuje mnie handlowanie"
 
 msgid "Not leaving devices unattended"
-msgstr ""
+msgstr "Niepozostawianie urządzeń bez nadzoru"
 
 msgid "Not saving login credentials on a shared device"
-msgstr ""
+msgstr "Niezapisywanie danych logowania na wspólnych urządzeniach"
 
 msgid "Not sending or receiving private information unless a secure webpage is being used (preferably, use a secure, encrypted Virtual Private Network (VPN)"
-msgstr ""
+msgstr "Nie wysyłanie i otrzymywanie prywatnych informacji, chyba że za pośrednictwem bezpiecznej strony internetowej (najlepiej przy użyciu wirtualnej sieci prywatnej VPN)"
 
 msgid "Not sure how margin works? Read our margin policy and learn how to calculate the margin for our CFDs."
 msgstr "Nie wiesz, jak działa depozyt zabezpieczający? Przeczytaj naszą politykę dot. depozytu zabezpieczającego i dowiedz się, w jaki sposób obliczyć wysokość depozytu zabezpieczającego dla naszych kontraktów CFD."
@@ -8925,6 +8934,9 @@ msgstr "Narzędzia do polecania klientów"
 
 msgid "Refine and polish engineer-generated documents and open source projects to imbue them with clarity and consistency"
 msgstr "Udoskonalanie dokumentów generowanych automatycznie oraz projektów open source, aby zapewnić ich przejrzystość i spójność"
+
+msgid "Refund policy"
+msgstr "Polityka ds. zwrotów"
 
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr "Odmowa wypłacenia jakichkolwiek prowizji Brokerowi polecającemu, który jest zaangażowany z działalność szkodliwą"
@@ -10493,6 +10505,9 @@ msgstr "Firma może według własnego uznania lub zgodnie z obowiązującymi wym
 msgid "The Company may, however, withhold the client's withdrawal request from their MT5 Real Account to their %1 account, in whole or in part, in one or more of the following cases:"
 msgstr "Jednak Firma może częściowo lub całkowicie wstrzymać wniosek klienta o wypłatę środków z jego Prawdziwego konta MT5 na konto %1 w poniższych przypadkach:"
 
+msgid "The Company offers a number of merchant solutions and payment service providers for making online payments. The client will be billed at the time of, or shortly after, making a transaction. The client agrees to pay for all trades that the client purchases via any of the available merchant solutions or payment service providers."
+msgstr ""
+
 msgid "The Company offers binary options through its online interactive platform."
 msgstr "Firma oferuje opcje binarne za pośrednictwem swojej interaktywnej platformy online."
 
@@ -11430,7 +11445,7 @@ msgid "The reset time is %1"
 msgstr "Czas resetowania to %1"
 
 msgid "The responsibility for the security of the client's login credentials, any linked email address, and any personal device on which the client's account is accessible lies solely with the client. The Company shall not be held responsible if there is unauthorised use of the account when the Company is not at fault."
-msgstr ""
+msgstr "Odpowiedzialność za przechowywanie danych logowania klienta, za bezpieczeństwo jakiegokolwiek powiązanego adresu e-mail oraz bezpieczeństwo jakiegokolwiek komputera lub urządzenia osobistego, na którym można uzyskać dostęp do konta klienta ponosi wyłącznie klient. Firma nie ponosi odpowiedzialności za nieuprawnione użycie konta, jeżeli wina nie leży po stronie Firmy."
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Zwrot to kwota wypłacana, gdy kontrakt się zakończy (zobacz: „Wypłata”)."
@@ -12615,7 +12630,7 @@ msgid "Use, perform, and display the Programmer's Application and its content fo
 msgstr "korzystania z Aplikacji Programisty i zawartych w niej treści w celach marketingowych, demonstracyjnych i w celu udostępniania Aplikacji Programisty klientom Firmy;"
 
 msgid "Using browser tools to delete files and cookies and clearing browsing history"
-msgstr ""
+msgstr "Używanie narzędzi przeglądarki do usuwania plików i cookies oraz historii przeglądania"
 
 msgid "Using our website, customers can trade currencies, stock indices, commodities, and synthetic indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "Korzystając z naszej strony internetowej, nasi klienci mogą handlować walutami, wskaźnikami giełdowymi, towarami i wskaźnikami syntetycznymi 24 godziny na dobę. Oferujemy najbardziej zróżnicowane ceny i najbogatszą gamę produktów."
