@@ -11,7 +11,7 @@ const ResponsibleTrading = (() => {
             const client_country = Client.get('residence') || State.getResponse('website_status.clients_country');
             const is_uk_client = client_country === 'gb';
 
-            if ((!is_uk_client && landing_company_shortcode === 'iom') || (is_uk_client && landing_company_shortcode === 'malta')) {
+            if (landing_company_shortcode === 'iom' || (is_uk_client && landing_company_shortcode === 'malta')) {
                 getElementById('iom_except_uk_without_mlt').setVisibility(1);
             }
         });
