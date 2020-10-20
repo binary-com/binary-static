@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-02 09:34\n"
+"PO-Revision-Date: 2020-10-19 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -516,6 +516,9 @@ msgstr "0-1 年"
 
 msgid "0-5 transactions in the past 12 months"
 msgstr "過去12個月內0-5次交易"
+
+msgid "0.2%"
+msgstr "0.2%"
 
 msgid "0.20"
 msgstr "0.20"
@@ -1252,6 +1255,9 @@ msgstr "保證金交易的所有產品有很高的風險，可能導致超越客
 msgid "All reasonable steps are taken to comply with the law or any rules applicable to the jurisdiction in which the Agent resides."
 msgstr "採取一切合理步驟, 遵守適用於代理居住地管轄權下的法律或任何規則。"
 
+msgid "All sales of trades are final. The Company does not refund the price charged for entering a trade if the trade is executed."
+msgstr "所有交易都是最終的。如果已執行交易，公司不退還已經交易的收費。"
+
 msgid "All software is to be used at the client's own risk. The Company will not be liable for any financial losses incurred using a third-party software. The Company is not associated with the development of the automated trading software or the Expert Advisors because they are exclusively developed and supported by third parties and not by the Company. The Company does not receive any form of financial and/or other benefits from permitting Expert Advisors to be used."
 msgstr "客戶使用所有軟體的風險由客戶自己承擔。公司對使用第三方軟體所招致的任何財務損失概不負責。公司與自動化交易軟體或專家顧問的開發無關, 因為這些完全由第三方開發和支持, 而不是由公司提供。公司允許使用專家顧問沒有獲得任何形式的財務和/或其他利益。"
 
@@ -1437,6 +1443,9 @@ msgstr "公司要求的任何其他資訊"
 
 msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
 msgstr "您在 MT5 帳戶中的任何待處理資金將轉至您的 Binary 帳戶。"
+
+msgid "Any request for a deposit refund for active accounts will be automatically rejected. If the Company has closed, blocked, or suspended the client’s account (see Section J. Fraud and money laundering), the client may request a refund of the client’s deposit. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. "
+msgstr "有效帳戶的任何押金退款請求將自動被拒絕。如果公司關閉、凍結或暫停了客戶的帳戶（請參閱第J節“欺詐和洗錢”），則客戶可以要求退還其押金。在調查客戶的索賠後，公司保留接受或拒絕客戶請求的權利。"
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
 msgstr "對客戶在某段時間內買入任何合約的限制"
@@ -1812,6 +1821,9 @@ msgstr "平均"
 
 msgid "Avoid the need to have an e-wallet"
 msgstr "避免使用電子錢包"
+
+msgid "Avoiding financial transactions that might reveal valuable passwords or personal information such as credit card numbers"
+msgstr "避免可能洩露有價值的密碼或個人資料（例如信用卡號）的金融交易"
 
 msgid "Award-winning online trading platform"
 msgstr "獲頒大獎的線上交易平台"
@@ -2590,8 +2602,8 @@ msgstr "客戶不可將第三方資金截留或匯集至他們在本公司開立
 msgid "Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that DIEL has supplied or in the future supplies to clients."
 msgstr "客戶必須認真閱讀這些補充條款和條件、訂單執行政策摘要和衝突政策摘要、適用的合約細節、風險揭露通知書以及DIEL向客戶提供或將會提供的所有其他文件。"
 
-msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient."
-msgstr "對於不想續簽自我禁止並要求重新開始交易的客戶，我們將在允許此類客戶存取本網站之前給予他們一天時間的冷靜期。需要注意的是，客戶必須通過電話與我們的客戶服務人員聯繫，這是非常重要的。僅以電子郵件聯繫是不足夠的。"
+msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling %1. It is not enough to send an email."
+msgstr ""
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "願意自我禁止的客戶應注意，自我禁止期至少是6個月，且可以在沒有任何冷靜期的情況下選擇將禁止期立即延長到總共五年以上。自我禁止期設定之後，客戶帳戶裡的剩餘資金將退還給客戶。在自我禁止期結束時，自我禁止狀態將繼續保留，除非客戶採取積極行動再次進行交易。"
@@ -3151,8 +3163,8 @@ msgstr "加密"
 msgid "Cryptocurrencies"
 msgstr "加密貨幣"
 
-msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts."
-msgstr "每回合交易的加密貨幣佣金。例如: 1手比特幣/美元的一回合交易, 如現貨價格為 10,000美元，財務帳戶將支付30美元。"
+msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts and 20 USD on financial STP accounts."
+msgstr "每回合交易的加密貨幣佣金。例如: 1手比特幣/美元的一回合交易, 如現貨價格為 10,000美元，金融帳戶將支付30美元，金融STP帳戶則支付20美元。"
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "像比特幣和以太幣這樣的加密貨幣是分散式的數字資產，可以在全世界任何地方即時支付。"
@@ -5389,6 +5401,9 @@ msgstr "如果%1根據法律和法規需求，或遵從具司法管轄權法庭�
 msgid "If DIEL decides to introduce a new trading platform, it shall provide the client with a relevant notice within 30 days before it introduces the new trading platform or the additional trading platform. In such a notice, DIEL will outline information including, but not limited to, features and operations of the new trading platform. Thus, using its backup database on the MT5 trading platform, DIEL shall integrate all data to the new trading platform, including but not limited to open trades, historical trades/data, and accounts."
 msgstr "如果DIEL決定引入新的交易平台, 其將在推出新交易平台或附加交易平台前30天內向客戶提供相關通知。DIEL將在通知裡概述包括但不限於新交易平台的功能和操作的資訊。因此, 在 MT5 交易平台使用DIEL的備份資料庫時, DIEL將把包括但不限於開放交易、歷史交易資料和帳戶的所有資料集合在新的交易平台上。"
 
+msgid "If a trade becomes unavailable after the transaction is made but before the trade is executed, the client may request a refund of the charged price. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. If technical problems prevent the execution of a trade, for example, if a disruption occurs in the data feeds that the Company cannot readily fix, the Company reserves the right to refund or reverse the trade."
+msgstr "如果在付款之後但在交易執行之前無法進行交易，則客戶可以要求退回收費。在調查客戶的索賠後，公司保留接受或拒絕客戶請求的權利。如果因為技術問題的原因阻止交易執行，例如，如果發生自資料饋送中斷而公司無法迅速解決，公司保留退款或撤銷交易的權利。"
+
 msgid "If an actual or potential conflict appears in the course of your work, they must declare it to %1compliance@binary.com%2"
 msgstr "如果在您的工作過程中出現實際或潛在衝突，請向 %1compliance@binary.com%2聲明"
 
@@ -5500,8 +5515,8 @@ msgstr "如果客戶想從MT5真實帳戶提款並關閉其MT5真實帳戶，客
 msgid "If the client wishes to withdraw funds from their MT5 Real Account and/or close their MT5 Real Account, the client may notify the Company by contacting the helpdesk at %1. The client's MT5 Real Account may be closed if the client does not have any Open Positions and all amounts due to the Company have been settled."
 msgstr "如果客戶想從MT5真實帳戶提款和/或關閉其MT5真實帳戶，客戶可通過 %1 聯繫客服部通知公司。如果客戶沒有任何未平倉頭寸及所有欠公司款項都已結清，其MT5真實帳戶可以關閉。"
 
-msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. The Company will investigate each inquiry and provide a final response in the shortest time possible."
-msgstr "如果客戶想投訴公司的服務，可在%1與公司聯繫並提供所有相關的細節。公司將調查所有詢問並儘快予以最終答复。"
+msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. %2If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling %3.%4 The Company will investigate each inquiry and provide a final response in the shortest time possible."
+msgstr ""
 
 msgid "If the client's %1 account is closed, their MT5 Real Account will be automatically closed as well."
 msgstr "如果客戶的%1帳戶已關閉, 其 MT5 真實帳戶也將自動關閉。"
@@ -6556,6 +6571,9 @@ msgstr "登入您的%1 聯盟帳號並前往：報告→ 詳細活動報告"
 msgid "Log out"
 msgstr "登出"
 
+msgid "Logging out of account-based websites at the end of the session"
+msgstr "在會話結束時退出基於帳戶的網站"
+
 msgid "Login History"
 msgstr "登入歷史"
 
@@ -6753,6 +6771,9 @@ msgstr "對殘障員工進行合理調整"
 
 msgid "Making decisions about who to employ and what salary and benefits to offer"
 msgstr "決定人員聘請以及薪資和福利"
+
+msgid "Making sure of having effective and updated antivirus/antispyware software and firewall in place before using public WiFi"
+msgstr "使用公共WiFi之前，請確保已安裝了有效且更新的防病毒/反間諜程式和防火牆。"
 
 msgid "Malaysia"
 msgstr "馬來西亞"
@@ -7410,6 +7431,15 @@ msgstr "不收任何費用。加入我們的聯盟計劃是完全免費的, 將�
 
 msgid "Not interested in trading"
 msgstr "對交易沒興趣"
+
+msgid "Not leaving devices unattended"
+msgstr "不要讓裝置無人看管"
+
+msgid "Not saving login credentials on a shared device"
+msgstr "不要將登入憑據保存在共享裝置上"
+
+msgid "Not sending or receiving private information unless a secure webpage is being used (preferably, use a secure, encrypted Virtual Private Network (VPN)"
+msgstr "除非使用安全網頁，否則不可傳送或接收私人資訊。最好使用安全的加密虛擬專用網絡（VPN）"
 
 msgid "Not sure how margin works? Read our margin policy and learn how to calculate the margin for our CFDs."
 msgstr "不知道保證金是怎麼一回事？請閱讀我們的保證金政策，了解計算差價合約保證金的方法。"
@@ -8904,6 +8934,9 @@ msgstr "推介工具"
 
 msgid "Refine and polish engineer-generated documents and open source projects to imbue them with clarity and consistency"
 msgstr "修整和優化工程師建立的文檔和開源項目，以使其清晰，一致"
+
+msgid "Refund policy"
+msgstr "退款政策"
 
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr "拒絕向涉及惡意活動的推介經紀支付任何佣金"
@@ -10471,6 +10504,9 @@ msgstr "公司可以自行決定或根據現行法規的要求，執行適當的
 msgid "The Company may, however, withhold the client's withdrawal request from their MT5 Real Account to their %1 account, in whole or in part, in one or more of the following cases:"
 msgstr "但是，如果發生下列的一種或多種情況，公司可以將客戶把資金從MT5真實帳戶轉到其%1帳戶的提款請求全部或部分暫停："
 
+msgid "The Company offers a number of merchant solutions and payment service providers for making online payments. The client will be billed at the time of, or shortly after, making a transaction. The client agrees to pay for all trades that the client purchases via any of the available merchant solutions or payment service providers."
+msgstr "公司為線上支付提供許多商戶解決方案和支付服務提供商。客戶將在付款時或交易後不久支付費用。客戶同意通過任何可用的商戶解決方案或支付服務提供商為客戶訂購的所有交易支付費用。"
+
 msgid "The Company offers binary options through its online interactive platform."
 msgstr "公司通過其線上互動平台提供二元期權交易。"
 
@@ -10999,6 +11035,9 @@ msgstr "客戶在違反本協定項下作出的任何保證或陳述或承諾，
 msgid "The client agrees that in any legal, arbitration, mediation, regulatory, administration, or any other proceedings initiated by them or by %1, the Company's records related to the client's dealings shall constitute evidence. Subject to the laws and any court, tribunal, competent authority, or government authority orders, requests, instructions, or guidelines, the client shall not object to the admission of such records on the grounds that they are not originals or in writing, or that they are produced by computers or any other electronic systems whatsoever. The client shall not rely on the Company to meet any of their disclosures or other obligations imposed by any court, tribunal, competent authority, or government authority."
 msgstr "客戶同意接受客戶或公司發起的所有法律、仲裁、調解、監管或管理或任何其他程序, 須以與客戶的交易有關的公司記錄構成證據。除法律及任何法院或審裁處或主管當局或政府當局的命令或要求或指示或指引以外, 客戶不得因為該等紀錄不是原件, 或以書面或由電腦或任何其他電子系統印製而反對接納。客戶不得依賴公司履行任何法院、審裁處或主管當局或政府當局所施加的任何資訊披露或其它義務。"
 
+msgid "The client agrees that when using the Live Chat feature on the Company website and applications, all personal information that the client enters in the chat channel, including but not limited to the client's first name and email address, is processed by the Company and stored in the Company's databases."
+msgstr "客戶同意，在使用公司網站和應用程式上的“實時聊天”功能時，客戶在聊天頻道中輸入的所有個人資料（包括但不限於客戶的名字和電子郵件地址）均由公司處理並存儲在公司的資料庫。"
+
 msgid "The client agrees to comply with the following when making payments to DIEL:"
 msgstr "客戶同意在向DIEL付款時遵守以下規定:"
 
@@ -11073,9 +11112,6 @@ msgstr "客戶的年齡在18歲以上，如果客戶是愛沙尼亞居民，則�
 
 msgid "The client is responsible for all third-party electronic transfer fees in respect of payments."
 msgstr "付款時所有第三方電子轉帳費用由客戶承擔。"
-
-msgid "The client is responsible for keeping the client's log-in details secure, the security of any linked email address, and the security (password protection, screen locking, etc.) of any personal computer or device on which the client's account is accessible. The Company shall not be held responsible if there is unauthorised use of the account when the Company is not at fault."
-msgstr "客戶有責任確保登入詳細資訊的安全性，任何連結電子郵件地址的安全性以及可存取客戶帳戶的任何個人電腦的安全性（包括密碼保護、螢幕鎖定等）。如果發生非公司的過錯導致的未經授權使用帳戶，公司將不承擔任何責任。"
 
 msgid "The client is responsible for managing the client's tax and legal affairs, including making any regulatory filings and payments and complying with applicable laws and regulations. The Company does not provide any regulatory, tax, or legal advice. If the client is in any doubt as to the tax treatment or liabilities%2 of Products available through %1%3, the client may wish to seek independent advice."
 msgstr "客戶須對其稅務和法律相關事項自行負責，包括按照法規填寫任何表格和款項支付，以及遵守法律和法規。公司不提供任何法規、稅務或法律方面的忠告。如客戶對%1%3所提供的產品的稅務處理或責任%2有任何疑問，請向獨立機構尋求意見。"
@@ -11406,6 +11442,9 @@ msgstr "轉售價格表示合約的目前市場價格。轉售價格在盡最大
 
 msgid "The reset time is %1"
 msgstr "重設時間為 %1"
+
+msgid "The responsibility for the security of the client's login credentials, any linked email address, and any personal device on which the client's account is accessible lies solely with the client. The Company shall not be held responsible if there is unauthorised use of the account when the Company is not at fault."
+msgstr "客戶的登入憑證、任何連結的電子郵件地址以及可存取客戶帳戶的任何個人裝置的安全性責任完全由客戶承擔。如果發生非公司的過錯導致的未經授權使用帳戶，公司將不承擔任何責任。"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "收益指當合約到期時實現的收益（參閱「賠付金額」）。"
@@ -12589,6 +12628,9 @@ msgstr "充分利用某些支付處理器提供的任何可用的附加功能"
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "使用、執行，並顯示程式設計員的應用程式及其內容作為行銷、展示用途，並將程式設計員的應用程式提供給公司的客戶使用。"
 
+msgid "Using browser tools to delete files and cookies and clearing browsing history"
+msgstr "使用瀏覽器工具刪除文件和cookie並清除瀏覽歷史記錄"
+
 msgid "Using our website, customers can trade currencies, stock indices, commodities, and synthetic indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
 msgstr "客戶可使用我們網站全天候進行貨幣、股票指數、大宗商品和綜合指數交易。我們擁有最靈活的價格和最齊全的產品配套供選擇。"
 
@@ -13203,6 +13245,9 @@ msgstr "您可以去往哪裡"
 
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
 msgstr "您的經驗、動力和天賦可以推動你往未知的方向邁進，而且您可以自由地踏入新的領域。"
+
+msgid "Whether the client uses a shared device or the client's own device in a public place either offline or on public WiFi, doing so might put the information that the client enters or receives in danger of being captured. To protect data in such cases, it is the clients' responsibility to take the following precautions and educate themselves on other security measures they can take:"
+msgstr "不論客戶是在脫機狀態下還是透過公共WiFi在公共場所使用共享裝置或客戶自己的裝置，這樣做都可能使客戶輸入或接收的資訊有被捕獲的危險。為了在這種情況下保護資料，客戶有責任採取以下預防措施，並對自己可以採取的其他安全措施進行教育："
 
 msgid "Which account is right for me?"
 msgstr "哪個帳戶適合我？"

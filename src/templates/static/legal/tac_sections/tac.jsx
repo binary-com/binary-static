@@ -64,7 +64,13 @@ const Tac = () => (
         <p>{it.L('A client should not use the client\'s account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client\'s account, without prior notice, any bank charges the Company has incurred before closing the account.')}</p>
         <p>{it.L('Transfers between Binary fiat and cryptocurrency accounts are allowed up to a maximum of 2,500.00 USD or equivalent. Fiat and cryptocurrency transfers are also allowed between Binary and MT5 accounts. Charges may apply for every successful transaction.')}</p>
 
-        <h2 data-anchor='prohibited-trades'>H. {it.L('Prohibited trades')}</h2>
+        <h2 data-anchor='refund-policy'>H. {it.L('Refund policy')}</h2>
+        <p>{it.L('The Company offers a number of merchant solutions and payment service providers for making online payments. The client will be billed at the time of, or shortly after, making a transaction. The client agrees to pay for all trades that the client purchases via any of the available merchant solutions or payment service providers.')}</p>
+        <p>{it.L('All sales of trades are final. The Company does not refund the price charged for entering a trade if the trade is executed.')}</p>
+        <p>{it.L('If a trade becomes unavailable after the transaction is made but before the trade is executed, the client may request a refund of the charged price. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. If technical problems prevent the execution of a trade, for example, if a disruption occurs in the data feeds that the Company cannot readily fix, the Company reserves the right to refund or reverse the trade.')}</p>
+        <p>{it.L('Any request for a deposit refund for active accounts will be automatically rejected. If the Company has closed, blocked, or suspended the client’s account (see Section J. Fraud and money laundering), the client may request a refund of the client’s deposit. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. ')}</p>
+
+        <h2 data-anchor='prohibited-trades'>I. {it.L('Prohibited trades')}</h2>
         <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity')}</p>
         <ul className='bullet'>
             <li>{it.L('That contravenes any laws, regulations, instruments, ordinances, or rules that govern the operation of any exchange, financial market, or financial regulatory environment')}</li>
@@ -79,7 +85,7 @@ const Tac = () => (
         <p>{it.L('The Company may withhold payment of funds accumulated in a client\'s account while it takes steps to verify compliance with these terms.')}</p>
         <p>{it.L('If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client\'s account and withhold any funds accumulated therein.')}</p>
 
-        <h2 data-anchor='fraud-and-money-laundering'>I. {it.L('Fraud and money laundering')}</h2>
+        <h2 data-anchor='fraud-and-money-laundering'>J. {it.L('Fraud and money laundering')}</h2>
         <p>{it.L('No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering, which may have several effects on clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities.')}</p>
         <p>{it.L('The anti-money laundering processes have the following effects on clients:')}
             <ul className='bullet'>
@@ -105,7 +111,7 @@ const Tac = () => (
             </ul>
         </p>
 
-        <h2 data-anchor='companys-rights'>J. {it.L('Company\'s rights')}</h2>
+        <h2 data-anchor='company-rights'>K. {it.L('Company\'s rights')}</h2>
         <p>{it.L('The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client\'s account if there is any form of inappropriate behaviour on the client\'s part.')}</p>
         <p>{it.L('The Company reserves the right to suspend the operation of this site or sections thereof in the following cases:')}
             <ul className='bullet'>
@@ -124,16 +130,16 @@ const Tac = () => (
         <p>{it.L('Any information given on these pages, and/or emails or newsletters sent by the Company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect.')}</p>
         <p>{it.L('The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such a change. It is the Company\'s responsibility to notify clients before any changes to its terms come into effect.')}</p>
 
-        <h2 data-anchor='dormant-and-inactive-accounts'>K. {it.L('Dormant and inactive accounts')}</h2>
+        <h2 data-anchor='dormant-and-inactive-accounts'>L. {it.L('Dormant and inactive accounts')}</h2>
         <p data-show='-eucountry'>{it.L('The company reserves the right to charge a dormant fee of up to 25 USD/EUR/AUD/GBP or equivalent of USD25 in any other currency as calculated in accordance with the current exchange rate published by www.xe.com, or any other recognised data provider, as on the date of charging of the fee, every 6 months for every client account that has had no transaction recorded for over 12 months.')}</p>
         <p data-show='eucountry'>{it.L('The company reserves the right to charge a dormant fee of up to 25 USD/EUR/GBP every six months for every client\'s account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked, or excluded accounts.')}</p>
-        <h2 data-anchor='liability'>L. {it.L('Liability')}</h2>
+        <h2 data-anchor='liability'>M. {it.L('Liability')}</h2>
         <p>{it.L('Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records, or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment, or software by the client or any damages or losses deemed or alleged to have resulted from, or been caused by, this site or its content.')}</p>
 
-        <h2 data-anchor='marketing-and-promotion'>M. {it.L('Marketing and promotion')}</h2>
+        <h2 data-anchor='marketing-and-promotion'>N. {it.L('Marketing and promotion')}</h2>
         <p>{it.L('The Company may from time to time inform clients about changes on the website, new services, and promotions. If, however, the client wishes to opt out of such a service and does not wish to receive any direct marketing data, the client can either unsubscribe from the service directly or email the Company\'s customer support team. If the client decides to opt in again into receiving promotional material, the client can also do so by contacting the customer support team.')}</p>
 
-        <h2 data-anchor='account-opening'>N. {it.L('Account opening')}</h2>
+        <h2 data-anchor='account-opening'>O. {it.L('Account opening')}</h2>
         <p>{it.L('A client may only open an account on this site on the following conditions:')}
             <ul className='bullet'>
                 <li>{it.L('The client has read this legal Terms and conditions page in full and understood that the client will be buying and selling contracts subject to these terms and conditions.')}</li>
@@ -144,7 +150,7 @@ const Tac = () => (
             </ul>
         </p>
 
-        <h2 data-anchor='account-closure'>O. {it.L('Account closure')}</h2>
+        <h2 data-anchor='account-closure'>P. {it.L('Account closure')}</h2>
         <p>{it.L('The client may choose to contact the Company to close the client\'s account held with the Company. The client\'s account may be closed if the client does not have any open trade positions and if the client has complied with the requested "Know Your Client" procedures to enable the client to withdraw any pending funds in the client\'s account.')}</p>
         <p data-show='eucountry'>{it.L('Due to the responsibilities under responsible gaming, [_1] reserves the right to assess and safeguard the client\'s account by excluding the client definitely or indefinitely, based on the company\'s client assessment.', it.website_name)}</p>
     </div>

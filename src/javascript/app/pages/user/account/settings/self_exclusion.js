@@ -149,20 +149,27 @@ const SelfExclusion = (() => {
             if (id in self_exclusion_data) {
                 checks.push('req');
                 if (!is_svg_client) {
+                    if (/session_duration_limit/.test(id)) {
+                        options.min = 1;
+                    } else {
+                        options.min = 0.01;
+                    }
                     options.max = self_exclusion_data[id];
                 }
             } else {
                 options.allow_empty = true;
             }
+            if (!is_svg_client) {
+                if (/max_open_bets/.test(id)){
+                    options.min = 1;
+                }
+                if (/max_balance/.test(id)) {
+                    options.min = 0.01;
+                }
+            }
             if (!/session_duration_limit|max_open_bets/.test(id)) {
                 options.type     = 'float';
                 options.decimals = decimal_places;
-            }
-            if (/max_open_bets/.test(id)) {
-                options.min = 1;
-            }
-            if (/max_balance/.test(id)) {
-                options.min = 0.01;
             }
             checks.push(['number', options]);
 
