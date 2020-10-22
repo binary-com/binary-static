@@ -16,7 +16,8 @@ const PaymentAgentTransfer = (() => {
         PaymentAgentTransferUI.initValues();
         BinarySocket.wait('get_settings', 'balance').then(() => {
             const currency = Client.get('currency');
-            if (!currency || +Client.get('balance') === 0) {
+            const balance = Client.get('balance');
+            if (!currency || +balance === 0) {
                 $('#pa_transfer_loading').remove();
                 $('#no_balance_error').setVisibility(1);
                 return;
@@ -30,7 +31,7 @@ const PaymentAgentTransfer = (() => {
                     const pa_values = response.paymentagent_list.list.filter(
                         (a) => a.paymentagent_loginid === Client.get('loginid')
                     )[0];
-                    init(pa_values, currency);
+                    init(pa_values, currency, balance);
                 });
             } else {
                 setFormVisibility(false);
@@ -45,7 +46,7 @@ const PaymentAgentTransfer = (() => {
         });
     };
 
-    const init = (pa, currency) => {
+    const init = (pa, currency, balance) => {
         const form_id = '#frm_paymentagent_transfer';
         $form_error = $('#form_error');
 
@@ -60,7 +61,7 @@ const PaymentAgentTransfer = (() => {
 
         FormManager.init(form_id, [
             { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: localize('Please enter a valid Login ID.') }]], request_field: 'transfer_to' },
-            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min: pa ? pa.min_withdrawal : 10, max: pa ? pa.max_withdrawal : 2000 }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]] },
+            { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min: pa ? pa.min_withdrawal : 10, max: max_withdrawal(balance, pa, 2000) }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]] },
             { selector: '#description', validations: ['general'] },
 
             { request_field: 'dry_run', value: 1 },
@@ -71,6 +72,12 @@ const PaymentAgentTransfer = (() => {
             fnc_response_handler: responseHandler,
             enable_button       : 1,
         });
+    };
+
+    const max_withdrawal = (balance, pa, fixed_max_withdrawal) => {
+        const pa_max_withdrawal = pa ? pa.max_withdrawal : fixed_max_withdrawal;
+
+        return balance < pa_max_withdrawal ? balance : pa_max_withdrawal;
     };
 
     const setFormVisibility = (is_visible) => {
