@@ -151,7 +151,7 @@ const TypesOfAccounts = () => (
             <FootNote
                 number={4}
                 title={it.L('Commission')}
-                texts={[it.L('Most brokers typically charge a commission for each trade that you place. [_1] currently charges no commission across all account types, except for cryptocurrencies.', it.website_name)]}
+                texts={[it.L('Most brokers typically charge a commission for each trade that you place. [_1] currently charges no commission across all account types.', it.website_name)]}
             />
             <FootNote
                 number={5}

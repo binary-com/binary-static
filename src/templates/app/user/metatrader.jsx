@@ -228,7 +228,7 @@ const Metatrader = () => (
                             it.L('Leverage up to [_1]', '1:1000'),
                             it.L('Variable spreads'),
                             it.L('Market execution'),
-                            it.L('No commission (excluding cryptocurrencies)'),
+                            it.L('No commission'),
                         ]}
                     />
                     {/* TODO: [remove-standard-advanced] remove maltainvest_standard when API groups are updated */}
@@ -240,7 +240,7 @@ const Metatrader = () => (
                             it.L('Leverage up to [_1]', '1:30'),
                             it.L('Variable spreads'),
                             it.L('Market execution'),
-                            it.L('No commission (excluding cryptocurrencies)'),
+                            it.L('No commission'),
                             it.L('Negative balance protection'),
                         ]}
                     />
@@ -253,7 +253,7 @@ const Metatrader = () => (
                             it.L('Leverage up to [_1]', '1:100'),
                             it.L('Variable spreads'),
                             it.L('Market execution'),
-                            it.L('No commission (excluding cryptocurrencies)'),
+                            it.L('No commission'),
                         ]}
                     />
                     {/* TODO: [remove-standard-advanced] remove vanuatu_advanced when API groups are updated */}
@@ -266,7 +266,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:100'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission (excluding cryptocurrencies)'),
+                                it.L('No commission'),
                             ]}
                         />
                         */}
