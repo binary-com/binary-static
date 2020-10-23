@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const DerivBanner = ({ content_name }) => (
     <React.Fragment>
         <div id='deriv_banner_container' data-show='-eucountry'>
-            <a target='_blank' rel='noopener noreferrer' href={`https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=${content_name}`}>
+            <a target='_blank' rel='noopener noreferrer' href={`https://deriv.com/interim/faq/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=${content_name}`}>
                 <img className='deriv_banner_background' src={it.url_for('images/deriv/deriv-banner-bg.png')} />
                 <img className='deriv_banner_background deriv_banner_background_mobile' src={it.url_for('images/deriv/deriv-banner-bg-mobile.png')} />
                 <img className='deriv_banner_chevron' src={it.url_for('images/deriv/chevron_right.svg')} />

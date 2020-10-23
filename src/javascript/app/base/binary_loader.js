@@ -44,6 +44,7 @@ const BinaryLoader = (() => {
 
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);
+        window.addEventListener('beforeunload', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
         BinaryPjax.init(container, '#content');
 
