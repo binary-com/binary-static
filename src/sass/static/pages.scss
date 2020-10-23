@@ -976,7 +976,7 @@ body #not_authenticated_financial ul.checked > li {
                 border: none;
             }
         }
-        button {
+        button:not(.onfido-sdk-ui-Theme-link):not(.onfido-sdk-ui-Button-button-primary) {
             &:hover, &:focus {
                 background-color: inherit;
             }
