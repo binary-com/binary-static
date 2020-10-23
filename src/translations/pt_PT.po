@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-19 02:26\n"
+"PO-Revision-Date: 2020-10-23 10:38\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -598,6 +598,9 @@ msgstr "3,50"
 msgid "30%"
 msgstr "30%"
 
+msgid "30-day deposit limit"
+msgstr ""
+
 msgid "30-day limit on losses"
 msgstr "Limite de 30 dias nas perdas"
 
@@ -624,6 +627,9 @@ msgstr "Código de 6 dígitos"
 
 msgid "60 – 79.999%"
 msgstr "60 a 79,999%"
+
+msgid "7-day deposit limit"
+msgstr ""
 
 msgid "7-day limit on losses"
 msgstr "Limite de 7 dias nas perdas"
@@ -2700,9 +2706,6 @@ msgstr "Estrutura de comissões"
 msgid "Commission"
 msgstr "Comissão"
 
-msgid "Commission and swap scheme"
-msgstr "Sistema de comissões e swaps"
-
 msgid "Commission on deposits"
 msgstr "Comissão sobre depósitos"
 
@@ -2711,9 +2714,6 @@ msgstr "Comissão sobre retiradas"
 
 msgid "Commission per round trade"
 msgstr "Comissão por negociação completa"
-
-msgid "Commission per side trade"
-msgstr "Comissão por comércio paralelo"
 
 msgid "Commission rates"
 msgstr "Taxas de comissão"
@@ -3180,8 +3180,8 @@ msgstr "Criptomoedas"
 msgid "Cryptocurrency"
 msgstr "Criptomoeda"
 
-msgid "Cryptocurrency contract specifications and commission scheme"
-msgstr "Especificações do contrato de criptomoeda e regime de comissão"
+msgid "Cryptocurrency contract specifications"
+msgstr ""
 
 msgid "Cryptocurrency margin policy"
 msgstr "Política de margens de criptomoedas"
@@ -3293,6 +3293,9 @@ msgstr "A DIEL não será obrigada a fornecer aos clientes profissionais o segui
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "Os Índices Reinício Diário – Os Índices Reinício Diário replicam mercados com tendências de baixa e de alta, com uma volatilidade constante. Os índices Mercado em alta e Mercado em baixa entram em funcionamento às 00:00 GMT todos os dias, replicando os mercados com tendência altista e tendência baixista, respectivamente."
+
+msgid "Daily deposit limit"
+msgstr ""
 
 msgid "Daily limit on losses"
 msgstr "Limite diário de perdas"
@@ -3899,9 +3902,6 @@ msgstr "Cada vez que você abra uma posição num pare de criptomoedas, é poss�
 
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Cada vez que você abra uma posição num par de criptomoedas, é possível começar com um volume de transação mínima conforme indicado na tabela acima."
-
-msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
-msgstr "Cada vez que você nos enviar um pedido, será cobrada uma comissão, que é igual ao preço do ativo multiplicado pela porcentagem vista na tabela acima."
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
 msgstr "Cada transferência está sujeita a uma taxa de transferência de %1 ou a uma taxa mínima de %2, o que for maior."
@@ -5250,9 +5250,6 @@ msgstr "Como fechar uma posição"
 msgid "How to manage your funds"
 msgstr "Como gerenciar os seus fundos"
 
-msgid "How to read the commission and swap scheme table"
-msgstr "Como ler a tabela do esquema de comissão e permuta"
-
 msgid "How to read the contract specifications table"
 msgstr "Como ler a tabela de especificações do contrato"
 
@@ -5550,9 +5547,6 @@ msgstr "Caso tenhamos motivos para acreditar que as suas informações fiscais e
 
 msgid "If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "Se você é residente no Reino Unido, para se autoexcluir de todas as empresas de jogos online licenciadas na Grã-Bretanha, vá para %1."
-
-msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
-msgstr "Caso você esteja considerando a auto-exclusão, é provável que queira registrar no GAMSTOP."
 
 msgid "If you are in the IOM, your limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
 msgstr "Se você estiver em IOM, seus limites só podem ser removidos ou aumentados, uma vez que a configuração de data limite expire. %1Contate-nos,%2, para remover ou ajustar os seus limites."
@@ -6959,12 +6953,6 @@ msgstr "Máximo de pagamentos agregados sobre posições em aberto"
 msgid "Maximum daily turnover"
 msgstr "Volume de negócios máximo diário"
 
-msgid "Maximum deposit limit"
-msgstr "Limite máximo de depósito"
-
-msgid "Maximum deposit limit expiry"
-msgstr "Expiração do limite máximo de depósito"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Multiplicador máximo de 1000."
 
@@ -7151,8 +7139,8 @@ msgstr "Mais especificamente, quando a Empresa entra em uma negociação de Opç
 msgid "More than 3 years of experience in technical content creation"
 msgstr "Mais de 3 anos de experiência na criação de conteúdo técnico"
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
-msgstr "A maioria de corretoras cobra normalmente uma comissão para cada negociação que você realiza. A %1 não cobra atualmente nenhuma comissão em qualquer tipo de conta, exceto criptomoedas."
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
+msgstr ""
 
 msgid "Mother of Cities"
 msgstr "Mãe das Cidades"
@@ -7375,9 +7363,6 @@ msgstr "Sem suborno"
 
 msgid "No commission"
 msgstr "Sem comissão"
-
-msgid "No commission (excluding cryptocurrencies)"
-msgstr "Nenhumas comissões (excluindo criptomoedas)"
 
 msgid "No delay, neglect, or forbearance on the part of either party in enforcing any term or condition of this Agreement against the other party shall either be, or be deemed to be, a waiver or in any way prejudice any right of that party under this Agreement."
 msgstr "Nenhum atraso, negligência ou indulgência por parte de qualquer das partes na aplicação de qualquer termo ou condição do presente Acordo contra a outra parte será, ou será considerado como sendo, uma renúncia ou de qualquer forma prejudicar qualquer direito dessa parte dentro do presente Acordo."
@@ -9947,6 +9932,9 @@ msgstr "Suspender a negociação do instrumento afetado"
 msgid "Suspending the client's MT5 Real Account and refusing to execute any Orders to enter into further transactions with the client"
 msgstr "Suspender a Conta Real MT5 do cliente e recusar-se a executar quaisquer Ordens para entrar em transações adicionais com o cliente"
 
+msgid "Swap scheme"
+msgstr ""
+
 msgid "Swaps Long (per annum)"
 msgstr "Longo Swaps (por ano)"
 
@@ -11105,8 +11093,8 @@ msgstr "O cliente também é lembrado de que sua conexão com a Internet pode in
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends)."
 msgstr "O cliente é solicitado a observar que as cotações de fim de semana são ignoradas para fins de liquidação do contrato. Durante os finais de semana, os mercados cambiais podem ocasionalmente gerar preços; no entanto, esses preços são frequentemente artificiais (os comerciantes às vezes aproveitam a falta de liquidez dos mercados durante os finais de semana para empurrar os preços para cima ou para baixo). Para evitar a fixação de preços com base em tais preços artificiais, é política da Companhia não contabilizar os preços de final de semana para os valores de liquidação do contrato (exceto os Índices Sintéticos, que estão abertos durante os finais de semana)."
 
-msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr "O cliente não é residente num país restrito como Canadá, Costa Rica, Hong Kong, Israel, Jersey, Malásia, Malta, Paraguai, os Emirados Árabes Unidos, os EUA ou qualquer outro país restrito que tenha sido identificado pelo FATF como tendo deficiências estratégicas."
+msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgstr ""
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "O cliente não está negociando no Ativo Subjacente real, ou na moeda estrangeira real; todas as transações são liquidadas somente em dinheiro."
@@ -12199,9 +12187,6 @@ msgstr "Horário de Negociação"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Limites de Negociação e de Retirada"
-
-msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "Negociações e depósitos foram desativados na sua conta. Entre em contato com o %1suporte ao cliente%2 para receber assistência."
 
 msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "A negociação e os saques foram desativados em sua conta. Entre em contato com o %1suporte ao cliente%2 para obter assistência."

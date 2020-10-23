@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-19 02:26\n"
+"PO-Revision-Date: 2020-10-23 10:39\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -598,6 +598,9 @@ msgstr "3.50"
 msgid "30%"
 msgstr "30%"
 
+msgid "30-day deposit limit"
+msgstr ""
+
 msgid "30-day limit on losses"
 msgstr "Giới hạn 30 ngày thua lỗ"
 
@@ -624,6 +627,9 @@ msgstr "Mã 6 chữ số"
 
 msgid "60 – 79.999%"
 msgstr "60 – 79.999%"
+
+msgid "7-day deposit limit"
+msgstr ""
 
 msgid "7-day limit on losses"
 msgstr "Giới hạn 7 ngày thua lỗ"
@@ -2604,7 +2610,7 @@ msgid "Clients should read these ST&Cs carefully as well as the Summary order ex
 msgstr "Khách hàng nên đọc cẩn thận các Điều Khoản & Điều Kiện, cũng như bản Tóm Tắt Chính Sách Thực Thi Lệnh, bản tóm tắt Chính Sách Xung Đột, Chi tiết Hợp Đồng được áp dụng cùng với Thông báo Tiết lộ Rủi ro và những tài liệu khác mà chúng tôi đã cung cấp hoặc sẽ cung cấp cho khách hàng trong tương lai."
 
 msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling %1. It is not enough to send an email."
-msgstr ""
+msgstr "Những khách hàng không muốn gia hạn quyền tự loại trừ và yêu cầu bắt đầu giao dịch lại, sẽ có một ngày để hạ nhiệt trước khi được phép truy cập vào trang web. Xin lưu ý rằng bạn phải liên hệ với nhóm hỗ trợ của chúng tôi bằng cách gọi %1. Gửi email là không đủ."
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "Khách hàng người mà muốn có chương trình tự loại trừ chú ý rằng thời gian tự loại trừ tối thiểu là 6 tháng và sẽ được lựa chọn kéo dài thời gian ít nhất 5 năm ngay lập tức mà không cần phải có bất kì thời gian nghỉ ngơi nào. Khi thời hạn chương trình tự loại trừ được thiết lập, số dư trong tài khoản của khách hàng sẽ được hoàn lại. Vào cuối kì chương trình tự loại trừ, chương trình đó vẫn còn hiển thị, trừ phi khách hàng làm hành động gì đó để giao dịch lại."
@@ -2699,9 +2705,6 @@ msgstr "Cơ cấu tính hoa hồng"
 msgid "Commission"
 msgstr "Hoa hồng"
 
-msgid "Commission and swap scheme"
-msgstr "Hoa hồng và kế hoạch hoán đổi"
-
 msgid "Commission on deposits"
 msgstr "Hoa hồng gửi tiền"
 
@@ -2710,9 +2713,6 @@ msgstr "Hoa hồng rút tiền"
 
 msgid "Commission per round trade"
 msgstr "Hoa hồng cho mỗi lượt giao dịch"
-
-msgid "Commission per side trade"
-msgstr "Hoa hồng cho mỗi giao dịch"
 
 msgid "Commission rates"
 msgstr "Tỷ lệ hoa hồng"
@@ -3179,8 +3179,8 @@ msgstr "Tiền ảo"
 msgid "Cryptocurrency"
 msgstr "Cryptocurrency"
 
-msgid "Cryptocurrency contract specifications and commission scheme"
-msgstr "Các đặc tính kỹ thuật và kế hoạch hoa hồng của hợp đồng Cryptocurrency"
+msgid "Cryptocurrency contract specifications"
+msgstr ""
 
 msgid "Cryptocurrency margin policy"
 msgstr "Chính sách ký quỹ Cryptocurrency"
@@ -3292,6 +3292,9 @@ msgstr "DIEL sẽ không có nghĩa vụ phải cung cấp cho các khách 
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "Chỉ số đặt lại hàng ngày - chỉ số đặt lại hàng ngày mô phỏng thị trường với một xu hướng biến động liên tục tăng và giảm. Các chỉ số thị trường Bull và Bear bắt đầu từ 00:00 GMT mỗi ngày, mô phỏng theo các thị trường tăng giảm tương ứng."
+
+msgid "Daily deposit limit"
+msgstr ""
 
 msgid "Daily limit on losses"
 msgstr "Giới hạn mức thua lỗ hàng ngày"
@@ -3898,9 +3901,6 @@ msgstr "Mỗi khi bạn mở một phiên trên một cặp cryptocurrency, bạ
 
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Mỗi khi bạn mở một phiên trên một ký hiệu chỉ số, bạn có thể bắt đầu với một khối lượng tối thiểu giao dịch như nêu trong bảng trên."
-
-msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
-msgstr "Mỗi khi bạn gửi cho chúng tôi một lệnh, bạn phải trả một khoản hoa hồng, tương đương với giá trị của tài sản nhân với tỷ lệ phần trăm mà có thể thấy ở bảng phía trên."
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
 msgstr "Mỗi giao dịch chuyển tiền sẽ phải chịu phí chuyển %1 hoặc phí tối thiểu %2, số nào cao hơn sẽ được áp dụng."
@@ -5249,9 +5249,6 @@ msgstr "Làm thế nào để đóng một vị trí"
 msgid "How to manage your funds"
 msgstr "Làm thế nào để quản lý các quỹ tiền của bạn"
 
-msgid "How to read the commission and swap scheme table"
-msgstr "Làm thế nào để đọc bảng chương trình hoa hồng và kế hoạch hoán đổi"
-
 msgid "How to read the contract specifications table"
 msgstr "Làm thế nào để đọc bảng thông số của hợp đồng"
 
@@ -5518,7 +5515,7 @@ msgid "If the client wishes to withdraw funds from their MT5 Real Account and/or
 msgstr "Nếu khách hàng muốn rút tiền khỏi Tài Khoản Thực MT5 và đóng Tài Khoản Thực MT5 của họ, khách hàng có thể thông báo cho Công Ty bằng cách liên hệ với %1 bộ phận trợ giúp %2. Tài Khoản Thực MT5 của khách hàng có thể đóng nếu họ không có bất kỳ Phiên Mở nào và tất cả số tiền nợ với Công Ty đã được giải quyết."
 
 msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. %2If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling %3.%4 The Company will investigate each inquiry and provide a final response in the shortest time possible."
-msgstr ""
+msgstr "Nếu khách hàng muốn gửi khiếu nại liên quan đến dịch vụ của Công ty, khách hàng có thể liên hệ với Công ty theo số %1, cung cấp mọi chi tiết liên quan liên quan đến khiếu nại của khách hàng. %2Nếu bạn đã đăng ký với Deriv (Europe) Limited, bạn cũng có thể gửi khiếu nại bằng cách gọi %3.%4 Công ty sẽ điều tra từng câu hỏi và đưa ra phản hồi cuối cùng trong thời gian sớm nhất có thể."
 
 msgid "If the client's %1 account is closed, their MT5 Real Account will be automatically closed as well."
 msgstr "Nếu tài khoản %1 của khách hàng bị đóng, tài khoản thực MT5 của họ cũng sẽ tự động đóng."
@@ -5549,9 +5546,6 @@ msgstr "Nếu chúng tôi có lý do để tin rằng thông tin thuế của b�
 
 msgid "If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "Nếu bạn là một công dân Anh, để tự loại trừ khỏi tất cả công ty cờ bạc trực tuyến có giấy phép trong Anh Quốc, đi tới %1."
-
-msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
-msgstr "Nếu bạn đang cân nhắc việc tự loại trừ, bạn có thể muốn đăng ký với GAMSTOP."
 
 msgid "If you are in the IOM, your limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
 msgstr "Nếu bạn đang ở trong IOM, giới hạn của bạn chỉ có thể bị xóa hoặc tăng lên khi cài đặt ngày giới hạn đã hết hạn. %1Liên hệ với chúng tôi%2 để xóa hoặc điều chỉnh các giới hạn của bạn."
@@ -6958,12 +6952,6 @@ msgstr "Tổng khoảng được trả tối đa trong phiên mở"
 msgid "Maximum daily turnover"
 msgstr "Thu nhập tối đa hàng ngày"
 
-msgid "Maximum deposit limit"
-msgstr "Giới hạn tiền gửi tối đa"
-
-msgid "Maximum deposit limit expiry"
-msgstr "Thời hạn mức gửi tối đa"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Hệ số tối đa 1000."
 
@@ -7150,8 +7138,8 @@ msgstr "Một cách chi tiết hơn, khi Công Ty giao dịch một Binary O
 msgid "More than 3 years of experience in technical content creation"
 msgstr "Hơn 3 năm kinh nghiệm trong việc sáng tạo nội dung kỹ thuật"
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
-msgstr "Hầu hết các công ty môi giới thường tính phí một khoản hoa hồng cho mỗi thương mại mà bạn đặt. %1 hiện nay chi phí không có hoa hồng trên tất cả các loại tài khoản, ngoại trừ cryptocurrencies."
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
+msgstr ""
 
 msgid "Mother of Cities"
 msgstr "Mẹ của các thành phố"
@@ -7374,9 +7362,6 @@ msgstr "Không hối lộ"
 
 msgid "No commission"
 msgstr "Không có hoa hồng"
-
-msgid "No commission (excluding cryptocurrencies)"
-msgstr "Không trả hoa hồng (không bao gồm cryptocurrency)"
 
 msgid "No delay, neglect, or forbearance on the part of either party in enforcing any term or condition of this Agreement against the other party shall either be, or be deemed to be, a waiver or in any way prejudice any right of that party under this Agreement."
 msgstr "Không có sự chậm trễ, bỏ bê hoặc cấm đối với một trong hai bên trong việc thực thi bất kỳ điều khoản hoặc điều kiện nào của Thỏa thuận này đối với bên kia, hoặc được coi là từ bỏ hoặc từ chối bất kỳ quyền nào của bên đó theo Thỏa thuận này."
@@ -9946,6 +9931,9 @@ msgstr "Đình chỉ kinh doanh các công cụ bị ảnh hưởng"
 msgid "Suspending the client's MT5 Real Account and refusing to execute any Orders to enter into further transactions with the client"
 msgstr "Đình chỉ tài khoản thực MT5 của khách hàng và từ chối thực hiện bất kỳ lệnh giao dịch nào với khách hàng đó"
 
+msgid "Swap scheme"
+msgstr ""
+
 msgid "Swaps Long (per annum)"
 msgstr "Giao dịch hoán đổi dài hạn (mỗi năm)"
 
@@ -11105,8 +11093,8 @@ msgstr "Khách hàng cũng cần lưu ý rằng tình trạng kết nối in
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends)."
 msgstr "Khách hàng nên lưu ý rằng giá niêm yết cuối tuần sẽ bị bỏ qua với mục đích quyết toán hợp đồng. Vào cuối tuần, thị trường ngoại hối thi thoảng vẫn đưa ra giá, tuy nhiên những giá này thường mang tính nhân tạo (đôi khi nhà giao dịch sẽ lợi dụng sự thanh khoản của thị trường vào cuối tuần để đẩy giá lên hoặc xuống). Để tránh quyết toán giá dựa trên giá nhân tạo, Công ty đưa ra chính sách không tính giá của cuối tuần cho giá trị quyết toán của hợp đồng (ngoại trừ Chỉ Số Tổng Hợp, được mở suốt cuối tuần)."
 
-msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr "Khách hàng không cư trú tại một số quốc gia bị hạn chế như Canada, Hồng Kông, Israel, Jersey, Malaysia, Malta, Paraguay, Các tiểu vương quốc Ả Rập thống nhất, Hoa Kỳ hoặc bất kỳ quốc gia bị hạn chế nào được FATF xác định là có thiếu sót chiến lược."
+msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgstr ""
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "Khách hàng không giao dịch bằng công cụ cơ bản thực tế, hoặc ngoại tệ thực tế; tất cả giao dịch chỉ được thanh toán bằng tiền mặt."
@@ -12199,9 +12187,6 @@ msgstr "Thời Gian Giao Dịch"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Giới Hạn Giao Dịch và Giới Hạn Rút Tiền"
-
-msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "Giao dịch và gửi tiền đã bị khóa trên tài khoản của bạn. Xin vui lòng %1liên hệ hỗ trợ khách hàng%2 để được trợ giúp."
 
 msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Giao dịch và rút tiền đã bị vô hiệu hóa trên tài khoản của bạn. Vui lòng %1liên hệ bộ phận khách hàng%2 để được hỗ trợ."
