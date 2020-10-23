@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-19 02:26\n"
+"PO-Revision-Date: 2020-10-23 10:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -598,6 +598,9 @@ msgstr "3.50"
 msgid "30%"
 msgstr "30%"
 
+msgid "30-day deposit limit"
+msgstr ""
+
 msgid "30-day limit on losses"
 msgstr "30天期損失限額"
 
@@ -624,6 +627,9 @@ msgstr "6位數代碼"
 
 msgid "60 – 79.999%"
 msgstr "60 – 79.999%"
+
+msgid "7-day deposit limit"
+msgstr ""
 
 msgid "7-day limit on losses"
 msgstr "7天期損失限額"
@@ -2603,7 +2609,7 @@ msgid "Clients should read these ST&Cs carefully as well as the Summary order ex
 msgstr "客戶必須認真閱讀這些補充條款和條件、訂單執行政策摘要和衝突政策摘要、適用的合約細節、風險揭露通知書以及DIEL向客戶提供或將會提供的所有其他文件。"
 
 msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling %1. It is not enough to send an email."
-msgstr ""
+msgstr "對於不想續簽自我禁止並要求重新開始交易的客戶，我們將在允許此類客戶存取本網站之前給予他們一天時間的冷靜期。請注意，您必須撥電話%1與我們的客戶服務團隊聯繫。僅傳送電子郵件不足夠的。"
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "願意自我禁止的客戶應注意，自我禁止期至少是6個月，且可以在沒有任何冷靜期的情況下選擇將禁止期立即延長到總共五年以上。自我禁止期設定之後，客戶帳戶裡的剩餘資金將退還給客戶。在自我禁止期結束時，自我禁止狀態將繼續保留，除非客戶採取積極行動再次進行交易。"
@@ -2698,9 +2704,6 @@ msgstr "佣金結構"
 msgid "Commission"
 msgstr "佣金"
 
-msgid "Commission and swap scheme"
-msgstr "佣金和掉期交易計劃"
-
 msgid "Commission on deposits"
 msgstr "存款佣金"
 
@@ -2709,9 +2712,6 @@ msgstr "取款佣金"
 
 msgid "Commission per round trade"
 msgstr "每筆完成交易的佣金"
-
-msgid "Commission per side trade"
-msgstr "每筆交易的佣金"
 
 msgid "Commission rates"
 msgstr "佣金費率"
@@ -3178,8 +3178,8 @@ msgstr "加密貨幣**"
 msgid "Cryptocurrency"
 msgstr "加密貨幣"
 
-msgid "Cryptocurrency contract specifications and commission scheme"
-msgstr "加密貨幣合約規格和佣金計劃"
+msgid "Cryptocurrency contract specifications"
+msgstr ""
 
 msgid "Cryptocurrency margin policy"
 msgstr "加密貨幣保證金政策"
@@ -3291,6 +3291,9 @@ msgstr "DIEL不可向專業客戶提供以下服務:"
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "每日重置指數 - 每日重置指數複製具看漲和看跌走勢與持續波動的市場。牛市和熊市指數每天從格林威治時間00:00開始，分別複製看漲和看跌市場。"
+
+msgid "Daily deposit limit"
+msgstr ""
 
 msgid "Daily limit on losses"
 msgstr "每日損失限額"
@@ -3897,9 +3900,6 @@ msgstr "每次開加密貨幣對頭寸時, 您都可以由上表所示的最小�
 
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "每次開指標符號頭寸時, 您都可以由上表所示的最小交易額開始。"
-
-msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
-msgstr "每次發送訂單時, 我們會向您收取佣金, 佣金率相等於資產價格乘以上表中顯示的百分比。"
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
 msgstr "每次轉帳需支付%1轉帳費或最低費用%2, 以較高者為準。"
@@ -5248,9 +5248,6 @@ msgstr "如何斬倉"
 msgid "How to manage your funds"
 msgstr "如何管理資金"
 
-msgid "How to read the commission and swap scheme table"
-msgstr "如何閱讀佣金和掉期計劃表"
-
 msgid "How to read the contract specifications table"
 msgstr "如何閱讀合約規格表"
 
@@ -5516,7 +5513,7 @@ msgid "If the client wishes to withdraw funds from their MT5 Real Account and/or
 msgstr "如果客戶想從MT5真實帳戶提款和/或關閉其MT5真實帳戶，客戶可通過 %1 聯繫客服部通知公司。如果客戶沒有任何未平倉頭寸及所有欠公司款項都已結清，其MT5真實帳戶可以關閉。"
 
 msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. %2If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling %3.%4 The Company will investigate each inquiry and provide a final response in the shortest time possible."
-msgstr ""
+msgstr "如果客戶想投訴公司的服務，可在%1與公司聯繫並提供所有相關的細節。％2如果您已在 Deriv（Europe）Limited 註冊，還可以致電％3.％4提出投訴。公司將調查所有詢問並儘快予以最終答复。"
 
 msgid "If the client's %1 account is closed, their MT5 Real Account will be automatically closed as well."
 msgstr "如果客戶的%1帳戶已關閉, 其 MT5 真實帳戶也將自動關閉。"
@@ -5547,9 +5544,6 @@ msgstr "如果我們有理由相信您的稅務資訊不完整, 我們將與您�
 
 msgid "If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "如您是英國居民，並要自我禁止在所有英國註冊的線上博彩公司交易, 請轉到%1。"
-
-msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
-msgstr "如果您要自我禁止, 您可考慮在 GAMSTOP 註冊。"
 
 msgid "If you are in the IOM, your limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
 msgstr "如果您是 IOM 成員，則只有在設定的限制日期過期後才能刪除或增加限制。 ％1與我們聯繫％2以刪除或調整限制。"
@@ -6955,12 +6949,6 @@ msgstr "未平倉頭寸的最大賠付總額"
 msgid "Maximum daily turnover"
 msgstr "最大日成交量"
 
-msgid "Maximum deposit limit"
-msgstr "最大存款限額"
-
-msgid "Maximum deposit limit expiry"
-msgstr "最大存款限額到期日"
-
 msgid "Maximum multiplier of 1000."
 msgstr "最大乘數為1000。"
 
@@ -7147,8 +7135,8 @@ msgstr "說得更具體就是，當公司和客戶進行二元期權交易時（
 msgid "More than 3 years of experience in technical content creation"
 msgstr "超過3年的技術內容創作經驗"
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
-msgstr "大多數經紀商通常會對您執行的每筆交易收取佣金。除了加密貨幣以外，目前％1的所有帳戶類型都不收取佣金。"
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
+msgstr ""
 
 msgid "Mother of Cities"
 msgstr "城市之母"
@@ -7371,9 +7359,6 @@ msgstr "無賄賂"
 
 msgid "No commission"
 msgstr "不收佣金"
-
-msgid "No commission (excluding cryptocurrencies)"
-msgstr "不收佣金費 (不包括加密貨幣)"
 
 msgid "No delay, neglect, or forbearance on the part of either party in enforcing any term or condition of this Agreement against the other party shall either be, or be deemed to be, a waiver or in any way prejudice any right of that party under this Agreement."
 msgstr "任何一方對另一方執行本協議的條款和條件方面的延遲、疏忽或容忍，不得構成或視為該方在本協議項下的任何權利被放棄或者受到任何影響。"
@@ -9943,6 +9928,9 @@ msgstr "受影響工具的交易被暫停"
 msgid "Suspending the client's MT5 Real Account and refusing to execute any Orders to enter into further transactions with the client"
 msgstr "客戶的MT5真實帳戶被暫停，並拒絕執行任何訂單以與客戶繼續交易"
 
+msgid "Swap scheme"
+msgstr ""
+
 msgid "Swaps Long (per annum)"
 msgstr "多頭掉期 (每年)"
 
@@ -11101,8 +11089,8 @@ msgstr "還有考慮客戶的網路連接可能會影響到交易執行後的顯
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends)."
 msgstr "請客戶注意，為進行合約結算，週末報價將忽略不計。週末，外匯交易市場也許會偶爾產生價格，但這些價格只是人為的（交易商有時會利用周末市場缺乏流動性而抬高或壓低價格）。為了避免結算受人為價格影響，公司的%1策略是在合約結算時不計算週末報價（綜合指數除外，因為這些指數週末也開放）。"
 
-msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr "客戶不是被FATF認定具有策略缺陷的國家和地區如加拿大、香港、以色列、澤西島、馬來西亞、馬爾他、巴拉圭、阿拉伯聯合大公國、美國或任何其他受限制國家的居民。"
+msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgstr ""
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "客戶沒交易真實的標的工具, 或真實的外幣。所有交易僅以現金結算。"
@@ -12195,9 +12183,6 @@ msgstr "交易時間"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "交易和取款限額"
-
-msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "您的帳戶已被禁交易和存款。請 %1聯繫客服部%2尋求幫助。"
 
 msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "您的帳戶已被禁交易和提款。請 %1聯繫客服部%2尋求幫助。"
