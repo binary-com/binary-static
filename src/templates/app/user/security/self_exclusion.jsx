@@ -86,8 +86,9 @@ const SelfExclusion = () => (
                             <p data-show='malta'>{it.L('If you live in the United Kingdom and are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                             <p data-show='iom'>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                             <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain. To find out more and to sign up, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk/">www.gamstop.co.uk</a>')}</p>
-                            <p data-show='iom, malta'>{it.L('[_1]Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. [_2]If you wish to resume trading after your self-exclusion period is over, please make your request by calling [_3]. Requests by chat or email shall not be entertained.', 
-                            '<span data-show="malta">', '</span>', '<a href=\'call:+447723580049\'>+447723580049</a>')}</p>
+                            <p data-show='iom, malta'>{it.L('[_1]Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. [_2]If you wish to resume trading after your self-exclusion period is over, please make your request by calling [_3]. Requests by chat or email shall not be entertained.',
+                                '<span data-show="malta">', '</span>', '<a href=\'call:+447723580049\'>+447723580049</a>')}
+                            </p>
                             <p>{it.L('For more information about counselling and support services, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.begambleaware.org/">begambleaware.org</a>')}</p>
                         </div>
                     </div>
