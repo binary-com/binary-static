@@ -1644,7 +1644,7 @@ body #not_authenticated_financial ul.checked > li {
   outline: 0;
   border: none; }
 
-.authentication #onfido button:hover, .authentication #onfido button:focus {
+.authentication #onfido button:not(.onfido-sdk-ui-Theme-link):not(.onfido-sdk-ui-Button-button-primary):hover, .authentication #onfido button:not(.onfido-sdk-ui-Theme-link):not(.onfido-sdk-ui-Button-button-primary):focus {
   background-color: inherit; }
 
 .authentication .fields > .gr-row > div > .button {
