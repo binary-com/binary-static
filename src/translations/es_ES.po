@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-19 02:25\n"
+"PO-Revision-Date: 2020-10-23 10:38\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -598,6 +598,9 @@ msgstr "3.50"
 msgid "30%"
 msgstr "30%"
 
+msgid "30-day deposit limit"
+msgstr ""
+
 msgid "30-day limit on losses"
 msgstr "El límite de pérdidas de 30 días"
 
@@ -624,6 +627,9 @@ msgstr "Código de 6 dígitos"
 
 msgid "60 – 79.999%"
 msgstr "60 – 79.999%"
+
+msgid "7-day deposit limit"
+msgstr ""
 
 msgid "7-day limit on losses"
 msgstr "El límite de pérdidas de 7 días"
@@ -2604,7 +2610,7 @@ msgid "Clients should read these ST&Cs carefully as well as the Summary order ex
 msgstr "Los clientes deben leer estos T&C's con mucha atención, así como el resumen de la política de ejecución de órdenes y el resumen de la política de conflictos, los detalles de contrato aplicables y el aviso de divulgación de riesgos, y cualquier otro documento que DIEL haya ofrecido u ofrecerá en el futuro a los clientes para su atención."
 
 msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling %1. It is not enough to send an email."
-msgstr ""
+msgstr "A los clientes que no deseen renovar la auto-exclusión y hacen solicitud para volver a operar en su cuenta, tendrán un día de reflexión antes de poder acceder al sitio web. Tenga en cuenta que debe ponerse en contacto con nuestro equipo de servicio al cliente llamando al %1. No es suficiente enviar un correo electrónico."
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "Los clientes que deseen auto-excluirse de la página web deben ser conscientes de que el período de auto-exclusión tiene un mínimo de seis meses con la opción de ampliarlo a un total de cinco años, de inmediato y sin ningún período de reflexión. Cuando se establece el período de auto-exclusión, se devolverá al cliente el saldo de su cuenta. Al final del período de auto-exclusión, la auto-exclusión permanece en vigor, a no ser que el cliente tome acción positiva con el fin de volver a operar con su cuenta."
@@ -2699,9 +2705,6 @@ msgstr "Estructura de las comisiones"
 msgid "Commission"
 msgstr "Comisión"
 
-msgid "Commission and swap scheme"
-msgstr "Esquema de comisión y swap"
-
 msgid "Commission on deposits"
 msgstr "Comisión por depósitos"
 
@@ -2710,9 +2713,6 @@ msgstr "Comisión por retiros"
 
 msgid "Commission per round trade"
 msgstr "Comisión por operación completa"
-
-msgid "Commission per side trade"
-msgstr "Comisión por operación alternativa"
 
 msgid "Commission rates"
 msgstr "Tasas de comisión"
@@ -3179,8 +3179,8 @@ msgstr "Criptomonedas**"
 msgid "Cryptocurrency"
 msgstr "Criptomonedas"
 
-msgid "Cryptocurrency contract specifications and commission scheme"
-msgstr "Especificaciones del contrato en Criptomonedas y esquema de comisiones"
+msgid "Cryptocurrency contract specifications"
+msgstr ""
 
 msgid "Cryptocurrency margin policy"
 msgstr "Política de márgenes de criptomonedas"
@@ -3292,6 +3292,9 @@ msgstr "DIEL no estará obligada a proporcionar lo siguiente a los clientes prof
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "Índices de Reajuste Diario: los Índices de reajuste diario replican los mercados con una tendencia alcista y bajista y con una volatilidad constante. Los Índices de Mercado Bull y Mercado Bear están disponibles a partir de las 00:00 GMT cada día, replicando mercados alcistas y bajistas respectivamente."
+
+msgid "Daily deposit limit"
+msgstr ""
 
 msgid "Daily limit on losses"
 msgstr "Límite diario de pérdidas"
@@ -3898,9 +3901,6 @@ msgstr "Cada vez que abre una posición en un par de criptomonedas, puede comenz
 
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Cada vez que abre una posición en un índice, puede comenzar con un volumen mínimo de operación, de acuerdo a lo que se indica en la tabla anterior."
-
-msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
-msgstr "Cada vez que nos envía una orden, se le cobra una comisión, que es igual al precio del activo multiplicado por el porcentaje que se ve en la tabla de arriba."
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
 msgstr "Cada transferencia está sujeta a una tasa por transferencia de %1 o una tasa mínima de %2, la que sea mayor."
@@ -5249,9 +5249,6 @@ msgstr "Cómo cerrar una posición"
 msgid "How to manage your funds"
 msgstr "Cómo administrar sus fondos"
 
-msgid "How to read the commission and swap scheme table"
-msgstr "Cómo leer la tabla de comisiones y esquema de swap"
-
 msgid "How to read the contract specifications table"
 msgstr "Cómo leer la tabla de especificaciones de contrato"
 
@@ -5517,7 +5514,7 @@ msgid "If the client wishes to withdraw funds from their MT5 Real Account and/or
 msgstr "Si el cliente desea retirar fondos de su Cuenta Real MT5 y/o cerrarla, este podrá informar a la Empresa poniéndose en contacto con su %1servicio de asistencia %2. La Cuenta Real MT5 puede cerrarse si el cliente no tiene alguna Posición Abierta y si todos los montos debidos a la Empresa ya han sido liquidados."
 
 msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. %2If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling %3.%4 The Company will investigate each inquiry and provide a final response in the shortest time possible."
-msgstr ""
+msgstr "Si el cliente desea presentar una queja en relación a los servicios de la Empresa, el cliente puede contactarnos a través de %1, proporcionando los detalles relevantes a su queja. %2Si está registrado en Deriv (Europe) Limited, también puede presentar una queja llamando al %3. %4La Empresa investigará cada reclamo y proveerá una respuesta final en el menor tiempo posible."
 
 msgid "If the client's %1 account is closed, their MT5 Real Account will be automatically closed as well."
 msgstr "Si la cuenta %1 del cliente se cierra, su cuenta real MT5 también se cerrará automáticamente."
@@ -5548,9 +5545,6 @@ msgstr "Si tenemos motivos para creer que su información tributaria está incom
 
 msgid "If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "Si es residente del Reino Unido, para autoexcluirse de todas las empresas de juegos online con licencia en Gran Bretaña, visite %1."
-
-msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
-msgstr "Si está considerando la autoexclusión, le recomendamos registrarse en GAMSTOP."
 
 msgid "If you are in the IOM, your limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
 msgstr "Si está en la Isla de Man, sus límites solo pueden ser removidos o incrementados una vez la fecha del límite haya expirado. %1Contáctenos%2 para remover o ajustar sus límites."
@@ -6957,12 +6951,6 @@ msgstr "Máximo de pagos agregados en posiciones abiertas"
 msgid "Maximum daily turnover"
 msgstr "Volumen de negocios diario máximo"
 
-msgid "Maximum deposit limit"
-msgstr "El límite máximo de depósito"
-
-msgid "Maximum deposit limit expiry"
-msgstr "El vencimiento del límite máximo de depósito"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Máximo multiplicador de 1000."
 
@@ -7149,8 +7137,8 @@ msgstr "Más específicamente, cuando la Empresa acuerda una operación de Opcio
 msgid "More than 3 years of experience in technical content creation"
 msgstr "Más de 3 años de experiencia en la creación de contenido técnico"
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
-msgstr "La mayoría de los corredores suelen cobra una comisión por cada operación que realice. %1 actualmente no cobra ninguna comisión en todos los tipos de cuentas, excepto en los de criptomonedas."
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
+msgstr ""
 
 msgid "Mother of Cities"
 msgstr "Madre de ciudades"
@@ -7373,9 +7361,6 @@ msgstr "Sin soborno"
 
 msgid "No commission"
 msgstr "Sin comisiones"
-
-msgid "No commission (excluding cryptocurrencies)"
-msgstr "Sin comisión (a excepción de las criptomonedas)"
 
 msgid "No delay, neglect, or forbearance on the part of either party in enforcing any term or condition of this Agreement against the other party shall either be, or be deemed to be, a waiver or in any way prejudice any right of that party under this Agreement."
 msgstr "Ningún retraso, negligencia o tolerancia por parte de cualquiera de las partes en la aplicación contra la otra parte de cualquier término o condición de este Acuerdo será o se considerará una renuncia ni perjudicará de ninguna forma cualquier derecho de esa parte conforme a este Acuerdo."
@@ -9945,6 +9930,9 @@ msgstr "Suspender la operación del instrumento afectado"
 msgid "Suspending the client's MT5 Real Account and refusing to execute any Orders to enter into further transactions with the client"
 msgstr "Suspender la Cuenta Real MT5 del cliente y negarse a ejecutar órdenes para realizar más transacciones con el cliente"
 
+msgid "Swap scheme"
+msgstr ""
+
 msgid "Swaps Long (per annum)"
 msgstr "Swaps de posición larga (anual)"
 
@@ -11103,8 +11091,8 @@ msgstr "El cliente deberá también considerar que su conexión de Internet pued
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends)."
 msgstr "Tenga en cuenta que las cotizaciones de fin de semana son ignoradas para la liquidación de contratos. Durante los fines de semana, los mercados forex pueden ocasionalmente generar precios; sin embargo, estos precios son usualmente artificiales (los corredores algunas veces aprovechan la iliquidez de los mercados durante los fines de semana para empujar los precios hacia abajo o arriba). Para evitar la liquidación de contratos en base a estos precios artificiales, es política de la Empresa no tomarlos en cuenta (excepto para Índices sintéticos, los cuales están abiertos durante los fines de semana)."
 
-msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr "El cliente no es residente en un país restringido como ser Canadá, San Vicente y las Granadinas, Hong Kong, Israel, Jersey, Malasia, Malta, Paraguay, los Emiratos Árabes Unidos, los EE. UU. o cualquier otro país restringido que haya sido identificado por el GAFI como un país con deficiencias estratégicas."
+msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgstr ""
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "El cliente no esta operando en el Instrumento Subyacente actual, o en la moneda extranjera actual, todas las Transacciones se liquidan únicamente en efectivo."
@@ -12197,9 +12185,6 @@ msgstr "Horarios del mercado"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Límites de trading y de retiro"
-
-msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "Se han desactivado las operaciones y depósitos en su cuenta. Por favor %1póngase en contacto con nuestro servicio de atención al cliente%2 para recibir asistencia."
 
 msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Se han desactivado las operaciones y retiros en su cuenta. Por favor %1póngase en contacto con nuestro servicio de atención al cliente%2 para recibir asistencia."
