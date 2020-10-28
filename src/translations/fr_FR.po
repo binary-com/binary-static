@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-23 10:38\n"
+"PO-Revision-Date: 2020-10-28 03:57\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -599,7 +599,7 @@ msgid "30%"
 msgstr "30%"
 
 msgid "30-day deposit limit"
-msgstr ""
+msgstr "Limite de dépôt sur 30 jours"
 
 msgid "30-day limit on losses"
 msgstr "Limite des pertes sur 30 jours"
@@ -629,7 +629,7 @@ msgid "60 – 79.999%"
 msgstr "60 – 79,999%"
 
 msgid "7-day deposit limit"
-msgstr ""
+msgstr "Limite de dépôt sur 7 jours"
 
 msgid "7-day limit on losses"
 msgstr "Limite des pertes sur 7 jours"
@@ -712,8 +712,8 @@ msgstr "Une compréhension claire du modèle OSI, TCP/IP et d’autres concepts 
 msgid "A client may only open an account on this site on the following conditions:"
 msgstr "Un client ne peut ouvrir un compte sur ce site qu'aux conditions suivantes :"
 
-msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account."
-msgstr "Un client ne devrait pas utiliser le compte du client comme un service bancaire, et les dépôts ne devraient être effectués qu'en vue d'utiliser des fonds pour placer des contrats. La Compagnie n'est pas une institution financière et le client ne recevra pas d'intérêt sur les dépôts. Si un client effectue des dépôts et des retraits répétés sans passer de contrats correspondants, la Compagnie se réserve le droit de transférer sur le compte du client, sans préavis, les frais bancaires que la Compagnie a engagés avant de fermer le compte."
+msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account. The Company also reserves the right to reject the client's payouts without prior notice."
+msgstr ""
 
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
 msgstr "Un programme d’affiliation compétitive et flexible qui peut être adapté à vos besoins"
@@ -1207,8 +1207,8 @@ msgstr "Toutes les activités d'affiliation doivent être menées d'une manière
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Tous les appels sont enregistrés à des fins de formation et de surveillance"
 
-msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
-msgstr "Tous les ordres des clients sont traités par ordre de placement chronologique, sans intervention manuelle. Dans le cadre de l'exécution de l'ordre client, %1 s'efforcera de traiter la transaction correspondante aussi vite que possible, au prix indiqué (ou à un meilleur prix, le cas échéant). Les limites d'exposition au risque sont définies en fonction des modalités de gouvernance et du système de gestion du risque, pour refléter l'ampleur, la nature, la complexité et le profil de risque des activités de la Compagnie. Ces limites d'exposition servent de références afin de distinguer les ordres susceptibles d'être automatiquement acceptés des ordres qui seront évalués en fonction des conditions de marché tout en communiquant le niveau d'exécution au client."
+msgid "All client orders are processed on a first in, first out basis without any manual intervention. If a client order exceeds the volume limit for the symbol, it is automatically rejected. When executing client orders, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
+msgstr ""
 
 msgid "All conditions and durations"
 msgstr "Toutes les conditions et les durées"
@@ -3179,7 +3179,7 @@ msgid "Cryptocurrency"
 msgstr "Devise cryptée"
 
 msgid "Cryptocurrency contract specifications"
-msgstr ""
+msgstr "Les spécifications du contrat de crypto monnaie"
 
 msgid "Cryptocurrency margin policy"
 msgstr "Politique de marge pour crypto monnaie"
@@ -3293,7 +3293,7 @@ msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bull
 msgstr "Les Indices de Réinitialisation Quotidiens – Les Indices de Réinitialisation Quotidiens reproduisent les marchés avec une tendance haussière et baissière avec une volatilité constante. Les indices de marché Bullish et Bearish commencent à 00:00 GMT chaque jour, reproduisant des marchés haussiers et baissiers respectivement."
 
 msgid "Daily deposit limit"
-msgstr ""
+msgstr "Limite de dépôt quotidienne"
 
 msgid "Daily limit on losses"
 msgstr "Limite journalière des pertes"
@@ -7137,7 +7137,7 @@ msgid "More than 3 years of experience in technical content creation"
 msgstr "Plus de 3 ans d'expérience en création de contenu technique"
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
-msgstr ""
+msgstr "La plupart des courtiers facturent généralement une commission pour chaque transaction que vous effectuez. %1 ne facture actuellement aucune commission sur tous les types de comptes."
 
 msgid "Mother of Cities"
 msgstr "Mère des villes"
@@ -9931,7 +9931,7 @@ msgid "Suspending the client's MT5 Real Account and refusing to execute any Orde
 msgstr "Dépenser le Compte Réel MT5 du client et refuser d'exécuter des Ordres pour conclure d'autres transactions avec le client"
 
 msgid "Swap scheme"
-msgstr ""
+msgstr "Schéma du Swap"
 
 msgid "Swaps Long (per annum)"
 msgstr "Swaps Longs (par an)"
@@ -10407,8 +10407,8 @@ msgstr "La Compagnie détient les fonds des clients dans des comptes bancaires d
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr "La Compagnie est une entité juridique indépendante et n’est pas affiliée à la plateforme de trading MT5. MT5 n'est pas possédé, contrôlé ou exploité par la Compagnie. Par conséquent, la Compagnie ne fournit pas toutes les garanties liées à tout produit ou service MT5 et n'a pas examiné ou vérifié les résultats des performances qui peuvent être présentés et/ou décrits sur ce site en ce qui concerne MT5."
 
-msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
-msgstr "La Compagnie est autorisée à trader les dérivés pour son propre compte. Les ordres clients seront exécutées par la Compagnie et la Compagnie sera toujours le lieu d’exécution unique du client pour tous les trades qu'un client peut effectuer dans les options binaires. Cela signifie que la Compagnie agira toujours en tant que contrepartie client, dans lequel il prend l’autre côté du trade du client. Les clients doivent être conscients qu’ils sont exposés à des risques plus élevés car tous les contrats d’Options Binaires sont négociés sur des marchés de gré à gré (OTC) , par opposition aux échanges réglementés. Cette section de la politique donnera un aperçu de comment la Compagnie a l’intention de se conformer à ses obligations de meilleure exécution."
+msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be accepted only if the orders are within the client’s account limit. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
+msgstr ""
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
 msgstr "La Compagnie n'est pas responsable des pertes ou dommages de quelque nature que ce soit résultant d'informations ou de prix publiés sur ou fournis par l'API de %1, ou de toute erreur ou omission de l'API de %1."
@@ -11092,7 +11092,7 @@ msgid "The client is asked to note that weekend quotes are ignored for the purpo
 msgstr "Le client est prié de noter que les devis des week-ends sont ignorés aux fins du règlement du contrat. Pendant les week-ends, les marchés forex peuvent occasionnellement générer des prix ; cependant, ces prix sont souvent artificiels (les traders profitent parfois de l'illiquidité des marchés pendant les week-ends pour faire monter ou baisser les prix). Afin d'éviter de fixer les prix sur la base de tels prix artificiels, la Compagnie a pour politique de ne pas compter les prix des week-ends dans les valeurs de règlement des contrats (sauf pour les Indices Synthétiques, qui sont ouverts durant les week-ends)."
 
 msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr ""
+msgstr "Le client ne réside pas dans un pays restreint tel que le Canada, Hong Kong, Israël, Jersey, la Malaisie, Malte, le Paraguay, le Rwanda, les Émirats arabes unis, les États-Unis ou tout autre pays restreint qui a été identifié par le GAFI comme ayant carences stratégiques."
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "Le client ne trade pas l'Instrument Sous-jacent ni la devise étrangère réelle ; toutes les Transactions sont réglées en espèces seulement."

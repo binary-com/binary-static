@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-23 10:38\n"
+"PO-Revision-Date: 2020-10-28 03:57\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -599,7 +599,7 @@ msgid "30%"
 msgstr "30%"
 
 msgid "30-day deposit limit"
-msgstr ""
+msgstr "30天期存款限额"
 
 msgid "30-day limit on losses"
 msgstr "30天损失限额"
@@ -629,7 +629,7 @@ msgid "60 – 79.999%"
 msgstr "60 – 79.999%"
 
 msgid "7-day deposit limit"
-msgstr ""
+msgstr "7天期存款限额"
 
 msgid "7-day limit on losses"
 msgstr "7天期损失限额"
@@ -712,8 +712,8 @@ msgstr "对OSI 模型、TCP/IP和其他行业标准网络防御概念了解得�
 msgid "A client may only open an account on this site on the following conditions:"
 msgstr "客户必须符合以下条件才能在此网站开立账户："
 
-msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account."
-msgstr "客户的账户不应被用作银行信贷，其中的存款只应视为交易资金用途。公司并不是金融机构，客户存款不会有利息。如果客户重复进行存、取款，却没有进行相应的交易，在关闭账户之前，公司保留权利在不事先通知的情况下把相关银行费用转加到客户的账户。"
+msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account. The Company also reserves the right to reject the client's payouts without prior notice."
+msgstr ""
 
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
 msgstr "可根据您的需要调整的具竞争性和灵活的联盟计划"
@@ -1207,8 +1207,8 @@ msgstr "所有联盟活动必须以专业和适当的方式进行。联盟会员
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "为了利于培训和监控，所有通话将被录音"
 
-msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
-msgstr "所有客户订单将以先进先出，没有任何人工干预的方式处理。执行客户的订单时，%1将尽快以指示价格 （或可用的更佳价格）填补客户的订单交易记录。基于内部治理安排和风险管理框架建立的接触限值将与公司活动的大小、性质、复杂性和风险架构相配合。这些接触限值是区分自动接受订单和可用于将填补水平传递给客户端市场的订单的基准。"
+msgid "All client orders are processed on a first in, first out basis without any manual intervention. If a client order exceeds the volume limit for the symbol, it is automatically rejected. When executing client orders, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
+msgstr ""
 
 msgid "All conditions and durations"
 msgstr "所有环境和期限"
@@ -3180,7 +3180,7 @@ msgid "Cryptocurrency"
 msgstr "加密货币"
 
 msgid "Cryptocurrency contract specifications"
-msgstr ""
+msgstr "加密货币合约规格"
 
 msgid "Cryptocurrency margin policy"
 msgstr "加密货币保证金政策"
@@ -3294,7 +3294,7 @@ msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bull
 msgstr "每日重置指数 - 每日重置指数复制具看涨和看跌走势与持续波动的市场。牛市和熊市指数每天从格林威治时间00:00开始，分别复制看涨和看跌市场。"
 
 msgid "Daily deposit limit"
-msgstr ""
+msgstr "一天期存款限额"
 
 msgid "Daily limit on losses"
 msgstr "每日损失限额"
@@ -7137,7 +7137,7 @@ msgid "More than 3 years of experience in technical content creation"
 msgstr "超过3年的技术内容创作经验"
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
-msgstr ""
+msgstr "大多数经纪商通常会对您执行的每笔交易收取佣金。目前％1的所有账户类型都不收取佣金。"
 
 msgid "Mother of Cities"
 msgstr "城市之母"
@@ -9930,7 +9930,7 @@ msgid "Suspending the client's MT5 Real Account and refusing to execute any Orde
 msgstr "客户的MT5真实账户被暂停，并拒绝执行任何订单以与客户继续交易"
 
 msgid "Swap scheme"
-msgstr ""
+msgstr "掉期方案"
 
 msgid "Swaps Long (per annum)"
 msgstr "多头掉期 (每年)"
@@ -10406,8 +10406,8 @@ msgstr "公司把客户资金存在独立的银行账户，与操作账户分开
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr "公司为独立法人实体，与MT5交易平台无任何附属关系。MT5不归本公司所有、控制或经营。因此，公司不提供与任何MT5产品或服务相关的任何担保，也未对本网站可能提供和/或描述与MT5相关的任何功能结果进行审查或验证。"
 
-msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
-msgstr "公司获得自行交易衍生品的许可。客户订单将由公司执行, 而公司将始终是客户执行所有二元期权交易的唯一地点。这意味着公司将始终充当客户的交易对手, 即作为客户进行交易的另一方。客户应该意识到本身面临极高的风险, 因为所有二元期权合约都是在场外交易 (OTC) 市场执行, 而不是受监管的交易所。本政策的这一部分将概述公司打算如何履行其最佳执行义务。"
+msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be accepted only if the orders are within the client’s account limit. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
+msgstr ""
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
 msgstr "由%1 API所提供或发布的任何信息或价格所造成的任何类型的损失或损害，或其所造成的任何错误或遗漏，公司概不负责。"
@@ -11092,7 +11092,7 @@ msgid "The client is asked to note that weekend quotes are ignored for the purpo
 msgstr "请客户注意，为进行合约结算，周末报价将忽略不计。周末，外汇交易市场也许会偶尔产生价格，但这些价格只是人为的（交易商有时会利用周末市场缺乏流动性而抬高或压低价格）。为了避免结算受人为价格影响，公司的%1策略是在合约结算时不计算周末报价（综合指数除外，因为这些指数周末也开放）。"
 
 msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr ""
+msgstr "客户不是被FATF认定具有策略缺陷的国家和地区如加拿大、香港、以色列、泽西岛、马来西亚、马耳他、巴拉圭、卢旺达、阿拉伯联合酋长国、美国或任何其他受限制国家的居民。"
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "客户没交易真实的标的工具, 或真实的外币。所有交易仅以现金结算。"

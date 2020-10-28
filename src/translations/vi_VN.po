@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-23 10:39\n"
+"PO-Revision-Date: 2020-10-28 03:57\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -599,7 +599,7 @@ msgid "30%"
 msgstr "30%"
 
 msgid "30-day deposit limit"
-msgstr ""
+msgstr "Giới hạn tiền gửi 30-ngày"
 
 msgid "30-day limit on losses"
 msgstr "Giới hạn 30 ngày thua lỗ"
@@ -629,7 +629,7 @@ msgid "60 – 79.999%"
 msgstr "60 – 79.999%"
 
 msgid "7-day deposit limit"
-msgstr ""
+msgstr "Giới hạn tiền gửi 7-ngày"
 
 msgid "7-day limit on losses"
 msgstr "Giới hạn 7 ngày thua lỗ"
@@ -712,8 +712,8 @@ msgstr "Có hiểu biết rõ ràng về phương thức OSI, TCP/IP, và các k
 msgid "A client may only open an account on this site on the following conditions:"
 msgstr "Một khách hàng có thể chỉ được mở một tài khoản trên trang này theo các điều kiện:"
 
-msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account."
-msgstr "Tài khoản của bạn không nên được sử dụng như một thiết bị ngân hàng và bạn chỉ nên gửi tiền với mục đích sử dụng nó để đặt hợp đồng. Công ty không phải là tổ chức tài chính, Khách hàng cũng không nhận được lãi suất từ tiền gửi. Nếu bạn gửi tiền và rút tiền nhiều lần mà không đặt hợp đồng tương xứng, chúng tôi có quyền thu hồi tài khoản của bạn, mà không cần thông báo trước, bất kỳ khoản phí ngân hàng nào chúng tôi sẽ thu của bạn trước khi đóng tài khoản."
+msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account. The Company also reserves the right to reject the client's payouts without prior notice."
+msgstr ""
 
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
 msgstr "Một chương trình liên kết cạnh tranh và linh hoạt có thể thích nghi với nhu cầu của bạn"
@@ -1208,8 +1208,8 @@ msgstr "Tất cả những hoạt động liên kết phải được tiến hà
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Tất cả các cuộc gọi sẽ được ghi âm với mục đích kiểm tra và đào tạo"
 
-msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
-msgstr "Tất cả các đơn đặt hàng của khách hàng được xử lý trên cơ sở đầu tiên, trước hết mà không có bất kỳ sự can thiệp thủ công nào. Khi thực hiện lệnh của khách hàng, %1 sẽ tìm cách thực hiện giao dịch đặt hàng của khách hàng càng nhanh càng tốt theo giá được hướng dẫn (hoặc với mức giá tốt hơn, nếu có). Giới hạn phơi nhiễm được thiết lập dựa trên các thỏa thuận quản trị nội bộ và khung quản lý rủi ro, cả hai đều tương xứng với quy mô, tính chất, độ phức tạp và hồ sơ rủi ro của các hoạt động của Công ty. Các giới hạn phơi nhiễm này được sử dụng làm điểm chuẩn để phân biệt các đơn hàng được chấp nhận tự động từ các đơn đặt hàng sẽ được thực hiện trên thị trường với mức độ lấp đầy được chuyển cho khách hàng."
+msgid "All client orders are processed on a first in, first out basis without any manual intervention. If a client order exceeds the volume limit for the symbol, it is automatically rejected. When executing client orders, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
+msgstr ""
 
 msgid "All conditions and durations"
 msgstr "Tất cả các điều kiện và thời hạn"
@@ -3180,7 +3180,7 @@ msgid "Cryptocurrency"
 msgstr "Cryptocurrency"
 
 msgid "Cryptocurrency contract specifications"
-msgstr ""
+msgstr "Thông số hợp đồng Cryptocurrency"
 
 msgid "Cryptocurrency margin policy"
 msgstr "Chính sách ký quỹ Cryptocurrency"
@@ -3294,7 +3294,7 @@ msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bull
 msgstr "Chỉ số đặt lại hàng ngày - chỉ số đặt lại hàng ngày mô phỏng thị trường với một xu hướng biến động liên tục tăng và giảm. Các chỉ số thị trường Bull và Bear bắt đầu từ 00:00 GMT mỗi ngày, mô phỏng theo các thị trường tăng giảm tương ứng."
 
 msgid "Daily deposit limit"
-msgstr ""
+msgstr "Giới hạn tiền gửi theo ngày"
 
 msgid "Daily limit on losses"
 msgstr "Giới hạn mức thua lỗ hàng ngày"
@@ -7139,7 +7139,7 @@ msgid "More than 3 years of experience in technical content creation"
 msgstr "Hơn 3 năm kinh nghiệm trong việc sáng tạo nội dung kỹ thuật"
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
-msgstr ""
+msgstr "Hầu hết các công ty môi giới thường tính phí một khoản hoa hồng cho mỗi thương mại mà bạn đặt. %1 hiện nay chi phí không có hoa hồng trên tất cả các loại tài khoản."
 
 msgid "Mother of Cities"
 msgstr "Mẹ của các thành phố"
@@ -9932,13 +9932,13 @@ msgid "Suspending the client's MT5 Real Account and refusing to execute any Orde
 msgstr "Đình chỉ tài khoản thực MT5 của khách hàng và từ chối thực hiện bất kỳ lệnh giao dịch nào với khách hàng đó"
 
 msgid "Swap scheme"
-msgstr ""
+msgstr "Tỷ lệ phí qua đêm"
 
 msgid "Swaps Long (per annum)"
-msgstr "Giao dịch hoán đổi dài hạn (mỗi năm)"
+msgstr "Phí qua đêm Mua (mỗi năm)"
 
 msgid "Swaps short (per annum)"
-msgstr "Giao dịch hoán đổi ngắn hạn (mỗi năm)"
+msgstr "Phí qua đêm Bán (mỗi năm)"
 
 msgid "Swiss franc vs Japanese yen"
 msgstr "Đồng franc Thụy Sĩ vs Yên Nhật"
@@ -10408,8 +10408,8 @@ msgstr "Công ty giữ vốn của khách hàng trong các tài khoản ng
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr "Công ty là một thực thể pháp lý độc lập và không được liên kết với sàn giao dịch MT5. MT5 không thuộc sở hữu, quản lý hoặc điều hành bởi Công ty. Do đó, Công ty không cung cấp bất cứ bảo hành liên quan đến bất kỳ sản phẩm hoặc dịch vụ MT5 đã không được kiểm tra hoặc xác nhận bất kỳ kết quả hiệu suất có thể được trình bày và/hoặc được mô tả trên trang web này liên quan đến MT5."
 
-msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
-msgstr "Công Ty được cấp phép kinh doanh các công cụ phái sinh trên tài khoản của chính mình. Các đơn đặt hàng của khách hàng sẽ được Công Ty thực hiện và Công Ty sẽ luôn là địa điểm thực hiện duy nhất của khách hàng đối với tất cả các giao dịch mà khách hàng thực hiện binary options. Điều này có nghĩa là Công Ty sẽ luôn đóng vai trò là đối tác của khách hàng, hoặc đối tác của đầu bên kia giao dịch của khách hàng. Khách hàng cần lưu ý rằng họ phải chịu rủi ro cao hơn vì tất cả các hợp đồng Các lựa chọn nhị Phân được giao dịch trên thị trường phi tập trung (OTC), đối lập với các giao dịch theo quy định. Phần này của chính sách sẽ phác thảo cách Công Ty sẽ tuân thủ các nghĩa vụ thực thi tốt nhất của mình."
+msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be accepted only if the orders are within the client’s account limit. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
+msgstr ""
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
 msgstr "Công ty không phải là trách nhiệm đối với tổn thất hoặc thiệt hại của bất kỳ loại nào phát sinh do hậu quả của thông tin hoặc mức giá được công bố trên %1 API, hoặc bất kỳ lỗi hoặc thiếu sót của %1 API."
@@ -11094,7 +11094,7 @@ msgid "The client is asked to note that weekend quotes are ignored for the purpo
 msgstr "Khách hàng nên lưu ý rằng giá niêm yết cuối tuần sẽ bị bỏ qua với mục đích quyết toán hợp đồng. Vào cuối tuần, thị trường ngoại hối thi thoảng vẫn đưa ra giá, tuy nhiên những giá này thường mang tính nhân tạo (đôi khi nhà giao dịch sẽ lợi dụng sự thanh khoản của thị trường vào cuối tuần để đẩy giá lên hoặc xuống). Để tránh quyết toán giá dựa trên giá nhân tạo, Công ty đưa ra chính sách không tính giá của cuối tuần cho giá trị quyết toán của hợp đồng (ngoại trừ Chỉ Số Tổng Hợp, được mở suốt cuối tuần)."
 
 msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr ""
+msgstr "Khách hàng không cư trú tại một số quốc gia bị hạn chế như Canada, Hồng Kông, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, Các tiểu vương quốc Ả Rập thống nhất, Hoa Kỳ hoặc bất kỳ quốc gia bị hạn chế nào được FATF xác định là có thiếu sót chiến lược."
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "Khách hàng không giao dịch bằng công cụ cơ bản thực tế, hoặc ngoại tệ thực tế; tất cả giao dịch chỉ được thanh toán bằng tiền mặt."
@@ -13014,7 +13014,7 @@ msgid "What is DNS"
 msgstr "DNS là gì"
 
 msgid "What is cryptocurrency trading"
-msgstr "Giao dịch Cryptocurrency là gì"
+msgstr "Giao dịch tiền điện tử là gì"
 
 msgid "What is forex trading"
 msgstr "Giao dịch ngoại hối là gì"
