@@ -27,8 +27,8 @@ const DerivBanner = ({ has_margin }) => {
                     </div>
                     <div className='multiplier_banner_text'>
                         <div>
-                            <h3>Synthetic indices AMPLIFIED</h3>
-                            <p>Try Multipliers on DTrader</p>
+                            <h3>{it.L('Synthetic indices AMPLIFIED')}</h3>
+                            <p>{it.L('Try Multipliers on DTrader')}</p>
                         </div>
                         <div>
                             <div className='multiplier_banner_btn'>{it.L('Try now')}</div>
@@ -37,7 +37,8 @@ const DerivBanner = ({ has_margin }) => {
                 </a>
                 <div className='deriv_banner_close' />
             </div>
-        </React.Fragment>);
+        </React.Fragment>
+    );
 };
 
 DerivBanner.propTypes = {
