@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2020-10-19 02:26\n"
+"PO-Revision-Date: 2020-10-28 03:57\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -598,6 +598,9 @@ msgstr "3,50"
 msgid "30%"
 msgstr "30%"
 
+msgid "30-day deposit limit"
+msgstr "Batas deposit 30 hari"
+
 msgid "30-day limit on losses"
 msgstr "Batas kerugian per 30 hari"
 
@@ -624,6 +627,9 @@ msgstr "Kode 6 digit"
 
 msgid "60 – 79.999%"
 msgstr "60 – 79,999%"
+
+msgid "7-day deposit limit"
+msgstr "Batas deposit 7 hari"
 
 msgid "7-day limit on losses"
 msgstr "Batas kerugian per 7 hari"
@@ -706,8 +712,8 @@ msgstr "Pemahaman yang jelas tentang model OSI, TCP/IP, dan konsep pertahanan ja
 msgid "A client may only open an account on this site on the following conditions:"
 msgstr "Klien hanya dapat mendaftar akun pada situs ini dengan ketentuan sebagai berikut:"
 
-msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account."
-msgstr "Klien tidak dapat menggunakan akun klien sebagai fasilitas perbankan, dan deposit hanya dapat dilakukan dengan maksud untuk menggunakan dana pembelian kontrak. Perusahaan adalah bukan lembaga keuangan, dan klien tidak akan menerima bunga diatas dana yang didepositkan. Jika klien melakukan deposit dan penarikan berulang tanpa melakukan pembelian kontrak yang sepadan, Perusahaan berhak untuk mengenakan biaya penarikan tanpa pemberitahuan terlebih dahulu sebelum melakukan penutupan akun."
+msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account. The Company also reserves the right to reject the client's payouts without prior notice."
+msgstr ""
 
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
 msgstr "Program afiliasi yang kompetitif dan fleksibel yang dapat disesuaikan dengan kebutuhan Anda"
@@ -1094,7 +1100,7 @@ msgid "Administer overall payment systems, including monitoring and reporting cl
 msgstr "Mengadministrasi sistem pembayaran secara keseluruhan, termasuk memonitor dan melaporkan aktifitas klien serta tingkat keberhasilan"
 
 msgid "Advanced"
-msgstr "Advanced"
+msgstr "Lanjutan"
 
 msgid "Advanced binary options trading interface"
 msgstr "Tampilan trading opsi binary tingkat lanjut"
@@ -1201,8 +1207,8 @@ msgstr "Semua kegiatan afiliasi harus dilakukan secara profesional dan tepat. Af
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Semua percakapan direkam untuk keperluan pelatihan dan pemantauan"
 
-msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
-msgstr "Semua order klien akan di proses satu per satu terlebihdahulu, tanpa intervensi manual. Saat memproses order klien, %1 akan memproses order klien secepatnya berdasarkan harga yang telah di instruksikan (atau pada harga yang lebih baik jika tersedia). Exposure limit dihitung berdasarkan pengaturan tata kelola internal dan kerangka kerja manajemen risiko, yang keduanya sepadan dengan ukuran, sifat, kompleksitas dan profil risiko kegiatan Perusahaan. Exposure limit ini juga digunakan sebagai tolok ukur untuk membedakan order yang diterima langsung dari order yang akan diproses pada pasar berdasarkan level yang dilanjutkan kepada klien."
+msgid "All client orders are processed on a first in, first out basis without any manual intervention. If a client order exceeds the volume limit for the symbol, it is automatically rejected. When executing client orders, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
+msgstr ""
 
 msgid "All conditions and durations"
 msgstr "Semua kondisi pasar dan durasi"
@@ -2603,7 +2609,7 @@ msgid "Clients should read these ST&Cs carefully as well as the Summary order ex
 msgstr "Klien harus membaca ST&C ini dengan saksama termasuk Ringkasan kebijakan eksekusi order dan Ringkasan kebijakan konflik, rincian Kontrak yang berlaku bersama dengan pemberitahuan pengungkapan Risiko dan dokumen lain yang telah disediakan DIEL atau informasi mendatang yang disediakan untuk klien."
 
 msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling %1. It is not enough to send an email."
-msgstr ""
+msgstr "Bagi Pelanggan yang tidak ingin memperbarui pengecualian diri dan ingin bertrading kembali, maka akan diberikan satu hari waktu tenggang sebelum dibenarkan untuk mengakses situs web. Mohon diketahui bahwa Anda harus menghubungi tim support kami dengan menelpon %1. Tidak cukup dengan hanya mengirim email saja."
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "Klien yang ingin mengecualikan diri harus menyadari bahwa periode pengecualian diri adalah minimal enam bulan hingga lima tahun, secara langsung tanpa masa tenggang. Ketika periode pengecualian diri ditetapkan, sisa saldo akan dikembalikan kepada Klien. Pada akhir periode pengecualian diri, pengecualian diri akan tetap berlaku kecuali jika Klien melakukan permohonan untuk melakukan trading kembali."
@@ -2698,9 +2704,6 @@ msgstr "Struktur komisi"
 msgid "Commission"
 msgstr "Komisi"
 
-msgid "Commission and swap scheme"
-msgstr "Skema komisi dan swap"
-
 msgid "Commission on deposits"
 msgstr "Komisi pada deposit"
 
@@ -2709,9 +2712,6 @@ msgstr "Komisi pada penarikan"
 
 msgid "Commission per round trade"
 msgstr "Komisi per putaran trading"
-
-msgid "Commission per side trade"
-msgstr "Komisi per sisi trading"
 
 msgid "Commission rates"
 msgstr "Tarif komisi"
@@ -3178,8 +3178,8 @@ msgstr "Mata uang kripto**"
 msgid "Cryptocurrency"
 msgstr "Mata uang kripto"
 
-msgid "Cryptocurrency contract specifications and commission scheme"
-msgstr "Spesifikasi kontrak mata uang kripto dan skema komisi"
+msgid "Cryptocurrency contract specifications"
+msgstr "Spesifikasi kontrak mata uang kripto"
 
 msgid "Cryptocurrency margin policy"
 msgstr "Kebijakan margin mata uang kripto"
@@ -3291,6 +3291,9 @@ msgstr "DIEL tidak berkewajiban untuk menyediakan hal-hal berikut ini kepada kli
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "Indeks Reset Harian - Indeks Reset Harian mereplikasi pasar dengan tren bullish dan bearish dengan volatilitas yang konstan. Indeks Pasar Bull dan Pasar Bear mulai pukul 00:00 GMT tiap harinya, mereplikasi masing-masing pasar bullish dan bearish."
+
+msgid "Daily deposit limit"
+msgstr "Batas deposit harian"
 
 msgid "Daily limit on losses"
 msgstr "Batas kerugian per hari"
@@ -3897,9 +3900,6 @@ msgstr "Setiap kali Anda membuka posisi pada pasangan mata uang kripto, Anda dap
 
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Setiap kali Anda membuka posisi pada simbol indeks, Anda dapat mulai dengan volume transkasi minimal seperti yang ditunjukkan pada tabel diatas."
-
-msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
-msgstr "Setiap kali Anda mengirim order kepada kami, Anda dikenakan komisi, yang sama dengan harga aset dikalikan dengan persentase yang terlihat pada tabel di atas."
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
 msgstr "Setiap transfer dikenakan biaya transfer %1 atau biaya minimum sebesar %2, mana yang lebih tinggi."
@@ -5248,9 +5248,6 @@ msgstr "Cara menutup posisi"
 msgid "How to manage your funds"
 msgstr "Bagaimana mengelola dana Anda"
 
-msgid "How to read the commission and swap scheme table"
-msgstr "Cara membaca tabel komisi dan skema swap"
-
 msgid "How to read the contract specifications table"
 msgstr "Cara membaca tabel spesifikasi kontrak"
 
@@ -5516,7 +5513,7 @@ msgid "If the client wishes to withdraw funds from their MT5 Real Account and/or
 msgstr "Jika klien ingin menarik dana dari Akun Riil MT5 mereka dan/atau menutup Akun Riil MT5 mereka, klien dapat memberi tahu Perusahaan dengan menghubungi helpdesk di %1. Akun Riil MT5 klien dapat ditutup jika klien tidak memiliki Open Posisi dan semua jumlah yang harus dibayar Perusahaan telah diselesaikan."
 
 msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. %2If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling %3.%4 The Company will investigate each inquiry and provide a final response in the shortest time possible."
-msgstr ""
+msgstr "Jika klien ingin mengajukan keluhan terkait layanan Perusahaan, klien dapat menghubungi Perusahaan di %1, memberikan detail yang relevan terkait dengan keluhan klien. %2Jika Anda terdaftar di Deriv (Europe) Limited, Anda juga dapat mengajukan keluhan dengan menghubungi %3.%4 Perusahaan akan menyelidiki setiap pertanyaan dan memberikan respons akhir dalam waktu sesingkat mungkin."
 
 msgid "If the client's %1 account is closed, their MT5 Real Account will be automatically closed as well."
 msgstr "Jika akun %1 klien ditutup, Akun Riil MT5 mereka juga akan ditutup secara otomatis."
@@ -5548,9 +5545,6 @@ msgstr "Jika kami meyakini bahwa informasi pajak Anda tidak lengkap, kami akan m
 
 msgid "If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to %1."
 msgstr "Jika Anda Jika Anda penduduk Inggris, untuk mengecualikan diri dari semua perusahaan trading online yang berlisensi di Britania Raya, kunjungi %1."
-
-msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
-msgstr "Jika Anda mempertimbangkan pengecualian diri, Anda mungkin ingin mendaftar pada GAMESTOP."
 
 msgid "If you are in the IOM, your limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
 msgstr "Jika Anda berada di negara IOM, batasan Anda hanya dapat dihapus atau dinaikan setelah tanggal batasan berakhir. %1Hubungi kami%2 untuk menghapus atau merubah batasan Anda."
@@ -6957,12 +6951,6 @@ msgstr "Jumlah maksimal total hasil pada open pisition"
 msgid "Maximum daily turnover"
 msgstr "Maksimum turnover harian"
 
-msgid "Maximum deposit limit"
-msgstr "Batas maksimum deposit"
-
-msgid "Maximum deposit limit expiry"
-msgstr "Batas waktu maksimum deposit"
-
 msgid "Maximum multiplier of 1000."
 msgstr "Maksimum kelipatan 1000."
 
@@ -7149,8 +7137,8 @@ msgstr "Lebih khusus lagi, ketika Perusahaan melakukan trading Opsi Binary denga
 msgid "More than 3 years of experience in technical content creation"
 msgstr "Memiliki pengalaman lebih dari 3 tahun dalam pembuatan konten teknis"
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
-msgstr "Kebanyakan broker biasanya mengenakan komisi untuk tiap trade yang Anda tempatkan. %1 saat ini tidak mengenakan biaya komisi apapun di semua jenis akun, kecuali mata uang crypto."
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
+msgstr "Kebanyakan broker biasanya mengenakan komisi untuk tiap trade yang Anda tempatkan. %1 saat ini tidak mengenakan biaya komisi apapun di semua jenis akun."
 
 msgid "Mother of Cities"
 msgstr "Ibu dari berbagai Kota"
@@ -7373,9 +7361,6 @@ msgstr "Tidak ada suap"
 
 msgid "No commission"
 msgstr "Tanpa komisi"
-
-msgid "No commission (excluding cryptocurrencies)"
-msgstr "Tanpa komisi (tidak termasuk mata uang kripto)"
 
 msgid "No delay, neglect, or forbearance on the part of either party in enforcing any term or condition of this Agreement against the other party shall either be, or be deemed to be, a waiver or in any way prejudice any right of that party under this Agreement."
 msgstr "Tidak ada penundaan, pengabaian, atau kesabaran dari pihak salah satu pihak dalam menegakkan syarat atau ketentuan Perjanjian ini terhadap pihak lain baik akan, atau dianggap, pengabaian atau dengan cara apa pun mengurangi hak pihak mana pun di bawah Perjanjian ini."
@@ -9945,6 +9930,9 @@ msgstr "Menangguhkan trading pada instrumen yang terlibat"
 msgid "Suspending the client's MT5 Real Account and refusing to execute any Orders to enter into further transactions with the client"
 msgstr "Menangguhkan Akun Riil MT5 klien dan menolak untuk melakukan Order apa pun untuk melakukan transaksi lebih lanjut dengan klien"
 
+msgid "Swap scheme"
+msgstr "Skema swap"
+
 msgid "Swaps Long (per annum)"
 msgstr "Swap beli (per tahun)"
 
@@ -10419,8 +10407,8 @@ msgstr "Perusahaan menyimpan dana pelanggan pada rekening bank terpisah dari rek
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr "Perusahaan adalah badan hukum independen dan tidak berafiliasi dengan platform trading MT5. MT5 tidak dimiliki, dikendalikan, atau dioperasikan oleh Perusahaan. Oleh karena itu, Perusahaan tidak memberikan jaminan apa pun terkait produk atau layanan MT5 apa pun dan belum meninjau atau memverifikasi hasil kinerja apa pun yang dapat disajikan dan/atau dijelaskan pada situs web ini sehubungan dengan MT5."
 
-msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
-msgstr "Perusahaan memiliki lisensi untuk berurusan dengan derivatif pada akunnya sendiri. Order klien akan dieksekusi oleh Perusahaan dan Perusahaan akan selalu menjadi tempat eksekusi tunggal klien untuk semua trading yang dilakukan klien pada opsi binary. Ini berarti bahwa Perusahaan akan selalu bertindak sebagai rekanan klien, di mana ia mengambil sisi lain dari trading klien. Klien harus menyadari bahwa mereka terekspos pada risiko yang lebih tinggi karena semua kontrak Opsi Binary adalah diperdagangkan pada pasar bebas (OTC), sebagai lawan dari pertukaran yang diatur. Bagian kebijakan ini akan menguraikan bagaimana Perusahaan bermaksud untuk mematuhi kewajiban pelaksanaan terbaiknya."
+msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be accepted only if the orders are within the client’s account limit. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
+msgstr ""
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
 msgstr "Perusahaan tidak bertanggung jawab atas kehilangan atau kerusakan apapun apapun yang timbul sebagai akibat dari informasi atau harga diterbitkan pada atau dilengkapi melalui API %1, atau kesalahan atau kelalaian dari API %1."
@@ -11104,8 +11092,8 @@ msgstr "Klien juga diingatkan bahwa koneksi internet mereka dapat memengaruhi ha
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends)."
 msgstr "Klien diminta untuk mengetahui bahwa penawaran akhir pekan adalah tidak diperhitungkan dalam penyelesaian kontrak. Hal tersebut berhubung selama akhir pekan, pasar valas terkadang menghasilkan harga; namun, harga tersebut seringkali dibuat-buat (trader terkadang mengambil keuntungan dari likuidasi pasar selama akhir pekan untuk mendorong harga naik atau turun). Untuk menghindari penetapan harga berdasarkan harga artifisial tersebut, maka kebijakan Perusahaan adalah untuk tidak memperhitungkan kutipan akhir pekan dalam penyelesaian kontrak (kecuali untuk Indeks Sintetis, berhubung indeks tersebut tersedia selama akhir pekan)."
 
-msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
-msgstr "Klien tidak menetap di negara terbatas seperti Kanada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Uni Emirat Arab, AS, atau negara terbatas lainnya yang telah diidentifikasi oleh FATF sebagai memiliki kekurangan strategis."
+msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgstr "Klien tidak menetap di negara terbatas seperti Kanada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, Uni Emirat Arab, AS, atau negara terbatas lainnya yang telah diidentifikasi oleh FATF sebagai memiliki kekurangan strategis."
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
 msgstr "Klien tidak bertrading pada Instrumen Dasar sebenarnya, atau mata uang asing yang sebenarnya; semua Transaksi diselesaikan secara tunai saja."
@@ -12198,9 +12186,6 @@ msgstr "Waktu Trading"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Batasan Penarikan"
-
-msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "Trading dan deposit telah dinonaktifkan pada akun Anda. Silahkan %1hubungi customer support%2 untuk bantuan."
 
 msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Trading dan penarikan telah dinonaktifkan pada akun Anda. Silakan %1hubungi customer support%2 untuk bantuan lebih lanjut."
