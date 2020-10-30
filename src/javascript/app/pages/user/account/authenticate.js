@@ -957,7 +957,7 @@ const Authenticate = (() => {
             $('#missing_personal_fields').html(error_msgs);
         }
 
-        const { identity, document } = authentication_status;
+        const { identity, needs_verification, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
         onfido_unsupported = !identity.services.onfido.is_country_supported;
@@ -970,7 +970,7 @@ const Authenticate = (() => {
 
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
-        } else if (!identity.further_resubmissions_allowed) {
+        } else if (!needs_verification.includes('identity')) {
             // if POI is verified and POA is not verified, redirect to POA tab
             if (identity.status === 'verified' && document.status !== 'verified') {
                 Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
@@ -1011,7 +1011,7 @@ const Authenticate = (() => {
                 initOnfido(service_token_response.token, documents_supported);
             }
         }
-        if (!document.further_resubmissions_allowed) {
+        if (!needs_verification.includes('document')) {
             switch (document.status) {
                 case 'none': {
                     init();
@@ -1040,7 +1040,7 @@ const Authenticate = (() => {
             init();
             $('#not_authenticated').setVisibility(1);
         }
-        
+
         $('#authentication_loading').setVisibility(0);
         TabSelector.updateTabDisplay();
     };
