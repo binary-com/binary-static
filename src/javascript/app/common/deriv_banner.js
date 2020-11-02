@@ -7,7 +7,7 @@ const banner_types = {
 };
 
 const DerivBanner = (() => {
-    let el_rebranding_banner_countainer,
+    let el_rebranding_banner_container,
         el_multiplier_banner_container,
         el_banner_to_show,
         el_close_button,
@@ -17,7 +17,7 @@ const DerivBanner = (() => {
         const is_deriv_banner_dismissed = localStorage.getItem('is_deriv_banner_dismissed');
 
         if (!is_deriv_banner_dismissed) {
-            el_rebranding_banner_countainer = getElementById('deriv_banner_container');
+            el_rebranding_banner_container = getElementById('deriv_banner_container');
             el_multiplier_banner_container = getElementById('multiplier_banner_container');
             deriv_banner_type = localStorage.getItem('deriv_banner_type');
 
@@ -34,7 +34,7 @@ const DerivBanner = (() => {
 
     const showBanner = () => {
         if (deriv_banner_type === banner_types.rebranding) {
-            el_banner_to_show = el_rebranding_banner_countainer;
+            el_banner_to_show = el_rebranding_banner_container;
         } else {
             el_banner_to_show = el_multiplier_banner_container;
         }
@@ -46,18 +46,15 @@ const DerivBanner = (() => {
             return;
         }
 
-        let banner_type = '';
+        const banner_type = Math.random() < 0.5 ? banner_types.rebranding : banner_types.multiplier;
 
-        if (Math.random() < 0.5) {
-            banner_type = banner_types.rebranding;
-        } else {
-            banner_type = banner_types.multiplier;
-        }
         localStorage.setItem('deriv_banner_type', banner_type);
     };
 
     const onUnload = () => {
-        el_close_button.removeEventListener('click', onClose);
+        if (el_close_button) {
+            el_close_button.removeEventListener('click', onClose);
+        }
     };
 
     return {
