@@ -82,7 +82,7 @@ const SelfExclusion = () => (
                 <div id='self_exclusion_warning' data-show='iom, malta' className='gr-row gr-padding-10 invisible'>
                     <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m'>
                         <div className='notice-msg gr-child gr-parent'>
-                            <p>{it.L('Self-exclusion on this website is applicable to your account only as accessed on [_1] or deriv.com and does not apply to any other website.', it.website_name)}</p>
+                            <p>{it.L('Self-exclusion on this website is applicable to your account only as accessed on [_1] or deriv.com and does not apply to any other website.', (it.website_name).toLowerCase())}</p>
                             <p data-show='malta'>{it.L('If you live in the United Kingdom and are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                             <p data-show='iom'>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                             <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain. To find out more and to sign up, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk/">www.gamstop.co.uk</a>')}</p>
