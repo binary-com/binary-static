@@ -15,9 +15,10 @@ const getHashValue     = require('../../../../../_common/url').getHashValue;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
-    const form_id           = '#frmPersonalDetails';
-    const real_acc_elements = '.RealAcc';
-    const name_fields       = ['salutation', 'first_name', 'last_name'];
+    const form_id                = '#frmPersonalDetails';
+    const real_acc_elements      = '.RealAcc';
+    const real_acc_auth_elements = '.RealAccAuth';
+    const name_fields            = ['salutation', 'first_name', 'last_name'];
 
     let is_for_new_account = false;
 
@@ -165,7 +166,9 @@ const PersonalDetails = (() => {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
             CommonFunctions.getElementById('tax_information_form').setVisibility(shouldShowTax(get_settings));
-            if (!is_fully_authenticated) {
+            if (is_fully_authenticated) {
+                $(real_acc_auth_elements).setVisibility(1);
+            } else {
                 displayChangeableFields(data);
             }
         }

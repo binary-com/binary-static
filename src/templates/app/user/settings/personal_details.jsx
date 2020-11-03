@@ -60,7 +60,7 @@ const PersonalDetails = () => (
                 </div>
             </Fieldset>
 
-            <Fieldset id='tax_information_form' className='invisible RealAcc' legend={it.L('Tax information')}>
+            <Fieldset id='tax_information_form' className='invisible' legend={it.L('Tax information')}>
                 <TaxInformationForm />
             </Fieldset>
 
@@ -80,7 +80,7 @@ const PersonalDetails = () => (
             <SubmitButton is_centered id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} className='gr-6 gr-centered' />
         </form>
 
-        <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
+        <p className='required invisible RealAccAuth rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
     </React.Fragment>
 );
 
