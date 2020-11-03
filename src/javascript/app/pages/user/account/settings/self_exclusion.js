@@ -20,6 +20,7 @@ const SelfExclusion = (() => {
         fields,
         self_exclusion_data,
         set_30day_turnover,
+        max_limits,
         currency,
         is_svg_client,
         is_mlt,
@@ -30,7 +31,9 @@ const SelfExclusion = (() => {
     const timeout_date_id         = '#timeout_until_date';
     const timeout_time_id         = '#timeout_until_time';
     const exclude_until_id        = '#exclude_until';
+    const max_balance_id          = '#max_balance';
     const max_30day_turnover_id   = '#max_30day_turnover';
+    const max_open_bets_id        = '#max_open_bets';
     const error_class             = 'errorfield';
     const TURNOVER_LIMIT          = 999999999999999; // 15 digits
 
@@ -44,6 +47,8 @@ const SelfExclusion = (() => {
         $form.find('input').each(function () {
             fields[this.name] = '';
         });
+
+        max_limits = {};
 
         currency = Client.get('currency');
 
@@ -75,6 +80,12 @@ const SelfExclusion = (() => {
                 return;
             }
             self_exclusion_data = response.get_self_exclusion;
+            BinarySocket.send({ get_limits: 1 }).then((data) => {
+                max_limits = {
+                    ...(data.get_limits.account_balance && { account_balance: data.get_limits.account_balance }),
+                    ...(data.get_limits.open_positions && { open_positions: data.get_limits.open_positions }),
+                };
+            });
             BinarySocket.send({ get_account_status: 1 }).then((data) => {
                 const has_to_set_30day_turnover = !has_exclude_until && /max_turnover_limit_not_set/.test(data.get_account_status.status);
                 if (typeof set_30day_turnover === 'undefined') {
@@ -160,9 +171,13 @@ const SelfExclusion = (() => {
             if (!is_svg_client) {
                 if (/max_open_bets/.test(id)){
                     options.min = 1;
+                    options.max = max_limits.open_positions;
+                    $(max_open_bets_id).attr('maxlength', options.max.toString().length);
                 }
                 if (/max_balance/.test(id)) {
                     options.min = 0.01;
+                    options.max = max_limits.account_balance;
+                    $(max_balance_id).attr('maxlength', parseInt(options.max).toString().length + decimal_places + 1); // Add 1 to allow to enter a dot
                 }
             }
             if (!/session_duration_limit|max_open_bets/.test(id)) {
