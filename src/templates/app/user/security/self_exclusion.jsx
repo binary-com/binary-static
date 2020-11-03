@@ -82,10 +82,14 @@ const SelfExclusion = () => (
                 <div id='self_exclusion_warning' data-show='iom, malta' className='gr-row gr-padding-10 invisible'>
                     <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m'>
                         <div className='notice-msg gr-child gr-parent'>
-                            <p>{it.L('Self-exclusion on this website only applies to your [_1] account and does not include other companies or websites.', it.website_name)}</p>
-                            <p data-show='malta'>{it.L('If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
-                            <p data-show='iom'>{it.L('To self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
-                            <p>{it.L('For more information and assistance to counselling and support services, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.begambleaware.org/">begambleaware.org</a>')}</p>
+                            <p>{it.L('Self-exclusion on this website is applicable to your account only as accessed on [_1] or deriv.com and does not apply to any other website.', (it.website_name).toLowerCase())}</p>
+                            <p data-show='malta'>{it.L('If you live in the United Kingdom and are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
+                            <p data-show='iom'>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
+                            <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain. To find out more and to sign up, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk/">www.gamstop.co.uk</a>')}</p>
+                            <p>{it.L('[_1]Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. [_2]If you wish to resume trading after your self-exclusion period is over, please make your request by calling [_3]. Requests by chat or email shall not be entertained.',
+                                '<span data-show="malta">', '</span>', '<a href=\'call:+447723580049\'>+447723580049</a>')}
+                            </p>
+                            <p>{it.L('For more information about counselling and support services, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.begambleaware.org/">begambleaware.org</a>')}</p>
                         </div>
                     </div>
                 </div>
