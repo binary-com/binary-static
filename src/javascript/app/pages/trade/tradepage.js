@@ -11,6 +11,7 @@ const ViewPopup         = require('../user/view_popup/view_popup');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
+const DerivBanner       = require('../../common/deriv_banner');
 const Guide             = require('../../common/guide');
 const TopUpVirtualPopup = require('../../pages/user/account/top_up_virtual/pop_up');
 const State             = require('../../../_common/storage').State;
@@ -20,6 +21,8 @@ const TradePage = (() => {
     State.remove('is_trading');
 
     const onLoad = () => {
+        DerivBanner.onLoad();
+
         BinarySocket.wait('authorize').then(() => {
             init();
         });
@@ -96,6 +99,7 @@ const TradePage = (() => {
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
         TradingAnalysis.onUnload();
+        DerivBanner.onUnload();
     };
 
     const onDisconnect = () => {
