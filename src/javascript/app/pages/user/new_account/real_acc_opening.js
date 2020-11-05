@@ -11,9 +11,8 @@ const RealAccOpening = (() => {
 
     const onLoad = () => {
         if (Client.get('residence')) {
-            if (AccountOpening.redirectAccount()) return;
-
             BinarySocket.wait('get_settings', 'landing_company', 'get_account_status').then(() => {
+                if (AccountOpening.redirectAccount()) return;
                 const is_unwelcome_uk = State.getResponse('get_account_status.status').some(status => status === 'unwelcome') && (/gb/.test(Client.get('residence')));
 
                 if (State.getResponse('authorize.upgradeable_landing_companies').some(item => item === 'svg')) {
