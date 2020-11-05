@@ -28,6 +28,9 @@
     .ui-tabs-anchor:focus {
         outline: none;
     }
+    .ui-tabs-nav li {
+        margin-top: 5px;
+    }
 }
 
 #asset_index_wrapper {
