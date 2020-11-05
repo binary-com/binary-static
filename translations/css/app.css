@@ -581,6 +581,9 @@ tbody#instruments > tr > td {
 #trading-times .ui-tabs-anchor:focus, #asset-index .ui-tabs-anchor:focus {
   outline: none; }
 
+#trading-times .ui-tabs-nav li, #asset-index .ui-tabs-nav li {
+  margin-top: 5px; }
+
 #asset_index_wrapper {
   max-width: 1200px; }
   #asset_index_wrapper #asset-index.has-tabs.ui-tabs .ui-tabs-panel {
