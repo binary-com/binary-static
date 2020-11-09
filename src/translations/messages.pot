@@ -436,6 +436,9 @@ msgstr ""
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
 msgstr ""
 
+msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
+msgstr ""
+
 msgid "%1Return to trading page%2"
 msgstr ""
 
@@ -500,6 +503,9 @@ msgid "0-1 year"
 msgstr ""
 
 msgid "0-5 transactions in the past 12 months"
+msgstr ""
+
+msgid "0.2%"
 msgstr ""
 
 msgid "0.20"
@@ -580,6 +586,9 @@ msgstr ""
 msgid "30%"
 msgstr ""
 
+msgid "30-day deposit limit"
+msgstr ""
+
 msgid "30-day limit on losses"
 msgstr ""
 
@@ -605,6 +614,9 @@ msgid "6-digit code"
 msgstr ""
 
 msgid "60 – 79.999%"
+msgstr ""
+
+msgid "7-day deposit limit"
 msgstr ""
 
 msgid "7-day limit on losses"
@@ -688,7 +700,7 @@ msgstr ""
 msgid "A client may only open an account on this site on the following conditions:"
 msgstr ""
 
-msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account."
+msgid "A client should not use the client's account as a banking facility, and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, and the client will not receive interest on deposits. Should a client make repeated deposits and withdrawals without placing commensurate contracts, the Company reserves the right to pass on to the client's account, without prior notice, any bank charges the Company has incurred before closing the account. The Company also reserves the right to reject the client's payouts without prior notice."
 msgstr ""
 
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
@@ -1183,7 +1195,7 @@ msgstr ""
 msgid "All calls are recorded for training and monitoring purposes"
 msgstr ""
 
-msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
+msgid "All client orders are processed on a first in, first out basis without any manual intervention. If a client order exceeds the volume limit for the symbol, it is automatically rejected. When executing client orders, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
 msgstr ""
 
 msgid "All conditions and durations"
@@ -1235,6 +1247,9 @@ msgid "All products traded on Margin carry a high degree of risk and can result 
 msgstr ""
 
 msgid "All reasonable steps are taken to comply with the law or any rules applicable to the jurisdiction in which the Agent resides."
+msgstr ""
+
+msgid "All sales of trades are final. The Company does not refund the price charged for entering a trade if the trade is executed."
 msgstr ""
 
 msgid "All software is to be used at the client's own risk. The Company will not be liable for any financial losses incurred using a third-party software. The Company is not associated with the development of the automated trading software or the Expert Advisors because they are exclusively developed and supported by third parties and not by the Company. The Company does not receive any form of financial and/or other benefits from permitting Expert Advisors to be used."
@@ -1421,6 +1436,9 @@ msgid "Any other information as requested by the Company"
 msgstr ""
 
 msgid "Any pending funds in your MT5 account will be transferred to your Binary account."
+msgstr ""
+
+msgid "Any request for a deposit refund for active accounts will be automatically rejected. If the Company has closed, blocked, or suspended the client’s account (see Section J. Fraud and money laundering), the client may request a refund of the client’s deposit. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. "
 msgstr ""
 
 msgid "Any restriction to its clients from purchasing any contracts during certain hours"
@@ -1796,6 +1814,9 @@ msgid "Average"
 msgstr ""
 
 msgid "Avoid the need to have an e-wallet"
+msgstr ""
+
+msgid "Avoiding financial transactions that might reveal valuable passwords or personal information such as credit card numbers"
 msgstr ""
 
 msgid "Award-winning online trading platform"
@@ -2575,7 +2596,7 @@ msgstr ""
 msgid "Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that DIEL has supplied or in the future supplies to clients."
 msgstr ""
 
-msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient."
+msgid "Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling %1. It is not enough to send an email."
 msgstr ""
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
@@ -2671,9 +2692,6 @@ msgstr ""
 msgid "Commission"
 msgstr ""
 
-msgid "Commission and swap scheme"
-msgstr ""
-
 msgid "Commission on deposits"
 msgstr ""
 
@@ -2681,9 +2699,6 @@ msgid "Commission on withdrawals"
 msgstr ""
 
 msgid "Commission per round trade"
-msgstr ""
-
-msgid "Commission per side trade"
 msgstr ""
 
 msgid "Commission rates"
@@ -3136,7 +3151,7 @@ msgstr ""
 msgid "Cryptocurrencies"
 msgstr ""
 
-msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts."
+msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts and 20 USD on financial STP accounts."
 msgstr ""
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
@@ -3151,7 +3166,7 @@ msgstr ""
 msgid "Cryptocurrency"
 msgstr ""
 
-msgid "Cryptocurrency contract specifications and commission scheme"
+msgid "Cryptocurrency contract specifications"
 msgstr ""
 
 msgid "Cryptocurrency margin policy"
@@ -3263,6 +3278,9 @@ msgid "DIEL shall not be obliged to provide professional clients with the follow
 msgstr ""
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
+msgstr ""
+
+msgid "Daily deposit limit"
 msgstr ""
 
 msgid "Daily limit on losses"
@@ -3463,13 +3481,13 @@ msgstr ""
 msgid "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
 msgstr ""
 
-msgid "Deriv (MX) Limited"
-msgstr ""
-
-msgid "Deriv (MX) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - %1view licence%2 and for UK clients by the UK Gambling Commission - %3view licence%2."
+msgid "Deriv (MX) Ltd"
 msgstr ""
 
 msgid "Deriv (MX) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
+msgstr ""
+
+msgid "Deriv (MX) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - %1view licence%2 and for UK clients by the UK Gambling Commission - %3view licence%2."
 msgstr ""
 
 msgid "Deriv (MX) Ltd."
@@ -3869,9 +3887,6 @@ msgid "Each time you open a position on a cryptocurrency pair, you can start wit
 msgstr ""
 
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
-msgstr ""
-
-msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
 msgstr ""
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
@@ -4738,7 +4753,10 @@ msgstr ""
 msgid "For information about forex leverage, refer to our %1Margin Policy%2."
 msgstr ""
 
-msgid "For more information and assistance to counselling and support services, please visit %1."
+msgid "For more information about counselling and support services, please visit %1."
+msgstr ""
+
+msgid "For more information, please visit %1."
 msgstr ""
 
 msgid "For payments-related queries:"
@@ -4859,6 +4877,9 @@ msgid "G. Regulatory provisions"
 msgstr ""
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
+msgstr ""
+
+msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain. To find out more and to sign up, please visit %1."
 msgstr ""
 
 msgid "GBE Brokers"
@@ -5218,9 +5239,6 @@ msgstr ""
 msgid "How to manage your funds"
 msgstr ""
 
-msgid "How to read the commission and swap scheme table"
-msgstr ""
-
 msgid "How to read the contract specifications table"
 msgstr ""
 
@@ -5371,6 +5389,9 @@ msgstr ""
 msgid "If DIEL decides to introduce a new trading platform, it shall provide the client with a relevant notice within 30 days before it introduces the new trading platform or the additional trading platform. In such a notice, DIEL will outline information including, but not limited to, features and operations of the new trading platform. Thus, using its backup database on the MT5 trading platform, DIEL shall integrate all data to the new trading platform, including but not limited to open trades, historical trades/data, and accounts."
 msgstr ""
 
+msgid "If a trade becomes unavailable after the transaction is made but before the trade is executed, the client may request a refund of the charged price. The Company reserves the right to accept or reject the client’s request after investigating the client’s claim. If technical problems prevent the execution of a trade, for example, if a disruption occurs in the data feeds that the Company cannot readily fix, the Company reserves the right to refund or reverse the trade."
+msgstr ""
+
 msgid "If an actual or potential conflict appears in the course of your work, they must declare it to %1compliance@binary.com%2"
 msgstr ""
 
@@ -5482,7 +5503,7 @@ msgstr ""
 msgid "If the client wishes to withdraw funds from their MT5 Real Account and/or close their MT5 Real Account, the client may notify the Company by contacting the helpdesk at %1. The client's MT5 Real Account may be closed if the client does not have any Open Positions and all amounts due to the Company have been settled."
 msgstr ""
 
-msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. The Company will investigate each inquiry and provide a final response in the shortest time possible."
+msgid "If the client would like to file a complaint with regards to the Company's service, the client can contact the Company at %1, providing any relevant details relating to the client's complaint. %2If you are registered with Deriv (Europe) Limited, you can also place a complaint by calling %3.%4 The Company will investigate each inquiry and provide a final response in the shortest time possible."
 msgstr ""
 
 msgid "If the client's %1 account is closed, their MT5 Real Account will be automatically closed as well."
@@ -5512,10 +5533,10 @@ msgstr ""
 msgid "If we have reason to believe that your tax information is incomplete, we may contact you for clarification."
 msgstr ""
 
-msgid "If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to %1."
+msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr ""
 
-msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
+msgid "If you are in the IOM, your limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
 msgstr ""
 
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
@@ -5560,7 +5581,13 @@ msgstr ""
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr ""
 
+msgid "If you live in the United Kingdom and are considering self-exclusion, you may wish to register with GAMSTOP."
+msgstr ""
+
 msgid "If you need assistance feel free to contact our %1Customer Support%2."
+msgstr ""
+
+msgid "If you reside in the UK and are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr ""
 
 msgid "If you score well in the hackathon or talent test, we'll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we'll invite you for an interview with a member of our recruitment team."
@@ -5848,7 +5875,7 @@ msgstr ""
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr ""
 
-msgid "In the case of a Stop Order, the client acknowledges that the Company will endeavour to fill the Order at a price equal to the one that the client has specified. However, if the specified price is unavailable, a less favourable price may be quoted. In other words, the Order is executed either at the price equal to the specified one or worse than that (slippage). The execution of Stop Orders is guaranteed."
+msgid "In the case of a Stop Order, the client acknowledges that the Company will endeavour to fill the Order at a price equal to the one that the client has specified. However, if the price is unavailable, the next available price may be quoted. In other words, the Order is executed at either the price equal to the specified one or the next available price (slippage). The execution of Stop Orders is guaranteed."
 msgstr ""
 
 msgid "In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order."
@@ -6532,6 +6559,9 @@ msgstr ""
 msgid "Log out"
 msgstr ""
 
+msgid "Logging out of account-based websites at the end of the session"
+msgstr ""
+
 msgid "Login History"
 msgstr ""
 
@@ -6730,6 +6760,9 @@ msgstr ""
 msgid "Making decisions about who to employ and what salary and benefits to offer"
 msgstr ""
 
+msgid "Making sure of having effective and updated antivirus/antispyware software and firewall in place before using public WiFi"
+msgstr ""
+
 msgid "Malaysia"
 msgstr ""
 
@@ -6908,12 +6941,6 @@ msgid "Maximum aggregate payouts on open positions"
 msgstr ""
 
 msgid "Maximum daily turnover"
-msgstr ""
-
-msgid "Maximum deposit limit"
-msgstr ""
-
-msgid "Maximum deposit limit expiry"
 msgstr ""
 
 msgid "Maximum multiplier of 1000."
@@ -7102,7 +7129,7 @@ msgstr ""
 msgid "More than 3 years of experience in technical content creation"
 msgstr ""
 
-msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
+msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types."
 msgstr ""
 
 msgid "Mother of Cities"
@@ -7148,6 +7175,9 @@ msgid "Multiplier Down"
 msgstr ""
 
 msgid "Multiplier Up"
+msgstr ""
+
+msgid "Multipliers"
 msgstr ""
 
 msgid "Must be a clear, colour photo"
@@ -7327,9 +7357,6 @@ msgstr ""
 msgid "No commission"
 msgstr ""
 
-msgid "No commission (excluding cryptocurrencies)"
-msgstr ""
-
 msgid "No delay, neglect, or forbearance on the part of either party in enforcing any term or condition of this Agreement against the other party shall either be, or be deemed to be, a waiver or in any way prejudice any right of that party under this Agreement."
 msgstr ""
 
@@ -7385,6 +7412,15 @@ msgid "Not at all. Joining our affiliate programme is completely free and always
 msgstr ""
 
 msgid "Not interested in trading"
+msgstr ""
+
+msgid "Not leaving devices unattended"
+msgstr ""
+
+msgid "Not saving login credentials on a shared device"
+msgstr ""
+
+msgid "Not sending or receiving private information unless a secure webpage is being used (preferably, use a secure, encrypted Virtual Private Network (VPN)"
 msgstr ""
 
 msgid "Not sure how margin works? Read our margin policy and learn how to calculate the margin for our CFDs."
@@ -7543,7 +7579,7 @@ msgstr ""
 msgid "Online currency exchangers"
 msgstr ""
 
-msgid "Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. Limits may only be removed or increased, once the limit date setting has expired. %1Contact us%2 to remove or adjust your limits."
+msgid "Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. If you are in the UK, your limits may be removed or increased within 24 hours."
 msgstr ""
 
 msgid "Online trading can be addictive. Self-exclusion is a facility to limit your online trading activity, should you need it. You can set limits in your account to help prevent unwanted losses. You may adjust these limits any time, but remove them only after 24 hours. %1Contact us%2 to remove or adjust your limits."
@@ -8881,6 +8917,9 @@ msgstr ""
 msgid "Refine and polish engineer-generated documents and open source projects to imbue them with clarity and consistency"
 msgstr ""
 
+msgid "Refund policy"
+msgstr ""
+
 msgid "Refuse to pay any Commission to the Introducing Broker engaged in the Malicious Activity"
 msgstr ""
 
@@ -9313,7 +9352,7 @@ msgstr ""
 msgid "Self-exclusion limits"
 msgstr ""
 
-msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
+msgid "Self-exclusion on this website is applicable to your account only as accessed on %1 or deriv.com and does not apply to any other website."
 msgstr ""
 
 msgid "Self-motivation and flexibility in task rotations"
@@ -9886,6 +9925,9 @@ msgstr ""
 msgid "Suspending the client's MT5 Real Account and refusing to execute any Orders to enter into further transactions with the client"
 msgstr ""
 
+msgid "Swap scheme"
+msgstr ""
+
 msgid "Swaps Long (per annum)"
 msgstr ""
 
@@ -9914,6 +9956,9 @@ msgid "Synthetic Indices give you exclusive access to various trade types, such 
 msgstr ""
 
 msgid "Synthetic indices"
+msgstr ""
+
+msgid "Synthetic indices AMPLIFIED"
 msgstr ""
 
 msgid "Synthetic indices that mimic market volatility."
@@ -10360,7 +10405,7 @@ msgstr ""
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr ""
 
-msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
+msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be accepted only if the orders are within the client’s account limit. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
 msgstr ""
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
@@ -10445,6 +10490,9 @@ msgid "The Company may, at its sole discretion or as required by regulations in 
 msgstr ""
 
 msgid "The Company may, however, withhold the client's withdrawal request from their MT5 Real Account to their %1 account, in whole or in part, in one or more of the following cases:"
+msgstr ""
+
+msgid "The Company offers a number of merchant solutions and payment service providers for making online payments. The client will be billed at the time of, or shortly after, making a transaction. The client agrees to pay for all trades that the client purchases via any of the available merchant solutions or payment service providers."
 msgstr ""
 
 msgid "The Company offers binary options through its online interactive platform."
@@ -10975,6 +11023,9 @@ msgstr ""
 msgid "The client agrees that in any legal, arbitration, mediation, regulatory, administration, or any other proceedings initiated by them or by %1, the Company's records related to the client's dealings shall constitute evidence. Subject to the laws and any court, tribunal, competent authority, or government authority orders, requests, instructions, or guidelines, the client shall not object to the admission of such records on the grounds that they are not originals or in writing, or that they are produced by computers or any other electronic systems whatsoever. The client shall not rely on the Company to meet any of their disclosures or other obligations imposed by any court, tribunal, competent authority, or government authority."
 msgstr ""
 
+msgid "The client agrees that when using the Live Chat feature on the Company website and applications, all personal information that the client enters in the chat channel, including but not limited to the client's first name and email address, is processed by the Company and stored in the Company's databases."
+msgstr ""
+
 msgid "The client agrees to comply with the following when making payments to DIEL:"
 msgstr ""
 
@@ -11038,7 +11089,7 @@ msgstr ""
 msgid "The client is asked to note that weekend quotes are ignored for the purpose of contract settlement. During weekends, the forex markets may occasionally generate prices; however, these prices are often artificial (traders sometimes take advantage of the illiquidity of the markets during weekends to push prices up or down). To avoid settling prices based on such artificial prices, it is Company's policy not to count weekend prices towards contract settlement values (except for Synthetic Indices, which are open during weekends)."
 msgstr ""
 
-msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
+msgid "The client is not resident in a restricted country such as Canada, Hong Kong, Israel, Jersey, Malaysia, Malta, Paraguay, Rwanda, the United Arab Emirates, the USA, or any other restricted country that has been identified by the FATF as having strategic deficiencies."
 msgstr ""
 
 msgid "The client is not trading in the actual Underlying Instrument, or the actual foreign currency; all Transactions are settled in cash only."
@@ -11048,9 +11099,6 @@ msgid "The client is over 18 years of age, unless the client is an Estonian resi
 msgstr ""
 
 msgid "The client is responsible for all third-party electronic transfer fees in respect of payments."
-msgstr ""
-
-msgid "The client is responsible for keeping the client's log-in details secure, the security of any linked email address, and the security (password protection, screen locking, etc.) of any personal computer or device on which the client's account is accessible. The Company shall not be held responsible if there is unauthorised use of the account when the Company is not at fault."
 msgstr ""
 
 msgid "The client is responsible for managing the client's tax and legal affairs, including making any regulatory filings and payments and complying with applicable laws and regulations. The Company does not provide any regulatory, tax, or legal advice. If the client is in any doubt as to the tax treatment or liabilities%2 of Products available through %1%3, the client may wish to seek independent advice."
@@ -11381,6 +11429,9 @@ msgid "The resale price indicates a contract's current market price. Resale pric
 msgstr ""
 
 msgid "The reset time is %1"
+msgstr ""
+
+msgid "The responsibility for the security of the client's login credentials, any linked email address, and any personal device on which the client's account is accessible lies solely with the client. The Company shall not be held responsible if there is unauthorised use of the account when the Company is not at fault."
 msgstr ""
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
@@ -11905,9 +11956,6 @@ msgstr ""
 msgid "To reset your trading or investor password, please click the button below:"
 msgstr ""
 
-msgid "To self-exclude from all online gambling companies licensed in Great Britain, go to %1."
-msgstr ""
-
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr ""
 
@@ -12133,9 +12181,6 @@ msgstr ""
 msgid "Trading and Withdrawal Limits"
 msgstr ""
 
-msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr ""
-
 msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr ""
 
@@ -12286,6 +12331,9 @@ msgstr ""
 msgid "Try Deriv.com now"
 msgstr ""
 
+msgid "Try Multipliers on DTrader"
+msgstr ""
+
 msgid "Try SmartCharts"
 msgstr ""
 
@@ -12293,6 +12341,9 @@ msgid "Try TradingView"
 msgstr ""
 
 msgid "Try WebTrader"
+msgstr ""
+
+msgid "Try now"
 msgstr ""
 
 msgid "Try our %1Synthetic Indices%2."
@@ -12340,7 +12391,7 @@ msgstr ""
 msgid "UI/UX Designer"
 msgstr ""
 
-msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Deriv (MX) Limited."
+msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd."
 msgstr ""
 
 msgid "US Patents"
@@ -12563,6 +12614,9 @@ msgid "Use to the utmost benefit any possible additional features that some paym
 msgstr ""
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
+msgstr ""
+
+msgid "Using browser tools to delete files and cookies and clearing browsing history"
 msgstr ""
 
 msgid "Using our website, customers can trade currencies, stock indices, commodities, and synthetic indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
@@ -13178,6 +13232,9 @@ msgid "Where you can go"
 msgstr ""
 
 msgid "Where your experience, drive and talent can propel you in unknown directions. And you have the freedom to push into new frontiers."
+msgstr ""
+
+msgid "Whether the client uses a shared device or the client's own device in a public place either offline or on public WiFi, doing so might put the information that the client enters or receives in danger of being captured. To protect data in such cases, it is the clients' responsibility to take the following precautions and educate themselves on other security measures they can take:"
 msgstr ""
 
 msgid "Which account is right for me?"

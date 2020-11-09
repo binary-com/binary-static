@@ -6,6 +6,7 @@ const NetworkMonitor      = require('./network_monitor');
 const Page                = require('./page');
 const BinarySocket        = require('./socket');
 const ContentVisibility   = require('../common/content_visibility');
+const DerivBanner         = require('../common/deriv_banner');
 const GTM                 = require('../../_common/base/gtm');
 const Login               = require('../../_common/base/login');
 const LiveChat            = require('../../_common/base/livechat');
@@ -41,9 +42,10 @@ const BinaryLoader = (() => {
 
         Client.init();
         NetworkMonitor.init();
-
+        DerivBanner.chooseBanner();
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);
+        window.addEventListener('beforeunload', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
         BinaryPjax.init(container, '#content');
 

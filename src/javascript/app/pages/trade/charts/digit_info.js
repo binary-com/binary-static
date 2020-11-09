@@ -187,14 +187,13 @@ const DigitInfo = (() => {
         }
 
         const series = chart.series[0]; // Where we put the final data.
-
         if (typeof latest_spot !== 'undefined' && series.name === symbol) {
-            spots.unshift(latest_spot.slice(-1)); // Only last digit matters
-            spots.pop();
+            spots.push(latest_spot.slice(-1)); // Only last digit matters
+            spots.shift();
         }
 
         // Always recompute and draw, even if theres no new data.
-        // This is especially useful on first reuqest, but maybe in other ways.
+        // This is especially useful on first request, but maybe in other ways.
         const filtered_spots  = [];
         const filterFunc      = el => +el === digit;
         let digit             = 10;

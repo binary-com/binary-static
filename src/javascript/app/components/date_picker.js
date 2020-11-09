@@ -120,7 +120,7 @@ const DatePicker = (() => {
     const checkWidth = (selector) => {
         const $selector        = $(selector);
         const date_picker_conf = date_pickers[selector].config_data;
-        if ($(window).width() < 770) {
+        if (window.innerWidth < 770) {
             if (!date_picker_conf.native) {
                 hide(selector);
                 $selector.attr('type', 'number');
@@ -135,7 +135,7 @@ const DatePicker = (() => {
                 return;
             }
         }
-        if (($(window).width() > 769 && $selector.attr('data-picker') !== 'jquery') || ($(window).width() < 770 && !checkInput('date', 'not-a-date'))) {
+        if ((window.innerWidth > 769 && $selector.attr('data-picker') !== 'jquery') || (window.innerWidth < 770 && !checkInput('date', 'not-a-date'))) {
             const value        = $selector.attr('data-value') || $selector.val();
             const format_value = value && date_picker_conf.type !== 'diff' ? toReadableFormat(moment(value)) : $selector.val();
             $selector.attr({ type: 'text', 'data-picker': 'jquery', 'data-value': value }).removeAttr('min max').val(format_value);
