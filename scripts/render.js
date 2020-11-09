@@ -236,6 +236,7 @@ async function compile(page) {
 
     const tasks = languages.map(async lang => {
         const affiliate_language_code = common.getAffiliateSignupLanguage(lang);
+        const deriv_language_code = lang === 'EN' ? '' : `${lang.toLowerCase().replace(/_/g, '-')}/`;
         const model = {
             website_name   : 'Binary.com',
             title          : page.title,
@@ -250,6 +251,7 @@ async function compile(page) {
             affiliate_signup_url  : `https://login.binary.com/signup.php?lang=${affiliate_language_code}`,
             affiliate_password_url: `https://login.binary.com/password-reset.php?lang=${affiliate_language_code}`,
             affiliate_email       : 'partners@binary.com',
+            deriv_banner_url      : `https://deriv.com/${deriv_language_code}`,
         };
 
         const context     = context_builder.buildFor(model);
