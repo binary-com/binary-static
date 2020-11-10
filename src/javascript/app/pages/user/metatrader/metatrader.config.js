@@ -194,7 +194,6 @@ const MetaTraderConfig = (() => {
                             const response_get_account_status = State.getResponse('get_account_status');
                             if (/financial_assessment_not_complete/.test(response_get_account_status.status)
                                 && !accounts_info[acc_type].mt5_account_type // is_synthetic
-                                && /high/.test(response_get_account_status.risk_classification)
                             ) {
                                 showElementSetRedirect('.assessment');
                                 is_ok = false;

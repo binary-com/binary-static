@@ -329,13 +329,12 @@ const ClientBase = (() => {
     };
 
     const getRiskAssessment = () => {
-        const status       = State.getResponse('get_account_status.status');
-        const is_high_risk = /high/.test(State.getResponse('get_account_status.risk_classification'));
+        const status = State.getResponse('get_account_status.status');
 
         return (
             isAccountOfType('financial') ?
                 /(financial_assessment|trading_experience)_not_complete/.test(status) :
-                (is_high_risk && /financial_assessment_not_complete/.test(status))
+                /financial_assessment_not_complete/.test(status)
         );
     };
 
