@@ -171,7 +171,8 @@ const ActiveSymbols = (() => {
         extend(trade_markets_list, getSubmarkets(active_symbols));
         return trade_markets_list;
     };
-
+    
+    // The unavailable underlyings are only offered on deriv.com.
     const getAvailableUnderlyings = (markets_list) => {
         const unavailable_underlyings = ['BOOM500', 'BOOM1000', 'CRASH500', 'CRASH1000', 'stpRNG'];
         const cloned = clone(markets_list);
