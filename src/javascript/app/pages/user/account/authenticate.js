@@ -963,7 +963,7 @@ const Authenticate = (() => {
         onfido_unsupported = !identity.services.onfido.is_country_supported;
         const documents_supported = identity.services.onfido.documents_supported;
 
-        if (is_fully_authenticated) {
+        if (is_fully_authenticated && (!needs_verification.includes('identity') || !needs_verification.includes('document'))) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }

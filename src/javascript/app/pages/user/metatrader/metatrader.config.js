@@ -345,8 +345,6 @@ const MetaTraderConfig = (() => {
                 BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                     Header.displayAccountStatus();
                 });
-
-                $('#financial_authenticate_msg').setVisibility(isAuthenticationPromptNeeded());
             },
         },
 
