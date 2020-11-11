@@ -266,6 +266,10 @@ const MetaTraderUI = (() => {
             handleNewAccountUI(action, acc_type, $target);
         };
 
+        if (/new_account/.test(action)) {
+            showFinancialAuthentication(false);
+        }
+
         if (/manage_password|new_account/.test(action)) {
             cloneForm();
             return;
