@@ -77,6 +77,9 @@ const Metatrader = () => (
             <h1>{it.L('MetaTrader 5 dashboard')}</h1>
         </div>
         <p id='page_msg' className='notice-msg center-text invisible' />
+        <p id='financial_authenticate_msg' className='notice-msg center-text invisible'>
+            {it.L('Please [_1]authenticate[_2] your account to continue trading.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}
+        </p>
         <div id='mt_loading'><Loading /></div>
         <div id='mt_account_management' className='gr-row invisible'>
             <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>

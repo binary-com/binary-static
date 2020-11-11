@@ -119,6 +119,7 @@ const MetaTraderUI = (() => {
     const updateAccount = (acc_type) => {
         updateListItem(acc_type);
         setCurrentAccount(acc_type);
+        showHideFinancialAuthenticate(acc_type);
     };
 
     const setMTAccountText = () => {
@@ -381,6 +382,7 @@ const MetaTraderUI = (() => {
             loadAction(null, acc_type);
             displayAccountDescription(accounts_info[acc_type].info ? acc_type : 'new_account');
             $.scrollTo($('h1'), 300, { offset: -10 });
+            showFinancialAuthentication(true);
         });
         const displayStep = (step) => {
             $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
@@ -583,6 +585,16 @@ const MetaTraderUI = (() => {
                 }
             }
         }
+    };
+
+    const showHideFinancialAuthenticate = (acc_type) => {
+        if (MetaTraderConfig.hasAccount(acc_type)) {
+            $('#financial_authenticate_msg').setVisibility(MetaTraderConfig.isAuthenticationPromptNeeded());
+        }
+    };
+
+    const showFinancialAuthentication = (should_show) => {
+        $('#financial_authenticate_msg').setVisibility(should_show ? MetaTraderConfig.isAuthenticationPromptNeeded() : 0);
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
