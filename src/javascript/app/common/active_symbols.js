@@ -1,4 +1,5 @@
 const isEmptyObject = require('../../_common/utility').isEmptyObject;
+const removeObjProperties = require('../../_common/utility').removeObjProperties;
 
 const submarket_order = {
     forex          : 0,
@@ -171,6 +172,23 @@ const ActiveSymbols = (() => {
         return trade_markets_list;
     };
 
+    const getAvailableUnderlyings = (markets_list) => {
+        const unavailable_underlyings = ['BOOM500', 'BOOM1000', 'CRASH500', 'CRASH1000', 'stpRNG'];
+        const cloned = clone(markets_list);
+
+        Object.keys(cloned).forEach(market_key => {
+            Object.keys(cloned[market_key].submarkets).forEach(submarket_key => {
+                removeObjProperties(unavailable_underlyings, cloned[market_key].submarkets[submarket_key].symbols);
+                if (Object.keys(cloned[market_key].submarkets[submarket_key].symbols).length === 0) {
+                    delete cloned[market_key].submarkets[submarket_key];
+                }
+            });
+            if (Object.keys(cloned[market_key].submarkets).length === 0) delete cloned[market_key];
+        });
+        if (Object.keys(cloned).length === 0) return [];
+        return cloned;
+    };
+
     const getTradeUnderlyings = (active_symbols) => {
         const trade_underlyings = {};
         const all_symbols       = getSymbols(active_symbols);
@@ -206,6 +224,7 @@ const ActiveSymbols = (() => {
         getSymbols,
         getSymbolsForMarket,
         sortSubmarket,
+        getAvailableUnderlyings,
     };
 })();
 
