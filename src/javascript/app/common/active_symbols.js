@@ -172,21 +172,26 @@ const ActiveSymbols = (() => {
         return trade_markets_list;
     };
 
-    const getAvailableUnderlyings = (markets_list) => {
-        const unavailable_underlyings = ['BOOM500', 'BOOM1000', 'CRASH500', 'CRASH1000', 'stpRNG'];
-        const cloned = clone(markets_list);
+    const unavailable_underlyings = ['BOOM500', 'BOOM1000', 'CRASH500', 'CRASH1000', 'stpRNG'];
 
-        Object.keys(cloned).forEach(market_key => {
-            Object.keys(cloned[market_key].submarkets).forEach(submarket_key => {
-                removeObjProperties(unavailable_underlyings, cloned[market_key].submarkets[submarket_key].symbols);
-                if (Object.keys(cloned[market_key].submarkets[submarket_key].symbols).length === 0) {
-                    delete cloned[market_key].submarkets[submarket_key];
+    const getAvailableUnderlyings = (markets_list) => {
+        const markets_list_clone = clone(markets_list);
+
+        Object.keys(markets_list_clone).forEach(market_key => {
+            Object.keys(markets_list_clone[market_key].submarkets).forEach(submarket_key => {
+                removeObjProperties(
+                    unavailable_underlyings,
+                    markets_list_clone[market_key].submarkets[submarket_key].symbols);
+                if (Object.keys(markets_list_clone[market_key].submarkets[submarket_key].symbols).length === 0) {
+                    delete markets_list_clone[market_key].submarkets[submarket_key];
                 }
             });
-            if (Object.keys(cloned[market_key].submarkets).length === 0) delete cloned[market_key];
+            if (Object.keys(markets_list_clone[market_key].submarkets).length === 0){
+                delete markets_list_clone[market_key];
+            }
         });
-        if (Object.keys(cloned).length === 0) return [];
-        return cloned;
+        if (Object.keys(markets_list_clone).length === 0) return [];
+        return markets_list_clone;
     };
 
     const getTradeUnderlyings = (active_symbols) => {
