@@ -206,7 +206,9 @@ const SetCurrency = (() => {
                     }
                 } else {
                     const previous_currency = Client.get('currency');
-                    Client.set('currency', selected_currency);
+                    // If it is creation of a new account, pick it's id up instead of the current loginid
+                    const new_account_loginid = popup_action === 'multi_account' ? response_c.new_account_real.client_id : undefined;
+                    Client.set('currency', selected_currency, new_account_loginid);
                     BinarySocket.send({ balance: 1 });
                     BinarySocket.send({ payout_currencies: 1 }, { forced: true });
                     Header.displayAccountStatus();
