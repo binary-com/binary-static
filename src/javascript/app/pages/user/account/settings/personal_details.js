@@ -28,6 +28,7 @@ const PersonalDetails = (() => {
         get_settings_data,
         mt_acct_type,
         is_mt_tax_required,
+        validations,
         $tax_residence;
 
     const init = () => {
@@ -36,6 +37,7 @@ const PersonalDetails = (() => {
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
         mt_acct_type      = getHashValue('mt5_redirect');
+        validations       = [];
         // demo and synthetic mt accounts do not require tax info
         is_mt_tax_required = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2 && +State.getResponse('landing_company.config.tax_details_required') === 1;
     };
@@ -65,7 +67,6 @@ const PersonalDetails = (() => {
     };
 
     const showHideMissingDetails = () => {
-        const validations = getValidations();
         const has_missing_field = validations.find((validation) => /req/.test(validation.validations) && $(validation.selector).val() === '');
         $('#missing_details_notice').setVisibility(!!has_missing_field);
     };
@@ -161,7 +162,8 @@ const PersonalDetails = (() => {
 
         $(form_id).setVisibility(1);
         $('#loading').remove();
-        FormManager.init(form_id, getValidations());
+        setValidations();
+        FormManager.init(form_id, validations);
         FormManager.handleSubmit({
             form_selector       : form_id,
             obj_request         : { set_settings: 1 },
@@ -254,8 +256,7 @@ const PersonalDetails = (() => {
         (Client.isAccountOfType('financial') && Client.shouldCompleteTax()) ||
         is_mt_tax_required;
 
-    const getValidations = () => {
-        let validations;
+    const setValidations = () => {
         if (is_virtual) {
             validations = [
                 { selector: '#email_consent' },
@@ -267,6 +268,9 @@ const PersonalDetails = (() => {
             const is_tax_req   = isTaxReq();
 
             validations = [
+                { selector: '#salutation',             validations: ['req'] },
+                { selector: '#first_name',             validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]] },
+                { selector: '#last_name',              validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]] },
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
                 { selector: '#address_line_2',         validations: ['address'] },
                 { selector: '#address_city',           validations: ['req', 'letter_symbol'] },
@@ -294,27 +298,15 @@ const PersonalDetails = (() => {
                 { selector: '#chk_tax_id', validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
-            if (!get_settings_data.immutable_fields.includes('first_name')) {
-                validations.push({
-                    selector   : '#first_name',
-                    validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]],
-                });
-            }
-            if (!get_settings_data.immutable_fields.includes('last_name')) {
-                validations.push({
-                    selector   : '#last_name',
-                    validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]],
-                });
-            }
-            // Required Without special treatment
-            if (!get_settings_data.immutable_fields.includes('salutation')) {
-                validations.push({
-                    selector   : '#salutation',
-                    validations: ['req'],
-                });
+            // loop backwards since we are removing array items
+            for (let i = validations.length - 1; i >= 0; i--) {
+                // if field is immutable, no need to validate or send it to API
+                if (!validations[i].exclude_request &&
+                    get_settings_data.immutable_fields.includes(validations[i].selector.slice(1))) {
+                    validations.splice(i, 1);
+                }
             }
         }
-        return validations;
     };
 
     const setDetailsResponse = (response) => {
