@@ -134,13 +134,13 @@ const PersonalDetails = (() => {
             get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
-        if (get_settings.place_of_birth && get_settings_data.immutable_fields.includes('place_of_birth') && residence_list) {
+        if (get_settings.place_of_birth && get_settings.immutable_fields.includes('place_of_birth') && residence_list) {
             get_settings.place_of_birth =
                 (residence_list.find(obj => obj.value === get_settings.place_of_birth) || {}).text ||
                 get_settings.place_of_birth;
         }
 
-        if (get_settings.citizen && get_settings_data.immutable_fields.includes('citizen') && residence_list) {
+        if (get_settings.citizen && get_settings.immutable_fields.includes('citizen') && residence_list) {
             get_settings.citizen =
                 (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
                 get_settings.citizen;
@@ -177,7 +177,7 @@ const PersonalDetails = (() => {
     const displayGetSettingsData = (get_settings) => {
         Object.keys(get_settings).forEach((key) => {
             // If field is immutable and value was set by client, show label instead of input
-            const has_label         = get_settings_data.immutable_fields.includes(key);
+            const has_label         = get_settings.immutable_fields.includes(key);
             const should_show_label = has_label && get_settings[key];
 
             const element_id  = `${should_show_label ? 'lbl_' : ''}${key}`;
@@ -333,6 +333,7 @@ const PersonalDetails = (() => {
                     return;
                 }
                 const get_settings    = data.get_settings;
+                get_settings_data = get_settings;
                 const has_required_mt = is_mt_tax_required ?
                     (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen)
                     :
