@@ -960,10 +960,11 @@ const Authenticate = (() => {
         const { identity, needs_verification, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
+        const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
         onfido_unsupported = !identity.services.onfido.is_country_supported;
         const documents_supported = identity.services.onfido.documents_supported;
 
-        if (is_fully_authenticated) {
+        if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }

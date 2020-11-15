@@ -224,7 +224,12 @@ const ClientBase = (() => {
     const shouldCompleteTax = () => isAccountOfType('financial') &&
         !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
-    const isAuthenticationAllowed = () => /allow_document_upload/.test(State.getResponse('get_account_status.status'));
+    const isAuthenticationAllowed = () => {
+        const { status, authentication } = State.getResponse('get_account_status');
+        const has_allow_document_upload = /allow_document_upload/.test(status);
+        const has_verification_flags = authentication.needs_verification.length;
+        return has_allow_document_upload || has_verification_flags;
+    };
 
     // remove manager id or master distinction from group
     // remove EUR or GBP or Bbook or HighRisk distinction from group
