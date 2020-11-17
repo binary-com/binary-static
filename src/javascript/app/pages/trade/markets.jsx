@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Symbols from './symbols';
 // Should be remove in the future
 import Defaults from './defaults';
-import { sortSubmarket } from '../../common/active_symbols';
+import { sortSubmarket, getAvailableUnderlyings } from '../../common/active_symbols';
 import { getElementById } from '../../../_common/common_functions';
 import { localize } from '../../../_common/localize';
 
@@ -69,8 +69,10 @@ class Markets extends React.Component {
     constructor (props) {
         super(props);
         let market_symbol = Defaults.get('market');
-        this.markets = Symbols.markets();
-
+        
+        const market_list = Symbols.markets();
+        this.markets = getAvailableUnderlyings(market_list);
+        
         this.underlyings = Symbols.getAllSymbols() || {};
         let underlying_symbol = Defaults.get('underlying');
         if (!underlying_symbol || !this.underlyings[underlying_symbol]) {
