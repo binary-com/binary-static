@@ -34,6 +34,10 @@
             color: #a8a8a8; // stylelint-disable color-no-hex
             text-align: justify;
             margin: 0 0 10px;
+
+            @at-root #footer #footer-regulatory .copyright p {
+                margin: 0;
+            }
         }
         .age-restriction-sign {
             width: 45px;
@@ -236,6 +240,24 @@
                 width: 35px;
                 margin: 5px;
             }
+        }
+    }
+
+    .copyright {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 6px;
+        font-size: $FONT_SIZE_S;
+
+        img {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+        }
+        p {
+            margin: 0;
         }
     }
 }
