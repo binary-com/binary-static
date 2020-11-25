@@ -77,7 +77,7 @@ const Client = (() => {
         });
     };
 
-    const endLiveChat = new Promise ((resolve) => {
+    const endLiveChat = () => new Promise ((resolve) => {
         const initial_session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '' };
 
         window.LiveChatWidget.call('set_session_variables', initial_session_variables);
