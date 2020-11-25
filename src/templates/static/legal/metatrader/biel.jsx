@@ -79,7 +79,7 @@ const BIEL = () => (
                 </ol>
             </li>
             <li><strong>{it.L('Account closure')}</strong>
-                <p>{it.L('If the client wishes to withdraw funds from their MT5 Real Account and/or close their MT5 Real Account, the client may notify the Company by contacting the helpdesk at [_1]. The client\'s MT5 Real Account may be closed if the client does not have any Open Positions and all amounts due to the Company have been settled.', '<a href="mailto:support@binary.com">support@binary.com</a>')}</p>
+                <p>{it.L('If the client wishes to withdraw funds from their MT5 Real Account and/or close their MT5 Real Account, the client may notify the Company via live chat. The client\'s MT5 Real Account may be closed if the client does not have any Open Positions and all amounts due to the Company have been settled.')}</p>
             </li>
         </ol>
 
