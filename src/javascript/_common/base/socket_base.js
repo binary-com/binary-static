@@ -97,7 +97,7 @@ const BinarySocketBase = (() => {
     const hasReadyState = (...states) => binary_socket && states.some(s => binary_socket.readyState === s);
 
     const sendBufferedRequests = () => {
-        while (buffered_sends.length > 0 && availability.is_up) {
+        while (buffered_sends.length > 0 && !availability.is_down) {
             const req_obj = buffered_sends.shift();
             send(req_obj.request, req_obj.options);
         }
@@ -142,7 +142,7 @@ const BinarySocketBase = (() => {
             const response = SocketCache.get(data, msg_type);
             if (response) {
                 State.set(['response', msg_type], cloneObject(response));
-                if (isReady() && availability.is_up && !options.skip_cache_update) { // make the request to keep the cache updated
+                if (isReady() && !availability.is_down && !options.skip_cache_update) { // make the request to keep the cache updated
                     binary_socket.send(JSON.stringify(data));
                 }
                 promise_obj.resolve(response);
@@ -178,7 +178,7 @@ const BinarySocketBase = (() => {
             subscribe: !!data.subscribe,
         };
 
-        if (isReady() && availability.is_up && config.isOnline()) {
+        if (isReady() && !availability.is_down && config.isOnline()) {
             is_disconnect_called = false;
             if (!getPropertyValue(data, 'passthrough') && !getPropertyValue(data, 'verify_email')) {
                 data.passthrough = {};
@@ -294,6 +294,8 @@ const BinarySocketBase = (() => {
 
     const isSiteDown = (status) => /^down$/i.test(status);
 
+    // if status is up or updating, consider site available
+    // if status is down, consider site unavailable
     const setAvailability = (status) => {
         availability.is_up       = isSiteUp(status);
         availability.is_updating = isSiteUpdating(status);
