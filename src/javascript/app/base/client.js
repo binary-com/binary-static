@@ -77,28 +77,35 @@ const Client = (() => {
         });
     };
 
-    const endLiveChat = () => {
-        const customerSDK = init({
-            licenseId: licenseID,
-            clientId : clientID,
-        });
-    
-        customerSDK.on('connected', () => {
-            if (window.LiveChatWidget.get('chat_data')) {
-                const { chatId, threadId } = window.LiveChatWidget.get('chat_data');
-                if (threadId) {
-                    customerSDK.deactivateChat({ chatId });
-                }
-            }
-        });
+    const endLiveChat = new Promise ((resolve) => {
+        const initial_session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '' };
 
+        window.LiveChatWidget.call('set_session_variables', initial_session_variables);
         window.LiveChatWidget.call('set_customer_email', ' ');
         window.LiveChatWidget.call('set_customer_name', ' ');
-    };
+        
+        try {
+            const customerSDK = init({
+                licenseId: licenseID,
+                clientId : clientID,
+            });
+            customerSDK.on('connected', () => {
+                if (window.LiveChatWidget.get('chat_data')) {
+                    const { chatId, threadId } = window.LiveChatWidget.get('chat_data');
+                    if (threadId) {
+                        customerSDK.deactivateChat({ chatId });
+                    }
+                }
+                resolve();
+            });
+        } catch (e){
+            resolve();
+        }
+
+    });
 
     const doLogout = (response) => {
         if (response.logout !== 1) return;
-        endLiveChat();
         removeCookies('login', 'loginid', 'loginid_list', 'email', 'residence', 'settings'); // backward compatibility
         removeCookies('reality_check', 'affiliate_token', 'affiliate_tracking', 'onfido_token');
         // clear elev.io session storage
@@ -110,12 +117,14 @@ const Client = (() => {
         ClientBase.set('loginid', '');
         SocketCache.clear();
         RealityCheckData.clear();
-        const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
-        if (redirect_to) {
-            window.location.href = redirect_to;
-        } else {
-            window.location.reload();
-        }
+        endLiveChat().then(() => {
+            const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
+            if (redirect_to) {
+                window.location.href = redirect_to;
+            } else {
+                window.location.reload();
+            }
+        });
     };
 
     const getUpgradeInfo = () => {
