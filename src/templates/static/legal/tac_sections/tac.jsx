@@ -3,8 +3,8 @@ import React from 'react';
 const Tac = () => (
     <div>
         <h2 data-anchor='terms-and-conditions'>{it.L('Terms and conditions')}</h2>
-        <p><i>{it.L('Version 48. Last modified 2019-05-10.')}</i></p>
-        <p>{it.L('It is the responsibility of each client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
+        <p><i>{it.L('Version 49. Last modified 23-11-2020.')}</i></p>
+        <p>{it.L('It is the responsibility of each client to read and understand this legal notice and the terms and conditions ("Terms") pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>
@@ -35,11 +35,19 @@ const Tac = () => (
         <p>{it.L('In cases where the client uses excessive anti-spam filtering which requires the Company to pay a fee in order to send a reply or a notification to the client, the Company will try to find an alternative way to communicate with the client but will not pay the requested fees to do so.')}</p>
 
         <h2 data-anchor='governing-laws-and-jurisdiction'>D. {it.L('Governing laws and jurisdiction')}</h2>
-        <p>{it.L('Laws regarding financial contracts vary throughout the world, and it is the responsibility of clients accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, clients accessing this site are required to inform themselves about, and to observe, such restrictions.')}</p>
-        <p>{it.L('The transactions performed on this site and the relationship between clients and the Company are to be governed by, and construed in accordance with, the laws of the country of incorporation of the Company (the "Jurisdiction"). The client agrees that the Jurisdiction\'s courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, the client irrevocably submits to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and agrees that any claim the client might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company\'s [_1]Complaints and disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions#complaints')}>`, '</a>')}</p>
-        <p>{it.L('For Deriv Investments (Europe) Limited and Deriv (Europe) Limited, the applicable Jurisdiction shall be Malta.')}</p>
-        <p>{it.L('For Deriv (MX) Ltd, the applicable Jurisdiction shall be the Isle of Man.')}</p>
-        <p data-show='-eucountry'>{it.L('For Deriv (SVG) LLC, the applicable Jurisdiction shall be St. Vincent and the Grenadines.')}</p>
+        <p>{it.L('It is the responsibility of clients accessing this site to make sure that they understand and fully follow the relevant laws and regulations of their own country. The Company does not support any offerings or make any solicitations that are illegal in a client\'s country, and clients cannot use their account for such prohibited offerings. In some countries, the Company may not be permitted to offer products and services to clients unless they have taken proactive steps to solicit information about the Company\'s products and services and requested to be provided with them. Access to this site and the offering of certain trades via this site may be also restricted in some jurisdictions. It is the client\'s responsibility to know about the restrictions that apply in the client\'s country of residence and to observe them, as in continuing to access the Company\'s products and services, the client represents to the Company that the client is doing so legally and that, where relevant, the client has solicited information about the Company\'s products and services and requested to be provided with them.')}</p>
+        <p>{it.L('Depending on where the client lives, the client\'s account will be governed by the laws of the country of incorporation of the company that the client\'s account is registered with as set out below. If the client has registered more than one account with more than one company, each account will be governed by the law of the country of incorporation of the company that each individual account has been registered with. The client agrees to submit to the applicable jurisdiction\'s courts and bring any claim the client may have before them. These courts will have sole authority to settle any disputes that may arise between the client and the Company.')}</p>
+        <p>{it.L('If a court or regulatory body of competent jurisdiction declares any provision of the Terms to be invalid or unenforceable, the rest of the Terms shall remain in full force and effect.')}</p>
+        <p>{it.L('The applicable jurisdiction shall be one of the following:')}</p>
+        <ul className='bullet'>
+            <li>{it.L('Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta')}</li>
+            <li>{it.L('Deriv (MX) Ltd: the Isle of Man')}</li>
+            <li>{it.L('Deriv (FX) Ltd: Labuan, Territory of Malaysia')}</li>
+            <li>{it.L('Deriv (BVI) Ltd: British Virgin Islands')}</li>
+            <li>{it.L('Deriv (V) Ltd: Vanuatu')}</li>
+            <li>{it.L('Deriv (SVG) LLC: St. Vincent and the Grenadines')}</li>
+            <li>{it.L('Champion Group Ltd: Vanuatu')}</li>
+        </ul>
 
         <h2 data-anchor='contracts'>E. {it.L('Contracts')}</h2>
         <p>{it.L('The Company does not provide a market amongst or between clients for investments, securities, derivatives, or speculations. Each financial contract purchased by a client via this site is an individual agreement between that client and the Company and is not a security, nor is it transferable, negotiable, or assignable to, or with, any third party.')}</p>
@@ -74,6 +82,7 @@ const Tac = () => (
         <p>{it.L('The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity')}</p>
         <ul className='bullet'>
             <li>{it.L('That contravenes any laws, regulations, instruments, ordinances, or rules that govern the operation of any exchange, financial market, or financial regulatory environment')}</li>
+            <li>{it.L('Where the client makes any false or misleading representation to the Company breaching the clauses under Governing laws and jurisdiction')}</li>
             <li>{it.L('With insider knowledge of any financial market or instrument')}</li>
         </ul>
         <p>{it.L('The Company has the discretion to seek information from clients to verify compliance with these terms.')}</p>
