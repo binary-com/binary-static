@@ -50,7 +50,8 @@ const AssetIndexUI = (() => {
         for (let i = 0; i < asset_index.length; i++) {
             const asset_item  = asset_index[i];
             const symbol_info = asset_item[3];
-            if (symbol_info) {
+            const is_offered = asset_item[4] && Object.keys(asset_item[4]).length;
+            if (symbol_info && is_offered) {
                 const $submarket_table = getSubmarketTable(asset_item, symbol_info);
                 $submarket_table.find('tbody').append(createSubmarketTableRow(asset_item, symbol_info));
             }

@@ -1,4 +1,4 @@
-const BinarySocket  = require('./socket_base');
+const BinarySocket = require('./socket_base');
 const ClientBase = require('./client_base');
 
 const LiveChat = (() => {
@@ -6,7 +6,7 @@ const LiveChat = (() => {
     const init = () => {
         if (window.LiveChatWidget) {
             window.LiveChatWidget.call('set_session_variables', initial_session_variables);
-            
+
             BinarySocket.wait('get_settings').then((response) => {
                 const get_settings = response.get_settings || {};
                 const { first_name, last_name } = get_settings;
@@ -16,6 +16,13 @@ const LiveChat = (() => {
                 if (first_name && last_name) window.LiveChatWidget.call('set_customer_name', `${first_name} ${last_name}`);
             });
 
+            window.LC_API.on_chat_ended = () => {
+                if (!ClientBase.isLoggedIn()){
+                    window.LiveChatWidget.call('set_customer_email', ' ');
+                    window.LiveChatWidget.call('set_customer_name', ' ');
+                }
+            };
+            
             window.LiveChatWidget.on('visibility_changed', ({ visibility }) => {
                 // only visible to CS
                 if (visibility === 'maximized' && ClientBase.isLoggedIn()) {
@@ -36,9 +43,6 @@ const LiveChat = (() => {
                     window.LiveChatWidget.call('set_session_variables', client_session_variables);
                 }
 
-                if (visibility === 'maximized' && !ClientBase.isLoggedIn()) {
-                    window.LiveChatWidget.call('set_session_variables', initial_session_variables);
-                }
             });
         }
     };

@@ -44,7 +44,8 @@ const Affiliate = () => (
                     { text: it.L('The Affiliate shall not place trades on the Affiliate\'s referrals\' behalf.') },
                     { text: it.L('The Affiliate shall not purchase or register keywords, search terms, or other identifiers for use in any search engine, portal, sponsored advertising service, or other search or referral service that are identical or similar to any of the Company\'s trademarks or trade names that include the word "[_1]" or any variation thereof.', it.website_name) },
                     { text: it.L('The Affiliate must ensure that the Affiliate does not place digital advertisements on websites providing unauthorised access to copyrighted content.') },
-                    { text: it.L('Neither the Affiliate, the Affiliate\'s direct relatives, nor any clients controlled by the Affiliate are eligible to become clients, and the Affiliate shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled clients.') },
+                    { text: it.L('Affiliates are not permitted to become clients by using their own affiliate link.') },
+                    { text: it.L('Neither the Affiliate\'s direct relatives nor any clients controlled by the Affiliate are eligible to become clients, and the Affiliate will not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives or controlled clients.') },
                     { text: it.L('The Affiliate shall not develop and implement marketing, advertising, and promotional activities that infringe any applicable laws, rules, regulations, or codes of practice relating to marketing, advertising, and promotional activities applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business.') },
                 ]}
             >
