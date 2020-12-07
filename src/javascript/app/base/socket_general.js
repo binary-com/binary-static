@@ -11,6 +11,7 @@ const setCurrencies          = require('../common/currency').setCurrencies;
 const SessionDurationLimit   = require('../common/session_duration_limit');
 const updateBalance          = require('../pages/user/update_balance');
 const GTM                    = require('../../_common/base/gtm');
+const NetworkMonitorBase     = require('../../_common/base/network_monitor_base');
 const SubscriptionManager    = require('../../_common/base/subscription_manager').default;
 const Crowdin                = require('../../_common/crowdin');
 const localize               = require('../../_common/localize').localize;
@@ -37,14 +38,23 @@ const BinarySocketGeneral = (() => {
     const onMessage = (response) => {
         handleError(response);
         Header.hideNotification('CONNECTION_ERROR');
-        let is_available = false;
         switch (response.msg_type) {
             case 'website_status':
                 if (response.website_status) {
-                    is_available = /^up$/i.test(response.website_status.site_status);
-                    if (is_available && !BinarySocket.availability()) {
+                    const is_available = !BinarySocket.isSiteDown(response.website_status.site_status);
+                    if (is_available && BinarySocket.getAvailability().is_down) {
                         window.location.reload();
                         return;
+                    }
+                    const is_updating = BinarySocket.isSiteUpdating(response.website_status.site_status);
+                    if (is_updating && !BinarySocket.getAvailability().is_updating) {
+                        // the existing connection is alive for one minute while status is updating
+                        // switch to the new connection somewhere between 1-30 seconds from now
+                        // to avoid everyone switching to the new connection at the same time
+                        const rand_timeout = Math.floor(Math.random() * 30) + 1;
+                        window.setTimeout(() => {
+                            NetworkMonitorBase.wsEvent('reconnect');
+                        }, rand_timeout * 1000);
                     }
                     if (!Crowdin.isInContext()) {
                         createLanguageDropDown(response.website_status);
@@ -54,7 +64,7 @@ const BinarySocketGeneral = (() => {
                     } else {
                         Footer.clearNotification();
                     }
-                    BinarySocket.availability(is_available);
+                    BinarySocket.setAvailability(response.website_status.site_status);
                     setCurrencies(response.website_status);
                     // for logged out clients send landing company with IP address as residence
                     if (!Client.isLoggedIn() && !State.getResponse('landing_company')) {
