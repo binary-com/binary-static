@@ -15,6 +15,17 @@ const TradingRules = () => (
                 <li>{it.L('Contracts may not expire on a weekend; therefore, the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday.')}</li>
                 <li>{it.L('Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the Company data feed.')}</li>
                 <li>{it.L('The Company does not guarantee the ability to sell a contract prior to its expiration time.')}</li>
+                <li>{it.L('Corporate actions')}
+                    <ul className='bullet'>
+                        <li>{it.L('A corporate action can include but is not limited to assimilation, acquisition, bankruptcy, bonus issue, bonus rights, cash dividend, class action, delisting, de-merger, general announcement, initial public offering (IPO), liquidation, merger, change in par value, scheme of arrangement, stock dividend, stock split, return of capital, and reverse stock split.')}</li>
+                        <li>{it.L('One or more of the client’s trades may be affected by a corporate action. In that case, the company may take one or more of the following measures:')}
+                            <ul className='bullet'>
+                                <li>{it.L('Credit an amount to or debit an amount from the client’s account')}</li>
+                                <li>{it.L('Restrict the client’s account to prevent the client from closing any affected trades until the corporate action is passed')}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
             </ul>
 
             <h2 data-anchor='contract-payouts'>{it.L('Contract payouts')}</h2>

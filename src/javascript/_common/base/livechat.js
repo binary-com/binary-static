@@ -15,6 +15,13 @@ const LiveChat = (() => {
                 if (email) window.LiveChatWidget.call('set_customer_email', email);
                 if (first_name && last_name) window.LiveChatWidget.call('set_customer_name', `${first_name} ${last_name}`);
             });
+
+            window.LC_API.on_chat_ended = () => {
+                if (!ClientBase.isLoggedIn()){
+                    window.LiveChatWidget.call('set_customer_email', ' ');
+                    window.LiveChatWidget.call('set_customer_name', ' ');
+                }
+            };
             
             window.LiveChatWidget.on('visibility_changed', ({ visibility }) => {
                 // only visible to CS
@@ -35,6 +42,7 @@ const LiveChat = (() => {
 
                     window.LiveChatWidget.call('set_session_variables', client_session_variables);
                 }
+
             });
         }
     };

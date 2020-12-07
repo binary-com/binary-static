@@ -22,13 +22,18 @@ const BinarySocketBase = (() => {
     let buffered_sends       = [];
     let req_id               = 0;
     let wrong_app_id         = 0;
-    let is_available         = true;
     let is_disconnect_called = false;
     let is_connected_before  = false;
 
     const socket_url = `${getSocketURL()}?app_id=${getAppId()}&l=${getLanguage()}&brand=binary`;
     const timeouts   = {};
     const promises   = {};
+
+    const availability = {
+        is_up      : true,
+        is_updating: false,
+        is_down    : false,
+    };
 
     const no_duplicate_requests = [
         'authorize',
@@ -92,7 +97,7 @@ const BinarySocketBase = (() => {
     const hasReadyState = (...states) => binary_socket && states.some(s => binary_socket.readyState === s);
 
     const sendBufferedRequests = () => {
-        while (buffered_sends.length > 0 && is_available) {
+        while (buffered_sends.length > 0 && !availability.is_down) {
             const req_obj = buffered_sends.shift();
             send(req_obj.request, req_obj.options);
         }
@@ -137,7 +142,7 @@ const BinarySocketBase = (() => {
             const response = SocketCache.get(data, msg_type);
             if (response) {
                 State.set(['response', msg_type], cloneObject(response));
-                if (isReady() && is_available && !options.skip_cache_update) { // make the request to keep the cache updated
+                if (isReady() && !availability.is_down && !options.skip_cache_update) { // make the request to keep the cache updated
                     binary_socket.send(JSON.stringify(data));
                 }
                 promise_obj.resolve(response);
@@ -173,7 +178,7 @@ const BinarySocketBase = (() => {
             subscribe: !!data.subscribe,
         };
 
-        if (isReady() && is_available && config.isOnline()) {
+        if (isReady() && !availability.is_down && config.isOnline()) {
             is_disconnect_called = false;
             if (!getPropertyValue(data, 'passthrough') && !getPropertyValue(data, 'verify_email')) {
                 data.passthrough = {};
@@ -202,7 +207,7 @@ const BinarySocketBase = (() => {
         clearTimeouts();
         config.wsEvent('init');
 
-        if (isClose()) {
+        if (isClose() || availability.is_updating) {
             binary_socket = new WebSocket(socket_url);
             State.set('response', {});
         }
@@ -283,11 +288,18 @@ const BinarySocketBase = (() => {
         }
     };
 
-    const availability = (status) => {
-        if (typeof status !== 'undefined') {
-            is_available = !!status;
-        }
-        return is_available;
+    const isSiteUp = (status) => /^up$/i.test(status);
+
+    const isSiteUpdating = (status) => /^updating$/i.test(status);
+
+    const isSiteDown = (status) => /^down$/i.test(status);
+
+    // if status is up or updating, consider site available
+    // if status is down, consider site unavailable
+    const setAvailability = (status) => {
+        availability.is_up       = isSiteUp(status);
+        availability.is_updating = isSiteUpdating(status);
+        availability.is_down     = isSiteDown(status);
     };
 
     return {
@@ -296,10 +308,13 @@ const BinarySocketBase = (() => {
         send,
         clear,
         clearTimeouts,
-        availability,
         hasReadyState,
+        isSiteUpdating,
+        isSiteDown,
+        setAvailability,
         sendBuffered      : sendBufferedRequests,
         get               : () => binary_socket,
+        getAvailability   : () => availability,
         setOnDisconnect   : (onDisconnect) => { config.onDisconnect = onDisconnect; },
         setOnReconnect    : (onReconnect) => { config.onReconnect = onReconnect; },
         removeOnReconnect : () => { delete config.onReconnect; },
