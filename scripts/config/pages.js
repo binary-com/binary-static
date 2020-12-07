@@ -78,7 +78,7 @@ module.exports = [
     ['careers',                                 'static/about/careers',                        'full_width', 'Careers'],
     ['careers/privacy-policy',                  'static/about/job_applicant_policy',           'full_width', 'Job Applicant Privacy Policy'],
     ['contact',                                 'static/about/contact',                        'full_width', 'Contact Us'],
-    ['contact-2',                               'static/about/contact_2',                      'full_width', 'Contact Us'],
+    // ['contact-2',                               'static/about/contact_2',                      'full_width', 'Contact Us'],
     ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya'],
     ['dubai',                                   'static/about/dubai',                          'full_width', 'Careers - Dubai'],
     ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan'],
