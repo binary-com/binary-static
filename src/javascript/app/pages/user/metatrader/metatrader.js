@@ -65,7 +65,7 @@ const MetaTrader = (() => {
     // * we should map them to landing_company:
     // mt_financial_company: { financial: {}, financial_stp: {}, swap_free: {} }
     // mt_gaming_company: { financial: {}, swap_free: {} }
-    const addAccount = (market_type, company) => {
+    const addAccount = (market_type, company = {}) => {
         Object.keys(company)
             .filter(sub_account_type => sub_account_type !== 'swap_free') // TODO: remove this when releasing swap_free
             .forEach((sub_account_type) => {
