@@ -62,7 +62,7 @@ const MetaTraderUI = (() => {
             .sort(sortMt5Accounts)
             .forEach((acc_type) => {
                 if ($list.find(`[value="${acc_type}"]`).length === 0) {
-                    if (/^demo/.test(acc_type)) {
+                    if (accounts_info[acc_type].is_demo) {
                         if (!acc_group_demo_set) {
                             $list.append($('<div/>', { class: 'acc-group invisible', id: 'acc_group_demo', text: localize('Demo Accounts') }));
                             acc_group_demo_set = true;
@@ -135,12 +135,12 @@ const MetaTraderUI = (() => {
 
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
-        $acc_item.find('.mt-type').text(accounts_info[acc_type].title.replace(/(demo|real)\s/i, ''));
+        $acc_item.find('.mt-type').text(accounts_info[acc_type].short_title);
         if (accounts_info[acc_type].info) {
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
             $acc_item.setVisibility(1);
-            if (/demo/.test(accounts_info[acc_type].account_type)) {
+            if (accounts_info[acc_type].is_demo) {
                 $list.find('#acc_group_demo').setVisibility(1);
             } else {
                 $list.find('#acc_group_real').setVisibility(1);
@@ -161,7 +161,18 @@ const MetaTraderUI = (() => {
     };
     const displayAccountDescription = (acc_type) => {
         const $account_desc = $templates.find('.account-desc');
-        const $account_type_desc = $account_desc.find(`.${acc_type}`);
+        let $account_type_desc = '';
+        if (acc_type) {
+            $account_type_desc = $account_desc.find(`.${acc_type}`);
+            const landing_company_short = accounts_info[acc_type].landing_company_short;
+            if ($account_type_desc.length === 2) {
+                const $specific_description = $account_desc.find(`.${acc_type}.${landing_company_short}`);
+
+                // try to find the landing_company specific description first,
+                // otherwise fall back to the first item (the general description)
+                $account_type_desc = $specific_description.length ? $specific_description : $account_type_desc.first();
+            }
+        }
         const $el_to_clone = $account_type_desc.length ? $account_type_desc : $account_desc.find('#general_desc');
         $container.find('#account_desc').html($el_to_clone.clone());
     };
@@ -174,7 +185,7 @@ const MetaTraderUI = (() => {
         }
 
         if (accounts_info[acc_type].info) {
-            const is_demo = /demo/.test(accounts_info[acc_type].account_type);
+            const is_demo = accounts_info[acc_type].is_demo;
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
                 const key     = $(this).attr('data');
@@ -375,7 +386,7 @@ const MetaTraderUI = (() => {
         }
 
         // is_new_account
-        displayAccountDescription(action);
+        displayAccountDescription();
         $form = actions_info[action].$form;
         if (Object.keys(accounts_info).every(a_type => !accounts_info[a_type].info)) {
             $form.find('#view_1 #btn_cancel').addClass('invisible');
@@ -384,7 +395,7 @@ const MetaTraderUI = (() => {
         // Navigation buttons: cancel, next, back
         $form.find('#btn_cancel').click(() => {
             loadAction(null, acc_type);
-            displayAccountDescription(accounts_info[acc_type].info ? acc_type : 'new_account');
+            displayAccountDescription(accounts_info[acc_type].info ? acc_type : undefined);
             $.scrollTo($('h1'), 300, { offset: -10 });
             showFinancialAuthentication(true);
         });
@@ -426,13 +437,12 @@ const MetaTraderUI = (() => {
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = 'new_account';
         if (/(demo|real)/.test(selected_acc_type)) {
-            displayAccountDescription(action);
+            displayAccountDescription();
             updateAccountTypesUI(selected_acc_type);
             switchAcccountTypesUI(selected_acc_type, $form);
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
-            $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
             const new_acc_type = newAccountGetType();
             displayAccountDescription(new_acc_type);
@@ -441,9 +451,6 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
-            // uncomment to show No Deposit Bonus note
-            // TODO: [remove-standard-advanced] remove standard when API groups are updated
-            // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_svg_(standard|financial)/.test(new_acc_type));
         }
     };
 
@@ -500,13 +507,11 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
-            .filter(acc_type => !/^(real|demo)_(labuan_(standard|financial)|svg_(advanced|financial_stp)|vanuatu_(advanced|financial_stp)|maltainvest_(advanced|financial_stp))$/.test(acc_type))// toEnableVanuatuFinancialSTP: remove vanuatu_financial_stp from regex
             .sort(sortMt5Accounts)
             .forEach((acc_type) => {
                 const $acc  = accounts_info[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
-                const image = accounts_info[acc_type].mt5_account_type || 'synthetic'; // image name can be (financial_stp|financial|synthetic)
+                const image = accounts_info[acc_type].market_type === 'gaming' ? 'synthetic' : accounts_info[acc_type].sub_account_type; // image name can be (financial_stp|financial|synthetic)
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
                     .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
                 $acc.find('p').text(accounts_info[acc_type].short_title);
@@ -611,26 +616,15 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        // TODO: [remove-standard-advanced] remove standard when API groups are updated
-        if (/^(demo|real)_vanuatu_(standard|financial)$/.test(acc_type)) {
+        if (accounts_info[acc_type].landing_company_short === 'vanuatu' &&
+            accounts_info[acc_type].market_type === 'financial' &&
+            accounts_info[acc_type].sub_account_type === 'financial') {
             $el.removeAttr('data-balloon data-balloon-length');
             return;
         }
 
         BinarySocket.wait('landing_company').then((response) => {
-            const mt_financial_company = response.landing_company.mt_financial_company;
-            const mt_gaming_company = response.landing_company.mt_gaming_company;
-            const account = accounts_info[acc_type];
-            let company;
-
-            // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
-            if (/advanced|financial_stp/.test(account.mt5_account_type)) {
-                company = mt_financial_company.financial_stp || mt_financial_company.advanced;
-            } else if (/standard|financial/.test(account.mt5_account_type)) {
-                company = mt_financial_company.financial || mt_financial_company.standard;
-            } else if (account.account_type === 'gaming' || (account.mt5_account_type === '' && account.account_type === 'demo')) {
-                company = mt_financial_company.financial || mt_gaming_company.standard;
-            }
+            const company = response.landing_company[`mt_${accounts_info[acc_type].market_type}_company`][accounts_info[acc_type].sub_account_type];
 
             $el.attr({
                 'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,

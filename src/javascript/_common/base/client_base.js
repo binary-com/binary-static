@@ -231,38 +231,34 @@ const ClientBase = (() => {
         return has_allow_document_upload || has_verification_flags;
     };
 
-    // remove manager id or master distinction from group
-    // remove EUR or GBP or Bbook or HighRisk distinction from group
-    const getMT5AccountType = group => (group ?
-        group
-            .replace('\\', '_')
-            .replace(/_(\d+|master|EUR|GBP|Bbook|HighRisk)/i, '')
-            // TODO: [remove-standard-advanced] remove standard and advanced when API groups are updated
-            .replace(/_standard$/, '_financial')
-            .replace(/_advanced$/, '_financial_stp')
-        :
-        ''
-    );
+    // * MT5 login list returns these:
+    // market_type: "financial" | "gaming"
+    // sub_account_type: "financial" | "financial_stp" | "swap_free"
+    // *
+    const getMT5AccountDisplays = (market_type, sub_account_type, is_demo) => {
+        // needs to be declared inside because of localize
+        // TODO: handle swap_free when ready
+        const obj_display = {
+            gaming: {
+                financial: {
+                    short: localize('Synthetic'),
+                    full : is_demo ? localize('Demo Synthetic') : localize('Real Synthetic'),
+                },
+            },
+            financial: {
+                financial: {
+                    short: localize('Financial'),
+                    full : is_demo ? localize('Demo Financial') : localize('Real Financial'),
+                },
+                financial_stp: {
+                    short: localize('Financial STP'),
+                    full : is_demo ? localize('Demo Financial STP') : localize('Real Financial STP'),
+                },
+            },
+        };
 
-    const getMT5AccountDisplay = (group) => {
-        let display_text = localize('MT5');
-        if (group) {
-            const value = getMT5AccountType(group);
-            if (/svg$/.test(value) || /malta$/.test(value)) {
-                display_text = localize('Synthetic');
-            } else if (
-                /vanuatu/.test(value) ||
-                /svg_(standard|financial)/.test(value) ||
-                /maltainvest_financial$/.test(value)
-            ) {
-                // TODO: [remove-standard-advanced] remove standard when API groups are updated
-                display_text = localize('Financial');
-            } else if (/labuan/.test(value)) {
-                display_text = localize('Financial STP');
-            }
-        }
-
-        return display_text;
+        // returns e.g. { short: 'Synthetic', full: 'Demo Synthetic' }
+        return obj_display[market_type][sub_account_type] || localize('MT5');
     };
 
     const getBasicUpgradeInfo = () => {
@@ -420,8 +416,7 @@ const ClientBase = (() => {
         currentLandingCompany,
         shouldCompleteTax,
         getAllAccountsObject,
-        getMT5AccountType,
-        getMT5AccountDisplay,
+        getMT5AccountDisplays,
         getBasicUpgradeInfo,
         getLandingCompanyValue,
         getRiskAssessment,

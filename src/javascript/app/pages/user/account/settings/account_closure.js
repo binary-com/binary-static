@@ -400,8 +400,8 @@ const AccountClosure = (() => {
             $account_closure_error.find(section_id).setVisibility(1).append($section);
         };
         const getMTDisplay = (account) => {
-            const mt5_group = (mt5_login_list.find(acc => acc.login === account) || {}).group;
-            return Client.getMT5AccountDisplay(mt5_group);
+            const mt5_account = (mt5_login_list.find(acc => acc.login === account) || {});
+            return Client.getMT5AccountDisplays(mt5_account.market_type, mt5_account.sub_account_type).short;
         };
         if (response.error.details.open_positions) {
             Object.keys(response.error.details.open_positions).forEach((account) => {
