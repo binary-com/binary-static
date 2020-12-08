@@ -52,7 +52,7 @@ const VideoFacility           = require('../pages/user/video_facility');
 // ==================== static ====================
 // const Charity            = require('../../static/pages/charity');
 const Contact             = require('../../static/pages/contact');
-const Contact2            = require('../../static/pages/contact_2');
+// const Contact2            = require('../../static/pages/contact_2');
 const GetStarted          = require('../../static/pages/get_started');
 const Home                = require('../../static/pages/home');
 const KeepSafe            = require('../../static/pages/keep_safe');
@@ -132,7 +132,7 @@ const pages_config = {
     'affiliate-ib'           : { module: AffiliatesIBLanding },
     'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
     'binary-options'         : { module: GetStarted.BinaryOptions },
-    'contact-2'              : { module: Contact2 },
+    // 'contact-2'              : { module: Contact2 },
     'contract-specifications': { module: TabSelector },
     'get-started'            : { module: TabSelector },
     'how-to-trade-mt5'       : { module: TabSelector },

@@ -42,6 +42,7 @@ const Elevio = (() => {
         if (!window._elev) return; // eslint-disable-line no-underscore-dangle
 
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
+            GTM.pushDataLayer({ event: 'elevio_widget_load' });
             if (el_shell) {
                 el_shell.parentNode.removeChild(el_shell);
                 el_shell = undefined;
