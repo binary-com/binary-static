@@ -1537,6 +1537,7 @@ body #not_authenticated_financial ul.checked > li {
 
 .lightbox #set_currency {
   padding: 25px;
+  padding-bottom: 4px;
   width: 40em; }
   .lightbox #set_currency #set_currency_text {
     margin-top: 0; }
@@ -1546,7 +1547,8 @@ body #not_authenticated_financial ul.checked > li {
     margin-top: 0;
     margin-bottom: 0; }
   .lightbox #set_currency #submit_section {
-    margin-top: 20px; }
+    margin-top: 20px;
+    margin-bottom: 16px; }
 
 .platforms-content h2 {
   line-height: 36px; }
