@@ -728,13 +728,10 @@ label + input {
 }
 
 @media (max-width: 768px) {
-    .show_mobile {
-        &[data-balloon]:before, &[data-balloon]:after {
+    .show-mobile {
+        &[data-balloon]:before {
             display: block !important;
             transform: translate(-15%, 0) !important;
-        }
-        &[data-balloon-length=medium]:before {
-            width: 120px;
         }
     }
 }
@@ -754,6 +751,14 @@ label + input {
                 width: 100%;
                 text-align: left !important;
             }
+        }
+    }
+    .show-mobile {
+        &[data-balloon]:before {
+            position: fixed;
+            width: 80vw;
+            left: 18vw;
+            bottom: 20vh;
         }
     }
 }

@@ -16,7 +16,7 @@ const Client = (() => {
     const clientID = '66aa088aad5a414484c1fd1fa8a5ace7';
     const processNewAccount = (options) => {
         if (ClientBase.setNewAccount(options)) {
-            window.location.href = options.redirect_url || defaultRedirectUrl(); // need to redirect not using pjax
+            setTimeout(() => { window.location.replace(options.redirect_url || defaultRedirectUrl()); }, 500); // need to redirect not using pjax
         }
     };
 
