@@ -2,9 +2,12 @@ const BinarySocket = require('./socket_base');
 const ClientBase = require('./client_base');
 
 const LiveChat = (() => {
+
     const initial_session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '' };
+
     const init = () => {
         if (window.LiveChatWidget) {
+
             window.LiveChatWidget.call('set_session_variables', initial_session_variables);
 
             BinarySocket.wait('get_settings').then((response) => {
@@ -47,8 +50,24 @@ const LiveChat = (() => {
         }
     };
 
+    // Fallback LiveChat icon
+    const livechatFallback = () => {
+        let livechat_shell;
+        const livechat_id = 'gtm-deriv-livechat';
+    
+        if (window.LiveChatWidget){
+            window.LiveChatWidget.on('ready', () => {
+                livechat_shell = document.getElementById(livechat_id);
+                livechat_shell.style.display = 'flex';
+                livechat_shell.addEventListener('click', () => window.LC_API.open_chat_window());
+            });
+        }
+        
+    };
+
     return {
         init,
+        livechatFallback,
     };
 })();
 
