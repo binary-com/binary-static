@@ -11,6 +11,7 @@ const appConfig = (grunt) => ({
         path: path.resolve(PATHS.DIST, 'js'),
     },
     optimization: {
+        minimize   : false,
         splitChunks: {
             cacheGroups: {
                 ...makeCacheGroup('vendor', -20, 'node_modules'),

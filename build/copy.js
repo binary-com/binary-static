@@ -16,8 +16,8 @@ module.exports = function (grunt) {
 
                 // Serve pushwoosh SDKs
                 { expand: true, cwd: 'src/javascript/_common/lib/pushwooshSDK/', src: ['**'], dest: global.dist },
-                { expand: true, cwd:  'src/root_files/app', src: ['**', '!index.html'], dest: 'dist' }, // top level
-                { expand: true, cwd:  'src/root_files/app', src: ['index.html'],        dest: global.dist },
+                { expand: true, cwd: 'src/root_files/app', src: ['**', '!index.html'], dest: 'dist' }, // top level
+                { expand: true, cwd: 'src/root_files/app', src: ['index.html'],        dest: global.dist },
 
                 // app, static
                 { expand: true, cwd: 'src/download/',                  src: ['**'],                  dest: `${global.dist}/download/` },
@@ -28,7 +28,10 @@ module.exports = function (grunt) {
                 // binary-style
                 { expand: true, cwd: `${global.node_modules_paths.binary_style}/src/images/favicons`, src: ['**'], dest: `${global.dist}/images/favicons/` },
                 { expand: true, cwd: `${global.node_modules_paths.binary_style}/src/images/logo`,     src: ['**'], dest: `${global.dist}/images/logo/` },
+
+                // dashboard
+                { expand: true, cwd: `${global.node_modules_paths.deriv_dashboard}/lib/assets`,       src: ['**'], dest: `${global.dist}/dashboard/assets` },
             ],
-        }
-    }
+        },
+    };
 };

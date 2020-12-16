@@ -16,7 +16,7 @@ const commonConfig = (grunt) => ({
     },
     optimization: {
         namedChunks: true,
-        minimize   : true,
+        minimize   : false,
         minimizer  : [
             new UglifyJsPlugin({
                 test     : /\.min\.js/,

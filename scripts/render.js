@@ -254,15 +254,18 @@ async function compile(page) {
             deriv_banner_url      : `https://deriv.com/${deriv_language_code}`,
         };
 
-        const context     = context_builder.buildFor(model);
-        const page_html   = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
-        const language    = lang.toLowerCase();
-        const layout_path = '../src/templates/_common/_layout/layout.jsx';
+        const context               = context_builder.buildFor(model);
+        const page_html             = renderComponent(context, `../src/templates/${page.tpl_path}.jsx`);
+        const language              = lang.toLowerCase();
+        const layout_path           = '../src/templates/_common/_layout/layout.jsx';
+        const dashboard_layout_path = '../src/templates/_common/_layout/dashboard-layout.jsx';
 
         if (page.layout) {
-            const layout_normal     = `<!DOCTYPE html>\n${renderComponent(context, layout_path)}`;
+            const is_dashboard_layout = page.layout === 'dashboard';
+            const active_layout_path = is_dashboard_layout ? dashboard_layout_path : layout_path;
+            const layout_normal     = `<!DOCTYPE html>\n${renderComponent(context, active_layout_path)}`;
             context.is_pjax_request = true;
-            const layout_pjax       = renderComponent(context, layout_path);
+            const layout_pjax       = renderComponent(context, active_layout_path);
 
             if (is_translation) return; // Skip saving files when it's a translation update
 
