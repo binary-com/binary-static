@@ -575,6 +575,12 @@ ul.bullet.gr-row > li {
     }
 }
 
+#dashboard-wrapper #content, #dashboard-wrapper .container {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+}
+
 .foot-note {
     font-size: $FONT_SIZE_XS;
     color: $COLOR_GRAY_SHADE;
