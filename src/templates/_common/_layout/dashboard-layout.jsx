@@ -18,9 +18,7 @@ const Layout = () => {
                 <Gtm />
                 <div id='msg_notification' className='notice-msg center-text' />
                 <div id='page-wrapper'>
-                    <div id='content-holder'>
-                        <WithLayout>{CONTENT_PLACEHOLDER}</WithLayout>
-                    </div>
+                    <WithLayout>{CONTENT_PLACEHOLDER}</WithLayout>
                 </div>
                 <InterviewPopup /> {/* TODO: remove when UX research is finished */}
                 <Elevio />
