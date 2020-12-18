@@ -81,6 +81,11 @@ const Elevio = (() => {
             addEventListenerGTM();
             makeLauncherVisible();
 
+            // disable tracking page views every route change
+            elev.setSettings({
+                disablePushState: true,
+            });
+
             if (is_open) {
                 elev.open();
             }
