@@ -728,12 +728,10 @@ label + input {
     margin-top: 3px; }
 
 @media (max-width: 768px) {
-  .show_mobile[data-balloon]:before, .show_mobile[data-balloon]:after {
+  .show-mobile[data-balloon]:before {
     display: block !important;
     -webkit-transform: translate(-15%, 0) !important;
-            transform: translate(-15%, 0) !important; }
-  .show_mobile[data-balloon-length=medium]:before {
-    width: 120px; } }
+            transform: translate(-15%, 0) !important; } }
 
 @media screen and (max-width: 500px) {
   .responsive thead {
@@ -745,7 +743,12 @@ label + input {
       font-weight: bold;
       display: inline-block;
       width: 100%;
-      text-align: left !important; } }
+      text-align: left !important; }
+  .show-mobile[data-balloon]:before {
+    position: fixed;
+    width: 80vw;
+    left: 18vw;
+    bottom: 20vh; } }
 
 @media screen and (max-width: 480px) {
   #token_form p.error-msg {
@@ -2169,7 +2172,7 @@ body.ZH_TW .google-play-badge {
   #sell_popup_container {
     max-height: 100%; }
   input:not([type='checkbox']), select {
-    width: 80%;
+    width: 75%;
     height: 26px; }
   .center-text-m, .center-text-m div:first-child label {
     text-align: center; }
@@ -11125,3 +11128,16 @@ html.mm-opened.mm-black .mm-page {
     transition: max-width 0.1s ease, padding 0.1s ease;
     color: #fff;
     font-size: 13px; }
+
+#gtm-deriv-livechat {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 4.6rem;
+  background-color: #fff;
+  -webkit-box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.05), 0 0 20px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.05), 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  display: none;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 9999; }
