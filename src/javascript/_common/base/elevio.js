@@ -25,6 +25,7 @@ const Elevio = (() => {
         if (httpresponse !== 200) {
 
             // fallback to livechat when elevio is not available
+            el_shell = document.getElementById(el_shell_id).remove();
             livechatFallback();
         }
     };
