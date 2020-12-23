@@ -25,6 +25,7 @@ const Elevio = (() => {
         if (httpresponse !== 200) {
 
             // fallback to livechat when elevio is not available
+            el_shell = document.getElementById(el_shell_id).remove();
             livechatFallback();
         }
     };
@@ -80,6 +81,11 @@ const Elevio = (() => {
             setTranslations(elev);
             addEventListenerGTM();
             makeLauncherVisible();
+
+            // disable tracking page views every route change
+            elev.setSettings({
+                disablePushState: true,
+            });
 
             if (is_open) {
                 elev.open();
