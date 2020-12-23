@@ -1,5 +1,6 @@
 const ClientBase    = require('./client_base');
 const GTM           = require('./gtm');
+const { livechatFallback } = require('./livechat');
 const BinarySocket  = require('./socket_base');
 const getLanguage   = require('../language').get;
 const localize      = require('../localize').localize;
@@ -9,6 +10,25 @@ const isLoginPages  = require('../utility').isLoginPages;
 const Elevio = (() => {
     const el_shell_id = 'elevio-shell';
     let el_shell;
+    const account_id = '5bbc2de0b7365';
+    const elevio_script = `https://cdn.elev.io/sdk/bootloader/v4/elevio-bootloader.js?cid=${account_id}`;
+
+    const checkElevioAvailability = () => {
+        const httpGet = (theUrl) => {
+            const xmlHttp = new XMLHttpRequest();
+            xmlHttp.open('GET', theUrl, false);
+            xmlHttp.send(null);
+            return xmlHttp.status;
+        };
+
+        const httpresponse = httpGet(elevio_script);
+        if (httpresponse !== 200) {
+
+            // fallback to livechat when elevio is not available
+            el_shell = document.getElementById(el_shell_id).remove();
+            livechatFallback();
+        }
+    };
 
     const init = () => {
         if (isLoginPages()) return;
@@ -16,17 +36,19 @@ const Elevio = (() => {
         el_shell = document.getElementById(el_shell_id);
 
         el_shell.addEventListener('click', () => injectElevio(true));
+
+        checkElevioAvailability(elevio_script);
     };
 
     const injectElevio = (is_open = false) => {
-        const account_id = '5bbc2de0b7365';
+        
         window._elev = {}; // eslint-disable-line no-underscore-dangle
         window._elev.account_id = account_id; // eslint-disable-line no-underscore-dangle
 
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.async = 1;
-        script.src = `https://cdn.elev.io/sdk/bootloader/v4/elevio-bootloader.js?cid=${account_id}`;
+        script.src = elevio_script;
         script.id = 'loaded-elevio-script';
         document.body.appendChild(script);
 
@@ -59,6 +81,11 @@ const Elevio = (() => {
             setTranslations(elev);
             addEventListenerGTM();
             makeLauncherVisible();
+
+            // disable tracking page views every route change
+            elev.setSettings({
+                disablePushState: true,
+            });
 
             if (is_open) {
                 elev.open();
