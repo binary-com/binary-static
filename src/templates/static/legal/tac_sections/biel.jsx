@@ -7,6 +7,7 @@ const Biel = () => (
         <p>{it.L('These ST&Cs form part of, and need to be read together with, the general terms and conditions relating to the use of [_1].', it.website_name)}</p>
         <p>{it.L('Clients should read these ST&Cs carefully as well as the Summary order execution policy and Summary conflicts policy, the applicable Contract details together with the Risk disclosure notice and any other documents that DIEL has supplied or in the future supplies to clients.')}</p>
         <p>{it.L('These ST&Cs begin to apply on the date DIEL opens the client\'s account, and, for any new versions after that, on the date DIEL notifies the client.')}</p>
+        <p>{it.L('DIEL has the duty to disclose all the circumstances that are material to the product or services that it provides to the clients before and during the provision of such product and/or service. DIEL is obliged to do so in accordance with its licensed activities.')}</p>
 
         <h2 data-anchor='about-us-and-our-regulator'>{it.L('About DIEL and DIEL\'s regulator')}</h2>
         <p>{it.L('DIEL is a company established in Malta under registration number C70156 and having its registered office at W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta.')}</p>
