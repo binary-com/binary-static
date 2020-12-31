@@ -60,12 +60,13 @@ const PaymentAgentWithdraw = (() => {
 
     const checkToken = async () => {
         token = token || Url.getHashValue('token');
-        const ws_response = await BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
         
-        if (ws_response.error) {
-            showPageError(ws_response.error.message);
-        } else if (!token) {
-            if (isBinaryApp()) {
+        if (!token) {
+            const ws_response = await BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
+
+            if (ws_response.error) {
+                showPageError(ws_response.error.message);
+            } else if (isBinaryApp()) {
                 handleVerifyCode((verification_code) => {
                     token = verification_code;
                     checkToken($ddl_agents);
