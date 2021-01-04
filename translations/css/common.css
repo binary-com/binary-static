@@ -603,6 +603,11 @@ ul.bullet.gr-row > li {
           -ms-flex: 1;
               flex: 1; }
 
+#dashboard-wrapper #content, #dashboard-wrapper .container {
+  margin: 0;
+  max-width: 100%;
+  padding: 0; }
+
 .foot-note {
   font-size: 0.7561436673rem;
   color: #c2c2c2;
