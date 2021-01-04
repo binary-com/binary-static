@@ -58,11 +58,15 @@ const PaymentAgentWithdraw = (() => {
         }
     };
 
-    const checkToken = () => {
+    const checkToken = async () => {
         token = token || Url.getHashValue('token');
+        
         if (!token) {
-            BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
-            if (isBinaryApp()) {
+            const ws_response = await BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
+
+            if (ws_response.error) {
+                showPageError(ws_response.error.message);
+            } else if (isBinaryApp()) {
                 handleVerifyCode((verification_code) => {
                     token = verification_code;
                     checkToken($ddl_agents);
