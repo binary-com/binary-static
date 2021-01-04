@@ -9,9 +9,9 @@ import Elevio from '../includes/elevio.jsx';
 import Gtm from '../includes/gtm.jsx';
 import LiveChat from '../includes/livechat.jsx';
 
-const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
+export const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
-const WithLayout = ({ children }) => {
+export const WithLayout = ({ children }) => {
     const content_class = `${it.current_route || ''}-content`;
     return (
         <div id='content' className={it.current_route ? content_class : undefined}>
@@ -39,6 +39,7 @@ const Layout = () => {
     if (it.is_pjax_request) {
         return <InnerContent />;
     }
+
     return (
         <html>
             <Head />

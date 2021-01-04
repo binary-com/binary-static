@@ -6,6 +6,7 @@ const LoggedInHandler         = require('./logged_in');
 const Redirect                = require('./redirect');
 const AccountTransfer         = require('../pages/cashier/account_transfer');
 const Cashier                 = require('../pages/cashier/cashier');
+const Dashboard               = require('../pages/dashboard/dashboard');
 const DepositWithdraw         = require('../pages/cashier/deposit_withdraw');
 const DP2P                    = require('../pages/cashier/dp2p');
 const PaymentAgentList        = require('../pages/cashier/payment_agent_list');
@@ -67,6 +68,7 @@ const ResponsibleTrading  = require('../../static/pages/responsible_trading');
 
 /* eslint-disable max-len */
 const pages_config = {
+    'about-us'               : { module: Dashboard },
     account_transfer         : { module: AccountTransfer,            is_authenticated: true, only_real: true, needs_currency: true },
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
@@ -91,6 +93,7 @@ const pages_config = {
     economic_calendar        : { module: EconomicCalendar },
     endpoint                 : { module: Endpoint },
     epg_forwardws            : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
+    explore                  : { module: Dashboard },
     faq                      : { module: StaticPages.AffiliatesFAQ },
     forex                    : { module: GetStarted.Forex },
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
@@ -106,6 +109,7 @@ const pages_config = {
     market_timesws           : { module: TradingTimesUI,             no_mf: true },
     metals                   : { module: GetStarted.Metals },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
+    overview                 : { module: Dashboard },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: Platforms },
@@ -116,6 +120,7 @@ const pages_config = {
     redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
+    resources                : { module: Dashboard },
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },

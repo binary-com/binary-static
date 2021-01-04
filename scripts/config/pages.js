@@ -11,6 +11,11 @@ module.exports = [
     ['cashier/session_expired',                 'app/cashier/session_expired',                 null,         'Cashier session expired'],
     ['cashier/top_up_virtualws',                'app/user/top_up_virtual/top_up_virtual',      'default',    'Top Up Virtual Account'],
 
+    ['dashboard/overview',                      'app/dashboard/index',                         'dashboard',  'Dashboard'],
+    ['dashboard/explore',                       'app/dashboard/index',                         'dashboard',  'Dashboard'],
+    ['dashboard/about-us',                      'app/dashboard/index',                         'dashboard',  'Dashboard'],
+    ['dashboard/resources',                     'app/dashboard/index',                         'dashboard',  'Dashboard'],
+
     ['paymentagent/transferws',                 'app/cashier/paymentagent_transfer',           'default',    'Payment Agent Transfer'],
     ['paymentagent/withdrawws',                 'app/cashier/paymentagent_withdraw',           'default',    'Payment Agent Withdrawal'],
 
