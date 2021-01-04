@@ -1,10 +1,10 @@
-const React               = require('react');
-const ReactDOM            = require('react-dom');
-const Client              = require('../../base/client');
-const BinarySocket        = require('../../base/socket');
-const ServerTime          = require('../../../_common/base/server_time');
-const getLanguage         = require('../../../_common/language').get;
-const urlForStatic        = require('../../../_common/url').urlForStatic;
+const React        = require('react');
+const ReactDOM     = require('react-dom');
+const Client       = require('../../base/client');
+const BinarySocket = require('../../base/socket');
+const ServerTime   = require('../../../_common/base/server_time');
+const getLanguage  = require('../../../_common/language').get;
+const urlForStatic = require('../../../_common/url').urlForStatic;
 
 const Dashboard = (() => {
     let el_shadow_dom_dashboard;
