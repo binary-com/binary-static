@@ -1,10 +1,10 @@
-const { init }           = require('@livechat/customer-sdk');
 const BinarySocket       = require('./socket');
 const Defaults           = require('../pages/trade/defaults');
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const ClientBase         = require('../../_common/base/client_base');
 const GTM                = require('../../_common/base/gtm');
 const SocketCache        = require('../../_common/base/socket_cache');
+const LiveChat            = require('../../_common/base/livechat');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const removeCookies      = require('../../_common/storage').removeCookies;
 const urlFor             = require('../../_common/url').urlFor;
@@ -12,8 +12,7 @@ const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const Client = (() => {
-    const licenseID = 12049137;
-    const clientID = '66aa088aad5a414484c1fd1fa8a5ace7';
+    
     const processNewAccount = (options) => {
         if (ClientBase.setNewAccount(options)) {
             setTimeout(() => { window.location.replace(options.redirect_url || defaultRedirectUrl()); }, 500); // need to redirect not using pjax
@@ -77,33 +76,6 @@ const Client = (() => {
         });
     };
 
-    const endLiveChat = () => new Promise ((resolve) => {
-        const initial_session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '' };
-
-        window.LiveChatWidget.call('set_session_variables', initial_session_variables);
-        window.LiveChatWidget.call('set_customer_email', ' ');
-        window.LiveChatWidget.call('set_customer_name', ' ');
-        
-        try {
-            const customerSDK = init({
-                licenseId: licenseID,
-                clientId : clientID,
-            });
-            customerSDK.on('connected', () => {
-                if (window.LiveChatWidget.get('chat_data')) {
-                    const { chatId, threadId } = window.LiveChatWidget.get('chat_data');
-                    if (threadId) {
-                        customerSDK.deactivateChat({ chatId });
-                    }
-                }
-                resolve();
-            });
-        } catch (e){
-            resolve();
-        }
-
-    });
-
     const doLogout = (response) => {
         if (response.logout !== 1) return;
         removeCookies('login', 'loginid', 'loginid_list', 'email', 'residence', 'settings'); // backward compatibility
@@ -117,7 +89,7 @@ const Client = (() => {
         ClientBase.set('loginid', '');
         SocketCache.clear();
         RealityCheckData.clear();
-        endLiveChat().then(() => {
+        LiveChat.endLiveChat().then(() => {
             const redirect_to = getPropertyValue(response, ['echo_req', 'passthrough', 'redirect_to']);
             if (redirect_to) {
                 window.location.href = redirect_to;
