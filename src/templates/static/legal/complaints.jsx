@@ -20,6 +20,9 @@ const Complaints = () => (
             '<a href="https://financialarbiter.org.mt" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
         <p data-show='eucountry'>{it.L('It is important that clients refer their disputes to the appropriate ADR for the claims to be valid.')}</p>
+        <p data-show='eucountry'>{it.L('If you reside in the UK and you are unhappy with our response you may escalate your complaint to the [_1]Financial Ombudsman Service[_2].',
+            '<a href="https://financialarbiter.org.mt" target="_blank" rel="noopener noreferrer">', '</a>')}
+        </p>
     </div>
 );
 
