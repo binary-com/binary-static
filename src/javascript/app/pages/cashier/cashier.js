@@ -61,28 +61,17 @@ const Cashier = (() => {
         resolve(getPropertyValue(offer_list_response, ['p2p_offer_list', 'list']).length);
     });
 
-    const displayTopUpButton = () => {
-        BinarySocket.wait('balance').then((response) => {
-            const el_virtual_topup_info = getElementById('virtual_topup_info');
-            const balance   = +response.balance.balance;
-            const can_topup = balance <= 1000;
-            const top_up_id = '#VRT_topup_link';
-            const $a        = $(top_up_id);
-            if (!$a) {
-                return;
-            }
-            const classes   = ['toggle', 'button-disabled'];
-            const new_el    = { class: $a.attr('class').replace(classes[+can_topup], classes[1 - +can_topup]), html: $a.html(), id: $a.attr('id') };
-            if (can_topup) {
-                href        = href || Url.urlFor('/cashier/top_up_virtualws');
-                new_el.href = href;
-            }
-            el_virtual_topup_info.innerText = can_topup
-                ? localize('Your virtual account balance is currently [_1] or less. You may top up your account with an additional [_2].', [`${Client.get('currency')} 1,000.00`, `${Client.get('currency')} 10,000.00`])
-                : localize('You can top up your virtual account with an additional [_1] if your balance is [_2] or less.', [`${Client.get('currency')} 10,000.00`, `${Client.get('currency')} 1,000.00`]);
-            $a.replaceWith($('<a/>', new_el));
-            $(top_up_id).parent().setVisibility(1);
-        });
+    const displayResetButton = () => {
+        const el_virtual_topup_info = getElementById('virtual_topup_info');
+        const top_up_id = '#VRT_topup_link';
+        const $a        = $(top_up_id);
+        if (!$a) return;
+        const new_el    = { class: 'toggle button', html: $a.html(), id: $a.attr('id') };
+        href            = href || Url.urlFor('/cashier/top_up_virtualws');
+        new_el.href     = href;
+        el_virtual_topup_info.innerText = localize('Reset the balance of your virtual account to [_1] anytime.', [`${Client.get('currency')} 10,000.00`]);
+        $a.replaceWith($('<a/>', new_el));
+        $(top_up_id).parent().setVisibility(1);
     };
 
     const showCurrentCurrency = (currency, statement, mt5_logins) => {
@@ -218,7 +207,7 @@ const Cashier = (() => {
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
                 if (Client.get('is_virtual')) {
-                    displayTopUpButton();
+                    displayResetButton();
                 } else if (currency) {
                     const is_p2p_allowed_currency = currency === 'USD';
                     const is_show_dp2p = /show_dp2p/.test(window.location.hash);
