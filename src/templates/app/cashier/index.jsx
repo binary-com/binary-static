@@ -15,7 +15,7 @@ const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
 );
 
 const DepositWithdrawButton = ({ is_payment_agent, is_virtual }) => (
-    <div className='gr-4 gr-12-m'>
+    <div className= {is_virtual ? 'gr-4 gr-12-m' : 'gr-2 gr-12-m'}>
         <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
         <div className='gr-row gr-row-align-left gr-row-align-right-m'>
             { is_virtual ?
