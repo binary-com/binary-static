@@ -21,7 +21,7 @@ const MetaTraderConfig = (() => {
         new Promise((resolve) => {
             const $message = $messages.find('#msg_real_financial').clone();
             const is_virtual = Client.get('is_virtual');
-            const is_demo = accounts_info[acc_type].is_demo;
+            const is_demo = /^demo_/.test(acc_type);
 
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
@@ -43,9 +43,16 @@ const MetaTraderConfig = (() => {
                     };
 
                     const has_financial_account = Client.hasAccountType('financial', 1);
-                    const is_maltainvest        = accounts_info[acc_type].landing_company_short === 'maltainvest';
-                    const is_financial          = accounts_info[acc_type].market_type === 'financial';
-                    const is_demo_financial     = accounts_info[acc_type].is_demo && is_financial;
+
+                    const clean_key = acc_type.substr(0, acc_type.lastIndexOf('_'));
+                    const regex = new RegExp(clean_key);
+                    const sample_account =
+                        accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
+
+                    const is_maltainvest        = sample_account.landing_company_short === 'maltainvest';
+
+                    const is_financial          = sample_account.market_type === 'financial';
+                    const is_demo_financial     = is_demo && is_financial;
 
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
@@ -55,7 +62,7 @@ const MetaTraderConfig = (() => {
 
                     const response_get_settings = State.getResponse('get_settings');
                     if (is_financial) {
-                        if (accounts_info[acc_type].landing_company_short === 'svg') resolve();
+                        if (sample_account.landing_company_short === 'svg') resolve();
 
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
@@ -82,7 +89,7 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             // UK Clients need to be authenticated first before they can proceed with account creation
-                            if (is_ok && !isAuthenticated() && is_maltainvest && accounts_info[acc_type].sub_account_type === 'financial' && Client.get('residence') === 'gb') {
+                            if (is_ok && !isAuthenticated() && is_maltainvest && sample_account.sub_account_type === 'financial' && Client.get('residence') === 'gb') {
                                 $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 await setMaltaInvestIntention();
@@ -90,7 +97,7 @@ const MetaTraderConfig = (() => {
                                 $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
-                            if (is_ok && !isAuthenticated() && accounts_info[acc_type].sub_account_type === 'financial_stp') {
+                            if (is_ok && !isAuthenticated() && sample_account.sub_account_type === 'financial_stp') {
                                 // disable button must occur before loading
                                 $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
@@ -103,7 +110,7 @@ const MetaTraderConfig = (() => {
                             if (is_ok) resolve();
                             else resolveWithMessage();
                         });
-                    } else if (accounts_info[acc_type].market_type === 'gaming') {
+                    } else if (sample_account.market_type === 'gaming') {
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
                             const response_get_account_status = State.getResponse('get_account_status');

@@ -78,18 +78,36 @@ const MetaTrader = (() => {
                         Client.getMT5AccountDisplays(market_type, sub_account_type, is_demo);
                     const leverage = getLeverage(market_type, sub_account_type, landing_company_short);
 
-                    // e.g. real_gaming_financial
-                    accounts_info[`${account_type}_${market_type}_${sub_account_type}`] = {
-                        is_demo,
-                        landing_company_short,
-                        leverage,
-                        market_type,
-                        sub_account_type,
-                        short_title: display_name.short,
-                        title      : display_name.full,
-                    };
+                    getAvailableServers(market_type, sub_account_type).forEach(trading_server => {
+                        // e.g. real_gaming_financial_africa
+                        accounts_info[`${account_type}_${market_type}_${sub_account_type}_${trading_server.id}`] = {
+                            is_demo,
+                            landing_company_short,
+                            leverage,
+                            market_type,
+                            sub_account_type,
+                            short_title: display_name.short,
+                            title      : display_name.full,
+                        };
+                    });
                 });
             });
+    };
+
+    const getAvailableServers = (market_type, sub_account_type) => {
+        const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
+        const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
+        const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
+
+        return State.getResponse('trading_servers').filter(trading_server => {
+            const { supported_accounts } = trading_server;
+            const is_server_supported =
+                (is_synthetic && supported_accounts.includes('gaming')) ||
+                (is_financial && supported_accounts.includes('financial')) ||
+                (is_financial_stp && supported_accounts.includes('financial_stp'));
+
+            return is_server_supported;
+        });
     };
 
     // synthetic is 500
@@ -244,7 +262,7 @@ const MetaTrader = (() => {
 
         // Update account info
         response.mt5_login_list.forEach((account) => {
-            const acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}`;
+            const acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}_${account.server}`;
 
             accounts_info[acc_type].info = account;
 
