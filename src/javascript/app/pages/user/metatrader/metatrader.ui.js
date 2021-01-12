@@ -175,6 +175,7 @@ const MetaTraderUI = (() => {
             $acc_item.setVisibility(0);
         }
     };
+
     const displayAccountDescription = (acc_type) => {
         const $account_desc = $templates.find('.account-desc');
         let $account_type_desc = '';
@@ -480,20 +481,47 @@ const MetaTraderUI = (() => {
             }
         });
 
-        const is_synthetic = accounts_info[acc_type].market_type === 'gaming' && accounts_info[acc_type].sub_account_type === 'financial';
-        const is_financial = accounts_info[acc_type].market_type === 'financial' && accounts_info[acc_type].sub_account_type === 'financial';
-        const is_financial_stp = accounts_info[acc_type].market_type === 'financial' && accounts_info[acc_type].sub_account_type === 'financial_stp';
+        const { market_type, sub_account_type } = accounts_info[acc_type];
+
+        const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
+        const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
+        const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
 
         // TODO: disable the option that is already created or API passed as disabled
-        State.getResponse('trading_servers').forEach(server => {
-            if ((is_synthetic && server.supported_accounts.includes('gaming')) ||
-            (is_financial && server.supported_accounts.includes('financial')) ||
-            (is_financial_stp && server.supported_accounts.includes('financial_stp'))) {
+        State.getResponse('trading_servers').forEach(trading_server => {
+            const { id: server_id, supported_accounts } = trading_server; 
+            const is_server_supported =
+                (is_synthetic && supported_accounts.includes('gaming')) ||
+                (is_financial && supported_accounts.includes('financial')) ||
+                (is_financial_stp && supported_accounts.includes('financial_stp'));
+            
+            const is_used_server = is_server_supported && server_id === accounts_info[acc_type].info.server;
+            const is_disabled = trading_server.disabled === 1;
+
+            if (is_server_supported) {
+                const input_attributes = {
+                    type : 'radio',
+                    name : 'ddl_trade_server',
+                    value: trading_server.id,
+                    ...(trading_server.recommended && !is_used_server && !is_disabled && { checked: 'checked' }),
+                };
+
+                const { region, sequence } = trading_server.geolocation;
+                let label_text = `${region} ${sequence}`;
+
+                if (is_used_server) {
+                    label_text += localize(' (account created)');
+                } else if (is_disabled) {
+                    label_text += localize(' (unavailable)');
+                }
+
                 $form.find('#ddl_trade_server')
                     .append(
-                        $('<div />', { id: server.id, class: 'gr-padding-10 gr-parent' })
-                            .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: server.id, ...(server.recommended && { checked: 'checked' }) }))
-                            .append($('<label />', { htmlFor: server.id }).append($('<span />', { text: `${server.geolocation.region} ${server.geolocation.sequence}` })))
+                        $('<div />', { id: trading_server.id, class: 'gr-padding-10 gr-parent' })
+                            .append($('<input />', input_attributes))
+                            .append($('<label />', { htmlFor: trading_server.id })
+                                .append($('<span />', { text: label_text }))
+                            )
                     );
             }
         });
