@@ -301,7 +301,7 @@ const Metatrader = () => (
                                     <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
                                         <span>{it.L('Cancel')}</span>
                                     </a>
-                                    <a id='btn_next' className='button button-disabled' href='javascript:;'>
+                                    <a className='button button-disabled btn-next' href='javascript:;'>
                                         <span>{it.L('Next')}</span>
                                     </a>
                                 </div>
@@ -311,6 +311,18 @@ const Metatrader = () => (
                                     <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                     <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
+                                    <a className='button button-secondary btn-back' href='javascript:;'>
+                                        <span>{it.L('Back')}</span>
+                                    </a>
+                                    <a className='button btn-next' href='javascript:;'>
+                                        <span>{it.L('Next')}</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id='view_3' className='gr-row invisible'>
+                                <div className='container gr-8 gr-12-m'>
+                                    <p>{it.L('Choose a server for your MT5 Real Synthetic account')}</p>
+                                    <div id='ddl_trade_server' type='radio' />
                                     <SubmitButton
                                         is_centered
                                         type='submit'
@@ -318,8 +330,7 @@ const Metatrader = () => (
                                         text={it.L('Create account')}
                                         attributes={{ action: 'new_account' }}
                                         custom_btn_text={it.L('Back')}
-                                        custom_btn_id='btn_back'
-                                        custom_btn_class='button-secondary'
+                                        custom_btn_class='button-secondary btn-back'
                                     />
                                 </div>
                             </div>

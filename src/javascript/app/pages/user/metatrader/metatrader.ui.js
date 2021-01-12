@@ -399,25 +399,66 @@ const MetaTraderUI = (() => {
             $.scrollTo($('h1'), 300, { offset: -10 });
             showFinancialAuthentication(true);
         });
+        let name = '';
         const displayStep = (step) => {
             $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
             $form.find(`#view_${step}`).setVisibility(1);
             $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
-            $form.find('input').val('');
             $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
+            if (step === 2) {
+                $form.find('input').val('');
+                $form.find('#txt_name').val(name);
+            }
         };
-        $form.find('#btn_next').click(function() {
+
+        const get_settings = State.getResponse('get_settings');
+        if (get_settings.first_name && get_settings.last_name) {
+            name = `${get_settings.first_name} ${get_settings.last_name}`;
+        }
+        $form.find('#view_1 .btn-next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                $form.find('#view_2 button[type="submit"]').attr('acc_type', newAccountGetType());
-                displayStep(2);
-                const get_settings = State.getResponse('get_settings');
-                if (get_settings.first_name && get_settings.last_name) {
-                    $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
-                }
+                // TODO: change to 2 after testing is done
+                displayStep(3);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
-        $form.find('#btn_back').click(() => { displayStep(1); });
+        $form.find('#view_2 .btn-next').click(() => {
+            if (Validation.validate('#frm_new_account')) {
+                $form.find('#view_3 button[type="submit"]').attr('acc_type', newAccountGetType());
+                displayStep(3);
+                $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
+            }
+        });
+        $form.find('#view_2 .btn-back').click(() => { displayStep(1); });
+        $form.find('#view_3 .btn-back').click(() => { displayStep(2); });
+
+        // TODO: update with trade servers from API
+        // TODO: disable the option that is already created
+        // TODO: filter to only show the server that is offered for the current account type
+        $form.find('#ddl_trade_server')
+            .append(
+                $('<div />', { id: 'real01', class: 'gr-padding-10 gr-parent' })
+                    .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: 'real01', checked: 'checked' }))
+                    .append($('<label />', { htmlFor: 'real01' }).append($('<span />', { text: 'Africa' })))
+            )
+            .append(
+                $('<div />', { id: 'real02', class: 'gr-padding-10 gr-parent' })
+                    .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: 'real02' }))
+                    .append($('<label />', { htmlFor: 'real02' }).append($('<span />', { text: 'Europe' })))
+            )
+            .on('click', (e) => {
+                $form.find('#ddl_trade_server').find('input').removeAttr('checked');
+
+                if (e.target.nodeName === 'SPAN') {
+                    $(e.target.parentElement).parent().find('input').attr('checked', 'checked');
+                }
+                if (e.target.nodeName === 'LABEL') {
+                    $(e.target.parentElement).find('input').attr('checked', 'checked');
+                }
+                if (e.target.nodeName === 'INPUT') {
+                    $(e.target).attr('checked', 'checked');
+                }
+            });
 
         // Account type selection
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
@@ -440,7 +481,7 @@ const MetaTraderUI = (() => {
             displayAccountDescription();
             updateAccountTypesUI(selected_acc_type);
             switchAcccountTypesUI(selected_acc_type, $form);
-            $form.find('#view_1 #btn_next').addClass('button-disabled');
+            $form.find('#view_1 .btn-next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
         } else {
@@ -448,7 +489,7 @@ const MetaTraderUI = (() => {
             displayAccountDescription(new_acc_type);
             actions_info[action].prerequisites(new_acc_type).then((error_msg) => {
                 displayMessage('#new_account_msg', error_msg || '');
-                $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
+                $form.find('#view_1 .btn-next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
         }

@@ -83,7 +83,7 @@ const MetaTraderConfig = (() => {
                             }
                             // UK Clients need to be authenticated first before they can proceed with account creation
                             if (is_ok && !isAuthenticated() && is_maltainvest && accounts_info[acc_type].sub_account_type === 'financial' && Client.get('residence') === 'gb') {
-                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 await setMaltaInvestIntention();
                                 $('#authenticate_loading').setVisibility(0);
@@ -92,7 +92,7 @@ const MetaTraderConfig = (() => {
                             }
                             if (is_ok && !isAuthenticated() && accounts_info[acc_type].sub_account_type === 'financial_stp') {
                                 // disable button must occur before loading
-                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 await setLabuanFinancialSTPIntention();
                                 $('#authenticate_loading').setVisibility(0);
@@ -115,7 +115,7 @@ const MetaTraderConfig = (() => {
                             const should_have_malta = Client.getUpgradeInfo().can_upgrade_to.includes('malta');
 
                             if (is_ok && is_maltainvest && should_have_malta) {
-                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 $message.find('.malta').setVisibility(1);
                                 await setMaltaIntention();
@@ -342,6 +342,7 @@ const MetaTraderConfig = (() => {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
+            ddl_trade_server : { id: '#ddl_trade_server', request_field: 'trade_server', is_radio: true },
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields:
                 acc_type => ({
@@ -406,6 +407,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
+            { selector: fields.new_account.ddl_trade_server.id,  validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
