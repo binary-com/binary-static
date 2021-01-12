@@ -353,11 +353,11 @@
                     margin-left: 8px;
                 }
                 input[type='radio'][disabled] + label {
-                    &::before {
-                        border: 1px solid #dedede;
+                    &:before {
+                        border: 1px solid $COLOR_GRAY;
                     }
                     & span {
-                        color: #dedede;
+                        color: $COLOR_GRAY;
                     }
                 }
             }
