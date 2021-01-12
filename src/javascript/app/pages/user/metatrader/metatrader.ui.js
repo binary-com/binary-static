@@ -212,7 +212,7 @@ const MetaTraderUI = (() => {
                     display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
                     server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
-                    trade_server : () => accounts_info[acc_type].info.server,
+                    trade_server : () => accounts_info[acc_type].info.display_server,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });

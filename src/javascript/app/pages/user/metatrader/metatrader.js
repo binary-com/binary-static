@@ -124,17 +124,6 @@ const MetaTrader = (() => {
         return default_account;
     };
 
-    const setAccountDetails = (login, acc_type, data) => {
-        if (data.mt5_login_list) {
-            const info = data.mt5_login_list.find(mt5_account => mt5_account.login === login);
-            if (info) {
-                accounts_info[acc_type].info = info;
-                accounts_info[acc_type].info.display_login = MetaTraderConfig.getDisplayLogin(info.login);
-                MetaTraderUI.updateAccount(acc_type);
-            }
-        }
-    };
-
     const makeRequestObject = (acc_type, action) => {
         const req = {};
 
@@ -251,15 +240,22 @@ const MetaTrader = (() => {
             return;
         }
 
+        const trading_servers = State.getResponse('trading_servers');
+
         // Update account info
         response.mt5_login_list.forEach((account) => {
             const acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}`;
-            accounts_info[acc_type].info = {
-                display_login: MetaTraderConfig.getDisplayLogin(account.login),
-                login        : account.login,
-                server       : account.server,
-            };
-            setAccountDetails(account.login, acc_type, response);
+
+            accounts_info[acc_type].info = account;
+
+            const geolocation = trading_servers.find(server => server.id === account.server).geolocation;
+
+            accounts_info[acc_type].info.display_login  = MetaTraderConfig.getDisplayLogin(account.login);
+            accounts_info[acc_type].info.login          = account.login;
+            accounts_info[acc_type].info.server         = account.server;
+            accounts_info[acc_type].info.display_server = `${geolocation.region} ${geolocation.sequence}`;
+
+            MetaTraderUI.updateAccount(acc_type);
         });
 
         const current_acc_type = getDefaultAccount();
