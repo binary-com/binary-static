@@ -400,7 +400,7 @@ const MetaTraderUI = (() => {
             const trading_servers = State.getResponse('trading_servers');
             const $view_2_button_container = $form.find('#view_2-buttons');
 
-            if (trading_servers.length === 0) {
+            if (trading_servers.length === 0 || /demo/.test(newAccountGetType())) {
                 const $submit_button = $form.find('#btn_submit_new_account');
                 
                 $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_2_button_container);
