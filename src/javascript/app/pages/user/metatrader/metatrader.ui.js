@@ -389,10 +389,10 @@ const MetaTraderUI = (() => {
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
+        $form.find('input').not(':input[type=radio]').val('');
         $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
 
         if (step === 2) {
-            $form.find('input').val('');
             $form.find('#txt_name').val(opt_name);
         }
     };
@@ -443,7 +443,7 @@ const MetaTraderUI = (() => {
 
         $form.find('#view_1 .btn-next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                displayStep(2);
+                displayStep(2, name);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
@@ -452,7 +452,7 @@ const MetaTraderUI = (() => {
             if (Validation.validate('#frm_new_account')) {
                 $form.find('#view_3 button[type="submit"]').attr('acc_type', newAccountGetType());
                 $form.find('#view_3 #mt5_account_type').text(accounts_info[acc_type].title);
-                displayStep(3, name);
+                displayStep(3);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
@@ -484,7 +484,7 @@ const MetaTraderUI = (() => {
                     $(e.target).attr('checked', 'checked');
                 }
             });
-        
+
         $form.find('#view_2 .btn-next').click(() => {
             if (Validation.validate('#frm_new_account')) {
                 $form.find('#view_3 button[type="submit"]').attr('acc_type', newAccountGetType());
