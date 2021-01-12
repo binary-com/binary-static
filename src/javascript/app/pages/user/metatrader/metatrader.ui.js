@@ -168,11 +168,6 @@ const MetaTraderUI = (() => {
                 $back_button.setVisibility(0);
                 displayStep(2);
 
-                const get_settings = State.getResponse('get_settings');
-
-                if (get_settings.first_name && get_settings.last_name) {
-                    $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
-                }
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             });
 
@@ -385,7 +380,7 @@ const MetaTraderUI = (() => {
         });
     };
 
-    const displayStep = (step, opt_name = null) => {
+    const displayStep = (step) => {
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
@@ -393,7 +388,11 @@ const MetaTraderUI = (() => {
         $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
 
         if (step === 2) {
-            $form.find('#txt_name').val(opt_name);
+            const get_settings = State.getResponse('get_settings');
+
+            if (get_settings.first_name && get_settings.last_name) {
+                $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
+            }
         }
     };
 
@@ -434,16 +433,9 @@ const MetaTraderUI = (() => {
             showFinancialAuthentication(true);
         });
 
-        let name = '';
-        const get_settings = State.getResponse('get_settings');
-
-        if (get_settings.first_name && get_settings.last_name) {
-            name = `${get_settings.first_name} ${get_settings.last_name}`;
-        }
-
         $form.find('#view_1 .btn-next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                displayStep(2, name);
+                displayStep(2);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
