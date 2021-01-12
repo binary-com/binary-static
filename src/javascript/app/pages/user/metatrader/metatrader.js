@@ -257,6 +257,7 @@ const MetaTrader = (() => {
             accounts_info[acc_type].info = {
                 display_login: MetaTraderConfig.getDisplayLogin(account.login),
                 login        : account.login,
+                server       : account.server,
             };
             setAccountDetails(account.login, acc_type, response);
         });

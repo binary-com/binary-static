@@ -212,7 +212,7 @@ const MetaTraderUI = (() => {
                     display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
                     server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
-                    trade_server : () => 'Some trading server', // TODO: Replace with actual trading server.
+                    trade_server : () => accounts_info[acc_type].info.server,
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
@@ -387,7 +387,7 @@ const MetaTraderUI = (() => {
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
         $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
-        
+
         if (step === 2) {
             $form.find('input').not(':input[type=radio]').val('');
 
@@ -402,7 +402,7 @@ const MetaTraderUI = (() => {
 
             if (trading_servers.length === 0 || /demo/.test(newAccountGetType())) {
                 const $submit_button = $form.find('#btn_submit_new_account');
-                
+
                 $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_2_button_container);
 
                 // If we have no trading servers, skip the step after this
