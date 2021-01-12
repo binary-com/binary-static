@@ -320,7 +320,7 @@ const Metatrader = () => (
                                     <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                     <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
-                                    <div className='gr-padding-10 center-text'>
+                                    <div id='view_2-buttons' className='gr-padding-10 center-text'>
                                         <a className='button button-secondary btn-back' href='javascript:;'>
                                             <span>{it.L('Back')}</span>
                                         </a>
@@ -340,14 +340,19 @@ const Metatrader = () => (
                                 <div className='container gr-8 gr-12-m'>
                                     <p>{it.L('Choose a server for your MT5 [_1] account:', '<span id="mt5_account_type"></span>')}</p>
                                     <div id='ddl_trade_server' type='radio' />
-                                    <div className='gr-padding-10 center-text'>
+                                    <div id='view_3-buttons' className='gr-padding-10 center-text'>
                                         <a className='button button-secondary btn-back' href='javascript:;'>
                                             <span>{it.L('Back')}</span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            
+                            <div id='submit_button_container'>
+                                <p id='msg_form' className='error-msg no-margin invisible' />
+                                <button className='invisible' id='btn_submit_new_account' type='submit' action='new_account'>
+                                    {it.L('Create account')}
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
