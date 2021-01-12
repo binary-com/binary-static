@@ -417,14 +417,14 @@ const MetaTraderUI = (() => {
         }
         $form.find('#view_1 .btn-next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                // TODO: change to 2 after testing is done
-                displayStep(3);
+                displayStep(2);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
         $form.find('#view_2 .btn-next').click(() => {
             if (Validation.validate('#frm_new_account')) {
                 $form.find('#view_3 button[type="submit"]').attr('acc_type', newAccountGetType());
+                $form.find('#view_3 #mt5_account_type').text(accounts_info[acc_type].title);
                 displayStep(3);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }

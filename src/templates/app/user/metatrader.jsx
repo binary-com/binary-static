@@ -321,7 +321,7 @@ const Metatrader = () => (
                             </div>
                             <div id='view_3' className='gr-row invisible'>
                                 <div className='container gr-8 gr-12-m'>
-                                    <p>{it.L('Choose a server for your MT5 Real Synthetic account')}</p>
+                                    <p>{it.L('Choose a server for your MT5 [_1] account:', '<span id="mt5_account_type"></span>')}</p>
                                     <div id='ddl_trade_server' type='radio' />
                                     <SubmitButton
                                         is_centered
