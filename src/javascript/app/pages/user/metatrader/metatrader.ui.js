@@ -139,6 +139,7 @@ const MetaTraderUI = (() => {
         if (accounts_info[acc_type].info) {
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
+            $acc_item.find('.mt-server').text(`${accounts_info[acc_type].info.display_server}`);
             $acc_item.setVisibility(1);
             if (accounts_info[acc_type].is_demo) {
                 $list.find('#acc_group_demo').setVisibility(1);

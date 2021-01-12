@@ -122,7 +122,7 @@ const Metatrader = () => (
                                 </div>
                                 <div className='gr-row gr-padding-10 gr-parent'>
                                     <div className='gr-3'>{it.L('Trade server:')}</div>
-                                    <div data='trade_server' />
+                                    <div className='mt-trade-server' data='trade_server' />
                                 </div>
                             </div>
                         </div>
@@ -219,6 +219,7 @@ const Metatrader = () => (
                     <div className='mt-balance invisible'>&nbsp;</div>
                     <span className='mt-type' />
                     <span className='mt-login' />
+                    <span className='mt-server mt-trade-server' />
                 </div>
                 <div className='account-desc'>
                     <AccountDesc
