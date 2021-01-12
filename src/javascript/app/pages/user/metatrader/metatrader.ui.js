@@ -163,7 +163,7 @@ const MetaTraderUI = (() => {
                 const account_type = Client.get('mt5_account');
 
                 loadAction('new_account', account_type);
-                $form.find('#view_2 button[type="submit"]').attr('acc_type', newAccountGetType());
+                $form.find('#view_3 button[type="submit"]').attr('acc_type', account_type);
                 $cancel_button.setVisibility(1);
                 $back_button.setVisibility(0);
                 displayStep(2);
@@ -492,7 +492,15 @@ const MetaTraderUI = (() => {
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
     };
 
-    const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
+    const newAccountGetType = () => {
+        const selected_type = $form.find('.step-2 .selected').attr('data-acc-type');
+        // if user selected account type using the form, send that
+        if (selected_type) {
+            return `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
+        }
+        // otherwise they are adding more server to their current account type
+        return Client.get('mt5_account');
+    };
 
     const selectAccountTypeUI = (e) => {
         const box_class = 'mt5_type_box';
