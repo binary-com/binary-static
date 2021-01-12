@@ -347,12 +347,9 @@ const Metatrader = () => (
                                     </div>
                                 </div>
                             </div>
-                            <div id='submit_button_container'>
-                                <p id='msg_form' className='error-msg no-margin invisible' />
-                                <button className='invisible' id='btn_submit_new_account' type='submit' action='new_account'>
-                                    {it.L('Create account')}
-                                </button>
-                            </div>
+                            <button id='btn_submit_new_account' className='invisible' type='submit' action='new_account'>
+                                {it.L('Create account')}
+                            </button>
                         </div>
                     </form>
                 </div>

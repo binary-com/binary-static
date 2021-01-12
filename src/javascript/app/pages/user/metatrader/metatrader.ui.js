@@ -381,9 +381,8 @@ const MetaTraderUI = (() => {
     };
 
     const displayStep = (step) => {
-        const $submit_button = $form.find('#btn_submit_new_account');
-
-        $submit_button.setVisibility(0);
+        $form.find('#btn_submit_new_account').setVisibility(0);
+        $form.find('#msg_form').remove();
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
@@ -399,22 +398,32 @@ const MetaTraderUI = (() => {
             }
 
             const trading_servers = State.getResponse('trading_servers');
+            const $view_2_button_container = $form.find('#view_2-buttons');
 
             if (trading_servers.length === 0) {
+                const $submit_button = $form.find('#btn_submit_new_account');
+                
+                $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_2_button_container);
+
                 // If we have no trading servers, skip the step after this
                 // by showing the "Create account" button right away.
-                const $back_button = $form.find('#view_2 .btn-back').setVisibility(1);
-                $submit_button.insertAfter($back_button);
+                $view_2_button_container.append($submit_button);
                 $submit_button.setVisibility(1);
             } else {
                 // If we do have trading servers, show the next button.
                 $form.find('#view_2 .btn-next').setVisibility(1);
             }
-        }
 
-        if (step === 3) {
-            const $back_button = $form.find('#view_3 .btn-back').setVisibility(1);
-            $submit_button.insertAfter($back_button).setVisibility(1);
+            $view_2_button_container.setVisibility(1);
+        } else if (step === 3) {
+            const $submit_button = $form.find('#btn_submit_new_account');
+            const $view_3_button_container = $form.find('#view_3-buttons');
+
+            $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_3_button_container);
+
+            $view_3_button_container.append($submit_button);
+            $view_3_button_container.setVisibility(1);
+            $submit_button.setVisibility(1);
         }
     };
 
