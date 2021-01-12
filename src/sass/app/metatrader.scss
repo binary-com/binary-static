@@ -352,6 +352,14 @@
                 #btn_submit_new_account {
                     margin-left: 8px;
                 }
+                input[type='radio'][disabled] + label {
+                    &::before {
+                        border: 1px solid #dedede;
+                    }
+                    & span {
+                        color: #dedede;
+                    }
+                }
             }
         }
     }

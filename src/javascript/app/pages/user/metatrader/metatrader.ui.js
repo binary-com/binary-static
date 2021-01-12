@@ -394,6 +394,11 @@ const MetaTraderUI = (() => {
                 account_type += `_${trading_server.id}`;
             }
             const new_account_info = accounts_info[account_type];
+
+            if (!new_account_info) {
+                return false;
+            }
+
             const { market_type, sub_account_type } = new_account_info;
 
             const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
@@ -530,9 +535,10 @@ const MetaTraderUI = (() => {
 
                 if (is_server_supported) {
                     const input_attributes = {
-                        type : 'radio',
-                        name : 'ddl_trade_server',
-                        value: trading_server.id,
+                        disabled: is_used_server || is_disabled,
+                        type    : 'radio',
+                        name    : 'ddl_trade_server',
+                        value   : trading_server.id,
                         ...(trading_server.recommended && !is_used_server && !is_disabled && { checked: 'checked' }),
                     };
 
@@ -572,16 +578,16 @@ const MetaTraderUI = (() => {
         });
 
         $form.find('#ddl_trade_server').off('click').on('click', (e) => {
-            $form.find('#ddl_trade_server').find('input').removeAttr('checked');
+            $form.find('#ddl_trade_server').find('input').not(':input[disabled]').removeAttr('checked');
 
             if (e.target.nodeName === 'SPAN') {
-                $(e.target.parentElement).parent().find('input').attr('checked', 'checked');
+                $(e.target.parentElement).parent().find('input').not(':input[disabled]').attr('checked', 'checked');
             }
             if (e.target.nodeName === 'LABEL') {
-                $(e.target.parentElement).find('input').attr('checked', 'checked');
+                $(e.target.parentElement).find('input').not(':input[disabled]').attr('checked', 'checked');
             }
             if (e.target.nodeName === 'INPUT') {
-                $(e.target).attr('checked', 'checked');
+                $(e.target).not(':input[disabled]').attr('checked', 'checked');
             }
         });
 
