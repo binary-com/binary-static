@@ -342,7 +342,7 @@ const MetaTraderConfig = (() => {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
-            ddl_trade_server : { id: '#ddl_trade_server', request_field: 'trade_server', is_radio: true },
+            ddl_trade_server : { id: '#ddl_trade_server', request_field: 'server', is_radio: true },
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields:
                 acc_type => ({

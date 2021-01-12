@@ -449,33 +449,37 @@ const MetaTraderUI = (() => {
             }
         });
 
-        // TODO: update with trade servers from API
-        // TODO: disable the option that is already created
-        // TODO: filter to only show the server that is offered for the current account type
-        $form.find('#ddl_trade_server')
-            .append(
-                $('<div />', { id: 'real01', class: 'gr-padding-10 gr-parent' })
-                    .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: 'real01', checked: 'checked' }))
-                    .append($('<label />', { htmlFor: 'real01' }).append($('<span />', { text: 'Africa' })))
-            )
-            .append(
-                $('<div />', { id: 'real02', class: 'gr-padding-10 gr-parent' })
-                    .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: 'real02' }))
-                    .append($('<label />', { htmlFor: 'real02' }).append($('<span />', { text: 'Europe' })))
-            )
-            .on('click', (e) => {
-                $form.find('#ddl_trade_server').find('input').removeAttr('checked');
+        const is_synthetic = accounts_info[acc_type].market_type === 'gaming' && accounts_info[acc_type].sub_account_type === 'financial';
+        const is_financial = accounts_info[acc_type].market_type === 'financial' && accounts_info[acc_type].sub_account_type === 'financial';
+        const is_financial_stp = accounts_info[acc_type].market_type === 'financial' && accounts_info[acc_type].sub_account_type === 'financial_stp';
 
-                if (e.target.nodeName === 'SPAN') {
-                    $(e.target.parentElement).parent().find('input').attr('checked', 'checked');
-                }
-                if (e.target.nodeName === 'LABEL') {
-                    $(e.target.parentElement).find('input').attr('checked', 'checked');
-                }
-                if (e.target.nodeName === 'INPUT') {
-                    $(e.target).attr('checked', 'checked');
-                }
-            });
+        // TODO: disable the option that is already created or API passed as disabled
+        State.getResponse('trading_servers').forEach(server => {
+            if ((is_synthetic && server.supported_accounts.includes('gaming')) ||
+            (is_financial && server.supported_accounts.includes('financial')) ||
+            (is_financial_stp && server.supported_accounts.includes('financial_stp'))) {
+                $form.find('#ddl_trade_server')
+                    .append(
+                        $('<div />', { id: server.id, class: 'gr-padding-10 gr-parent' })
+                            .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: server.id, checked: 'checked' }))
+                            .append($('<label />', { htmlFor: server.id }).append($('<span />', { text: `${server.geolocation.region} ${server.geolocation.sequence}` })))
+                    );
+            }
+        });
+
+        $form.find('#ddl_trade_server').off('click').on('click', (e) => {
+            $form.find('#ddl_trade_server').find('input').removeAttr('checked');
+
+            if (e.target.nodeName === 'SPAN') {
+                $(e.target.parentElement).parent().find('input').attr('checked', 'checked');
+            }
+            if (e.target.nodeName === 'LABEL') {
+                $(e.target.parentElement).find('input').attr('checked', 'checked');
+            }
+            if (e.target.nodeName === 'INPUT') {
+                $(e.target).attr('checked', 'checked');
+            }
+        });
 
         $form.find('#view_2 .btn-next').click(() => {
             if (Validation.validate('#frm_new_account')) {
