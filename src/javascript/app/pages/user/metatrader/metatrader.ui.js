@@ -163,12 +163,9 @@ const MetaTraderUI = (() => {
                 const account_type = Client.get('mt5_account');
 
                 loadAction('new_account', account_type);
-                
                 $form.find('#view_2 button[type="submit"]').attr('acc_type', newAccountGetType());
-
                 $cancel_button.setVisibility(1);
                 $back_button.setVisibility(0);
-
                 displayStep(2);
 
                 const get_settings = State.getResponse('get_settings');
