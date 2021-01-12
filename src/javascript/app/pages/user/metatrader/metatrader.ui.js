@@ -158,6 +158,7 @@ const MetaTraderUI = (() => {
             }
 
             // Add more trade servers button.
+            $container.find('#btn_add_more_servers').setVisibility(State.getResponse('trading_servers').length > 0);
             $container.find('#btn_add_more_servers').click(() => {
                 const $back_button = $form.find('#view_2 .btn-back');
                 const $cancel_button = $form.find('#view_2 .btn-cancel');
@@ -167,7 +168,7 @@ const MetaTraderUI = (() => {
                 $form.find('#view_3 button[type="submit"]').attr('acc_type', account_type);
                 $cancel_button.setVisibility(1);
                 $back_button.setVisibility(0);
-                displayStep(3); // TODO: Make it 2 again
+                displayStep(2);
 
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             });
@@ -613,7 +614,8 @@ const MetaTraderUI = (() => {
             return `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
         }
         // otherwise they are adding more server to their current account type
-        return Client.get('mt5_account');
+        const saved_mt5_account = Client.get('mt5_account');
+        return saved_mt5_account.substr(0, saved_mt5_account.lastIndexOf('_'));
     };
 
     const selectAccountTypeUI = (e) => {
