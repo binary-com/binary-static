@@ -166,7 +166,7 @@ const MetaTraderUI = (() => {
                 $form.find('#view_3 button[type="submit"]').attr('acc_type', account_type);
                 $cancel_button.setVisibility(1);
                 $back_button.setVisibility(0);
-                displayStep(2);
+                displayStep(3); // TODO: Make it 2 again
 
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             });
@@ -381,18 +381,40 @@ const MetaTraderUI = (() => {
     };
 
     const displayStep = (step) => {
+        const $submit_button = $form.find('#btn_submit_new_account');
+
+        $submit_button.setVisibility(0);
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
-        $form.find('input').not(':input[type=radio]').val('');
         $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
-
+        
         if (step === 2) {
+            $form.find('input').not(':input[type=radio]').val('');
+
             const get_settings = State.getResponse('get_settings');
 
             if (get_settings.first_name && get_settings.last_name) {
                 $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
             }
+
+            const trading_servers = State.getResponse('trading_servers');
+
+            if (trading_servers.length === 0) {
+                // If we have no trading servers, skip the step after this
+                // by showing the "Create account" button right away.
+                const $back_button = $form.find('#view_2 .btn-back').setVisibility(1);
+                $submit_button.insertAfter($back_button);
+                $submit_button.setVisibility(1);
+            } else {
+                // If we do have trading servers, show the next button.
+                $form.find('#view_2 .btn-next').setVisibility(1);
+            }
+        }
+
+        if (step === 3) {
+            const $back_button = $form.find('#view_3 .btn-back').setVisibility(1);
+            $submit_button.insertAfter($back_button).setVisibility(1);
         }
     };
 
@@ -461,7 +483,7 @@ const MetaTraderUI = (() => {
                 $form.find('#ddl_trade_server')
                     .append(
                         $('<div />', { id: server.id, class: 'gr-padding-10 gr-parent' })
-                            .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: server.id, checked: 'checked' }))
+                            .append($('<input />', { type: 'radio', name: 'ddl_trade_server', value: server.id, ...(server.recommended && { checked: 'checked' }) }))
                             .append($('<label />', { htmlFor: server.id }).append($('<span />', { text: `${server.geolocation.region} ${server.geolocation.sequence}` })))
                     );
             }
