@@ -158,9 +158,25 @@ const MetaTraderUI = (() => {
 
             // Add more trade servers button.
             $container.find('#btn_add_more_servers').click(() => {
+                const $back_button = $form.find('#view_2 .btn-back');
+                const $cancel_button = $form.find('#view_2 .btn-cancel');
                 const account_type = Client.get('mt5_account');
+
                 loadAction('new_account', account_type);
-                onNextClick(true);
+                
+                $form.find('#view_2 button[type="submit"]').attr('acc_type', newAccountGetType());
+
+                $cancel_button.setVisibility(1);
+                $back_button.setVisibility(0);
+
+                displayStep(2);
+
+                const get_settings = State.getResponse('get_settings');
+
+                if (get_settings.first_name && get_settings.last_name) {
+                    $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
+                }
+                $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             });
 
         } else {
@@ -384,25 +400,6 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const onNextClick = (is_adding_new_server) => {
-        const $back_button = $form.find('#view_2 .btn-back');
-        const $cancel_button = $form.find('#view_2 .btn-cancel');
-        
-        $form.find('#view_2 button[type="submit"]').attr('acc_type', newAccountGetType());
-
-        $cancel_button.setVisibility(is_adding_new_server);
-        $back_button.setVisibility(!is_adding_new_server);
-
-        displayStep(2);
-
-        const get_settings = State.getResponse('get_settings');
-
-        if (get_settings.first_name && get_settings.last_name) {
-            $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
-        }
-        $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
-    };
-
     // -----------------------
     // ----- New Account -----
     // -----------------------
@@ -453,7 +450,7 @@ const MetaTraderUI = (() => {
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
-        
+
         $form.find('#view_2 .btn-next').click(() => {
             if (Validation.validate('#frm_new_account')) {
                 $form.find('#view_3 button[type="submit"]').attr('acc_type', newAccountGetType());
