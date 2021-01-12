@@ -169,6 +169,7 @@
     }
     #account_details {
         flex: 0;
+        position: relative;
 
         .acc-info {
             font-size: $FONT_SIZE_S;
@@ -184,6 +185,16 @@
                 .symbols {
                     display: block;
                 }
+            }
+        }
+        .add_more_servers {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+
+            span {
+                padding: 6px 8px;
+                font-size: 14px;
             }
         }
     }

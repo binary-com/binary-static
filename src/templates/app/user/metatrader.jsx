@@ -120,6 +120,10 @@ const Metatrader = () => (
                                     <div className='gr-3'>{it.L('Server:')}</div>
                                     <div data='server' />
                                 </div>
+                                <div className='gr-row gr-padding-10 gr-parent'>
+                                    <div className='gr-3'>{it.L('Trade server:')}</div>
+                                    <div data='trade_server' />
+                                </div>
                             </div>
                         </div>
                         <div className='gr-3 align-end gr-hide-m gr-hide-p'>
@@ -127,6 +131,11 @@ const Metatrader = () => (
                                 <div>{it.L('Balance')}</div>
                                 <div className='balance gr-padding-10' data='balance' />
                             </div>
+                        </div>
+                        <div className='add_more_servers'>
+                            <a id='btn_add_more_servers' className='button' href='javascript:;'>
+                                <span>{it.L('Add more trade servers')}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -298,7 +307,7 @@ const Metatrader = () => (
 
                                 <p id='new_account_msg' className='notice-msg center-text invisible' />
                                 <div className='center-text'>
-                                    <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
+                                    <a className='button button-secondary btn-cancel' href='javascript:;'>
                                         <span>{it.L('Cancel')}</span>
                                     </a>
                                     <a className='button button-disabled btn-next' href='javascript:;'>
@@ -311,12 +320,20 @@ const Metatrader = () => (
                                     <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                     <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
-                                    <a className='button button-secondary btn-back' href='javascript:;'>
-                                        <span>{it.L('Back')}</span>
-                                    </a>
-                                    <a className='button btn-next' href='javascript:;'>
-                                        <span>{it.L('Next')}</span>
-                                    </a>
+                                    <div className='center-text'>
+                                        <a className='button button-secondary btn-back' href='javascript:;'>
+                                            <span>{it.L('Back')}</span>
+                                        </a>
+                                        <a
+                                            className='button button-secondary btn-cancel invisible'
+                                            href='javascript:;'
+                                        >
+                                            <span className='button'>{it.L('Cancel')}</span>
+                                        </a>
+                                        <a className='button btn-next' href='javascript:;'>
+                                            <span>{it.L('Next')}</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div id='view_3' className='gr-row invisible'>
