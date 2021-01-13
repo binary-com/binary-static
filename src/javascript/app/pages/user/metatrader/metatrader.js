@@ -77,10 +77,18 @@ const MetaTrader = (() => {
                     const display_name =
                         Client.getMT5AccountDisplays(market_type, sub_account_type, is_demo);
                     const leverage = getLeverage(market_type, sub_account_type, landing_company_short);
+                    const available_servers = getAvailableServers(market_type, sub_account_type);
 
-                    getAvailableServers(market_type, sub_account_type).forEach(trading_server => {
-                        // e.g. real_gaming_financial_africa
-                        accounts_info[`${account_type}_${market_type}_${sub_account_type}_${trading_server.id}`] = {
+                    const addAccountsInfo = (trading_server) => {
+                        // e.g. real_gaming_financial
+                        let key = `${account_type}_${market_type}_${sub_account_type}`;
+
+                        // e.g. real_gaming_financial_real01
+                        if (trading_server) {
+                            key += `_${trading_server.id}`;
+                        }
+
+                        accounts_info[key] = {
                             is_demo,
                             landing_company_short,
                             leverage,
@@ -89,7 +97,13 @@ const MetaTrader = (() => {
                             short_title: display_name.short,
                             title      : display_name.full,
                         };
-                    });
+                    };
+
+                    if (available_servers.length) {
+                        available_servers.forEach(trading_server => addAccountsInfo(trading_server));
+                    } else {
+                        addAccountsInfo();
+                    }
                 });
             });
     };
@@ -100,7 +114,7 @@ const MetaTrader = (() => {
         const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
 
         return State.getResponse('trading_servers').filter(trading_server => {
-            const { supported_accounts } = trading_server;
+            const { supported_accounts = [] } = trading_server;
             const is_server_supported =
                 (is_synthetic && supported_accounts.includes('gaming')) ||
                 (is_financial && supported_accounts.includes('financial')) ||
@@ -264,16 +278,19 @@ const MetaTrader = (() => {
         response.mt5_login_list.forEach((account) => {
             const acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}_${account.server}`;
 
-            accounts_info[acc_type].info = account;
+            // in case trading_server API response is corrupted, acc_type will not exist in accounts_info due to missing supported_accounts prop
+            if (acc_type in accounts_info) {
+                accounts_info[acc_type].info = account;
 
-            const geolocation = trading_servers.find(server => server.id === account.server).geolocation;
+                const geolocation = trading_servers.find(server => server.id === account.server).geolocation;
 
-            accounts_info[acc_type].info.display_login  = MetaTraderConfig.getDisplayLogin(account.login);
-            accounts_info[acc_type].info.login          = account.login;
-            accounts_info[acc_type].info.server         = account.server;
-            accounts_info[acc_type].info.display_server = `${geolocation.region} ${geolocation.sequence}`;
+                accounts_info[acc_type].info.display_login  = MetaTraderConfig.getDisplayLogin(account.login);
+                accounts_info[acc_type].info.login          = account.login;
+                accounts_info[acc_type].info.server         = account.server;
+                accounts_info[acc_type].info.display_server = `${geolocation.region} ${geolocation.sequence}`;
 
-            MetaTraderUI.updateAccount(acc_type);
+                MetaTraderUI.updateAccount(acc_type);
+            }
         });
 
         const current_acc_type = getDefaultAccount();

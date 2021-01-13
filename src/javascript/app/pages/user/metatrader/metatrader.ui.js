@@ -184,7 +184,7 @@ const MetaTraderUI = (() => {
         if (acc_type) {
             $account_type_desc = $account_desc.find(`.${acc_type}`);
 
-            const clean_key = acc_type.substr(0, acc_type.lastIndexOf('_'));
+            const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
             const regex = new RegExp(clean_key);
             const landing_company_short =
                 accounts_info[Object.keys(accounts_info).find(account => regex.test(account))].landing_company_short;
@@ -395,8 +395,9 @@ const MetaTraderUI = (() => {
                 account_type += `_${trading_server.id}`;
             }
             const new_account_info = accounts_info[account_type];
+            const { supported_accounts } = trading_server;
 
-            if (!new_account_info) {
+            if (!new_account_info || !supported_accounts) {
                 return false;
             }
 
@@ -406,7 +407,6 @@ const MetaTraderUI = (() => {
             const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
             const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
 
-            const { supported_accounts } = trading_server;
             const is_server_supported =
                 (is_synthetic && supported_accounts.includes('gaming')) ||
                 (is_financial && supported_accounts.includes('financial')) ||
@@ -524,17 +524,19 @@ const MetaTraderUI = (() => {
                 const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
                 const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
 
-                const { id: server_id, supported_accounts } = trading_server;
+                const { id: server_id, supported_accounts = [] } = trading_server;
+
                 const is_server_supported =
                     (is_synthetic && supported_accounts.includes('gaming')) ||
                     (is_financial && supported_accounts.includes('financial')) ||
                     (is_financial_stp && supported_accounts.includes('financial_stp'));
 
-                const is_used_server = new_account_info.info && new_account_info.info.server &&
-                    is_server_supported && server_id === accounts_info[account_type].info.server;
-                const is_disabled = trading_server.disabled === 1;
-
                 if (is_server_supported) {
+                    const is_used_server = new_account_info.info && new_account_info.info.server &&
+                        is_server_supported && server_id === accounts_info[account_type].info.server;
+
+                    const is_disabled = trading_server.disabled === 1;
+
                     const input_attributes = {
                         disabled: is_used_server || is_disabled,
                         type    : 'radio',
@@ -566,7 +568,7 @@ const MetaTraderUI = (() => {
             if (Validation.validate('#frm_new_account')) {
                 const new_account_type = newAccountGetType();
 
-                const clean_key = new_account_type.substr(0, new_account_type.lastIndexOf('_'));
+                const clean_key = /\d$/.test(new_account_type) ? new_account_type.substr(0, new_account_type.lastIndexOf('_')) : new_account_type;
                 const regex = new RegExp(clean_key);
                 const sample_account =
                     accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
@@ -615,7 +617,8 @@ const MetaTraderUI = (() => {
         }
         // otherwise they are adding more server to their current account type
         const saved_mt5_account = Client.get('mt5_account');
-        return saved_mt5_account.substr(0, saved_mt5_account.lastIndexOf('_'));
+        const clean_key = /\d$/.test(saved_mt5_account) ? saved_mt5_account.substr(0, saved_mt5_account.lastIndexOf('_')) : saved_mt5_account;
+        return clean_key;
     };
 
     const selectAccountTypeUI = (e) => {
@@ -681,10 +684,11 @@ const MetaTraderUI = (() => {
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
                 let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
-                if (accounts_info[acc_type].info && getAvailableServers() === 0) {
+                if (accounts_info[acc_type].info && getAvailableServers().length === 0) {
                     class_name = 'existed';
                 }
-                $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
+                const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
+                $form.find(`.step-2 #${clean_key.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
                     .addClass(class_name);
             });
@@ -702,7 +706,7 @@ const MetaTraderUI = (() => {
         const filtered_accounts = {};
         Object.keys(accounts_info).sort(sortMt5Accounts).forEach(acc_type => {
             // remove server from name
-            const clean_key = acc_type.substr(0, acc_type.lastIndexOf('_'));
+            const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
             filtered_accounts[clean_key] = accounts_info[acc_type];
         });
 

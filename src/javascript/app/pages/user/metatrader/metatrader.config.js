@@ -44,7 +44,7 @@ const MetaTraderConfig = (() => {
 
                     const has_financial_account = Client.hasAccountType('financial', 1);
 
-                    const clean_key = acc_type.substr(0, acc_type.lastIndexOf('_'));
+                    const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
                     const regex = new RegExp(clean_key);
                     const sample_account =
                         accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
