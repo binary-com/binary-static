@@ -515,6 +515,9 @@ const MetaTraderConfig = (() => {
     // between all the servers, so we can disregard the server and return the first
     // accounts_info item that has the same market type and sub account type
     const getSampleAccount = (acc_type) => {
+        if (acc_type in accounts_info) {
+            return accounts_info[acc_type];
+        }
         const regex = new RegExp(getCleanAccType(acc_type));
         return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
     };
