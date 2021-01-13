@@ -59,7 +59,7 @@ const MetaTrader = (() => {
                 const is_server_offered =
                     trading_servers.find((trading_server => trading_server.id === mt5_login.server));
 
-                if (!is_server_offered) {
+                if (!is_server_offered && !/demo/.test(mt5_login.server)) {
                     addAccount('gaming', mt_gaming_company, mt5_login.server);
                     addAccount('financial', mt_financial_company, mt5_login.server);
                 }

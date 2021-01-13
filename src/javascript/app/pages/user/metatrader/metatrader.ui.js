@@ -396,9 +396,9 @@ const MetaTraderUI = (() => {
         });
     };
 
-    const getAvailableServers = (should_ignore_used = false) =>
+    const getAvailableServers = (should_ignore_used = false, acc_type) =>
         State.getResponse('trading_servers').filter(trading_server => {
-            let account_type = newAccountGetType();
+            let account_type = acc_type || newAccountGetType();
             // if server is not added to account type, and in accounts_info we are storing it without server
             if (!/\d$/.test(account_type) && !accounts_info[account_type]) {
                 account_type += `_${trading_server.id}`;
@@ -426,7 +426,10 @@ const MetaTraderUI = (() => {
             }
 
             const is_used_server = new_account_info.info && new_account_info.info.server &&
-                is_server_supported && trading_server.id === accounts_info[account_type].info.server;
+                is_server_supported &&
+                Object.keys(accounts_info).find(account =>
+                    accounts_info[account].info && trading_server.id === accounts_info[account].info.server
+                );
 
             return is_server_supported && !is_used_server;
         });
@@ -699,7 +702,7 @@ const MetaTraderUI = (() => {
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
                 let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
-                if (accounts_info[acc_type].info && (getAvailableServers().length === 0 || type === 'demo')) {
+                if (accounts_info[acc_type].info && (getAvailableServers(false, acc_type).length === 0 || type === 'demo')) {
                     class_name = 'existed';
                 }
                 const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type);
