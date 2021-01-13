@@ -100,7 +100,7 @@ const MetaTrader = (() => {
                     };
 
                     // demo only has one server, no need to create for each trade server
-                    if (available_servers.length && !is_demo) {
+                    if (available_servers.length > 1 && !is_demo) {
                         available_servers.forEach(trading_server => addAccountsInfo(trading_server));
                     } else {
                         addAccountsInfo();
@@ -262,7 +262,13 @@ const MetaTrader = (() => {
                             let account_type = acc_type;
                             if (action === 'new_account' && !/\d$/.test(account_type) && !accounts_info[account_type]) {
                                 const server = $('#frm_new_account').find('#ddl_trade_server input[checked]').val();
-                                account_type += `_${server}`;
+                                if (server) {
+                                    account_type += `_${server}`;
+
+                                    if (!accounts_info[account_type]) {
+                                        account_type = acc_type;
+                                    }
+                                }
                             }
 
                             MetaTraderUI.setAccountType(account_type, true);

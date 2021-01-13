@@ -594,7 +594,7 @@ const MetaTraderUI = (() => {
 
             // Check whether any of the servers is checked, if not, check one.
             if ($ddl_trade_server.find('input[checked]').length === 0) {
-                $ddl_trade_server.find('input:not(:disabled)')[0].checked = 'checked';
+                $ddl_trade_server.find('input:not(:disabled):first').attr('checked', 'checked');
             }
 
             if (Validation.validate('#frm_new_account')) {
