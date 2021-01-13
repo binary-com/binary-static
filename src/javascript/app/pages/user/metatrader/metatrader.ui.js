@@ -228,6 +228,8 @@ const MetaTraderUI = (() => {
                         trade_server: () => accounts_info[acc_type].info.display_server,
                     }),
                 };
+
+                $container.find('#mt-trade-server-container').setVisibility(!!mapping.trade_server);
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
 

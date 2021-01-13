@@ -120,7 +120,7 @@ const Metatrader = () => (
                                     <div className='gr-3'>{it.L('Server:')}</div>
                                     <div data='server' />
                                 </div>
-                                <div className='gr-row gr-padding-10 gr-parent real-only invisible'>
+                                <div id='mt-trade-server-container' className='gr-row gr-padding-10 gr-parent invisible'>
                                     <div className='gr-3'>{it.L('Trade server:')}</div>
                                     <div className='mt-trade-server' data='trade_server' />
                                 </div>
