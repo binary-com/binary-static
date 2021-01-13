@@ -420,7 +420,7 @@ const MetaTraderUI = (() => {
                 (is_synthetic && supported_accounts.includes('gaming')) ||
                 (is_financial && supported_accounts.includes('financial')) ||
                 (is_financial_stp && supported_accounts.includes('financial_stp'));
-            
+
             if (should_ignore_used) {
                 return is_server_supported;
             }
@@ -455,16 +455,15 @@ const MetaTraderUI = (() => {
 
             // Check whether this is the last server the user is creating.
             const supported_servers = getAvailableServers(true);
-            const available_servers = getAvailableServers(false);
-            const should_show_remaining_server = supported_servers.length - available_servers.length > 0;
 
-            if (trading_servers.length === 0 || /demo/.test(new_account_type) || !should_show_remaining_server) {
+            if (trading_servers.length === 0 || /demo/.test(new_account_type) || supported_servers.length <= 1) {
                 const $submit_button = $form.find('#btn_submit_new_account');
 
                 $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_2_button_container);
 
                 // If we have no trading servers, skip the step after this
                 // by showing the "Create account" button right away.
+                $form.find('#view_2 .btn-next').setVisibility(0);
                 $view_2_button_container.append($submit_button);
                 $submit_button.setVisibility(1);
             } else {
