@@ -63,7 +63,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('The client has sufficient experience and knowledge about contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
-                    <li>{it.L('The Company reserves the right to refuse the client\'s request to open an MT5 Real Account for any reason, and any MT5 Real Account may be closed at the Company\'s discretion at any time.')}</li>
+                    <li>{it.L('The Company reserves the right to refuse the client\'s request to open an MT5 Real Account for any reason, and any MT5 Real Account may be closed at the Company\'s discretion at any time upon 7-day notice.')}</li>
                 </ol>
             </li>
             <li data-show='eucountry' >{it.L('Assessment of appropriateness')}
