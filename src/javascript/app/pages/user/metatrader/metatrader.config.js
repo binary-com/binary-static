@@ -526,6 +526,17 @@ const MetaTraderConfig = (() => {
         return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
     };
 
+    const hasMultipleTradeServers = (is_demo, accounts) =>
+        Object.keys(accounts).some((account_type_a, idx_a) => {
+            const clean_account_type_a = getCleanAccType(account_type_a);
+
+            return Object.keys(accounts).some((account_type_b, idx_b) => {
+                const clean_account_type_b = getCleanAccType(account_type_b);
+
+                return idx_a !== idx_b && clean_account_type_a === clean_account_type_b;
+            });
+        });
+
     return {
         accounts_info,
         actions_info,
@@ -533,6 +544,7 @@ const MetaTraderConfig = (() => {
         validations,
         needsRealMessage,
         hasAccount,
+        hasMultipleTradeServers,
         getCleanAccType,
         getCurrency,
         getDisplayLogin,

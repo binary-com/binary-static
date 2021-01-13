@@ -140,7 +140,10 @@ const MetaTraderUI = (() => {
         if (accounts_info[acc_type].info) {
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
-            if (accounts_info[acc_type].info.display_server) {
+            if (
+                accounts_info[acc_type].info.display_server &&
+                MetaTraderConfig.hasMultipleTradeServers(accounts_info[acc_type].is_demo, accounts_info)
+            ) {
                 $acc_item.find('.mt-server').text(`${accounts_info[acc_type].info.display_server}`);
             } else {
                 $acc_item.find('.mt-server').remove();
@@ -224,9 +227,11 @@ const MetaTraderUI = (() => {
                     display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
                     server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
-                    ...(accounts_info[acc_type].info.display_server && {
-                        trade_server: () => accounts_info[acc_type].info.display_server,
-                    }),
+                    ...(
+                        accounts_info[acc_type].info.display_server &&
+                        MetaTraderConfig.hasMultipleTradeServers(is_demo, accounts_info) &&
+                        ({ trade_server: () => accounts_info[acc_type].info.display_server })
+                    ),
                 };
 
                 $container.find('#mt-trade-server-container').setVisibility(!!mapping.trade_server);
