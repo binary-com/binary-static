@@ -426,12 +426,14 @@ const MetaTraderUI = (() => {
         });
 
     const displayStep = (step) => {
+        const new_account_type = newAccountGetType();
+
         $form.find('#btn_submit_new_account').setVisibility(0);
         $form.find('#msg_form').remove();
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
-        $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
+        $form.find(`.${/demo/.test(new_account_type) ? 'real' : 'demo'}-only`).setVisibility(0);
 
         if (step === 2) {
             $form.find('input').not(':input[type=radio]').val('');
@@ -445,7 +447,7 @@ const MetaTraderUI = (() => {
             const trading_servers = State.getResponse('trading_servers');
             const $view_2_button_container = $form.find('#view_2-buttons');
 
-            if (trading_servers.length === 0 || /demo/.test(newAccountGetType()) || getAvailableServers().length <= 1) {
+            if (trading_servers.length === 0 || /demo/.test(new_account_type) || getAvailableServers().length <= 1) {
                 const $submit_button = $form.find('#btn_submit_new_account');
 
                 $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_2_button_container);
@@ -461,6 +463,9 @@ const MetaTraderUI = (() => {
 
             $view_2_button_container.setVisibility(1);
         } else if (step === 3) {
+            const sample_account = MetaTraderConfig.getSampleAccount(new_account_type);
+            $form.find('#view_3 #mt5_account_type').text(sample_account.title);
+
             const $submit_button = $form.find('#btn_submit_new_account');
             const $view_3_button_container = $form.find('#view_3-buttons');
 
@@ -576,7 +581,6 @@ const MetaTraderUI = (() => {
 
             if (Validation.validate('#frm_new_account')) {
                 const new_account_type = newAccountGetType();
-
                 const sample_account = MetaTraderConfig.getSampleAccount(new_account_type);
 
                 $form.find('button[type="submit"]').attr('acc_type', new_account_type);
