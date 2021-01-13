@@ -156,7 +156,7 @@ const MetaTraderUI = (() => {
                     +accounts_info[acc_type].info.balance);
                 $acc_item.find('.mt-balance').html(mt_balance);
                 $action.find('.mt5-balance').html(mt_balance);
-                $container.find('#btn_add_more_servers').setVisibility(getAvailableServers().length > 0 && !accounts_info[acc_type].is_demo);
+                $container.find('#btn_add_more_servers').setVisibility(getAvailableServers(false, acc_type).length > 0 && !accounts_info[acc_type].is_demo);
             }
             // disable MT5 account opening if created all available accounts
             if (Object.keys(accounts_info).every(type => accounts_info[type].info)) {
@@ -213,7 +213,7 @@ const MetaTraderUI = (() => {
         if (accounts_info[acc_type].info) {
             const is_demo = accounts_info[acc_type].is_demo;
             $detail.find('.real-only').setVisibility(!is_demo);
-            $container.find('#btn_add_more_servers').setVisibility(getAvailableServers().length > 0 && !is_demo);
+            $container.find('#btn_add_more_servers').setVisibility(getAvailableServers(false, acc_type).length > 0 && !is_demo);
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
                 const key     = $(this).attr('data');
