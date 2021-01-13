@@ -691,7 +691,7 @@ const MetaTraderUI = (() => {
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
                 let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
-                if (accounts_info[acc_type].info && getAvailableServers().length === 0) {
+                if (accounts_info[acc_type].info && (getAvailableServers().length === 0 || type === 'demo')) {
                     class_name = 'existed';
                 }
                 const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type);
