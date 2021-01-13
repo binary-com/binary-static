@@ -562,7 +562,7 @@ const MetaTraderUI = (() => {
                     };
 
                     const { region, sequence } = trading_server.geolocation;
-                    let label_text = `${region} ${sequence}`;
+                    let label_text = sequence > 1 ? `${region} ${sequence}` : region;
 
                     if (is_used_server) {
                         label_text += localize(' (account created)');
