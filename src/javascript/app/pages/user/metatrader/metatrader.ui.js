@@ -588,10 +588,7 @@ const MetaTraderUI = (() => {
 
             if (Validation.validate('#frm_new_account')) {
                 const new_account_type = newAccountGetType();
-                const sample_account = MetaTraderConfig.getSampleAccount(new_account_type);
-
                 $form.find('button[type="submit"]').attr('acc_type', new_account_type);
-                $form.find('#view_3 #mt5_account_type').text(sample_account.title);
                 displayStep(3);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
