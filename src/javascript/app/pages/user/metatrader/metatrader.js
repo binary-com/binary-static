@@ -18,6 +18,8 @@ const MetaTrader = (() => {
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+            await BinarySocket.send({ trading_servers: 1, platform: 'mt5' });
+
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
                     addAllAccounts();
@@ -50,6 +52,20 @@ const MetaTrader = (() => {
             addAccount('gaming', mt_gaming_company);
             addAccount('financial', mt_financial_company);
 
+            const trading_servers = State.getResponse('trading_servers');
+            // for legacy clients on the real01 server, real01 server is not going to be offered in trading servers
+            // but we need to build their object in accounts_info or they can't view their legacy account
+            response.mt5_login_list.forEach((mt5_login) => {
+                const is_server_offered =
+                    trading_servers.find((trading_server => trading_server.id === mt5_login.server));
+
+                if (!is_server_offered && !/demo/.test(mt5_login.server)) {
+                    const landing_company = mt5_login.market_type === 'gaming' ? mt_gaming_company : mt_financial_company;
+
+                    addAccount(mt5_login.market_type, landing_company, mt5_login.server);
+                }
+            });
+
             getAllAccountsInfo(response);
         });
     };
@@ -65,7 +81,7 @@ const MetaTrader = (() => {
     // * we should map them to landing_company:
     // mt_financial_company: { financial: {}, financial_stp: {}, swap_free: {} }
     // mt_gaming_company: { financial: {}, swap_free: {} }
-    const addAccount = (market_type, company = {}) => {
+    const addAccount = (market_type, company = {}, server) => {
         Object.keys(company)
             .filter(sub_account_type => sub_account_type !== 'swap_free') // TODO: remove this when releasing swap_free
             .forEach((sub_account_type) => {
@@ -77,18 +93,58 @@ const MetaTrader = (() => {
                         Client.getMT5AccountDisplays(market_type, sub_account_type, is_demo);
                     const leverage = getLeverage(market_type, sub_account_type, landing_company_short);
 
-                    // e.g. real_gaming_financial
-                    accounts_info[`${account_type}_${market_type}_${sub_account_type}`] = {
-                        is_demo,
-                        landing_company_short,
-                        leverage,
-                        market_type,
-                        sub_account_type,
-                        short_title: display_name.short,
-                        title      : display_name.full,
+                    const addAccountsInfo = (trading_server) => {
+                        // e.g. real_gaming_financial
+                        let key = `${account_type}_${market_type}_${sub_account_type}`;
+
+                        // e.g. real_gaming_financial_real01
+                        if (trading_server) {
+                            key += `_${trading_server.id}`;
+                        }
+
+                        accounts_info[key] = {
+                            is_demo,
+                            landing_company_short,
+                            leverage,
+                            market_type,
+                            sub_account_type,
+                            short_title: display_name.short,
+                            title      : display_name.full,
+                        };
                     };
+
+                    if (server && !is_demo) {
+                        addAccountsInfo({ id: server });
+                    } else {
+                        const available_servers = getAvailableServers(market_type, sub_account_type);
+
+                        // demo only has one server, no need to create for each trade server
+                        if (available_servers.length > 1 && !is_demo) {
+                            available_servers.forEach(trading_server => addAccountsInfo(trading_server));
+                        } else {
+                            addAccountsInfo();
+                        }
+
+                    }
+
                 });
             });
+    };
+
+    const getAvailableServers = (market_type, sub_account_type) => {
+        const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
+        const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
+        const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
+
+        return State.getResponse('trading_servers').filter(trading_server => {
+            const { supported_accounts = [] } = trading_server;
+            const is_server_supported =
+                (is_synthetic && supported_accounts.includes('gaming')) ||
+                (is_financial && supported_accounts.includes('financial')) ||
+                (is_financial_stp && supported_accounts.includes('financial_stp'));
+
+            return is_server_supported;
+        });
     };
 
     // synthetic is 500
@@ -121,17 +177,6 @@ const MetaTrader = (() => {
             default_account = MetaTraderConfig.getAllAccounts()[0] || '';
         }
         return default_account;
-    };
-
-    const setAccountDetails = (login, acc_type, data) => {
-        if (data.mt5_login_list) {
-            const info = data.mt5_login_list.find(mt5_account => mt5_account.login === login);
-            if (info) {
-                accounts_info[acc_type].info = info;
-                accounts_info[acc_type].info.display_login = MetaTraderConfig.getDisplayLogin(info.login);
-                MetaTraderUI.updateAccount(acc_type);
-            }
-        }
     };
 
     const makeRequestObject = (acc_type, action) => {
@@ -211,7 +256,7 @@ const MetaTrader = (() => {
                         MetaTraderUI.enableButton(action, response);
                     } else {
                         await BinarySocket.send({ get_account_status: 1 });
-                        if (accounts_info[acc_type].info) {
+                        if (accounts_info[acc_type] && accounts_info[acc_type].info) {
                             const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
                             if (parent_action === 'cashier') {
                                 await BinarySocket.send({ get_limits: 1 });
@@ -235,8 +280,21 @@ const MetaTrader = (() => {
                         BinarySocket.send({ mt5_login_list: 1 }).then((response_login_list) => {
                             MetaTraderUI.refreshAction();
                             allAccountsResponseHandler(response_login_list);
-                            MetaTraderUI.setAccountType(acc_type, true);
-                            MetaTraderUI.loadAction(null, acc_type);
+
+                            let account_type = acc_type;
+                            if (action === 'new_account' && !/\d$/.test(account_type) && !accounts_info[account_type]) {
+                                const server = $('#frm_new_account').find('#ddl_trade_server input[checked]').val();
+                                if (server) {
+                                    account_type += `_${server}`;
+
+                                    if (!accounts_info[account_type]) {
+                                        account_type = acc_type;
+                                    }
+                                }
+                            }
+
+                            MetaTraderUI.setAccountType(account_type, true);
+                            MetaTraderUI.loadAction(null, account_type);
                         });
                     }
                 });
@@ -250,14 +308,31 @@ const MetaTrader = (() => {
             return;
         }
 
+        const trading_servers = State.getResponse('trading_servers');
+
         // Update account info
         response.mt5_login_list.forEach((account) => {
-            const acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}`;
-            accounts_info[acc_type].info = {
-                display_login: MetaTraderConfig.getDisplayLogin(account.login),
-                login        : account.login,
-            };
-            setAccountDetails(account.login, acc_type, response);
+            let acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}`;
+            const acc_type_server = `${acc_type}_${account.server}`;
+            if (!(acc_type in accounts_info) || acc_type_server in accounts_info) {
+                acc_type = acc_type_server;
+            }
+
+            // in case trading_server API response is corrupted, acc_type will not exist in accounts_info due to missing supported_accounts prop
+            if (acc_type in accounts_info) {
+                accounts_info[acc_type].info = account;
+
+                accounts_info[acc_type].info.display_login = MetaTraderConfig.getDisplayLogin(account.login);
+                accounts_info[acc_type].info.login         = account.login;
+                accounts_info[acc_type].info.server        = account.server;
+
+                const geolocation = (trading_servers.find(server => server.id === account.server) || {}).geolocation;
+                if (geolocation) {
+                    accounts_info[acc_type].info.display_server = geolocation.sequence > 1 ? `${geolocation.region} ${geolocation.sequence}` : geolocation.region;
+                }
+
+                MetaTraderUI.updateAccount(acc_type);
+            }
         });
 
         const current_acc_type = getDefaultAccount();

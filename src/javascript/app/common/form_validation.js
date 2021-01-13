@@ -25,7 +25,7 @@ const Validation = (() => {
 
     const getFieldType = ($field) => {
         if (!$field.length) return null;
-        if ($field.find('input[type=radio]').length) return 'radio';
+        if ($field.find('input[type=radio]').length || $field.attr('type') === 'radio') return 'radio';
         if ($field.attr('type') === 'checkbox') return 'checkbox';
         return $field.get(0).localName;
     };
