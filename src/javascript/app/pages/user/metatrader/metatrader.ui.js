@@ -396,7 +396,7 @@ const MetaTraderUI = (() => {
         });
     };
 
-    const getAvailableServers = () =>
+    const getAvailableServers = (should_ignore_used = false) =>
         State.getResponse('trading_servers').filter(trading_server => {
             let account_type = newAccountGetType();
             // if server is not added to account type, and in accounts_info we are storing it without server
@@ -420,6 +420,10 @@ const MetaTraderUI = (() => {
                 (is_synthetic && supported_accounts.includes('gaming')) ||
                 (is_financial && supported_accounts.includes('financial')) ||
                 (is_financial_stp && supported_accounts.includes('financial_stp'));
+            
+            if (should_ignore_used) {
+                return is_server_supported;
+            }
 
             const is_used_server = new_account_info.info && new_account_info.info.server &&
                 is_server_supported && trading_server.id === accounts_info[account_type].info.server;
@@ -449,7 +453,12 @@ const MetaTraderUI = (() => {
             const trading_servers = State.getResponse('trading_servers');
             const $view_2_button_container = $form.find('#view_2-buttons');
 
-            if (trading_servers.length === 0 || /demo/.test(new_account_type) || getAvailableServers().length <= 1) {
+            // Check whether this is the last server the user is creating.
+            const supported_servers = getAvailableServers(true);
+            const available_servers = getAvailableServers(false);
+            const should_show_remaining_server = supported_servers.length - available_servers.length > 0;
+
+            if (trading_servers.length === 0 || /demo/.test(new_account_type) || !should_show_remaining_server) {
                 const $submit_button = $form.find('#btn_submit_new_account');
 
                 $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_2_button_container);
