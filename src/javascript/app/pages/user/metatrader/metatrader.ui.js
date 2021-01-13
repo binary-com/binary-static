@@ -158,7 +158,7 @@ const MetaTraderUI = (() => {
             }
 
             // Add more trade servers button.
-            $container.find('#btn_add_more_servers').setVisibility(State.getResponse('trading_servers').length > 0);
+            $container.find('#btn_add_more_servers').setVisibility(getAvailableServers().length > 0);
             $container.find('#btn_add_more_servers').click(() => {
                 const $back_button = $form.find('#view_2 .btn-back');
                 const $cancel_button = $form.find('#view_2 .btn-cancel');
@@ -610,7 +610,7 @@ const MetaTraderUI = (() => {
     };
 
     const newAccountGetType = () => {
-        const selected_type = $form.find('.step-2 .selected').attr('data-acc-type');
+        const selected_type = $form && $form.find('.step-2 .selected').attr('data-acc-type');
         // if user selected account type using the form, send that
         if (selected_type) {
             return `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
