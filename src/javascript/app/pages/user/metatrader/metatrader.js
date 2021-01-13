@@ -52,6 +52,19 @@ const MetaTrader = (() => {
             addAccount('gaming', mt_gaming_company);
             addAccount('financial', mt_financial_company);
 
+            const trading_servers = State.getResponse('trading_servers');
+            // for legacy clients on the real01 server, real01 server is not going to be offered in trading servers
+            // but we need to build their object in accounts_info or they can't view their legacy account
+            response.mt5_login_list.forEach((mt5_login) => {
+                const is_server_offered =
+                    trading_servers.find((trading_server => trading_server.id === mt5_login.server));
+
+                if (!is_server_offered) {
+                    addAccount('gaming', mt_gaming_company, mt5_login.server);
+                    addAccount('financial', mt_financial_company, mt5_login.server);
+                }
+            });
+
             getAllAccountsInfo(response);
         });
     };
@@ -67,7 +80,7 @@ const MetaTrader = (() => {
     // * we should map them to landing_company:
     // mt_financial_company: { financial: {}, financial_stp: {}, swap_free: {} }
     // mt_gaming_company: { financial: {}, swap_free: {} }
-    const addAccount = (market_type, company = {}) => {
+    const addAccount = (market_type, company = {}, server) => {
         Object.keys(company)
             .filter(sub_account_type => sub_account_type !== 'swap_free') // TODO: remove this when releasing swap_free
             .forEach((sub_account_type) => {
@@ -78,7 +91,6 @@ const MetaTrader = (() => {
                     const display_name =
                         Client.getMT5AccountDisplays(market_type, sub_account_type, is_demo);
                     const leverage = getLeverage(market_type, sub_account_type, landing_company_short);
-                    const available_servers = getAvailableServers(market_type, sub_account_type);
 
                     const addAccountsInfo = (trading_server) => {
                         // e.g. real_gaming_financial
@@ -100,12 +112,20 @@ const MetaTrader = (() => {
                         };
                     };
 
-                    // demo only has one server, no need to create for each trade server
-                    if (available_servers.length > 1 && !is_demo) {
-                        available_servers.forEach(trading_server => addAccountsInfo(trading_server));
+                    if (server && !is_demo) {
+                        addAccountsInfo({ id: server });
                     } else {
-                        addAccountsInfo();
+                        const available_servers = getAvailableServers(market_type, sub_account_type);
+
+                        // demo only has one server, no need to create for each trade server
+                        if (available_servers.length > 1 && !is_demo) {
+                            available_servers.forEach(trading_server => addAccountsInfo(trading_server));
+                        } else {
+                            addAccountsInfo();
+                        }
+
                     }
+
                 });
             });
     };
