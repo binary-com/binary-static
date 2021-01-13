@@ -18,7 +18,7 @@ const MetaTrader = (() => {
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
-            BinarySocket.send({ trading_servers: 1, platform: 'mt5' });
+            await BinarySocket.send({ trading_servers: 1, platform: 'mt5' });
 
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
