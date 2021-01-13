@@ -523,7 +523,9 @@ const MetaTraderUI = (() => {
         });
 
         $form.find('#view_2 .btn-next').click(() => {
-            $form.find('#ddl_trade_server').empty();
+            const $ddl_trade_server = $form.find('#ddl_trade_server');
+
+            $ddl_trade_server.empty();
 
             State.getResponse('trading_servers').forEach(trading_server => {
                 let account_type = newAccountGetType();
@@ -568,7 +570,7 @@ const MetaTraderUI = (() => {
                         label_text += localize(' (unavailable)');
                     }
 
-                    $form.find('#ddl_trade_server')
+                    $ddl_trade_server
                         .append(
                             $('<div />', { id: trading_server.id, class: 'gr-padding-10 gr-parent' })
                                 .append($('<input />', input_attributes))
@@ -578,6 +580,11 @@ const MetaTraderUI = (() => {
                         );
                 }
             });
+
+            // Check whether any of the servers is checked, if not, check one.
+            if ($ddl_trade_server.find('input[checked]').length === 0) {
+                $ddl_trade_server.find('input:not(:disabled)')[0].checked = 'checked';
+            }
 
             if (Validation.validate('#frm_new_account')) {
                 const new_account_type = newAccountGetType();
