@@ -201,6 +201,13 @@ a.previous-wrapper {
       display: inline-block;
       vertical-align: middle;
       margin-right: 10px; }
+  #mt_account_management .mt-trade-server {
+    color: #fff;
+    border-radius: 2px;
+    background-color: #e98024;
+    padding: 4px;
+    text-align: center;
+    font-size: 0.6575162324rem; }
   #mt_account_management .password-type {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -277,6 +284,8 @@ a.previous-wrapper {
         #mt_account_management #account_selector #accounts_list .acc-name .mt-login {
           padding-left: 3px;
           font-size: 90%; }
+        #mt_account_management #account_selector #accounts_list .acc-name .mt-server {
+          margin-left: 4px; }
       #mt_account_management #account_selector #accounts_list .separator {
         margin: 5px 0; }
   #mt_account_management #mt_right_panel {
@@ -320,7 +329,8 @@ a.previous-wrapper {
   #mt_account_management #account_details {
     -webkit-box-flex: 0;
         -ms-flex: 0;
-            flex: 0; }
+            flex: 0;
+    position: relative; }
     #mt_account_management #account_details .acc-info {
       font-size: 0.8695652174rem;
       word-wrap: break-word; }
@@ -331,6 +341,13 @@ a.previous-wrapper {
         color: #2a3052; }
         #mt_account_management #account_details .acc-info .balance .symbols {
           display: block; }
+    #mt_account_management #account_details .add_more_servers {
+      position: absolute;
+      bottom: 8px;
+      right: 8px; }
+      #mt_account_management #account_details .add_more_servers span {
+        padding: 6px 8px;
+        font-size: 14px; }
   #mt_account_management .acc-actions {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -441,6 +458,12 @@ a.previous-wrapper {
     #mt_account_management .fst-container #fst_action #new_account_msg ul.bullet {
       margin-top: 0;
       margin-bottom: 0; }
+    #mt_account_management .fst-container #fst_action #frm_new_account #btn_submit_new_account {
+      margin-left: 8px; }
+    #mt_account_management .fst-container #fst_action #frm_new_account input[type='radio'][disabled] + label:before {
+      border: 1px solid #dedede; }
+    #mt_account_management .fst-container #fst_action #frm_new_account input[type='radio'][disabled] + label span {
+      color: #dedede; }
   #mt_account_management .txt-left {
     text-align: left; }
   #mt_account_management .separator {
