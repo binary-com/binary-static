@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-01-11 08:17\n"
+"PO-Revision-Date: 2021-01-13 09:41\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -30,6 +30,12 @@ msgstr "10"
 
 msgid "404"
 msgstr "404"
+
+msgid " (account created)"
+msgstr ""
+
+msgid " (unavailable)"
+msgstr ""
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " 為了利於培訓和監控，所有通話將被錄音。"
@@ -1086,6 +1092,9 @@ msgstr "透過新增+/-給障礙偏移量定義。例如, +0.005 表示比入市
 
 msgid "Add funds"
 msgstr "增加基金"
+
+msgid "Add more trade servers"
+msgstr ""
 
 msgid "Additional business exposure:"
 msgstr "附加商業風險:"
@@ -2503,6 +2512,9 @@ msgstr "選擇賠付額後，系統將計算購入合約所需投注資金額。
 msgid "Choose a payout from $1 to $50,000."
 msgstr "賠付額的選擇範圍為1 美元到5 萬美元。"
 
+msgid "Choose a server for your MT5 %1 account:"
+msgstr ""
+
 msgid "Choose an account"
 msgstr "選擇帳戶"
 
@@ -3374,10 +3386,10 @@ msgid "DIEL has the duty to disclose all the circumstances that are material to 
 msgstr "DIEL 有義務在提供此類產品和/或服務之前和期間向客戶披露其提供的產品或服務的所有重大狀況。DIEL 有義務根據其受許可的活動這樣做。"
 
 msgid "DIEL is a company established in Malta under registration number C70156 and having its registered office at W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta."
-msgstr ""
+msgstr "DIEL 是在馬爾他建立的公司，註冊號為 C70156，公司註冊地址是 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta。"
 
 msgid "DIEL is authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. It is also authorised and subject to limited regulation by the Financial Conduct Authority in the UK. Details about the extent of our authorisation and regulation by the Financial Conduct Authority are available from us on request. DIEL is authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients; both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). DIEL is not authorised to and does not offer investment, financial, legal, tax, regulatory, and/or other types of advice or state an opinion in relation to a Transaction under any circumstances. Clients should get independent advice from an investment adviser if they have any doubts about dealing in financial products."
-msgstr ""
+msgstr "DIEL 由馬爾他金融服務管理局（「MFSA」）根據《投資服務法令》（《馬爾他法律》第370章）（「法令」）授權執行投資業務和受其監管。並由英國金融行為監管局授權並受其監管。我們可應要求提供有關金融行為監管局授權和監管範圍的詳細資訊。 MFSA 授權 DIEL 以自己的帳戶交易（即提供報價並充當交易對手）並代表其他客戶執行訂單；以上兩項服務均涉及與外匯、指數和其他金融產品或資產（「金融產品」）有關的金融衍生產品。 DIEL 在任何情況下均無權提供任何投資、財務、法律、稅務、監管和/或其他類型的建議，也不可就任何交易發表意見。如果客戶對金融產品交易有任何疑問，須向投資顧問尋求獨立建議。"
 
 msgid "DIEL is authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients; both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). DIEL is not authorised to and does not offer investment, financial, legal, tax, regulatory, and/or other types of advice or state an opinion in relation to a Transaction under any circumstances. Clients should get independent advice from an investment adviser if they have any doubts about dealing in financial products."
 msgstr "DIEL受MFSA授權對自己帳戶進行交易（即提供服務和將交易對手作為客戶進行交易）及代替其他客戶執行訂單。這兩種服務和金融衍生產品有關，也跟外匯、指數和其他金融產品或資產（「金融產品」）有關。任何情況下，DIEL 無權也不提供任何與交易有關的投資、金融、法律、稅務、法規和/或其它類型的諮詢或提出意見。如果客戶對金融產品有任何疑問，須向金融顧問尋求獨立的建議。"
@@ -5801,7 +5813,7 @@ msgid "If you reside in the UK and are considering self-exclusion, you may wish 
 msgstr "如果您在英國居住且要自我禁止, 您可考慮在 GAMSTOP 註冊。"
 
 msgid "If you reside in the UK and you are unhappy with our response you may escalate your complaint to the %1Financial Ombudsman Service%2."
-msgstr ""
+msgstr "如果您在英國居住，並對我們的答覆不滿意，則可以進一步向%1金融申訴專員服務%2提出投訴。"
 
 msgid "If you score well in the hackathon or talent test, we'll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we'll invite you for an interview with a member of our recruitment team."
 msgstr "如果您在駭客松或人才測試中取得高分, 我們將向您發送一份自我評估精英面談 (SATI) 問卷。如果您通過了SATI，我們將邀請您參與我們招聘團隊成員的面試。"
@@ -12633,6 +12645,9 @@ msgstr "在我們的MT5平台使用槓桿和可變點差交易流行的加密貨
 
 msgid "Trade popular major and minor currency pairs, plus Smart FX indices – weighted indices that measure the value of a currency against a basket of major currencies."
 msgstr "交易流行的主要和次要貨幣對，加上智能外匯指數 - 衡量與一籃子主要貨幣相兌的指定貨幣價值的加權指數。"
+
+msgid "Trade server:"
+msgstr ""
 
 msgid "Trade type"
 msgstr "交易類型"
