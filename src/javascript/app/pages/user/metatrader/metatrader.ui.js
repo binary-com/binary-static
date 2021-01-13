@@ -184,10 +184,7 @@ const MetaTraderUI = (() => {
         if (acc_type) {
             $account_type_desc = $account_desc.find(`.${acc_type}`);
 
-            const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
-            const regex = new RegExp(clean_key);
-            const landing_company_short =
-                accounts_info[Object.keys(accounts_info).find(account => regex.test(account))].landing_company_short;
+            const landing_company_short = MetaTraderConfig.getSampleAccount().landing_company_short;
 
             if ($account_type_desc.length === 2) {
                 const $specific_description = $account_desc.find(`.${acc_type}.${landing_company_short}`);
@@ -568,10 +565,7 @@ const MetaTraderUI = (() => {
             if (Validation.validate('#frm_new_account')) {
                 const new_account_type = newAccountGetType();
 
-                const clean_key = /\d$/.test(new_account_type) ? new_account_type.substr(0, new_account_type.lastIndexOf('_')) : new_account_type;
-                const regex = new RegExp(clean_key);
-                const sample_account =
-                    accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
+                const sample_account = MetaTraderConfig.getSampleAccount();
 
                 $form.find('#view_3 button[type="submit"]').attr('acc_type', new_account_type);
                 $form.find('#view_3 #mt5_account_type').text(sample_account.title);
@@ -617,8 +611,7 @@ const MetaTraderUI = (() => {
         }
         // otherwise they are adding more server to their current account type
         const saved_mt5_account = Client.get('mt5_account');
-        const clean_key = /\d$/.test(saved_mt5_account) ? saved_mt5_account.substr(0, saved_mt5_account.lastIndexOf('_')) : saved_mt5_account;
-        return clean_key;
+        return MetaTraderConfig.getCleanAccType(saved_mt5_account);
     };
 
     const selectAccountTypeUI = (e) => {
@@ -687,8 +680,8 @@ const MetaTraderUI = (() => {
                 if (accounts_info[acc_type].info && getAvailableServers().length === 0) {
                     class_name = 'existed';
                 }
-                const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
-                $form.find(`.step-2 #${clean_key.replace(type, 'rbtn')}`)
+                const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type);
+                $form.find(`.step-2 #${clean_acc_type.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
                     .addClass(class_name);
             });
@@ -706,8 +699,8 @@ const MetaTraderUI = (() => {
         const filtered_accounts = {};
         Object.keys(accounts_info).sort(sortMt5Accounts).forEach(acc_type => {
             // remove server from name
-            const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
-            filtered_accounts[clean_key] = accounts_info[acc_type];
+            const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type);
+            filtered_accounts[clean_acc_type] = accounts_info[acc_type];
         });
 
         Object.keys(filtered_accounts).forEach((acc_type) => {

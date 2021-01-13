@@ -44,10 +44,7 @@ const MetaTraderConfig = (() => {
 
                     const has_financial_account = Client.hasAccountType('financial', 1);
 
-                    const clean_key = /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
-                    const regex = new RegExp(clean_key);
-                    const sample_account =
-                        accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
+                    const sample_account = getSampleAccount();
 
                     const is_maltainvest        = sample_account.landing_company_short === 'maltainvest';
 
@@ -506,6 +503,20 @@ const MetaTraderConfig = (() => {
         return is_need_verification;
     };
 
+    // remove server from acc_type for cases where we don't have it
+    // e.g. during new account creation no server is set yet
+    const getCleanAccType = (acc_type) =>
+        /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
+
+    // if no server exists yet, e.g. during new account creation
+    // we want to get information like landing company etc which is shared
+    // between all the servers, so we can disregard the server and return the first
+    // accounts_info item that has the same market type and sub account type
+    const getSampleAccount = () => {
+        const regex = new RegExp(getCleanAccType());
+        return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
+    };
+
     return {
         accounts_info,
         actions_info,
@@ -513,8 +524,10 @@ const MetaTraderConfig = (() => {
         validations,
         needsRealMessage,
         hasAccount,
+        getCleanAccType,
         getCurrency,
         getDisplayLogin,
+        getSampleAccount,
         isAuthenticated,
         isAuthenticationPromptNeeded,
         setMessages   : ($msg) => { $messages = $msg; },
