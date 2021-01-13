@@ -99,7 +99,8 @@ const MetaTrader = (() => {
                         };
                     };
 
-                    if (available_servers.length) {
+                    // demo only has one server, no need to create for each trade server
+                    if (available_servers.length && !is_demo) {
                         available_servers.forEach(trading_server => addAccountsInfo(trading_server));
                     } else {
                         addAccountsInfo();
@@ -233,7 +234,7 @@ const MetaTrader = (() => {
                         MetaTraderUI.enableButton(action, response);
                     } else {
                         await BinarySocket.send({ get_account_status: 1 });
-                        if (accounts_info[acc_type].info) {
+                        if (accounts_info[acc_type] && accounts_info[acc_type].info) {
                             const parent_action = /password/.test(action) ? 'manage_password' : 'cashier';
                             if (parent_action === 'cashier') {
                                 await BinarySocket.send({ get_limits: 1 });
@@ -276,18 +277,23 @@ const MetaTrader = (() => {
 
         // Update account info
         response.mt5_login_list.forEach((account) => {
-            const acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}_${account.server}`;
+            let acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}`;
+            if (!(acc_type in accounts_info)) {
+                acc_type += `_${account.server}`;
+            }
 
             // in case trading_server API response is corrupted, acc_type will not exist in accounts_info due to missing supported_accounts prop
             if (acc_type in accounts_info) {
                 accounts_info[acc_type].info = account;
 
-                const geolocation = trading_servers.find(server => server.id === account.server).geolocation;
+                accounts_info[acc_type].info.display_login = MetaTraderConfig.getDisplayLogin(account.login);
+                accounts_info[acc_type].info.login         = account.login;
+                accounts_info[acc_type].info.server        = account.server;
 
-                accounts_info[acc_type].info.display_login  = MetaTraderConfig.getDisplayLogin(account.login);
-                accounts_info[acc_type].info.login          = account.login;
-                accounts_info[acc_type].info.server         = account.server;
-                accounts_info[acc_type].info.display_server = `${geolocation.region} ${geolocation.sequence}`;
+                const geolocation = (trading_servers.find(server => server.id === account.server) || {}).geolocation;
+                if (geolocation) {
+                    accounts_info[acc_type].info.display_server = geolocation.sequence > 1 ? `${geolocation.region} ${geolocation.sequence}` : geolocation.region;
+                }
 
                 MetaTraderUI.updateAccount(acc_type);
             }

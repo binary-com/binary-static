@@ -42,12 +42,10 @@ const MetaTraderConfig = (() => {
                         resolve($message.html());
                     };
 
+                    const sample_account = getSampleAccount(acc_type);
+
                     const has_financial_account = Client.hasAccountType('financial', 1);
-
-                    const sample_account = getSampleAccount();
-
                     const is_maltainvest        = sample_account.landing_company_short === 'maltainvest';
-
                     const is_financial          = sample_account.market_type === 'financial';
                     const is_demo_financial     = is_demo && is_financial;
 
@@ -210,9 +208,11 @@ const MetaTraderConfig = (() => {
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
-                    const is_synthetic = accounts_info[acc_type].market_type === 'gaming';
+                    const sample_account = getSampleAccount(acc_type);
+                    const is_synthetic = sample_account.market_type === 'gaming';
+                    const is_demo = /^demo_/.test(acc_type);
 
-                    if (is_synthetic && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
+                    if (is_synthetic && !is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id               : 'confirm_new_account',
                             localized_message: localize(['Trading contracts for difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
@@ -222,7 +222,7 @@ const MetaTraderConfig = (() => {
                             }
                             resolve(is_ok);
                         });
-                    } else if (!accounts_info[acc_type].is_demo && Client.get('residence') === 'es') {
+                    } else if (!is_demo && Client.get('residence') === 'es') {
                         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
                             const { cfd_score, trading_score } = response.get_financial_assessment;
                             const passed_financial_assessment = cfd_score === 4 || trading_score >= 8;
@@ -348,15 +348,17 @@ const MetaTraderConfig = (() => {
             txt_re_main_pass : { id: '#txt_re_main_pass' },
             ddl_trade_server : { id: '#ddl_trade_server', request_field: 'server', is_radio: true },
             chk_tnc          : { id: '#chk_tnc' },
-            additional_fields:
-                acc_type => ({
-                    account_type: accounts_info[acc_type].is_demo ? 'demo' : accounts_info[acc_type].market_type,
+            additional_fields: acc_type => {
+                const sample_account = getSampleAccount(acc_type);
+                return ({
+                    account_type: /^demo_/.test(acc_type) ? 'demo' : sample_account.market_type,
                     email       : Client.get('email'),
-                    leverage    : accounts_info[acc_type].leverage,
-                    ...(accounts_info[acc_type].market_type === 'financial' && {
-                        mt5_account_type: accounts_info[acc_type].sub_account_type,
+                    leverage    : sample_account.leverage,
+                    ...(sample_account.market_type === 'financial' && {
+                        mt5_account_type: sample_account.sub_account_type,
                     }),
-                }),
+                });
+            },
         },
         password_change: {
             ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
@@ -512,8 +514,8 @@ const MetaTraderConfig = (() => {
     // we want to get information like landing company etc which is shared
     // between all the servers, so we can disregard the server and return the first
     // accounts_info item that has the same market type and sub account type
-    const getSampleAccount = () => {
-        const regex = new RegExp(getCleanAccType());
+    const getSampleAccount = (acc_type) => {
+        const regex = new RegExp(getCleanAccType(acc_type));
         return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
     };
 

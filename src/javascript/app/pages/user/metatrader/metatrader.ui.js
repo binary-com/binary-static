@@ -139,7 +139,11 @@ const MetaTraderUI = (() => {
         if (accounts_info[acc_type].info) {
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
-            $acc_item.find('.mt-server').text(`${accounts_info[acc_type].info.display_server}`);
+            if (accounts_info[acc_type].info.display_server) {
+                $acc_item.find('.mt-server').text(`${accounts_info[acc_type].info.display_server}`);
+            } else {
+                $acc_item.find('.mt-server').remove();
+            }
             $acc_item.setVisibility(1);
             if (accounts_info[acc_type].is_demo) {
                 $list.find('#acc_group_demo').setVisibility(1);
@@ -158,14 +162,14 @@ const MetaTraderUI = (() => {
             }
 
             // Add more trade servers button.
-            $container.find('#btn_add_more_servers').setVisibility(getAvailableServers().length > 0);
+            $container.find('#btn_add_more_servers').setVisibility(getAvailableServers().length > 0 && !accounts_info[acc_type].is_demo);
             $container.find('#btn_add_more_servers').click(() => {
                 const $back_button = $form.find('#view_2 .btn-back');
                 const $cancel_button = $form.find('#view_2 .btn-cancel');
                 const account_type = Client.get('mt5_account');
 
                 loadAction('new_account', account_type);
-                $form.find('#view_3 button[type="submit"]').attr('acc_type', account_type);
+                $form.find('button[type="submit"]').attr('acc_type', account_type);
                 $cancel_button.setVisibility(1);
                 $back_button.setVisibility(0);
                 displayStep(2);
@@ -184,7 +188,7 @@ const MetaTraderUI = (() => {
         if (acc_type) {
             $account_type_desc = $account_desc.find(`.${acc_type}`);
 
-            const landing_company_short = MetaTraderConfig.getSampleAccount().landing_company_short;
+            const landing_company_short = MetaTraderConfig.getSampleAccount(acc_type).landing_company_short;
 
             if ($account_type_desc.length === 2) {
                 const $specific_description = $account_desc.find(`.${acc_type}.${landing_company_short}`);
@@ -207,6 +211,8 @@ const MetaTraderUI = (() => {
 
         if (accounts_info[acc_type].info) {
             const is_demo = accounts_info[acc_type].is_demo;
+            $detail.find('.real-only').setVisibility(!is_demo);
+            $container.find('#btn_add_more_servers').setVisibility(getAvailableServers().length > 0 && !is_demo);
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
                 const key     = $(this).attr('data');
@@ -217,7 +223,9 @@ const MetaTraderUI = (() => {
                     display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
                     server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
-                    trade_server : () => accounts_info[acc_type].info.display_server,
+                    ...(accounts_info[acc_type].info.display_server && {
+                        trade_server: () => accounts_info[acc_type].info.display_server,
+                    }),
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
@@ -388,7 +396,8 @@ const MetaTraderUI = (() => {
     const getAvailableServers = () =>
         State.getResponse('trading_servers').filter(trading_server => {
             let account_type = newAccountGetType();
-            if (!/\d$/.test(account_type)) {
+            // if server is not added to account type, and in accounts_info we are storing it without server
+            if (!/\d$/.test(account_type) && !accounts_info[account_type]) {
                 account_type += `_${trading_server.id}`;
             }
             const new_account_info = accounts_info[account_type];
@@ -502,6 +511,7 @@ const MetaTraderUI = (() => {
         $form.find('#view_1 .btn-next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
                 displayStep(2);
+                $form.find('button[type="submit"]').attr('acc_type', newAccountGetType());
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
@@ -511,7 +521,8 @@ const MetaTraderUI = (() => {
 
             State.getResponse('trading_servers').forEach(trading_server => {
                 let account_type = newAccountGetType();
-                if (!/\d$/.test(account_type)) {
+                // if server is not added to account type, and in accounts_info we are not storing it with server
+                if (!/\d$/.test(account_type) && !accounts_info[account_type]) {
                     account_type += `_${trading_server.id}`;
                 }
                 const new_account_info = accounts_info[account_type];
@@ -565,9 +576,9 @@ const MetaTraderUI = (() => {
             if (Validation.validate('#frm_new_account')) {
                 const new_account_type = newAccountGetType();
 
-                const sample_account = MetaTraderConfig.getSampleAccount();
+                const sample_account = MetaTraderConfig.getSampleAccount(new_account_type);
 
-                $form.find('#view_3 button[type="submit"]').attr('acc_type', new_account_type);
+                $form.find('button[type="submit"]').attr('acc_type', new_account_type);
                 $form.find('#view_3 #mt5_account_type').text(sample_account.title);
                 displayStep(3);
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
@@ -585,14 +596,6 @@ const MetaTraderUI = (() => {
             }
             if (e.target.nodeName === 'INPUT') {
                 $(e.target).not(':input[disabled]').attr('checked', 'checked');
-            }
-        });
-
-        $form.find('#view_2 .btn-next').click(() => {
-            if (Validation.validate('#frm_new_account')) {
-                $form.find('#view_3 button[type="submit"]').attr('acc_type', newAccountGetType());
-                displayStep(3);
-                $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
 
