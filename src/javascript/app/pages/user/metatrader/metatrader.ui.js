@@ -827,6 +827,7 @@ const MetaTraderUI = (() => {
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
+        const $icon = $el.parent().find('.display_login_tip');
         /*
             The details for vanuatu landing company was changed to
             those of the svg landing company, thus it will show
@@ -839,14 +840,14 @@ const MetaTraderUI = (() => {
         if (accounts_info[acc_type].landing_company_short === 'vanuatu' &&
             accounts_info[acc_type].market_type === 'financial' &&
             accounts_info[acc_type].sub_account_type === 'financial') {
-            $el.removeAttr('data-balloon data-balloon-length');
+            $icon.remove();
             return;
         }
 
         BinarySocket.wait('landing_company').then((response) => {
             const company = response.landing_company[`mt_${accounts_info[acc_type].market_type}_company`][accounts_info[acc_type].sub_account_type];
 
-            $el.attr({
+            $icon.attr({
                 'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
                 'data-balloon-length': 'large',
             });
