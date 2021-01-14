@@ -828,6 +828,7 @@ const MetaTraderUI = (() => {
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
         const $icon = $el.parent().find('.display_login_tip');
+        const is_mobile = window.innerWidth < 770;
         /*
             The details for vanuatu landing company was changed to
             those of the svg landing company, thus it will show
@@ -837,9 +838,10 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if (accounts_info[acc_type].landing_company_short === 'vanuatu' &&
+        if ((accounts_info[acc_type].landing_company_short === 'vanuatu' &&
             accounts_info[acc_type].market_type === 'financial' &&
-            accounts_info[acc_type].sub_account_type === 'financial') {
+            accounts_info[acc_type].sub_account_type === 'financial') ||
+            is_mobile) {
             $icon.remove();
             return;
         }
