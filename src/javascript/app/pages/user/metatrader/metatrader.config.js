@@ -490,7 +490,7 @@ const MetaTraderConfig = (() => {
                         func: () => {
                             const balance = accounts_info[Client.get('mt5_account')].info.balance;
 
-                            const is_balance_more_than_entered = +balance >= +$(fields.deposit.txt_amount.id).val();
+                            const is_balance_more_than_entered = +balance >= +$(fields.withdrawal.txt_amount.id).val();
 
                             return balance && is_balance_more_than_entered;
                         },
@@ -500,14 +500,14 @@ const MetaTraderConfig = (() => {
                     // e.g. client balance could be 0.45 but min limit could be 1
                     ['custom', {
                         func: () => {
-                            const balance         = Client.get('balance');
-                            const min_req_balance = Currency.getTransferLimits(Client.get('mt5_account'), 'min', 'mt5');
+                            const balance         = accounts_info[Client.get('mt5_account')].info.balance;
+                            const min_req_balance = Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5');
 
                             const is_balance_more_than_min_req = +balance >= +min_req_balance;
 
                             return balance && is_balance_more_than_min_req;
                         },
-                        message: localize('Should be more than [_1]', Currency.getTransferLimits(Client.get('mt5_account'), 'min', 'mt5')),
+                        message: () => localize('Should be more than [_1]', Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5')),
                     }],
                     // check if amount is between min and max
                     ['number', {
