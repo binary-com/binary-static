@@ -225,7 +225,7 @@ const Footer = () => (
                                 {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
                             </p>
                             <p className='eu-only invisible'>
-                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. [_1] of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.', '74%')}
+                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. [_1] of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.', '71%')}
                             </p>
                         </div>
                     </div>
