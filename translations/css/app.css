@@ -341,6 +341,9 @@ a.previous-wrapper {
         color: #2a3052; }
         #mt_account_management #account_details .acc-info .balance .symbols {
           display: block; }
+      #mt_account_management #account_details .acc-info .display_login_tip {
+        margin-left: 4px;
+        border-bottom: none; }
     #mt_account_management #account_details .add_more_servers {
       position: absolute;
       bottom: 8px;
