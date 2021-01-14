@@ -654,7 +654,7 @@ const MetaTraderUI = (() => {
             displayAccountDescription();
             updateAccountTypesUI(selected_acc_type);
             switchAccountTypesUI(selected_acc_type, $form);
-            $form.find('#view_1 #btn_next').addClass('button-disabled');
+            $form.find('#view_1 .btn-next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
         } else {
