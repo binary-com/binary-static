@@ -668,7 +668,7 @@ const MetaTraderUI = (() => {
             displayAccountDescription();
             updateAccountTypesUI(selected_acc_type);
             switchAccountTypesUI(selected_acc_type, $form);
-            $form.find('#view_1 #btn_next').addClass('button-disabled');
+            $form.find('#view_1 .btn-next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
         } else {
@@ -841,6 +841,8 @@ const MetaTraderUI = (() => {
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
+        const $icon = $el.parent().find('.display_login_tip');
+        const is_mobile = window.innerWidth < 770;
         /*
             The details for vanuatu landing company was changed to
             those of the svg landing company, thus it will show
@@ -850,17 +852,18 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if (accounts_info[acc_type].landing_company_short === 'vanuatu' &&
+        if ((accounts_info[acc_type].landing_company_short === 'vanuatu' &&
             accounts_info[acc_type].market_type === 'financial' &&
-            accounts_info[acc_type].sub_account_type === 'financial') {
-            $el.removeAttr('data-balloon data-balloon-length');
+            accounts_info[acc_type].sub_account_type === 'financial') ||
+            is_mobile) {
+            $icon.remove();
             return;
         }
 
         BinarySocket.wait('landing_company').then((response) => {
             const company = response.landing_company[`mt_${accounts_info[acc_type].market_type}_company`][accounts_info[acc_type].sub_account_type];
 
-            $el.attr({
+            $icon.attr({
                 'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
                 'data-balloon-length': 'large',
             });

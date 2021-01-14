@@ -103,6 +103,7 @@ const Metatrader = () => (
                                 <div className='gr-row gr-padding-10'>
                                     <div className='gr-3'>{it.L('MT5 Login:')}</div>
                                     <div data='display_login' />
+                                    <div className='display_login_tip'>&#9432;</div>
                                 </div>
                                 <div className='gr-row gr-padding-10 gr-parent'>
                                     <div className='gr-3'>{it.L('Name:')}</div>
