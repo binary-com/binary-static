@@ -140,7 +140,10 @@ const MetaTraderUI = (() => {
         if (accounts_info[acc_type].info) {
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
-            if (accounts_info[acc_type].info.display_server) {
+            if (
+                accounts_info[acc_type].info.display_server &&
+                MetaTraderConfig.hasMultipleTradeServers(acc_type, accounts_info)
+            ) {
                 $acc_item.find('.mt-server').text(`${accounts_info[acc_type].info.display_server}`);
             } else {
                 $acc_item.find('.mt-server').remove();
@@ -224,9 +227,11 @@ const MetaTraderUI = (() => {
                     display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
                     server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
-                    ...(accounts_info[acc_type].info.display_server && {
-                        trade_server: () => accounts_info[acc_type].info.display_server,
-                    }),
+                    ...(
+                        accounts_info[acc_type].info.display_server &&
+                        MetaTraderConfig.hasMultipleTradeServers(acc_type, accounts_info) &&
+                        ({ trade_server: () => accounts_info[acc_type].info.display_server })
+                    ),
                 };
 
                 $container.find('#mt-trade-server-container').setVisibility(!!mapping.trade_server);
@@ -437,7 +442,7 @@ const MetaTraderUI = (() => {
     const displayStep = (step) => {
         const new_account_type = newAccountGetType();
 
-        $form.find('#btn_submit_new_account').setVisibility(0);
+        $form.find('#btn_submit_new_account').setVisibility(0).attr('disabled', true);
         $form.find('#msg_form').remove();
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
@@ -469,6 +474,7 @@ const MetaTraderUI = (() => {
                 $form.find('#view_2 .btn-next').setVisibility(0);
                 $view_2_button_container.append($submit_button);
                 $submit_button.setVisibility(1);
+                $submit_button.removeAttr('disabled');
             } else {
                 // If we do have trading servers, show the next button.
                 $form.find('#view_2 .btn-next').setVisibility(1);
@@ -487,6 +493,7 @@ const MetaTraderUI = (() => {
             $view_3_button_container.append($submit_button);
             $view_3_button_container.setVisibility(1);
             $submit_button.setVisibility(1);
+            $submit_button.removeAttr('disabled');
         }
     };
 
@@ -618,6 +625,13 @@ const MetaTraderUI = (() => {
             }
             if (e.target.nodeName === 'INPUT') {
                 $(e.target).not(':input[disabled]').attr('checked', 'checked');
+            }
+
+            // Disable/enable submit button based on whether any of the checkboxes is checked.
+            if ($form.find('#ddl_trade_server input[checked]').length > 0) {
+                $form.find('#btn_submit_new_account').removeAttr('disabled');
+            } else {
+                $form.find('#btn_submit_new_account').attr('disabled', true);
             }
         });
 

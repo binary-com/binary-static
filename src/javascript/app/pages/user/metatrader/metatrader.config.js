@@ -355,7 +355,7 @@ const MetaTraderConfig = (() => {
                     account_type: is_demo ? 'demo' : sample_account.market_type,
                     email       : Client.get('email'),
                     leverage    : sample_account.leverage,
-                    ...(!is_demo && {
+                    ...(!is_demo && hasMultipleTradeServers(acc_type, accounts_info) && {
                         server: $('#frm_new_account').find('#ddl_trade_server input[checked]').val(),
                     }),
                     ...(sample_account.market_type === 'financial' && {
@@ -526,6 +526,11 @@ const MetaTraderConfig = (() => {
         return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
     };
 
+    const hasMultipleTradeServers = (acc_type, accounts) => {
+        const clean_acc_type_a = getCleanAccType(acc_type);
+        return Object.keys(accounts).filter(acc_type_b => clean_acc_type_a === getCleanAccType(acc_type_b)).length > 1;
+    };
+
     return {
         accounts_info,
         actions_info,
@@ -533,6 +538,7 @@ const MetaTraderConfig = (() => {
         validations,
         needsRealMessage,
         hasAccount,
+        hasMultipleTradeServers,
         getCleanAccType,
         getCurrency,
         getDisplayLogin,
