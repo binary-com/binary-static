@@ -355,7 +355,7 @@ const MetaTraderConfig = (() => {
                     account_type: is_demo ? 'demo' : sample_account.market_type,
                     email       : Client.get('email'),
                     leverage    : sample_account.leverage,
-                    ...(!is_demo && hasMultipleTradeServers(accounts_info) && {
+                    ...(!is_demo && hasMultipleTradeServers(acc_type, accounts_info) && {
                         server: $('#frm_new_account').find('#ddl_trade_server input[checked]').val(),
                     }),
                     ...(sample_account.market_type === 'financial' && {
@@ -526,15 +526,9 @@ const MetaTraderConfig = (() => {
         return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
     };
 
-    const hasMultipleTradeServers = (accounts) => {
-        const account_types = Object.keys(accounts);
-
-        return account_types.some((account_type_a, idx_a) => {
-            const clean_account_type_a = getCleanAccType(account_type_a);
-            return account_types.some((account_type_b, idx_b) =>
-                idx_a !== idx_b && clean_account_type_a === getCleanAccType(account_type_b)
-            );
-        });
+    const hasMultipleTradeServers = (acc_type, accounts) => {
+        const clean_acc_type_a = getCleanAccType(acc_type);
+        return Object.keys(accounts).filter(acc_type_b => clean_acc_type_a === getCleanAccType(acc_type_b)).length > 1;
     };
 
     return {
