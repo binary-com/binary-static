@@ -474,7 +474,8 @@ const MetaTraderConfig = (() => {
                             // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
                             return Math.min(mt5_limit, balance || mt5_limit).toFixed(Currency.getDecimalPlaces(Client.get('currency')));
                         },
-                        decimals: Currency.getDecimalPlaces(Client.get('currency')),
+                        decimals    : Currency.getDecimalPlaces(Client.get('currency')),
+                        format_money: true,
                     }],
                 ],
             },
@@ -489,7 +490,6 @@ const MetaTraderConfig = (() => {
                     ['custom', {
                         func: () => {
                             const balance = accounts_info[Client.get('mt5_account')].info.balance;
-
                             const is_balance_more_than_entered = +balance >= +$(fields.withdrawal.txt_amount.id).val();
 
                             return balance && is_balance_more_than_entered;
@@ -520,7 +520,8 @@ const MetaTraderConfig = (() => {
                             // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
                             return Math.min(mt5_limit, balance || mt5_limit);
                         },
-                        decimals: 2,
+                        decimals    : 2,
+                        format_money: true,
                     }],
                 ],
             },
