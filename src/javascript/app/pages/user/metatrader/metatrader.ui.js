@@ -125,8 +125,9 @@ const MetaTraderUI = (() => {
     const setMTAccountText = () => {
         const acc_type = $mt5_account.attr('value');
         if (acc_type) {
-            const display_login = getPropertyValue(accounts_info[acc_type], ['info', 'display_login']);
-            const title = `${accounts_info[acc_type].title}${ display_login ? ` (${display_login})` : '' }`;
+            const sample_account = MetaTraderConfig.getSampleAccount(acc_type);
+            const display_login = getPropertyValue(sample_account, ['info', 'display_login']);
+            const title = `${sample_account.title}${ display_login ? ` (${display_login})` : '' }`;
             if (!new RegExp(title).test($mt5_account.text())) {
                 $mt5_account.html(title);
             }
@@ -139,6 +140,14 @@ const MetaTraderUI = (() => {
         if (accounts_info[acc_type].info) {
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
+            if (
+                accounts_info[acc_type].info.display_server &&
+                MetaTraderConfig.hasMultipleTradeServers(acc_type, accounts_info)
+            ) {
+                $acc_item.find('.mt-server').text(`${accounts_info[acc_type].info.display_server}`);
+            } else {
+                $acc_item.find('.mt-server').remove();
+            }
             $acc_item.setVisibility(1);
             if (accounts_info[acc_type].is_demo) {
                 $list.find('#acc_group_demo').setVisibility(1);
@@ -150,21 +159,41 @@ const MetaTraderUI = (() => {
                     +accounts_info[acc_type].info.balance);
                 $acc_item.find('.mt-balance').html(mt_balance);
                 $action.find('.mt5-balance').html(mt_balance);
+                $container.find('#btn_add_more_servers').setVisibility(getAvailableServers(false, acc_type).length > 0 && !accounts_info[acc_type].is_demo);
             }
             // disable MT5 account opening if created all available accounts
             if (Object.keys(accounts_info).every(type => accounts_info[type].info)) {
                 $container.find('.act_new_account').remove();
             }
+
+            // Add more trade servers button.
+            $container.find('#btn_add_more_servers').click(() => {
+                const $back_button = $form.find('#view_2 .btn-back');
+                const $cancel_button = $form.find('#view_2 .btn-cancel');
+                const account_type = Client.get('mt5_account');
+
+                loadAction('new_account', account_type);
+                $form.find('button[type="submit"]').attr('acc_type', account_type);
+                $cancel_button.setVisibility(1);
+                $back_button.setVisibility(0);
+                displayStep(2);
+
+                $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
+            });
+
         } else {
             $acc_item.setVisibility(0);
         }
     };
+
     const displayAccountDescription = (acc_type) => {
         const $account_desc = $templates.find('.account-desc');
         let $account_type_desc = '';
         if (acc_type) {
             $account_type_desc = $account_desc.find(`.${acc_type}`);
-            const landing_company_short = accounts_info[acc_type].landing_company_short;
+
+            const landing_company_short = MetaTraderConfig.getSampleAccount(acc_type).landing_company_short;
+
             if ($account_type_desc.length === 2) {
                 const $specific_description = $account_desc.find(`.${acc_type}.${landing_company_short}`);
 
@@ -186,6 +215,8 @@ const MetaTraderUI = (() => {
 
         if (accounts_info[acc_type].info) {
             const is_demo = accounts_info[acc_type].is_demo;
+            $detail.find('.real-only').setVisibility(!is_demo);
+            $container.find('#btn_add_more_servers').setVisibility(getAvailableServers(false, acc_type).length > 0 && !is_demo);
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
                 const key     = $(this).attr('data');
@@ -196,7 +227,14 @@ const MetaTraderUI = (() => {
                     display_login: () => (`${info} (${is_demo ? localize('Demo Account') : localize('Real-Money Account')})`),
                     leverage     : () => `1:${info}`,
                     server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
+                    ...(
+                        accounts_info[acc_type].info.display_server &&
+                        MetaTraderConfig.hasMultipleTradeServers(acc_type, accounts_info) &&
+                        ({ trade_server: () => accounts_info[acc_type].info.display_server })
+                    ),
                 };
+
+                $container.find('#mt-trade-server-container').setVisibility(!!mapping.trade_server);
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
 
@@ -363,6 +401,102 @@ const MetaTraderUI = (() => {
         });
     };
 
+    const getAvailableServers = (should_ignore_used = false, acc_type) =>
+        State.getResponse('trading_servers').filter(trading_server => {
+            let account_type = acc_type || newAccountGetType();
+            // if server is not added to account type, and in accounts_info we are storing it without server
+            if (!/\d$/.test(account_type) && !accounts_info[account_type]) {
+                account_type += `_${trading_server.id}`;
+            }
+            const new_account_info = accounts_info[account_type];
+            const { supported_accounts } = trading_server;
+
+            if (!new_account_info || !supported_accounts) {
+                return false;
+            }
+
+            const { market_type, sub_account_type } = new_account_info;
+
+            const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
+            const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
+            const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
+
+            const is_server_supported =
+                (is_synthetic && supported_accounts.includes('gaming')) ||
+                (is_financial && supported_accounts.includes('financial')) ||
+                (is_financial_stp && supported_accounts.includes('financial_stp'));
+
+            if (should_ignore_used) {
+                return is_server_supported;
+            }
+
+            const is_used_server = new_account_info.info && new_account_info.info.server &&
+                is_server_supported &&
+                Object.keys(accounts_info).find(account =>
+                    accounts_info[account].info && trading_server.id === accounts_info[account].info.server
+                );
+
+            return is_server_supported && !is_used_server;
+        });
+
+    const displayStep = (step) => {
+        const new_account_type = newAccountGetType();
+
+        $form.find('#btn_submit_new_account').setVisibility(0).attr('disabled', true);
+        $form.find('#msg_form').remove();
+        $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
+        $form.find(`#view_${step}`).setVisibility(1);
+        $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
+        $form.find(`.${/demo/.test(new_account_type) ? 'real' : 'demo'}-only`).setVisibility(0);
+
+        if (step === 2) {
+            $form.find('input').not(':input[type=radio]').val('');
+
+            const get_settings = State.getResponse('get_settings');
+
+            if (get_settings.first_name && get_settings.last_name) {
+                $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
+            }
+
+            const trading_servers = State.getResponse('trading_servers');
+            const $view_2_button_container = $form.find('#view_2-buttons');
+
+            // Check whether this is the last server the user is creating.
+            const supported_servers = getAvailableServers(true);
+
+            if (trading_servers.length === 0 || /demo/.test(new_account_type) || supported_servers.length <= 1) {
+                const $submit_button = $form.find('#btn_submit_new_account');
+
+                $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_2_button_container);
+
+                // If we have no trading servers, skip the step after this
+                // by showing the "Create account" button right away.
+                $form.find('#view_2 .btn-next').setVisibility(0);
+                $view_2_button_container.append($submit_button);
+                $submit_button.setVisibility(1);
+                $submit_button.removeAttr('disabled');
+            } else {
+                // If we do have trading servers, show the next button.
+                $form.find('#view_2 .btn-next').setVisibility(1);
+            }
+
+            $view_2_button_container.setVisibility(1);
+        } else if (step === 3) {
+            const sample_account = MetaTraderConfig.getSampleAccount(new_account_type);
+            $form.find('#view_3 #mt5_account_type').text(sample_account.title);
+
+            const $submit_button = $form.find('#btn_submit_new_account');
+            const $view_3_button_container = $form.find('#view_3-buttons');
+
+            $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_3_button_container);
+
+            $view_3_button_container.append($submit_button);
+            $view_3_button_container.setVisibility(1);
+            $submit_button.setVisibility(1);
+            $submit_button.removeAttr('disabled');
+        }
+    };
+
     // -----------------------
     // ----- New Account -----
     // -----------------------
@@ -389,41 +523,135 @@ const MetaTraderUI = (() => {
         displayAccountDescription();
         $form = actions_info[action].$form;
         if (Object.keys(accounts_info).every(a_type => !accounts_info[a_type].info)) {
-            $form.find('#view_1 #btn_cancel').addClass('invisible');
+            $form.find('#view_1 .btn-cancel').addClass('invisible');
         }
 
         // Navigation buttons: cancel, next, back
-        $form.find('#btn_cancel').click(() => {
+        $form.find('.btn-cancel').click(() => {
             loadAction(null, acc_type);
             displayAccountDescription(accounts_info[acc_type].info ? acc_type : undefined);
             $.scrollTo($('h1'), 300, { offset: -10 });
             showFinancialAuthentication(true);
         });
-        const displayStep = (step) => {
-            $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
-            $form.find(`#view_${step}`).setVisibility(1);
-            $form.find('#view_2').find('.error-msg, .days_to_crack').setVisibility(0);
-            $form.find('input').val('');
-            $form.find(`.${/demo/.test(newAccountGetType()) ? 'real' : 'demo'}-only`).setVisibility(0);
-        };
-        $form.find('#btn_next').click(function() {
+
+        $form.find('#view_1 .btn-next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
-                $form.find('#view_2 button[type="submit"]').attr('acc_type', newAccountGetType());
                 displayStep(2);
-                const get_settings = State.getResponse('get_settings');
-                if (get_settings.first_name && get_settings.last_name) {
-                    $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
-                }
+                $form.find('button[type="submit"]').attr('acc_type', newAccountGetType());
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             }
         });
-        $form.find('#btn_back').click(() => { displayStep(1); });
+
+        $form.find('#view_2 .btn-next').click(() => {
+            const $ddl_trade_server = $form.find('#ddl_trade_server');
+
+            $ddl_trade_server.empty();
+
+            State.getResponse('trading_servers').forEach(trading_server => {
+                let account_type = newAccountGetType();
+                // if server is not added to account type, and in accounts_info we are not storing it with server
+                if (!/\d$/.test(account_type) && !accounts_info[account_type]) {
+                    account_type += `_${trading_server.id}`;
+                }
+                const new_account_info = accounts_info[account_type];
+                const { market_type, sub_account_type } = new_account_info;
+
+                const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
+                const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
+                const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
+
+                const { id: server_id, supported_accounts = [] } = trading_server;
+
+                const is_server_supported =
+                    (is_synthetic && supported_accounts.includes('gaming')) ||
+                    (is_financial && supported_accounts.includes('financial')) ||
+                    (is_financial_stp && supported_accounts.includes('financial_stp'));
+
+                if (is_server_supported) {
+                    const is_used_server = new_account_info.info && new_account_info.info.server &&
+                        is_server_supported && server_id === accounts_info[account_type].info.server;
+
+                    const is_disabled = trading_server.disabled === 1;
+
+                    const input_attributes = {
+                        disabled: is_used_server || is_disabled,
+                        type    : 'radio',
+                        name    : 'ddl_trade_server',
+                        value   : trading_server.id,
+                        ...(trading_server.recommended && !is_used_server && !is_disabled && { checked: 'checked' }),
+                    };
+
+                    const { region, sequence } = trading_server.geolocation;
+                    let label_text = sequence > 1 ? `${region} ${sequence}` : region;
+
+                    if (is_used_server) {
+                        label_text += localize(' (account created)');
+                    } else if (is_disabled) {
+                        label_text += localize(' (unavailable)');
+                    }
+
+                    $ddl_trade_server
+                        .append(
+                            $('<div />', { id: trading_server.id, class: 'gr-padding-10 gr-parent' })
+                                .append($('<input />', input_attributes))
+                                .append($('<label />', { htmlFor: trading_server.id })
+                                    .append($('<span />', { text: label_text }))
+                                )
+                        );
+                }
+            });
+
+            // Check whether any of the servers is checked, if not, check one.
+            if ($ddl_trade_server.find('input[checked]').length === 0) {
+                $ddl_trade_server.find('input:not(:disabled):first').attr('checked', 'checked');
+            }
+
+            if (Validation.validate('#frm_new_account')) {
+                const new_account_type = newAccountGetType();
+                $form.find('button[type="submit"]').attr('acc_type', new_account_type);
+                displayStep(3);
+                $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
+            }
+        });
+
+        $form.find('#ddl_trade_server').off('click').on('click', (e) => {
+            $form.find('#ddl_trade_server').find('input').not(':input[disabled]').removeAttr('checked');
+
+            if (e.target.nodeName === 'SPAN') {
+                $(e.target.parentElement).parent().find('input').not(':input[disabled]').attr('checked', 'checked');
+            }
+            if (e.target.nodeName === 'LABEL') {
+                $(e.target.parentElement).find('input').not(':input[disabled]').attr('checked', 'checked');
+            }
+            if (e.target.nodeName === 'INPUT') {
+                $(e.target).not(':input[disabled]').attr('checked', 'checked');
+            }
+
+            // Disable/enable submit button based on whether any of the checkboxes is checked.
+            if ($form.find('#ddl_trade_server input[checked]').length > 0) {
+                $form.find('#btn_submit_new_account').removeAttr('disabled');
+            } else {
+                $form.find('#btn_submit_new_account').attr('disabled', true);
+            }
+        });
+
+        $form.find('#view_2 .btn-back').click(() => { displayStep(1); });
+        $form.find('#view_3 .btn-back').click(() => { displayStep(2); });
 
         // Account type selection
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
     };
 
-    const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
+    const newAccountGetType = () => {
+        const selected_type = $form && $form.find('.step-2 .selected').attr('data-acc-type');
+        // if user selected account type using the form, send that
+        if (selected_type) {
+            return `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
+        }
+        // otherwise they are adding more server to their current account type
+        const saved_mt5_account = Client.get('mt5_account');
+        return MetaTraderConfig.getCleanAccType(saved_mt5_account);
+    };
 
     const selectAccountTypeUI = (e) => {
         const box_class = 'mt5_type_box';
@@ -439,8 +667,8 @@ const MetaTraderUI = (() => {
         if (/(demo|real)/.test(selected_acc_type)) {
             displayAccountDescription();
             updateAccountTypesUI(selected_acc_type);
-            switchAcccountTypesUI(selected_acc_type, $form);
-            $form.find('#view_1 #btn_next').addClass('button-disabled');
+            switchAccountTypesUI(selected_acc_type, $form);
+            $form.find('#view_1 .btn-next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
         } else {
@@ -448,13 +676,13 @@ const MetaTraderUI = (() => {
             displayAccountDescription(new_acc_type);
             actions_info[action].prerequisites(new_acc_type).then((error_msg) => {
                 displayMessage('#new_account_msg', error_msg || '');
-                $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
-                $form.find('#view_1 #btn_cancel').removeClass('invisible');
+                $form.find('#view_1 .btn-next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
+                $form.find('#view_1 .btn-cancel').removeClass('invisible');
             });
         }
     };
 
-    const switchAcccountTypesUI = (type, form) => {
+    const switchAccountTypesUI = (type, form) => {
         const demo_btn = form.find('#view_1 .step-2 .type-group .template_demo');
         const real_btn = form.find('#view_1 .step-2 .type-group .template_real');
 
@@ -488,10 +716,11 @@ const MetaTraderUI = (() => {
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
                 let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
-                if (accounts_info[acc_type].info) {
+                if (accounts_info[acc_type].info && (getAvailableServers(false, acc_type).length === 0 || type === 'demo')) {
                     class_name = 'existed';
                 }
-                $form.find(`.step-2 #${acc_type.replace(type, 'rbtn')}`)
+                const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type);
+                $form.find(`.step-2 #${clean_acc_type.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
                     .addClass(class_name);
             });
@@ -506,19 +735,24 @@ const MetaTraderUI = (() => {
             || !$acc_template_mt.length) return;
 
         let count = 0;
-        Object.keys(accounts_info)
-            .sort(sortMt5Accounts)
-            .forEach((acc_type) => {
-                const $acc  = accounts_info[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
-                const type  = acc_type.split('_').slice(1).join('_');
-                const image = accounts_info[acc_type].market_type === 'gaming' ? 'synthetic' : accounts_info[acc_type].sub_account_type; // image name can be (financial_stp|financial|synthetic)
-                $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
-                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
-                $acc.find('p').text(accounts_info[acc_type].short_title);
-                $acc_template_mt.append($acc);
+        const filtered_accounts = {};
+        Object.keys(accounts_info).sort(sortMt5Accounts).forEach(acc_type => {
+            // remove server from name
+            const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type);
+            filtered_accounts[clean_acc_type] = accounts_info[acc_type];
+        });
 
-                count++;
-            });
+        Object.keys(filtered_accounts).forEach((acc_type) => {
+            const $acc  = filtered_accounts[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
+            const type  = acc_type.split('_').slice(1).join('_');
+            const image = filtered_accounts[acc_type].market_type === 'gaming' ? 'synthetic' : filtered_accounts[acc_type].sub_account_type; // image name can be (financial_stp|financial|synthetic)
+            $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
+                .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
+            $acc.find('p').text(filtered_accounts[acc_type].short_title);
+            $acc_template_mt.append($acc);
+
+            count++;
+        });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
     };
 
@@ -607,6 +841,8 @@ const MetaTraderUI = (() => {
     };
 
     const setCounterpartyAndJurisdictionTooltip = ($el, acc_type) => {
+        const $icon = $el.parent().find('.display_login_tip');
+        const is_mobile = window.innerWidth < 770;
         /*
             The details for vanuatu landing company was changed to
             those of the svg landing company, thus it will show
@@ -616,17 +852,18 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if (accounts_info[acc_type].landing_company_short === 'vanuatu' &&
+        if ((accounts_info[acc_type].landing_company_short === 'vanuatu' &&
             accounts_info[acc_type].market_type === 'financial' &&
-            accounts_info[acc_type].sub_account_type === 'financial') {
-            $el.removeAttr('data-balloon data-balloon-length');
+            accounts_info[acc_type].sub_account_type === 'financial') ||
+            is_mobile) {
+            $icon.remove();
             return;
         }
 
         BinarySocket.wait('landing_company').then((response) => {
             const company = response.landing_company[`mt_${accounts_info[acc_type].market_type}_company`][accounts_info[acc_type].sub_account_type];
 
-            $el.attr({
+            $icon.attr({
                 'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
                 'data-balloon-length': 'large',
             });

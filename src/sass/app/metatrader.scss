@@ -37,6 +37,14 @@
             margin-right: 10px;
         }
     }
+    .mt-trade-server {
+        color: $COLOR_WHITE;
+        border-radius: 2px;
+        background-color: $COLOR_ORANGE;
+        padding: 4px;
+        text-align: center;
+        font-size: $FONT_SIZE_XXS;
+    }
     .password-type {
         display: flex;
         flex-direction: row;
@@ -123,6 +131,9 @@
                     padding-left: 3px;
                     font-size: 90%;
                 }
+                .mt-server {
+                    margin-left: 4px;
+                }
             }
             .separator {
                 margin: 5px 0;
@@ -169,6 +180,7 @@
     }
     #account_details {
         flex: 0;
+        position: relative;
 
         .acc-info {
             font-size: $FONT_SIZE_S;
@@ -184,6 +196,20 @@
                 .symbols {
                     display: block;
                 }
+            }
+            .display_login_tip {
+                margin-left: 4px;
+                border-bottom: none;
+            }
+        }
+        .add_more_servers {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+
+            span {
+                padding: 6px 8px;
+                font-size: 14px;
             }
         }
     }
@@ -325,6 +351,19 @@
             #new_account_msg ul.bullet {
                 margin-top: 0;
                 margin-bottom: 0;
+            }
+            #frm_new_account {
+                #btn_submit_new_account {
+                    margin-left: 8px;
+                }
+                input[type='radio'][disabled] + label {
+                    &:before {
+                        border: 1px solid $COLOR_GRAY;
+                    }
+                    & span {
+                        color: $COLOR_GRAY;
+                    }
+                }
             }
         }
     }

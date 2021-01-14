@@ -1,5 +1,7 @@
 // This is an auto-generated list of strings used in js code for debugging purpose only
 module.exports = [
+    ' (account created)',
+    ' (unavailable)',
     '1. This link was sent by you',
     '2. Your desktop window stays open',
     'AM',

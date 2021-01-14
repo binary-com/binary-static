@@ -103,6 +103,7 @@ const Metatrader = () => (
                                 <div className='gr-row gr-padding-10'>
                                     <div className='gr-3'>{it.L('MT5 Login:')}</div>
                                     <div data='display_login' />
+                                    <div className='display_login_tip'>&#9432;</div>
                                 </div>
                                 <div className='gr-row gr-padding-10 gr-parent'>
                                     <div className='gr-3'>{it.L('Name:')}</div>
@@ -120,6 +121,10 @@ const Metatrader = () => (
                                     <div className='gr-3'>{it.L('Server:')}</div>
                                     <div data='server' />
                                 </div>
+                                <div id='mt-trade-server-container' className='gr-row gr-padding-10 gr-parent invisible'>
+                                    <div className='gr-3'>{it.L('Trade server:')}</div>
+                                    <div className='mt-trade-server' data='trade_server' />
+                                </div>
                             </div>
                         </div>
                         <div className='gr-3 align-end gr-hide-m gr-hide-p'>
@@ -127,6 +132,11 @@ const Metatrader = () => (
                                 <div>{it.L('Balance')}</div>
                                 <div className='balance gr-padding-10' data='balance' />
                             </div>
+                        </div>
+                        <div className='add_more_servers'>
+                            <a id='btn_add_more_servers' className='button' href='javascript:;'>
+                                <span>{it.L('Add more trade servers')}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -210,6 +220,7 @@ const Metatrader = () => (
                     <div className='mt-balance invisible'>&nbsp;</div>
                     <span className='mt-type' />
                     <span className='mt-login' />
+                    <span className='mt-server mt-trade-server' />
                 </div>
                 <div className='account-desc'>
                     <AccountDesc
@@ -298,10 +309,10 @@ const Metatrader = () => (
 
                                 <p id='new_account_msg' className='notice-msg center-text invisible' />
                                 <div className='center-text'>
-                                    <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
+                                    <a className='button button-secondary btn-cancel' href='javascript:;'>
                                         <span>{it.L('Cancel')}</span>
                                     </a>
-                                    <a id='btn_next' className='button button-disabled' href='javascript:;'>
+                                    <a className='button button-disabled btn-next' href='javascript:;'>
                                         <span>{it.L('Next')}</span>
                                     </a>
                                 </div>
@@ -311,18 +322,36 @@ const Metatrader = () => (
                                     <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                     <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
-                                    <SubmitButton
-                                        is_centered
-                                        type='submit'
-                                        id='btn_submit_new_account'
-                                        text={it.L('Create account')}
-                                        attributes={{ action: 'new_account' }}
-                                        custom_btn_text={it.L('Back')}
-                                        custom_btn_id='btn_back'
-                                        custom_btn_class='button-secondary'
-                                    />
+                                    <div id='view_2-buttons' className='gr-padding-10 center-text'>
+                                        <a className='button button-secondary btn-back' href='javascript:;'>
+                                            <span>{it.L('Back')}</span>
+                                        </a>
+                                        <a
+                                            className='button button-secondary btn-cancel invisible'
+                                            href='javascript:;'
+                                        >
+                                            <span className='button'>{it.L('Cancel')}</span>
+                                        </a>
+                                        <a className='button btn-next invisible' href='javascript:;'>
+                                            <span>{it.L('Next')}</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
+                            <div id='view_3' className='gr-row invisible'>
+                                <div className='container gr-8 gr-12-m'>
+                                    <p>{it.L('Choose a server for your MT5 [_1] account:', '<span id="mt5_account_type"></span>')}</p>
+                                    <div id='ddl_trade_server' type='radio' />
+                                    <div id='view_3-buttons' className='gr-padding-10 center-text'>
+                                        <a className='button button-secondary btn-back' href='javascript:;'>
+                                            <span>{it.L('Back')}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id='btn_submit_new_account' className='invisible' type='submit' action='new_account'>
+                                {it.L('Create account')}
+                            </button>
                         </div>
                     </form>
                 </div>

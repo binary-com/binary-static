@@ -21,7 +21,7 @@ const MetaTraderConfig = (() => {
         new Promise((resolve) => {
             const $message = $messages.find('#msg_real_financial').clone();
             const is_virtual = Client.get('is_virtual');
-            const is_demo = accounts_info[acc_type].is_demo;
+            const is_demo = /^demo_/.test(acc_type);
 
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
@@ -42,10 +42,12 @@ const MetaTraderConfig = (() => {
                         resolve($message.html());
                     };
 
+                    const sample_account = getSampleAccount(acc_type);
+
                     const has_financial_account = Client.hasAccountType('financial', 1);
-                    const is_maltainvest        = accounts_info[acc_type].landing_company_short === 'maltainvest';
-                    const is_financial          = accounts_info[acc_type].market_type === 'financial';
-                    const is_demo_financial     = accounts_info[acc_type].is_demo && is_financial;
+                    const is_maltainvest        = sample_account.landing_company_short === 'maltainvest';
+                    const is_financial          = sample_account.market_type === 'financial';
+                    const is_demo_financial     = is_demo && is_financial;
 
                     if (is_maltainvest && (is_financial || is_demo_financial) && !has_financial_account) {
                         $message.find('.maltainvest').setVisibility(1);
@@ -55,7 +57,7 @@ const MetaTraderConfig = (() => {
 
                     const response_get_settings = State.getResponse('get_settings');
                     if (is_financial) {
-                        if (accounts_info[acc_type].landing_company_short === 'svg') resolve();
+                        if (sample_account.landing_company_short === 'svg') resolve();
 
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
@@ -82,17 +84,17 @@ const MetaTraderConfig = (() => {
                                 is_ok = false;
                             }
                             // UK Clients need to be authenticated first before they can proceed with account creation
-                            if (is_ok && !isAuthenticated() && is_maltainvest && accounts_info[acc_type].sub_account_type === 'financial' && Client.get('residence') === 'gb') {
-                                $('#view_1 #btn_next').addClass('button-disabled');
+                            if (is_ok && !isAuthenticated() && is_maltainvest && sample_account.sub_account_type === 'financial' && Client.get('residence') === 'gb') {
+                                $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 await setMaltaInvestIntention();
                                 $('#authenticate_loading').setVisibility(0);
                                 $message.find('.authenticate').setVisibility(1);
                                 is_ok = false;
                             }
-                            if (is_ok && !isAuthenticated() && accounts_info[acc_type].sub_account_type === 'financial_stp') {
+                            if (is_ok && !isAuthenticated() && sample_account.sub_account_type === 'financial_stp') {
                                 // disable button must occur before loading
-                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 await setLabuanFinancialSTPIntention();
                                 $('#authenticate_loading').setVisibility(0);
@@ -103,7 +105,7 @@ const MetaTraderConfig = (() => {
                             if (is_ok) resolve();
                             else resolveWithMessage();
                         });
-                    } else if (accounts_info[acc_type].market_type === 'gaming') {
+                    } else if (sample_account.market_type === 'gaming') {
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
                             const response_get_account_status = State.getResponse('get_account_status');
@@ -115,7 +117,7 @@ const MetaTraderConfig = (() => {
                             const should_have_malta = Client.getUpgradeInfo().can_upgrade_to.includes('malta');
 
                             if (is_ok && is_maltainvest && should_have_malta) {
-                                $('#view_1 #btn_next').addClass('button-disabled');
+                                $('#view_1 .btn-next').addClass('button-disabled');
                                 $('#authenticate_loading').setVisibility(1);
                                 $message.find('.malta').setVisibility(1);
                                 await setMaltaIntention();
@@ -206,9 +208,11 @@ const MetaTraderConfig = (() => {
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
-                    const is_synthetic = accounts_info[acc_type].market_type === 'gaming';
+                    const sample_account = getSampleAccount(acc_type);
+                    const is_synthetic = sample_account.market_type === 'gaming';
+                    const is_demo = /^demo_/.test(acc_type);
 
-                    if (is_synthetic && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
+                    if (is_synthetic && !is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id               : 'confirm_new_account',
                             localized_message: localize(['Trading contracts for difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
@@ -218,7 +222,7 @@ const MetaTraderConfig = (() => {
                             }
                             resolve(is_ok);
                         });
-                    } else if (!accounts_info[acc_type].is_demo && Client.get('residence') === 'es') {
+                    } else if (!is_demo && Client.get('residence') === 'es') {
                         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
                             const { cfd_score, trading_score } = response.get_financial_assessment;
                             const passed_financial_assessment = cfd_score === 4 || trading_score >= 8;
@@ -342,16 +346,23 @@ const MetaTraderConfig = (() => {
             txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
+            ddl_trade_server : { id: '#ddl_trade_server', is_radio: true },
             chk_tnc          : { id: '#chk_tnc' },
-            additional_fields:
-                acc_type => ({
-                    account_type: accounts_info[acc_type].is_demo ? 'demo' : accounts_info[acc_type].market_type,
+            additional_fields: acc_type => {
+                const sample_account = getSampleAccount(acc_type);
+                const is_demo = /^demo_/.test(acc_type);
+                return ({
+                    account_type: is_demo ? 'demo' : sample_account.market_type,
                     email       : Client.get('email'),
-                    leverage    : accounts_info[acc_type].leverage,
-                    ...(accounts_info[acc_type].market_type === 'financial' && {
-                        mt5_account_type: accounts_info[acc_type].sub_account_type,
+                    leverage    : sample_account.leverage,
+                    ...(!is_demo && hasMultipleTradeServers(acc_type, accounts_info) && {
+                        server: $('#frm_new_account').find('#ddl_trade_server input[checked]').val(),
                     }),
-                }),
+                    ...(sample_account.market_type === 'financial' && {
+                        mt5_account_type: sample_account.sub_account_type,
+                    }),
+                });
+            },
         },
         password_change: {
             ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
@@ -406,6 +417,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
+            { selector: fields.new_account.ddl_trade_server.id,  validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
@@ -426,23 +438,44 @@ const MetaTraderConfig = (() => {
                 selector   : fields.deposit.txt_amount.id,
                 validations: [
                     ['req', { hide_asterisk: true }],
+                    // check if entered amount is less than the available balance
+                    // e.g. transfer amount is 10 but client balance is 5
+                    ['custom', {
+                        func: () => {
+                            const balance = Client.get('balance');
+
+                            const is_balance_more_than_entered = +balance >= +$(fields.deposit.txt_amount.id).val();
+
+                            return balance && is_balance_more_than_entered;
+                        },
+                        message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')),
+                    }],
+                    // check if balance is less than the minimum limit for transfer
+                    // e.g. client balance could be 0.45 but min limit could be 1
+                    ['custom', {
+                        func: () => {
+                            const balance         = Client.get('balance');
+                            const min_req_balance = Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5');
+
+                            const is_balance_more_than_min_req = +balance >= +min_req_balance;
+
+                            return balance && is_balance_more_than_min_req;
+                        },
+                        message: localize('Should be more than [_1]', Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5')),
+                    }],
+                    // check if amount is between min and max
                     ['number', {
                         type: 'float',
                         min : () => Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5'),
                         max : () => {
-                            const mt5_limit     = Currency.getTransferLimits(Client.get('currency'), 'max', 'mt5');
-                            const balance       = Client.get('balance');
+                            const mt5_limit = Currency.getTransferLimits(Client.get('currency'), 'max', 'mt5');
+                            const balance   = Client.get('balance');
+
                             // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
                             return Math.min(mt5_limit, balance || mt5_limit).toFixed(Currency.getDecimalPlaces(Client.get('currency')));
                         },
-                        decimals: Currency.getDecimalPlaces(Client.get('currency')),
-                    }],
-                    ['custom', {
-                        func: () => {
-                            const balance = Client.get('balance');
-                            return balance && (+balance >= +$(fields.deposit.txt_amount.id).val());
-                        },
-                        message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')),
+                        decimals    : Currency.getDecimalPlaces(Client.get('currency')),
+                        format_money: true,
                     }],
                 ],
             },
@@ -452,23 +485,43 @@ const MetaTraderConfig = (() => {
                 selector   : fields.withdrawal.txt_amount.id,
                 validations: [
                     ['req', { hide_asterisk: true }],
+                    // check if entered amount is less than the available balance
+                    // e.g. transfer amount is 10 but client balance is 5
+                    ['custom', {
+                        func: () => {
+                            const balance = accounts_info[Client.get('mt5_account')].info.balance;
+                            const is_balance_more_than_entered = +balance >= +$(fields.withdrawal.txt_amount.id).val();
+
+                            return balance && is_balance_more_than_entered;
+                        },
+                        message: localize('You have insufficient funds in your MT5 account.'),
+                    }],
+                    // check if balance is less than the minimum limit for transfer
+                    // e.g. client balance could be 0.45 but min limit could be 1
+                    ['custom', {
+                        func: () => {
+                            const balance         = accounts_info[Client.get('mt5_account')].info.balance;
+                            const min_req_balance = Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5');
+
+                            const is_balance_more_than_min_req = +balance >= +min_req_balance;
+
+                            return balance && is_balance_more_than_min_req;
+                        },
+                        message: () => localize('Should be more than [_1]', Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5')),
+                    }],
+                    // check if amount is between min and max
                     ['number', {
                         type: 'float',
                         min : () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5'),
                         max : () => {
                             const mt5_limit = Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'max', 'mt5');
                             const balance   = accounts_info[Client.get('mt5_account')].info.balance;
+
                             // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
                             return Math.min(mt5_limit, balance || mt5_limit);
                         },
-                        decimals: 2,
-                    }],
-                    ['custom', {
-                        func: () => {
-                            const balance = accounts_info[Client.get('mt5_account')].info.balance;
-                            return balance && (+balance >= +$(fields.withdrawal.txt_amount.id).val());
-                        },
-                        message: localize('You have insufficient funds in your MT5 account.'),
+                        decimals    : 2,
+                        format_money: true,
                     }],
                 ],
             },
@@ -497,6 +550,28 @@ const MetaTraderConfig = (() => {
         return is_need_verification;
     };
 
+    // remove server from acc_type for cases where we don't have it
+    // e.g. during new account creation no server is set yet
+    const getCleanAccType = (acc_type) =>
+        /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
+
+    // if no server exists yet, e.g. during new account creation
+    // we want to get information like landing company etc which is shared
+    // between all the servers, so we can disregard the server and return the first
+    // accounts_info item that has the same market type and sub account type
+    const getSampleAccount = (acc_type) => {
+        if (acc_type in accounts_info) {
+            return accounts_info[acc_type];
+        }
+        const regex = new RegExp(getCleanAccType(acc_type));
+        return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
+    };
+
+    const hasMultipleTradeServers = (acc_type, accounts) => {
+        const clean_acc_type_a = getCleanAccType(acc_type);
+        return Object.keys(accounts).filter(acc_type_b => clean_acc_type_a === getCleanAccType(acc_type_b)).length > 1;
+    };
+
     return {
         accounts_info,
         actions_info,
@@ -504,8 +579,11 @@ const MetaTraderConfig = (() => {
         validations,
         needsRealMessage,
         hasAccount,
+        hasMultipleTradeServers,
+        getCleanAccType,
         getCurrency,
         getDisplayLogin,
+        getSampleAccount,
         isAuthenticated,
         isAuthenticationPromptNeeded,
         setMessages   : ($msg) => { $messages = $msg; },
