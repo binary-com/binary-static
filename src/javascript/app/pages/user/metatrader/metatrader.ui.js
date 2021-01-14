@@ -142,7 +142,7 @@ const MetaTraderUI = (() => {
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
             if (
                 accounts_info[acc_type].info.display_server &&
-                MetaTraderConfig.hasMultipleTradeServers(accounts_info[acc_type].is_demo, accounts_info)
+                MetaTraderConfig.hasMultipleTradeServers(accounts_info)
             ) {
                 $acc_item.find('.mt-server').text(`${accounts_info[acc_type].info.display_server}`);
             } else {
@@ -229,7 +229,7 @@ const MetaTraderUI = (() => {
                     server       : () => `Deriv-${is_demo ? 'Demo' : 'Server'}`,
                     ...(
                         accounts_info[acc_type].info.display_server &&
-                        MetaTraderConfig.hasMultipleTradeServers(is_demo, accounts_info) &&
+                        MetaTraderConfig.hasMultipleTradeServers(accounts_info) &&
                         ({ trade_server: () => accounts_info[acc_type].info.display_server })
                     ),
                 };
