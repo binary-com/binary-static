@@ -1596,12 +1596,35 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .account-closure {
+    .notice-msg-wrapper {
+        background-color: $COLOR_YELLOW;
+        margin-top: 65px;
+    }
+    .notice-msg-text {
+        color: $COLOR_BLACK;
+        overflow: hidden;
+        margin: 0;
+        text-align: center;
+    }
     &-form {
         text-align: left;
         line-height: 40px;
 
-        span {
-            padding-left: 15px;
+        .margin-top-20 {
+            margin-top: 20px;
+        }
+        .textarea-container {
+            display: grid;
+        }
+        p {
+            font-size: 1rem;
+        }
+        textarea {
+            width: 90%;
+            max-width: 350px;
+            height: 80px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     }
     &-subtitle {

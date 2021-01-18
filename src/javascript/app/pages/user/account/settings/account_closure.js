@@ -1,377 +1,170 @@
-const getAllCurrencies             = require('../../get_currency').getAllCurrencies;
-const getCurrenciesOfOtherAccounts = require('../../get_currency').getCurrenciesOfOtherAccounts;
-const Metatrader                   = require('../../metatrader/metatrader');
-const BinarySocket                 = require('../../../../base/socket');
-const Client                       = require('../../../../base/client');
-const Currency                     = require('../../../../common/currency');
-const localize                     = require('../../../../../_common/localize').localize;
-const Url                          = require('../../../../../_common/url');
-const isCryptocurrency             = require('../../../../../_common/base/currency_base').isCryptocurrency;
-const hasAccountType               = require('../../../../../_common/base/client_base').hasAccountType;
-const hasCurrencyType              = require('../../../../../_common/base/client_base').hasCurrencyType;
-const hasOnlyCurrencyType          = require('../../../../../_common/base/client_base').hasOnlyCurrencyType;
+const Metatrader = require('../../metatrader/metatrader');
+const BinarySocket = require('../../../../base/socket');
+const Client = require('../../../../base/client');
+const Currency = require('../../../../common/currency');
+const Url = require('../../../../../_common/url');
+const hasAccountType = require('../../../../../_common/base/client_base').hasAccountType;
+const getElementById = require('../../../../../_common/common_functions').getElementById;
+const localize = require('../../../../../_common/localize').localize;
+const applyToAllElements = require('../../../../../_common/utility').applyToAllElements;
 
 const AccountClosure = (() => {
-    const form_selector = '#form_closure';
-    let $form,
-        $txt_other_reason,
-        $closure_loading,
-        $submit_loading,
-        $closure_container,
-        $trading_limit,
-        $real_unset,
-        $fiat_1,
-        $fiat_2,
-        $crypto_1,
-        $crypto_2,
-        $virtual,
-        $success_msg,
-        $error_msg;
+    let reason_checkbox_list,
+        checked_reasons,
+        el_form_closure_step_1,
+        el_step_2_back,
+        el_step_2_submit,
+        el_dialog_container,
+        el_account_closure_warning,
+        el_account_closure_error,
+        el_closure_loading,
+        el_error_msg,
+        el_other_trading_platforms,
+        el_suggested_improves,
+        el_remain_characters,
+        el_deacivate_button,
+        el_error_no_selection,
+        el_submit_loading;
+
+    const number_of_steps = 3;
+    checked_reasons = '';
 
     const onLoad = () => {
-        $txt_other_reason   = $('#other_reason');
-        $closure_loading    = $('#closure_loading');
-        $submit_loading     = $('#submit_loading');
-        $closure_container  = $('#closure_container');
-        $success_msg        = $('#msg_main');
-        $error_msg          = $('#msg_form');
-        $trading_limit      = $('.trading_limit');
-        $virtual            = $('.virtual');
-        $crypto_1           = $('.crypto_1');
-        $crypto_2           = $('.crypto_2');
-        $real_unset         = $('.real_unset');
-        $fiat_1             = $('.fiat_1');
-        $fiat_2             = $('.fiat_2');
-        $form               = $(form_selector);
+        reason_checkbox_list = document.getElementsByName('reason-checkbox');
+        el_dialog_container = getElementById('dialog_container');
+        el_form_closure_step_1 = getElementById('form_closure_step_1');
+        el_step_2_back = getElementById('step_2_back');
+        el_step_2_submit = getElementById('step_2_submit');
+        el_other_trading_platforms = getElementById('other_trading_platforms');
+        el_suggested_improves = getElementById('suggested_improves');
+        el_remain_characters = getElementById('remain_characters');
+        el_account_closure_warning = getElementById('account_closure_warning');
+        el_account_closure_error = getElementById('account_closure_error');
+        el_closure_loading = getElementById('closure_loading');
+        el_deacivate_button = getElementById('deactivate');
+        el_error_msg = getElementById('error_msg');
+        el_error_no_selection = getElementById('error_no_selection');
+        el_submit_loading = getElementById('submit_loading');
 
-        $closure_loading.setVisibility(1);
+        el_closure_loading.setVisibility(1);
+        const hideDialogs = () => {
+            el_account_closure_warning.setVisibility(0);
+            el_account_closure_error.setVisibility(0);
+        };
+        hideDialogs();
 
-        const is_virtual        = !hasAccountType('real');
-        const is_svg            = Client.get('landing_company_shortcode') === 'svg';
-        const has_trading_limit = hasAccountType('real');
-        const is_real_unset     = hasOnlyCurrencyType('unset');
-        const is_fiat           = hasOnlyCurrencyType('fiat');
-        const is_crypto         = hasOnlyCurrencyType('crypto');
-        const is_both           = hasCurrencyType('fiat') && hasCurrencyType('crypto');
-        const current_email     = Client.get('email');
-        const current_currency  = Client.get('currency');
-
-        BinarySocket.wait('landing_company').then((response) => {
-            const currencies = getAllCurrencies(response.landing_company);
-            const other_currencies = getCurrenciesOfOtherAccounts(true);
-
-            if (is_virtual) {
-                $virtual.setVisibility(1);
-                currencies.forEach((currency) => {
-                    $virtual.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                });
-
-            } else {
-                if (has_trading_limit) {
-                    $trading_limit.setVisibility(1);
-                    $('#closing_steps').setVisibility(1);
-                }
-                if (is_real_unset) {
-                    $real_unset.setVisibility(1);
-                    $trading_limit.setVisibility(0);
-                    currencies.forEach((currency) => {
-                        let is_allowed = true;
-                        other_currencies.forEach((other_currency) => {
-                            if (currency === other_currency) {
-                                is_allowed = false;
-                            }
-                        });
-                        if (is_allowed) {
-                            $real_unset.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                        }
-                    });
-                }
-                if (is_fiat) {
-                    $fiat_1.setVisibility(1);
-                    if (is_svg) {
-                        $fiat_2.setVisibility(1);
-                    }
-
-                    let fiat_currency = Client.get('currency');
-
-                    if (Client.get('is_virtual')) {
-                        other_currencies.forEach((currency) => {
-                            if (!isCryptocurrency(currency)) {
-                                fiat_currency = currency;
-                            }
-                        });
-                    }
-
-                    $('#current_currency_fiat').text(fiat_currency);
-                    $('.current_currency').text(fiat_currency);
-
-                    currencies.forEach((currency) => {
-                        let is_allowed = true;
-                        other_currencies.forEach((other_currency) => {
-                            if (currency === other_currency) {
-                                is_allowed = false;
-                            }
-                        });
-                        if (is_allowed) {
-                            if (isCryptocurrency(currency)) {
-                                $fiat_2.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                            } else {
-                                $fiat_1.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                            }
-                        }
-                    });
-                }
-
-                if (is_crypto) {
-                    $crypto_1.setVisibility(1);
-                    if (is_svg) {
-                        $crypto_2.setVisibility(1);
-                    }
-
-                    let crypto_currencies = '';
-                    let has_all_crypto = true;
-                    let crypto_numbers = 0;
-
-                    if (!Client.get('is_virtual')) {
-                        crypto_currencies = Client.get('currency');
-                        crypto_numbers++;
-                    }
-
-                    other_currencies.forEach((currency) => {
-                        if (isCryptocurrency(currency)) {
-                            crypto_numbers++;
-                            if (!crypto_currencies) {
-                                crypto_currencies += currency;
-                            } else {
-                                crypto_currencies += `, ${currency}`;
-                            }
-                        }
-                    });
-
-                    if (crypto_numbers > 1) {
-                        crypto_currencies += ` ${localize('accounts')}`;
-                    } else {
-                        crypto_currencies += ` ${localize('account')}`;
-                    }
-
-                    $('.current_currency').text(crypto_currencies);
-                    $('#current_currency_crypto').text(crypto_currencies);
-                    currencies.forEach((currency) => {
-                        let is_allowed = true;
-                        other_currencies.forEach((other_currency) => {
-                            if (currency === other_currency) {
-                                is_allowed = false;
-                            }
-                        });
-                        if (is_allowed) {
-                            if (isCryptocurrency(currency)) {
-                                has_all_crypto = false;
-                                $crypto_2.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                            } else {
-                                $crypto_1.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                            }
-                        }
-                    });
-
-                    if (has_all_crypto) {
-                        $crypto_2.setVisibility(0);
-                    }
-                }
-
-                if (is_both) {
-                    $fiat_1.setVisibility(1);
-                    if (is_svg) {
-                        $crypto_2.setVisibility(1);
-                    }
-
-                    let crypto_currencies = '';
-                    let has_all_crypto = true;
-                    let crypto_numbers = 0;
-
-                    if (isCryptocurrency(current_currency)) {
-                        crypto_currencies = Client.get('currency');
-                        crypto_numbers++;
-                        other_currencies.forEach(currency => {
-                            if (isCryptocurrency(currency)) {
-                                crypto_currencies += `, ${currency}`;
-                                crypto_numbers++;
-                            } else {
-                                $('#current_currency_fiat').text(currency);
-                                $('.current_currency').text(currency);
-                            }
-                        });
-                        if (crypto_numbers > 1) {
-                            crypto_currencies += ` ${localize('accounts')}`;
-                        } else {
-                            crypto_currencies += ` ${localize('account')}`;
-                        }
-                        $('#current_currency_crypto').text(crypto_currencies);
-                    } else {
-                        let fiat_currency = '';
-
-                        if (Client.get('is_virtual')) {
-                            other_currencies.forEach((currency) => {
-                                if (isCryptocurrency(currency)) {
-                                    crypto_numbers++;
-                                    if (!crypto_currencies) {
-                                        crypto_currencies += currency;
-                                    } else {
-                                        crypto_currencies += `, ${currency}`;
-                                    }
-                                } else {
-                                    fiat_currency = currency;
-                                    // eslint-disable-next-line
-                                    if (Client.get('is_virtual')) {
-                                        fiat_currency = currency;
-                                    } else {
-                                        fiat_currency = current_currency;
-                                    }
-                                }
-                            });
-                        } else {
-                            other_currencies.forEach((currency) => {
-                                if (isCryptocurrency(currency)) {
-                                    crypto_numbers++;
-                                    if (!crypto_currencies) {
-                                        crypto_currencies += currency;
-                                    } else {
-                                        crypto_currencies += `, ${currency}`;
-                                    }
-                                }
-                            });
-
-                            fiat_currency = current_currency;
-                        }
-
-                        if (crypto_numbers > 1) {
-                            crypto_currencies += ` ${localize('accounts')}`;
-                        } else {
-                            crypto_currencies += ` ${localize('account')}`;
-                        }
-
-                        $('#current_currency_fiat').text(fiat_currency);
-                        $('.current_currency').text(fiat_currency);
-                        $('#current_currency_crypto').text(crypto_currencies);
-                    }
-
-                    currencies.forEach((currency) => {
-                        let is_allowed = true;
-                        other_currencies.forEach((other_currency) => {
-                            if (currency === other_currency) {
-                                is_allowed = false;
-                            }
-                        });
-                        if (is_allowed) {
-                            if (isCryptocurrency(currency)) {
-                                has_all_crypto = false;
-                                $crypto_2.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                            } else {
-                                $fiat_1.find('ul').append(`<li>${Currency.getCurrencyFullName(currency)}</li>`);
-                            }
-                        }
-                    });
-
-                    if (has_all_crypto) {
-                        $crypto_2.setVisibility(0);
-                    }
-
-                }
-
+        const has_virtual_only = !hasAccountType('real');
+        BinarySocket.wait('landing_company').then(() => {
+            if (!has_virtual_only) {
                 BinarySocket.send({ statement: 1, limit: 1 });
                 BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
                     const is_eligible = await Metatrader.isEligible();
                     if (is_eligible) {
-                        $('.metatrader-link').setVisibility(1);
+                        applyToAllElements('.metatrader-link', (element) => { element.setVisibility(1); });
                     }
-
                 });
             }
-
-            $('#current_email').text(current_email);
-            $closure_loading.setVisibility(0);
-
-            $closure_container.setVisibility(1);
+            el_closure_loading.setVisibility(0);
+            showStep(1);
         }).catch((error) => {
             showFormMessage(error.message);
-            $closure_loading.setVisibility(0);
-            $closure_container.setVisibility(1);
+            el_closure_loading.setVisibility(0);
         });
 
-        $('#closure_accordion').accordion({
-            heightStyle: 'content',
-            collapsible: true,
-            active     : true,
-        });
-        const $account_closure_warning = $('#account_closure_warning');
-        const $account_closure_error = $('#account_closure_error');
-
-        const hideDialogs = () => {
-            $account_closure_warning.setVisibility(0);
-            $account_closure_error.setVisibility(0);
-        };
-
-        hideDialogs();
-
-        $('.back').on('click', () => {
-            hideDialogs();
+        const modal_back_items = document.getElementsByClassName('modal-back');
+        Array.from(modal_back_items).forEach((item) => {
+            item.addEventListener('click', () => {
+                hideDialogs();
+            });
         });
 
-        $('#deactivate').on('click', () => {
-            $account_closure_warning.setVisibility(0);
-            submitForm($account_closure_error);
+        el_dialog_container.setVisibility(1);
+
+        el_deacivate_button.addEventListener('click', () => {
+            el_account_closure_warning.setVisibility(0);
+            deactivate();
         });
 
-        $(form_selector).on('submit', (event) => {
-            event.preventDefault();
-            if (getReason()) {
-                $account_closure_warning.setVisibility(1);
+        el_form_closure_step_1.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showStep(2);
+        });
+
+        el_step_2_submit.addEventListener('click', (e) => {
+            if (!el_step_2_submit.classList.contains('button-disabled')) {
+                e.preventDefault();
+                el_account_closure_warning.setVisibility(1);
             }
         });
 
-        $txt_other_reason.setVisibility(0);
-
-        $txt_other_reason.on('keyup', () => {
-            const input = $txt_other_reason.val();
-            if (input && validateReasonTextField(false)) {
-                $txt_other_reason.removeClass('error-field');
-                $error_msg.css('display', 'none');
-            }
+        el_step_2_back.addEventListener('click', () => {
+            showStep(1);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        $('#reason input[type=radio]').on('change', (e) => {
-            const { value } = e.target;
 
-            if (value === 'other') {
-                $txt_other_reason.setVisibility(1);
-            } else {
-                $txt_other_reason.setVisibility(0);
-                $txt_other_reason.removeClass('error-field');
-                $txt_other_reason.val('');
-                $error_msg.css('display', 'none');
-            }
+        reason_checkbox_list.forEach(element => {
+            element.addEventListener('change', () => { onSelectedReasonChange(); });
+        });
+
+        el_suggested_improves.addEventListener('input', onTextChanged);
+        el_other_trading_platforms.addEventListener('input', onTextChanged);
+    };
+
+    const showStep = (step) => {
+        Array.from(new Array(number_of_steps)).forEach((_, index) => {
+            getElementById(`step_${index + 1}`).setVisibility(index + 1 === step);
         });
     };
 
-    const submitForm = ($account_closure_error) => {
-        const $btn_submit = $form.find('#btn_submit');
-        $submit_loading.setVisibility(1);
-        $btn_submit.attr('disabled', true);
+    const regex = new RegExp('^[a-zA-Z0-9., \'-]+$');
 
-        const data  = { account_closure: 1, reason: getReason() };
+    const onTextChanged = (e) => {
+        if (!regex.test(e.data)) {
+            document.execCommand('undo');
+            return;
+        }
+        validateReason();
+    };
+
+    const onSelectedReasonChange = () => {
+        const num_selected_reasons = getSelectedReasonCount();
+        el_step_2_submit.classList[num_selected_reasons > 0 ? 'remove' : 'add']('button-disabled');
+        el_error_no_selection.setVisibility(num_selected_reasons > 0 ? 0 : 1);
+        if (num_selected_reasons >= 3) {
+            reason_checkbox_list.forEach(reason => {
+                if (!reason.checked) {
+                    reason.disabled = true;
+                    reason.classList.add('disable');
+                }
+            });
+        } else {
+            reason_checkbox_list.forEach(reason => { reason.disabled = false; });
+        }
+        getReason();
+        validateReason();
+    };
+
+    const getSelectedReasonCount = () => Array.from(reason_checkbox_list).filter(el => el.checked).length;
+
+    const deactivate = async () => {
+        el_submit_loading.setVisibility(1);
+        el_step_2_submit.setAttribute('disabled', true);
+
+        const data = { account_closure: 1, reason: getReason() };
         BinarySocket.send(data).then(async (response) => {
             if (response.error) {
-                $submit_loading.setVisibility(0);
+                el_submit_loading.setVisibility(0);
                 if (response.error.details) {
-                    await showErrorPopUp(response, $account_closure_error);
-                    $account_closure_error.setVisibility(1);
+                    await showErrorPopUp(response);
+                    el_account_closure_error.setVisibility(1);
                 } else {
                     showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                 }
-                $btn_submit.attr('disabled', false);
+                el_step_2_submit.setAttribute('disabled', false);
             } else {
-                $submit_loading.setVisibility(0);
-                $closure_container.setVisibility(0);
-                $success_msg.setVisibility(1);
-                $.scrollTo(0, 500);
+                el_submit_loading.setVisibility(0);
+                showStep(3);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
 
                 sessionStorage.setItem('closingAccount', 1);
                 setTimeout(() => {
@@ -383,21 +176,33 @@ const AccountClosure = (() => {
         });
     };
 
-    const showErrorPopUp = async (response, $account_closure_error) => {
+    const showErrorPopUp = async (response) => {
         const mt5_login_list = (await BinarySocket.wait('mt5_login_list')).mt5_login_list;
         // clear all previously added details first
-        $account_closure_error.find('.account-closure-details').remove();
-        const $parent = $('<div/>', { class: 'gr-padding-10 gr-child account-closure-details' });
+        const previous_parent = document.getElementsByClassName('account-closure-details');
+        if (previous_parent) { Array.from(previous_parent).forEach(item => { item.parentNode.removeChild(item); }); }
+        const el_parent = document.createElement('div');
+        el_parent.className = 'gr-padding-10 gr-child account-closure-details';
         let section_id = '';
         let display_name = '';
         const addSection = (account, info) => {
-            const $section = $parent.clone();
-            $section
-                .append($('<div />')
-                    .append($('<strong />', { text: display_name }))
-                    .append($('<div />', { text: account.replace(/^MT[DR]?/i, '') })))
-                .append($('<span />', { text: info }));
-            $account_closure_error.find(section_id).setVisibility(1).append($section);
+            const el_section_parent = el_parent.cloneNode(true);
+
+            const el_strong = document.createElement('strong');
+            el_strong.innerHTML = display_name;
+            const el_inner_div = document.createElement('div');
+            el_inner_div.innerHTML = account.replace(/^MT[DR]?/i, '');
+            const el_span = document.createElement('span');
+            el_span.innerHTML = info;
+
+            const el_div = document.createElement('div');
+            el_div.appendChild(el_strong);
+            el_div.appendChild(el_inner_div);
+            el_section_parent.appendChild(el_div);
+            el_section_parent.appendChild(el_span);
+
+            const el_section = getElementById(section_id);
+            el_section.setVisibility(1).appendChild(el_section_parent);
         };
         const getMTDisplay = (account) => {
             const mt5_account = (mt5_login_list.find(acc => acc.login === account) || {});
@@ -407,11 +212,11 @@ const AccountClosure = (() => {
             Object.keys(response.error.details.open_positions).forEach((account) => {
                 const txt_positions = `${response.error.details.open_positions[account]} position(s)`;
                 if (/^MT/.test(account)) {
-                    section_id = '#account_closure_open_mt';
+                    section_id = 'account_closure_open_mt';
                     display_name = getMTDisplay(account);
                 } else {
-                    section_id = '#account_closure_open';
-                    display_name = Client.get('currency', account);
+                    section_id = 'account_closure_open';
+                    display_name = Currency.getCurrencyName(Client.get('currency', account));
                 }
                 addSection(account, txt_positions);
             });
@@ -420,10 +225,10 @@ const AccountClosure = (() => {
             Object.keys(response.error.details.balance).forEach((account) => {
                 const txt_balance = `${response.error.details.balance[account].balance} ${response.error.details.balance[account].currency}`;
                 if (/^MT/.test(account)) {
-                    section_id = '#account_closure_balance_mt';
+                    section_id = 'account_closure_balance_mt';
                     display_name = getMTDisplay(account);
                 } else {
-                    section_id = '#account_closure_balance';
+                    section_id = 'account_closure_balance';
                     display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);
                 }
                 addSection(account, txt_balance);
@@ -431,51 +236,51 @@ const AccountClosure = (() => {
         }
     };
 
-    const showFormMessage = (localized_msg, scroll_on_error) => {
-        if (scroll_on_error) $.scrollTo($('#reason'), 500, { offset: -20 });
-        $error_msg
-            .attr('class', 'errorfield')
-            .html(localized_msg)
-            .css('display', 'block');
+    const showFormMessage = (localized_msg) => {
+        el_error_msg.setAttribute('class', 'errorfield');
+        el_error_msg.innerHTML = localized_msg;
+        el_error_msg.style.display = 'block';
     };
 
-    const validateReasonTextField = (scroll_on_error) => {
-        const other_reason_input = $txt_other_reason.val();
-
-        if (!other_reason_input) {
-            $txt_other_reason.addClass('error-field');
-            showFormMessage(localize('Please specify the reasons for closing your accounts'), scroll_on_error);
-            return false;
-        } else if (other_reason_input.length < 5 || other_reason_input.length > 250) {
-            $txt_other_reason.addClass('error-field');
-            showFormMessage(localize('The reason should be between 5 and 250 characters'), scroll_on_error);
-            return false;
-        } else if (!/^[0-9A-Za-z .,'-]{5,250}$/.test(other_reason_input)) {
-            $txt_other_reason.addClass('error-field');
-            showFormMessage(localize('Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed.'), scroll_on_error);
-            return false;
+    const getLabelTextOfCheckBox = (checkbox_id) => {
+        const labels = document.getElementsByTagName('LABEL');
+        for (let i = 0; i < labels.length; i++) {
+            if (labels[i].htmlFor === checkbox_id) {
+                return labels[i].textContent;
+            }
         }
-        return true;
+        return '';
+    };
+
+    const validateReason = () => {
+        const reason_length = 247
+            - checked_reasons.length
+            - el_other_trading_platforms.value.length
+            - el_suggested_improves.value.length;
+        el_remain_characters.innerHTML = localize('Remaining characters: [_1].', (reason_length).toString());
+        el_remain_characters.classList[reason_length < 0 ? 'add' : 'remove']('errorfield');
+        el_step_2_submit.classList[
+            reason_length < 0 || checked_reasons.length === 0
+                ? 'add'
+                : 'remove'
+        ]('button-disabled');
     };
 
     const getReason = () => {
-        const $selected_reason   = $('#reason input[type=radio]:checked');
-        const reason_radio_val   = $selected_reason.val();
-        const reason_radio_id    = $selected_reason.attr('id');
-        const reason_radio_text  = $(`label[for=${reason_radio_id }]`).text();
-        const other_reason_input = $txt_other_reason.val();
-
-        if (reason_radio_val) {
-            if (reason_radio_val === 'other') {
-                if (validateReasonTextField(true)){
-                    return other_reason_input;
-                }
-                return false;
+        const reasons = [];
+        reason_checkbox_list.forEach(reason => {
+            if (reason.checked) {
+                reasons.push(getLabelTextOfCheckBox(reason.id));
             }
-            return reason_radio_text;
+        });
+        checked_reasons = reasons.toString();
+        if (el_other_trading_platforms.value.length !== 0) {
+            reasons.push(el_other_trading_platforms.value);
         }
-        showFormMessage(localize('Please select a reason.'));
-        return false;
+        if (el_suggested_improves.value.length !== 0) {
+            reasons.push(el_suggested_improves.value);
+        }
+        return reasons.toString();
     };
 
     return {
