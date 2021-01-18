@@ -236,7 +236,7 @@ const Footer = () => (
                     <div className='gr-12'>
                         <div className='copyright'>
                             <img src={it.url_for('images/common/copyright.svg')} />
-                            <p>{it.L('2020 Binary | All rights reserved')}</p>
+                            <p>{it.L('2021 Binary | All rights reserved')}</p>
                         </div>
                     </div>
                 </div>
