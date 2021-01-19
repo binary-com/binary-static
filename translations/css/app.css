@@ -271,6 +271,12 @@ a.previous-wrapper {
       #mt_account_management #account_selector #accounts_list .acc-name {
         line-height: 30px;
         padding: 0 20px; }
+        #mt_account_management #account_selector #accounts_list .acc-name.disabled {
+          cursor: not-allowed;
+          color: #dedede !important;
+          background-color: transparent !important; }
+          #mt_account_management #account_selector #accounts_list .acc-name.disabled .mt-icon {
+            opacity: 0.4; }
         #mt_account_management #account_selector #accounts_list .acc-name:hover {
           color: #394171;
           background: #f2f2f2; }
@@ -446,6 +452,12 @@ a.previous-wrapper {
           height: 88px;
           position: absolute;
           background: rgba(0, 0, 0, 0.05); }
+      #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.disabled {
+        cursor: not-allowed; }
+        #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.disabled:before {
+          background: url("../images/pages/metatrader/dashboard/tick_disabled.svg"); }
+        #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.disabled:after {
+          background: transparent; }
       #mt_account_management .fst-container #fst_action .type-group .mt5_type_box.existed:before {
         background: url("../images/pages/metatrader/dashboard/tick_gray.svg");
         border: none; }
