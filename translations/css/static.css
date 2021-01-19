@@ -2163,31 +2163,11 @@ body #not_authenticated_financial ul.checked > li {
       .why-us-content .awards-section .horizontal-margin {
         margin: 15px 15px 20px; } }
 
-.account-closure .notice-msg-wrapper {
-  background-color: #fef1cf;
-  margin-top: 65px; }
-
-.account-closure .notice-msg-text {
-  color: #000;
-  overflow: hidden;
-  margin: 0;
-  text-align: center; }
-
 .account-closure-form {
   text-align: left;
   line-height: 40px; }
-  .account-closure-form .margin-top-20 {
-    margin-top: 20px; }
-  .account-closure-form .textarea-container {
-    display: grid; }
-  .account-closure-form p {
-    font-size: 1rem; }
-  .account-closure-form textarea {
-    width: 90%;
-    max-width: 350px;
-    height: 80px;
-    margin-top: 10px;
-    margin-bottom: 10px; }
+  .account-closure-form span {
+    padding-left: 15px; }
 
 .account-closure-subtitle {
   margin-top: 0;
