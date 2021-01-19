@@ -113,6 +113,15 @@
                 line-height: 30px;
                 padding: 0 20px;
 
+                &.disabled {
+                    cursor: not-allowed;
+                    color: $COLOR_GRAY !important;
+                    background-color: transparent !important;
+
+                    .mt-icon {
+                        opacity: 0.4;
+                    }
+                }
                 &:hover {
                     color: $COLOR_BLUE_SHADE;
                     background: $COLOR_LIGHT_GRAY;
@@ -327,6 +336,16 @@
                             height: 88px;
                             position: absolute;
                             background: rgba(0, 0, 0, 0.05);
+                        }
+                    }
+                    &.disabled {
+                        cursor: not-allowed;
+
+                        &:before {
+                            background: url('../images/pages/metatrader/dashboard/tick_disabled.svg');
+                        }
+                        &:after {
+                            background: transparent;
                         }
                     }
                     &.existed:before {

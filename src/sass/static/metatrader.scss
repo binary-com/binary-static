@@ -109,11 +109,26 @@
     }
 }
 
+#page_msg {
+    font-size: $FONT_SIZE_N;
+}
+
+.act_new_account {
+    &.button-disabled {
+        cursor: not-allowed;
+    }
+}
+
 #new_account_icon {
     background-image: url('../images/pages/metatrader/icons/new_account.svg');
     background-repeat: no-repeat;
     background-position: 18px 6px;
     padding-left: 48px;
+    pointer-events: none;
+
+    &.disabled {
+        background-image: url('../images/pages/metatrader/icons/new_account_disabled.svg');
+    }
 }
 
 #mt_download {
