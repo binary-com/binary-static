@@ -83,6 +83,12 @@ const Authenticate = () => (
                             <p>{it.L('Kindly send a scan of a valid proof of identity to [_1]support@binary.com[_2]', '<a href="mailto:support@binary.com" target="_blank">', '</a>')}</p>
                         </div>
 
+                        <div id='limited_poi' className='center-text gr-padding-20 invisible'>
+                            <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
+                            <h1 className='gr-padding-10'>{it.L('You\'ve reached the limit for uploading your documents.')}</h1>
+                            <p>{it.L('Please contact us via [_1]live chat[_2].', `<a href=${it.url_for('contact')} target="_blank">`, '</a>')}</p>
+                        </div>
+
                         <div id='unverified' className='center-text gr-padding-20 invisible'>
                             <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/invalid.svg')} />
                             <h1 className='gr-padding-10'>{it.L('Proof of identity verification failed')}</h1>
