@@ -68,7 +68,7 @@ const ProfitTableInit = (() => {
                 $('#profit-table').find('tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>', { colspan: 8 })
-                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
+                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('You\'ve made no transactions of this type up to this date.') }))));
             } else {
                 $('#util_row').setVisibility(1);
             }

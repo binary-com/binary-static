@@ -26,12 +26,21 @@ const Statement = () => (
                 <AccountStatisticsBox id='total_withdrawals' heading={it.L('Total withdrawals')} />
                 <AccountStatisticsBox id='net_deposits'      heading={it.L('Net deposits')} />
             </div>
-
-            <div id='util_row' className='gr-row gr-padding-10 gr-parent invisible container'>
-                <div className='gr-12 gr-12-m'>
-                    <div className='gr-row gr-row-align-right gr-row-align-left-m gr-row-align-middle'>
-                        <DatePicker id='date_to' text={it.L('Show all historical transactions up to')} />
-                        <Button id='download_statement_btn' className='button-secondary invisible' text={it.L('Download your statement')} />
+            <div id='util_row' className='gr-row gr-padding-20 gr-parent invisible container'>
+                <div id='statement-tool' className='gr-12'>
+                    <DatePicker id='date_to' className='date-picker-statement' text={it.L('Show all historical transactions up to')} />
+                    <Button id='download_statement_btn' className='button-secondary invisible' text={it.L('Download your statement')} />
+                    <div id='filter-container'>
+                        <select
+                            className='dropdown-statement__filter'
+                            id='dropdown_statement_filter'
+                        >
+                            <option value='all' selected>{it.L('All transactions')}</option>
+                            <option value='buy'>{it.L('Buy')}</option>
+                            <option value='sell'>{it.L('Sell')}</option>
+                            <option value='deposit'>{it.L('Deposit')}</option>
+                            <option value='withdrawal'>{it.L('Withdrawal')}</option>
+                        </select>
                     </div>
                 </div>
                 <div className='gr-12 gr-12-m align-end'>

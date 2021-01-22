@@ -1,3 +1,4 @@
+const Dropdown             = require('@binary-com/binary-style').selectDropdown;
 const StatementUI          = require('./statement.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
 const Client               = require('../../../../base/client');
@@ -20,6 +21,7 @@ const StatementInit = (() => {
         no_more_data,
         pending,
         current_batch,
+        filter,
         transactions_received,
         transactions_consumed;
 
@@ -42,7 +44,11 @@ const StatementInit = (() => {
     };
 
     const getNextBatchStatement = () => {
-        getStatement({ offset: transactions_received, limit: batch_size });
+        if (filter === 'all') {
+            getStatement({ offset: transactions_received, limit: batch_size });
+        } else {
+            getStatement({ offset: transactions_received, limit: batch_size, action_type: filter });
+        }
         pending = true;
     };
 
@@ -77,7 +83,6 @@ const StatementInit = (() => {
         if (current_batch.length < batch_size) {
             no_more_data = true;
         }
-
         if (!tableExist()) {
             StatementUI.createEmptyStatementTable().appendTo('#statement-container');
             $('.act, .credit').addClass('nowrap');
@@ -88,7 +93,7 @@ const StatementInit = (() => {
                 $('#statement-table').find('tbody')
                     .append($('<tr/>', { class: 'flex-tr' })
                         .append($('<td/>', { colspan: 7 })
-                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
+                            .append($('<p/>', { class: 'notice-msg center-text', text: localize('You\'ve made no transactions of this type up to this date.') }))));
             } else {
                 $('#util_row').setVisibility(1);
                 // uncomment to enable export to CSV
@@ -110,7 +115,6 @@ const StatementInit = (() => {
             };
 
             const p_from_top = $(document).scrollTop();
-
             if (!tableExist() || p_from_top < hidableHeight(70)) return;
 
             if (finishedConsumed() && !no_more_data && !pending) {
@@ -136,6 +140,7 @@ const StatementInit = (() => {
     };
 
     const initPage = () => {
+        Dropdown('#dropdown_statement_filter', true);
         batch_size            = 200;
         chunk_size            = batch_size / 2;
         no_more_data          = false;
@@ -143,6 +148,7 @@ const StatementInit = (() => {
         current_batch         = [];
         transactions_received = 0;
         transactions_consumed = 0;
+        filter =  $('#dropdown_statement_filter').val();
 
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             addTooltip(StatementUI.setOauthApps(buildOauthApps(response)));
@@ -160,6 +166,20 @@ const StatementInit = (() => {
 
     const onLoad = () => {
         initPage();
+
+        $('#dropdown_statement_filter').on('change', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            // update the filter state
+            filter = e.target;
+
+            StatementUI.errorMessage(null);
+            StatementUI.clearTableContent();
+            $('.barspinner').setVisibility(1);
+            initPage();
+        });
+
         DateTo.attachDateToPicker(() => {
             StatementUI.clearTableContent();
             $('.barspinner').setVisibility(1);

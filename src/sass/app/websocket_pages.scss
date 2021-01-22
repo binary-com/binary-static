@@ -130,6 +130,32 @@
 }
 
 #statement-container {
+    #statement-tool {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        @media (max-width: 804px) {
+            flex-flow: column;
+        }
+
+        .date-picker-statement {
+            display: inline-block;
+        }
+        #filter-container {
+            display: inline-block;
+            width: 15rem;
+            margin-left: 10px;
+
+            @media (max-width: 480px) {
+                width: 75%;
+            }
+
+            @media (max-width: 804px) {
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    }
     #download_csv {
         line-height: 28px;
     }
