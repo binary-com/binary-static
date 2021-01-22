@@ -2023,6 +2023,37 @@ tbody#instruments > tr > td {
 #profit-table-container .new-width {
   min-width: 100px; }
 
+#statement-container #statement-tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  @media (max-width: 804px) {
+    #statement-container #statement-tool {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column;
+              flex-flow: column; } }
+  #statement-container #statement-tool .date-picker-statement {
+    display: inline-block; }
+  #statement-container #statement-tool #filter-container {
+    display: inline-block;
+    width: 15rem;
+    margin-left: 10px; }
+    @media (max-width: 480px) {
+      #statement-container #statement-tool #filter-container {
+        width: 75%; } }
+    @media (max-width: 804px) {
+      #statement-container #statement-tool #filter-container {
+        margin-top: 10px;
+        margin-left: 0; } }
+
 #statement-container #download_csv {
   line-height: 28px; }
 
