@@ -103,7 +103,7 @@ const TradePage = (() => {
         commonTrading.clean();
         BinarySocket.clear('active_symbols');
         TradingAnalysis.onUnload();
-        DerivBanner.onUnload();
+        // DerivBanner.onUnload();
     };
 
     const onDisconnect = () => {

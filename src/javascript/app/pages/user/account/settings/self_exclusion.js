@@ -59,10 +59,6 @@ const SelfExclusion = (() => {
         is_mlt = Client.get('landing_company_shortcode') === 'malta';
         is_mx = Client.get('landing_company_shortcode') === 'iom';
 
-        is_mlt = Client.get('landing_company_shortcode') === 'malta';
-        is_mx = Client.get('landing_company_shortcode') === 'iom';
-        is_gamstop_client = Client.get('residence') === 'gb' && (is_mx || is_mlt);
-        
         initDatePicker();
         getData(true);
     };
@@ -186,12 +182,6 @@ const SelfExclusion = (() => {
             if (!/session_duration_limit|max_open_bets/.test(id)) {
                 options.type     = 'float';
                 options.decimals = decimal_places;
-            }
-            if (/max_open_bets/.test(id)) {
-                options.min = 1;
-            }
-            if (/max_balance/.test(id)) {
-                options.min = 0.01;
             }
             checks.push(['number', options]);
 

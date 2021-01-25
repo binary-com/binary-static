@@ -268,28 +268,7 @@ const ClientBase = (() => {
         // returns e.g. { short: 'Synthetic', full: 'Demo Synthetic' }
         return obj_display[market_type][sub_account_type] || localize('MT5');
     };
-
-    const getMT5AccountDisplay = (group) => {
-        let display_text = localize('MT5');
-        if (group) {
-            const value = getMT5AccountType(group);
-            if (/svg$/.test(value) || /malta$/.test(value)) {
-                display_text = localize('Synthetic');
-            } else if (
-                /vanuatu/.test(value) ||
-                /svg_(standard|financial)/.test(value) ||
-                /maltainvest_financial$/.test(value)
-            ) {
-                // TODO: [remove-standard-advanced] remove standard when API groups are updated
-                display_text = localize('Financial');
-            } else if (/labuan/.test(value)) {
-                display_text = localize('Financial STP');
-            }
-        }
-
-        return display_text;
-    };
-
+    
     const getBasicUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
         const landing_company_obj = State.getResponse('landing_company');

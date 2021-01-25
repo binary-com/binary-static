@@ -828,7 +828,7 @@ const Header = (() => {
             const hasStatus = (string) => status &&
                 (status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true));
             const hasVerification = (string) => {
-                const { prompt_client_to_authenticate } = get_account_status;
+                // const { prompt_client_to_authenticate } = get_account_status;
                 const { identity, document, needs_verification } = authentication;
                 if (!identity || !document || !needs_verification || !isAuthenticationAllowed()) {
                     return false;
