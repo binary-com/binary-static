@@ -1,9 +1,6 @@
-import pt from './pt';
-
 const localize = require('../../../../../_common/localize').localize;
 
 module.exports = {
-    pt,
     country_select: {
         alert_dropdown: {
             country_not_found: localize('Country not found'),
