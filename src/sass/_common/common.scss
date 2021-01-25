@@ -81,6 +81,17 @@ button.full-width, .button.full-width {
     }
 }
 
+button.button-disabled {
+    color: $COLOR_GRAY;
+    background: $COLOR_LIGHT_GRAY;
+    cursor: default;
+
+    &:hover {
+        color: $COLOR_GRAY;
+        background: $COLOR_LIGHT_GRAY;
+    }
+}
+
 span.checked {
     background: url('../images/pages/authenticate/checked.svg') no-repeat;
     width: 16px;

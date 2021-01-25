@@ -383,6 +383,11 @@
                         color: $COLOR_GRAY;
                     }
                 }
+                #server_unavailable_notice {
+                    margin: 0 14px;
+                    font-size: $FONT_SIZE_N;
+                    line-height: 24px;
+                }
             }
         }
     }

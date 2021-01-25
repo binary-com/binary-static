@@ -338,6 +338,9 @@ const Metatrader = () => (
                                 </div>
                             </div>
                             <div id='view_3' className='gr-row invisible'>
+                                <div id='server_unavailable_notice' className='notice-msg center-text invisible'>
+                                    {it.L('Due to an issue on our server, some MT5 accounts are unavailable at the moment. Please bear with us and thank you for your patience.')}
+                                </div>
                                 <div className='container gr-8 gr-12-m'>
                                     <p>{it.L('Choose a server for your MT5 [_1] account:', '<span id="mt5_account_type"></span>')}</p>
                                     <div id='ddl_trade_server' type='radio' />
