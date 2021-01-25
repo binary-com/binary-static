@@ -837,6 +837,7 @@ body #not_authenticated_financial ul.checked > li {
 
 .lightbox #set_currency {
     padding: 25px;
+    padding-bottom: 4px;
     width: 40em;
 
     #set_currency_text {
@@ -853,6 +854,7 @@ body #not_authenticated_financial ul.checked > li {
     }
     #submit_section {
         margin-top: 20px;
+        margin-bottom: 16px;
     }
 }
 
@@ -976,7 +978,7 @@ body #not_authenticated_financial ul.checked > li {
                 border: none;
             }
         }
-        button {
+        button:not(.onfido-sdk-ui-Theme-link):not(.onfido-sdk-ui-Button-button-primary) {
             &:hover, &:focus {
                 background-color: inherit;
             }

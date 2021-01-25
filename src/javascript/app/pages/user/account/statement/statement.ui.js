@@ -40,7 +40,7 @@ const StatementUI = (() => {
     const clearTableContent = () => {
         Table.clearTableBody(table_id);
         all_data = [];
-        $(`#${table_id} > tfoot`).hide();
+        $(`#${table_id}`).remove();
     };
 
     const createStatementRow = (transaction) => {
@@ -109,7 +109,6 @@ const StatementUI = (() => {
         errorMessage,
         exportCSV,
         updateAccountStatistics,
-
         setOauthApps: values => (oauth_apps = values),
     };
 })();

@@ -89,6 +89,7 @@ const PaymentAgentWithdraw = () => (
                 </p>
 
                 <SubmitButton
+                    id='btn_transaction_detail'
                     custom_btn_id='btnBack'
                     custom_btn_href='javascript:;'
                     custom_btn_text={it.L('Back')}
@@ -127,7 +128,7 @@ const PaymentAgentWithdraw = () => (
                         </div>
                         <FormRow label={it.L('Payment reference')} id='txtPaymentRef' type='text' hint={it.L('If you have a payment reference (for example 122), you can enter it here.')} />
                         <p id='form-error' className='error-msg center-text invisible' />
-                        <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
+                        <SubmitButton id='reference_btn_submit' msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
                         <div className='gr-8 gr-centered gr-padding-20'>
                             {it.L('Note: [_1] does not charge any transfer fees.', it.website_name)}
                         </div>

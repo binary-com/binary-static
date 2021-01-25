@@ -38,8 +38,9 @@ const release_config = {
 };
 
 const node_modules_paths = {
-    binary_style: 'node_modules/@binary-com/binary-style',
-    deriv_p2p   : 'node_modules/@deriv/p2p',
+    binary_style   : 'node_modules/@binary-com/binary-style',
+    deriv_p2p      : 'node_modules/@deriv/p2p',
+    deriv_dashboard: 'node_modules/@deriv/dashboard',
 };
 
 const config = {

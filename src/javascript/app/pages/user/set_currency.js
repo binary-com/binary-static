@@ -25,10 +25,10 @@ const SetCurrency = (() => {
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
 
+        const landing_company = (await BinarySocket.wait('landing_company')).landing_company;
         const { can_upgrade, type } = Client.getUpgradeInfo();
         $('#upgrade_to_mf').setVisibility(can_upgrade && type === 'financial');
 
-        const landing_company   = (await BinarySocket.wait('landing_company')).landing_company;
         const payout_currencies = (await BinarySocket.wait('payout_currencies')).payout_currencies;
         const $currency_list    = $('.currency_list');
         const $error            = $('#set_currency').find('.error-msg');
@@ -109,11 +109,15 @@ const SetCurrency = (() => {
                     text: Currency.getCurrencyName(c) || c,
                     ...(/^UST$/.test(c) && {
                         'data-balloon'       : localize('Tether Omni (USDT) is a version of Tether that\'s pegged to USD and is built on the Bitcoin blockchain.'),
-                        'data-balloon-length': 'large',
+                        'data-balloon-length': 'medium',
+                        'data-balloon-pos'   : 'top',
+                        'class'              : 'show-mobile',
                     }),
                     ...(/^eUSDT/.test(c) && {
                         'data-balloon'       : localize('Tether ERC20 (eUSDT) is a version of Tether that\'s pegged to USD and is hosted on the Ethereum platform.'),
-                        'data-balloon-length': 'large',
+                        'data-balloon-length': 'medium',
+                        'data-balloon-pos'   : 'top',
+                        'class'              : 'show-mobile',
                     }),
                 });
 
@@ -206,7 +210,9 @@ const SetCurrency = (() => {
                     }
                 } else {
                     const previous_currency = Client.get('currency');
-                    Client.set('currency', selected_currency);
+                    // Use the client_id while creating a new account
+                    const new_account_loginid = popup_action === 'multi_account' ? response_c.new_account_real.client_id : undefined;
+                    Client.set('currency', selected_currency, new_account_loginid);
                     BinarySocket.send({ balance: 1 });
                     BinarySocket.send({ payout_currencies: 1 }, { forced: true });
                     Header.displayAccountStatus();

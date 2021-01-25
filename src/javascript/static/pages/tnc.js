@@ -1,6 +1,10 @@
 const tabListener = require('@binary-com/binary-style').tabListener;
+const getElementById = require('../../_common/common_functions').getElementById;
 const localize    = require('../../_common/localize').localize;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
+const State          = require('../../_common/storage').State;
+const Client      = require('../../app/base/client');
+const BinarySocket   = require('../../app/base/socket');
 
 const TermsAndConditions = (() => {
     let sidebar_width;
@@ -22,6 +26,16 @@ const TermsAndConditions = (() => {
         window.onresize = checkWidth;
 
         $('.currentYear').text(new Date().getFullYear());
+        
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+            const landing_company_shortcode = Client.get('landing_company_shortcode') || State.getResponse('landing_company.gaming_company.shortcode');
+            const client_country = Client.get('residence') || State.getResponse('website_status.clients_country');
+            const is_uk_client = client_country === 'gb';
+
+            if (is_uk_client && landing_company_shortcode === 'maltainvest') {
+                getElementById('mf_uk').setVisibility(1);
+            }
+        });
     };
 
     const handleActiveTab = () => {

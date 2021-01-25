@@ -71,10 +71,10 @@ const Tour = () => (
             <div className='section border-bottom'>
                 <div className='section-content center-text gr-padding-30 gr-child'>
                     <h1>{it.L('Talk to us')}</h1>
-                    <p>{it.L('Feel free to contact our friendly and helpful customer service experts. They\'re always available to answer your questions. You can contact us via email and telephone.')}</p>
-                    <div className='gr-4 gr-8-m gr-centered'>
-                        <a className='button' href={it.url_for('contact')}>
-                            <img className='responsive' src={it.url_for('images/pages/tour/tour-customer-support.png')} />
+                    <p>{it.L('Feel free to contact our friendly and helpful customer service experts. They\'re always available to answer your questions. You can contact us via live chat.')}</p>
+                    <div className='gr-8 gr-centered'>
+                        <a className='button' href={it.url_for('contact')} rel='noopener noreferrer' target='_blank' >
+                            <img className='responsive' src={it.url_for('images/pages/tour/tour-live-chat-support.png')} />
                         </a>
                     </div>
                 </div>

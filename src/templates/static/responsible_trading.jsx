@@ -37,7 +37,7 @@ const ResponsibleTrading = () => (
             <p data-show='-eucountry'>{it.L('When the self-exclusion period is set, we will refund the balance of funds in your account.')}</p>
             <p data-show='-eucountry'>{it.L('If you wish to reduce or remove the self-exclusion period, contact our [_1]Customer Support[_1].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
             <p data-show='eucountry'>{it.L('Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client\'s account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again.')}</p>
-            <p data-show='eucountry'>{it.L('Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient.')}</p>
+            <p id='iom_except_uk_without_mlt' className='invisible'>{it.L('Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. Please note that you must contact our support team by calling [_1]. It is not enough to send an email.', '<a href=\'call:+447723580049\'>+447723580049</a>')}</p>
 
             <div data-show='eucountry'>
                 <h2>GAMSTOP</h2>

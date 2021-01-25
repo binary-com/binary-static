@@ -834,7 +834,7 @@ const Authenticate = (() => {
         });
     });
 
-    const initOnfido = async (sdk_token, documents_supported) => {
+    const initOnfido = async (sdk_token, documents_supported, country_code) => {
         if (!$('#onfido').is(':parent')) {
             $('#onfido').setVisibility(1);
 
@@ -842,8 +842,9 @@ const Authenticate = (() => {
                 onfido = Onfido.init({
                     containerId: 'onfido',
                     language   : {
-                        locale : getLanguage().toLowerCase() || 'en',
-                        phrases: onfido_phrases[getLanguage().toLowerCase()],
+                        locale       : getLanguage().toLowerCase() || 'en',
+                        phrases      : onfido_phrases,
+                        mobilePhrases: onfido_phrases,
                     },
                     token     : sdk_token,
                     useModal  : false,
@@ -853,9 +854,13 @@ const Authenticate = (() => {
                             type   : 'document',
                             options: {
                                 documentTypes: {
-                                    passport              : documents_supported.some(doc => /Passport/g.test(doc)),
-                                    driving_licence       : documents_supported.some(doc => /Driving Licence/g.test(doc)),
-                                    national_identity_card: documents_supported.some(doc => /National Identity Card/g.test(doc)),
+                                    passport       : documents_supported.some(doc => /Passport/g.test(doc)),
+                                    driving_licence: documents_supported.some(doc => /Driving Licence/g.test(doc)) ? {
+                                        country: country_code,
+                                    } : false,
+                                    national_identity_card: documents_supported.some(doc => /National Identity Card/g.test(doc)) ? {
+                                        country: country_code,
+                                    } : false,
                                 },
                             },
                         },
@@ -957,20 +962,22 @@ const Authenticate = (() => {
             $('#missing_personal_fields').html(error_msgs);
         }
 
-        const { identity, document } = authentication_status;
+        const { identity, needs_verification, document } = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
+        const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
         onfido_unsupported = !identity.services.onfido.is_country_supported;
         const documents_supported = identity.services.onfido.documents_supported;
+        const country_code = identity.services.onfido.country_code;
 
-        if (is_fully_authenticated) {
+        if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         }
 
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
-        } else if (!identity.further_resubmissions_allowed) {
+        } else if (!needs_verification.includes('identity')) {
             // if POI is verified and POA is not verified, redirect to POA tab
             if (identity.status === 'verified' && document.status !== 'verified') {
                 Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
@@ -981,7 +988,7 @@ const Authenticate = (() => {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
-                        initOnfido(service_token_response.token, documents_supported);
+                        initOnfido(service_token_response.token, documents_supported, country_code);
                     }
                     break;
                 case 'pending':
@@ -1008,10 +1015,10 @@ const Authenticate = (() => {
                 $('#not_authenticated_uns').setVisibility(1);
                 initUnsupported();
             } else {
-                initOnfido(service_token_response.token, documents_supported);
+                initOnfido(service_token_response.token, documents_supported, country_code);
             }
         }
-        if (!document.further_resubmissions_allowed) {
+        if (!needs_verification.includes('document')) {
             switch (document.status) {
                 case 'none': {
                     init();
@@ -1040,7 +1047,7 @@ const Authenticate = (() => {
             init();
             $('#not_authenticated').setVisibility(1);
         }
-        
+
         $('#authentication_loading').setVisibility(0);
         TabSelector.updateTabDisplay();
     };

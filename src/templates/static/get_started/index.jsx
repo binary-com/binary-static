@@ -192,7 +192,7 @@ const Index = () => (
                                     link='get-started/cryptocurrencies'
                                     hash='contract-specification'
                                     image='mt5/contract-specification'
-                                    header={it.L('Cryptocurrency contract specifications and commission scheme')}
+                                    header={it.L('Cryptocurrency contract specifications')}
                                     text={it.L('Find out more about the costs and details of every cryptocurrency pair we offer.')}
                                 />
                             </div>

@@ -60,8 +60,8 @@ const NetworkMonitorBase = (() => {
 
     const isOnline = () => navigator.onLine;
 
-    const wsReconnect = () => {
-        if (isOnline() && BinarySocket.hasReadyState(2, 3)) { // CLOSING or CLOSED
+    const wsReconnect = (is_force_reconnect) => {
+        if (isOnline() && (BinarySocket.hasReadyState(2, 3) || is_force_reconnect)) { // CLOSING or CLOSED or forced
             BinarySocket.init(ws_config);
         } else {
             BinarySocket.send({ ping: 1 }); // trigger a request to get stable status sooner
@@ -84,11 +84,12 @@ const NetworkMonitorBase = (() => {
     };
 
     const ws_events_map = {
-        init   : () => setPending(pending_keys.ws_init),
-        open   : () => clearPendings(pending_keys.ws_init),
-        send   : () => setPending(pending_keys.ws_request),
-        message: () => clearPendings(),
-        close  : () => setPending(pending_keys.ws_init),
+        init     : () => setPending(pending_keys.ws_init),
+        open     : () => clearPendings(pending_keys.ws_init),
+        send     : () => setPending(pending_keys.ws_request),
+        message  : () => clearPendings(),
+        reconnect: () => wsReconnect(true),
+        close    : () => setPending(pending_keys.ws_init),
     };
 
     const wsEvent = (event) => {

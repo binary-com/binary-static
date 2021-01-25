@@ -76,9 +76,8 @@ const Area = ({ items }) => {
 };
 
 const Regulation = () => {
-    const has_KID    = /de|en|es|it|fr|pl|pt|ru/.test(`${it.language.toLowerCase()}`);
-    const has_CFD_FX = !/fr/.test(it.language.toLowerCase()); // CFD, FX documents in FR will not be available
-    const lang       = has_KID && has_CFD_FX ? `${it.language.toLowerCase()}` : 'en';
+    const has_KID  = /en|es|it|pl|pt/.test(`${it.language.toLowerCase()}`);
+    const lang_KID = has_KID ? `${it.language.toLowerCase()}` : 'en';
 
     return (
         <div className='static_full'>
@@ -94,7 +93,9 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Deriv Investments (Europe) Limited')} >
-                <p>{it.L('Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Deriv-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
+                <p data-show='-eucountry'>{it.L('In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).', `<a href=${it.url_for('download/WS-Deriv-Investments-Europe-Limited.pdf')} target="_blank">`, '</a>')}</p>
+                <p data-show='eucountry'>{it.L('Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed in Malta and authorised by the Malta Financial Services Authority under the Investments Services Act to provide investment services in the European Union.')}</p>
+                <p data-show='eucountry'>{it.L('It is also authorised and subject to limited regulation by the Financial Conduct Authority in the UK. Details about the extent of our authorisation and regulation by the Financial Conduct Authority are available from us on request.')}</p>
                 <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Deriv Investments (Europe) Limited.')}</p>
                 <div className='gr-padding-30 gr-12' id='accordion'>
                     <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
@@ -154,9 +155,9 @@ const Regulation = () => {
                     <div>
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>
-                            <FillBox id='crypto_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Crypto.pdf`)} target='_blank' text={it.L('Cryptocurrencies')} />
-                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Commodities.pdf`)} target='_blank' text={it.L('Commodities')} />
-                            <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Forex.pdf`)} target='_blank' text={it.L('Forex')} />
+                            <FillBox id='crypto_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Crypto.pdf`)} target='_blank' text={it.L('Cryptocurrencies')} />
+                            <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Commodities.pdf`)} target='_blank' text={it.L('Commodities')} />
+                            <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Forex.pdf`)} target='_blank' text={it.L('Forex')} />
                         </div>
                     </div>
 
@@ -272,6 +273,49 @@ const Regulation = () => {
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/xlsx-icon.svg'
                                 href={it.url_for('/download/rts27_2020/Q2/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
+                            />
+                        </div>
+                        <div className='gr-6 gr-12-m gr-padding-30'>
+                            <h3>{it.L('Q3 2020')}</h3>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q3/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q3/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q3/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q3/Table_6.xlsx')}
                                 target='_blank'
                                 text={it.L('Table 6 - Likelihood of execution information')}
                             />
@@ -576,7 +620,7 @@ const Regulation = () => {
 
             <Box header={it.L('Deriv (BVI) Ltd')} >
                 <p>{it.L('Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
-                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) who wish to trade CFDs on financial instruments and cryptocurrencies can have MetaTrader 5 accounts under Deriv (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />
             </Box>

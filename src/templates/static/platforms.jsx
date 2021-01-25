@@ -148,7 +148,7 @@ const Platform = () => (
                 </div>
                 <div className='center-text'>
                     <p>{it.L('No sign up required. Easily log in with your [_1] credentials.', it.website_name)}</p>
-                    <p><a className='button' href='https://deriv.com/interim/deriv/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Learn more about Deriv.com')}</span></a></p>
+                    <p><a className='button' href='https://deriv.com/interim/faq/?utm_source=binary&utm_medium=referral&utm_campaign=deriv-launch&utm_content=page-platforms-banner' target='_blank' rel='noopener noreferrer'><span>{it.L('Learn more about Deriv.com')}</span></a></p>
                 </div>
             </div>
         </div>

@@ -17,12 +17,6 @@ const SelfExclusion = () => (
             <p data-show='eucountry'>{it.L('You may also instruct us to exclude you from trading on [_1] for a specific period of time. This self-exclusion date cannot be amended once it is set.', it.website_name)}</p>
             <p data-show='-eucountry'>{it.L('Here, you can set and adjust the amount of money and time you spend trading on SmartTrader, WebTrader, and Binary Bot. Setting your limits is optional and you can adjust them at any time. If you don’t wish to set a specific limit, leave the field blank.')}</p>
             <p data-show='-eucountry'>{it.L('You can also decide to exclude yourself entirely from our website for a specified duration. Once the self-exclusion period has ended, you can either extend it further or resume trading immediately. If you wish to reduce or remove the self-exclusion period, contact our [_1]Customer Support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
-            <div id='gamstop_info_top' className='invisible'>
-                <p>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
-                <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain.')}</p>
-                <p>{it.L('To find out more and to sign up with GAMSTOP, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
-            </div>
-
         </div>
         <div className='invisible' id='description_max_30day_turnover'>
             <h1>{it.L('Turnover Limit')}</h1>
@@ -39,19 +33,15 @@ const SelfExclusion = () => (
             <Fieldset>
                 <FormRow type='text' id='max_balance' label={it.L('Maximum account cash balance')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
 
-                <div data-show='iom' className='form-row no-padding'>
-                    <FormRow type='text' id='max_deposit' label={it.L('Maximum deposit limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
-
-                    <FormRow type='text' id='max_deposit_end_date' label={it.L('Maximum deposit limit expiry')} attributes={{ maxLength: 15, autoComplete: 'off', readOnly: 'readonly' }} className='clearable' hint={it.L('Please enter date in the format DD MMM, YYYY.')} />
+                <div data-show='iom, malta, maltainvest' className='form-row no-padding'>
+                    <FormRow type='text' id='max_deposit' label={it.L('Daily deposit limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
+                    <FormRow type='text' id='max_7day_deposit'  label={it.L('7-day deposit limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
+                    <FormRow type='text' id='max_30day_deposit' label={it.L('30-day deposit limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Once this limit is reached, you may no longer deposit.')} />
                 </div>
 
                 <FormRow type='text' id='max_turnover' label={it.L('Daily turnover limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate contract purchases per day.')} />
 
-                <FormRow type='text' id='max_losses' label={it.L('Daily limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss per day.')} />
-
                 <FormRow type='text' id='max_7day_turnover' label={it.L('7-day turnover limit')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate contract purchases over a 7-day period.')} />
-
-                <FormRow type='text' id='max_7day_losses' label={it.L('7-day limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss over a 7-day period.')} />
 
                 <FormRow type='custom' row_class='max_30day_turnover' label={it.L('30-day turnover limit')} hint={it.L('Maximum aggregate contract purchases over a 30-day period.')}>
                     <input id='max_30day_turnover' className='append_currency' type='text' maxLength={20} />
@@ -60,6 +50,10 @@ const SelfExclusion = () => (
                         <label htmlFor='chk_no_limit'>{it.L('No limit')}</label>
                     </div>
                 </FormRow>
+
+                <FormRow type='text' id='max_losses' label={it.L('Daily limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss per day.')} />
+
+                <FormRow type='text' id='max_7day_losses' label={it.L('7-day limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss over a 7-day period.')} />
 
                 <FormRow type='text' id='max_30day_losses' label={it.L('30-day limit on losses')} attributes={{ maxLength: 20 }} className='append_currency' hint={it.L('Maximum aggregate loss over a 30-day period.')} />
 
@@ -88,10 +82,14 @@ const SelfExclusion = () => (
                 <div id='self_exclusion_warning' data-show='iom, malta' className='gr-row gr-padding-10 invisible'>
                     <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m'>
                         <div className='notice-msg gr-child gr-parent'>
-                            <p>{it.L('Self-exclusion on this website only applies to your [_1] account and does not include other companies or websites.', it.website_name)}</p>
-                            <p data-show='malta'>{it.L('If you are a UK resident, to self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
-                            <p data-show='iom'>{it.L('To self-exclude from all online gambling companies licensed in Great Britain, go to [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
-                            <p>{it.L('For more information and assistance to counselling and support services, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.begambleaware.org/">begambleaware.org</a>')}</p>
+                            <p>{it.L('Self-exclusion on this website is applicable to your account only as accessed on [_1] or deriv.com and does not apply to any other website.', (it.website_name).toLowerCase())}</p>
+                            <p data-show='malta'>{it.L('If you live in the United Kingdom and are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
+                            <p data-show='iom'>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
+                            <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain. To find out more and to sign up, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk/">www.gamstop.co.uk</a>')}</p>
+                            <p>{it.L('[_1]Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. [_2]If you wish to resume trading after your self-exclusion period is over, please make your request by calling [_3]. Requests by chat or email shall not be entertained.',
+                                '<span data-show="malta">', '</span>', '<a href=\'call:+447723580049\'>+447723580049</a>')}
+                            </p>
+                            <p>{it.L('For more information about counselling and support services, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.begambleaware.org/">begambleaware.org</a>')}</p>
                         </div>
                     </div>
                 </div>

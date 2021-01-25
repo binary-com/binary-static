@@ -6,7 +6,7 @@ import Loading from '../../_common/components/loading.jsx';
 const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container'>
-            {/* <DerivBanner content_name='page-trading-banner' /> */}
+            {/* <DerivBanner /> */}
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />
             {/* <a

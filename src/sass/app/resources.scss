@@ -28,6 +28,9 @@
     .ui-tabs-anchor:focus {
         outline: none;
     }
+    .ui-tabs-nav li {
+        margin-top: 5px;
+    }
 }
 
 #asset_index_wrapper {
@@ -41,7 +44,7 @@
             overflow-x: auto;
         }
         th {
-            width: calc(100% / 7);
+            width: calc(100% / var(--number_of_columns));
 
             &:nth-child(2):nth-last-child(1) {
                 width: 24%;
