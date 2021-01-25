@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-01-20 03:05\n"
+"PO-Revision-Date: 2021-01-25 04:26\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -434,7 +434,7 @@ msgid "%124/7 customer support%2 to enhance your trading experience"
 msgstr "%1Служба поддержки%2 доступна 24/7, чтобы помочь вам получить максимум от вашего трейдинга."
 
 msgid "%1Choose a currency%2 for your fiat currency account:"
-msgstr ""
+msgstr "%1Выберите валюту%2 вашего фиатного счета:"
 
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Свяжитесь с нами,%2 чтобы назначить дату и время видеозвонка."
@@ -452,7 +452,7 @@ msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1Нет, я хочу изменить валюту моего фиатного счёта%2"
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
-msgstr ""
+msgstr "%1Примечание%2: Эти ограничения действуют только на вашем реальном счете %3. Пожалуйста, перейдите на нужный вам счет и установите необходимые лимиты."
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Обратите внимание, если вы живете в Соединенном Королевстве, самоисключение нельзя удалить, пока не истечет его период действия. %2Если вы хотите вернуться к трейдингу после окончания периода самоисключения, сделайте соответствующий запрос, позвонив по номеру %3. Запросы в чате или по электронной почте не принимаются."
@@ -1296,6 +1296,9 @@ msgstr "Вся информация, получаемая Компанией о 
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Все время на сайте указано в GMT, по Гринвичу (Greenwich Mean Time)."
+
+msgid "All transactions"
+msgstr ""
 
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company's responsibility; hence the Company is not liable for such actions or results."
 msgstr "Любые непредвиденные открытия или закрытия позиций, инициированные через Expert Advisor, будь то по причине системных сбоев или любым другим причинам, находятся вне сфер влияния Компании. Таким образом, Компания не несёт ответственности за таковые действия или их последствия."
@@ -2498,7 +2501,7 @@ msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Руководители, высокопоставленные чиновники и работники законодательных органов"
 
 msgid "Choose a currency for your real account:"
-msgstr ""
+msgstr "Выберите валюту вашего реального счета:"
 
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Выберите длительность от 10 секунд до 365 дней."
@@ -2534,7 +2537,7 @@ msgid "Choose from three main trade types:"
 msgstr "Выберите один из трёх основных видов контрактов:"
 
 msgid "Choose one or more cryptocurrency accounts:"
-msgstr ""
+msgstr "Выберите один или несколько криптовалютных счетов:"
 
 msgid "Choose scopes:"
 msgstr "Выберите сферу действия:"
@@ -2702,7 +2705,7 @@ msgid "Close identity verification screen"
 msgstr "Закройте экран подтверждения личности"
 
 msgid "Close my account"
-msgstr ""
+msgstr "Закрыть мой счет"
 
 msgid "Close your %1 account."
 msgstr "Закрыть ваш счет %1."
@@ -2741,7 +2744,7 @@ msgid "Closing price"
 msgstr "Цена закрытия"
 
 msgid "Closing your %1 accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts."
-msgstr ""
+msgstr "Закрытие ваших счетов %1 включает в себя закрытие всех открытых позиций на ваших счетах, вывод средств и деактивацию ваших счетов."
 
 msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
 msgstr "Система DNS общего пользования от Cloudflare предоставляет более быстрое и надёжное соединение."
@@ -3961,6 +3964,9 @@ msgstr "Знаковая архитектура Дубая включает са
 msgid "Dubai, United Arab Emirates"
 msgstr "Дубай, ОАЭ"
 
+msgid "Due to an issue on our server, some MT5 accounts are unavailable at the moment. Please bear with us and thank you for your patience."
+msgstr ""
+
 msgid "Due to an issue on our server, some of your MT5 accounts are unavailable at the moment. %1Please bear with us and thank you for your patience."
 msgstr "Из-за неполадок на нашем сервере некоторые из ваших счетов MT5 в настоящее время недоступны. Мы работаем над устранением проблемы. %1Приносим свои извинения и благодарим за понимание."
 
@@ -4812,7 +4818,7 @@ msgid "Financial assessment"
 msgstr "Финансовая оценка"
 
 msgid "Financial concerns"
-msgstr ""
+msgstr "Финансовые проблемы"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Производные финансовые инструменты, позволяющие зарабатывать на прогнозах движений цен базовых активов."
@@ -5217,13 +5223,13 @@ msgid "Go to statement"
 msgstr "Вернуться к выпискам"
 
 msgid "Go to the %1Cashier%2 to withdraw funds from your %3 accounts."
-msgstr ""
+msgstr "Перейдите в %1Кассу%2, чтобы вывести средства с ваших счетов %3."
 
 msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
-msgstr ""
+msgstr "Перейдите на %1панель MT5%2, чтобы вывести средства со своего счета Binary.com MT5."
 
 msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
-msgstr ""
+msgstr "Перейдите на страницу %1Портфель%2, чтобы закрыть все открытые позиции на своих счетах Binary.com."
 
 msgid "Go with the leader"
 msgstr "Следуйте за лидером"
@@ -5514,34 +5520,34 @@ msgid "I hereby confirm that the tax information I provided is true and complete
 msgstr "Настоящим я подтверждаю, что предоставленная мной налоговая информация является точной и достоверной. Также я обязуюсь уведомить Deriv Investments (Europe) Limited о любых изменениях в данной информации."
 
 msgid "I want to change my affiliate instead"
-msgstr ""
+msgstr "Я хочу указать другого реферера"
 
 msgid "I want to change my currency instead"
-msgstr ""
+msgstr "Я хочу изменить валюту счета"
 
 msgid "I want to close my account"
-msgstr ""
+msgstr "Я хочу закрыть счет"
 
 msgid "I want to limit my trading activity instead"
-msgstr ""
+msgstr "Я хотел бы установить ограничения на свою торговую деятельность."
 
 msgid "I want to open a cryptocurrency account instead"
-msgstr ""
+msgstr "Я хочу открыть криптовалютный счет"
 
 msgid "I want to open a fiat currency account instead"
-msgstr ""
+msgstr "Я хочу открыть фидуциарный счет"
 
 msgid "I want to open a real account instead"
-msgstr ""
+msgstr "Я хочу открыть реальный счет"
 
 msgid "I want to open another cryptocurrency account instead"
-msgstr ""
+msgstr "Я хочу открыть еще один криптовалютный счет"
 
 msgid "I want to reapply"
 msgstr "Я хочу подать заявку повторно"
 
 msgid "I want to set my currency instead"
-msgstr ""
+msgstr "Я хочу установить валюту счета"
 
 msgid "I would like to be treated as a professional client."
 msgstr "Я хочу стать профессиональным клиентом."
@@ -5802,7 +5808,7 @@ msgid "If you have a payment reference (for example 122), you can enter it here.
 msgstr "Если у вас есть номер перевода (например, 122), укажите его здесь."
 
 msgid "If you have opened positions in your MT5 account, please close them too."
-msgstr ""
+msgstr "Если вы открывали позиции на своем счете МТ5, пожалуйста, закройте и их тоже."
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Если вы оставляете позицию открытой на ночь, по ней будет произведена корректировка, чтобы отразить расходы, связанные с ее переносом на следующие сутки."
@@ -5934,7 +5940,7 @@ msgid "If you select a specific <strong>end time</strong>, the <strong>end time<
 msgstr "Если вы выбираете определенное <strong>время окончания</strong>, <strong>временем окончания</strong> контракта будет выбранное вами время."
 
 msgid "If you want to change your affiliate, contact %1partners@binary.com%2 for more information on how you can do this."
-msgstr ""
+msgstr "Если вы хотите указать другого реферера, пожалуйста, напишите нам на %1partners@binary.com%2, и мы подскажем, как это можно сделать."
 
 msgid "If you wish to reduce or remove the self-exclusion period, contact our %1Customer Support%1."
 msgstr "Если вы хотите сократить или убрать период самоисключения, обратитесь в %1службу поддержки%1."
@@ -7722,7 +7728,7 @@ msgid "Not at all. Joining our affiliate programme is completely free and always
 msgstr "Нет. Регистрация в нашей партнёрской программе осуществляется совершенно бесплатно."
 
 msgid "Not interested in trading"
-msgstr ""
+msgstr "Не интересен трейдинг"
 
 msgid "Not leaving devices unattended"
 msgstr "Не оставлять устройства без присмотра"
@@ -8067,7 +8073,7 @@ msgid "Other than the payment of Commissions, Binary is not liable to the Introd
 msgstr "Помимо выплаты комиссионных, Binary не несёт ответственности перед Представляющим брокером, его/её партнёром или иным лицом за любые обстоятельства, возникающие ввиду или в связи с настоящим Соглашением, будь то в рамках закона о правонарушениях, контракта, правил долевого участия или ввиду любых других потерь."
 
 msgid "Others (please specify)"
-msgstr ""
+msgstr "Другое (пожалуйста, опишите)"
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "Наш бухгалтерский отдел управляет широким спектром банковских счетов и систем электронных валют, а также большим объёмом переводов, совершаемых ежедневно."
@@ -8616,7 +8622,7 @@ msgid "Please select a country"
 msgstr "Выберите страну"
 
 msgid "Please select a reason."
-msgstr ""
+msgstr "Пожалуйста, укажите причину."
 
 msgid "Please select a valid time."
 msgstr "Пожалуйста, выберите правильное время."
@@ -8649,7 +8655,7 @@ msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
 msgstr "Пожалуйста, установите %1лимит на 30-дневный оборот счета%2, чтобы устранить лимиты на пополнение."
 
 msgid "Please specify the reasons for closing your accounts"
-msgstr ""
+msgstr "Пожалуйста, укажите причину закрытия счетов"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Пожалуйста, укажите желаемый интервал для проверки реальности (в минутах)"
@@ -8673,7 +8679,7 @@ msgid "Please take note that our swap rate also depends on the time and days you
 msgstr "Пожалуйста, примите во внимание, что наши свопы также зависят от времени суток и количества дней, в которые ваши позиции остаются открытыми:"
 
 msgid "Please tell us why you are closing your account (please select one):"
-msgstr ""
+msgstr "Пожалуйста, скажите нам, почему вы решили закрыть свой счет (вы можете выбрать одну из причин ниже):"
 
 msgid "Please try again"
 msgstr "Пожалуйста, попробуйте снова"
@@ -8799,7 +8805,7 @@ msgid "Predict the last decimal digit of the spot price with Digits. There are t
 msgstr "Предскажите последнюю десятичную спот-котировки Цифрового контракта. Всего есть три типа цифровых контрактов:"
 
 msgid "Prefer another trading website"
-msgstr ""
+msgstr "Предпочитаю торговать на другом сайте"
 
 msgid "Preferences:"
 msgstr "Предпочтения:"
@@ -10152,7 +10158,7 @@ msgid "Step 1: Choose demo or real account"
 msgstr "Шаг 1: Выберите реальный или демо-счёт"
 
 msgid "Step 1: Close all open positions"
-msgstr ""
+msgstr "Шаг 1: Закройте все открытые позиции"
 
 msgid "Step 1: Define your position"
 msgstr "Шаг 1: Выберите условия"
@@ -10173,7 +10179,7 @@ msgid "Step 2: Understand when to buy and when to sell"
 msgstr "Шаг 2: Понимайте, когда покупать и продавать"
 
 msgid "Step 2: Withdraw your funds"
-msgstr ""
+msgstr "Шаг 2: Выведите средства"
 
 msgid "Step 3"
 msgstr "Шаг 3"
@@ -11931,7 +11937,7 @@ msgid "The provisions of this agreement or any orders and any applicable laws wi
 msgstr "Положения данного соглашения, любые ордеры и любые применимые законы не будут нарушены."
 
 msgid "The reason should be between 5 and 250 characters"
-msgstr ""
+msgstr "Причина должна содержать от 5 до 250 знаков"
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
 msgstr "запрошенный перевод средств снизит баланс клиентского счёта, в результате чего он окажется ниже маржи, требуемой для поддержания открытых позиций клиента."
@@ -12318,7 +12324,7 @@ msgid "This page is only available to logged out clients."
 msgstr "Эта страница доступна только для клиентов, вошедших на сайт."
 
 msgid "This page will redirect to the %1 homepage after 10 seconds."
-msgstr ""
+msgstr "Вы будете перенаправлены на главную страницу %1 через 10 секунд."
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "Эта политика применяется к клиентам, отнесенным к категории индивидуальных или профессиональных. Клиенты, классифицируемые как правомочные контрагенты, не входят в сферу действия настоящей политики."
@@ -12417,7 +12423,7 @@ msgid "To change your name, date of birth, country of residence, email, or tax i
 msgstr "Чтобы изменить имя, дату рождения, страну проживания или эл. адрес или налоговую информацию, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To close your account, complete the following steps:"
-msgstr ""
+msgstr "Чтобы закрыть счет, пожалуйста, выполните следующие действия:"
 
 msgid "To create a MetaTrader 5 account:"
 msgstr "Чтобы открыть счёт MetaTrader 5:"
@@ -12498,7 +12504,7 @@ msgid "Token name"
 msgstr "Название ключа"
 
 msgid "Too addictive"
-msgstr ""
+msgstr "Слишком затягивает"
 
 msgid "Too many failed attempts"
 msgstr "Слишком много неудачных попыток"
@@ -14067,10 +14073,10 @@ msgid "You are selling the base currency and buying the quote currency."
 msgstr "Вы продаёте основную (базовую) валюту и покупаете валюту котировки."
 
 msgid "You can %1open a cryptocurrency%2 account without closing your fiat currency account."
-msgstr ""
+msgstr "Вы можете %1открыть криптовалютный счет%2, не закрывая своего фидуциарного счета."
 
 msgid "You can %1open a real account%2 without closing your demo account."
-msgstr ""
+msgstr "Вы можете %1открыть реальный счет%2, не закрывая своего демо-счета."
 
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
 msgstr "Вы можете %1установить новую валюту%2 перед первым пополнением счёта или открытием счёта MT5."
@@ -14109,13 +14115,13 @@ msgid "You can now return to your computer to continue"
 msgstr "Теперь вы можете вернуться и продолжить со своего компьютера"
 
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
-msgstr ""
+msgstr "Вы можете открыть фидуциарный счет, не закрывая своего криптовалютного счета."
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Вы можете продать контракт до окончания срока его действия, чтобы сохранить имеющуюся прибыль или минимизировать убыток."
 
 msgid "You can set limits to your account and trading activities. Go to the %1self-exclusion page%2 to manage your account limits."
-msgstr ""
+msgstr "Вы можете устанавливать ограничения на свой счет и торговую деятельность. Для этого перейдите на %1страницу самоисключения%2."
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "Вы можете дополнительно внести на демо-счёт %1, если его баланс составит %2 или ниже."
@@ -14139,10 +14145,10 @@ msgid "You expect the %1 to rise in value so you can sell it back for a profit."
 msgstr "Вы ожидаете, что %1 подорожает и его можно будет продать для получения прибыли."
 
 msgid "You have %1. You may open one or %2more cryptocurrency%3 accounts:"
-msgstr ""
+msgstr "У вас уже есть%1. Вы можете открыть один или %2несколько криптовалютных%3 счетов:"
 
 msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
-msgstr ""
+msgstr "У вас есть счет в %1. Вы можете %2изменить валюту счета%3 до того, как внесете средства или откроете счет МТ5. Доступные валюты:"
 
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "Вы уже в сумме вывели %1%2 за последние %3 суток."
@@ -14151,7 +14157,7 @@ msgid "You have already withdrawn %1%2."
 msgstr "Вы уже вывели со счета %1%2."
 
 msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
-msgstr ""
+msgstr "У вас есть счет, но вы не указали валюту. Вы можете %1выбрать одну%2 из этих валют"
 
 msgid "You have created all accounts available to you."
 msgstr "Вы открыли все доступные счета."
@@ -14315,6 +14321,9 @@ msgstr "Вы находитесь на демо-счете."
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "Вы провели значительное количество контрактов на схожих рынках, что в среднем составляет 10 контрактов за квартал по итогам предыдущих четырёх кварталов"
 
+msgid "You've made no transactions of this type up to this date."
+msgstr ""
+
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Вы работали в сфере финансов на протяжении года и занимали позицию, требующую знаний, необходимых для проведения сделок на нашей платформе"
 
@@ -14354,14 +14363,11 @@ msgstr "Проверка вашего счёта прошла успешно"
 msgid "Your account has no Login/Logout activity."
 msgstr "На вашем счете нет активности входов/выходов."
 
-msgid "Your account has no trading activity."
-msgstr "На вашем счете нет торговой деятельности."
-
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Ваш счет полностью авторизован, и лимит на вывод был снят."
 
 msgid "Your account is now closed"
-msgstr ""
+msgstr "Ваш счет успешно закрыт"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Ваш счёт заблокирован. Пожалуйста, свяжитесь с нашей %1cлужбой поддержки%2 для получения дальнейшей помощи."
@@ -14517,7 +14523,7 @@ msgid "You’ll be logged out automatically."
 msgstr "Вы автоматически выйдете из системы."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
-msgstr ""
+msgstr "Вы успешно закрыли счет. Мы отправим письмо с подтверждением на %1."
 
 msgid "ZingPay is a payment facility that allows online bank transfers for clients in South Africa."
 msgstr "ZingPay - это платежная система, которая позволяет осуществлять онлайн-переводы для клиентов в Южной Африке."
@@ -14556,10 +14562,10 @@ msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's
 msgstr "a) зайти на торговую платформу MT5 по прямой ссылке %1 через веб интерфейс DIEL; или"
 
 msgid "account"
-msgstr ""
+msgstr "счёт"
 
 msgid "accounts"
-msgstr ""
+msgstr "счета"
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "инструкция исполнить контракт с целью закрыть открытую позицию, когда цена достигнет уровня, указанного клиентом"
