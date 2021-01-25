@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-01-20 03:13\n"
+"PO-Revision-Date: 2021-01-25 04:26\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1297,6 +1297,9 @@ msgstr "Tất cả thông tin mà Công Ty thu thập được về khách
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "Thời gian đều tính theo GMT (Giờ trung bình tại Greenwich)."
+
+msgid "All transactions"
+msgstr ""
 
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company's responsibility; hence the Company is not liable for such actions or results."
 msgstr "Tất cả rủi ro không lường trước trong việc mở hoặc đóng của phiên thông qua các Chuyên Gia Tư Vấn, dù có liên quan đến lỗi hệ thống hay không, thuộc ngoài phạm vi trách nhiệm Công Ty, do đó Công Ty không chịu trách nhiệm đối với các hành động hoặc kết quả trên."
@@ -3962,6 +3965,9 @@ msgstr "Các kiến trúc tiêu biểu của Dubai bao gồm tòa nhà ca
 msgid "Dubai, United Arab Emirates"
 msgstr "Dubai, Tiểu Vương Quốc Ả-rập"
 
+msgid "Due to an issue on our server, some MT5 accounts are unavailable at the moment. Please bear with us and thank you for your patience."
+msgstr ""
+
 msgid "Due to an issue on our server, some of your MT5 accounts are unavailable at the moment. %1Please bear with us and thank you for your patience."
 msgstr "Do vấn đề với máy chủ, một số tài khoản MT5 của bạn không khả dụng bây giờ. %1Vui lòng thông cảm cho chúng tôi và cảm ơn sự kiên nhẫn của bạn."
 
@@ -4812,7 +4818,7 @@ msgid "Financial assessment"
 msgstr "Đánh giá tài chính"
 
 msgid "Financial concerns"
-msgstr ""
+msgstr "Các thắc mắc tài chính"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Phái sinh tài chính cho phép bạn giao dịch trên sự di chuyển tài sản cơ bản."
@@ -5217,13 +5223,13 @@ msgid "Go to statement"
 msgstr "Xem sao kê"
 
 msgid "Go to the %1Cashier%2 to withdraw funds from your %3 accounts."
-msgstr ""
+msgstr "Đi đến %1Thu Ngân%2 để rút vốn thừ tài khoản %3 của bạn."
 
 msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
-msgstr ""
+msgstr "Đi đến %1bảng điều khiển MT5%2 để rút vốn từ tài khoản Binary.com MT5 của bạn."
 
 msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
-msgstr ""
+msgstr "Đi đến %1trang danh mục đầu tư%2 để đóng các giao dịch mở từ các tài khoản Binary.com của bạn."
 
 msgid "Go with the leader"
 msgstr "Đồng hành cùng đơn vị giao dịch hàng đầu"
@@ -5515,34 +5521,34 @@ msgid "I hereby confirm that the tax information I provided is true and complete
 msgstr "Tôi xin xác nhận rằng thông tin thuế tôi cung cấp là đúng sự thật và đầy đủ. Tôi cũng sẽ thông báo cho Công ty TNHH Đầu tư Binary Limited (Châu Âu) về bất kỳ thay đổi nào để thông tin này."
 
 msgid "I want to change my affiliate instead"
-msgstr ""
+msgstr "Tôi muốn thay đổi bên liên kết của mình"
 
 msgid "I want to change my currency instead"
-msgstr ""
+msgstr "Tôi muốn thay đổi đơn vị tiền tệ của mình"
 
 msgid "I want to close my account"
-msgstr ""
+msgstr "Tôi muốn đóng tài khoản của mình"
 
 msgid "I want to limit my trading activity instead"
-msgstr ""
+msgstr "Tôi muốn giới hạn các hoạt động giao dịch của mình"
 
 msgid "I want to open a cryptocurrency account instead"
-msgstr ""
+msgstr "Tôi muốn mở một tài khoản cryptocurrency"
 
 msgid "I want to open a fiat currency account instead"
-msgstr ""
+msgstr "Tôi muốn mở một tài khoản tiền pháp định"
 
 msgid "I want to open a real account instead"
-msgstr ""
+msgstr "Tôi muốn mở một tài khoản thực"
 
 msgid "I want to open another cryptocurrency account instead"
-msgstr ""
+msgstr "Tôi muốn mở một tài khoản cryptocurrency khác"
 
 msgid "I want to reapply"
 msgstr "Tôi muốn nộp đơn xin lại"
 
 msgid "I want to set my currency instead"
-msgstr ""
+msgstr "Tôi muốn đặt đơn vị tiền tệ"
 
 msgid "I would like to be treated as a professional client."
 msgstr "Tôi muốn được đối xử như một khách hàng chuyên nghiệp."
@@ -5803,7 +5809,7 @@ msgid "If you have a payment reference (for example 122), you can enter it here.
 msgstr "Nếu bạn có một con số thanh toán tham khảo (Ví dụ như 122), bạn có thể nhập chúng tại đây."
 
 msgid "If you have opened positions in your MT5 account, please close them too."
-msgstr ""
+msgstr "Nếu bạn có các giao dịch mở trong tài khoản MT5 của mình, xin hãy đảm báo chúng đã được đóng."
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Nếu bạn giữ cho bất kỳ phiên mở nào qua đêm, điều chỉnh lãi suất sẽ được thực hiện cho tài khoản giao dịch như là một dấu hiệu của các chi phí cần thiết để giữ phiên của bạn mở."
@@ -5935,7 +5941,7 @@ msgid "If you select a specific <strong>end time</strong>, the <strong>end time<
 msgstr "Nếu bạn chọn <strong>thời gian kết thúc cụ thể</strong>, <strong>thời gian kết thúc</strong> là thời gian đã được lựa chọn."
 
 msgid "If you want to change your affiliate, contact %1partners@binary.com%2 for more information on how you can do this."
-msgstr ""
+msgstr "Nếu bạn muốn thay đổi Liên kết của mình, hãy liên hệ với %1partners@binary.com%2 để biết thêm thông tin về cách thức thực hiện."
 
 msgid "If you wish to reduce or remove the self-exclusion period, contact our %1Customer Support%1."
 msgstr "Nếu bạn muốn giảm hoặc xóa khoảng thời gian tự loại trừ, hãy liên hệ với %1Bộ phận hỗ trợ khách hàng%1."
@@ -7724,7 +7730,7 @@ msgid "Not at all. Joining our affiliate programme is completely free and always
 msgstr "Không có gì. Tham gia chương trình liên kết của chúng tôi là hoàn toàn miễn phí và sẽ luôn luôn là thế."
 
 msgid "Not interested in trading"
-msgstr ""
+msgstr "Không có hứng thú với giao dịch"
 
 msgid "Not leaving devices unattended"
 msgstr "Không để thiết bị ngoài tầm giám sát"
@@ -8069,7 +8075,7 @@ msgid "Other than the payment of Commissions, Binary is not liable to the Introd
 msgstr "Ngoài việc thanh toán hoa hồng, Binary không chịu trách nhiệm với Nhà môi giới giới thiệu hoặc Cộng sự của họ hoặc bất kỳ người nào khác về bất kỳ vấn đề nào phát sinh từ hoặc liên quan đến Thỏa thuận này cho dù theo luật bất cẩn, hợp đồng hoặc vốn chủ sở hữu đối với bất kỳ tổn thất nào."
 
 msgid "Others (please specify)"
-msgstr ""
+msgstr "Khác (vui lòng nêu rõ)"
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "Đội ngũ Kế Toán và Thanh Toán &amp; của chúng tôi sẽ quản lý một diện rộng các tài khoản ngân hàng và hệ thống tiền điện tử, cũng như một số lượng lớn các giao dịch diễn ra hàng ngày."
@@ -8618,7 +8624,7 @@ msgid "Please select a country"
 msgstr "Xin vui lòng chọn quốc gia"
 
 msgid "Please select a reason."
-msgstr ""
+msgstr "Vui lòng chọn một lý do."
 
 msgid "Please select a valid time."
 msgstr "Vui lòng chọn một thời gian hợp lệ."
@@ -8651,7 +8657,7 @@ msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
 msgstr "Xin vui lòng thiết lập %130 ngày giới hạn doanh thu%2 của bạn để loại bỏ giới hạn tiền gửi."
 
 msgid "Please specify the reasons for closing your accounts"
-msgstr ""
+msgstr "Vui lòng nêu rõ lý do bạn đóng các tài khoản của mình"
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Hãy chỉ rõ khoảng thời gian kiểm tra thực tế ưa thích của bạn vào biên bản"
@@ -8675,7 +8681,7 @@ msgid "Please take note that our swap rate also depends on the time and days you
 msgstr "Xin hãy lưu ý rằng tỷ lệ trao đổi của chúng tôi cũng phụ thuộc vào thời gian và ngày bạn giữ mở phiên của bạn:"
 
 msgid "Please tell us why you are closing your account (please select one):"
-msgstr ""
+msgstr "Vui lòng chia sẻ với chúng tôi lý do bạn đóng tài khoản của mình (Vui lòng chọn một):"
 
 msgid "Please try again"
 msgstr "Vui lòng thử lại"
@@ -8801,7 +8807,7 @@ msgid "Predict the last decimal digit of the spot price with Digits. There are t
 msgstr "Dự đoán chữ số cuối của số thập phân trong giá tại điểm giao dịch Chữ Số. Có ba loại giao dịch Chữ số:"
 
 msgid "Prefer another trading website"
-msgstr ""
+msgstr "Đang dùng một trang web giao dịch khác"
 
 msgid "Preferences:"
 msgstr "Tài khoản tham khảo:"
@@ -10154,7 +10160,7 @@ msgid "Step 1: Choose demo or real account"
 msgstr "Bước 1: Chọn tài khoản demo hay tài khoản thực"
 
 msgid "Step 1: Close all open positions"
-msgstr ""
+msgstr "Bước 1: Đóng tất cả các giao dịch mở"
 
 msgid "Step 1: Define your position"
 msgstr "Bước 1: Xác định phiên của bạn"
@@ -10175,7 +10181,7 @@ msgid "Step 2: Understand when to buy and when to sell"
 msgstr "Bước 2: Hiểu khi nào mua và khi nào bán"
 
 msgid "Step 2: Withdraw your funds"
-msgstr ""
+msgstr "Bước 2: Rút vốn của bạn"
 
 msgid "Step 3"
 msgstr "Bước 3"
@@ -11934,7 +11940,7 @@ msgid "The provisions of this agreement or any orders and any applicable laws wi
 msgstr "Các điều khoản của Thỏa thuận này hoặc bất kỳ Lệnh nào và mọi luật hiện hành sẽ không bị vi phạm."
 
 msgid "The reason should be between 5 and 250 characters"
-msgstr ""
+msgstr "Lý do nên được viết trong khoảng từ 5 đến 250 ký tự"
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
 msgstr "Việc chuyển tiền được yêu cầu sẽ làm giảm số dư Tài Khoản của khách hàng xuống dưới số tiền Ký Quỹ bắt buộc đối với các Phiên Mở của họ."
@@ -12321,7 +12327,7 @@ msgid "This page is only available to logged out clients."
 msgstr "Trang này chỉ dành cho khách hàng đã đăng xuất."
 
 msgid "This page will redirect to the %1 homepage after 10 seconds."
-msgstr ""
+msgstr "Trang này sẽ trở về trang chủ %1 sau 10 giây nữa."
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "Chính sách này áp dụng cho các khách hàng bán lẻ hoặc khách hàng chuyên nghiệp. Những khách hàng thuộc nhóm đối tác đủ điều kiện không nằm trong diện áp dụng chính sách này."
@@ -12420,7 +12426,7 @@ msgid "To change your name, date of birth, country of residence, email, or tax i
 msgstr "Để thay đổi tên, ngày sinh, quốc gia cư trú, email hoặc thông tin thuế, vui lòng liên hệ với %1Hỗ Trợ Khách Hàng%2."
 
 msgid "To close your account, complete the following steps:"
-msgstr ""
+msgstr "Để đóng tài khoản, thực hiện các bước sau:"
 
 msgid "To create a MetaTrader 5 account:"
 msgstr "Để tạo một tài khoản Meta Trader 5:"
@@ -12501,7 +12507,7 @@ msgid "Token name"
 msgstr "Tên Token"
 
 msgid "Too addictive"
-msgstr ""
+msgstr "Có tính gây nghiện cao"
 
 msgid "Too many failed attempts"
 msgstr "Có quá nhiều lần thử thất bại"
@@ -14070,10 +14076,10 @@ msgid "You are selling the base currency and buying the quote currency."
 msgstr "Bạn đang bán các loại tiền tệ cơ sở và mua các loại tiền tệ trong danh sách."
 
 msgid "You can %1open a cryptocurrency%2 account without closing your fiat currency account."
-msgstr ""
+msgstr "Bạn có thể %1mở một tài khoản tiền điện tử%2 mà không cần đóng tài khoản tiền pháp định hiện tại."
 
 msgid "You can %1open a real account%2 without closing your demo account."
-msgstr ""
+msgstr "Bạn có thể %1mở một tài khoản thực%2 mà không cần đóng tài khoản dùng thử của mình."
 
 msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
 msgstr "Bạn có thể đặt một đơn vị tiền tệ mới trước lần gửi tiền đầu tiên hoặc tạo một tài khoản MT5."
@@ -14112,13 +14118,13 @@ msgid "You can now return to your computer to continue"
 msgstr "Bây giờ bạn có thể quay lại máy tính của mình để tiếp tục"
 
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
-msgstr ""
+msgstr "Bạn có thể mở một tài khoản tiền pháp định mà không cần đóng tài khoản tiền điện tử của mình."
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Bạn có thể bán hợp đồng của bạn trước khi hết thời hạn để giữ bất kỳ lợi nhuận bạn có thể thực hiện hoặc để giảm thiểu thua lỗ của bạn."
 
 msgid "You can set limits to your account and trading activities. Go to the %1self-exclusion page%2 to manage your account limits."
-msgstr ""
+msgstr "Bạn có thể đặt các giới hạn cho tài khoản và các hoạt động giao dịch của mình. Đi đến %1trang tự loại trừ%2 để quản lý các giới hạn tài khoản của mình."
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "Bạn có thể nạp %1 vào tài khoản demo nếu số dư của bạn là từ %2 trở xuống."
@@ -14142,10 +14148,10 @@ msgid "You expect the %1 to rise in value so you can sell it back for a profit."
 msgstr "Bạn mong đợi %1 tăng, khi đó, bạn có thể bán lại và đạt một lợi nhuận."
 
 msgid "You have %1. You may open one or %2more cryptocurrency%3 accounts:"
-msgstr ""
+msgstr "Bạn có %1. Bạn có thể mở thêm một hoặc %2nhiều tài khoản tiền điện tử%3:"
 
 msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
-msgstr ""
+msgstr "Bạn có một tài khoản %1. Bạn có thể %2thay đổi loại tiền tệ hiện tại%3 thành bất cứ loại nào sau đây, miễn là bạn chưa từng nạp tiền hoặc tạo tài khoản MT5:"
 
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "Bạn đã rút %1%2 trong tổng số %3 ngày qua."
@@ -14154,7 +14160,7 @@ msgid "You have already withdrawn %1%2."
 msgstr "Bạn đã rút %1%2."
 
 msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
-msgstr ""
+msgstr "Bạn tạo tài khoản nhưng không thể chọn loại tiền tệ. Bạn có thể %1chọn một%2 trong những loại dưới đây như tiền tệ mặc định"
 
 msgid "You have created all accounts available to you."
 msgstr "Bạn đã tạo ra tất cả các tài khoản khả dụng cho bạn."
@@ -14318,6 +14324,9 @@ msgstr "Bạn đang sử dụng Tài Khoản Ảo."
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "Bạn đã thực hiện nhiều giao dịch lớn trên thị trường tương đương những thị trường chúng tôi cung cấp, trung bình 10 giao dịch mỗi quý trong 4 quý trước"
 
+msgid "You've made no transactions of this type up to this date."
+msgstr ""
+
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Bạn đã làm việc trong lĩnh vực tài chính tối thiểu được một năm trong một vai trò đòi hỏi kiến thức về giao dịch bạn định thực hiện trên nền tảng của chúng tôi"
 
@@ -14357,14 +14366,11 @@ msgstr "Tài khoản của bạn đã được xác thực thành công"
 msgid "Your account has no Login/Logout activity."
 msgstr "Không có hoạt động Đăng nhập/Đăng xuất nào trên tài khoản của bạn."
 
-msgid "Your account has no trading activity."
-msgstr "Không có hoạt động giao dịch nào trên tài khoản của bạn."
-
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Tài khoản của bạn được xác thực đầy đủ và mức giới hạn rút tiền của bạn đã được nâng lên."
 
 msgid "Your account is now closed"
-msgstr ""
+msgstr "Tài khoản của bạn đã được đóng"
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Tài khoản của bạn bị hạn chế. %1 vui lòng liên hệ hỗ trợ khách hàng %2 để được hỗ trợ."
@@ -14520,7 +14526,7 @@ msgid "You’ll be logged out automatically."
 msgstr "Bạn sẽ tự động đăng xuất khỏi tài khoản."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
-msgstr ""
+msgstr "Bạn đã đóng tài khoản thành công. Chúng tôi sẽ gửi email xác nhận tới %1"
 
 msgid "ZingPay is a payment facility that allows online bank transfers for clients in South Africa."
 msgstr "ZingPay là một phương tiện thanh toán cho phép chuyển khoản ngân hàng trực tuyến cho khách hàng ở Nam Phi."
@@ -14559,10 +14565,10 @@ msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's
 msgstr "a. Truy cập vào nền sàn giao dịch MT5 qua liên kết trực tiếp %1 từ giao diện web của DIEL, hoặc"
 
 msgid "account"
-msgstr ""
+msgstr "tài khoản"
 
 msgid "accounts"
-msgstr ""
+msgstr "các tài khoản"
 
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "một Lệnh để thực hiện một giao dịch cho việc đóng một Phiên Mở khi giá đạt tới Giá được khách hàng chỉ định"
