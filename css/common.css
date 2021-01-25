@@ -175,6 +175,14 @@ button.full-width, button.full-width span, .button.full-width, .button.full-widt
 button.full-width .barspinner, .button.full-width .barspinner {
   display: inline-block; }
 
+button.button-disabled {
+  color: #dedede;
+  background: #f2f2f2;
+  cursor: default; }
+  button.button-disabled:hover {
+    color: #dedede;
+    background: #f2f2f2; }
+
 span.checked {
   background: url("../images/pages/authenticate/checked.svg") no-repeat;
   width: 16px;

@@ -479,6 +479,10 @@ a.previous-wrapper {
       border: 1px solid #dedede; }
     #mt_account_management .fst-container #fst_action #frm_new_account input[type='radio'][disabled] + label span {
       color: #dedede; }
+    #mt_account_management .fst-container #fst_action #frm_new_account #server_unavailable_notice {
+      margin: 0 14px;
+      font-size: 1rem;
+      line-height: 24px; }
   #mt_account_management .txt-left {
     text-align: left; }
   #mt_account_management .separator {
