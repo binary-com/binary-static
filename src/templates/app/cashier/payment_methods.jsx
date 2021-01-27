@@ -91,9 +91,9 @@ const PaymentMethods = () => {
 
     const deposit                  = 'Deposit: ';
     const withdrawal               = 'Withdrawal: ';
-    const period                = '[_1] day';
+    const period                   = '[_1] day';
     const instant                  = 'Instant';
-    const period_range        = '[_1] to [_2] days';
+    const period_range             = '[_1] to [_2] days';
     const not_applicable           = 'Not applicable';
     const blockchain_confirmations = '[_1] blockchain confirmations';
 
