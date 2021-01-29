@@ -592,15 +592,15 @@ const Regulation = () => {
 
             <div data-show='eucountry'>
                 <Box header={it.L('Deriv (Europe) Limited')} >
-                    <p>{it.L('Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta. Licensed and regulated (for gambling products only - [_1]\'s Synthetic Indices) by the Malta Gaming Authority in Malta  (licence no. [_2]) - [_3]view licence[_4] and also maintains an Irish licence. For UK clients by the UK Gambling Commission - [_5]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', `<a href="${it.url_for('download/regulation/MGA_licence.pdf')}" target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">')}</p>
-                    <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited.')}</p>
+                    <p>{it.L('Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - [_1]\'s Synthetic Indices) by the Malta Gaming Authority in Malta ([_2]licence no. MGA/B2C/102/2000[_4]), by the Gambling Commission for clients in Great Britain under ([_3]account no. 39495[_4]), and by the Revenue Commissioners for clients in Ireland (licence no. 1010285).', it.website_name, `<a href=${it.url_for('download/regulation/MGA_licence.pdf')} target="_blank">`, '<a href="https://beta.gamblingcommission.gov.uk/public-register/business/detail/39495" target="_blank" rel="noopener noreferrer">', '</a>')}</p>
+                    <p>{it.L('Clients in the European Union who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
                 </Box>
 
                 <Box header={it.L('Deriv (MX) Ltd')} >
-                    <p>{it.L('Deriv (MX) Ltd, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) - [_1]view licence[_2] and for UK clients by the UK Gambling Commission - [_3]view licence[_2].', `<a href=${it.url_for('download/regulation/IOMGSC_Licence.pdf')} target="_blank">`, '</a>', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">')}</p>
-                    <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd.')}</p>
+                    <p>{it.L('Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man, is licensed and regulated in Great Britain by the Gambling Commission under [_1]account no. 39172[_3] and by the Gambling Supervision Commission in the Isle of Man ([_2]view licence[_3]).', '<a href="https://beta.gamblingcommission.gov.uk/public-register/business/detail/39172" target="_blank" rel="noopener noreferrer">', '<a href="https://deriv.com/regulatory/Deriv_(MX)_Ltd.pdf" target="_blank" rel="noopener noreferrer">', '</a>')}</p>
+                    <p>{it.L('Clients in the Isle of Man and the UK who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd.')}</p>
                     <RegulatorText />
                     <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/regulation/isle-of-man.png' />
                 </Box>
