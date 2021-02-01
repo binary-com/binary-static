@@ -1,6 +1,4 @@
-const Client       = require('../../../../base/client');
 const BinarySocket = require('../../../../base/socket');
-const formatMoney  = require('../../../../common/currency').formatMoney;
 const localize     = require('../../../../../_common/localize').localize;
 
 const TopUpVirtual = (() => {
@@ -20,10 +18,7 @@ const TopUpVirtual = (() => {
                 showMessage(response.error.message, false);
             } else {
                 showMessage(
-                    localize('[_1] has been credited into your Virtual Account: [_2].', [
-                        formatMoney(response.topup_virtual.currency, response.topup_virtual.amount),
-                        Client.get('loginid'),
-                    ]),
+                    localize('Your virtual balance has been reset.'),
                     true);
             }
             $('.barspinner').setVisibility(0);

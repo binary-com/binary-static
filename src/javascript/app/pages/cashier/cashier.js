@@ -11,6 +11,7 @@ const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 const Cashier = (() => {
     let href = '';
+    const default_virtual_balance = 10000;
 
     const showContent = () => {
         Client.activateByClientType();
@@ -61,6 +62,8 @@ const Cashier = (() => {
         resolve(getPropertyValue(offer_list_response, ['p2p_offer_list', 'list']).length);
     });
 
+    const isDefaultVirtualBalance = () => +Client.get('balance') === default_virtual_balance;
+
     const displayResetButton = () => {
         const el_virtual_topup_info = getElementById('virtual_topup_info');
         const top_up_id = '#VRT_topup_link';
@@ -69,6 +72,10 @@ const Cashier = (() => {
         const new_el    = { class: 'toggle button', html: $a.html(), id: $a.attr('id') };
         href            = href || Url.urlFor('/cashier/top_up_virtualws');
         new_el.href     = href;
+        if (isDefaultVirtualBalance()) {
+            new_el.class = 'toggle button button-disabled';
+            new_el.href = '';
+        }
         el_virtual_topup_info.innerText = localize('Reset the balance of your virtual account to [_1] anytime.', [`${Client.get('currency')} 10,000.00`]);
         $a.replaceWith($('<a/>', new_el));
         $(top_up_id).parent().setVisibility(1);
@@ -200,13 +207,17 @@ const Cashier = (() => {
     };
 
     const onLoad = () => {
+        const is_virtual = Client.get('is_virtual');
+        if (is_virtual && isDefaultVirtualBalance()) {
+            getElementById('VRT_topup_link').classList.add('button-disabled');
+        }
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
             BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status', 'landing_company').then(() => {
                 checkStatusIsLocked(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
-                if (Client.get('is_virtual')) {
+                if (is_virtual) {
                     displayResetButton();
                 } else if (currency) {
                     const is_p2p_allowed_currency = currency === 'USD';
