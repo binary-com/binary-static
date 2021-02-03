@@ -12,7 +12,7 @@ const Dialog = () => (
                             <a className='button button-secondary' id='btn_cancel' href='javascript:;'><span>{it.L('Cancel')}</span></a>
                             <a className='button' id='btn_ok' href='javascript:;'>
                                 <span>{it.L('Send')}</span>
-                                </a>
+                            </a>
                         </form>
                     </div>
                     <p id='dialog_footnote' className='invisible hint' />
