@@ -303,7 +303,7 @@ const DepositWithdraw = (() => {
             if (cashier_type === 'withdraw') {
                 const limit = State.getResponse('get_limits.remainder');
                 if (typeof limit !== 'undefined' && +limit < Currency.getMinWithdrawal(Client.get('currency'))) {
-                    showError('custom_error', localize('You have reached the withdrawal limit.'));
+                    showError('custom_error', localize('You have reached the withdrawal limit. Please upload a copy of your proof of identity document to proceed with your withdrawal'));
                     return;
                 }
             }
