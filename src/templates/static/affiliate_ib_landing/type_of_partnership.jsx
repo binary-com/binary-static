@@ -243,9 +243,60 @@ const TypesOfPartnership = () => (
                                             { text: it.L('Forex and metals*') },
                                             { text: it.L('10') },
                                         ],
+                                    ],
+                                }}
+                            />
+                            <Table
+                                data={{
+                                    thead: [
                                         [
-                                            { text: it.L('Cryptocurrencies**') },
-                                            { text: it.L('0.3%') },
+                                            { text: it.L('Asset'), attributes: { rowSpan: 2 } },
+                                            { text: it.L('Commission per round trade') },
+                                        ],
+                                        [
+                                            { text: it.L('$ per 100,000 USD of turnover'), className: 'center-text' },
+                                        ],
+                                    ],
+                                    tbody: [
+                                        [
+                                            { text: it.L('BTC/USD') },
+                                            { text: it.L('40') },
+                                        ],
+                                        [
+                                            { text: it.L('ETH/USD') },
+                                            { text: it.L('40') },
+                                        ],
+                                        [
+                                            { text: it.L('LTC/USD') },
+                                            { text: it.L('50') },
+                                        ],
+                                        [
+                                            { text: it.L('BCH/USD') },
+                                            { text: it.L('50') },
+                                        ],
+                                        [
+                                            { text: it.L('XRP/USD') },
+                                            { text: it.L('50') },
+                                        ],
+                                        [
+                                            { text: it.L('DSH/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('EOS/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('ZEC/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('XMR/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('BNB/USD') },
+                                            { text: it.L('50') },
                                         ],
                                     ],
                                 }}
@@ -268,16 +319,66 @@ const TypesOfPartnership = () => (
                                             { text: it.L('Forex*') },
                                             { text: it.L('5') },
                                         ],
+                                    ],
+                                }}
+                            />
+                            <Table
+                                data={{
+                                    thead: [
                                         [
-                                            { text: it.L('Cryptocurrencies**') },
-                                            { text: it.L('0.2%') },
+                                            { text: it.L('Asset'), attributes: { rowSpan: 2 } },
+                                            { text: it.L('Commission per round trade') },
+                                        ],
+                                        [
+                                            { text: it.L('$ per 100,000 USD of turnover'), className: 'center-text' },
+                                        ],
+                                    ],
+                                    tbody: [
+                                        [
+                                            { text: it.L('BTC/USD') },
+                                            { text: it.L('40') },
+                                        ],
+                                        [
+                                            { text: it.L('ETH/USD') },
+                                            { text: it.L('40') },
+                                        ],
+                                        [
+                                            { text: it.L('LTC/USD') },
+                                            { text: it.L('50') },
+                                        ],
+                                        [
+                                            { text: it.L('BCH/USD') },
+                                            { text: it.L('50') },
+                                        ],
+                                        [
+                                            { text: it.L('XRP/USD') },
+                                            { text: it.L('50') },
+                                        ],
+                                        [
+                                            { text: it.L('DSH/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('EOS/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('ZEC/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('XMR/USD') },
+                                            { text: it.L('500') },
+                                        ],
+                                        [
+                                            { text: it.L('BNB/USD') },
+                                            { text: it.L('50') },
                                         ],
                                     ],
                                 }}
                             />
 
                             <p className='text-align-left'>*{it.L('Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on financial accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on financial STP accounts.')}</p>
-                            <p className='text-align-left'>**{it.L('Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts and 20 USD on financial STP accounts.')}</p>
                         </div>
 
                         <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>

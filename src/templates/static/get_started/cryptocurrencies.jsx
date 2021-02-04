@@ -14,8 +14,6 @@ const hundredth = '0.01';
 const tenth     = '0.10';
 const one       = '1';
 const hundred   = '100';
-const negten = '-10%';
-const negfifteen = '-15%';
 
 const Cryptocurrencies = () => (
     <div className='static_full get-started'>
@@ -98,6 +96,9 @@ const Cryptocurrencies = () => (
                                 [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')       }, { text: one }, { text: hundred   }, { text: hundred   }],
                                 [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')         }, { text: one }, { text: one       }, { text: one       }],
                                 [{ text: 'EOS/USD' }, { text: it.L('EOS vs US dollar')          }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'ZEC/USD' }, { text: it.L('ZEC vs US dollar')           }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'XMR/USD' }, { text: it.L('XMR vs US dollar')           }, { text: one }, { text: one       }, { text: one       }],
+                                [{ text: 'BNB/USD' }, { text: it.L('BNB vs US dollar')          }, { text: one }, { text: one       }, { text: one       }],
                             ],
                         }}
                     />
@@ -112,17 +113,20 @@ const Cryptocurrencies = () => (
                             thead: [[
                                 { text: it.L('Symbol'),                    className: 'gr-padding-10' },
                                 { text: it.L('Description'),               className: 'gr-padding-10' },
-                                { text: it.L('Swaps Long (per annum)'),    className: 'gr-padding-10 w-80' },
-                                { text: it.L('Swaps short (per annum)'),   className: 'gr-padding-10 w-80' },
+                                { text: it.L('Swaps Long (per annum)'),    className: 'gr-padding-10 w-112' },
+                                { text: it.L('Swaps Short (per annum)'),   className: 'gr-padding-10 w-112' },
                             ]],
                             tbody: [
-                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')      }, { text: negten     }, { text: negfifteen }],
-                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar')     }, { text: negfifteen }, { text: negfifteen }],
-                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar')     }, { text: negfifteen }, { text: negfifteen }],
-                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US dollar') }, { text: negfifteen }, { text: negfifteen }],
-                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')       }, { text: negfifteen }, { text: negfifteen }],
-                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')         }, { text: negfifteen }, { text: negfifteen }],
-                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US dollar')          }, { text: negfifteen }, { text: negfifteen }],
+                                [{ text: 'BTC/USD' }, { text: it.L('Bitcoin vs US dollar')      }, { text: '-20%' }, { text: '-20%' }],
+                                [{ text: 'ETH/USD' }, { text: it.L('Ethereum vs US dollar')     }, { text: '-15%' }, { text: '-15%' }],
+                                [{ text: 'LTC/USD' }, { text: it.L('Litecoin vs US dollar')     }, { text: '-20%' }, { text: '-20%' }],
+                                [{ text: 'BCH/USD' }, { text: it.L('Bitcoin Cash vs US dollar') }, { text: '-17%' }, { text: '-17%' }],
+                                [{ text: 'XRP/USD' }, { text: it.L('Ripple vs US dollar')       }, { text: '-45%' }, { text: '-45%' }],
+                                [{ text: 'DSH/USD' }, { text: it.L('Dash vs US dollar')         }, { text: '-21%' }, { text: '-21%' }],
+                                [{ text: 'EOS/USD' }, { text: it.L('EOS vs US dollar')          }, { text: '-24%' }, { text: '-24%' }],
+                                [{ text: 'ZEC/USD' }, { text: it.L('ZEC vs US dollar')          }, { text: '-17%' }, { text: '-17%' }],
+                                [{ text: 'XMR/USD' }, { text: it.L('XMR vs US dollar')          }, { text: '-24%' }, { text: '-24%' }],
+                                [{ text: 'BNB/USD' }, { text: it.L('BNB vs US dollar')          }, { text: '-20%' }, { text: '-20%' }],
                             ],
                         }}
                     />
