@@ -724,6 +724,7 @@ module.exports = [
     'Your trading statistics since [_1].',
     'Your transaction reference is',
     'Your transaction reference number is [_1]',
+    'Your virtual balance has been reset.',
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
     'Your withdrawal limit is [_1][_2].',
     '[_1] Account',
