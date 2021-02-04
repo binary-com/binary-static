@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-01-29 06:53\n"
+"PO-Revision-Date: 2021-02-04 06:39\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,17 @@ msgstr "5"
 msgid "10"
 msgstr "10"
 
+msgid "40"
+msgstr ""
+
+msgid "50"
+msgstr ""
+
 msgid "404"
 msgstr "404"
+
+msgid "500"
+msgstr ""
 
 msgid " (account created)"
 msgstr " (conto creato)"
@@ -523,14 +532,8 @@ msgstr "da 0 a 1 anno"
 msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 transazioni negli ultimi 12 mesi"
 
-msgid "0.2%"
-msgstr "0,2%"
-
 msgid "0.20"
 msgstr "0,20"
-
-msgid "0.3%"
-msgstr "0,3%"
 
 msgid "0.4%"
 msgstr "0,4%"
@@ -1876,8 +1879,20 @@ msgstr "B. Decorrenza"
 msgid "B. Scope"
 msgstr "B. Scopo"
 
+msgid "BCH/USD"
+msgstr ""
+
+msgid "BNB vs US dollar"
+msgstr ""
+
+msgid "BNB/USD"
+msgstr ""
+
 msgid "BTC"
 msgstr "BTC"
+
+msgid "BTC/USD"
+msgstr ""
 
 msgid "Bachelor's degree in computer science, or an equivalent combination of technical education, training, and work experience"
 msgstr "Una laurea breve in informatica o una combinazione equivalente di studi, corsi ed esperienza lavorativa in ambito tecnico"
@@ -2651,10 +2666,10 @@ msgid "Clients hereby declare that they are dealing with DIEL outside the scope 
 msgstr "I clienti dichiarano di operare con DIEL al di fuori degli obiettivi della propria attività economica e professionale; pertanto DIEL tratterà ogni cliente come cliente individuale al dettaglio ai fini della conformità con EMIR, salvo ove diversamente indicato."
 
 msgid "Clients in the European Union who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited."
-msgstr ""
+msgstr "I clienti nell'Unione europea che desiderano fare trading con i prodotti di gioco d'azzardo, apriranno il proprio conto con Deriv (Europe) Limited."
 
 msgid "Clients in the Isle of Man and the UK who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd."
-msgstr ""
+msgstr "I clienti sull'Isola di Man e nel Regno Unito che desiderano fare trading con i prodotti di gioco d'azzardo apriranno il proprio conto con Deriv (MX) Ltd."
 
 msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2 management will decide what information needs to be reported to government officials and through what channels."
 msgstr "I clienti possono fare trading sulle nostre piattaforme solo se utilizzano denaro in loro possesso e fondi ottenuti in modo onesto. Se sospetti che i fondi usati dai clienti non siano stati ottenuti lecitamente, devi informarne %1; in tal caso, potremmo decidere di verificare lo stato e le esperienze pregresse dei clienti. I responsabili di %2 valuteranno quali informazioni devono essere segnalate alle autorità governative e attraverso quali canali."
@@ -3283,17 +3298,11 @@ msgstr "Cripto"
 msgid "Cryptocurrencies"
 msgstr "Criptovalute"
 
-msgid "Cryptocurrencies commission per round trade. For example, a round trade of 1 lot of BTC/USD with spot price of 10,000 USD will pay 30 USD on financial accounts and 20 USD on financial STP accounts."
-msgstr "Commissione sulle criptovalute per trade completo. Esempio: un trade completo di 1 lotto di BTC/USD con prezzo spot di 10.000 USD varrà 30 USD su un conto finanziario e 20 USD su un conto finanziario STP."
-
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital assets that enable instant payments to anywhere in the world."
 msgstr "Criptovalute come Bitcoin e Ethereum sono asset digitali decentralizzati che consentono pagamenti istantanei in qualsiasi parte del mondo."
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
 msgstr "Criptovalute come Bitcoin e Ethereum sono valute digitali decentralizzati sulla blockchain."
-
-msgid "Cryptocurrencies**"
-msgstr "Criptovalute**"
 
 msgid "Cryptocurrency"
 msgstr "Criptovaluta"
@@ -3414,6 +3423,9 @@ msgstr "DIEL si riserva il diritto di accettare o rifiutare eventuali richieste 
 
 msgid "DIEL shall not be obliged to provide professional clients with the following:"
 msgstr "DIEL non è tenuta a fornire ai clienti professionisti quanto segue:"
+
+msgid "DSH/USD"
+msgstr ""
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "Indici di reset giornalieri: gli indici di reset giornalieri riproducono i mercati con un trend rialzista e ribassista con volatilità costante. Gli indici di mercato rialzista (Bull Market) e quelli di mercato ribassista (Bear Market) si attivano ogni giorno alle 00:00 GMT, replicando rispettivamente i mercati rialzisti e ribassisti."
@@ -3605,7 +3617,7 @@ msgid "Deriv (Europe) Limited,"
 msgstr "Deriv (Europe) Limited,"
 
 msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%4), by the Gambling Commission for clients in Great Britain under (%3account no. 39495%4), and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
-msgstr ""
+msgstr "Deriv (Europe) Limited, W Business Centre, terzo piano, Triq Dun Karm, Birkirkara BKR 9033, Malta è autorizzata e regolamentata (esclusivamente per prodotti per il gioco d'azzardo - indici sintetici %1) dalla the Malta Gaming Authority di Malta (%2licenza n. MGA/B2C/102/2000%4), dalla Gambling Commission per clienti in Gran Bretagna (%3n. di conto 39495%4) e dalla Revenue Commissioners per i clienti in Irlanda (licenza n. 1010285)."
 
 msgid "Deriv (Europe) Limited, or"
 msgstr "Deriv (Europe) Limited, o"
@@ -3629,7 +3641,7 @@ msgid "Deriv (MX) Ltd"
 msgstr "Deriv (MX) Ltd"
 
 msgid "Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man, is licensed and regulated in Great Britain by the Gambling Commission under %1account no. 39172%3 and by the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr ""
+msgstr "Deriv (MX) Ltd, Millennium House, primo piano, Victoria Road, Douglas IM2 4RW, Isola di Man è autorizzata e regolamentata in Gran Bretagna dalla Gambling Commission tramite %1n. di conto 39172%3 e dalla Gambling Supervision Commission nell'Isola di Man (%2vedere licenza%3)."
 
 msgid "Deriv (MX) Ltd."
 msgstr "Deriv (MX) Ltd."
@@ -4032,6 +4044,12 @@ msgstr "EGR Operator Awards"
 
 msgid "EOS vs US dollar"
 msgstr "EOS vs dollaro statunitense"
+
+msgid "EOS/USD"
+msgstr ""
+
+msgid "ETH/USD"
+msgstr ""
 
 msgid "EU Passport Rights"
 msgstr "Diritti dei passaporti UE"
@@ -6104,7 +6122,7 @@ msgid "In the EU, financial products are offered by Deriv Investments (Europe) L
 msgstr "Nell'UE, i prodotti finanziari sono offerti da Deriv Investments (Europe) Limited, W Business Centre, terzo piano, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regolamentata come appartenente alla Categoria 3 dei fornitori di servizi di investimento dalla Malta Financial Services Authority (%1licenza n. IS/70156%2)."
 
 msgid "In the Isle of Man and the UK, Synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under %1account no. 39172%3 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr ""
+msgstr "Nell'Isola di Man e nel Regno Unito, gli indici sintetici sono forniti da Deriv (MX) Ltd, Millennium House, primo piano, Victoria Road, Douglas IM2 4RW, Isola di Man è autorizzata e regolamentata in Gran Bretagna dalla (1) Gambling Commission tramite %1n. di conto 39172%3 e dalla (2) Gambling Supervision Commission nell'Isola di Man (%2vedere licenza%3)."
 
 msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Limited. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr "Nel Regno Unito, i nostri clienti effettuano trading attraverso Deriv (MX) Ltd e Deriv Investments (Europe) Limited. Nell'Isola di Man attraverso Deriv (MX) Ltd. Nell'Unione Europea (fatta eccezione per il Regno Unito) attraverso Deriv (Europe) Limited e Deriv Investments (Europe) Limited. Nel resto del mondo attraverso Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd e Deriv (FX) Ltd."
@@ -6137,7 +6155,7 @@ msgid "In the event that the Company is aware of an Affiliate who is in breach o
 msgstr "Nel caso in cui la Società sia a conoscenza della violazione da parte di un Associato di una qualsiasi delle suddette disposizioni, quest'ultima avrà il diritto, oltre agli altri diritti o rimedi disponibili ai sensi del presente Contratto o della legge applicabile, di bloccare immediatamente l'accesso dell'Associato al presente programma. Con la presente, qualora la Società revocasse il suo accesso al programa, l'Associato rinuncia irrevocabilmente ai suoi diritti e risarcirà la Società e qualsiasi membro del gruppo di società Deriv per reclami o richieste avanzati nei confronti della Società o di qualsiasi membro del gruppo di società Deriv, dei suoi direttori, funzionari, azionisti, impiegati, o nei confronti del sito internet di %1."
 
 msgid "In the rest of the EU, Synthetic Indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority (%1licence no. MGA/B2C/102/2000%4), by (2) the Gambling Commission for clients in Great Britain under %2account no. 39495%4, and by (3) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete %3Regulatory Information%4."
-msgstr ""
+msgstr "Nel resto dell'Unione Europea, gli indici sintetici sono offerti da Deriv (Europe) Limited, W Business Centre, piano 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, autorizzata e regolamentata dalla (1) Malta Gaming Authority (%1licenza n. MGA/B2C/102/2000%3) dalla (2) Gambling Commission per clienti in Gran Bretagna con %2n. di conto 39495%4 e dalla (3) Revenue Commissioners per i clienti in Irlanda (licenza n. 1010285). Consulta la %3normativa%4 completa per maggiori informazioni."
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "Nel presente Contratto, salvo disposizioni contrarie, valgono le seguente definizioni:"
@@ -6576,6 +6594,9 @@ msgstr "Ufficio di Kuala Lumpur"
 
 msgid "L. Manifest Error"
 msgstr "L. Errore manifesto"
+
+msgid "LTC/USD"
+msgstr ""
 
 msgid "Labuan"
 msgstr "Labuan"
@@ -10408,8 +10429,8 @@ msgstr "Piano swap"
 msgid "Swaps Long (per annum)"
 msgstr "Swap a lungo termine (annuo)"
 
-msgid "Swaps short (per annum)"
-msgstr "Swap a breve termine (annuo)"
+msgid "Swaps Short (per annum)"
+msgstr ""
 
 msgid "Swiss franc vs Japanese yen"
 msgstr "Franco svizzero vs yen giapponese"
@@ -14032,6 +14053,15 @@ msgstr "Scrivere codici robusti, di alta qualità e pronti all'utilizzo per i no
 msgid "Written limits and self-exclusion"
 msgstr "Limiti scritti e auto esclusione"
 
+msgid "XMR vs US dollar"
+msgstr ""
+
+msgid "XMR/USD"
+msgstr ""
+
+msgid "XRP/USD"
+msgstr ""
+
 msgid "Yes"
 msgstr "Sì"
 
@@ -14506,6 +14536,9 @@ msgstr "Il riferimento per le transazioni è"
 msgid "Your transaction reference number is %1"
 msgstr "Il numero di riferimento per le transazioni è %1"
 
+msgid "Your virtual balance has been reset."
+msgstr ""
+
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "Il tuo web browser (%1) non è aggiornato e potrebbe influire sulla tua esperienza di trading. Prosegui a tuo rischio. %2Aggiorna il browser%3"
 
@@ -14523,6 +14556,12 @@ msgstr "Verrai disconnesso automaticamente."
 
 msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
 msgstr "Il conto è stato chiuso. Riceverai un'e-mail di conferma all'indirizzo %1."
+
+msgid "ZEC vs US dollar"
+msgstr ""
+
+msgid "ZEC/USD"
+msgstr ""
 
 msgid "ZingPay is a payment facility that allows online bank transfers for clients in South Africa."
 msgstr "ZingPay è un servizio di pagamento che consente di effettuare trasferimenti bancari online per i clienti in Sud Africa."
