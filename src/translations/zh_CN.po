@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-02-04 06:39\n"
+"PO-Revision-Date: 2021-02-08 07:35\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -29,16 +29,16 @@ msgid "10"
 msgstr "10"
 
 msgid "40"
-msgstr ""
+msgstr "40"
 
 msgid "50"
-msgstr ""
+msgstr "50"
 
 msgid "404"
 msgstr "404"
 
 msgid "500"
-msgstr ""
+msgstr "500"
 
 msgid " (account created)"
 msgstr " (已开立账户)"
@@ -952,9 +952,6 @@ msgstr "个人数据访问"
 msgid "Access to the client's personal data is strictly prohibited, with the exception of key %1 personnel and only as needed for the performance of their duties."
 msgstr "除非%1的关键人员在执行职务时有此必要，严格禁止任何人访问客户的个人数据。"
 
-msgid "Access your account with full trading permission."
-msgstr "使用完整交易权限访问您的账户。"
-
 msgid "Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media"
 msgstr "具备至少五年的数字广告或网络媒体编辑经验, 并具备写作和编辑技能"
 
@@ -1311,6 +1308,9 @@ msgstr "所有适用于Android的版本"
 
 msgid "All versions for iOS"
 msgstr "所有适用于iOS的版本"
+
+msgid "All you’ll need from now is one password"
+msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允许客户以较少金额（通过本地货币）充值"
@@ -1880,19 +1880,19 @@ msgid "B. Scope"
 msgstr "二、范围"
 
 msgid "BCH/USD"
-msgstr ""
+msgstr "比特币现金/美元"
 
 msgid "BNB vs US dollar"
-msgstr ""
+msgstr "币安币兑美元"
 
 msgid "BNB/USD"
-msgstr ""
+msgstr "币安币/美元"
 
 msgid "BTC"
 msgstr "比特币"
 
 msgid "BTC/USD"
-msgstr ""
+msgstr "比特币/美元"
 
 msgid "Bachelor's degree in computer science, or an equivalent combination of technical education, training, and work experience"
 msgstr "计算机科学大学本科学历，或拥有同等的技术教育、培训和工作经验"
@@ -2446,14 +2446,17 @@ msgstr "Champion Group Ltd: 瓦努阿图"
 msgid "Change API Endpoint"
 msgstr "更改 API 端点"
 
-msgid "Change MT5 password"
-msgstr "更改MT5密码"
-
 msgid "Change Password"
 msgstr "更改密码"
 
 msgid "Change currency"
 msgstr "更改币种"
+
+msgid "Change investor password"
+msgstr ""
+
+msgid "Change main password"
+msgstr ""
 
 msgid "Change password"
 msgstr "更改密码"
@@ -2954,6 +2957,9 @@ msgstr "确认新密码"
 msgid "Confirm changes"
 msgstr "确认更改"
 
+msgid "Confirm current password"
+msgstr ""
+
 msgid "Conflicts Policy"
 msgstr "冲突政策"
 
@@ -3338,9 +3344,6 @@ msgstr "货币对分类如下："
 msgid "Current"
 msgstr "当前"
 
-msgid "Current MT5 password"
-msgstr "当前MT5密码"
-
 msgid "Current Time"
 msgstr "当前时间"
 
@@ -3426,7 +3429,7 @@ msgid "DIEL shall not be obliged to provide professional clients with the follow
 msgstr "DIEL不可向专业客户提供以下服务："
 
 msgid "DSH/USD"
-msgstr ""
+msgstr "DSH/美元"
 
 msgid "Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively."
 msgstr "每日重置指数 - 每日重置指数复制具看涨和看跌走势与持续波动的市场。牛市和熊市指数每天从格林威治时间00:00开始，分别复制看涨和看跌市场。"
@@ -4047,10 +4050,10 @@ msgid "EOS vs US dollar"
 msgstr "EOS兑美元"
 
 msgid "EOS/USD"
-msgstr ""
+msgstr "EOS/美元"
 
 msgid "ETH/USD"
-msgstr ""
+msgstr "以太币/美元"
 
 msgid "EU Passport Rights"
 msgstr "欧盟金融护照权利"
@@ -5240,6 +5243,9 @@ msgstr "前往 MT5 下载页面"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "前往MetaTrader 5 仪表板"
 
+msgid "Go to settings"
+msgstr ""
+
 msgid "Go to statement"
 msgstr "前往月结单"
 
@@ -5822,6 +5828,9 @@ msgstr "如您还没有 %1真实账户，请先 %2开立一个%3。"
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "如果在几分钟内未收到电子邮件，请检查您的垃圾/广告文件夹。"
 
+msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
+msgstr ""
+
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "如您在我们的%1开源代码%2中发现任何漏洞， 请随时在GitHub提交引入请求。"
 
@@ -6347,9 +6356,6 @@ msgstr "想进行产品投资的EEA居民由Deriv Investments (Europe) Limited (
 msgid "Investments &amp; Dividends"
 msgstr "投资 &amp; 分红"
 
-msgid "Investor"
-msgstr "投资者"
-
 msgid "Investor Compensation Scheme"
 msgstr "投资者补偿方案"
 
@@ -6598,7 +6604,7 @@ msgid "L. Manifest Error"
 msgstr "十二、清单错误"
 
 msgid "LTC/USD"
-msgstr ""
+msgstr "莱特币/美元"
 
 msgid "Labuan"
 msgstr "纳闽"
@@ -6980,12 +6986,6 @@ msgstr "在第一次面试中留下了深刻印象？我们将邀请您与首席
 
 msgid "Maestro is an international debit card service by Mastercard. For more information, please visit %1."
 msgstr "Maestro是万事达卡的国际借记卡服务。欲了解详细信息, 请访问 %1。"
-
-msgid "Main"
-msgstr "主页"
-
-msgid "Main password"
-msgstr "主密码"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "保持准确的系统定价参数"
@@ -7617,9 +7617,6 @@ msgstr "从未"
 msgid "Never Used"
 msgstr "从未使用过"
 
-msgid "New MT5 password"
-msgstr "MT5新密码"
-
 msgid "New Password"
 msgstr "新密码"
 
@@ -7643,6 +7640,9 @@ msgstr "新西兰元兑美元"
 
 msgid "New account"
 msgstr "新账户"
+
+msgid "New investor password"
+msgstr ""
 
 msgid "New office in Asunción, Paraguay"
 msgstr "位于巴拉圭亚松森的新办事处"
@@ -8271,6 +8271,9 @@ msgstr "护照"
 msgid "Passport photo page"
 msgstr "含照片的护照页面"
 
+msgid "Password"
+msgstr ""
+
 msgid "Password Reset"
 msgstr "重设密码"
 
@@ -8282,9 +8285,6 @@ msgstr "重设密码"
 
 msgid "Password should have lower and uppercase English letters with numbers."
 msgstr "密码必须有大小写英文字母和数字。"
-
-msgid "Password type"
-msgstr "密码类型"
 
 msgid "Patented technology"
 msgstr "专利保护技术"
@@ -8567,6 +8567,9 @@ msgstr "请确认您不是政治公众人士。"
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "请确认交易详情以完成转账："
+
+msgid "Please confirm your %1 password to create an MT5 account. If you’ve forgotten your password, click Reset password."
+msgstr ""
 
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "请联系您的付款代理，以便验证您的取款请求。"
@@ -9447,9 +9450,6 @@ msgstr "重置看涨"
 msgid "Reset Call/Reset Put"
 msgstr "重置看涨/重置看跌"
 
-msgid "Reset MT5 password"
-msgstr "重设MT5密码"
-
 msgid "Reset Password"
 msgstr "重设密码"
 
@@ -9458,6 +9458,12 @@ msgstr "重置看跌"
 
 msgid "Reset Time"
 msgstr "重设时间"
+
+msgid "Reset account password"
+msgstr ""
+
+msgid "Reset investor password"
+msgstr ""
 
 msgid "Reset my virtual balance"
 msgstr "重设虚拟余额"
@@ -9911,9 +9917,6 @@ msgstr "立刻为 %1 账户设置双因素身份验证:"
 
 msgid "Severability"
 msgstr "可分割性"
-
-msgid "Share access to your account without any permission to trade."
-msgstr "没有任何交易许可的情况下分享您的账户的访问权。"
 
 msgid "Sharp prices"
 msgstr "精准报价"
@@ -10432,7 +10435,7 @@ msgid "Swaps Long (per annum)"
 msgstr "多头掉期 (每年)"
 
 msgid "Swaps Short (per annum)"
-msgstr ""
+msgstr "空头掉期 (每年)"
 
 msgid "Swiss franc vs Japanese yen"
 msgstr "瑞士法郎兑日元"
@@ -12502,9 +12505,6 @@ msgstr "为了给客户提供更好的体验，％1提供的某些服务可能�
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "如要重新设置密码，在下面字段输入您注册的电子邮件并点击“重设密码”。"
 
-msgid "To reset your trading or investor password, please click the button below:"
-msgstr "要重置您的交易或投资者密码, 请单击下面的按钮:"
-
 msgid "To smoothly verify you, we need a better photo"
 msgstr "为了顺利验证，我们需要更好的照片"
 
@@ -13024,6 +13024,9 @@ msgstr "无法读取文件 %1"
 msgid "Unavailable"
 msgstr "不可用"
 
+msgid "Unavailable because of too many failed attempts. Please try again in a minute or reset your account password to continue."
+msgstr ""
+
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this Agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "在任何情况下，根据本协议，公司或其董事或雇员一概不对程序员或任何第三方直接或间接由于使用或不能使用%1 API或其任何内容的任何间接、特定、附带、惩罚性或后果性损失或损害或任何理论下的任何其他类似损害（无论是在合同、侵权行为、严格赔偿责任或任何其他理论）承担赔偿责任，即使已预先通知公司事件发生的可能性。"
 
@@ -13246,6 +13249,9 @@ msgstr "验证"
 msgid "Verification code"
 msgstr "验证码"
 
+msgid "Verification code is wrong. Please use the link sent to your email, or request a new token by clicking Reset investor password."
+msgstr ""
+
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "验证码错误。请使用以下链接发送到您的电子邮件。"
 
@@ -13267,11 +13273,8 @@ msgstr "验证和批准客户的存款和取款请求"
 msgid "Verify identity"
 msgstr "身份验证"
 
-msgid "Verify main password"
-msgstr "主密码验证"
-
-msgid "Verify new MT5 password"
-msgstr "MT5新密码验证"
+msgid "Verify new investor password"
+msgstr ""
 
 msgid "Verify new password"
 msgstr "验证新密码"
@@ -13611,6 +13614,12 @@ msgstr "具备良好的组织、行政和会计技能"
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "我们将更新您的限额。单击％1同意和接受％2以确认您对自己的行为负全部责任，如果您因此而上瘾或蒙受损失，我们将不承担任何责任。"
+
+msgid "We’ve upgraded our system to support a single, more secure password across %1. Once you’ve set a new password, you can use it to log into all your %1 and MT5 accounts."
+msgstr ""
+
+msgid "We’ve upgraded our system to support a single, more secure password across all of %1. Once you’ve set a new password, you can use it to log into all your %1, and MT5 accounts."
+msgstr ""
 
 msgid "What about instant execution? In this case, your order is placed at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "什么是即时执行？在这种情况下，您的订单是以当时可用的价格确定的。如果在订单执行完成之前价格波动很大，可重新报价。"
@@ -14057,13 +14066,13 @@ msgid "Written limits and self-exclusion"
 msgstr "书面限制和自我禁止"
 
 msgid "XMR vs US dollar"
-msgstr ""
+msgstr "门罗币兑美元"
 
 msgid "XMR/USD"
-msgstr ""
+msgstr "门罗币/美元"
 
 msgid "XRP/USD"
-msgstr ""
+msgstr "瑞波币/美元"
 
 msgid "Yes"
 msgstr "是的"
@@ -14386,6 +14395,9 @@ msgstr "您的客户将收到电子邮件通知，告知其转账交易已处理
 msgid "Your Existing Accounts"
 msgstr "您的当前账户"
 
+msgid "Your MT5 password is now same as your %1 account. To reset, please go to %2Settings%3 to change your password."
+msgstr ""
+
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "此时您的账户不需要验证。%1如果将来需要验证，我们会通知您。"
 
@@ -14540,7 +14552,7 @@ msgid "Your transaction reference number is %1"
 msgstr "您的交易参考号是 %1"
 
 msgid "Your virtual balance has been reset."
-msgstr ""
+msgstr "您的虚拟余额已重置。"
 
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "您的网络浏览器 (%1) 已过时，并可能会影响您的交易操作。继续操作须自行承担风险。%2更新浏览器%3"
@@ -14561,10 +14573,10 @@ msgid "You’ve successfully closed your account. We’ll send a confirmation em
 msgstr "您的账户已成功关闭。我们将传送确认邮件到%1。"
 
 msgid "ZEC vs US dollar"
-msgstr ""
+msgstr "大零币兑美元"
 
 msgid "ZEC/USD"
-msgstr ""
+msgstr "大零币/美元"
 
 msgid "ZingPay is a payment facility that allows online bank transfers for clients in South Africa."
 msgstr "ZingPay 是允许南非客户进行网上银行转账的支付工具 。"
