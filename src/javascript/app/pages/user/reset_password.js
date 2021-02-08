@@ -1,3 +1,4 @@
+const Client      = require('../../base/client');
 const FormManager = require('../../common/form_manager');
 const Login       = require('../../../_common/base/login');
 const localize    = require('../../../_common/localize').localize;
@@ -23,6 +24,9 @@ const ResetPassword = (() => {
             $form_error.setVisibility(1);
         } else {
             $('#msg_reset_password').text(localize('Your password has been successfully reset. Please log into your account using your new password.')).setVisibility(1);
+            if (Client.isLoggedIn()) {
+                Client.doLogout({ logout: 1 });
+            }
             setTimeout(() => {
                 Login.redirectToLogin();
             }, 5000);

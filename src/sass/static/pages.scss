@@ -1708,3 +1708,13 @@ body #not_authenticated_financial ul.checked > li {
 #self_exclusion_dialog #dialog_content {
     max-width: 496px;
 }
+
+.universal-password-alert {
+    padding: 24px 22px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.confirm-password-form-fields {
+    margin-bottom: 22px;
+}

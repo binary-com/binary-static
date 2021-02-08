@@ -13,6 +13,7 @@ const ResetPassword = () => (
             </div>
 
             <div className='gr-parent gr-padding-10' id='container_reset_password'>
+                <p className='notice-msg'>{it.L('We’ve upgraded our system to support a single, more secure password across all of [_1]. Once you’ve set a new password, you can use it to log into all your [_1], and MT5 accounts.', it.website_name)}</p>
                 <form id='frm_reset_password'>
                     <Fieldset legend={it.L('Details')}>
                         <FormRow type='password' id='new_password' label={it.L('New Password')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
