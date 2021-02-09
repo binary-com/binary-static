@@ -119,7 +119,7 @@ const pages_config = {
     realws                   : { module: RealAccOpening,             is_authenticated: true },
     redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
-    reset_passwordws         : { module: ResetPassword,              not_authenticated: false },
+    reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
     resources                : { module: Dashboard },
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
