@@ -260,6 +260,7 @@ const MetaTraderConfig = (() => {
                 $('#financial_authenticate_msg').setVisibility(isAuthenticationPromptNeeded());
             },
         },
+
         password_change: {
             title        : localize('Change Password'),
             success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, getDisplayLogin(response.echo_req.login)]),
@@ -374,7 +375,7 @@ const MetaTraderConfig = (() => {
                 }),
         },
         password_reset: {
-            password_type      : { id: '#reset_password_type', request_field: 'password_type' },
+            ddl_password_type  : { id: '#ddl_reset_password_type', request_field: 'password_type', is_radio: true },
             txt_new_password   : { id: '#txt_reset_new_password',  request_field: 'new_password' },
             txt_re_new_password: { id: '#txt_reset_re_new_password' },
             additional_fields  :
@@ -425,7 +426,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_change.txt_re_new_password.id, validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         password_reset: [
-            { selector: fields.password_reset.password_type.id,   validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.password_reset.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
             { selector: fields.password_reset.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'], re_check_field: fields.password_reset.txt_re_new_password.id },
             { selector: fields.password_reset.txt_re_new_password.id, validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.password_reset.txt_new_password.id }]] },
         ],

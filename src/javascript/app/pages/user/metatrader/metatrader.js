@@ -255,6 +255,7 @@ const MetaTrader = (() => {
 
     const submit = (e) => {
         e.preventDefault();
+
         if (show_new_account_popup) {
             MetaTraderUI.showNewAccountConfirmationPopup(
                 e,
@@ -289,8 +290,7 @@ const MetaTrader = (() => {
                 const req = makeRequestObject(acc_type, action);
                 BinarySocket.send(req).then(async (response) => {
                     if (response.error) {
-                        MetaTraderUI.displayFormMessage(response.error.message, action, response.error.code);
-
+                        MetaTraderUI.displayFormMessage(response.error.message, action);
                         if (typeof actions_info[action].onError === 'function') {
                             actions_info[action].onError(response, MetaTraderUI.$form());
                         }

@@ -3,8 +3,7 @@ import { FormRow, Fieldset, SubmitButton } from '../../../_common/components/for
 
 const ChangePassword = () => (
     <React.Fragment>
-        <h1>{it.L('All you’ll need from now is one password')}</h1>
-        <p className='notice-msg'>{it.L('We’ve upgraded our system to support a single, more secure password across all of [_1]. Once you’ve set a new password, you can use it to log into all your [_1], and MT5 accounts.', it.website_name)}</p>
+        <h1>{it.L('Change Password')}</h1>
         <form className='gr-padding-10' id='frm_change_password'>
             <Fieldset>
                 <FormRow type='password' id='old_password' label={it.L('Current password')} />
