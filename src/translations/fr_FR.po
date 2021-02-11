@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-02-08 07:35\n"
+"PO-Revision-Date: 2021-02-11 07:21\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -952,6 +952,9 @@ msgstr "Accès aux données personnelles"
 msgid "Access to the client's personal data is strictly prohibited, with the exception of key %1 personnel and only as needed for the performance of their duties."
 msgstr "L'accès aux données personnelles du client est strictement interdit, à l'exception du personnel clé de %1 et uniquement dans la mesure nécessaire à l'exercice de leurs fonctions."
 
+msgid "Access your account with full trading permission."
+msgstr ""
+
 msgid "Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media"
 msgstr "Compétences en matière de rédaction et d'édition avec au moins cinq ans d’expérience en publicité numérique ou dans les médias en ligne"
 
@@ -1308,9 +1311,6 @@ msgstr "Toutes les versions d’Android"
 
 msgid "All versions for iOS"
 msgstr "Toutes les versions d’iOS"
-
-msgid "All you’ll need from now is one password"
-msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Autoriser les Clients à effectuer des dépôts pour des sommes inférieures (en devise locale)"
@@ -2446,17 +2446,14 @@ msgstr "Champion Group Ltd: Vanuatu"
 msgid "Change API Endpoint"
 msgstr "Modifier le point terminal de l'API"
 
+msgid "Change MT5 password"
+msgstr ""
+
 msgid "Change Password"
 msgstr "Modifier le mot de passe"
 
 msgid "Change currency"
 msgstr "Changer de devise"
-
-msgid "Change investor password"
-msgstr ""
-
-msgid "Change main password"
-msgstr ""
 
 msgid "Change password"
 msgstr "Modifier le mot de passe"
@@ -2956,9 +2953,6 @@ msgstr "Confirmer le nouveau mot de passe"
 msgid "Confirm changes"
 msgstr "Confirmer les modifications"
 
-msgid "Confirm current password"
-msgstr ""
-
 msgid "Conflicts Policy"
 msgstr "Gestion des conflits d'intérêts"
 
@@ -3342,6 +3336,9 @@ msgstr "Les pairs de devises sont catégorisées de la façon suivante:"
 
 msgid "Current"
 msgstr "Valeur actuelle"
+
+msgid "Current MT5 password"
+msgstr ""
 
 msgid "Current Time"
 msgstr "Heure actuelle"
@@ -5242,9 +5239,6 @@ msgstr "Allez sur la page de téléchargement MT5"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "Aller au tableau de bord de MetaTrader 5"
 
-msgid "Go to settings"
-msgstr ""
-
 msgid "Go to statement"
 msgstr "Aller sur le relevé"
 
@@ -5828,9 +5822,6 @@ msgstr "Si vous n'avez pas encore de Compte Réel %1, veuillez en %2créer un%3.
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "Si vous ne recevez pas le mail dans les prochaines minutes, veuillez vérifier votre dossier de courrier indésirable/spam."
 
-msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
-msgstr ""
-
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Si vous trouvez des vulnérabilités dans notre %1code source ouvert%2, n'hésitez pas à nous soumettre une requête sur GitHub."
 
@@ -6355,6 +6346,9 @@ msgstr "Les Produits d'investissement sont mis à disposition des résidents de 
 
 msgid "Investments &amp; Dividends"
 msgstr "Investissements et dividendes"
+
+msgid "Investor"
+msgstr ""
 
 msgid "Investor Compensation Scheme"
 msgstr "Système d'indemnisation des investisseurs"
@@ -6986,6 +6980,12 @@ msgstr "Vous avez fait une bonne impression durant votre premier entretien ? No
 msgid "Maestro is an international debit card service by Mastercard. For more information, please visit %1."
 msgstr "Maestro est un service international de cartes de débit par Mastercard. Pour plus d'informations, veuillez visiter %1."
 
+msgid "Main"
+msgstr ""
+
+msgid "Main password"
+msgstr ""
+
 msgid "Maintain accurate system pricing parameters"
 msgstr "Maintenir la précision des paramètres du système de tarification"
 
@@ -7616,6 +7616,9 @@ msgstr "Jamais"
 msgid "Never Used"
 msgstr "Jamais utilisé"
 
+msgid "New MT5 password"
+msgstr ""
+
 msgid "New Password"
 msgstr "Nouveau mot de passe"
 
@@ -7639,9 +7642,6 @@ msgstr "Dollar Néo-Zélandais vs Dollar Américain"
 
 msgid "New account"
 msgstr "Nouveau compte"
-
-msgid "New investor password"
-msgstr ""
 
 msgid "New office in Asunción, Paraguay"
 msgstr "Nouveau bureau à Asunción, Paraguay"
@@ -8114,8 +8114,8 @@ msgstr "Notre compte MetaTrader 5 Financier est adapté à la fois pour les trad
 msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
 msgstr "Notre compte Synthétique vous permet de trader les CFDs sur des Indices Synthétiques - nos actifs synthétiques propriétaires qui simulent les tendances du marché."
 
-msgid "Our active client base is expected to reach over 175,000 total clients this year."
-msgstr "Notre base active de client devrait atteindre plus de 175 000 clients au total cette année."
+msgid "Our active client base is expected to reach over 790,000 total clients this year."
+msgstr ""
 
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "Notre entreprise est fondée sur la collaboration et nous visons à établir des relations à long terme et mutuellement bénéfiques avec nos partenaires. Cependant, nous ne compromettrons jamais notre engagement envers l'intégrité commerciale. Si nos partenaires ne veulent pas ou ne peuvent pas respecter nos principes, nous nous réservons le droit de nous retirer de la relation commerciale."
@@ -8270,9 +8270,6 @@ msgstr "Passeport"
 msgid "Passport photo page"
 msgstr "Page de photo de passeport"
 
-msgid "Password"
-msgstr ""
-
 msgid "Password Reset"
 msgstr "Réinitialisation de mot de passe"
 
@@ -8284,6 +8281,9 @@ msgstr "Réinitialisation de mot de passe"
 
 msgid "Password should have lower and uppercase English letters with numbers."
 msgstr "Le mot de passe doit être composé de majuscules, de minuscules et de chiffres."
+
+msgid "Password type"
+msgstr ""
 
 msgid "Patented technology"
 msgstr "Technologie breveté"
@@ -8566,9 +8566,6 @@ msgstr "Veuillez confirmer que vous n’êtes pas une personne politiquement exp
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Veuillez confirmer les détails de la transaction afin de compléter le transfert:"
-
-msgid "Please confirm your %1 password to create an MT5 account. If you’ve forgotten your password, click Reset password."
-msgstr ""
 
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "Veuillez contacter votre agent de paiement pour valider votre demande de retrait."
@@ -9450,6 +9447,9 @@ msgstr "Reset Call"
 msgid "Reset Call/Reset Put"
 msgstr "Reset Call/Reset Put"
 
+msgid "Reset MT5 password"
+msgstr ""
+
 msgid "Reset Password"
 msgstr "Réinitialiser le mot de passe"
 
@@ -9458,12 +9458,6 @@ msgstr "Reset Put"
 
 msgid "Reset Time"
 msgstr "Temps de réinitialisation"
-
-msgid "Reset account password"
-msgstr ""
-
-msgid "Reset investor password"
-msgstr ""
 
 msgid "Reset my virtual balance"
 msgstr "Réinitialiser mon solde virtuel"
@@ -9917,6 +9911,9 @@ msgstr "Configurer maintenant l’authentification deux facteurs pour votre comp
 
 msgid "Severability"
 msgstr "Divisibilité"
+
+msgid "Share access to your account without any permission to trade."
+msgstr ""
 
 msgid "Sharp prices"
 msgstr "Des prix compétitifs"
@@ -12504,6 +12501,9 @@ msgstr "Pour offrir au client une meilleure expérience, certains des services p
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Pour réinitialiser votre mot de passe, entrez l’adresse e-mail utilisée pour créer votre compte dans le champ ci-dessous et cliquez sur « Réinitialiser le mot de passe »."
 
+msgid "To reset your trading or investor password, please click the button below:"
+msgstr ""
+
 msgid "To smoothly verify you, we need a better photo"
 msgstr "Pour vérifier votre compte, nous avons besoin d'une meilleure photo"
 
@@ -13023,9 +13023,6 @@ msgstr "Incapable de lire les fichiers %1"
 msgid "Unavailable"
 msgstr "Indisponible"
 
-msgid "Unavailable because of too many failed attempts. Please try again in a minute or reset your account password to continue."
-msgstr ""
-
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this Agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "En vertu de cet Accord, la Compagnie et ses membres dirigeants ou employés ne peuvent en aucun cas être tenus responsables, envers le Programmeur ou toute tierce partie, d'éventuels dommages indirects, spéciaux, accessoires, punitifs ou consécutifs, ou de toute autre forme de perte ou de dommage similaire, en vertu de quelque théorie de responsabilité que ce soit (qu'il s'agisse d'un contrat, d'un délit civil, d'une responsabilité objective, ou de toute autre théorie), qui sont directement ou indirectement imputables à l'utilisation de, ou à l'incapacité d'utiliser, l'API de %1 ou tout contenu de celle-ci, et ce même si la Compagnie a été informée de cette possibilité."
 
@@ -13248,9 +13245,6 @@ msgstr "Vérification"
 msgid "Verification code"
 msgstr "Code de Vérification"
 
-msgid "Verification code is wrong. Please use the link sent to your email, or request a new token by clicking Reset investor password."
-msgstr ""
-
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "Le code de vérification est incorrect. Veuillez utiliser le lien envoyé à votre adresse email."
 
@@ -13272,7 +13266,10 @@ msgstr "Vérifier et approuver les demandes de dépôt et de retrait des clients
 msgid "Verify identity"
 msgstr "Vérifier l'indentité"
 
-msgid "Verify new investor password"
+msgid "Verify main password"
+msgstr ""
+
+msgid "Verify new MT5 password"
 msgstr ""
 
 msgid "Verify new password"
@@ -13548,9 +13545,6 @@ msgstr "Nous le comparerons avec votre document"
 msgid "We're almost there"
 msgstr "On y est presque"
 
-msgid "We're expected to generate over 2 USD billion in turnover this year, bringing our total turnover since inception to over 9.2 USD billion."
-msgstr "Nous devrions générer plus de 2 milliards USD de chiffre d'affaires cette année, ce qui porte notre chiffre d'affaires total depuis sa création à plus de 9,2 milliards USD."
-
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "La société obtient des brevets en tant que « Système de courtage en ligne et méthode de spéculation sur un marché financier » et en tant que « Système de courtage en ligne fournissant des services de spéculation personnalisés sur les marchés financiers ». Ces brevets reflètent notre capacité à innover et à rester à la pointe du secteur."
 
@@ -13563,14 +13557,14 @@ msgstr "Nous ne sommes pas obligés d'effectuer un test de pertinence, ni de vou
 msgid "We're now ready to verify your identity"
 msgstr "Nous sommes maintenant prêts à vérifier votre identité"
 
-msgid "We're projected to register over 377 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 1.42 billion."
-msgstr "Nous projetons d'enregistrer plus de 377 millions de transactions cette année, portant le nombre total de contrats qui ont été achetés et vendus sur notre plateforme depuis sa création à plus 1.42 milliards."
+msgid "We're projected to register over 1.1 billion transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 2.8 billion."
+msgstr ""
 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Nous sommes très fiers de ce prix. Nous sommes fortement engagés à offrir une expérience de trading éthique et orientée clients. Cette récompense prouve que BetOnMarkets est une marque fiable et à l'écoute de ses clients, qui met un point d'honneur à vous satisfaire, que vous soyez un trader expérimenté ou un débutant. Nous offrons des services à la clientèle en anglais, indonésien, russe, chinois et espagnol."
 
-msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across four offices in Malaysia, Malta, Paraguay and Dubai. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "Nous avons grandi au fil des ans - tant en termes de personnel que de bureaux. Nous avons actuellement plus de %1 employés dans quatre bureaux en Malaisie, à Malte, au Paraguay et à Dubaï. Une nouvelle croissance des effectifs est attendue cette année pour répondre à la demande accrue de nos produits et services."
+msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across 6 offices in Malaysia, Malta, Paraguay, Dubai, Rwanda and Cyprus. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "We've sent a secure link to %{number}"
 msgstr "Nous avons envoyé un lien sécurisé vers %{number}"
@@ -13613,12 +13607,6 @@ msgstr "Bonnes compétences organisationnelles, administratives et comptables"
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "Nous mettrons à jour vos limites. Cliquez sur %1Accepter et acceptez%2 pour reconnaître que vous êtes entièrement responsable de vos actions et que nous ne sommes pas responsables de toute dépendance ou perte."
-
-msgid "We’ve upgraded our system to support a single, more secure password across %1. Once you’ve set a new password, you can use it to log into all your %1 and MT5 accounts."
-msgstr ""
-
-msgid "We’ve upgraded our system to support a single, more secure password across all of %1. Once you’ve set a new password, you can use it to log into all your %1, and MT5 accounts."
-msgstr ""
 
 msgid "What about instant execution? In this case, your order is placed at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "Quid de l’exécution instantanée ? Dans ce cas, votre ordre est placé au prix qui est disponible à ce moment-là. Les Requotes sont possibles si le prix fluctue beaucoup avant que l'exécution de l'ordre ne soit terminée."
@@ -14393,9 +14381,6 @@ msgstr "Votre Client va recevoir un émail de notification l'informant que le tr
 
 msgid "Your Existing Accounts"
 msgstr "Vos comptes existants"
-
-msgid "Your MT5 password is now same as your %1 account. To reset, please go to %2Settings%3 to change your password."
-msgstr ""
 
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "Votre compte n'a pas besoin d'authentification pour le moment. %1Nous vous informerons si une authentification est requise à l'avenir."
