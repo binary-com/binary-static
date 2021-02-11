@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-02-08 07:35\n"
+"PO-Revision-Date: 2021-02-11 07:21\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -952,6 +952,9 @@ msgstr "個人資料存取"
 msgid "Access to the client's personal data is strictly prohibited, with the exception of key %1 personnel and only as needed for the performance of their duties."
 msgstr "除非%1的關鍵人員在執行職務時有此必要，嚴格禁止任何人存取客戶的個人資料。"
 
+msgid "Access your account with full trading permission."
+msgstr ""
+
 msgid "Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media"
 msgstr "具備至少五年的數位廣告或網路媒體編輯經驗, 並具備寫作和編輯技能"
 
@@ -1308,9 +1311,6 @@ msgstr "所有適用於Android的版本"
 
 msgid "All versions for iOS"
 msgstr "所有適用於iOS的版本"
-
-msgid "All you’ll need from now is one password"
-msgstr ""
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允許客戶以較少金額（通過本地貨幣）充值"
@@ -2446,17 +2446,14 @@ msgstr "Champion Group Ltd: 萬那杜"
 msgid "Change API Endpoint"
 msgstr "更改 API 端點"
 
+msgid "Change MT5 password"
+msgstr ""
+
 msgid "Change Password"
 msgstr "更改密碼"
 
 msgid "Change currency"
 msgstr "更改幣種"
-
-msgid "Change investor password"
-msgstr ""
-
-msgid "Change main password"
-msgstr ""
 
 msgid "Change password"
 msgstr "更改密碼"
@@ -2956,9 +2953,6 @@ msgstr "確認新密碼"
 msgid "Confirm changes"
 msgstr "確認更改"
 
-msgid "Confirm current password"
-msgstr ""
-
 msgid "Conflicts Policy"
 msgstr "衝突政策"
 
@@ -3342,6 +3336,9 @@ msgstr "貨幣對分類如下:"
 
 msgid "Current"
 msgstr "目前"
+
+msgid "Current MT5 password"
+msgstr ""
 
 msgid "Current Time"
 msgstr "目前時間"
@@ -5242,9 +5239,6 @@ msgstr "前往 MT5 下載頁面"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "前往MetaTrader 5 儀表板"
 
-msgid "Go to settings"
-msgstr ""
-
 msgid "Go to statement"
 msgstr "前往月結單"
 
@@ -5827,9 +5821,6 @@ msgstr "如您還沒有 %1真實帳戶，請先 %2開立一個%3。"
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "如果在幾分鐘內您未收到電子郵件，請檢查您的垃圾/廣告資料夾。"
 
-msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
-msgstr ""
-
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "如您在我們的%1開源代碼%2中發現任何漏洞，請隨時在GitHub提交引入請求。"
 
@@ -6354,6 +6345,9 @@ msgstr "想要進行產品投資的 EEA 居民由 Deriv 投資(歐洲) 有限公
 
 msgid "Investments &amp; Dividends"
 msgstr "投資&amp;分紅"
+
+msgid "Investor"
+msgstr ""
 
 msgid "Investor Compensation Scheme"
 msgstr "投資者補償方案"
@@ -6985,6 +6979,12 @@ msgstr "在第一次面試中留下了印象？我們將邀請您與首席執行
 msgid "Maestro is an international debit card service by Mastercard. For more information, please visit %1."
 msgstr "Maestro是萬事達卡的國際轉帳卡服務。欲瞭解詳細資訊, 請前往 %1。"
 
+msgid "Main"
+msgstr ""
+
+msgid "Main password"
+msgstr ""
+
 msgid "Maintain accurate system pricing parameters"
 msgstr "維護準確的系統訂價參數"
 
@@ -7615,6 +7615,9 @@ msgstr "從未"
 msgid "Never Used"
 msgstr "從未使用過"
 
+msgid "New MT5 password"
+msgstr ""
+
 msgid "New Password"
 msgstr "新密碼"
 
@@ -7638,9 +7641,6 @@ msgstr "紐西蘭元兌美元"
 
 msgid "New account"
 msgstr "新帳戶"
-
-msgid "New investor password"
-msgstr ""
 
 msgid "New office in Asunción, Paraguay"
 msgstr "位於巴拉圭亞松森的新辦事處"
@@ -8113,8 +8113,8 @@ msgstr "我們的 MetaTrader 5 財務帳戶適用于新手和經驗豐富的交�
 msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
 msgstr "我們的綜合帳戶允許您對綜合指數進行差價交易 - 這是我們專有的綜合資產，可模擬市場力量。"
 
-msgid "Our active client base is expected to reach over 175,000 total clients this year."
-msgstr "我們今年的預計活躍客戶總數將超過17萬5千人。"
+msgid "Our active client base is expected to reach over 790,000 total clients this year."
+msgstr ""
 
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "我們的業務建立在合作基礎上，我們旨在與合作夥伴建立長期的互利關係。但是，我們絕不會對業務誠信的堅持作出妥協。如果我們的合作夥伴不願意或無法遵守我們的原則，我們保留退出業務關係的權利。"
@@ -8269,9 +8269,6 @@ msgstr "護照"
 msgid "Passport photo page"
 msgstr "含照片的護照頁面"
 
-msgid "Password"
-msgstr ""
-
 msgid "Password Reset"
 msgstr "重設密碼"
 
@@ -8283,6 +8280,9 @@ msgstr "重設密碼"
 
 msgid "Password should have lower and uppercase English letters with numbers."
 msgstr "密碼必須有大小寫英文字母和數字。"
+
+msgid "Password type"
+msgstr ""
 
 msgid "Patented technology"
 msgstr "專利保護技術"
@@ -8565,9 +8565,6 @@ msgstr "請確認您不是政治公眾人士。"
 
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "請確認交易詳細資料以完成轉帳："
-
-msgid "Please confirm your %1 password to create an MT5 account. If you’ve forgotten your password, click Reset password."
-msgstr ""
 
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "請聯繫您的付款代理，以便驗證您的取款請求。"
@@ -9448,6 +9445,9 @@ msgstr "重設買權"
 msgid "Reset Call/Reset Put"
 msgstr "重置看漲/重置看跌"
 
+msgid "Reset MT5 password"
+msgstr ""
+
 msgid "Reset Password"
 msgstr "重設密碼"
 
@@ -9456,12 +9456,6 @@ msgstr "重設賣權"
 
 msgid "Reset Time"
 msgstr "重設時間"
-
-msgid "Reset account password"
-msgstr ""
-
-msgid "Reset investor password"
-msgstr ""
 
 msgid "Reset my virtual balance"
 msgstr "重設虛擬餘額"
@@ -9915,6 +9909,9 @@ msgstr "立刻為 %1 帳戶設定雙因素身份驗證:"
 
 msgid "Severability"
 msgstr "可分割性"
+
+msgid "Share access to your account without any permission to trade."
+msgstr ""
 
 msgid "Sharp prices"
 msgstr "精準報價"
@@ -12502,6 +12499,9 @@ msgstr "為了給客戶提供更好的體驗，％1提供的某些服務可能�
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "如要重新設定密碼，在下面的欄位中輸入您註冊的電子郵件地址並點選「重設密碼」。"
 
+msgid "To reset your trading or investor password, please click the button below:"
+msgstr ""
+
 msgid "To smoothly verify you, we need a better photo"
 msgstr "為了順利驗證，我們需要更好的照片"
 
@@ -13021,9 +13021,6 @@ msgstr "無法讀取文檔%1"
 msgid "Unavailable"
 msgstr "不可用"
 
-msgid "Unavailable because of too many failed attempts. Please try again in a minute or reset your account password to continue."
-msgstr ""
-
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this Agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "在任何情況下，根據本協議，公司或其董事或僱員一概不對程式設計員或任何第三方直接或間接由於使用或不能使用%1 API或其任何內容的任何間接、特定、附帶、懲罰性或後果性損失或損害或任何理論下的任何其他類似損害（無論是在合同、侵權行為、嚴格賠償責任或任何其他理論）承擔賠償責任，即使已預先通知公司事件發生的可能性。"
 
@@ -13246,9 +13243,6 @@ msgstr "驗證"
 msgid "Verification code"
 msgstr "驗證碼"
 
-msgid "Verification code is wrong. Please use the link sent to your email, or request a new token by clicking Reset investor password."
-msgstr ""
-
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "驗證碼錯誤。請使用以下連結發送到您的電子郵件。"
 
@@ -13270,7 +13264,10 @@ msgstr "驗證和批准客戶的存款和取款請求"
 msgid "Verify identity"
 msgstr "身份驗證"
 
-msgid "Verify new investor password"
+msgid "Verify main password"
+msgstr ""
+
+msgid "Verify new MT5 password"
 msgstr ""
 
 msgid "Verify new password"
@@ -13546,9 +13543,6 @@ msgstr "我們將把它與您的文檔比較"
 msgid "We're almost there"
 msgstr "快全部就緒了"
 
-msgid "We're expected to generate over 2 USD billion in turnover this year, bringing our total turnover since inception to over 9.2 USD billion."
-msgstr "我們今年的預計營業額將超過20億美元, 自成立以來的總營業額超過92億美元。"
-
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "我們獲得「用於金融市場投機的電腦交易系統及方法」和「用於自訂金融市場投機的電腦交易系統」的專利授權。這些專利表明我們的創新和保持領先群雄的能力。"
 
@@ -13561,14 +13555,14 @@ msgstr "我們沒有義務進行適當性測試, 也沒有義務向您提供任�
 msgid "We're now ready to verify your identity"
 msgstr "我們現在準備驗證您的身份"
 
-msgid "We're projected to register over 377 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 1.42 billion."
-msgstr "我們預計今年將有超過3億7700萬筆交易, 成立以來我們平台的購入和售出合約總數超過14億2000萬。"
+msgid "We're projected to register over 1.1 billion transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 2.8 billion."
+msgstr ""
 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "獲得這個獎項，我們真的很自豪。我們堅定地致力於提供一個合乎道德和以客戶為中心的交易體驗。獲取獎項表明 BetOnMarkets 是一個值得信賴的品牌，接受客戶意見，能夠滿足客戶的需求，無論他們是經驗豐富的交易者還是交易新手。我們為客戶提供英語、印尼語、俄語、中文和西班牙語服務。"
 
-msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across four offices in Malaysia, Malta, Paraguay and Dubai. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "多年來，無論在人力和辦公室方面， 我們的規模不斷擴大。目前在馬來西亞、馬爾他、巴拉圭和杜拜有四個辦事處和%1多名員工。預計今年的員工人數將進一步增長, 以滿足我們產品和服務需求的增加。"
+msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across 6 offices in Malaysia, Malta, Paraguay, Dubai, Rwanda and Cyprus. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "We've sent a secure link to %{number}"
 msgstr "已傳送安全連結至%{number}"
@@ -13611,12 +13605,6 @@ msgstr "具備良好的組織、行政和會計技能"
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "我們將更新您的限額。點選％1同意和接受％2以確認您對自己的行為負全部責任，如果您因此而上癮或蒙受損失，我們將不承擔任何責任。"
-
-msgid "We’ve upgraded our system to support a single, more secure password across %1. Once you’ve set a new password, you can use it to log into all your %1 and MT5 accounts."
-msgstr ""
-
-msgid "We’ve upgraded our system to support a single, more secure password across all of %1. Once you’ve set a new password, you can use it to log into all your %1, and MT5 accounts."
-msgstr ""
 
 msgid "What about instant execution? In this case, your order is placed at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "即時執行是怎麼回事？在這種情況下，您的訂單是以當時可用的價格確定的。如果在訂單執行完成之前價格波動很大，可重新報價。"
@@ -14391,9 +14379,6 @@ msgstr "您的客戶將收到電子郵件通知，告知其轉帳交易已處理
 
 msgid "Your Existing Accounts"
 msgstr "您的目前帳戶"
-
-msgid "Your MT5 password is now same as your %1 account. To reset, please go to %2Settings%3 to change your password."
-msgstr ""
 
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "此時您的帳戶不需要驗證。%1如果將來需要驗證，我們會通知您。"
