@@ -39,7 +39,7 @@ const BinaryInNumbers = () => (
             <Numbers
                 className='employee'
                 header={it.L('Number of employees and contractors')}
-                text={it.L('We\'ve grown in size over the years - both in terms of manpower and offices. We currently have over [_1] employees across 10 offices in Malta, Dubai, Malaysia, Paraguay, Cyprus, Rwanda, and Belarus. Further growth in headcount is expected this year to cater to the increased demand in our products and services.', '500')}
+                text={it.L('We\'ve grown in size over the years - both in terms of manpower and offices. We currently have over [_1] employees across 10 offices in Malta, Dubai, Malaysia, Paraguay, Cyprus, Rwanda, and Belarus. Further growth in headcount is expected this year to cater to the increased demand in our products and services.', '440')}
                 image='chart-num-employees'
             />
         </div>
