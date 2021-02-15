@@ -104,13 +104,15 @@ const DesktopDownloadBlock = ({
 );
 
 const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
-    const txt_unsupported = it.L('The MT5 desktop app is not supported by macOS, Windows XP, Windows 2003, and Windows Vista.');
+    const txt_unsupported = it.L('The MT5 desktop app is not supported by Windows XP, Windows 2003, and Windows Vista.');
     return (
         <div className={`gr-padding-20 desktop-apps${is_first_child ? ' gr-parent' : ''}`}>
             {has_desktop_app ?
                 <React.Fragment>
                     <Heading system='windows' />
                     <Heading system='linux'>{it.L('MT5 for Linux')}</Heading>
+                    <Heading system='mac'>{it.L('MT5 for MacOs')}</Heading>
+                    
                     <p>
                         {it.L(
                             'Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.'
@@ -126,9 +128,15 @@ const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
                             href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux'
                             target='_blank'
                         />
+                        <DesktopDownloadBlock
+                            id='mac'
+                            href='https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/MetaTrader5.dmg'
+                            target='mac'
+                        />
                     </div>
-                    <AlternativeDescription system='windows' alt1={`<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`} />
-                    <AlternativeDescription system='linux' alt1={`<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows')}</a>`} />
+                    <AlternativeDescription system='windows' alt1={`<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux or MacOs')}</a>`} />
+                    <AlternativeDescription system='linux' alt1={`<a data-type='alt-link' data-target='mac' id='enable-mac-alt-link'>${it.L('MacOs or Windows')}</a>`} />
+                    <AlternativeDescription system='mac' alt1={`<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows or Linux')}</a>`} />
                     <p className='foot-note notice-msg'>{txt_unsupported}</p>
                 </React.Fragment>
                 :
@@ -228,7 +236,8 @@ const Download = () => (
             <MT5WebPlatform />
         </div>
         <div className='invisible' id='mt5_download_mac_platforms'>
-            <MT5WebPlatform is_first_child />
+
+            <MT5DesktopApp is_first_child  has_desktop_app />
 
             <SeparatorLine no_wrapper />
 
@@ -236,7 +245,7 @@ const Download = () => (
 
             <SeparatorLine no_wrapper />
 
-            <MT5DesktopApp />
+            <MT5WebPlatform />
         </div>
         <div className='gr-padding-30' />
     </div>

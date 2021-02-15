@@ -26,6 +26,8 @@ const toggleDownloadPage = target => {
         getElementById(`${target}-description`).setVisibility(1);
     }
     getElementById(`mt5_download_${target === 'mac' ? 'mac_' : ''}platforms`).setVisibility(1);
+    getElementById(`mt5_download_${target !== 'mac' ? 'mac_' : ''}platforms`).setVisibility(0);
+
 };
 const DownloadMetatrader = (() => {
     const onLoad = () => {
