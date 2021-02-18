@@ -597,6 +597,7 @@ module.exports = [
     'Town/City',
     'Trade',
     'Trading Information',
+    'Trading and deposits have been disabled on your account. Kindly allow us some time to review the account.',
     'Trading and withdrawals have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Trading contracts for difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.',
     'Trading is unavailable at this time.',
