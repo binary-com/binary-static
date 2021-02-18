@@ -111,8 +111,8 @@ const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
                 <React.Fragment>
                     <Heading system='windows' />
                     <Heading system='linux'>{it.L('MT5 for Linux')}</Heading>
-                    <Heading system='mac'>{it.L('MT5 for MacOs')}</Heading>
-                    
+                    <Heading system='mac'>{it.L('MT5 for macOS')}</Heading>
+
                     <p>
                         {it.L(
                             'Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders.'
