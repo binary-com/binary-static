@@ -926,6 +926,11 @@ const Authenticate = (() => {
         return !is_not_required;
     };
 
+    const cleanElementVisibility = () => {
+        $('#personal_details_error').setVisibility(0);
+        $('#limited_poi').setVisibility(0);
+    };
+
     const initAuthentication = async () => {
         let has_personal_details_error = false;
         const authentication_status = await getAuthenticationStatus();
@@ -969,6 +974,10 @@ const Authenticate = (() => {
         onfido_unsupported = !identity.services.onfido.is_country_supported;
         const documents_supported = identity.services.onfido.documents_supported;
         const country_code = identity.services.onfido.country_code;
+        const has_submission_attempts = !!identity.services.onfido.submissions_left;
+        const is_rejected = identity.status === 'rejected';
+        const last_rejected_reasons = identity.services.onfido.last_rejected;
+        const has_rejected_reasons = !!last_rejected_reasons.length && is_rejected;
 
         if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
@@ -977,6 +986,51 @@ const Authenticate = (() => {
 
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
+        } else if (has_rejected_reasons && has_submission_attempts) {
+            const maximum_reasons = last_rejected_reasons.slice(0, 3);
+            const has_minimum_reasons = last_rejected_reasons.length > 3;
+            $('#last_rejection_poi').setVisibility(1);
+
+            maximum_reasons.forEach(reason => {
+                $('#last_rejection_list').append(`<li>${reason}</li>`);
+            });
+
+            $('#last_rejection_button').off('click').on('click', () => {
+                $('#last_rejection_poi').setVisibility(0);
+                
+                if (onfido_unsupported) {
+                    $('#not_authenticated_uns').setVisibility(1);
+                    initUnsupported();
+                } else {
+                    initOnfido(service_token_response.token, documents_supported, country_code);
+                }
+            });
+            if (has_minimum_reasons) {
+                $('#last_rejection_more').setVisibility(1);
+                $('#last_rejection_more').off('click').on('click', () => {
+                    $('#last_rejection_more').setVisibility(0);
+                    $('#last_rejection_less').setVisibility(1);
+    
+                    $('#last_rejection_list').empty();
+    
+                    last_rejected_reasons.forEach(reason => {
+                        $('#last_rejection_list').append(`<li>${reason}</li>`);
+                    });
+                });
+                $('#last_rejection_less').off('click').on('click', () => {
+                    $('#last_rejection_less').setVisibility(0);
+                    $('#last_rejection_more').setVisibility(1);
+    
+                    $('#last_rejection_list').empty();
+    
+                    maximum_reasons.forEach(reason => {
+                        $('#last_rejection_list').append(`<li>${reason}</li>`);
+                    });
+                });
+            }
+            
+        } else if (!has_submission_attempts && is_rejected) {
+            $('#limited_poi').setVisibility(1);
         } else if (!needs_verification.includes('identity')) {
             // if POI is verified and POA is not verified, redirect to POA tab
             if (identity.status === 'verified' && document.status !== 'verified') {
@@ -1053,6 +1107,7 @@ const Authenticate = (() => {
     };
 
     const onLoad = async () => {
+        cleanElementVisibility();
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
         if (!isAuthenticationAllowed()) {
