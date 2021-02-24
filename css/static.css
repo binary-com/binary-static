@@ -1713,6 +1713,28 @@ body #not_authenticated_financial ul.checked > li {
   display: inline-block;
   margin-left: 5px; }
 
+.authentication ul.rejected > li {
+  background: url("../images/pages/authenticate/error.svg") no-repeat left 0.3em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: left;
+  padding-left: 1.4em;
+  margin-top: 1em;
+  min-height: auto; }
+
+.authentication #last_rejection_poi span {
+  cursor: pointer;
+  color: #e98024; }
+  .authentication #last_rejection_poi span:hover {
+    text-decoration: underline; }
+
+.authentication #last_rejection_button {
+  margin-top: 1.4em; }
+
+.authentication #last_rejection_list {
+  margin-bottom: 0.9em; }
+
 .authentication #resolve_error {
   color: #c03; }
 
