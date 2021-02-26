@@ -975,7 +975,7 @@ const Authenticate = (() => {
         const documents_supported = identity.services.onfido.documents_supported;
         const country_code = identity.services.onfido.country_code;
         const has_submission_attempts = !!identity.services.onfido.submissions_left;
-        const is_rejected = identity.status === 'rejected';
+        const is_rejected = identity.status === 'rejected' || identity.status === 'suspected';
         const last_rejected_reasons = identity.services.onfido.last_rejected;
         const has_rejected_reasons = !!last_rejected_reasons.length && is_rejected;
 
