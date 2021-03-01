@@ -32,7 +32,7 @@ const ArrowsMobile = ({ direction, parent }) => (
     </div>
 );
 
-const MarketsContent = ({ text, header, image }) => (
+const MarketsContent = ({ text, header, image, footnote }) => (
     <div className='gr-10 gr-12-m gr-centered'>
         <div className='gr-row'>
             <div className='gr-6 gr-12-m gr-12-p center-text-m order-2-m'>
@@ -44,6 +44,7 @@ const MarketsContent = ({ text, header, image }) => (
                     </div>
                 </div>
                 <p>{text}</p>
+                {footnote && <p className='hint'>{footnote}</p>}
             </div>
             <div className='gr-6 gr-12-m gr-12-p center-text'>
                 <img className='responsive' src={it.url_for(image)} />
@@ -52,10 +53,10 @@ const MarketsContent = ({ text, header, image }) => (
     </div>
 );
 
-const MarketsTabContent = ({ text, header, image }) => (
+const MarketsTabContent = ({ text, header, image, footnote }) => (
     <div className='gr-row gr-row-align-middle'>
         <Arrows parent='market_tabs' direction='left' />
-        <MarketsContent text={text} header={header} image={image} />
+        <MarketsContent text={text} header={header} image={image} footnote={footnote} />
         <Arrows parent='market_tabs' direction='right' />
     </div>
 );
@@ -286,9 +287,10 @@ const Home = () => {
                             </TabContent>
                             <TabContent id='crypto'>
                                 <MarketsTabContent
-                                    header={it.L('Cryptocurrencies')}
+                                    header={it.L('Cryptocurrencies*')}
                                     text={it.L('Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin.')}
                                     image='images/pages/home/trade/crypto.svg'
+                                    footnote={it.L('*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd.')}
                                 />
                             </TabContent>
                             <TabContent id='cfds'>
