@@ -513,12 +513,6 @@ const MetaTraderUI = (() => {
         if (step === 2) {
             $form.find('input').not(':input[type=radio]').val('');
 
-            const get_settings = State.getResponse('get_settings');
-
-            if (get_settings.first_name && get_settings.last_name) {
-                $form.find('#txt_name').val(`${get_settings.first_name} ${get_settings.last_name}`);
-            }
-
             const trading_servers = State.getResponse('trading_servers');
             const $view_2_button_container = $form.find('#view_2-buttons');
 
