@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-02-25 07:11\n"
+"PO-Revision-Date: 2021-03-02 04:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -519,6 +519,9 @@ msgstr "（四）结算的可能性"
 
 msgid "(e) Size and nature"
 msgstr "（五）大小和性质"
+
+msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
+msgstr "*加密货币对不适用于在 Deriv (V) Ltd 注册的 DMT5 金融账户。"
 
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
@@ -3304,6 +3307,9 @@ msgstr "像比特币和以太币这样的加密货币是分散式的数字资产
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
 msgstr "比特币和以太币等加密货币是区块链上的分散式数字货币。"
+
+msgid "Cryptocurrencies*"
+msgstr "加密货币*"
 
 msgid "Cryptocurrency"
 msgstr "加密货币"
@@ -8575,7 +8581,7 @@ msgid "Please confirm the transaction details in order to complete the transfer:
 msgstr "请确认交易详情以完成转账："
 
 msgid "Please contact us via %1live chat%2."
-msgstr ""
+msgstr "请通过%1li实时聊天%2与我们联系。"
 
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "请联系您的付款代理，以便验证您的取款请求。"
@@ -8592,8 +8598,8 @@ msgstr "请确保您提供的的地址是完整和准确的。"
 msgid "Please enter a valid Login ID."
 msgstr "请输入有效的登录 ID。"
 
-msgid "Please enter a valid phone number, including the country code (e.g. +15417541234)."
-msgstr "请输入包括国家代码的有效电话号 (例如 +15417541234)."
+msgid "Please enter a valid phone number (e.g. +15417541234)."
+msgstr ""
 
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "请输入日期，格式为日-月-年 时：分（当地时间）。"
@@ -9979,10 +9985,10 @@ msgid "Show all historical transactions up to"
 msgstr "显示此日期前的所有历史记录"
 
 msgid "Show less"
-msgstr ""
+msgstr "显示更少"
 
 msgid "Show more"
-msgstr ""
+msgstr "显示更多"
 
 msgid "Sign out"
 msgstr "登出"
@@ -13151,7 +13157,7 @@ msgid "Upload back of license from your computer"
 msgstr "从电脑上传执照的背面"
 
 msgid "Upload document"
-msgstr ""
+msgstr "上传文件"
 
 msgid "Upload front of card from your computer"
 msgstr "从电脑上传卡的正面"
@@ -14378,7 +14384,7 @@ msgid "You've made no transactions of this type up to this date."
 msgstr "您至今为止没有进行过此类交易。"
 
 msgid "You've reached the limit for uploading your documents."
-msgstr ""
+msgstr "文件上传已达上限。"
 
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "您在金融业界工作至少一年, 拥有在我们平台上交易的所需知识"
@@ -14525,7 +14531,7 @@ msgid "Your proof of identity has expired"
 msgstr "您的身份证明已过期"
 
 msgid "Your proof of identity submission failed because:"
-msgstr ""
+msgstr "您提交的身份证明已失败，因为:"
 
 msgid "Your proof of identity was submitted successfully"
 msgstr "您的身份证明已成功提交"
