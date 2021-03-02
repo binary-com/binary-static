@@ -351,11 +351,13 @@ const MetaTraderConfig = (() => {
                 const sample_account = getSampleAccount(acc_type);
                 const is_demo = /^demo_/.test(acc_type);
                 const get_settings = State.getResponse('get_settings');
+                // First name is not set when user has no real account
+                const name = get_settings.first_name && get_settings.last_name ? `${get_settings.first_name} ${get_settings.last_name}` : sample_account.title;
                 return ({
+                    name,
                     account_type: is_demo ? 'demo' : sample_account.market_type,
                     email       : Client.get('email'),
                     leverage    : sample_account.leverage,
-                    name        : `${get_settings.first_name} ${get_settings.last_name}`,
                     ...(!is_demo && hasMultipleTradeServers(acc_type, accounts_info) && {
                         server: $('#frm_new_account').find('#ddl_trade_server input[checked]').val(),
                     }),
