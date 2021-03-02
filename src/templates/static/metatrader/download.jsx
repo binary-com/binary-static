@@ -5,7 +5,7 @@ const Heading = ({ system, children }) => (
     <h1
         className='invisible download-heading gr-centered'
         id={`${system}-heading`}
-    > {children || it.L(`MT5 for ${system.replace(/^\w/, c => c.toUpperCase())}`)}
+    > {children || it.L('MT5 for [_1]', system.replace(/^\w/, c => c.toUpperCase()))}
     </h1>
 );
 const AlternativeDescription = ({ system, alt1 }) => (
