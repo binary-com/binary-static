@@ -380,7 +380,7 @@ module.exports = [
     'Please confirm that you are not a politically exposed person.',
     'Please ensure that you have the Telegram app installed on your device.',
     'Please enter a valid Login ID.',
-    'Please enter a valid phone number, including the country code (e.g. +15417541234).',
+    'Please enter a valid phone number (e.g. +15417541234).',
     'Please note that the selected currency is allowed for limited accounts only.',
     'Please reapply once the required criteria has been fulfilled.',
     'Please reload the page',

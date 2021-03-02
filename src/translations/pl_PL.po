@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-02-25 07:11\n"
+"PO-Revision-Date: 2021-03-02 04:10\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -519,6 +519,9 @@ msgstr "(d) Prawdopodobieństwo rozliczenia"
 
 msgid "(e) Size and nature"
 msgstr "(e) Rozmiar i charakter"
+
+msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
+msgstr "*Pary kryptowalut nie są dostępne dla kont finansowych DMT5 zarejestrowanych przez Deriv (V) Ltd."
 
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
@@ -3303,6 +3306,9 @@ msgstr "Kryptowaluty, takie jak Bitcoin czy Ethereum, to zdecentralizowane aktyw
 
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
 msgstr "Kryptowaluty, takie jak Bitcoin czy Ethereum, to zdecentralizowane waluty cyfrowe w bazie blockchain."
+
+msgid "Cryptocurrencies*"
+msgstr "Kryptowaluty*"
 
 msgid "Cryptocurrency"
 msgstr "Kryptowaluta"
@@ -8573,7 +8579,7 @@ msgid "Please confirm the transaction details in order to complete the transfer:
 msgstr "Proszę potwierdzić szczegóły transakcji w celu zakończenia przelewu:"
 
 msgid "Please contact us via %1live chat%2."
-msgstr ""
+msgstr "Skontaktuj się z nami za pośrednictwem %1czatu na żywo%2."
 
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "Skontaktuj się ze swoim pośrednikiem płatności, aby zatwierdzić swój wniosek o wypłatę."
@@ -8590,8 +8596,8 @@ msgstr "Upewnij się, że Twoje dane adresowe są kompletne i dokładne."
 msgid "Please enter a valid Login ID."
 msgstr "Proszę podać poprawny login."
 
-msgid "Please enter a valid phone number, including the country code (e.g. +15417541234)."
-msgstr "Podaj prawidłowy numer telefonu, w tym kod kraju (np. +15417541234)."
+msgid "Please enter a valid phone number (e.g. +15417541234)."
+msgstr ""
 
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Wpisz datę i godzinę w formacie DD MMM, YYYY GG:mm (czasu lokalnego)."
@@ -9977,10 +9983,10 @@ msgid "Show all historical transactions up to"
 msgstr "Pokaż wszystkie przeszłe transakcje aż do"
 
 msgid "Show less"
-msgstr ""
+msgstr "Wyświetl mniej"
 
 msgid "Show more"
-msgstr ""
+msgstr "Wyświetl więcej"
 
 msgid "Sign out"
 msgstr "Wyloguj"
@@ -13149,7 +13155,7 @@ msgid "Upload back of license from your computer"
 msgstr "Prześlij tylną część prawa jazdy ze swojego komputera"
 
 msgid "Upload document"
-msgstr ""
+msgstr "Prześlij dokument"
 
 msgid "Upload front of card from your computer"
 msgstr "Prześlij skan przodu dowodu osobistego ze swojego komputera"
@@ -14376,7 +14382,7 @@ msgid "You've made no transactions of this type up to this date."
 msgstr "Do dziś nie zrealizowałeś żadnej transakcji tego rodzaju."
 
 msgid "You've reached the limit for uploading your documents."
-msgstr ""
+msgstr "Osiągnięto limit przesyłanych dokumentów."
 
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Pracowałeś/-aś w sektorze finansowym przez co najmniej rok na stanowisku wymagającym wiedzy o transakcjach, które chcesz zawierać na naszej platformie"
@@ -14523,7 +14529,7 @@ msgid "Your proof of identity has expired"
 msgstr "Twoje potwierdzenie tożsamości jest już nieważne"
 
 msgid "Your proof of identity submission failed because:"
-msgstr ""
+msgstr "Przesłanie dokumentu potwierdzającego tożsamość nie powiodło się z powodu:"
 
 msgid "Your proof of identity was submitted successfully"
 msgstr "Twoje potwierdzenie tożsamości zostało przesłane"
