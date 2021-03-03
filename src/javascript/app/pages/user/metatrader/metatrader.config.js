@@ -343,7 +343,6 @@ const MetaTraderConfig = (() => {
 
     const fields = {
         new_account: {
-            txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
             txt_re_main_pass : { id: '#txt_re_main_pass' },
             ddl_trade_server : { id: '#ddl_trade_server', is_radio: true },
@@ -351,7 +350,11 @@ const MetaTraderConfig = (() => {
             additional_fields: acc_type => {
                 const sample_account = getSampleAccount(acc_type);
                 const is_demo = /^demo_/.test(acc_type);
+                const get_settings = State.getResponse('get_settings');
+                // First name is not set when user has no real account
+                const name = get_settings.first_name && get_settings.last_name ? `${get_settings.first_name} ${get_settings.last_name}` : sample_account.title;
                 return ({
+                    name,
                     account_type: is_demo ? 'demo' : sample_account.market_type,
                     email       : Client.get('email'),
                     leverage    : sample_account.leverage,
@@ -414,7 +417,6 @@ const MetaTraderConfig = (() => {
 
     const validations = () => ({
         new_account: [
-            { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.ddl_trade_server.id,  validations: [['req', { hide_asterisk: true }]] },

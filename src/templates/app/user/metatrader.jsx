@@ -105,10 +105,6 @@ const Metatrader = () => (
                                     <div data='display_login' />
                                     <div className='display_login_tip'>&#9432;</div>
                                 </div>
-                                <div className='gr-row gr-padding-10 gr-parent'>
-                                    <div className='gr-3'>{it.L('Name:')}</div>
-                                    <div data='name' />
-                                </div>
                                 <div className='gr-row gr-padding-10 gr-parent gr-hide mobile-balance'>
                                     <div className='gr-3'>{it.L('Balance:')}</div>
                                     <div data='balance' />
@@ -318,7 +314,6 @@ const Metatrader = () => (
                             </div>
                             <div id='view_2' className='gr-row invisible'>
                                 <div className='container gr-8 gr-12-m'>
-                                    <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
                                     <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
                                     <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
                                     <div id='view_2-buttons' className='gr-padding-10 center-text'>
