@@ -82,10 +82,13 @@ const PersonalDetails = (() => {
             CommonFunctions.getElementById(`row_lbl_${field}`).setVisibility(1);
         });
 
-        if (name_fields.some(key => get_settings.immutable_fields.includes(key))) {
-            CommonFunctions.getElementById('row_name').setVisibility(1);
-            name_fields.forEach(field => CommonFunctions.getElementById(field).setVisibility(0));
-        }
+        // if salutation is missing, we want to show first and last name label but salutation selectable separately
+        name_fields.forEach((field) => {
+            if (get_settings.immutable_fields.includes(field)) {
+                CommonFunctions.getElementById('row_name').setVisibility(1);
+                CommonFunctions.getElementById(field).setVisibility(0);
+            }
+        });
 
         if (!get_settings.immutable_fields.includes('date_of_birth')) {
             $('#date_of_birth').setVisibility(1);
