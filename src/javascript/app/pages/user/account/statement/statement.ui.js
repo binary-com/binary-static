@@ -65,7 +65,7 @@ const StatementUI = (() => {
         $statement_row.children('.date').addClass('pre');
         $statement_row.children('.desc').html(`<span>${statement_data.desc}</span><br>`);
 
-        // add processing time popup for withdrawal
+        // add processing time tooltip for withdrawal
         if (transaction.action_type === 'withdrawal') {
             $statement_row.children('.desc').find('span').attr('data-balloon', transaction.withdrawal_details);
         }
