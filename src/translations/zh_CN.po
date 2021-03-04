@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-04 02:42\n"
+"PO-Revision-Date: 2021-03-04 05:41\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -3587,8 +3587,8 @@ msgstr "在下方存款或提款"
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "存款： %1区块链确认"
 
-msgid "Deposit: %1 working day"
-msgstr "存款：%1工作日内"
+msgid "Deposit: %1 day"
+msgstr ""
 
 msgid "Deposit: Instant"
 msgstr "存款：实时"
@@ -14017,11 +14017,11 @@ msgstr "从客户的MT5真实账户中提款时可以使用与其%1账户不相�
 msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
 msgstr "必须完全通过付款代理存款才可使用付款代理提款。"
 
-msgid "Withdrawal: %1 to %2 working days"
-msgstr "取款：%1至%2 个工作日"
+msgid "Withdrawal: %1 day"
+msgstr ""
 
-msgid "Withdrawal: %1 working day"
-msgstr "取款：%1 个工作日"
+msgid "Withdrawal: %1 to %2 days"
+msgstr ""
 
 msgid "Withdrawal: Not applicable"
 msgstr "取款：不适用"
@@ -14281,6 +14281,12 @@ msgstr "资金只可在法定账户和加密货币账户之间转移."
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "您可以为每种受支持的加密货币开立专用账户。"
 
+msgid "You must also submit a proof of address."
+msgstr ""
+
+msgid "You must also submit a proof of identity."
+msgstr ""
+
 msgid "You must ensure that potential clients are aware of the prohibition on insider trading based on confidential information. If you have any suspicion that such trading is taking place you must inform %1compliance@binary.com%2."
 msgstr "您必须确保潜在客户了解基于机密信息的内幕交易禁令。如果您怀疑有人正在进行此类交易，必须通知%1compliance@binary.com%2。"
 
@@ -14464,8 +14470,14 @@ msgstr "您的电脑更新可能需要数秒钟"
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "您的模拟账户余额当前为 %1 或更低。您可以添加 %2补充账户资金。"
 
-msgid "Your document is being reviewed, please check back in 1-3 days"
-msgstr "您的文件正在审查中，请于1-3天后再查看"
+msgid "Your document is being reviewed, please check back in 1-3 days."
+msgstr ""
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of address."
+msgstr ""
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of identity."
+msgstr ""
 
 msgid "Your face is needed in the selfie"
 msgstr "自拍照片必须包括脸部"

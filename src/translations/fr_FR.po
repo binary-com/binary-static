@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-04 02:43\n"
+"PO-Revision-Date: 2021-03-04 05:41\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -3586,8 +3586,8 @@ msgstr "Déposer ou retirer ci-dessous"
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Dépôt : %1 confirmations blockchain"
 
-msgid "Deposit: %1 working day"
-msgstr "Dépôt : %1 jour ouvrable"
+msgid "Deposit: %1 day"
+msgstr ""
 
 msgid "Deposit: Instant"
 msgstr "Dépôt : instantané"
@@ -14016,11 +14016,11 @@ msgstr "Les retraits de fonds du Compte Réel MT5 du client peuvent être effect
 msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
 msgstr "Le retrait par agent de paiement n'est disponible que si vous effectuez vos dépôts uniquement par le biais d'un agent de paiement."
 
-msgid "Withdrawal: %1 to %2 working days"
-msgstr "Retrait : %1 à %2 jours ouvrables"
+msgid "Withdrawal: %1 day"
+msgstr ""
 
-msgid "Withdrawal: %1 working day"
-msgstr "Retrait : %1 jour ouvrable"
+msgid "Withdrawal: %1 to %2 days"
+msgstr ""
 
 msgid "Withdrawal: Not applicable"
 msgstr "Retrait: Non applicable"
@@ -14280,6 +14280,12 @@ msgstr "Vous ne pouvez virer des fonds qu'entre des comptes fiat et crypto devis
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "Vous pouvez ouvrir un compte pour chaque cryptodevise supportée."
 
+msgid "You must also submit a proof of address."
+msgstr ""
+
+msgid "You must also submit a proof of identity."
+msgstr ""
+
 msgid "You must ensure that potential clients are aware of the prohibition on insider trading based on confidential information. If you have any suspicion that such trading is taking place you must inform %1compliance@binary.com%2."
 msgstr "Vous devez vous assurer que les clients potentiels sont au courant de l'interdiction des délits d'initiés fondés sur des renseignements confidentiels. Si vous avez le moindre soupçon qu'une telle transaction a lieu, vous devez informer %1compliance@binary.com%2."
 
@@ -14463,8 +14469,14 @@ msgstr "La mise à jour de votre ordinateur peut prendre quelques secondes"
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "Le solde de votre compte démo est actuellement inférieur ou égal à %1. Vous pouvez recharger votre compte avec %2 de plus."
 
-msgid "Your document is being reviewed, please check back in 1-3 days"
-msgstr "Votre document est en cours de revue, merci de vérifier de nouveau dans 1 à 3 jours"
+msgid "Your document is being reviewed, please check back in 1-3 days."
+msgstr ""
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of address."
+msgstr ""
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of identity."
+msgstr ""
 
 msgid "Your face is needed in the selfie"
 msgstr "Votre visage est nécessaire dans le selfie"
