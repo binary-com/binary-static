@@ -95,7 +95,7 @@ const LiveChat = (() => {
                 if (window.LiveChatWidget.get('chat_data')) {
                     const { chatId, threadId } = window.LiveChatWidget.get('chat_data');
                     if (threadId) {
-                        customerSDK.deactivateChat({ chatId });
+                        customerSDK.deactivateChat({ chatId }).catch(() => null);
                     }
                 }
                 resolve();

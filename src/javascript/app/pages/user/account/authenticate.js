@@ -26,6 +26,7 @@ const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
     let onfido_unsupported       = false;
+    let authentication_object    = {};
     let file_checks          = {};
     let file_checks_uns      = {};
     let onfido,
@@ -769,6 +770,7 @@ const Authenticate = (() => {
             $button.setVisibility(0);
             $('.submit-status').setVisibility(0);
             $('#not_authenticated').setVisibility(0);
+            showCTAButton('identity', 'pending');
             $('#pending_poa').setVisibility(1);
         });
     };
@@ -780,6 +782,8 @@ const Authenticate = (() => {
             $button_uns.setVisibility(0);
             $('.submit-status-uns').setVisibility(0);
             $('#not_authenticated_uns').setVisibility(0);
+
+            showCTAButton('document', 'pending');
             $('#upload_complete').setVisibility(1);
         });
     };
@@ -875,6 +879,20 @@ const Authenticate = (() => {
         }
     };
 
+    const showCTAButton = (type, status) => {
+        const { needs_verification } = authentication_object;
+        const type_required = type === 'identity' ? 'poi' : 'poa';
+        const type_pending = type === 'identity' ? 'poa' : 'poi';
+        const description_status = status !== 'verified';
+
+        if (needs_verification.includes(type)) {
+            $(`#text_${status}_${type_required}_required`).setVisibility(1);
+            $(`#button_${status}_${type_required}_required`).setVisibility(1);
+        } else if (description_status) {
+            $(`#text_${status}_${type_pending}_pending`).setVisibility(1);
+        }
+    };
+
     const handleComplete = () => {
         BinarySocket.send({
             notification_event: 1,
@@ -888,6 +906,8 @@ const Authenticate = (() => {
                     $('#upload_complete').setVisibility(1);
                     Header.displayAccountStatus();
                     $('#authentication_loading').setVisibility(0);
+
+                    showCTAButton('document', 'pending');
                 });
             }, 4000);
         });
@@ -968,6 +988,7 @@ const Authenticate = (() => {
         }
 
         const { identity, needs_verification, document } = authentication_status;
+        authentication_object = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
         const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
@@ -1046,12 +1067,15 @@ const Authenticate = (() => {
                     }
                     break;
                 case 'pending':
+                    showCTAButton('document', 'pending');
+
                     $('#upload_complete').setVisibility(1);
                     break;
                 case 'rejected':
                     $('#unverified').setVisibility(1);
                     break;
                 case 'verified':
+                    showCTAButton('document', 'verified');
                     $('#verified').setVisibility(1);
                     break;
                 case 'expired':
@@ -1080,6 +1104,7 @@ const Authenticate = (() => {
                     break;
                 }
                 case 'pending':
+                    showCTAButton('identity', 'pending');
                     $('#pending_poa').setVisibility(1);
                     break;
                 case 'rejected':
@@ -1089,6 +1114,7 @@ const Authenticate = (() => {
                     $('#unverified_poa').setVisibility(1);
                     break;
                 case 'verified':
+                    showCTAButton('document', 'verified');
                     $('#verified_poa').setVisibility(1);
                     break;
                 case 'expired':
