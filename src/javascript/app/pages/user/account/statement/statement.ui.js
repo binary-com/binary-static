@@ -67,6 +67,7 @@ const StatementUI = (() => {
 
         // add processing time tooltip for withdrawal
         if (transaction.action_type === 'withdrawal') {
+            console.log(transaction)
             $statement_row.children('.desc').find('span').attr('data-balloon', transaction.withdrawal_details);
         }
 
