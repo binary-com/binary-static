@@ -3,7 +3,6 @@ import Head from './head.jsx';
 import { CONTENT_PLACEHOLDER, WithLayout } from './layout.jsx';
 import InterviewPopup from '../components/interview_popup.jsx';
 import Elevio from '../includes/elevio.jsx';
-import Gtm from '../includes/gtm.jsx';
 import LiveChat from '../includes/livechat.jsx';
 
 const Layout = () => {
@@ -15,7 +14,6 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language}>
-                <Gtm />
                 <div id='msg_notification' className='notice-msg center-text' />
                 <div id='page-wrapper'>
                     <div id='dashboard-wrapper'>

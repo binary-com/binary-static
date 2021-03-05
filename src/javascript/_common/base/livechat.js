@@ -3,7 +3,6 @@ const BinarySocket = require('./socket_base');
 const ClientBase = require('./client_base');
 
 const LiveChat = (() => {
-
     const licenseID = 12049137;
     const clientID = '66aa088aad5a414484c1fd1fa8a5ace7';
     let session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '' };

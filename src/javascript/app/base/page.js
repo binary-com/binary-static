@@ -14,6 +14,7 @@ const ClientBase       = require('../../_common/base/client_base');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../_common/common_functions').getElementById;
 const Crowdin          = require('../../_common/crowdin');
+const GTM              = require('../../_common/gtm');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
 const localize         = require('../../_common/localize').localize;
@@ -35,6 +36,7 @@ const Page = (() => {
         Url.init();
         Elevio.init();
         PushNotification.init();
+        GTM.init();
         onDocumentReady();
         Crowdin.init();
     };
