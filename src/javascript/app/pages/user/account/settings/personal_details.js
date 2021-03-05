@@ -223,7 +223,9 @@ const PersonalDetails = (() => {
                 if (should_update_value) {
                     $(element_key).change(function () {
                         if (this.getAttribute('id') === 'date_of_birth') {
-                            this.setAttribute('data-value', toISOFormat(moment(this.value, 'DD MMM, YYYY')));
+                            // value could be epoch or already formatted to ISO
+                            const date_of_birth = this.value.indexOf('-') < 0 ? toISOFormat(moment(this.value, 'DD MMM, YYYY')) : this.value;
+                            this.setAttribute('data-value', date_of_birth);
                             return CommonFunctions.dateValueChanged(this, 'date');
                         }
                         return this.setAttribute('data-value', this.value);
