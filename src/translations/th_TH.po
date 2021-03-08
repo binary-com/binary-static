@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-04 05:41\n"
+"PO-Revision-Date: 2021-03-08 02:56\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -521,7 +521,7 @@ msgid "(e) Size and nature"
 msgstr "(จ) ขนาดและลักษณะ"
 
 msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
-msgstr ""
+msgstr "*คู่สกุลเงินดิจิทัลไม่สามารถใช้ได้กับบัญชีการเงิน DMT5 ที่ลงทะเบียนกับ Deriv (V) Ltd."
 
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
@@ -3309,7 +3309,7 @@ msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital c
 msgstr "เงินดิจิทัล ได้แก่ บิทคอยน์ และ อีเธอเรียม เป็นสกุลเงินดิจิทัลบนบล็อกเชนที่แยกออกจากการควบคุมโดยศูนย์กลาง"
 
 msgid "Cryptocurrencies*"
-msgstr ""
+msgstr "สกุลเงินดิจิตอล*"
 
 msgid "Cryptocurrency"
 msgstr "เงินดิจิทัล"
@@ -3588,7 +3588,7 @@ msgid "Deposit: %1 blockchain confirmations"
 msgstr "ฝากเงิน: %1 การยืนยันจากบล็อกเชน"
 
 msgid "Deposit: %1 day"
-msgstr ""
+msgstr "ฝากเงิน: %1 วัน"
 
 msgid "Deposit: Instant"
 msgstr "ฝากเงิน: ทันที"
@@ -6954,7 +6954,7 @@ msgid "MT5 Web platform"
 msgstr "MT5 สำหรับเว็บ"
 
 msgid "MT5 for %1"
-msgstr ""
+msgstr "MT5 สำหรับ %1"
 
 msgid "MT5 for Android"
 msgstr "MT5 สำหรับแอนดรอยด์"
@@ -8578,7 +8578,7 @@ msgid "Please confirm the transaction details in order to complete the transfer:
 msgstr "โปรดยืนยันรายละเอียดของธุรกรรมเพื่อทำให้การโอนสมบูรณ์"
 
 msgid "Please contact us via %1live chat%2."
-msgstr ""
+msgstr "กรุณาติดต่อเราผ่านทาง %1แชทสด%2"
 
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "โปรดติดต่อตัวแทนชำระเงินของท่านเพื่อตรวจสอบคำขอถอนเงินของท่าน"
@@ -9982,10 +9982,10 @@ msgid "Show all historical transactions up to"
 msgstr "แสดงรายละเอียดประวัติธุรกรรมถึง"
 
 msgid "Show less"
-msgstr ""
+msgstr "แสดงน้อยลง"
 
 msgid "Show more"
-msgstr ""
+msgstr "แสดงเพิ่มเติม"
 
 msgid "Sign out"
 msgstr "ออกจากระบบ"
@@ -13155,7 +13155,7 @@ msgid "Upload back of license from your computer"
 msgstr "อัปโหลดด้านหลังใบขับขี่จากคอมพิวเตอร์ของคุณ"
 
 msgid "Upload document"
-msgstr ""
+msgstr "อัปโหลดเอกสาร"
 
 msgid "Upload front of card from your computer"
 msgstr "อัปโหลดด้านหน้าบัตรประจำตัวประชาชนจากคอมพิวเตอร์ของคุณ"
@@ -14019,10 +14019,10 @@ msgid "Withdrawal via payment agent is available only if you deposit exclusively
 msgstr "การถอนเงินผ่านตัวแทนรับชำระเงินมีให้บริการท่าน เมื่อท่านฝากเงินผ่านตัวแทนรับชำระเงินแต่เพียงผู้เดียว"
 
 msgid "Withdrawal: %1 day"
-msgstr ""
+msgstr "การถอนเงิน: %1 วัน"
 
 msgid "Withdrawal: %1 to %2 days"
-msgstr ""
+msgstr "การถอนเงิน: %1 ถึง %2 วัน"
 
 msgid "Withdrawal: Not applicable"
 msgstr "การถอนเงิน: ไม่เกี่ยวข้อง"
@@ -14283,10 +14283,10 @@ msgid "You may open one account for each supported cryptocurrency."
 msgstr "ท่านอาจจะเปิดหนึ่งบัญชีเพื่อรอองรับเงินดิจิทัลแต่ละประเภท"
 
 msgid "You must also submit a proof of address."
-msgstr ""
+msgstr "นอกจากนี้ต้องส่งหลักฐานยืนยันที่อยู่ของคุณด้วย"
 
 msgid "You must also submit a proof of identity."
-msgstr ""
+msgstr "นอกจากนี้ต้องส่งหลักฐานยืนยันตัวตนของคุณด้วย"
 
 msgid "You must ensure that potential clients are aware of the prohibition on insider trading based on confidential information. If you have any suspicion that such trading is taking place you must inform %1compliance@binary.com%2."
 msgstr "คุณต้องตรวจสอบให้แน่ใจว่าลูกค้าที่มีศักยภาพตระหนักถึงข้อห้ามในการซื้อขายหลักทรัพย์โดยใช้ข้อมูลภายในโดยอาศัยข้อมูลที่เป็นความลับ หากคุณมีข้อสงสัยว่ามีการซื้อขายเกิดขึ้นคุณต้องแจ้ง %1compliance@binary.com%2"
@@ -14385,7 +14385,7 @@ msgid "You've made no transactions of this type up to this date."
 msgstr "คุณไม่ได้ทําธุรกรรมประเภทนี้จนถึงวันที่นี้"
 
 msgid "You've reached the limit for uploading your documents."
-msgstr ""
+msgstr "คุณอัปโหลดเอกสารถึงขีด จำกัด แล้ว"
 
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "ท่านมีประสบการณ์ทำงานในภาคการเงินมาก่อนอย่างน้อยหนึ่งปีในตำแหน่งที่ต้องใช้ความรู้ของธุรกรรมที่ท่านตั้งใจจะใช้กับแพลตฟอร์มของเรา"
@@ -14472,13 +14472,13 @@ msgid "Your demo account balance is currently %1 or less. You may top up your ac
 msgstr "ท่านมียอดเงินคงเหลือในบัญชีทดลอง %1 หรือน้อยกว่า กรุณาฝากเงินในบัญชีของท่านเพิ่ม %2"
 
 msgid "Your document is being reviewed, please check back in 1-3 days."
-msgstr ""
+msgstr "เอกสารของคุณกำลังอยู่ระหว่างการพิจารณา โปรดตรวจสอบอีกครั้งใน 1-3 วัน"
 
 msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of address."
-msgstr ""
+msgstr "เอกสารของคุณกำลังอยู่ระหว่างการพิจารณา โปรดตรวจสอบอีกครั้งใน 1-3 วัน นอกจากนี้ต้องส่งหลักฐานยืนยันที่อยู่ของคุณด้วย"
 
 msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of identity."
-msgstr ""
+msgstr "เอกสารของคุณกำลังอยู่ระหว่างการพิจารณา โปรดตรวจสอบอีกครั้งใน 1-3 วัน นอกจากนี้ต้องส่งหลักฐานยืนยันตัวตนของคุณด้วย"
 
 msgid "Your face is needed in the selfie"
 msgstr "ใบหน้าของคุณเป็นสิ่งที่จำเป็นในการเซลฟี่"
@@ -14538,7 +14538,7 @@ msgid "Your proof of identity has expired"
 msgstr "เอกสารแสดงตัวบุคคลของท่านหมดอายุแล้ว"
 
 msgid "Your proof of identity submission failed because:"
-msgstr ""
+msgstr "การส่งหลักฐานยืนยันตัวตนของคุณล้มเหลวเนื่องจาก:"
 
 msgid "Your proof of identity was submitted successfully"
 msgstr "เอกสารแสดงตัวบุคคลของท่านถูกนำส่งเรียบร้อยแล้ว"
