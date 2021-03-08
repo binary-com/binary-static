@@ -320,6 +320,49 @@ const Regulation = () => {
                                 text={it.L('Table 6 - Likelihood of execution information')}
                             />
                         </div>
+                        <div className='gr-6 gr-12-m gr-padding-30'>
+                            <h3>{it.L('Q4 2020')}</h3>
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q4/Table_1.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 1 - Type of execution venue')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q4/Table_3.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 3 - Intra-Day Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q4/Table_4.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 4 - Daily Price information')}
+                            />
+                            <FillBox
+                                align_left
+                                center
+                                border='border-dark-gray'
+                                className='margin-top-17 align-start'
+                                image='images/pages/regulation/xlsx-icon.svg'
+                                href={it.url_for('/download/rts27_2020/Q4/Table_6.xlsx')}
+                                target='_blank'
+                                text={it.L('Table 6 - Likelihood of execution information')}
+                            />
+                        </div>
                     </div>
 
                     <h3>{it.L('RTS 27 2019')}</h3>
