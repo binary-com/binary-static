@@ -32,27 +32,27 @@ Use `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html` f
 2. In `src/javascript/config.js`: Insert the `Application ID` of your registered application in `user_app_id`.
   * **NOTE:** In order to avoid accidentally committing personal changes to this file, use `git update-index --assume-unchanged src/javascript/config.js`
 
-3. Run `grunt dev`
+3. Run `sudo grunt dev`
 
 
 ### Deploy js/css and template changes together
 
 ```
-grunt dev
+sudo grunt dev
 ```
 
 
 ### Deploy only js/css changes
 
 ```
-grunt deploy
+sudo grunt deploy
 ```
 
 
 ### Deploy some template changes
 
 ```
-grunt dev --path=about-us
+sudo grunt dev --path=about-us
 ```
 
 
