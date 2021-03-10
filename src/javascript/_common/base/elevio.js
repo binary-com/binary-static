@@ -97,6 +97,9 @@ const Elevio = (() => {
         window._elev.on('widget:opened', () => { // eslint-disable-line no-underscore-dangle
             GTM.pushDataLayer({ event: 'elevio_widget_opened' });
         });
+        window._elev.on('page:view', () => { // eslint-disable-line no-underscore-dangle
+            GTM.pushDataLayer({ event: 'elevio_page_views' });
+        });
     };
 
     const makeLauncherVisible = () => {
