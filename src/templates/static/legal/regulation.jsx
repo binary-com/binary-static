@@ -158,6 +158,8 @@ const Regulation = () => {
                             <FillBox id='crypto_fillbox' padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Crypto.pdf`)} target='_blank' text={it.L('Cryptocurrencies')} />
                             <FillBox id='cfd_fillbox' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Commodities.pdf`)} target='_blank' text={it.L('Commodities')} />
                             <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Forex.pdf`)} target='_blank' text={it.L('Forex')} />
+                            <FillBox id='fx_fillbox' padding='4' center className='margin-right-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Stocks.pdf`)} target='_blank' text={it.L('Stocks')} />
+                            <FillBox id='fx_fillbox' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang_KID}/Stock-Indices.pdf`)} target='_blank' text={it.L('Stock Indices')} />
                         </div>
                     </div>
 
