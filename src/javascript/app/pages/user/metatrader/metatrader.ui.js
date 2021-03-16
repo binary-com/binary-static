@@ -7,6 +7,7 @@ const Validation       = require('../../../common/form_validation');
 const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
 const getElementById   = require('../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../_common/localize').localize;
+const Password         = require('../../../../_common/check_password');
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const getHashValue     = require('../../../../_common/url').getHashValue;
@@ -698,8 +699,16 @@ const MetaTraderUI = (() => {
             }
         });
 
-        $form.find('#view_2 .btn-back').click(() => { displayStep(1); });
-        $form.find('#view_3 .btn-back').click(() => { displayStep(2); });
+        $form.find('#view_2 .btn-back').click(() => {
+            const password_selector = $form.find('.password--input-field').attr('id');
+            if (password_selector) {
+                Password.removeCheck(`#${password_selector}`, true);
+            }
+            displayStep(1);
+        });
+        $form.find('#view_3 .btn-back').click(() => {
+            displayStep(2);
+        });
 
         // Account type selection
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
