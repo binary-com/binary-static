@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-18 06:26\n"
+"PO-Revision-Date: 2021-03-18 09:47\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "404"
 msgid "500"
 msgstr "500"
 
-msgid " (account created)"
-msgstr " (conta criada)"
+msgid " (Region added)"
+msgstr ""
 
-msgid " (unavailable)"
-msgstr " (indisponível)"
+msgid " (Temporarily unavailable)"
+msgstr ""
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " Todas as chamadas são gravadas para fins de treinamento e monitoramento."
@@ -524,6 +524,9 @@ msgstr "(e) Dimensão e natureza"
 msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
 msgstr "\n"
 "* Os pares de criptomoedas não estão disponíveis para contas financeiras DMT5 registradas com Deriv (V) Ltd."
+
+msgid "+ Add region"
+msgstr ""
 
 msgid "0 – 19.999%"
 msgstr "0 a 19,999%"
@@ -1108,9 +1111,6 @@ msgstr "Adicione outra palavra ou duas. Palavras incomuns são melhores."
 
 msgid "Add funds"
 msgstr "Adicionar fundos"
-
-msgid "Add more trade servers"
-msgstr "Adicionar mais servidores de negociação"
 
 msgid "Additional business exposure:"
 msgstr "Exposição comercial adicional:"
@@ -2273,9 +2273,6 @@ msgstr "Preço de compra"
 msgid "Buy the contract or re-define your position."
 msgstr "Compre o contrato ou redefina a sua posição."
 
-msgid "Buy time"
-msgstr ""
-
 msgid "Buy your first currency pairs"
 msgstr "Compre os seus primeiros pares de moedas"
 
@@ -3061,6 +3058,9 @@ msgstr "Continue com a verificação"
 msgid "Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively."
 msgstr "Índice Contínuos – Escolha dentre o Índice Volatilidade 10, o Índice Volatilidade 25, o Índice Volatilidade 50, o Índice Volatilidade 75 e o Índice Volatilidade 100. Estes índices correspondem a mercados simulados com volatilidades constantes de 10%, 25%, 50%, 75% e 100%, respectivamente."
 
+msgid "Contract"
+msgstr ""
+
 msgid "Contract Confirmation"
 msgstr "Confirmação de Contrato"
 
@@ -3081,9 +3081,6 @@ msgstr "Contrato começa"
 
 msgid "Contract Type"
 msgstr "Tipo de contrato"
-
-msgid "Contract details"
-msgstr ""
 
 msgid "Contract duration"
 msgstr "Duração do contrato"
@@ -6277,9 +6274,6 @@ msgstr "Indica a disponibilidade da negociação de criptomoedas numa determinad
 msgid "Indicative"
 msgstr "Indicativo"
 
-msgid "Indicative price"
-msgstr ""
-
 msgid "Industrial metals"
 msgstr "Metais industriais"
 
@@ -7012,9 +7006,6 @@ msgstr "Conta real MT5"
 
 msgid "MT5 Synthetic"
 msgstr "MT5 Sintéticos"
-
-msgid "MT5 Web platform"
-msgstr "Plataforma Web MT5"
 
 msgid "MT5 for %1"
 msgstr "MT5 para %1"
@@ -8431,9 +8422,6 @@ msgstr "Prêmio"
 msgid "Payout Range"
 msgstr "Intervalo do pagamento de prêmios"
 
-msgid "Payout limit"
-msgstr ""
-
 msgid "Paytrust88 is a payment facility that allows online bank transfers for clients across Southeast Asia. For more information, please visit %1."
 msgstr "O Paytrust88 é uma instalação de pagamento que permite transferências bancárias online para clientes em todo o sudeste da Ásia. Para mais informações, visite %1."
 
@@ -9373,7 +9361,7 @@ msgstr "Processo de recrutamento"
 msgid "Redo"
 msgstr "Refazer"
 
-msgid "Ref. ID"
+msgid "Ref."
 msgstr ""
 
 msgid "Refer clients to Binary with the knowledge, or with a reasonably expected knowledge, that these clients engage in such conduct that constitutes Malicious Activity"
@@ -9751,6 +9739,12 @@ msgstr "Sáb"
 msgid "Salaried Employee"
 msgstr "Trabalhador assalariado"
 
+msgid "Sale Date"
+msgstr ""
+
+msgid "Sale Price"
+msgstr ""
+
 msgid "Sale of Property"
 msgstr "Venda de propriedade"
 
@@ -9928,12 +9922,6 @@ msgstr "Venda os seus contratos a preços de mercado."
 
 msgid "Sell option"
 msgstr "Vender opção"
-
-msgid "Sell price"
-msgstr ""
-
-msgid "Sell time"
-msgstr ""
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "Venda os seus contratos de longo prazo antes de expiração para proteger quaisquer lucros que tenha realizado ou para minimizar as suas perdas."
@@ -12813,6 +12801,9 @@ msgstr "Negocie já"
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "Negocie em mercados subjacentes que incluem Forex, Índices de ações, Commodities e muito mais."
 
+msgid "Trade on web terminal"
+msgstr ""
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Negocie apenas uma quantia de dinheiro que possa perder. Não jogue com dinheiro emprestado."
 
@@ -12940,9 +12931,6 @@ msgstr "TradingView"
 msgid "Trailing stops"
 msgstr "Limites móveis"
 
-msgid "Transaction"
-msgstr ""
-
 msgid "Transaction ID"
 msgstr "ID da transação"
 
@@ -12951,9 +12939,6 @@ msgstr "O monitoramento de transações é de responsabilidade do cliente em sua
 
 msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "Transação executada por %1 (App ID: %2)"
-
-msgid "Transaction time"
-msgstr ""
 
 msgid "Transactions in CFD instruments are traded outside a stock exchange or OTF or MTF."
 msgstr "Transações de instrumentos de CFD são negociados fora de bolsas de valores ou OTF ou MTF."

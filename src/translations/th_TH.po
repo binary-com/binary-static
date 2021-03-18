@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-18 06:26\n"
+"PO-Revision-Date: 2021-03-18 09:47\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "404"
 msgid "500"
 msgstr "500"
 
-msgid " (account created)"
-msgstr " (สร้างบัญชีแล้ว)"
+msgid " (Region added)"
+msgstr ""
 
-msgid " (unavailable)"
-msgstr " (ไม่)"
+msgid " (Temporarily unavailable)"
+msgstr ""
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " ทุกสายการสนทนาจะถูกบันทึกเพื่อการพัฒนาบุคลากรและการปรับปรุงคุณภาพ"
@@ -522,6 +522,9 @@ msgstr "(จ) ขนาดและลักษณะ"
 
 msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
 msgstr "*คู่สกุลเงินดิจิทัลไม่สามารถใช้ได้กับบัญชีการเงิน DMT5 ที่ลงทะเบียนกับ Deriv (V) Ltd."
+
+msgid "+ Add region"
+msgstr ""
 
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
@@ -1104,9 +1107,6 @@ msgstr "เพิ่มคำอื่นหรือสองคำ ไม่�
 
 msgid "Add funds"
 msgstr "ฝากเงิน"
-
-msgid "Add more trade servers"
-msgstr "เพิ่มเซิร์ฟเวอร์การค้าเพิ่มเติม"
 
 msgid "Additional business exposure:"
 msgstr "การเปิดทางธุรกิจเพิ่มเติม"
@@ -2266,9 +2266,6 @@ msgstr "ราคาซื้อ"
 msgid "Buy the contract or re-define your position."
 msgstr "ซื้อสัญญา หรือ กำหนดตำแหน่งของท่านใหม่อีกครั้ง"
 
-msgid "Buy time"
-msgstr ""
-
 msgid "Buy your first currency pairs"
 msgstr "ซื้อคู่สกุลเงินแรกของท่าน"
 
@@ -3052,6 +3049,9 @@ msgstr "ดําเนินการยืนยันต่อ"
 msgid "Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively."
 msgstr "ดัชนีต่อเนื่อง เลือกจากดัชนีผันผวน 10 ดัชนีผันผวน 25 ดัชนีผันผวน 50 ดัชนีผันผวน 75 และดัชนีผันผวน 100 ดัชนีเหล่านี้สอดคล้องกับตลาดที่จำลองมาโดยมีความผันผวนคงที่ที่ 10%, 25%, 50%, 75%, และ 100% ตามลำดับ"
 
+msgid "Contract"
+msgstr ""
+
 msgid "Contract Confirmation"
 msgstr "การยืนยันสัญญา"
 
@@ -3072,9 +3072,6 @@ msgstr "เริ่มต้นสัญญา"
 
 msgid "Contract Type"
 msgstr "ประเภทของสัญญา"
-
-msgid "Contract details"
-msgstr ""
 
 msgid "Contract duration"
 msgstr "ระยะเวลาของสัญญา"
@@ -6245,9 +6242,6 @@ msgstr "ระบุให้การซื้อขายเงินดิจ
 msgid "Indicative"
 msgstr "อินดิเคทีฟ"
 
-msgid "Indicative price"
-msgstr ""
-
 msgid "Industrial metals"
 msgstr "โลหะอุตสาหกรรม"
 
@@ -6979,9 +6973,6 @@ msgstr "บัญชี MT5 จริง"
 
 msgid "MT5 Synthetic"
 msgstr "ดัชนีสังเคราะห์ MT5"
-
-msgid "MT5 Web platform"
-msgstr "MT5 สำหรับเว็บ"
 
 msgid "MT5 for %1"
 msgstr "MT5 สำหรับ %1"
@@ -8397,9 +8388,6 @@ msgstr "การชำระเงิน"
 msgid "Payout Range"
 msgstr "ช่วงการชำระเงิน"
 
-msgid "Payout limit"
-msgstr ""
-
 msgid "Paytrust88 is a payment facility that allows online bank transfers for clients across Southeast Asia. For more information, please visit %1."
 msgstr "Paytrust88 เป็นบริการชำระเงินที่ให้ลูกค้าทำการโอนเงินผ่านธนาคารได้ทางออนไลน์ภายในภูมิภาคเอเชียตะวันออกเฉียงใต้ สำหรับข้อมูลเพิ่มเติม โปรดศึกษาจาก %1"
 
@@ -9336,7 +9324,7 @@ msgstr "กระบวนการสรรหาบุคลากร"
 msgid "Redo"
 msgstr "ทำซ้ำ"
 
-msgid "Ref. ID"
+msgid "Ref."
 msgstr ""
 
 msgid "Refer clients to Binary with the knowledge, or with a reasonably expected knowledge, that these clients engage in such conduct that constitutes Malicious Activity"
@@ -9711,6 +9699,12 @@ msgstr "ส"
 msgid "Salaried Employee"
 msgstr "พนักงานประจำ"
 
+msgid "Sale Date"
+msgstr ""
+
+msgid "Sale Price"
+msgstr ""
+
 msgid "Sale of Property"
 msgstr "การขายทรัพย์สิน"
 
@@ -9887,12 +9881,6 @@ msgstr "ขายกลับไปที่ราคาตลาด"
 
 msgid "Sell option"
 msgstr "ขายออปชั่น"
-
-msgid "Sell price"
-msgstr ""
-
-msgid "Sell time"
-msgstr ""
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "ขายสัญญาระยะยาวของคุณก่อนที่จะหมดอายุเพื่อรักษาผลกำไรที่คุณอาจทำได้ หรือเพื่อลดการสูญเสียของคุณ"
@@ -12770,6 +12758,9 @@ msgstr "ซื้อขายทันที"
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "ซื้อขายในตลาดอ้างอิงซึ่งรวมถึงฟอเร็กซ์ ดัชนีหุ้น หุ้นโภคภัณฑ์ และอื่นๆ"
 
+msgid "Trade on web terminal"
+msgstr ""
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "ซื้อขายด้วยเงินที่ท่านจะยอมขาดทุนได้เท่านั้น อย่านำเงินยืมมาเทรด"
 
@@ -12896,9 +12887,6 @@ msgstr "TradingView"
 msgid "Trailing stops"
 msgstr "การหยุดขาดทุนแบบเลื่อนตามราคา (Trailing Stops)"
 
-msgid "Transaction"
-msgstr ""
-
 msgid "Transaction ID"
 msgstr "Transaction ID"
 
@@ -12907,9 +12895,6 @@ msgstr "การดูแลธุรกรรมต่างๆ ล้วน�
 
 msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "ดำเนินธุรกรรมโดย %1 (App ID: %2)"
-
-msgid "Transaction time"
-msgstr ""
 
 msgid "Transactions in CFD instruments are traded outside a stock exchange or OTF or MTF."
 msgstr "ธุรกรรมจากเครื่องมือ CFD ถูกซื้อขายภายนอกตลาดหลักทรัพย์ หรือ OTF หรือ MTF"

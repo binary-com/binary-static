@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-18 06:26\n"
+"PO-Revision-Date: 2021-03-18 09:47\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "404"
 msgid "500"
 msgstr "500"
 
-msgid " (account created)"
-msgstr " (已开立账户)"
+msgid " (Region added)"
+msgstr ""
 
-msgid " (unavailable)"
-msgstr " (不可用)"
+msgid " (Temporarily unavailable)"
+msgstr ""
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " 为了利于培训和监控，所有通话将被录音。"
@@ -522,6 +522,9 @@ msgstr "（五）大小和性质"
 
 msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
 msgstr "*加密货币对不适用于在 Deriv (V) Ltd 注册的 DMT5 金融账户。"
+
+msgid "+ Add region"
+msgstr ""
 
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
@@ -1104,9 +1107,6 @@ msgstr "加上一两个字。不常见的词更好。"
 
 msgid "Add funds"
 msgstr "添加基金"
-
-msgid "Add more trade servers"
-msgstr "添加更多交易服务器"
 
 msgid "Additional business exposure:"
 msgstr "附加商业风险："
@@ -2266,9 +2266,6 @@ msgstr "买入价"
 msgid "Buy the contract or re-define your position."
 msgstr "购入合约或重新设置头寸。"
 
-msgid "Buy time"
-msgstr ""
-
 msgid "Buy your first currency pairs"
 msgstr "买入第一个货币对"
 
@@ -3053,6 +3050,9 @@ msgstr "继续验证操作"
 msgid "Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively."
 msgstr "连续指数 - 从波动率10指数、波动率25指数、波动率50指数、波动率75指数及波动率100指数中挑选。这些指数跟具10%、25%、50%、75% 和100% 持续波动率的模拟市场对应。"
 
+msgid "Contract"
+msgstr ""
+
 msgid "Contract Confirmation"
 msgstr "合约确认"
 
@@ -3073,9 +3073,6 @@ msgstr "合约开始时间"
 
 msgid "Contract Type"
 msgstr "合约类型"
-
-msgid "Contract details"
-msgstr ""
 
 msgid "Contract duration"
 msgstr "合约期限"
@@ -6245,9 +6242,6 @@ msgstr "指出特定账户交易加密货币的可行性。"
 msgid "Indicative"
 msgstr "指示性"
 
-msgid "Indicative price"
-msgstr ""
-
 msgid "Industrial metals"
 msgstr "工业金属"
 
@@ -6980,9 +6974,6 @@ msgstr "MT5真实账户"
 
 msgid "MT5 Synthetic"
 msgstr "MT5 综合"
-
-msgid "MT5 Web platform"
-msgstr "网络平台版MT5"
 
 msgid "MT5 for %1"
 msgstr "%1 版MT5"
@@ -8397,9 +8388,6 @@ msgstr "赔付"
 msgid "Payout Range"
 msgstr "赔付范围"
 
-msgid "Payout limit"
-msgstr ""
-
 msgid "Paytrust88 is a payment facility that allows online bank transfers for clients across Southeast Asia. For more information, please visit %1."
 msgstr "Paytras88 是允许东南亚各地客户进行网上银行转账的支付工具, 。欲了解详细信息, 请访问 %1。"
 
@@ -9336,7 +9324,7 @@ msgstr "招聘流程"
 msgid "Redo"
 msgstr "恢复"
 
-msgid "Ref. ID"
+msgid "Ref."
 msgstr ""
 
 msgid "Refer clients to Binary with the knowledge, or with a reasonably expected knowledge, that these clients engage in such conduct that constitutes Malicious Activity"
@@ -9711,6 +9699,12 @@ msgstr "星期六"
 msgid "Salaried Employee"
 msgstr "受薪雇员"
 
+msgid "Sale Date"
+msgstr ""
+
+msgid "Sale Price"
+msgstr ""
+
 msgid "Sale of Property"
 msgstr "财产出售"
 
@@ -9887,12 +9881,6 @@ msgstr "按市价回售交易。"
 
 msgid "Sell option"
 msgstr "卖出期权"
-
-msgid "Sell price"
-msgstr ""
-
-msgid "Sell time"
-msgstr ""
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "长期合约到期前售出交易，以保护您的盈利或将亏损降至最低。"
@@ -12769,6 +12757,9 @@ msgstr "即刻交易"
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "在包括外汇、股票指数、商品等在内的基本市场交易。"
 
+msgid "Trade on web terminal"
+msgstr ""
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根据您的风险承受能力进行交易。切勿借钱交易。"
 
@@ -12895,9 +12886,6 @@ msgstr "TradingView"
 msgid "Trailing stops"
 msgstr "追踪止损"
 
-msgid "Transaction"
-msgstr ""
-
 msgid "Transaction ID"
 msgstr "交易ID"
 
@@ -12906,9 +12894,6 @@ msgstr "交易监控纯粹是客户的责任。公司不对客户的交易进行
 
 msgid "Transaction performed by %1 (App ID: %2)"
 msgstr "交易执行者为%1 (应用程序 ID: %2)"
-
-msgid "Transaction time"
-msgstr ""
 
 msgid "Transactions in CFD instruments are traded outside a stock exchange or OTF or MTF."
 msgstr "差价合约工具交易在证券交易所或OTF或MTF之外交易."
