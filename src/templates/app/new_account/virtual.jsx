@@ -12,6 +12,7 @@ const Virtual = () => (
             <Fieldset legend={it.L('Details')}>
                 <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{ single: 'single' }}  />
                 <FormRow
+                    autoComplete='new-password'
                     type='password'
                     has_password_meter
                     id='client_password'

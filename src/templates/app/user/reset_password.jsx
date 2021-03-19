@@ -16,6 +16,7 @@ const ResetPassword = () => (
                 <form id='frm_reset_password'>
                     <Fieldset legend={it.L('Details')}>
                         <FormRow
+                            autoComplete='new-password'
                             has_password_meter
                             type='password'
                             id='new_password'

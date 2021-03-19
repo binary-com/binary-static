@@ -10,6 +10,7 @@ export const Fieldset = ({ children, legend, id, className }) => (
 );
 
 export const FormRow = ({
+    autoComplete,
     spaced,
     type,
     id,
@@ -86,6 +87,7 @@ export const FormRow = ({
                     {type === 'password' ?
                         <div className='password--field-wrapper'>
                             <input
+                                autoComplete={autoComplete}
                                 type='password'
                                 className={`password--input-field ${className || ''}`}
                                 id={id}

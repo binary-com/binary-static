@@ -6,8 +6,9 @@ const ChangePassword = () => (
         <h1>{it.L('Change Password')}</h1>
         <form className='gr-padding-10' id='frm_change_password'>
             <Fieldset legend={it.L('Details')}>
-                <FormRow type='password' id='old_password' label={it.L('Current password')} />
+                <FormRow autoComplete='current-password' type='password' id='old_password' label={it.L('Current password')} />
                 <FormRow
+                    autoComplete='new-password'
                     has_password_meter
                     type='password'
                     id='new_password'

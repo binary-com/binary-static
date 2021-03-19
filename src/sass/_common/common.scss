@@ -567,6 +567,9 @@ button .barspinner.white {
             top: 8px;
         }
     }
+    input[style*='background'] ~ &--toggle {
+        right: 32px;
+    }
 }
 
 ul.bullet.gr-row > li {
