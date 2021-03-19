@@ -546,10 +546,18 @@ const MetaTraderConfig = (() => {
         return is_need_verification;
     };
 
-    // remove server from acc_type for cases where we don't have it
+    // remove server from acc_type for cases where we don't need it
     // e.g. during new account creation no server is set yet
-    const getCleanAccType = (acc_type) =>
-        /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
+    // due to ability for server names to have one or more underscores in the name
+    // we can pass the number of underscores to remove it from acc_type
+    // f.e. getCleanAccType('financial_ts01_02', 2) returns 'financial'
+    const getCleanAccType = (acc_type, underscores) => {
+        if (underscores > 1) {
+            // eslint-disable-next-line no-param-reassign
+            acc_type = getCleanAccType(acc_type, --underscores);
+        }
+        return /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
+    };
 
     // if no server exists yet, e.g. during new account creation
     // we want to get information like landing company etc which is shared
@@ -563,9 +571,21 @@ const MetaTraderConfig = (() => {
         return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
     };
 
+    const hasTradeServers = (acc_type) => {
+        const is_real = acc_type.startsWith('real');
+        const is_gaming = accounts_info[acc_type].market_type === 'gaming';
+        const is_clean_type = acc_type.endsWith('financial') || acc_type.endsWith('stp');
+        if ((/unknown/.test(acc_type))) {
+            return false;
+        }
+        return !(is_real && (is_gaming || is_clean_type));
+    };
+
     const hasMultipleTradeServers = (acc_type, accounts) => {
-        const clean_acc_type_a = getCleanAccType(acc_type);
-        return Object.keys(accounts).filter(acc_type_b => clean_acc_type_a === getCleanAccType(acc_type_b)).length > 1;
+        // we need to call getCleanAccType twice as the server names have underscore in it
+        const clean_acc_type_a = getCleanAccType(acc_type, 2);
+        return Object.keys(accounts).filter(acc_type_b => clean_acc_type_a ===
+            getCleanAccType(acc_type_b, 2)).length > 1;
     };
 
     return {
@@ -575,6 +595,7 @@ const MetaTraderConfig = (() => {
         validations,
         needsRealMessage,
         hasAccount,
+        hasTradeServers,
         hasMultipleTradeServers,
         getCleanAccType,
         getCurrency,

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-15 04:22\n"
+"PO-Revision-Date: 2021-03-18 09:47\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "404"
 msgid "500"
 msgstr "500"
 
-msgid " (account created)"
-msgstr " (Compte créé)"
+msgid " (Region added)"
+msgstr ""
 
-msgid " (unavailable)"
-msgstr " (indisponible)"
+msgid " (Temporarily unavailable)"
+msgstr ""
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " Tous les appels sont enregistrés à des fins de formation et de surveillance."
@@ -523,6 +523,9 @@ msgstr "(e) La taille et la nature"
 msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
 msgstr "* Les paires de crypto-monnaie ne sont pas disponibles pour les comptes financiers DMT5 enregistrés auprès de Deriv (V) Ltd."
 
+msgid "+ Add region"
+msgstr ""
+
 msgid "0 – 19.999%"
 msgstr "0 – 19,999%"
 
@@ -842,7 +845,7 @@ msgid "A whole new easy-to-use platform that's rich with features."
 msgstr "Une toute nouvelle plate-forme facile à utiliser et riche en fonctionnalités."
 
 msgid "A word by itself is easy to guess"
-msgstr ""
+msgstr "Un mot en lui-même est facile à deviner"
 
 msgid "A. Introduction"
 msgstr "A. Introduction"
@@ -1100,13 +1103,10 @@ msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier
 msgstr "Ajouter + / – pour définir une compensation de barrière. Par exemple, +0.005 signifie une barrière qui est plus élevée que le point d’entrée de 0,005."
 
 msgid "Add another word or two. Uncommon words are better."
-msgstr ""
+msgstr "Ajoutez un ou deux mots supplémentaires. Les mots peu courants sont meilleurs."
 
 msgid "Add funds"
 msgstr "Ajouter des fonds"
-
-msgid "Add more trade servers"
-msgstr "Ajouter plus de serveurs de trading"
 
 msgid "Additional business exposure:"
 msgstr "Risque additionnel des affaires :"
@@ -1322,7 +1322,7 @@ msgid "All versions for iOS"
 msgstr "Toutes les versions d’iOS"
 
 msgid "All-uppercase is almost as easy to guess as all-lowercase"
-msgstr ""
+msgstr "Tout en majuscules est presque aussi facile à deviner que tout en minuscules"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Autoriser les Clients à effectuer des dépôts pour des sommes inférieures (en devise locale)"
@@ -1874,22 +1874,22 @@ msgid "Average"
 msgstr "Moyenne"
 
 msgid "Avoid dates and years that are associated with you"
-msgstr ""
+msgstr "Évitez les dates et les années qui vous sont associées"
 
 msgid "Avoid recent years"
-msgstr ""
+msgstr "Évitez les dernières années"
 
 msgid "Avoid repeated words and characters"
-msgstr ""
+msgstr "Évitez les mots et les caractères répétés"
 
 msgid "Avoid sequences"
-msgstr ""
+msgstr "Évitez les séquences"
 
 msgid "Avoid the need to have an e-wallet"
 msgstr "Évitez d'avoir à utiliser un service de paiement électronique"
 
 msgid "Avoid years that are associated with you"
-msgstr ""
+msgstr "Évitez les années qui vous sont associées"
 
 msgid "Avoiding financial transactions that might reveal valuable passwords or personal information such as credit card numbers"
 msgstr "Éviter les transactions financières qui pourraient révéler des mots de passe précieux ou des informations personnelles telles que des numéros de carte de crédit"
@@ -2432,7 +2432,7 @@ msgid "Capacity to multitask, balance deadlines, and reliably deliver high-quali
 msgstr "Capacité à gérer simultanément différentes tâches tout en respectant les échéances pour produire un contenu fiable de haute qualité"
 
 msgid "Capitalization doesn't help very much"
-msgstr ""
+msgstr "La capitalisation n'aide pas beaucoup"
 
 msgid "Careers"
 msgstr "Opportunités de carrière"
@@ -2864,7 +2864,7 @@ msgid "Commodities are resources that are grown or extracted from the ground, su
 msgstr "Les matières premières sont des ressources issues de l'agriculture ou extraites du sol, telles que l'argent, l'or et le pétrole. Sur %1, les matières premières sont cotées en USD."
 
 msgid "Common names and surnames are easy to guess"
-msgstr ""
+msgstr "Les noms et prénoms communs sont faciles à deviner"
 
 msgid "Communicate and collaborate effectively with members of different teams across the organisation."
 msgstr "Communiquer et collaborer efficacement avec les membres des différentes équipes de l'organisation."
@@ -3050,7 +3050,7 @@ msgid "Continuous Indices – Choose from the Volatility 10 Index, Volatility 25
 msgstr "Les indices continus - Choisissez parmi les indices Volatility 10, Volatility 25, Volatility 50, Volatility 75 et Volatility 100. Ces indices correspondent à des simulations de marché basées sur des taux de volatilité constants de 10%, 25 %, 50 %, 75 % et 100 %."
 
 msgid "Contract"
-msgstr "Contrat"
+msgstr ""
 
 msgid "Contract Confirmation"
 msgstr "Confirmation de contrat"
@@ -3515,7 +3515,7 @@ msgid "Dated within the last six months"
 msgstr "Daté dans les trois derniers mois"
 
 msgid "Dates are often easy to guess"
-msgstr ""
+msgstr "Les dates sont souvent faciles à deviner"
 
 msgid "Deactivate"
 msgstr "Désactiver"
@@ -6974,9 +6974,6 @@ msgstr "Compte Réel MT5"
 msgid "MT5 Synthetic"
 msgstr "MT5 Synthétique"
 
-msgid "MT5 Web platform"
-msgstr "Plate-forme Web MT5"
-
 msgid "MT5 for %1"
 msgstr "MT5 pour %1"
 
@@ -7581,7 +7578,7 @@ msgid "Name, email address, and contact number"
 msgstr "Nom, adresse e-mail, et numéro de téléphone "
 
 msgid "Names and surnames by themselves are easy to guess"
-msgstr ""
+msgstr "Les noms et prénoms sont faciles à deviner"
 
 msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
 msgstr "Carte nationale d’identité, livret d'identité ou tout document publié par un gouvernement qui contient une photo, votre nom et date de naissance"
@@ -7752,7 +7749,7 @@ msgid "No modification or amendment of any or all clauses or provisions of this 
 msgstr "Aucune modification ou amendement d'une ou de toutes les clauses ou dispositions du présent accord ne sera valide sans l'acceptation claire et sans équivoque de ces amendements par les deux Parties."
 
 msgid "No need for symbols, digits, or uppercase letters"
-msgstr ""
+msgstr "Pas besoin de symboles, de chiffres ou de lettres majuscules"
 
 msgid "No open positions."
 msgstr "Pas de positions ouvertes."
@@ -8868,7 +8865,7 @@ msgid "Predict the last decimal digit of the spot price with Digits. There are t
 msgstr "Prédisez la dernière décimale de votre prix spot. Il y a trois types d'option « Chiffres » :"
 
 msgid "Predictable substitutions like '@' instead of 'a' don't help very much"
-msgstr ""
+msgstr "Les substitutions prévisibles comme '@' au lieu de 'a' n'aident pas beaucoup"
 
 msgid "Prefer another trading website"
 msgstr "Préfère un autre site de trading"
@@ -9304,7 +9301,7 @@ msgid "Receive your earnings through your favourite payment method"
 msgstr "Recevez vos gains par le biais de votre mode de paiement préféré"
 
 msgid "Recent years are easy to guess"
-msgstr ""
+msgstr "Les dernières années sont faciles à deviner"
 
 msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
 msgstr "Conscients de la complexité des marchés financiers, nous décrivons nos options de trading de manière juste et détaillée. Nous incluons des descriptions de produits précises sur notre site Web, ainsi que des webinaires gratuits. Nous offrons à nos clients la possibilité de créer des comptes virtuels afin d'expérimenter le système gratuitement. Nous encourageons nos clients à étudier attentivement toutes ces sources d'information avant de trader."
@@ -9328,7 +9325,7 @@ msgid "Redo"
 msgstr "Refaire"
 
 msgid "Ref."
-msgstr "Réf."
+msgstr ""
 
 msgid "Refer clients to Binary with the knowledge, or with a reasonably expected knowledge, that these clients engage in such conduct that constitutes Malicious Activity"
 msgstr "Référer les clients à Binary en sachant, ou en toute connaissance de cause, que ces clients se livrent à une telle conduite qui constitue une Activité Malveillante"
@@ -9439,10 +9436,10 @@ msgid "Remove your glasses, if necessary"
 msgstr "Retirez vos lunettes, si nécessaire"
 
 msgid "Repeats like \"aaa\" are easy to guess"
-msgstr ""
+msgstr "Les répétitions telles que \"aaa\" sont faciles à deviner"
 
 msgid "Repeats like \"abcabcabc\" are only slightly harder to guess than \"abc\""
-msgstr ""
+msgstr "Les répétitions comme \"abcabcabc\" ne sont que légèrement plus difficiles à deviner que \"abc\""
 
 msgid "Replication,"
 msgstr "Réplication,"
@@ -9601,7 +9598,7 @@ msgid "Reverse side"
 msgstr "Verso"
 
 msgid "Reversed words aren't much harder to guess"
-msgstr ""
+msgstr "Les mots inversés ne sont pas beaucoup plus difficiles à deviner"
 
 msgid "Review and analyse suspicious client activities"
 msgstr "Examiner et analyser les activités suspectes de clients"
@@ -9703,10 +9700,10 @@ msgid "Salaried Employee"
 msgstr "Employé salarié"
 
 msgid "Sale Date"
-msgstr "Date de vente"
+msgstr ""
 
 msgid "Sale Price"
-msgstr "Prix de vente"
+msgstr ""
 
 msgid "Sale of Property"
 msgstr "Vente d’un bien"
@@ -9913,7 +9910,7 @@ msgid "September"
 msgstr "septembre"
 
 msgid "Sequences like abc or 6543 are easy to guess"
-msgstr ""
+msgstr "Les séquences comme abc ou 6543 sont faciles à deviner"
 
 msgid "Server"
 msgstr "Serveur"
@@ -9982,7 +9979,7 @@ msgid "Sharp, benchmarked prices"
 msgstr "Des prix compétitifs, comparés"
 
 msgid "Short keyboard patterns are easy to guess"
-msgstr ""
+msgstr "Les motifs de clavier courts sont faciles à deviner"
 
 msgid "Short to long-term durations"
 msgstr "Durée courte à long terme"
@@ -10330,7 +10327,7 @@ msgid "Stored Procedures"
 msgstr "les Procédures Stockées"
 
 msgid "Straight rows of keys are easy to guess"
-msgstr ""
+msgstr "Les rangées droites de clés sont faciles à deviner"
 
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "Fortes capacités d’analyse qui ont fait leurs preuves à titre préalable ou un vif intérêt dans ce domaine"
@@ -10351,7 +10348,7 @@ msgid "Strong oral and written communication skills in both the regional languag
 msgstr "Excellentes aptitudes à la communication orale et écrite, à la fois en anglais et dans la(les) langue(s) régionale(s)"
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
-msgstr ""
+msgstr "Les mots de passe forts contiennent au moins 8 caractères, combinent des lettres majuscules et minuscules, des chiffres et des symboles."
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "Solide compréhension des couleurs, typographie, design d’identité et image de marque"
@@ -12391,13 +12388,13 @@ msgid "This is a staging server - For testing purposes only"
 msgstr "Il s'agit d'un serveur intermédiaire, utilisé uniquement à des fins de test"
 
 msgid "This is a top-10 common password"
-msgstr ""
+msgstr "Ceci est un mot de passe commun parmi les 10 premiers"
 
 msgid "This is a top-100 common password"
-msgstr ""
+msgstr "Ceci est un mot de passe commun parmi les 100 premiers"
 
 msgid "This is a very common password"
-msgstr ""
+msgstr "C'est un mot de passe très courant"
 
 msgid "This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset."
 msgstr "Ceci est une barrière indicative. La véritable barrière sera le point d'entrée plus la compensation de la barrière."
@@ -12412,7 +12409,7 @@ msgid "This is one of our core commitments to clients."
 msgstr "C'est l'un de nos principaux engagements envers nos clients."
 
 msgid "This is similar to a commonly used password"
-msgstr ""
+msgstr "Ceci est similaire à un mot de passe couramment utilisé"
 
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Il s'agit du prix actuel auquel un sous-jacent peut être acheté ou vendu à un moment donné."
@@ -12436,7 +12433,7 @@ msgid "This page is only available to logged out clients."
 msgstr "Cette page est uniquement disponible pour les clients connectés."
 
 msgid "This password is on the blacklist"
-msgstr ""
+msgstr "Ce mot de passe est sur la liste noire"
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "Cette politique s’applique aux clients qualifiées de détail ou professionnel. Les clients classés comme contreparties éligibles se situent en dehors du cadre de cette politique."
@@ -12758,6 +12755,9 @@ msgstr "Tradez maintenant"
 
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "Tradez sur les marchés sous-jacents qui incluent le Forex, les indices boursiers, les matières premières et plus encore."
+
+msgid "Trade on web terminal"
+msgstr ""
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "N'engagez que les fonds que vous pouvez vous permettre de perdre. N'utilisez jamais de fonds empruntés."
@@ -13261,10 +13261,10 @@ msgid "Usage limit"
 msgstr "Restrictions d'utilisation"
 
 msgid "Use a few words, avoid common phrases"
-msgstr ""
+msgstr "Utilisez quelques mots, évitez les phrases courantes"
 
 msgid "Use a longer keyboard pattern with more turns"
-msgstr ""
+msgstr "Utilisez un motif de clavier plus long avec plus de tours"
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
 msgstr "Utiliser les compétences d'analyse avancée de données pour étudier les tendances/modèle sur les marchés financiers"

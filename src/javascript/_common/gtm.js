@@ -31,9 +31,8 @@ const GTM = (() => {
                 loadGTMElements();
             }
         });
-        
     };
-
+    
     return {
         init,
         loadGTMElements,

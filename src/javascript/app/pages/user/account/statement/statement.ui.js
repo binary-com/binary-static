@@ -63,7 +63,7 @@ const StatementUI = (() => {
         ], columns, 'data');
         $statement_row.children('.credit').addClass(credit_debit_type);
         $statement_row.children('.date').addClass('pre');
-        $statement_row.children('.desc').html(`${statement_data.desc}<br>`);
+        $statement_row.children('.desc').html(`<span>${statement_data.desc}</span>`);
 
         // add processing time tooltip for withdrawal
         if (transaction.action_type === 'withdrawal') {

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-15 04:22\n"
+"PO-Revision-Date: 2021-03-18 09:47\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "404"
 msgid "500"
 msgstr "500"
 
-msgid " (account created)"
-msgstr " (สร้างบัญชีแล้ว)"
+msgid " (Region added)"
+msgstr ""
 
-msgid " (unavailable)"
-msgstr " (ไม่)"
+msgid " (Temporarily unavailable)"
+msgstr ""
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " ทุกสายการสนทนาจะถูกบันทึกเพื่อการพัฒนาบุคลากรและการปรับปรุงคุณภาพ"
@@ -523,6 +523,9 @@ msgstr "(จ) ขนาดและลักษณะ"
 msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
 msgstr "*คู่สกุลเงินดิจิทัลไม่สามารถใช้ได้กับบัญชีการเงิน DMT5 ที่ลงทะเบียนกับ Deriv (V) Ltd."
 
+msgid "+ Add region"
+msgstr ""
+
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
 
@@ -842,7 +845,7 @@ msgid "A whole new easy-to-use platform that's rich with features."
 msgstr "แพลตฟอร์มใหม่ใช้งานง่าย เครื่องมือจัดเต็ม"
 
 msgid "A word by itself is easy to guess"
-msgstr ""
+msgstr "คําด้วยตัวเองนั้นง่ายต่อการคาดเดา"
 
 msgid "A. Introduction"
 msgstr "A. บทนำ"
@@ -1100,13 +1103,10 @@ msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier
 msgstr "เพิ่ม +/ – เพื่อกำหนด Barrier Offset เช่น +0.005 หมายถึง อุปสรรคที่อยู่สูงกว่าสปอตเริ่มต้นอยู่ 0.005"
 
 msgid "Add another word or two. Uncommon words are better."
-msgstr ""
+msgstr "เพิ่มคำอื่นหรือสองคำ ไม่ใช่คำทั่วไปจะดีที่สุด"
 
 msgid "Add funds"
 msgstr "ฝากเงิน"
-
-msgid "Add more trade servers"
-msgstr "เพิ่มเซิร์ฟเวอร์การค้าเพิ่มเติม"
 
 msgid "Additional business exposure:"
 msgstr "การเปิดทางธุรกิจเพิ่มเติม"
@@ -1322,7 +1322,7 @@ msgid "All versions for iOS"
 msgstr "ทุกเวอร์ชันของระบบปฏิบัติการ iOS"
 
 msgid "All-uppercase is almost as easy to guess as all-lowercase"
-msgstr ""
+msgstr "ตัวพิมพ์ใหญ่ทั้งหมดนั้นคาดเดาได้ง่ายพอๆกับตัวพิมพ์เล็กทั้งหมด"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "ยินยอมให้ลูกค้าฝากเงินในจำนวนที่ต่ำกว่า (ผ่านสกุลเงินท้องถิ่น)"
@@ -1874,22 +1874,22 @@ msgid "Average"
 msgstr "ค่าเฉลี่ย"
 
 msgid "Avoid dates and years that are associated with you"
-msgstr ""
+msgstr "หลีกเลี่ยงวันที่และปีที่เกี่ยวข้องกับคุณ"
 
 msgid "Avoid recent years"
-msgstr ""
+msgstr "หลีกเลี่ยงปีล่าสุด"
 
 msgid "Avoid repeated words and characters"
-msgstr ""
+msgstr "หลีกเลี่ยงคําและตัวอักษรซ้ำ"
 
 msgid "Avoid sequences"
-msgstr ""
+msgstr "หลีกเลี่ยงลำดับ"
 
 msgid "Avoid the need to have an e-wallet"
 msgstr "หลีกเลี่ยงความจำเป็นในการมีกระเป๋าเงินอิเล็กทรอนิกส์"
 
 msgid "Avoid years that are associated with you"
-msgstr ""
+msgstr "หลีกเลี่ยงปีที่เกี่ยวข้องกับคุณ"
 
 msgid "Avoiding financial transactions that might reveal valuable passwords or personal information such as credit card numbers"
 msgstr "หลีกเลี่ยงการทําธุรกรรมทางการเงินที่อาจเปิดเผยรหัสผ่านหรือข้อมูลส่วนบุคคล เช่น หมายเลขบัตรเครดิต"
@@ -2432,7 +2432,7 @@ msgid "Capacity to multitask, balance deadlines, and reliably deliver high-quali
 msgstr "มีความสามารถในการทำงานหลายๆ ชิ้นพร้อมๆ กัน สามารถจัดการกำหนดการส่งมอบงานได้อย่างเหมาะสม และเนื้อหาข้อมูลมีคุณภาพสูง"
 
 msgid "Capitalization doesn't help very much"
-msgstr ""
+msgstr "การใช้ตัวอักษรพิมพ์ใหญ่ไม่ได้ช่วยมากนัก"
 
 msgid "Careers"
 msgstr "ร่วมงานกับเรา"
@@ -2864,7 +2864,7 @@ msgid "Commodities are resources that are grown or extracted from the ground, su
 msgstr "สินค้าโภคภัณฑ์ คือ ทรัพยากรที่มีอยู่ หรือ สกัด หรือผ่านกระบวนการแยกจากพื้นผิวโลก ได้แก่ เงิน ทอง และน้ำมัน สำหรับมูลค่าที่ใช้ใน %1 ราคาเป็นหน่วยเหรียญสหรัฐ"
 
 msgid "Common names and surnames are easy to guess"
-msgstr ""
+msgstr "ชื่อและนามสกุลทั่วไปสามารถคาดเดาได้ง่าย"
 
 msgid "Communicate and collaborate effectively with members of different teams across the organisation."
 msgstr "สื่อสารและประสานงานอย่างมีประสิทธิภาพกับทีมงานและบุคลากรทีมอื่นๆ ในบริษัทฯ"
@@ -3050,7 +3050,7 @@ msgid "Continuous Indices – Choose from the Volatility 10 Index, Volatility 25
 msgstr "ดัชนีต่อเนื่อง เลือกจากดัชนีผันผวน 10 ดัชนีผันผวน 25 ดัชนีผันผวน 50 ดัชนีผันผวน 75 และดัชนีผันผวน 100 ดัชนีเหล่านี้สอดคล้องกับตลาดที่จำลองมาโดยมีความผันผวนคงที่ที่ 10%, 25%, 50%, 75%, และ 100% ตามลำดับ"
 
 msgid "Contract"
-msgstr "สัญญา"
+msgstr ""
 
 msgid "Contract Confirmation"
 msgstr "การยืนยันสัญญา"
@@ -3516,7 +3516,7 @@ msgid "Dated within the last six months"
 msgstr "ลงวันที่ภายในหกเดือนที่ผ่านมา"
 
 msgid "Dates are often easy to guess"
-msgstr ""
+msgstr "วันที่มักง่ายต่อการคาดเดา"
 
 msgid "Deactivate"
 msgstr "ปิดใช้งาน"
@@ -6974,9 +6974,6 @@ msgstr "บัญชี MT5 จริง"
 msgid "MT5 Synthetic"
 msgstr "ดัชนีสังเคราะห์ MT5"
 
-msgid "MT5 Web platform"
-msgstr "MT5 สำหรับเว็บ"
-
 msgid "MT5 for %1"
 msgstr "MT5 สำหรับ %1"
 
@@ -7582,7 +7579,7 @@ msgid "Name, email address, and contact number"
 msgstr "ชื่อ อีเมล์ และข้อมูลการติดต่อ"
 
 msgid "Names and surnames by themselves are easy to guess"
-msgstr ""
+msgstr "ชื่อและนามสกุลตัวเองสามารถคาดเดาได้ง่าย"
 
 msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
 msgstr "บัตรประจำตัวประชาชน หนังสือเดินทาง หรือ เอกสารใดๆ ที่ออกโดยรัฐบาล ซึ่งมีรูปถ่าย ชื่อของท่าน และวันเดือนปีเกิด"
@@ -7753,7 +7750,7 @@ msgid "No modification or amendment of any or all clauses or provisions of this 
 msgstr "การเปลี่ยนแปลง หรือ การแก้ไขข้อความ หรือ ข้อกำหนดใดๆ หรือ ทั้งหมดของสัญญานี้ จะมีผลนอกจากว่า มีการยอมรับการแก้ไขดังกล่าวอย่างชัดเจนโดยคู่สัญญาทั้งสองฝ่าย"
 
 msgid "No need for symbols, digits, or uppercase letters"
-msgstr ""
+msgstr "ไม่จำเป็นต้องมีสัญลักษณ์ ตัวเลข หรือตัวอักษรตัวพิมพ์ใหญ่"
 
 msgid "No open positions."
 msgstr "ไม่มีโพซิชั่นที่เปิดอยู่"
@@ -8869,7 +8866,7 @@ msgid "Predict the last decimal digit of the spot price with Digits. There are t
 msgstr "คาดการณ์ถึงตัวเลขหลักทศนิยมสุดท้ายของราคาสปอตที่มีหลักตัวเลข มีการซื้อขายแบบหลักตัวเลขอยู่สามประเภท"
 
 msgid "Predictable substitutions like '@' instead of 'a' don't help very much"
-msgstr ""
+msgstr "การแทนที่เพื่อช่วยเพิ่มการคาดเดา เช่น \"@\" แทน \"a\" ไม่ได้ช่วยมากนัก"
 
 msgid "Prefer another trading website"
 msgstr "ชอบเว็บไซต์ซื้อขายอื่น"
@@ -9304,7 +9301,7 @@ msgid "Receive your earnings through your favourite payment method"
 msgstr "รับรายได้ผ่านช่องทางที่คุณปรารถนา"
 
 msgid "Recent years are easy to guess"
-msgstr ""
+msgstr "ปีล่าสุดนั้นง่ายต่อการคาดเดา"
 
 msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
 msgstr "เมื่อตระหนักถึงความซับซ้อนของตลาดการเงิน เราจึงอธิบายตัวเลือกการซื้อขายของเราอย่างเป็นธรรมและละเอียด เรามีคำอธิบายผลิตภัณฑ์ที่ถูกต้องบนเว็บไซต์ของเราตลอดจนการสัมมนาทางเว็บฟรี เราเปิดโอกาสให้ลูกค้าตั้งค่าบัญชีเสมือนเพื่อทดลองใช้ระบบโดยไม่เสียค่าใช้จ่าย เราขอแนะนำให้ลูกค้าของเราศึกษาแหล่งข้อมูลเหล่านี้อย่างรอบคอบก่อนทำการซื้อขาย"
@@ -9328,7 +9325,7 @@ msgid "Redo"
 msgstr "ทำซ้ำ"
 
 msgid "Ref."
-msgstr "อ้างอิง"
+msgstr ""
 
 msgid "Refer clients to Binary with the knowledge, or with a reasonably expected knowledge, that these clients engage in such conduct that constitutes Malicious Activity"
 msgstr "แนะนำลูกค้าให้แก่ Binary ด้วยทักษะความรู้ หรือ ด้วยความรู้ที่คาดว่าสมเหตุสมผล ซึ่งลูกค้าเหล่านี้มีส่วนร่วมในการปฏิบัติที่ถือว่าเป็นกิจกรรมที่มุ่งร้าย"
@@ -9439,10 +9436,10 @@ msgid "Remove your glasses, if necessary"
 msgstr "ถอดแว่นตาของคุณออก หากจำเป็น"
 
 msgid "Repeats like \"aaa\" are easy to guess"
-msgstr ""
+msgstr "การทำซ้ำ เช่น \"aaa\" นั้นง่ายต่อการคาดเดา"
 
 msgid "Repeats like \"abcabcabc\" are only slightly harder to guess than \"abc\""
-msgstr ""
+msgstr "การทำซ้ำ เช่น \"abcabcabc\" จะทำให้คาดเดายากกว่า \"abc\" เพียงเล็กน้อย"
 
 msgid "Replication,"
 msgstr "การทำซ้ำ"
@@ -9601,7 +9598,7 @@ msgid "Reverse side"
 msgstr "อีกด้านหนึ่ง"
 
 msgid "Reversed words aren't much harder to guess"
-msgstr ""
+msgstr "การย้อนกลับคำนั้นไม่ยากมากที่จะคาดเดา"
 
 msgid "Review and analyse suspicious client activities"
 msgstr "ทวนสอบและวิเคราะห์พฤติกรรมที่น่าสงสัยของลูกค้า"
@@ -9703,10 +9700,10 @@ msgid "Salaried Employee"
 msgstr "พนักงานประจำ"
 
 msgid "Sale Date"
-msgstr "วันที่ขาย"
+msgstr ""
 
 msgid "Sale Price"
-msgstr "ราคาขาย"
+msgstr ""
 
 msgid "Sale of Property"
 msgstr "การขายทรัพย์สิน"
@@ -9913,7 +9910,7 @@ msgid "September"
 msgstr "กันยายน"
 
 msgid "Sequences like abc or 6543 are easy to guess"
-msgstr ""
+msgstr "ลําดับ เช่น abc หรือ 6543 นั้นง่ายต่อการคาดเดา"
 
 msgid "Server"
 msgstr "เซิร์ฟเวอร์"
@@ -9982,7 +9979,7 @@ msgid "Sharp, benchmarked prices"
 msgstr "เฉียบคม ราคามาตรฐาน"
 
 msgid "Short keyboard patterns are easy to guess"
-msgstr ""
+msgstr "รูปแบบแป้นพิมพ์สั้นคาดเดาได้ง่าย"
 
 msgid "Short to long-term durations"
 msgstr "ระยะเวลาสั้นถึงระยะยาว"
@@ -10330,7 +10327,7 @@ msgid "Stored Procedures"
 msgstr "สตรอโพรซีเยอร์"
 
 msgid "Straight rows of keys are easy to guess"
-msgstr ""
+msgstr "แถวตรงของแป้นคาดเดาได้ง่าย"
 
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "มีความสามารถในการวิเคราะห์ซึ่งได้มีการพิสูจน์ก่อนหน้า หรือมีความสนใจกระตือรือร้นที่จะย้ายเข้ามาในส่วนนี้"
@@ -10351,7 +10348,7 @@ msgid "Strong oral and written communication skills in both the regional languag
 msgstr "มีทักษะการสื่อสารทั้งการพูดและการเขียนในทั้งภาษาของภูมิภาคและภาษาอังกฤษ"
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
-msgstr ""
+msgstr "รหัสผ่านที่คาดเดาได้ยากประกอบด้วยอย่างน้อย 8 ตัวอักษร รวมตัวอักษรตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์"
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "มีความเข้าใจที่ลึกซึ่งในเรื่องสี การพิม์ การออกแบบอัตลักษณ์ และการออกแบบตราสัญลักษณ์"
@@ -12393,13 +12390,13 @@ msgid "This is a staging server - For testing purposes only"
 msgstr "นี่คือ เครื่องแม่ข่ายสำหรับพักงานระหว่างพัฒนาระบบ ซึ่งใช้เพื่อในการทดสอบเท่านั้น"
 
 msgid "This is a top-10 common password"
-msgstr ""
+msgstr "นี่คือรหัสผ่านทั่วไป 10 อันดับ"
 
 msgid "This is a top-100 common password"
-msgstr ""
+msgstr "นี่คือรหัสผ่านทั่วไป 100 อันดับ"
 
 msgid "This is a very common password"
-msgstr ""
+msgstr "นี่คือรหัสผ่านที่พบใช้บ่อยทั่วไป"
 
 msgid "This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset."
 msgstr "นี้คือ Indicative Barrier ส่วน Barrier จริงนั้น จะเป็นสปอตเริ่มต้นรวมกับ Barrier Offset"
@@ -12414,7 +12411,7 @@ msgid "This is one of our core commitments to clients."
 msgstr "นี่คือหนึ่งในความมุ่งมั่นหลักของเราที่มีต่อลูกค้า"
 
 msgid "This is similar to a commonly used password"
-msgstr ""
+msgstr "ซึ่งคล้ายกับรหัสผ่านที่ใช้กันทั่วไป"
 
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "นี้คือราคาปัจจุบันที่ผลิตภัณฑ์อ้างอิงสามารถถูกซื้อ หรือ ขาย ณ เวลาใดๆ"
@@ -12438,7 +12435,7 @@ msgid "This page is only available to logged out clients."
 msgstr "หน้านี้สำหรับแสดงให้กับผู้ใช้งานที่ออกจากระบบแล้ว"
 
 msgid "This password is on the blacklist"
-msgstr ""
+msgstr "รหัสผ่านนี้อยู่ในบัญชีดํา"
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "นโยบายนี้ใช้กับลูกค้าในกลุ่มลูกค้ารายย่อย (Retail) หรือ ลูกค้าผู้เชี่ยวชาญ (Professional) ไม่สามารถใช้กับลูกค้าพึงมีคุณสมบัติ (Eligible Counterparty)"
@@ -12760,6 +12757,9 @@ msgstr "ซื้อขายทันที"
 
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "ซื้อขายในตลาดอ้างอิงซึ่งรวมถึงฟอเร็กซ์ ดัชนีหุ้น หุ้นโภคภัณฑ์ และอื่นๆ"
+
+msgid "Trade on web terminal"
+msgstr ""
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "ซื้อขายด้วยเงินที่ท่านจะยอมขาดทุนได้เท่านั้น อย่านำเงินยืมมาเทรด"
@@ -13263,10 +13263,10 @@ msgid "Usage limit"
 msgstr "วงเงินที่ใช้"
 
 msgid "Use a few words, avoid common phrases"
-msgstr ""
+msgstr "ใช้คำไม่กี่คำ หลีกเลี่ยงคำวลีทั่วไป"
 
 msgid "Use a longer keyboard pattern with more turns"
-msgstr ""
+msgstr "ใช้รูปแบบแป้นพิมพ์ที่ยาวขึ้นและหมุนได้มากขึ้น"
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
 msgstr "ใช้ทักษะการวิเคราะห์ข้อมูลเชิงลึกเพื่อศึกษาแนวโน้ม หรือ รูปแบบของตลาดการเงิน"

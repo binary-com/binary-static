@@ -239,14 +239,16 @@
                 border-bottom: none;
             }
         }
-        .add_more_servers {
+        .add_region {
             position: absolute;
-            bottom: 8px;
-            right: 8px;
+            bottom: 20px;
+            right: 20px;
 
+            #btn_add_region {
+                margin-right: 16px;
+            }
             span {
-                padding: 6px 8px;
-                font-size: 14px;
+                font-size: 18px;
             }
         }
     }
@@ -394,6 +396,15 @@
                     max-width: 140px;
                     margin: 0 auto;
                 }
+                #template_gaming_financial {
+                    order: 1;
+                }
+                #template_financial_financial {
+                    order: 2;
+                }
+                #template_financial_financial_stp {
+                    order: 3;
+                }
             }
             #new_account_msg ul.bullet {
                 margin-top: 0;
@@ -458,8 +469,27 @@
 }
 
 @media (max-width: 768px) {
-    #mt_account_management .mobile-balance {
-        display: flex;
+    #mt_account_management {
+        .mobile-balance {
+            display: flex;
+        }
+        #account_details {
+            .add_region {
+                position: unset;
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                padding: 0 10px;
+
+                a {
+                    margin-bottom: 0 !important;
+                }
+                span {
+                    padding: 9px;
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }
 

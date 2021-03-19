@@ -67,14 +67,9 @@ const MetaTrader = (() => {
             response.mt5_login_list.forEach((mt5_login) => {
 
                 if (mt5_login.error) {
-                    const { account_type } = mt5_login.error.details;
                     let message = mt5_login.error.message_to_client;
                     switch (mt5_login.error.code) {
                         case 'MT5AccountInaccessible': {
-                            MetaTraderUI.setDisabledAccountTypes({
-                                'real': account_type === 'real',
-                                'demo': account_type === 'demo',
-                            });
                             message = localize('Due to an issue on our server, some of your MT5 accounts are unavailable at the moment. [_1]Please bear with us and thank you for your patience.', '<br />');
                             break;
                         }
@@ -389,7 +384,6 @@ const MetaTrader = (() => {
             // in case trading_server API response is corrupted, acc_type will not exist in accounts_info due to missing supported_accounts prop
             if (acc_type in accounts_info && !/unknown+$/.test(acc_type)) {
                 accounts_info[acc_type].info = account;
-
                 accounts_info[acc_type].info.display_login = MetaTraderConfig.getDisplayLogin(account.login);
                 accounts_info[acc_type].info.login         = account.login;
                 accounts_info[acc_type].info.server        = account.server;
