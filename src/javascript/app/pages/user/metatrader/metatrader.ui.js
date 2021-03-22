@@ -731,14 +731,14 @@ const MetaTraderUI = (() => {
             }
         });
 
-        $form.find('#view_3 .btn-back').click(() => { displayStep(2); });
-        $form.find('#view_2 .btn-back').click(() => {
+        $form.find('#view_3 .btn-back').click(() => {
             const password_selector = $form.find('.password--input-field').attr('id');
             if (password_selector) {
                 Password.removeCheck(`#${password_selector}`, true);
             }
-            displayStep(1);
+            displayStep(2);
         });
+        $form.find('#view_2 .btn-back').click(() => { displayStep(1); });
 
         // Account type selection
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
