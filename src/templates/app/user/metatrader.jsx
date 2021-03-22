@@ -353,8 +353,8 @@ const Metatrader = () => (
                                         ]}
                                         default_option='main'
                                     />
-                                    <FormRow autocomplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current MT5 password')} />
-                                    <FormRow autocomplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New MT5 password')} />
+                                    <FormRow autoComplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current MT5 password')} />
+                                    <FormRow autoComplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New MT5 password')} />
                                     <SubmitButton
                                         no_wrapper
                                         type='submit'
@@ -409,7 +409,7 @@ const Metatrader = () => (
                                         ]}
                                         default_option='main'
                                     />
-                                    <FormRow autocomplete='new-password' has_password_meter is_two_rows type='password' id='txt_reset_new_password' label={it.L('New MT5 password')} />
+                                    <FormRow autoComplete='new-password' has_password_meter is_two_rows type='password' id='txt_reset_new_password' label={it.L('New MT5 password')} />
                                     <SubmitButton
                                         no_wrapper
                                         type='submit'
