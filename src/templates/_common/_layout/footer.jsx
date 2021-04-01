@@ -134,7 +134,7 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    // { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
+                                    { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
                                     { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
                                     { media: 'reddit',      href: 'https://www.reddit.com/user/Deriv_official/' },
@@ -187,7 +187,7 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    // { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
+                                    { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
                                     { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
                                     { media: 'reddit',      href: 'https://www.reddit.com/user/Deriv_official/' },
