@@ -459,8 +459,8 @@ const TypesOfPartnership = () => (
                             <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
                             <p className='text-align-left'><strong>{it.L('  (USD 20      ÷   USD 100,000)    ✕       1 lot      ✕        USD 50,000            =   USD 10')}</strong></p>
                             <p className='text-align-left'>{it.L('(Commission rate   ÷    Adjusted volume)    ✕       Volume      ✕   BTC/USD exchange rate        =  Commission')}</p>
-
-                            <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>','</strong>')}</p>
+                            
+                            <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>', '</strong>')}</p>
                             <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example)')}</p>
                             <p className='text-align-left'>{it.L('Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
 
@@ -473,12 +473,15 @@ const TypesOfPartnership = () => (
 
                             <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
                             <p className='text-align-left'><strong>{it.L('  (USD 20      ÷   USD 100,000)    ✕       1 lot      ✕        USD 50,000            =   USD 10')}</strong></p>
-                            <p className='text-align-left'>{it.L('(Commission rate   ÷    Adjusted volume)    ✕       Volume      ✕   BTC/USD exchange rate        =  Commission')}</p>
+                            <p className='text-align-left'>{it.L('(   Min. commission        ✕        Adjusted volume         )           ÷         Commission rate      =         USD volume')}</p>
+                            <p className='text-align-left'><strong>{it.L(' 50             ÷       USD 50,000            =              0.001 lots')}</strong></p>
+                            <p className='text-align-left'>{it.L('(   USD volume       ✕        Spot price        )           ÷         Volume in lots')}</p>
 
-                            <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>','</strong>')}</p>
-                            <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example)')}</p>
-                            <p className='text-align-left'>{it.L('Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
-
+                            <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility Index 75 for a price of USD 500,000 per USD 100,000 turnover will pay out a commission of USD 5. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
+                            <p className='text-align-left'><strong>{it.L('(          0.01              ✕       USD 100,000       )         ÷               5                 =            200')}</strong></p>
+                            <p className='text-align-left'>{it.L('(   Min. commission        ✕        Adjusted volume         )            ÷         Commission rate      =         USD volume')}</p>
+                            <p className='text-align-left'><strong>{it.L('         200              +       USD 500,000       )         =0.0004 lots')}</strong></p>
+                            <p className='text-align-left'>{it.L('   USD volume         ÷            Spot price                      =                Volume in lots ')}</p>
                         </div>
 
                         <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
