@@ -6,7 +6,6 @@ import Footer from './footer.jsx';
 import InterviewPopup from '../components/interview_popup.jsx';
 import Title from '../components/title.jsx';
 import Elevio from '../includes/elevio.jsx';
-import Gtm from '../includes/gtm.jsx';
 import LiveChat from '../includes/livechat.jsx';
 
 export const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
@@ -44,7 +43,6 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language}>
-                <Gtm />
                 <div id='msg_notification' className='notice-msg center-text' />
                 <div id='page-wrapper'>
                     <Header />

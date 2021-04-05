@@ -17,7 +17,7 @@ const PersonalDetails = (() => {
     const form_id                = '#frmPersonalDetails';
     const real_acc_elements      = '.RealAcc';
     const real_acc_auth_elements = '.RealAccAuth';
-    const name_fields            = ['salutation', 'first_name', 'last_name'];
+    const name_fields            = ['first_name', 'last_name'];
 
     let is_for_new_account = false;
 
@@ -76,16 +76,19 @@ const PersonalDetails = (() => {
      *
      * @param get_settings to prepopulate some of the values.
      */
+
     const displayChangeableFields = (get_settings) => {
         get_settings.immutable_fields.forEach(field => {
             CommonFunctions.getElementById(`row_${field}`).setVisibility(0);
             CommonFunctions.getElementById(`row_lbl_${field}`).setVisibility(1);
         });
 
-        if (name_fields.some(key => get_settings.immutable_fields.includes(key))) {
-            CommonFunctions.getElementById('row_name').setVisibility(1);
-            name_fields.forEach(field => CommonFunctions.getElementById(field).setVisibility(0));
-        }
+        name_fields.forEach((field) => {
+            if (get_settings.immutable_fields.includes(field)) {
+                CommonFunctions.getElementById('row_name').setVisibility(1);
+                CommonFunctions.getElementById(field).setVisibility(0);
+            }
+        });
 
         if (!get_settings.immutable_fields.includes('date_of_birth')) {
             $('#date_of_birth').setVisibility(1);
@@ -131,7 +134,7 @@ const PersonalDetails = (() => {
         // for subaccounts, back-end sends loginid of the master account as name
         const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
-            get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+            get_settings.name = `${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
         if (get_settings.place_of_birth && get_settings.immutable_fields.includes('place_of_birth') && residence_list) {
@@ -179,7 +182,6 @@ const PersonalDetails = (() => {
             // If field is immutable and value was set by client, show label instead of input
             const has_label         = get_settings.immutable_fields.includes(key);
             const should_show_label = has_label && get_settings[key];
-
             const element_id  = `${should_show_label ? 'lbl_' : ''}${key}`;
             const element_key = document.getElementById(element_id);
             if (!element_key) return;
@@ -187,7 +189,10 @@ const PersonalDetails = (() => {
             editable_fields[key] = (get_settings[key] !== null ? get_settings[key] : '');
 
             const should_update_value = /select|text/i.test(element_key.type);
-            CommonFunctions.getElementById(`row_${element_id}`).setVisibility(1);
+            if (element_id !== 'salutation' || !get_settings_data.salutation){
+                CommonFunctions.getElementById(`row_${element_id}`).setVisibility(1);
+            }
+           
             if (element_key.type === 'checkbox') {
                 element_key.checked = !!get_settings[key];
             } else if (!should_update_value) { // for all non (checkbox|select|text) elements
@@ -220,7 +225,9 @@ const PersonalDetails = (() => {
                 if (should_update_value) {
                     $(element_key).change(function () {
                         if (this.getAttribute('id') === 'date_of_birth') {
-                            this.setAttribute('data-value', toISOFormat(moment(this.value, 'DD MMM, YYYY')));
+                            // value could be epoch or already formatted to ISO
+                            const date_of_birth = this.value.indexOf('-') < 0 ? toISOFormat(moment(this.value, 'DD MMM, YYYY')) : this.value;
+                            this.setAttribute('data-value', date_of_birth);
                             return CommonFunctions.dateValueChanged(this, 'date');
                         }
                         return this.setAttribute('data-value', this.value);
@@ -232,6 +239,7 @@ const PersonalDetails = (() => {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'country' })));
             $('#country').text(get_settings.country);
         }
+
         if (is_virtual) {
             CommonFunctions.getElementById('row_date_of_birth').setVisibility(0);
         }
@@ -277,7 +285,7 @@ const PersonalDetails = (() => {
                 { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
                 { selector: '#address_postcode',       validations: [residence === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#email_consent' },
-                { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
+                { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 9, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
                 { selector: '#date_of_birth',          validations: ['req'] },

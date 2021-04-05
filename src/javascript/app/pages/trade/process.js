@@ -100,6 +100,24 @@ const Process = (() => {
         });
     };
 
+    const hideLoading = () => {
+        getElementById('trading_socket_container').classList.add('show');
+        const init_logo = getElementById('trading_init_progress');
+
+        if (init_logo && init_logo.style.display !== 'none') {
+            init_logo.style.display = 'none';
+            Defaults.update();
+        }
+    };
+
+    const handleNotOfferedSymbol = async () => {
+        const { active_symbols } = await BinarySocket.send({ active_symbols: 'brief' });
+        const default_open_symbol = await Symbols.getDefaultOpenSymbol(active_symbols);
+
+        Defaults.set('market', default_open_symbol.market);
+        Defaults.set('underlying', default_open_symbol.symbol);
+    };
+
     /*
      * Function to display contract form for current underlying
      */
@@ -111,20 +129,15 @@ const Process = (() => {
             getElementById('confirmation_message').hide();
             const confirmation_error = getElementById('confirmation_error');
             confirmation_error.setVisibility(1);
-            Defaults.remove('underlying', 'market');
+            handleNotOfferedSymbol();
             elementInnerHtml(confirmation_error, `${contracts.error.message} <a href="javascript:;" onclick="sessionStorage.removeItem('underlying'); window.location.reload();">${localize('Please reload the page')}</a>`);
+            hideLoading();
+
             return;
         }
-
         State.set('is_chart_allowed', !(contracts.contracts_for && contracts.contracts_for.feed_license && contracts.contracts_for.feed_license === 'chartonly'));
 
-        getElementById('trading_socket_container').classList.add('show');
-
-        const init_logo = getElementById('trading_init_progress');
-        if (init_logo && init_logo.style.display !== 'none') {
-            init_logo.style.display = 'none';
-            Defaults.update();
-        }
+        hideLoading();
 
         Contract.setContracts(contracts);
 

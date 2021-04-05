@@ -35,7 +35,7 @@ const Login = (() => {
     );
 
     const initOneAll = () => {
-        ['google', 'facebook'].forEach(provider => {
+        ['google', 'facebook', 'apple'].forEach(provider => {
             $(`#button_${provider}`).off('click').on('click', e => {
                 e.preventDefault();
 

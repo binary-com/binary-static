@@ -11,9 +11,7 @@ export const Salutation = ({ className, row_class, row_id }) => (
         row_id={row_id}
     >
         <option value='Mr'>{it.L('Mr')}</option>
-        <option value='Mrs' className='ru-hide'>{it.L('Mrs')}</option>
         <option value='Ms'>{it.L('Ms')}</option>
-        <option value='Miss' className='ru-hide'>{it.L('Miss')}</option>
     </FormRow>
 );
 

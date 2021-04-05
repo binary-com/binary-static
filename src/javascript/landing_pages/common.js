@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+const GTM = require('../_common/gtm');
+
 // Check view width, add navbar height as offset if on desktop
 function checkWidth() {
     const mq = window.matchMedia('(max-width: 1199px)');
@@ -175,7 +177,10 @@ function setupCrowdin() {
 
 function commonOnload() {
     setupCrowdin();
-    dataLayer.push({ event: 'page_load' });
+    GTM.init();
+    if (dataLayer) {
+        dataLayer.push({ event: 'page_load' });
+    }
 }
 
 // displays notification on outdated browsers

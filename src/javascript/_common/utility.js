@@ -218,6 +218,12 @@ const findParent = (el, selector) => {
     return null;
 };
 
+const isBinaryDomain = () => {
+    const url = new URL(window.location.href);
+    const domain = url.hostname.split('.').slice(-2).join('.');
+    return (domain === 'binary.com');
+};
+
 let static_hash;
 const getStaticHash = () => {
     static_hash = static_hash || (document.querySelector('script[src*="binary"]').getAttribute('src') || '').split('?')[1];
@@ -238,6 +244,7 @@ module.exports = {
     getHighestZIndex,
     downloadCSV,
     template,
+    isBinaryDomain,
     isEmptyObject,
     isLoginPages,
     cloneObject,

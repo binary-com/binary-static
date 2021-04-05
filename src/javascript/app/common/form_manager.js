@@ -25,6 +25,7 @@ const FormManager = (() => {
                 fields.forEach((field) => {
                     if (field.selector) {
                         field.$ = $form.find(field.selector);
+
                         if (!field.$.length) return;
                     }
 

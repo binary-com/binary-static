@@ -2,11 +2,9 @@ import React from 'react';
 import Title from '../components/title.jsx';
 import Favicons from '../includes/favicons.jsx';
 import AntiClickjack from '../includes/anti_clickjack.jsx';
-import GoogleOptimizer from '../includes/google_optimizer.jsx';
 
 const Head = () => (
     <head>
-        <GoogleOptimizer />
         <AntiClickjack />
         <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
         <meta httpEquiv='Content-Language' content={it.language} />

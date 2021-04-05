@@ -10,6 +10,7 @@ const getHashValue             = require('../../_common/url').getHashValue;
 const cloneObject              = require('../../_common/utility').cloneObject;
 const isEmptyObject            = require('../../_common/utility').isEmptyObject;
 const template                 = require('../../_common/utility').template;
+const urlFor                   = require('../../_common/url').urlForStatic;
 
 const Validation = (() => {
     const forms        = {};
@@ -73,7 +74,8 @@ const Validation = (() => {
                     if (field.msg_element) {
                         field.$error = $form.find(field.msg_element);
                     } else {
-                        const $parent = field.$.parent();
+                        // for password type fields we need to go up one parent due to the password field wrapper
+                        const $parent = field.$.attr('type') === 'password' ? field.$.parent().parent() : field.$.parent();
                         // Add indicator to required fields
                         if (field.validations.find(v => /^req$/.test(v) && (isEmptyObject(v[1]) || !v[1].hide_asterisk))) {
                             let $label = $parent.parent().find('label');
@@ -84,7 +86,13 @@ const Validation = (() => {
                             }
                         }
                         if ($parent.find(`p.${error_class}`).length === 0) {
-                            $parent.append($('<p/>', { class: `${error_class} ${hidden_class} no-margin` }));
+                            // input with password meter data attribute should have default margins
+                            const has_password_meter = $parent.children('div').children('input').attr('data-password');
+                            $parent.append($('<p/>',
+                                {
+                                    class: `${error_class} ${hidden_class} ${!has_password_meter ? 'no-margin' : ''}`,
+                                })
+                            );
                         }
                         field.$error = $parent.find(`.${error_class}`);
                     }
@@ -101,6 +109,16 @@ const Validation = (() => {
                                 )));
                             }
                         });
+
+                        if (field.$.attr('type') === 'password') {
+                            field.$.next('#password_toggle')[0].onclick = () => togglePasswordVisibility(field);
+                            if (field.$.attr('data-password')) {
+                                field.$.after(
+                                    '<div class="password--meter password--meter-bg"></div>' +
+                                    '<div class="password--meter password--meter-fill"></div>' +
+                                    '<p class="password--message"></p>');
+                            }
+                        }
                     }
                 });
                 if (has_required && $form.find('.indicates-required').length === 0) {
@@ -109,6 +127,18 @@ const Validation = (() => {
                 }
             }
         }
+
+        const togglePasswordVisibility = (field) => {
+            const el_password_icon = field.$.siblings('#password_toggle').find('#password_toggle_icon');
+
+            if (field.$.attr('type') === 'text') {
+                field.$.attr('type', 'password');
+                el_password_icon.attr('src', urlFor('images/common/password_hide.svg'));
+            } else if (field.$.attr('type') === 'password') {
+                field.$.attr('type', 'text');
+                el_password_icon.attr('src', urlFor('images/common/password_show.svg'));
+            }
+        };
 
         // need to init Dropdown after we have responses from ws
         const el_all_select = document.querySelectorAll('select:not([multiple]):not([single])');
@@ -134,7 +164,7 @@ const Validation = (() => {
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);
     const validPassword     = (value, options, field) => {
         if (/^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]*$/.test(value)) {
-            Password.checkPassword(field.selector);
+            Password.checkPassword(field.selector, true);
             return true;
         }
         // else
@@ -144,7 +174,7 @@ const Validation = (() => {
     const validGeneral      = value => !/[`~!@#$%^&*)(_=+[}{\]\\/";:?><|]+/.test(value);
     const validAddress      = value => !/[`~!$%^&*_=+[}{\]\\"?><|]+/.test(value);
     const validPostCode     = value => value === '' || /^[A-Za-z0-9][A-Za-z0-9\s-]*$/.test(value);
-    const validPhone        = value => /^\+((-|\s)*[0-9])*$/.test(value);
+    const validPhone        = value => /^\+?((-|\s)*[0-9])*$/.test(value);
     const validRegular      = (value, options) => options.regex.test(value);
     const validEmailToken   = value => value.trim().length === 8;
     const compareToEmail    = value => {
@@ -239,7 +269,7 @@ const Validation = (() => {
             address         : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: [_1]', '- . \' # ; : ( ) , @ /') },
             letter_symbol   : { func: validLetterSymbol, message: localize('Only letters, space, hyphen, period, and apostrophe are allowed.') },
             postcode        : { func: validPostCode,     message: localize('Only letters, numbers, space, and hyphen are allowed.') },
-            phone           : { func: validPhone,        message: localize('Please enter a valid phone number, including the country code (e.g. +15417541234).') },
+            phone           : { func: validPhone,        message: localize('Please enter a valid phone number (e.g. +15417541234).') },
             compare         : { func: validCompare,      message: localize('The two passwords that you entered do not match.') },
             not_equal       : { func: validNotEqual,     message: localizeKeepPlaceholders('[_1] and [_2] cannot be the same.') },
             min             : { func: validMin,          message: localizeKeepPlaceholders('Minimum of [_1] characters required.') },
@@ -290,6 +320,7 @@ const Validation = (() => {
                 field.is_ok = false;
                 type        = 'length';
                 options     = pass_length;
+                Password.checkPassword(field.selector, false);
             } else {
                 const validator = (type === 'custom' ? options.func : ValidatorsMap.get(type).func);
 

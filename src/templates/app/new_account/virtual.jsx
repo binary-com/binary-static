@@ -10,16 +10,20 @@ const Virtual = () => (
 
         <form id='virtual-form' className='gr-padding-10 invisible'>
             <Fieldset legend={it.L('Details')}>
+                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{ single: 'single' }}  />
                 <FormRow
+                    autoComplete='new-password'
                     type='password'
+                    has_password_meter
                     id='client_password'
-                    label={it.L('Choose a password')}
-                    hint={it.L('Minimum of eight lower and uppercase English letters with numbers')}
+                    label={it.L('New password')}
                 />
 
-                <FormRow type='password' id='repeat_password' label={it.L('Re-enter password')} />
-
-                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{ single: 'single' }}  />
+                <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m center-text-m'>
+                    <p className='hint password--hint'>
+                        {it.L('Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols.')}
+                    </p>
+                </div>
 
                 <FormRow
                     type='checkbox'

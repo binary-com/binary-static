@@ -22,6 +22,7 @@ const NewAccount = () => (
                 <div className='gr-row gr-row-align-center'>
                     <SocialButton provider='google' />
                     <SocialButton provider='facebook' />
+                    <SocialButton provider='apple' />
                 </div>
             </div>
             <p>{it.L('Already have an account? [_1]Log in[_2] here', '<a id="login" href="javascript:;">', '</a>')}</p>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-02-18 04:16\n"
+"PO-Revision-Date: 2021-03-25 03:22\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "404"
 msgid "500"
 msgstr "500"
 
-msgid " (account created)"
-msgstr " (已開立帳戶)"
+msgid " (Region added)"
+msgstr " (已新增區域)"
 
-msgid " (unavailable)"
-msgstr " (不可用)"
+msgid " (Temporarily unavailable)"
+msgstr " (暫時不可用)"
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " 為了利於培訓和監控，所有通話將被錄音。"
@@ -520,6 +520,12 @@ msgstr "(四) 結算的可能性"
 msgid "(e) Size and nature"
 msgstr "(五) 大小和性質"
 
+msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
+msgstr "*加密貨幣對不適用於在 Deriv (V) Ltd 註冊的 DMT5 金融帳戶。"
+
+msgid "+ Add region"
+msgstr "+ 新增區域"
+
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
 
@@ -838,6 +844,9 @@ msgstr "大學學位或其它相關專業資格"
 msgid "A whole new easy-to-use platform that's rich with features."
 msgstr "全新的簡單操作、功能繁多交易平台。"
 
+msgid "A word by itself is easy to guess"
+msgstr "一個詞本身很容易猜到"
+
 msgid "A. Introduction"
 msgstr "一、簡介"
 
@@ -1093,11 +1102,11 @@ msgstr "新增"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "透過新增+/-給障礙偏移量定義。例如, +0.005 表示比入市現價高0.005 的障礙。"
 
+msgid "Add another word or two. Uncommon words are better."
+msgstr "加上一兩個字。不常見的詞更好。"
+
 msgid "Add funds"
 msgstr "增加基金"
-
-msgid "Add more trade servers"
-msgstr "新增更多交易伺服器"
 
 msgid "Additional business exposure:"
 msgstr "附加商業風險:"
@@ -1311,6 +1320,9 @@ msgstr "所有適用於Android的版本"
 
 msgid "All versions for iOS"
 msgstr "所有適用於iOS的版本"
+
+msgid "All-uppercase is almost as easy to guess as all-lowercase"
+msgstr "全大寫幾乎和全小寫一樣容易猜出"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "允許客戶以較少金額（通過本地貨幣）充值"
@@ -1861,8 +1873,23 @@ msgstr "可用的交易類型:"
 msgid "Average"
 msgstr "平均"
 
+msgid "Avoid dates and years that are associated with you"
+msgstr "避免與您相關的日期和年份"
+
+msgid "Avoid recent years"
+msgstr "避免用最近數年的年份"
+
+msgid "Avoid repeated words and characters"
+msgstr "避免重複的單詞和字元"
+
+msgid "Avoid sequences"
+msgstr "避免序列式密碼"
+
 msgid "Avoid the need to have an e-wallet"
 msgstr "避免使用電子錢包"
+
+msgid "Avoid years that are associated with you"
+msgstr "避免用與您相關的年份"
 
 msgid "Avoiding financial transactions that might reveal valuable passwords or personal information such as credit card numbers"
 msgstr "避免可能洩露有價值的密碼或個人資料（例如信用卡號）的金融交易"
@@ -2404,6 +2431,9 @@ msgstr "取消"
 msgid "Capacity to multitask, balance deadlines, and reliably deliver high-quality content"
 msgstr "能夠同時執行多項任務，將最後期限平衡協調，並可靠地交付高品質內容"
 
+msgid "Capitalization doesn't help very much"
+msgstr "大寫並不提供很大幫助"
+
 msgid "Careers"
 msgstr "工作機會"
 
@@ -2520,9 +2550,6 @@ msgstr "為您的真實帳戶選定幣種："
 
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "合約期限的選擇範圍為10 秒到365 天。"
-
-msgid "Choose a password"
-msgstr "選用密碼"
 
 msgid "Choose a payout and our system will calculate the stake required to purchase the contract."
 msgstr "選擇賠付額後，系統將計算購入合約所需投注資金額。"
@@ -2650,8 +2677,8 @@ msgstr "客戶也被告知，如果客戶提供錯誤的資訊，其權利可能
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) who wish to trade CFDs on financial instruments and cryptocurrencies can have MetaTrader 5 accounts under Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
 msgstr "全球其他地區(除了一些國家如美國、加拿大和香港) 想要進行金融工具和加密貨幣差價合約交易的客戶可在 Deriv (BVI) Ltd. 擁有MetaTrader 5帳戶。%1在英屬維爾京群島不能使用。"
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "全球其他地區的客戶(不包括某些國家如美國、加拿大、香港) 可在 Deriv (V) Ltd. 開設外匯和差價合約 Metatrader 5 帳戶。%1在萬那杜不能使用。"
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. This company does not offer CFDs on cryptocurrencies. %1 is not available in the Republic of Vanuatu."
+msgstr "全球其他地區的客戶(不包括某些國家如美國、加拿大、香港) 可在 Deriv (V) Ltd. 開設外匯和差價合約 Metatrader 5 帳戶。公司不提供加密貨幣的差價合約。%1在萬那杜不能使用。"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
 msgstr "全球其他地區的客戶(不包括某些國家如美國、加拿大和香港) 可在 Deriv (SVG) LLC開設帳戶。"
@@ -2836,6 +2863,9 @@ msgstr "商品"
 msgid "Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On %1, they are priced in US dollars."
 msgstr "商品是生長在地上或從地面開採的寶貴資源，例如白銀、黃金和石油。在 %1 ，商品按美元報價。"
 
+msgid "Common names and surnames are easy to guess"
+msgstr "常用名稱和姓氏容易猜到"
+
 msgid "Communicate and collaborate effectively with members of different teams across the organisation."
 msgstr "與整個組織的各個團隊成員進行有效溝通和協作。"
 
@@ -2946,9 +2976,6 @@ msgstr "按照％1的說明配置您的個人電腦和手機以使用Cloudflare 
 
 msgid "Confirm"
 msgstr "確認"
-
-msgid "Confirm New Password"
-msgstr "確認新密碼"
 
 msgid "Confirm changes"
 msgstr "確認更改"
@@ -3304,6 +3331,9 @@ msgstr "像比特幣和以太幣這樣的加密貨幣是分散式的數字資產
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
 msgstr "比特幣和以太幣等加密貨幣是區塊鏈上的分散式數字貨幣。"
 
+msgid "Cryptocurrencies*"
+msgstr "加密貨幣*"
+
 msgid "Cryptocurrency"
 msgstr "加密貨幣"
 
@@ -3484,6 +3514,9 @@ msgstr "出生日期"
 msgid "Dated within the last six months"
 msgstr "過去六個月內的日期"
 
+msgid "Dates are often easy to guess"
+msgstr "日期通常很容易猜到"
+
 msgid "Deactivate"
 msgstr "停用"
 
@@ -3580,8 +3613,8 @@ msgstr "在下方存款或提款"
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "存款： %1區塊鏈確認"
 
-msgid "Deposit: %1 working day"
-msgstr "存款：%1工作日內"
+msgid "Deposit: %1 day"
+msgstr "存款：%1天"
 
 msgid "Deposit: Instant"
 msgstr "存款：即時"
@@ -5419,9 +5452,6 @@ msgstr "「高於/低於」交易"
 msgid "Highlights"
 msgstr "亮點"
 
-msgid "Hint: it would take approximately %1%2 to crack your password."
-msgstr "提示：破解密碼需要大約 %1%2 。"
-
 msgid "Historical Mediterranean island"
 msgstr "歷史悠久的地中海島嶼"
 
@@ -6943,8 +6973,8 @@ msgstr "MT5真實帳戶"
 msgid "MT5 Synthetic"
 msgstr "MT5 綜合"
 
-msgid "MT5 Web platform"
-msgstr "網路平台版 MT5"
+msgid "MT5 for %1"
+msgstr "%1版MT5"
 
 msgid "MT5 for Android"
 msgstr "Android版MT5"
@@ -6954,9 +6984,6 @@ msgstr "Linux版MT5"
 
 msgid "MT5 for Mobile"
 msgstr "移動設備版MT5"
-
-msgid "MT5 for Windows"
-msgstr "Windows版MT5"
 
 msgid "MT5 for iOS"
 msgstr "IOS版MT5"
@@ -7354,9 +7381,6 @@ msgstr "最小存款額"
 msgid "Minimum of %1 characters required."
 msgstr "需至少%1 個字元。"
 
-msgid "Minimum of eight lower and uppercase English letters with numbers"
-msgstr "至少八個大小寫英文字母和數字"
-
 msgid "Minimum of six months validity"
 msgstr "有效期至少六個月"
 
@@ -7389,9 +7413,6 @@ msgstr "對Binary或其提供的服務產生曲解"
 
 msgid "Misrepresent the services that the Agent provides to the clients"
 msgstr "對代理向客戶提供的服務產生曲解"
-
-msgid "Miss"
-msgstr "遺漏"
 
 msgid "Mo"
 msgstr "星期一"
@@ -7474,9 +7495,6 @@ msgstr "透過真實帳戶將資金移入和移出。"
 msgid "Mr"
 msgstr "先生"
 
-msgid "Mrs"
-msgstr "夫人"
-
 msgid "Ms"
 msgstr "女士"
 
@@ -7552,8 +7570,8 @@ msgstr "您寵物的名字"
 msgid "Name, email address, and contact number"
 msgstr "姓名、電子郵件地址和電話號。"
 
-msgid "Name:"
-msgstr "姓名:"
+msgid "Names and surnames by themselves are easy to guess"
+msgstr "僅名字和姓氏本身很容易猜到"
 
 msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
 msgstr "包含您的照片、姓名和出生日期的國民身份證、身份本或任何政府出具的文檔"
@@ -7722,6 +7740,9 @@ msgstr "不限"
 
 msgid "No modification or amendment of any or all clauses or provisions of this agreement shall be valid without the clear and unequivocal acceptance of such amendments by both Parties."
 msgstr "除非由雙方明確及不含糊地接受，對本協議的任何或全部條款或規定進行修改或修訂都屬無效。"
+
+msgid "No need for symbols, digits, or uppercase letters"
+msgstr "不需要符號、數字或大寫字母"
 
 msgid "No open positions."
 msgstr "無未平倉頭寸。"
@@ -8572,6 +8593,9 @@ msgstr "請確認您不是政治公眾人士。"
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "請確認交易詳細資料以完成轉帳："
 
+msgid "Please contact us via %1live chat%2."
+msgstr "請透過%1即時聊天%2與我們聯繫。"
+
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "請聯繫您的付款代理，以便驗證您的取款請求。"
 
@@ -8587,8 +8611,8 @@ msgstr "請確保您提供的地址是完整和準確的。"
 msgid "Please enter a valid Login ID."
 msgstr "請輸入有效的登入識別碼。"
 
-msgid "Please enter a valid phone number, including the country code (e.g. +15417541234)."
-msgstr "請輸入包括國家代碼的有效電話號 (例如 +15417541234)。"
+msgid "Please enter a valid phone number (e.g. +15417541234)."
+msgstr "請輸入有效的電話號 (例如 +15417541234)。"
 
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "請輸入日期，格式為日-月-年 時:分(當地時間)。"
@@ -8832,6 +8856,9 @@ msgstr "預測價格走向<br />並購入"
 
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "預測現貨價格最後小數點數值的數字。共有三種數字交易："
+
+msgid "Predictable substitutions like '@' instead of 'a' don't help very much"
+msgstr "容易猜測的替換，例如用'@'代替'a'並沒有提供太大幫助"
 
 msgid "Prefer another trading website"
 msgstr "較喜歡別的交易網站"
@@ -9127,6 +9154,9 @@ msgstr "2018年第四季"
 msgid "Q4 2019"
 msgstr "2019年第四季"
 
+msgid "Q4 2020"
+msgstr "2020年第四季"
+
 msgid "Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more information, please visit %1."
 msgstr "Qiwi 是支付服務提供者, 成立于2007年。它為個人提供簡單的線上轉移資金、接收付款和支付。欲知詳情, 請存取 %1。"
 
@@ -9171,9 +9201,6 @@ msgstr "範圍突破指數"
 
 msgid "Range of markets"
 msgstr "市場範圍"
-
-msgid "Re-enter password"
-msgstr "重新輸入密碼"
 
 msgid "Read"
 msgstr "閱讀"
@@ -9264,6 +9291,9 @@ msgstr "獲得公司批准, 提供與公司有關的任何資料"
 
 msgid "Receive your earnings through your favourite payment method"
 msgstr "通過您最傾向的付款方式領取收入"
+
+msgid "Recent years are easy to guess"
+msgstr "以最近年份作密碼很容易猜出"
 
 msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
 msgstr "認識到金融市場的複雜性，我們公平及詳細地描述了我們的交易選擇。我們在網站上提供準確的產品描述，以及免費的網絡研討會。我們為客戶提供建立虛擬帳戶的機會，以便免費試用交易系統。我們鼓勵客戶在交易前仔細研究所有這些資訊來源。"
@@ -9396,6 +9426,12 @@ msgstr "完成後，請記得要按停止。 <fallback>恢復視訊操作</fallb
 
 msgid "Remove your glasses, if necessary"
 msgstr "必要時摘下眼鏡"
+
+msgid "Repeats like \"aaa\" are easy to guess"
+msgstr "像“aaa”這樣的重複密碼很容易猜到"
+
+msgid "Repeats like \"abcabcabc\" are only slightly harder to guess than \"abc\""
+msgstr "像“abcabcabc”這樣的重複詞比“abc”更難猜測"
 
 msgid "Replication,"
 msgstr "複製"
@@ -9552,6 +9588,9 @@ msgstr "反面"
 
 msgid "Reverse side"
 msgstr "反面"
+
+msgid "Reversed words aren't much harder to guess"
+msgstr "倒寫單詞並不難猜"
 
 msgid "Review and analyse suspicious client activities"
 msgstr "審查和分析可疑的客戶活動"
@@ -9862,6 +9901,9 @@ msgstr "九月"
 msgid "September"
 msgstr "九月"
 
+msgid "Sequences like abc or 6543 are easy to guess"
+msgstr "像abc或6543這樣的序列密碼很容易猜到"
+
 msgid "Server"
 msgstr "伺服器"
 
@@ -9928,6 +9970,9 @@ msgstr "精準報價"
 msgid "Sharp, benchmarked prices"
 msgstr "精確基準報價"
 
+msgid "Short keyboard patterns are easy to guess"
+msgstr "短鍵盤列式很容易猜到"
+
 msgid "Short to long-term durations"
 msgstr "短期限到長期限"
 
@@ -9972,6 +10017,12 @@ msgstr "顯示所有詳細資訊-包括最後2行"
 
 msgid "Show all historical transactions up to"
 msgstr "顯示此日期前的所有歷史記錄"
+
+msgid "Show less"
+msgstr "顯示更少"
+
+msgid "Show more"
+msgstr "顯示更多"
 
 msgid "Sign out"
 msgstr "登出"
@@ -10267,6 +10318,9 @@ msgstr "內容儲存"
 msgid "Stored Procedures"
 msgstr "儲存過程"
 
+msgid "Straight rows of keys are easy to guess"
+msgstr "直線排列鍵很容易猜到"
+
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "經證明具優秀的問題分析能力或對進入本領域有濃厚興趣"
 
@@ -10284,6 +10338,9 @@ msgstr "果敢的決策能力"
 
 msgid "Strong oral and written communication skills in both the regional language(s) and English"
 msgstr "流利區域語言和英語溝通（口頭/書面）技巧"
+
+msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
+msgstr "強密碼須至少8個字元，及包含大小寫字母、數字和符號。"
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "對顏色、排版、辨識設計和品牌非常熟悉"
@@ -12322,6 +12379,15 @@ msgstr "此文繼續以上的說明。 ％1為客戶提供多種學習負責任�
 msgid "This is a staging server - For testing purposes only"
 msgstr "這是分期伺服器，僅用於測試目的"
 
+msgid "This is a top-10 common password"
+msgstr "這是10個最常用的密碼"
+
+msgid "This is a top-100 common password"
+msgstr "這是100個最常用的密碼"
+
+msgid "This is a very common password"
+msgstr "這是很常用的密碼"
+
 msgid "This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset."
 msgstr "這是一個指示性的障礙。實際障礙將是入市現價加上障礙距離。"
 
@@ -12333,6 +12399,9 @@ msgstr "這是件大事。我們獲得英國《金融時報》和《Investors Ch
 
 msgid "This is one of our core commitments to clients."
 msgstr "這是我們對客戶的核心承諾之一。"
+
+msgid "This is similar to a commonly used password"
+msgstr "這類似於常用密碼"
 
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "這是標的資產在特定時間可以買入或賣出的目前價格。"
@@ -12354,6 +12423,9 @@ msgstr "這項義務包括禁止非法付款或向公職人員、業務夥伴、
 
 msgid "This page is only available to logged out clients."
 msgstr "此頁面僅適用於已登出的客戶。"
+
+msgid "This password is on the blacklist"
+msgstr "此密碼已列入黑名單"
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "本政策適用于歸類為零售或專業的客戶。被列為符合條件的交易對手的客戶不在本政策的範圍之內。"
@@ -12675,6 +12747,9 @@ msgstr "即刻交易"
 
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "在包括外匯、股票指數、大宗商品等在內的基本市場交易。"
+
+msgid "Trade on web terminal"
+msgstr "Web 終端交易"
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根據您的風險承受能力進行交易。切勿借錢交易。"
@@ -13138,6 +13213,9 @@ msgstr "從電腦上傳卡的背面"
 msgid "Upload back of license from your computer"
 msgstr "從電腦上傳執照的背面"
 
+msgid "Upload document"
+msgstr "上傳文件"
+
 msgid "Upload front of card from your computer"
 msgstr "從電腦上傳卡的正面"
 
@@ -13173,6 +13251,12 @@ msgstr "本協議到期或終止時（不論是什麼原因），所有通過本
 
 msgid "Usage limit"
 msgstr "使用限制"
+
+msgid "Use a few words, avoid common phrases"
+msgstr "用幾個詞，避免常用短語"
+
+msgid "Use a longer keyboard pattern with more turns"
+msgstr "使用更長的鍵盤列式並給予更多變化"
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
 msgstr "使用先進的資料分析技能研究金融市場的趨勢/模式"
@@ -13273,23 +13357,11 @@ msgstr "驗證和批准客戶的存款和取款請求"
 msgid "Verify identity"
 msgstr "身份驗證"
 
-msgid "Verify main password"
-msgstr "主密碼驗證"
-
-msgid "Verify new MT5 password"
-msgstr "MT5新密碼驗證"
-
-msgid "Verify new password"
-msgstr "驗證新密碼"
-
 msgid "Version 49. Last modified 23-11-2020."
 msgstr "版本49。最後修改時間為 2020年11月23日。"
 
 msgid "Video Room Facility"
 msgstr "視訊室設施"
-
-msgid "Video tutorial"
-msgstr "視訊教程"
 
 msgid "View"
 msgstr "檢視"
@@ -14002,11 +14074,11 @@ msgstr "從客戶的MT5真實帳戶中提款時可以使用與其％1帳戶不�
 msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
 msgstr "必須完全通過付款代理存款才可使用付款代理提款."
 
-msgid "Withdrawal: %1 to %2 working days"
-msgstr "取款：%1 至%2個工作日"
+msgid "Withdrawal: %1 day"
+msgstr "取款：%1 天"
 
-msgid "Withdrawal: %1 working day"
-msgstr "取款：%1 個工作日"
+msgid "Withdrawal: %1 to %2 days"
+msgstr "取款：%1 至%2天"
 
 msgid "Withdrawal: Not applicable"
 msgstr "取款：不適用"
@@ -14266,6 +14338,12 @@ msgstr "資金只可在法定帳戶和加密貨幣帳戶之間轉移."
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "您可以為每種受支持的加密貨幣開立專用帳戶。"
 
+msgid "You must also submit a proof of address."
+msgstr "您還需提交地址證明。"
+
+msgid "You must also submit a proof of identity."
+msgstr "您還需提交身份證明。"
+
 msgid "You must ensure that potential clients are aware of the prohibition on insider trading based on confidential information. If you have any suspicion that such trading is taking place you must inform %1compliance@binary.com%2."
 msgstr "您必須確保潛在客戶了解基於機密資訊的內幕交易禁令。如果您懷疑有人正在進行此類交易，必須通知%1compliance@binary.com%2。"
 
@@ -14362,6 +14440,9 @@ msgstr "您在與我們類似的市場進行了相當多的交易, 過去四季�
 msgid "You've made no transactions of this type up to this date."
 msgstr "您至今為止沒有進行過此類交易。"
 
+msgid "You've reached the limit for uploading your documents."
+msgstr "文件上傳已達上限。"
+
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "您在金融業界工作至少一年, 擁有在我們平台上交易的所需知識"
 
@@ -14446,8 +14527,14 @@ msgstr "您的電腦更新可能需要數秒鐘"
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "您的模擬帳戶餘額目前為 %1 或更低。您可以新增 %2補充帳戶資金。"
 
-msgid "Your document is being reviewed, please check back in 1-3 days"
-msgstr "您的文件正在審查中，請於1-3天後再查看"
+msgid "Your document is being reviewed, please check back in 1-3 days."
+msgstr "您的文件正在審查中，請於1-3天後再檢視."
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of address."
+msgstr "您的文件正在審查中，請於1-3天後再檢視。您還需提交地址證明。"
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of identity."
+msgstr "您的文件正在審查中，請於1-3天後再檢視。您還需提交身份證明。"
 
 msgid "Your face is needed in the selfie"
 msgstr "自拍照片必須包括臉部"
@@ -14482,9 +14569,6 @@ msgstr "您的密碼已更改。請重新登入。"
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "您的密碼已成功重設。請用新密碼登入您的帳戶。"
 
-msgid "Your password is one of the most commonly used passwords on the internet. Please choose a unique password."
-msgstr "您的密碼是網上最常用的密碼之一。請另選一個獨特的密碼。"
-
 msgid "Your professional client request is %1not approved%2."
 msgstr "您申請成為專業客戶的請求%1不受批准%2。"
 
@@ -14505,6 +14589,9 @@ msgstr "您的身份證明已通過驗證"
 
 msgid "Your proof of identity has expired"
 msgstr "您的身份證明已過期"
+
+msgid "Your proof of identity submission failed because:"
+msgstr "您提交的身份證明已失敗，因為："
 
 msgid "Your proof of identity was submitted successfully"
 msgstr "您的身份證明已成功提交"
@@ -14677,9 +14764,6 @@ msgstr "登入"
 msgid "logout"
 msgstr "登出"
 
-msgid "million"
-msgstr "百萬"
-
 msgid "minute"
 msgstr "分鐘"
 
@@ -14752,9 +14836,6 @@ msgstr "差價合約價格採用的基礎貨幣或金融工具"
 msgid "there was a connection error. Please try again later."
 msgstr "連接出錯。請稍後重試。"
 
-msgid "thousand"
-msgstr "千"
-
 msgid "tick"
 msgstr "跳動點"
 
@@ -14769,9 +14850,6 @@ msgstr "今天，週五"
 
 msgid "virtual money credit to account"
 msgstr "虛擬資金存入帳戶"
-
-msgid "years"
-msgstr "年"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

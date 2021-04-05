@@ -483,16 +483,92 @@ button .barspinner.white {
     }
 }
 
-.days_to_crack {
-    width: fit-content;
-    padding: 5px;
-    margin-top: 5px;
-
-    &.red {
-        color: $COLOR_RED;
+#virtual-form {
+    .select2-container {
+        max-width: 220px;
     }
-    &.green {
-        color: $COLOR_GREEN;
+}
+
+.password {
+    &--field-wrapper {
+        position: relative;
+        max-width: 220px;
+
+        input {
+            width: 202px;
+        }
+        @media screen and (max-width: 480px) {
+            margin: 0 auto;
+
+            input {
+                width: 202px !important;
+            }
+            & + .error-msg {
+                text-align: center;
+            }
+        }
+    }
+    &--meter {
+        position: absolute;
+        pointer-events: none;
+        height: 3px;
+        top: 23px;
+        left: 1px;
+        border-radius: 0 0 3px 3px;
+        width: calc(100% - 2px);
+
+        &-bg {
+            background: $COLOR_LIGHT_GRAY;
+            z-index: 1;
+        }
+        &-fill {
+            transition: transform 0.25s linear;
+            transform-origin: left top;
+            z-index: 2;
+            transform: scale(0, 1);
+
+            &.red {
+                background-color: $COLOR_RED;
+            }
+            &.orange {
+                background-color: $COLOR_ORANGE;
+            }
+            &.green {
+                background-color: $COLOR_GREEN;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            top: 28px;
+        }
+    }
+    &--hint {
+        margin-top: 16px;
+        max-width: 380px;
+    }
+    &--message {
+        color: $COLOR_ORANGE;
+        font-size: 13px;
+        font-style: italic;
+        white-space: nowrap;
+        margin-top: 0.4em;
+
+        @media screen and (max-width: 480px) {
+            white-space: unset;
+        }
+    }
+    &--toggle {
+        display: flex;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        cursor: pointer;
+
+        @media screen and (max-width: 480px) {
+            top: 8px;
+        }
+    }
+    input[style*='background'] ~ &--toggle {
+        right: 32px;
     }
 }
 
@@ -643,7 +719,7 @@ li strong.margin-right {
     justify-content: center;
     border-radius: 3px;
     height: 40px;
-    width: 200px;
+    width: 155px;
     border: 1px solid $COLOR_GRAY;
     background-position-x: 7px;
     background-position-y: center;
@@ -657,6 +733,9 @@ li strong.margin-right {
     &#button_facebook {
         background-image: url('../images/social/facebook.svg');
     }
+    &#button_apple {
+        background-image: url('../images/social/apple.svg');
+    }
     & + .button-social {
         margin-left: 10px;
     }
@@ -669,7 +748,12 @@ li strong.margin-right {
         font-weight: 400;
         padding-left: 1rem;
     }
-    @media screen and (max-width: 480px) {
+
+    @media screen and (max-width: 650px) {
+        width: 150px;
+    }
+
+    @media screen and (max-width: 650px) {
         width: 30%;
         background-position-x: center;
 
