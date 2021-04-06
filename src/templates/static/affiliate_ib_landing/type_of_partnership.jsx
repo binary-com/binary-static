@@ -222,15 +222,16 @@ const TypesOfPartnership = () => (
                                 }}
                             />
 
-                            <div className='gr-10'>
-                                <h3 className='text-align-left'>{it.L('How it’s calculated')}</h3>
-                                <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility 75 Index for a price of USD 500,000 will pay out USD 25 in commission based on the following formula:')}</p>
-                                <p className='text-align-left'><strong>{it.L('  (USD 5          ÷   USD 100,000)        ✕       1 lot      ✕       USD 500,000     =   USD 25')}</strong></p>
-                                <p className='text-align-left'>{it.L('(Commission rate  ÷  Adjusted volume)            ✕       Volume      ✕            Spot price             =   Commission')}</p>
-                                <p className='text-align-left'>{it.L('[_1]Please note[_2]: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.','<strong>','</strong>')}</p>
+                            <h3 className='text-align-left'>{it.L('How it’s calculated')}</h3>
+                            <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility 75 Index for a price of USD 500,000 will pay out USD 25 in commission based on the following formula:')}</p>
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-synthetic.svg')}
+                                width='100%'
+                            />
+                            <p className='text-align-left'>{it.L('[_1]Please note[_2]: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.','<strong>','</strong>')}</p>
 
-                                <h3>{it.L('Financial account')}</h3>
-                            </div>
+                            <h3>{it.L('Financial account')}</h3>
+                            
                             <Table
                                 data={{
                                     thead: [
@@ -336,12 +337,16 @@ const TypesOfPartnership = () => (
 
                             <h3 className='text-align-left'>{it.L('How it’s calculated')}</h3>
                             <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:')}</p>
-                            <p className='text-align-left'><strong>{it.L('EUR 5         ✕     1 lot      =     EUR 5')}</strong></p>
-                            <p className='text-align-left'>{it.L('Commission rate     ✕     Volume     =    Commission')}</p>
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-forex.svg')}
+                                width='100%'
+                            />
 
                             <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula:')}</p>
-                            <p className='text-align-left'><strong>{it.L('   (USD 20      ÷   USD 100,000)    ✕       1 lot      ✕               50,000                 =   USD 10')}</strong></p>
-                            <p className='text-align-left'>{it.L('(Commission rate   ÷    Adjusted volume)     ✕       Volume     ✕       BTCUSD exchange rate        =  Commission')}</p>
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-crypto.svg')}
+                                width='100%'
+                            />
 
                             <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>','</strong>')}</p>
                             <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example). Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
@@ -453,13 +458,15 @@ const TypesOfPartnership = () => (
 
                             <h3 className='text-align-left'>{it.L('How it’s calculated')}</h3>
                             <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:')}</p>
-                            <p className='text-align-left'><strong>{it.L('  EUR 2.5            ✕    1 lot      =     EUR 2.5')}</strong></p>
-                            <p className='text-align-left'>{it.L('Commission rate           ✕    Volume     =   Commission')}</p>
-
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-forex.svg')}
+                                width='100%'
+                            />
                             <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
-                            <p className='text-align-left'><strong>{it.L('  (USD 20      ÷   USD 100,000)    ✕       1 lot      ✕        USD 50,000            =   USD 10')}</strong></p>
-                            <p className='text-align-left'>{it.L('(Commission rate   ÷    Adjusted volume)    ✕       Volume      ✕   BTC/USD exchange rate        =  Commission')}</p>
-                            
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-crypto.svg')}
+                                width='100%'
+                            />
                             <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>', '</strong>')}</p>
                             <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example)')}</p>
                             <p className='text-align-left'>{it.L('Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
@@ -469,19 +476,27 @@ const TypesOfPartnership = () => (
                           
                             <p className='text-align-left'><strong>{it.L('Example:')}</strong></p>
                             <p className='text-align-left'>{it.L('A deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) per USD 100,000 turnover will pay out a commission of USD 20. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
-                            <p className='text-align-left'><strong>{it.L('(          0.01              ✕       USD 100,000       )         ÷               20              =            50')}</strong></p>
-
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-value.svg')}
+                                width='100%'
+                            />
                             <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
-                            <p className='text-align-left'><strong>{it.L('  (USD 20      ÷   USD 100,000)    ✕       1 lot      ✕        USD 50,000            =   USD 10')}</strong></p>
-                            <p className='text-align-left'>{it.L('(   Min. commission        ✕        Adjusted volume         )           ÷         Commission rate      =         USD volume')}</p>
-                            <p className='text-align-left'><strong>{it.L(' 50             ÷       USD 50,000            =              0.001 lots')}</strong></p>
-                            <p className='text-align-left'>{it.L('(   USD volume       ✕        Spot price        )           ÷         Volume in lots')}</p>
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-spot.svg')}
+                                width='100%'
+                            />
 
                             <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility Index 75 for a price of USD 500,000 per USD 100,000 turnover will pay out a commission of USD 5. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
-                            <p className='text-align-left'><strong>{it.L('(          0.01              ✕       USD 100,000       )         ÷               5                 =            200')}</strong></p>
-                            <p className='text-align-left'>{it.L('(   Min. commission        ✕        Adjusted volume         )            ÷         Commission rate      =         USD volume')}</p>
-                            <p className='text-align-left'><strong>{it.L('         200              +       USD 500,000       )         =0.0004 lots')}</strong></p>
-                            <p className='text-align-left'>{it.L('   USD volume         ÷            Spot price                      =                Volume in lots ')}</p>
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-value.svg')}
+                                width='100%'
+                            />
+
+                            <img
+                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-spot.svg')}
+                                width='100%'
+                            />
+
                         </div>
 
                         <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
