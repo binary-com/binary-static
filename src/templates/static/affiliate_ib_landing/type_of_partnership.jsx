@@ -221,16 +221,16 @@ const TypesOfPartnership = () => (
                                     ],
                                 }}
                             />
-
-                            <h3 className='text-align-left'>{it.L('How it’s calculated')}</h3>
-                            <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility 75 Index for a price of USD 500,000 will pay out USD 25 in commission based on the following formula:')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-synthetic.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
-                            <p className='text-align-left'>{it.L('[_1]Please note[_2]: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.','<strong>','</strong>')}</p>
-
+                            <div className='affiliate-ib-calculation'>
+                                <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
+                                <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility 75 Index for a price of USD 500,000 will pay out USD 25 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-synthetic.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'>{it.L('[_1]Please note[_2]: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.','<strong>','</strong>')}</p>
+                            </div>
                             <h3>{it.L('Financial account')}</h3>
                             
                             <Table
@@ -335,26 +335,27 @@ const TypesOfPartnership = () => (
                                     ],
                                 }}
                             />
+                            <div className='affiliate-ib-calculation'>
+                                <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
+                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-forex.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
 
-                            <h3 className='text-align-left'>{it.L('How it’s calculated')}</h3>
-                            <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-forex.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
+                                <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-crypto.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
 
-                            <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula:')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-crypto.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
+                                <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>','</strong>')}</p>
+                                <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example). Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
 
-                            <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>','</strong>')}</p>
-                            <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example). Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
-
-                            <h3>{it.L('Financial STP account')}</h3> 
+                            </div>
+                            <h3>{it.L('Financial STP account')}</h3>
                             <Table
                                 data={{
                                     thead: [
@@ -459,58 +460,62 @@ const TypesOfPartnership = () => (
                                 }}
                             />
 
-                            <h3 className='text-align-left'>{it.L('How it’s calculated')}</h3>
-                            <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-forex.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
-                            <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-crypto.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
-                            <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>', '</strong>')}</p>
-                            <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example)')}</p>
-                            <p className='text-align-left'>{it.L('Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
+                            <div className='affiliate-ib-calculation'>
+                                <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
+                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-forex.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-crypto.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'>{it.L('[_1]Please note[_2]:','<strong>', '</strong>')}</p>
+                                <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example)')}</p>
+                                <p className='text-align-left'>{it.L('Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
+                            </div>
 
-                            <h3 className='text-align-left'>{it.L('Minimum volume requirement')}</h3>
-                            <p className='text-align-left'>{it.L('To receive the minimum commission (0.01 in any currency) allowed by the system, the minimum volume requirement is calculated based on the following formulas: ')}</p>
-                          
-                            <p className='text-align-left'><strong>{it.L('Example:')}</strong></p>
-                            <p className='text-align-left'>{it.L('A deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) per USD 100,000 turnover will pay out a commission of USD 20. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-value.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
-                            <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-spot.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
+                            <div className='affiliate-ib-calculation affiliate-ib-calculation-minimum'>
+                                <h3 className='text-align-left'><strong>{it.L('Minimum volume requirement')}</strong></h3>
+                                <p className='text-align-left'>{it.L('To receive the minimum commission (0.01 in any currency) allowed by the system, the minimum volume requirement is calculated based on the following formulas: ')}</p>
+                            
+                                <p className='text-align-left'><strong>{it.L('Example:')}</strong></p>
+                                <p className='text-align-left'>{it.L('A deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) per USD 100,000 turnover will pay out a commission of USD 20. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-value.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 20 in commission based on the following formula: ')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-spot.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
 
-                            <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility Index 75 for a price of USD 500,000 per USD 100,000 turnover will pay out a commission of USD 5. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-value.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
+                                <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility Index 75 for a price of USD 500,000 per USD 100,000 turnover will pay out a commission of USD 5. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-value.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
 
-                            <img
-                                src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-spot.svg')}
-                                width='100%'
-                                className='gr-padding-20'
-                            />
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-spot.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
 
+                            </div>
+
+                            <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
+                                <span>{it.L('Sign up now')}</span>
+                            </a>
                         </div>
-
-                        <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
-                            <span>{it.L('Sign up now')}</span>
-                        </a>
                     </div>
                 </div>
             </div>
