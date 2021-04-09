@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-25 03:22\n"
+"PO-Revision-Date: 2021-04-09 03:54\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -707,10 +707,10 @@ msgid "A Stays Between trade pays out if the market stays between (does not touc
 msgstr "Если вы выбираете \"Останется между\" (не коснется обоих уровней), вы получаете выплату, если рынок останется между верхним и нижним барьером (не коснется НИ ОДНОГО из них) за все время действия контракта. Контракт \"Выйдет за пределы\" приносит прибыль, если рынок коснется ЛИБО верхнего, ЛИБО нижнего барьера в любое время в течение срока действия контракта."
 
 msgid "A Stop Loss Order is intended for minimising losses when the financial instrument price moves in an unprofitable direction. The execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr "Ордер стоп-лосс предназначен для минимизации убытка, когда цена финансового инструмента движется в невыгодном направлении. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
+msgstr "Ордер стоп лосс предназначен для минимизации убытка, когда цена финансового инструмента движется в невыгодном направлении. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
 
 msgid "A Take Profit Order is intended for gaining profit when the financial instrument price has reached a certain level. Execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr "Ордер тейк-профит предназначен для получения прибыли, когда цена финансового инструмента достигнет определенного уровня. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
+msgstr "Ордер тейк профит предназначен для получения прибыли, когда цена финансового инструмента достигнет определенного уровня. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
 
 msgid "A bachelor's degree in commerce or any business-related field, IT-related field, or criminology"
 msgstr "Степень бакалавра в области коммерции или в области, смежной с бизнесом, IT или криминалистикой"
@@ -1853,7 +1853,7 @@ msgid "Automated decision-making"
 msgstr "Автоматизированное принятие решений"
 
 msgid "Automatic adjustments of Take Profit levels"
-msgstr "Автоматическая коррекция уровней тэйк-профит"
+msgstr "Автоматическая коррекция уровней тейк профит"
 
 msgid "Available 24/7"
 msgstr "Доступно 24/7"
@@ -2297,7 +2297,7 @@ msgid "By indicating the acceptance of the terms and conditions of this Agreemen
 msgstr "Принимая правила и условия данного Соглашения и продолжая подачу заявления на участие в программе Представляющих брокеров Компании, Представляющий брокер соглашается с правилами и условиями, перечисленными в данном документе."
 
 msgid "By opening an MT5 Real Account with %1, the client represents, warrants, and undertakes the following:"
-msgstr "Открывая Реальный счёт MT5 на сайте %1, клиент заявляет, подтверждает и гарантирует, что:"
+msgstr "Открывая Реальный счёт MT5 в %1, клиент заявляет, подтверждает и гарантирует, что:"
 
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will contact you with the relevant form to complete and will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "Если вы зарегистрировались в качестве Профессионального клиента, мы не будем считать, что вы обладаете знаниями и опытом работы на рынках, как предполагает термин \"Профессиональный клиент\". Мы свяжемся с вами, предложим заполнить соответствующую анкету и предпримем все разумные меры, чтобы гарантировать, что запрос на добавление вас в эту категорию соответствует вышеупомянутым критериям, включая, но не ограничиваясь следующими копиями:"
@@ -5004,7 +5004,7 @@ msgid "For full contact details of %1, the client is encouraged to check %1's %2
 msgstr "Полная контактная информация %1 перечислена на странице %2Контакты%3."
 
 msgid "For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the client's Account Equity to turn negative. In that case, the Stop Out process will be triggered."
-msgstr "Маржа не будет взиматься с открытых позиций на полностью покрытых счетах. Тем не менее, свопы и другие применимые сборы могут привести к тому, что остаток средств на счёте клиента станет отрицательным. В данной ситуации будет запущен механизм стоп-аут."
+msgstr "Маржа не будет взиматься с открытых позиций на полностью покрытых счетах. Тем не менее, свопы и другие применимые сборы могут привести к тому, что остаток средств на счёте клиента станет отрицательным. В данной ситуации будет запущен механизм стоп аут."
 
 msgid "For further assistance, email us at %1partners@binary.com%2"
 msgstr "Для получения дополнительной помощи, пожалуйста, отправьте нам сообщение по адресу %1partners@binary.com%2"
@@ -5742,7 +5742,7 @@ msgid "If the Introducing Broker engages in Malicious Activity, Binary, in its a
 msgstr "Если Представляющий брокер занимается какой-либо вредоносной деятельностью, Binary может по своему единоличному усмотрению"
 
 msgid "If the Margin Level for the client's MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses those Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if the client's Margin Level is still under the Stop Out Level, the next Order is deleted (Orders without Margin Requirements are not deleted); (iv) if the client's Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until the client's Margin Level becomes higher than the Stop Out Level. Additionally, for fully hedged positions, Stop Out will be performed on accounts having Open Positions, zero Margin (positions are covered), and negative equity."
-msgstr "Если уровень маржи на Реальном счете MT5 клиента достигает или опускается ниже уровня стоп-аут, эта ситуация будет расцениваться как случай невыполнения обязательств. В такой ситуации открытые позиции будут автоматически закрыты в следующем порядке: (i) сервер произведёт анализ ордеров клиента, которые не были исполнены до настоящего момента; (ii) сервер удалит все ордеры с наибольшим размером маржи; (iii) если уровень маржи по-прежнему остаётся ниже уровня стоп-аут, будет удалён следующий ордер (ордеры без маржинальных требований не будут удалены); (iv) если уровень маржи клиента по-прежнему ниже уровня стоп-аут, сервер закроет позицию с наибольшем размером убытка; (v) открытые позиции будут подлежать принудительному закрытию до тех пор, пока уровень маржи клиента не будет выше уровня стоп-аут. Кроме того, для лучшего хеджирования позиций стоп-аут будет применён на счетах, имеющих открытые позиции, нулевую маржу (покрытые позиции) и отрицательный баланс."
+msgstr "Если уровень маржи на Реальном счете MT5 клиента достигает или опускается ниже уровня стоп аут, эта ситуация будет расцениваться как случай невыполнения обязательств. В такой ситуации открытые позиции будут автоматически закрыты в следующем порядке: (i) сервер произведёт анализ ордеров клиента, которые не были исполнены до настоящего момента; (ii) сервер удалит все ордеры с наибольшим размером маржи; (iii) если уровень маржи по-прежнему остаётся ниже уровня стоп аут, будет удалён следующий ордер (ордеры без маржинальных требований не будут удалены); (iv) если уровень маржи клиента по-прежнему ниже уровня стоп аут, сервер закроет позицию с наибольшем размером убытка; (v) открытые позиции будут подлежать принудительному закрытию до тех пор, пока уровень маржи клиента не будет выше уровня стоп аут. Кроме того, для лучшего хеджирования позиций стоп аут будет применён на счетах, имеющих открытые позиции, нулевую маржу (покрытые позиции) и отрицательный баланс."
 
 msgid "If the Programmer is an affiliate of %1, the Programmer must also comply with %1's Affiliate Programme terms and conditions."
 msgstr "Если Программист является партнёром %1, Программист также должен соблюдать Правила и условия Партнёрской программы %1."
@@ -6018,19 +6018,19 @@ msgid "If your account currency is EUR or GBP, your commission will be converted
 msgstr "Если валютой вашего счёта является EUR или GBP, ваши комиссионные будут конвертированы по текущему обменному курсу."
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
-msgstr "Если ваш счет находится под маржин коллом в течение длительного периода времени, он достигнет уровня стоп-аут, при котором не сможет поддерживать открытые позиции. Это приведет к отмене ваших отложенных ордеров и принудительному закрытию открытых позиций (также известное как «принудительная ликвидация»)."
+msgstr "Если ваш счет находится под маржин коллом в течение длительного периода времени, он достигнет уровня стоп аут, при котором не сможет поддерживать открытые позиции. Это приведет к отмене ваших отложенных ордеров и принудительному закрытию открытых позиций (также известное как «принудительная ликвидация»)."
 
 msgid "If your documents cannot be verified over video call for any reason, you will be required to send your documents to %1"
 msgstr "Если по какой-то причине ваши документы нельзя проверить по видеозвонку, вам необходимо отправить копии этих документов %1"
 
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
-msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп-аут, мы закроем позицию с наибольшим уровнем убытка."
+msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп аут, мы закроем позицию с наибольшим уровнем убытка."
 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
-msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп-аут, будет удалён следующий ордер. Ордеры без маржинальных требований не будут затронуты."
+msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп аут, будет удалён следующий ордер. Ордеры без маржинальных требований не будут затронуты."
 
 msgid "If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as \"forced liquidation\")."
-msgstr "Если ваш уровень маржи опустится ещё ниже (как правило, к отметке 50%), ваш счёт достигнет уровня стоп-аут, при котором невозможно поддерживать открытые позиции. В результате все или часть ваших открытых позиций будет принудительно закрыта."
+msgstr "Если ваш уровень маржи опустится ещё ниже (как правило, к отметке 50%), ваш счёт достигнет уровня стоп аут, при котором невозможно поддерживать открытые позиции. В результате все или часть ваших открытых позиций будет принудительно закрыта."
 
 msgid "Imagine"
 msgstr "Представьте"
@@ -6165,7 +6165,7 @@ msgid "In the case of a Limit Order, the client acknowledges that the Company wi
 msgstr "В случае лимитного ордера, клиент соглашается с тем, что Компания предпримет все разумные усилия, чтобы исполнить ордер на уровне, который будет совпадать или быть выгоднее указанного клиентом лимита, в зависимости от доступной лимитной цены."
 
 msgid "In the case of a Stop Order, the client acknowledges that the Company will endeavour to fill the Order at a price equal to the one that the client has specified. However, if the price is unavailable, the next available price may be quoted. In other words, the Order is executed at either the price equal to the specified one or the next available price (slippage). The execution of Stop Orders is guaranteed."
-msgstr "В случае стоп-ордера клиент признаёт, что Компания предпримет все разумные меры, чтобы подать ордер по цене, равной той, что указал клиент. Тем не менее, если указанная цена недоступна, может быть предоставлена следующая доступная цена. Иными словами, ордер исполняется по цене, равной указанной, или по ближайшей доступной (проскальзывание). Исполнение стоп-ордеров гарантировано."
+msgstr "В случае стоп ордера клиент признаёт, что Компания предпримет все разумные меры, чтобы подать ордер по цене, равной той, что указал клиент. Тем не менее, если указанная цена недоступна, может быть предоставлена следующая доступная цена. Иными словами, ордер исполняется по цене, равной указанной, или по ближайшей доступной (проскальзывание). Исполнение стоп ордеров гарантировано."
 
 msgid "In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order."
 msgstr "В отношении некоторых контрактов, нужные рынки или биржи, на которых торгуется соответствующий продукт, могут быть закрыты. В таких случаях Компания определяет справедливую цену на продукт на основе ряда факторов, таких как изменение цен на связанных с инструментом рынках и других рыночных условий, а также информации о собственных контрактах наших клиентов."
@@ -9657,7 +9657,7 @@ msgid "Risk of slippage"
 msgstr "Риск проскальзывания"
 
 msgid "Risk of stop order"
-msgstr "Риск стоп-приказа"
+msgstr "Риск стоп ордера"
 
 msgid "Risk warnings and notices related to Transactions and investments in the proposed instruments"
 msgstr "Предупреждения и уведомления о риске, относящиеся к контрактам и инвестициям в предложенные инструменты"
@@ -10299,19 +10299,19 @@ msgid "Stocks"
 msgstr "Акции"
 
 msgid "Stop Limit Orders are a combination of Stop and Limit Orders. If the price reaches (or passes) the Stop Price, a Limit Order is placed at the specified price, which will be filled at a price equal or better than the specified price. "
-msgstr "Стоп-лимитные ордеры являются комбинацией стоп-ордера и лимитного ордера. Если цена достигает (или преодолевает) стоп-цену, лимитный ордер размещается по указанной цене и исполняется по цене, которая равна или лучше указанной цены. "
+msgstr "Стоп-лимитные ордеры являются комбинацией стоп ордера и лимитного ордера. Если цена достигает (или преодолевает) стоп-цену, лимитный ордер размещается по указанной цене и исполняется по цене, которая равна или лучше указанной цены. "
 
 msgid "Stop Loss Orders"
-msgstr "Ордеры стоп-лосс"
+msgstr "Ордеры стоп лосс"
 
 msgid "Stop Order/Stop Loss Order"
-msgstr "Стоп ордер/ордер стоп-лосс"
+msgstr "Стоп ордер/ордер стоп лосс"
 
 msgid "Stop Out Level"
-msgstr "Уровень принудительного закрытия (уровень стоп-аут)"
+msgstr "Уровень принудительного закрытия (уровень стоп аут)"
 
 msgid "Stop out level"
-msgstr "Уровень принудительного закрытия (уровень стоп-аут)"
+msgstr "Уровень принудительного закрытия (уровень стоп аут)"
 
 msgid "Storage of content"
 msgstr "Хранение контента"
@@ -10968,7 +10968,7 @@ msgid "The Company endeavours to open or close the transaction to which the clie
 msgstr "Компания обязуется предпринять все разумные усилия, чтобы открыть или закрыть контракт, к которому относится ордер клиента, по доступной Компании цене, руководствуясь обязательством наилучшего исполнения. Лучшее исполнение означает, что при исполнении ордеров Компания должна предпринять все возможные меры, чтобы получить для клиента наилучший результат, принимая во внимание цену, расходы, скорость, вероятность исполнения и закрытия контракта, размер, характер или любые другие аспекты, имеющие отношение к исполнению ордера."
 
 msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a client of Deriv (Europe) Limited, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "В Компании действует политика стоп-аут (политика принудительного закрытия позиций), которая не позволит клиенту потерять сумму, превышающую депозит. Тем не менее, если открытые позиции клиента не закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп-аут, Компания по своему единоличному усмотрению может ликвидировать отрицательный баланс клиента, предоставив клиенту небольшой кредит, если баланс счёта станет отрицательным. Отрицательный баланс образуется путём суммирования отрицательного баланса, появившегося за последние 24 часа на всех счетах клиента. Настоящим клиент признаёт и соглашается, что, если он/она не является индивидуальным клиентом Deriv Investments (Europe) Limited или Deriv (Europe) Limited, предложение защиты от негативного баланса со стороны Компании производится по единоличному усмотрению Компании. Также Компания оставляет за собой право в любое время изменить характеристики и критерии отбора для защиты от отрицательного баланса. Положения политики защиты от отрицательного баланса не применимы в следующих случаях:"
+msgstr "В Компании действует политика стоп аут (политика принудительного закрытия позиций), которая не позволит клиенту потерять сумму, превышающую депозит. Тем не менее, если открытые позиции клиента не закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп аут, Компания по своему единоличному усмотрению может ликвидировать отрицательный баланс клиента, предоставив клиенту небольшой кредит, если баланс счёта станет отрицательным. Отрицательный баланс образуется путём суммирования отрицательного баланса, появившегося за последние 24 часа на всех счетах клиента. Настоящим клиент признаёт и соглашается, что, если он/она не является индивидуальным клиентом Deriv Investments (Europe) Limited или Deriv (Europe) Limited, предложение защиты от негативного баланса со стороны Компании производится по единоличному усмотрению Компании. Также Компания оставляет за собой право в любое время изменить характеристики и критерии отбора для защиты от отрицательного баланса. Положения политики защиты от отрицательного баланса не применимы в следующих случаях:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Основная обязанность Компании – честно, справедливо и профессионально вести совместный бизнес с клиентом, а также действовать в интересах клиента при открытии и закрытии контрактов на бинарных опционах."
@@ -11079,7 +11079,7 @@ msgid "The Company may withhold payment of funds accumulated in a client's accou
 msgstr "Компания может удерживать средства, находящиеся на счете клиента, на время проверки выполнения им данных условий."
 
 msgid "The Company may, at its absolute discretion, accept a Stop Order, a Limit Order, or a Stop Limit Order from the client."
-msgstr "Компания может по своему единоличному усмотрению принять от клиента стоп-ордер, лимитный ордер или стоп-лимитный ордер."
+msgstr "Компания может по своему единоличному усмотрению принять от клиента стоп ордер, лимитный ордер или стоп-лимитный ордер."
 
 msgid "The Company may, at its absolute discretion, disregard the client's Order if an Event takes place resulting in it no longer being practicable to act on the client's Order after indicating an acceptance of their Order."
 msgstr "Компания может по своему единоличному усмотрению не исполнять ордер клиента, если произойдёт событие, в результате которого исполнение ордера потеряет практический смысл (после принятия данного ордера)."
@@ -11379,7 +11379,7 @@ msgid "The MT5 desktop app is not supported by Windows XP, Windows 2003, and Win
 msgstr "Приложение MT5 для ПК не поддерживается на Windows XP, Windows 2003 и Windows Vista."
 
 msgid "The Margin Level of the client's MT5 Real Account reaches or falls below the Stop Out Level."
-msgstr "Уровень маржи на Реальном счете MT5 клиента достиг или опустился ниже уровня стоп-аут (уровня принудительного закрытия позиции)."
+msgstr "Уровень маржи на Реальном счете MT5 клиента достиг или опустился ниже уровня стоп аут (уровня принудительного закрытия позиции)."
 
 msgid "The Margin trading services described in this agreement are conducted over the counter (\"OTC\"). "
 msgstr "Услуги торговли с применением маржи, описанные в данном соглашении, выполняются на внебиржевом рынке (\"OTC\" или \"over the counter\"). "
@@ -11496,7 +11496,7 @@ msgid "The Spread is subject to alteration, at the Company's absolute discretion
 msgstr "Размер спреда подлежит изменению, что находится на усмотрении Компании. Клиент признаёт, что несмотря на то, что Компания принимает все разумные меры для поддержания конкурентоспособного спреда, он может значительно расшириться в ряде обстоятельств и размер спреда будет определяться Компанией, по её единоличному усмотрению. Спреды могут расширяться в случае банковских ролловеров."
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
-msgstr "Уровень стоп-аут, относящийся к Реальному счёту MT5 клиента, может отличаться от уровня стоп-аут по умолчанию, опубликованного на вебсайте Компании."
+msgstr "Уровень стоп аут, относящийся к Реальному счёту MT5 клиента, может отличаться от уровня стоп аут по умолчанию, опубликованного на вебсайте Компании."
 
 msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
 msgstr "Синтетический счет позволяет вам торговать контрактами на разницу (CFD) на активах, имитирующих движение реальных рынков. Синтетические индексы доступны для торговли 24/7 и регулярно проверяются независимой третьей стороной."
@@ -11595,7 +11595,7 @@ msgid "The client acknowledges that any explanations, trading recommendations, i
 msgstr "Настоящим клиент признаёт, что любые пояснения, торговые рекомендации, независимое инвестиционное исследование, комментарии относительно рынка или любая иная информация, предоставляемая DIEL, доводится до сведения клиента только в рамках маркетинговой коммуникации или образовательных материалов, исключительно с информативными целями, и не является личным советом или рекомендацией для инвестирования."
 
 msgid "The client acknowledges that it is their responsibility to cancel the Stop or Limit Order if they do not want the Stop or Limit Order to remain valid. If the client fails to cancel the Stop or Limit Order, the Company shall be entitled, at its absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new transaction for the client if and when the Company quote reaches or goes beyond the level of the Stop or Limit Order."
-msgstr "Клиент обязуется самостоятельно отменять стоп-ордер или лимитный ордер, если клиент хочет прекратить их действие. В случае, когда клиент не смог отменить стоп-ордер или лимитный ордер, Компания по своему единоличному усмотрению может расценивать стоп-ордер или лимитный ордер в качестве инструкции провести для клиента соответствующую транзакцию, в случае и когда котировка Компании достигнет или выйдет за пределы уровня стоп-ордера или лимитного ордера."
+msgstr "Клиент обязуется самостоятельно отменять стоп ордер или лимитный ордер, если клиент хочет прекратить их действие. В случае, когда клиент не смог отменить стоп ордер или лимитный ордер, Компания по своему единоличному усмотрению может расценивать стоп ордер или лимитный ордер в качестве инструкции провести для клиента соответствующую транзакцию, в случае и когда котировка Компании достигнет или выйдет за пределы уровня стоп ордера или лимитного ордера."
 
 msgid "The client acknowledges that it is their responsibility to monitor their Account Balance and Margin Requirement, and the Company is not under any obligation to keep the client informed (i.e. to make a Margin Call)."
 msgstr "Клиент признает, что несет ответственность за мониторинг баланса своего счета и маржинальных требований, и Компания не обязана информировать клиента по данному вопросу (т.е. отправлять маржин коллы)."
@@ -11724,10 +11724,10 @@ msgid "The client may make Margin Payments by transferring funds from their %1 a
 msgstr "Клиент может оплачивать маржу путём перевода средств со счёта %1 на Реальный счёт MT5. Если на счете %1 недостаточно средств для пополнения Реального счёта MT5, клиент может оплатить маржу путём пополнения своего счёта %1 и перевести средства со счёта %1 на Реальный счёт MT5."
 
 msgid "The client may not cancel or amend the level of their Stop and Limit Order once the level has been reached."
-msgstr "Клиент не может отменить или изменить уровень своего стоп-ордера или лимитного ордера, если уровень был достигнут."
+msgstr "Клиент не может отменить или изменить уровень своего стоп ордера или лимитного ордера, если уровень был достигнут."
 
 msgid "The client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
-msgstr "Клиент может предоставить инструкции для стоп-ордера или лимитного ордера, который будет применён в течение ограниченного периода времени или действовать в течение неопределённый периода (“приказ до отмены”, “ордер до отмены” или ордер \"GTC\" – good till cancelled)."
+msgstr "Клиент может предоставить инструкции для стоп ордера или лимитного ордера, который будет применён в течение ограниченного периода времени или действовать в течение неопределённого периода (“ордер до отмены” или ордер \"GTC\" – good till cancelled)."
 
 msgid "The client may update the client's personal information at any time by logging in to the \"Settings\" section of the client's account. It is the client's responsibility to ensure that %1 is promptly and continually informed of any change in the client's personal information. The client should note that if the client provides the Company with inaccurate information, or if the client fails to notify the Company of any changes to the information previously supplied by the client, this may adversely affect the quality of the services that the Company can provide."
 msgstr "Клиент может в любое время обновить свою личную информацию, войдя в раздел \"Настройки\" на своём счёте. Настоящим клиент обязуется постоянно и своевременно уведомлять %1 о любых изменениях в его/её личной информации. Если клиент предоставляет Компании неточную информацию или не уведомляет Компанию о любых изменениях в ранее предоставленной информации, это может негативно сказаться на качестве предоставляемых Компанией услуг."
@@ -11841,7 +11841,7 @@ msgid "The default DNS services provided by your ISP can be slow and insecure. %
 msgstr "Сервисы DNS по умолчанию, предоставленные вашим интернет-провайдером, могут оказаться медленными и ненадёжными. %1 рекомендует пользоваться сервисом DNS от Cloudflare %2, предоставляющим более быстрое и надёжное соединение с интернетом."
 
 msgid "The default Stop Out Level applicable to the client's account is published on the Company website. However, the default Stop Out Level is subject to alteration at the Company's absolute discretion. Any changes to the Stop Out Level will take effect immediately. The Company will endeavour to notify the client of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on the Company website. It is the client's responsibility to check the Company website regularly and remain informed about the default Stop Out Level."
-msgstr "Уровень стоп-аут, установленный на счете клиента по умолчанию, указан на сайте Компании. Тем не менее, уровень стоп-аут по умолчанию может быть изменён по единоличному усмотрению Компании. Любые изменения уровня стоп-аут вступят в силу незамедлительно. Компания предпримет все разумные усилия, чтобы уведомить клиента об изменении уровня стоп-аут по умолчанию, опубликовав новый уровень стоп-аут на сайте Компании. Настоящим клиент обязуется регулярно следить за информацией на сайте компании и проверять значение уровня стоп-аут по умолчанию."
+msgstr "Уровень стоп аут, установленный на счете клиента по умолчанию, указан на сайте Компании. Тем не менее, уровень стоп аут по умолчанию может быть изменён по единоличному усмотрению Компании. Любые изменения уровня стоп аут вступят в силу незамедлительно. Компания предпримет все разумные усилия, чтобы уведомить клиента об изменении уровня стоп аут по умолчанию, опубликовав новый уровень стоп аут на сайте Компании. Настоящим клиент обязуется регулярно следить за информацией на сайте компании и проверять значение уровня стоп аут по умолчанию."
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "Длительность – это временной период купленного контракта (см. \"период контракта\")."
@@ -12096,7 +12096,7 @@ msgid "The synthetic indices simulate various real market situations and provide
 msgstr "Синтетические индексы моделируют различные ситуации на рынке и предоставляют идеальную платформу, на которой можно научиться торговать и протестировать свои стратегии в самых разных рыночных условиях. Данные индексы зависят от уровня волатильности и движения рынка, помогая пользователям опробовать такие сценарии, как высокая или низкая волатильность, восходящие или нисходящие тренды."
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
-msgstr "Система размещает ордеры в порядке их поступления, т.е. в том порядке, в котором они были получены, что находится вне контроля Компании. В результате закрытие контракта по цене, установленной клиентом в стоп-приказе, может оказаться сложным или невозможным, ввиду определённых рыночных условий. Размещение стоп-приказа является полезным инструментом управления риском, который не всегда может ограничить потери клиента запланированным размером убытка (в случае высокой волатильности на рынке, так как исполнение приказа клиента может оказаться невозможным при определённых рыночных условиях, и цена на выходе из контракта окажется неопределённой). Иными словами, стоп-приказ не даёт никаких гарантий, так как он не может быть исполнен при абсолютно любых условиях на рынке."
+msgstr "Система размещает ордеры в порядке их поступления, т.е. в том порядке, в котором они были получены, что находится вне контроля Компании. В результате закрытие контракта по цене, установленной клиентом в стоп ордере, может оказаться сложным или невозможным, ввиду определённых рыночных условий. Размещение стоп ордера является полезным инструментом управления риском, который не всегда может ограничить потери клиента запланированным размером убытка (в случае высокой волатильности на рынке, так как исполнение приказа клиента может оказаться невозможным при определённых рыночных условиях, и цена на выходе из контракта окажется неопределённой). Иными словами, стоп ордер не даёт никаких гарантий, так как он не может быть исполнен при абсолютно любых условиях на рынке."
 
 msgid "The terms 'the Company' and '%1' shall denote"
 msgstr "Термины \"Компания\" и \"%1\" должны обозначать"
@@ -12558,7 +12558,7 @@ msgid "To learn more, read our %1Margin Policy%2 that further explains our margi
 msgstr "Чтобы получить более подробную информацию, ознакомьтесь с нашей %1Политикой расчёта маржи%2, которая также объясняет наши маржинальные требования."
 
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
-msgstr "Чтобы поддерживать открытые позиции, клиент должен иметь достаточный остаток средств на счете для покрытия всех маржинальных требований. Если уровень маржи клиента опускается ниже уровня, установленного для его счета, клиент получит маржин колл и должен будет увеличить свой уровень маржи, чтобы избежать стоп-аута. Клиенту может быть отказано в размещении ордера на открытие контракта, если на его счете нет достаточных средств для покрытия общей маржи."
+msgstr "Чтобы поддерживать открытые позиции, клиент должен иметь достаточный остаток средств на счете для покрытия всех маржинальных требований. Если уровень маржи клиента опускается ниже уровня, установленного для его счета, клиент получит маржин колл и должен будет увеличить свой уровень маржи, чтобы избежать стоп аута. Клиенту может быть отказано в размещении ордера на открытие контракта, если на его счете нет достаточных средств для покрытия общей маржи."
 
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "Чтобы открыть банковский счет, нам необходимо будет подтвердить вашу личность."
@@ -13605,7 +13605,7 @@ msgid "We were unable to verify your document automatically. We will try to veri
 msgstr "Нам не удалось проверить ваш документ автоматически. Мы постараемся проверить ваш документ вручную. Пожалуйста, зайдите через 1-3 дня."
 
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level."
-msgstr "Мы продолжим закрывать открытые позиции до тех пор, пока ваш уровень маржи не станет выше уровня стоп-аут."
+msgstr "Мы продолжим закрывать открытые позиции до тех пор, пока ваш уровень маржи не станет выше уровня стоп аут."
 
 msgid "We will inform you when your account needs to be authenticated."
 msgstr "Мы уведомим вас, когда вашему счету потребуется аутентификация."
@@ -13740,7 +13740,7 @@ msgid "What's a margin call and how is it applied"
 msgstr "Что такое маржин колл (margin call, требование внесения дополнительной маржи) и как он работает"
 
 msgid "What's a stop out level and how is it applied"
-msgstr "Что такое уровень принудительного закрытия (уровень стоп-аута) и как он используется"
+msgstr "Что такое уровень принудительного закрытия (уровень стоп аута) и как он используется"
 
 msgid "When a client is classified as an Eligible Counterparty, DIEL shall not provide them with"
 msgstr "Если клиент относится к категории уполномоченных контрагентов, DIEL не будет предоставлять ему/ей следующих услуг"
@@ -13803,7 +13803,7 @@ msgid "When the market conditions or market movements/volatility are abnormal"
 msgstr "в случае аномальных рыночных условий или рыночной динамики/волатильности,"
 
 msgid "When the remaining funds in your account is unable to cover the leverage or margin requirement, your account will be placed under margin call. To prevent a margin call escalating into a stop out level, you can deposit additional funds into your account or close any open positions."
-msgstr "Когда остатка средств на вашем счете недостаточно для поддержания позиции при текущих маржинальных требованиях, ваш счёт попадёт в состояние маржин колла. Чтобы не доводить свой счёт до стоп-аута, вы можете пополнить его или закрыть любые открытые позиции."
+msgstr "Когда остатка средств на вашем счете недостаточно для поддержания позиции при текущих маржинальных требованиях, ваш счёт попадёт в состояние маржин колла. Чтобы не доводить свой счёт до стоп аута, вы можете пополнить его или закрыть любые открытые позиции."
 
 msgid "When the self-exclusion period is set, we will refund the balance of funds in your account."
 msgstr "Мы вернем остаток средств на вашем счете после того, как будет установлен период самоисключения."
@@ -13947,7 +13947,7 @@ msgid "Whilst the Company acts as principal in respect of the client's orders, t
 msgstr "Выступая принципалом (исполнителем) в отношении ордеров клиента, Компания также оценивает места исполнения, которые использует Компания и которым она значительно доверяет предоставление наилучшего результата для исполнения ордеров клиента. Как правило, данные места исполнения представлены сторонними инвестиционными компаниями, брокерами и/или поставщиками ликвидности."
 
 msgid "Whilst the Company endeavours to close out the client's Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level, the company does not guarantee that the client's Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level."
-msgstr "Несмотря на то, что Компания предпримет все разумные усилия, чтобы закрыть открытые позиции Клиента в случае, если уровень маржи на Реальном счете MT5 достигнет или упадёт ниже уровня принудительного закрытия (уровня стоп-аут), Компания не даёт никаких гарантий, что открытые позиции клиента будут закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп-аут."
+msgstr "Несмотря на то, что Компания предпримет все разумные усилия, чтобы закрыть открытые позиции Клиента в случае, если уровень маржи на Реальном счете MT5 достигнет или упадёт ниже уровня принудительного закрытия (уровня стоп аут), Компания не даёт никаких гарантий, что открытые позиции клиента будут закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп-аут."
 
 msgid "Whilst the Company endeavours to open or close the transaction to which the client's orders relate at the requested price, acting in accordance with the Company's duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that the client's order is not filled at the exact intended quoted price when the client places their order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to the client) or a negative slippage (less favourable to the client)."
 msgstr "Несмотря на то, что Компания предпринимает все усилия, чтобы по указанной цене открыть или закрыть контракт, к которому относятся ордеры клиента (действуя согласно политике наилучшего исполнения Компании), бывают периоды, когда, ввиду повышения волатильности или объёма торгов, ордеры могут проскальзывать. Разница между ценой ордера и ценой его исполнения называется проскальзыванием. Это означает, что ордер Клиента не будет открыт по цене, точно указанной при размещении ордера. Как правило, проскальзывание наблюдается в периоды очень высокой или очень низкой волатильности и обычно возникает во время выхода важных новостей или в периоды ограниченной ликвидности. Проскальзывание может оказаться позитивным (более благоприятным для клиента) или негативным (неблагоприятным для клиента)."
@@ -14709,7 +14709,7 @@ msgid "an Order to open or close a transaction if and when a price quote becomes
 msgstr "инструкция открыть или закрыть контракт, если/когда цена котировки будет более благоприятна для клиента, по сравнению с текущей ценой"
 
 msgid "an execution instruction given by the client to the Company to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order, etc."
-msgstr "исполнение инструкций, предоставленных клиентом Компании с целью открытия или закрытия позиции на рынке, со ссылкой на базовый инструмент, включая рыночный ордер, стоп-ордер, лимитный ордер и т. д."
+msgstr "исполнение инструкций, предоставленных клиентом Компании с целью открытия или закрытия позиции на рынке, со ссылкой на базовый инструмент, включая рыночный ордер, стоп ордер, лимитный ордер и т. д."
 
 msgid "b. Download and install the MT5 trading platform through the link %1"
 msgstr "b) загрузить и установить торговую платформу MT5 по ссылке %1"
@@ -14772,7 +14772,7 @@ msgid "minutes"
 msgstr "мин."
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
-msgstr "самая ранняя цена, которая доступна и предоставлена %1, когда котировка Компании достигает или выходит за пределы уровня стоп-ордера клиента"
+msgstr "самая ранняя цена, которая доступна и предоставлена %1, когда котировка Компании достигает или выходит за пределы уровня стоп ордера клиента"
 
 msgid "numbers"
 msgstr "цифры"
