@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-25 03:22\n"
+"PO-Revision-Date: 2021-04-15 09:53\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -448,6 +448,12 @@ msgstr "%1Chọn một loại tiền tệ%2 làm đơn vị tiền tệ mặc đ
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Liên hệ với chúng tôi%2 để sắp xếp một ngày và thời gian cho cuộc gọi video."
 
+msgid "%1Deriv-Demo%2 if your signal is for demo accounts only."
+msgstr ""
+
+msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accounts only."
+msgstr ""
+
 msgid "%1Founded%2 October 1999"
 msgstr "%1Được thành lập%2 tháng 10 năm 1999"
 
@@ -462,6 +468,12 @@ msgstr "%1Không, thay đổi tài khoản tiền fiat bây giờ%2"
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
 msgstr "%1Lưu Ý%2: Các giới hạn này chỉ áp dụng cho tài khoản thực %3 của bạn. Để đặt giới hạn, đổi sang tài khoản tương ứng và đặt giới hạn phù hợp."
+
+msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
+msgstr ""
+
+msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
+msgstr ""
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Xin lưu ý rằng nếu bạn sống ở Vương quốc Anh, không thể bỏ tính năng tự loại trừ cho đến khi hết thời hạn. %2Nếu bạn muốn tiếp tục giao dịch sau khi hết thời gian tự loại trừ, vui lòng gửi yêu cầu của bạn bằng cách gọi %3. Yêu cầu qua chat hoặc email sẽ không được xử lý."
@@ -495,6 +507,9 @@ msgstr "Giao dịch (một) Chạm"
 
 msgid "(This limit may vary depending on current exchange rates.)"
 msgstr "(Giới hạn này có thể thay đổi tùy thuộc vào tỷ giá hiện tại.)"
+
+msgid "(You can find the account server name on your %1MT5 dashboard%2)."
+msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(a) Giá và các chi phí"
@@ -1102,6 +1117,9 @@ msgstr "Thêm"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "Thêm /-để xác định một độ lệch giới hạn. Ví dụ, +0.005 có nghĩa là một giới hạn mà cao hơn 0,005 so với điểm khởi đầu."
 
+msgid "Add a description and click %1Save%2 to complete the registration."
+msgstr ""
+
 msgid "Add another word or two. Uncommon words are better."
 msgstr "Thêm một hoặc hai từ khác. Những từ không phổ biến sẽ tốt hơn."
 
@@ -1110,6 +1128,9 @@ msgstr "Thêm quỹ"
 
 msgid "Additional business exposure:"
 msgstr "Sự tiếp xúc kinh doanh bổ sung:"
+
+msgid "Additional income stream from monthly subscriptions."
+msgstr ""
 
 msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
 msgstr "Ngân hàng hoặc dịch vụ chuyển tiền của bạn có thể yêu cầu kéo dài thời gian xử lý cho đến khi vốn được thêm vào tài khoản của bạn."
@@ -1850,6 +1871,9 @@ msgstr "Công cụ lập trình tự động giao dịch"
 msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
 msgstr "Tự động hóa chiến lược giao dịch của bạn với công cụ tạo bot \"kéo và thả\" đơn giản của chúng tôi."
 
+msgid "Automated copying – no extra work from you."
+msgstr ""
+
 msgid "Automated decision-making"
 msgstr "Tự động hóa việc đưa ra quyết định giao dịch"
 
@@ -2024,8 +2048,14 @@ msgstr "Bắt kịp với các công cụ mới nhất và công nghệ liên qu
 msgid "Benefits"
 msgstr "Các lợi nhuận"
 
+msgid "Benefits of being a MT5 provider"
+msgstr ""
+
 msgid "Benefits of being a Payment Agent"
 msgstr "Lợi ích khi là một Đại lý Thanh toán"
+
+msgid "Benefits of subscribing to MT5 signals"
+msgstr ""
 
 msgid "Best execution factors"
 msgstr "Các Yếu Tố Thực Thi Tốt Nhất"
@@ -2642,6 +2672,12 @@ msgstr "Nhấp vào đây để mở một Tài Khoản Thực"
 msgid "Click here to retry"
 msgstr "Vui lòng nhấp vào đây để thử lại"
 
+msgid "Click on the %1My Statistics%2 tab and select your signal provider."
+msgstr ""
+
+msgid "Click the %1Renew%2 button to renew the service or the %1Unsubscribe%2 button to cancel the subscription."
+msgstr ""
+
 msgid "Client Information"
 msgstr "Thông tin khách hàng"
 
@@ -2915,6 +2951,9 @@ msgstr "Khiếu Nại và Tranh Chấp"
 msgid "Complaints and disputes"
 msgstr "Khiếu nại và Tranh chấp"
 
+msgid "Complete the form with your MT5 account credentials. In the Broker field, enter your account server name:"
+msgstr ""
+
 msgid "Complete your %1Tax Information%2."
 msgstr "Hoàn thành %1Thông Tin Thuế%2 của bạn."
 
@@ -2974,6 +3013,9 @@ msgstr "Tính bảo mật"
 
 msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
 msgstr "Định cấu hình PC và điện thoại di động của bạn để sử dụng DNS Cloudflare bằng cách làm theo hướng dẫn tại %1."
+
+msgid "Configure your trading and risk management parameters. Then click %1OK%2 to complete the process."
+msgstr ""
 
 msgid "Confirm"
 msgstr "Xác nhận"
@@ -4160,6 +4202,9 @@ msgstr "Đạt được cùng một tỉ lệ hoàn vốn trong tất cả các 
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr "Thu nhập lên tới 45% tiền hoa hồng dựa trên tổng số doanh thu khách hàng của bạn tạo được. Tiền hoa hồng được chuyển vào tài khoản của bạn sau ngày thứ 15 mỗi tháng."
 
+msgid "Easy to set up – no installation required."
+msgstr ""
+
 msgid "Economic Calendar"
 msgstr "Lịch kinh tế"
 
@@ -5099,6 +5144,12 @@ msgstr "Từ tài khoản: "
 msgid "From time to time, DIEL may decide to provide the client with written or video information, which DIEL may publish on its website or provide to the client in any other manner. DIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by DIEL to the client."
 msgstr "Đôi khi, DIEL có thể quyết định cung cấp cho khách hàng thông tin bằng văn bản hoặc video mà DIEL có thể xuất bản trên trang web hoặc cung cấp cho bạn theo bất kỳ cách nào khác. DIEL sẽ nỗ lực để đảm bảo tính chính xác và đầy đủ của thông tin này nhưng nó sẽ không được cho là nghiên cứu đầu tư độc lập hoặc tư vấn đầu tư do chúng tôi cung cấp cho bạn."
 
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab to view the list of signal providers."
+msgstr ""
+
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab."
+msgstr ""
+
 msgid "Front Side"
 msgstr "Mặt trước"
 
@@ -5110,6 +5161,9 @@ msgstr "Mặt trước"
 
 msgid "Front-End Developer"
 msgstr "Vận hành Front-End"
+
+msgid "Full disclosure of each providers’ performances."
+msgstr ""
 
 msgid "Fund transfers"
 msgstr "Chuyển khoản"
@@ -5285,8 +5339,14 @@ msgstr "Đi đến %1Thu Ngân%2 để rút vốn thừ tài khoản %3 cu
 msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
 msgstr "Đi đến %1bảng điều khiển MT5%2 để rút vốn từ tài khoản Binary.com MT5 của bạn."
 
-msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
-msgstr "Đi đến %1trang danh mục đầu tư%2 để đóng các giao dịch mở từ các tài khoản Binary.com của bạn."
+msgid "Go to the %1Portfolio%2 to close all open positions from your Binary.com accounts."
+msgstr ""
+
+msgid "Go to the MQL5 signals showcase page and click on the %1Create signal%2 button."
+msgstr ""
+
+msgid "Go to the MT5 Terminal"
+msgstr ""
 
 msgid "Go with the leader"
 msgstr "Đồng hành cùng đơn vị giao dịch hàng đầu"
@@ -5356,6 +5416,9 @@ msgstr "Kinh nghiệm thực hành trong an ninh hệ thống và an ninh mạng
 
 msgid "Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks"
 msgstr "Kinh nghiệm thực hành xử lý sự cố phần mềm máy tính, phần cứng và một loạt các ứng dụng và mạng internet"
+
+msgid "Have more questions? Check out the %1FAQ section%2 on the MQL5 website."
+msgstr ""
 
 msgid "Have not previously been a %1 customer"
 msgstr "Trước đó đã không là một khách hàng của %1"
@@ -5522,8 +5585,17 @@ msgstr "Làm thế nào để đọc bảng thông số của hợp đồng"
 msgid "How to read the table above"
 msgstr "Làm thế nào để đọc bảng trên"
 
+msgid "How to register as a signal provider"
+msgstr ""
+
+msgid "How to renew or cancel your subscription"
+msgstr ""
+
 msgid "How to scan a QR code"
 msgstr "Cách quét mã QR"
+
+msgid "How to subscribe to a MT5 signal"
+msgstr ""
 
 msgid "How to trade CFDs"
 msgstr "Làm thế nào để giao dịch các hợp đồng CFD"
@@ -5819,6 +5891,9 @@ msgstr "Nếu chúng tôi quyết định mời bạn vào làm cho vị trí �
 
 msgid "If we have reason to believe that your tax information is incomplete, we may contact you for clarification."
 msgstr "Nếu chúng tôi có lý do để tin rằng thông tin thuế của bạn là không đầy đủ, chúng tôi có thể liên hệ với bạn để làm rõ."
+
+msgid "If you are a professional trader, the MT5 trading signals service allows you to share your strategies with other traders for free or a subscription fee that you determine. When traders subscribe to your signal, your deals are automatically replicated on their accounts each time you place a trade."
+msgstr ""
 
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "Nếu bạn đang cân nhắc việc tự loại trừ, bạn có thể muốn đăng ký với GAMSTOP."
@@ -6973,6 +7048,9 @@ msgstr "Đăng nhập MT5:"
 msgid "MT5 Real Account"
 msgstr "Tài khoản Thực MT5"
 
+msgid "MT5 Signals"
+msgstr ""
+
 msgid "MT5 Synthetic"
 msgstr "MT5 tổng hợp"
 
@@ -7327,6 +7405,9 @@ msgstr "MetaTrader"
 msgid "MetaTrader 5"
 msgstr "MetaTrader 5"
 
+msgid "MetaTrader 5 Signals"
+msgstr ""
+
 msgid "MetaTrader 5 dashboard"
 msgstr "Đi đến bảng điều khiển MetaTrader 5"
 
@@ -7377,6 +7458,9 @@ msgstr "Số tiền gửi Tối đa-Tối thiểu"
 
 msgid "Min-Max Withdrawal"
 msgstr "Số tiền rút Tối đa-Tối thiểu"
+
+msgid "Minimise trading risk by copying from expert traders."
+msgstr ""
 
 msgid "Minimum deposit"
 msgstr "Tiền gửi tối thiểu"
@@ -9709,6 +9793,9 @@ msgstr "Thứ Bảy"
 msgid "Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records, or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment, or software by the client or any damages or losses deemed or alleged to have resulted from, or been caused by, this site or its content."
 msgstr "Lưu trong trường hợp sơ suất, gian lận, hoặc mặc định của Công Ty, Công Ty sẽ không chịu trách nhiệm dưới bất kỳ hình thức nào đối với bất kỳ khách hàng nào trong trường hợp bất khả kháng hoặc hành động của bất kỳ chính phủ, hoặc cơ quan pháp lý nào, hoặc vì sự cố, hoặc gây thiệt hại, hoặc phá hủy hệ thống máy tính, dữ liệu, hoặc hồ sơ, hoặc bất kỳ phần nào của chúng, hoặc cho sự chậm trễ, tổn thất lỗi, hoặc thiếu sót do lỗi, hoặc quản lý kém của bất kỳ thiết bị máy tính, hoặc phần mềm viễn thông nào của khách hàng, hoặc bất kỳ thiệt hại, hoặc tổn thất nào được coi là, hoặc bị cáo buộc là do, hoặc do trang web này, hoặc nội dung của trang web gây ra."
 
+msgid "Save time – no need to open, monitor, and close trades."
+msgstr ""
+
 msgid "Savings & Inheritance"
 msgstr "Tiết Kiệm & Thừa Kế"
 
@@ -9826,6 +9913,9 @@ msgstr "Chọn thị trường:"
 msgid "Select payment agent"
 msgstr "Chọn đại lý thanh toán"
 
+msgid "Select the signal provider you prefer and click the %1Subscribe%2 button."
+msgstr ""
+
 msgid "Select your market and underlying asset"
 msgstr "Chọn thị trường và các tài sản cơ sở của bạn"
 
@@ -9910,8 +10000,8 @@ msgstr "Các chuỗi như abc hoặc 6543 rất dễ đoán"
 msgid "Server"
 msgstr "Máy chủ"
 
-msgid "Server maintenance starting 03:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "Bảo trì máy chủ bắt đầu từ 03:00 GMT mỗi Chủ nhật. Quá trình này có thể mất tới 2 giờ để hoàn thành. Dịch vụ có thể bị gián đoạn trong thời gian này."
+msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
+msgstr ""
 
 msgid "Server:"
 msgstr "Máy chủ:"
@@ -10035,6 +10125,12 @@ msgstr "Đăng kí"
 
 msgid "Sign up now"
 msgstr "Đăng ký ngay"
+
+msgid "Signal Provider"
+msgstr ""
+
+msgid "Signal Subscriber"
+msgstr ""
 
 msgid "Signup"
 msgstr "Đăng ký"
@@ -10927,6 +11023,9 @@ msgstr "Công Ty cũng thu thập và xử lý dữ liệu của ứng viên đ
 msgid "The Company also collects basic tax residence information for the purposes of CRS/FATCA compliance. The tax information that the client provides may only be disclosed to the authorities who are legally charged with collecting this information for CRS/FATCA reporting, and %1 will only do so to the extent that it is legally obliged to collect it from the clients and disclose it to the authorities. The Company does not use, disclose, or process this information in any other way at any time."
 msgstr "Công ty cũng thu thập thông tin thuế cơ bản của nơi cư trú cho các mục đích tuân thủ CRS/FATCA. Thông tin khách hàng cung cấp chỉ có thể được tiết lộ cho các đơn vị chính quyền được phép thu thập thông tin này cho các báo cáo CRS/FATCA và chỉ đến mức %1 được thu thập hợp pháp và tiết lộ ra ngoài. Công ty không sử dụng, tiết lộ hoặc xử lý thông tin đó bằng bất cứ hình thức nào."
 
+msgid "The Company also has a regulatory obligation to send the personal data of the clients residing in the UK to GAMSTOP to check whether or not  they have self-excluded with GAMSTOP. To find out more, please read the %1GAMSTOP privacy policy%2."
+msgstr ""
+
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "Công ty cũng có quyền yêu cầu các tài liệu liên quan đến các nghĩa vụ pháp lý khác."
 
@@ -10969,8 +11068,8 @@ msgstr "Công ty không cho phép bất cứ hành vi thiếu chuẩn mự
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Công ty cố gắng để mở hoặc đóng các giao dịch mà Lệnh của khách hàng được đưa ra với mức giá hợp lý có thể chấp nhận với Công ty, phù hợp với nhiệm vụ mang lại dịch vụ tốt nhất cho khách hàng của Công ty. Nghĩa là Công ty phải thực hiện đầy đủ nghĩa vụ, khi lệnh đang được thực hiện để mang lại kết quả tốt nhất có thể cho các khách hàng, khi tính đến giá cả, chi phí, tốc độ, khả năng thực hiện và giải quyết, kích thước, tính tự nhiên hay bất kỳ điều gì khác liên quan đến việc thực hiện Lệnh giao dịch."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a client of Deriv (Europe) Limited, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "Công Ty có chính sách Dừng khi khách hàng mất nhiều hơn số tiền họ đã ký gửi. Tuy nhiên, trong trường hợp các Phiên mở của khách hàng không được đóng khi Mức ký quỹ cho Tài khoản Thực MT5 đạt đến Mức Dừng, Công ty có thể từ bỏ số dư âm của khách hàng bằng cách ghi thêm vào tài khoản của mình nếu Số dư Tài khoản của khách hàng đi vào số dư âm. Số dư âm được xác định bằng cách tổng hợp tất cả số dư âm phát sinh trong khoảng thời gian 24 giờ trên tất cả các tài khoản do khách hàng nắm giữ. khách hàng chấp nhận, trừ khi họ là khách hàng bán lẻ của Công ty Deriv Investments Limited (Europe) hoặc của Deriv Limited (Châu Âu), việc Công Ty bảo vệ Số Dư Âm cho khách hàng là được quyết định hoàn toàn bởi Công ty và chúng tôi có quyền thay đổi các tính năng và tiêu chí để đáp ứng điều kiện của Bảo Vệ Số Dư Âm bất cứ lúc nào. Các điều khoản của Bảo Vệ Số Dư Âm không áp dụng cho các trường hợp sau:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Nhiệm vụ chung của Công Ty là hoạt động kinh doanh trung thực, công bằng, chuyên nghiệp, và mang lại cho khách hàng mức lãi suất tốt nhất khi mở và đóng những giao dịch binary options."
@@ -11379,6 +11478,9 @@ msgstr "Đề Án Bồi Thường Nhà Đầu Tư"
 
 msgid "The MT5 desktop app is not supported by Windows XP, Windows 2003, and Windows Vista."
 msgstr "Ứng dụng MT5 máy tính không hỗ trợ bởi các hệ điều hành Windows XP, Windows 2003, và Windows Vista."
+
+msgid "The MT5 trading signals service allows you to copy the trades of more experienced traders to your MT5 account. Once you’ve subscribed to a signal, the provider’s deals will be automatically replicated on your %1 MT5 trading account each time they place a trade."
+msgstr ""
 
 msgid "The Margin Level of the client's MT5 Real Account reaches or falls below the Stop Out Level."
 msgstr "Mức Ký quỹ của Tài Khoản Thực MT5 của khách hàng đạt tới hay thấp hơn Mức Dừng."
@@ -14228,6 +14330,9 @@ msgstr "Bạn không còn có thể thay đổi đơn vị tiền tệ vi�
 msgid "You can now return to your computer to continue"
 msgstr "Bây giờ bạn có thể quay lại máy tính của mình để tiếp tục"
 
+msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
+msgstr ""
+
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
 msgstr "Bạn có thể mở một tài khoản tiền pháp định mà không cần đóng tài khoản tiền điện tử của mình."
 
@@ -14357,6 +14462,9 @@ msgstr "Bạn phải đảm bảo đã điền đầy đủ và chính xác các
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr "Bạn phải có một kết nối Internet nhanh và ổn định như ảnh chụp màn hình tài liệu của bạn được yêu cầu cho hồ sơ của chúng tôi"
 
+msgid "You must have an MQL5 community account to subscribe to trading signals. If you don’t have an account yet, please go to %1MQL5.com%2 to register."
+msgstr ""
+
 msgid "You must have:"
 msgstr "Bạn cần có:"
 
@@ -14425,6 +14533,9 @@ msgstr "Bạn sẽ lĩnh tiền thưởng nếu giá thị trường khôn
 
 msgid "You win the payout if the market price ends in the digit you have selected."
 msgstr "Bạn sẽ nhận được tiền thưởng nếu giá thị trường kết thúc trong con số bạn đã chọn."
+
+msgid "You won’t be able to trade manually with the same %1 MT5 account once you’ve subscribed to a signal."
+msgstr ""
 
 msgid "You'll need to restart your verification on your computer"
 msgstr "Bạn sẽ phải làm mới quá trình xác minh trên máy tính của bạn"
@@ -14653,6 +14764,9 @@ msgstr "Giới hạn rút tiền của bạn là %1%2."
 
 msgid "You’ll be logged out automatically."
 msgstr "Bạn sẽ tự động đăng xuất khỏi tài khoản."
+
+msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
+msgstr ""
 
 msgid "ZEC vs US dollar"
 msgstr "ZEC vs đô la Mỹ"

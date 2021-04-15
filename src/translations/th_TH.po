@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-25 03:22\n"
+"PO-Revision-Date: 2021-04-15 09:53\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -448,6 +448,12 @@ msgstr "%1Cเลือกสกุลเงิน%2 สําหรับบั
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1ติดต่อเรา%2 เพื่อจัดหาวันและเวลาสำหรับการสนทนาทางวีดีโอ"
 
+msgid "%1Deriv-Demo%2 if your signal is for demo accounts only."
+msgstr ""
+
+msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accounts only."
+msgstr ""
+
 msgid "%1Founded%2 October 1999"
 msgstr "%1ก่อตั้งเมื่อ%2 ตุลาคม พ.ศ. 2542 (ค.ศ. 1999)"
 
@@ -462,6 +468,12 @@ msgstr "%1ไม่ เปลี่ยนสกุลเงินบัญชี
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
 msgstr "%1หมายเหตุ%2 ขีดจํากัดเหล่านี้ใช้ได้กับบัญชีจริง %3 ของคุณเท่านั้น หากต้องการกำหนดให้เปลี่ยนไปใช้บัญชีที่เกี่ยวข้องและกําหนดขีดจํากัดของคุณตามลําดับ"
+
+msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
+msgstr ""
+
+msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
+msgstr ""
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1โปรดทราบว่าหากคุณอาศัยอยู่ในสหราชอาณาจักรจะไม่สามารถลบหรือยกเลิกการป้องกันตนเองได้ จนกว่าจะหมดระยะเวลา %2หากคุณต้องการซื้อขายอีกครั้งหลังจากระยะเวลาการป้องกันตนเองสิ้นสุดลง โปรดส่งคำขอของคุณโดยการโทร %3 การร้องขอทางแชทหรืออีเมลไม่เพียงพอ"
@@ -495,6 +507,9 @@ msgstr "(One) Touch Trades"
 
 msgid "(This limit may vary depending on current exchange rates.)"
 msgstr "(วงเงินอาจมีการเปลี่ยนแปลง ขึ้นอยู่กับอัตราแลกเปลี่ยนปัจจุบัน)"
+
+msgid "(You can find the account server name on your %1MT5 dashboard%2)."
+msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(ก) ราคาและต้นทุน"
@@ -1102,6 +1117,9 @@ msgstr "เพิ่ม"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "เพิ่ม +/ – เพื่อกำหนด Barrier Offset เช่น +0.005 หมายถึง อุปสรรคที่อยู่สูงกว่าสปอตเริ่มต้นอยู่ 0.005"
 
+msgid "Add a description and click %1Save%2 to complete the registration."
+msgstr ""
+
 msgid "Add another word or two. Uncommon words are better."
 msgstr "เพิ่มคำอื่นหรือสองคำ ไม่ใช่คำทั่วไปจะดีที่สุด"
 
@@ -1110,6 +1128,9 @@ msgstr "ฝากเงิน"
 
 msgid "Additional business exposure:"
 msgstr "การเปิดทางธุรกิจเพิ่มเติม"
+
+msgid "Additional income stream from monthly subscriptions."
+msgstr ""
 
 msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
 msgstr "ธนาคารหรือบริการโอนเงินของคุณอาจต้องใช้เวลาดำเนินการเพิ่มเติมเพื่อให้โอนเงินเข้าบัญชีการชำระเงินของคุณ"
@@ -1849,6 +1870,9 @@ msgstr "เครื่องมือในการตั้งซื้อข
 msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
 msgstr "การซื้อขายอัตโนมัติอย่างง่ายทำได้ด้วยเครื่องมือ \"ลากแล้ววาง\""
 
+msgid "Automated copying – no extra work from you."
+msgstr ""
+
 msgid "Automated decision-making"
 msgstr "การตัดสินใจโดยอัตโนมัติ"
 
@@ -2023,8 +2047,14 @@ msgstr "มีความสามารถในการใช้เครื
 msgid "Benefits"
 msgstr "ประโยชน์ต่างๆ"
 
+msgid "Benefits of being a MT5 provider"
+msgstr ""
+
 msgid "Benefits of being a Payment Agent"
 msgstr "ประโยชน์ต่างๆ ของการเป็นตัวแทนรับชำระเงิน"
+
+msgid "Benefits of subscribing to MT5 signals"
+msgstr ""
 
 msgid "Best execution factors"
 msgstr "ปัจจัยการดำเนินการที่ดีที่สุด"
@@ -2641,6 +2671,12 @@ msgstr "คลิกที่นี่ เพื่อเปิดบัญช�
 msgid "Click here to retry"
 msgstr "คลิกที่นี่เพื่อลองใหม่"
 
+msgid "Click on the %1My Statistics%2 tab and select your signal provider."
+msgstr ""
+
+msgid "Click the %1Renew%2 button to renew the service or the %1Unsubscribe%2 button to cancel the subscription."
+msgstr ""
+
 msgid "Client Information"
 msgstr "ข้อมูลลูกค้า"
 
@@ -2914,6 +2950,9 @@ msgstr "การร้องเรียนและข้อโต้แย้
 msgid "Complaints and disputes"
 msgstr "การร้องเรียนและข้อโต้แย้ง"
 
+msgid "Complete the form with your MT5 account credentials. In the Broker field, enter your account server name:"
+msgstr ""
+
 msgid "Complete your %1Tax Information%2."
 msgstr "โปรดบันทึก %1 ข้อมูลภาษีของท่าน %2ให้สมบูรณ์"
 
@@ -2973,6 +3012,9 @@ msgstr "การรักษาความลับ"
 
 msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
 msgstr "ตั้งค่าคอมพิวเตอร์ส่วนบุคคลของท่านและโทรศัพท์มือถือของท่านเพื่อใช้ Cloudflare DNS โดยทำตามคำแนะนำ %1"
+
+msgid "Configure your trading and risk management parameters. Then click %1OK%2 to complete the process."
+msgstr ""
 
 msgid "Confirm"
 msgstr "ยืนยัน"
@@ -4160,6 +4202,9 @@ msgstr "รับผลตอบแทนจากเงินเดิมพั
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr "รับค่าตอบแทนสูงถึง 45% ของรายได้สุทธิจากลูกค้าของท่าน เงินคอมมิชชั่นโอนเข้าบัญชีหลังจากวันที่ 15 ในแต่ละเดือน"
 
+msgid "Easy to set up – no installation required."
+msgstr ""
+
 msgid "Economic Calendar"
 msgstr "ปฏิทินเศรษฐกิจ"
 
@@ -5099,6 +5144,12 @@ msgstr "จากบัญชี: "
 msgid "From time to time, DIEL may decide to provide the client with written or video information, which DIEL may publish on its website or provide to the client in any other manner. DIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by DIEL to the client."
 msgstr "ในบางครั้ง DIEL อาจตัดสินใจให้ข้อมูลกับลูกค้าเป็นลายลักษณ์อักษร หรือ ข้อมูลทางวิดีโอ ซึ่ง DIEL อาจเผยแพร่ข้อมูลออกทางเว็บไซต์ของบริษัทหรือมอบให้ลูกค้าลักษณะอื่น DIEL จะพยายามทำให้แน่ใจว่า ข้อมูลมีความถูกต้องและครบถ้วน แต่จะไม่ถือเป็นบทวิเคราะห์อิสระ หรือ คำแนะนำด้านการลงทุนของ DIEL ที่แจ้งให้แก่ลูกค้า"
 
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab to view the list of signal providers."
+msgstr ""
+
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab."
+msgstr ""
+
 msgid "Front Side"
 msgstr "ด้านหน้า"
 
@@ -5110,6 +5161,9 @@ msgstr "ด้านหน้า"
 
 msgid "Front-End Developer"
 msgstr "ผู้พัฒนาส่วนหน้า"
+
+msgid "Full disclosure of each providers’ performances."
+msgstr ""
 
 msgid "Fund transfers"
 msgstr "การโอนเงิน"
@@ -5285,8 +5339,14 @@ msgstr "ไปที่ %1Cแคชเชียร์%2 เพื่อถอ�
 msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
 msgstr "ไปที่ %1แดชบอร์ด MT5%2 เพื่อถอนเงินจากบัญชี Binary.com MT5 ของคุณ"
 
-msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
-msgstr "ไปที่ %1pหน้าผลงาน%2 เพื่อปิดสถานะที่เปิดอยู่ทั้งหมดจากบัญชี Binary.com ของคุณ"
+msgid "Go to the %1Portfolio%2 to close all open positions from your Binary.com accounts."
+msgstr ""
+
+msgid "Go to the MQL5 signals showcase page and click on the %1Create signal%2 button."
+msgstr ""
+
+msgid "Go to the MT5 Terminal"
+msgstr ""
 
 msgid "Go with the leader"
 msgstr "ก้าวไปกับผู้นำ"
@@ -5356,6 +5416,9 @@ msgstr "มีประสบการณ์โดยตรงในระบบ
 
 msgid "Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks"
 msgstr "มีประสบการณ์โดยตรงในการแก้ไขปัญหาซอฟต์แวร์คอมพิวเตอร์ ฮาร์ดแวร์ และแอพพลิเคชันและเครือข่ายอินเทอร์เนตที่หลากหลาย"
+
+msgid "Have more questions? Check out the %1FAQ section%2 on the MQL5 website."
+msgstr ""
 
 msgid "Have not previously been a %1 customer"
 msgstr "ยังไม่เคยเป็นลูกค้าของ %1"
@@ -5522,8 +5585,17 @@ msgstr "อ่านตารางข้อกำหนดสัญญาอย
 msgid "How to read the table above"
 msgstr "จะอ่านตารางข้างต้นอย่างไร"
 
+msgid "How to register as a signal provider"
+msgstr ""
+
+msgid "How to renew or cancel your subscription"
+msgstr ""
+
 msgid "How to scan a QR code"
 msgstr "วิธีสแกนรหัส QR"
+
+msgid "How to subscribe to a MT5 signal"
+msgstr ""
 
 msgid "How to trade CFDs"
 msgstr "ซื้อขาย CFD อย่างไร"
@@ -5818,6 +5890,9 @@ msgstr "หากบริษัทฯ ตัดสินใจที่จะ�
 
 msgid "If we have reason to believe that your tax information is incomplete, we may contact you for clarification."
 msgstr "หากมีเหตุผลที่จะให้เชื่อว่า ข้อมูลภาษีของท่านยังไม่สมบูรณ์ บริษัทฯ จะติดต่อท่านเพื่อขอคำชี้แจงเพิ่มเติม"
+
+msgid "If you are a professional trader, the MT5 trading signals service allows you to share your strategies with other traders for free or a subscription fee that you determine. When traders subscribe to your signal, your deals are automatically replicated on their accounts each time you place a trade."
+msgstr ""
 
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "หากคุณกำลังพิจารณาป้องกันตนเอง คุณอาจต้องการลงทะเบียนกับ GAMSTOP"
@@ -6971,6 +7046,9 @@ msgstr "เข้าสู่ระบบ MT5:"
 msgid "MT5 Real Account"
 msgstr "บัญชี MT5 จริง"
 
+msgid "MT5 Signals"
+msgstr ""
+
 msgid "MT5 Synthetic"
 msgstr "ดัชนีสังเคราะห์ MT5"
 
@@ -7326,6 +7404,9 @@ msgstr "MetaTrader"
 msgid "MetaTrader 5"
 msgstr "MetaTrader 5"
 
+msgid "MetaTrader 5 Signals"
+msgstr ""
+
 msgid "MetaTrader 5 dashboard"
 msgstr "รายงานสรุปภาพรวมบัญชี MetaTrader 5"
 
@@ -7376,6 +7457,9 @@ msgstr "ฝากต่ำสุด-สูงสุด"
 
 msgid "Min-Max Withdrawal"
 msgstr "ถอนต่ำสุด-สูงสุด"
+
+msgid "Minimise trading risk by copying from expert traders."
+msgstr ""
 
 msgid "Minimum deposit"
 msgstr "เงินฝากขั้นต่ำ"
@@ -9708,6 +9792,9 @@ msgstr "วันเสาร์"
 msgid "Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records, or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment, or software by the client or any damages or losses deemed or alleged to have resulted from, or been caused by, this site or its content."
 msgstr "ความปลอดภัยต่อกรณีของความประมาทเลินเล่อ การฉ้อฉล หรือ การผิดสัญญาโดยบริษัทฯ บริษัทฯ จะไม่รับชอบต่อลูกค้าไม่ว่าหนทางใดๆ ในกรณีเหตุสุดวิสัย หรือ การกระทำของรัฐบาลหรือเจ้าหน้าที่ตามกฎหมาย หรือสำหรับความล้มเหลว ความเสียหาย หรือการถูกทำลาย ต่อระบบคอมพิวเตอร์ ข้อมูล หรือบันทึก หรือ ส่วนใดส่วนหนึ่งของสิ่งที่กล่าวมาดังกล่าว หรือสำหรับความล่าช้า การสูญเสีย ความผิดพลาด การละเว้น ซึ่งเป็นผลมาจากความล้มเหลว หรือการบริหารจัดการที่ผิดพลาดของการสื่อสารใดๆ หรืออุปกรณ์คอมพิวเตอร์ หรือซอฟต์แวร์โดยลูกค้า หรือ ความเสียหาย หรือความสูญเสียใดๆ ที่คิดว่า หรือถูกอ้างว่าเป็นผลมาจาก หรือมีสาเหตุมาจากเว็บไซต์นี้ หรือเนื้อหาของเว็บไซต์นี้"
 
+msgid "Save time – no need to open, monitor, and close trades."
+msgstr ""
+
 msgid "Savings & Inheritance"
 msgstr "เงินฝากและมรดก"
 
@@ -9825,6 +9912,9 @@ msgstr "กำหนดตลาด:"
 msgid "Select payment agent"
 msgstr "เลือกตัวแทนชำระเงิน"
 
+msgid "Select the signal provider you prefer and click the %1Subscribe%2 button."
+msgstr ""
+
 msgid "Select your market and underlying asset"
 msgstr "เลือกตลาดที่ท่านต้องการ และ ผลิตภัณฑ์อ้างอิงของท่าน"
 
@@ -9909,8 +9999,8 @@ msgstr "ลําดับ เช่น abc หรือ 6543 นั้นง่
 msgid "Server"
 msgstr "เซิร์ฟเวอร์"
 
-msgid "Server maintenance starting 03:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "การบำรุงรักษาเซิร์ฟเวอร์เริ่มตั้งแต่ 03:00 GMT ทุกวันอาทิตย์ กระบวนการนี้อาจใช้เวลาถึง 2 ชั่วโมงในการดําเนินการให้เสร็จสมบูรณ์ บริการอาจหยุดชะงักในช่วงเวลานี้"
+msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
+msgstr ""
 
 msgid "Server:"
 msgstr "เซิร์ฟเวอร์:"
@@ -10034,6 +10124,12 @@ msgstr "ลงทะเบียน"
 
 msgid "Sign up now"
 msgstr "ลงทะเบียนเดี๋ยวนี้"
+
+msgid "Signal Provider"
+msgstr ""
+
+msgid "Signal Subscriber"
+msgstr ""
 
 msgid "Signup"
 msgstr "ลงทะเบียน"
@@ -10926,6 +11022,9 @@ msgstr "บริษัทยังรวบรวมและประมวล
 msgid "The Company also collects basic tax residence information for the purposes of CRS/FATCA compliance. The tax information that the client provides may only be disclosed to the authorities who are legally charged with collecting this information for CRS/FATCA reporting, and %1 will only do so to the extent that it is legally obliged to collect it from the clients and disclose it to the authorities. The Company does not use, disclose, or process this information in any other way at any time."
 msgstr "บริษัทฯ ยังได้เก็บรวบรวมข้อมูลพื้นฐานเกี่ยวกับสถานที่เกิดแหล่งรายได้สำหรับภาษี เพื่อวัตถุประสงค์ในการปฏิบัติตามข้อกำหนดของ CRS/FATCA ข้อมูลภาษีที่ลูกค้าให้ไว้นั้นจะถูกเปิดเผยให้กับเจ้าหน้าที่ที่มีหน้าที่ในการเก็บรวบรวมข้อมูลนี้เพื่อการทำรายงานสำหรับ CRS/FATCA เท่านั้น และ %1 จะดำเนินการในขอบเขตที่กฎหมายบังคับเพื่อเก็บรวบรวมจากลูกค้า และเปิดเผยให้กับเจ้าหน้าที่ที่มีอำนาจเท่านั้น บริษัทฯ จะไม่ใช้ เปิดเผย หรือ ดำเนินการกับข้อมูลนี้ในทางอื่นไม่ว่าเมื่อไรก็ตาม"
 
+msgid "The Company also has a regulatory obligation to send the personal data of the clients residing in the UK to GAMSTOP to check whether or not  they have self-excluded with GAMSTOP. To find out more, please read the %1GAMSTOP privacy policy%2."
+msgstr ""
+
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "บริษัทฯ สงวนสิทธิ์ในการขอเอกสารใดๆ ที่เกี่ยวกับหน้าที่ทางกฎหมาย"
 
@@ -10968,8 +11067,8 @@ msgstr "บริษัทฯ ไม่ส่งเสริมพฤติก�
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "บริษัทฯ พยายามที่จะเปิด หรือปิดธุรกรรมของการสั่งซื้อของลูกค้าในราคาสมเหตุสมผลที่บริษัทฯ มี ด้วยการปฏิบัติหน้าที่ในการดำเนินการที่ดีที่สุด การประมวลผลคำสั่งซื้อที่ดีที่สุด หมายถึง เมื่อประมวลผลคำสั่งซื้อ บริษัทฯ จะดำเนินการตามขั้นตอนทั้งหมด เพื่อให้ได้ผลลัพธ์ที่ดีที่สุดแก่ลูกค้า โดยพิจารณาราคา ต้นทุน ความเร็ว ความเป็นไปได้ในการประมวลผลและการชำระราคา ขนาด ลักษณะ หรือ ข้อพิจารณาอื่นๆ ที่เกี่ยวข้องกับการประมวลผลคำสั่งซื้อ"
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a client of Deriv (Europe) Limited, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "บริษัทมีนโยบายการยุติการซื้อขาย ซึ่งป้องกันไม่ให้ลูกค้าสูญเสียเงินมากกว่าจำนวนที่ฝากไว้ อย่างไรก็ตาม ในกรณีที่ตำแหน่งเปิดของลูกค้าไม่ถูกปิดเมื่อระดับมาร์จิ้นของบัญชี MT5 จริงไปถึงระดับยุติการซื้อขาย บริษัทอาจละเว้นยอดคงเหลือที่ติดลบของลูกค้า โดยการเครดิตบัญชีของลูกค้าหากยอดคงเหลือในบัญชีติดลบ ยอดคงเหลือติดลบจะถูกพิจารณา โดยการคำนวณรวมยอดคงเหลือติดลบทั้งหมดที่เกิดขึ้นในทุกๆ บัญชีของลูกค้าภายในระยะเวลา 24 ชั่วโมง ลูกค้ายอมรับว่า เว้นแต่ลูกค้าเป็นลูกค้ารายย่อยของ Deriv Investments (Europe) Limited หรือ ลูกค้าของ Deriv (Europe) Limited ข้อเสนอกลไกการป้องกันยอดคงเหลือติดลบของบริษัทที่ให้แก่ลูกค้านี้ จะเป็นไปตามดุลยพินิจของบริษัทเท่านั้น และบริษัทสงวนสิทธิ์ในการเปลี่ยนแปลงคุณลักษณะและหลักเกณฑ์การคัดเลือกของกลไกการป้องกันยอดคงเหลือติดลบเมื่อใดก็ได้ หากแต่จะไม่มีบริการป้องกันยอดคงเหลือติดลบในสถานการณ์ดังต่อไปนี้:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "บริษัทฯ มีหน้าที่ทั่วๆ ไป ในการจัดการธุรกิจของเรากับลูกค้าด้วยความซื่อสัตย์ เป็นธรรม และอย่างมืออาชีพ และเพื่อปฏิบัติอย่างเหมาะสมที่สุดเพื่อดำเนินการในการเปิดและปิดการซื้อขายไบนารีออปชั่นกับลูกค้า"
@@ -11378,6 +11477,9 @@ msgstr "แผนผลประโยชน์ของนักลงทุน
 
 msgid "The MT5 desktop app is not supported by Windows XP, Windows 2003, and Windows Vista."
 msgstr "แอพเดสก์ท็อป MT5 ไม่รองรับ Windows XP, Windows 2003, และ Windows Vista"
+
+msgid "The MT5 trading signals service allows you to copy the trades of more experienced traders to your MT5 account. Once you’ve subscribed to a signal, the provider’s deals will be automatically replicated on your %1 MT5 trading account each time they place a trade."
+msgstr ""
 
 msgid "The Margin Level of the client's MT5 Real Account reaches or falls below the Stop Out Level."
 msgstr "ระดับมาร์จินของบัญชี MT5 จริงของลูกค้าถึง หรือ ลดต่ำลงจากระดับยุติการซื้อขาย"
@@ -14228,6 +14330,9 @@ msgstr "ท่านไม่สามารถแก้ไขสกุลเง
 msgid "You can now return to your computer to continue"
 msgstr "ตอนนี้คุณสามารถกลับไปที่คอมพิวเตอร์ของคุณเพื่อดำเนินการต่อ"
 
+msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
+msgstr ""
+
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
 msgstr "คุณสามารถเปิดบัญชีสกุลเงินหลัก ได้โดยไม่ต้องปิดบัญชีสกุลเงินดิจิทัลของคุณ"
 
@@ -14357,6 +14462,9 @@ msgstr "คุณต้องตรวจสอบให้แน่ใจว่
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr "ท่านจะต้องมีสัญญาณอินเทอร์เน็ตที่เร็วและการเชื่อมต่อที่มีเสถียรภาพ เพราะการเก็บภาพหน้าจอของเอกสารของท่านเป็นสิ่งจำเป็นสำหรับการบันทึกของเรา"
 
+msgid "You must have an MQL5 community account to subscribe to trading signals. If you don’t have an account yet, please go to %1MQL5.com%2 to register."
+msgstr ""
+
 msgid "You must have:"
 msgstr "ท่านต้องมี"
 
@@ -14425,6 +14533,9 @@ msgstr "ท่านได้กำไรเมื่อราคาตลาด
 
 msgid "You win the payout if the market price ends in the digit you have selected."
 msgstr "ท่านได้กำไรเมื่อราคาตลาดสิ้นสุดด้วยตัวเลขที่ท่านเลือก"
+
+msgid "You won’t be able to trade manually with the same %1 MT5 account once you’ve subscribed to a signal."
+msgstr ""
 
 msgid "You'll need to restart your verification on your computer"
 msgstr "คุณจะต้องรีสตาร์ทการตรวจสอบบนคอมพิวเตอร์ของคุณ"
@@ -14653,6 +14764,9 @@ msgstr "วงเงินการถอนของคุณ คือ %1%2"
 
 msgid "You’ll be logged out automatically."
 msgstr "คุณจะออกจากระบบโดยอัตโนมัติ"
+
+msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
+msgstr ""
 
 msgid "ZEC vs US dollar"
 msgstr "ZEC เทียบกับดอลลาร์สหรัฐ"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-03-30 03:19\n"
+"PO-Revision-Date: 2021-04-15 09:52\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -448,6 +448,12 @@ msgstr "%1Choisissez une devise%2 pour votre devise de compte"
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Contactez nous%2 pour arranger une date et une heure pour l’appel vidéo."
 
+msgid "%1Deriv-Demo%2 if your signal is for demo accounts only."
+msgstr ""
+
+msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accounts only."
+msgstr ""
+
 msgid "%1Founded%2 October 1999"
 msgstr "%1Fondé%2 en Octobre 1999"
 
@@ -462,6 +468,12 @@ msgstr "%1Non, changer la devise de mon compte fiat maintenant%2"
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
 msgstr "%1Note%2: Ces limites ne sont applicables que pour votre %3 compte réel. Pour définir des limites, sélectionnez le compte à configurer et définissez vos limites."
+
+msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
+msgstr ""
+
+msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
+msgstr ""
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Veuillez noter que si vous habitez au Royaume-Uni, l'auto-exclusion ne peut pas être supprimée tant que sa période n'est pas expirée. %2Si vous souhaitez reprendre le trading après la fin de votre période d'auto-exclusion, veuillez faire votre demande en appelant %3. Les demandes par chat ou par e-mail ne seront pas acceptées."
@@ -495,6 +507,9 @@ msgstr "Options (One) Touch"
 
 msgid "(This limit may vary depending on current exchange rates.)"
 msgstr "(Cette limite peut varier en fonction des taux de change actuels.)"
+
+msgid "(You can find the account server name on your %1MT5 dashboard%2)."
+msgstr ""
 
 msgid "(a) Price and cost"
 msgstr "(a) Prix et Coût"
@@ -1102,6 +1117,9 @@ msgstr "Ajouter"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "Ajouter + / – pour définir une compensation de barrière. Par exemple, +0.005 signifie une barrière qui est plus élevée que le point d’entrée de 0,005."
 
+msgid "Add a description and click %1Save%2 to complete the registration."
+msgstr ""
+
 msgid "Add another word or two. Uncommon words are better."
 msgstr "Ajoutez un ou deux mots supplémentaires. Les mots peu courants sont meilleurs."
 
@@ -1110,6 +1128,9 @@ msgstr "Ajouter des fonds"
 
 msgid "Additional business exposure:"
 msgstr "Risque additionnel des affaires :"
+
+msgid "Additional income stream from monthly subscriptions."
+msgstr ""
 
 msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
 msgstr "Un délai supplémentaire peut être requis par votre banque ou votre service de transfert d'argent afin d'approvisionner votre compte."
@@ -1849,6 +1870,9 @@ msgstr "Outil de programmation de trading automatique"
 msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
 msgstr "Automatisez vos stratégies de trading avec notre outil de création de robot par \"glisser-déposer\", en toute simplicité."
 
+msgid "Automated copying – no extra work from you."
+msgstr ""
+
 msgid "Automated decision-making"
 msgstr "Prise de décision automatisée"
 
@@ -2023,8 +2047,14 @@ msgstr "Être en contact avec les derniers outils et technologies liés à votre
 msgid "Benefits"
 msgstr "Avantages"
 
+msgid "Benefits of being a MT5 provider"
+msgstr ""
+
 msgid "Benefits of being a Payment Agent"
 msgstr "Avantages associés au statut d'agen"
+
+msgid "Benefits of subscribing to MT5 signals"
+msgstr ""
 
 msgid "Best execution factors"
 msgstr "Meilleurs facteurs d'exécution"
@@ -2641,6 +2671,12 @@ msgstr "Cliquez ici pour ouvrir un Compte Réel"
 msgid "Click here to retry"
 msgstr "Cliquez ici pour réessayer"
 
+msgid "Click on the %1My Statistics%2 tab and select your signal provider."
+msgstr ""
+
+msgid "Click the %1Renew%2 button to renew the service or the %1Unsubscribe%2 button to cancel the subscription."
+msgstr ""
+
 msgid "Client Information"
 msgstr "Informations du client"
 
@@ -2914,6 +2950,9 @@ msgstr "Réclamations et litiges"
 msgid "Complaints and disputes"
 msgstr "Réclamations et litiges"
 
+msgid "Complete the form with your MT5 account credentials. In the Broker field, enter your account server name:"
+msgstr ""
+
 msgid "Complete your %1Tax Information%2."
 msgstr "Complétez vos %1informations fiscales%2."
 
@@ -2973,6 +3012,9 @@ msgstr "Confidentialité"
 
 msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
 msgstr "Configurez votre PC et téléphone mobile pour utiliser le DNS Cloudflare en suivant les instructions à %1."
+
+msgid "Configure your trading and risk management parameters. Then click %1OK%2 to complete the process."
+msgstr ""
 
 msgid "Confirm"
 msgstr "Confirmer"
@@ -4159,6 +4201,9 @@ msgstr "Recevez le même retour proportionnel aux montants de toutes valeurs."
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr "Obtenez jusqu'à 45% de commission en fonction du revenu net total généré par vos clients. Les commissions sont créditées sur votre compte après le 15 de chaque mois."
 
+msgid "Easy to set up – no installation required."
+msgstr ""
+
 msgid "Economic Calendar"
 msgstr "Calendrier Economique"
 
@@ -5098,6 +5143,12 @@ msgstr "Du compte : "
 msgid "From time to time, DIEL may decide to provide the client with written or video information, which DIEL may publish on its website or provide to the client in any other manner. DIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by DIEL to the client."
 msgstr "De temps à autre, DIEL peut décider de fournir au client des informations écrites ou vidéo que DIEL peut publier sur son site web ou fournir au client de toute autre manière. DIEL s'efforcera d'assurer l'exactitude et l'exhaustivité de ces informations, mais elles ne constitueront pas une recherche ou un conseil en investissement indépendant fourni par DIEL au client."
 
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab to view the list of signal providers."
+msgstr ""
+
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab."
+msgstr ""
+
 msgid "Front Side"
 msgstr "Face Avant"
 
@@ -5109,6 +5160,9 @@ msgstr "Face avant"
 
 msgid "Front-End Developer"
 msgstr "Développeur Front-End"
+
+msgid "Full disclosure of each providers’ performances."
+msgstr ""
 
 msgid "Fund transfers"
 msgstr "Transferts de fonds"
@@ -5284,8 +5338,14 @@ msgstr "Aller à la caisse %1%2 pour retirer des fonds de votre compte %3."
 msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
 msgstr "Aller sur le %1tableau de bord MT5%2 pour retirer vos fonds de votre compte Binary.com."
 
-msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
-msgstr "Aller sur le %1portfolio page%2 pour fermer toutes les positions ouvertes sur vos comptes Binary.com."
+msgid "Go to the %1Portfolio%2 to close all open positions from your Binary.com accounts."
+msgstr ""
+
+msgid "Go to the MQL5 signals showcase page and click on the %1Create signal%2 button."
+msgstr ""
+
+msgid "Go to the MT5 Terminal"
+msgstr ""
 
 msgid "Go with the leader"
 msgstr "Faites confiance au leader du marché"
@@ -5355,6 +5415,9 @@ msgstr "Expérience pratique dans les systèmes et la sécurité du réseau. Exp
 
 msgid "Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks"
 msgstr "Expérience pratique en dépannage de logiciels, de matériel informatique et d'une variété d’applications internet et réseaux"
+
+msgid "Have more questions? Check out the %1FAQ section%2 on the MQL5 website."
+msgstr ""
 
 msgid "Have not previously been a %1 customer"
 msgstr "N'a pas précédemment été un client %1"
@@ -5521,8 +5584,17 @@ msgstr "Comment lire le tableau des spécifications de contrat"
 msgid "How to read the table above"
 msgstr "Comment lire le tableau ci-dessus ?"
 
+msgid "How to register as a signal provider"
+msgstr ""
+
+msgid "How to renew or cancel your subscription"
+msgstr ""
+
 msgid "How to scan a QR code"
 msgstr "Comment scanner un code QR"
+
+msgid "How to subscribe to a MT5 signal"
+msgstr ""
 
 msgid "How to trade CFDs"
 msgstr "Comment négocier les CFD"
@@ -5818,6 +5890,9 @@ msgstr "Si nous décidons de faire une offre, nous allons procéder à une véri
 
 msgid "If we have reason to believe that your tax information is incomplete, we may contact you for clarification."
 msgstr "Si nous avons des raisons de croire que vos renseignements fiscaux sont incomplets, nous pouvons vous contacter pour des précisions."
+
+msgid "If you are a professional trader, the MT5 trading signals service allows you to share your strategies with other traders for free or a subscription fee that you determine. When traders subscribe to your signal, your deals are automatically replicated on their accounts each time you place a trade."
+msgstr ""
 
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "Si vous envisagez de vous auto-exclure, vous pouvez vous inscrire auprès de GAMSTOP."
@@ -6971,6 +7046,9 @@ msgstr "Connexion MT5:"
 msgid "MT5 Real Account"
 msgstr "Compte Réel MT5"
 
+msgid "MT5 Signals"
+msgstr ""
+
 msgid "MT5 Synthetic"
 msgstr "MT5 Synthétique"
 
@@ -7325,6 +7403,9 @@ msgstr "MetaTrader"
 msgid "MetaTrader 5"
 msgstr "MetaTrader 5"
 
+msgid "MetaTrader 5 Signals"
+msgstr ""
+
 msgid "MetaTrader 5 dashboard"
 msgstr "Tableau de bord MetaTrader 5"
 
@@ -7375,6 +7456,9 @@ msgstr "Dépôt min-max"
 
 msgid "Min-Max Withdrawal"
 msgstr "Retrait min-max"
+
+msgid "Minimise trading risk by copying from expert traders."
+msgstr ""
 
 msgid "Minimum deposit"
 msgstr "Dépôt minimum"
@@ -9708,6 +9792,9 @@ msgstr "samedi"
 msgid "Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records, or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment, or software by the client or any damages or losses deemed or alleged to have resulted from, or been caused by, this site or its content."
 msgstr "Sauf en cas de négligence, fraude, ou défaut de la Compagnie, la Compagnie ne sera responsable envers aucun client en cas d'événement de force majeure, ou d'action émanant de tout gouvernement ou autorité légale, de défaillance, dommage ou destruction de ses systèmes informatiques, données ou enregistrements, totale ou partielle, ou de retards, pertes, erreurs ou omissions survenus à la suite de défaillances ou de mauvaise gestion de tout équipement de télécommunications, informatique, ou logiciel par le client ou de tout dommage ou pertes considéré ou supposé résultant de, ou causé par, ce site ou son contenu."
 
+msgid "Save time – no need to open, monitor, and close trades."
+msgstr ""
+
 msgid "Savings & Inheritance"
 msgstr "Épargne & Héritage"
 
@@ -9825,6 +9912,9 @@ msgstr "Sélectionnez un marché :"
 msgid "Select payment agent"
 msgstr "Sélectionnez l’agent de paiement"
 
+msgid "Select the signal provider you prefer and click the %1Subscribe%2 button."
+msgstr ""
+
 msgid "Select your market and underlying asset"
 msgstr "Sélectionnez votre marché et actif sous-jacent"
 
@@ -9909,8 +9999,8 @@ msgstr "Les séquences comme abc ou 6543 sont faciles à deviner"
 msgid "Server"
 msgstr "Serveur"
 
-msgid "Server maintenance starting 03:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "Maintenance du serveur à partir de 03h00 GMT tous les dimanches. Ce processus peut prendre jusqu'à 2 heures. Le service peut être interrompu pendant cette période."
+msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
+msgstr ""
 
 msgid "Server:"
 msgstr "Serveur:"
@@ -10034,6 +10124,12 @@ msgstr "Inscrivez vous"
 
 msgid "Sign up now"
 msgstr "S'inscrire maintenant"
+
+msgid "Signal Provider"
+msgstr ""
+
+msgid "Signal Subscriber"
+msgstr ""
 
 msgid "Signup"
 msgstr "S'enregistrer"
@@ -10926,6 +11022,9 @@ msgstr "La Société recueille et traite également les données du candidat pou
 msgid "The Company also collects basic tax residence information for the purposes of CRS/FATCA compliance. The tax information that the client provides may only be disclosed to the authorities who are legally charged with collecting this information for CRS/FATCA reporting, and %1 will only do so to the extent that it is legally obliged to collect it from the clients and disclose it to the authorities. The Company does not use, disclose, or process this information in any other way at any time."
 msgstr "La Compagnie recueille également des informations de base sur la résidence fiscale aux fins de l'observation du SIR/de la FATCA. Les informations fiscales fournies par le client ne peuvent être divulguées qu'aux autorités légalement chargées de collecter ces informations pour le reporting de SIR/FATCA, et %1 ne le fera que dans la mesure où elle est légalement tenue de les collecter auprès des clients et de les divulguer aux autorités. La Compagnie n'utilise, ne divulgue ou ne traite ces informations d'aucune autre manière et à aucun moment."
 
+msgid "The Company also has a regulatory obligation to send the personal data of the clients residing in the UK to GAMSTOP to check whether or not  they have self-excluded with GAMSTOP. To find out more, please read the %1GAMSTOP privacy policy%2."
+msgstr ""
+
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "La Compagnie se réserve également le droit de demander de la documentation relative à toute autre obligation légale."
 
@@ -10968,8 +11067,8 @@ msgstr "La Compagnie ne tolère aucune forme de comportement inapproprié. Cela 
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "La Compagnie s'efforce d'ouvrir ou de conclure la transaction à laquelle se rapporte l'ordre du client à un prix raisonnablement disponible pour la Compagnie, agissant conformément à l'obligation de meilleure exécution qui incombe à la Compagnie. La meilleure exécution signifie que, lors de l'exécution des Ordres, la Compagnie doit prendre toutes les mesures suffisantes pour obtenir le meilleur résultat possible pour le client, en tenant compte du prix, des coûts, de la rapidité, de la probabilité d'exécution et de règlement, de la taille, de la nature ou de toute autre considération pertinente pour l'exécution de l'Ordre."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a client of Deriv (Europe) Limited, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "La Compagnie a une politique de Stop Out qui empêche le client de perdre plus qu'il n'a déposé. Toutefois, dans le cas où les Positions Ouvertes du client ne sont pas clôturées lorsque le Niveau de Marge de son Compte MT5 Real atteint le Niveau Stop Out, la Compagnie, à sa seule discrétion, peut renoncer au solde négatif du client en créditant son compte si le Solde de leur Compte tombe dans le rouge. Le solde négatif est déterminé en additionnant tous les soldes négatifs encourus sur une période de 24 heures pour tous les comptes détenus par le client. Le client reconnaît que, sauf s'il est un client de détail de Deriv Investments (Europe) Limited ou un client de Deriv (Europe) Limited, l'offre de la protection du solde négatif par la Compagnie au client est au seul gré de la Compagnie et cette dernière se réserve le droit de modifier à tout moment les caractéristiques et critères de la protection du solde négatif et les conditions de qualification. Les dispositions de la protection contre le solde négatif ne s'appliquent pas dans les situations suivantes :"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "La Compagnie a un devoir général de conduire nos affaires avec le client de manière honnête, juste et professionnelle et d'agir dans vos meilleurs intérêts lors de l'ouverture et la clôture des trades d'options binaires avec le client."
@@ -11378,6 +11477,9 @@ msgstr "Système d'indemnisation des investisseurs"
 
 msgid "The MT5 desktop app is not supported by Windows XP, Windows 2003, and Windows Vista."
 msgstr "L'application de bureau MT5 n'est pas prise en charge par, Windows XP, Windows 2003 et Windows Vista."
+
+msgid "The MT5 trading signals service allows you to copy the trades of more experienced traders to your MT5 account. Once you’ve subscribed to a signal, the provider’s deals will be automatically replicated on your %1 MT5 trading account each time they place a trade."
+msgstr ""
 
 msgid "The Margin Level of the client's MT5 Real Account reaches or falls below the Stop Out Level."
 msgstr "Le Niveau de Marge du Compte Réel MT5 du client atteint ou tombe en dessous du Niveau de Stop Out."
@@ -14226,6 +14328,9 @@ msgstr "Vous ne pouvez plus changer la devise parce que vous avez effectué un t
 msgid "You can now return to your computer to continue"
 msgstr "Vous pouvez maintenant revenir à votre ordinateur pour continuer"
 
+msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
+msgstr ""
+
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
 msgstr "Vous pouvez ouvrir un compte crypto-monnaie sans fermer votre compte en monnaie fiduciaire."
 
@@ -14355,6 +14460,9 @@ msgstr "Vous devez vous assurer que vous remplissez tous les dossiers avec exact
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr "Vous devez avoir une connexion Internet rapide et stable étant donné que des captures d’écran de vos documents sont requis pour nos archives"
 
+msgid "You must have an MQL5 community account to subscribe to trading signals. If you don’t have an account yet, please go to %1MQL5.com%2 to register."
+msgstr ""
+
 msgid "You must have:"
 msgstr "Vous devez disposer :"
 
@@ -14423,6 +14531,9 @@ msgstr "Vous remportez le prix si le prix du marché ne se termine pas par le ch
 
 msgid "You win the payout if the market price ends in the digit you have selected."
 msgstr "Vous remportez le prix si le prix du marché se termine par le chiffre que vous avez sélectionné."
+
+msgid "You won’t be able to trade manually with the same %1 MT5 account once you’ve subscribed to a signal."
+msgstr ""
 
 msgid "You'll need to restart your verification on your computer"
 msgstr "Vous devrez redémarrer votre vérification sur votre ordinateur"
@@ -14651,6 +14762,9 @@ msgstr "Votre limite de retrait est de %1%2."
 
 msgid "You’ll be logged out automatically."
 msgstr "Vous serez déconnecté automatiquement."
+
+msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
+msgstr ""
 
 msgid "ZEC vs US dollar"
 msgstr "ZEC vs US dollar"
