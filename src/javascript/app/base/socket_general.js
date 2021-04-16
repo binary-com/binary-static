@@ -14,7 +14,6 @@ const GTM                    = require('../../_common/base/gtm');
 const NetworkMonitorBase     = require('../../_common/base/network_monitor_base');
 const SubscriptionManager    = require('../../_common/base/subscription_manager').default;
 const Crowdin                = require('../../_common/crowdin');
-const localize               = require('../../_common/localize').localize;
 const LocalStore             = require('../../_common/storage').LocalStore;
 const State                  = require('../../_common/storage').State;
 const getPropertyValue       = require('../../_common/utility').getPropertyValue;
@@ -162,9 +161,6 @@ const BinarySocketGeneral = (() => {
                 }
                 break;
             }
-            case 'RateLimit':
-                Header.displayNotification(localize('You have reached the rate limit of requests per second. Please try later.'), true, 'RATE_LIMIT');
-                break;
             case 'InvalidAppID':
                 Header.displayNotification(response.error.message, true, 'INVALID_APP_ID');
                 break;
