@@ -306,11 +306,12 @@ const SetCurrency = (() => {
     const populateReqMultiAccount = (selected_currency) => {
         const get_settings = State.getResponse('get_settings');
 
+        const is_svg = Client.get('landing_company_shortcode') === 'svg';
+
         return ({
             new_account_real      : 1,
             currency              : selected_currency,
             date_of_birth         : moment.utc(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD'),
-            salutation            : get_settings.salutation,
             first_name            : get_settings.first_name,
             last_name             : get_settings.last_name,
             address_line_1        : get_settings.address_line_1,
@@ -323,6 +324,8 @@ const SetCurrency = (() => {
             citizen               : get_settings.citizen,
             place_of_birth        : get_settings.place_of_birth,
             residence             : Client.get('residence'),
+            // salutation should not be sent in new_account_real req for SVG / CR clients
+            ...(!is_svg && { salutation: get_settings.salutation }),
             ...(get_settings.tax_identification_number && {
                 tax_identification_number: get_settings.tax_identification_number,
             }),
