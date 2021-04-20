@@ -68,9 +68,6 @@
             if (/^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href)) {
                 window.location.href = 'ach/home.html'; // in-context translation
             } else {
-                if (document.referrer) {
-                    localStorage.setItem('index_referrer', document.referrer);
-                }
                 lang = getCookieItem('language');
                 if (lang) {
                     redirect();

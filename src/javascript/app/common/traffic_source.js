@@ -47,8 +47,9 @@ const TrafficSource = (() => {
         const current_values = getData();
         const params         = Url.paramsHash();
         const param_keys     = ['utm_source', 'utm_medium', 'utm_campaign'];
-
-        if (params.utm_source) { // url params can be stored only if utm_source is available
+        
+        // When the user comes to the site with URL params
+        if (params.utm_source && params.utm_medium && params.utm_campaign) {
             param_keys.map((key) => {
                 if (params[key] && !current_values[key]) {
                     cookie.set(key, params[key], { sameSite: 'none', secure: true });
@@ -60,15 +61,8 @@ const TrafficSource = (() => {
         if (params.gclid && !Client.isLoggedIn()) {
             LocalStore.set('gclid', params.gclid);
         }
-
-        const doc_ref = document.referrer;
-        let referrer  = localStorage.getItem('index_referrer') || doc_ref;
-        localStorage.removeItem('index_referrer');
-        if (doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
-            referrer = doc_ref;
-        }
-        if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (Url.getLocation(referrer)).hostname, { sameSite: 'none', secure: true });
+        if (!current_values.referrer && !params.utm_source && !current_values.utm_source) {
+            cookie.set('referrer', 'binary_direct', { sameSite: 'none', secure: true });
         }
     };
 
