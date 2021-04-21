@@ -232,7 +232,7 @@ const MetaTraderUI = (() => {
             const server_info = accounts_info[acc_type].info.server_info;
             const region = server_info && server_info.geolocation.region;
             const sequence = server_info && server_info.geolocation.sequence;
-            const is_synthetic = accounts_info[acc_type].market_type === 'gaming';
+            const is_synthetic = accounts_info[acc_type].market_type === 'gaming' || accounts_info[acc_type].market_type === 'synthetic';
             const label_text = server_info ? sequence > 1 ? `${region} ${sequence}` : region : accounts_info[acc_type].info.display_server;
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${accounts_info[acc_type].info.display_login})`);
@@ -341,7 +341,7 @@ const MetaTraderUI = (() => {
 
         if (accounts_info[acc_type].info) {
             const is_demo      = accounts_info[acc_type].is_demo;
-            const is_synthetic = accounts_info[acc_type].market_type === 'gaming';
+            const is_synthetic = accounts_info[acc_type].market_type === 'gaming' || accounts_info[acc_type].market_type === 'synthetic';
             const server_info  = accounts_info[acc_type].info.server_info;
             const region = server_info && server_info.geolocation.region;
             const sequence = server_info && server_info.geolocation.sequence;
@@ -576,7 +576,7 @@ const MetaTraderUI = (() => {
         });
 
     const isSupportedServer = (market_type, sub_account_type, supported_accounts) => {
-        const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
+        const is_synthetic     = (market_type === 'gaming' || market_type === 'synthetic') && sub_account_type === 'financial';
         const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
         const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
 
@@ -855,7 +855,7 @@ const MetaTraderUI = (() => {
             if (/unknown+$/.test(acc_type)) return;
             const $acc  = filtered_accounts[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
             const type  = acc_type.split('_').slice(1).join('_');
-            const image = filtered_accounts[acc_type].market_type === 'gaming' ? 'synthetic' : filtered_accounts[acc_type].sub_account_type; // image name can be (financial_stp|financial|synthetic)
+            const image = filtered_accounts[acc_type].market_type === 'gaming' || filtered_accounts[acc_type].market_type === 'synthetic'  ? 'synthetic' : filtered_accounts[acc_type].sub_account_type; // image name can be (financial_stp|financial|synthetic)
             $acc.attr({ id: `template_${type}` });
             $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
                 .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));

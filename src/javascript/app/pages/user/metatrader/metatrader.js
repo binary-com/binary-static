@@ -84,7 +84,7 @@ const MetaTrader = (() => {
                         trading_servers.find((trading_server => trading_server.id === mt5_login.server));
 
                     if (!is_server_offered && !/demo/.test(mt5_login.server)) {
-                        const landing_company = mt5_login.market_type === 'gaming' ? mt_gaming_company : mt_financial_company;
+                        const landing_company = mt5_login.market_type === 'gaming' || mt5_login.market_type === 'synthetic' ? mt_gaming_company : mt_financial_company;
 
                         addAccount(mt5_login.market_type, landing_company, mt5_login.server);
                     }
@@ -172,7 +172,7 @@ const MetaTrader = (() => {
     };
 
     const getAvailableServers = (market_type, sub_account_type) => {
-        const is_synthetic     = market_type === 'gaming'    && sub_account_type === 'financial';
+        const is_synthetic     = (market_type === 'gaming' || market_type === 'synthetic') && sub_account_type === 'financial';
         const is_financial     = market_type === 'financial' && sub_account_type === 'financial';
         const is_financial_stp = market_type === 'financial' && sub_account_type === 'financial_stp';
 
@@ -188,7 +188,7 @@ const MetaTrader = (() => {
     // financial is 1000, unless maltainvest then 30
     // financial_stp is 100
     const getLeverage = (market_type, sub_account_type, landing_company_short) => {
-        if (market_type === 'gaming') {
+        if (market_type === 'gaming' || market_type === 'synthetic') {
             return 500;
         }
         if (sub_account_type === 'financial') {
