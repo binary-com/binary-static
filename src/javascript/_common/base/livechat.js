@@ -1,14 +1,18 @@
-const { init }     = require('@livechat/customer-sdk');
-const BinarySocket = require('./socket_base');
-const ClientBase = require('./client_base');
+const BinarySocket  = require('./socket_base');
+const ClientBase    = require('./client_base');
+const TrafficSource = require('../../app/common/traffic_source');
+const licenseID     = require('../utility').lc_licenseID;
 
 const LiveChat = (() => {
-    const licenseID = 12049137;
-    const clientID = '66aa088aad5a414484c1fd1fa8a5ace7';
-    let session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '' };
+    const utm_data = TrafficSource.getData();
+    const utm_source = TrafficSource.getSource(utm_data) || '';
+    const utm_campaign = utm_data.utm_campaign || '';
+    const utm_medium = utm_data.utm_medium || '';
+    let session_variables = { is_logged_in: false, loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '', utm_source , utm_medium, utm_campaign };
     let client_email, first_name, last_name;
     
     const setSessionVariables = () => {
+        const is_logged_in = !!ClientBase.isLoggedIn();
         const loginid = ClientBase.get('loginid');
         const landing_company_shortcode = ClientBase.get('landing_company_shortcode');
         const currency = ClientBase.get('currency');
@@ -16,13 +20,16 @@ const LiveChat = (() => {
         const email = ClientBase.get('email');
 
         session_variables = {
+            ...is_logged_in && { is_logged_in },
             ...loginid && { loginid },
             ...landing_company_shortcode && { landing_company_shortcode },
             ...currency && { currency },
             ...residence && { residence },
             ...email && { email },
+            ...utm_source && { utm_source },
+            ...utm_campaign && { utm_campaign },
+            ...utm_medium && { utm_medium },
         };
-
         window.LiveChatWidget.call('set_session_variables', session_variables);
     };
 
@@ -78,33 +85,6 @@ const LiveChat = (() => {
         
     };
 
-    // Called when logging out to end ongoing chats if there is any
-    const endLiveChat = () => new Promise ((resolve) => {
-        session_variables = { loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '' };
-        window.LiveChatWidget.call('set_session_variables', session_variables);
-        window.LiveChatWidget.call('set_customer_email', ' ');
-        window.LiveChatWidget.call('set_customer_name', ' ');
-        
-        try {
-            const customerSDK = init({
-                licenseId: licenseID,
-                clientId : clientID,
-            });
-            customerSDK.on('connected', () => {
-                if (window.LiveChatWidget.get('chat_data')) {
-                    const { chatId, threadId } = window.LiveChatWidget.get('chat_data');
-                    if (threadId) {
-                        customerSDK.deactivateChat({ chatId }).catch(() => null);
-                    }
-                }
-                resolve();
-            });
-        } catch (e){
-            resolve();
-        }
-
-    });
-
     // Delete existing LiveChat instance when there is no chat running
     const livechatDeletion = () => new Promise ((resolve) => {
         if (window.LiveChatWidget){
@@ -141,7 +121,6 @@ const LiveChat = (() => {
     };
 
     return {
-        endLiveChat,
         initialize,
         livechatDeletion,
         livechatFallback,
