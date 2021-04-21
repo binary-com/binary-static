@@ -48,17 +48,13 @@ const TrafficSource = (() => {
         const current_values = getData();
         const params         = Url.paramsHash();
         const param_keys     = ['utm_source', 'utm_medium', 'utm_campaign'];
-        let is_need_change   = true;
 
         // When the user comes to the site with URL params
         if (params.utm_source || params.utm_medium || params.utm_campaign) {
 
             // if url is missing one of required fields, do nothing
-            for (let ctr = 0; ctr < param_keys.length; ctr++) {
-                if (!Object.hasOwnProperty.call(params, param_keys[ctr])) {
-                    is_need_change = false;
-                }
-            }
+            const is_need_change = param_keys.every((param) => param in params);
+            
             if (is_need_change) {
                 param_keys.forEach((key) => {
                     if (params[key]) {
