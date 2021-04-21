@@ -1,3 +1,4 @@
+const Cookies        = require('js-cookie');
 const Client         = require('../base/client');
 const CookieStorage  = require('../../_common/storage').CookieStorage;
 const LocalStore     = require('../../_common/storage').LocalStore;
@@ -47,14 +48,26 @@ const TrafficSource = (() => {
         const current_values = getData();
         const params         = Url.paramsHash();
         const param_keys     = ['utm_source', 'utm_medium', 'utm_campaign'];
+        let is_need_change   = true;
 
-        if (params.utm_source) { // url params can be stored only if utm_source is available
-            param_keys.map((key) => {
-                if (params[key] && !current_values[key]) {
-                    cookie.set(key, params[key], { sameSite: 'none', secure: true });
+        // When the user comes to the site with URL params
+        if (params.utm_source || params.utm_medium || params.utm_campaign) {
+
+            // if url is missing one of required fields, do nothing
+            for (let ctr = 0; ctr < param_keys.length; ctr++) {
+                if (!Object.hasOwnProperty.call(params, param_keys[ctr])) {
+                    is_need_change = false;
                 }
-            });
-        } else {
+            }
+            if (is_need_change) {
+                param_keys.forEach((key) => {
+                    if (params[key]) {
+                        cookie.set(key, params[key], { sameSite: 'none', secure: true });
+                    }
+                });
+            }
+            
+        } else if (!Cookies.get('utm_data')) {
             initCookie();
             cookie.set('utm_source', 'binary_direct', { sameSite: 'none', secure: true });
         }
