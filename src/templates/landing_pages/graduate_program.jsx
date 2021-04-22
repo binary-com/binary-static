@@ -210,7 +210,7 @@ const GraduateProgram = () => {
             </section>
 
             <footer className='center-text primary-bg-color content-inverse-color'>
-                <p>{('Browse all career opportunities at')} <a className='link' href={it.url_for('careers')} >{it.website_name}</a></p>
+                <p>{('Browse all career opportunities at')} <a className='link' href={it.deriv_career_url} >{it.website_name}</a></p>
             </footer>
         </Layout>
     );

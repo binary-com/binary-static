@@ -37,6 +37,7 @@ const MobileMenu = () => (
                         { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },
                         { text: it.L('Trading Times'),     href: it.url_for('resources/market_timesws') },
                         { text: it.L('Economic Calendar'), href: it.url_for('resources/economic_calendar') },
+                        { text: it.L('MT5 Signals'),       href: it.url_for('mt5-signals') },
                         { text: it.L('TradingView'),       href: 'https://tradingview.binary.com',          target: '_blank' },
                         { text: it.L('SmartCharts'),       href: 'https://charts.binary.com/',              target: '_blank' },
                     ]}

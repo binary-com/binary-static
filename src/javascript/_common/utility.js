@@ -218,6 +218,12 @@ const findParent = (el, selector) => {
     return null;
 };
 
+const isBinaryDomain = () => {
+    const url = new URL(window.location.href);
+    const domain = url.hostname.split('.').slice(-2).join('.');
+    return (domain === 'binary.com');
+};
+
 let static_hash;
 const getStaticHash = () => {
     static_hash = static_hash || (document.querySelector('script[src*="binary"]').getAttribute('src') || '').split('?')[1];
@@ -233,11 +239,15 @@ class PromiseClass {
     }
 }
 
+const lc_licenseID = 12049137;
+const lc_clientID = '66aa088aad5a414484c1fd1fa8a5ace7';
+
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
     downloadCSV,
     template,
+    isBinaryDomain,
     isEmptyObject,
     isLoginPages,
     cloneObject,
@@ -252,4 +262,6 @@ module.exports = {
     getStaticHash,
     PromiseClass,
     removeObjProperties,
+    lc_licenseID,
+    lc_clientID,
 };

@@ -82,8 +82,7 @@ const VirtualAccOpening = (() => {
         const date_first_contact = LocalStore.get('date_first_contact');
 
         const req = [
-            { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
-            { selector: '#repeat_password', validations: ['req', ['compare', { to: '#client_password' }]], exclude_request: 1 },
+            { selector: '#client_password', validations: ['req', 'password'] },
 
             { selector: '#residence' },
             { selector: '#email_consent' },

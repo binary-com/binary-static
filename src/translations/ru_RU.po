@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-02-08 07:35\n"
+"PO-Revision-Date: 2021-04-20 03:33\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -40,11 +40,11 @@ msgstr "404"
 msgid "500"
 msgstr "500"
 
-msgid " (account created)"
-msgstr " (счет открыт)"
+msgid " (Region added)"
+msgstr " (Регион добавлен)"
 
-msgid " (unavailable)"
-msgstr " (недоступно)"
+msgid " (Temporarily unavailable)"
+msgstr " (Временно недоступно)"
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " Все звонки записываются с целью обучения и мониторинга."
@@ -448,6 +448,12 @@ msgstr "%1Выберите валюту%2 вашего фиатного счет
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Свяжитесь с нами,%2 чтобы назначить дату и время видеозвонка."
 
+msgid "%1Deriv-Demo%2 if your signal is for demo accounts only."
+msgstr "%1Deriv-Demo%2, если ваш сигнал предназначен только для демо-счетов."
+
+msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accounts only."
+msgstr "%1Deriv-Server%2 или %1Deriv-Server-02%2, если ваш сигнал предназначен только для реальных счетов."
+
 msgid "%1Founded%2 October 1999"
 msgstr "%1Дата основания:%2 октябрь 1999 г."
 
@@ -462,6 +468,12 @@ msgstr "%1Нет, я хочу изменить валюту моего фиат�
 
 msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
 msgstr "%1Примечание%2: Эти ограничения действуют только на вашем реальном счете %3. Пожалуйста, перейдите на нужный вам счет и установите необходимые лимиты."
+
+msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
+msgstr "%1Примечание:%2 чтобы получить доступ к более широкому выбору провайдеров сигналов, перейдите на %3страницу сигналов MQL5%4 и введите Deriv в поле сервер Брокера."
+
+msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
+msgstr "%1Примечание:%2 чтобы добавить сигнал, вам необходимо повысить статус своего аккаунта MQL5 до статуса продавца. Если вы еще не повысили статус, следуйте инструкциям на этой странице, чтобы зарегистрироваться в качестве продавца."
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Обратите внимание, если вы живете в Соединенном Королевстве, самоисключение нельзя удалить, пока не истечет его период действия. %2Если вы хотите вернуться к трейдингу после окончания периода самоисключения, сделайте соответствующий запрос, позвонив по номеру %3. Запросы в чате или по электронной почте не принимаются."
@@ -496,6 +508,9 @@ msgstr "Контракты Касание"
 msgid "(This limit may vary depending on current exchange rates.)"
 msgstr "(Этот лимит может варьироваться в зависимости от текущих валютных курсов)."
 
+msgid "(You can find the account server name on your %1MT5 dashboard%2)."
+msgstr "(Вы можете найти имя сервера счета на %1панели управления MT5%2)."
+
 msgid "(a) Price and cost"
 msgstr "(a) Цена и стоимость"
 
@@ -519,6 +534,12 @@ msgstr "(d) Вероятность одобрения"
 
 msgid "(e) Size and nature"
 msgstr "(e) Размер и свойства"
+
+msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
+msgstr "*Криптовалютные пары недоступны для финансовых счетов DMT5, зарегистрированных в Deriv (V) Ltd."
+
+msgid "+ Add region"
+msgstr "+ Добавить регион"
 
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
@@ -701,10 +722,10 @@ msgid "A Stays Between trade pays out if the market stays between (does not touc
 msgstr "Если вы выбираете \"Останется между\" (не коснется обоих уровней), вы получаете выплату, если рынок останется между верхним и нижним барьером (не коснется НИ ОДНОГО из них) за все время действия контракта. Контракт \"Выйдет за пределы\" приносит прибыль, если рынок коснется ЛИБО верхнего, ЛИБО нижнего барьера в любое время в течение срока действия контракта."
 
 msgid "A Stop Loss Order is intended for minimising losses when the financial instrument price moves in an unprofitable direction. The execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr "Ордер стоп-лосс предназначен для минимизации убытка, когда цена финансового инструмента движется в невыгодном направлении. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
+msgstr "Ордер стоп лосс предназначен для минимизации убытка, когда цена финансового инструмента движется в невыгодном направлении. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
 
 msgid "A Take Profit Order is intended for gaining profit when the financial instrument price has reached a certain level. Execution of this Order results in the complete closing of the whole position. It is always connected to an Open Position or a Pending Order."
-msgstr "Ордер тейк-профит предназначен для получения прибыли, когда цена финансового инструмента достигнет определенного уровня. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
+msgstr "Ордер тейк профит предназначен для получения прибыли, когда цена финансового инструмента достигнет определенного уровня. Исполнение этого ордера приведёт к полному закрытию всей позиции. Ордер всегда связан с открытой позицией или отложенным ордером."
 
 msgid "A bachelor's degree in commerce or any business-related field, IT-related field, or criminology"
 msgstr "Степень бакалавра в области коммерции или в области, смежной с бизнесом, IT или криминалистикой"
@@ -838,6 +859,9 @@ msgstr "Высшее образование или профессиональн�
 msgid "A whole new easy-to-use platform that's rich with features."
 msgstr "Новая и простая в использовании платформа со множеством полезных функций."
 
+msgid "A word by itself is easy to guess"
+msgstr "Отдельное слово легко угадать"
+
 msgid "A. Introduction"
 msgstr "A. Введение"
 
@@ -951,6 +975,9 @@ msgstr "Доступ к личным данным"
 
 msgid "Access to the client's personal data is strictly prohibited, with the exception of key %1 personnel and only as needed for the performance of their duties."
 msgstr "Доступ к личным данным клиентов строго запрещен, за исключением ключевого персонала %1 и только по мере необходимости при выполнении ими своих обязанностей."
+
+msgid "Access your account with full trading permission."
+msgstr "Заходите на свой счёт с полным торговым функционалом."
 
 msgid "Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media"
 msgstr "Хорошие навыки написания и редактирования текстов, минимум пять лет редакторского опыта в сфере цифрового маркетинга и онлайн рекламы."
@@ -1090,14 +1117,20 @@ msgstr "Добавить"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "Добавьте +/–, чтобы определить оффсет барьера. Например, +0.005 означает, что барьер будет на 0.005 выше входной спот-котировки."
 
+msgid "Add a description and click %1Save%2 to complete the registration."
+msgstr "Добавьте описание и нажмите %1Сохранить%2, чтобы завершить регистрацию."
+
+msgid "Add another word or two. Uncommon words are better."
+msgstr "Добавьте одно или два необычных слова."
+
 msgid "Add funds"
 msgstr "Пополнить"
 
-msgid "Add more trade servers"
-msgstr "Добавить больше торговых серверов"
-
 msgid "Additional business exposure:"
 msgstr "Дополнительные возможности для бизнеса:"
+
+msgid "Additional income stream from monthly subscriptions."
+msgstr "Дополнительный источник дохода от ежемесячных подписок."
 
 msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
 msgstr "Вашему банку или электронному кошельку может потребоваться дополнительное время на обработку и зачисление платежа на ваш счет."
@@ -1309,8 +1342,8 @@ msgstr "Все версии для Android"
 msgid "All versions for iOS"
 msgstr "Все версии для iOS"
 
-msgid "All you’ll need from now is one password"
-msgstr ""
+msgid "All-uppercase is almost as easy to guess as all-lowercase"
+msgstr "Пароль из только заглавных букв угадать почти так же легко, как и пароль из только строчных"
 
 msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr "Позволяют Клиентам пополнять счет небольшими суммами (в местной валюте)"
@@ -1837,11 +1870,14 @@ msgstr "Программный инструмент для автоматизи�
 msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot creation tool."
 msgstr "Автоматизируйте свои торговые стратегии с помощью нашего простого инструмента создания робота."
 
+msgid "Automated copying – no extra work from you."
+msgstr "Автоматическое копирование - никакой лишней работы с вашей стороны."
+
 msgid "Automated decision-making"
 msgstr "Автоматизированное принятие решений"
 
 msgid "Automatic adjustments of Take Profit levels"
-msgstr "Автоматическая коррекция уровней тэйк-профит"
+msgstr "Автоматическая коррекция уровней тейк профит"
 
 msgid "Available 24/7"
 msgstr "Доступно 24/7"
@@ -1861,8 +1897,23 @@ msgstr "Доступные виды контрактов:"
 msgid "Average"
 msgstr "Среднее"
 
+msgid "Avoid dates and years that are associated with you"
+msgstr "Избегайте дат и лет, которые связаны с вами"
+
+msgid "Avoid recent years"
+msgstr "Избегайте недавних дат"
+
+msgid "Avoid repeated words and characters"
+msgstr "Избегайте повторения слов и символов"
+
+msgid "Avoid sequences"
+msgstr "Избегайте последовательностей"
+
 msgid "Avoid the need to have an e-wallet"
 msgstr "Позволяют не иметь электронного кошелька"
+
+msgid "Avoid years that are associated with you"
+msgstr "Избегайте дат, которые связаны с вами"
 
 msgid "Avoiding financial transactions that might reveal valuable passwords or personal information such as credit card numbers"
 msgstr "Избегать финансовых транзакций, которые могут раскрыть ценные пароли или личную информацию, например номера кредитных карт."
@@ -1996,8 +2047,14 @@ msgstr "Изучение новейших инструментов и техно
 msgid "Benefits"
 msgstr "Преимущества участия"
 
+msgid "Benefits of being a MT5 provider"
+msgstr "Преимущества провайдера сигналов МТ5"
+
 msgid "Benefits of being a Payment Agent"
 msgstr "Преимущества Платежного агента"
+
+msgid "Benefits of subscribing to MT5 signals"
+msgstr "Преимущества подписки на сигналы MT5"
 
 msgid "Best execution factors"
 msgstr "Факторы наилучшего исполнения"
@@ -2270,7 +2327,7 @@ msgid "By indicating the acceptance of the terms and conditions of this Agreemen
 msgstr "Принимая правила и условия данного Соглашения и продолжая подачу заявления на участие в программе Представляющих брокеров Компании, Представляющий брокер соглашается с правилами и условиями, перечисленными в данном документе."
 
 msgid "By opening an MT5 Real Account with %1, the client represents, warrants, and undertakes the following:"
-msgstr "Открывая Реальный счёт MT5 на сайте %1, клиент заявляет, подтверждает и гарантирует, что:"
+msgstr "Открывая Реальный счёт MT5 в %1, клиент заявляет, подтверждает и гарантирует, что:"
 
 msgid "By opting to be treated as a Professional Client, we shall not presume that you possess market knowledge and experience as defined by the term 'Professional Client'. We will contact you with the relevant form to complete and will take all reasonable steps to ensure that your request for this Categorization meets the aforementioned criteria, including, but not limited to copies of:"
 msgstr "Если вы зарегистрировались в качестве Профессионального клиента, мы не будем считать, что вы обладаете знаниями и опытом работы на рынках, как предполагает термин \"Профессиональный клиент\". Мы свяжемся с вами, предложим заполнить соответствующую анкету и предпримем все разумные меры, чтобы гарантировать, что запрос на добавление вас в эту категорию соответствует вышеупомянутым критериям, включая, но не ограничиваясь следующими копиями:"
@@ -2404,6 +2461,9 @@ msgstr "Отмена"
 msgid "Capacity to multitask, balance deadlines, and reliably deliver high-quality content"
 msgstr "Способность одновременно выполнять несколько задач, правильно устанавливать сроки и стабильно предоставлять высококачественный контент"
 
+msgid "Capitalization doesn't help very much"
+msgstr "Использование заглавных букв не очень помогает"
+
 msgid "Careers"
 msgstr "Карьера"
 
@@ -2446,17 +2506,14 @@ msgstr "Champion Group Ltd: Вануату"
 msgid "Change API Endpoint"
 msgstr "Изменить конечную точку API"
 
+msgid "Change MT5 password"
+msgstr "Изменить пароль MT5"
+
 msgid "Change Password"
 msgstr "Сменить пароль"
 
 msgid "Change currency"
 msgstr "Изменить валюту"
-
-msgid "Change investor password"
-msgstr ""
-
-msgid "Change main password"
-msgstr ""
 
 msgid "Change password"
 msgstr "Изменение пароля"
@@ -2523,9 +2580,6 @@ msgstr "Выберите валюту вашего реального счета
 
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Выберите длительность от 10 секунд до 365 дней."
-
-msgid "Choose a password"
-msgstr "Выберите пароль"
 
 msgid "Choose a payout and our system will calculate the stake required to purchase the contract."
 msgstr "Выберите выплату, и наша система рассчитает ставку, необходимую для покупки контракта."
@@ -2617,6 +2671,12 @@ msgstr "Нажмите здесь для открытия Реального с�
 msgid "Click here to retry"
 msgstr "Нажмите, чтобы повторить попытку"
 
+msgid "Click on the %1My Statistics%2 tab and select your signal provider."
+msgstr "Щелкните вкладку %1Моя статистика%2 и выберите провайдера сигналов."
+
+msgid "Click the %1Renew%2 button to renew the service or the %1Unsubscribe%2 button to cancel the subscription."
+msgstr "Нажмите кнопку %1Продлить%2, чтобы продлить услугу, или кнопку %1Отписаться%2, чтобы отменить подписку."
+
 msgid "Client Information"
 msgstr "Информация клиента"
 
@@ -2653,8 +2713,8 @@ msgstr "Клиентам следует помнить, что их права �
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) who wish to trade CFDs on financial instruments and cryptocurrencies can have MetaTrader 5 accounts under Deriv (BVI) Ltd. %1 is not available in the British Virgin Islands."
 msgstr "Счета MetaTrader 5 для клиентов из других стран (за исключением ряда стран и территорий, например, США, Канады и Гонконга), желающих начать торговлю CFD на финансовых инструментах и криптовалютах, будут открыты в рамках компании Deriv (BVI) Ltd. %1 недоступен на Британских Виргинских островах."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли на Forex и CFD на платформе Metatrader 5 будут открыты в рамках компании Deriv (V) Ltd. Услуги %1 недоступны в Вануату."
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. This company does not offer CFDs on cryptocurrencies. %1 is not available in the Republic of Vanuatu."
+msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли на Forex и CFD на платформе Metatrader 5 будут открыты в рамках компании Deriv (V) Ltd. Эта компания не предлагает CFD на криптовалютах. Услуги %1 не действуют в Вануату. "
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
 msgstr "Счета для клиентов из других стран мира (за исключением США, Канады и Гонконга) будут открыты в компании Deriv (SVG) LLC."
@@ -2839,6 +2899,9 @@ msgstr "Сырьевые товары"
 msgid "Commodities are resources that are grown or extracted from the ground, such as silver, gold and oil. On %1, they are priced in US dollars."
 msgstr "Сырье – это материалы, которые растут или добываются из недр земли, как серебро, золото и нефть. На %1 они оцениваются в американских долларах."
 
+msgid "Common names and surnames are easy to guess"
+msgstr "Распространенные имена и фамилии угадать несложно"
+
 msgid "Communicate and collaborate effectively with members of different teams across the organisation."
 msgstr "Эффективная коммуникация и сотрудничество с представителями различных команд в рамках компании."
 
@@ -2886,6 +2949,9 @@ msgstr "Жалобы и иски"
 
 msgid "Complaints and disputes"
 msgstr "Жалобы и споры"
+
+msgid "Complete the form with your MT5 account credentials. In the Broker field, enter your account server name:"
+msgstr "Заполните форму, указав свои учетные данные MT5. В поле Брокер введите имя сервера вашего счета:"
 
 msgid "Complete your %1Tax Information%2."
 msgstr "Заполните %1налоговую информацию%2."
@@ -2947,17 +3013,14 @@ msgstr "Конфиденциальность"
 msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
 msgstr "Измените конфигурацию своего ПК и мобильного телефона на Cloudflare DNS, выполнив инструкции на %1."
 
+msgid "Configure your trading and risk management parameters. Then click %1OK%2 to complete the process."
+msgstr "Настройте параметры трейдинга и управления рисками. Затем нажмите %1ОК%2, чтобы завершить процесс."
+
 msgid "Confirm"
 msgstr "Подтвердить"
 
-msgid "Confirm New Password"
-msgstr "Подтвердить новый пароль"
-
 msgid "Confirm changes"
 msgstr "Подтвердить изменения"
-
-msgid "Confirm current password"
-msgstr ""
 
 msgid "Conflicts Policy"
 msgstr "Политика по конфликтам"
@@ -3310,6 +3373,9 @@ msgstr "Криптовалюты, например Bitcoin или Ethereum, яв
 msgid "Cryptocurrencies such as Bitcoin and Ethereum are decentralised digital currencies on the blockchain."
 msgstr "Криптовалюты (например, Bitcoin и Ethereum), являются децентрализованными цифровыми валютами, работающими на основе технологии блокчейн."
 
+msgid "Cryptocurrencies*"
+msgstr "Криптовалюты*"
+
 msgid "Cryptocurrency"
 msgstr "Криптовалюта"
 
@@ -3342,6 +3408,9 @@ msgstr "Валютные пары делятся на следующие кат�
 
 msgid "Current"
 msgstr "Текущие"
+
+msgid "Current MT5 password"
+msgstr "Текущий пароль MT5"
 
 msgid "Current Time"
 msgstr "Текущее время"
@@ -3413,7 +3482,7 @@ msgid "DIEL is authorised and regulated by the Malta Financial Services Authorit
 msgstr "DIEL уполномочен и регулируется Управлением по финансовым услугам Мальты, Malta Financial Services Authority (\"MFSA\"), в рамках Акта об инвестиционных услугах, Investment Services Act (глава 370 мальтийского законодательства) (\"Акт\"), на ведение инвестиционного бизнеса. Компания также уполномочена и подлежит ограниченному регулированию Управлением по финансовому надзору Великобритании (FCA). Подробную информацию о степени полномочий и регулирования со стороны Управления можно получить по запросу. DIEL обладает разрешением MFSA на проведение операций на своём счету (т.е. предложение контрактов и действие в качестве контрагента по сделкам), а также на исполнение контрактов от имени других лиц; обе услуги относятся к производным финансовым продуктам, а также связаны с обменом валют, индексами и другими финансовыми продуктами или активами (\"финансовые продукты\"). DIEL не уполномочен, не предлагает и не предоставляет инвестиционных, финансовых, юридических или налоговых консультаций, а также каких-либо других советов относительно заключения контрактов при любых обстоятельствах. Если у клиента есть какие-либо сомнения относительно работы с финансовыми продуктами, клиенту рекомендуется получить независимый совет от инвестиционного консультанта."
 
 msgid "DIEL is authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients; both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). DIEL is not authorised to and does not offer investment, financial, legal, tax, regulatory, and/or other types of advice or state an opinion in relation to a Transaction under any circumstances. Clients should get independent advice from an investment adviser if they have any doubts about dealing in financial products."
-msgstr "DIEL обладает разрешением MFSA на проведение операций на своём счету (т.е. предложение контрактов и действие в качестве контрагента по сделкам), а также на исполнение контрактов от имени других лиц; обе услуги относятся к производным финансовым продуктам, а также связаны с обменом валют, индексами и другими финансовыми продуктами или активами (\"финансовые продукты\"). DIEL не уполномочен, не предлагает и не предоставляет инвестиционных, финансовых, юридических или налоговых консультаций, а также каких-либо других советов относительно заключения контрактов при любых обстоятельствах. Если у клиента есть любые сомнения относительно работы с финансовыми продуктами, клиенту рекомендуется получить независимый совет от инвестиционного консультанта."
+msgstr "DIEL обладает разрешением MFSA на проведение операций на своём счете (т.е. предложение контрактов и действие в качестве контрагента по сделкам), а также на исполнение ордеров от имени других лиц; обе услуги относятся к производным финансовым продуктам, а также связаны с обменом валют, индексами и другими финансовыми продуктами или активами (\"финансовые продукты\"). DIEL не уполномочен, не предлагает и не предоставляет инвестиционных, финансовых, юридических или налоговых консультаций, а также каких-либо других советов относительно покупки контрактов при любых обстоятельствах. Если у клиента есть какие-либо сомнения относительно работы с финансовыми продуктами, клиенту рекомендуется получить независимый совет от инвестиционного консультанта."
 
 msgid "DIEL is entitled under the Rules to rely upon information provided by clients. Clients should ensure that they provide DIEL with accurate and complete information and notify DIEL in the event that any information supplied to DIEL changes. Clients should note that if they provide DIEL with inaccurate information, or if they fail to notify DIEL of any changes to information previously supplied by them, this may adversely affect the quality of the services that DIEL can provide."
 msgstr "В соответствии с Правилами, DIEL имеет право полагаться на информацию, предоставленную клиентами. Клиенты должны гарантировать предоставление DIEL точной и полной информации, а также уведомить DIEL в случае любых изменений в ней. Следует отметить, что, если клиенты предоставляют DIEL неточную информацию или не сообщают о любых изменениях в ранее предоставленной информации, это может негативно повлиять на качество услуг DIEL."
@@ -3486,6 +3555,9 @@ msgstr "Дата рождения"
 
 msgid "Dated within the last six months"
 msgstr "Датирован не позднее, чем за последние 6 месяцев"
+
+msgid "Dates are often easy to guess"
+msgstr "Даты часто легко угадать"
 
 msgid "Deactivate"
 msgstr "Деактивировать"
@@ -3583,8 +3655,8 @@ msgstr "Пополните счёт или выведите средства"
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Пополнение. Подтверждение блокчейнов: %1"
 
-msgid "Deposit: %1 working day"
-msgstr "Пополнения: %1 раб.день (дня)"
+msgid "Deposit: %1 day"
+msgstr "Пополнение: %1 дн."
 
 msgid "Deposit: Instant"
 msgstr "Пополнения: Мгновенно"
@@ -3937,6 +4009,9 @@ msgstr "Загрузить MT5"
 msgid "Download MT5 for Linux"
 msgstr "Загрузить MT5 для Linux"
 
+msgid "Download MT5 for Mac"
+msgstr "Загрузить MT5 для Mac"
+
 msgid "Download MT5 for Windows"
 msgstr "Загрузить MT5 для Windows"
 
@@ -4125,6 +4200,9 @@ msgstr "Ваша потенциальная прибыль всегда проп
 
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr "Получайте комиссию в размере до 45% на основе общей чистой прибыли от ваших клиентов. Комиссионные поступают на ваш счёт после 15 числа каждого месяца."
+
+msgid "Easy to set up – no installation required."
+msgstr "Легко настроить – не требует установки."
 
 msgid "Economic Calendar"
 msgstr "Экономический календарь"
@@ -4971,7 +5049,7 @@ msgid "For full contact details of %1, the client is encouraged to check %1's %2
 msgstr "Полная контактная информация %1 перечислена на странице %2Контакты%3."
 
 msgid "For fully covered accounts, no Margin will be charged on open positions. However, swaps and other applicable fees can cause the client's Account Equity to turn negative. In that case, the Stop Out process will be triggered."
-msgstr "Маржа не будет взиматься с открытых позиций на полностью покрытых счетах. Тем не менее, свопы и другие применимые сборы могут привести к тому, что остаток средств на счёте клиента станет отрицательным. В данной ситуации будет запущен механизм стоп-аут."
+msgstr "Маржа не будет взиматься с открытых позиций на полностью покрытых счетах. Тем не менее, свопы и другие применимые сборы могут привести к тому, что остаток средств на счёте клиента станет отрицательным. В данной ситуации будет запущен механизм стоп аут."
 
 msgid "For further assistance, email us at %1partners@binary.com%2"
 msgstr "Для получения дополнительной помощи, пожалуйста, отправьте нам сообщение по адресу %1partners@binary.com%2"
@@ -5066,6 +5144,12 @@ msgstr "Со счёта: "
 msgid "From time to time, DIEL may decide to provide the client with written or video information, which DIEL may publish on its website or provide to the client in any other manner. DIEL will endeavour to ensure the accuracy and completeness of this information, but it will not constitute independent investment research or investment advice provided by DIEL to the client."
 msgstr "Время от времени DIEL может предоставлять клиенту письменную или видео информацию, которая может быть опубликована на сайте DIEL или передана клиенту в любом другом виде. DIEL обязуется предпринять все разумные усилия, чтобы гарантировать точность и полноту данной информации, которая не должна рассматриваться в качестве инвестиционного совета или рекомендаций DIEL для клиента."
 
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab to view the list of signal providers."
+msgstr "В торговом терминале MT5 нажмите вкладку %1Сигналы%2, чтобы просмотреть список провайдеров сигналов."
+
+msgid "From your MT5 trading terminal, click on the %1Signals%2 tab."
+msgstr "В торговом терминале MT5 нажмите вкладку %1Сигналы%2."
+
 msgid "Front Side"
 msgstr "Лицевая сторона"
 
@@ -5077,6 +5161,9 @@ msgstr "Лицевая сторона"
 
 msgid "Front-End Developer"
 msgstr "Front-End разработчик"
+
+msgid "Full disclosure of each providers’ performances."
+msgstr "Полный отчет о результатах каждого провайдера."
 
 msgid "Fund transfers"
 msgstr "Перевод средств"
@@ -5243,9 +5330,6 @@ msgstr "Перейти к странице загрузки MT5"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "Перейти к панели MetaTrader 5"
 
-msgid "Go to settings"
-msgstr ""
-
 msgid "Go to statement"
 msgstr "Вернуться к выпискам"
 
@@ -5255,8 +5339,14 @@ msgstr "Перейдите в %1Кассу%2, чтобы вывести сред
 msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
 msgstr "Перейдите на %1панель MT5%2, чтобы вывести средства со своего счета Binary.com MT5."
 
-msgid "Go to the %1portfolio page%2 to close all open positions from your Binary.com accounts."
-msgstr "Перейдите на страницу %1Портфель%2, чтобы закрыть все открытые позиции на своих счетах Binary.com."
+msgid "Go to the %1Portfolio%2 to close all open positions from your Binary.com accounts."
+msgstr "Перейдите в %1Портфель%2, чтобы закрыть все открытые позиции на своих счетах Binary.com."
+
+msgid "Go to the MQL5 signals showcase page and click on the %1Create signal%2 button."
+msgstr "Перейдите на страницу сигналов MQL5 и нажмите кнопку %1Создать сигнал%2."
+
+msgid "Go to the MT5 Terminal"
+msgstr ""
 
 msgid "Go with the leader"
 msgstr "Следуйте за лидером"
@@ -5326,6 +5416,9 @@ msgstr "Практический опыт в сфере безопасности
 
 msgid "Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks"
 msgstr "Практический опыт устранения неполадок программного обеспечения, аппаратного обеспечения, а также различных интернет-приложений и сетей"
+
+msgid "Have more questions? Check out the %1FAQ section%2 on the MQL5 website."
+msgstr "Остались вопросы? Посетите %1раздел FAQ%2 на сайте MQL5."
 
 msgid "Have not previously been a %1 customer"
 msgstr "не являться текущим клиентом %1,"
@@ -5423,9 +5516,6 @@ msgstr "Контракты Выше/Ниже"
 msgid "Highlights"
 msgstr "Основные моменты"
 
-msgid "Hint: it would take approximately %1%2 to crack your password."
-msgstr "Подсказка: на взламывание вашего пароля уйдёт примерно %1%2."
-
 msgid "Historical Mediterranean island"
 msgstr "Средиземноморский остров с богатой историей"
 
@@ -5495,8 +5585,17 @@ msgstr "Как читать таблицу спецификации"
 msgid "How to read the table above"
 msgstr "Как читать таблицу выше"
 
+msgid "How to register as a signal provider"
+msgstr "Как стать провайдером сигналов"
+
+msgid "How to renew or cancel your subscription"
+msgstr "Как продлить или отменить подписку"
+
 msgid "How to scan a QR code"
 msgstr "Как отсканировать QR-код"
+
+msgid "How to subscribe to a MT5 signal"
+msgstr "Как подписаться на сигнал MT5"
 
 msgid "How to trade CFDs"
 msgstr "Как торговать CFD"
@@ -5715,7 +5814,7 @@ msgid "If the Introducing Broker engages in Malicious Activity, Binary, in its a
 msgstr "Если Представляющий брокер занимается какой-либо вредоносной деятельностью, Binary может по своему единоличному усмотрению"
 
 msgid "If the Margin Level for the client's MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses those Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if the client's Margin Level is still under the Stop Out Level, the next Order is deleted (Orders without Margin Requirements are not deleted); (iv) if the client's Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until the client's Margin Level becomes higher than the Stop Out Level. Additionally, for fully hedged positions, Stop Out will be performed on accounts having Open Positions, zero Margin (positions are covered), and negative equity."
-msgstr "Если уровень маржи на Реальном счете MT5 клиента достигает или опускается ниже уровня стоп-аут, эта ситуация будет расцениваться как случай невыполнения обязательств. В такой ситуации открытые позиции будут автоматически закрыты в следующем порядке: (i) сервер произведёт анализ ордеров клиента, которые не были исполнены до настоящего момента; (ii) сервер удалит все ордеры с наибольшим размером маржи; (iii) если уровень маржи по-прежнему остаётся ниже уровня стоп-аут, будет удалён следующий ордер (ордеры без маржинальных требований не будут удалены); (iv) если уровень маржи клиента по-прежнему ниже уровня стоп-аут, сервер закроет позицию с наибольшем размером убытка; (v) открытые позиции будут подлежать принудительному закрытию до тех пор, пока уровень маржи клиента не будет выше уровня стоп-аут. Кроме того, для лучшего хеджирования позиций стоп-аут будет применён на счетах, имеющих открытые позиции, нулевую маржу (покрытые позиции) и отрицательный баланс."
+msgstr "Если уровень маржи на Реальном счете MT5 клиента достигает или опускается ниже уровня стоп аут, эта ситуация будет расцениваться как случай невыполнения обязательств. В такой ситуации открытые позиции будут автоматически закрыты в следующем порядке: (i) сервер произведёт анализ ордеров клиента, которые не были исполнены до настоящего момента; (ii) сервер удалит все ордеры с наибольшим размером маржи; (iii) если уровень маржи по-прежнему остаётся ниже уровня стоп аут, будет удалён следующий ордер (ордеры без маржинальных требований не будут удалены); (iv) если уровень маржи клиента по-прежнему ниже уровня стоп аут, сервер закроет позицию с наибольшем размером убытка; (v) открытые позиции будут подлежать принудительному закрытию до тех пор, пока уровень маржи клиента не будет выше уровня стоп аут. Кроме того, для лучшего хеджирования позиций стоп аут будет применён на счетах, имеющих открытые позиции, нулевую маржу (покрытые позиции) и отрицательный баланс."
 
 msgid "If the Programmer is an affiliate of %1, the Programmer must also comply with %1's Affiliate Programme terms and conditions."
 msgstr "Если Программист является партнёром %1, Программист также должен соблюдать Правила и условия Партнёрской программы %1."
@@ -5792,6 +5891,9 @@ msgstr "Если нам понравится ваша кандидатура, м
 msgid "If we have reason to believe that your tax information is incomplete, we may contact you for clarification."
 msgstr "Если у нас появятся основания полагать, что ваша налоговая информация является неполной, мы свяжемся с вами для дальнейших разъяснений."
 
+msgid "If you are a professional trader, the MT5 trading signals service allows you to share your strategies with other traders for free or a subscription fee that you determine. When traders subscribe to your signal, your deals are automatically replicated on their accounts each time you place a trade."
+msgstr "Сервис торговых сигналов МТ5 позволяет профессиональным трейдерам делиться своими стратегиями с другими пользователями бесплатно или за определенную абонентскую плату (подписку). Ваши контракты будут автоматически копироваться на счета подписавшихся на вас трейдеров."
+
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "Если вы рассматриваете самоисключение, рекомендуем зарегистрироваться в GAMSTOP."
 
@@ -5827,9 +5929,6 @@ msgstr "Если у вас ещё нет реального счёта %1, по�
 
 msgid "If you don't receive the email within the next few minutes, please check your junk/spam folder."
 msgstr "Если вы не получите сообщения от нас в следующие несколько минут, пожалуйста, проверьте папку со спамом."
-
-msgid "If you don’t receive the email within the next few minutes, please check your junk/spam folder."
-msgstr ""
 
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Если вы обнаружите какие-либо уязвимости в нашем %1проекте с открытым кодом%2, пожалуйста, отправьте pull-запрос на GitHub."
@@ -5994,19 +6093,19 @@ msgid "If your account currency is EUR or GBP, your commission will be converted
 msgstr "Если валютой вашего счёта является EUR или GBP, ваши комиссионные будут конвертированы по текущему обменному курсу."
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
-msgstr "Если ваш счет находится под маржин коллом в течение длительного периода времени, он достигнет уровня стоп-аут, при котором не сможет поддерживать открытые позиции. Это приведет к отмене ваших отложенных ордеров и принудительному закрытию открытых позиций (также известное как «принудительная ликвидация»)."
+msgstr "Если ваш счет находится под маржин коллом в течение длительного периода времени, он достигнет уровня стоп аут, при котором не сможет поддерживать открытые позиции. Это приведет к отмене ваших отложенных ордеров и принудительному закрытию открытых позиций (также известное как «принудительная ликвидация»)."
 
 msgid "If your documents cannot be verified over video call for any reason, you will be required to send your documents to %1"
 msgstr "Если по какой-то причине ваши документы нельзя проверить по видеозвонку, вам необходимо отправить копии этих документов %1"
 
 msgid "If your margin level is still under the stop out level, we will close an open position with the largest loss."
-msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп-аут, мы закроем позицию с наибольшим уровнем убытка."
+msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп аут, мы закроем позицию с наибольшим уровнем убытка."
 
 msgid "If your margin level is still under the stop out level, your next order will be deleted. However, orders without margin requirements will not be deleted."
-msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп-аут, будет удалён следующий ордер. Ордеры без маржинальных требований не будут затронуты."
+msgstr "Если уровень маржи на вашем счете по-прежнему ниже уровня стоп аут, будет удалён следующий ордер. Ордеры без маржинальных требований не будут затронуты."
 
 msgid "If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as \"forced liquidation\")."
-msgstr "Если ваш уровень маржи опустится ещё ниже (как правило, к отметке 50%), ваш счёт достигнет уровня стоп-аут, при котором невозможно поддерживать открытые позиции. В результате все или часть ваших открытых позиций будет принудительно закрыта."
+msgstr "Если ваш уровень маржи опустится ещё ниже (как правило, к отметке 50%), ваш счёт достигнет уровня стоп аут, при котором невозможно поддерживать открытые позиции. В результате все или часть ваших открытых позиций будет принудительно закрыта."
 
 msgid "Imagine"
 msgstr "Представьте"
@@ -6141,7 +6240,7 @@ msgid "In the case of a Limit Order, the client acknowledges that the Company wi
 msgstr "В случае лимитного ордера, клиент соглашается с тем, что Компания предпримет все разумные усилия, чтобы исполнить ордер на уровне, который будет совпадать или быть выгоднее указанного клиентом лимита, в зависимости от доступной лимитной цены."
 
 msgid "In the case of a Stop Order, the client acknowledges that the Company will endeavour to fill the Order at a price equal to the one that the client has specified. However, if the price is unavailable, the next available price may be quoted. In other words, the Order is executed at either the price equal to the specified one or the next available price (slippage). The execution of Stop Orders is guaranteed."
-msgstr "В случае стоп-ордера клиент признаёт, что Компания предпримет все разумные меры, чтобы подать ордер по цене, равной той, что указал клиент. Тем не менее, если указанная цена недоступна, может быть предоставлена следующая доступная цена. Иными словами, ордер исполняется по цене, равной указанной, или по ближайшей доступной (проскальзывание). Исполнение стоп-ордеров гарантировано."
+msgstr "В случае стоп ордера клиент признаёт, что Компания предпримет все разумные меры, чтобы подать ордер по цене, равной той, что указал клиент. Тем не менее, если указанная цена недоступна, может быть предоставлена следующая доступная цена. Иными словами, ордер исполняется по цене, равной указанной, или по ближайшей доступной (проскальзывание). Исполнение стоп ордеров гарантировано."
 
 msgid "In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order."
 msgstr "В отношении некоторых контрактов, нужные рынки или биржи, на которых торгуется соответствующий продукт, могут быть закрыты. В таких случаях Компания определяет справедливую цену на продукт на основе ряда факторов, таких как изменение цен на связанных с инструментом рынках и других рыночных условий, а также информации о собственных контрактах наших клиентов."
@@ -6355,6 +6454,9 @@ msgstr "Инвестиционные продукты для резиденто�
 
 msgid "Investments &amp; Dividends"
 msgstr "Инвестиции и дивиденды"
+
+msgid "Investor"
+msgstr "Инвесторский"
 
 msgid "Investor Compensation Scheme"
 msgstr "Схема компенсации инвесторам"
@@ -6791,8 +6893,8 @@ msgstr "Подключено к вашему компьютеру"
 msgid "Links"
 msgstr "Ссылки"
 
-msgid "Linux"
-msgstr "Linux"
+msgid "Linux or MacOs"
+msgstr "Linux или MacOs"
 
 msgid "Liquidity solutions"
 msgstr "Варианты ликвидности"
@@ -6875,9 +6977,6 @@ msgstr "В настоящее время опционы Lookback доступн�
 msgid "Looking for %1 app?"
 msgstr "Ищите приложение %1?"
 
-msgid "Looking for desktop apps?"
-msgstr "Ищете приложения для ПК?"
-
 msgid "Looking for the %1 Desktop app?"
 msgstr "Ищете приложение для ПК %1?"
 
@@ -6947,11 +7046,14 @@ msgstr "Логин MT5:"
 msgid "MT5 Real Account"
 msgstr "Реальный счет MT5"
 
+msgid "MT5 Signals"
+msgstr "Сигналы MT5"
+
 msgid "MT5 Synthetic"
 msgstr "MT5 Синтетический"
 
-msgid "MT5 Web platform"
-msgstr "Веб платформа MT5"
+msgid "MT5 for %1"
+msgstr "MT5 для %1"
 
 msgid "MT5 for Android"
 msgstr "MT5 для Android"
@@ -6962,11 +7064,11 @@ msgstr "MT5 для Linux"
 msgid "MT5 for Mobile"
 msgstr "MT5 для мобильного"
 
-msgid "MT5 for Windows"
-msgstr "MT5 для Windows"
-
 msgid "MT5 for iOS"
 msgstr "MT5 для iOS"
+
+msgid "MT5 for macOS"
+msgstr "MT5 для macOS"
 
 msgid "MT5 real-money account for Synthetic Indices only."
 msgstr "Реальный счёт MT5 только для Синтетических индексов."
@@ -6980,11 +7082,20 @@ msgstr "Веб платформа MT5"
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
 msgstr "На вашем счете MT5 отключен вывод средств. Проверьте свою электронную почту для получения более подробной информации."
 
+msgid "MacOs or Windows"
+msgstr "MacOs или Windows"
+
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "Удалось произвести хорошее впечатление на первом интервью? Будем рады пригласить вас на второе интервью с нашим CEO и/или менеджером направления."
 
 msgid "Maestro is an international debit card service by Mastercard. For more information, please visit %1."
 msgstr "Maestro – это международная дебетовая карта, поддерживаемая системой Mastercard. Более подробную информацию можно получить по адресу %1."
+
+msgid "Main"
+msgstr "Основной"
+
+msgid "Main password"
+msgstr "Основной пароль"
 
 msgid "Maintain accurate system pricing parameters"
 msgstr "Поддержание точных параметров системы ценообразования"
@@ -7292,6 +7403,9 @@ msgstr "MetaTrader"
 msgid "MetaTrader 5"
 msgstr "MetaTrader 5"
 
+msgid "MetaTrader 5 Signals"
+msgstr "Сигналы MetaTrader 5"
+
 msgid "MetaTrader 5 dashboard"
 msgstr "Панель MetaTrader 5"
 
@@ -7343,14 +7457,14 @@ msgstr "Мин.-макс. пополнение"
 msgid "Min-Max Withdrawal"
 msgstr "Мин.-макс. вывод"
 
+msgid "Minimise trading risk by copying from expert traders."
+msgstr "Минимизируйте торговый риск, копируя контракты опытных трейдеров."
+
 msgid "Minimum deposit"
 msgstr "Мин. депозит"
 
 msgid "Minimum of %1 characters required."
 msgstr "Необходимо минимум %1 знака(ов)."
-
-msgid "Minimum of eight lower and uppercase English letters with numbers"
-msgstr "Пароль должен содержать минимум восемь заглавных и строчных латинских букв с цифрами"
 
 msgid "Minimum of six months validity"
 msgstr "Минимальный срок действия: 6 месяцев"
@@ -7384,9 +7498,6 @@ msgstr "Сообщать ложную информацию о Binary или ус
 
 msgid "Misrepresent the services that the Agent provides to the clients"
 msgstr "искажать услуги, предоставляемые Агентом клиентам,"
-
-msgid "Miss"
-msgstr "Госпожа"
 
 msgid "Mo"
 msgstr "Пн"
@@ -7469,9 +7580,6 @@ msgstr "Переводите средства с и на свой реальны
 msgid "Mr"
 msgstr "Господин"
 
-msgid "Mrs"
-msgstr "Госпожа"
-
 msgid "Ms"
 msgstr "Госпожа"
 
@@ -7547,8 +7655,8 @@ msgstr "Имя домашнего животного"
 msgid "Name, email address, and contact number"
 msgstr "своё имя, электронный адрес и контактный номер,"
 
-msgid "Name:"
-msgstr "Имя:"
+msgid "Names and surnames by themselves are easy to guess"
+msgstr "Пароли, состоящие только из имен и фамилий, легко угадать"
 
 msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
 msgstr "Национальное удостоверение личности, ID-карта, ID book или любой документ, выпущенный государством и содержащий фотографию, ваше имя и дату рождения"
@@ -7616,6 +7724,9 @@ msgstr "Никогда"
 msgid "Never Used"
 msgstr "Никогда не использовался"
 
+msgid "New MT5 password"
+msgstr "Новый пароль MT5"
+
 msgid "New Password"
 msgstr "Новый пароль"
 
@@ -7639,9 +7750,6 @@ msgstr "Новозеландский доллар против американ�
 
 msgid "New account"
 msgstr "Новый счёт"
-
-msgid "New investor password"
-msgstr ""
 
 msgid "New office in Asunción, Paraguay"
 msgstr "Новый офис в Асунсьоне, Парагвай"
@@ -7717,6 +7825,9 @@ msgstr "Лимита нет"
 
 msgid "No modification or amendment of any or all clauses or provisions of this agreement shall be valid without the clear and unequivocal acceptance of such amendments by both Parties."
 msgstr "Никакие изменения или поправки любого или всех пунктов или положений настоящего соглашения не имеют силы без четкого и безоговорочного принятия таких поправок обеими Сторонами."
+
+msgid "No need for symbols, digits, or uppercase letters"
+msgstr "Нет необходимости в символах, цифрах или заглавных буквах"
 
 msgid "No open positions."
 msgstr "Нет открытых позиций."
@@ -8114,8 +8225,8 @@ msgstr "Финансовый счёт MetaTrader 5 подходит для оп�
 msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
 msgstr "Синтетический счет позволяет торговать CFD на Синтетических индексах, нашем уникальном активе, имитирующем динамику реальных рынков."
 
-msgid "Our active client base is expected to reach over 175,000 total clients this year."
-msgstr "Ожидается, что в этом году наша база активных клиентов превысит 175 000 человек."
+msgid "Our active client base is expected to reach over 790,000 total clients this year."
+msgstr "Ожидается, что в этом году наша активная клиентская база превысит 790 000 человек."
 
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "Наш бизнес основан на сотрудничестве; мы стремимся создавать долгосрочные и взаимовыгодные отношения с нашими партнёрами. Тем не менее, мы никогда не пожертвуем нашими обязательствами в угоду деловой этике. В случаях, если партнёры не хотят или не могут соблюдать наши принципы, мы оставляем за собой право прекратить деловые отношения."
@@ -8270,9 +8381,6 @@ msgstr "Паспорт"
 msgid "Passport photo page"
 msgstr "Страница паспорта с фото"
 
-msgid "Password"
-msgstr ""
-
 msgid "Password Reset"
 msgstr "Изменение пароля"
 
@@ -8284,6 +8392,9 @@ msgstr "Изменение пароля"
 
 msgid "Password should have lower and uppercase English letters with numbers."
 msgstr "Пароль должен состоять из заглавных, строчных латинских букв и цифр."
+
+msgid "Password type"
+msgstr "Вид пароля"
 
 msgid "Patented technology"
 msgstr "Запатентованная технология"
@@ -8567,8 +8678,8 @@ msgstr "Пожалуйста подтвердите, что вы не являе
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Подтвердите данные транзакции для завершения перевода:"
 
-msgid "Please confirm your %1 password to create an MT5 account. If you’ve forgotten your password, click Reset password."
-msgstr ""
+msgid "Please contact us via %1live chat%2."
+msgstr "Свяжитесь с нами через %1чат%2."
 
 msgid "Please contact your payment agent to validate your withdrawal request."
 msgstr "Пожалуйста, свяжитесь со своим платежным агентом, чтобы подтвердить запрос на вывод средств."
@@ -8585,8 +8696,8 @@ msgstr "Пожалуйста, убедитесь, что ваш адрес яв�
 msgid "Please enter a valid Login ID."
 msgstr "Пожалуйста, введите правильное имя пользователя."
 
-msgid "Please enter a valid phone number, including the country code (e.g. +15417541234)."
-msgstr "Пожалуйста, введите действительный номер телефона, с кодом страны (например +15417541234)."
+msgid "Please enter a valid phone number (e.g. +15417541234)."
+msgstr "Пожалуйста, введите действительный номер телефона (например, +15417541234)."
 
 msgid "Please enter date in the format DD MMM, YYYY HH:mm (local time)."
 msgstr "Пожалуйста, введите дату в формате ДД ММ, ГГГГ ЧЧ:мм (по местному времени)."
@@ -8831,6 +8942,9 @@ msgstr "Предскажите направление движения<br />и �
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Предскажите последнюю десятичную спот-котировки Цифрового контракта. Всего есть три типа цифровых контрактов:"
 
+msgid "Predictable substitutions like '@' instead of 'a' don't help very much"
+msgstr "Легко предсказуемые замены, такие как '@' вместо 'a', не очень помогают"
+
 msgid "Prefer another trading website"
 msgstr "Предпочитаю торговать на другом сайте"
 
@@ -8878,6 +8992,9 @@ msgstr "Цена(цены)/информация о ценах"
 
 msgid "Primary"
 msgstr "Начальное"
+
+msgid "Prime Brokerage Services Limited"
+msgstr "Prime Brokerage Services Limited"
 
 msgid "Prior to placing an Order, which results in opening a position, the client acknowledges that it is their responsibility to ensure that their Account Free Margin is sufficient to cover the Margin required in relation to the opening of the position (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Перед размещением ордера (что приводит к открытию контракта или к увеличению числа текущих открытых позиций) клиент обязуется удостовериться в том, что на его/её счете достаточно свободной маржи для покрытия маржинальных требований по открытым контрактам (см. \"Маржинальные требования\"), а также для дальнейшего соблюдения Маржинальных требований."
@@ -9122,6 +9239,9 @@ msgstr "Q4 2018"
 msgid "Q4 2019"
 msgstr "Q4 2019"
 
+msgid "Q4 2020"
+msgstr "Q4 2020"
+
 msgid "Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more information, please visit %1."
 msgstr "Qiwi – это платёжная система, основанная в 2007 году. Система предоставляет её пользователям простой способ перевода средств, получения платежей и онлайн оплаты. Для получения более подробной информации, пожалуйста, посетите сайт %1."
 
@@ -9166,9 +9286,6 @@ msgstr "Индексы Range Break"
 
 msgid "Range of markets"
 msgstr "Многообразие рынков"
-
-msgid "Re-enter password"
-msgstr "Введите пароль заново"
 
 msgid "Read"
 msgstr "Читать"
@@ -9260,6 +9377,9 @@ msgstr "Получить разрешение Компании размещат�
 msgid "Receive your earnings through your favourite payment method"
 msgstr "Получайте прибыль удобным платёжным способом"
 
+msgid "Recent years are easy to guess"
+msgstr "Последние годы легко угадать"
+
 msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
 msgstr "Осознавая сложность финансовых рынков, мы честно и подробно описываем наши торговые возможности. На нашем сайте мы размещаем точные описания продуктов, а также проводим бесплатные вебинары. Мы предлагаем клиентам возможность открыть демо-счет, чтобы бесплатно потренироваться в торговой системе. Мы рекомендуем нашим клиентам внимательно изучить все эти источники информации перед тем, как приступить к трейдингу."
 
@@ -9282,7 +9402,7 @@ msgid "Redo"
 msgstr "Вернуть"
 
 msgid "Ref."
-msgstr "Ном."
+msgstr "Номер"
 
 msgid "Refer clients to Binary with the knowledge, or with a reasonably expected knowledge, that these clients engage in such conduct that constitutes Malicious Activity"
 msgstr "Привлекать на Binary клиентов, заранее зная или имея основания полагать, что эти клиенты занимаются или намереваются заниматься вредоносной деятельностью"
@@ -9392,6 +9512,12 @@ msgstr "Не забудьте нажать стоп, когда закончит
 msgid "Remove your glasses, if necessary"
 msgstr "При необходимости снимите очки."
 
+msgid "Repeats like \"aaa\" are easy to guess"
+msgstr "Повторения типа \"aaa\" легко угадать"
+
+msgid "Repeats like \"abcabcabc\" are only slightly harder to guess than \"abc\""
+msgstr "Повторения типа \"abcabcabc\" угадать немногим сложнее, чем \"abc\""
+
 msgid "Replication,"
 msgstr "Репликация,"
 
@@ -9449,6 +9575,9 @@ msgstr "Reset Колл"
 msgid "Reset Call/Reset Put"
 msgstr "Reset колл/Reset пут"
 
+msgid "Reset MT5 password"
+msgstr "Сбросить пароль MT5"
+
 msgid "Reset Password"
 msgstr "Изменить пароль"
 
@@ -9457,12 +9586,6 @@ msgstr "Reset Пут"
 
 msgid "Reset Time"
 msgstr "Время Reset"
-
-msgid "Reset account password"
-msgstr ""
-
-msgid "Reset investor password"
-msgstr ""
 
 msgid "Reset my virtual balance"
 msgstr "Сбросить мой виртуальный баланс"
@@ -9551,6 +9674,9 @@ msgstr "Обратная сторона"
 msgid "Reverse side"
 msgstr "Обратная сторона"
 
+msgid "Reversed words aren't much harder to guess"
+msgstr "Перевернутые слова угадать не намного сложнее"
+
 msgid "Review and analyse suspicious client activities"
 msgstr "Проверка и анализ подозрительного поведения клиентов"
 
@@ -9615,7 +9741,7 @@ msgid "Risk of slippage"
 msgstr "Риск проскальзывания"
 
 msgid "Risk of stop order"
-msgstr "Риск стоп-приказа"
+msgstr "Риск стоп ордера"
 
 msgid "Risk warnings and notices related to Transactions and investments in the proposed instruments"
 msgstr "Предупреждения и уведомления о риске, относящиеся к контрактам и инвестициям в предложенные инструменты"
@@ -9664,6 +9790,9 @@ msgstr "Суббота"
 
 msgid "Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records, or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment, or software by the client or any damages or losses deemed or alleged to have resulted from, or been caused by, this site or its content."
 msgstr "За исключением случаев небрежности, мошенничества или неисполнения обязательств, Компания не несёт никакой ответственности перед клиентами в случаях возникновения форс-мажорных обстоятельств, действий правительства или правоохранительных органов, срывов, повреждения или уничтожения компьютерных систем, их данных и записей или любой их части; задержки, потери, ошибки или упущения в результате неисполнения или неэффективного использования какого-либо средства связи, компьютерного оборудования или программного обеспечения. Компания не несет ответственности за любой ущерб, реальные или предполагаемые убытки, которые являются результатом или были вызваны контентом данного сайта."
+
+msgid "Save time – no need to open, monitor, and close trades."
+msgstr "Экономьте время - не нужно открывать, отслеживать и закрывать контракты."
 
 msgid "Savings & Inheritance"
 msgstr "Сбережения и наследство"
@@ -9782,6 +9911,9 @@ msgstr "Выбрать рынок:"
 msgid "Select payment agent"
 msgstr "Выберите платежного агента"
 
+msgid "Select the signal provider you prefer and click the %1Subscribe%2 button."
+msgstr "Выберите понравившегося провайдера сигналов и нажмите кнопку %1Подписаться%2."
+
 msgid "Select your market and underlying asset"
 msgstr "Выберите рынок и основной актив"
 
@@ -9860,11 +9992,14 @@ msgstr "Сен"
 msgid "September"
 msgstr "Сентябрь"
 
+msgid "Sequences like abc or 6543 are easy to guess"
+msgstr "Последовательности вроде abc или 6543 легко угадать"
+
 msgid "Server"
 msgstr "Сервер"
 
-msgid "Server maintenance starting 03:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "Технические работы на сервере начинаются с 03:00 GMT каждое воскресенье. Этот процесс может занять до 2 часов. Работа сервиса может прерываться в течение этого времени."
+msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
+msgstr "Технические работы на сервере начинаются в 01:00 GMT каждое воскресенье. Этот процесс может занять до 2 часов. В это время сервисы и платформы могут быть недоступны."
 
 msgid "Server:"
 msgstr "Сервер:"
@@ -9917,11 +10052,17 @@ msgstr "Установите двухступенчатую аутентифик
 msgid "Severability"
 msgstr "Раздельность положений Соглашения"
 
+msgid "Share access to your account without any permission to trade."
+msgstr "Делитесь доступом к своему счету без разрешения на торговлю."
+
 msgid "Sharp prices"
 msgstr "Лучшие цены"
 
 msgid "Sharp, benchmarked prices"
 msgstr "Точные цены на активы"
+
+msgid "Short keyboard patterns are easy to guess"
+msgstr "Короткие комбинации клавиш легко угадать"
 
 msgid "Short to long-term durations"
 msgstr "Краткосрочные и долгосрочные контракты"
@@ -9968,6 +10109,12 @@ msgstr "Показаны все данные, включая 2 нижние ст
 msgid "Show all historical transactions up to"
 msgstr "Показать историю всех контрактов до"
 
+msgid "Show less"
+msgstr "Показать меньше"
+
+msgid "Show more"
+msgstr "Показать больше"
+
 msgid "Sign out"
 msgstr "Выход"
 
@@ -9976,6 +10123,12 @@ msgstr "Зарегистрируйтесь"
 
 msgid "Sign up now"
 msgstr "Зарегистрироваться сейчас"
+
+msgid "Signal Provider"
+msgstr "Провайдер сигналов"
+
+msgid "Signal Subscriber"
+msgstr "Подписчик сигнала"
 
 msgid "Signup"
 msgstr "Регистрация"
@@ -10242,25 +10395,28 @@ msgid "Stocks"
 msgstr "Акции"
 
 msgid "Stop Limit Orders are a combination of Stop and Limit Orders. If the price reaches (or passes) the Stop Price, a Limit Order is placed at the specified price, which will be filled at a price equal or better than the specified price. "
-msgstr "Стоп-лимитные ордеры являются комбинацией стоп-ордера и лимитного ордера. Если цена достигает (или преодолевает) стоп-цену, лимитный ордер размещается по указанной цене и исполняется по цене, которая равна или лучше указанной цены. "
+msgstr "Стоп-лимитные ордеры являются комбинацией стоп ордера и лимитного ордера. Если цена достигает (или преодолевает) стоп-цену, лимитный ордер размещается по указанной цене и исполняется по цене, которая равна или лучше указанной цены. "
 
 msgid "Stop Loss Orders"
-msgstr "Ордеры стоп-лосс"
+msgstr "Ордеры стоп лосс"
 
 msgid "Stop Order/Stop Loss Order"
-msgstr "Стоп ордер/ордер стоп-лосс"
+msgstr "Стоп ордер/ордер стоп лосс"
 
 msgid "Stop Out Level"
-msgstr "Уровень принудительного закрытия (уровень стоп-аут)"
+msgstr "Уровень принудительного закрытия (уровень стоп аут)"
 
 msgid "Stop out level"
-msgstr "Уровень принудительного закрытия (уровень стоп-аут)"
+msgstr "Уровень принудительного закрытия (уровень стоп аут)"
 
 msgid "Storage of content"
 msgstr "Хранение контента"
 
 msgid "Stored Procedures"
 msgstr "Хранимые процедуры."
+
+msgid "Straight rows of keys are easy to guess"
+msgstr "Прямые ряды клавиш легко угадать"
 
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "Сильные аналитические способности, подтвержденные на предыдущем месте работы, или большой интерес к работе в этой области"
@@ -10279,6 +10435,9 @@ msgstr "Отличные навыки принятия решений"
 
 msgid "Strong oral and written communication skills in both the regional language(s) and English"
 msgstr "Отличные навыки устной и письменной коммуникации на английском и вашем региональном языке (языках)"
+
+msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
+msgstr "Надежный пароль состоит как минимум из 8 знаков и комбинации чисел, символов, строчных и заглавных букв."
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "Хорошее знание цветов, типографии, корпоративного дизайна и брендинга"
@@ -10862,6 +11021,9 @@ msgstr "Компания также собирает и обрабатывает
 msgid "The Company also collects basic tax residence information for the purposes of CRS/FATCA compliance. The tax information that the client provides may only be disclosed to the authorities who are legally charged with collecting this information for CRS/FATCA reporting, and %1 will only do so to the extent that it is legally obliged to collect it from the clients and disclose it to the authorities. The Company does not use, disclose, or process this information in any other way at any time."
 msgstr "Также компания собирает основную информацию о налоговой регистрации с целью соответствия требованиям единого стандарта по обмену налоговой информацией/Закона о налоговом соответствии иностранных счетов (CRS/FATCA). Предоставляемая клиентом налоговая информация может быть разглашена только органам, имеющим юридическое право на сбор данной информации с целью отчётности CRS/FATCA и только в той мере, в которой %1 разрешено собирать и разглашать данную информацию. Данная информация не используется и не разглашается Компанией ни в каких других целях."
 
+msgid "The Company also has a regulatory obligation to send the personal data of the clients residing in the UK to GAMSTOP to check whether or not  they have self-excluded with GAMSTOP. To find out more, please read the %1GAMSTOP privacy policy%2."
+msgstr "Компания также обязана отправлять личные данные клиентов, проживающих в Великобритании, в GAMSTOP, чтобы проверить, прошли ли они самоисключение через GAMSTOP. Чтобы узнать больше, ознакомьтесь с %1политикой конфиденциальности GAMSTOP%2."
+
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "Также Компания оставляет за собой право запросить документы для соблюдения любых других юридических обязательств."
 
@@ -10904,8 +11066,8 @@ msgstr "Компания не терпит любых форм неприемл�
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Компания обязуется предпринять все разумные усилия, чтобы открыть или закрыть контракт, к которому относится ордер клиента, по доступной Компании цене, руководствуясь обязательством наилучшего исполнения. Лучшее исполнение означает, что при исполнении ордеров Компания должна предпринять все возможные меры, чтобы получить для клиента наилучший результат, принимая во внимание цену, расходы, скорость, вероятность исполнения и закрытия контракта, размер, характер или любые другие аспекты, имеющие отношение к исполнению ордера."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a client of Deriv (Europe) Limited, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "В Компании действует политика стоп-аут (политика принудительного закрытия позиций), которая не позволит клиенту потерять сумму, превышающую депозит. Тем не менее, если открытые позиции клиента не закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп-аут, Компания по своему единоличному усмотрению может ликвидировать отрицательный баланс клиента, предоставив клиенту небольшой кредит, если баланс счёта станет отрицательным. Отрицательный баланс образуется путём суммирования отрицательного баланса, появившегося за последние 24 часа на всех счетах клиента. Настоящим клиент признаёт и соглашается, что, если он/она не является индивидуальным клиентом Deriv Investments (Europe) Limited или Deriv (Europe) Limited, предложение защиты от негативного баланса со стороны Компании производится по единоличному усмотрению Компании. Также Компания оставляет за собой право в любое время изменить характеристики и критерии отбора для защиты от отрицательного баланса. Положения политики защиты от отрицательного баланса не применимы в следующих случаях:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr "В Компании действует политика стоп аут (политика принудительного закрытия позиций), которая не позволит клиенту потерять сумму, превышающую депозит. Тем не менее, если открытые позиции клиента не закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп аут, Компания по своему единоличному усмотрению может ликвидировать отрицательный баланс клиента, предоставив клиенту небольшой кредит, если баланс счёта станет отрицательным. Отрицательный баланс образуется путём суммирования отрицательного баланса, появившегося за последние 24 часа на всех счетах клиента. Клиент признает, что, если он не является розничным клиентом Deriv Investments (Europe) Limited, клиентом Deriv (Europe) Limited или розничным клиентом, проживающим в Австралии, предложение защиты от негативного баланса со стороны Компании производится по единоличному усмотрению Компании. Также Компания оставляет за собой право в любое время изменить характеристики и критерии отбора для защиты от отрицательного баланса. Положения политики защиты от отрицательного баланса не применимы в следующих случаях:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Основная обязанность Компании – честно, справедливо и профессионально вести совместный бизнес с клиентом, а также действовать в интересах клиента при открытии и закрытии контрактов на бинарных опционах."
@@ -11016,7 +11178,7 @@ msgid "The Company may withhold payment of funds accumulated in a client's accou
 msgstr "Компания может удерживать средства, находящиеся на счете клиента, на время проверки выполнения им данных условий."
 
 msgid "The Company may, at its absolute discretion, accept a Stop Order, a Limit Order, or a Stop Limit Order from the client."
-msgstr "Компания может по своему единоличному усмотрению принять от клиента стоп-ордер, лимитный ордер или стоп-лимитный ордер."
+msgstr "Компания может по своему единоличному усмотрению принять от клиента стоп ордер, лимитный ордер или стоп-лимитный ордер."
 
 msgid "The Company may, at its absolute discretion, disregard the client's Order if an Event takes place resulting in it no longer being practicable to act on the client's Order after indicating an acceptance of their Order."
 msgstr "Компания может по своему единоличному усмотрению не исполнять ордер клиента, если произойдёт событие, в результате которого исполнение ордера потеряет практический смысл (после принятия данного ордера)."
@@ -11312,11 +11474,14 @@ msgstr "Обязанности представляющего брокера"
 msgid "The Investor Compensation Scheme"
 msgstr "Схема компенсации инвесторам"
 
-msgid "The MT5 desktop app is not supported by macOS, Windows XP, Windows 2003, and Windows Vista."
-msgstr "Приложение MT5 для ПК  не поддерживается на macOS Catalina, Windows XP, Windows 2003 и Windows Vista."
+msgid "The MT5 desktop app is not supported by Windows XP, Windows 2003, and Windows Vista."
+msgstr "Приложение MT5 для ПК не поддерживается на Windows XP, Windows 2003 и Windows Vista."
+
+msgid "The MT5 trading signals service allows you to copy the trades of more experienced traders to your MT5 account. Once you’ve subscribed to a signal, the provider’s deals will be automatically replicated on your %1 MT5 trading account each time they place a trade."
+msgstr "Сервис торговых сигналов MT5 позволяет копировать контракты более опытных трейдеров на свой счет MT5. После того, как вы подпишетесь на сигнал, контракты провайдера будут автоматически копироваться на ваш торговый счет MT5 %1."
 
 msgid "The Margin Level of the client's MT5 Real Account reaches or falls below the Stop Out Level."
-msgstr "Уровень маржи на Реальном счете MT5 клиента достиг или опустился ниже уровня стоп-аут (уровня принудительного закрытия позиции)."
+msgstr "Уровень маржи на Реальном счете MT5 клиента достиг или опустился ниже уровня стоп аут (уровня принудительного закрытия позиции)."
 
 msgid "The Margin trading services described in this agreement are conducted over the counter (\"OTC\"). "
 msgstr "Услуги торговли с применением маржи, описанные в данном соглашении, выполняются на внебиржевом рынке (\"OTC\" или \"over the counter\"). "
@@ -11433,7 +11598,7 @@ msgid "The Spread is subject to alteration, at the Company's absolute discretion
 msgstr "Размер спреда подлежит изменению, что находится на усмотрении Компании. Клиент признаёт, что несмотря на то, что Компания принимает все разумные меры для поддержания конкурентоспособного спреда, он может значительно расшириться в ряде обстоятельств и размер спреда будет определяться Компанией, по её единоличному усмотрению. Спреды могут расширяться в случае банковских ролловеров."
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
-msgstr "Уровень стоп-аут, относящийся к Реальному счёту MT5 клиента, может отличаться от уровня стоп-аут по умолчанию, опубликованного на вебсайте Компании."
+msgstr "Уровень стоп аут, относящийся к Реальному счёту MT5 клиента, может отличаться от уровня стоп аут по умолчанию, опубликованного на вебсайте Компании."
 
 msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
 msgstr "Синтетический счет позволяет вам торговать контрактами на разницу (CFD) на активах, имитирующих движение реальных рынков. Синтетические индексы доступны для торговли 24/7 и регулярно проверяются независимой третьей стороной."
@@ -11532,7 +11697,7 @@ msgid "The client acknowledges that any explanations, trading recommendations, i
 msgstr "Настоящим клиент признаёт, что любые пояснения, торговые рекомендации, независимое инвестиционное исследование, комментарии относительно рынка или любая иная информация, предоставляемая DIEL, доводится до сведения клиента только в рамках маркетинговой коммуникации или образовательных материалов, исключительно с информативными целями, и не является личным советом или рекомендацией для инвестирования."
 
 msgid "The client acknowledges that it is their responsibility to cancel the Stop or Limit Order if they do not want the Stop or Limit Order to remain valid. If the client fails to cancel the Stop or Limit Order, the Company shall be entitled, at its absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new transaction for the client if and when the Company quote reaches or goes beyond the level of the Stop or Limit Order."
-msgstr "Клиент обязуется самостоятельно отменять стоп-ордер или лимитный ордер, если клиент хочет прекратить их действие. В случае, когда клиент не смог отменить стоп-ордер или лимитный ордер, Компания по своему единоличному усмотрению может расценивать стоп-ордер или лимитный ордер в качестве инструкции провести для клиента соответствующую транзакцию, в случае и когда котировка Компании достигнет или выйдет за пределы уровня стоп-ордера или лимитного ордера."
+msgstr "Клиент обязуется самостоятельно отменять стоп ордер или лимитный ордер, если клиент хочет прекратить их действие. В случае, когда клиент не смог отменить стоп ордер или лимитный ордер, Компания по своему единоличному усмотрению может расценивать стоп ордер или лимитный ордер в качестве инструкции провести для клиента соответствующую транзакцию, в случае и когда котировка Компании достигнет или выйдет за пределы уровня стоп ордера или лимитного ордера."
 
 msgid "The client acknowledges that it is their responsibility to monitor their Account Balance and Margin Requirement, and the Company is not under any obligation to keep the client informed (i.e. to make a Margin Call)."
 msgstr "Клиент признает, что несет ответственность за мониторинг баланса своего счета и маржинальных требований, и Компания не обязана информировать клиента по данному вопросу (т.е. отправлять маржин коллы)."
@@ -11661,10 +11826,10 @@ msgid "The client may make Margin Payments by transferring funds from their %1 a
 msgstr "Клиент может оплачивать маржу путём перевода средств со счёта %1 на Реальный счёт MT5. Если на счете %1 недостаточно средств для пополнения Реального счёта MT5, клиент может оплатить маржу путём пополнения своего счёта %1 и перевести средства со счёта %1 на Реальный счёт MT5."
 
 msgid "The client may not cancel or amend the level of their Stop and Limit Order once the level has been reached."
-msgstr "Клиент не может отменить или изменить уровень своего стоп-ордера или лимитного ордера, если уровень был достигнут."
+msgstr "Клиент не может отменить или изменить уровень своего стоп ордера или лимитного ордера, если уровень был достигнут."
 
 msgid "The client may specify their instruction of a Stop Order or apply for a Limit Order for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
-msgstr "Клиент может предоставить инструкции для стоп-ордера или лимитного ордера, который будет применён в течение ограниченного периода времени или действовать в течение неопределённый периода (“приказ до отмены”, “ордер до отмены” или ордер \"GTC\" – good till cancelled)."
+msgstr "Клиент может предоставить инструкции для стоп ордера или лимитного ордера, который будет применён в течение ограниченного периода времени или действовать в течение неопределённого периода (“ордер до отмены” или ордер \"GTC\" – good till cancelled)."
 
 msgid "The client may update the client's personal information at any time by logging in to the \"Settings\" section of the client's account. It is the client's responsibility to ensure that %1 is promptly and continually informed of any change in the client's personal information. The client should note that if the client provides the Company with inaccurate information, or if the client fails to notify the Company of any changes to the information previously supplied by the client, this may adversely affect the quality of the services that the Company can provide."
 msgstr "Клиент может в любое время обновить свою личную информацию, войдя в раздел \"Настройки\" на своём счёте. Настоящим клиент обязуется постоянно и своевременно уведомлять %1 о любых изменениях в его/её личной информации. Если клиент предоставляет Компании неточную информацию или не уведомляет Компанию о любых изменениях в ранее предоставленной информации, это может негативно сказаться на качестве предоставляемых Компанией услуг."
@@ -11778,7 +11943,7 @@ msgid "The default DNS services provided by your ISP can be slow and insecure. %
 msgstr "Сервисы DNS по умолчанию, предоставленные вашим интернет-провайдером, могут оказаться медленными и ненадёжными. %1 рекомендует пользоваться сервисом DNS от Cloudflare %2, предоставляющим более быстрое и надёжное соединение с интернетом."
 
 msgid "The default Stop Out Level applicable to the client's account is published on the Company website. However, the default Stop Out Level is subject to alteration at the Company's absolute discretion. Any changes to the Stop Out Level will take effect immediately. The Company will endeavour to notify the client of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on the Company website. It is the client's responsibility to check the Company website regularly and remain informed about the default Stop Out Level."
-msgstr "Уровень стоп-аут, установленный на счете клиента по умолчанию, указан на сайте Компании. Тем не менее, уровень стоп-аут по умолчанию может быть изменён по единоличному усмотрению Компании. Любые изменения уровня стоп-аут вступят в силу незамедлительно. Компания предпримет все разумные усилия, чтобы уведомить клиента об изменении уровня стоп-аут по умолчанию, опубликовав новый уровень стоп-аут на сайте Компании. Настоящим клиент обязуется регулярно следить за информацией на сайте компании и проверять значение уровня стоп-аут по умолчанию."
+msgstr "Уровень стоп аут, установленный на счете клиента по умолчанию, указан на сайте Компании. Тем не менее, уровень стоп аут по умолчанию может быть изменён по единоличному усмотрению Компании. Любые изменения уровня стоп аут вступят в силу незамедлительно. Компания предпримет все разумные усилия, чтобы уведомить клиента об изменении уровня стоп аут по умолчанию, опубликовав новый уровень стоп аут на сайте Компании. Настоящим клиент обязуется регулярно следить за информацией на сайте компании и проверять значение уровня стоп аут по умолчанию."
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "Длительность – это временной период купленного контракта (см. \"период контракта\")."
@@ -12033,7 +12198,7 @@ msgid "The synthetic indices simulate various real market situations and provide
 msgstr "Синтетические индексы моделируют различные ситуации на рынке и предоставляют идеальную платформу, на которой можно научиться торговать и протестировать свои стратегии в самых разных рыночных условиях. Данные индексы зависят от уровня волатильности и движения рынка, помогая пользователям опробовать такие сценарии, как высокая или низкая волатильность, восходящие или нисходящие тренды."
 
 msgid "The system fills orders on a first-in, first-out basis, i.e. based on the sequence of the order received, and this is beyond the Company's control. As a result, the client may find it difficult or impossible to close a position at the intended price stipulated in the client's stop order during certain market conditions. The placement of stop order by the client, though useful as a risk management tool, will not necessarily limit the client's losses to the client's intended amounts in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders, and there is uncertainty about the client's possible exit price. In short, a stop order is not guaranteed because it cannot operate in all market circumstances."
-msgstr "Система размещает ордеры в порядке их поступления, т.е. в том порядке, в котором они были получены, что находится вне контроля Компании. В результате закрытие контракта по цене, установленной клиентом в стоп-приказе, может оказаться сложным или невозможным, ввиду определённых рыночных условий. Размещение стоп-приказа является полезным инструментом управления риском, который не всегда может ограничить потери клиента запланированным размером убытка (в случае высокой волатильности на рынке, так как исполнение приказа клиента может оказаться невозможным при определённых рыночных условиях, и цена на выходе из контракта окажется неопределённой). Иными словами, стоп-приказ не даёт никаких гарантий, так как он не может быть исполнен при абсолютно любых условиях на рынке."
+msgstr "Система размещает ордеры в порядке их поступления, т.е. в том порядке, в котором они были получены, что находится вне контроля Компании. В результате закрытие контракта по цене, установленной клиентом в стоп ордере, может оказаться сложным или невозможным, ввиду определённых рыночных условий. Размещение стоп ордера является полезным инструментом управления риском, который не всегда может ограничить потери клиента запланированным размером убытка (в случае высокой волатильности на рынке, так как исполнение приказа клиента может оказаться невозможным при определённых рыночных условиях, и цена на выходе из контракта окажется неопределённой). Иными словами, стоп ордер не даёт никаких гарантий, так как он не может быть исполнен при абсолютно любых условиях на рынке."
 
 msgid "The terms 'the Company' and '%1' shall denote"
 msgstr "Термины \"Компания\" и \"%1\" должны обозначать"
@@ -12317,6 +12482,15 @@ msgstr "Это продолжение того же положения. %1 пр�
 msgid "This is a staging server - For testing purposes only"
 msgstr "Это вспомогательный сервер, применяемый только для тестирования"
 
+msgid "This is a top-10 common password"
+msgstr "Это один из 10 наиболее распространенных паролей."
+
+msgid "This is a top-100 common password"
+msgstr "Это один из 100 наиболее распространенных паролей."
+
+msgid "This is a very common password"
+msgstr "Это один из наиболее распространенных паролей"
+
 msgid "This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset."
 msgstr "Это ориентировочный барьер. Настоящим барьером будет спот-котировка плюс оффсет барьера."
 
@@ -12328,6 +12502,9 @@ msgstr "Одна из наших важнейших наград – двойн�
 
 msgid "This is one of our core commitments to clients."
 msgstr "Это одно из наших основных обязательств перед клиентами."
+
+msgid "This is similar to a commonly used password"
+msgstr "Это похоже на часто используемый пароль"
 
 msgid "This is the current price at which an underlying can be bought or sold at a particular time."
 msgstr "Это текущая цена, по которой актив может быть приобретен или продан."
@@ -12350,8 +12527,8 @@ msgstr "Данное обязательство включает запрет н
 msgid "This page is only available to logged out clients."
 msgstr "Эта страница доступна только для клиентов, вошедших на сайт."
 
-msgid "This page will redirect to the %1 homepage after 10 seconds."
-msgstr "Вы будете перенаправлены на главную страницу %1 через 10 секунд."
+msgid "This password is on the blacklist"
+msgstr "Этот пароль находится в черном списке"
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr "Эта политика применяется к клиентам, отнесенным к категории индивидуальных или профессиональных. Клиенты, классифицируемые как правомочные контрагенты, не входят в сферу действия настоящей политики."
@@ -12483,7 +12660,7 @@ msgid "To learn more, read our %1Margin Policy%2 that further explains our margi
 msgstr "Чтобы получить более подробную информацию, ознакомьтесь с нашей %1Политикой расчёта маржи%2, которая также объясняет наши маржинальные требования."
 
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
-msgstr "Чтобы поддерживать открытые позиции, клиент должен иметь достаточный остаток средств на счете для покрытия всех маржинальных требований. Если уровень маржи клиента опускается ниже уровня, установленного для его счета, клиент получит маржин колл и должен будет увеличить свой уровень маржи, чтобы избежать стоп-аута. Клиенту может быть отказано в размещении ордера на открытие контракта, если на его счете нет достаточных средств для покрытия общей маржи."
+msgstr "Чтобы поддерживать открытые позиции, клиент должен иметь достаточный остаток средств на счете для покрытия всех маржинальных требований. Если уровень маржи клиента опускается ниже уровня, установленного для его счета, клиент получит маржин колл и должен будет увеличить свой уровень маржи, чтобы избежать стоп аута. Клиенту может быть отказано в размещении ордера на открытие контракта, если на его счете нет достаточных средств для покрытия общей маржи."
 
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "Чтобы открыть банковский счет, нам необходимо будет подтвердить вашу личность."
@@ -12502,6 +12679,9 @@ msgstr "Чтобы предоставить клиенту лучший опыт
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Чтобы изменить пароль, введите ваш зарегистрированный эл. адрес в поле внизу и нажмите \"Изменить пароль\"."
+
+msgid "To reset your trading or investor password, please click the button below:"
+msgstr "Для сброса торгового или инвестиционного пароля нажмите на кнопку ниже:"
 
 msgid "To smoothly verify you, we need a better photo"
 msgstr "Нам нужно фото более высокого качества, чтобы верифицировать вас"
@@ -12671,6 +12851,9 @@ msgstr "Начать торговлю"
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "Торгуйте на всех основных рынках, включая forex, фондовые индексы, сырьевые товары и многое другое."
 
+msgid "Trade on web terminal"
+msgstr "Торговать с веб-терминала"
+
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Покупайте контракты только на те суммы, которые можете позволить себе потерять. Никогда не покупайте контракты на занятые деньги."
 
@@ -12736,6 +12919,9 @@ msgstr "Время открытия рынков"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Лимиты на торговлю и вывод"
+
+msgid "Trading and deposits have been disabled on your account. Kindly allow us some time to review the account."
+msgstr "На вашем счете отключены трейдинг и пополнение. Нам потребуется некоторое время, чтобы проверить счет."
 
 msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "На вашем счете заблокирована торговля и вывод средств. Пожалуйста, свяжитесь со %1службой поддержки%2 для получения помощи."
@@ -13022,9 +13208,6 @@ msgstr "Не удалось прочитать файл %1"
 msgid "Unavailable"
 msgstr "Недоступно"
 
-msgid "Unavailable because of too many failed attempts. Please try again in a minute or reset your account password to continue."
-msgstr ""
-
 msgid "Under no circumstances shall the Company or its directors or employees be liable under this Agreement to the Programmer or any third party for any indirect, special, incidental, punitive, or consequential loss or damages or any other similar damages under any theory of liability (whether in contract, tort, strict liability, or any other theory), which are directly or indirectly attributable to the use of, or the inability to use, the %1 API, or any content contained thereon, even if the Company has been informed of the possibility thereof."
 msgstr "Ни при каких обстоятельствах Компания, её директоры или сотрудники не будут нести ответственности в рамках данного соглашения перед Программистом или третьей стороной за любые косвенные, специальные, случайные, штрафные или последующие потери или убытки, а также любые другие убытки по любой теории ответственности (в рамках договора, правонарушения, объективной ответственности или любой другой теории), которые имеют прямое или косвенное отношение к использованию или невозможности использования API %1, а также к любому контенту сайта, даже если Компания была проинформирована о такой возможности."
 
@@ -13133,6 +13316,9 @@ msgstr "Загрузите оборотную сторону карты со с�
 msgid "Upload back of license from your computer"
 msgstr "Загрузите оборотную сторону прав со своего компьютера"
 
+msgid "Upload document"
+msgstr "Загрузить документ"
+
 msgid "Upload front of card from your computer"
 msgstr "Загрузите лицевую сторону карты со своего компьютера"
 
@@ -13168,6 +13354,12 @@ msgstr "После прекращения действия или расторж
 
 msgid "Usage limit"
 msgstr "Лимит использования"
+
+msgid "Use a few words, avoid common phrases"
+msgstr "Используйте несколько слов, избегайте распространенных фраз"
+
+msgid "Use a longer keyboard pattern with more turns"
+msgstr "Используйте более длинные комбинации клавиш с большим количеством поворотов"
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
 msgstr "Использование дополнительных навыков анализа данных для изучения трендов/моделей на финансовых рынках"
@@ -13247,9 +13439,6 @@ msgstr "Подтверждение"
 msgid "Verification code"
 msgstr "Код проверки"
 
-msgid "Verification code is wrong. Please use the link sent to your email, or request a new token by clicking Reset investor password."
-msgstr ""
-
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "Неправильный проверочный код. Пожалуйста, воспользуйтесь ссылкой, отправленной на ваш email."
 
@@ -13271,20 +13460,11 @@ msgstr "Проверка и утверждение запросов клиент
 msgid "Verify identity"
 msgstr "Подтвердить личность"
 
-msgid "Verify new investor password"
-msgstr ""
-
-msgid "Verify new password"
-msgstr "Подтвердите новый пароль"
-
 msgid "Version 49. Last modified 23-11-2020."
 msgstr "Версия 49. Последние изменения: 23-11-2020."
 
 msgid "Video Room Facility"
 msgstr "Видео комната"
-
-msgid "Video tutorial"
-msgstr "Видеокурс"
 
 msgid "View"
 msgstr "Просмотр"
@@ -13527,7 +13707,7 @@ msgid "We were unable to verify your document automatically. We will try to veri
 msgstr "Нам не удалось проверить ваш документ автоматически. Мы постараемся проверить ваш документ вручную. Пожалуйста, зайдите через 1-3 дня."
 
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level."
-msgstr "Мы продолжим закрывать открытые позиции до тех пор, пока ваш уровень маржи не станет выше уровня стоп-аут."
+msgstr "Мы продолжим закрывать открытые позиции до тех пор, пока ваш уровень маржи не станет выше уровня стоп аут."
 
 msgid "We will inform you when your account needs to be authenticated."
 msgstr "Мы уведомим вас, когда вашему счету потребуется аутентификация."
@@ -13547,9 +13727,6 @@ msgstr "Мы сравним его с вашим документом"
 msgid "We're almost there"
 msgstr "Почти готово"
 
-msgid "We're expected to generate over 2 USD billion in turnover this year, bringing our total turnover since inception to over 9.2 USD billion."
-msgstr "Мы ожидаем, что объём покупок в этом году превысит 2 млрд. долларов США, а общий оборот с момента основания компании составит более 9.2 млрд. долларов США."
-
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "Мы получаем патенты в категории \"Система компьютерной торговли и метод спекуляций на финансовых рынках\" и \"Система компьютерной торговли для предложения спекуляций на рынках\". Патенты демонстрируют наше стремление к инновациям и лидерству."
 
@@ -13562,14 +13739,17 @@ msgstr "Мы не обязаны проводить тест на проверк
 msgid "We're now ready to verify your identity"
 msgstr "Теперь мы готовы подтвердить вашу личность"
 
-msgid "We're projected to register over 377 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 1.42 billion."
-msgstr "Количество контрактов в этом году способно превысить 377 млн., а общее количество контрактов, заключённых на нашей платформе с момента основания, превысит 1.42 млрд."
+msgid "We're projected to register over 1.1 billion transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 2.8 billion."
+msgstr "Ожидается, что в этом году мы зарегистрируем более 1,1 миллиарда транзакций, в результате чего общее количество контрактов, купленных и проданных на нашей платформе с момента создания, превысит 2,8 миллиарда."
 
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Мы очень гордимся этой наградой. Мы стремимся предлагать этичный и ориентированный на клиентов опыт торговли, а получение этой премии подтверждает, что BetOnMarkets является надежным брендом, который прислушивается ко всем своим клиентам: опытным трейдерам и новичкам. Мы предлагаем обслуживание клиентов на английском, индонезийском, русском, китайском и испанском языках."
 
-msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across four offices in Malaysia, Malta, Paraguay and Dubai. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "За последние годы мы значительно выросли в размерах, как в отношении количества сотрудников, так и в отношении числа действующих офисов. На данный момент в офисах в Малайзии, Парагвае, Дубае и на Мальте трудится более %1 человек. В этом году мы ожидаем дальнейший рост наших ресурсов, чтобы соответствовать растущему спросу на наши продукты и услуги."
+msgid "We're sorry to see you leave."
+msgstr "Жаль, что вы уходите."
+
+msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across 10 offices in Malta, Dubai, Malaysia, Paraguay, Cyprus, Rwanda, and Belarus. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr "За последние годы мы значительно выросли в размерах, как в отношении количества сотрудников, так и в отношении числа действующих офисов. На данный момент в 10 офисах в Малайзии, Парагвае, Дубае, Руанде, Беларуси, на Кипре и Мальте трудятся более %1 человек. В этом году мы продолжим наращивать ресурсы, чтобы соответствовать растущему спросу на наши продукты и услуги."
 
 msgid "We've sent a secure link to %{number}"
 msgstr "Мы отправили безопасную ссылку на %{number}"
@@ -13612,12 +13792,6 @@ msgstr "Отличные организационные, администрат�
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "Мы обновим ваши лимиты. Нажмите %1Согласиться и принять%2, чтобы подтвердить, что вы осознаете и полностью отвечаете за свои действия, и мы не несем ответственности за какие-либо убытки или зависимость."
-
-msgid "We’ve upgraded our system to support a single, more secure password across %1. Once you’ve set a new password, you can use it to log into all your %1 and MT5 accounts."
-msgstr ""
-
-msgid "We’ve upgraded our system to support a single, more secure password across all of %1. Once you’ve set a new password, you can use it to log into all your %1, and MT5 accounts."
-msgstr ""
 
 msgid "What about instant execution? In this case, your order is placed at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "При мгновенном исполнении ваш ордер будет размещён по цене, доступной в данный момент времени. Изменение котировки возможно, если цена слишком сильно колеблется до исполнения ордера."
@@ -13668,7 +13842,7 @@ msgid "What's a margin call and how is it applied"
 msgstr "Что такое маржин колл (margin call, требование внесения дополнительной маржи) и как он работает"
 
 msgid "What's a stop out level and how is it applied"
-msgstr "Что такое уровень принудительного закрытия (уровень стоп-аута) и как он используется"
+msgstr "Что такое уровень принудительного закрытия (уровень стоп аута) и как он используется"
 
 msgid "When a client is classified as an Eligible Counterparty, DIEL shall not provide them with"
 msgstr "Если клиент относится к категории уполномоченных контрагентов, DIEL не будет предоставлять ему/ей следующих услуг"
@@ -13731,7 +13905,7 @@ msgid "When the market conditions or market movements/volatility are abnormal"
 msgstr "в случае аномальных рыночных условий или рыночной динамики/волатильности,"
 
 msgid "When the remaining funds in your account is unable to cover the leverage or margin requirement, your account will be placed under margin call. To prevent a margin call escalating into a stop out level, you can deposit additional funds into your account or close any open positions."
-msgstr "Когда остатка средств на вашем счете недостаточно для поддержания позиции при текущих маржинальных требованиях, ваш счёт попадёт в состояние маржин колла. Чтобы не доводить свой счёт до стоп-аута, вы можете пополнить его или закрыть любые открытые позиции."
+msgstr "Когда остатка средств на вашем счете недостаточно для поддержания позиции при текущих маржинальных требованиях, ваш счёт попадёт в состояние маржин колла. Чтобы не доводить свой счёт до стоп аута, вы можете пополнить его или закрыть любые открытые позиции."
 
 msgid "When the self-exclusion period is set, we will refund the balance of funds in your account."
 msgstr "Мы вернем остаток средств на вашем счете после того, как будет установлен период самоисключения."
@@ -13875,7 +14049,7 @@ msgid "Whilst the Company acts as principal in respect of the client's orders, t
 msgstr "Выступая принципалом (исполнителем) в отношении ордеров клиента, Компания также оценивает места исполнения, которые использует Компания и которым она значительно доверяет предоставление наилучшего результата для исполнения ордеров клиента. Как правило, данные места исполнения представлены сторонними инвестиционными компаниями, брокерами и/или поставщиками ликвидности."
 
 msgid "Whilst the Company endeavours to close out the client's Open Positions if and when the Margin Level for their MT5 Real Account reaches or falls below the Stop Out Level, the company does not guarantee that the client's Open Positions will be closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level."
-msgstr "Несмотря на то, что Компания предпримет все разумные усилия, чтобы закрыть открытые позиции Клиента в случае, если уровень маржи на Реальном счете MT5 достигнет или упадёт ниже уровня принудительного закрытия (уровня стоп-аут), Компания не даёт никаких гарантий, что открытые позиции клиента будут закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп-аут."
+msgstr "Несмотря на то, что Компания предпримет все разумные усилия, чтобы закрыть открытые позиции Клиента в случае, если уровень маржи на Реальном счете MT5 достигнет или упадёт ниже уровня принудительного закрытия (уровня стоп аут), Компания не даёт никаких гарантий, что открытые позиции клиента будут закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп-аут."
 
 msgid "Whilst the Company endeavours to open or close the transaction to which the client's orders relate at the requested price, acting in accordance with the Company's duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that the client's order is not filled at the exact intended quoted price when the client places their order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to the client) or a negative slippage (less favourable to the client)."
 msgstr "Несмотря на то, что Компания предпринимает все усилия, чтобы по указанной цене открыть или закрыть контракт, к которому относятся ордеры клиента (действуя согласно политике наилучшего исполнения Компании), бывают периоды, когда, ввиду повышения волатильности или объёма торгов, ордеры могут проскальзывать. Разница между ценой ордера и ценой его исполнения называется проскальзыванием. Это означает, что ордер Клиента не будет открыт по цене, точно указанной при размещении ордера. Как правило, проскальзывание наблюдается в периоды очень высокой или очень низкой волатильности и обычно возникает во время выхода важных новостей или в периоды ограниченной ликвидности. Проскальзывание может оказаться позитивным (более благоприятным для клиента) или негативным (неблагоприятным для клиента)."
@@ -13943,8 +14117,8 @@ msgstr "Размер выплаты вычисляется как разница
 msgid "Win the multiplier times the high minus low."
 msgstr "Размер выплаты вычисляется как разница между максимальной и минимальной ценой за определенный период времени, умноженная на мультипликатор."
 
-msgid "Windows"
-msgstr "Windows"
+msgid "Windows or Linux"
+msgstr "Windows или Linux"
 
 msgid "Winning the contract"
 msgstr "Условия выигрыша контракта"
@@ -14003,11 +14177,11 @@ msgstr "Вывод средств с Реального счёта MT5 клие�
 msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
 msgstr "Вывод средств через платёжного агента возможен только в том случае, если вы вносите средства исключительно через этого платёжного агента."
 
-msgid "Withdrawal: %1 to %2 working days"
-msgstr "Вывод: от %1 до %2 рабочих дней"
+msgid "Withdrawal: %1 day"
+msgstr "Вывод: %1 дн."
 
-msgid "Withdrawal: %1 working day"
-msgstr "Вывод: %1 раб. дн"
+msgid "Withdrawal: %1 to %2 days"
+msgstr "Вывод: от %1 до %2 дн."
 
 msgid "Withdrawal: Not applicable"
 msgstr "Вывод: не предлагается"
@@ -14153,6 +14327,9 @@ msgstr "Вы не можете изменить валюту счёта, так 
 msgid "You can now return to your computer to continue"
 msgstr "Теперь вы можете вернуться и продолжить со своего компьютера"
 
+msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
+msgstr "Вы можете подписаться только на одного провайдера сигналов с одного счета %1 в любой момент времени. Вы можете использовать сигнал максимум на 3 компьютерах."
+
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
 msgstr "Вы можете открыть фиатный счет, не закрывая своего криптовалютного счета."
 
@@ -14267,6 +14444,12 @@ msgstr "Вы можете переводить средства только м�
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "Вы можете открыть по одному счёту на каждую доступную криптовалюту."
 
+msgid "You must also submit a proof of address."
+msgstr "Вам также необходимо предоставить подтверждение адреса."
+
+msgid "You must also submit a proof of identity."
+msgstr "Вам также необходимо предоставить подтверждение личности."
+
 msgid "You must ensure that potential clients are aware of the prohibition on insider trading based on confidential information. If you have any suspicion that such trading is taking place you must inform %1compliance@binary.com%2."
 msgstr "Вы должны убедиться, что потенциальные клиенты знают о запрете на инсайдерскую торговлю с использованием конфиденциальной информации. Если у вас есть подозрения, что кто-то практикует этот вид торговли, напишите нам на %1compliance@binary.com%2."
 
@@ -14275,6 +14458,9 @@ msgstr "Вы должны убедиться, что заполнили все �
 
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr "У вас должно быть быстрое и стабильное интернет-соединение, так как вам необходимо будет отправить нам скриншоты ваших документов"
+
+msgid "You must have an MQL5 community account to subscribe to trading signals. If you don’t have an account yet, please go to %1MQL5.com%2 to register."
+msgstr "Для подписки на торговые сигналы вам потребуется аккаунт сообщества MQL5. Если его у вас еще нет, перейдите на %1MQL5.com%2 для регистрации."
 
 msgid "You must have:"
 msgstr "Предпочтения:"
@@ -14345,6 +14531,9 @@ msgstr "Вы выигрываете, если рыночная цена по и�
 msgid "You win the payout if the market price ends in the digit you have selected."
 msgstr "Вы выигрываете, если рыночная цена по истечении срока действия контракта будет заканчиваться выбранной вами цифрой."
 
+msgid "You won’t be able to trade manually with the same %1 MT5 account once you’ve subscribed to a signal."
+msgstr "После подписки на сигнал вы не сможете торговать вручную с того же счета MT5 %1."
+
 msgid "You'll need to restart your verification on your computer"
 msgstr "Вам нужно будет перезапустить верификацию на вашем компьютере"
 
@@ -14362,6 +14551,9 @@ msgstr "Вы провели значительное количество кон
 
 msgid "You've made no transactions of this type up to this date."
 msgstr "До этого момента вы не совершали транзакций такого типа."
+
+msgid "You've reached the limit for uploading your documents."
+msgstr "Вы достигли лимита на загрузку документов."
 
 msgid "You've worked in the financial sector for at least one year in a role that requires knowledge of your intended transactions on our platform"
 msgstr "Вы работали в сфере финансов на протяжении года и занимали позицию, требующую знаний, необходимых для проведения сделок на нашей платформе"
@@ -14393,9 +14585,6 @@ msgstr "Ваш клиент получит по электронной почт�
 msgid "Your Existing Accounts"
 msgstr "Ваши текущие счета"
 
-msgid "Your MT5 password is now same as your %1 account. To reset, please go to %2Settings%3 to change your password."
-msgstr ""
-
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "В настоящее время вам не нужно аутентифицировать свой счет.%1Мы сообщим вам, если счету потребуется аутентификация."
 
@@ -14408,8 +14597,8 @@ msgstr "На вашем счете нет активности входов/вы
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Ваш счет полностью авторизован, и лимит на вывод был снят."
 
-msgid "Your account is now closed"
-msgstr "Ваш счет успешно закрыт"
+msgid "Your account is now deactivated."
+msgstr "Ваш счет успешно деактивирован."
 
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Ваш счёт заблокирован. Пожалуйста, свяжитесь с нашей %1cлужбой поддержки%2 для получения дальнейшей помощи."
@@ -14450,8 +14639,14 @@ msgstr "Вашему компьютеру может потребоваться 
 msgid "Your demo account balance is currently %1 or less. You may top up your account with an additional %2."
 msgstr "В данный момент баланс вашего демо-счёта составляет %1 или ниже. Вы можете пополнить счёт дополнительными %2."
 
-msgid "Your document is being reviewed, please check back in 1-3 days"
-msgstr "Ваши документы проходят процесс проверки. Пожалуйста, подождите от 1 до 3 дней"
+msgid "Your document is being reviewed, please check back in 1-3 days."
+msgstr "Ваши документы проходят проверку. Пожалуйста, подождите от 1 до 3 дней."
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of address."
+msgstr "Ваши документы проходят проверку. Пожалуйста, подождите от 1 до 3 дней. Вам также необходимо предоставить подтверждение адреса."
+
+msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of identity."
+msgstr "Ваши документы проходят проверку. Пожалуйста, подождите от 1 до 3 дней. Вам также необходимо предоставить подтверждение личности."
 
 msgid "Your face is needed in the selfie"
 msgstr "На селфи должно быть ваше лицо"
@@ -14486,9 +14681,6 @@ msgstr "Пароль был изменен. Пожалуйста, войдите
 msgid "Your password has been successfully reset. Please log into your account using your new password."
 msgstr "Ваш пароль был изменен. Пожалуйста, зайдите на счет, используя новый пароль."
 
-msgid "Your password is one of the most commonly used passwords on the internet. Please choose a unique password."
-msgstr "Ваш пароль является одним из наиболее часто используемых паролей в Интернете. Пожалуйста, подберите уникальный пароль."
-
 msgid "Your professional client request is %1not approved%2."
 msgstr "Ваша заявка на статус профессионального клиента %1отклонена%2."
 
@@ -14509,6 +14701,9 @@ msgstr "Проверка вашей личности прошла успешно
 
 msgid "Your proof of identity has expired"
 msgstr "Истек срок действия документа, удостоверяющего вашу личность"
+
+msgid "Your proof of identity submission failed because:"
+msgstr "Верификация вашего удостоверения личности не удалась, потому что:"
 
 msgid "Your proof of identity was submitted successfully"
 msgstr "Ваше удостоверение личности было успешно отправлено"
@@ -14567,8 +14762,8 @@ msgstr "Ваш лимит на вывод составляет %1%2."
 msgid "You’ll be logged out automatically."
 msgstr "Вы автоматически выйдете из системы."
 
-msgid "You’ve successfully closed your account. We’ll send a confirmation email to %1."
-msgstr "Вы успешно закрыли счет. Мы отправим письмо с подтверждением на %1."
+msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
+msgstr "Чтобы подписаться на платные сигналы, вам нужно пополнить свой счет MQL5. Вот как вы можете %1это сделать%2."
 
 msgid "ZEC vs US dollar"
 msgstr "ZEC против доллара США"
@@ -14628,7 +14823,7 @@ msgid "an Order to open or close a transaction if and when a price quote becomes
 msgstr "инструкция открыть или закрыть контракт, если/когда цена котировки будет более благоприятна для клиента, по сравнению с текущей ценой"
 
 msgid "an execution instruction given by the client to the Company to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order, etc."
-msgstr "исполнение инструкций, предоставленных клиентом Компании с целью открытия или закрытия позиции на рынке, со ссылкой на базовый инструмент, включая рыночный ордер, стоп-ордер, лимитный ордер и т. д."
+msgstr "исполнение инструкций, предоставленных клиентом Компании с целью открытия или закрытия позиции на рынке, со ссылкой на базовый инструмент, включая рыночный ордер, стоп ордер, лимитный ордер и т. д."
 
 msgid "b. Download and install the MT5 trading platform through the link %1"
 msgstr "b) загрузить и установить торговую платформу MT5 по ссылке %1"
@@ -14684,9 +14879,6 @@ msgstr "вход"
 msgid "logout"
 msgstr "выход"
 
-msgid "million"
-msgstr "млн."
-
 msgid "minute"
 msgstr "мин."
 
@@ -14694,7 +14886,7 @@ msgid "minutes"
 msgstr "мин."
 
 msgid "nearest price reasonably available and quoted by %1 when the Company Price quotation reaches or goes beyond the level of the client's Stop Order"
-msgstr "самая ранняя цена, которая доступна и предоставлена %1, когда котировка Компании достигает или выходит за пределы уровня стоп-ордера клиента"
+msgstr "самая ранняя цена, которая доступна и предоставлена %1, когда котировка Компании достигает или выходит за пределы уровня стоп ордера клиента"
 
 msgid "numbers"
 msgstr "цифры"
@@ -14759,9 +14951,6 @@ msgstr "основная валюта или финансовый инструм
 msgid "there was a connection error. Please try again later."
 msgstr "произошла ошибка соединения. Пожалуйста, повторите попытку позже."
 
-msgid "thousand"
-msgstr "тыс."
-
 msgid "tick"
 msgstr "тик."
 
@@ -14776,9 +14965,6 @@ msgstr "сегодня, по пятницам"
 
 msgid "virtual money credit to account"
 msgstr "виртуальных денег на счёт"
-
-msgid "years"
-msgstr "год(а)/лет"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

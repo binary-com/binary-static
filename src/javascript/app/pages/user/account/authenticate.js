@@ -26,6 +26,7 @@ const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
     let onfido_unsupported       = false;
+    let authentication_object    = {};
     let file_checks          = {};
     let file_checks_uns      = {};
     let onfido,
@@ -769,6 +770,7 @@ const Authenticate = (() => {
             $button.setVisibility(0);
             $('.submit-status').setVisibility(0);
             $('#not_authenticated').setVisibility(0);
+            showCTAButton('identity', 'pending');
             $('#pending_poa').setVisibility(1);
         });
     };
@@ -780,6 +782,8 @@ const Authenticate = (() => {
             $button_uns.setVisibility(0);
             $('.submit-status-uns').setVisibility(0);
             $('#not_authenticated_uns').setVisibility(0);
+
+            showCTAButton('document', 'pending');
             $('#upload_complete').setVisibility(1);
         });
     };
@@ -875,6 +879,20 @@ const Authenticate = (() => {
         }
     };
 
+    const showCTAButton = (type, status) => {
+        const { needs_verification } = authentication_object;
+        const type_required = type === 'identity' ? 'poi' : 'poa';
+        const type_pending = type === 'identity' ? 'poa' : 'poi';
+        const description_status = status !== 'verified';
+
+        if (needs_verification.includes(type)) {
+            $(`#text_${status}_${type_required}_required`).setVisibility(1);
+            $(`#button_${status}_${type_required}_required`).setVisibility(1);
+        } else if (description_status) {
+            $(`#text_${status}_${type_pending}_pending`).setVisibility(1);
+        }
+    };
+
     const handleComplete = () => {
         BinarySocket.send({
             notification_event: 1,
@@ -888,6 +906,8 @@ const Authenticate = (() => {
                     $('#upload_complete').setVisibility(1);
                     Header.displayAccountStatus();
                     $('#authentication_loading').setVisibility(0);
+
+                    showCTAButton('document', 'pending');
                 });
             }, 4000);
         });
@@ -924,6 +944,11 @@ const Authenticate = (() => {
         const is_not_required = identity.status === 'none' && document.status === 'none' && !needs_verification.length;
 
         return !is_not_required;
+    };
+
+    const cleanElementVisibility = () => {
+        $('#personal_details_error').setVisibility(0);
+        $('#limited_poi').setVisibility(0);
     };
 
     const initAuthentication = async () => {
@@ -963,12 +988,17 @@ const Authenticate = (() => {
         }
 
         const { identity, needs_verification, document } = authentication_status;
+        authentication_object = authentication_status;
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
         const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
         onfido_unsupported = !identity.services.onfido.is_country_supported;
         const documents_supported = identity.services.onfido.documents_supported;
         const country_code = identity.services.onfido.country_code;
+        const has_submission_attempts = !!identity.services.onfido.submissions_left;
+        const is_rejected = identity.status === 'rejected' || identity.status === 'suspected';
+        const last_rejected_reasons = identity.services.onfido.last_rejected;
+        const has_rejected_reasons = !!last_rejected_reasons.length && is_rejected;
 
         if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
@@ -977,6 +1007,51 @@ const Authenticate = (() => {
 
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
+        } else if (has_rejected_reasons && has_submission_attempts) {
+            const maximum_reasons = last_rejected_reasons.slice(0, 3);
+            const has_minimum_reasons = last_rejected_reasons.length > 3;
+            $('#last_rejection_poi').setVisibility(1);
+
+            maximum_reasons.forEach(reason => {
+                $('#last_rejection_list').append(`<li>${reason}</li>`);
+            });
+
+            $('#last_rejection_button').off('click').on('click', () => {
+                $('#last_rejection_poi').setVisibility(0);
+                
+                if (onfido_unsupported) {
+                    $('#not_authenticated_uns').setVisibility(1);
+                    initUnsupported();
+                } else {
+                    initOnfido(service_token_response.token, documents_supported, country_code);
+                }
+            });
+            if (has_minimum_reasons) {
+                $('#last_rejection_more').setVisibility(1);
+                $('#last_rejection_more').off('click').on('click', () => {
+                    $('#last_rejection_more').setVisibility(0);
+                    $('#last_rejection_less').setVisibility(1);
+    
+                    $('#last_rejection_list').empty();
+    
+                    last_rejected_reasons.forEach(reason => {
+                        $('#last_rejection_list').append(`<li>${reason}</li>`);
+                    });
+                });
+                $('#last_rejection_less').off('click').on('click', () => {
+                    $('#last_rejection_less').setVisibility(0);
+                    $('#last_rejection_more').setVisibility(1);
+    
+                    $('#last_rejection_list').empty();
+    
+                    maximum_reasons.forEach(reason => {
+                        $('#last_rejection_list').append(`<li>${reason}</li>`);
+                    });
+                });
+            }
+            
+        } else if (!has_submission_attempts && is_rejected) {
+            $('#limited_poi').setVisibility(1);
         } else if (!needs_verification.includes('identity')) {
             // if POI is verified and POA is not verified, redirect to POA tab
             if (identity.status === 'verified' && document.status !== 'verified') {
@@ -992,12 +1067,15 @@ const Authenticate = (() => {
                     }
                     break;
                 case 'pending':
+                    showCTAButton('document', 'pending');
+
                     $('#upload_complete').setVisibility(1);
                     break;
                 case 'rejected':
                     $('#unverified').setVisibility(1);
                     break;
                 case 'verified':
+                    showCTAButton('document', 'verified');
                     $('#verified').setVisibility(1);
                     break;
                 case 'expired':
@@ -1026,6 +1104,7 @@ const Authenticate = (() => {
                     break;
                 }
                 case 'pending':
+                    showCTAButton('identity', 'pending');
                     $('#pending_poa').setVisibility(1);
                     break;
                 case 'rejected':
@@ -1035,6 +1114,7 @@ const Authenticate = (() => {
                     $('#unverified_poa').setVisibility(1);
                     break;
                 case 'verified':
+                    showCTAButton('document', 'verified');
                     $('#verified_poa').setVisibility(1);
                     break;
                 case 'expired':
@@ -1053,6 +1133,7 @@ const Authenticate = (() => {
     };
 
     const onLoad = async () => {
+        cleanElementVisibility();
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
         if (!isAuthenticationAllowed()) {

@@ -375,7 +375,7 @@ const Header = (() => {
                 residence               : () => buildMessage(localizeKeepPlaceholders('Please set [_1]country of residence[_2] before upgrading to a real-money account.'),                                                   'user/settings/detailsws'),
                 risk                    : () => buildMessage(localizeKeepPlaceholders('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),                                   'user/settings/assessmentws'),
                 tax                     : () => buildMessage(localizeKeepPlaceholders('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),                                            'user/settings/detailsws'),
-                unwelcome               : () => buildMessage('Trading and deposits have been disabled on your account. Kindly allow us some time to review the account.'),
+                unwelcome               : () => localize('Trading and deposits have been disabled on your account. Kindly allow us some time to review the account.'),
                 withdrawal_locked_review: () => localize('Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified.'),
                 withdrawal_locked       : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
                 tnc                     : () => buildMessage(has_no_tnc_limit

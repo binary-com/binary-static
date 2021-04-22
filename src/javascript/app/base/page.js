@@ -14,6 +14,7 @@ const ClientBase       = require('../../_common/base/client_base');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../_common/common_functions').getElementById;
 const Crowdin          = require('../../_common/crowdin');
+const GTM              = require('../../_common/gtm');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
 const localize         = require('../../_common/localize').localize;
@@ -32,6 +33,7 @@ require('../../_common/lib/polyfills/string.includes');
 const Page = (() => {
     const init = () => {
         State.set('is_loaded_by_pjax', false);
+        GTM.init();
         Url.init();
         Elevio.init();
         PushNotification.init();
@@ -130,6 +132,13 @@ const Page = (() => {
             }
         }
         TrafficSource.setData();
+
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+            const is_uk_residence = (Client.get('residence') === 'gb' || State.getResponse('website_status.clients_country') === 'gb');
+            if (is_uk_residence || Client.get('landing_company_shortcode') === 'iom') {
+                getElementById('gamstop_uk_display').setVisibility(1);
+            }
+        });
     };
 
     const recordAffiliateExposure = () => {

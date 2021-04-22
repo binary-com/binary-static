@@ -10,6 +10,7 @@ export const Fieldset = ({ children, legend, id, className }) => (
 );
 
 export const FormRow = ({
+    autoComplete,
     spaced,
     type,
     id,
@@ -24,6 +25,7 @@ export const FormRow = ({
     is_bold,
     tooltip,
     hint,
+    has_password_meter,
     has_geovalidator,
     attributes = {},
     input_prefix,
@@ -82,12 +84,33 @@ export const FormRow = ({
             return (
                 <React.Fragment>
                     {input_prefix}
-                    <input
-                        type={type}
-                        className={className}
-                        id={id}
-                        {...attributes}
-                    />
+                    {type === 'password' ?
+                        <div className='password--field-wrapper'>
+                            <input
+                                autoComplete={autoComplete}
+                                type='password'
+                                className={`password--input-field ${className || ''}`}
+                                id={id}
+                                data-password={has_password_meter}
+                                {...attributes}
+                            />
+                            <div id='password_toggle' className='password--toggle'>
+                                <img
+                                    id='password_toggle_icon'
+                                    alt='toggle-password-view'
+                                    className='password-toggle-icon'
+                                    src={it.url_for('images/common/password_hide.svg')}
+                                />
+                            </div>
+                        </div>
+                        :
+                        <input
+                            type={type}
+                            className={className}
+                            id={id}
+                            {...attributes}
+                        />
+                    }
                     {type === 'checkbox' && spaced ?
                         <label htmlFor={id} />
                         :

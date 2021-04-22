@@ -1,6 +1,5 @@
 const loadScript   = require('scriptjs');
 const BinarySocket = require('../../../../app/base/socket');
-const isEuCountry  = require('../../../../app/common/country_base').isEuCountry;
 const getLanguage  = require('../../../../_common/language').get;
 
 const EconomicCalendar = (() => {
@@ -26,7 +25,7 @@ const EconomicCalendar = (() => {
         if (loader) loader.remove();
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
-            $('.calendar-footer').setVisibility(isEuCountry());
+            $('.calendar-footer').setVisibility(true);
         });
     };
 

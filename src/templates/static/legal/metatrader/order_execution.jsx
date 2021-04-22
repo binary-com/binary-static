@@ -68,6 +68,7 @@ const OrderExecution = () => (
             <li>{it.L('FXOpen')}</li>
             <li>{it.L('CFH Clearing Limited')}</li>
             <li>{it.L('TopFX')}</li>
+            <li>{it.L('Prime Brokerage Services Limited')}</li>
         </ul>
 
         <h2 data-anchor='order-handling'>{it.L('G. Order handling')}</h2>

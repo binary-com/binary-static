@@ -1,24 +1,24 @@
-const BinaryPjax          = require('./binary_pjax');
-const pages_config        = require('./binary_pages');
-const Client              = require('./client');
-const Header              = require('./header');
-const NetworkMonitor      = require('./network_monitor');
-const Page                = require('./page');
-const BinarySocket        = require('./socket');
-const ContentVisibility   = require('../common/content_visibility');
-const DerivBanner         = require('../common/deriv_banner');
-const GTM                 = require('../../_common/base/gtm');
-const Login               = require('../../_common/base/login');
-const LiveChat            = require('../../_common/base/livechat');
-const getElementById      = require('../../_common/common_functions').getElementById;
-const urlLang             = require('../../_common/language').urlLang;
-const localizeForLang     = require('../../_common/localize').forLang;
-const localize            = require('../../_common/localize').localize;
-const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
-const isStorageSupported  = require('../../_common/storage').isStorageSupported;
-const ThirdPartyLinks     = require('../../_common/third_party_links');
-const urlFor              = require('../../_common/url').urlFor;
-const createElement       = require('../../_common/utility').createElement;
+const BinaryPjax = require('./binary_pjax');
+const pages_config = require('./binary_pages');
+const Client = require('./client');
+const Header = require('./header');
+const NetworkMonitor = require('./network_monitor');
+const Page = require('./page');
+const BinarySocket = require('./socket');
+const ContentVisibility = require('../common/content_visibility');
+const DerivBanner = require('../common/deriv_banner');
+const GTM = require('../../_common/base/gtm');
+const Login = require('../../_common/base/login');
+const LiveChat = require('../../_common/base/livechat');
+const getElementById = require('../../_common/common_functions').getElementById;
+const urlLang = require('../../_common/language').urlLang;
+const localizeForLang = require('../../_common/localize').forLang;
+const localize = require('../../_common/localize').localize;
+const ScrollToAnchor = require('../../_common/scroll_to_anchor');
+const isStorageSupported = require('../../_common/storage').isStorageSupported;
+const ThirdPartyLinks = require('../../_common/third_party_links');
+const urlFor = require('../../_common/url').urlFor;
+const createElement = require('../../_common/utility').createElement;
 
 const BinaryLoader = (() => {
     let container;
@@ -46,10 +46,10 @@ const BinaryLoader = (() => {
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);
         window.addEventListener('beforeunload', beforeContentChange);
-        container.addEventListener('binarypjax:after',  afterContentChange);
+        container.addEventListener('binarypjax:after', afterContentChange);
         BinaryPjax.init(container, '#content');
-
         ThirdPartyLinks.init();
+
     };
 
     const beforeContentChange = () => {
@@ -61,7 +61,7 @@ const BinaryLoader = (() => {
             }
             active_script = null;
         }
-        
+
         ScrollToAnchor.cleanup();
     };
 
@@ -79,10 +79,10 @@ const BinaryLoader = (() => {
         ContentVisibility.init().then(() => {
             BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
                 GTM.pushDataLayer({ event: 'page_load' }); // we need website_status.clients_country
-                
+
                 // reroute LiveChat group
                 LiveChat.rerouteGroup();
-                
+
                 // first time load.
                 const last_image = $('#content img').last();
                 if (last_image) {
@@ -166,7 +166,7 @@ const BinaryLoader = (() => {
         }
 
         const div_container = createElement('div', { class: 'logged_out_title_container', html: Client.isAccountOfType('financial') ? '' : content.getElementsByTagName('h1')[0] || '' });
-        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localized_message });
+        const div_notice = createElement('p', { class: 'center-text notice-msg', html: localized_message });
 
         div_container.appendChild(div_notice);
 
@@ -197,7 +197,7 @@ const BinaryLoader = (() => {
         const inner_container = createElement('div', { class: 'center-text' });
         const error_msg = createElement('div', { class: 'center-text notice-msg', text: error_messages.not_authenticated() });
         const logout_cta = createElement('button');
-        const logout_span = createElement('span', { text: localize ('Sign out') });
+        const logout_span = createElement('span', { text: localize('Sign out') });
 
         logout_cta.addEventListener('click', () => { Client.doLogout({ logout: 1 }); });
         logout_cta.appendChild(logout_span);

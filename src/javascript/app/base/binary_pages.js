@@ -59,6 +59,7 @@ const Home                = require('../../static/pages/home');
 const KeepSafe            = require('../../static/pages/keep_safe');
 const JobDetails          = require('../../static/pages/job_details');
 const Platforms           = require('../../static/pages/platforms');
+const Mt5Signals          = require('../../static/pages/mt5_signals');
 const Regulation          = require('../../static/pages/regulation');
 const StaticPages         = require('../../static/pages/static_pages');
 const TermsAndConditions  = require('../../static/pages/tnc');
@@ -144,6 +145,7 @@ const pages_config = {
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
     'job-details'            : { module: JobDetails },
     'keep-safe'              : { module: KeepSafe },
+    'mt5-signals'            : { module: Mt5Signals },
     'new-account'            : { module: NewAccount,                     not_authenticated: true },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },

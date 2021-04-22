@@ -88,14 +88,12 @@ const AccountClosure = () => (
         <div id='logged_out' className='invisible'>
             <h1>{it.L('Account Closure')}</h1>
         </div>
-        <div id='msg_main' className='gr-gutter gr-padding-10 invisible'>
-            <h1 className='text-bold'>{it.L('Your account is now closed')}</h1>
+        <div id='msg_main' className='center-text gr-gutter gr-padding-30 invisible'>
             <p className='notice-msg'>
-                {it.L('You’ve successfully closed your account. We’ll send a confirmation email to [_1].', '<span id="current_email"></span>')}
+                {it.L('We\'re sorry to see you leave.')}
+                <br />
+                {it.L('Your account is now deactivated.')}
             </p>
-            <br />
-            <br />
-            <p className='center-text'>{it.L('This page will redirect to the [_1] homepage after 10 seconds.', it.website_name)}</p>
         </div>
         <div id='closure_container' className='account-closure invisible'>
             <div id='main_header' className='gr-padding-30'>
@@ -162,7 +160,7 @@ const AccountClosure = () => (
                     <p className='account-closure-subtitle'>{it.L('To close your account, complete the following steps:')}</p>
                     <div className='gr-padding-10'>
                         <h3 className='secondary-color'>{it.L('Step 1: Close all open positions')}</h3>
-                        <p>{it.L('Go to the [_1]portfolio page[_2] to close all open positions from your Binary.com accounts.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
+                        <p>{it.L('Go to the [_1]Portfolio[_2] to close all open positions from your Binary.com accounts.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
                         <p className='invisible metatrader-link'>{it.L('If you have opened positions in your MT5 account, please close them too.')}</p>
 
                     </div>

@@ -51,6 +51,48 @@ const Symbols = (() => {
         })
     );
 
+    const isSymbolOpen = symbol => symbol.exchange_is_open === 1;
+
+    const findSymbol = async (active_symbols, symbol) => {
+        const first_symbol = active_symbols.find(item => item.symbol === symbol && isSymbolOpen(item));
+        const is_symbol_offered = await isSymbolOffered(first_symbol);
+
+        if (is_symbol_offered) return first_symbol;
+
+        return undefined;
+    };
+
+    const isSymbolOffered = async symbol_info => {
+        const response = await BinarySocket.send({ contracts_for: symbol_info.symbol });
+        
+        return !(getPropertyValue(response, ['error', 'code']) === 'InvalidSymbol');
+    };
+
+    const findFirstSymbol = async (active_symbols, pattern) => {
+        const first_symbol = active_symbols.find(
+            symbol_info => pattern.test(symbol_info.submarket) && isSymbolOpen(symbol_info)
+        );
+
+        if (first_symbol) {
+            const is_symbol_offered = await isSymbolOffered(first_symbol);
+
+            if (is_symbol_offered) return first_symbol;
+        }
+        
+        return undefined;
+    };
+
+    const getDefaultOpenSymbol = async active_symbols => {
+        const default_open_symbol =
+            (await findSymbol(active_symbols, '1HZ100V')) ||
+            (await findFirstSymbol(active_symbols, /random_index/)) ||
+            (await findFirstSymbol(active_symbols, /major_pairs/));
+
+        if (default_open_symbol) return default_open_symbol.symbol;
+
+        return active_symbols.find(symbol_info => symbol_info.submarket === 'major_pairs');
+    };
+
     return {
         details,
         markets      : list => (list ? trade_markets_list : trade_markets),
@@ -58,6 +100,7 @@ const Symbols = (() => {
         underlyings  : () => trade_underlyings,
         getAllSymbols: () => names,
         getUnderlyingPipSize,
+        getDefaultOpenSymbol,
     };
 })();
 

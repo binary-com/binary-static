@@ -13,6 +13,7 @@ const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
     const isGtmApplicable = () => (/^(1|1098|14473|15284|16303|15265|16929)$/.test(getAppId()));
+    const isGtmAvailable = () => (window.dataLayer !== (null || undefined));
 
     const getCommonVariables = () => ({
         country_ip: State.getResponse('website_status.clients_country'),
@@ -28,11 +29,13 @@ const GTM = (() => {
     });
 
     const pushDataLayer = (data) => {
-        if (isGtmApplicable() && !isLoginPages()) {
-            dataLayer.push({
-                ...getCommonVariables(),
-                ...data,
-            });
+        if (isGtmAvailable()){
+            if (isGtmApplicable() && (!isLoginPages() || data.is_elevio)) {
+                dataLayer.push({
+                    ...getCommonVariables(),
+                    ...data,
+                });
+            }
         }
     };
 

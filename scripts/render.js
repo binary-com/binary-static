@@ -252,6 +252,7 @@ async function compile(page) {
             affiliate_password_url: `https://login.binary.com/password-reset.php?lang=${affiliate_language_code}`,
             affiliate_email       : 'partners@binary.com',
             deriv_banner_url      : `https://deriv.com/${deriv_language_code}`,
+            deriv_career_url      : 'https://deriv.com/careers',
         };
 
         const context               = context_builder.buildFor(model);

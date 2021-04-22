@@ -1054,6 +1054,32 @@ body #not_authenticated_financial ul.checked > li {
         display: inline-block;
         margin-left: 5px;
     }
+    ul.rejected > li {
+        background: url('../images/pages/authenticate/error.svg') no-repeat left 0.3em;
+        width: fit-content;
+        text-align: left;
+        padding-left: 1.4em;
+        margin-top: 1em;
+        min-height: auto;
+    }
+    #last_rejection {
+        &_poi {
+            span {
+                cursor: pointer;
+                color: $COLOR_ORANGE;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &_button {
+            margin-top: 1.4em;
+        }
+        &_list {
+            margin-bottom: 0.9em;
+        }
+    }
     #resolve_error {
         color: $COLOR_RED;
     }
@@ -1707,4 +1733,17 @@ body #not_authenticated_financial ul.checked > li {
 
 #self_exclusion_dialog #dialog_content {
     max-width: 496px;
+}
+
+.signal_provider {
+    &-container {
+        display: flex;
+        @media screen and (max-width: 480px) {
+            flex-direction: column-reverse;
+        }
+    }
+    &-image {
+        border: 2px solid $COLOR_GRAY;
+    }
+
 }

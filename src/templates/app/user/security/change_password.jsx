@@ -5,10 +5,15 @@ const ChangePassword = () => (
     <React.Fragment>
         <h1>{it.L('Change Password')}</h1>
         <form className='gr-padding-10' id='frm_change_password'>
-            <Fieldset>
-                <FormRow type='password' id='old_password' label={it.L('Current password')} />
-                <FormRow type='password' id='new_password' label={it.L('New password')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
-                <FormRow type='password' id='repeat_password' label={it.L('Verify new password')} />
+            <Fieldset legend={it.L('Details')}>
+                <FormRow autoComplete='current-password' type='password' id='old_password' label={it.L('Current password')} />
+                <FormRow
+                    autoComplete='new-password'
+                    has_password_meter
+                    type='password'
+                    id='new_password'
+                    label={it.L('New password')}
+                />
                 <SubmitButton type='submit' msg_id='frm_change_password_error' text={it.L('Change password')} />
             </Fieldset>
         </form>

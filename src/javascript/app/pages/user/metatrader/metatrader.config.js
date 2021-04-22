@@ -343,15 +343,17 @@ const MetaTraderConfig = (() => {
 
     const fields = {
         new_account: {
-            txt_name         : { id: '#txt_name',          request_field: 'name' },
             txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
-            txt_re_main_pass : { id: '#txt_re_main_pass' },
             ddl_trade_server : { id: '#ddl_trade_server', is_radio: true },
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields: acc_type => {
                 const sample_account = getSampleAccount(acc_type);
                 const is_demo = /^demo_/.test(acc_type);
+                const get_settings = State.getResponse('get_settings');
+                // First name is not set when user has no real account
+                const name = get_settings.first_name && get_settings.last_name ? `${get_settings.first_name} ${get_settings.last_name}` : sample_account.title;
                 return ({
+                    name,
                     account_type: is_demo ? 'demo' : sample_account.market_type,
                     email       : Client.get('email'),
                     leverage    : sample_account.leverage,
@@ -365,20 +367,18 @@ const MetaTraderConfig = (() => {
             },
         },
         password_change: {
-            ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
-            txt_old_password   : { id: '#txt_old_password',  request_field: 'old_password' },
-            txt_new_password   : { id: '#txt_new_password',  request_field: 'new_password' },
-            txt_re_new_password: { id: '#txt_re_new_password' },
-            additional_fields  :
+            ddl_password_type: { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
+            txt_old_password : { id: '#txt_old_password',  request_field: 'old_password' },
+            txt_new_password : { id: '#txt_new_password',  request_field: 'new_password' },
+            additional_fields:
                 acc_type => ({
                     login: accounts_info[acc_type].info.login,
                 }),
         },
         password_reset: {
-            ddl_password_type  : { id: '#ddl_reset_password_type', request_field: 'password_type', is_radio: true },
-            txt_new_password   : { id: '#txt_reset_new_password',  request_field: 'new_password' },
-            txt_re_new_password: { id: '#txt_reset_re_new_password' },
-            additional_fields  :
+            ddl_password_type: { id: '#ddl_reset_password_type', request_field: 'password_type', is_radio: true },
+            txt_new_password : { id: '#txt_reset_new_password',  request_field: 'new_password' },
+            additional_fields:
                 (acc_type, token) => ({
                     login            : accounts_info[acc_type].info.login,
                     verification_code: token,
@@ -414,21 +414,17 @@ const MetaTraderConfig = (() => {
 
     const validations = () => ({
         new_account: [
-            { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 101 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'] },
-            { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
             { selector: fields.new_account.ddl_trade_server.id,  validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
             { selector: fields.password_change.txt_old_password.id,    validations: [['req', { hide_asterisk: true }]] },
-            { selector: fields.password_change.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], 'password', ['not_equal', { to: fields.password_change.txt_old_password.id, name1: localize('Current password'), name2: localize('New password') }], 'compare_to_email'], re_check_field: fields.password_change.txt_re_new_password.id },
-            { selector: fields.password_change.txt_re_new_password.id, validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.password_change.txt_new_password.id }]] },
+            { selector: fields.password_change.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], 'password', ['not_equal', { to: fields.password_change.txt_old_password.id, name1: localize('Current password'), name2: localize('New password') }], 'compare_to_email'] },
         ],
         password_reset: [
             { selector: fields.password_reset.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
-            { selector: fields.password_reset.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'], re_check_field: fields.password_reset.txt_re_new_password.id },
-            { selector: fields.password_reset.txt_re_new_password.id, validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.password_reset.txt_new_password.id }]] },
+            { selector: fields.password_reset.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'] },
         ],
         verify_password_reset_token: [
             { selector: fields.verify_password_reset_token.txt_verification_code.id, validations: [['req', { hide_asterisk: true }], 'token'], exclude_request: 1 },
@@ -550,10 +546,18 @@ const MetaTraderConfig = (() => {
         return is_need_verification;
     };
 
-    // remove server from acc_type for cases where we don't have it
+    // remove server from acc_type for cases where we don't need it
     // e.g. during new account creation no server is set yet
-    const getCleanAccType = (acc_type) =>
-        /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
+    // due to ability for server names to have one or more underscores in the name
+    // we can pass the number of underscores to remove it from acc_type
+    // f.e. getCleanAccType('financial_ts01_02', 2) returns 'financial'
+    const getCleanAccType = (acc_type, underscores) => {
+        if (underscores > 1) {
+            // eslint-disable-next-line no-param-reassign
+            acc_type = getCleanAccType(acc_type, --underscores);
+        }
+        return /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
+    };
 
     // if no server exists yet, e.g. during new account creation
     // we want to get information like landing company etc which is shared
@@ -567,9 +571,21 @@ const MetaTraderConfig = (() => {
         return accounts_info[Object.keys(accounts_info).find(account => regex.test(account))];
     };
 
+    const hasTradeServers = (acc_type) => {
+        const is_real = acc_type.startsWith('real');
+        const is_gaming = accounts_info[acc_type].market_type === 'gaming';
+        const is_clean_type = acc_type.endsWith('financial') || acc_type.endsWith('stp');
+        if ((/unknown/.test(acc_type))) {
+            return false;
+        }
+        return !(is_real && (is_gaming || is_clean_type));
+    };
+
     const hasMultipleTradeServers = (acc_type, accounts) => {
-        const clean_acc_type_a = getCleanAccType(acc_type);
-        return Object.keys(accounts).filter(acc_type_b => clean_acc_type_a === getCleanAccType(acc_type_b)).length > 1;
+        // we need to call getCleanAccType twice as the server names have underscore in it
+        const clean_acc_type_a = getCleanAccType(acc_type, 2);
+        return Object.keys(accounts).filter(acc_type_b => clean_acc_type_a ===
+            getCleanAccType(acc_type_b, 2)).length > 1;
     };
 
     return {
@@ -579,6 +595,7 @@ const MetaTraderConfig = (() => {
         validations,
         needsRealMessage,
         hasAccount,
+        hasTradeServers,
         hasMultipleTradeServers,
         getCleanAccType,
         getCurrency,

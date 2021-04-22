@@ -105,10 +105,6 @@ const Metatrader = () => (
                                     <div data='display_login' />
                                     <div className='display_login_tip'>&#9432;</div>
                                 </div>
-                                <div className='gr-row gr-padding-10 gr-parent'>
-                                    <div className='gr-3'>{it.L('Name:')}</div>
-                                    <div data='name' />
-                                </div>
                                 <div className='gr-row gr-padding-10 gr-parent gr-hide mobile-balance'>
                                     <div className='gr-3'>{it.L('Balance:')}</div>
                                     <div data='balance' />
@@ -133,9 +129,12 @@ const Metatrader = () => (
                                 <div className='balance gr-padding-10' data='balance' />
                             </div>
                         </div>
-                        <div className='add_more_servers'>
-                            <a id='btn_add_more_servers' className='button' href='javascript:;'>
-                                <span>{it.L('Add more trade servers')}</span>
+                        <div className='add_region'>
+                            <a id='btn_add_region' className='button-secondary invisible' href='javascript:;'>
+                                <span>{it.L('+ Add region')}</span>
+                            </a>
+                            <a className='button mt5-web-link' target='_blank' rel='noopener noreferrer'>
+                                <span>{it.L('Trade on web terminal')}</span>
                             </a>
                         </div>
                     </div>
@@ -143,7 +142,7 @@ const Metatrader = () => (
 
                 <div className='hint gr-padding-20 gr-parent no-margin'>
                     <p className='no-margin'>
-                        {it.L('Server maintenance starting 03:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time.')}
+                        {it.L('Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time.')}
                     </p>
                 </div>
                 <div className='mt-panel'>
@@ -182,30 +181,6 @@ const Metatrader = () => (
                             <a href={it.url_for('metatrader/download')} className='mt-link-button'>
                                 {it.L('Go to MT5 download page')}
                             </a>
-                        </div>
-                    </div>
-                </div>
-                <div className='mt-panel'>
-                    <div className='mt-sidebar-button mt5-web'>
-                        <div className='small-icon'>
-                            <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
-                                <img src={it.url_for('images/pages/metatrader/dashboard/img-app-mac@2x.png')} />
-                            </a>
-                        </div>
-                        <div className='mt-title-mt5-web'>
-                            {it.L('MT5 Web platform')}
-                        </div>
-                        <div className='mt-link-web'>
-                            <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Deriv-Demo&trade_server=Deriv-Demo' target='_blank' rel='noopener noreferrer'>
-                                    {it.L('Demo')}
-                                </a>
-                            </div>
-                            <div className='mt5-web-link'>
-                                <a href='https://trade.mql5.com/trade?servers=Deriv-Server&trade_server=Deriv-Server' target='_blank' rel='noopener noreferrer'>
-                                    {it.L('Real')}
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -316,44 +291,44 @@ const Metatrader = () => (
                                     </a>
                                 </div>
                             </div>
-                            <div id='view_2' className='gr-row invisible'>
+                            <div id='view_3' className='gr-row invisible'>
                                 <div className='container gr-8 gr-12-m'>
-                                    <FormRow is_two_rows type='text' id='txt_name' label={it.L('Name')} attributes={{ maxLength: 101, autoComplete: 'off' }} />
-                                    <FormRow is_two_rows type='password' id='txt_main_pass' label={it.L('Main password')} tooltip={it.L('Access your account with full trading permission.')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
-                                    <FormRow is_two_rows type='password' id='txt_re_main_pass' label={it.L('Verify main password')} />
-                                    <div id='view_2-buttons' className='gr-padding-10 center-text'>
+                                    <FormRow
+                                        autoComplete='new-password'
+                                        is_two_rows
+                                        has_password_meter
+                                        type='password'
+                                        id='txt_main_pass'
+                                        label={it.L('Main password')}
+                                        tooltip={it.L('Access your account with full trading permission.')}
+                                    />
+                                    <div id='view_3-buttons' className='gr-padding-10 center-text'>
                                         <a className='button button-secondary btn-back' href='javascript:;'>
                                             <span>{it.L('Back')}</span>
                                         </a>
-                                        <a
-                                            className='button button-secondary btn-cancel invisible'
-                                            href='javascript:;'
-                                        >
-                                            <span className='button'>{it.L('Cancel')}</span>
-                                        </a>
-                                        <a className='button btn-next invisible' href='javascript:;'>
-                                            <span>{it.L('Next')}</span>
-                                        </a>
+                                        <button id='btn_submit_new_account' type='submit' action='new_account'>
+                                            {it.L('Create account')}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <div id='view_3' className='gr-row invisible'>
+                            <div id='view_2' className='gr-row invisible'>
                                 <div id='server_unavailable_notice' className='notice-msg center-text invisible'>
                                     {it.L('Due to an issue on our server, some MT5 accounts are unavailable at the moment. Please bear with us and thank you for your patience.')}
                                 </div>
                                 <div className='container gr-8 gr-12-m'>
                                     <p>{it.L('Choose a server for your MT5 [_1] account:', '<span id="mt5_account_type"></span>')}</p>
                                     <div id='ddl_trade_server' type='radio' />
-                                    <div id='view_3-buttons' className='gr-padding-10 center-text'>
+                                    <div id='view_2-buttons' className='gr-padding-10 center-text'>
                                         <a className='button button-secondary btn-back' href='javascript:;'>
                                             <span>{it.L('Back')}</span>
+                                        </a>
+                                        <a className='button btn-next' href='javascript:;'>
+                                            <span>{it.L('Next')}</span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <button id='btn_submit_new_account' className='invisible' type='submit' action='new_account'>
-                                {it.L('Create account')}
-                            </button>
                         </div>
                     </form>
                 </div>
@@ -378,9 +353,8 @@ const Metatrader = () => (
                                         ]}
                                         default_option='main'
                                     />
-                                    <FormRow is_two_rows type='password' id='txt_old_password' label={it.L('Current MT5 password')} />
-                                    <FormRow is_two_rows type='password' id='txt_new_password' label={it.L('New MT5 password')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
-                                    <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new MT5 password')} />
+                                    <FormRow autoComplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current MT5 password')} />
+                                    <FormRow autoComplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New MT5 password')} />
                                     <SubmitButton
                                         no_wrapper
                                         type='submit'
@@ -435,8 +409,7 @@ const Metatrader = () => (
                                         ]}
                                         default_option='main'
                                     />
-                                    <FormRow is_two_rows type='password' id='txt_reset_new_password' label={it.L('New MT5 password')} hint={it.L('Minimum of eight lower and uppercase English letters with numbers')} />
-                                    <FormRow is_two_rows type='password' id='txt_reset_re_new_password' label={it.L('Verify new MT5 password')} />
+                                    <FormRow autoComplete='new-password' has_password_meter is_two_rows type='password' id='txt_reset_new_password' label={it.L('New MT5 password')} />
                                     <SubmitButton
                                         no_wrapper
                                         type='submit'
