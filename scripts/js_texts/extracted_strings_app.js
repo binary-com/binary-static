@@ -705,7 +705,7 @@ module.exports = [
     'You have insufficient funds in your MT5 account.',
     'You have not granted access to any applications.',
     'You have reached the rate limit of requests per second. Please try later.',
-    'You have reached the withdrawal limit.',
+    'You have reached the withdrawal limit. Please upload your proof of identity and address to lift your withdrawal limit and proceed with your withdrawal.',
     'You have sold this contract at [_1] [_2]',
     'You have successfully changed your account currency from [_1] to [_2].',
     'You have successfully disabled two-factor authentication for your account.',

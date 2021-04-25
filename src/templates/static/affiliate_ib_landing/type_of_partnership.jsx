@@ -146,177 +146,109 @@ const TypesOfPartnership = () => (
                             <h3 id='ib_header' className='secondary-color'>{it.L('Commision structure')}</h3>
 
                             <h3>{it.L('Synthetic Account')}</h3>
+                            <p>{it.L('Earn when your clients trade on an MT5 Synthetics account.')}</p>
                             <Table
                                 data={{
                                     thead: [
                                         [
-                                            { text: it.L('Asset'), attributes: { rowSpan: 2 } },
-                                            { text: it.L('Commission per round trade') },
-                                        ],
-                                        [
-                                            { text: it.L('$ per 100,000 USD of turnover'), className: 'center-text' },
+                                            { text: it.L('Asset') },
+                                            { text: it.L('Commission per USD 100k turnover'), className: 'center-text' },
                                         ],
                                     ],
                                     tbody: [
                                         [
-                                            { text: it.L('Crash 1000 Index') },
-                                            { text: it.L('0.50') },
-                                        ],
-                                        [
                                             { text: it.L('Crash 500 Index') },
-                                            { text: it.L('0.70') },
+                                            { text: it.L('0.35') },
                                         ],
                                         [
-                                            { text: it.L('Boom 1000 Index') },
-                                            { text: it.L('0.50') },
+                                            { text: it.L('Crash 1000 Index') },
+                                            { text: it.L('0.25') },
                                         ],
                                         [
                                             { text: it.L('Boom 500 Index') },
-                                            { text: it.L('0.70') },
+                                            { text: it.L('0.35') },
                                         ],
                                         [
-                                            { text: it.L('Step Index') },
-                                            { text: it.L('0.20') },
+                                            { text: it.L('Boom 1000 Index') },
+                                            { text: it.L('0.25') },
                                         ],
                                         [
                                             { text: it.L('Volatility 10 Index') },
-                                            { text: it.L('1.50') },
+                                            { text: it.L('0.75') },
                                         ],
                                         [
                                             { text: it.L('Volatility 10 (1s) Index') },
-                                            { text: it.L('1.50') },
+                                            { text: it.L('0.75') },
                                         ],
                                         [
                                             { text: it.L('Volatility 25 Index') },
-                                            { text: it.L('3.50') },
+                                            { text: it.L('1.75') },
                                         ],
                                         [
                                             { text: it.L('Volatility 25 (1s) Index') },
-                                            { text: it.L('3.50') },
+                                            { text: it.L('1.75') },
                                         ],
                                         [
                                             { text: it.L('Volatility 50 Index') },
-                                            { text: it.L('7.50') },
+                                            { text: it.L('3.75') },
                                         ],
                                         [
                                             { text: it.L('Volatility 50 (1s) Index') },
-                                            { text: it.L('7.50') },
+                                            { text: it.L('3.75') },
                                         ],
                                         [
                                             { text: it.L('Volatility 75 Index') },
-                                            { text: it.L('10.00') },
+                                            { text: it.L('5.00') },
                                         ],
                                         [
                                             { text: it.L('Volatility 75 (1s) Index') },
-                                            { text: it.L('10.00') },
+                                            { text: it.L('5.00') },
                                         ],
                                         [
                                             { text: it.L('Volatility 100 Index') },
-                                            { text: it.L('15.00') },
+                                            { text: it.L('7.50') },
                                         ],
                                         [
                                             { text: it.L('Volatility 100 (1s) Index') },
-                                            { text: it.L('15.00') },
+                                            { text: it.L('7.50') },
+                                        ],
+                                        [
+                                            { text: it.L('Step Index') },
+                                            { text: it.L('0.10') },
                                         ],
                                     ],
                                 }}
                             />
-
-                            <p className='text-align-left'>{it.L('For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of 125,000 USD would pay 12.5 USD.')}</p>
-                            <p className='text-align-left'><strong>{it.L('10 USD x 1 lot x 125,000 USD/100,000 = 12.5 USD')}</strong></p>
-                            <p className='text-align-left'>{it.L('If your account currency is EUR or GBP, your commission will be converted based on the current forex rate.')}</p>
-
+                            <div className='affiliate-ib-calculation'>
+                                <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
+                                <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility 75 Index for a price of USD 500,000 will pay out USD 25 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-synthetic.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'>{it.L('[_1]Please note[_2]: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.', '<strong>', '</strong>')}</p>
+                            </div>
                             <h3>{it.L('Financial account')}</h3>
+                            <p>{it.L('Earn when your clients trade on an MT5 Financial account.')}</p>
                             <Table
                                 data={{
                                     thead: [
                                         [
                                             { text: it.L('Asset'), attributes: { rowSpan: 2 } },
-                                            { text: it.L('Commission') },
+                                            { text: it.L('Commission per lot') },
                                         ],
                                         [
-                                            { text: it.L('per lot'), className: 'center-text' },
-                                        ],
-                                    ],
-                                    tbody: [
-                                        [
-                                            { text: it.L('Forex and metals*') },
-                                            { text: it.L('10') },
-                                        ],
-                                    ],
-                                }}
-                            />
-                            <Table
-                                data={{
-                                    thead: [
-                                        [
-                                            { text: it.L('Asset'), attributes: { rowSpan: 2 } },
-                                            { text: it.L('Commission per round trade') },
-                                        ],
-                                        [
-                                            { text: it.L('$ per 100,000 USD of turnover'), className: 'center-text' },
+                                            { text: it.L('(1 standard forex lot is 100k units)'), className: 'center-text' },
                                         ],
                                     ],
                                     tbody: [
                                         [
-                                            { text: it.L('BTC/USD') },
-                                            { text: it.L('40') },
+                                            { text: it.L('Forex') },
+                                            { text: it.L('5') },
                                         ],
                                         [
-                                            { text: it.L('ETH/USD') },
-                                            { text: it.L('40') },
-                                        ],
-                                        [
-                                            { text: it.L('LTC/USD') },
-                                            { text: it.L('50') },
-                                        ],
-                                        [
-                                            { text: it.L('BCH/USD') },
-                                            { text: it.L('50') },
-                                        ],
-                                        [
-                                            { text: it.L('XRP/USD') },
-                                            { text: it.L('50') },
-                                        ],
-                                        [
-                                            { text: it.L('DSH/USD') },
-                                            { text: it.L('500') },
-                                        ],
-                                        [
-                                            { text: it.L('EOS/USD') },
-                                            { text: it.L('500') },
-                                        ],
-                                        [
-                                            { text: it.L('ZEC/USD') },
-                                            { text: it.L('500') },
-                                        ],
-                                        [
-                                            { text: it.L('XMR/USD') },
-                                            { text: it.L('500') },
-                                        ],
-                                        [
-                                            { text: it.L('BNB/USD') },
-                                            { text: it.L('50') },
-                                        ],
-                                    ],
-                                }}
-                            />
-
-                            <h3>{it.L('Financial STP account')}</h3>
-                            <Table
-                                data={{
-                                    thead: [
-                                        [
-                                            { text: it.L('Asset'), attributes: { rowSpan: 2 } },
-                                            { text: it.L('Commission') },
-                                        ],
-                                        [
-                                            { text: it.L('per lot'), className: 'center-text' },
-                                        ],
-                                    ],
-                                    tbody: [
-                                        [
-                                            { text: it.L('Forex*') },
+                                            { text: it.L('Metals') },
                                             { text: it.L('5') },
                                         ],
                                     ],
@@ -326,64 +258,272 @@ const TypesOfPartnership = () => (
                                 data={{
                                     thead: [
                                         [
-                                            { text: it.L('Asset'), attributes: { rowSpan: 2 } },
-                                            { text: it.L('Commission per round trade') },
+                                            { text: it.L('Asset') },
+                                            { text: it.L('Commission per USD 100K turnover'), className: 'center-text' },
+                                        ],
+                                    ],
+                                    tbody: [
+                                        [
+                                            { text: it.L('Stock indices') },
+                                            { text: it.L('USD 1') },
                                         ],
                                         [
-                                            { text: it.L('$ per 100,000 USD of turnover'), className: 'center-text' },
+                                            { text: it.L('Stocks') },
+                                            { text: it.L('USD 10') },
+                                        ],
+                                    ],
+                                }}
+                            />
+                            <Table
+                                data={{
+                                    thead: [
+                                        [
+                                            { text: it.L('Asset') },
+                                            { text: it.L('Commission per USD 100k turnover'), className: 'center-text' },
                                         ],
                                     ],
                                     tbody: [
                                         [
                                             { text: it.L('BTC/USD') },
-                                            { text: it.L('40') },
+                                            { text: it.L('20') },
                                         ],
                                         [
                                             { text: it.L('ETH/USD') },
-                                            { text: it.L('40') },
+                                            { text: it.L('20') },
                                         ],
                                         [
                                             { text: it.L('LTC/USD') },
-                                            { text: it.L('50') },
+                                            { text: it.L('25') },
                                         ],
                                         [
                                             { text: it.L('BCH/USD') },
-                                            { text: it.L('50') },
+                                            { text: it.L('25') },
                                         ],
                                         [
                                             { text: it.L('XRP/USD') },
-                                            { text: it.L('50') },
+                                            { text: it.L('25') },
                                         ],
                                         [
                                             { text: it.L('DSH/USD') },
-                                            { text: it.L('500') },
+                                            { text: it.L('250') },
                                         ],
                                         [
                                             { text: it.L('EOS/USD') },
-                                            { text: it.L('500') },
+                                            { text: it.L('250') },
                                         ],
                                         [
                                             { text: it.L('ZEC/USD') },
-                                            { text: it.L('500') },
+                                            { text: it.L('250') },
                                         ],
                                         [
                                             { text: it.L('XMR/USD') },
-                                            { text: it.L('500') },
+                                            { text: it.L('250') },
                                         ],
                                         [
                                             { text: it.L('BNB/USD') },
-                                            { text: it.L('50') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('IOT/USD') },
+                                            { text: it.L('15O') },
+                                        ],
+                                        [
+                                            { text: it.L('NEO/USD') },
+                                            { text: it.L('150') },
+                                        ],
+                                        [
+                                            { text: it.L('OMG/USD') },
+                                            { text: it.L('150') },
+                                        ],
+                                        [
+                                            { text: it.L('TRX/USD') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('XLM/USD') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('BTC/ETH') },
+                                            { text: it.L('20') },
+                                        ],
+                                        [
+                                            { text: it.L('BTC/LTC') },
+                                            { text: it.L('20') },
                                         ],
                                     ],
                                 }}
                             />
+                            <div className='affiliate-ib-calculation'>
+                                <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
+                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-forex.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 10 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-crypto.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'><strong>{it.L('Please note:')}</strong></p>
+                                <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example). Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
+                            </div>
+                            <h3>{it.L('Financial STP account')}</h3>
+                            <p>{it.L('Earn when your clients trade on an MT5 Financial STP account.')}</p>
+                            <Table
+                                data={{
+                                    thead: [
+                                        [
+                                            { text: it.L('Asset'), attributes: { rowSpan: 2 } },
+                                            { text: it.L('Commission per lot') },
+                                        ],
+                                        [
+                                            { text: it.L('(1 standard lot is 100k units)'), className: 'center-text' },
+                                        ],
+                                    ],
+                                    tbody: [
+                                        [
+                                            { text: it.L('Forex') },
+                                            { text: it.L('2.5') },
+                                        ],
+                                    ],
+                                }}
+                            />
+                            <Table
+                                data={{
+                                    thead: [
+                                        [
+                                            { text: it.L('Asset') },
+                                            { text: it.L('Commission per USD 100k turnover'), className: 'center-text' },
+                                        ],
+                                    ],
+                                    tbody: [
+                                        [
+                                            { text: it.L('BTC/USD') },
+                                            { text: it.L('20') },
+                                        ],
+                                        [
+                                            { text: it.L('ETH/USD') },
+                                            { text: it.L('20') },
+                                        ],
+                                        [
+                                            { text: it.L('LTC/USD') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('BCH/USD') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('XRP/USD') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('DSH/USD') },
+                                            { text: it.L('250') },
+                                        ],
+                                        [
+                                            { text: it.L('EOS/USD') },
+                                            { text: it.L('250') },
+                                        ],
+                                        [
+                                            { text: it.L('ZEC/USD') },
+                                            { text: it.L('250') },
+                                        ],
+                                        [
+                                            { text: it.L('XMR/USD') },
+                                            { text: it.L('250') },
+                                        ],
+                                        [
+                                            { text: it.L('BNB/USD') },
+                                            { text: it.L('25') },
+                                        ],
 
-                            <p className='text-align-left'>*{it.L('Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on financial accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on financial STP accounts.')}</p>
+                                        [
+                                            { text: it.L('IOT/USD') },
+                                            { text: it.L('150') },
+                                        ],
+                                        [
+                                            { text: it.L('NEO/USD') },
+                                            { text: it.L('150') },
+                                        ],
+                                        [
+                                            { text: it.L('OMG/USD') },
+                                            { text: it.L('150') },
+                                        ],
+                                        [
+                                            { text: it.L('TRX/USD') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('XLM/USD') },
+                                            { text: it.L('25') },
+                                        ],
+                                        [
+                                            { text: it.L('BTC/ETH') },
+                                            { text: it.L('20') },
+                                        ],
+                                        [
+                                            { text: it.L('BTC/LTC') },
+                                            { text: it.L('20') },
+                                        ],
+                                    ],
+                                }}
+                            />
+                            <div className='affiliate-ib-calculation'>
+                                <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
+                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-forex.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'>{it.L('For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 10 in commission based on the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-stp-crypto.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <p className='text-align-left'><strong>{it.L('Please note:')}</strong></p>
+                                <p className='text-align-left'>{it.L('For forex, your commission is represented in the base currency (EUR in the above example).')}</p>
+                                <p className='text-align-left'>{it.L('Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate.')}</p>
+                            </div>
+                            <div className='affiliate-ib-calculation affiliate-ib-calculation-minimum'>
+                                <h3 className='text-align-left'><strong>{it.L('Minimum volume requirement')}</strong></h3>
+                                <p className='text-align-left'>{it.L('To receive the minimum commission (0.01 in any currency) allowed by the system, the minimum volume requirement is calculated based on the following formulas:')}</p>
+                            
+                                <p className='text-align-left'><strong>{it.L('Example:')}</strong></p>
+                                <p className='text-align-left'>{it.L('A deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) per USD 100,000 turnover will pay out a commission of USD 10. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-value.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-crypto-spot.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+
+                                <p className='text-align-left'>{it.L('A deal for 1 lot of the Volatility Index 75 for a price of USD 500,000 per USD 100,000 turnover will pay out a commission of USD 5. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:')}</p>
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-value.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                                <img
+                                    src={it.url_for('images/pages/affiliates_ib_landing/formulas/min-financial-stp-forex-spot.svg')}
+                                    width='100%'
+                                    className='gr-padding-20'
+                                />
+                            </div>
+                            <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
+                                <span>{it.L('Sign up now')}</span>
+                            </a>
                         </div>
-
-                        <a href={it.affiliate_signup_url} className='button' target='_blank' rel='noopener noreferrer'>
-                            <span>{it.L('Sign up now')}</span>
-                        </a>
                     </div>
                 </div>
             </div>

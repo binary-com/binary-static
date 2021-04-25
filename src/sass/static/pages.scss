@@ -1735,6 +1735,18 @@ body #not_authenticated_financial ul.checked > li {
     max-width: 496px;
 }
 
+.affiliate-ib {
+    &-calculation {
+        border: 1px solid $COLOR_BLACK;
+        padding: 10px;
+
+        &-minimum {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
 .signal_provider {
     &-container {
         display: flex;
