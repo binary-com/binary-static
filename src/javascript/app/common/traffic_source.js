@@ -1,4 +1,3 @@
-const Cookies        = require('js-cookie');
 const Client         = require('../base/client');
 const CookieStorage  = require('../../_common/storage').CookieStorage;
 const LocalStore     = require('../../_common/storage').LocalStore;
@@ -63,8 +62,7 @@ const TrafficSource = (() => {
                 });
             }
             
-        } else if (!Cookies.get('utm_data')) {
-            initCookie();
+        } else if (!current_values.utm_source) {
             cookie.set('utm_source', 'binary_direct', { sameSite: 'none', secure: true });
         }
 
