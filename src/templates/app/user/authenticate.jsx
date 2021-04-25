@@ -61,6 +61,9 @@ const Authenticate = () => (
             <div className='tab-content'>
                 <TabContentContainer>
                     <TabContent id='poi' className='selectedTab'>
+                        <p id='msg_personal_details' className='gr-padding-10 center-text notice-msg invisible'>
+                            {it.L('Before uploading your document, please ensure that your [_1]personal details[_2] are updated to match your proof of identity. This will help to avoid delays during the verification process.', `<a href=${it.url_for('user/settings/detailsws')} target="_blank">`, '</a>')}
+                        </p>
                         <div id='onfido' />
                         <div id='not_authenticated_uns' className='invisible'>
                             <UnsupportedMessage />

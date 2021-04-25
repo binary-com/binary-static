@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-04-15 09:52\n"
+"PO-Revision-Date: 2021-04-23 06:45\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -25,20 +25,20 @@ msgstr "2"
 msgid "5"
 msgstr "5"
 
-msgid "10"
-msgstr "10"
+msgid "20"
+msgstr ""
 
-msgid "40"
-msgstr "40"
+msgid "25"
+msgstr ""
 
-msgid "50"
-msgstr "50"
+msgid "150"
+msgstr ""
+
+msgid "250"
+msgstr ""
 
 msgid "404"
 msgstr "404"
-
-msgid "500"
-msgstr "500"
 
 msgid " (Region added)"
 msgstr " (Wilayah ditambahkan)"
@@ -111,9 +111,6 @@ msgstr "\"Konten\" berarti data atau konten apa pun baik dari Situs Web Perusaha
 
 msgid "\"Third-party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Provider pihak ketiga\" adalah pihak ketiga (bukan-afiliasi) yang membuat fitur dan fungsi melalui penggunaan API %1."
-
-msgid "$ per 100,000 USD of turnover"
-msgstr "$ per USD 100.000 total pembelian "
 
 msgid "$0 - $20,000"
 msgstr "$0 - $20.000"
@@ -449,10 +446,10 @@ msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Hubungi kami%2 untuk mengatur tanggal dan waktu panggilan video."
 
 msgid "%1Deriv-Demo%2 if your signal is for demo accounts only."
-msgstr ""
+msgstr "%1Deriv-Demo%2 jika sinyal Anda hanya untuk akun demo."
 
 msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accounts only."
-msgstr ""
+msgstr "%1Deriv-Server%2 atau %1Deriv-Server-02%2 jika sinyal Anda hanya untuk akun riil."
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1Didirikan%2 Oktober 1999"
@@ -470,16 +467,22 @@ msgid "%1Note%2: These limits are only applicable to your %3 real account. To se
 msgstr "%1Nota%2: Batasan ini hanya berlaku pada akun riil %3 Anda. Untuk menetapkan batas, akses akun masing-masing dan tetapkan batasan yang sesuai."
 
 msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
-msgstr ""
+msgstr "%1Catatan:%2 Untuk pilihan penyedia sinyal yang lebih luas pada Deriv, kunjungi %3Halaman showcase MQL5%4 dan cari Deriv di bawah kolom server Broker."
 
 msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
-msgstr ""
+msgstr "%1Catatan:%2 Anda perlu mengupgrade akun MQL5 Anda ke status penjual untuk dapat menambahkan sinyal. Jika Anda belum mengupgrade, ikuti langkah-langkah pada halaman ini untuk mendaftar sebagai penjual."
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Mohon diketahui bahwa jika Anda berdomisili di Inggris, pengecualian diri tidak dapat dihapus hingga periodenya berakhir. %2Jika Anda ingin melanjutkan trading setelah periode pengecualian diri Anda berakhir, silakan ajukan permintaan dengan menghubungi %3. Permintaan melalui obrolan atau email tidak akan dilayani."
 
+msgid "%1Please note%2: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate."
+msgstr ""
+
 msgid "%1Return to trading page%2"
 msgstr "%1Kembali ke halaman trading%2"
+
+msgid "%1Use MetaTrader %2Economic Calendar"
+msgstr ""
 
 msgid "%1’s refusal to pay bribes is an essential part of our ethical commitment. Similarly, we do not permit our business partners to pay bribes when acting on our behalf."
 msgstr "%1 menolak untuk membayar suap adalah bagian penting dari komitmen etis kami. Demikian pula, kami tidak mengizinkan mitra bisnis kami untuk membayar suap ketika bertindak atas nama kami."
@@ -502,6 +505,12 @@ msgstr "'Perusahaan Fixed-Odds Terbaik 2012' penghargaan dari Global Banking and
 msgid "'Financial Trading Operator of the Year' award by eGaming Review"
 msgstr "Penghargaan 'Financial Trading Operator of the Year' oleh eGaming Review"
 
+msgid "(1 standard forex lot is 100k units)"
+msgstr ""
+
+msgid "(1 standard lot is 100k units)"
+msgstr ""
+
 msgid "(One) Touch trades"
 msgstr "Kontrak (Sekali) Sentuh"
 
@@ -509,7 +518,7 @@ msgid "(This limit may vary depending on current exchange rates.)"
 msgstr "(Batasan ini dapat bervariasi tergantung pada nilai tukar saat ini.)"
 
 msgid "(You can find the account server name on your %1MT5 dashboard%2)."
-msgstr ""
+msgstr "(Anda dapat menemukan nama server akun pada dasbor %1MT5%2)."
 
 msgid "(a) Price and cost"
 msgstr "(a) Harga dan biaya"
@@ -553,8 +562,14 @@ msgstr "0-1 tahun"
 msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 transaksi dalam 12 bulan terakhir"
 
-msgid "0.20"
-msgstr "0,20"
+msgid "0.10"
+msgstr ""
+
+msgid "0.25"
+msgstr ""
+
+msgid "0.35"
+msgstr ""
 
 msgid "0.4%"
 msgstr "0.4%"
@@ -562,11 +577,8 @@ msgstr "0.4%"
 msgid "0.5%"
 msgstr "0,5%"
 
-msgid "0.50"
-msgstr "0,50"
-
-msgid "0.70"
-msgstr "0,70"
+msgid "0.75"
+msgstr ""
 
 msgid "0.75%"
 msgstr "0,75%"
@@ -589,23 +601,17 @@ msgstr "1. Anda yang mengirim tautan"
 msgid "1.5%"
 msgstr "1.5%"
 
-msgid "1.50"
-msgstr "1,50"
-
-msgid "10 USD x 1 lot x 125,000 USD/100,000 = 12.5 USD"
-msgstr "USD 10 x 1 lot x USD 125.000/100.000 = USD 12,5"
-
-msgid "10.00"
-msgstr "10,00"
+msgid "1.75"
+msgstr ""
 
 msgid "11-39 transactions in the past 12 months"
 msgstr "11-39 transaksi pada 12 bulan terakhir"
 
-msgid "15.00"
-msgstr "15,00"
-
 msgid "150+"
 msgstr "150+"
+
+msgid "15O"
+msgstr ""
 
 msgid "16th MENA Financial Forum & Expo"
 msgstr "Finansial Forum & Expo MENA ke 16"
@@ -625,14 +631,17 @@ msgstr "2. Foto selfie dengan memegang bukti identitas"
 msgid "2. Your desktop window stays open"
 msgstr "2. Jendela desktop Anda tetap terbuka"
 
+msgid "2.5"
+msgstr ""
+
 msgid "20 – 39.999%"
 msgstr "20 – 39,999%"
 
 msgid "2021 Binary | All rights reserved"
 msgstr "Binary 2021 | Hak Cipta Terpelihara"
 
-msgid "3.50"
-msgstr "3,50"
+msgid "3.75"
+msgstr ""
 
 msgid "30%"
 msgstr "30%"
@@ -657,6 +666,9 @@ msgstr "40K+"
 
 msgid "45%"
 msgstr "45%"
+
+msgid "5.00"
+msgstr ""
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transaksi pada 12 bulan terakhir"
@@ -759,6 +771,15 @@ msgstr "Program afiliasi yang kompetitif dan fleksibel yang dapat disesuaikan de
 
 msgid "A corporate action can include but is not limited to assimilation, acquisition, bankruptcy, bonus issue, bonus rights, cash dividend, class action, delisting, de-merger, general announcement, initial public offering (IPO), liquidation, merger, change in par value, scheme of arrangement, stock dividend, stock split, return of capital, and reverse stock split."
 msgstr "Aksi korporasi adalah termasuk dan tidak terkecuali pada asimilasi, akuisisi, kebangkrutan, masalah bonus, hak bonus, dividen tunai, tindakan kelas, menghapus daftar, pembatalan merger, pengumuman umum, penawaran umum perdana (IPO), likuidasi, merger, perubahan nilai nominal, skema pengaturan, dividen saham, pemecahan saham, pengembalian modal, dan pembatalan pemecahan saham."
+
+msgid "A deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) per USD 100,000 turnover will pay out a commission of USD 10. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:"
+msgstr ""
+
+msgid "A deal for 1 lot of the Volatility 75 Index for a price of USD 500,000 will pay out USD 25 in commission based on the following formula:"
+msgstr ""
+
+msgid "A deal for 1 lot of the Volatility Index 75 for a price of USD 500,000 per USD 100,000 turnover will pay out a commission of USD 5. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:"
+msgstr ""
 
 msgid "A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives."
 msgstr "Derivatif adalah sebuah instrumen keuangan dimana nilainya ditentukan oleh berdasarkan pasar. Derivatif pada umumnya diperdagangkan pada pasar antar-bank dan binary adalah salah satu bentuk yang paling sederhana dari derivatif."
@@ -1118,7 +1139,7 @@ msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier
 msgstr "Tambahkan +/– untuk menentukan barrier offset. Contoh, +0,005 berarti batasan lebih tinggi 0,005 dari spot masuk."
 
 msgid "Add a description and click %1Save%2 to complete the registration."
-msgstr ""
+msgstr "Tambahkan deskripsi dan klik %1Simpan%2 untuk menyelesaikan pendaftaran."
 
 msgid "Add another word or two. Uncommon words are better."
 msgstr "Tambahkan satu atau dua kata lagi. Kata-kata yang tidak umum lebih baik."
@@ -1130,7 +1151,7 @@ msgid "Additional business exposure:"
 msgstr "Paparan bisnis tambahan:"
 
 msgid "Additional income stream from monthly subscriptions."
-msgstr ""
+msgstr "Penghasilan tambahan dari langganan bulanan."
 
 msgid "Additional processing time may be required by your bank or money transfer services for the funds to be credited to your payment account."
 msgstr "Waktu pemrosesan tambahan mungkin diperlukan oleh bank atau layanan transfer dana dalam mengkreditkan dana ke dalam akun pembayaran Anda."
@@ -1871,7 +1892,7 @@ msgid "Automate your trading strategies with our simple, \"drag-and-drop\" bot c
 msgstr "Otomatiskan strategi trading Anda secara sederhana dengan alat pembuat bot \"drag-and-drop\"."
 
 msgid "Automated copying – no extra work from you."
-msgstr ""
+msgstr "Penyalinan otomatis - tanpa perlu melakukan kerja apapun."
 
 msgid "Automated decision-making"
 msgstr "Pembuatan keputusan otomatis"
@@ -1941,6 +1962,12 @@ msgstr "BNB/USD"
 
 msgid "BTC"
 msgstr "BTC"
+
+msgid "BTC/ETH"
+msgstr ""
+
+msgid "BTC/LTC"
+msgstr ""
 
 msgid "BTC/USD"
 msgstr "BTC/USD"
@@ -2035,6 +2062,9 @@ msgstr "Menjadi mitra kami"
 msgid "Before the Company opens an account for the client in which the client can trade or invest in Investment Products with DIEL, the Company is required to make an assessment of whether products or services that the client has chosen are appropriate for the client and to warn the client if, on the basis of the information that the client has provided to the Company, any such product or service is deemed not appropriate for the client. Any decision to open an account and to use the Company's products or services is the client's. It is the client's responsibility to understand the risks involved with the Company's products or services."
 msgstr "Sebelum Perusahaan membuka akun untuk klien di mana klien dapat bertrading atau berinvestasi dalam Produk Investasi dengan DIEL, Perusahaan diharuskan untuk menilai apakah produk atau layanan yang dipilih klien sesuai untuk klien dan memperingatkan klien jika, berdasarkan informasi yang diberikan klien kepada Perusahaan, produk atau layanan semacam itu dianggap tidak sesuai untuk klien. Setiap keputusan untuk membuka akun dan menggunakan produk atau layanan Perusahaan adalah milik klien. Adalah merupakan tanggung jawab klien untuk memahami risiko yang terkait dengan produk atau layanan Perusahaan."
 
+msgid "Before uploading your document, please ensure that your %1personal details%2 are updated to match your proof of identity. This will help to avoid delays during the verification process."
+msgstr ""
+
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "Sebelum menggunakan trading robot atau Expert Advisor dan melanjutkan trading, klien harus mengujinya pada akun demo terlebih dahulu."
 
@@ -2048,13 +2078,13 @@ msgid "Benefits"
 msgstr "Manfaat"
 
 msgid "Benefits of being a MT5 provider"
-msgstr ""
+msgstr "Manfaat menjadi penyedia sinyal MT5"
 
 msgid "Benefits of being a Payment Agent"
 msgstr "Manfaat menjadi Agen Pembayaran"
 
 msgid "Benefits of subscribing to MT5 signals"
-msgstr ""
+msgstr "Manfaat berlangganan sinyal MT5"
 
 msgid "Best execution factors"
 msgstr "Faktor eksekusi terbaik"
@@ -2672,10 +2702,10 @@ msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
 
 msgid "Click on the %1My Statistics%2 tab and select your signal provider."
-msgstr ""
+msgstr "Klik pada tab %1Statistik Saya%2 dan pilih penyedia sinyal Anda."
 
 msgid "Click the %1Renew%2 button to renew the service or the %1Unsubscribe%2 button to cancel the subscription."
-msgstr ""
+msgstr "Klik pada tombol %1Memperbarui%2 untuk memperbarui layanan atau tombol %1Berhenti berlangganan%2 untuk membatalkan langganan."
 
 msgid "Client Information"
 msgstr "Informasi Klien"
@@ -2869,8 +2899,17 @@ msgstr "Komisi pada deposit"
 msgid "Commission on withdrawals"
 msgstr "Komisi pada penarikan"
 
-msgid "Commission per round trade"
-msgstr "Komisi per putaran trading"
+msgid "Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate."
+msgstr ""
+
+msgid "Commission per USD 100K turnover"
+msgstr ""
+
+msgid "Commission per USD 100k turnover"
+msgstr ""
+
+msgid "Commission per lot"
+msgstr ""
 
 msgid "Commission rates"
 msgstr "Tarif komisi"
@@ -2951,7 +2990,7 @@ msgid "Complaints and disputes"
 msgstr "Keluhan dan perselisihan"
 
 msgid "Complete the form with your MT5 account credentials. In the Broker field, enter your account server name:"
-msgstr ""
+msgstr "Lengkapi formulir dengan kredensial akun MT5 Anda. Pada kolom Broker, masukkan nama server akun Anda:"
 
 msgid "Complete your %1Tax Information%2."
 msgstr "Lengkapi %1Informasi Pajak%2 Anda."
@@ -3014,7 +3053,7 @@ msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following
 msgstr "Konfigurasikan PC dan ponsel Anda untuk menggunakan DNS Cloudflare dengan mengikuti petunjuk di %1."
 
 msgid "Configure your trading and risk management parameters. Then click %1OK%2 to complete the process."
-msgstr ""
+msgstr "Konfigurasikan parameter trading dan manajemen risiko Anda. Kemudian klik %1OK%2 untuk menyelesaikan prosesnya."
 
 msgid "Confirm"
 msgstr "Lanjutkan"
@@ -4201,8 +4240,17 @@ msgstr "Dapatkan keuntungan proporsional yang sama pada modal di semua nilai."
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr "Dapatkan komisi hingga 45% berdasarkan total pendapatan bersih yang dihasilkan oleh klien Anda. Komisi akan dikreditkan ke dalam akun Anda setelah tanggal 15 setiap bulan."
 
-msgid "Easy to set up – no installation required."
+msgid "Earn when your clients trade on an MT5 Financial STP account."
 msgstr ""
+
+msgid "Earn when your clients trade on an MT5 Financial account."
+msgstr ""
+
+msgid "Earn when your clients trade on an MT5 Synthetics account."
+msgstr ""
+
+msgid "Easy to set up – no installation required."
+msgstr "Pemasangan mudah - tidak perlu instalasi."
 
 msgid "Economic Calendar"
 msgstr "Kalender Ekonomi"
@@ -4999,14 +5047,14 @@ msgstr "Mengikuti, mematuhi, dan menerapkan semua arahan, kebijakan, dan prosedu
 msgid "Food Services"
 msgstr "Layanan Makanan"
 
+msgid "For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 10 in commission based on the following formula:"
+msgstr ""
+
 msgid "For details on submitting a complaint to the Company's lead supervisory authority on data processing practices, the client is encouraged to check %1's %2Complaints and disputes%3 section."
 msgstr "Untuk perincian tentang pengajuan keluhan kepada otoritas pengawas utama Perusahaan mengenai praktik pengolahan data, klien didorong untuk memeriksa bagian %1%2 Keluhan dan perselisihan%3."
 
 msgid "For e-wallets or local currencies not supported by %1."
 msgstr "Untuk metode e-wallet atau mata uang lokal yang tidak disediakan oleh %1."
-
-msgid "For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of 125,000 USD would pay 12.5 USD."
-msgstr "Contoh, satu putaran trading (pembukaan dan penutupan posisi) pada 1 lot Indeks Volatilitas 75 dengan harga USD 125.000 akan memberi komisi sebesar USD 12,5."
 
 msgid "For example, if you buy a 100 USD contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Sebagai contoh, jika Anda membeli kontrak USD 100 dan tidak berjalan sesuai rencana, Anda hanya perlu menjualnya untuk memotong kerugian Anda pada harga pasar."
@@ -5040,6 +5088,18 @@ msgstr "Untuk fitur dan ilustrasi trading Spot FX yang ditawarkan oleh %1, lihat
 
 msgid "For forex quotes, the closing times are defined by the Company as shown in the market opening times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "Untuk kutipan valas, waktu penutupan ditentukan oleh Perusahaan seperti yang ditunjukkan pada bagian waktu pembukaan pasar situs web. Dalam hal terjadi perselisihan mengenai nilai pasar atau penyelesaian, keputusan Perusahaan bersifat final dan mengikat. Klien harus memahami bahwa pasar tertentu (seperti indeks saham) tidak buka sepanjang hari dan bahwa trading mungkin tidak tersedia ketika pasar ditutup."
+
+msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:"
+msgstr ""
+
+msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:"
+msgstr ""
+
+msgid "For forex, your commission is represented in the base currency (EUR in the above example)."
+msgstr ""
+
+msgid "For forex, your commission is represented in the base currency (EUR in the above example). Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate."
+msgstr ""
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly, prices may differ among providers, depending on which bank(s) they obtain prices from."
 msgstr "Untuk valas: Pasar valas adalah pasar OTC (over the counter), di mana bank dan lembaga keuangan besar lainnya memperdagangkan mata uang di antara mereka sendiri tanpa ada lembaga kliring pusat. Dengan demikian, tidak tersedia sumber harga 'resmi' bagi penawaran valas. Data feed yang berbeda akan berisi penawaran dari sub-set bank internasional yang berbeda. Berhubung hal tersebut, harga mungkin berbeda di antara penyedia, tergantung dari bank mana mereka memperoleh harga tersebut."
@@ -5083,9 +5143,6 @@ msgstr "Forex"
 msgid "Forex and contract-for-difference transactions involve a high degree of risk and are speculative because they allow the client to speculate on the short-term price movements of the underlying financial instruments. The client should not enter into forex and/or contract-for-difference transactions unless the client is able to sustain losses that exceed the client's deposited funds. It is important for the client to understand that in order to realise any value from the client's open positions, the client would have to enter into a corresponding transaction to close the client's open positions and may find it difficult or impossible to do so under certain market conditions."
 msgstr "Forex dan transaksi contract-for-differences (cfd) adalah melibatkan tingkat risiko yang tinggi dan bersifat spekulatif karena memungkinkan klien untuk berspekulasi pada pergerakan harga jangka pendek dari instrumen keuangan dasar. Klien tidak boleh masuk ke dalam transaksi forex dan/atau contract for differences (cfd) kecuali klien mampu mempertahankan kerugian yang melebihi dana yang didepositkan klien. Penting bagi klien untuk memahami bahwa untuk merealisasikan nilai apa pun dari open posisi klien, klien harus masuk ke dalam transaksi yang sesuai untuk menutup open posisi klien dan mungkin merasa sulit atau tidak mungkin untuk melakukannya di bawah kondisi pasar tertentu."
 
-msgid "Forex and metals*"
-msgstr "Forex dan logam*"
-
 msgid "Forex contract specifications"
 msgstr "Spesifikasi kontrak Forex"
 
@@ -5103,9 +5160,6 @@ msgstr "Trading forex melibatkan pembelian satu mata uang dan penjualan mata uan
 
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "Trading forex akan melibatkan pembelian dan penjualan \"pasangan mata uang\" ini. Ketika Anda membeli suatu pasangan mata uang seperti EUR/USD, berarti Anda membeli EURO dan menjual USD pada saat yang bersamaan."
-
-msgid "Forex*"
-msgstr "Forex*"
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Didirikan pada tahun 1999, %1 merupakan salah satu nama tertua dan dihormati pada trading online binary."
@@ -5144,10 +5198,10 @@ msgid "From time to time, DIEL may decide to provide the client with written or 
 msgstr "Dari waktu ke waktu, DIEL dapat memutuskan untuk memberikan informasi tertulis atau video kepada klien, yang dapat dipublikasikan oleh DIEL di situs webnya atau menyediakan kepada klien dengan cara lain apa pun. DIEL akan berusaha untuk memastikan keakuratan dan kelengkapan informasi ini, tetapi itu tidak akan menjadi penelitian investasi independen atau saran investasi yang diberikan oleh DIEL kepada klien."
 
 msgid "From your MT5 trading terminal, click on the %1Signals%2 tab to view the list of signal providers."
-msgstr ""
+msgstr "Pada terminal trading MT5 Anda, klik pada tab %1Sinyal%2 untuk melihat daftar penyedia sinyal."
 
 msgid "From your MT5 trading terminal, click on the %1Signals%2 tab."
-msgstr ""
+msgstr "Pada terminal trading MT5 Anda, klik pada tab %1Sinyal%2."
 
 msgid "Front Side"
 msgstr "Bagian Depan"
@@ -5162,7 +5216,7 @@ msgid "Front-End Developer"
 msgstr "Front-End Developer"
 
 msgid "Full disclosure of each providers’ performances."
-msgstr ""
+msgstr "Tampilan lengkap mengenai kinerja masing-masing penyedia."
 
 msgid "Fund transfers"
 msgstr "Transfer dana"
@@ -5339,13 +5393,13 @@ msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 ac
 msgstr "Kunjungi %1Dasbor MT5%2 unuk menarik dana pada akun MT5 Binary.com Anda."
 
 msgid "Go to the %1Portfolio%2 to close all open positions from your Binary.com accounts."
-msgstr ""
+msgstr "Kunjungi %1Portofolio%2 untuk menutup semua posisi berjalan pada akun Binary.com Anda."
 
 msgid "Go to the MQL5 signals showcase page and click on the %1Create signal%2 button."
-msgstr ""
+msgstr "Kunjungi halaman tampilan sinyal MQL5 dan klik pada tombol %1Membuat sinyal%2."
 
 msgid "Go to the MT5 Terminal"
-msgstr ""
+msgstr "Kunjungi Terminal MT5"
 
 msgid "Go with the leader"
 msgstr "Ikuti pemimpin"
@@ -5417,7 +5471,7 @@ msgid "Hands-on experience in troubleshooting computer software, hardware, and a
 msgstr "Berpengalaman langsung dalam memecahkan masalah perangkat lunak komputer, perangkat keras, dan berbagai aplikasi dan jaringan internet"
 
 msgid "Have more questions? Check out the %1FAQ section%2 on the MQL5 website."
-msgstr ""
+msgstr "Ada pertanyaan lain? Lihat bagian %1Pertanyaan Umum%2 di situs web MQL5."
 
 msgid "Have not previously been a %1 customer"
 msgstr "Belum pernah menjadi pelanggan %1"
@@ -5557,6 +5611,9 @@ msgstr "Bagaimana cara kerjanya?"
 msgid "How it works"
 msgstr "Cara kerja"
 
+msgid "How it’s calculated"
+msgstr ""
+
 msgid "How much do I get paid if I refer clients onto your MT5 platform?"
 msgstr "Berapa banyak bayaran yang akan saya dapatkan jika saya mereferensikan klien ke platform MT5 Anda?"
 
@@ -5585,16 +5642,16 @@ msgid "How to read the table above"
 msgstr "Bagaimana cara membaca tabel di atas"
 
 msgid "How to register as a signal provider"
-msgstr ""
+msgstr "Bagaimana cara mendaftar sebagai penyedia sinyal"
 
 msgid "How to renew or cancel your subscription"
-msgstr ""
+msgstr "Cara memperbarui atau membatalkan langganan Anda"
 
 msgid "How to scan a QR code"
 msgstr "Cara menscan kode QR"
 
 msgid "How to subscribe to a MT5 signal"
-msgstr ""
+msgstr "Bagaimana cara berlangganan sinyal MT5"
 
 msgid "How to trade CFDs"
 msgstr "Cara bertrading CFD"
@@ -5703,6 +5760,9 @@ msgstr "IDK"
 
 msgid "IMPORTANT DISCLAIMER"
 msgstr "SANGGAHAN PENTING"
+
+msgid "IOT/USD"
+msgstr ""
 
 msgid "IP Address"
 msgstr "Alamat IP"
@@ -5892,7 +5952,7 @@ msgid "If we have reason to believe that your tax information is incomplete, we 
 msgstr "Jika kami meyakini bahwa informasi pajak Anda tidak lengkap, kami akan menghubungi Anda untuk klarifikasi."
 
 msgid "If you are a professional trader, the MT5 trading signals service allows you to share your strategies with other traders for free or a subscription fee that you determine. When traders subscribe to your signal, your deals are automatically replicated on their accounts each time you place a trade."
-msgstr ""
+msgstr "Jika Anda seorang trader profesional, layanan sinyal trading MT5 memungkinkan Anda untuk berbagi strategi dengan trader lain secara gratis atau dengan biaya berlangganan yang Anda tetapkan. Saat trader berlangganan sinyal Anda, kontrak yang Anda beli akan secara otomatis disimulasikan pada akun mereka setiap kali Anda melakukan trading."
 
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "Jika Anda mempertimbangkan pengecualian diri, Anda mungkin ingin mendaftar pada GAMESTOP."
@@ -6088,9 +6148,6 @@ msgstr "Jika Anda terpilih, kami akan mengundang Anda ke hackathon atau mengirim
 
 msgid "If you're shortlisted, we'll send you a talent test to be completed."
 msgstr "Jika Anda terpilih, kami akan mengirimkan tes bakat untuk dilengkapi lebih lanjut."
-
-msgid "If your account currency is EUR or GBP, your commission will be converted based on the current forex rate."
-msgstr "Jika mata uang akun Anda adalah EUR atau GBP, komisi Anda akan dikonversi berdasarkan nilai tukar Forex saat ini."
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
 msgstr "Jika akun Anda berada dibawah margin call untuk suatu jangka waktu tertentu, akun Anda akan mencapai level stop out dimana akun tersebut tidak dapat mempertahankan open position. Hal ini akan membuat order Anda dibatalkan dan open position Anda akan ditutup secara paksa (juga dikenal sebagai \"likuidasi paksa\")."
@@ -7047,7 +7104,7 @@ msgid "MT5 Real Account"
 msgstr "Akun Riil MT5"
 
 msgid "MT5 Signals"
-msgstr ""
+msgstr "Sinyal MT5"
 
 msgid "MT5 Synthetic"
 msgstr "MT5 Sintetis"
@@ -7404,7 +7461,7 @@ msgid "MetaTrader 5"
 msgstr "MetaTrader 5"
 
 msgid "MetaTrader 5 Signals"
-msgstr ""
+msgstr "Sinyal MetaTrader 5"
 
 msgid "MetaTrader 5 dashboard"
 msgstr "Dashboard MetaTrader 5"
@@ -7458,7 +7515,7 @@ msgid "Min-Max Withdrawal"
 msgstr "Min-Mak Penarikan"
 
 msgid "Minimise trading risk by copying from expert traders."
-msgstr ""
+msgstr "Minimalkan risiko trading dengan mengkopi dari trader berpengalaman."
 
 msgid "Minimum deposit"
 msgstr "Deposit minimum"
@@ -7477,6 +7534,9 @@ msgstr "Memiliki minimal dua tahun pengalaman dalam peran pengujian aplikasi per
 
 msgid "Minimum volume"
 msgstr "Volume minimal"
+
+msgid "Minimum volume requirement"
+msgstr ""
 
 msgid "Minimum:"
 msgstr "Minimum:"
@@ -7639,6 +7699,9 @@ msgstr "N/A"
 
 msgid "NEED HELP?"
 msgstr "BUTUH BANTUAN?"
+
+msgid "NEO/USD"
+msgstr ""
 
 msgid "NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more information, please visit %1."
 msgstr "NETELLER memberi pembisnis dan individu dengan cara cepat, sederhana, dan aman untuk mentransfer dana secara online. Untuk informasi lebih lanjut, silakan kunjungi %1."
@@ -7957,6 +8020,9 @@ msgstr "OAuth App ID"
 
 msgid "OK"
 msgstr "OK"
+
+msgid "OMG/USD"
+msgstr ""
 
 msgid "OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage"
 msgstr "OSCP, CEH, Security +, CISSP, atau sertifikasi GIAC apa pun merupakan nilai tambah"
@@ -8728,6 +8794,9 @@ msgstr "Harap dicatat bawah satu lot setara dengan 100 unit, berdasarkan spesifi
 
 msgid "Please note that the selected currency is allowed for limited accounts only."
 msgstr "Harap dicatat bahwa mata uang yang Anda pilih hanya diperbolehkan untuk akun terbatas."
+
+msgid "Please note:"
+msgstr ""
 
 msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
 msgstr "Mohon informasikan nomor identifikasi pajak untuk negara dimana Anda membayar pajak. Jika Anda tidak dapat menyediakan informasi ini, silahkan hubungi tim customer support kami."
@@ -9527,9 +9596,6 @@ msgstr "Mewakili diri mereka sebagai perwakilan Perusahaan atau sebagai orang ya
 msgid "Representations and warranties"
 msgstr "Perwakilan dan jaminan"
 
-msgid "Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on financial accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on financial STP accounts."
-msgstr "Jumlah komisi dalam mata uang per satu putaran trading. Contoh, satu putaran trading untuk 1 lot EUR/USD akan membayar komisi sebesat 10 EUR pada akun finansial. Satu putaran trading untuk 1 lot USD/CAD akan membayar komisi sebesar 5 USD pada akun finansial STP."
-
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "Mewakili jumlah maksimum saldo tunai pada akun anda. Jika jumlah maksimum tercapai, maka anda perlu menarik dana anda."
 
@@ -9792,7 +9858,7 @@ msgid "Save in case of negligence, fraud, or default by the Company, the Company
 msgstr "Kecuali jika terjadi kelalaian, penipuan, atau gagal bayar oleh Perusahaan, Perusahaan tidak akan bertanggung jawab dengan cara apa pun kepada klien mana pun jika terjadi force majeure, atau atas tindakan pemerintah mana pun atau otoritas hukum, atau untuk kegagalan atau kerusakan atau kerusakan pada sistem komputer, data, atau catatannya, atau bagian apa pun darinya, atau untuk keterlambatan, kehilangan, kesalahan, atau kelalaian yang diakibatkan oleh kegagalan atau salah kelola dari telekomunikasi mana pun, peralatan komputer, atau perangkat lunak oleh klien atau kerusakan atau kerugian yang dianggap atau diduga disebabkan oleh situs ini atau kontennya."
 
 msgid "Save time – no need to open, monitor, and close trades."
-msgstr ""
+msgstr "Hemat waktu - tidak perlu membuka, memantau, dan menutup trading."
 
 msgid "Savings & Inheritance"
 msgstr "Tabungan & Warisan"
@@ -9912,7 +9978,7 @@ msgid "Select payment agent"
 msgstr "Pilih agen pembayaran"
 
 msgid "Select the signal provider you prefer and click the %1Subscribe%2 button."
-msgstr ""
+msgstr "Pilih penyedia sinyal yang Anda inginkan dan klik tombol %1Berlangganan%2."
 
 msgid "Select your market and underlying asset"
 msgstr "Pilih pasar dan aset dasar Anda"
@@ -9999,7 +10065,7 @@ msgid "Server"
 msgstr "Server"
 
 msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr ""
+msgstr "Pemeliharaan server akan di mulai pada pukul 01:00 GMT (08:00 WIB) setiap hari Minggu. Proses ini dapat memakan waktu hingga 2 jam. Beberapa layanan mungkin akan mengalami gangguan selama waktu ini."
 
 msgid "Server:"
 msgstr "Server:"
@@ -10125,10 +10191,10 @@ msgid "Sign up now"
 msgstr "Daftar sekarang"
 
 msgid "Signal Provider"
-msgstr ""
+msgstr "Penyedia Sinyal"
 
 msgid "Signal Subscriber"
-msgstr ""
+msgstr "Pelanggan Sinyal"
 
 msgid "Signup"
 msgstr "Daftar"
@@ -10388,6 +10454,9 @@ msgstr "Sticpay adalah layanan e-wallet global sebagai alat transfer dana dan pe
 msgid "Stock Indices"
 msgstr "Indeks Saham"
 
+msgid "Stock indices"
+msgstr ""
+
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "Indeks bursa saham mengukur nilai beberapa perusahaan pada bursa saham."
 
@@ -10630,6 +10699,9 @@ msgstr "Sintetis"
 
 msgid "System Administrator"
 msgstr "System Administrator"
+
+msgid "TRX/USD"
+msgstr ""
 
 msgid "Table 1 - Type of execution venue"
 msgstr "Tabel 1 - Jenis tempat eksekusi"
@@ -11022,7 +11094,7 @@ msgid "The Company also collects basic tax residence information for the purpose
 msgstr "Perusahaan juga mengumpulkan informasi dasar pajak untuk keperluan kepatuhan CRS/FATCA. Informasi pajak yang disediakan oleh klien hanya dapat diungkapkan kepada pihak berwenang yang secara hukum dituduh mengumpulkan informasi ini untuk pelaporan CRS/FATCA, dan %1 hanya akan melakukannya sejauh yang secara hukum berkewajiban untuk mengumpulkannya dari klien dan mengungkapkan ke pada pihak berwenang. Perusahaan tidak menggunakan, mengungkapkan, atau memproses informasi ini dengan cara lain kapan pun."
 
 msgid "The Company also has a regulatory obligation to send the personal data of the clients residing in the UK to GAMSTOP to check whether or not  they have self-excluded with GAMSTOP. To find out more, please read the %1GAMSTOP privacy policy%2."
-msgstr ""
+msgstr "Perusahaan juga memiliki kewajiban untuk mengirim data pribadi klien yang berdomisili di Inggris kepada GAMSTOP untuk memeriksa apakah mereka telah mengecualikan diri pada GAMSTOP atau tidak. Untuk mengetahui lebih lanjut, silakan baca %1Kebijakan privasi GAMSTOP%2."
 
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "Perusahaan juga berhak untuk meminta dokumentasi yang berkaitan dengan kewajiban hukum lainnya."
@@ -11067,7 +11139,7 @@ msgid "The Company endeavours to open or close the transaction to which the clie
 msgstr "Perusahaan berupaya untuk membuka atau menutup transaksi yang terkait dengan Order klien dengan harga yang wajar tersedia bagi Perusahaan, bertindak sesuai dengan tugas Perusahaan untuk melaksanakan eksekusi terbaik. Eksekusi terbaik berarti bahwa, ketika melaksanakan Order, Perusahaan harus mengambil semua langkah yang cukup untuk mendapatkan hasil sebaik mungkin bagi klien, dengan mempertimbangkan harga, biaya, kecepatan, kemungkinan eksekusi dan penyelesaian, ukuran, sifat, atau pertimbangan lain relevan dengan pelaksanaan Order."
 
 msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr ""
+msgstr "Perusahaan memiliki kebijakan Stop Out untuk mencegah klien kehilangan lebih dari dana deposit mereka. Namun, jika Posisi Berjalan klien tidak ditutup ketika Level margin pada akun riil MT5 mereka mencapai level stop out, perusahaan, atas kebijakannya sendiri, dapat mengesampingkan saldo negatif klien dengan mengkreditkan akun mereka jika akun mereka memiliki saldo negatif. Saldo negatif ditentukan dengan menggabungkan semua saldo negatif yang dimiliki selama periode 24-jam pada semua akun yang dimiliki oleh klien. Klien mengakui bahwa, kecuali jika mereka adalah pelanggan ritel Deriv Investments (Europe) Limited atau klien dari Deriv (Europe) Limited, atau pelanggan yang berdomisili di Australia, tawaran perlindungan saldo negatif oleh perusahaan kepada klien adalah atas kebijakan tunggal perusahaan dan perusahaan berhak untuk mengubah fitur dan kriteria kelayakan perlindungan saldo negatif tersebut setiap saat. Ketentuan perlindungan saldo negatif tidak berlaku pada situasi berikut:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Perusahaan berkewajiban umum untuk menjalankan bisnisnya dengan klien secara jujur, adil, dan profesional serta bertindak demi kepentingan terbaik klien saat membuka dan menutup opsi trading binary bersama klien."
@@ -11478,7 +11550,7 @@ msgid "The MT5 desktop app is not supported by Windows XP, Windows 2003, and Win
 msgstr "Aplikasi desktop MT5 tidak tersedia pada Windows XP, Windows 2003, dan Windows Vista."
 
 msgid "The MT5 trading signals service allows you to copy the trades of more experienced traders to your MT5 account. Once you’ve subscribed to a signal, the provider’s deals will be automatically replicated on your %1 MT5 trading account each time they place a trade."
-msgstr ""
+msgstr "Layanan sinyal trading MT5 memberi Anda fasilitas untuk menyalin trading yang dilakukan oleh trader berpengalaman ke dalam akun MT5 Anda. Setelah berlangganan maka sinyal yang ditawarkan oleh penyedia akan secara otomatis direplikasikan pada akun trading MT5 %1 Anda setiap kali mereka melakukan trading."
 
 msgid "The Margin Level of the client's MT5 Real Account reaches or falls below the Stop Out Level."
 msgstr "Level Margin dari Akun Riil MT5 klien mencapai atau jatuh di bawah Level Stop Out."
@@ -12678,6 +12750,9 @@ msgstr "Untuk melindungi portofolio Anda dari pergerakan pasar yang merugikan ka
 msgid "To provide the client with a better experience, some of the services offered by %1 may require permission to access the client's cloud storage services, such as Google Drive, to save or load DBot trading strategies. In such instances"
 msgstr "Untuk memberikan pengalaman yang lebih baik, beberapa layanan yang ditawarkan oleh %1 mungkin memerlukan izin pengaksesan layanan penyimpanan cloud klien, seperti Google Drive, untuk menyimpan atau memuat strategi trading DBot. Dalam hal tersebut"
 
+msgid "To receive the minimum commission (0.01 in any currency) allowed by the system, the minimum volume requirement is calculated based on the following formulas:"
+msgstr ""
+
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Untuk mereset kata sandi Anda, masukkan alamat email yang Anda daftarkan pada kolom di bawah ini dan klik 'Reset kata sandi'."
 
@@ -13190,6 +13265,12 @@ msgstr "Dolar AS vs Lira Turki"
 
 msgid "USD"
 msgstr "USD"
+
+msgid "USD 1"
+msgstr ""
+
+msgid "USD 10"
+msgstr ""
 
 msgid "USD Coin"
 msgstr "USD Coin"
@@ -14238,6 +14319,9 @@ msgstr "Menulis kode yang kuat, berkualitas tinggi, dan siap produksi untuk situ
 msgid "Written limits and self-exclusion"
 msgstr "Batas tertulis dan pengecualian diri"
 
+msgid "XLM/USD"
+msgstr ""
+
 msgid "XMR vs US dollar"
 msgstr "XMR vs dolar AS"
 
@@ -14329,7 +14413,7 @@ msgid "You can now return to your computer to continue"
 msgstr "Anda sekarang dapat kembali ke komputer untuk melanjutkan"
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
-msgstr ""
+msgstr "Anda hanya dapat berlangganan ke satu penyedia sinyal menggunakan satu akun %1 pada satu waktu. Anda dapat menggunakan sinyal Anda pada 3 komputer yang berbeda."
 
 msgid "You can open a fiat currency account without closing your cryptocurrency account."
 msgstr "Anda dapat mendaftar akun dalam mata uang fiat tanpa perlu menutup akun mata uang kripto."
@@ -14406,8 +14490,8 @@ msgstr "Anda mungkin pernah melihat istilah 'going long' dan 'going short' digun
 msgid "You have reached the rate limit of requests per second. Please try later."
 msgstr "Anda telah mencapai batas tingkat permintaan per detik. Silakan coba lagi nanti."
 
-msgid "You have reached the withdrawal limit."
-msgstr "Anda telah mencapai batas penarikan."
+msgid "You have reached the withdrawal limit. Please upload your proof of identity and address to lift your withdrawal limit and proceed with your withdrawal."
+msgstr ""
 
 msgid "You have sold this contract at %1 %2"
 msgstr "Anda telah menjual kontrak pada %1 %2"
@@ -14461,7 +14545,7 @@ msgid "You must have a fast and stable Internet connection as screenshots of you
 msgstr "Anda harus memiliki koneksi internet yang cepat dan stabil karena tangkapan layar dokumen Anda diperlukan untuk catatan kami"
 
 msgid "You must have an MQL5 community account to subscribe to trading signals. If you don’t have an account yet, please go to %1MQL5.com%2 to register."
-msgstr ""
+msgstr "Anda harus memiliki akun komunitas MQL5 untuk berlangganan sinyal trading. Jika Anda belum memiliki akun, silakan daftar di %1MQL5.com%2."
 
 msgid "You must have:"
 msgstr "Anda harus memiliki:"
@@ -14533,7 +14617,7 @@ msgid "You win the payout if the market price ends in the digit you have selecte
 msgstr "Anda akan memperoleh hasil jika harga pasar berakhir pada angka yang Anda pilih."
 
 msgid "You won’t be able to trade manually with the same %1 MT5 account once you’ve subscribed to a signal."
-msgstr ""
+msgstr "Anda tidak dapat bertrading secara manual menggunakan akun MT5 %1 yang sama setelah berlangganan sinyal."
 
 msgid "You'll need to restart your verification on your computer"
 msgstr "Anda harus memulai ulang verifikasi menggunakan komputer"
@@ -14764,7 +14848,7 @@ msgid "You’ll be logged out automatically."
 msgstr "Anda akan keluar secara otomatis."
 
 msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
-msgstr ""
+msgstr "Anda perlu mendanai akun MQL5 Anda untuk berlangganan sinyal berbayar. Pelajari bagaimana %1cara mendanai akun Anda%2."
 
 msgid "ZEC vs US dollar"
 msgstr "ZEC vs dolar AS"
@@ -14900,9 +14984,6 @@ msgstr "atau meng-upload foto - bukan scan atau fotokopi"
 
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard menawarkan metode pembayaran online berbasis voucher yang tidak memerlukan rekening bank, kartu kredit, atau informasi pribadi lainnya. Untuk informasi lebih lanjut, silakan kunjungi %1."
-
-msgid "per lot"
-msgstr "per lot"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "rasio dari Akun Ekuitas pada Total Margin, dinyatakan dalam persen"

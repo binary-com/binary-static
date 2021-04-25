@@ -785,6 +785,7 @@ const Authenticate = (() => {
 
             showCTAButton('document', 'pending');
             $('#upload_complete').setVisibility(1);
+            $('#msg_personal_details').setVisibility(0);
         });
     };
 
@@ -903,6 +904,7 @@ const Authenticate = (() => {
             $('#authentication_loading').setVisibility(1);
             setTimeout(() => {
                 BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                    $('#msg_personal_details').setVisibility(0);
                     $('#upload_complete').setVisibility(1);
                     Header.displayAccountStatus();
                     $('#authentication_loading').setVisibility(0);
@@ -1059,6 +1061,7 @@ const Authenticate = (() => {
             }
             switch (identity.status) {
                 case 'none':
+                    $('#msg_personal_details').setVisibility(1);
                     if (onfido_unsupported) {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
@@ -1093,6 +1096,7 @@ const Authenticate = (() => {
                 $('#not_authenticated_uns').setVisibility(1);
                 initUnsupported();
             } else {
+                $('#msg_personal_details').setVisibility(1);
                 initOnfido(service_token_response.token, documents_supported, country_code);
             }
         }

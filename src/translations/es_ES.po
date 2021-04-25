@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-04-20 03:33\n"
+"PO-Revision-Date: 2021-04-23 06:45\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -25,20 +25,20 @@ msgstr "2"
 msgid "5"
 msgstr "5"
 
-msgid "10"
-msgstr "10"
+msgid "20"
+msgstr ""
 
-msgid "40"
-msgstr "40"
+msgid "25"
+msgstr ""
 
-msgid "50"
-msgstr "50"
+msgid "150"
+msgstr ""
+
+msgid "250"
+msgstr ""
 
 msgid "404"
 msgstr "404"
-
-msgid "500"
-msgstr "500"
 
 msgid " (Region added)"
 msgstr " (Región agregada)"
@@ -111,9 +111,6 @@ msgstr "\"Contenido\" significa cualquier dato o contenido de la Empresa a trav�
 
 msgid "\"Third-party Provider(s)\" means the third party (non-affiliated) entity that makes available features and functions through use of the %1 API."
 msgstr "\"Proveedor(es) Tercero\" significa una entidad tercera (no afiliada) que hace que las características y funciones estén disponibles a través del uso de la API de %1."
-
-msgid "$ per 100,000 USD of turnover"
-msgstr "$ por cada 100,000 USD de volumen de facturación"
 
 msgid "$0 - $20,000"
 msgstr "$0 - $20,000"
@@ -478,8 +475,14 @@ msgstr "%1Nota:%2 Necesita actualizar su cuenta MQL5 a estado de vendedor para p
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Por favor note que si vive en el Reino Unido, la autoexclusión no puede removerse hasta que el período haya expirado. %2Si desea continuar operando una vez haya expirado el período, llámenos al %3. Las solicitudes via chat o email no serán atendidas."
 
+msgid "%1Please note%2: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate."
+msgstr ""
+
 msgid "%1Return to trading page%2"
 msgstr "%1Volver a la página de trading%2"
+
+msgid "%1Use MetaTrader %2Economic Calendar"
+msgstr ""
 
 msgid "%1’s refusal to pay bribes is an essential part of our ethical commitment. Similarly, we do not permit our business partners to pay bribes when acting on our behalf."
 msgstr "La negativa de %1 a pagar sobornos es una parte esencial de nuestro compromiso ético. Del mismo modo, no permitimos que nuestros socios comerciales paguen sobornos cuando actúan en nuestro nombre."
@@ -501,6 +504,12 @@ msgstr "El premio \"Mejor Empresa de Probabilidades Fijas 2012\" de Global Banki
 
 msgid "'Financial Trading Operator of the Year' award by eGaming Review"
 msgstr "Premio de \"Operador de Apuestas Financieras del Año\" de eGaming Review"
+
+msgid "(1 standard forex lot is 100k units)"
+msgstr ""
+
+msgid "(1 standard lot is 100k units)"
+msgstr ""
 
 msgid "(One) Touch trades"
 msgstr "Contratos Toque"
@@ -553,8 +562,14 @@ msgstr "0-1 año"
 msgid "0-5 transactions in the past 12 months"
 msgstr "0-5 transacciones en los últimos 12 meses"
 
-msgid "0.20"
-msgstr "0.20"
+msgid "0.10"
+msgstr ""
+
+msgid "0.25"
+msgstr ""
+
+msgid "0.35"
+msgstr ""
 
 msgid "0.4%"
 msgstr "0.4%"
@@ -562,11 +577,8 @@ msgstr "0.4%"
 msgid "0.5%"
 msgstr "0.5%"
 
-msgid "0.50"
-msgstr "0.50"
-
-msgid "0.70"
-msgstr "0.70"
+msgid "0.75"
+msgstr ""
 
 msgid "0.75%"
 msgstr "0.75%"
@@ -589,23 +601,17 @@ msgstr "1. Este enlace fue enviado por usted"
 msgid "1.5%"
 msgstr "1.5%"
 
-msgid "1.50"
-msgstr "1.50"
-
-msgid "10 USD x 1 lot x 125,000 USD/100,000 = 12.5 USD"
-msgstr "10 USD x 1 lote x 125,000 USD/100,000 = 12.5 USD"
-
-msgid "10.00"
-msgstr "10.00"
+msgid "1.75"
+msgstr ""
 
 msgid "11-39 transactions in the past 12 months"
 msgstr "11-39 transacciones en los úlitmos 12 meses"
 
-msgid "15.00"
-msgstr "15.00"
-
 msgid "150+"
 msgstr "150+"
+
+msgid "15O"
+msgstr ""
 
 msgid "16th MENA Financial Forum & Expo"
 msgstr "16th MENA Financial Forum & Expo"
@@ -625,14 +631,17 @@ msgstr "2. Selfie con comprobante de identidad"
 msgid "2. Your desktop window stays open"
 msgstr "2. La ventana de su escritorio permanece abierta"
 
+msgid "2.5"
+msgstr ""
+
 msgid "20 – 39.999%"
 msgstr "20 – 39.999%"
 
 msgid "2021 Binary | All rights reserved"
 msgstr "2021 Binary | Todos los derechos reservados"
 
-msgid "3.50"
-msgstr "3.50"
+msgid "3.75"
+msgstr ""
 
 msgid "30%"
 msgstr "30%"
@@ -657,6 +666,9 @@ msgstr "40K+"
 
 msgid "45%"
 msgstr "45%"
+
+msgid "5.00"
+msgstr ""
 
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transacciones en los últimos 12 meses"
@@ -759,6 +771,15 @@ msgstr "Un programa de afiliados competitivo y flexible que se adapta a sus nece
 
 msgid "A corporate action can include but is not limited to assimilation, acquisition, bankruptcy, bonus issue, bonus rights, cash dividend, class action, delisting, de-merger, general announcement, initial public offering (IPO), liquidation, merger, change in par value, scheme of arrangement, stock dividend, stock split, return of capital, and reverse stock split."
 msgstr "Una acción corporativa puede incluir, entre otros, asimilación, adquisición, bancarrota, emisión de bonificaciones, derechos de bonificación, dividendos en efectivo, acción de clase, exclusión de la lista, escisión, anuncio general, oferta pública inicial (IPO), liquidación, fusión, cambio de valor nominal, esquema de arreglo, dividendo de acciones, división de acciones, retorno de capital y división inversa de acciones."
+
+msgid "A deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) per USD 100,000 turnover will pay out a commission of USD 10. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:"
+msgstr ""
+
+msgid "A deal for 1 lot of the Volatility 75 Index for a price of USD 500,000 will pay out USD 25 in commission based on the following formula:"
+msgstr ""
+
+msgid "A deal for 1 lot of the Volatility Index 75 for a price of USD 500,000 per USD 100,000 turnover will pay out a commission of USD 5. The minimum volume required to receive the minimum commission of USD 0.01 is determined using the following formula:"
+msgstr ""
 
 msgid "A derivative is a financial instrument whose value is determined by reference to an underlying market. Derivatives are commonly traded in the inter-bank market, and binaries are one of the simplest forms of derivatives."
 msgstr "Un derivado es un instrumento financiero cuyo valor se determina en referencia al mercado subyacente. Los derivados, por lo general, se negocian en el mercado interbancario y los binarios son una de las formas de derivados más simples."
@@ -1943,6 +1964,12 @@ msgstr "BNB/USD"
 msgid "BTC"
 msgstr "BTC"
 
+msgid "BTC/ETH"
+msgstr ""
+
+msgid "BTC/LTC"
+msgstr ""
+
 msgid "BTC/USD"
 msgstr "BTC/USD"
 
@@ -2035,6 +2062,9 @@ msgstr "Conviértase en nuestro afiliado"
 
 msgid "Before the Company opens an account for the client in which the client can trade or invest in Investment Products with DIEL, the Company is required to make an assessment of whether products or services that the client has chosen are appropriate for the client and to warn the client if, on the basis of the information that the client has provided to the Company, any such product or service is deemed not appropriate for the client. Any decision to open an account and to use the Company's products or services is the client's. It is the client's responsibility to understand the risks involved with the Company's products or services."
 msgstr "Antes de que la Empresa abra una cuenta para que el cliente pueda operar o invertir en productos de inversión con DIEL, la Empresa tiene la obligación de hacer una evaluación de si los productos o servicios de inversión que el cliente ha elegido son apropiados para el y advertirle si, basándose en la información que el propio cliente proporciona a la Empresa, el producto o servicio es o no adecuado para el cliente como tal. Cualquier decisión de abrir una cuenta y utilizar los productos o servicios de la Empresa es del cliente. Por lo tanto, es de su responsabilidad entender los riesgos involucrados con los productos o servicios de la Empresa."
+
+msgid "Before uploading your document, please ensure that your %1personal details%2 are updated to match your proof of identity. This will help to avoid delays during the verification process."
+msgstr ""
 
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "Antes de utilizar los robots de trading o Expert Advisors y operar con ellos, el cliente deberá probarlos en una cuenta demo."
@@ -2870,8 +2900,17 @@ msgstr "Comisión por depósitos"
 msgid "Commission on withdrawals"
 msgstr "Comisión por retiros"
 
-msgid "Commission per round trade"
-msgstr "Comisión por operación completa"
+msgid "Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate."
+msgstr ""
+
+msgid "Commission per USD 100K turnover"
+msgstr ""
+
+msgid "Commission per USD 100k turnover"
+msgstr ""
+
+msgid "Commission per lot"
+msgstr ""
 
 msgid "Commission rates"
 msgstr "Tasas de comisión"
@@ -4202,6 +4241,15 @@ msgstr "Obtenga el mismo rendimiento proporcional en las inversiones de todos lo
 msgid "Earn up to 45% in commission based on the total net revenue generated by your clients. Commissions are credited into your account after the 15th of every month."
 msgstr "Obtenga hasta un 45% de comisión con base de los ingresos netos totales generados por sus clientes. Las comisiones se acreditan en su cuenta después del día 15 de cada mes."
 
+msgid "Earn when your clients trade on an MT5 Financial STP account."
+msgstr ""
+
+msgid "Earn when your clients trade on an MT5 Financial account."
+msgstr ""
+
+msgid "Earn when your clients trade on an MT5 Synthetics account."
+msgstr ""
+
 msgid "Easy to set up – no installation required."
 msgstr "Fácil de configurar, no requiere instalación."
 
@@ -5000,14 +5048,14 @@ msgstr "Seguir, cumplir, e implementar todas las directivas, políticas, y proce
 msgid "Food Services"
 msgstr "Servicios de comida"
 
+msgid "For cryptocurrency assets, a deal for 1 lot of BTC/USD (with a BTC to USD exchange rate of USD 50,000) will pay out USD 10 in commission based on the following formula:"
+msgstr ""
+
 msgid "For details on submitting a complaint to the Company's lead supervisory authority on data processing practices, the client is encouraged to check %1's %2Complaints and disputes%3 section."
 msgstr "Para más detalles respecto a la presentación de quejas ante la autoridad supervisora principal con respecto a las prácticas de procesamiento de datos de la Empresa, se invita al cliente a revisar la sección de %1Quejas y disputas%2."
 
 msgid "For e-wallets or local currencies not supported by %1."
 msgstr "Para billeteras electrónicas o divisas locales no admitidas por %1."
-
-msgid "For example, a round trade (i.e. open and close position) of 1 lot of Vol 75 Index for a price of 125,000 USD would pay 12.5 USD."
-msgstr "Por ejemplo, una operación completa (es decir, abrir y cerrar una posición) de 1 lote de Índice de Volatilidad 75, por un precio de 125,000 USD pagará 12.5 USD."
 
 msgid "For example, if you buy a 100 USD contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Por ejemplo, si compra un contrato de 100 USD y no va según lo planeado, solo necesita venderlo al precio actual de mercado para reducir sus pérdidas."
@@ -5041,6 +5089,18 @@ msgstr "Para características e ilustraciones de operaciones en Spot FX ofrecida
 
 msgid "For forex quotes, the closing times are defined by the Company as shown in the market opening times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "Para las cotizaciones de forex, los horarios de cierre están definidos por la Empresa como se muestra en la sección Horarios de Mercado del sitio web. En el caso de cualquier disputa con respecto a los valores de mercado o de liquidación, la decisión de la Empresa será definitiva y vinculante. Los clientes deben tener en cuenta que ciertos mercados (como los índices bursátiles) no están abiertos durante todo el día y que las operaciones pueden no estar disponibles cuando los mercados están cerrados."
+
+msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:"
+msgstr ""
+
+msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:"
+msgstr ""
+
+msgid "For forex, your commission is represented in the base currency (EUR in the above example)."
+msgstr ""
+
+msgid "For forex, your commission is represented in the base currency (EUR in the above example). Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate."
+msgstr ""
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly, prices may differ among providers, depending on which bank(s) they obtain prices from."
 msgstr "Para Forex: El mercado Forex es un mercado OTC (extrabursátil), en el cual bancos y otras grandes instituciones financieras comercian divisas entre ellos sin la existencia de una cámara central de compensación. Por tanto, no existe una fuente 'oficial' de precios para este mercado. Fuentes de datos diferentes contendrán precios de diferentes sub-grupos de bancos internacionales. Asimismo, los precios pueden diferir de acuerdo al proveedor, dependiendo del banco (s) del cual obtiene los precios."
@@ -5084,9 +5144,6 @@ msgstr "Forex"
 msgid "Forex and contract-for-difference transactions involve a high degree of risk and are speculative because they allow the client to speculate on the short-term price movements of the underlying financial instruments. The client should not enter into forex and/or contract-for-difference transactions unless the client is able to sustain losses that exceed the client's deposited funds. It is important for the client to understand that in order to realise any value from the client's open positions, the client would have to enter into a corresponding transaction to close the client's open positions and may find it difficult or impossible to do so under certain market conditions."
 msgstr "Las transacciones de divisas y de contratos por diferencias implican un alto grado de riesgo y son especulativas porque permiten al cliente especular sobre los movimientos de precios a corto plazo de los instrumentos financieros subyacentes. El cliente no debe realizar transacciones de divisas y / o contratos por diferencias a menos que este pueda soportar pérdidas que excedan los fondos depositados por él mismo. Es importante que el cliente entienda que, para obtener cualquier valor de las posiciones abiertas del cliente, tendría que realizar una transacción correspondiente para cerrar sus posiciones abiertas y puede que le resulte difícil o imposible hacerlo en ciertas condiciones de mercado."
 
-msgid "Forex and metals*"
-msgstr "Forex y metales*"
-
 msgid "Forex contract specifications"
 msgstr "Especificaciones del contrato Forex"
 
@@ -5104,9 +5161,6 @@ msgstr "La operación de Forex consiste en la compra de una moneda y vender otra
 
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "La operación de Forex consiste en la compra o venta de este \"par de divisas\". Cuando se compra un par como el EUR/USD, significa que está comprando el EUR y vendiendo el USD al mismo tiempo."
-
-msgid "Forex*"
-msgstr "Forex*"
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Fundada en 1999, %1 es uno de los nombres más antiguos y respetados del comercio de opciones binarias en línea."
@@ -5558,6 +5612,9 @@ msgstr "¿Cómo funciona?"
 msgid "How it works"
 msgstr "Cómo funciona"
 
+msgid "How it’s calculated"
+msgstr ""
+
 msgid "How much do I get paid if I refer clients onto your MT5 platform?"
 msgstr "¿Cuánto me pagan si recomiendo clientes a su plataforma MT5?"
 
@@ -5704,6 +5761,9 @@ msgstr "IDK"
 
 msgid "IMPORTANT DISCLAIMER"
 msgstr "AVISO IMPORTANTE"
+
+msgid "IOT/USD"
+msgstr ""
 
 msgid "IP Address"
 msgstr "Dirección IP"
@@ -6088,9 +6148,6 @@ msgstr "Si es seleccionado, lo invitaremos a participar de una hackatón o le en
 
 msgid "If you're shortlisted, we'll send you a talent test to be completed."
 msgstr "Si está preseleccionado, le enviaremos una prueba de talento para completar."
-
-msgid "If your account currency is EUR or GBP, your commission will be converted based on the current forex rate."
-msgstr "Si la moneda de su cuenta es el EUR o GBP, su comisión será convertida con base en la tasa actual de Forex."
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
 msgstr "En caso de que su cuenta se encuentre bajo el nivel de margen por un período extendido, activará el stop out cuando ya no pueda mantener una posición abierta. Esto provocará la cancelación de sus órdenes pendientes y el cierre forzado de sus posiciones abiertas, lo que se conoce también como \"liquidación forzada\"."
@@ -7479,6 +7536,9 @@ msgstr "Experiencia mínima de dos años en un puesto de probador de software o 
 msgid "Minimum volume"
 msgstr "Volumen mínimo"
 
+msgid "Minimum volume requirement"
+msgstr ""
+
 msgid "Minimum:"
 msgstr "Mínimo:"
 
@@ -7640,6 +7700,9 @@ msgstr "N/A"
 
 msgid "NEED HELP?"
 msgstr "¿NECESITA AYUDA?"
+
+msgid "NEO/USD"
+msgstr ""
 
 msgid "NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more information, please visit %1."
 msgstr "NETELLER proporciona a las empresas y personas una forma rápida, sencilla y segura de transferir dinero en línea. Para más información, visite %1."
@@ -7958,6 +8021,9 @@ msgstr "ID de App OAuth"
 
 msgid "OK"
 msgstr "Aceptar"
+
+msgid "OMG/USD"
+msgstr ""
 
 msgid "OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage"
 msgstr "Cualquier certificación OSCP, CEH, Security +, CISSP o de GIAC es una ventaja"
@@ -8729,6 +8795,9 @@ msgstr "Tenga en cuenta que un lote es equivalente a 100 unidades, según nuestr
 
 msgid "Please note that the selected currency is allowed for limited accounts only."
 msgstr "Tenga en cuenta que la moneda seleccionada está permitida solo para cuentas limitadas."
+
+msgid "Please note:"
+msgstr ""
 
 msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
 msgstr "Indique el número de identificación fiscal del país donde usted es residente fiscal. Si no puede proporcionar esta información, comuníquese con nuestro equipo de atención al cliente."
@@ -9527,9 +9596,6 @@ msgstr "Representarse a sí mismo como un representante de la Compañía o como 
 
 msgid "Representations and warranties"
 msgstr "Declaraciones y garantías"
-
-msgid "Represents the amount in base currency per round trade. For example, a round trade of 1 lot of EUR/USD would pay 10 EUR on financial accounts. A round trade of 1 lot of USD/CAD would pay 5 USD on financial STP accounts."
-msgstr "Representa el importe en la moneda base por operación completa. Por ejemplo, una operación completa de 1 lote de EUR / USD pagaría 10 EUR en cuentas financieras. Una operación completa de 1 lote de USD / CAD pagaría 5 USD en cuentas financieras STP."
 
 msgid "Represents the maximum amount of cash that you may hold in your account.  If the maximum is reached, you will be asked to withdraw funds."
 msgstr "Representa el monto máximo de dinero que puede tener en su cuenta. Si se alcanza el máximo se le pedirá que retire sus fondos."
@@ -10389,6 +10455,9 @@ msgstr "Sticpay es un servicio global de billetera electrónica para transferenc
 msgid "Stock Indices"
 msgstr "Indices bursátiles"
 
+msgid "Stock indices"
+msgstr ""
+
 msgid "Stock market indices measure the value of a selection of companies in the stock market."
 msgstr "Los índices bursátiles miden el valor de una selección de las compañías en el mercado bursátil."
 
@@ -10631,6 +10700,9 @@ msgstr "Sintéticos"
 
 msgid "System Administrator"
 msgstr "Administrador del Sistema"
+
+msgid "TRX/USD"
+msgstr ""
 
 msgid "Table 1 - Type of execution venue"
 msgstr "Tabla 1 - Tipo de medio de ejecución"
@@ -12678,6 +12750,9 @@ msgstr "Para proteger su cartera de movimientos adversos del mercado debido a la
 msgid "To provide the client with a better experience, some of the services offered by %1 may require permission to access the client's cloud storage services, such as Google Drive, to save or load DBot trading strategies. In such instances"
 msgstr "Para proporcionar al cliente una mejor experiencia, algunos de los servicios ofrecidos por %1 pueden requerir permiso para acceder a los servicios de almacenamiento en la nube del cliente, como Google Drive, para guardar o cargar estrategias de negociación de DBot. En tales casos"
 
+msgid "To receive the minimum commission (0.01 in any currency) allowed by the system, the minimum volume requirement is calculated based on the following formulas:"
+msgstr ""
+
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Para restablecer su contraseña, introduzca su dirección de correo electrónico que utilizó para crear su cuenta en el siguiente espacio y haga clic en \"Restablecer contraseña\"."
 
@@ -13190,6 +13265,12 @@ msgstr "Dólar estadounidense vs Lira turca"
 
 msgid "USD"
 msgstr "USD"
+
+msgid "USD 1"
+msgstr ""
+
+msgid "USD 10"
+msgstr ""
 
 msgid "USD Coin"
 msgstr "USD Coin"
@@ -14238,6 +14319,9 @@ msgstr "Escribir código robusto, de alta calidad y listo para producción para 
 msgid "Written limits and self-exclusion"
 msgstr "Límites y auto-exclusión"
 
+msgid "XLM/USD"
+msgstr ""
+
 msgid "XMR vs US dollar"
 msgstr "XMR vs dólar estadounidense"
 
@@ -14406,8 +14490,8 @@ msgstr "Es probable que usted haya visto los términos \"asumir una posición la
 msgid "You have reached the rate limit of requests per second. Please try later."
 msgstr "Ustes ha alcanzado el límite de solicitudes por segundo. Vuelva a intentarlo más tarde."
 
-msgid "You have reached the withdrawal limit."
-msgstr "Usted ha alcanzado el límite de retiros."
+msgid "You have reached the withdrawal limit. Please upload your proof of identity and address to lift your withdrawal limit and proceed with your withdrawal."
+msgstr ""
 
 msgid "You have sold this contract at %1 %2"
 msgstr "Usted ha vendido este contrato en %1 %2"
@@ -14900,9 +14984,6 @@ msgstr "o suba una foto, no se aceptan escaneos ni fotocopias"
 
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard ofrece un método de pago en línea basado en cupones que no requiere una cuenta bancaria, tarjeta de crédito u otra información personal. Para más información, visite %1."
-
-msgid "per lot"
-msgstr "por lote"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "relación entre el Capital de la Cuenta y el Margen Total, expresado en porcentaje"
