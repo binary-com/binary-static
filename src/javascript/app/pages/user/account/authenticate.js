@@ -391,23 +391,34 @@ const Authenticate = (() => {
         processFilesUns(files);
     };
 
+    const cancelUpload = () => {
+        removeButtonLoading();
+        enableDisableSubmit();
+    };
+
     const processFiles = (files) => {
         const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
         let idx_to_upload     = 0;
         let is_any_file_error = false;
 
-        compressImageFiles(files).then((files_to_process) => {
-            readFiles(files_to_process).then((processed_files) => {
-                processed_files.forEach((file) => {
-                    if (file.message) {
-                        is_any_file_error = true;
-                        showError(file);
-                    }
-                });
+        readFiles(files).then((files_to_process) => {
+            files_to_process.forEach((file) => {
+                if (file.message) {
+                    is_any_file_error = true;
+                    showError(file);
+                }
+            });
+
+            if (is_any_file_error) {
+                cancelUpload();
+                return;
+            }
+            console.log(files_to_process)
+            return;
+            compressImageFiles(files_to_process).then((processed_files) => {
                 const total_to_upload = processed_files.length;
-                if (is_any_file_error || !total_to_upload) {
-                    removeButtonLoading();
-                    enableDisableSubmit();
+                if (!total_to_upload) {
+                    cancelUpload();
                     return; // don't start submitting files until all front-end validation checks pass
                 }
 
@@ -441,6 +452,7 @@ const Authenticate = (() => {
                 };
                 uploadFile();
             });
+            
         });
     };
 
@@ -501,9 +513,9 @@ const Authenticate = (() => {
         const promises = [];
         files.forEach((f) => {
             const promise = new Promise((resolve) => {
-                if (isImageType(f.file.name)) {
-                    const $status = $submit_table.find(`.${f.class} .status`);
-                    const $filename = $submit_table.find(`.${f.class} .filename`);
+                if (isImageType(f.filename)) {
+                    const $status = $submit_table.find(`.${f.passthrough.class} .status`);
+                    const $filename = $submit_table.find(`.${f.passthrough.class} .filename`);
                     $status.text(`${localize('Compressing Image')}...`);
 
                     ConvertToBase64(f.file).then((img) => {
@@ -1108,8 +1120,10 @@ const Authenticate = (() => {
                     break;
                 }
                 case 'pending':
-                    showCTAButton('identity', 'pending');
-                    $('#pending_poa').setVisibility(1);
+                    init();
+                    $('#not_authenticated').setVisibility(1);
+                    // showCTAButton('identity', 'pending');
+                    // $('#pending_poa').setVisibility(1);
                     break;
                 case 'rejected':
                     $('#unverified_poa').setVisibility(1);
