@@ -413,8 +413,7 @@ const Authenticate = (() => {
                 cancelUpload();
                 return;
             }
-            console.log(files_to_process)
-            return;
+            
             compressImageFiles(files_to_process).then((processed_files) => {
                 const total_to_upload = processed_files.length;
                 if (!total_to_upload) {
@@ -575,6 +574,7 @@ const Authenticate = (() => {
 
                     const format = (f.file.type.split('/')[1] || (f.file.name.match(/\.([\w\d]+)$/) || [])[1] || '').toUpperCase();
                     const obj    = {
+                        file          : f.file,
                         filename      : f.file.name,
                         buffer        : fr.result,
                         documentType  : f.type,
