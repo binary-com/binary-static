@@ -4,14 +4,14 @@ const TrafficSource = require('../../app/common/traffic_source');
 const licenseID     = require('../utility').lc_licenseID;
 
 const LiveChat = (() => {
-    const utm_data = TrafficSource.getData();
-    const utm_source = TrafficSource.getSource(utm_data) || '';
-    const utm_campaign = utm_data.utm_campaign || '';
-    const utm_medium = utm_data.utm_medium || '';
-    let session_variables = { is_logged_in: false, loginid: '', landing_company_shortcode: '', currency: '', residence: '', email: '', utm_source , utm_medium, utm_campaign };
-    let client_email, first_name, last_name;
     
+    let client_email, first_name, last_name;
+
     const setSessionVariables = () => {
+        const utm_data = TrafficSource.getData();
+        const utm_source = TrafficSource.getSource(utm_data);
+        const utm_campaign = utm_data.utm_campaign;
+        const utm_medium = utm_data.utm_medium;
         const is_logged_in = !!ClientBase.isLoggedIn();
         const loginid = ClientBase.get('loginid');
         const landing_company_shortcode = ClientBase.get('landing_company_shortcode');
@@ -19,8 +19,8 @@ const LiveChat = (() => {
         const residence = ClientBase.get('residence');
         const email = ClientBase.get('email');
 
-        session_variables = {
-            ...is_logged_in && { is_logged_in },
+        const session_variables = {
+            is_logged_in,
             ...loginid && { loginid },
             ...landing_company_shortcode && { landing_company_shortcode },
             ...currency && { currency },
@@ -55,7 +55,7 @@ const LiveChat = (() => {
     const initialize = () => {
         if (window.LiveChatWidget) {
             window.LiveChatWidget.on('ready', () => {
-                window.LiveChatWidget.call('set_session_variables', session_variables);
+                setSessionVariables();
                 if (!ClientBase.isLoggedIn()){
                     window.LC_API.on_chat_ended = () => {
                         window.LiveChatWidget.call('set_customer_email', ' ');

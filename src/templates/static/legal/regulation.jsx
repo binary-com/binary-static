@@ -172,9 +172,9 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/pdf-icon.svg'
-                                href={it.url_for('/download/DIEL-RTS28-for-2018.pdf')}
+                                href={it.url_for('/download/DIEL_RTS28_for_2019.pdf')}
                                 target='_blank'
-                                text={it.L('DIEL RTS28 for 2018')}
+                                text={it.L('DIEL RTS28 for 2019')}
                             />
                         </div>
                         <div className='gr-6 gr-12-m'>
@@ -184,9 +184,9 @@ const Regulation = () => {
                                 border='border-dark-gray'
                                 className='margin-top-17 align-start'
                                 image='images/pages/regulation/pdf-icon.svg'
-                                href={it.url_for('/download/DIEL_RTS28_for_2019.pdf')}
+                                href={it.url_for('/download/20210422_Deriv_DIEL_RTS 28_Report_2020.pdf')}
                                 target='_blank'
-                                text={it.L('DIEL RTS28 for 2019')}
+                                text={it.L('DIEL RTS28 for 2020')}
                             />
                         </div>
                     </div>
@@ -543,95 +543,6 @@ const Regulation = () => {
                         </div>
                     </div>
 
-                    <h3>{it.L('RTS 27 2018')}</h3>
-                    <div className='gr-row'>
-                        <div className='gr-6 gr-12-m gr-padding-30'>
-                            <h3>{it.L('Q3 2018')}</h3>
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_1.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 1 - Type of execution venue')}
-                            />
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_3.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 3 - Intra-Day Price information')}
-                            />
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_4.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 4 - Daily Price information')}
-                            />
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q3/Table_6.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 6 - Likelihood of execution information')}
-                            />
-                        </div>
-                        <div className='gr-6 gr-12-m gr-padding-30'>
-                            <h3>{it.L('Q4 2018')}</h3>
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q4/Table_1.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 1 - Type of execution venue')}
-                            />
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q4/Table_3.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 3 - Intra-Day Price information')}
-                            />
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q4/Table_4.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 4 - Daily Price information')}
-                            />
-                            <FillBox
-                                align_left
-                                center
-                                border='border-dark-gray'
-                                className='margin-top-17 align-start'
-                                image='images/pages/regulation/xlsx-icon.svg'
-                                href={it.url_for('/download/rts27_2018/Q4/Table_6.xlsx')}
-                                target='_blank'
-                                text={it.L('Table 6 - Likelihood of execution information')}
-                            />
-                        </div>
-                    </div>
                 </div>
             </Box>
 

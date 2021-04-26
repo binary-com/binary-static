@@ -514,6 +514,7 @@ module.exports = [
     'Sorry, account signup is not available in your country.',
     'Sorry, an error occurred while processing your account.',
     'Sorry, an error occurred while processing your request.',
+    'Sorry, but binary options trading is not available in your country.',
     'Sorry, but binary options trading is not available in your financial account.',
     'Sorry, deposits for this currency are currently disabled.',
     'Sorry, no mobile phone bills',
