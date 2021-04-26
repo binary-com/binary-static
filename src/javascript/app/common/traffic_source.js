@@ -70,16 +70,6 @@ const TrafficSource = (() => {
         if (params.gclid && !Client.isLoggedIn()) {
             LocalStore.set('gclid', params.gclid);
         }
-
-        const doc_ref = document.referrer;
-        let referrer  = localStorage.getItem('index_referrer') || doc_ref;
-        localStorage.removeItem('index_referrer');
-        if (doc_ref && !(new RegExp(window.location.hostname, 'i')).test(doc_ref)) {
-            referrer = doc_ref;
-        }
-        if (referrer && !current_values.referrer && !params.utm_source && !current_values.utm_source) {
-            cookie.set('referrer', (Url.getLocation(referrer)).hostname, { sameSite: 'none', secure: true });
-        }
     };
 
     const clearData = () => {
