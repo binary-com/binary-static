@@ -416,12 +416,14 @@ const Authenticate = (() => {
             
             compressImageFiles(files_to_process).then((processed_files) => {
                 const total_to_upload = processed_files.length;
+
                 if (!total_to_upload) {
                     cancelUpload();
-                    return; // don't start submitting files until all front-end validation checks pass
+                    return;
                 }
 
                 const isLastUpload = () => total_to_upload === idx_to_upload + 1;
+
                 // sequentially send files
                 const uploadFile = () => {
                     const $status = $submit_table.find(`.${processed_files[idx_to_upload].passthrough.class} .status`);
@@ -1120,10 +1122,8 @@ const Authenticate = (() => {
                     break;
                 }
                 case 'pending':
-                    init();
-                    $('#not_authenticated').setVisibility(1);
-                    // showCTAButton('identity', 'pending');
-                    // $('#pending_poa').setVisibility(1);
+                    showCTAButton('identity', 'pending');
+                    $('#pending_poa').setVisibility(1);
                     break;
                 case 'rejected':
                     $('#unverified_poa').setVisibility(1);
@@ -1155,9 +1155,9 @@ const Authenticate = (() => {
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
         if (!isAuthenticationAllowed()) {
-            //$('#authentication_tab').setVisibility(0);
+            $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
-            //$('#authentication_unneeded').setVisibility(1);
+            $('#authentication_unneeded').setVisibility(1);
         }
 
         const has_svg_account = Client.hasSvgAccount();
