@@ -52,9 +52,9 @@ const TrafficSource = (() => {
         if (params.utm_source || params.utm_medium || params.utm_campaign) {
 
             // if url is missing one of required fields, do nothing
-            const is_need_change = param_keys.every((param) => param in params);
+            const has_all_params = param_keys.every((param) => param in params);
             
-            if (is_need_change) {
+            if (has_all_params) {
                 param_keys.forEach((key) => {
                     if (params[key]) {
                         cookie.set(key, params[key], { sameSite: 'none', secure: true });
