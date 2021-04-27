@@ -1155,9 +1155,9 @@ const Authenticate = (() => {
         const authentication_status = await getAuthenticationStatus();
         const is_required = checkIsRequired(authentication_status);
         if (!isAuthenticationAllowed()) {
-            $('#authentication_tab').setVisibility(0);
+            //$('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
-            $('#authentication_unneeded').setVisibility(1);
+            //$('#authentication_unneeded').setVisibility(1);
         }
 
         const has_svg_account = Client.hasSvgAccount();
