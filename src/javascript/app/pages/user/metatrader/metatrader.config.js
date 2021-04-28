@@ -105,7 +105,7 @@ const MetaTraderConfig = (() => {
                             if (is_ok) resolve();
                             else resolveWithMessage();
                         });
-                    } else if (sample_account.market_type === 'gaming') {
+                    } else if (sample_account.market_type === 'gaming' || sample_account.market_type === 'synthetic') {
                         let is_ok = true;
                         BinarySocket.wait('get_account_status', 'landing_company').then(async () => {
                             const response_get_account_status = State.getResponse('get_account_status');
@@ -209,7 +209,7 @@ const MetaTraderConfig = (() => {
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
                     const sample_account = getSampleAccount(acc_type);
-                    const is_synthetic = sample_account.market_type === 'gaming';
+                    const is_synthetic = sample_account.market_type === 'gaming' || sample_account.market_type === 'synthetic';
                     const is_demo = /^demo_/.test(acc_type);
 
                     if (is_synthetic && !is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
@@ -573,7 +573,7 @@ const MetaTraderConfig = (() => {
 
     const hasTradeServers = (acc_type) => {
         const is_real = acc_type.startsWith('real');
-        const is_gaming = accounts_info[acc_type].market_type === 'gaming';
+        const is_gaming = accounts_info[acc_type].market_type === 'gaming' || accounts_info[acc_type].market_type === 'synthetic';
         const is_clean_type = acc_type.endsWith('financial') || acc_type.endsWith('stp');
         if ((/unknown/.test(acc_type))) {
             return false;
