@@ -56,7 +56,9 @@ const MetaTrader = (() => {
             // }
 
             const { mt_financial_company, mt_gaming_company } = State.getResponse('landing_company');
+            // maintain backwards compatibility for gaming market_type, new accounts will use synthetic market_type
             addAccount('gaming', mt_gaming_company);
+            addAccount('synthetic', mt_gaming_company);
             addAccount('financial', mt_financial_company);
             // TODO: Remove once details in inaccessible error provides necessary accounts info
             addAccount('unknown', null);

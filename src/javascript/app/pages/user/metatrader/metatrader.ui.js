@@ -977,7 +977,8 @@ const MetaTraderUI = (() => {
         }
 
         BinarySocket.wait('landing_company').then((response) => {
-            const company = response.landing_company[`mt_${accounts_info[acc_type].market_type}_company`][accounts_info[acc_type].sub_account_type];
+            const landing_company_name = accounts_info[acc_type].market_type === 'synthetic' ? 'mt_gaming_company' : `mt_${accounts_info[acc_type].market_type}_company`;
+            const company = response.landing_company[landing_company_name][accounts_info[acc_type].sub_account_type];
 
             $icon.attr({
                 'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
