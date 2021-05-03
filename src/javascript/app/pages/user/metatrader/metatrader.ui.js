@@ -852,7 +852,8 @@ const MetaTraderUI = (() => {
 
         Object.keys(filtered_accounts).forEach((acc_type) => {
             // TODO: remove once we have market type and sub type data from error response details
-            if (/unknown+$/.test(acc_type)) return;
+            // we need to remove gaming from account creation but support it in metatrader.js L60 for backwards compatibility
+            if (/unknown+$/.test(acc_type) || filtered_accounts[acc_type].market_type === 'gaming') return;
             const $acc  = filtered_accounts[acc_type].is_demo ? $acc_template_demo.clone() : $acc_template_real.clone();
             const type  = acc_type.split('_').slice(1).join('_');
             const image = filtered_accounts[acc_type].market_type === 'gaming' || filtered_accounts[acc_type].market_type === 'synthetic'  ? 'synthetic' : filtered_accounts[acc_type].sub_account_type; // image name can be (financial_stp|financial|synthetic)
