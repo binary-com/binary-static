@@ -153,6 +153,7 @@ export const UnsupportedMessage = () => (
         <div className='submit-status-uns gr-centered gr-padding-30 invisible'>
             <h2 className='center-text'>{it.L('Document submission status')}</h2>
             <Table
+                scroll
                 data={{
                     thead: [
                         [
@@ -204,6 +205,7 @@ export const AuthenticateMessage = () => (
         <div className='submit-status gr-centered gr-padding-30 invisible'>
             <h2 className='center-text'>{it.L('Document submission status')}</h2>
             <Table
+                scroll
                 data={{
                     thead: [
                         [
