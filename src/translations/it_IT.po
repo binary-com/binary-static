@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-04-27 01:18\n"
+"PO-Revision-Date: 2021-05-03 11:12\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -449,7 +449,7 @@ msgid "%1Deriv-Demo%2 if your signal is for demo accounts only."
 msgstr "%1Deriv-Demo%2 se il segnale vale solo per conti di prova."
 
 msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accounts only."
-msgstr ""
+msgstr "%1Deriv-Server%2 o %1Deriv-Server-02%2 se il segnale vale solo per conti reali."
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1Fondata%2 nell'ottobre 1999"
@@ -467,10 +467,10 @@ msgid "%1Note%2: These limits are only applicable to your %3 real account. To se
 msgstr "%1Nota%2: questi limiti valgono solo per il conto reale %3. Potrai decidere altri limiti e impostarli di conseguenza, passando al conto corrispettivo."
 
 msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
-msgstr ""
+msgstr "%1Nota bene:%2 per una maggiore selezione di fornitori di segnali per Deriv, visita la %3pagina di presentazione MQL5%4 e cerca Deriv nel campo del server Broker."
 
 msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
-msgstr ""
+msgstr "%1Nota bene:%2 per potere aggiungere un segnale, è necessario eseguire l'upgrade del conto MQL5 e classificarsi come venditore. Se non lo hai ancora fatto, segui i passaggi riportati su questa pagina per registrarti come venditore."
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1 Se vivi nel Regno Unito, non è possibile rimuovere l'autoesclusione fino alla scadenza del periodo stabilito. %2Se desideri riprendere le attività di trading dopo tale periodo, puoi richiederlo chiamando al numero %3. Le richieste inviate via chat o via e-mail non verranno considerate."
@@ -5728,6 +5728,9 @@ msgstr "Desidero aprire un altro conto per criptovalute"
 msgid "I want to reapply"
 msgstr "Desidero ricandidarmi"
 
+msgid "I want to receive updates on %1 products, services, and events."
+msgstr ""
+
 msgid "I want to set my currency instead"
 msgstr "Desidero impostare la mia valuta"
 
@@ -9417,9 +9420,6 @@ msgstr "Ricevi e-mail su prodotti, servizi ed eventi di %1."
 
 msgid "Receive instant prices based on your position."
 msgstr "Ricevi prezzi immediati basati sulla tua posizione."
-
-msgid "Receive news and special offers"
-msgstr "Ricevi aggiornamenti e offerte speciali"
 
 msgid "Receive prices that are benchmarked against interbank rates."
 msgstr "Ricevi prezzi che vengono confrontati con i tassi interbancari."
@@ -13599,6 +13599,9 @@ msgstr "Virtuale"
 
 msgid "Virtual Account"
 msgstr "Conto Virtuale"
+
+msgid "Virtual accounts do not have Payment Agent services."
+msgstr ""
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa è una società internazionale che supporta i pagamenti digitali in tutto il mondo, solitamente attraverso le carte di credito o di debito dello stesso circuito. Per maggiori informazioni, visita il sito %1."
