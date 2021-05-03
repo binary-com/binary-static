@@ -285,7 +285,7 @@ const BinaryOptions = () => {
                         <p>{it.L('Synthetic Indices give you exclusive access to various trade types, such as Up/Down, Touch/No Touch, In/Out, Asians, Digits, Lookbacks, Reset Call/Reset Put, Call Spread/Put Spread, Only Ups/Only Downs, and more.')}</p>
                         <p>{it.L('Synthetic Indices are further categorised into two classes:')}</p>
                         <ul className='bullet'>
-                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</li>
+                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 (1s) Index, Volatility 25 (1s) Index, Volatility 50 (1s) Index, Volatility 75 (1s) Index, Volatility 100 (1s) Index, Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</li>
                             <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively.')}</li>
                         </ul>
                     </Section>
