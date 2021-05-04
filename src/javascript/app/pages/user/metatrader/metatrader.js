@@ -84,7 +84,7 @@ const MetaTrader = (() => {
                     const is_server_offered =
                         trading_servers.find((trading_server => trading_server.id === mt5_login.server));
 
-                    if (!is_server_offered && !/demo/.test(mt5_login.server)) {
+                    if (!is_server_offered && !/demo/.test(mt5_login.account_type)) {
                         const landing_company = mt5_login.market_type === 'gaming' || mt5_login.market_type === 'synthetic' ? mt_gaming_company : mt_financial_company;
 
                         const market_type = mt5_login.market_type === 'synthetic' ? 'gaming' : mt5_login.market_type;
