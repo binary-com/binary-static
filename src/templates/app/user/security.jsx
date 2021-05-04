@@ -9,8 +9,8 @@ const Column = ({
     text,
     url,
 }) => (
-    <div className={`gr-3 gr-6-m gr-no-gutter gr-parent ${className}`} id={id} data-show={dataShow}>
-        <div className='gr-8 gr-padding-10'>
+    <div className={`gr-3 gr-6-m gr-no-gutter gr-parent center-text-m ${className}`} id={id} data-show={dataShow}>
+        <div className='gr-8 gr-padding-10 gr-centered-m'>
             <a href={it.url_for(`user/security/${url}`)}>
                 <img className='responsive' src={it.url_for(`images/pages/settings/${image}.svg`)} />
             </a>
