@@ -17,7 +17,7 @@ const MetaTraderConfig = (() => {
     const getAccountsInfo = (key, accounts) => {
         const local_accounts_info = accounts || accounts_info;
         if (local_accounts_info[key]) return local_accounts_info[key];
-        if (key.includes('synthetic')) return local_accounts_info[key.replace('synthetic', 'gaming')];
+        if (key && key.includes('synthetic')) return local_accounts_info[key.replace('synthetic', 'gaming')];
         return undefined;
     };
 

@@ -87,7 +87,8 @@ const MetaTrader = (() => {
                     if (!is_server_offered && !/demo/.test(mt5_login.server)) {
                         const landing_company = mt5_login.market_type === 'gaming' || mt5_login.market_type === 'synthetic' ? mt_gaming_company : mt_financial_company;
 
-                        addAccount(mt5_login.market_type, landing_company, mt5_login.server);
+                        const market_type = mt5_login.market_type === 'synthetic' ? 'gaming' : mt5_login.market_type;
+                        addAccount(market_type, landing_company, mt5_login.server);
                     }
                 }
             });
@@ -376,7 +377,8 @@ const MetaTrader = (() => {
 
         // Update account info
         response.mt5_login_list.forEach((account) => {
-            let acc_type = `${account.account_type}_${account.market_type}_${account.sub_account_type}`;
+            const market_type = account.market_type === 'synthetic' ? 'gaming' : account.market_type;
+            let acc_type = `${account.account_type}_${market_type}_${account.sub_account_type}`;
             const acc_type_server = `${acc_type}_${account.server}`;
             if (!(acc_type in accounts_info) || acc_type_server in accounts_info) {
                 acc_type = acc_type_server;

@@ -401,7 +401,8 @@ const AccountClosure = (() => {
         };
         const getMTDisplay = (account) => {
             const mt5_account = (mt5_login_list.find(acc => acc.login === account) || {});
-            return Client.getMT5AccountDisplays(mt5_account.market_type, mt5_account.sub_account_type).short;
+            const market_type = mt5_account.market_type === 'synthetic' ? 'gaming' : mt5_account.market_type;
+            return Client.getMT5AccountDisplays(market_type, mt5_account.sub_account_type).short;
         };
         if (response.error.details.open_positions) {
             Object.keys(response.error.details.open_positions).forEach((account) => {
