@@ -143,9 +143,12 @@ const BinaryLoader = (() => {
         if (config.no_mf && Client.isLoggedIn() && Client.isAccountOfType('financial')) {
             BinarySocket.wait('authorize').then(() => displayMessage(error_messages.no_mf()));
         }
-        if (config.no_blocked_country && Client.isLoggedIn() && Client.isOptionsBlocked()) {
-            BinarySocket.wait('authorize').then(() => displayMessage(error_messages.options_blocked()));
-        }
+
+        BinarySocket.wait('authorize').then(() => {
+            if (config.no_blocked_country && Client.isLoggedIn() && Client.isOptionsBlocked()) {
+                displayMessage(error_messages.options_blocked());
+            }
+        });
 
         BinarySocket.setOnDisconnect(active_script.onDisconnect);
     };

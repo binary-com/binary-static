@@ -115,9 +115,12 @@ table {
             @media (max-width: $md) {
                 & > th.details, & > td.details {
                     display: table-cell !important;
+                    position: relative;
 
                     .button {
                         padding: 8px 15px;
+                        position: absolute;
+                        top: 0.25rem;
                     }
                 }
                 th, td {

@@ -262,6 +262,15 @@ const DepositWithdraw = (() => {
         const response_get_account_status = State.get(['response', 'get_account_status']);
         if (!response_get_account_status.error) {
             if (/cashier_locked/.test(response_get_account_status.get_account_status.status)) {
+                if (/ASK_UK_FUNDS_PROTECTION/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    initUKGC();
+                    return;
+                }
+                if (/ASK_SELF_EXCLUSION_MAX_TURNOVER_SET/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('limits_error');
+                    return;
+                }
+                    
                 showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
                 return;
             }

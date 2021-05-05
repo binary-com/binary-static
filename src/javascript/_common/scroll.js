@@ -1,8 +1,9 @@
 const Scroll = (() => {
-    let $main_container;
+    let $main_container,$window_location;
 
     const sidebarScroll = ($container) => {
         $main_container = $container;
+        $window_location = window.location.pathname;
 
         $container.on('click', '#sidebar-nav li', function () {
             const clicked_li = $(this);
@@ -35,7 +36,7 @@ const Scroll = (() => {
                     $sidebar_container[0].offsetHeight + $sidebar_container.offset().top) {
                     $sidebar.css({ position: 'absolute', bottom: 0, top: '', 'max-width': width, 'width': '100%' });
                 } else if (scroll_top > sticky_navigation_offset_top) {
-                    $sidebar.css({ position: 'fixed', top: 0, bottom: '', 'max-width': width, 'width': '100%' });
+                    $sidebar.css({ position: 'sticky', top: 0, bottom: '', 'max-width': width, 'width': '100%' });
                 } else {
                     $sidebar.css({ position: 'relative' });
                 }
@@ -96,7 +97,10 @@ const Scroll = (() => {
         sidebarScroll,
         scrollToTop,
         offScroll: () => {
-            $(window).off('scroll');
+            if (window.location.pathname !== $window_location) {
+                $(window).off('scroll');
+            }
+
             if ($main_container) {
                 $main_container.find('#sidebar-nav li').off('click');
                 $main_container = '';

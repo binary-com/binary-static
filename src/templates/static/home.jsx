@@ -100,7 +100,7 @@ const AccountsTabContent = ({
                         <img className='responsive' src={it.url_for(image)} />
                     </div>
                     <div className={`center-text gr-12 gr-hide gr-show-m ${mobile_class || ''}`}>
-                        <div className='gr-8 gr-centered'>
+                        <div className='gr-10 gr-centered margin-top-10'>
                             <div className='gr-row'>
                                 <ArrowsMobile parent='account_tabs' direction='left' />
                                 <strong className='align-self-center gr-centered'>{mobile_header}</strong>

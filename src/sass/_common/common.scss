@@ -351,6 +351,15 @@ _:-ms-fullscreen, :root #content-holder {
     vertical-align: middle;
 }
 
+#email_consent + label {
+    display: flex;
+    justify-content: center;
+
+    &:before {
+        margin-top: 4px;
+    }
+}
+
 input[type=checkbox] {
     margin: 5px 5px 5px 0;
     padding: 7px;
@@ -486,6 +495,9 @@ button .barspinner.white {
 #virtual-form {
     .select2-container {
         max-width: 220px;
+    }
+    .hide-product-checkbox {
+        visibility: hidden !important;
     }
 }
 
