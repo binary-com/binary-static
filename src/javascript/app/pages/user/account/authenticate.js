@@ -777,7 +777,8 @@ const Authenticate = (() => {
     };
 
     const showSuccess = () => {
-        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
+            authentication_object = response.get_account_status.authentication;
             Header.displayAccountStatus();
             removeButtonLoading();
             $button.setVisibility(0);
@@ -789,7 +790,8 @@ const Authenticate = (() => {
     };
 
     const showSuccessUns = () => {
-        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
+            authentication_object = response.get_account_status.authentication;
             Header.displayAccountStatus();
             removeButtonLoadingUns();
             $button_uns.setVisibility(0);
@@ -916,7 +918,8 @@ const Authenticate = (() => {
             onfido.tearDown();
             $('#authentication_loading').setVisibility(1);
             setTimeout(() => {
-                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
+                    authentication_object = response.get_account_status.authentication;
                     $('#msg_personal_details').setVisibility(0);
                     $('#upload_complete').setVisibility(1);
                     Header.displayAccountStatus();
