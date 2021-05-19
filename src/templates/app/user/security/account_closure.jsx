@@ -155,19 +155,20 @@ const AccountClosure = () => (
                 </div>
                 <SeparatorLine className='gr-padding-20' />
                 <div className='gr-padding-20 gr-hide gr-show-m' />
-                <h2 className='primary-color account-closure-close-title'>{it.L('I want to close my account')}</h2>
+                <h2 className='primary-color account-closure-close-title'>{it.L('Deactivate account')}</h2>
                 <div id='closing_steps' className='gr-padding-10 invisible'>
-                    <p className='account-closure-subtitle'>{it.L('To close your account, complete the following steps:')}</p>
+                    <p className='account-closure-subtitle'>{it.L('Before you deactivate your account, you’ll need to:')}</p>
                     <div className='gr-padding-10'>
-                        <h3 className='secondary-color'>{it.L('Step 1: Close all open positions')}</h3>
-                        <p>{it.L('Go to the [_1]Portfolio[_2] to close all open positions from your Binary.com accounts.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
-                        <p className='invisible metatrader-link'>{it.L('If you have opened positions in your MT5 account, please close them too.')}</p>
-
+                        <h3 className='secondary-color'>{it.L('1. Ensure to close all your positions')}</h3>
+                        <p>{it.L('If you have a Binary real account, go to [_1]Portfolio[_2] to close or sell any open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
+                        <p className='invisible metatrader-link'>{it.L('If you have a Deriv MT5, log in to close any open positions.')}</p>
+                        <p className='invisible cfd-link'>{it.L('If you have a Deriv MT5 or Deriv X real account, log in to close any open positions.')}</p>
                     </div>
                     <div className='gr-padding-10'>
-                        <h3 className='secondary-color'>{it.L('Step 2: Withdraw your funds')}</h3>
-                        <p>{it.L('Go to the [_1]Cashier[_2] to withdraw funds from your [_3] accounts.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name)}</p>
-                        <p className='invisible metatrader-link'>{it.L('Go to the [_1]MT5 dashboard[_2] to withdraw funds from your Binary.com MT5 account.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                        <h3 className='secondary-color'>{it.L('2. Withdraw your funds')}</h3>
+                        <p>{it.L('If you have a Binary real account, go to [_1]Cashier[_2] to withdraw your funds.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name)}</p>
+                        <p className='invisible metatrader-link'>{it.L('If you have a Deriv MT5, go to your [_1]Deriv MT5[_2] dashboard to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                        <p className='invisible cfd-link'>{it.L('If you have a Deriv MT5 or Deriv X real account, go to your [_1]Deriv MT5[_2] or [_3]Deriv X[_4] dashboard to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>', '<a href="https://app.deriv.com/derivx">', '</a>')}</p>
                     </div>
                 </div>
                 <SeparatorLine />
