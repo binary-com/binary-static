@@ -166,7 +166,7 @@ const AccountClosure = () => (
                     </div>
                     <div className='gr-padding-10'>
                         <h3 className='secondary-color'>{it.L('2. Withdraw your funds')}</h3>
-                        <p>{it.L('If you have a Binary real account, go to [_1]Cashier[_2] to withdraw your funds.', `<a href="${it.url_for('cashier')}">`, '</a>', it.website_name)}</p>
+                        <p>{it.L('If you have a Binary real account, go to [_1]Cashier[_2] to withdraw your funds.', `<a href="${it.url_for('cashier')}">`, '</a>')}</p>
                         <p className='invisible metatrader-link'>{it.L('If you have a Deriv MT5, go to your [_1]Deriv MT5[_2] dashboard to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
                         <p className='invisible cfd-link'>{it.L('If you have a Deriv MT5 or Deriv X real account, go to your [_1]Deriv MT5[_2] or [_3]Deriv X[_4] dashboard to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>', '<a href="https://app.deriv.com/derivx">', '</a>')}</p>
                     </div>
