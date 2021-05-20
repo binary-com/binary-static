@@ -51,7 +51,7 @@ const Guide = (() => {
 
     const isDisabled = () => {
         const disabled = Cookies.get(cookie_name);
-        return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
+        return !disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
     };
 
     /*
