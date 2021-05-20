@@ -2,6 +2,8 @@ const Cookies   = require('js-cookie');
 const EnjoyHint = require('../../_common/lib/guide.enjoyhint');
 const localize  = require('../../_common/localize').localize;
 
+console.log('Here')
+
 /*
  *  This is developed to simplify the usage of enjoyhint (https://github.com/xbsoftware/enjoyhint)
  *
@@ -12,6 +14,7 @@ const localize  = require('../../_common/localize').localize;
  */
 
 const Guide = (() => {
+    
     let opt,
         cookie_name,
         btn_next,
@@ -43,13 +46,9 @@ const Guide = (() => {
             $(opt.guideBtnID).remove();
             return;
         }
-
         makeButton();
     };
 
-    /*
-     *  do not show the guide button if its close (X) has been clicked before
-     */
     const isDisabled = () => {
         const disabled = Cookies.get(cookie_name);
         return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
@@ -69,6 +68,7 @@ const Guide = (() => {
      *  generate the button's html
      */
     const makeButton = () => {
+        
         if ($(opt.guideBtnID).children().length > 0) {
             return;
         }

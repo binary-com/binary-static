@@ -24,3 +24,4 @@ $(window).on('pageshow', (e) => { // Safari doesn't fire load event when using b
         BinaryLoader.init();
     }
 });
+
