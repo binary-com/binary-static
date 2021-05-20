@@ -282,7 +282,7 @@ const AccountClosure = (() => {
                 BinarySocket.send({ statement: 1, limit: 1 });
                 BinarySocket.wait('landing_company', 'get_account_status', 'statement', 'website_status').then(async () => {
                     const is_eligible = await Metatrader.isEligible();
-                    const is_dxtrade_allowed = is_svg || (!isLoggedIn() && !isEuCountry());
+                    const is_dxtrade_allowed = is_svg;
 
                     if (is_eligible) {
                         if (is_dxtrade_allowed) {
