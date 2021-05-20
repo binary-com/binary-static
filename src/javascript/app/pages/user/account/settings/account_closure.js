@@ -367,13 +367,13 @@ const AccountClosure = (() => {
         const data  = { account_closure: 1, reason: getReason() };
         BinarySocket.send(data).then(async (response) => {
             if (response.error) {
-                $submit_loading.setVisibility(0);
                 if (response.error.details) {
                     await showErrorPopUp(response, $account_closure_error);
                     $account_closure_error.setVisibility(1);
                 } else {
                     showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                 }
+                $submit_loading.setVisibility(0);
                 $btn_submit.attr('disabled', false);
             } else {
                 $submit_loading.setVisibility(0);
@@ -393,6 +393,8 @@ const AccountClosure = (() => {
 
     const showErrorPopUp = async (response, $account_closure_error) => {
         const mt5_login_list = (await BinarySocket.wait('mt5_login_list')).mt5_login_list;
+        const dxtrade_accounts_list = (await BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' })).trading_platform_accounts;
+
         // clear all previously added details first
         $account_closure_error.find('.account-closure-details').remove();
         const $parent = $('<div/>', { class: 'gr-padding-10 gr-child account-closure-details' });
@@ -412,12 +414,19 @@ const AccountClosure = (() => {
             const market_type = mt5_account.market_type === 'synthetic' ? 'gaming' : mt5_account.market_type;
             return Client.getMT5AccountDisplays(market_type, mt5_account.sub_account_type).short;
         };
+        const getDxtradeDisplay = (account) => {
+            const dxtrade_account = (dxtrade_accounts_list.find(acc => acc.account_id === account) || {});
+            return Client.getMT5AccountDisplays(dxtrade_account.market_type, 'financial').short;
+        };
         if (response.error.details.open_positions) {
             Object.keys(response.error.details.open_positions).forEach((account) => {
                 const txt_positions = `${response.error.details.open_positions[account]} position(s)`;
                 if (/^MT/.test(account)) {
                     section_id = '#account_closure_open_mt';
                     display_name = getMTDisplay(account);
+                } else if (/^DX/.test(account)) {
+                    section_id = '#account_closure_open_dxtrade';
+                    display_name = getDxtradeDisplay(account);
                 } else {
                     section_id = '#account_closure_open';
                     display_name = Client.get('currency', account);
@@ -431,6 +440,9 @@ const AccountClosure = (() => {
                 if (/^MT/.test(account)) {
                     section_id = '#account_closure_balance_mt';
                     display_name = getMTDisplay(account);
+                } else if (/^DX/.test(account)) {
+                    section_id = '#account_closure_balance_dxtrade';
+                    display_name = getDxtradeDisplay(account);
                 } else {
                     section_id = '#account_closure_balance';
                     display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);

@@ -72,6 +72,12 @@ const AccountClosureError = () => (
                 <div className='gr-padding-20 gr-parent invisible' id='account_closure_balance_mt'>
                     {it.L('You have funds in these MT5 accounts:')}
                 </div>
+                <div className='gr-padding-20 gr-parent invisible' id='account_closure_open_dxtrade'>
+                    {it.L('You have open positions in these Deriv X accounts:')}
+                </div>
+                <div className='gr-padding-20 gr-parent invisible' id='account_closure_balance_dxtrade'>
+                    {it.L('You have funds in these Deriv X accounts:')}
+                </div>
             </div>
             <div id='account_closure_error_buttons' className='gr-padding-10 gr-child'>
                 <button className='back button no-margin'>{it.L('OK')}</button>
