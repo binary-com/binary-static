@@ -9,9 +9,7 @@ const Url                          = require('../../../../../_common/url');
 const isCryptocurrency             = require('../../../../../_common/base/currency_base').isCryptocurrency;
 const hasAccountType               = require('../../../../../_common/base/client_base').hasAccountType;
 const hasCurrencyType              = require('../../../../../_common/base/client_base').hasCurrencyType;
-const isLoggedIn                   = require('../../../../../_common/base/client_base').isLoggedIn;
 const hasOnlyCurrencyType          = require('../../../../../_common/base/client_base').hasOnlyCurrencyType;
-const isEuCountry                  = require('../../../../../app/common/country_base').isEuCountry;
 
 const AccountClosure = (() => {
     const form_selector = '#form_closure';
