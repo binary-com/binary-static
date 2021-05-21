@@ -39,18 +39,14 @@ const Guide = (() => {
         if ($(opt.guideBtnID).length === 0 || opt.script.length === 0) {
             return;
         }
-
        
-
         if (isDisabled()) {
             $(opt.guideBtnID).remove();
             return;
         }
         makeButton();
     };
-
     
-
     const isDisabled = () => {
         const disabled = Cookies.get(cookie_name);
         return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
