@@ -40,6 +40,8 @@ const Guide = (() => {
             return;
         }
 
+       
+
         if (isDisabled()) {
             $(opt.guideBtnID).remove();
             return;
@@ -47,18 +49,22 @@ const Guide = (() => {
         makeButton();
     };
 
+    
+
     const isDisabled = () => {
         const disabled = Cookies.get(cookie_name);
-        return !disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
+        return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
     };
 
     /*
      *  handle the guide button appearance using a cookie for all scripts
      */
     const setDisabled = () => {
+
         if (!isDisabled()) {
             const disabled = Cookies.get(cookie_name);
             Cookies.set(cookie_name, (!disabled ? opt.script : `${disabled},${opt.script}`), { sameSite: 'strict', secure: true });
+           
         }
     };
 
