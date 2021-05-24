@@ -8,7 +8,6 @@ const removeCookies       = require('../storage').removeCookies;
 const urlForCurrentDomain = require('../url').urlForCurrentDomain;
 const isLoginPages        = require('../utility').isLoginPages;
 const TrafficSource       = require('../../app/common/traffic_source');
-
 const getAppId            = require('../../config').getAppId;
 
 const Login = (() => {
