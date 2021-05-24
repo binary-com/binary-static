@@ -906,6 +906,9 @@ const Authenticate = (() => {
         const type_pending = type === 'identity' ? 'poa' : 'poi';
         const description_status = status !== 'verified';
 
+        $(`#text_verified_${type_pending}_required, #text_pending_${type_pending}_required`).setVisibility(0);
+        $(`#button_verified_${type_pending}_required, #button_pending_${type_pending}_required`).setVisibility(0);
+
         if (needs_verification.includes(type)) {
             $(`#text_${status}_${type_required}_required`).setVisibility(1);
             $(`#button_${status}_${type_required}_required`).setVisibility(1);
