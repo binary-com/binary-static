@@ -406,3 +406,85 @@
         }
     }
 }
+
+#frm_change_password, #frm_trading_password {
+    .gr-row {
+        .app-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+
+            span {
+                font-size: $FONT_SIZE_S;
+                padding-right: 10px;
+                display: inline-block;
+                color: $COLOR_DARK_BLUE;
+            }
+        }
+        .binary-app {
+            font-size: $FONT_SIZE_S;
+            display: block;
+            color: $COLOR_ORANGE;
+            margin-bottom: 1rem;
+        }
+    }
+    .row-inner {
+        .social-identifier {
+            gap: 12px;
+            padding: 20px 0;
+
+            > span {
+                font-size: $FONT_SIZE_S;
+            }
+        }
+    }
+    .frm-btn-container > a {
+        margin-right: 16px;
+    }
+}
+
+#frm_trading_reset_password, #frm_reset_binary_password, #frm_reset_password {
+    .fieldset-subtitle {
+        margin: 0.2em 0 1em 0.2em;
+    }
+}
+
+#unlink_confirmation_dialog, #sent_email_dialog {
+    #dialog_content {
+        max-width: 469px;
+        padding: 32px 12px 22px;
+    }
+    #dialog_title {
+        line-height: 42px;
+    }
+}
+
+#sent_email_success_dialog {
+    #dialog_content {
+        max-width: 471px;
+        padding: 32px 12px 22px;
+    }
+    #dialog_title {
+        text-align: center;
+        line-height: 42px;
+    }
+}
+
+#change_password_success_dialog {
+    #dialog_content {
+        width: 85%;
+        max-width: 469px;
+        padding: 32px 12px 22px;
+    }
+    #dialog_title {
+        line-height: 42px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    #unlink_confirmation_dialog, #sent_email_dialog, #sent_email_success_dialog {
+        #dialog_content {
+            margin: auto 16px;
+        }
+    }
+}

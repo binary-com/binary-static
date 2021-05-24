@@ -21,7 +21,6 @@ const showLoadingImage        = require('../../../../_common/utility').showLoadi
     To handle onfido unsupported country, we handle the functions separately,
     the name of the functions will be original name + uns abbreviation of `unsupported`
 */
-
 const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
@@ -880,9 +879,15 @@ const Authenticate = (() => {
                                         country: country_code,
                                     } : false,
                                 },
+                                useLiveDocumentCapture: true,
                             },
                         },
-                        'face',
+                        {
+                            type   : 'face',
+                            options: {
+                                useLiveDocumentCapture: true,
+                            },
+                        },
                     ],
                 });
                 $('#authentication_loading').setVisibility(0);

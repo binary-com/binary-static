@@ -115,7 +115,7 @@ const Header = () => (
                                             type     : 'nested',
                                             text     : it.L('Resources'),
                                             href     : 'javascript:;',
-                                            dataShow : '-maltainvest',
+                                            dataShow : '-maltainvest, -optionsblocked',
                                             className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },

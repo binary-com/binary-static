@@ -270,7 +270,7 @@ const MetaTraderConfig = (() => {
 
         password_change: {
             title        : localize('Change Password'),
-            success_msg  : response => localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, getDisplayLogin(response.echo_req.login)]),
+            success_msg  : response => localize('The investor password of account number [_1] has been changed.', [getDisplayLogin(response.echo_req.account_id)]),
             prerequisites: () => new Promise(resolve => resolve('')),
         },
         password_reset: {
@@ -350,7 +350,7 @@ const MetaTraderConfig = (() => {
 
     const fields = {
         new_account: {
-            txt_main_pass    : { id: '#txt_main_pass',     request_field: 'mainPassword' },
+            trading_password : { id: '#trading_password',     request_field: 'mainPassword' },
             ddl_trade_server : { id: '#ddl_trade_server', is_radio: true },
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields: acc_type => {
@@ -375,28 +375,28 @@ const MetaTraderConfig = (() => {
             },
         },
         password_change: {
-            ddl_password_type: { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
             txt_old_password : { id: '#txt_old_password',  request_field: 'old_password' },
             txt_new_password : { id: '#txt_new_password',  request_field: 'new_password' },
             additional_fields:
                 acc_type => ({
-                    login: getAccountsInfo(acc_type).info.login,
+                    account_id: accounts_info[acc_type].info.login,
+                    platform  : 'mt5',
                 }),
         },
         password_reset: {
-            ddl_password_type: { id: '#ddl_reset_password_type', request_field: 'password_type', is_radio: true },
             txt_new_password : { id: '#txt_reset_new_password',  request_field: 'new_password' },
             additional_fields:
                 (acc_type, token) => ({
-                    login            : getAccountsInfo(acc_type).info.login,
+                    account_id       : accounts_info[acc_type].info.login,
                     verification_code: token,
+                    platform         : 'mt5',
                 }),
         },
         verify_password_reset: {
             additional_fields:
                 () => ({
                     verify_email: Client.get('email'),
-                    type        : 'mt5_password_reset',
+                    type        : 'trading_platform_investor_password_reset',
                 }),
         },
         verify_password_reset_token: {
@@ -422,16 +422,14 @@ const MetaTraderConfig = (() => {
 
     const validations = () => ({
         new_account: [
-            { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'] },
+            { selector: fields.new_account.trading_password.id,     validations: [['req', { hide_asterisk: false }], 'password', 'compare_to_email'] },
             { selector: fields.new_account.ddl_trade_server.id,  validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
-            { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
             { selector: fields.password_change.txt_old_password.id,    validations: [['req', { hide_asterisk: true }]] },
             { selector: fields.password_change.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], 'password', ['not_equal', { to: fields.password_change.txt_old_password.id, name1: localize('Current password'), name2: localize('New password') }], 'compare_to_email'] },
         ],
         password_reset: [
-            { selector: fields.password_reset.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
             { selector: fields.password_reset.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], 'password', 'compare_to_email'] },
         ],
         verify_password_reset_token: [

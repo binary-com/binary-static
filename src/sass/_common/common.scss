@@ -252,8 +252,9 @@ label {
 
 /* global styles */
 .required_field_asterisk {
-    position: absolute;
-    margin: -3px 3px;
+    position: relative;
+    left: 3px;
+    top: -3px;
     font-size: $FONT_SIZE_S;
     color: $COLOR_RED;
 
@@ -420,6 +421,10 @@ button .barspinner.white {
     z-index: 999;
 }
 
+.flex {
+    display: flex;
+}
+
 .inline-flex {
     display: inline-flex;
 }
@@ -582,6 +587,11 @@ button .barspinner.white {
     input[style*='background'] ~ &--toggle {
         right: 32px;
     }
+}
+
+.required_asterisk:after {
+    content: '*';
+    color: $COLOR_RED;
 }
 
 ul.bullet.gr-row > li {

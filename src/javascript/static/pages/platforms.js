@@ -21,6 +21,12 @@ const os_list = [
 
 const Platforms = (() => {
     const onLoad = () => {
+        const staticFull = getElementById('static_full');
+        const loadingImage = getElementById('loading_image');
+        BinarySocket.wait('authorize').then(() => {
+            staticFull.setVisibility(1);
+            loadingImage.setVisibility(0);
+        });
         BinarySocket.wait('website_status').then(() => {
             $('.desktop-app').setVisibility(isIndonesia() && !isBinaryApp());
         });

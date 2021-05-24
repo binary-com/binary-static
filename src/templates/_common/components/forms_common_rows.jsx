@@ -191,6 +191,7 @@ export const Tnc = () => (
                         '</a>'
                     )}
                 </label>
+                <span className='required_field_asterisk'>*</span>
             </div>
         </div>
 
@@ -230,6 +231,7 @@ export const TaxInformationForm = () => (
             <label>{it.L('Deriv Investments (Europe) Limited is required to collect your tax information.')}&nbsp;
                 <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
             </label>
+            <span className='required_field_asterisk'>*</span>
 
             <div id='tax_information_note' style={{ display: 'none' }}>
                 <p>{it.L('This requirement is mandated by the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
@@ -284,6 +286,7 @@ export const TaxInformationForm = () => (
                 <label htmlFor='chk_tax_id'>
                     {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Deriv Investments (Europe) Limited about any changes to this information.')}
                 </label>
+                <span className='required_field_asterisk'>*</span>
             </div>
         </div>
     </React.Fragment>
