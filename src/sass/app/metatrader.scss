@@ -15,13 +15,6 @@
         margin-bottom: 20px;
 
         & .password {
-            &--field-wrapper {
-                max-width: unset;
-
-                input {
-                    max-width: unset;
-                }
-            }
             &--message {
                 white-space: unset;
             }
@@ -39,6 +32,29 @@
                 &--toggle {
                     top: 5px;
                 }
+            }
+        }
+        & #trading_password_input {
+            padding-left: 7rem;
+        }
+        & #trading_password_existing_user_validation_error {
+            padding-left: 8rem;
+        }
+        @media (max-width: 480px) {
+            & #trading_password_input {
+                width: calc(100% - 20px);
+                padding: initial;
+
+                & .password--meter.password--meter-bg {
+                    top: 28px;
+                }
+                & .password--meter.password--meter-fill {
+                    top: 28px;
+                }
+            }
+            & #trading_password_existing_user_validation_error {
+                width: calc(100% - 20px);
+                padding: initial;
             }
         }
     }
@@ -247,9 +263,6 @@
             #btn_add_region {
                 margin-right: 16px;
             }
-            span {
-                font-size: 18px;
-            }
         }
     }
     .acc-actions {
@@ -317,6 +330,17 @@
                 }
                 button[type='submit'] {
                     line-height: 22px;
+                }
+                .button-full-width {
+                    width: 100%;
+                }
+                .change-investor-button {
+                    margin-bottom: 10px;
+                }
+                #existing_client_message, #new_client_message {
+                    .notice-msg {
+                        padding: 16px;
+                    }
                 }
             }
             .type-group {
@@ -448,6 +472,9 @@
             }
         }
     }
+    span {
+        font-size: $FONT_SIZE_L;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -489,6 +516,14 @@
                     font-size: 14px;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #view_3-buttons_existing_user {
+        .button + .button {
+            margin-left: 0 !important;
         }
     }
 }
@@ -538,6 +573,10 @@
 
 .mt-sidebar-button.mt5-web {
     height: 140px;
+}
+
+.required {
+    color: $COLOR_RED;
 }
 
 tbody#instruments > tr > td {

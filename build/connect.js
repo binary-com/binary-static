@@ -10,8 +10,8 @@ module.exports = function (grunt) {
         livereload: {
             options: {
                 hostname  : '0.0.0.0',
-                port      : 443,
-                protocol  : 'https',
+                port      : 4433,
+                protocol  : 'http',
                 base      : 'dist',
                 open      : {
                     appName: {

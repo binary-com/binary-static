@@ -140,6 +140,11 @@
                 #trade_details_message {
                     font-style: italic;
                 }
+                #trade_details_bottom {
+                    @media screen and (max-width: 480px) {
+                        padding-bottom: 25px;
+                    }
+                }
                 #contract_sell_message {
                     font-size: $FONT_SIZE_S;
                     line-height: 20px;

@@ -40,6 +40,7 @@ const Statement = () => (
                             <option value='sell'>{it.L('Sell')}</option>
                             <option value='deposit'>{it.L('Deposit')}</option>
                             <option value='withdrawal'>{it.L('Withdrawal')}</option>
+                            <option value='transfer'>{it.L('Transfer')}</option>
                         </select>
                     </div>
                 </div>

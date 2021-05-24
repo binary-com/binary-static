@@ -10,8 +10,8 @@ const TrafficSource       = require('../../app/common/traffic_source');
 const getAppId            = require('../../config').getAppId;
 
 const Login = (() => {
-    const redirectToLogin = () => {
-        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) {
+    const redirectToLogin = (reset_password) => {
+        if ((!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) || reset_password) {
             sessionStorage.setItem('redirect_url', window.location.href);
             window.location.href = loginUrl();
         }

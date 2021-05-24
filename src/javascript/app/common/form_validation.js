@@ -111,7 +111,11 @@ const Validation = (() => {
                         });
 
                         if (field.$.attr('type') === 'password') {
-                            field.$.next('#password_toggle')[0].onclick = () => togglePasswordVisibility(field);
+                            const [password_toggle] = field.$.next('#password_toggle');
+                            if (password_toggle) {
+                                password_toggle.onclick = () => togglePasswordVisibility(field);
+                            }
+
                             if (field.$.attr('data-password')) {
                                 field.$.after(
                                     '<div class="password--meter password--meter-bg"></div>' +

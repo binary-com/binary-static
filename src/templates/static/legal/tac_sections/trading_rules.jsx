@@ -14,7 +14,7 @@ const TradingRules = () => (
                 <li>{it.L('Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level.')}</li>
                 <li>{it.L('Contracts may not expire on a weekend; therefore, the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday.')}</li>
                 <li>{it.L('Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the Company data feed.')}</li>
-                <li>{it.L('The Company does not guarantee the ability to sell a contract prior to its expiration time.')}</li>
+                <li>{it.L('The Company does not guarantee and bears no liability for the simultaneous selling of the original and copy trades when the client engages in copy trading on WebTrader.')}</li>
                 <li>{it.L('Corporate actions')}
                     <ul className='bullet'>
                         <li>{it.L('A corporate action can include but is not limited to assimilation, acquisition, bankruptcy, bonus issue, bonus rights, cash dividend, class action, delisting, de-merger, general announcement, initial public offering (IPO), liquidation, merger, change in par value, scheme of arrangement, stock dividend, stock split, return of capital, and reverse stock split.')}</li>

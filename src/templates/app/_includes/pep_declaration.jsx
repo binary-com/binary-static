@@ -16,6 +16,7 @@ const PepDeclaration = () => (
             <label htmlFor='not_pep'>
                 {it.L('I acknowledge that I am not a politically exposed person (PEP).')}
             </label>
+            <span className='required_field_asterisk'>*</span>
         </div>
     </Fieldset>
 );

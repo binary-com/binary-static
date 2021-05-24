@@ -292,22 +292,55 @@ const Metatrader = () => (
                                 </div>
                             </div>
                             <div id='view_3' className='gr-row invisible'>
-                                <div className='container gr-8 gr-12-m'>
-                                    <FormRow
-                                        autoComplete='new-password'
-                                        is_two_rows
-                                        has_password_meter
-                                        type='password'
-                                        id='txt_main_pass'
-                                        label={it.L('Main password')}
-                                        tooltip={it.L('Access your account with full trading permission.')}
-                                    />
-                                    <div id='view_3-buttons' className='gr-padding-10 center-text'>
-                                        <a className='button button-secondary btn-back' href='javascript:;'>
-                                            <span>{it.L('Back')}</span>
+                                <div className='container gr-12'>
+                                    <p id='trading_password_new_user' className='center-text notice-msg invisible'>
+                                        {it.L('Set a trading password. Use this to log in and trade on MT5.')}
+                                    </p>
+                                    <p id='trading_password_existing_user' className='notice-msg invisible'>
+                                        {it.L('Please enter your trading password to create an account. If you\'ve forgotten your password, click [_1]Reset password[_2]', '<strong>', '</strong>')}
+                                    </p>
+                                    <p id='trading_password_reset_required' className='notice-msg center-text invisible'>
+                                        {it.L('To many attempts. Please try again in a few minutes')}
+                                    </p>
+                                    <div id='trading_password_input' className='center-text'>
+                                        <FormRow
+                                            className='trading-password'
+                                            autoComplete='trading_password'
+                                            has_password_meter
+                                            required
+                                            type='password'
+                                            id='trading_password'
+                                            label={it.L('Trading password')}
+                                        />
+                                    </div>
+                                    <div id='view_3-buttons_existing_user' className='gr-padding-10 center-text'>
+                                        <p id='trading_password_existing_user_validation_error' className='align-start invisible'>
+                                            {it.L('Hint: You may have chosen a different trading password from your [_1] log in password.', it.website_name)}
+                                        </p>
+                                        <button type='button' id='btn_forgot_trading_password' className='button button-secondary btn-back'>
+                                            {it.L('Reset password')}
+                                        </button>
+                                        <button className='button'  id='existing_user_btn_submit_new_account' type='submit' action='new_account'>
+                                            {it.L('Add account')}
+                                        </button>
+                                    </div>
+                                    <div id='view_3-buttons_new_user' className='gr-padding-10 center-text'>
+                                        <button className='button button-secondary btn-back' id='new_user_cancel_button'>
+                                            {it.L('Cancel')}
+                                        </button>
+                                        <a className='button button-primary invisible' id='has_mt5_new_user_btn_submit_new_account' href={it.url_for('user/security/change_passwordws')}>
+                                            <span>{it.L('Set trading password')}</span>
                                         </a>
-                                        <button id='btn_submit_new_account' type='submit' action='new_account'>
-                                            {it.L('Create account')}
+                                        <button className='button invisible' id='new_user_btn_submit_new_account' type='submit' action='new_account'>
+                                            {it.L('Set trading password')}
+                                        </button>
+                                    </div>
+                                    <div id='view_3-buttons_reset_password' className='gr-padding-10 center-text'>
+                                        <button type='button' id='btn_reset_trading_password' className='button button-secondary btn-back'>
+                                            {it.L('Reset password')}
+                                        </button>
+                                        <button className='button' id='try_again' type='button'>
+                                            {it.L('Try again')}
                                         </button>
                                     </div>
                                 </div>
@@ -329,59 +362,81 @@ const Metatrader = () => (
                                     </div>
                                 </div>
                             </div>
+                            <div id='view_4' className='gr-row invisible'>
+                                <div className='container gr-padding-10 center-text'>
+                                    <h2>
+                                        {it.L('We’ve sent you an email')}
+                                    </h2>
+                                    <p className='notice-msg'>
+                                        {it.L('Please click on the link in the email to reset your trading password.')}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
                 <div id='frm_manage_password'>
                     <div className='gr-row'>
                         <div className='gr-6 gr-12-m flex'>
-                            <div className='mt-panel mt-container'>
-                                <form id='frm_password_change'>
-                                    <div className='center-text hint gr-padding-20 gr-parent'>
-                                        <h3 className='secondary-color'>{it.L('Change password')}</h3>
+                            <div className='mt-panel mt-container' >
+                                <div className='center-text hint gr-padding-20 gr-parent'>
+                                    <div id='existing_client_message' className='invisible'>
+                                        <h3 className='secondary-color'>{it.L('You have a trading password for MT5')}</h3>
+                                        <p className='notice-msg  center-text font-n'>
+                                            {it.L('Use trading password to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices.')}
+                                        </p>
+                                        <a
+                                            href={it.url_for('user/security/change_passwordws')}
+                                            className='button mt5-web-link'
+                                        >
+                                            <span>{it.L('Manage trading password')}</span>
+                                        </a>
                                     </div>
-
-                                    <FormRow
-                                        is_two_rows
-                                        type='radio'
-                                        id='ddl_password_type'
-                                        className='password-type'
-                                        label={it.L('Password type')}
-                                        options={[
-                                            { value: 'main', label: it.L('Main'), data_balloon_text: it.L('Access your account with full trading permission.') },
-                                            { value: 'investor', label: it.L('Investor'), data_balloon_text: it.L('Share access to your account without any permission to trade.') },
-                                        ]}
-                                        default_option='main'
-                                    />
-                                    <FormRow autoComplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current MT5 password')} />
-                                    <FormRow autoComplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New MT5 password')} />
-                                    <SubmitButton
-                                        no_wrapper
-                                        type='submit'
-                                        id='btn_submit_password_change'
-                                        text={it.L('Change MT5 password')}
-                                        attributes={{ action: 'password_change' }}
-                                    />
-                                </form>
+                                    <div id='new_client_message'  className='invisible'>
+                                        <h3 className='secondary-color'>{it.L('Trading password — a new, easy way to sign in to your MT5 accounts')}</h3>
+                                        <p className='notice-msg  center-text  font-n'>
+                                            {it.L('A trading password is used to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices. ')}
+                                        </p>
+                                        <a
+                                            href={it.url_for('user/security/change_passwordws')}
+                                            className='button mt5-web-link'
+                                        >
+                                            <span>{it.L('Set trading password')}</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className='gr-6 gr-12-m flex'>
                             <div className='mt-panel mt-container'>
-                                <div className='center-text hint gr-padding-20 gr-parent'>
-                                    <h3 className='secondary-color'>{it.L('Reset password')}</h3>
-                                </div>
-                                <form className='invisible' id='frm_verify_password_reset'>
-                                    <div className='gr-padding-10'>
-                                        <p className='center-text notice-msg no-margin invisible' id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</p>
-                                        <p className='no-margin'>{it.L('To reset your trading or investor password, please click the button below:')}</p>
-                                        <SubmitButton
-                                            no_wrapper
-                                            type='submit'
-                                            id='btn_submit_verify_password_reset'
-                                            text={it.L('Reset MT5 password')}
-                                            attributes={{ action: 'verify_password_reset' }}
-                                        />
+                                <form id='frm_password_change'>
+                                    <div className='center-text hint gr-padding-20 gr-parent'>
+                                        <h3 className='secondary-color'>{it.L('Change investor password')}</h3>
                                     </div>
+                                    <p className='no-margin'>{it.L('Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create a password, or you have forgotten your password, please reset it.')}</p>
+                                    <FormRow autoComplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current investor password')} />
+                                    <FormRow autoComplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New investor password')} />
+                                    <p className='no-margin font-s'>
+                                        {it.L('Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers.')}
+                                    </p>
+                                    <SubmitButton
+                                        no_wrapper
+                                        type='submit'
+                                        id='btn_submit_password_change'
+                                        className='button-primary full-width change-investor-button '
+                                        text={it.L('Change investor password')}
+                                        attributes={{ action: 'password_change' }}
+                                    />
+                                </form>
+                                <form className='invisible' id='frm_verify_password_reset'>
+                                    <p className='center-text notice-msg no-margin invisible' id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</p>
+                                    <button
+                                        type='submit'
+                                        className='button-secondary button-full-width'
+                                        action='verify_password_reset'
+                                    >
+                                        {it.L('Create or reset password')}
+                                    </button>
                                 </form>
                                 <form className='invisible' id='frm_verify_password_reset_token'>
                                     <div className='gr-padding-10'>
@@ -397,24 +452,15 @@ const Metatrader = () => (
                                     </div>
                                 </form>
                                 <form className='invisible' id='frm_password_reset'>
-                                    <FormRow
-                                        is_two_rows
-                                        type='radio'
-                                        id='ddl_reset_password_type'
-                                        className='password-type'
-                                        label={it.L('Password type')}
-                                        options={[
-                                            { value: 'main', label: it.L('Main'), data_balloon_text: it.L('Access your account with full trading permission.') },
-                                            { value: 'investor', label: it.L('Investor'), data_balloon_text: it.L('Share access to your account without any permission to trade.') },
-                                        ]}
-                                        default_option='main'
-                                    />
-                                    <FormRow autoComplete='new-password' has_password_meter is_two_rows type='password' id='txt_reset_new_password' label={it.L('New MT5 password')} />
+                                    <div className='center-text hint gr-padding-20 gr-parent'>
+                                        <h3 className='secondary-color'>{it.L('Change investor password')}</h3>
+                                    </div>
+                                    <FormRow autoComplete='new-password' has_password_meter is_two_rows type='password' id='txt_reset_new_password' label={it.L('Investor password')} />
                                     <SubmitButton
                                         no_wrapper
                                         type='submit'
                                         id='btn_submit_password_reset'
-                                        text={it.L('Reset MT5 password')}
+                                        text={it.L('Reset investor password')}
                                         attributes={{ action: 'password_reset' }}
                                     />
                                 </form>

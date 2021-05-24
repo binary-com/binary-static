@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-05-10 03:32\n"
+"PO-Revision-Date: 2021-05-23 12:15\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -865,6 +865,9 @@ msgstr "ช่วงห่างของราคา (Tick) คือ การ
 msgid "A trade is opened by either executing a \"Buy\" or a \"Sell\" Order based on a specified number of lots (volume) that constitute the Underlying Instrument of the relevant market."
 msgstr "การเริ่มการซื้อขาย ทำได้โดยการดำเนินการคำสั่ง \"ซื้อ\" หรือ \"ขาย\" ตามจำนวนที่ระบุในแต่ละคราว (จำนวนคำสั่ง) ซึ่งถือเป็นเครื่องมืออ้างอิงของตลาดที่เกี่ยวข้อง"
 
+msgid "A trading password is used to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices. "
+msgstr ""
+
 msgid "A university degree in Accounting/Finance or its equivalent"
 msgstr "สำเร็จการศึกษาระดับปริญญาด้านบัญชี/การเงินหรือเทียบเท่า"
 
@@ -996,9 +999,6 @@ msgstr "การเข้าถึงข้อมูลส่วนบุคค
 
 msgid "Access to the client's personal data is strictly prohibited, with the exception of key %1 personnel and only as needed for the performance of their duties."
 msgstr "การเข้าถึงข้อมูลส่วนบุคคลเป็นข้อห้ามอย่างเคร่งครัด ยกเว้นบุคคล %1 หลัก และเมื่อจำเป็นในการปฏิบัติงานตามหน้าที่ของบุคคลเหล่านี้เท่านั้น"
-
-msgid "Access your account with full trading permission."
-msgstr "เข้าถึงบัญชีของท่านด้วยสิทธิ์อย่างสมบูรณ์ในการซื้อขาย"
 
 msgid "Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media"
 msgstr "มีทักษะทางด้านการเขียนและการแก้ไขที่ประสบความสำเร็จ โดยมีประสบการณ์ด้านการเขียนบทบรรณาธิการอย่างน้อยห้าปีในด้านการโฆษณาดิจิทัลหรือสื่อออนไลน์"
@@ -1140,6 +1140,9 @@ msgstr "เพิ่ม +/ – เพื่อกำหนด Barrier Offset เ
 
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "เพิ่มคำอธิบายและคลิก %1บันทึก%2 เพื่อลงทะเบียนให้เสร็จสมบูรณ์"
+
+msgid "Add account"
+msgstr ""
 
 msgid "Add another word or two. Uncommon words are better."
 msgstr "เพิ่มคำอื่นหรือสองคำ ไม่ใช่คำทั่วไปจะดีที่สุด"
@@ -1588,6 +1591,9 @@ msgstr "ความเหมาะสม"
 msgid "Appropriateness test"
 msgstr "การทดสอบความเหมาะสม"
 
+msgid "Apps you have linked to this password:"
+msgstr ""
+
 msgid "Apr"
 msgstr "เม.ย."
 
@@ -1617,6 +1623,9 @@ msgstr "ท่านแน่ใจหรือไม่ว่า ท่าน�
 
 msgid "Are you sure you want to deposit in %1?"
 msgstr "คุณแน่ใจหรือไม่ ว่าต้องการฝากเงินกับ %1? "
+
+msgid "Are you sure you want to unlink from %1?"
+msgstr ""
 
 msgid "Are you sure?"
 msgstr "ท่านแน่ใจแล้วหรือ?"
@@ -2146,6 +2155,12 @@ msgstr "Binary KK ได้รับใบอนุญาตในประเ�
 msgid "Binary Options"
 msgstr "ไบนารีออปชั่น (Binary Options)"
 
+msgid "Binary Password"
+msgstr ""
+
+msgid "Binary Password Reset"
+msgstr ""
+
 msgid "Binary WebTrader"
 msgstr "ไบนารีเว็บเทรดเดอร์ (Binary Webtrader)"
 
@@ -2175,6 +2190,9 @@ msgstr "ความถี่ในการซื้อขายไบนาร
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "การซื้อขายไบนารีออปชันทำได้ง่ายๆ ท่านสามารถซื้อสัญญาได้ในสามขั้นตอน"
+
+msgid "Binary password"
+msgstr ""
 
 msgid "Binary shall have the absolute discretionary power to accept or reject an application to open an Account by a client introduced by the Introducing Broker."
 msgstr "Binary จะมีอำนาจสิทธิ์ขาดในการพิจารณาที่จะรับ หรือ ปฏิเสธใบสมัครเพื่อขอเปิดบัญชีของลูกค้าที่แนะนำโดยโบรกเกอร์แนะนำ"
@@ -2536,14 +2554,14 @@ msgstr "Champion Group Ltd: วานูอาตู"
 msgid "Change API Endpoint"
 msgstr "เปลี่ยน API ปลายทาง"
 
-msgid "Change MT5 password"
-msgstr "เปลี่ยนรหัสผ่าน MT5"
-
 msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
 
 msgid "Change currency"
 msgstr "เปลี่ยนสกุลเงิน"
+
+msgid "Change investor password"
+msgstr ""
 
 msgid "Change password"
 msgstr "เปลี่ยนรหัสผ่าน"
@@ -2551,8 +2569,8 @@ msgstr "เปลี่ยนรหัสผ่าน"
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "การเปลี่ยนแปลงอัตรามาร์จินสัมพันธ์กับโพซิชั่นที่เปิดอยู่และคำสั่งซื้อใหม่"
 
-msgid "Change your main login password."
-msgstr "แก้ไขรหัสผ่านหลักของท่าน"
+msgid "Change your main login and trading password."
+msgstr ""
 
 msgid "Changes to this privacy policy"
 msgstr "เปลี่ยนนโยบายการรักษาข้อมูลส่วนบุคคลนี้"
@@ -2589,6 +2607,15 @@ msgstr "ตรวจสอบว่ามีการเชื่อมต่อ
 
 msgid "Check that your number is correct"
 msgstr "โปรดตรวจสอบว่าหมายเลขของคุณถูกต้อง"
+
+msgid "Check the email account associated with your Apple ID and click the link in the email to proceed."
+msgstr ""
+
+msgid "Check your Facebook account email and click the link in the email to proceed."
+msgstr ""
+
+msgid "Check your Google account email and click the link in the email to proceed."
+msgstr ""
 
 msgid "Check your image"
 msgstr "ตรวจสอบรูปภาพของคุณ"
@@ -3061,6 +3088,9 @@ msgstr "ยืนยัน"
 msgid "Confirm changes"
 msgstr "ยืนยันการเปลี่ยนแปลง"
 
+msgid "Confirm password"
+msgstr ""
+
 msgid "Conflicts Policy"
 msgstr "นโยบายการบริหารความขัดแย้ง"
 
@@ -3368,6 +3398,9 @@ msgstr "สร้างบัญชีเงินเสมือนใหม่
 msgid "Create or Manage Accounts"
 msgstr "สร้าง หรือ จัดการบัญชี"
 
+msgid "Create or reset password"
+msgstr ""
+
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "สร้างกลยุทธ์เพื่อจัดการความเสี่ยงที่อาจเกิดขึ้นเนื่องจากนวัตกรรมที่เข้ามาขัดขวาง"
 
@@ -3449,14 +3482,14 @@ msgstr "คู่สกุลเงินจะถูกจัดหมวดห
 msgid "Current"
 msgstr "ปัจจุบัน"
 
-msgid "Current MT5 password"
-msgstr "รหัสผ่าน MT5 ปัจจุบัน "
-
 msgid "Current Time"
 msgstr "เวลาปัจจุบัน"
 
 msgid "Current balance"
 msgstr "ยอดคงเหลือ"
+
+msgid "Current investor password"
+msgstr ""
 
 msgid "Current password"
 msgstr "รหัสผ่านปัจจุบัน"
@@ -4037,6 +4070,9 @@ msgstr "ไม่ต้องการเทรดกับ %1 เหรอ? ท
 msgid "Don't worry, you can simply %1reset your password%2."
 msgstr "ไม่ต้องกังวล ท่านสามารถ %1ตั้งค่ารหัสผ่านใหม่%2 ของท่านได้อย่างง่ายดาย"
 
+msgid "Done"
+msgstr ""
+
 msgid "Dormant and inactive accounts"
 msgstr "บัญชีไม่เคลื่อนไหว และ บัญชีไม่มีการใช้งาน"
 
@@ -4375,6 +4411,15 @@ msgstr "ให้แน่ใจว่าการออกแบบและพ
 
 msgid "Ensure the integrity of releases by coordinating testing activities"
 msgstr "ให้แน่ใจถึงความสมบูรณ์ของการเปิดตัวโดยประสานงานกิจกรรมการทดสอบ"
+
+msgid "Enter a new Binary password."
+msgstr ""
+
+msgid "Enter a new password for your Binary account."
+msgstr ""
+
+msgid "Enter a new trading password."
+msgstr ""
 
 msgid "Enter mobile number"
 msgstr "ป้อนหมายเลขโทรศัพท์มือถือ"
@@ -5162,6 +5207,9 @@ msgstr "การซื้อขายฟอเร็กซ์เกี่ยว
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "การซื้อขายฟอเร็กซ์เกี่ยวข้องกับการซื้อหรือขาย \"คู่สกุลเงิน\" เหล่านี้ เมื่อท่านซื้อคู่สกุลเงินหนึ่งๆ เช่น EUR/USD หมายความว่า ท่านกำลังซื้อยูโร และ ขายดอลลาร์สหรัฐในเวลาเดียวกัน"
 
+msgid "Forgot password"
+msgstr ""
+
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 ก่อตั้งขึ้นในปี ค.ศ. 1999 (พ.ศ. 2542) เป็นชื่อที่เก่าแก่ที่สุด และได้รับการยอมรับมากที่สุดในการซื้อขายไบนารีออนไลน์"
 
@@ -5426,6 +5474,9 @@ msgstr "คุณสมบัติที่เป็นประโยชน์
 msgid "Good understanding of payments functionality and a keen interest in cryptocurrencies"
 msgstr "มีความเข้าใจอันดีในปฏิบัติการชำระเงินและมีความสนใจในเงินดิจิทัล"
 
+msgid "Got it"
+msgstr ""
+
 msgid "Governing law"
 msgstr "กฎหมายที่กำกับ"
 
@@ -5569,6 +5620,9 @@ msgstr "ซื้อขาย Higher/Lower "
 
 msgid "Highlights"
 msgstr "ไฮไลท์"
+
+msgid "Hint: You may have chosen a different trading password from your %1 log in password."
+msgstr ""
 
 msgid "Historical Mediterranean island"
 msgstr "เกาะประวัติศาสตร์เมดิเตอร์เรเนียน"
@@ -6515,11 +6569,11 @@ msgstr "ผลิตภัณฑ์เพื่อการลงทุนสำ
 msgid "Investments &amp; Dividends"
 msgstr "เงินปันผลและการลงทุน"
 
-msgid "Investor"
-msgstr "นักลงทุน"
-
 msgid "Investor Compensation Scheme"
 msgstr "แผนผลประโยชน์ของนักลงทุน"
+
+msgid "Investor password"
+msgstr ""
 
 msgid "Is there a cost for joining?"
 msgstr "มีค่าใช้จ่ายในการเข้าร่วมไหม?"
@@ -6950,6 +7004,9 @@ msgstr "เชื่อม และนำลูกค้าของบริ�
 msgid "Linked to your computer"
 msgstr "การเชื่อมโยงไปยังคอมพิวเตอร์ของคุณ"
 
+msgid "Linked with %1"
+msgstr ""
+
 msgid "Links"
 msgstr "ลิงค์"
 
@@ -7151,12 +7208,6 @@ msgstr "หากท่านได้สร้างความประทั
 msgid "Maestro is an international debit card service by Mastercard. For more information, please visit %1."
 msgstr "Maestro เป็นบริการบัตรเดบิตสากลของมาสเตอร์การ์ด สำหรับข้อมูลเพิ่มเติม โปรดศึกษาจาก %1"
 
-msgid "Main"
-msgstr "หลัก"
-
-msgid "Main password"
-msgstr "รหัสผ่านหลัก"
-
 msgid "Maintain accurate system pricing parameters"
 msgstr "ปรับปรุงตัวแปรราคาที่แม่นยำของระบบ"
 
@@ -7304,6 +7355,9 @@ msgstr "จัดการการรักษาความปลอดภั
 
 msgid "Manage the funds in your cryptocurrency account."
 msgstr "จัดการหลักประกันในบัญชีเงินดิจิทัลของท่าน"
+
+msgid "Manage trading password"
+msgstr ""
 
 msgid "Manage your authorised applications."
 msgstr "จัดการแอพพลิเคชันที่ลงทะเบียน"
@@ -7791,11 +7845,8 @@ msgstr "ไม่เคย"
 msgid "Never Used"
 msgstr "ไม่เคยใช้"
 
-msgid "New MT5 password"
-msgstr "รหัสผ่าน MT5 ใหม่"
-
-msgid "New Password"
-msgstr "รหัสผ่านใหม่"
+msgid "New Binary password"
+msgstr ""
 
 msgid "New Year's Day"
 msgstr "วันปีใหม่"
@@ -7818,6 +7869,9 @@ msgstr "ดอลลาร์นิวซีแลนด์ เทียบก�
 msgid "New account"
 msgstr "บัญชีใหม่"
 
+msgid "New investor password"
+msgstr ""
+
 msgid "New office in Asunción, Paraguay"
 msgstr "สำนักงานใหม่ที่ Asunción ประเทศปารากวัย"
 
@@ -7838,6 +7892,9 @@ msgstr "มือใหม่กับฟอเร็กซ์หรือไม
 
 msgid "New token created."
 msgstr "สร้างโทเค่นใหม่แล้ว"
+
+msgid "New trading password"
+msgstr ""
 
 msgid "Next"
 msgstr "ถัดไป"
@@ -8463,9 +8520,6 @@ msgstr "ตั้งรหัสผ่านใหม่"
 msgid "Password should have lower and uppercase English letters with numbers."
 msgstr "รหัสผ่านควรประกอบด้วยตัวอักษรภาษาอังกฤษตัวพิมพ์เล็กและพิมพ์ใหญ่พร้อมตัวเลข"
 
-msgid "Password type"
-msgstr "ประเภทรหัสผ่าน"
-
 msgid "Patented technology"
 msgstr "เทคโนโลยีที่จดสิทธิบัตร"
 
@@ -8724,6 +8778,12 @@ msgstr "โปรดตรวจสอบกล่องจดหมายขอ
 msgid "Please choose a currency"
 msgstr "โปรดเลือกสกุลเงิน"
 
+msgid "Please click on the link in the email to reset your binary password."
+msgstr ""
+
+msgid "Please click on the link in the email to reset your trading password."
+msgstr ""
+
 msgid "Please complete the %1Real Account form%2 to verify your age as required by the %3UK Gambling%4 Commission (UKGC)."
 msgstr "โปรดกรอก %1แบบฟอร์มบัญชีจริง%2 เพื่อยืนยันอายุของท่าน ตามข้อกำหนดของ %3UK Gambling%4 Commission (UKGC)"
 
@@ -8783,6 +8843,9 @@ msgstr "โปรดกรอกที่อยู่ของท่านให
 
 msgid "Please enter your full home address to avoid authentication delays."
 msgstr "โปรดกรอกที่อยู่ของท่านให้สมบูรณ์เพื่อหลีกเลี่ยงความล่าช้าในการตรวจสอบความถูกต้อง"
+
+msgid "Please enter your trading password to create an account. If you've forgotten your password, click %1Reset password%2"
+msgstr ""
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "โปรดกรอกรหัสผู้ใช้งาน และจำนวนเงินที่ท่านต้องการโอนให้กับลูกค้าของท่านในแบบฟอร์มด้านล่าง"
@@ -9633,9 +9696,6 @@ msgstr "Reset Call"
 msgid "Reset Call/Reset Put"
 msgstr "Reset Call/Reset Put"
 
-msgid "Reset MT5 password"
-msgstr "ตั้งค่ารหัสผ่าน MT5 ใหม่"
-
 msgid "Reset Password"
 msgstr "ตั้งรหัสผ่านใหม่"
 
@@ -9644,6 +9704,12 @@ msgstr "Reset Put"
 
 msgid "Reset Time"
 msgstr "Reset Time"
+
+msgid "Reset investor password"
+msgstr ""
+
+msgid "Reset my password"
+msgstr ""
 
 msgid "Reset my virtual balance"
 msgstr "รีเซ็ตยอดคงเหลือเสมือนของฉัน"
@@ -10074,6 +10140,9 @@ msgstr "รอบระยะเวลาการซื้อขาย:"
 msgid "Set Currency"
 msgstr "ตั้งค่าสกุลเงิน"
 
+msgid "Set a trading password. Use this to log in and trade on MT5."
+msgstr ""
+
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "ตั้งค่า Barrier เพื่อกำหนดตำแหน่งของท่าน และกำหนดผลของตัวเงินที่ท่านจะได้รับ"
 
@@ -10088,6 +10157,9 @@ msgstr "ตั้งระยะเวลาของการซื้อขา
 
 msgid "Set the standard for our technical documentation by creating a technical style guide that can be followed across the company"
 msgstr "กำหนดมาตรฐานสำหรับเอกสารทางเทคนิคของเรา โดยสร้างคู่มือรูปแบบทางเทคนิคที่สามารถปฏิบัติตามได้ทั่วทั้งบริษัท"
+
+msgid "Set trading password"
+msgstr ""
 
 msgid "Set up %1 on your device now"
 msgstr "ติดตั้ง%1บนอุปกรณ์ของคุณเดี๋ยวนี้"
@@ -10109,9 +10181,6 @@ msgstr "ตั้งค่าการรับรองความถูกต
 
 msgid "Severability"
 msgstr "การโมฆะเป็นบางส่วน"
-
-msgid "Share access to your account without any permission to trade."
-msgstr "แชร์การเข้าถึงบัญชีของท่านโดยปราศจากการอนุญาตเข้าซื้อขาย"
 
 msgid "Sharp prices"
 msgstr "ราคาเฉียบ"
@@ -10283,6 +10352,9 @@ msgstr "ขออภัย ฟังก์ชันนี้มีให้ใ�
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "ขออภัย ฟังก์ชันนี้ไม่พร้อมใช้งานในพื้นที่ของท่าน"
+
+msgid "Sorry, this page is not available in your country of residence."
+msgstr ""
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "ขออภัย การถอนเงินสำหรับสกุลเงินนี้ ขณะนี้ถูกปิดการใช้งาน"
@@ -10482,6 +10554,9 @@ msgstr "สตรอโพรซีเยอร์"
 msgid "Straight rows of keys are easy to guess"
 msgstr "แถวตรงของแป้นคาดเดาได้ง่าย"
 
+msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
+msgstr ""
+
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "มีความสามารถในการวิเคราะห์ซึ่งได้มีการพิสูจน์ก่อนหน้า หรือมีความสนใจกระตือรือร้นที่จะย้ายเข้ามาในส่วนนี้"
 
@@ -10589,6 +10664,9 @@ msgstr "ส่งแล้ว"
 
 msgid "Submitting"
 msgstr "กำลังส่ง"
+
+msgid "Success!"
+msgstr ""
 
 msgid "Successful"
 msgstr "เรียบร้อยแล้ว"
@@ -10896,9 +10974,6 @@ msgstr "โปรแกรมพันธมิตร %1 ให้ประโ�
 msgid "The %1 order execution policy"
 msgstr "นโยบายการดำเนินการคำสั่งซื้อของ %1"
 
-msgid "The %1 password of account number %2 has been changed."
-msgstr "%1รหัสผ่านของเลขที่บัญชี %2 ได้มีการเปลี่ยนแปลงเรียบร้อยแล้ว"
-
 msgid "The %1 privacy and security policy"
 msgstr "นโยบายความปลอดภัยและความเป็นส่วนตัวของ %1"
 
@@ -11103,11 +11178,11 @@ msgstr "บริษัทฯ รวบรวม และประเมิน�
 msgid "The Company collects, stores, and processes a range of information about the applicant, including but not limited to the following:"
 msgstr "บริษัทรวบรวมจัดเก็บและประมวลผลข้อมูลต่างๆ เกี่ยวกับผู้สมัครรวมถึง แต่ไม่จํากัดเฉพาะข้อมูลต่อไปนี้:"
 
+msgid "The Company does not guarantee and bears no liability for the simultaneous selling of the original and copy trades when the client engages in copy trading on WebTrader."
+msgstr ""
+
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "บริษัทฯ ไม่รับรองว่า API ของ %1 ดำเนินการโดยปราศจากข้อขัดข้อง หรือ ข้อผิดพลาด การทำงานของ API ของ %1 อาจจะได้รับผลกระทบจากการดูแลรักษาระบบ การปรับปรุงระบบ หรือ การล้มเหลวของเครือข่าย หรือ ระบบ บริษัทฯ ปฏิเสธความรับผิดชอบต่อการสูญเสีย หรือภาระใดๆ ที่อาจจะเกิดขึ้นเนื่องจากข้อขัดข้อง หรือ ข้อผิดพลาดดังกล่าว"
-
-msgid "The Company does not guarantee the ability to sell a contract prior to its expiration time."
-msgstr "บริษัทฯ ไม่รับประกันว่าจะขายสัญญาได้ ก่อนที่สัญญาจะหมดอายุ"
 
 msgid "The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 trading platform or otherwise is correct."
 msgstr "บริษัทฯ ไม่รับประกันใดๆ อย่างชัดแจ้งหรือโดยนัยว่า ราคา หรือ ข้อมูลอื่นๆ จากแพลตฟอร์มการซื้อขาย MT5 หรือ แหล่งอื่น นั้นถูกต้อง"
@@ -12092,6 +12167,9 @@ msgstr "การปรับดอกเบี้ยจะคํานวณใ
 msgid "The interest adjustment is calculated in points, meaning we will convert the relevant interbank lending rates to points in the base currency."
 msgstr "การปรับดอกเบี้ยจะถูกคำนวณเป็นจุด ซึ่งหมายความว่า เราจะแปลงอัตราดอกเบี้ยระหว่างธนาคารที่เกี่ยวข้องให้เป็นจุดในสกุลเงินฐาน"
 
+msgid "The investor password of account number %1 has been changed."
+msgstr ""
+
 msgid "The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "ระดับกลไกการป้องกันของลูกค้าแต่ละราย ขึ้นอยู่กับประเภทที่ลูกค้าถูกกำหนด ลูกค้ารายย่อยจะได้ประโยชน์จากระดับการป้องกันที่สูงสุด บริษัทฯ จะประเมินความรู้และประสบการณ์ของลูกค้า เปรียบเทียบกับความเหมาะสมของบริการ/ผลิตภัณฑ์ทางลงทุนที่ปรารถนา"
 
@@ -12731,6 +12809,9 @@ msgstr "ศึกษาเพิ่มเติม %1 นโยบายมา�
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
 msgstr "ในการดำเนินการกับโพซิชันเปิด ลูกค้าจะต้องมีหลักประกันในบัญชีเพียงพอตามข้อกำหนดของมาร์จิน หากระดับมาร์จินของลูกค้าน้อยกว่าระดับมาร์จินที่กำหนดไว้ในบัญชี จะทำให้เกิดกระบวนการมาร์จินคอล และลูกค้าจะต้องเพิ่มระดับมาร์จินให้เกินกว่าระดับที่ระบุไว้ในบัญชี เพื่อหลีกเลี่ยงการยุติการซื้อขาย (Stop Out) ลูกค้าจะไม่สามารถส่งคำสั่งซื้อเพื่อเปิดธุรกรรมได้ นอกจากจะมีหลักประกันในบัญชีเพียงพอต่อเงื่อนไขมาร์จินรวม"
 
+msgid "To many attempts. Please try again in a few minutes"
+msgstr ""
+
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "ในการเปิดบัญชีธนาคาร เราจะต้องยืนยันตัวตนของคุณ"
 
@@ -12751,9 +12832,6 @@ msgstr "ในการรับค่าคอมมิชชั่นขั้
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "เพื่อตั้งค่ารหัสผ่านของท่านใหม่ ป้อนอีเมล์ที่ท่านลงทะเบียนไว้ในช่องว่างข้างล่าง และคลิก 'ตั้งรหัสผ่านใหม่'"
-
-msgid "To reset your trading or investor password, please click the button below:"
-msgstr "กรุณาคลิกที่ปุ่มด้านล่างนี้ เพื่อตั้งรหัสผ่านการซื้อขายหรือนักลงทุนใหม่"
 
 msgid "To smoothly verify you, we need a better photo"
 msgstr "หากต้องการยืนยันคุณอย่างราบรื่นเราต้องการภาพถ่ายที่ดีกว่า"
@@ -12983,6 +13061,9 @@ msgstr "ข้อมูลการซื้อขาย"
 msgid "Trading Limits"
 msgstr "วงเงินในการซื้อขาย"
 
+msgid "Trading Password Reset"
+msgstr ""
+
 msgid "Trading Platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
 
@@ -13036,6 +13117,15 @@ msgstr "วงเงินในการซื้อขาย"
 
 msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
 msgstr "การซื้อขายบน%1สามารถทำให้เสพติดได้ หากคุณต้องการพักจากเว็บไซต์ โปรดใช้%2sเครื่องมือสำหรับพักการซื้อขาย%3"
+
+msgid "Trading password"
+msgstr ""
+
+msgid "Trading password reset"
+msgstr ""
+
+msgid "Trading password — a new, easy way to sign in to your MT5 accounts"
+msgstr ""
 
 msgid "Trading platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
@@ -13156,6 +13246,9 @@ msgstr "ทดลองใช้ TradingView"
 
 msgid "Try WebTrader"
 msgstr "ทดลองใช้ WebTrader"
+
+msgid "Try again"
+msgstr ""
 
 msgid "Try now"
 msgstr "ลองเดี๋ยวนี้เลย"
@@ -13340,6 +13433,9 @@ msgstr "ระบบปฏิบัติการที่ไม่รู้จ
 msgid "Unless otherwise advised, DIEL shall treat a client as a retail client. Clients may also request, by writing to DIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. DIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "นอกจากที่กำหนดไว้ DIEL จะดูแลลูกค้าเสมือนลูกค้ารายย่อย ลูกค้าต้องส่งความประสงค์เป็นลายลักษณ์อักษรให้แก่ DIEL เพื่อขอเปลี่ยนแปลงประเภทตามที่บริษัทได้จำแนกไว้ ซึ่งอาจมีผลต่อระดับกลไกการป้องกันที่เกี่ยวข้อง DIEL จะประเมินความรู้และประสบการณ์ของลูกค้า เทียบกับความเหมาะสมของบริการ/ผลิตภัณฑ์การลงทุน"
 
+msgid "Unlink"
+msgstr ""
+
 msgid "Unsupported browser"
 msgstr "เบราว์เซอร์ที่ไม่ได้รับการสนับสนุน"
 
@@ -13481,8 +13577,20 @@ msgstr "ใช้ความพยายามอย่างสุดควา
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "ใช้ความพยายามอย่างสุดความสามารถของเขาเพื่อสร้างความสนใจต่อลูกค้าของ Binary"
 
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create a password, or you have forgotten your password, please reset it."
+msgstr ""
+
+msgid "Use this to log in and trade with MT5."
+msgstr ""
+
+msgid "Use this to log in to Binary.com, SmartTrader, Binary Bot, and Webtrader."
+msgstr ""
+
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "ใช้คุณลักษณะเพิ่มเติมที่เป็นไปได้จากผู้ให้บริการชำระเงินเพื่อให้เกิดประโยชน์สูงสุด"
+
+msgid "Use trading password to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices."
+msgstr ""
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของโปรแกรมเมอร์ และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของบริษัทฯ ได้ใช้งานแอพพลิเคชันของโปรแกรมเมอร์"
@@ -13873,6 +13981,9 @@ msgstr "มีทักษะในการจัดการที่ดี �
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "เราจะอัปเดตขีดจำกัดของคุณ คลิก %1เห็นด้วยและยอมรับ%2 เพื่อรับทราบว่าคุณต้องรับผิดชอบอย่างเต็มที่ต่อการกระทำของคุณและเราจะไม่รับผิดชอบต่อการเสพติดหรือการสูญเสียใดๆ"
+
+msgid "We’ve sent you an email"
+msgstr ""
 
 msgid "What about instant execution? In this case, your order is placed at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "แล้วการดำเนินการแบบทันทีล่ะ? ในกรณีนี้ จะมีการวางคำสั่งซื้อของท่านในราคาที่มีอยู่ในขณะนั้น มีความเป็นไปได้ที่จะมีการนำเสนอราคาใหม่ถ้าราคาผันผวนอย่างมากก่อนการดำเนินการสั่งซื้อจะเสร็จสมบูรณ์"
@@ -14450,6 +14561,15 @@ msgstr "คุณมี %1 คุณสามารถเปิดบัญช�
 msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
 msgstr "คุณมีบัญชี %1 คุณสามารถ %2เปลี่ยนสกุลเงินของคุณ%3 เป็นค่าใดๆ ต่อไปนี้ได้ตราบเท่าที่คุณยังไม่ได้ฝากเงินหรือสร้างบัญชี MT5:"
 
+msgid "You have a new binary password."
+msgstr ""
+
+msgid "You have a new trading password. Use this to log in to MetaTrader 5."
+msgstr ""
+
+msgid "You have a trading password for MT5"
+msgstr ""
+
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "คุณได้ทำการถอนเงิน %1%2 หรือเทียบเท่าในช่วง %3 วันที่ผ่านมา"
 
@@ -14600,6 +14720,9 @@ msgstr "ท่านจะมีศักยภาพที่จะเปิด
 msgid "You will increase awareness of your services and generate new business."
 msgstr "ท่านจะเพิ่มความตระหนักรู้ในบริการของท่านและสร้างธุรกิจใหม่"
 
+msgid "You will need to set a password to complete the process."
+msgstr ""
+
 msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
 msgstr "ท่านจะไม่สามารถแก้ไขสกุลเงินของบัญชีเงิน fiat ได้หลังจากท่านเปิดบัญชี MT5 ท่านต้องการดำเนินการต่อหรือไม่?"
 
@@ -14663,6 +14786,9 @@ msgstr "ทั้ง%1เอกสารแสดงตัวบุคคล%3 �
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
 msgstr "%1pหลักฐานยืนยันตัวตน%3 และ %2pหลักฐานที่อยู่%3 ของคุณยังไม่ได้รับการยืนยัน"
 
+msgid "Your Binary account is unlinked from %1. Use %2your email and password for future log in."
+msgstr ""
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "ลูกค้าของท่านจะได้รับอีเมล์แจ้งให้ทราบว่า การโอนได้ถูกดำเนินการแล้ว"
 
@@ -14701,6 +14827,9 @@ msgstr "ใบสมัครของท่านเพื่อปรับส
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "ใบสมัครของท่านจะถูกทวนสอบโดยฝ่ายการตลาดและฝ่ายตรวจสอบของเรา เมื่อได้รับการอนุมัติ ชื่อของท่านจะถูกแสดงในรายชื่อ %1ตัวแทนรับชำระเงิน%2 ของเรา"
+
+msgid "Your binary password has been changed. Please log in again."
+msgstr ""
 
 msgid "Your cashier is locked."
 msgstr "แคชเชียร์ของท่านถูกล็อก"
@@ -14759,12 +14888,6 @@ msgstr "ความสัมพันธ์ของท่านกับ %1 �
 msgid "Your password cannot be the same as your email address."
 msgstr "รหัสผ่านของคุณไม่สามารถเหมือนกับที่อยู่อีเมลของคุณ"
 
-msgid "Your password has been changed. Please log in again."
-msgstr "รหัสผ่านของท่านได้ถูกแก้ไขแล้ว โปรดเข้าสู่ระบบอีกครั้ง"
-
-msgid "Your password has been successfully reset. Please log into your account using your new password."
-msgstr "รหัสผ่านของท่านได้ถูกกำหนดใหม่เรียบร้อยแล้ว โปรดเข้าสู่ระบบโดยการใช้รหัสผ่านใหม่ของท่าน"
-
 msgid "Your professional client request is %1not approved%2."
 msgstr "คำขอเป็นลูกค้าผู้เชี่ยวชาญของท่าน %1ไม่ได้รับการอนุมัติ%2"
 
@@ -14818,6 +14941,12 @@ msgstr "โทเค่นของท่านหมดอายุแล้ว
 
 msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "โทเค่นของท่านหมดอายุแล้ว โปรดคลิก<a href=\"%1\">ที่นี่</a> เพื่อดำเนินกระบวนการตรวจสอบ"
+
+msgid "Your trading password has been changed. Please use this to log in to MetaTrader 5."
+msgstr ""
+
+msgid "Your trading password has been set. Please use this to log in to MetaTrader 5."
+msgstr ""
 
 msgid "Your trading statistics since %1."
 msgstr "สถิติการซื้อขายของท่านตั้งแต่ %1"
