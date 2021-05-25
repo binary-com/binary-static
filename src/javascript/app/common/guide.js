@@ -12,7 +12,6 @@ const localize  = require('../../_common/localize').localize;
  */
 
 const Guide = (() => {
-    
     let opt,
         cookie_name,
         btn_next,
@@ -39,14 +38,14 @@ const Guide = (() => {
         if ($(opt.guideBtnID).length === 0 || opt.script.length === 0) {
             return;
         }
-       
+
         if (isDisabled()) {
             $(opt.guideBtnID).remove();
             return;
         }
+
         makeButton();
     };
-    
     /*
      *  do not show the guide button if its close (X) has been clicked before
      */
@@ -59,11 +58,9 @@ const Guide = (() => {
      *  handle the guide button appearance using a cookie for all scripts
      */
     const setDisabled = () => {
-
         if (!isDisabled()) {
             const disabled = Cookies.get(cookie_name);
-            Cookies.set(cookie_name, (!disabled ? opt.script : `${disabled},${opt.script}`), { sameSite: 'strict', secure: true });
-           
+            Cookies.set(cookie_name, (!disabled ? opt.script : `${disabled},${opt.script}`), { sameSite: 'strict', secure: true });    
         }
     };
 
@@ -71,7 +68,6 @@ const Guide = (() => {
      *  generate the button's html
      */
     const makeButton = () => {
-        
         if ($(opt.guideBtnID).children().length > 0) {
             return;
         }
