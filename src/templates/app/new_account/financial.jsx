@@ -49,7 +49,7 @@ const Financial = () => (
                     <Phone />
                 </Fieldset>
 
-                <Fieldset legend={it.L('Tax information')}>
+                <Fieldset id='tax_information_form' legend={it.L('Tax information')}>
                     <TaxInformationForm />
                 </Fieldset>
 

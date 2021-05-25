@@ -9,7 +9,13 @@ const TradingResetPassword = () => (
 
             <div className='invisible' id='form_error'>
                 <p className='error-msg' id='form_error_msg' />
-                <a href={it.url_for('user/lost_passwordws')}>{it.L('Click here to retry')}</a>
+                <div id='form_error_cta' className='center-text invisible'>
+                    <a className='button button-primary' href={it.url_for('user/security/change_passwordws')}>
+                        <span>{it.L('OK')}</span>
+                    </a>
+                </div>
+
+                <a id='form_error_retry' href={it.url_for('user/lost_passwordws')}>{it.L('Click here to retry')}</a>
             </div>
 
             <div className='gr-parent gr-padding-10' id='container_trading_reset_password'>
