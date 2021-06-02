@@ -55,6 +55,11 @@
             }
         }
     }
+    #tax_information_form {
+        #tax_information_info {
+            display: none;
+        }
+    }
     #frmPersonalDetails {
         @media all and (max-width: 480px) {
             div.select {

@@ -12,8 +12,9 @@ const TradingResetPassword = (() => {
             const $form_error = $('#form_error');
             getElementById('msg_reset_password').setVisibility(0);
             const err_msg = response.error.message;
-            $form_error.find('a').setVisibility(0);
+            $form_error.find('#form_error_retry').setVisibility(0);
             getElementById('form_error_msg').innerHTML = err_msg;
+            getElementById('form_error_cta').setVisibility(1);
             $form_error.setVisibility(1);
         } else {
             Dialog.alert({

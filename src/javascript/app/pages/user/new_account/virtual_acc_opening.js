@@ -57,8 +57,8 @@ const VirtualAccOpening = (() => {
     };
 
     const handleWebsiteStatus = (website_status = {}, $residence) => {
-        const consent_checkbox = document.getElementById('consent_checkbox');
-        const email_consent = document.getElementById('email_consent');
+        const email_consent_container = $('#consent_checkbox');
+        const consent_checkbox = $('#email_consent');
         if (!website_status || Utility.isEmptyObject(website_status)) return;
         const clients_country = website_status.clients_country;
 
@@ -75,22 +75,24 @@ const VirtualAccOpening = (() => {
             })
             .setVisibility(1);
             
-        const residence_dropdown = document.getElementById('residence');
-        if (!isEuCountrySelected(residence_dropdown.value)) {
-            email_consent.classList.add('hide-product-checkbox');
-            consent_checkbox.classList.add('hide-product-checkbox');
+        const residence_dropdown = $('#residence');
+        if (isEuCountrySelected(residence_dropdown.val())) {
+            consent_checkbox.removeClass('hidden-consent-checkbox');
+            email_consent_container.removeClass('email-consent-container');
+        } else {
+            consent_checkbox.addClass('hidden-consent-checkbox');
         }
-        residence_dropdown.onchange = () => {
-            const updated_selected_value = document.getElementById('residence').value;
+        residence_dropdown.on('change', () => {
+            const updated_selected_value = $('#residence').val();
             const eu_country = isEuCountrySelected(updated_selected_value);
             if (eu_country) {
-                email_consent.classList.remove('hide-product-checkbox');
-                consent_checkbox.classList.remove('hide-product-checkbox');
+                consent_checkbox.removeClass('hidden-consent-checkbox');
+                email_consent_container.removeClass('email-consent-container');
             } else {
-                email_consent.classList.add('hide-product-checkbox');
-                consent_checkbox.classList.add('hide-product-checkbox');
+                consent_checkbox.addClass('hidden-consent-checkbox');
+                email_consent_container.addClass('email-consent-container');
             }
-        };
+        });
     };
 
     const bindValidation = () => {
