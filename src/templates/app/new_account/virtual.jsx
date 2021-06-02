@@ -25,7 +25,7 @@ const Virtual = () => (
                     </p>
                 </div>
             </Fieldset>
-            <div id='consent_checkbox'>
+            <div id='consent_checkbox' className='email-consent-container'>
                 <FormRow
                     type='checkbox'
                     id='email_consent'

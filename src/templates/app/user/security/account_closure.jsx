@@ -78,12 +78,12 @@ const AccountClosure = () => (
                         <div className='gr-padding-10'>
                             <h3 className='secondary-color'>{it.L('Close open positions')}</h3>
                             <p className='no-margin'>{it.L('If you have a Binary real account, go to [_1]Portfolio[_2] to close any open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
-                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a DMT5 real account, log into it to close any open positions.')}</p>
+                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a MT5 real account, log into it to close any open positions.')}</p>
                         </div>
                         <div className='gr-padding-30'>
                             <h3 className='secondary-color'>{it.L('Withdraw your funds')}</h3>
                             <p className='no-margin'>{it.L('If you have a Binary real account, go to [_1]Cashier[_2] to withdraw your funds', `<a href="${it.url_for('cashier')}">`, '</a>')}</p>
-                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a DMT5 real account, go to [_1]MT5 dashboard[_2] to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a MT5 real account, go to [_1]MT5 dashboard[_2] to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
                         </div>
                     </div>
 

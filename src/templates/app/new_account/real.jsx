@@ -21,7 +21,6 @@ import {
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
-    TaxInformationForm,
     Tnc,
 } from '../../_common/components/forms_common_rows.jsx';
 
@@ -42,10 +41,6 @@ const Real = () => (
                 <Residence />
                 <Phone />
                 <AccountOpeningReason />
-            </Fieldset>
-
-            <Fieldset id='tax_information_form' legend={it.L('Tax information')}>
-                <TaxInformationForm />
             </Fieldset>
 
             <Fieldset id='address_form' legend={it.L('Address')}>

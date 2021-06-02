@@ -55,6 +55,7 @@ const VideoFacility           = require('../pages/user/video_facility');
 // const Charity            = require('../../static/pages/charity');
 const Contact             = require('../../static/pages/contact');
 // const Contact2            = require('../../static/pages/contact_2');
+const DeactivatedAccount  = require('../../static/pages/deactivated_account');
 const GetStarted          = require('../../static/pages/get_started');
 const Home                = require('../../static/pages/home');
 const KeepSafe            = require('../../static/pages/keep_safe');
@@ -142,6 +143,7 @@ const pages_config = {
     'binary-options'         : { module: GetStarted.BinaryOptions },
     // 'contact-2'              : { module: Contact2 },
     'contract-specifications': { module: TabSelector },
+    'deactivated-account'    : { module: DeactivatedAccount },
     'get-started'            : { module: TabSelector },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },

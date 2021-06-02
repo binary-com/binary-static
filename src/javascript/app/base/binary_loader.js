@@ -102,12 +102,12 @@ const BinaryLoader = (() => {
 
     const error_messages = {
         login            : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
-        only_virtual     : () => localize('Sorry, this feature is available to virtual accounts only.'),
+        only_virtual     : () => localize('This feature is available to virtual accounts only.'),
         only_real        : () => localize('This feature is not relevant to virtual-money accounts.'),
         not_authenticated: () => localize('This page is only available to logged out clients.'),
-        no_mf            : () => localize('Sorry, but binary options trading is not available in your financial account.'),
-        options_blocked  : () => localize('Sorry, but binary options trading is not available in your country.'),
-        residence_blocked: () => localize('Sorry, this page is not available in your country of residence.'),
+        no_mf            : () => localize('Binary options trading is not available in your financial account.'),
+        options_blocked  : () => localize('Binary options trading is not available in your country.'),
+        residence_blocked: () => localize('This page is not available in your country of residence.'),
     };
 
     const loadHandler = (this_page) => {
@@ -148,6 +148,9 @@ const BinaryLoader = (() => {
                 }
             });
         }
+        if (this_page === 'deactivated-account' && Client.isLoggedIn()) {
+            displayMessage(error_messages.not_deactivated());
+        }
 
         BinarySocket.wait('authorize').then(() => {
             if (config.no_blocked_country && Client.isLoggedIn() && Client.isOptionsBlocked()) {
@@ -181,6 +184,7 @@ const BinaryLoader = (() => {
         if (!content) {
             return;
         }
+        content.classList.add('container');
 
         const div_container = createElement('div', { class: 'logged_out_title_container', html: Client.isAccountOfType('financial') || Client.isOptionsBlocked() ? '' : content.getElementsByTagName('h1')[0] || '' });
         const div_notice = createElement('p', { class: 'center-text notice-msg', html: localized_message });

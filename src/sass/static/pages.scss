@@ -1642,6 +1642,41 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.deactivated-account-content {
+    text-align: center;
+
+    .close-user-account {
+        height: 25vh;
+
+        .msg_main_modal {
+            .notice-msg {
+                background-color: transparent;
+                height: auto;
+                margin: auto;
+
+                img {
+                    width: 4rem;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-weight: 500;
+                }
+                h1 {
+                    @media (max-width: 500px) {
+                        font-size: 30px;
+                    }
+                }
+                @media (max-width: 500px) {
+                    width: 90%;
+                }
+            }
+        }
+        @media (max-width: 500px) {
+            margin-bottom: 5rem;
+        }
+    }
+}
+
 .account-closure {
     .notice-msg-wrapper {
         background-color: $COLOR_YELLOW;

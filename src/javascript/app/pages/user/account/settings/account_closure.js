@@ -181,16 +181,7 @@ const AccountClosure = (() => {
                 }
                 el_step_2_submit.setAttribute('disabled', false);
             } else {
-                el_submit_loading.setVisibility(0);
-                showStep(3);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                sessionStorage.setItem('closingAccount', 1);
-                setTimeout(() => {
-                    // we need to clear all stored client data by performing a logout action and then redirect to home
-                    // otherwise it will think that client is still logged in and redirect to trading page
-                    Client.sendLogoutRequest(false, Url.urlFor('home'));
-                }, 10000);
+                Client.sendLogoutRequest(false, Url.urlFor('deactivated-account'));
             }
         });
     };
