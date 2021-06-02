@@ -133,7 +133,7 @@ const AccountClosure = () => (
 
             <div id='step_3' className='gr-gutter gr-padding-10 notice-msg-wrapper invisible'>
                 <p className='notice-msg-text'>{it.L('We\'re sorry to see you leave.')}</p>
-                <p className='notice-msg-text'>{it.L('Your account is now deactived.')}</p>
+                <p className='notice-msg-text'>{it.L('Your account is now deactivated.')}</p>
             </div>
 
             <div className='invisible' id='submit_loading'>
