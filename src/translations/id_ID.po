@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-01 09:32\n"
+"PO-Revision-Date: 2021-06-02 07:58\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1008,6 +1008,9 @@ msgstr "Kategorisasi Akun"
 
 msgid "Account Closure"
 msgstr "Penutupan Akun"
+
+msgid "Account Deactivated"
+msgstr ""
 
 msgid "Account Deposit Currency"
 msgstr "Mata Uang Akun Deposit"
@@ -2181,6 +2184,12 @@ msgstr "Pengalaman trading opsi Binary"
 
 msgid "Binary options trading frequency"
 msgstr "Frekuensi trading opsi binary"
+
+msgid "Binary options trading is not available in your country."
+msgstr ""
+
+msgid "Binary options trading is not available in your financial account."
+msgstr ""
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "Trading opsi binary relatif mudah. Anda bisa membeli kontrak hanya dalam tiga langkah:"
@@ -6024,10 +6033,10 @@ msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open 
 msgstr "Jika Anda memiliki akun riil Binary, kunjungi %1Portfolio%2 untuk menutup posisi berjalan."
 
 msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr ""
+msgstr "Jika Anda memiliki akun riil DMT5, kunjungi %1Dashboard MT5%2 untuk menarik dana Anda."
 
 msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr ""
+msgstr "Jika Anda memiliki akun riil MT5, akses akun tersebut untuk menutup posisi berjalan."
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "Jika Anda memiliki referensi pembayaran (misalnya 122), Anda dapat memasukkannya di sini."
@@ -10307,12 +10316,6 @@ msgstr "Maaf, error terjadi ketika memproses rekening Anda."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
 
-msgid "Sorry, but binary options trading is not available in your country."
-msgstr "Maaf, trading opsi binary tidak tersedia di negara Anda."
-
-msgid "Sorry, but binary options trading is not available in your financial account."
-msgstr "Maaf, trading opsi binary tidak tersedia pada akun finansial Anda."
-
 msgid "Sorry, deposits for this currency are currently disabled."
 msgstr "Maaf, deposit untuk mata uang ini sedang dinonaktifkan."
 
@@ -10322,14 +10325,8 @@ msgstr "Maaf, versi seluler belum tersedia."
 msgid "Sorry, no mobile phone bills"
 msgstr "Maaf, tagihan ponsel tidak dapat diterima"
 
-msgid "Sorry, this feature is available to virtual accounts only."
-msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
-
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Maaf, fitur ini tidak tersedia di yurisdiksi Anda."
-
-msgid "Sorry, this page is not available in your country of residence."
-msgstr "Maaf, halaman ini tidak tersedia pada negara domisili Anda."
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "Maaf, penarikan untuk mata uang ini sedang dinonaktifkan."
@@ -12579,6 +12576,9 @@ msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan ketentuan (\"Ketentua
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan ketentuan antara \"Perusahaan\", yaitu Deriv Services Ltd, dengan pihak yang telah mengajukan permohonan pada program ini (\"Afiliasi\"), sehubungan dengan aplikasi Afiliasi untuk menyiapkan akun afiliasi (dan keanggotaan program afiliasi jika aplikasi afiliasi diluluskan)."
 
+msgid "This feature is available to virtual accounts only."
+msgstr ""
+
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Fasilitas ini tidak tersedia untuk akun uang virtual."
 
@@ -12644,6 +12644,9 @@ msgstr "Pemberitahuan ini memberi klien informasi tentang risiko yang terkait de
 
 msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members, or any other partners."
 msgstr "Kewajiban ini mencakup larangan pembayaran yang melanggar hukum atau pemberian segala bentuk manfaat yang melanggar hukum kepada pejabat publik, mitra bisnis, karyawan, anggota keluarga, atau mitra lainnya."
+
+msgid "This page is not available in your country of residence."
+msgstr ""
 
 msgid "This page is only available to logged out clients."
 msgstr "Anda perlu keluar dari akun Anda terlebih dahulu untuk mengakses halaman ini."
@@ -14750,6 +14753,9 @@ msgstr "Akun Anda tidak memiliki aktivitas Login/Logout."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
+
+msgid "Your account is now deactivated."
+msgstr ""
 
 msgid "Your account is now deactived."
 msgstr "Akun Anda sudah dinonaktifkan."

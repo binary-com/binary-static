@@ -4,6 +4,7 @@ const getLanguage         = require('../language').get;
 const isMobile            = require('../os_detect').isMobile;
 const isStorageSupported  = require('../storage').isStorageSupported;
 const LocalStore          = require('../storage').LocalStore;
+const removeCookies       = require('../storage').removeCookies;
 const urlForCurrentDomain = require('../url').urlForCurrentDomain;
 const isLoginPages        = require('../utility').isLoginPages;
 const TrafficSource       = require('../../app/common/traffic_source');
@@ -11,7 +12,8 @@ const getAppId            = require('../../config').getAppId;
 
 const Login = (() => {
     const redirectToLogin = (reset_password) => {
-        if ((!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage)) || reset_password) {
+        removeCookies('hide_guide');
+        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage) || reset_password) {
             sessionStorage.setItem('redirect_url', window.location.href);
             window.location.href = loginUrl();
         }

@@ -46,7 +46,6 @@ const Guide = (() => {
 
         makeButton();
     };
-
     /*
      *  do not show the guide button if its close (X) has been clicked before
      */

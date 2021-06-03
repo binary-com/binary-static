@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-01 09:32\n"
+"PO-Revision-Date: 2021-06-02 07:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -1008,6 +1008,9 @@ msgstr "帳戶分類"
 
 msgid "Account Closure"
 msgstr "帳戶關閉"
+
+msgid "Account Deactivated"
+msgstr ""
 
 msgid "Account Deposit Currency"
 msgstr "帳戶存款幣種"
@@ -2181,6 +2184,12 @@ msgstr "二元期權交易經驗"
 
 msgid "Binary options trading frequency"
 msgstr "二元期權交易頻率"
+
+msgid "Binary options trading is not available in your country."
+msgstr ""
+
+msgid "Binary options trading is not available in your financial account."
+msgstr ""
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "相對說來，二元期權交易是很容易的。您可以通過三個簡單步驟購買合約："
@@ -6023,10 +6032,10 @@ msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open 
 msgstr "如您有 Binary 真實帳戶，請前往%1投資組合%2將全部持倉頭寸平倉。"
 
 msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr ""
+msgstr "如您有 MT5 真實帳戶，請前往%1MT5 儀表板%2提取資金。"
 
 msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr ""
+msgstr "如您有 MT5真實帳戶，請登入以便將全部持倉頭寸平倉。"
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "如有付款參考編號（例如122），可在此處輸入。"
@@ -10306,12 +10315,6 @@ msgstr "對不起，在處理您的帳戶時出錯。"
 msgid "Sorry, an error occurred while processing your request."
 msgstr "對不起，在處理您的請求時發生錯誤。"
 
-msgid "Sorry, but binary options trading is not available in your country."
-msgstr "對不起，您的國家無法進行二元期權交易。"
-
-msgid "Sorry, but binary options trading is not available in your financial account."
-msgstr "對不起，您的金融帳戶無法進行二元期權交易。"
-
 msgid "Sorry, deposits for this currency are currently disabled."
 msgstr "抱歉，此貨幣的存款目前被禁用。"
 
@@ -10321,14 +10324,8 @@ msgstr "對不起，手機版本還不可用。"
 msgid "Sorry, no mobile phone bills"
 msgstr "抱歉，不接受手機帳單"
 
-msgid "Sorry, this feature is available to virtual accounts only."
-msgstr "對不起，此功能僅適用虛擬帳戶。"
-
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "對不起，您的管轄權內無法使用此功能。"
-
-msgid "Sorry, this page is not available in your country of residence."
-msgstr "對不起，您的居住國無法使用此頁面。"
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "抱歉，此貨幣的取款目前被禁用。"
@@ -12577,6 +12574,9 @@ msgstr "本文檔 （「協定」） 規定了Deriv Services Ltd (「公司」) 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "本文件（「協議」）規定了「公司」（即 Deriv Services Ltd.）與本計劃申請人(「聯盟會員」）之間關於聯盟會員申請設立聯盟會員帳戶（申請成功後還包括聯盟計劃的會員資格）以推廣網站的條款和條件。"
 
+msgid "This feature is available to virtual accounts only."
+msgstr ""
+
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "此功能不適用於虛擬資金帳戶。"
 
@@ -12642,6 +12642,9 @@ msgstr "本通知向客戶提供關於客戶通過％1服務購買的合約的�
 
 msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members, or any other partners."
 msgstr "這項義務包括禁止非法付款或向公職人員、業務夥伴、雇員、家庭成員或任何其他夥伴提供任何形式的非法利益。"
+
+msgid "This page is not available in your country of residence."
+msgstr ""
 
 msgid "This page is only available to logged out clients."
 msgstr "此頁面僅適用於已登出的客戶。"
@@ -14748,6 +14751,9 @@ msgstr "您的帳戶沒有登入/登出活動。"
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的帳戶已經得到完全驗證，且您的取款限額已經取消。"
+
+msgid "Your account is now deactivated."
+msgstr ""
 
 msgid "Your account is now deactived."
 msgstr "您的帳戶已停用."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-01 09:32\n"
+"PO-Revision-Date: 2021-06-02 07:59\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1008,6 +1008,9 @@ msgstr "Phân loại tài khoản"
 
 msgid "Account Closure"
 msgstr "Đóng tài khoản"
+
+msgid "Account Deactivated"
+msgstr ""
 
 msgid "Account Deposit Currency"
 msgstr "Tài khoản tiền gửi tiền tệ"
@@ -2182,6 +2185,12 @@ msgstr "Kinh nghiệm giao dịch các lựa chọn nhị phân"
 
 msgid "Binary options trading frequency"
 msgstr "Tần xuất giao dịch các lựa chọn nhị phân"
+
+msgid "Binary options trading is not available in your country."
+msgstr ""
+
+msgid "Binary options trading is not available in your financial account."
+msgstr ""
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "Giao dịch lựa chọn nhị phân tương đối dễ dàng. Bạn có thể mua một hợp đồng trong chỉ ba bước:"
@@ -6025,10 +6034,10 @@ msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open 
 msgstr "Nếu bạn có một tài khoản Binary thực, đi tới %1Danh mục đầu tư%2 để đóng các giao dịch mở."
 
 msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr ""
+msgstr "Nếu bạn có một tài khoản MT5 thực, đi tới %1Bảng điều khiển MT5%2 để rút tiền."
 
 msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr ""
+msgstr "Nếu bạn có một tài khoản thực MT5, hãy đăng nhập để đóng các giao dịch mở."
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "Nếu bạn có một con số thanh toán tham khảo (Ví dụ như 122), bạn có thể nhập chúng tại đây."
@@ -10309,12 +10318,6 @@ msgstr "Rất tiêt, Lỗi xảy ra trong khi đang xử lý tài khoản cu
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Rất tiếc, đã xảy ra lỗi khi đang xử lý yêu cầu của bạn."
 
-msgid "Sorry, but binary options trading is not available in your country."
-msgstr "Rất tiếc, các quyền chọn giao dịch nhị phân không khả dụng tại quốc gia của bạn."
-
-msgid "Sorry, but binary options trading is not available in your financial account."
-msgstr "Rất tiếc, các quyền chọn giao dịch nhị phân không khả dụng cho tài khoản tài chính của bạn."
-
 msgid "Sorry, deposits for this currency are currently disabled."
 msgstr "Rất tiếc, chức năng nạp cho loại tiền này hiện đang bị vô hiệu hóa."
 
@@ -10324,14 +10327,8 @@ msgstr "Rất tiếc, ứng dụng cho điện thoại vẫn chưa khả du
 msgid "Sorry, no mobile phone bills"
 msgstr "Rất tiếc, không có hóa đơn điện thoại di động"
 
-msgid "Sorry, this feature is available to virtual accounts only."
-msgstr "Rất tiếc, tính năng này chỉ khả dụng với tài khoản tiền ảo."
-
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Xin lỗi, tính năng này không có sẵn trong thẩm quyền của bạn."
-
-msgid "Sorry, this page is not available in your country of residence."
-msgstr "Rất tiếc, trang này không khả dụng tại quốc gia của bạn."
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "Rất tiếc, chức năng rút cho loại tiền này hiện đang bị vô hiệu hóa."
@@ -12581,6 +12578,9 @@ msgstr "Tài liệu này (\"Thỏa Thuận\") đưa ra các điều khoản và 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "Tài liệu (\"Thỏa Thuận\") này đặt ra các điều khoản và điều kiện giữa \"Công Ty\" là Deriv Services Ltd và người đăng ký tham gia chương trình; (\"Bên liên kết\"), liên quan đến ứng dụng của Bên liên kết để thiết lập tài khoản liên kết (và là thành viên của chương trình liên kết nếu ứng dụng của Bên liên kết được coi là thành công)."
 
+msgid "This feature is available to virtual accounts only."
+msgstr ""
+
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Chức năng này này không liên quan tới tài khoản tiền ảo."
 
@@ -12646,6 +12646,9 @@ msgstr "Thông báo này cung cấp cho khách hàng những thông tin v�
 
 msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members, or any other partners."
 msgstr "Nghĩa vụ này bao gồm việc cấm thanh toán bất hợp pháp hoặc cấp bất kỳ hình thức lợi ích bất hợp pháp nào cho cán bộ công chức, đối tác kinh doanh, nhân viên, thành viên gia đình hoặc bất kỳ đối tác nào khác."
+
+msgid "This page is not available in your country of residence."
+msgstr ""
 
 msgid "This page is only available to logged out clients."
 msgstr "Trang này chỉ dành cho khách hàng đã đăng xuất."
@@ -14752,6 +14755,9 @@ msgstr "Không có hoạt động Đăng nhập/Đăng xuất nào trên tài kh
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Tài khoản của bạn được xác thực đầy đủ và mức giới hạn rút tiền của bạn đã được nâng lên."
+
+msgid "Your account is now deactivated."
+msgstr ""
 
 msgid "Your account is now deactived."
 msgstr "Tài khoản của bạn đã được hủy."

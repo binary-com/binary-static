@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-01 09:32\n"
+"PO-Revision-Date: 2021-06-02 07:58\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -1008,6 +1008,9 @@ msgstr "Kategoryzacja konta"
 
 msgid "Account Closure"
 msgstr "Zamknięcie konta"
+
+msgid "Account Deactivated"
+msgstr ""
 
 msgid "Account Deposit Currency"
 msgstr "Waluta depozytu konta"
@@ -2181,6 +2184,12 @@ msgstr "Doświadczenie w handlowaniu opcjami binarnymi"
 
 msgid "Binary options trading frequency"
 msgstr "Częstotliwość handlowania opcjami binarnymi"
+
+msgid "Binary options trading is not available in your country."
+msgstr ""
+
+msgid "Binary options trading is not available in your financial account."
+msgstr ""
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "Handlowanie opcjami binarnymi jest dość proste. Możesz zakupić kontrakt w trzech krokach:"
@@ -6023,10 +6032,10 @@ msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open 
 msgstr ""
 
 msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr ""
+msgstr "Jeśli masz prawdziwe konto MT5, przejdź do %1pulpitu DMT5%2, aby wypłacić swoje środki."
 
 msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr ""
+msgstr "Jeśli masz prawdziwe konto MT5, zaloguj się do konta, aby zamknąć otwarte pozycje."
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "Jeśli masz numer identyfikacyjny płatności (na przykład 122), możesz wpisać go tutaj."
@@ -10306,12 +10315,6 @@ msgstr "Przepraszamy, wystąpił błąd podczas operacji na Twoim koncie."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Przepraszamy, podczas przetwarzania Twojego żądania wystąpił błąd."
 
-msgid "Sorry, but binary options trading is not available in your country."
-msgstr "Przepraszamy, ale handlowanie opcjami binarnymi nie jest dostępne w Twoim kraju."
-
-msgid "Sorry, but binary options trading is not available in your financial account."
-msgstr "Przepraszamy, ale handlowanie opcjami binarnymi nie jest dostępne na Twoim koncie finansowym."
-
 msgid "Sorry, deposits for this currency are currently disabled."
 msgstr "Przepraszamy, wpłaty w tej walucie są obecnie niedostępne."
 
@@ -10321,14 +10324,8 @@ msgstr "Przepraszamy, wersja mobilna jest jeszcze niedostępna."
 msgid "Sorry, no mobile phone bills"
 msgstr "Przepraszamy, nie akceptujemy rachunków za telefon komórkowy"
 
-msgid "Sorry, this feature is available to virtual accounts only."
-msgstr "Przepraszamy, ta funkcja jest dostępna tylko dla kont wirtualnych."
-
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Niestety ta funkcja jest niedostępna w Twojej jurysdykcji."
-
-msgid "Sorry, this page is not available in your country of residence."
-msgstr ""
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "Przepraszamy, wypłaty w tej walucie są obecnie niedostępne."
@@ -12578,6 +12575,9 @@ msgstr "Niniejszy dokument („Umowa”) określa warunki („Warunki”) wspó�
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "Niniejszy dokument („Umowa”) ustanawia warunki regulujące relacje między „Firmą”, czyli Deriv Services Ltd, a osobą, która złożyła wniosek o uczestnictwo w tym programie („Partner”), w odniesieniu do wniosku Partnera o założenie konta partnerskiego (i o członkostwo w programie partnerskim, jeśli wniosek Partnera zostanie rozpatrzony pozytywnie)."
 
+msgid "This feature is available to virtual accounts only."
+msgstr ""
+
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Ta funkcja nie jest dostępna dla kont z wirtualnymi pieniędzmi."
 
@@ -12643,6 +12643,9 @@ msgstr "Niniejsze powiadomienie informuje klienta o ryzykach związanych z kontr
 
 msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members, or any other partners."
 msgstr "To zobowiązanie obejmuje zakaz niezgodnych z prawem płatności lub przekazywania w jakiejkolwiek formie niezgodnych z prawem korzyści funkcjonariuszom publicznym, partnerom biznesowym, pracownikom, członkom rodziny lub jakimkolwiek innym partnerom."
+
+msgid "This page is not available in your country of residence."
+msgstr ""
 
 msgid "This page is only available to logged out clients."
 msgstr "Ta strona jest dostępna tylko dla wylogowanych klientów."
@@ -14749,6 +14752,9 @@ msgstr "Na Twoim koncie nie odnotowano żadnej aktywności związanej z logowani
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Twoje konto jest w pełni zweryfikowane, a Twój limit wypłat został zwiększony."
+
+msgid "Your account is now deactivated."
+msgstr ""
 
 msgid "Your account is now deactived."
 msgstr ""
