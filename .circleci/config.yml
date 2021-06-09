@@ -179,6 +179,12 @@ jobs:
           k8s_svc_name: "production-binary-com"
       
 workflows:
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore: /^master$/
   release:
     jobs:
       - release_beta:

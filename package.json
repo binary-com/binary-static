@@ -8,7 +8,7 @@
     "serve": "sudo -p 'enter password for sudo:' grunt serve",
     "start": "sudo -p 'enter password for sudo:' grunt start",
     "eslint": "eslint --fix \"src/**/*.jsx\" src/",
-    "build": "grunt releaseci --production"
+    "build": "grunt release_test_link --production"
   },
   "repository": {
     "type": "git",
