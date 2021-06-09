@@ -51,7 +51,7 @@ const Index = () => (
         <div className='container section'>
             <div className='gr-parent'>
                 <h1 className='center-text gr-padding-20'>
-                    {it.L('The premier platform for trading binary options in the world\'s financial markets')}
+                    {it.L('TEST The premier platform for trading binary options in the world\'s financial markets')}
                 </h1>
                 <div className='gr-row'>
                     <div className='gr-6 gr-12-m gr-padding-20'>
