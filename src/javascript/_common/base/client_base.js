@@ -403,6 +403,13 @@ const ClientBase = (() => {
         return options_blocked_countries.includes(country);
     };
 
+    const isMalta = () => {
+        const malta_countries = ['at', 'be', 'bg', 'cy', 'cz', 'dk', 'ee', 'fi', 'hr', 'hu', 'ie', 'lt', 'lv', 'nl', 'pl', 'pt', 'ro', 'se', 'si', 'sk'];
+        const country = State.getResponse('authorize.country');
+        
+        return malta_countries.includes(country);
+    };
+
     return {
         init,
         isLoggedIn,
@@ -433,6 +440,7 @@ const ClientBase = (() => {
         canTransferFunds,
         hasSvgAccount,
         canChangeCurrency,
+        isMalta,
     };
 })();
 
