@@ -12,7 +12,6 @@ const localize  = require('../../_common/localize').localize;
  */
 
 const Guide = (() => {
-    
     let opt,
         cookie_name,
         btn_next,
@@ -68,7 +67,7 @@ const Guide = (() => {
     /*
      *  generate the button's html
      */
-    const makeButton = () => { 
+    const makeButton = () => {
         if ($(opt.guideBtnID).children().length > 0) {
             return;
         }
