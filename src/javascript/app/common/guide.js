@@ -44,8 +44,12 @@ const Guide = (() => {
             $(opt.guideBtnID).remove();
             return;
         }
+
         makeButton();
     };
+    /*
+     *  do not show the guide button if its close (X) has been clicked before
+     */
     const isDisabled = () => {
         const disabled = Cookies.get(cookie_name);
         return !!disabled && $.inArray(opt.script, disabled.split(',')) >= 0;
@@ -64,8 +68,7 @@ const Guide = (() => {
     /*
      *  generate the button's html
      */
-    const makeButton = () => {
-        
+    const makeButton = () => { 
         if ($(opt.guideBtnID).children().length > 0) {
             return;
         }
