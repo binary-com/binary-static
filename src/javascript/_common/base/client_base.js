@@ -239,7 +239,7 @@ const ClientBase = (() => {
         // needs to be declared inside because of localize
         // TODO: handle swap_free when ready
 
-        const account_market_type = market_type === 'synthetic' ? 'gaming' : market_type;
+        const account_market_type = (market_type === 'synthetic' || market_type === 'gaming') ? 'gaming' : market_type;
         const obj_display = {
             gaming: {
                 financial: {

@@ -14,6 +14,7 @@ const State                    = require('../../../../_common/storage').State;
 const urlFor                   = require('../../../../_common/url').urlFor;
 const Utility                  = require('../../../../_common/utility');
 const isEuCountrySelected      = require('../../../../_common/utility').isEuCountrySelected;
+const ClientBase               = require('../../../../_common/base/client_base');
 const isBinaryApp              = require('../../../../config').isBinaryApp;
 
 const VirtualAccOpening = (() => {
@@ -57,8 +58,8 @@ const VirtualAccOpening = (() => {
     };
 
     const handleWebsiteStatus = (website_status = {}, $residence) => {
-        const consent_checkbox = document.getElementById('consent_checkbox');
-        const email_consent = document.getElementById('email_consent');
+        const email_consent_container = $('#consent_checkbox');
+        const consent_checkbox = $('#email_consent');
         if (!website_status || Utility.isEmptyObject(website_status)) return;
         const clients_country = website_status.clients_country;
 
@@ -75,22 +76,24 @@ const VirtualAccOpening = (() => {
             })
             .setVisibility(1);
             
-        const residence_dropdown = document.getElementById('residence');
-        if (!isEuCountrySelected(residence_dropdown.value)) {
-            email_consent.classList.add('hide-product-checkbox');
-            consent_checkbox.classList.add('hide-product-checkbox');
+        const residence_dropdown = $('#residence');
+        if (isEuCountrySelected(residence_dropdown.val())) {
+            consent_checkbox.removeClass('hidden-consent-checkbox');
+            email_consent_container.removeClass('email-consent-container');
+        } else {
+            consent_checkbox.addClass('hidden-consent-checkbox');
         }
-        residence_dropdown.onchange = () => {
-            const updated_selected_value = document.getElementById('residence').value;
+        residence_dropdown.on('change', () => {
+            const updated_selected_value = $('#residence').val();
             const eu_country = isEuCountrySelected(updated_selected_value);
             if (eu_country) {
-                email_consent.classList.remove('hide-product-checkbox');
-                consent_checkbox.classList.remove('hide-product-checkbox');
+                consent_checkbox.removeClass('hidden-consent-checkbox');
+                email_consent_container.removeClass('email-consent-container');
             } else {
-                email_consent.classList.add('hide-product-checkbox');
-                consent_checkbox.classList.add('hide-product-checkbox');
+                consent_checkbox.addClass('hidden-consent-checkbox');
+                email_consent_container.addClass('email-consent-container');
             }
-        };
+        });
     };
 
     const bindValidation = () => {
@@ -102,7 +105,7 @@ const VirtualAccOpening = (() => {
         const req = [
             { selector: '#client_password', validations: ['req', 'password'] },
 
-            { selector: '#residence' },
+            { selector: '#residence' , validations: ['req'] },
             { selector: '#email_consent' },
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
@@ -135,12 +138,13 @@ const VirtualAccOpening = (() => {
                     LocalStore.remove('signup_device');
                     BinarySocket.send({ get_account_status: 1 }).then((account_status) => {
                         const is_unwelcome_uk = account_status.get_account_status.status.some(status => status === 'unwelcome') && (/gb/.test(residence));
+                        const upgrade_info    = ClientBase.getBasicUpgradeInfo();
                         Client.processNewAccount({
                             email       : new_account.email,
                             loginid     : new_account.client_id,
                             token       : new_account.oauth_token,
                             is_virtual  : true,
-                            redirect_url: is_unwelcome_uk ? urlFor('new_account/realws') : urlFor('new_account/welcome'),
+                            redirect_url: getRedirectUrl(is_unwelcome_uk, residence, upgrade_info),
                         });
                     });
                 }
@@ -173,6 +177,17 @@ const VirtualAccOpening = (() => {
         }
     };
 
+    const getRedirectUrl = (is_unwelcome_uk, residence,  upgrade_info) => {
+
+        const { can_upgrade_to } = upgrade_info;
+        if (is_unwelcome_uk) return urlFor('new_account/realws');
+        if (can_upgrade_to.includes('svg') && residence !== 'au') {
+            return urlFor('new_account/welcome_onboarding');
+        }
+        if (residence === 'au') return urlFor('user/metatrader');
+        
+        return urlFor('new_account/welcome');
+    };
     const showFormError = (message, url) => {
         $('#virtual-form').html($('<p/>', { html: Utility.template(message, [urlFor(url)]) }));
     };

@@ -252,8 +252,9 @@ label {
 
 /* global styles */
 .required_field_asterisk {
-    position: absolute;
-    margin: -3px 3px;
+    position: relative;
+    left: 3px;
+    top: -3px;
     font-size: $FONT_SIZE_S;
     color: $COLOR_RED;
 
@@ -379,7 +380,7 @@ input[type=checkbox] {
 
 .logged_out_title_container {
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 button .barspinner.white {
@@ -418,6 +419,10 @@ button .barspinner.white {
     display: none;
     background: url('../images/common/scrollup_icon.svg') no-repeat;
     z-index: 999;
+}
+
+.flex {
+    display: flex;
 }
 
 .inline-flex {
@@ -496,7 +501,7 @@ button .barspinner.white {
     .select2-container {
         max-width: 220px;
     }
-    .hide-product-checkbox {
+    .email-consent-container {
         visibility: hidden !important;
     }
 }
@@ -584,8 +589,17 @@ button .barspinner.white {
     }
 }
 
+.required_asterisk:after {
+    content: '*';
+    color: $COLOR_RED;
+}
+
 ul.bullet.gr-row > li {
     display: list-item;
+}
+
+#tax_information_, #pep_declaration_note_toggle, #professional_info_toggle {
+    font-weight: bold;
 }
 
 .toggle-arrow {

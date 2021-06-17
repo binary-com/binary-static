@@ -6,7 +6,6 @@ const NetworkMonitor = require('./network_monitor');
 const Page = require('./page');
 const BinarySocket = require('./socket');
 const ContentVisibility = require('../common/content_visibility');
-const DerivBanner = require('../common/deriv_banner');
 const GTM = require('../../_common/base/gtm');
 const Login = require('../../_common/base/login');
 const LiveChat = require('../../_common/base/livechat');
@@ -38,11 +37,12 @@ const BinaryLoader = (() => {
 
         localizeForLang(urlLang());
 
+        checkAppidAndQAserver();
+
         Page.showNotificationOutdatedBrowser();
 
         Client.init();
         NetworkMonitor.init();
-        DerivBanner.chooseBanner();
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);
         window.addEventListener('beforeunload', beforeContentChange);
@@ -50,6 +50,16 @@ const BinaryLoader = (() => {
         BinaryPjax.init(container, '#content');
         ThirdPartyLinks.init();
 
+    };
+
+    const checkAppidAndQAserver = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const qa_server = urlParams.get('qa_server');
+        const app_id = urlParams.get('app_id');
+        if (qa_server && app_id) {
+            localStorage.setItem('config.server_url', qa_server);
+            localStorage.setItem('config.app_id', app_id);
+        }
     };
 
     const beforeContentChange = () => {
@@ -104,11 +114,13 @@ const BinaryLoader = (() => {
 
     const error_messages = {
         login            : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
-        only_virtual     : () => localize('Sorry, this feature is available to virtual accounts only.'),
+        only_virtual     : () => localize('This feature is available to virtual accounts only.'),
         only_real        : () => localize('This feature is not relevant to virtual-money accounts.'),
         not_authenticated: () => localize('This page is only available to logged out clients.'),
-        no_mf            : () => localize('Sorry, but binary options trading is not available in your financial account.'),
-        options_blocked  : () => localize('Sorry, but binary options trading is not available in your country.'),
+        no_mf            : () => localize('Binary options trading is not available in your financial account.'),
+        options_blocked  : () => localize('Binary options trading is not available in your country.'),
+        residence_blocked: () => localize('This page is not available in your country of residence.'),
+        not_deactivated  : () => localize('Page not available, you did not deactivate your account.'),
     };
 
     const loadHandler = (this_page) => {
@@ -141,12 +153,25 @@ const BinaryLoader = (() => {
             loadActiveScript(config);
         }
         if (config.no_mf && Client.isLoggedIn() && Client.isAccountOfType('financial')) {
-            BinarySocket.wait('authorize').then(() => displayMessage(error_messages.no_mf()));
+            BinarySocket.wait('authorize').then(() => {
+                if (config.msg_residence_blocked) {
+                    displayMessage(error_messages.residence_blocked());
+                } else {
+                    displayMessage(error_messages.no_mf());
+                }
+            });
+        }
+        if (this_page === 'deactivated-account' && Client.isLoggedIn()) {
+            displayMessage(error_messages.not_deactivated());
         }
 
         BinarySocket.wait('authorize').then(() => {
             if (config.no_blocked_country && Client.isLoggedIn() && Client.isOptionsBlocked()) {
-                displayMessage(error_messages.options_blocked());
+                if (config.msg_residence_blocked) {
+                    displayMessage(error_messages.residence_blocked());
+                } else {
+                    displayMessage(error_messages.options_blocked());
+                }
             }
         });
 
@@ -167,10 +192,12 @@ const BinaryLoader = (() => {
     };
 
     const displayMessage = (localized_message) => {
-        const content = container.querySelector('#content .container');
+        const content = container.querySelector('#content');
+
         if (!content) {
             return;
         }
+        content.classList.add('container');
 
         const div_container = createElement('div', { class: 'logged_out_title_container', html: Client.isAccountOfType('financial') || Client.isOptionsBlocked() ? '' : content.getElementsByTagName('h1')[0] || '' });
         const div_notice = createElement('p', { class: 'center-text notice-msg', html: localized_message });

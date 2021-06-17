@@ -34,6 +34,11 @@ const RealAccOpening = (() => {
                     obj_request         : { new_account_real: 1 },
                     fnc_response_handler: handleResponse,
                 });
+                $('#tax_information_note_toggle').off('click').on('click', (e) => {
+                    e.stopPropagation();
+                    $('#tax_information_note_toggle').toggleClass('open');
+                    $('#tax_information_note').slideToggle();
+                });
             });
         } else {
             BinaryPjax.loadPreviousUrl();

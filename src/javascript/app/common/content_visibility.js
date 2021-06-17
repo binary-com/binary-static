@@ -202,16 +202,23 @@ const ContentVisibility = (() => {
     };
 
     const centerSelect = ($el) => {
-        const option_width = getTextWidth($el.children(':selected').html());
-        const empty_space = '280' - option_width; // in mobile all select drop-downs are hardcoded to be at 280px in css
-        $el.css('text-indent', (empty_space / 2) - 7); // 7px is for the drop-down arrow
+        const option_width = getTextWidth($el.children(':selected').text());
+        const center_option_text = option_width / 2;
+        $el.css('text-indent', `calc(50% - ${center_option_text}px)`);
     };
 
     const centerAlignSelect = (should_init) => {
         $(window).off('resize', centerAlignSelect);
-        $center_select_m = ((typeof should_init === 'boolean' && should_init) || !$center_select_m) ? $('.center-select-m') : $center_select_m;
+        $('#frm_real #trading_experience_form select, #frm_real #financial_info_form select').addClass('center-select-m');
+        $center_select_m = ((typeof should_init === 'boolean' && should_init) || !$center_select_m) ? $('#frm_real .center-select-m') : $center_select_m;
 
         if ($(window).width() <= 480) {
+            const financial_form_selects = $('#frm_real select');
+            financial_form_selects.get().forEach((element) => {
+                const option_width = getTextWidth($(element).children(':selected').text());
+                const center_option_text = option_width / 2;
+                $(element).css('text-indent', `calc(50% - ${center_option_text}px)`);
+            });
             $center_select_m.on('change', function() {
                 centerSelect($(this));
             });

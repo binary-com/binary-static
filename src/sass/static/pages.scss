@@ -970,6 +970,22 @@ body #not_authenticated_financial ul.checked > li {
             color: $COLOR_BLACK;
             border-radius: 0;
         }
+        /** TODO: To re-implement style overrides when upgrading Onfido version
+        .onfido-sdk-ui-Theme-textButton:hover {
+            color: $COLOR_BLACK;
+        }
+        .onfido-sdk-ui-CustomFileInput-container {
+            .onfido-sdk-ui-Theme-button-lg {
+                background: rgb(54, 64, 245);
+            }
+            button {
+                background: transparent;
+
+                &:hover {
+                    background: rgb(92, 108, 255);
+                }
+            }
+        } **/
         input, textarea {
             &:hover, &:focus {
                 outline: 0;
@@ -1370,6 +1386,75 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .welcome-content {
+    a:hover {
+        text-decoration: none;
+    }
+    &-container {
+        margin: 0 auto;
+        width: 80%;
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    &-box {
+        max-height: 86px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-radius: 9px;
+        margin-top: 10px;
+
+        &-desc {
+            overflow: hidden;
+            text-align: left;
+            margin-left: 15px;
+            width: 80%;
+            font-weight: 500;
+
+            @media only screen and (max-width: 576px) {
+                font-size: 13px;
+                margin-top: 0.6rem;
+                width: 70%;
+                word-wrap: break-word;
+                margin-left: 8px;
+            }
+
+            p {
+                margin: 0.4em 0;
+                line-height: 1.2em;
+            }
+            p.default:first-of-type {
+                margin-top: 1.1rem;
+            }
+        }
+        &-sub-options {
+            width: 100%;
+            font-size: 12px;
+            color: $COLOR_BLACK;
+            @media only screen and (max-width: 576px) {
+                font-size: xx-small;
+            }
+
+            span {
+                padding: 0 0.5rem;
+                border-left: 0.5px solid $COLOR_GRAY_SUB;
+                @media only screen and (max-width: 576px) {
+                    padding: 0 0.2rem;
+                }
+            }
+        }
+        &-arrow {
+            width: 5%;
+            position: relative;
+
+            &-image {
+                img {
+                    position: absolute;
+                    top: 50%;
+                }
+            }
+        }
+    }
     .box-grid .box {
         display: flex;
         flex-direction: column;
@@ -1624,13 +1709,71 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.deactivated-account-content {
+    text-align: center;
+
+    .close-user-account {
+        height: 25vh;
+
+        .msg_main_modal {
+            .notice-msg {
+                background-color: transparent;
+                height: auto;
+                margin: auto;
+
+                img {
+                    width: 4rem;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-weight: 500;
+                }
+                h1 {
+                    @media (max-width: 500px) {
+                        font-size: 30px;
+                    }
+                }
+                @media (max-width: 500px) {
+                    width: 90%;
+                }
+            }
+        }
+        @media (max-width: 500px) {
+            margin-bottom: 5rem;
+        }
+    }
+}
+
 .account-closure {
+    .notice-msg-wrapper {
+        background-color: $COLOR_YELLOW;
+        margin-top: 65px;
+    }
+    .notice-msg-text {
+        color: $COLOR_BLACK;
+        overflow: hidden;
+        margin: 0;
+        text-align: center;
+    }
     &-form {
         text-align: left;
         line-height: 40px;
 
-        span {
-            padding-left: 15px;
+        .margin-top-20 {
+            margin-top: 20px;
+        }
+        .textarea-container {
+            display: grid;
+        }
+        p {
+            font-size: 1rem;
+        }
+        textarea {
+            width: 90%;
+            max-width: 350px;
+            height: 80px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     }
     &-subtitle {

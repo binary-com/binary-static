@@ -74,7 +74,7 @@ const Header = () => (
                                     </div>
                                     <div className='gr-9 gr-hide-m gr-hide-p binary-logo-text'>
                                         <div data-show='-maltainvest, -optionsblocked' />
-                                        <div data-show='maltainvest, optionsblocked' className='binary-type-logo-old' />
+                                        <div data-show='maltainvest, optionsblocked' />
                                     </div>
                                 </div>
                             </a>
@@ -115,7 +115,7 @@ const Header = () => (
                                             type     : 'nested',
                                             text     : it.L('Resources'),
                                             href     : 'javascript:;',
-                                            dataShow : '-maltainvest',
+                                            dataShow : '-maltainvest, -optionsblocked',
                                             className: 'ico-only-hide client_logged_in nav-dropdown-toggle invisible',
                                             subitems : [
                                                 { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },

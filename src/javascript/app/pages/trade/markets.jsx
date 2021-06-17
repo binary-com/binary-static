@@ -79,8 +79,10 @@ class Markets extends React.Component {
             const submarket = Object.keys(this.markets[market_symbol].submarkets).sort(sortSubmarket)[0];
             underlying_symbol = Object.keys(this.markets[market_symbol].submarkets[submarket].symbols).sort()[0];
         }
-        const markets_arr = Object.entries(this.markets).sort((a, b) => sortSubmarket(a[0], b[0]));
-        this.markets_all = markets_arr.slice();
+        const is_not_crypto = symbol => !/^(cry|JD)/i.test(symbol);
+        const market_arr = Object.entries(this.markets).sort((a, b) => sortSubmarket(a[0], b[0]));
+        const non_crypto_markets_arr = market_arr.filter(market => is_not_crypto(market));
+        this.markets_all = non_crypto_markets_arr.slice();
         if (!(market_symbol in this.markets)) {
             market_symbol = Object.keys(this.markets).find(m => this.markets[m].submarkets[market_symbol]);
             Defaults.set('market', market_symbol);
@@ -97,7 +99,7 @@ class Markets extends React.Component {
                 symbol: underlying_symbol,
                 name  : this.underlyings[underlying_symbol],
             },
-            markets                : markets_arr,
+            markets                : non_crypto_markets_arr,
             active_market          : market_symbol,
             query                  : '',
             open_dropdown_scroll_id: 0,

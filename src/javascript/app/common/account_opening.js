@@ -155,7 +155,7 @@ const AccountOpening = (() => {
                 }
 
                 const $tax_residence_select = $('#tax_residence');
-                $tax_residence_select.html($options_with_disabled.html());
+                $tax_residence_select.html($options.html());
 
                 if (tax_residence) {
                     const tax_residences_arr = tax_residence.split(',');

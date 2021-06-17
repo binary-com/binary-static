@@ -4,11 +4,12 @@ const Url                = require('../../_common/url');
 const Redirect = (() => {
     const onLoad = () => {
         const actions_map = {
-            signup                : { path: 'new_account/virtualws' },
-            reset_password        : { path: 'user/reset_passwordws' },
-            payment_withdraw      : { path: 'cashier/forwardws', query: 'action=withdraw' },
-            payment_agent_withdraw: { path: 'paymentagent/withdrawws' },
-            mt5_password_reset    : { path: 'user/metatrader' },
+            signup                                  : { path: 'new_account/virtualws' },
+            reset_password                          : { path: 'user/reset_passwordws' },
+            trading_platform_password_reset         : { path: 'user/trading_reset_passwordws' },
+            payment_withdraw                        : { path: 'cashier/forwardws', query: 'action=withdraw' },
+            payment_agent_withdraw                  : { path: 'paymentagent/withdrawws' },
+            trading_platform_investor_password_reset: { path: 'user/metatrader' },
         };
 
         const params = Url.paramsHash();

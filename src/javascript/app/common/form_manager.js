@@ -7,9 +7,18 @@ const showLoadingImage = require('../../_common/utility').showLoadingImage;
 const FormManager = (() => {
     const forms = {};
 
-    const initForm = (form_selector, fields, needs_token) => {
+    const initForm = (form_selector, fields, needs_token, should_set_trading_password) => {
         const $form = $(`${form_selector}:visible`);
-        const $btn  = $form.find('button[type="submit"]');
+        let $btn;
+        if (form_selector === '#frm_trading_password') {
+            if (should_set_trading_password) {
+                $btn = $form.find('#set_trading_btn');
+            } else {
+                $btn = $form.find('#change_trading_pw_btn');
+            }
+        } else {
+            $btn = $form.find('button[type="submit"]');
+        }
         if ($form.length) {
             forms[form_selector] = {
                 $btn_submit: $btn,
@@ -48,7 +57,7 @@ const FormManager = (() => {
 
         fields.forEach((field) => {
             if (!field.exclude_request) {
-                if (field.$.attr('class') === 'hide-product-checkbox' || field.$.is(':visible') || field.value || field.$.attr('data-force')) {
+                if (field.$.attr('class') === 'hidden-consent-checkbox' || field.$.is(':visible') || field.value || field.$.attr('data-force')) {
                     val = field.$.val();
                     key = field.request_field || field.selector;
 
@@ -59,8 +68,8 @@ const FormManager = (() => {
                         value = field.$.attr('data-value');
                     } else if (/lbl_/.test(key)) {
                         value = field.value || field.$.text();
-                    } else if (field.$.attr('class') === 'hide-product-checkbox') {
-                        value = field.$.attr('class') === 'hide-product-checkbox' ? 1 : 0;
+                    } else if (field.$.attr('class') === 'hidden-consent-checkbox') {
+                        value = field.$.attr('class') === 'hidden-consent-checkbox' ? 1 : 0;
                     } else if (field.$.is(':checkbox')) {
                         value = field.$.is(':checked') ? 1 : 0;
                     } else if (Array.isArray(val)) {

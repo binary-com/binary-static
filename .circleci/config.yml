@@ -85,44 +85,48 @@ commands:
           command: gh-pages -d dist --branch << parameters.target_branch >> --message '[skip ci]'
   docker_build_push:
     description: "Build Docker image"
+    parameters:
+      docker_latest_image_tag:
+        type: string
+        default: "latest-staging"
+      docker_image_tag:
+        type: string
+        default: ${CIRCLE_SHA1}
     steps:
       - setup_remote_docker
       - run: 
           name: Building docker image
           command: |
-            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG} -t ${DOCKHUB_ORGANISATION}/binary-static:production-latest .
+            docker build -t ${DOCKHUB_ORGANISATION}/binary-static:<< parameters.docker_image_tag >> -t ${DOCKHUB_ORGANISATION}/binary-static:<< parameters.docker_latest_image_tag >> .
       - run: 
           name: Pushing Image to docker hub
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push ${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
-            docker push ${DOCKHUB_ORGANISATION}/binary-static:production-latest
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:<< parameters.docker_image_tag >>
+            docker push ${DOCKHUB_ORGANISATION}/binary-static:<< parameters.docker_latest_image_tag >>
   k8s_deploy:
     description: "Deploy to k8s cluster"
     parameters:
       k8s_svc_name:
         type: string
         default: "staging-binary-com"
+      k8s_namespace:
+        type: string
+        default: "www-binary-com-staging"
+      k8s_version:
+        type: string
+        default: ${CIRCLE_SHA1}
     steps:
       - k8s/install-kubectl
       - run: 
           name: Deploying to k8s cluster for service << parameters.k8s_svc_name >>
           command: |
-            for SERVER_ID in {1..5}
-            do
-              KUBE_SERVER_REF="KUBE_SERVER_$SERVER_ID"
-              SERVICEACCOUNT_TOKEN_REF="SERVICEACCOUNT_TOKEN_$SERVER_ID"
-              CA_CRT_REF="CA_CRT_$SERVER_ID"
-              if [ ! -z "${!KUBE_SERVER_REF}" ]
-              then
-                echo "Deploying to cluster $SERVER_ID"
-                CA_CRT="${!CA_CRT_REF}"
-                KUBE_SERVER="${!KUBE_SERVER_REF}"
-                SERVICEACCOUNT_TOKEN="${!SERVICEACCOUNT_TOKEN_REF}"
-                echo $CA_CRT | base64 --decode > ca.crt
-                kubectl --server=${KUBE_SERVER} --certificate-authority=ca.crt --token=$SERVICEACCOUNT_TOKEN set image deployment/<< parameters.k8s_svc_name >> << parameters.k8s_svc_name >>=${DOCKHUB_ORGANISATION}/binary-static:${CIRCLE_TAG}
-              fi
-            done
+            TAG=${CIRCLE_TAG:-$CIRCLE_SHA1}
+            export NAMESPACE=<< parameters.k8s_namespace >>
+            git clone https://github.com/binary-com/devops-ci-scripts
+            cd devops-ci-scripts/k8s-build_tools
+            echo $CA_CRT | base64 --decode > ca.crt
+            ./release.sh binary-static << parameters.k8s_version >>
   notify_slack:
     description: "Notify slack"
     steps:
@@ -139,7 +143,7 @@ jobs:
       - git_checkout_from_cache
       - npm_install
       - test
-  release_beta:
+  release_staging:
     docker:
       - image: circleci/node:9.8.0-stretch
     steps:
@@ -152,6 +156,8 @@ jobs:
           target: 'translations'
       - deploy:
           target_branch: "staging"
+      - docker_build_push
+      - k8s_deploy
       - notify_slack
   release_production:
     docker:
@@ -174,10 +180,14 @@ jobs:
       - test
       - build:
           target: 'production'
-      - docker_build_push
+      - docker_build_push:
+          docker_latest_image_tag: latest
+          docker_image_tag: ${CIRCLE_TAG}
       - k8s_deploy:
           k8s_svc_name: "production-binary-com"
-      
+          k8s_namespace: "www-binary-com-production"
+          k8s_version: ${CIRCLE_TAG}
+
 workflows:
   test:
     jobs:
@@ -187,7 +197,7 @@ workflows:
               ignore: /^master$/
   release:
     jobs:
-      - release_beta:
+      - release_staging:
           filters:
             branches:
               only: /^master$/

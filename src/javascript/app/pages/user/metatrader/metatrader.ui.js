@@ -24,6 +24,7 @@ const MetaTraderUI = (() => {
         $templates,
         $form,
         $main_msg,
+        mt5_login_list,
         validations,
         submit,
         topup_demo,
@@ -58,6 +59,10 @@ const MetaTraderUI = (() => {
         $main_msg    = $container.find('#main_msg');
         $container.find('[class*="act_"]').on('click', populateForm);
 
+        BinarySocket.wait('mt5_login_list').then(() => {
+            mt5_login_list = State.getResponse('mt5_login_list');
+        });
+
         MetaTraderConfig.setMessages($templates.find('#messages'));
 
         validations = MetaTraderConfig.validations();
@@ -73,11 +78,11 @@ const MetaTraderUI = (() => {
         $mt5_web_link.attr('href', `${mt5_url}${query_params}`);
     };
 
-    const populateTradingServers = () => {
+    const populateTradingServers = (acc_type) => {
         const $ddl_trade_server = $form.find('#ddl_trade_server');
 
         $ddl_trade_server.empty();
-        let account_type = newAccountGetType();
+        let account_type = acc_type || newAccountGetType();
         const num_servers = {
             disabled : 0,
             supported: 0,
@@ -441,12 +446,18 @@ const MetaTraderUI = (() => {
                 .setVisibility(1);
 
             if (action === 'manage_password') {
-                $form.find('button[type="submit"]').append(getAccountsInfo(acc_type).info.display_login ? ` ${localize('for account [_1]', getAccountsInfo(acc_type).info.display_login)}` : '');
+                if (shouldSetTradingPassword()) {
+                    $form.find('#new_client_message').setVisibility(1);
+                } else {
+                    $form.find('#existing_client_message').setVisibility(1);
+                }
+                $form.find('button#btn_submit_password_change[type="submit"]').append(accounts_info[acc_type].info.display_login ? ` ${localize('for account [_1]', accounts_info[acc_type].info.display_login)}` : '');
                 if (!token) {
                     $form.find('#frm_verify_password_reset').setVisibility(1);
                 } else if (!Validation.validEmailToken(token)) {
                     $form.find('#frm_verify_password_reset').find('#token_error').setVisibility(1).end().setVisibility(1);
                 } else {
+                    $form.find('#frm_password_change').setVisibility(0);
                     $form.find('#frm_password_reset').setVisibility(1);
                 }
             }
@@ -599,15 +610,37 @@ const MetaTraderUI = (() => {
             trading_server.id === getAccountsInfo(account).info.server
         );
 
+    const shouldSetTradingPassword = () => {
+        const { status } = State.getResponse('get_account_status');
+
+        return Array.isArray(status) && status.includes('trading_password_required');
+    };
+
     const displayStep = (step) => {
         const new_account_type = newAccountGetType();
         const is_demo = /demo/.test(new_account_type);
+        const should_set_trading_password = shouldSetTradingPassword();
         const is_synthetic = /gaming/.test(new_account_type);
+        const has_mt5_account = mt5_login_list.length > 0;
 
         $form.find('#msg_form').remove();
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_3').find('.error-msg, .days-to-crack').setVisibility(0);
+
+        // Show proper notice msg based on api flag
+        if (should_set_trading_password) {
+            $form.find('#view_3').find('#trading_password_new_user').setVisibility(1);
+            if (has_mt5_account) {
+                $form.find('#trading_password_input').setVisibility(0);
+                $form.find('#has_mt5_new_user_btn_submit_new_account').setVisibility(1);
+            } else {
+                $form.find('#new_user_btn_submit_new_account').setVisibility(1);
+            }
+        } else {
+            $form.find('#view_3').find('#trading_password_existing_user').setVisibility(1);
+        }
+
         $form.find(`.${is_demo ? 'real' : 'demo'}-only`).setVisibility(0);
 
         // we do not show step 2 (servers selection) to demo and non synthetic accouns
@@ -628,11 +661,22 @@ const MetaTraderUI = (() => {
             $view_2_button_container.setVisibility(1);
         } else if (step === 3) {
             $form.find('input').not(':input[type=radio]').val('');
+            $form.find('#trading_password_reset_required').setVisibility(0);
 
-            const $view_3_button_container = $form.find('#view_3-buttons');
-
+            let $view_3_button_container;
+            if (should_set_trading_password) {
+                $view_3_button_container = $form.find('#view_3-buttons_new_user');
+            } else {
+                $view_3_button_container = $form.find('#view_3-buttons_existing_user');
+            }
             $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_3_button_container);
             $view_3_button_container.setVisibility(1);
+            $view_3_button_container.find('#btn_forgot_trading_password').on('click', () => displayStep(4));
+        } else if (step === 4) {
+            BinarySocket.send({
+                verify_email: Client.get('email'),
+                type        : 'trading_platform_password_reset',
+            });
         } else if (step !== 1) {
             displayStep(1);
         }
@@ -719,11 +763,16 @@ const MetaTraderUI = (() => {
                 $(e.target).not(':input[disabled]').attr('checked', 'checked');
             }
 
+            const new_user_submit_button = $form.find(mt5_login_list.length > 0 ? '#has_mt5_new_user_btn_submit_new_account' : '#new_user_btn_submit_new_account');
+            const existing_user_submit_button = $form.find('#existing_user_btn_submit_new_account');
+
             // Disable/enable submit button based on whether any of the checkboxes is checked.
             if ($form.find('#ddl_trade_server input[checked]').length > 0) {
-                $form.find('#btn_submit_new_account').removeAttr('disabled');
+                new_user_submit_button.removeAttr('disabled');
+                existing_user_submit_button.removeAttr('disabled');
             } else {
-                $form.find('#btn_submit_new_account').attr('disabled', true);
+                new_user_submit_button.attr('disabled', true);
+                existing_user_submit_button.attr('disabled', true);
             }
         });
 
@@ -784,12 +833,12 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 .btn-cancel').removeClass('invisible');
             });
         }
-        
+
         // disable next button and Synthetic option if all servers are used or unavailable
-        const num_servers = populateTradingServers();
-        if (num_servers.supported === num_servers.used + num_servers.disabled) {
+        const num_servers = populateTradingServers('real_gaming_financial');
+        if (/real/.test(selected_acc_type) && num_servers.supported === num_servers.used + num_servers.disabled) {
             disableButtonLink('.btn-next');
-            $form.find('.step-2 #rbtn_gaming_financial').addClass('existed disabled');
+            $form.find('.step-2 #rbtn_gaming_financial').addClass('existed');
         }
     };
 
@@ -909,8 +958,29 @@ const MetaTraderUI = (() => {
         $('#mt_loading').remove();
     };
 
+    /**
+     * @param {string} action
+     * @returns {jQuery}
+     */
+    const  getActionButton = (action) => {
+        let button_selector = 'button';
+        if (action === 'new_account') {
+            if (shouldSetTradingPassword()) {
+                if (mt5_login_list.length > 0) {
+                    button_selector = '#has_mt5_new_user_btn_submit_new_account';
+                } else {
+                    button_selector = '#new_user_btn_submit_new_account';
+                }
+            } else {
+                button_selector = '#existing_user_btn_submit_new_account';
+            }
+        }
+        return actions_info[action].$form.find(button_selector);
+    };
+
     const disableButton = (action) => {
-        const $btn = actions_info[action].$form.find('button');
+        const $btn = getActionButton(action);
+
         if ($btn.length && !$btn.find('.barspinner').length) {
             $btn.attr('disabled', 'disabled');
             const $btn_text = $('<span/>', { text: $btn.text(), class: 'invisible' });
@@ -919,14 +989,41 @@ const MetaTraderUI = (() => {
         }
     };
 
-    const enableButton = (action, response = {}) => {
-        const $btn = actions_info[action].$form.find('button');
+    const enableButton = (action, response) => {
+        const $btn = getActionButton(action);
         if ($btn.length && $btn.find('.barspinner').length) {
             $btn.removeAttr('disabled').html($btn.find('span').text());
         }
         if (/password_reset/.test(action)) {
             // after submit is done, reset token value
             resetManagePasswordTab(action, response);
+        }
+        if (/new_account/.test(action)) {
+            resetNewAccountForm(response);
+        }
+    };
+
+    const resetNewAccountForm = (response) => {
+        const should_reset_view = ['#view_3-buttons_reset_password', '#trading_password_reset_required'];
+        const normal_view = ['#trading_password_existing_user', '#view_3-buttons_existing_user', '#trading_password_input'];
+        const $hint = $('#trading_password_existing_user_validation_error');
+        $('#trading_password').val('').focus();
+        $hint.setVisibility(0); // Make sure hint is hidden unless told otherwise
+        // We need to render a different form on this error.
+        if (response.error && response.error.code === 'PasswordReset') {
+            normal_view.forEach(selector => $(selector).setVisibility(0));
+            should_reset_view.forEach(selector => $(selector).setVisibility(1));
+            $('#btn_reset_trading_password').on('click.reset_password', () => displayStep(4));
+            $('#try_again').on('click', () => {
+                // Reset previous form
+                normal_view.forEach(selector => $(selector).setVisibility(1));
+                should_reset_view.forEach(selector => $(selector).setVisibility(0));
+                $('#btn_reset_trading_password').off('click.reset_password');
+                displayStep(3);
+            });
+        }
+        if (response.error && response.error.code === 'PasswordError') {
+            $hint.setVisibility(1);
         }
     };
 
@@ -937,7 +1034,7 @@ const MetaTraderUI = (() => {
             if (action === 'password_reset') { // go back to verify reset password form
                 loadAction('manage_password');
                 if (!response.error) {
-                    displayMainMessage(localize('The [_1] password of account number [_2] has been changed.', [response.echo_req.password_type, MetaTraderConfig.getDisplayLogin(response.echo_req.login)]));
+                    displayMainMessage(localize('The investor password of account number [_1] has been changed.', MetaTraderConfig.getDisplayLogin(response.echo_req.account_id)));
                 } else if (has_invalid_token) {
                     $form.find('#frm_verify_password_reset #token_error').setVisibility(1);
                 }

@@ -43,13 +43,15 @@ const Financial = () => (
                     <LastName className='input-disabled' />
                     <DateOfBirth className='input-disabled' />
                     <Citizenship />
-                    <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{ single: 'single' }} />
+                    <div className='place_of_birth_container'>
+                        <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{ single: 'single' }} />
+                    </div>
                     <Residence />
                     <AccountOpeningReason />
                     <Phone />
                 </Fieldset>
 
-                <Fieldset legend={it.L('Tax information')}>
+                <Fieldset id='tax_information_form' legend={it.L('Tax information')}>
                     <TaxInformationForm />
                 </Fieldset>
 

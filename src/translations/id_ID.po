@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-05-10 03:31\n"
+"PO-Revision-Date: 2021-06-15 06:35\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -265,9 +265,6 @@ msgstr "%1 adalah salah satu perusahaan trading online tertua dan paling sukses 
 msgid "%1 is owned and operated by the Deriv Group Ltd. group of companies. For more information, %2visit our history page%3."
 msgstr "%1 dimiliki dan dioperasikan oleh grup perusahaan Deriv Group Ltd. Untuk informasi lebih lanjut, %2kunjungi halaman sejarah kami%3."
 
-msgid "%1 is rebranding to Deriv.com"
-msgstr "%1 melakukan rebranding ke Deriv.com"
-
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 adalah pemenang penghargaan sebagai industri perintis opsi trading online. Kami bangga dengan:"
 
@@ -439,8 +436,8 @@ msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pad
 msgid "%124/7 customer support%2 to enhance your trading experience"
 msgstr "%1Customer support tersedia 24/7%2 untuk meningkatkan pengalaman trading Anda"
 
-msgid "%1Choose a currency%2 for your fiat currency account:"
-msgstr "%1Pilih mata uang%2 untuk akun fiat Anda:"
+msgid "%1CFD%2"
+msgstr "%1CFD%2"
 
 msgid "%1Contact us%2 to arrange a date and time for the video call."
 msgstr "%1Hubungi kami%2 untuk mengatur tanggal dan waktu panggilan video."
@@ -451,6 +448,9 @@ msgstr "%1Deriv-Demo%2 jika sinyal Anda hanya untuk akun demo."
 msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accounts only."
 msgstr "%1Deriv-Server%2 atau %1Deriv-Server-02%2 jika sinyal Anda hanya untuk akun riil."
 
+msgid "%1Digital Options%1"
+msgstr "%1Opsi Digital%1"
+
 msgid "%1Founded%2 October 1999"
 msgstr "%1Didirikan%2 Oktober 1999"
 
@@ -460,11 +460,14 @@ msgstr "%1Sehubungan dengan pelanggan Deriv (MX) Ltd, hutang trading online dapa
 msgid "%1Manage your accounts%2"
 msgstr "%1Kelola akun Anda%2"
 
+msgid "%1Maximise returns%2 by %3risking more%4 than you put in."
+msgstr "%1Maksimalkan keuntungan%2 dengan %3merisikokan lebih%4 dari modal Anda."
+
 msgid "%1No, change my fiat account's currency now%2"
 msgstr "%1Tidak, rubah mata uang akun fiat saya sekarang%2"
 
-msgid "%1Note%2: These limits are only applicable to your %3 real account. To set limits, switch to the respective account and set your limits accordingly."
-msgstr "%1Nota%2: Batasan ini hanya berlaku pada akun riil %3 Anda. Untuk menetapkan batas, akses akun masing-masing dan tetapkan batasan yang sesuai."
+msgid "%1Not Sure?%1"
+msgstr "%1Tidak yakin?%1"
 
 msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
 msgstr "%1Catatan:%2 Untuk pilihan penyedia sinyal yang lebih luas pada Deriv, kunjungi %3Halaman showcase MQL5%4 dan cari Deriv di bawah kolom server Broker."
@@ -865,6 +868,9 @@ msgstr "Tik adalah gerakan minimal naik atau turun pada harga pasar."
 msgid "A trade is opened by either executing a \"Buy\" or a \"Sell\" Order based on a specified number of lots (volume) that constitute the Underlying Instrument of the relevant market."
 msgstr "Trading dibuka dengan melakukan Order \"Beli\" atau \"Jual\" berdasarkan jumlah lot (volume) tertentu yang merupakan Instrumen Dasar dari pasar yang relevan."
 
+msgid "A trading password is used to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices. "
+msgstr "Kata sandi trading digunakan untuk mengakses akun MT5 melalui aplikasi yang diakses via ponsel atau perangkat lain. "
+
 msgid "A university degree in Accounting/Finance or its equivalent"
 msgstr "Gelar sarjana di bidang Akuntansi/Keuangan atau yang setara"
 
@@ -997,9 +1003,6 @@ msgstr "Akses ke data pribadi"
 msgid "Access to the client's personal data is strictly prohibited, with the exception of key %1 personnel and only as needed for the performance of their duties."
 msgstr "Akses ke dalam data pribadi klien adalah sangat dilarang, dengan pengecualian bagi personel kunci %1 dan hanya sesuai kebutuhan untuk menjalankan tugasnya."
 
-msgid "Access your account with full trading permission."
-msgstr "Akses akun Anda dengan pengaksesan trading penuh."
-
 msgid "Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media"
 msgstr "Ketrampilan menulis dan mengedit dengan pengalaman editorial minimal lima tahun dalam iklan digital atau media online"
 
@@ -1017,6 +1020,9 @@ msgstr "Kategorisasi Akun"
 
 msgid "Account Closure"
 msgstr "Penutupan Akun"
+
+msgid "Account Deactivated"
+msgstr "Akun Dinonaktifkan"
 
 msgid "Account Deposit Currency"
 msgstr "Mata Uang Akun Deposit"
@@ -1140,6 +1146,9 @@ msgstr "Tambahkan +/– untuk menentukan barrier offset. Contoh, +0,005 berarti 
 
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "Tambahkan deskripsi dan klik %1Simpan%2 untuk menyelesaikan pendaftaran."
+
+msgid "Add account"
+msgstr "Tambahkan akun"
 
 msgid "Add another word or two. Uncommon words are better."
 msgstr "Tambahkan satu atau dua kata lagi. Kata-kata yang tidak umum lebih baik."
@@ -1588,6 +1597,9 @@ msgstr "Kelayakan"
 msgid "Appropriateness test"
 msgstr "Tes kelayakan"
 
+msgid "Apps you have linked to this password:"
+msgstr "Aplikasi yang telah Anda tautkan pada kata sandi ini:"
+
 msgid "Apr"
 msgstr "Apr"
 
@@ -1617,6 +1629,9 @@ msgstr "Apa Anda yakin ingin mendaftar akun %1 Anda sekarang?"
 
 msgid "Are you sure you want to deposit in %1?"
 msgstr "Apa Anda yakin ingin mendeposit dalam %1?"
+
+msgid "Are you sure you want to unlink from %1?"
+msgstr "Apa Anda yakin ingin membatalkan tautan dari %1?"
 
 msgid "Are you sure?"
 msgstr "Apa Anda yakin?"
@@ -2068,6 +2083,9 @@ msgstr "Sebelum mengunggah dokumen, pastikan bahwa %1data pribadi%2 Anda telah d
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "Sebelum menggunakan trading robot atau Expert Advisor dan melanjutkan trading, klien harus mengujinya pada akun demo terlebih dahulu."
 
+msgid "Before you deactivate your account, you need to do the following:"
+msgstr "Sebelum menonaktifkan akun, Anda harus melakukan hal berikut:"
+
 msgid "Beginner"
 msgstr "Pemula"
 
@@ -2146,6 +2164,12 @@ msgstr "Binary KK telah menerima lisensi Jepang"
 msgid "Binary Options"
 msgstr "Opsi Binary"
 
+msgid "Binary Password"
+msgstr "Kata sandi Binary"
+
+msgid "Binary Password Reset"
+msgstr "Reset Kata Sandi Binary"
+
 msgid "Binary WebTrader"
 msgstr "Binary WebTrader"
 
@@ -2173,8 +2197,17 @@ msgstr "Pengalaman trading opsi Binary"
 msgid "Binary options trading frequency"
 msgstr "Frekuensi trading opsi binary"
 
+msgid "Binary options trading is not available in your country."
+msgstr "Trading opsi binary tidak tersedia di negara Anda."
+
+msgid "Binary options trading is not available in your financial account."
+msgstr "Trading opsi binary tidak tersedia pada akun finansial Anda."
+
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "Trading opsi binary relatif mudah. Anda bisa membeli kontrak hanya dalam tiga langkah:"
+
+msgid "Binary password"
+msgstr "Kata sandi Binary"
 
 msgid "Binary shall have the absolute discretionary power to accept or reject an application to open an Account by a client introduced by the Introducing Broker."
 msgstr "Binary akan memiliki wewenang mutlak untuk menerima atau menolak aplikasi untuk pendaftaran Akun oleh klien yang diperkenalkan oleh Introducing Broker."
@@ -2199,9 +2232,6 @@ msgstr "Platform Binary memproses rata-rata %1 %2transaksi%3 per detik, 24/7"
 
 msgid "Binary.com Graduate Program"
 msgstr "Binary.com Graduate Program"
-
-msgid "Binary.com MT5 is moving to Deriv"
-msgstr "Binary.com MT5 berpindah ke Deriv"
 
 msgid "Binary.com Shop"
 msgstr "Toko Binary.com"
@@ -2536,14 +2566,14 @@ msgstr "Champion Group Ltd: Vanuatu"
 msgid "Change API Endpoint"
 msgstr "Rubah Endpoint API"
 
-msgid "Change MT5 password"
-msgstr "Rubah kata sandi MT5"
-
 msgid "Change Password"
 msgstr "Perubahan Kata Sandi"
 
 msgid "Change currency"
 msgstr "Rubah mata uang"
+
+msgid "Change investor password"
+msgstr "Ubah kata sandi investor"
 
 msgid "Change password"
 msgstr "Merubah kata sandi"
@@ -2551,8 +2581,8 @@ msgstr "Merubah kata sandi"
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Mengubah tingkat Margin terkait dengan Open Posisi dan Order baru"
 
-msgid "Change your main login password."
-msgstr "Rubah kata sandi untuk mengakses akun Anda."
+msgid "Change your main login and trading password."
+msgstr "Ganti kata sandi utama dan kata sandi trading Anda."
 
 msgid "Changes to this privacy policy"
 msgstr "Perubahan kebijakan privasi ini"
@@ -2590,6 +2620,15 @@ msgstr "Periksa apakah terhubung dan berfungsi. Anda juga dapat <fallback>melanj
 msgid "Check that your number is correct"
 msgstr "Periksa apakah nomor Anda sudah benar"
 
+msgid "Check the email account associated with your Apple ID and click the link in the email to proceed."
+msgstr "Cek alamat email yang terhubung dengan ID Apple Anda dan klik tautan pada email untuk melanjutkan."
+
+msgid "Check your Facebook account email and click the link in the email to proceed."
+msgstr "Cek alamat email akun Facebook Anda dan klik tautan pada email untuk melanjutkan."
+
+msgid "Check your Google account email and click the link in the email to proceed."
+msgstr "Cek alamat email akun Google Anda dan klik tautan pada email untuk melanjutkan."
+
 msgid "Check your image"
 msgstr "Periksa gambar Anda"
 
@@ -2604,9 +2643,6 @@ msgstr "Memeriksa"
 
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Kepala Eksekutif, Pejabat Senior dan Legislator"
-
-msgid "Choose a currency for your real account:"
-msgstr "Pilih mata uang untuk akun riil Anda:"
 
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Pilih durasi kontrak dari 10 detik hingga 365 hari."
@@ -2637,9 +2673,6 @@ msgstr "Pilih dari satu juta lebih kemungkinan variasi trading kapan saja, dan s
 
 msgid "Choose from three main trade types:"
 msgstr "Pilih dari tiga jenis trading utama:"
-
-msgid "Choose one or more cryptocurrency accounts:"
-msgstr "Pilih satu atau lebih akun mata uang kripto:"
 
 msgid "Choose scopes:"
 msgstr "Pilih cangkupan:"
@@ -2818,8 +2851,8 @@ msgstr "Menutup semua atau salah satu Open Posisi klien pada tingkat penutupan y
 msgid "Close identity verification screen"
 msgstr "Menutup layar verifikasi identitas"
 
-msgid "Close my account"
-msgstr "Tutup akun saya"
+msgid "Close open positions"
+msgstr "Tutup kontrak yang masih berjalan"
 
 msgid "Close your %1 account."
 msgstr "Tutup akun %1 Anda."
@@ -2856,9 +2889,6 @@ msgstr "Menutup atau menutup sebagian dari Open Posisi klien berdasarkan harga y
 
 msgid "Closing price"
 msgstr "Harga penutupan"
-
-msgid "Closing your %1 accounts involves closing all open positions in your accounts, withdrawing your funds, and deactivating your accounts."
-msgstr "Penutupan akun %1 adalah termasuk menutup semua posisi berjalan, menarik dana, dan menonaktifkan akun Anda."
 
 msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
 msgstr "Layanan DNS publik Cloudfare memberi Anda penjelajahan web yang lebih cepat dan aman."
@@ -3061,6 +3091,9 @@ msgstr "Lanjutkan"
 msgid "Confirm changes"
 msgstr "Konfirmasikan perubahan"
 
+msgid "Confirm password"
+msgstr "Konfirmasi kata sandi"
+
 msgid "Conflicts Policy"
 msgstr "Kebijakan Konflik"
 
@@ -3120,6 +3153,9 @@ msgstr "Lanjutkan pada telepon"
 
 msgid "Continue on your phone"
 msgstr "Lanjutkan pada telepon Anda"
+
+msgid "Continue to account deactivation"
+msgstr "Lanjutkan ke penonaktifan akun"
 
 msgid "Continue trading"
 msgstr "Lanjutkan trading"
@@ -3367,6 +3403,9 @@ msgstr "Daftar akun dana virtual baru"
 msgid "Create or Manage Accounts"
 msgstr "Mendaftar atau Mengelola Akun"
 
+msgid "Create or reset password"
+msgstr "Membuat atau mereset kata sandi"
+
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "Buat strategi melawan potensi risiko yang mungkin timbul karena inovasi yang mengganggu"
 
@@ -3448,14 +3487,14 @@ msgstr "Pasangan mata uang dikategorikan sebagai berikut:"
 msgid "Current"
 msgstr "Saat ini"
 
-msgid "Current MT5 password"
-msgstr "Kata sandi MT5 saat ini"
-
 msgid "Current Time"
 msgstr "Waktu Terkini"
 
 msgid "Current balance"
 msgstr "Saldo saat ini"
+
+msgid "Current investor password"
+msgstr "Kata sandi investor saat ini"
 
 msgid "Current password"
 msgstr "Kata sandi saat ini"
@@ -3474,6 +3513,9 @@ msgstr "Fokus pelanggan"
 
 msgid "Customer funds"
 msgstr "Dana pelanggan"
+
+msgid "Customer service was unsatisfactory."
+msgstr "Layanan customer service yang kurang memuaskan."
 
 msgid "Customer-centric partnership"
 msgstr "Kemitraan yang berfokus pada pelanggan"
@@ -3600,6 +3642,15 @@ msgstr "Tanggal biasanya mudah ditebak"
 
 msgid "Deactivate"
 msgstr "Menonaktifkan"
+
+msgid "Deactivate Account"
+msgstr "Menonaktifkan Akun"
+
+msgid "Deactivate account?"
+msgstr "Menonaktifkan akun?"
+
+msgid "Deactivating your account will automatically log you out. You can reactivate your account by logging in at any time."
+msgstr "Dengan menonaktifkan akun maka Anda akan secara otomatis keluar dari pengaksesan akun. Anda dapat mengaktifkan kembali akun berikut dan mengaksesnya kapan saja."
 
 msgid "Deal Cancel. Fee"
 msgstr "Batalkan transaksi. Biaya"
@@ -3928,9 +3979,6 @@ msgstr "Sanggahan"
 msgid "Disclaimers"
 msgstr "Sanggahan"
 
-msgid "Discover what’s new"
-msgstr "Temukan berita terbaru"
-
 msgid "Dismiss alert"
 msgstr "Tutup peringatan"
 
@@ -4035,6 +4083,9 @@ msgstr "Apakah Anda ingin bertrading dalam %1. Anda dapat mendaftar akun kripto 
 
 msgid "Don't worry, you can simply %1reset your password%2."
 msgstr "Jangan khawatir, Anda hanya perlu %1mereset kata sandi Anda%2."
+
+msgid "Done"
+msgstr "Selesai"
 
 msgid "Dormant and inactive accounts"
 msgstr "Akun Dormant dan nonaktif"
@@ -4216,6 +4267,9 @@ msgstr "Setiap transfer dikenakan biaya transfer %1 atau biaya minimum sebesar %
 msgid "Earn"
 msgstr "Hasilkan"
 
+msgid "Earn %1fixed returns%2 by %3risking only%4 what you put in."
+msgstr "Dapatkan %1keuntungan tetap%2 dengan %3risiko terbatas%4 pada modal Anda."
+
 msgid "Earn 100 USD in commission for each successful referral. Your referred client must open a %1real account%2 through your unique affiliate link and deposit a total of 100 USD or more (one-time or accumulative) in the account. This commission plan is only available for clients based in the EU."
 msgstr "Dapatkan komisi sebesar USD 100 bagi setiap referal yang Anda rujuk. Klien yang Anda referensikan harus mendaftar %1Akun riil%2 melalui link afiliasi unik Anda dan melakukan deposit sejumlah USD 100 atau lebih (satu kali atau akumulatif) pada akun mereka. Rencana Komisi ini hanya tersedia untuk klien yang berbasis di Uni Eropa."
 
@@ -4374,6 +4428,15 @@ msgstr "Pastikan desain dan pengembangan setiap halaman atau produk konsisten de
 
 msgid "Ensure the integrity of releases by coordinating testing activities"
 msgstr "Pastikan integritas rilis dengan mengoordinasi aktivitas pengujian"
+
+msgid "Enter a new Binary password."
+msgstr "Masukkan kata sandi Binary baru."
+
+msgid "Enter a new password for your Binary account."
+msgstr "Masukkan kata sandi baru untuk akun Binary Anda."
+
+msgid "Enter a new trading password."
+msgstr "Masukkan kata sandi trading baru."
 
 msgid "Enter mobile number"
 msgstr "Masukkan nomor ponsel"
@@ -4966,9 +5029,6 @@ msgstr "Akun Finansial"
 msgid "Financial assessment"
 msgstr "Penilaian keuangan"
 
-msgid "Financial concerns"
-msgstr "Masalah keuangan"
-
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Derivatif finansial yang memungkinkan Anda bertrading pada pergerakan aset dasar."
 
@@ -5160,6 +5220,9 @@ msgstr "Trading forex melibatkan pembelian satu mata uang dan penjualan mata uan
 
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "Trading forex akan melibatkan pembelian dan penjualan \"pasangan mata uang\" ini. Ketika Anda membeli suatu pasangan mata uang seperti EUR/USD, berarti Anda membeli EURO dan menjual USD pada saat yang bersamaan."
+
+msgid "Forgot password"
+msgstr "Lupa kata sandi"
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Didirikan pada tahun 1999, %1 merupakan salah satu nama tertua dan dihormati pada trading online binary."
@@ -5386,15 +5449,6 @@ msgstr "Kunjungi dashboard MetaTrader 5"
 msgid "Go to statement"
 msgstr "Kunjungi pernyataan"
 
-msgid "Go to the %1Cashier%2 to withdraw funds from your %3 accounts."
-msgstr "Kunjungi %1Kasir%2 untuk menarik dana pada akun %3."
-
-msgid "Go to the %1MT5 dashboard%2 to withdraw funds from your Binary.com MT5 account."
-msgstr "Kunjungi %1Dasbor MT5%2 unuk menarik dana pada akun MT5 Binary.com Anda."
-
-msgid "Go to the %1Portfolio%2 to close all open positions from your Binary.com accounts."
-msgstr "Kunjungi %1Portofolio%2 untuk menutup semua posisi berjalan pada akun Binary.com Anda."
-
 msgid "Go to the MQL5 signals showcase page and click on the %1Create signal%2 button."
 msgstr "Kunjungi halaman tampilan sinyal MQL5 dan klik pada tombol %1Membuat sinyal%2."
 
@@ -5424,6 +5478,9 @@ msgstr "Diutamakan memiliki:"
 
 msgid "Good understanding of payments functionality and a keen interest in cryptocurrencies"
 msgstr "Pemahaman yang baik mengenai fungsi pembayaran dan berminat dengan mata uang kripto"
+
+msgid "Got it"
+msgstr "Mengerti"
 
 msgid "Governing law"
 msgstr "Pengaturan hukum"
@@ -5569,6 +5626,9 @@ msgstr "Kontrak Higher/Lower"
 msgid "Highlights"
 msgstr "Sorotan"
 
+msgid "Hint: You may have chosen a different trading password from your %1 log in password."
+msgstr "Petunjuk: Anda mungkin menggunakan kata sandi trading lain selain kata sandi untuk mengakses %1. "
+
 msgid "Historical Mediterranean island"
 msgstr "Pulau Mediterania yang bersejarah"
 
@@ -5695,35 +5755,17 @@ msgstr "Saya menyatakan bahwa saya bukan orang yang terlibat dengan politik (PEP
 msgid "I forgot my password, what should I do?"
 msgstr "Saya lupa kata sandi, apa yang harus saya lakukan?"
 
+msgid "I have other financial priorities."
+msgstr "Saya memiliki prioritas keuangan lainnya."
+
 msgid "I have read and agree to the %1terms and conditions%2 of the site."
 msgstr "Saya telah membaca dan menyetujui %1syarat dan kondisi%2 situs ini."
 
 msgid "I hereby confirm that the tax information I provided is true and complete. I will also inform Deriv Investments (Europe) Limited about any changes to this information."
 msgstr "Dengan ini saya mengkonfirmasikan bahwa informasi pajak yang saya berikan adalah benar dan lengkap. Saya juga akan menginformasikan kepada Deriv Investments (Europe) Limited jika terdapat perubahan pada informasi ini."
 
-msgid "I want to change my affiliate instead"
-msgstr "Saya ingin mengganti afiliasi"
-
-msgid "I want to change my currency instead"
-msgstr "Saya ingin mengubah mata uang"
-
-msgid "I want to close my account"
-msgstr "Saya ingin menutup akun saya"
-
-msgid "I want to limit my trading activity instead"
-msgstr "Saya ingin membatasi aktivitas trading"
-
-msgid "I want to open a cryptocurrency account instead"
-msgstr "Saya ingin mendaftar akun mata uang kripto"
-
-msgid "I want to open a fiat currency account instead"
-msgstr "Saya ingin mendaftar akun mata uang fiat"
-
-msgid "I want to open a real account instead"
-msgstr "Saya ingin mendaftar akun riil"
-
-msgid "I want to open another cryptocurrency account instead"
-msgstr "Saya ingin mendaftar akun mata uang kripto lain"
+msgid "I prefer another trading website."
+msgstr "Saya lebih memilih situs trading lain."
 
 msgid "I want to reapply"
 msgstr "Saya ingin mendaftar kembali"
@@ -5731,14 +5773,20 @@ msgstr "Saya ingin mendaftar kembali"
 msgid "I want to receive updates on %1 products, services, and events."
 msgstr "Saya ingin menerima pemberitahuan mengenai produk, layanan dan acara yang diselenggarakan oleh %1."
 
-msgid "I want to set my currency instead"
-msgstr "Saya ingin menetapkan mata uang pada akun saya"
+msgid "I want to stop myself from trading."
+msgstr "Saya ingin berhenti dari bertrading."
 
 msgid "I would like to be treated as a professional client."
 msgstr "Saya ingin diperlakukan sebagai klien profesional."
 
+msgid "I'm deactivating my account for other reasons."
+msgstr "Saya menonaktifkan akun berhubung alasan lain."
+
 msgid "I'm interested"
 msgstr "Saya tertarik"
+
+msgid "I'm no longer interested in trading."
+msgstr "Saya tidak tertarik lagi pada trading."
 
 msgid "I. Trading"
 msgstr "I. Trading"
@@ -5972,9 +6020,6 @@ msgstr "Jika Anda adalah penggemar makanan, Anda akan terpukau dengan jumlah pil
 msgid "If you choose to be treated as a Professional Client, we'll regard you as having the required market knowledge and experience. As such, we'll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:"
 msgstr "Jika Anda memilih untuk diperlakukan sebagai Klien Profesional, kami akan menganggap Anda memiliki pengetahuan dan pengalaman pasar yang dibutuhkan. Dengan demikian, kami akan mengambil langkah untuk memastikan bahwa permintaan Anda pada status Klien Profesional memenuhi kriteria di atas, termasuk permintaan untuk hal berikut:"
 
-msgid "If you deactivate:"
-msgstr "Jika Anda menonaktifkan:"
-
 msgid "If you decide to buy or 'go long' on the US 100 index, your profit will continue to increase as long as the price of the US 100 index keeps rising. However, if the price falls, the losses you incur will also increase."
 msgstr "Jika Anda memutuskan untuk membeli atau 'go long' pada indeks US 100, profit Anda akan terus naik selama harga indeks US 100 tetap naik. Namun, jika harga turun, rugi yang Anda alami juga akan bertambah."
 
@@ -5996,11 +6041,23 @@ msgstr "Jika Anda belum menerima e-mail setelah beberapa menit mendatang, silaka
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Jika Anda menemukan kerentanan pada %1kode open-source%2 kami, silahkan ajukan permohonan pada GitHub."
 
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
+msgstr "Jika Anda memiliki akun riil Binary, kunjungi %1Kasir%2 untuk menarik saldo Anda"
+
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
+msgstr "Jika Anda memiliki akun riil Binary, kunjungi %1Portfolio%2 untuk menutup posisi berjalan."
+
+msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
+msgstr "Jika Anda memiliki akun riil DMT5, kunjungi %1Dashboard MT5%2 untuk menarik dana Anda."
+
+msgid "If you have a MT5 real account, log into it to close any open positions."
+msgstr "Jika Anda memiliki akun riil MT5, akses akun tersebut untuk menutup posisi berjalan."
+
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "Jika Anda memiliki referensi pembayaran (misalnya 122), Anda dapat memasukkannya di sini."
 
-msgid "If you have opened positions in your MT5 account, please close them too."
-msgstr "Jika Anda membeli kontrak pada akun MT5, mohon tutup juga kontrak tersebut."
+msgid "If you have an account with us, we'll send you a link to your email in a few minutes to reset your password."
+msgstr "Jika Anda sudah pernah mendaftar sebelumnya, kami akan mengirimkan email untuk mereset kata sandi Anda sebentar lagi."
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Jika Anda menjaga posisi Anda terbuka dalam semalam, penyesuaian bunga akan dilakukan ke akun trading Anda sebagai indikasi biaya yang diperlukan untuk menjaga posisi Anda tetap terbuka."
@@ -6130,9 +6187,6 @@ msgstr "Jika anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <stron
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong>waktu berakhir</strong> adalah waktu yang dipilih."
-
-msgid "If you want to change your affiliate, contact %1partners@binary.com%2 for more information on how you can do this."
-msgstr "Jika Anda ingin mengubah afiliasi Anda, hubungi %1partners@binary.com%2 untuk bantuan lebih lanjut."
 
 msgid "If you wish to reduce or remove the self-exclusion period, contact our %1Customer Support%1."
 msgstr "Jika Anda ingin merubah atau menghapus periode pengecualian diri, hubungi %1Customer Support%1 kami."
@@ -6515,11 +6569,11 @@ msgstr "Produk Investasi untuk penduduk EEA disediakan oleh Deriv Investments (E
 msgid "Investments &amp; Dividends"
 msgstr "Investasi &amp; Dividen"
 
-msgid "Investor"
-msgstr "Investor"
-
 msgid "Investor Compensation Scheme"
 msgstr "Skema Kompensasi Investor"
+
+msgid "Investor password"
+msgstr "Kata sandi investor"
 
 msgid "Is there a cost for joining?"
 msgstr "Apakah ada biaya untuk mendaftar?"
@@ -6860,6 +6914,9 @@ msgstr "Kurang dari $100.000"
 msgid "Less than $25,000"
 msgstr "Kurang dari $25.000"
 
+msgid "Let us introduce you to trading on Binary."
+msgstr "Izinkan kami memperkenalkan trading Binary kepada Anda."
+
 msgid "Let's calculate the spread for EUR/USD:"
 msgstr "Mari hitung spread untuk EUR / USD:"
 
@@ -6949,6 +7006,9 @@ msgstr "Tautan ke dan mengarahkan klien Perusahaan ke dalam Aplikasi Programmer.
 
 msgid "Linked to your computer"
 msgstr "Hubungkan ke komputer Anda"
+
+msgid "Linked with %1"
+msgstr "Ditautkan dengan %1"
 
 msgid "Links"
 msgstr "Berbagai Link"
@@ -7151,12 +7211,6 @@ msgstr "Berhasil dalam wawancara pertama? Kami akan mengundang Anda untuk melaku
 msgid "Maestro is an international debit card service by Mastercard. For more information, please visit %1."
 msgstr "Maestro adalah layanan kartu debit internasional oleh Mastercard. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
-msgid "Main"
-msgstr "Utama"
-
-msgid "Main password"
-msgstr "Kata sandi utama"
-
 msgid "Maintain accurate system pricing parameters"
 msgstr "Mempertahankan parameter sistem harga yang akurat"
 
@@ -7253,6 +7307,9 @@ msgstr "Membuat penyesuaian yang wajar bagi karyawan penyandang cacat"
 msgid "Making decisions about who to employ and what salary and benefits to offer"
 msgstr "Membuat keputusan tentang siapa yang harus dipekerjakan dan berapa gaji serta manfaat yang ditawarkan"
 
+msgid "Making deposits and withdrawals is difficult."
+msgstr "Deposit dan penarikan yang sangat sulit."
+
 msgid "Making sure of having effective and updated antivirus/antispyware software and firewall in place before using public WiFi"
 msgstr "Pastikan untuk memasang perangkat lunak antivirus/antispyware dan firewall yang efektif dan diperbarui sebelum menggunakan WiFi umum"
 
@@ -7303,6 +7360,9 @@ msgstr "Mengelola keamanan, mendeteksi intrusi, perlindungan DDoS, dan ukuran ke
 
 msgid "Manage the funds in your cryptocurrency account."
 msgstr "Kelola dana pada akun mata uang kripto Anda."
+
+msgid "Manage trading password"
+msgstr "Kelola kata sandi trading"
 
 msgid "Manage your authorised applications."
 msgstr "Mengelola aplikasi resmi Anda."
@@ -7688,6 +7748,9 @@ msgstr "Harus foto yang jelas dan berwarna"
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "Foto berwarna atau gambar scan harus jelas"
 
+msgid "Must be numbers, letters, and special characters . , ' -"
+msgstr "Harus berupa angka, huruf, dan karakter khusus . , ' -"
+
 msgid "Must be under 10MB."
 msgstr "Harus di bawah 10MB."
 
@@ -7790,11 +7853,8 @@ msgstr "Tidak pernah"
 msgid "Never Used"
 msgstr "Tidak pernah dipakai"
 
-msgid "New MT5 password"
-msgstr "Kata sandi MT5 baru"
-
-msgid "New Password"
-msgstr "Kata Sandi Baru"
+msgid "New Binary password"
+msgstr "Kata sandi baru Binary"
 
 msgid "New Year's Day"
 msgstr "Tahun Baru"
@@ -7817,6 +7877,9 @@ msgstr "Dolar Selandia Baru vs Dolar AS"
 msgid "New account"
 msgstr "Akun baru"
 
+msgid "New investor password"
+msgstr "Kata sandi investor baru"
+
 msgid "New office in Asunción, Paraguay"
 msgstr "Kantor baru di Asunción, Paraguay"
 
@@ -7837,6 +7900,9 @@ msgstr "Baru di forex? Kami menjelaskan beberapa dasar mengenai pasar yang palin
 
 msgid "New token created."
 msgstr "Token baru dibuat."
+
+msgid "New trading password"
+msgstr "Kata sandi trading baru"
 
 msgid "Next"
 msgstr "Lanjutkan"
@@ -7927,9 +7993,6 @@ msgstr "Tidak diumumkan untuk mata uang ini."
 
 msgid "Not at all. Joining our affiliate programme is completely free and always will be."
 msgstr "Tidak sama sekali. Bergabung dengan program afiliasi kami benar-benar gratis dan akan selalu akan seperti itu."
-
-msgid "Not interested in trading"
-msgstr "Tidak tertarik pada trading"
 
 msgid "Not leaving devices unattended"
 msgstr "Tidak meninggalkan perangkat tanpa pengawasan"
@@ -8276,9 +8339,6 @@ msgstr "Risiko lain: Terdapat risiko lain yang terkait dengan memperdagangkan Pr
 msgid "Other than the payment of Commissions, Binary is not liable to the Introducing Broker or their Associates or any other person for any matter arising out of or in relation to this Agreement whether under the law of tort, contract, or equity or otherwise for any loss."
 msgstr "Selain dari pembayaran Komisi, Binary tidak bertanggung jawab kepada Introducing Broker atau Asosiasi mereka atau orang lain apa pun atas masalah apa pun yang timbul dari atau sehubungan dengan Perjanjian ini baik berdasarkan hukum gugatan, kontrak, atau ekuitas atau dengan kata lain atas kerugian."
 
-msgid "Others (please specify)"
-msgstr "Lainnya (mohon sebutkan)"
-
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "Tim Accounting &amp; Payments mengelola berbagai macam rekening bank dan sistem e-currency kami, serta volume transaksi besar yang terjadi setiap hari."
 
@@ -8405,6 +8465,9 @@ msgstr "Deklarasi PEP"
 msgid "PM"
 msgstr "PM"
 
+msgid "Page not available, you did not deactivate your account."
+msgstr "Halaman tidak tersedia, Anda tidak menonaktifkan akun Anda."
+
 msgid "Palladium vs US dollar"
 msgstr "Palladium vs Dolar AS"
 
@@ -8461,9 +8524,6 @@ msgstr "Reset kata sandi"
 
 msgid "Password should have lower and uppercase English letters with numbers."
 msgstr "Kata sandi harus terdiri dari huruf kecil dan besar alfabet beserta angka."
-
-msgid "Password type"
-msgstr "Jenis kata sandi"
 
 msgid "Patented technology"
 msgstr "Teknologi yang dipatenkan"
@@ -8708,9 +8768,6 @@ msgstr "Silakan cek email Anda untuk informasi lengkap"
 msgid "Please check your email for further instructions."
 msgstr "Silakan lihat email Anda untuk instruksi lebih lanjut."
 
-msgid "Please check your email for the password reset link."
-msgstr "Silakan periksa email Anda untuk memperoleh tautan reset kata sandi."
-
 msgid "Please check your email for the verification code to complete the process."
 msgstr "Silakan lihat email Anda untuk melengkapi proses verifikasi."
 
@@ -8722,6 +8779,12 @@ msgstr "Silakan periksa kotak masuk email Anda untuk rincian lebih lanjut."
 
 msgid "Please choose a currency"
 msgstr "Silahkan pilih mata uang"
+
+msgid "Please click on the link in the email to reset your binary password."
+msgstr "Silahkan klik pada link di email untuk mereset kata sandi binary Anda."
+
+msgid "Please click on the link in the email to reset your trading password."
+msgstr "Silahkan klik pada link di email untuk mereset kata sandi trading Anda."
 
 msgid "Please complete the %1Real Account form%2 to verify your age as required by the %3UK Gambling%4 Commission (UKGC)."
 msgstr "Silakan lengkapi formulir %1Akun Riil%2 untuk memverifikasi umur Anda seperti yang telah dipersyaratkan oleh %3UKGC%4."
@@ -8774,6 +8837,9 @@ msgstr "Pilih tanggal, bulan, tahun, jam serta menit waktu istirahat yang Anda i
 msgid "Please enter date in the format DD MMM, YYYY."
 msgstr "Pilih hingga tanggal, bulan dan tahun berapa Anda ingin mengecualikan diri."
 
+msgid "Please enter no more than %1 characters for both fields."
+msgstr "Mohon masukkan tidak lebih dari %1 karakter pada kedua kolom."
+
 msgid "Please enter your %1tax information%2 below to continue."
 msgstr "Masukkan %1informasi pajak Anda%2 dibawah untuk melanjutkan."
 
@@ -8782,6 +8848,9 @@ msgstr "Masukkan alamat lengkap Anda untuk menghindari penundaan otentikasi."
 
 msgid "Please enter your full home address to avoid authentication delays."
 msgstr "Masukkan alamat lengkap rumah Anda untuk menghindari penundaan otentikasi."
+
+msgid "Please enter your trading password to create an account. If you've forgotten your password, click %1Reset password%2"
+msgstr "Anda perlu mengisi kata sandi trading untuk mendaftar akun. Jika Anda lupa kata sandi, klik %1Reset kata sandi%2"
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Silahkan isi Login ID dan jumlah yang ingin Anda transfer ke klien Anda dalam formulir di bawah ini:"
@@ -8831,11 +8900,11 @@ msgstr "Tolong pilih"
 msgid "Please select a country"
 msgstr "Silakan pilih negara"
 
-msgid "Please select a reason."
-msgstr "Silakan pilih alasan."
-
 msgid "Please select a valid time."
 msgstr "Silahkan pilih waktu yang berlaku."
+
+msgid "Please select at least one reason."
+msgstr "Silakan pilih minimal satu alasan."
 
 msgid "Please select at least one scope"
 msgstr "Silakan pilih minimal satu scope"
@@ -8864,9 +8933,6 @@ msgstr "Silahkan susun batasan turnover %130-hari%2 Anda untuk mengakses kasir."
 msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
 msgstr "Pilih %1batasan 30-hari total pembelian%2 untuk menghapus batasan deposit."
 
-msgid "Please specify the reasons for closing your accounts"
-msgstr "Mohon tentukan alasan penutupan akun Anda"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 
@@ -8888,8 +8954,8 @@ msgstr "Mohon diperhatikan bahwa nilai tukar kami juga tergantung pada waktu dan
 msgid "Please take note that our swap rate also depends on the time and days you hold your positions open:"
 msgstr "Mohon perhatikan bahwa harga swap kami juga tergantung pada waktu dan hari Anda memegang posisi berjalan:"
 
-msgid "Please tell us why you are closing your account (please select one):"
-msgstr "Mohon informasikan alasan Anda untuk menutup akun (pilih salah satu):"
+msgid "Please tell us why you’re leaving. (Select up to 3 reasons.)"
+msgstr "Mohon beritahu kami alasan Anda untuk pergi. (Pilih hingga 3 alasan.)"
 
 msgid "Please try again"
 msgstr "Silakan coba lagi"
@@ -9016,9 +9082,6 @@ msgstr "Prediksikan angka desimal terakhir dari harga spot dengan Digit. Ada tig
 
 msgid "Predictable substitutions like '@' instead of 'a' don't help very much"
 msgstr "Substitusi yang dapat diprediksi seperti '@' dan bukan 'a' yang tidak begitu membantu"
-
-msgid "Prefer another trading website"
-msgstr "Lebih memilih untuk bertrading pada situs web lain"
 
 msgid "Preferences:"
 msgstr "Diutamakan:"
@@ -9566,6 +9629,12 @@ msgstr "Sisa transfer dana MT5 untuk hari ini: %1"
 msgid "Remaining Time"
 msgstr "Waktu Yang Tersisa"
 
+msgid "Remaining characters: %1."
+msgstr "Karakter yang tersisa: %1."
+
+msgid "Remaining characters: 250."
+msgstr "Karakter yang tersisa: 250."
+
 msgid "Remember to press stop when you're done. <fallback>Redo video actions</fallback>"
 msgstr "Pastikan untuk menekan tombol berhenti setelah Anda selesai. <fallback>Ulangi tindakan video</fallback>"
 
@@ -9632,9 +9701,6 @@ msgstr "Reset Call"
 msgid "Reset Call/Reset Put"
 msgstr "Reset Call/Reset Put"
 
-msgid "Reset MT5 password"
-msgstr "Reset kata sandi MT5"
-
 msgid "Reset Password"
 msgstr "Reset Kata Sandi"
 
@@ -9643,6 +9709,12 @@ msgstr "Reset Put"
 
 msgid "Reset Time"
 msgstr "Waktu Reset"
+
+msgid "Reset investor password"
+msgstr "Reset kata sandi investor"
+
+msgid "Reset my password"
+msgstr "Reset kata sandi saya"
 
 msgid "Reset my virtual balance"
 msgstr "Reset saldo virtual saya"
@@ -10073,6 +10145,9 @@ msgstr "Sesi durasi:"
 msgid "Set Currency"
 msgstr "Atur Mata Uang"
 
+msgid "Set a trading password. Use this to log in and trade on MT5."
+msgstr "Pasang kata sandi trading. Gunakan untuk mengakses dan trading pada MT5."
+
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Tetapkan batasan untuk menentukan posisi dan memicu hasil yang Anda akan dapatkan."
 
@@ -10087,6 +10162,9 @@ msgstr "Tetapkan panjang perdagangan Anda dari 10 detik sampai 365 hari, apakah 
 
 msgid "Set the standard for our technical documentation by creating a technical style guide that can be followed across the company"
 msgstr "Menetapkan standar pada dokumentasi teknis dengan membuat panduan gaya teknis yang dapat diikuti pada semua perusahaan"
+
+msgid "Set trading password"
+msgstr "Atur kata sandi trading"
 
 msgid "Set up %1 on your device now"
 msgstr "Siapkan %1 pada perangkat Anda sekarang"
@@ -10108,9 +10186,6 @@ msgstr "Siapkan autentikasi dua faktor untuk akun %1 Anda sekarang:"
 
 msgid "Severability"
 msgstr "Keterpisahan"
-
-msgid "Share access to your account without any permission to trade."
-msgstr "Berbagi akses akun Anda tanpa memberi pengaksesan trading."
 
 msgid "Sharp prices"
 msgstr "Harga akurat"
@@ -10262,12 +10337,6 @@ msgstr "Maaf, error terjadi ketika memproses rekening Anda."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
 
-msgid "Sorry, but binary options trading is not available in your country."
-msgstr "Maaf, trading opsi binary tidak tersedia di negara Anda."
-
-msgid "Sorry, but binary options trading is not available in your financial account."
-msgstr "Maaf, trading opsi binary tidak tersedia pada akun finansial Anda."
-
 msgid "Sorry, deposits for this currency are currently disabled."
 msgstr "Maaf, deposit untuk mata uang ini sedang dinonaktifkan."
 
@@ -10276,9 +10345,6 @@ msgstr "Maaf, versi seluler belum tersedia."
 
 msgid "Sorry, no mobile phone bills"
 msgstr "Maaf, tagihan ponsel tidak dapat diterima"
-
-msgid "Sorry, this feature is available to virtual accounts only."
-msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "Maaf, fitur ini tidak tersedia di yurisdiksi Anda."
@@ -10397,9 +10463,6 @@ msgstr "Langkah 1"
 msgid "Step 1: Choose demo or real account"
 msgstr "Langkah 1: Pilih akun demo atau riil"
 
-msgid "Step 1: Close all open positions"
-msgstr "Langkah 1: Tutup semua posisi berjalan"
-
 msgid "Step 1: Define your position"
 msgstr "Langkah 1: Tentukan posisi Anda"
 
@@ -10417,9 +10480,6 @@ msgstr "Langkah 2: Dapatkan harga Anda"
 
 msgid "Step 2: Understand when to buy and when to sell"
 msgstr "Langkah 2: Pahami kapan harus membeli dan menjual"
-
-msgid "Step 2: Withdraw your funds"
-msgstr "Langkah 2: Tarik dana Anda"
 
 msgid "Step 3"
 msgstr "Langkah 3"
@@ -10480,6 +10540,9 @@ msgstr "Prosedur Penyimpanan"
 
 msgid "Straight rows of keys are easy to guess"
 msgstr "Baris tombol lurus mudah ditebak"
+
+msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
+msgstr "Kata sandi yang kuat mengandung setidaknya 8 karakter, menggabungkan huruf besar dan kecil serta angka."
 
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "Kuat dalam analitis dan terbukti dalam kapasitas sebelumnya atau berminat untuk pindah ke area ini"
@@ -10588,6 +10651,9 @@ msgstr "Terkirim"
 
 msgid "Submitting"
 msgstr "Mengirimkan"
+
+msgid "Success!"
+msgstr "Sukses!"
 
 msgid "Successful"
 msgstr "Berhasil"
@@ -10710,28 +10776,28 @@ msgid "Table 6 - Likelihood of execution information"
 msgstr "Tabel 6 - Kemungkinan informasi eksekusi"
 
 msgid "Take a photo"
-msgstr "Mengambil foto"
+msgstr "Foto"
 
 msgid "Take a photo of the back of your card"
-msgstr "Mengambil foto bagian belakang kartu Anda"
+msgstr "Foto bagian belakang kartu Anda"
 
 msgid "Take a photo of the back of your license"
-msgstr "Mengambil foto bagian belakang SIM Anda"
+msgstr "Foto bagian belakang Sim Anda"
 
 msgid "Take a photo of the front of your card"
-msgstr "Mengambil foto bagian depan kartu Anda"
+msgstr "Foto bagian depan kartu Anda"
 
 msgid "Take a photo of the front of your license"
-msgstr "Mengambil foto bagian depan SIM Anda"
+msgstr "Foto bagian depan Sim Anda"
 
 msgid "Take a photo of your passport photo page"
-msgstr "Mengambil foto halaman yang berisikan foto pada paspor Anda"
+msgstr "Foto halaman yang berisikan foto pada paspor Anda"
 
 msgid "Take a photo using the <fallback>basic camera mode</fallback> instead"
-msgstr "Ambil foto menggunakan <fallback>mode kamera dasar</fallback> sebagai gantinya"
+msgstr "Foto menggunakan <fallback>mode kamera dasar</fallback> sebagai gantinya"
 
 msgid "Take a photo with your phone"
-msgstr "Mengambil foto dengan ponsel Anda"
+msgstr "Foto menggunakan ponsel Anda"
 
 msgid "Take a selfie"
 msgstr "Mengambil selfie"
@@ -10749,7 +10815,7 @@ msgid "Take necessary measures to correct and enhance IT operations"
 msgstr "Mengambil langkah-langkah yang diperlukan untuk memperbaiki dan meningkatkan operasi IT"
 
 msgid "Take photo"
-msgstr "Mengambil foto"
+msgstr "Foto"
 
 msgid "Taking the following measures, the Company is committed to making sure that the client's personal data and transactions are secure:"
 msgstr "Mengambil langkah-langkah berikut, Perusahaan berkomitmen untuk memastikan bahwa data pribadi dan transaksi klien adalah aman:"
@@ -10895,9 +10961,6 @@ msgstr "Program Afiliasi %1 memberi Anda manfaat dengan memperkenalkan klien bar
 msgid "The %1 order execution policy"
 msgstr "Kebijakan eksekusi order %1"
 
-msgid "The %1 password of account number %2 has been changed."
-msgstr "Kata sandi %1 untuk akun %2 sudah diganti."
-
 msgid "The %1 privacy and security policy"
 msgstr "Privasi dan kebijakan keamanan %1"
 
@@ -11012,11 +11075,11 @@ msgstr "Afiliasi tidak akan mendorong anggota Afiliasi untuk mengambil segala be
 msgid "The Affiliate shall not hold or pool the Affiliate's referrals' funds or third-party funds into the Affiliate's own account held with %1."
 msgstr "Afiliasi tidak boleh memegang atau mengumpulkan dana anggota Afiliasi atau dana pihak ketiga ke dalam rekening pribadi milik Afiliasi sendiri pada %1."
 
+msgid "The Affiliate shall not impersonate the Company’s domains, or bid on, purchase, or register keywords, search terms, or other identifiers for use in any search engine, portal, sponsored advertising service, or other search or referral service that are identical or similar to any of the Company’s trademarks or trade names that include the word \"%1\" or any variation thereof."
+msgstr "Afiliasi tidak boleh meniru domain Perusahaan, atau menawar, membeli, atau mendaftarkan kata kunci, istilah pencarian, atau pengenal lain untuk digunakan pada mesin pencari, portal, layanan iklan bersponsor, atau layanan pencarian atau rujukan lain yang identik atau mirip dengan salah satu merek dagang atau nama dagang Perusahaan yang menyertakan kata \"%1\" atau variasinya."
+
 msgid "The Affiliate shall not place trades on the Affiliate's referrals' behalf."
 msgstr "Afiliasi tidak boleh melakukan trading atas nama anggota Afiliasi."
-
-msgid "The Affiliate shall not purchase or register keywords, search terms, or other identifiers for use in any search engine, portal, sponsored advertising service, or other search or referral service that are identical or similar to any of the Company's trademarks or trade names that include the word \"%1\" or any variation thereof."
-msgstr "Afiliasi tidak boleh membeli atau mendaftarkan keyword, istilah pencarian, atau pengidentifikasi lainnya untuk digunakan pada mesin pencari, portal, layanan iklan apa pun yang disponsori, atau layanan pencarian atau rujukan lain yang identik atau serupa dengan merek dagang atau nama dagang Perusahaan termasuk perkataan \"%1\" atau variasi daripadanya."
 
 msgid "The Affiliate shall not resort to high-pressure sales tactics or false promises."
 msgstr "Afiliasi tidak boleh menggunakan taktik penjualan secara memaksa atau janji palsu."
@@ -11026,6 +11089,9 @@ msgstr "Afiliasi tidak boleh menargetkan kegiatan pemasaran, periklanan, dan pro
 
 msgid "The Affiliate's obligations"
 msgstr "Kewajiban afiliasi"
+
+msgid "The Affiliate’s advertisements and campaigns must not lead traffic directly to the Company’s websites and must not include any URL containing the word \"%1\" or any variation thereof."
+msgstr "Iklan dan kampanye yang dilakukan oleh Afiliasi tidak boleh mengarahkan lalu lintas langsung ke situs web Perusahaan dan tidak boleh menyertakan URL apa pun yang menggunakan kata \"%1\" atau variasinya."
 
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with, the Agent's fraudulent acts or omissions, negligence, misconduct, wilful default, or breach of this Agreement."
 msgstr "Agen setuju untuk memberi ganti rugi kepada Perusahaan atas semua dan segala kerugian yang mungkin diderita Perusahaan karena, atau sehubungan dengan, tindakan, pelanggaran, atau kesalahan Agen yang disengaja, kegagalan yang disengaja, atau pelanggaran Perjanjian ini."
@@ -11102,11 +11168,11 @@ msgstr "Perusahaan mengumpulkan dan menilai data klien untuk membuat profil klie
 msgid "The Company collects, stores, and processes a range of information about the applicant, including but not limited to the following:"
 msgstr "Perusahaan mengumpulkan, menyimpan, dan memproses berbagai informasi tentang pelamar, termasuk namun tidak terbatas pada hal berikut:"
 
+msgid "The Company does not guarantee and bears no liability for the simultaneous selling of the original and copy trades when the client engages in copy trading on WebTrader."
+msgstr "Perusahaan tidak menjamin dan tidak bertanggung jawab atas penjualan secara bersamaan dari trading asli dan salinan ketika klien bertrading menggunakan copy trading pada WebTrader."
+
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "Perusahaan tidak menjamin dimana API %1 akan memberikan fungsinya tanpa gangguan atau error pada saat berfungsi. Khususnya, pengoperasian API %1 mungkin akan mengalami ganguan berhubung perbaikan, perbaruan atau masalah system dan kegagalan network. Perusahaan melepaskan semua tanggung jawab atas kerusakan yang disebabkan oleh gangguan tersebut atau kesalahan dalam fungsi."
-
-msgid "The Company does not guarantee the ability to sell a contract prior to its expiration time."
-msgstr "Perusahaan tidak menjamin keberhasilan penjualan awal kontrak sebelum waktu berakhir tercapai."
 
 msgid "The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 trading platform or otherwise is correct."
 msgstr "Perusahaan tidak membuat jaminan apa pun, tersurat maupun tersirat, bahwa harga apa pun atau informasi lain yang disediakan melalui platform trading MT5 atau yang lainnya benar."
@@ -12090,6 +12156,9 @@ msgstr "Penyesuaian bunga dihitung dalam basis tahunan untuk posisi jual dan bel
 msgid "The interest adjustment is calculated in points, meaning we will convert the relevant interbank lending rates to points in the base currency."
 msgstr "Penyesuaian bunga yang dihitung dalam poin, artinya kita akan mengkonversi suku bunga kredit antar bank  yang relevan dengan poin dalam mata uang dasar."
 
+msgid "The investor password of account number %1 has been changed."
+msgstr "Kata sandi investor untuk nomor akun %1 telah diubah."
+
 msgid "The level of protection offered and due to each client depends on the category to which each client is assigned. Retail clients benefit from the highest degree of protection. The Company will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Tingkat perlindungan yang ditawarkan dan karena masing-masing klien tergantung pada kategori di mana setiap klien ditugaskan. Klien ritel mendapat manfaat dari tingkat perlindungan tertinggi. Perusahaan akan menilai pengetahuan dan pengalaman klien versus kelayakan produk layanan/investasi yang diminta."
 
@@ -12162,6 +12231,12 @@ msgstr "Hasil adalah jumlah yang dibayarkan pada opsi trader jika analisa tepat.
 msgid "The photo should clearly show your document"
 msgstr "Foto harus menunjukkan dokumen Anda dengan jelas"
 
+msgid "The platforms aren't user-friendly."
+msgstr "Platform tidak mudah untuk digunakan."
+
+msgid "The platforms lack key features or functionality."
+msgstr "Platform kekurangan fitur utama atau fungsi."
+
 msgid "The premier platform for trading binary options in the world's financial markets"
 msgstr "Platform utama untuk trading opsi binary pada pasar finansial dunia"
 
@@ -12194,9 +12269,6 @@ msgstr "Ketentuan layanan trading yang diuraikan dalam perjanjian ini menggunaka
 
 msgid "The provisions of this agreement or any orders and any applicable laws will not be breached or violated."
 msgstr "Ketentuan perjanjian ini atau perintah apa pun dan hukum apa pun yang berlaku tidak akan dilanggar atau disalahgunakan."
-
-msgid "The reason should be between 5 and 250 characters"
-msgstr "Alasan harus antara 5 dan 250 karakter"
 
 msgid "The requested transfer would reduce the client's Account Balance to less than the Margin required for the client's Open Positions."
 msgstr "Transfer yang diminta akan mengurangi Saldo Akun klien menjadi berkurang dari Margin yang diperlukan untuk Open Posisi klien."
@@ -12525,6 +12597,9 @@ msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan ketentuan (\"Ketentua
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan ketentuan antara \"Perusahaan\", yaitu Deriv Services Ltd, dengan pihak yang telah mengajukan permohonan pada program ini (\"Afiliasi\"), sehubungan dengan aplikasi Afiliasi untuk menyiapkan akun afiliasi (dan keanggotaan program afiliasi jika aplikasi afiliasi diluluskan)."
 
+msgid "This feature is available to virtual accounts only."
+msgstr "Fasilitas ini hanya tersedia untuk rekening virtual saja."
+
 msgid "This feature is not relevant to virtual-money accounts."
 msgstr "Fasilitas ini tidak tersedia untuk akun uang virtual."
 
@@ -12590,6 +12665,9 @@ msgstr "Pemberitahuan ini memberi klien informasi tentang risiko yang terkait de
 
 msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members, or any other partners."
 msgstr "Kewajiban ini mencakup larangan pembayaran yang melanggar hukum atau pemberian segala bentuk manfaat yang melanggar hukum kepada pejabat publik, mitra bisnis, karyawan, anggota keluarga, atau mitra lainnya."
+
+msgid "This page is not available in your country of residence."
+msgstr "Halaman ini tidak tersedia pada negara domisili Anda."
 
 msgid "This page is only available to logged out clients."
 msgstr "Anda perlu keluar dari akun Anda terlebih dahulu untuk mengakses halaman ini."
@@ -12693,9 +12771,6 @@ msgstr "Untuk dapat bertrading instrumen OTC yang tersedia pada platform trading
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr "Untuk merubah nama, tanggal lahir, negara domisili, email atau informasi pajak Anda, silahkan hubungi %1Customer Support%2."
 
-msgid "To close your account, complete the following steps:"
-msgstr "Untuk menutup akun, lengkapi langkah berikut:"
-
 msgid "To create a MetaTrader 5 account:"
 msgstr "Untuk mendaftar akun MetaTrader 5:"
 
@@ -12729,6 +12804,9 @@ msgstr "Lebih lanjut, baca %1Kebijakan Margin%2 kami yang menjelaskan lebih lanj
 msgid "To maintain Open Positions, the client is required to have sufficient Account Equity to cover any Margin Requirement. If a client's Margin Level is less than the Margin Level set for their account, the client has entered into a Margin Call and is required to increase their Margin Level above the account's specified level in order to avoid a Stop Out to occur. The client may not be able to place an Order to open a transaction unless there is sufficient Account Equity to cover the Total Margin."
 msgstr "Untuk mempertahankan Open Posisi, klien harus memiliki Ekuitas Akun yang cukup untuk memenuhi Persyaratan Margin. Jika Level Margin klien kurang dari Level Margin yang ditetapkan untuk akun mereka, klien telah melakukan Margin Call dan diharuskan untuk meningkatkan Level Margin mereka di atas level yang ditentukan akun untuk menghindari Stop Out yang terjadi. Klien mungkin tidak dapat melakukan Order transaksi kecuali terdapat Ekuitas Akun yang cukup untuk menutupi Total Margin."
 
+msgid "To many attempts. Please try again in a few minutes"
+msgstr "Terlalu banyak percobaan. Silakan coba beberapa menit lagi."
+
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "Untuk membuka rekening bank, kami perlu memverifikasi identitas Anda."
 
@@ -12749,9 +12827,6 @@ msgstr "Jumlah komisi minimal yang dapat di bayarkan adalah sebesar USD 0,01. Ma
 
 msgid "To reset your password, enter the email address you used to create your account into the field below and click 'Reset password'."
 msgstr "Untuk mereset kata sandi Anda, masukkan alamat email yang Anda daftarkan pada kolom di bawah ini dan klik 'Reset kata sandi'."
-
-msgid "To reset your trading or investor password, please click the button below:"
-msgstr "Untuk mengatur ulang kata sandi trading atau investor, silahkan klik tombol berikut:"
 
 msgid "To smoothly verify you, we need a better photo"
 msgstr "Untuk memverifikasi Anda dengan lancar, kami membutuhkan foto yang lebih baik"
@@ -12776,9 +12851,6 @@ msgstr "Token"
 
 msgid "Token name"
 msgstr "Nama token"
-
-msgid "Too addictive"
-msgstr "Terlalu adiktif"
 
 msgid "Too many failed attempts"
 msgstr "Terlalu banyak percobaan yang gagal"
@@ -12981,6 +13053,9 @@ msgstr "Informasi Trading"
 msgid "Trading Limits"
 msgstr "Batasan Trading"
 
+msgid "Trading Password Reset"
+msgstr "Reset Kata Sandi Trading"
+
 msgid "Trading Platforms"
 msgstr "Trading Platform"
 
@@ -13034,6 +13109,15 @@ msgstr "Batas trading"
 
 msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
 msgstr "Trading di %1 dapat menyebabkan ketagihan. Jika Anda merasa perlu mengecualikan diri Anda dari situs, silakan gunakan fasilitas %2pengecualian diri%3."
+
+msgid "Trading password"
+msgstr "Kata sandi trading"
+
+msgid "Trading password reset"
+msgstr "Reset kata sandi trading"
+
+msgid "Trading password — a new, easy way to sign in to your MT5 accounts"
+msgstr "Kata sandi trading - cara baru dan mudah untuk mengakses akun MT5 Anda"
 
 msgid "Trading platforms"
 msgstr "Platform trading"
@@ -13154,6 +13238,9 @@ msgstr "Coba TradingView"
 
 msgid "Try WebTrader"
 msgstr "Coba WebTrader"
+
+msgid "Try again"
+msgstr "Coba lagi"
 
 msgid "Try now"
 msgstr "Coba sekarang"
@@ -13338,6 +13425,9 @@ msgstr "OS tidak diketahui"
 msgid "Unless otherwise advised, DIEL shall treat a client as a retail client. Clients may also request, by writing to DIEL, to change the category in which they have been classified, and this may have an effect on the level of protection afforded to them. DIEL will assess the client's knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Kecuali disarankan sebaliknya, DIEL akan memperlakukan klien sebagai klien ritel. Klien juga dapat meminta, secara tertulis kepada DIEL, untuk mengubah kategori klasifikasi mereka, dan ini mungkin berdampak pada tingkat perlindungan yang diberikan kepada mereka. DIEL akan menilai pengetahuan dan pengalaman klien versus kelayakan produk layanan/investasi yang diminta."
 
+msgid "Unlink"
+msgstr "Batalkan tautan"
+
 msgid "Unsupported browser"
 msgstr "Browser yang tidak tersedia"
 
@@ -13479,8 +13569,20 @@ msgstr "Menggunakan upaya terbaik dan ketekunan mereka untuk mentransfer dana ya
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "Menggunakan upaya terbaik mereka untuk menarik klien potensial ke Binary"
 
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create a password, or you have forgotten your password, please reset it."
+msgstr "Gunakan kata sandi ini untuk memberikan akses pada pengguna lain. Mereka hanya akan dapat melihat aktifitas trading Anda dan tidak dapat melakukan aktifitas lain. Jika ini adalah pertamakali Anda membuat kata sandi, atau Anda lupa kata sandi, silakan reset."
+
+msgid "Use this to log in and trade with MT5."
+msgstr "Gunakan untuk mengakses dan bertrading MT5."
+
+msgid "Use this to log in to Binary.com, SmartTrader, Binary Bot, and Webtrader."
+msgstr "Gunakan untuk mengakses Binary.com, SmartTrader, Binary Bot, dan Webtrader."
+
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "Memanfaatkan sebaik baiknya fungsi tambahan yang ditawarkan dari beberapa prosesor pembayaran"
+
+msgid "Use trading password to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices."
+msgstr "Gunakan kata sandi trading untuk mengakses salah satu akun MT5 Anda saat melalui aplikasi MT5 pada ponsel atau perangkat lain."
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "Gunakan, lakukan, dan tampilkan Aplikasi Programmer dan kontennya untuk tujuan pemasaran, menunjukkan, dan membuat Aplikasi Programmer tersedia untuk klien Perusahaan."
@@ -13661,9 +13763,6 @@ msgstr "Ingin membantu kami meningkatkan kekuatan dan keamanan platform?"
 
 msgid "Want to telecommute?"
 msgstr "Ingin menjadi telecommute?"
-
-msgid "Warning!"
-msgstr "Peringatan!"
 
 msgid "Warranties"
 msgstr "Jaminan"
@@ -13871,6 +13970,9 @@ msgstr "Memiliki keterampilan dalam berorganisasi, administrasi, dan akuntansi y
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "Kami akan memperbarui batasan Anda. Klik %1Setuju dan terima%2 untuk mengakui bahwa Anda bertanggung jawab sepenuhnya atas tindakan Anda, dan kami tidak bertanggung jawab atas kecanduan atau kerugian apa pun."
+
+msgid "We’ve sent you an email"
+msgstr "Kami telah mengirimikan email"
 
 msgid "What about instant execution? In this case, your order is placed at the price that's available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr "Bagaimana dengan eksekusi instan? Dalam hal ini, order Anda ditempatkan pada harga yang tersedia pada saat itu. Requote mungkin terjadi jika harga berfluktuasi banyak sebelum eksekusi order selesai."
@@ -14109,6 +14211,9 @@ msgstr "Jika kewajiban klien kepada Perusahaan jatuh tempo dan terhutang, Perusa
 msgid "Where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 trading platform"
 msgstr "Di mana saldo negatif terhubung ke atau akibat dari keterbatasan fungsional dan/atau kegagalan platform trading MT5"
 
+msgid "Where would you like to start?"
+msgstr "Darimana anda ingin memulai?"
+
 msgid "Where you can go"
 msgstr "Kemana Anda dapat melangkah"
 
@@ -14238,6 +14343,9 @@ msgstr "Penarikan dari MT5"
 msgid "Withdraw funds from your MT5 account"
 msgstr "Menarik dana dari akun MT5 Anda"
 
+msgid "Withdraw your funds"
+msgstr "Tarik dana Anda"
+
 msgid "Withdrawal"
 msgstr "Penarikan"
 
@@ -14358,8 +14466,8 @@ msgstr "Anda mengharapkan mata uang dasar jatuh nilainya sehingga Anda bisa memb
 msgid "You are expecting the base currency to rise in value so you can sell it back for a profit."
 msgstr "Anda mengharapkan mata uang dasar naik nilainya sehingga Anda bisa menjualnya kembali untuk mendapatkan keuntungan."
 
-msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time deposit or create an MT5 account."
-msgstr "Anda hanya dapat memiliki satu akun dalam mata uang fiat. Mata uang akun fiat Anda dapat dirubah jika Anda belum melakukan deposit perdana atau mendaftar akun MT5."
+msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time %1."
+msgstr ""
 
 msgid "You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments."
 msgstr "Anda bertanggung jawab untuk mengurangi risiko dan penyalahgunaan yang kami hadapi dari penipuan dan pencucian uang. Untuk mencapai hal ini, Anda harus memantau, menganalisis, dan melakukan berbagai pemeriksaan anti-penipuan dan AML pada akun klien dan deposit. Anda akan bergabung dengan kami di Malta dibawah Kepala Pembayaran kami."
@@ -14367,14 +14475,8 @@ msgstr "Anda bertanggung jawab untuk mengurangi risiko dan penyalahgunaan yang k
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "Anda menjual mata uang dasar dan membeli mata uang kutipan."
 
-msgid "You can %1open a cryptocurrency%2 account without closing your fiat currency account."
-msgstr "Anda dapat %1mendaftar akun mata uang kripto%2 tanpa perlu menutup akun mata uang fiat."
-
-msgid "You can %1open a real account%2 without closing your demo account."
-msgstr "Anda dapat %1mendaftar akun riil%2 tanpa perlu menutup akun demo."
-
-msgid "You can %1set a new currency%2 before you deposit for the first time or create an MT5 account."
-msgstr "Anda dapat %1memilih mata uang baru%2 jika belum melakukan deposit perdana atau mendaftar akun MT5."
+msgid "You can %1set a new currency%2 before you deposit for the first %3."
+msgstr "Anda dapat memilih %1mata uang% baru sebelum mendeposit pertama %3."
 
 msgid "You can also decide to exclude yourself entirely from our website for a specified duration. Once the self-exclusion period has ended, you can either extend it further or resume trading immediately. If you wish to reduce or remove the self-exclusion period, contact our %1Customer Support%2."
 msgstr "Anda juga dapat memutuskan untuk mengecualikan diri Anda sepenuhnya dari situs web kami untuk durasi tertentu. Setelah periode pengecualian diri berakhir, Anda dapat memperpanjangnya lebih lanjut atau melanjutkan trading dengan segera. Jika Anda ingin mengurangi atau menghapus periode pengecualian diri, hubungi %1Customer Support%2 kami."
@@ -14412,14 +14514,8 @@ msgstr "Anda sekarang dapat kembali ke komputer untuk melanjutkan"
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "Anda hanya dapat berlangganan ke satu penyedia sinyal menggunakan satu akun %1 pada satu waktu. Anda dapat menggunakan sinyal Anda pada 3 komputer yang berbeda."
 
-msgid "You can open a fiat currency account without closing your cryptocurrency account."
-msgstr "Anda dapat mendaftar akun dalam mata uang fiat tanpa perlu menutup akun mata uang kripto."
-
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Anda berkesempatan untuk menutup kontrak sebelum berakhir untuk mengurangkan risiko kerugian Anda."
-
-msgid "You can set limits to your account and trading activities. Go to the %1self-exclusion page%2 to manage your account limits."
-msgstr "Anda dapat menetapkan batasan pada aktivitas akun dan trading Anda. Kunjungi halaman %1Pengecualian Diri%2 untuk mengelola batasan akun Anda."
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "Anda dapat mengisi ulang akun demo Anda dengan tambahan %1 jika saldo Anda %2 atau kurang."
@@ -14442,20 +14538,20 @@ msgstr "Anda mengharapkan %1 turun nilainya sehingga Anda dapat membelinya kemba
 msgid "You expect the %1 to rise in value so you can sell it back for a profit."
 msgstr "Anda mengharapkan %1 naik nilainya sehingga Anda bisa menjualnya kembali untuk mendapatkan keuntungan."
 
-msgid "You have %1. You may open one or %2more cryptocurrency%3 accounts:"
-msgstr "Anda memiliki %1. Anda dapat mendaftar satu atau lebih %2akun mata uang kripto%3:"
+msgid "You have a new binary password."
+msgstr "Anda sudah memiliki kata sandi baru binary."
 
-msgid "You have a %1 account. You may %2change your currency%3 to any of the following as long as you haven't made a deposit or created an MT5 account:"
-msgstr "Anda memiliki akun %1. Anda dapat %2menukar mata uang Anda%3 pada salah satu dari pilihan berikut dengan syarat Anda belum melakukan deposit atau mendaftar akun MT5:"
+msgid "You have a new trading password. Use this to log in to MetaTrader 5."
+msgstr "Anda memiliki kata sandi trading baru. Gunakan kata sandi ini untuk mengakses MetaTrader 5."
+
+msgid "You have a trading password for MT5"
+msgstr "Anda memiliki kata sandi trading untuk MT5"
 
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "Anda telah menarik %1%2 secara total selama %3 terakhir."
 
 msgid "You have already withdrawn %1%2."
 msgstr "Anda telah menarik dana sebesar %1%2."
-
-msgid "You have an account but have not set a currency. You may %1choose one%2 of these as your account currency"
-msgstr "Anda memiliki akun tetapi belum menetapkan mata uang. Anda dapat %1memilih salah satu%2 mata uang berikut pada akun Anda"
 
 msgid "You have created all accounts available to you."
 msgstr "Anda telah mendaftar berbagai akun yang tersedia bagi Anda."
@@ -14562,9 +14658,6 @@ msgstr "Anda ingin membeli pasangan mata uang tertentu jika Anda berpikir mata u
 msgid "You want to sell that currency pair if you think the base currency will go down."
 msgstr "Anda ingin menjual pasangan mata uang itu jika menurut Anda mata uang dasar akan turun."
 
-msgid "You will %1NOT%2 be able to log in again."
-msgstr "Anda %1TIDAK%2 dapat mengakses kembali."
-
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
 msgstr "Anda juga akan mendorong kesadaran keamanan di seluruh organisasi melalui komunikasi reguler pada praktik terbaik keamanan dan ancaman online terbaru."
 
@@ -14597,6 +14690,9 @@ msgstr "Anda akan memiliki potensi untuk mendapatkan tingkat lain pendapatan dar
 
 msgid "You will increase awareness of your services and generate new business."
 msgstr "Anda akan memperjelas layanan Anda dan menghasilkan peluang bisnis baru."
+
+msgid "You will need to set a password to complete the process."
+msgstr "Anda perlu mengatur kata sandi untuk menyelesaikan proses."
 
 msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
 msgstr "Anda tidak akan dapat merubah mata uang akun fiat Anda setelah mendaftar akun MT5. Apa Anda yakin ingin melanjutkan?"
@@ -14661,6 +14757,9 @@ msgstr "%1Bukti identitas%3 dan %2bukti alamat%3 Anda telah berakhir."
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
 msgstr "%1Bukti identitas%3 dan %2bukti alamat%3 Anda belum diverifikasi."
 
+msgid "Your Binary account is unlinked from %1. Use %2your email and password for future log in."
+msgstr "Akun Binary Anda tidak terhubung dengan %1. Gunakan %2alamat email dan kata sandi untuk mengakses."
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka telah diproses."
 
@@ -14682,6 +14781,9 @@ msgstr "Akun Anda telah terbukti dan batasan penarikan Anda telah dihapuskan."
 msgid "Your account is now deactivated."
 msgstr "Akun Anda sudah dinonaktifkan."
 
+msgid "Your account is now deactived."
+msgstr "Akun Anda sudah dinonaktifkan."
+
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Akun Anda memiliki akses terbatas. Silahkan %1hubungi customer support%2 untuk bantuan."
 
@@ -14699,6 +14801,9 @@ msgstr "Aplikasi Anda sebagai klien profesional sedang diproses."
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar %1agen pembayaran%2."
+
+msgid "Your binary password has been changed. Please log in again."
+msgstr "Kata sandi binary Anda telah dirubah. Coba akses kembali."
 
 msgid "Your cashier is locked."
 msgstr "Kasir Anda terkunci."
@@ -14757,12 +14862,6 @@ msgstr "Kemitraan Anda dengan %1 dapat menjadi sarana untuk mempromosikan produk
 msgid "Your password cannot be the same as your email address."
 msgstr "Jangan menggunakan alamat email sebagai kata sandi."
 
-msgid "Your password has been changed. Please log in again."
-msgstr "Kata sandi Anda telah dirubah. Silahkan akses kembali."
-
-msgid "Your password has been successfully reset. Please log into your account using your new password."
-msgstr "Kata sandi Anda sudah berhasil direset. Silahkan akes akun Anda menggunakan kata sandi baru."
-
 msgid "Your professional client request is %1not approved%2."
 msgstr "Permohonan klien profesional Anda %1tidak disetujui%2."
 
@@ -14817,6 +14916,12 @@ msgstr "Token Anda telah berakhir atau tidak berlaku. Silahkan klik %1disini%2 u
 msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "Token Anda telah berakhir atau tidak berlaku. Silahkan klik <a href=\"%1\">disini</a> untuk memulai kembali proses verifikasi."
 
+msgid "Your trading password has been changed. Please use this to log in to MetaTrader 5."
+msgstr "Kata sandi trading Anda telah diubah. Silakan gunakan untuk mengakses MetaTrader 5."
+
+msgid "Your trading password has been set. Please use this to log in to MetaTrader 5."
+msgstr "Kata sandi trading Anda telah dibuat. Gunakan untuk mengakses akun MetaTrader 5."
+
 msgid "Your trading statistics since %1."
 msgstr "Statistik trading Anda sejak %1."
 
@@ -14840,9 +14945,6 @@ msgstr "Alamat situs web Anda"
 
 msgid "Your withdrawal limit is %1%2."
 msgstr "Batas penarikan Anda adalah %1%2."
-
-msgid "You’ll be logged out automatically."
-msgstr "Anda akan keluar secara otomatis."
 
 msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
 msgstr "Anda perlu mendanai akun MQL5 Anda untuk berlangganan sinyal berbayar. Pelajari bagaimana %1cara mendanai akun Anda%2."
@@ -14889,12 +14991,6 @@ msgstr "unit transaksi yang mewakili kuantitas standar dari Instrumen Dasar, seb
 msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's web interface, or"
 msgstr "a. Mengakses platform trading MT5 melalui tautan langsung %1 dari situs web DIEL, atau"
 
-msgid "account"
-msgstr "akun"
-
-msgid "accounts"
-msgstr "beberapa akun"
-
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "order untuk melakukan transaksi guna menutup Open Posisi ketika harga mencapai harga yang telah ditentukan oleh klien"
 
@@ -14924,6 +15020,12 @@ msgstr "hari"
 
 msgid "days"
 msgstr "hari"
+
+msgid "deposit"
+msgstr ""
+
+msgid "deposit or create an MT5 account"
+msgstr ""
 
 msgid "details"
 msgstr "perincian"
@@ -15035,6 +15137,12 @@ msgstr "tik"
 
 msgid "ticks"
 msgstr "tik"
+
+msgid "time"
+msgstr ""
+
+msgid "time or create an MT5 account"
+msgstr ""
 
 msgid "today"
 msgstr "hari ini"

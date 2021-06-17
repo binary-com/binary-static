@@ -44,7 +44,9 @@ const FinancialAccOpening     = require('../pages/user/new_account/financial_acc
 const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
 const VirtualAccOpening       = require('../pages/user/new_account/virtual_acc_opening');
 const WelcomePage             = require('../pages/user/new_account/welcome_page');
+const WelcomePageOnboarding   = require('../pages/user/new_account/welcome_onboarding');
 const ResetPassword           = require('../pages/user/reset_password');
+const TradingResetPassword    = require('../pages/user/trading_reset_password');
 const SetCurrency             = require('../pages/user/set_currency');
 const TelegramBot             = require('../pages/user/telegram_bot');
 const TNCApproval             = require('../pages/user/tnc_approval');
@@ -54,6 +56,7 @@ const VideoFacility           = require('../pages/user/video_facility');
 // const Charity            = require('../../static/pages/charity');
 const Contact             = require('../../static/pages/contact');
 // const Contact2            = require('../../static/pages/contact_2');
+const DeactivatedAccount  = require('../../static/pages/deactivated_account');
 const GetStarted          = require('../../static/pages/get_started');
 const Home                = require('../../static/pages/home');
 const KeepSafe            = require('../../static/pages/keep_safe');
@@ -74,7 +77,7 @@ const pages_config = {
     accounts                 : { module: Accounts,                   is_authenticated: true, needs_currency: true },
     api_tokenws              : { module: APIToken,                   is_authenticated: true },
     assessmentws             : { module: FinancialAssessment,        is_authenticated: true, only_real: true },
-    asset_indexws            : { module: AssetIndexUI,               no_mf: true },
+    asset_indexws            : { module: AssetIndexUI,               no_mf: true , no_blocked_country: true },
     asuncion                 : { module: StaticPages.Locations },
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
@@ -102,25 +105,25 @@ const pages_config = {
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
     labuan                   : { module: StaticPages.Locations },
     landing_page             : { module: StaticPages.LandingPage,    is_authenticated: true, only_virtual: true },
-    limitsws                 : { module: Limits,                     is_authenticated: true, no_mf: true, only_real: true, needs_currency: true },
+    limitsws                 : { module: Limits,                     is_authenticated: true, no_mf: true, only_real: true, needs_currency: true, no_blocked_country: true },
     logged_inws              : { module: LoggedInHandler },
     lost_passwordws          : { module: LostPassword,               not_authenticated: true },
     malta                    : { module: StaticPages.Locations },
     maltainvestws            : { module: FinancialAccOpening,        is_authenticated: true },
-    market_timesws           : { module: TradingTimesUI,             no_mf: true },
+    market_timesws           : { module: TradingTimesUI,             no_mf: true, no_blocked_country: true },
     metals                   : { module: GetStarted.Metals },
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
     overview                 : { module: Dashboard },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: Platforms },
+    platforms                : { module: Platforms,                  no_mf: true, no_blocked_country: true, msg_residence_blocked: true },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     realws                   : { module: RealAccOpening,             is_authenticated: true },
     redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
-    reset_passwordws         : { module: ResetPassword,              not_authenticated: true },
+    reset_passwordws         : { module: ResetPassword },
     resources                : { module: Dashboard },
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
@@ -129,10 +132,12 @@ const pages_config = {
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true,   no_mf: true, no_blocked_country: true },
+    trading_reset_passwordws : { module: TradingResetPassword },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     two_factor_authentication: { module: TwoFactorAuthentication,    is_authenticated: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
+    welcome_onboarding       : { module: WelcomePageOnboarding,      is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
 
     'affiliate-ib'           : { module: AffiliatesIBLanding },
@@ -140,6 +145,7 @@ const pages_config = {
     'binary-options'         : { module: GetStarted.BinaryOptions },
     // 'contact-2'              : { module: Contact2 },
     'contract-specifications': { module: TabSelector },
+    'deactivated-account'    : { module: DeactivatedAccount },
     'get-started'            : { module: TabSelector },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },

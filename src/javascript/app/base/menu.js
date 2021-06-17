@@ -50,9 +50,16 @@ const Menu = (() => {
         }
     };
 
+    const makeMobileMenuOnResize = () => {
+        $(window).resize(() => {
+            makeMobileMenu();
+        });
+    };
+
     return {
         init,
         makeMobileMenu,
+        makeMobileMenuOnResize,
     };
 })();
 

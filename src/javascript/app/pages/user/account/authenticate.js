@@ -21,7 +21,6 @@ const showLoadingImage        = require('../../../../_common/utility').showLoadi
     To handle onfido unsupported country, we handle the functions separately,
     the name of the functions will be original name + uns abbreviation of `unsupported`
 */
-
 const Authenticate = (() => {
     let is_any_upload_failed     = false;
     let is_any_upload_failed_uns = false;
@@ -777,7 +776,8 @@ const Authenticate = (() => {
     };
 
     const showSuccess = () => {
-        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
+            authentication_object = response.get_account_status.authentication;
             Header.displayAccountStatus();
             removeButtonLoading();
             $button.setVisibility(0);
@@ -789,7 +789,8 @@ const Authenticate = (() => {
     };
 
     const showSuccessUns = () => {
-        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
+            authentication_object = response.get_account_status.authentication;
             Header.displayAccountStatus();
             removeButtonLoadingUns();
             $button_uns.setVisibility(0);
@@ -899,6 +900,9 @@ const Authenticate = (() => {
         const type_pending = type === 'identity' ? 'poa' : 'poi';
         const description_status = status !== 'verified';
 
+        $(`#text_verified_${type_pending}_required, #text_pending_${type_pending}_required`).setVisibility(0);
+        $(`#button_verified_${type_pending}_required, #button_pending_${type_pending}_required`).setVisibility(0);
+
         if (needs_verification.includes(type)) {
             $(`#text_${status}_${type_required}_required`).setVisibility(1);
             $(`#button_${status}_${type_required}_required`).setVisibility(1);
@@ -916,7 +920,8 @@ const Authenticate = (() => {
             onfido.tearDown();
             $('#authentication_loading').setVisibility(1);
             setTimeout(() => {
-                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+                BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
+                    authentication_object = response.get_account_status.authentication;
                     $('#msg_personal_details').setVisibility(0);
                     $('#upload_complete').setVisibility(1);
                     Header.displayAccountStatus();
