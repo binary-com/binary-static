@@ -186,7 +186,7 @@ const AccountClosure = (() => {
                     showFormMessage(response.error.message || localize('Sorry, an error occurred while processing your request.'));
                 }
                 el_submit_loading.setVisibility(0);
-                el_step_2_submit.attr('disabled', false);
+                el_step_2_submit.setAttribute('disabled', false);
             } else {
                 Client.sendLogoutRequest(false, Url.urlFor('deactivated-account'));
             }
@@ -239,7 +239,7 @@ const AccountClosure = (() => {
                     section_id = 'account_closure_open_mt';
                     display_name = getMTDisplay(account);
                 } else if (/^DX/.test(account)) {
-                    section_id = '#account_closure_open_dxtrade';
+                    section_id = 'account_closure_open_dxtrade';
                     display_name = getDxtradeDisplay(account);
                 } else {
                     section_id = 'account_closure_open';
@@ -255,7 +255,7 @@ const AccountClosure = (() => {
                     section_id = 'account_closure_balance_mt';
                     display_name = getMTDisplay(account);
                 } else if (/^DX/.test(account)) {
-                    section_id = '#account_closure_balance_dxtrade';
+                    section_id = 'account_closure_balance_dxtrade';
                     display_name = getDxtradeDisplay(account);
                 } else {
                     section_id = 'account_closure_balance';
