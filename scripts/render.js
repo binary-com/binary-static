@@ -253,6 +253,7 @@ async function compile(page) {
             affiliate_email       : 'partners@binary.com',
             deriv_banner_url      : `https://deriv.com/${deriv_language_code}`,
             deriv_career_url      : 'https://deriv.com/careers',
+            payment_agent_email   : 'paymentagents@binary.com',
         };
 
         const context               = context_builder.buildFor(model);

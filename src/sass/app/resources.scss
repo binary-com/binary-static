@@ -33,6 +33,19 @@
     }
 }
 
+#trading-date-container {
+    display: flex;
+
+    label {
+        display: flex;
+        align-items: center;
+
+        .ux-date {
+            margin: 0 0.5em;
+        }
+    }
+}
+
 #asset_index_wrapper {
     max-width: 1200px;
 

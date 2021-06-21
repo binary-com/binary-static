@@ -24,7 +24,6 @@ const PaymentAgent = () => (
                             { href: '#next-steps',                  text: it.L('How does it work?') },
                         ]}
                     />
-                    <div className='sidebar-button'><a href={`mailto:${it.affiliate_email}`}>{it.L('Contact us')}</a></div>
                 </div>
             </div>
             <div className='gr-9 gr-12-m gr-parent'>
@@ -39,7 +38,7 @@ const PaymentAgent = () => (
                             <img className='responsive' src={it.url_for('images/pages/payment_agent/payment_agents.svg')} />
                         </div>
                     </div>
-                    <p className='faded'>{it.L('Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars.')}</p>
+                    <p className='note'>{it.L('Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars.')}</p>
                 </Section>
 
                 <Section id='why-choose-payment-agents' header={it.L('Why do Clients choose to use Payment Agents?')}>
@@ -76,22 +75,21 @@ const PaymentAgent = () => (
                 </Section>
 
                 <Section id='next-steps' header={it.L('How does it work?')}>
-                    <p>{it.L('Interested, so what\'s next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to [_2]hear from you![_3]', it.website_name, `<a href='mailto:${it.affiliate_email}'>`, '</a>')}</p>
-                    <p>{it.L('As a first step, please send us an application with:')}</p>
+                    <p>{it.L('Interested, so what\'s next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by [_1], and you have a good track record in the market, then we would love to [_2]hear from you![_3]', it.website_name, `<a href='mailto:${it.payment_agent_email}'>`, '</a>')}</p>
+                   
                     <ul className='checked'>
-                        <li>{it.L('Your name, email address and contact number')}</li>
-                        <li>{it.L('Your website address (if you have one)')}</li>
-                        <li>{it.L('A list of payment methods you will accept from Clients')}</li>
-                        <li>{it.L('The commission you will charge Clients on deposits and withdrawals')}</li>
+                        <li className='spaced'><strong>{it.L('Log in or sign up')}</strong> {it.L('[_1]Log in if you have an account. Haven\'t joined us yet? Go ahead and sign up[_2]','<div class="margin-top-5">','</div>')}</li>
+                        <li className='spaced'><strong>{it.L('Go to cashier > Payment agents')}</strong> {it.L('[_1]Click on the sign up button to start the process.[_2]','<div class="margin-top-5">','</div>')}</li>
+                        <li className='spaced'><strong>{it.L('Fill out the application form')}</strong> {it.L('[_1]Enter your details and attach proofs of your identity and address.[_2]','<div class="margin-top-5">','</div>')}</li>
+                        <li className='spaced'><strong>{it.L('Choose your payment methods')}</strong> {it.L('[_1]Select payment methods that you\'ll accept from clients.[_2]','<div class="margin-top-5">','</div>')}</li>
+                        <li className='spaced'><strong>{it.L('Get listed')}</strong> {it.L('[_1]After the final approval from our compliance team, we\'ll publish your details on our payment agent listing.[_2]','<div class="margin-top-5">','</div>')}</li>
                     </ul>
-                    <p>{it.L('Please submit the above information to [_1].',`<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
-                    <p>{it.L('Once we receive your application, one of our affiliate managers will contact you to follow up with the next steps in the application process (this will include asking you to submit several documents).')}</p>
-                    <p>{it.L('Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our [_1]payment agent[_2] list.', `<a href="${it.url_for('cashier/payment_agent_listws')}">`, '</a>')}</p>
-                </Section>
 
-                <Section id='need-more-information' header={it.L('Need more information?')}>
-                    <p>{it.L('If you would like more information on becoming a Payment Agent, please contact us at [_1]', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
-                    <p>{it.L('We look forward to hearing from you.')}</p>
+                    <div className='footer-box'>
+                        <div className='action-button'>
+                            <a href='#' id='payment-agent-next-btn'>{it.L('Next')}</a>
+                        </div>
+                    </div>
                 </Section>
             </div>
         </div>

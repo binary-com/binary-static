@@ -6,6 +6,9 @@ const handleHash   = require('../../_common/utility').handleHash;
 const BinaryPjax   = require('../../app/base/binary_pjax');
 const Client       = require('../../app/base/client');
 const Header       = require('../../app/base/header');
+const isLoggedIn   = require('../../_common/base/client_base').isLoggedIn;
+const Url          = require('../../_common/url');
+const Login        = require('../../_common/base/login');
 
 module.exports = {
     OpenPositions: {
@@ -23,7 +26,18 @@ module.exports = {
         onUnload: () => { Scroll.offScroll(); },
     },
     PaymentAgent: {
-        onLoad  : () => { Scroll.sidebarScroll($('.payment-agent')); },
+        onLoad: () => {
+            Scroll.sidebarScroll($('.payment-agent'));
+            
+            if (isLoggedIn()){
+                $('#payment-agent-next-btn').attr('href', Url.urlFor('cashier'));
+            } else {
+                $('#payment-agent-next-btn').click(e => {
+                    e.preventDefault();
+                    Login.redirectToLogin();
+                });
+            }
+        },
         onUnload: () => { Scroll.offScroll(); },
     },
     handleTab: {

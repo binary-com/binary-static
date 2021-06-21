@@ -150,6 +150,10 @@
     margin-bottom: 0;
 }
 
+.note {
+    font-size: $FONT_SIZE_S;
+}
+
 #account_currency {
     display: flex;
     align-items: center;
@@ -658,6 +662,14 @@ body #_elev_io {
 
 body #not_authenticated_financial ul.checked > li {
     list-style: none;
+}
+
+body ul.checked > li.spaced {
+    margin-bottom: 1.5em;
+
+    strong {
+        color: $COLOR_BLUE;
+    }
 }
 
 .liquidity-solutions-content {
@@ -1904,4 +1916,21 @@ body #not_authenticated_financial ul.checked > li {
         border: 2px solid $COLOR_GRAY;
     }
 
+}
+
+.payment-agent {
+    .action-button {
+        a {
+            @include link-button;
+            font-weight: 500;
+            font-size: $FONT_SIZE_L;
+            width: 100%;
+            border-radius: 3px;
+            max-width: 295px;
+            padding: 1em;
+        }
+    }
+    .footer-box {
+        margin-top: 3em;
+    }
 }
