@@ -82,8 +82,6 @@ const ClientBase = (() => {
         return account_type;
     };
 
-    const getBrokerCode = loginid => loginid.match(/[A-Z]*/)[0];
-
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
         const this_type   = getAccountType(loginid);
         return ((
@@ -413,7 +411,6 @@ const ClientBase = (() => {
         get,
         getAllLoginids,
         getAccountType,
-        getBrokerCode,
         isAccountOfType,
         isAuthenticationAllowed,
         isOptionsBlocked,

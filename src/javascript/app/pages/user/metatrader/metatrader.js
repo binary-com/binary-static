@@ -18,8 +18,8 @@ const MetaTrader = (() => {
     const getAccountsInfo = MetaTraderConfig.getAccountsInfo;
 
     const onLoad = () => {
-        const current_account = Client.getBrokerCode(Client.getAllLoginids()[0]);
-        if (current_account === 'MF' || Client.isOptionsBlocked()){
+        const financial_account = Client.getAccountType() === 'financial';
+        if (financial_account || Client.isOptionsBlocked()) {
             DerivBanner.onLoad();
         }
         BinarySocket.send({ statement: 1, limit: 1 });
