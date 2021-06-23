@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-15 06:35\n"
+"PO-Revision-Date: 2021-06-23 13:27\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -199,11 +199,11 @@ msgstr "พนักงานหรือพันธมิตร %1 ต้อ�
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stock indices, commodities, and synthetic indices."
 msgstr "%1 ช่วยให้ทุกคนสามารถเข้าร่วมในตลาดการเงินได้ง่ายขึ้น คุณสามารถซื้อขายด้วยเงินลงทุนขั้นต่ำเพียง 1 USD กับสกุลเงินหลัก ดัชนีหุ้น หุ้นโภคภัณฑ์ และ ดัชนีสังเคราะห์"
 
+msgid "%1 has been credited into your Demo Account: %2."
+msgstr ""
+
 msgid "%1 has been credited into your MT5 Demo Account: %2."
 msgstr "%1 ได้ถูกเพิ่มเข้าในบัญชีทดลองบนแพลตฟอร์ม MT5 ของท่านแล้ว: %2"
-
-msgid "%1 has been credited into your Virtual Account: %2."
-msgstr "%1 ได้ถูกเพิ่มเข้าในบัญชีเสมือนของท่านแล้ว: %2"
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 ซึ่งมีชื่อเสียงอย่างกว้างขวางจากพันธสัญญาของเราที่มีมาตรฐานระดับสูงและคุณภาพจากประสบการณ์ความเชี่ยวชาญในการซื้อขายที่เรามี"
@@ -325,14 +325,14 @@ msgstr "ทรัพย์สินของ %1"
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 มีบริการสำหรับพันธมิตรทางธุรกิจผ่านโปรแกรมต่างๆ ต่อไปนี้"
 
+msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
+msgstr ""
+
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr "%1 นำเสนอราคาตลาดและการดำเนินการการซื้อขายหลากหลายผลิตภัณฑ์ รวมถึงคู่สกุลเงินหลักต่างๆ โลหะมีค่า ดัชนี CFD และเงินดิจิทัลที่เป็นที่นิยมให้แก่ลูกค้าสถาบันทั่วโลก"
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
 msgstr "%1 นำเสนอการประมวลผลที่ดีที่สุดในการจัดการคำสั่งซื้อโดยวิธีการรวมกันอย่างชาญฉลาด ซึ่งมีกลไกการทำงานโดย"
-
-msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
-msgstr "%1ให้คุณได้ใช้เงินเสมือนเพื่อฝึกฝนกลยุทธ์ในการซื้อขายด้วยเงินเสมือน สลับเป็นบัญชีเงินเสมือนโดยใช้กล่องแบบดึงลงบนมุมด้านขวาบนของหน้าจอ"
 
 msgid "%1 provides you with the opportunity to either self-exclude or %2set limits on your trading activities%3 on this website. You may also %4contact us%3 to state the limits you wish to set via email or phone. Available limits are:"
 msgstr "%1 ช่วยให้ท่านสามารถตั้งการพักการใช้งาน หรือ %2ตั้งวงเงินของการซื้อขายแต่ละกิจกรรมของท่าน%3 บนเว็บไซต์นี้ ท่านสามารถ %4 ติดต่อเรา%3 เพื่อแจ้งวงเงินที่ท่านต้องการผ่านทางอีเมล์ หรือโทรศัพท์ วงเงินที่มีของท่าน คือ"
@@ -430,8 +430,8 @@ msgstr "เทคโนโลยีการแสดงราคาอย่า
 msgid "%1's remarkable history"
 msgstr "ประวัติศาสตร์อันน่าจดจำของ %1"
 
-msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
-msgstr "ระบบต่างๆ ของ %1 ขณะนี้มีการประมวลผลมากกว่า 1 ล้านธุรกรรมต่อวัน (รวมประเภทบัญชีเสมือน หรือ บัญชีทดลองใช้)"
+msgid "%1's systems are now processing in excess of 1 million transactions/day (including demo accounts)."
+msgstr ""
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
 msgstr "การสนับสนุนลูกค้า %124/7%2 เพื่อปรับปรุงประสบการณ์การซื้อขายของคุณ"
@@ -595,6 +595,9 @@ msgstr "1%"
 msgid "1-2 years"
 msgstr "1-2 ปี"
 
+msgid "1. Ensure to close all your positions"
+msgstr ""
+
 msgid "1. Proof of identity"
 msgstr "1. หลักฐานแสดงตัวบุคคล"
 
@@ -630,6 +633,9 @@ msgstr "ราคา 2 ทาง (2-Way Pricing)"
 
 msgid "2. Selfie with proof of ID"
 msgstr "2. ภาพถ่ายตัวเองพร้อมบัตรประจำตัวประชาชน หรือ เอกสารแสดงตัวบุคคล (ถือในมือ)"
+
+msgid "2. Withdraw your funds"
+msgstr ""
 
 msgid "2. Your desktop window stays open"
 msgstr "2. หน้าต่างเดสก์ท็อปของคุณยังคงเปิดอยู่"
@@ -2083,8 +2089,8 @@ msgstr "ก่อนอัปโหลดเอกสารของคุณโ
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "ก่อนการใช้หุ่นยนต์ซื้อขาย หรือ Expert Advisors และการซื้อขายล่วงหน้า ลูกค้าควรทดลองใช้งานฟังก์ชันดังกล่าวจากบัญชีทดลองใช้เสียก่อน"
 
-msgid "Before you deactivate your account, you need to do the following:"
-msgstr "ก่อนที่คุณจะปิดใช้งานบัญชีของคุณ คุณต้องดำเนินการดังต่อไปนี้:"
+msgid "Before you deactivate your account, you’ll need to:"
+msgstr ""
 
 msgid "Beginner"
 msgstr "ผู้เริ่มต้น"
@@ -2470,8 +2476,8 @@ msgstr "กล้องไม่ทํางาน?"
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "ฉันสามารถเสนอค่าตอบแทนกับผู้อ้างอิงของฉันในการลงทะเบียนผ่านลิงค์พันธมิตรของฉันแทนการลงทะเบียนโดยตรงได้หรือไม่?"
 
-msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts."
-msgstr "สามารถใช้ในการซื้อและขายสัญญาต่างๆ การต่ออายุ และการเติมเงินในบัญชีเสมือน"
+msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts."
+msgstr ""
 
 msgid "Can be used to open accounts, set settings, manage token usage, and more."
 msgstr "สามารถใช้เพื่อเปิดบัญชี ตั้งค่าต่างๆ จัดการการใช้โทเค่น และอื่นๆ"
@@ -2850,9 +2856,6 @@ msgstr "การปิดโพซิชั่นเปิดของลูก
 
 msgid "Close identity verification screen"
 msgstr "ปิดหน้าจอการยืนยันตัวตน"
-
-msgid "Close open positions"
-msgstr "ปิดตําแหน่งที่เปิด"
 
 msgid "Close your %1 account."
 msgstr "ปิดบัญชี %1 ของคุณ"
@@ -3365,8 +3368,8 @@ msgstr "สร้างบัญชี"
 msgid "Create MetaTrader 5 account"
 msgstr "สร้างบัญชี MetaTrader 5"
 
-msgid "Create New Virtual-money Account"
-msgstr "สร้างบัญชีเงินเสมือนใหม่"
+msgid "Create New Demo Account"
+msgstr ""
 
 msgid "Create account"
 msgstr "สร้างบัญชี"
@@ -3395,11 +3398,11 @@ msgstr "สร้างบัญชีฟรีกับ"
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr "สร้างแบบจำลองทางคณิตศาสตร์/สถิติสำหรับการกำหนดราคา วิเคราะห์เพื่อประเมินความต้องการมาร์จิ้นและจัดการความเสี่ยงสำหรับออปชันที่แปลกใหม่ ฟอเร็กซ์ และ CFD"
 
+msgid "Create new demo account"
+msgstr ""
+
 msgid "Create new token"
 msgstr "สร้างโทเค่นใหม่"
-
-msgid "Create new virtual-money account"
-msgstr "สร้างบัญชีเงินเสมือนใหม่"
 
 msgid "Create or Manage Accounts"
 msgstr "สร้าง หรือ จัดการบัญชี"
@@ -3647,6 +3650,9 @@ msgstr "ปิดใช้งาน"
 msgid "Deactivate Account"
 msgstr "ปิดใช้งานบัญชี"
 
+msgid "Deactivate account"
+msgstr ""
+
 msgid "Deactivate account?"
 msgstr "ยกเลิกการเรียกใช้บัญชีหรือไม่?"
 
@@ -3709,6 +3715,9 @@ msgstr "บัญชีทดลอง Financial STP"
 
 msgid "Demo Synthetic"
 msgstr "บัญชีทดลอง ดัชนีสังเคราะห์"
+
+msgid "Demo accounts do not have Payment Agent services."
+msgstr ""
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "ขึ้นอยู่กับเขตอำนาจศาลที่บัญชีของลูกค้าที่ได้เปิดไว้ ตามขั้นตอนในการเปิดบัญชีของเว็บไซต์ และตามที่ได้ให้รายละเอียดไว้ในส่วนเกี่ยวกับเราในเว็บไซต์ และประเภทของผลิตภัณฑ์ที่นำเสนอ คำว่า \"บริษัทฯ\" จะหมายถึงอย่างใดอย่างหนึ่งต่อไปนี้"
@@ -6041,17 +6050,23 @@ msgstr "หากท่านไม่ได้รับอีเมล์ใน
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "หากท่านพบความเปราะบาง หรือ ช่องโหว่ของระบบ %1 โอเพ่นซอสของเรา %2 โปรดส่งข้อมูลการเปลี่ยนแปลงให้เราทราบทาง GitHub"
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
-msgstr "หากคุณมีบัญชีจริง Binary ให้ไปที่ %1แคชเชียร์%2 เพื่อถอนเงินของคุณ"
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
+msgstr ""
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
-msgstr "หากคุณมีบัญชีจริง Binary ให้ไปที่ %1พอร์ตโฟลิโอ%2 เพื่อปิดตำแหน่งที่เปิดอยู่"
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
+msgstr ""
 
-msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr "หากคุณมีบัญชีจริง DMT5 ให้ไปที่ %1แดชบอร์ด MT5%2 เพื่อถอนเงินของคุณ"
+msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
+msgstr ""
 
-msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr "หากคุณมีบัญชีจริง MT5 ให้เข้าสู่ระบบเพื่อปิดสถานะที่เปิดอยู่"
+msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
+msgstr ""
+
+msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
+msgstr ""
+
+msgid "If you have a DMT5 real account, log in to close any open positions."
+msgstr ""
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "หากคุณมีข้อมูลอ้างอิงการชำระเงิน (ตัวอย่าง เช่น 122) คุณสามารถป้อนข้อมูลได้ที่นี่"
@@ -6296,8 +6311,8 @@ msgstr "ในตลาดแลกเปลี่ยนเงินตรา �
 msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to the following rights with regards to the applicant's personal data:"
 msgstr "ภายใต้กฎข้อบังคับด้านการป้องกันข้อมูลทั่วไปของสหภาพยุโรป 2016/679 และพระราชบัญญัติการป้องกันข้อมูลปี 2018 ผู้สมัครมีสิทธิได้รับสิทธิดังต่อไปนี้เกี่ยวกับข้อมูลส่วนบุคคลของผู้สมัคร:"
 
-msgid "In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
-msgstr "สำหรับลูกค้าในสหราชอาณาจักรที่ต้องการใช้บัญชีทดลองใช้ ลูกค้าจะต้องดำเนินการตรวจสอบอายุก่อน และลูกค้าจำเป็นต้องได้รับการตรวจสอบอย่างสมบูรณ์ก่อนการใช้งานบัญชีเงินจริง การตรวจสอบสามารถดำเนินการผ่านช่องทางอิเล็กทรอนิกส์ หรือ ด้วยการส่งเอกสาร KYC"
+msgid "In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
+msgstr ""
 
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
 msgstr "เพื่อใช้งานเทเลแกรมอัตโนมัติ (Telegram Bot) โปรด%1สร้างโทเค่น API%2 และบันทึกค่าในช่องด้านล่าง"
@@ -9009,11 +9024,11 @@ msgstr "ความเรียบง่ายและทรงพลัง"
 msgid "Powerful charting and technical analysis"
 msgstr "แผนภูมิกราฟที่เป็นประโยชน์และการวิเคราะห์ทางเทคนิค"
 
-msgid "Practice account with replenishable 10,000 USD virtual credit."
-msgstr "บัญชีฝึกหัดพร้อมเครดิตเสมือน 10,000 USD ที่เติมได้"
+msgid "Practice account with replenishable 10,000 USD demo credit."
+msgstr ""
 
-msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
-msgstr "ฝึกวางยุทธศาสตร์การซื้อขายในสภาพที่ไม่มีความเสี่ยงโดยใช้เงินทุนทดลอง"
+msgid "Practice your trading strategies in a risk-free environment by using demo funds."
+msgstr ""
 
 msgid "Practise with virtual funds"
 msgstr "ฝึกฝนด้วยเงินเสมือน"
@@ -9504,8 +9519,8 @@ msgstr "รับรายได้ผ่านช่องทางที่ค
 msgid "Recent years are easy to guess"
 msgstr "ปีล่าสุดนั้นง่ายต่อการคาดเดา"
 
-msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
-msgstr "เมื่อตระหนักถึงความซับซ้อนของตลาดการเงิน เราจึงอธิบายตัวเลือกการซื้อขายของเราอย่างเป็นธรรมและละเอียด เรามีคำอธิบายผลิตภัณฑ์ที่ถูกต้องบนเว็บไซต์ของเราตลอดจนการสัมมนาทางเว็บฟรี เราเปิดโอกาสให้ลูกค้าตั้งค่าบัญชีเสมือนเพื่อทดลองใช้ระบบโดยไม่เสียค่าใช้จ่าย เราขอแนะนำให้ลูกค้าของเราศึกษาแหล่งข้อมูลเหล่านี้อย่างรอบคอบก่อนทำการซื้อขาย"
+msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up demo accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
+msgstr ""
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "แนะนำทางเลือกต่างๆ เพื่อแก้ปัญหาระบบที่ซ้ำซ้อน หรือ ระบบที่ล้าสมัย"
@@ -9714,23 +9729,23 @@ msgstr "Reset Time"
 msgid "Reset investor password"
 msgstr "รีเซ็ตรหัสผ่านนักลงทุน"
 
+msgid "Reset my demo balance"
+msgstr ""
+
 msgid "Reset my password"
 msgstr "รีเซ็ตรหัสผ่าน"
-
-msgid "Reset my virtual balance"
-msgstr "รีเซ็ตยอดคงเหลือเสมือนของฉัน"
 
 msgid "Reset password"
 msgstr "ตั้งรหัสผ่านใหม่"
 
-msgid "Reset the balance of your virtual account to %1 anytime."
-msgstr "รีเซ็ตยอดคงเหลือของบัญชีเสมือนของคุณเป็น %1 ได้ตลอดเวลา"
+msgid "Reset the balance of your demo account to %1 anytime."
+msgstr ""
 
 msgid "Reset to original settings"
 msgstr "ปรับการตั้งค่ากลับไปสู่ค่าเริ่มต้น"
 
-msgid "Reset your virtual balance"
-msgstr "รีเซ็ตยอดคงเหลือเสมือนของคุณ"
+msgid "Reset your demo balance"
+msgstr ""
 
 msgid "Residence permit"
 msgstr "ใบอนุญาตพํานักอาศัย"
@@ -12599,11 +12614,11 @@ msgstr "เอกสารฉบับนี้ (\"ข้อตกลง\") ก�
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "เอกสารนี้ (\"ข้อตกลง\") กำหนดข้อกำหนดและเงื่อนไขระหว่าง \"บริษัท\" ซึ่งก็คือ Deriv Services Ltd และผู้ที่สมัครเข้าร่วมโปรแกรมนี้ (\"พันธมิตร\") ที่เกี่ยวข้องกับการสมัครของพันธมิตร เพื่อสร้างบัญชีพันธมิตร (และการเป็นสมาชิกของโปรแกรมพันธมิตรหากใบสมัครของพันธมิตร นั้นได้รับการอนุมัติ)"
 
-msgid "This feature is available to virtual accounts only."
-msgstr "ฟีเจอร์นี้พร้อมใช้งานสําหรับบัญชีเสมือนเท่านั้น"
+msgid "This feature is available to demo accounts only."
+msgstr ""
 
-msgid "This feature is not relevant to virtual-money accounts."
-msgstr "ฟังก์ชันนี้ไม่สัมพันธ์กับบัญชีเงินเสมือน"
+msgid "This feature is not relevant to demo-money accounts."
+msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "ฟังก์ชันนี้สัมพันธ์กับบัญชีตัวแทนชำระเงินเท่านั้น"
@@ -12620,8 +12635,8 @@ msgstr "การปรับดอกเบี้ย (หรือ Swap Rate) �
 msgid "This is a complete list of supported payment methods. We'll show you which payment methods are available in your location on the deposit page."
 msgstr "นี่คือวิธีการจ่ายเงินทั้งหมดของเว็บไซต์ เราจะแสดงวิธีการจ่ายเงินที่มีอยู่สำหรับประเทศของท่านในหน้าการฝากเงิน"
 
-msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a virtual account rather than trading with real funds straightaway."
-msgstr "นี่คือความต่อเนื่องของจุดเดียวกัน %1 นำเสนอวิธีการเรียนรู้ที่หลากหลายแก่ลูกค้าในการซื้อขายอย่างมีความรับผิดชอบ พันธมิตรควรตรวจสอบให้แน่ใจว่าพวกเขาได้เรียนรู้ เช่น ส่งเสริมให้พวกเขาสร้างความเชี่ยวชาญด้วยบัญชีเสมือนแทนที่จะซื้อขายด้วยเงินจริงทันที"
+msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a demo account rather than trading with real funds straightaway."
+msgstr ""
 
 msgid "This is a staging server - For testing purposes only"
 msgstr "นี่คือ เครื่องแม่ข่ายสำหรับพักงานระหว่างพัฒนาระบบ ซึ่งใช้เพื่อในการทดสอบเท่านั้น"
@@ -12857,20 +12872,20 @@ msgstr "ชื่อโทเค่น"
 msgid "Too many failed attempts"
 msgstr "มีความพยายามหลายครั้งแต่ไม่สำเร็จ"
 
-msgid "Top Up Virtual Account"
-msgstr "เพิ่มเงินในบัญชีทดลองใช้"
+msgid "Top Up Demo Account"
+msgstr ""
 
 msgid "Top up"
 msgstr "เติมเงิน"
 
-msgid "Top up Virtual Account"
-msgstr "เพิ่มเงินไปยังบัญชีทดลอง"
+msgid "Top up Demo Account"
+msgstr ""
+
+msgid "Top up demo account"
+msgstr ""
 
 msgid "Top up error"
 msgstr "มีข้อผิดพลาดในการเติมเงิน"
-
-msgid "Top up virtual account"
-msgstr "เพิ่มเงินในบัญชีทดลองใช้"
 
 msgid "Top-tier liquidity"
 msgstr "สภาพคล่องในระดับสูง"
@@ -13559,8 +13574,8 @@ msgstr "ใช้เอกสารทางการตลาดเพื่อ
 msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the Binary Trademarks in a way that might compete with Binary's search engine optimisation without the prior written consent of Binary, which includes using the name '%1' on the title tag of the Introducing Broker's website"
 msgstr "ใช้ชื่อ 'Binary' หรือ การสร้างคำจากชื่อนั้น เช่น '%1' หรือ เครื่องหมายการค้าของ Binary ในลักษณะที่อาจแข่งขันกับระบบการใช้เครื่องมือสืบค้นให้เกิดประโยชน์สูงสุด (Search Engine Optimisation) ของ Binary โดยปราศจากความเห็นชอบอย่างเป็นลายลักษณ์อักษรจาก Binary ก่อน ซึ่งรวมถึงการใช้ชื่อ '%1' บนป้ายชื่อของเว็บไซต์ของโบรกเกอร์แนะนำ"
 
-msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
-msgstr "ใช้โอกาสที่มีในเว็บของพวกเราเพื่อเรียนรู้ให้เกิดความชำนาญโดยไม่ต้องลงทุนลงเงินจากบัญชีทดลองใช้งาน จะทำให้ท่านมีความคุ้นเคยกับการทำงานต่างๆ และหลักการในเว็บไซต์"
+msgid "Use the opportunity provided by our website to practice for free with our demo account facility. This will enable you to get used to the functionalities and rules of the website."
+msgstr ""
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "ใช้แพลตฟอร์มเว็บ ไม่ว่า วินโดวส์ ระบบปฏิบัติการแมค หรือ ลินุกซ์ โดยไม่ต้องดาวน์โหลดหรือติดตั้งโปรแกรมใดๆ"
@@ -13699,15 +13714,6 @@ msgstr "ดูรายการเดินบัญชีของท่าน
 
 msgid "View your trading and withdrawal limits."
 msgstr "ดูวงเงินการซื้อขายและวงเงินสำหรับถอนเงินของท่าน"
-
-msgid "Virtual"
-msgstr "เสมือน"
-
-msgid "Virtual Account"
-msgstr "บัญชีทดลองใช้"
-
-msgid "Virtual accounts do not have Payment Agent services."
-msgstr "บัญชีเสมือนไม่มีบริการตัวแทนการชำระเงิน"
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "วีซ่า เป็นองค์กรนานาชาติที่ให้บริการการชำระเงินดิจิทัลทั่วโลก ส่วนใหญ่ผ่านทางบัตรเครดิตหรือบัตรเดบิตของแบรนด์ต่างๆ สำหรับข้อมูลเพิ่มเติม โปรดศึกษาจาก %1"
@@ -14345,9 +14351,6 @@ msgstr "ถอนจาก MT5"
 msgid "Withdraw funds from your MT5 account"
 msgstr "ถอนเงินจากบัญชี MT5 ของท่าน"
 
-msgid "Withdraw your funds"
-msgstr "ถอนเงินของคุณ"
-
 msgid "Withdrawal"
 msgstr "ถอนเงิน"
 
@@ -14469,7 +14472,7 @@ msgid "You are expecting the base currency to rise in value so you can sell it b
 msgstr "ท่านกำลังคาดว่า มูลค่าของสกุลเงินฐานจะเพิ่มขึ้น เพื่อท่านจะได้ขายและทำกำไร"
 
 msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time %1."
-msgstr ""
+msgstr "ท่านถูกจำกัดสิทธิ์ไว้ที่สกุลเงิน fiat หนึ่งบัญชี สกุลเงินของบัญชีเงิน fiat ของท่านสามารถเปลี่ยนแปลงได้ก่อนที่ท่านจะ %1"
 
 msgid "You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments."
 msgstr "ท่านจะได้รับหน้าที่ในการบรรเทาความเสี่ยงและการใช้งานที่ไม่ถูกต้องที่บริษัทฯ ประสบจากการฉ้อโกงและการฟอกเงิน ซึ่งในการปฏิบัติงานเหล่านี้ ท่านจะอาศัยทักษะในการวิเคราะห์ การตรวจสอบ และการติดตามพฤติกรรมต่อพฤติการณ์การฟอกเงินในบัญชีและธุรกรรมการฝากของลูกค้า ท่านจะร่วมงานกับเราที่สำนักงานมอลตาและรายงานตรงต่อหัวหน้าแผนกชำระเงิน"
@@ -14478,7 +14481,7 @@ msgid "You are selling the base currency and buying the quote currency."
 msgstr "ท่านกำลังขายสกุลเงินฐานและซื้อสกุลเงินที่มีการเสนอราคา"
 
 msgid "You can %1set a new currency%2 before you deposit for the first %3."
-msgstr "ท่านสามารถ %1ตั้งค่าสกุลเงินใหม่%2 ก่อนที่คุณจะฝากเงินเป็นครั้งแรก %3"
+msgstr "ท่านสามารถ %1ตั้งค่าสกุลเงินใหม่%2 ก่อนท่านดำเนินการฝากเงิน %3"
 
 msgid "You can also decide to exclude yourself entirely from our website for a specified duration. Once the self-exclusion period has ended, you can either extend it further or resume trading immediately. If you wish to reduce or remove the self-exclusion period, contact our %1Customer Support%2."
 msgstr "นอกจากนี้คุณยังสามารถตัดสินใจป้องกันตนเองทั้งหมดจากเว็บไซต์ของเราในช่วงเวลาที่กำหนด เมื่อช่วงเวลาการป้องกันตนเองสิ้นสุดลงคุณสามารถขยายเวลาเพิ่มเติมหรือทำการซื้อขายต่อได้ทันที หากคุณต้องการลดหรือยกเลิกช่วงเวลาการป้องกันตนเอง โปรดติดต่อ %1Cฝ่ายบริการลูกค้า%2 ของเรา"
@@ -14512,6 +14515,9 @@ msgstr "ท่านไม่สามารถแก้ไขสกุลเง
 
 msgid "You can now return to your computer to continue"
 msgstr "ตอนนี้คุณสามารถกลับไปที่คอมพิวเตอร์ของคุณเพื่อดำเนินการต่อ"
+
+msgid "You can only perform up to %1 transfers a day. Please try again tomorrow."
+msgstr ""
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "คุณสามารถสมัครสมาชิกผู้ให้บริการสัญญาณรายเดียวด้วยบัญชี %1 เพียงบัญชีเดียวในเวลาใดก็ได้ คุณสามารถใช้สัญญาณของคุณบนคอมพิวเตอร์สูงสุด 3 เครื่อง"
@@ -14561,6 +14567,9 @@ msgstr "ท่านได้สร้างบัญชีทั้งหมด
 msgid "You have funds in these Binary accounts:"
 msgstr "คุณมีเงินในบัญชี Binary เหล่านี้:"
 
+msgid "You have funds in these Deriv X accounts:"
+msgstr ""
+
 msgid "You have funds in these MT5 accounts:"
 msgstr "คุณมีเงินในบัญชี MT5 เหล่านี้:"
 
@@ -14575,6 +14584,9 @@ msgstr "ท่านไม่ได้รับอนุญาตให้เข
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "คุณมีตําแหน่งที่เปิดในบัญชี Binary เหล่านี้:"
+
+msgid "You have open positions in these Deriv X accounts:"
+msgstr ""
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "คุณมีตําแหน่งที่เปิดในบัญชี MT5 เหล่านี้:"
@@ -14594,8 +14606,8 @@ msgstr "ท่านได้ขายสัญญานี้ที่ %1 %2"
 msgid "You have successfully changed your account currency from %1 to %2."
 msgstr "ท่านได้เปลี่ยนสกุลเงินจาด %1 เป็น %2 เรียบร้อยแล้ว"
 
-msgid "You have successfully created your Virtual Account."
-msgstr "ท่านได้สร้างบัญชีทดลองใช้เรียบร้อยแล้ว"
+msgid "You have successfully created your Demo Account."
+msgstr ""
 
 msgid "You have successfully created your real money %1account."
 msgstr "ท่านได้สร้างบัญชี%1เงินจริงของท่านเรียบร้อยแล้ว"
@@ -14723,8 +14735,8 @@ msgstr "คุณกำลังซื้อ %1 และกำลังขา�
 msgid "You're selling the %1 and buying the %2."
 msgstr "คุณกำลังขาย %1 และกำลังซื้อ %2"
 
-msgid "You're using a Virtual Account."
-msgstr "ท่านกำลังใช้บัญชีเสมือน หรือ บัญชีทดลองใช้"
+msgid "You're using a Demo Account."
+msgstr ""
 
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "ท่านได้ดำเนินการธุรกรรมในตลาดคล้ายกับที่เราได้นำเสนอ เฉลี่ยรวม 10 ธุรกรรม ต่อ ไตรมาส ภายในระยะเวลา 4 ไตรมาสที่ผ่านมา"
@@ -14765,6 +14777,9 @@ msgstr "บัญชีผู้ใช้ไบนารีของคุณถ
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "ลูกค้าของท่านจะได้รับอีเมล์แจ้งให้ทราบว่า การโอนได้ถูกดำเนินการแล้ว"
 
+msgid "Your Demo balance has been reset."
+msgstr ""
+
 msgid "Your Existing Accounts"
 msgstr "บัญชีของท่านที่มีอยู่"
 
@@ -14795,8 +14810,8 @@ msgstr "บัญชีของท่านยังอยู่ในประ
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "ความปลอดภัยของบัญชีมีความสำคัญยิ่งต่อเรา โปรดพิจารณาความริเริ่มและเครื่องมือต่อไปนี้เพื่อเพิ่มความปลอดภัยของบัญชี"
 
-msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
-msgstr "บัญชีของท่านจะเปิดกับ %1 และขึ้นกับเขตพื้นที่ และกฎหมายของ %2"
+msgid "Your account will be opened with %1, %2 and will be subject to the laws of %3."
+msgstr ""
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "ใบสมัครของท่านเพื่อปรับสถานะเป็นลูกค้าผู้เชี่ยวชาญ (Professional Client) กำลังถูกดำเนินการ"
@@ -14933,9 +14948,6 @@ msgstr "เลขที่อ้างอิงของธุรกรรมข
 msgid "Your transaction reference number is %1"
 msgstr "หมายเลขอ้างอิงของธุรกรรมของท่าน คือ %1"
 
-msgid "Your virtual balance has been reset."
-msgstr "ยอดคงเหลือเสมือนของคุณถูกรีเซ็ตแล้ว"
-
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "เว็บเบราเซอร์ของท่าน (%1) ไม่ได้ปรับปรุงให้ทันสมัย ซึ่งส่งผลต่อการใช้งานในการซื้อขายของท่าน โปรดดำเนินการเพื่อแก้ไขความเสี่ยงนี้โดยตัวท่านเองสามารถ %2 ปรับปรุงเบราเซอร์ให้เหมาะกับการใช้งาน %3"
 
@@ -15023,11 +15035,14 @@ msgstr "วัน"
 msgid "days"
 msgstr "วัน"
 
-msgid "deposit"
+msgid "demo credit to account"
 msgstr ""
 
+msgid "deposit"
+msgstr "ฝากเข้าบัญชีเงิน"
+
 msgid "deposit or create an MT5 account"
-msgstr ""
+msgstr "ฝากเข้าบัญชีเงิน fiat ของท่านเป็นครั้งแรก หรือ ก่อนเปิดบัญชี MT5 ท่าน"
 
 msgid "details"
 msgstr "รายละเอียด"
@@ -15141,19 +15156,16 @@ msgid "ticks"
 msgstr "ช่วงห่างของราคา"
 
 msgid "time"
-msgstr ""
+msgstr "ครั้งแรก"
 
 msgid "time or create an MT5 account"
-msgstr ""
+msgstr "ครั้งแรก หรือ ก่อนเปิดบัญชี MT5 ท่าน"
 
 msgid "today"
 msgstr "วันนี้"
 
 msgid "today, Fridays"
 msgstr "วันนี้วันศุกร์"
-
-msgid "virtual money credit to account"
-msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

@@ -184,10 +184,10 @@ msgstr ""
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stock indices, commodities, and synthetic indices."
 msgstr ""
 
-msgid "%1 has been credited into your MT5 Demo Account: %2."
+msgid "%1 has been credited into your Demo Account: %2."
 msgstr ""
 
-msgid "%1 has been credited into your Virtual Account: %2."
+msgid "%1 has been credited into your MT5 Demo Account: %2."
 msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
@@ -310,13 +310,13 @@ msgstr ""
 msgid "%1 provides business partnership services via the following programs."
 msgstr ""
 
+msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
+msgstr ""
+
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr ""
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
-msgstr ""
-
-msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
 msgstr ""
 
 msgid "%1 provides you with the opportunity to either self-exclude or %2set limits on your trading activities%3 on this website. You may also %4contact us%3 to state the limits you wish to set via email or phone. Available limits are:"
@@ -415,7 +415,7 @@ msgstr ""
 msgid "%1's remarkable history"
 msgstr ""
 
-msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
+msgid "%1's systems are now processing in excess of 1 million transactions/day (including demo accounts)."
 msgstr ""
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
@@ -580,6 +580,9 @@ msgstr ""
 msgid "1-2 years"
 msgstr ""
 
+msgid "1. Ensure to close all your positions"
+msgstr ""
+
 msgid "1. Proof of identity"
 msgstr ""
 
@@ -614,6 +617,9 @@ msgid "2-way pricing"
 msgstr ""
 
 msgid "2. Selfie with proof of ID"
+msgstr ""
+
+msgid "2. Withdraw your funds"
 msgstr ""
 
 msgid "2. Your desktop window stays open"
@@ -2068,7 +2074,7 @@ msgstr ""
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr ""
 
-msgid "Before you deactivate your account, you need to do the following:"
+msgid "Before you deactivate your account, you’ll need to:"
 msgstr ""
 
 msgid "Beginner"
@@ -2455,7 +2461,7 @@ msgstr ""
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr ""
 
-msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts."
+msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts."
 msgstr ""
 
 msgid "Can be used to open accounts, set settings, manage token usage, and more."
@@ -2834,9 +2840,6 @@ msgid "Close all or any of the client's Open Positions at a closing level that i
 msgstr ""
 
 msgid "Close identity verification screen"
-msgstr ""
-
-msgid "Close open positions"
 msgstr ""
 
 msgid "Close your %1 account."
@@ -3349,7 +3352,7 @@ msgstr ""
 msgid "Create MetaTrader 5 account"
 msgstr ""
 
-msgid "Create New Virtual-money Account"
+msgid "Create New Demo Account"
 msgstr ""
 
 msgid "Create account"
@@ -3379,10 +3382,10 @@ msgstr ""
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr ""
 
-msgid "Create new token"
+msgid "Create new demo account"
 msgstr ""
 
-msgid "Create new virtual-money account"
+msgid "Create new token"
 msgstr ""
 
 msgid "Create or Manage Accounts"
@@ -3631,6 +3634,9 @@ msgstr ""
 msgid "Deactivate Account"
 msgstr ""
 
+msgid "Deactivate account"
+msgstr ""
+
 msgid "Deactivate account?"
 msgstr ""
 
@@ -3692,6 +3698,9 @@ msgid "Demo Financial STP"
 msgstr ""
 
 msgid "Demo Synthetic"
+msgstr ""
+
+msgid "Demo accounts do not have Payment Agent services."
 msgstr ""
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
@@ -6025,16 +6034,22 @@ msgstr ""
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr ""
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
 msgstr ""
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
 msgstr ""
 
-msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
+msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
 msgstr ""
 
-msgid "If you have a MT5 real account, log into it to close any open positions."
+msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
+msgstr ""
+
+msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
+msgstr ""
+
+msgid "If you have a DMT5 real account, log in to close any open positions."
 msgstr ""
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
@@ -6280,7 +6295,7 @@ msgstr ""
 msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to the following rights with regards to the applicant's personal data:"
 msgstr ""
 
-msgid "In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
+msgid "In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
 msgstr ""
 
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
@@ -8992,10 +9007,10 @@ msgstr ""
 msgid "Powerful charting and technical analysis"
 msgstr ""
 
-msgid "Practice account with replenishable 10,000 USD virtual credit."
+msgid "Practice account with replenishable 10,000 USD demo credit."
 msgstr ""
 
-msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
+msgid "Practice your trading strategies in a risk-free environment by using demo funds."
 msgstr ""
 
 msgid "Practise with virtual funds"
@@ -9487,7 +9502,7 @@ msgstr ""
 msgid "Recent years are easy to guess"
 msgstr ""
 
-msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
+msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up demo accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
 msgstr ""
 
 msgid "Recommend alternatives to redundant or obsolete systems"
@@ -9697,22 +9712,22 @@ msgstr ""
 msgid "Reset investor password"
 msgstr ""
 
-msgid "Reset my password"
+msgid "Reset my demo balance"
 msgstr ""
 
-msgid "Reset my virtual balance"
+msgid "Reset my password"
 msgstr ""
 
 msgid "Reset password"
 msgstr ""
 
-msgid "Reset the balance of your virtual account to %1 anytime."
+msgid "Reset the balance of your demo account to %1 anytime."
 msgstr ""
 
 msgid "Reset to original settings"
 msgstr ""
 
-msgid "Reset your virtual balance"
+msgid "Reset your demo balance"
 msgstr ""
 
 msgid "Residence permit"
@@ -12580,10 +12595,10 @@ msgstr ""
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr ""
 
-msgid "This feature is available to virtual accounts only."
+msgid "This feature is available to demo accounts only."
 msgstr ""
 
-msgid "This feature is not relevant to virtual-money accounts."
+msgid "This feature is not relevant to demo-money accounts."
 msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
@@ -12601,7 +12616,7 @@ msgstr ""
 msgid "This is a complete list of supported payment methods. We'll show you which payment methods are available in your location on the deposit page."
 msgstr ""
 
-msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a virtual account rather than trading with real funds straightaway."
+msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a demo account rather than trading with real funds straightaway."
 msgstr ""
 
 msgid "This is a staging server - For testing purposes only"
@@ -12838,19 +12853,19 @@ msgstr ""
 msgid "Too many failed attempts"
 msgstr ""
 
-msgid "Top Up Virtual Account"
+msgid "Top Up Demo Account"
 msgstr ""
 
 msgid "Top up"
 msgstr ""
 
-msgid "Top up Virtual Account"
+msgid "Top up Demo Account"
+msgstr ""
+
+msgid "Top up demo account"
 msgstr ""
 
 msgid "Top up error"
-msgstr ""
-
-msgid "Top up virtual account"
 msgstr ""
 
 msgid "Top-tier liquidity"
@@ -13540,7 +13555,7 @@ msgstr ""
 msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the Binary Trademarks in a way that might compete with Binary's search engine optimisation without the prior written consent of Binary, which includes using the name '%1' on the title tag of the Introducing Broker's website"
 msgstr ""
 
-msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
+msgid "Use the opportunity provided by our website to practice for free with our demo account facility. This will enable you to get used to the functionalities and rules of the website."
 msgstr ""
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
@@ -13679,15 +13694,6 @@ msgid "View your statement"
 msgstr ""
 
 msgid "View your trading and withdrawal limits."
-msgstr ""
-
-msgid "Virtual"
-msgstr ""
-
-msgid "Virtual Account"
-msgstr ""
-
-msgid "Virtual accounts do not have Payment Agent services."
 msgstr ""
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
@@ -14326,9 +14332,6 @@ msgstr ""
 msgid "Withdraw funds from your MT5 account"
 msgstr ""
 
-msgid "Withdraw your funds"
-msgstr ""
-
 msgid "Withdrawal"
 msgstr ""
 
@@ -14494,6 +14497,9 @@ msgstr ""
 msgid "You can now return to your computer to continue"
 msgstr ""
 
+msgid "You can only perform up to %1 transfers a day. Please try again tomorrow."
+msgstr ""
+
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr ""
 
@@ -14542,6 +14548,9 @@ msgstr ""
 msgid "You have funds in these Binary accounts:"
 msgstr ""
 
+msgid "You have funds in these Deriv X accounts:"
+msgstr ""
+
 msgid "You have funds in these MT5 accounts:"
 msgstr ""
 
@@ -14555,6 +14564,9 @@ msgid "You have not granted access to any applications."
 msgstr ""
 
 msgid "You have open positions in these Binary accounts:"
+msgstr ""
+
+msgid "You have open positions in these Deriv X accounts:"
 msgstr ""
 
 msgid "You have open positions in these MT5 accounts:"
@@ -14575,7 +14587,7 @@ msgstr ""
 msgid "You have successfully changed your account currency from %1 to %2."
 msgstr ""
 
-msgid "You have successfully created your Virtual Account."
+msgid "You have successfully created your Demo Account."
 msgstr ""
 
 msgid "You have successfully created your real money %1account."
@@ -14704,7 +14716,7 @@ msgstr ""
 msgid "You're selling the %1 and buying the %2."
 msgstr ""
 
-msgid "You're using a Virtual Account."
+msgid "You're using a Demo Account."
 msgstr ""
 
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
@@ -14746,6 +14758,9 @@ msgstr ""
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr ""
 
+msgid "Your Demo balance has been reset."
+msgstr ""
+
 msgid "Your Existing Accounts"
 msgstr ""
 
@@ -14776,7 +14791,7 @@ msgstr ""
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr ""
 
-msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
+msgid "Your account will be opened with %1, %2 and will be subject to the laws of %3."
 msgstr ""
 
 msgid "Your application to be treated as a professional client is being processed."
@@ -14914,9 +14929,6 @@ msgstr ""
 msgid "Your transaction reference number is %1"
 msgstr ""
 
-msgid "Your virtual balance has been reset."
-msgstr ""
-
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr ""
 
@@ -15002,6 +15014,9 @@ msgid "day"
 msgstr ""
 
 msgid "days"
+msgstr ""
+
+msgid "demo credit to account"
 msgstr ""
 
 msgid "deposit"
@@ -15131,9 +15146,6 @@ msgid "today"
 msgstr ""
 
 msgid "today, Fridays"
-msgstr ""
-
-msgid "virtual money credit to account"
 msgstr ""
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
