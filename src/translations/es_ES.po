@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-23 13:27\n"
+"PO-Revision-Date: 2021-06-27 05:33\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -595,9 +595,6 @@ msgstr "1%"
 msgid "1-2 years"
 msgstr "1-2 años"
 
-msgid "1. Ensure to close all your positions"
-msgstr ""
-
 msgid "1. Proof of identity"
 msgstr "1. Comprobante de identidad"
 
@@ -633,9 +630,6 @@ msgstr "Valorización de contrato en 2 direcciones"
 
 msgid "2. Selfie with proof of ID"
 msgstr "2. Selfie con comprobante de identidad"
-
-msgid "2. Withdraw your funds"
-msgstr ""
 
 msgid "2. Your desktop window stays open"
 msgstr "2. La ventana de su escritorio permanece abierta"
@@ -2090,7 +2084,7 @@ msgstr "Antes de subir su documento, asegúrese de que sus %1pdatos personales%2
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "Antes de utilizar los robots de trading o Expert Advisors y operar con ellos, el cliente deberá probarlos en una cuenta demo."
 
-msgid "Before you deactivate your account, you’ll need to:"
+msgid "Before you deactivate your account, you need to do the following:"
 msgstr ""
 
 msgid "Beginner"
@@ -2857,6 +2851,9 @@ msgstr "Cerrar todas o algunas de las Posiciones Abiertas del cliente a un nivel
 
 msgid "Close identity verification screen"
 msgstr "Cerrar la pantalla de verificación de identidad"
+
+msgid "Close open positions"
+msgstr ""
 
 msgid "Close your %1 account."
 msgstr "Cierre su cuenta %1."
@@ -3649,9 +3646,6 @@ msgstr "Desactivar"
 
 msgid "Deactivate Account"
 msgstr "Desactivar cuenta"
-
-msgid "Deactivate account"
-msgstr ""
 
 msgid "Deactivate account?"
 msgstr "¿Desactivar cuenta?"
@@ -6050,22 +6044,16 @@ msgstr "Si no recibe el correo electrónico en los próximos minutos, revise su 
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Si encuentra cualquier vulnerabilidad en nuestro %1código de fuente abierto%2, no dude de enviar un pull-request a través de GitHub."
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
 msgstr ""
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
 msgstr ""
 
-msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
+msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
 msgstr ""
 
-msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
-msgstr ""
-
-msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
-msgstr ""
-
-msgid "If you have a DMT5 real account, log in to close any open positions."
+msgid "If you have a MT5 real account, log into it to close any open positions."
 msgstr ""
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
@@ -12615,7 +12603,7 @@ msgstr "Este documento (el \"Acuerdo\") establece los términos y condiciones en
 msgid "This feature is available to demo accounts only."
 msgstr ""
 
-msgid "This feature is not relevant to demo-money accounts."
+msgid "This feature is not relevant to demo accounts."
 msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
@@ -14349,6 +14337,9 @@ msgstr "Retirar de MT5"
 msgid "Withdraw funds from your MT5 account"
 msgstr "Retirar fondos de su cuenta MT5"
 
+msgid "Withdraw your funds"
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "Retirar"
 
@@ -14565,9 +14556,6 @@ msgstr "Usted ha creado todas las cuentas disponibles."
 msgid "You have funds in these Binary accounts:"
 msgstr "Tiene fondos en estas cuentas de Binary:"
 
-msgid "You have funds in these Deriv X accounts:"
-msgstr ""
-
 msgid "You have funds in these MT5 accounts:"
 msgstr "Tiene fondos en estas cuentas MT5:"
 
@@ -14582,9 +14570,6 @@ msgstr "Usted no ha concedido acceso a ninguna aplicación."
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "Tiene posiciones abiertas en estas cuentas Binary:"
-
-msgid "You have open positions in these Deriv X accounts:"
-msgstr ""
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "Tiene posiciones abiertas en estas cuentas MT5:"

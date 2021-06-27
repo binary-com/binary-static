@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-23 13:27\n"
+"PO-Revision-Date: 2021-06-27 05:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -200,7 +200,7 @@ msgid "%1 gives everyone an easy way to participate in the financial markets. Tr
 msgstr "%1让每个人都能轻松参与金融市场。您可交易各主要货币、股票指数、大宗商品和综合指数，投资门槛低至1美元。"
 
 msgid "%1 has been credited into your Demo Account: %2."
-msgstr ""
+msgstr "%1 已记入您的模拟账户: %2。"
 
 msgid "%1 has been credited into your MT5 Demo Account: %2."
 msgstr "%1 已记入您的MT5模拟账户: %2。"
@@ -326,7 +326,7 @@ msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 通过以下方案提供商业伙伴关系服务。"
 
 msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
-msgstr ""
+msgstr "%1 提供模拟設施让您以虛擬資金實踐交易策略。使用螢幕右上角的下拉清單可切換到模拟账户。"
 
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr "%1 向世界各地的机构客户提供广泛的资产市场报价和交易执行服务，包括主要货币对、现货金属、差价合约指数和受欢迎的加密货币。"
@@ -431,7 +431,7 @@ msgid "%1's remarkable history"
 msgstr "%1的辉煌发展历程"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including demo accounts)."
-msgstr ""
+msgstr "%1 系统每天处理超过百万笔交易（包括模拟账户）。"
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
 msgstr "%1提供全天候客户支持服务%2以增强您的交易体验"
@@ -595,9 +595,6 @@ msgstr "1%"
 msgid "1-2 years"
 msgstr "1-2 年"
 
-msgid "1. Ensure to close all your positions"
-msgstr ""
-
 msgid "1. Proof of identity"
 msgstr "1. 身份证明"
 
@@ -633,9 +630,6 @@ msgstr "双向报价"
 
 msgid "2. Selfie with proof of ID"
 msgstr "2. 带ID证件的自拍照片"
-
-msgid "2. Withdraw your funds"
-msgstr ""
 
 msgid "2. Your desktop window stays open"
 msgstr "2. 您的桌面窗口保持打开状态"
@@ -2089,7 +2083,7 @@ msgstr "上传文档之前，请确保您的%1个人详细信息%2已更新以�
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "客户在使用交易机器人或智能交易系统和远期交易之前, 应透过模拟账户进行测试。"
 
-msgid "Before you deactivate your account, you’ll need to:"
+msgid "Before you deactivate your account, you need to do the following:"
 msgstr ""
 
 msgid "Beginner"
@@ -2477,7 +2471,7 @@ msgid "Can I offer my referrals an incentive to sign up through my unique affili
 msgstr "我是否可以让我推荐的客户不要直接注册，而是通过我的联盟专用链接注册，从而获得奖金？"
 
 msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts."
-msgstr ""
+msgstr "可用于合同购入与售出，给到期的购入合同延期，以及给模拟账户存入资金。"
 
 msgid "Can be used to open accounts, set settings, manage token usage, and more."
 msgstr "可用于开账户、设置、代币用法管理等。"
@@ -2857,6 +2851,9 @@ msgstr "以合理可用的平仓水平将客户所有或任何未平仓头寸平
 
 msgid "Close identity verification screen"
 msgstr "关闭身份验证屏幕"
+
+msgid "Close open positions"
+msgstr ""
 
 msgid "Close your %1 account."
 msgstr "关闭您的 %1 账户。"
@@ -3369,7 +3366,7 @@ msgid "Create MetaTrader 5 account"
 msgstr "开立 MetaTrader 5 账户"
 
 msgid "Create New Demo Account"
-msgstr ""
+msgstr "开立新的模拟账户"
 
 msgid "Create account"
 msgstr "开立账户"
@@ -3399,7 +3396,7 @@ msgid "Create mathematical/statistical models for pricing, analyse fat tails to 
 msgstr "创建用于定价的数学/统计模型, 分析肥尾效应以评估保证金要求, 并管理奇异期权、外汇和差价合约的风险"
 
 msgid "Create new demo account"
-msgstr ""
+msgstr "开立新的模拟账户"
 
 msgid "Create new token"
 msgstr "创建新令牌"
@@ -3650,9 +3647,6 @@ msgstr "停用"
 msgid "Deactivate Account"
 msgstr "停用账户"
 
-msgid "Deactivate account"
-msgstr ""
-
 msgid "Deactivate account?"
 msgstr "停用账户?"
 
@@ -3717,7 +3711,7 @@ msgid "Demo Synthetic"
 msgstr "模拟综合"
 
 msgid "Demo accounts do not have Payment Agent services."
-msgstr ""
+msgstr "模拟账户没有付款代理服务。"
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "根据网站的开户程式对客户账户所附的管辖权和“关于我们”部分的详细说明以及提供的产品类型, “公司”一词应表示,"
@@ -6050,22 +6044,16 @@ msgstr "如果在几分钟内未收到电子邮件，请检查您的垃圾/广�
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "如您在我们的%1开源代码%2中发现任何漏洞， 请随时在GitHub提交引入请求。"
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
 msgstr ""
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
 msgstr ""
 
-msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
+msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
 msgstr ""
 
-msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
-msgstr ""
-
-msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
-msgstr ""
-
-msgid "If you have a DMT5 real account, log in to close any open positions."
+msgid "If you have a MT5 real account, log into it to close any open positions."
 msgstr ""
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
@@ -6312,7 +6300,7 @@ msgid "In light of the EU General Data Protection Regulation 2016/679 and the Da
 msgstr "根据欧盟2016/679一般数据保护条例 和2018数据保护法, 申请人对其个人资料有以下权利:"
 
 msgid "In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
-msgstr ""
+msgstr "为了让英国居民能够使用模拟账户，客户首先必须通过年龄验证。使用真实资金账户前，客户还必须通过全面验证。验证可以通过电子方式或提交KYC文件完成。"
 
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
 msgstr "要访问Telegram Bot，请%1创建 API 令牌%2并在下面的输入框中输入。"
@@ -9025,10 +9013,10 @@ msgid "Powerful charting and technical analysis"
 msgstr "功能强大的图表和技术分析"
 
 msgid "Practice account with replenishable 10,000 USD demo credit."
-msgstr ""
+msgstr "拥有10,000美元可补充模拟资金的练习账户。"
 
 msgid "Practice your trading strategies in a risk-free environment by using demo funds."
-msgstr ""
+msgstr "使用模拟资金在无风险的环境中实践您的交易策略。"
 
 msgid "Practise with virtual funds"
 msgstr "使用虚拟资金练习"
@@ -9520,7 +9508,7 @@ msgid "Recent years are easy to guess"
 msgstr "以最近数年的年份作密码很容易猜出"
 
 msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up demo accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
-msgstr ""
+msgstr "认识到金融市场的复杂性，我们公平及详细地描述了我们的交易选择。我们在网站上提供准确的产品描述，以及免费的网络研讨会。我们为客户提供建立模拟账户的机会，以便免费试用交易系统。我们鼓励客户在交易前仔细研究所有这些信息来源。"
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "推荐冗余或过时系统的替代品"
@@ -9730,7 +9718,7 @@ msgid "Reset investor password"
 msgstr "重置投资者密码"
 
 msgid "Reset my demo balance"
-msgstr ""
+msgstr "重设模拟余额"
 
 msgid "Reset my password"
 msgstr "重置密码"
@@ -9739,13 +9727,13 @@ msgid "Reset password"
 msgstr "重设密码"
 
 msgid "Reset the balance of your demo account to %1 anytime."
-msgstr ""
+msgstr "随时将模拟账户余额重设为 %1 。"
 
 msgid "Reset to original settings"
 msgstr "重设为原始设置"
 
 msgid "Reset your demo balance"
-msgstr ""
+msgstr "重设模拟余额"
 
 msgid "Residence permit"
 msgstr "居留许可证"
@@ -12614,9 +12602,9 @@ msgid "This document (the \"Agreement\") sets out the terms and conditions betwe
 msgstr "本文件（“协议”）规定了“公司”（即 Deriv Services Ltd.）与本项目申请人（“联盟会员”）之间关于联盟会员申请设立联盟会员账户（申请成功后还包括联盟项目的会员资格）以推广网站的条款和条件。"
 
 msgid "This feature is available to demo accounts only."
-msgstr ""
+msgstr "此功能仅适用于模拟账户。"
 
-msgid "This feature is not relevant to demo-money accounts."
+msgid "This feature is not relevant to demo accounts."
 msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
@@ -12635,7 +12623,7 @@ msgid "This is a complete list of supported payment methods. We'll show you whic
 msgstr "这是受支持的付款方式的完整列表。存款页面会显示您所在位置可用的付款方式。"
 
 msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a demo account rather than trading with real funds straightaway."
-msgstr ""
+msgstr "此文继续以上的说明。％1为客户提供多种学习负责任交易的方式。联盟成员须确保自己确实有在利用此资源，例如，通过模拟账户建立自己的专业知识，而不是直接使用真实资金交易。"
 
 msgid "This is a staging server - For testing purposes only"
 msgstr "这是分期服务器 -仅用于测试目的"
@@ -12872,16 +12860,16 @@ msgid "Too many failed attempts"
 msgstr "失败尝试次数太多"
 
 msgid "Top Up Demo Account"
-msgstr ""
+msgstr "充值模拟账户"
 
 msgid "Top up"
 msgstr "充值"
 
 msgid "Top up Demo Account"
-msgstr ""
+msgstr "充值模拟账户"
 
 msgid "Top up demo account"
-msgstr ""
+msgstr "充值模拟账户"
 
 msgid "Top up error"
 msgstr "充值错误"
@@ -13574,7 +13562,7 @@ msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the 
 msgstr "未经Binary事先书面同意，用可能会与Binary的搜索引擎优化竞争的方式使用Binary名称或该名称的任何派生，例如'%1'或Binary商标，包括在推介经纪网站的标题标签上使用%1名称"
 
 msgid "Use the opportunity provided by our website to practice for free with our demo account facility. This will enable you to get used to the functionalities and rules of the website."
-msgstr ""
+msgstr "利用本网站向您提供的机会，通过模拟账户免费尝试交易并熟悉各种功能和规则。"
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "网络平台可在Windows、MacOS、或 Linux 操作系统上使用，不需下载或安装。"
@@ -14350,6 +14338,9 @@ msgstr "从MT5提款"
 msgid "Withdraw funds from your MT5 account"
 msgstr "从您的 MT5 账户中提取资金"
 
+msgid "Withdraw your funds"
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "提款"
 
@@ -14516,7 +14507,7 @@ msgid "You can now return to your computer to continue"
 msgstr "您现在可以返回电脑继续操作"
 
 msgid "You can only perform up to %1 transfers a day. Please try again tomorrow."
-msgstr ""
+msgstr "每天只能执行%1次转账。请明天再试。"
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "在任何给定时间，您只能使用一个%1账户订阅一个信号提供者。您最多可以在3台计算机上使用信号。"
@@ -14566,9 +14557,6 @@ msgstr "您已开立所有可用的账户。"
 msgid "You have funds in these Binary accounts:"
 msgstr "您在以下Binary 账户中存有资金："
 
-msgid "You have funds in these Deriv X accounts:"
-msgstr ""
-
 msgid "You have funds in these MT5 accounts:"
 msgstr "您在以下 MT5 账户中存有资金："
 
@@ -14583,9 +14571,6 @@ msgstr "您没有访问任何应用程序的权限。"
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "您在以下 Binary 账户中持有未平仓头寸："
-
-msgid "You have open positions in these Deriv X accounts:"
-msgstr ""
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "您在以下 MT5 账户中持有未平仓头寸："
@@ -14606,7 +14591,7 @@ msgid "You have successfully changed your account currency from %1 to %2."
 msgstr "您已成功将账户币种从 %1 更改为 %2。"
 
 msgid "You have successfully created your Demo Account."
-msgstr ""
+msgstr "您已成功开立模拟账户."
 
 msgid "You have successfully created your real money %1account."
 msgstr "您已成功开立%1真实资金账户。"
@@ -14735,7 +14720,7 @@ msgid "You're selling the %1 and buying the %2."
 msgstr "您要卖出%1，买入%2。"
 
 msgid "You're using a Demo Account."
-msgstr ""
+msgstr "您使用的是模拟账户。"
 
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "您在与我们类似的市场进行了相当多的交易, 过去四季度里平均每季度进行了10笔交易"
@@ -14777,7 +14762,7 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "您的客户将收到电子邮件通知，告知其转账交易已处理。"
 
 msgid "Your Demo balance has been reset."
-msgstr ""
+msgstr "您的模拟余额已重置。"
 
 msgid "Your Existing Accounts"
 msgstr "您的当前账户"
@@ -14810,7 +14795,7 @@ msgid "Your account security is of paramount importance to us. Please consider t
 msgstr "您的账户安全对我们来说至关重要。请考虑采用以下措施和工具以增强您的账户安全:"
 
 msgid "Your account will be opened with %1, %2 and will be subject to the laws of %3."
-msgstr ""
+msgstr "您的账户将透过%1，%2开立，并受%3的法律管辖。"
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "您要求成为专业客户的申请正在处理中。"
@@ -15035,7 +15020,7 @@ msgid "days"
 msgstr "天"
 
 msgid "demo credit to account"
-msgstr ""
+msgstr "模拟资金进入账户"
 
 msgid "deposit"
 msgstr "存款"

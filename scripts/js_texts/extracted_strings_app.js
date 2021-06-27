@@ -602,7 +602,7 @@ module.exports = [
     'This contract lost',
     'This contract won',
     'This feature is available to demo accounts only.',
-    'This feature is not relevant to demo-money accounts.',
+    'This feature is not relevant to demo accounts.',
     'This field is required.',
     'This is a staging server - For testing purposes only',
     'This is a top-10 common password',

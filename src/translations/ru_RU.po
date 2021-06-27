@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-23 13:27\n"
+"PO-Revision-Date: 2021-06-27 05:33\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -200,7 +200,7 @@ msgid "%1 gives everyone an easy way to participate in the financial markets. Tr
 msgstr "%1 открывает вам простой способ работы на финансовых рынках. Заключайте контракты на сумму от $1 USD на ведущих валютных парах, сырьевых рынках, а также фондовых и синтетических индексах."
 
 msgid "%1 has been credited into your Demo Account: %2."
-msgstr ""
+msgstr "%1 зачислено на ваш демо-счет: %2."
 
 msgid "%1 has been credited into your MT5 Demo Account: %2."
 msgstr "%1 зачислено на ваш демо-счёт MT5: %2."
@@ -326,7 +326,7 @@ msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 предлагает услуги делового партнерства по следующим программам."
 
 msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
-msgstr ""
+msgstr "%1 предоставляет возможность работать на демо-счете, чтобы отточить вашу торговую стратегию, не рискуя реальными средствами. Перейдите на демо-счет через меню в правом верхнем углу экрана."
 
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr "%1 предоставляет институциональным клиентам по всему миру рыночные котировки и исполнение контрактов на множестве активов, включая основные валютные пары, металлы, контракты на разницу (CFD) на индексах и популярные криптовалюты."
@@ -431,7 +431,7 @@ msgid "%1's remarkable history"
 msgstr "Многолетняя история %1"
 
 msgid "%1's systems are now processing in excess of 1 million transactions/day (including demo accounts)."
-msgstr ""
+msgstr "Системы %1 обрабатывают более 1 миллиона транзакций в день (включая демо-счета)."
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
 msgstr "%1Служба поддержки%2 доступна 24/7, чтобы помочь вам получить максимум от вашего трейдинга."
@@ -595,9 +595,6 @@ msgstr "1%"
 msgid "1-2 years"
 msgstr "1-2 года"
 
-msgid "1. Ensure to close all your positions"
-msgstr ""
-
 msgid "1. Proof of identity"
 msgstr "1. Подтверждение личности"
 
@@ -633,9 +630,6 @@ msgstr "Оцените движение рынка в двух направле�
 
 msgid "2. Selfie with proof of ID"
 msgstr "2. Селфи с удостоверением личности"
-
-msgid "2. Withdraw your funds"
-msgstr ""
 
 msgid "2. Your desktop window stays open"
 msgstr "2. Окно программы остается открытым."
@@ -2089,7 +2083,7 @@ msgstr "Перед загрузкой документа убедитесь, ч�
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "Перед тем, как использовать торговых роботов или Expert Advisors и форвардную торговлю, клиент должен протестировать их на демо-счете."
 
-msgid "Before you deactivate your account, you’ll need to:"
+msgid "Before you deactivate your account, you need to do the following:"
 msgstr ""
 
 msgid "Beginner"
@@ -2477,7 +2471,7 @@ msgid "Can I offer my referrals an incentive to sign up through my unique affili
 msgstr "Могу ли я предложить рефералам вознаграждение за регистрацию через мою ссылку, а не напрямую через сайт?"
 
 msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts."
-msgstr ""
+msgstr "Может использоваться для покупки и продажи контрактов, возобновления закончившихся контрактов, а также пополнения демо-счетов."
 
 msgid "Can be used to open accounts, set settings, manage token usage, and more."
 msgstr "Может использоваться для открытия счетов, создания настроек, управления ключом и других действий."
@@ -2856,6 +2850,9 @@ msgstr "закрыть любую или все открытые позиции 
 
 msgid "Close identity verification screen"
 msgstr "Закройте экран подтверждения личности"
+
+msgid "Close open positions"
+msgstr ""
 
 msgid "Close your %1 account."
 msgstr "Закрыть ваш счет %1."
@@ -3368,7 +3365,7 @@ msgid "Create MetaTrader 5 account"
 msgstr "Открыть счёт MetaTrader 5"
 
 msgid "Create New Demo Account"
-msgstr ""
+msgstr "Открыть новый демо-счет"
 
 msgid "Create account"
 msgstr "Открыть счёт"
@@ -3398,7 +3395,7 @@ msgid "Create mathematical/statistical models for pricing, analyse fat tails to 
 msgstr "Создание математических/статистических моделей цен, анализ \"тяжёлых хвостов\" для оценки маржинальных требований, а также управление рисками экзотических опционов, forex и CFD"
 
 msgid "Create new demo account"
-msgstr ""
+msgstr "Открыть новый демо-счёт"
 
 msgid "Create new token"
 msgstr "Создать новый ключ"
@@ -3649,9 +3646,6 @@ msgstr "Деактивировать"
 msgid "Deactivate Account"
 msgstr "Деактивировать счет"
 
-msgid "Deactivate account"
-msgstr ""
-
 msgid "Deactivate account?"
 msgstr "Деактивировать счет?"
 
@@ -3716,7 +3710,7 @@ msgid "Demo Synthetic"
 msgstr "Демо Синтетический"
 
 msgid "Demo accounts do not have Payment Agent services."
-msgstr ""
+msgstr "Услуги платежных агентов недоступны на демо-счетах."
 
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "В зависимости от вида предоставляемых продуктов, юрисдикции, к которой относится счёт клиента, а также согласно процедуре открытия счёта, указанной на вебсайте и в разделе О нас, термин \"Компания\" обозначает,"
@@ -6050,22 +6044,16 @@ msgstr "Если вы не получите сообщения от нас в с
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Если вы обнаружите какие-либо уязвимости в нашем %1проекте с открытым кодом%2, пожалуйста, отправьте pull-запрос на GitHub."
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
 msgstr ""
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
 msgstr ""
 
-msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
+msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
 msgstr ""
 
-msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
-msgstr ""
-
-msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
-msgstr ""
-
-msgid "If you have a DMT5 real account, log in to close any open positions."
+msgid "If you have a MT5 real account, log into it to close any open positions."
 msgstr ""
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
@@ -6312,7 +6300,7 @@ msgid "In light of the EU General Data Protection Regulation 2016/679 and the Da
 msgstr "Согласно Общему регламенту по защите данных 2016/679 и Акту о защите информации от 2018 г., заявитель обладает следующими правами в отношении его личных данных:"
 
 msgid "In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
-msgstr ""
+msgstr "Чтобы резидент Великобритании мог использовать демо-счет, клиент сначала должен подтвердить возраст. Перед тем, как использовать реальный счет, клиент также должен пройти полную проверку. Подтверждение может быть выполнено в электронном виде или путем подачи документов KYC."
 
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
 msgstr "Чтобы получить доступ к Telegram Bot, %1сгенерируйте токен API%2 и введите его ниже."
@@ -9024,10 +9012,10 @@ msgid "Powerful charting and technical analysis"
 msgstr "Мощные графики и технический анализ"
 
 msgid "Practice account with replenishable 10,000 USD demo credit."
-msgstr ""
+msgstr "Демо-счёт с восполняемым виртуальным кредитом в размере 10 000 USD."
 
 msgid "Practice your trading strategies in a risk-free environment by using demo funds."
-msgstr ""
+msgstr "Попрактикуйте свои торговые стратегии в безопасной среде, пользуясь средствами демо-счета."
 
 msgid "Practise with virtual funds"
 msgstr "Попрактикуйте на виртуальных деньгах"
@@ -9519,7 +9507,7 @@ msgid "Recent years are easy to guess"
 msgstr "Последние годы легко угадать"
 
 msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up demo accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
-msgstr ""
+msgstr "Осознавая сложность финансовых рынков, мы честно и подробно описываем наши торговые возможности. На нашем сайте мы размещаем точные описания продуктов, а также проводим бесплатные вебинары. Мы предлагаем клиентам возможность открыть демо-счет, чтобы бесплатно потренироваться в торговой системе. Мы рекомендуем нашим клиентам внимательно изучить все эти источники информации перед тем, как приступить к трейдингу."
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "Рекомендация альтернатив для модернизации ненужных или устаревших систем"
@@ -9729,7 +9717,7 @@ msgid "Reset investor password"
 msgstr "Сбросить инвесторский пароль"
 
 msgid "Reset my demo balance"
-msgstr ""
+msgstr "Сбросить демо баланс"
 
 msgid "Reset my password"
 msgstr "Сбросить пароль"
@@ -9738,13 +9726,13 @@ msgid "Reset password"
 msgstr "Изменить пароль"
 
 msgid "Reset the balance of your demo account to %1 anytime."
-msgstr ""
+msgstr "Сбросьте баланс вашего демо-счета до %1 в любое время."
 
 msgid "Reset to original settings"
 msgstr "Восстановить исходные настройки"
 
 msgid "Reset your demo balance"
-msgstr ""
+msgstr "Сбросьте баланс вашего демо-счета"
 
 msgid "Residence permit"
 msgstr "Вид на жительство"
@@ -12612,9 +12600,9 @@ msgid "This document (the \"Agreement\") sets out the terms and conditions betwe
 msgstr "Данный документ (далее именуемый \"Соглашением\") устанавливает правила и условия, распространяющиеся на \"Компанию,\" что означает Deriv Services Ltd, и лицо, подавшее заявку на участие в данной программе (\"Партнёр\") в отношении заявки на открытие партнёрского счёта (и участия в партнёрской программе, если таковая заявка на участие будет одобрена)."
 
 msgid "This feature is available to demo accounts only."
-msgstr ""
+msgstr "Эта опция доступна только для демо-счетов."
 
-msgid "This feature is not relevant to demo-money accounts."
+msgid "This feature is not relevant to demo accounts."
 msgstr ""
 
 msgid "This feature is only relevant to payment agent accounts."
@@ -12633,7 +12621,7 @@ msgid "This is a complete list of supported payment methods. We'll show you whic
 msgstr "Это полный список поддерживаемых платежных методов. Мы покажем, какие платежные методы действуют в вашем регионе на странице пополнения счёта."
 
 msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a demo account rather than trading with real funds straightaway."
-msgstr ""
+msgstr "Это продолжение того же положения. %1 предлагает клиентам широкий выбор способов обучиться ответственной торговле. Партнёры должны убедиться, что их клиенты учатся трейдингу, например, поощряя их набираться опыта на демо-счёте перед началом торговли на реальные деньги."
 
 msgid "This is a staging server - For testing purposes only"
 msgstr "Это вспомогательный сервер, применяемый только для тестирования"
@@ -12870,16 +12858,16 @@ msgid "Too many failed attempts"
 msgstr "Слишком много неудачных попыток"
 
 msgid "Top Up Demo Account"
-msgstr ""
+msgstr "Пополнить демо-счет"
 
 msgid "Top up"
 msgstr "Пополнить"
 
 msgid "Top up Demo Account"
-msgstr ""
+msgstr "Пополнить демо-счет"
 
 msgid "Top up demo account"
-msgstr ""
+msgstr "Пополнить демо-счет"
 
 msgid "Top up error"
 msgstr "Ошибка при пополнении"
@@ -13572,7 +13560,7 @@ msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the 
 msgstr "Использовать имя \"Binary\" или любое производное от данного имени, например, \"%1\" или торговую марку Binary любыми способами, которые могут ухудшить поисковую оптимизацию Binary без предварительного письменного согласия Binary, что включает использование имени \"%1\" в заголовках вебсайта Представляющего брокера"
 
 msgid "Use the opportunity provided by our website to practice for free with our demo account facility. This will enable you to get used to the functionalities and rules of the website."
-msgstr ""
+msgstr "Используйте возможность бесплатно практиковаться на нашем сайте на демо-счете. Это поможет вам понять правила и основные функции сайта."
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "Пользуйтесь веб платформой для операционных систем Windows, MacOS и Linux без загрузки и установки."
@@ -14348,6 +14336,9 @@ msgstr "Вывести средства с MT5"
 msgid "Withdraw funds from your MT5 account"
 msgstr "Вывод средств со счёта MT5"
 
+msgid "Withdraw your funds"
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "Вывод"
 
@@ -14514,7 +14505,7 @@ msgid "You can now return to your computer to continue"
 msgstr "Теперь вы можете вернуться и продолжить со своего компьютера"
 
 msgid "You can only perform up to %1 transfers a day. Please try again tomorrow."
-msgstr ""
+msgstr "Вы можете совершать до %1 переводов в день. Пожалуйста, повторите попытку завтра."
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "Вы можете подписаться только на одного провайдера сигналов с одного счета %1 в любой момент времени. Вы можете использовать сигнал максимум на 3 компьютерах."
@@ -14564,9 +14555,6 @@ msgstr "Вы открыли все доступные счета."
 msgid "You have funds in these Binary accounts:"
 msgstr "У вас есть средства на этих счетах Binary:"
 
-msgid "You have funds in these Deriv X accounts:"
-msgstr ""
-
 msgid "You have funds in these MT5 accounts:"
 msgstr "У вас есть средства на этих счетах MT5:"
 
@@ -14581,9 +14569,6 @@ msgstr "Вы не предоставили доступ ни к каким пр�
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "У вас есть открытые позиции на этих счетах Binary:"
-
-msgid "You have open positions in these Deriv X accounts:"
-msgstr ""
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "У вас есть открытые позиции на этих счетах  MT5:"
@@ -14604,7 +14589,7 @@ msgid "You have successfully changed your account currency from %1 to %2."
 msgstr "Вы успешно изменили валюту счёта с %1 на %2."
 
 msgid "You have successfully created your Demo Account."
-msgstr ""
+msgstr "Вы успешно открыли демо-счет."
 
 msgid "You have successfully created your real money %1account."
 msgstr "Вы успешно открыли реальный счёт %1."
@@ -14733,7 +14718,7 @@ msgid "You're selling the %1 and buying the %2."
 msgstr "Вы продаёте %1 и покупаете %2."
 
 msgid "You're using a Demo Account."
-msgstr ""
+msgstr "Вы находитесь на демо-счете."
 
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "Вы провели значительное количество контрактов на схожих рынках, что в среднем составляет 10 контрактов за квартал по итогам предыдущих четырёх кварталов"
@@ -14775,7 +14760,7 @@ msgid "Your Client will receive an email notification informing him/her that the
 msgstr "Ваш клиент получит по электронной почте уведомление о том, что перевод был выполнен."
 
 msgid "Your Demo balance has been reset."
-msgstr ""
+msgstr "Баланс вашего демо-счета был сброшен."
 
 msgid "Your Existing Accounts"
 msgstr "Ваши текущие счета"
@@ -14808,7 +14793,7 @@ msgid "Your account security is of paramount importance to us. Please consider t
 msgstr "Безопасность вашего счёта является нашей первостепенной задачей. Пожалуйста, ознакомьтесь со следующими процедурами и инструментами повышения безопасности вашего счёта:"
 
 msgid "Your account will be opened with %1, %2 and will be subject to the laws of %3."
-msgstr ""
+msgstr "Ваш счет будет открыт в компании %1, %2 и будет регулироваться законами %3."
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Ваша заявка на квалификацию профессионального клиента находится на рассмотрении."
@@ -15033,7 +15018,7 @@ msgid "days"
 msgstr "дн."
 
 msgid "demo credit to account"
-msgstr ""
+msgstr "демо-средства на счет"
 
 msgid "deposit"
 msgstr "пополнение"
