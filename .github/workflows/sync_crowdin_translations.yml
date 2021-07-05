@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Setup node
         uses: actions/setup-node@v2
+        with:
+          node-version: '12'
 
       - name: Comment secrets
         run: |
@@ -47,8 +49,8 @@ jobs:
           
           echo "Installing project dependencies"
           npm install
-
-          git status
+          echo "Building the project"
+          npm run build
 
           echo "Checking out new branch [$branch_name]"
           git checkout -b "$branch_name"
@@ -57,6 +59,11 @@ jobs:
 
           echo "Updating translations source file"          
           last_messages_hash="$(git hash-object $(git rev-parse --show-toplevel)/src/translations/messages.pot)"
+          echo "- [crowdin]:   message.pot hash is: $last_messages_hash"
+          echo "****************"
+          cwd
+          ls
+          echo "****************"
           node ./scripts/render.js -t
           current_messages_hash="$(git hash-object $(git rev-parse --show-toplevel)/src/translations/messages.pot)"
           echo "- [crowdin]:   message.pot hash is: $last_messages_hash"
