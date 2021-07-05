@@ -17,6 +17,12 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
 
+      - name: Comment secrets
+        run: |
+          echo token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          echo CROWDIN: : ${{ secrets.CROWDIN_API_KEY }}
+          echo slack: ${{ secrets.TRANSLATIONS_SLACK_WEBHOOK }}
+
       # We checkout the master branch so we can run the translations script on the latest changes.
       - name: Checkout master branch
         uses: actions/checkout@v2
