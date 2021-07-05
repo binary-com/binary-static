@@ -173,6 +173,7 @@ const Home = () => {
                 <div className='container gr-padding-20'>
                     <h1 className='dark center-text gr-padding-20 gr-child'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
                     <p className='center-text gr-padding-10'>{it.L('Trade 24/7, even on weekends.')}</p>
+                    <p className='center-text gr-padding-10'>{it.L('This is a test string.')}</p>
 
                     <div className='gr-padding-30 gr-11-m gr-centered gr-child'>
                         <FormVerifyEmail
