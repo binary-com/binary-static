@@ -46,7 +46,8 @@ jobs:
           sudo npm i -g @crowdin/cli
 
           echo "Checking out new branch [$branch_name]"
-          git checkout -b "$branch_name" master
+          git checkout action-test
+          git checkout -b "$branch_name"
 
 
 
