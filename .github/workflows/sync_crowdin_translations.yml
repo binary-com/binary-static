@@ -19,12 +19,6 @@ jobs:
         with:
           node-version: '12'
 
-      - name: Comment secrets
-        run: |
-          echo token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          echo CROWDIN: : ${{ secrets.CROWDIN_API_KEY }}
-          echo slack: ${{ secrets.TRANSLATIONS_SLACK_WEBHOOK }}
-
       - name: Checkout master branch
         uses: actions/checkout@v2
         with:
@@ -95,17 +89,16 @@ jobs:
             git add .
             git commit -m "translations: 📚 sync translations with crowdin"
             
-            echo "**** pushing"
             # Force push to this branch in case a previous run created it.
             git push --set-upstream origin "$branch_name" -f
 
-            echo "**** installing gh"
             sudo apt install gh
-            echo "**** logging in"
             gh auth login --with-token <<< ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-            echo "**** closng prev pr"
             gh pr close "$branch_name" || true
-            echo "**** creating pr"
+
+            echo "******remote "
+            git remote -v
+
             gh pr create --fill --base "translation-test" --head "binary-com:$branch_name"
 
             echo "Attempting to approve and merge the PR."
