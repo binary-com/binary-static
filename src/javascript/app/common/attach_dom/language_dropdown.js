@@ -1,4 +1,5 @@
 const Language = require('../../../_common/language');
+const LocalStore = require('../../../_common/storage').LocalStore;
 
 const createLanguageDropDown = (website_status) => {
     const $languages = $('.languages');
@@ -6,9 +7,9 @@ const createLanguageDropDown = (website_status) => {
     if ($languages.find('#display_language li').attr('class')) {
         return;
     }
-
+    
     const select_language_id = '#select_language';
-    const current_language   = Language.get();
+    const current_language   = LocalStore.get('active_loginid') ? LocalStore.get('preferred_language') : Language.get();
 
     $languages.find(`#display_language li, ${select_language_id} li`)
         .addClass(current_language)
