@@ -61,7 +61,9 @@ jobs:
           last_messages_hash="$(git hash-object $(git rev-parse --show-toplevel)/src/translations/messages.pot)"
           echo "- [crowdin]:   message.pot hash is: $last_messages_hash"
           echo "****************"
-          cwd
+          echo "PWD: "
+          pwd
+          echo "LS:"
           ls
           echo "****************"
           node ./scripts/render.js -t
