@@ -533,6 +533,7 @@ module.exports = [
     'Sorry, no mobile phone bills',
     'Sorry, this feature is not available in your jurisdiction.',
     'Sorry, withdrawals for this currency are currently disabled.',
+    'Sorry, your account is not authorised for any further contract purchases.',
     'Spot',
     'Spot Time',
     'Spot Time (GMT)',
