@@ -37,7 +37,7 @@ const ClientBase = (() => {
      * @param {String|null} loginid        The account to set the value for
      */
     const set = (key, value, loginid = current_loginid) => {
-        if (key === 'preferred_language' &&  !LocalStore.get('preferred_language')) {
+        if (key === 'preferred_language' && !LocalStore.get('preferred_language')) {
             LocalStore.set('preferred_language', value);
         }
         if (key === 'loginid' && value !== current_loginid) {
