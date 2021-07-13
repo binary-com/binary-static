@@ -8,14 +8,13 @@ const removeCookies       = require('../storage').removeCookies;
 const urlForCurrentDomain = require('../url').urlForCurrentDomain;
 const isLoginPages        = require('../utility').isLoginPages;
 const TrafficSource       = require('../../app/common/traffic_source');
-const urlFor              = require('../language').urlFor;
 const getAppId            = require('../../config').getAppId;
 
 const Login = (() => {
     const redirectToLogin = (reset_password) => {
         removeCookies('hide_guide');
         if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage) || reset_password) {
-            sessionStorage.setItem('redirect_url', urlFor(LocalStore.get('preferred_language'), window.location.href));
+            sessionStorage.setItem('redirect_url', window.location.href);
             window.location.href = loginUrl();
         }
     };
