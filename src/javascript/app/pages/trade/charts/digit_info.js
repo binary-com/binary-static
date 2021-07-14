@@ -28,6 +28,7 @@ const DigitInfo = (() => {
             plotBackgroundColor: '#fff',
             plotBorderWidth    : 1,
             plotBorderColor    : '#ccc',
+            marginBottom       : 50,
             height             : 225, // This is "unresponsive", but so is leaving it empty where it goes to 400px.
         },
         title    : { text: '' },
@@ -94,6 +95,18 @@ const DigitInfo = (() => {
                     return `${percentage}%`;
                 },
             },
+        },
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 472,
+                },
+                chartOptions: {
+                    chart: {
+                        marginBottom: 70,
+                    },
+                },
+            }],
         },
     };
 
@@ -166,7 +179,9 @@ const DigitInfo = (() => {
 
             const getTitle = () => (
                 {
-                    text: template($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]),
+                    text   : template($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]),
+                    useHTML: true,
+                    style  : { 'text-align': 'center' },
                 }
             );
 

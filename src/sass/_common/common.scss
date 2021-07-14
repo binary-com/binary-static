@@ -777,6 +777,9 @@ li strong.margin-right {
         font-weight: 400;
         padding-left: 1rem;
     }
+    .text-capitalize {
+        text-transform: capitalize !important;
+    }
 
     @media screen and (max-width: 650px) {
         width: 150px;

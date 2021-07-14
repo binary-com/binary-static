@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-30 07:55\n"
+"PO-Revision-Date: 2021-07-13 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -4864,11 +4864,8 @@ msgstr "F. Margin dan Leverage"
 msgid "FIX API"
 msgstr "API TETAP"
 
-msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr "FX-mayor (standar), FX-minor, Komoditas, Mata uang kripto"
-
-msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr "FX-mayor (standar/lot mikro), FX-minor, Komoditas, Mata uang kripto"
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
+msgstr ""
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "FX-mayor, FX-minor, FX-eksotik, Mata uang kripto"
@@ -8030,8 +8027,8 @@ msgstr "Catatan: %1 tidak membebankan biaya transfer."
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "Nota: Untuk pertanyaan mengenai akun non aktif atau pembatalan akun, silahkan hubungi %1Customer Support%2."
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr "Catatan: transfer agen pembayaran hanya tersedia untuk akun yang terdaftar pada Deriv (SVG) LLC. Transaksi diterima hanya dalam mata uang dolar AS."
+msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
+msgstr "Catatan: Transfer Agen Pembayaran hanya tersedia untuk akun yang terdaftar di Deriv (SVG) LLC."
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Catatan: Anda hanya dapat memiliki satu akun dalam mata uang fiat. Mata uang akun fiat Anda dapat dirubah jika Anda belum melakukan deposit perdana atau mendaftar akun MT5. Anda juga dapat mendaftar pada setiap akun mata uang kripto yang tersedia."
@@ -10355,6 +10352,9 @@ msgstr "Maaf, fitur ini tidak tersedia di yurisdiksi Anda."
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "Maaf, penarikan untuk mata uang ini sedang dinonaktifkan."
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Maaf, akun Anda tidak dapat membeli kontrak selanjutnya."
+
 msgid "Source of income"
 msgstr "Sumber penghasilan"
 
@@ -11555,11 +11555,11 @@ msgstr "Produk Keuangan yang ditawarkan oleh DIEL adalah kontrak antara klien da
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
 msgstr "Akun Finansial STP (Straight Through Processing) adalah 100% akun buku A di mana trading yang Anda lakukan akan dikirim langsung pada pasar, memberi Anda akses langsung ke penyedia likuiditas Forex. Bertrading pasangan mata uang mayor, minor, eksotis, dan mata uang kripto dengan spread ketat serta volume trading yang lebih tinggi."
 
-msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "Akun Finansial (tersedia dalam mata uang EUR dan GBP) cocok untuk berbagai jenis trader, baik trader baru maupun trader berpengalaman. Bertrading pasar komoditas, mata uang kripto, pasangan mata uang mayor dan minor dengan spread ketat dan variabel tanpa komisi serta deposit yang sangat minimal."
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
+msgstr ""
 
-msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "Akun Finansial menawarkan leverage tinggi dan spread variabel untuk fleksibilitas maksimum bagi trader baru dan berpengalaman. Bertrading komoditas, mata uang kripto, mayor (standard dan mikro-lot), dan pasangan mata uang minor dengan leverage tinggi."
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
+msgstr ""
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "Pasar Foreign Exhange (forex) adalah pasar terbesar dan paling likuid di dunia - dimana semua orang dapat menjual, membeli, dan menukar mata uang."
@@ -14574,6 +14574,9 @@ msgstr "Anda memiliki posisi berjalan pada akun Binary ini:"
 msgid "You have open positions in these MT5 accounts:"
 msgstr "Anda memiliki posisi berjalan pada akun MT5 ini:"
 
+msgid "You have pending withdrawal(s) in these Binary accounts:"
+msgstr ""
+
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Anda mungkin pernah melihat istilah 'going long' dan 'going short' digunakan oleh banyak broker dan trader forex. Mari bandingkan perbedaan antara kedua istilah tersebut:"
 
@@ -15084,8 +15087,20 @@ msgstr "atau meng-upload foto - bukan scan atau fotokopi"
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard menawarkan metode pembayaran online berbasis voucher yang tidak memerlukan rekening bank, kartu kredit, atau informasi pribadi lainnya. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
+msgid "position(s)"
+msgstr ""
+
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "rasio dari Akun Ekuitas pada Total Margin, dinyatakan dalam persen"
+
+msgid "regulated by the Malta Financial Services Authority (MFSA),"
+msgstr ""
+
+msgid "regulated by the Malta Gaming Authority,"
+msgstr ""
+
+msgid "regulated by the UK Gaming Commission (UKGC),"
+msgstr ""
 
 msgid "second"
 msgstr "detik"
@@ -15149,6 +15164,9 @@ msgstr "hari ini"
 
 msgid "today, Fridays"
 msgstr "hari ini, Jumat"
+
+msgid "withdrawal(s)"
+msgstr ""
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

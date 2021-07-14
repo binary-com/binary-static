@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-30 07:55\n"
+"PO-Revision-Date: 2021-07-13 11:27\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -4865,11 +4865,8 @@ msgstr "F. Biên và Đòn Bẩy"
 msgid "FIX API"
 msgstr "FIX API"
 
-msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr "Cặp tiền tệ chính (lô tiêu chuẩn), Cặp tiền tệ thứ yếu, Hàng hoá thương mại, Tiền điện tử"
-
-msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr "Cặp tiền tệ chính (lô tiêu chuẩn/nhỏ), Cặp tiền tệ thứ yếu, Hàng hoá thương mại, Tiền điện tử"
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
+msgstr ""
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "Các cặp ngoại hối chính, phụ, ngoại lai và tiền điện tử"
@@ -8032,8 +8029,8 @@ msgstr "Lưu ý: %1 không tính bất kì phí chuyển tiền nào."
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "Lưu ý: Đối với bất kỳ thắc mắc liên quan đến các tài khoản bị vô hiệu hóa hoặc bị loại trừ, xin vui lòng liên hệ với %1Hỗ trợ khách hàng%2."
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr "Chú ý: Chuyển tiền qua Đại lý Thanh toán chỉ có cho các tài khoản đã được đăng kí với công ty TNHH Deriv (SVG). Giao dịch chỉ được chấp nhận bằng tiền Đô la Mỹ."
+msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
+msgstr "Chú ý: Chuyển tiền qua Đại lý Thanh toán chỉ có cho các tài khoản đã được đăng kí với công ty TNHH Deriv (SVG)."
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Lưu ý: Bạn chỉ được phép sở hữu 1 tài khoản tiền thật. Đơn vị tiền tệ của tài khoản tiền thật có thể được thay đổi trước lần gửi tiền đầu tiên hoặc khi bạn tạo tài khoản MT5. Bạn cũng có thể mở một tài khoản cho mỗi loại tiền ảo được hỗ trợ."
@@ -10357,6 +10354,9 @@ msgstr "Xin lỗi, tính năng này không có sẵn trong thẩm quyền của 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "Rất tiếc, chức năng rút cho loại tiền này hiện đang bị vô hiệu hóa."
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Rất tiếc, tài khoản của bạn không có quyền mua thêm hợp đồng."
+
 msgid "Source of income"
 msgstr "Nguồn thu nhập"
 
@@ -11557,11 +11557,11 @@ msgstr "Các Sản phẩm Tài chính mà DIEL cung cấp để giao dịch là 
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
 msgstr "Tài khoản Xử lý Thông qua Tài chính (STP) là một tài khoản A Book 100%, nơi các giao dịch của bạn được chuyển thẳng ra thị trường, cho phép bạn truy cập trực tiếp vào các nhà cung cấp thanh khoản ngoại hối. Giao dịch các cặp tiền tệ chính, phụ, ngoại lai và tiền điện tử với mức chênh lệch thấp và khối lượng giao dịch cao hơn."
 
-msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "Tài khoản tài chính (có sẵn bằng EUR và GBP) phù hợp với nhiều nhà giao dịch, cả người mới hoặc người có kinh nghiệm. Giao dịch hàng hóa, tiền điện tử, cặp tiền chính và phụ với chênh lệch thấp và linh hoạt mà không có phí hoa hồng và tiền gửi tối thiểu."
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
+msgstr ""
 
-msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "Tài khoản tài chính cung cấp cho các nhà giao dịch mới và có kinh nghiệm đòn bẩy cao và chênh lệch biến đổi cho sự linh hoạt tối đa. Giao dịch hàng hóa, tiền điện tử, các cặp tiền chính (tiêu chuẩn và siêu nhỏ) và các cặp tiền tệ phụ có đòn bẩy cao."
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
+msgstr ""
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "Thị trường ngoại hối (forex) là thị trường lớn nhất và thanh khoản nhiều nhất thế giới - nơi mọi người có thể mua, bán và trao đổi tiền tệ."
@@ -14576,6 +14576,9 @@ msgstr "Bạn có các giao dịch mở trong các tài khoản Binary này:"
 msgid "You have open positions in these MT5 accounts:"
 msgstr "Bạn có các giao dịch mở trong các tài khoản MT5 này:"
 
+msgid "You have pending withdrawal(s) in these Binary accounts:"
+msgstr ""
+
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Bạn có thể đã thấy các thuật ngữ 'đi dài' và 'đi ngắn' được sử dụng bởi rất nhiều bởi các nhà môi giới và giao dịch ngoại hối. Hãy so sánh sự khác biệt giữa hai thuật ngữ:"
 
@@ -15086,8 +15089,20 @@ msgstr "hoặc tải ảnh lên - không quét hoặc sao chụp"
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard cung cấp phương thức thanh toán trực tuyến dựa trên các phiếu nạp không yêu cầu tài khoản ngân hàng, thẻ tín dụng hoặc thông tin cá nhân khác. Để biết thêm thông tin, vui lòng truy cập %1."
 
+msgid "position(s)"
+msgstr ""
+
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "tỷ lệ của Vốn Sở Hữu với Tổng Tiền Ký Quỹ, được biệu thị bằng phần trăm"
+
+msgid "regulated by the Malta Financial Services Authority (MFSA),"
+msgstr ""
+
+msgid "regulated by the Malta Gaming Authority,"
+msgstr ""
+
+msgid "regulated by the UK Gaming Commission (UKGC),"
+msgstr ""
 
 msgid "second"
 msgstr "giây"
@@ -15151,6 +15166,9 @@ msgstr "hôm nay"
 
 msgid "today, Fridays"
 msgstr "hôm nay, Thứ Sáu"
+
+msgid "withdrawal(s)"
+msgstr ""
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

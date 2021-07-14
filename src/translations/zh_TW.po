@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-30 07:55\n"
+"PO-Revision-Date: 2021-07-14 08:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -4864,11 +4864,8 @@ msgstr "六、保證金和槓桿交易"
 msgid "FIX API"
 msgstr "FIX API"
 
-msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr "外匯-主要貨幣對（標準）、外匯-次要貨幣對、大宗商品、加密貨幣"
-
-msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr "外匯-主要貨幣對（標準/微手）， 外匯-次要貨幣對， 大宗商品， 加密貨幣"
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
+msgstr "外匯-主要貨幣對（標準/微手）、 外匯-次要貨幣對、大宗商品、加密貨幣、股票和股票指數"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "外匯-主要貨幣對、外匯-次要貨幣對、外匯-奇異貨幣對、加密貨幣"
@@ -8029,8 +8026,8 @@ msgstr "注意: %1不收取任何轉帳費用。"
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "注: 如有任何關於禁用或隔離帳戶的查詢, 請與%1客服部%2聯繫。"
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr "注意：僅在 Deriv (SVG) LLC 註冊的帳號才能通過付款代理匯款。僅接受以美元進行所有交易。"
+msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
+msgstr "注意：僅在 Deriv (SVG) LLC 註冊的帳號才能通過付款代理匯款。"
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "注意: 您只能使用一個法定貨幣帳戶。首次把資金存入法定帳戶或開立 MT5 帳戶之前, 可以更改 法定帳戶的幣種。您還可以為每種受支持的加密貨幣開立專用帳戶。"
@@ -10354,6 +10351,9 @@ msgstr "對不起，您的管轄權內無法使用此功能。"
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "抱歉，此貨幣的取款目前被禁用。"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "對不起，您的帳戶沒有進一步買入任何合約的權限。"
+
 msgid "Source of income"
 msgstr "收入來源"
 
@@ -11554,11 +11554,11 @@ msgstr "DIEL提供的金融產品交易為客戶和DIEL之間的合約。在這�
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
 msgstr "財務直通處理系統 (STP) 帳戶是100% A Book 帳戶。讓您直接進入市場交易，您也可直接存取外匯流動量提供商，並進行緊密利差、高交易量的主要、次要、特異貨幣對和加密貨幣外匯交易。"
 
-msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "財務帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。以微小和可變的差價進行大宗商品、加密貨幣、主要和次要貨幣對交易, 不收佣金費，也沒有最低存款限制。"
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
+msgstr "金融帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。交易主要（標準和微手）和次要貨幣對、股票、股票指數、大宗商品和加密貨幣。"
 
-msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "財務帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性，進行高槓桿大宗商品、加密貨幣、主要（標準和微手）和次要貨幣對交易。"
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
+msgstr "金融帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性。高槓桿交易主要（標準和微手）和次要貨幣對、股票、股票指數、大宗商品和加密貨幣。"
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "外匯市場（forex）是世界上最大、流動性最高的市場 ​​- 任何人都可以買、賣、交易貨幣。"
@@ -14572,6 +14572,9 @@ msgstr "您在以下 Binary 帳戶中持有未平倉頭寸："
 msgid "You have open positions in these MT5 accounts:"
 msgstr "您在以下 MT5 帳戶中持有未平倉頭寸："
 
+msgid "You have pending withdrawal(s) in these Binary accounts:"
+msgstr "您在以下 Binary 帳戶中有待定提款："
+
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "您可能看過很多外匯經紀商和交易者使用「開多頭頭寸」和「開空頭頭寸」這兩個術語。讓我們來比較一下兩個術語之間的差異："
 
@@ -15082,8 +15085,20 @@ msgstr "或上傳照片 - 不接受掃描件或影印件"
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard 提供基於憑證，不需要銀行帳戶、信用卡或其他個人資料的線上支付方法 。欲知詳情, 請存取 %1。"
 
+msgid "position(s)"
+msgstr "頭寸"
+
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "帳戶資金與保證金總額的比率，以百分比表示"
+
+msgid "regulated by the Malta Financial Services Authority (MFSA),"
+msgstr "由馬爾他金融服務管理局 (MFSA) 監管，"
+
+msgid "regulated by the Malta Gaming Authority,"
+msgstr "由馬爾他博彩局監管，"
+
+msgid "regulated by the UK Gaming Commission (UKGC),"
+msgstr "由英國博彩委員會(UKGC)監管，"
 
 msgid "second"
 msgstr "秒"
@@ -15147,6 +15162,9 @@ msgstr "今天"
 
 msgid "today, Fridays"
 msgstr "今天，週五"
+
+msgid "withdrawal(s)"
+msgstr "提款"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

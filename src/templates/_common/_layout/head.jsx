@@ -2,12 +2,10 @@ import React from 'react';
 import Title from '../components/title.jsx';
 import Favicons from '../includes/favicons.jsx';
 import AntiClickjack from '../includes/anti_clickjack.jsx';
-import SurveyPopUp from '../includes/survey_pop_up.jsx';
 
 const Head = () => (
     <head>
         <AntiClickjack />
-        <SurveyPopUp />
         <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
         <meta httpEquiv='Content-Language' content={it.language} />
         <meta name='description' content={` ${it.L('[_1] gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stock indices, commodities, and synthetic indices.', it.broker_name)}`} />
