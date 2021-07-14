@@ -19,7 +19,7 @@ jobs:
           repository: "binary-com/binary-static"
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
-      - name: Setup Project and enviroonment
+      - name: Setup Project and environment
         run: |
           branch_name="binary_static_translations"
 
