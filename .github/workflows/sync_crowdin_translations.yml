@@ -2,12 +2,20 @@ name: Sync Crowdin translations
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   sync_crowdin_translations:
     if: github.repository == 'binary-com/binary-static'
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel previous running workflow
+        uses: styfle/cancel-workflow-action@0.9.0
+        with:
+          access_token: ${{ github.token }}
+
       - name: Setup node
         uses: actions/setup-node@v2
         with:
