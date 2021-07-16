@@ -63,7 +63,7 @@ const Language = (() => {
     };
 
     const urlForLanguage = (lang, url = window.location.href) =>
-        url.replace(new RegExp(`/${languageFromUrl(url)}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
+        url.replace(new RegExp(`/${languageFromUrl(url) || getLanguage()}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
 
     const onChangeLanguage = () => {
         applyToAllElements('li', (el) => {

@@ -23,9 +23,9 @@ const LoggedInHandler = (() => {
         const params = paramsHash(window.location.href);
         BinarySocket.send({ authorize: params.token1 }).then((response) => {
             const account_list = getPropertyValue(response, ['authorize', 'account_list']);
-            const preferred_language   = response.authorize.preferred_language.toLowerCase();
             if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
                 // redirect url
+                const preferred_language   = response.authorize.preferred_language.toLowerCase();
                 redirect_url = urlForLanguage(preferred_language, sessionStorage.getItem('redirect_url'));
                 LocalStore.set('preferred_language', preferred_language);
                 sessionStorage.removeItem('redirect_url');

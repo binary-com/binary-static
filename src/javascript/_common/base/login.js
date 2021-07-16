@@ -21,7 +21,7 @@ const Login = (() => {
 
     const loginUrl = () => {
         const server_url         = localStorage.getItem('config.server_url');
-        const language           = LocalStore.get('preferred_language') || getLanguage();
+        const language           = getLanguage() || LocalStore.get('preferred_language') ;
         const signup_device      = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
         const date_first_contact = LocalStore.get('date_first_contact');
         const marketing_queries  = `&signup_device=${signup_device}${date_first_contact ? `&date_first_contact=${date_first_contact}` : ''}`;
