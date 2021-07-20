@@ -101,8 +101,7 @@ const Validation = (() => {
                     const event = events_map[field.type];
 
                     if (event) {
-                        field.$.unbind(event).on(event, e => {
-                            if (e.type === 'change' && e.target.type === 'text') return;
+                        field.$.unbind(event).on(event, () => {
                             checkField(field);
                             if (field.re_check_field) {
                                 checkField(forms[form_selector].fields.find(fld => (
@@ -160,13 +159,14 @@ const Validation = (() => {
     // ------------------------------
     // ----- Validation Methods -----
     // ------------------------------
+
+    const validEmail        = value => /^(([a-zA-Z0-9][^!@£$%^&*=/?§±~<>(){}[\]\\.,;:\s@"'`]+(\.[^!@£$%^&*=/?§±~<>(){}[\]\\.,;:\s@"'`]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
     const validRequired     = (value, options, field) => {
         if (value.length) return true;
         // else
         ValidatorsMap.get().req.message = field.type === 'checkbox' ? localize('Please select the checkbox.') : localize('This field is required.');
         return false;
     };
-    const validEmail        = value => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
     const validPassword     = (value, options, field) => {
         if (/^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]*$/.test(value)) {
             Password.checkPassword(field.selector, true);
@@ -232,12 +232,20 @@ const Validation = (() => {
             message = localize('Should be less than [_1]', addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined));
         }
 
+        // Priority Validation
+        if ('balance' in options && isLessThanBalance(value, options)) {
+            is_ok   = false;
+            message = localize('Insufficient balance.');
+        }
+
         ValidatorsMap.get().number.message = message;
         return is_ok;
     };
 
     const isMoreThanMax = (value, options) =>
         (options.type === 'float' ? +value > +options.max : compareBigUnsignedInt(value, options.max) === 1);
+
+    const isLessThanBalance = (value,options) => options.balance < value;
 
     const validTaxID = (value, options, field) => {
         // input is valid in API regex but may not be valid for country regex
@@ -371,6 +379,7 @@ const Validation = (() => {
     };
 
     const showError = (field, localized_message) => {
+        if (field.$error.html() === localized_message) return;
         clearError(field);
         Password.removeCheck(field.selector);
         field.$error.html(localized_message).setVisibility(1);

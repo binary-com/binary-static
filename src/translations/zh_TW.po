@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-27 05:33\n"
+"PO-Revision-Date: 2021-07-15 08:44\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2084,7 +2084,7 @@ msgid "Before using the trading robots or Expert Advisors and forward trade, the
 msgstr "客戶在使用交易機器人或專家顧問和遠期交易之前, 應透過模擬帳戶進行測試。"
 
 msgid "Before you deactivate your account, you need to do the following:"
-msgstr ""
+msgstr "在停用帳戶之前，您需要執行以下操作："
 
 msgid "Beginner"
 msgstr "初學者"
@@ -2852,7 +2852,7 @@ msgid "Close identity verification screen"
 msgstr "關閉身份驗證螢幕"
 
 msgid "Close open positions"
-msgstr ""
+msgstr "把持倉頭寸平倉"
 
 msgid "Close your %1 account."
 msgstr "關閉您的 %1 帳戶。"
@@ -4864,11 +4864,8 @@ msgstr "六、保證金和槓桿交易"
 msgid "FIX API"
 msgstr "FIX API"
 
-msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr "外匯-主要貨幣對（標準）、外匯-次要貨幣對、大宗商品、加密貨幣"
-
-msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr "外匯-主要貨幣對（標準/微手）， 外匯-次要貨幣對， 大宗商品， 加密貨幣"
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
+msgstr "外匯-主要貨幣對（標準/微手）、 外匯-次要貨幣對、大宗商品、加密貨幣、股票和股票指數"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "外匯-主要貨幣對、外匯-次要貨幣對、外匯-奇異貨幣對、加密貨幣"
@@ -6044,16 +6041,16 @@ msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to
 msgstr "如您在我們的%1開源代碼%2中發現任何漏洞，請隨時在GitHub提交引入請求。"
 
 msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
-msgstr ""
+msgstr "如您有 Binary 真實帳戶，請前往%1C收銀台%2提取資金。"
 
 msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
-msgstr ""
+msgstr "如您有 Binary 真實帳戶，請前往%1投資組合%2將全部持倉頭寸平倉。"
 
 msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr ""
+msgstr "如您有 MT5 真實帳戶，請前往%1MT5 儀表板%2提取資金。"
 
 msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr ""
+msgstr "如您有 MT5真實帳戶，請登入以便將全部持倉頭寸平倉。"
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "如有付款參考編號（例如122），可在此處輸入。"
@@ -8029,8 +8026,8 @@ msgstr "注意: %1不收取任何轉帳費用。"
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "注: 如有任何關於禁用或隔離帳戶的查詢, 請與%1客服部%2聯繫。"
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr "注意：僅在 Deriv (SVG) LLC 註冊的帳號才能通過付款代理匯款。僅接受以美元進行所有交易。"
+msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
+msgstr "注意：僅在 Deriv (SVG) LLC 註冊的帳號才能通過付款代理匯款。"
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "注意: 您只能使用一個法定貨幣帳戶。首次把資金存入法定帳戶或開立 MT5 帳戶之前, 可以更改 法定帳戶的幣種。您還可以為每種受支持的加密貨幣開立專用帳戶。"
@@ -8362,6 +8359,9 @@ msgstr "我們今年的預計活躍客戶總數將超過79萬人。"
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "我們的業務建立在合作基礎上，我們旨在與合作夥伴建立長期的互利關係。但是，我們絕不會對業務誠信的堅持作出妥協。如果我們的合作夥伴不願意或無法遵守我們的原則，我們保留退出業務關係的權利。"
 
+msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr "由於系統維護，收銀台暫時無法使用。一旦維護完成，您即可存取收銀台。"
+
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "我們的佣金結構是簡單的二層級計劃。"
 
@@ -8370,6 +8370,9 @@ msgstr "我們對完整性和可靠性的承諾意味著我們一直都努力為
 
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "我們公司繼續茁壯成長，並在曼島獲得執照，可以為我們的英國客戶提供更好的服務。"
+
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr ""
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我們深受客戶喜愛。 2014年中旬，%1的歷史交易數量和每日新交易數量分別超過1億筆和13萬筆。"
@@ -10354,6 +10357,9 @@ msgstr "對不起，您的管轄權內無法使用此功能。"
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "抱歉，此貨幣的取款目前被禁用。"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "對不起，您的帳戶沒有進一步買入任何合約的權限。"
+
 msgid "Source of income"
 msgstr "收入來源"
 
@@ -11554,11 +11560,11 @@ msgstr "DIEL提供的金融產品交易為客戶和DIEL之間的合約。在這�
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
 msgstr "財務直通處理系統 (STP) 帳戶是100% A Book 帳戶。讓您直接進入市場交易，您也可直接存取外匯流動量提供商，並進行緊密利差、高交易量的主要、次要、特異貨幣對和加密貨幣外匯交易。"
 
-msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "財務帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。以微小和可變的差價進行大宗商品、加密貨幣、主要和次要貨幣對交易, 不收佣金費，也沒有最低存款限制。"
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
+msgstr "金融帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。交易主要（標準和微手）和次要貨幣對、股票、股票指數、大宗商品和加密貨幣。"
 
-msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "財務帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性，進行高槓桿大宗商品、加密貨幣、主要（標準和微手）和次要貨幣對交易。"
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
+msgstr "金融帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性。高槓桿交易主要（標準和微手）和次要貨幣對、股票、股票指數、大宗商品和加密貨幣。"
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "外匯市場（forex）是世界上最大、流動性最高的市場 ​​- 任何人都可以買、賣、交易貨幣。"
@@ -12602,7 +12608,7 @@ msgid "This feature is available to demo accounts only."
 msgstr "此功能僅適用於模擬帳戶。"
 
 msgid "This feature is not relevant to demo accounts."
-msgstr ""
+msgstr "此功能與模擬帳戶沒有關聯。"
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "此功能僅適用於支付代理帳戶。"
@@ -13963,6 +13969,9 @@ msgstr "具備良好的組織、行政和會計技能"
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "我們將更新您的限額。點選％1同意和接受％2以確認您對自己的行為負全部責任，如果您因此而上癮或蒙受損失，我們將不承擔任何責任。"
 
+msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
+msgstr "我們的收銀台系統正在更新，很快即將線上提供服務。更新詳情請參閱我們的%1s狀態頁面%2。"
+
 msgid "We’ve sent you an email"
 msgstr "我們已給您傳送電子郵件"
 
@@ -14336,7 +14345,7 @@ msgid "Withdraw funds from your MT5 account"
 msgstr "從您的 MT5 帳戶中提取資金"
 
 msgid "Withdraw your funds"
-msgstr ""
+msgstr "提取資金"
 
 msgid "Withdrawal"
 msgstr "提款"
@@ -14571,6 +14580,9 @@ msgstr "您在以下 Binary 帳戶中持有未平倉頭寸："
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "您在以下 MT5 帳戶中持有未平倉頭寸："
+
+msgid "You have pending withdrawal(s) in these Binary accounts:"
+msgstr "您在以下 Binary 帳戶中有待定提款："
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "您可能看過很多外匯經紀商和交易者使用「開多頭頭寸」和「開空頭頭寸」這兩個術語。讓我們來比較一下兩個術語之間的差異："
@@ -15082,8 +15094,20 @@ msgstr "或上傳照片 - 不接受掃描件或影印件"
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard 提供基於憑證，不需要銀行帳戶、信用卡或其他個人資料的線上支付方法 。欲知詳情, 請存取 %1。"
 
+msgid "position(s)"
+msgstr "頭寸"
+
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "帳戶資金與保證金總額的比率，以百分比表示"
+
+msgid "regulated by the Malta Financial Services Authority (MFSA),"
+msgstr "由馬爾他金融服務管理局 (MFSA) 監管，"
+
+msgid "regulated by the Malta Gaming Authority,"
+msgstr "由馬爾他博彩局監管，"
+
+msgid "regulated by the UK Gaming Commission (UKGC),"
+msgstr "由英國博彩委員會(UKGC)監管，"
 
 msgid "second"
 msgstr "秒"
@@ -15147,6 +15171,9 @@ msgstr "今天"
 
 msgid "today, Fridays"
 msgstr "今天，週五"
+
+msgid "withdrawal(s)"
+msgstr "提款"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

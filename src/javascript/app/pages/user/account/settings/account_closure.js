@@ -221,7 +221,7 @@ const AccountClosure = (() => {
         };
         if (response.error.details.open_positions) {
             Object.keys(response.error.details.open_positions).forEach((account) => {
-                const txt_positions = `${response.error.details.open_positions[account]} position(s)`;
+                const txt_positions = `${response.error.details.open_positions[account]} ${localize('position(s)')}`;
                 if (/^MT/.test(account)) {
                     section_id = 'account_closure_open_mt';
                     display_name = getMTDisplay(account);
@@ -243,6 +243,13 @@ const AccountClosure = (() => {
                     display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);
                 }
                 addSection(account, txt_balance);
+            });
+        }
+        if (response.error.details.pending_withdrawals) {
+            Object.keys(response.error.details.pending_withdrawals).forEach((account) => {
+                const txt_pending_withdrawals = `${response.error.details.pending_withdrawals[account]} ${localize('withdrawal(s)')}`;
+                section_id = 'account_closure_pending_withdrawals';
+                addSection(account, txt_pending_withdrawals);
             });
         }
     };

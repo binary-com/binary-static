@@ -123,6 +123,9 @@ const Client = (() => {
         // clear elev.io session storage
         sessionStorage.removeItem('_elevaddon-6app');
         sessionStorage.removeItem('_elevaddon-6create');
+        // clear session storage related to #financial-form
+        sessionStorage.removeItem('client_form_response');
+        sessionStorage.removeItem('is_risk_disclaimer');
         // clear trading session
         Defaults.remove('underlying', 'market');
         ClientBase.clearAllAccounts();

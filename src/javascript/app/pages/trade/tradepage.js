@@ -23,7 +23,7 @@ const TradePage = (() => {
     const onLoad = () => {
         DerivBanner.onLoad();
 
-        BinarySocket.wait('authorize').then(() => {
+        BinarySocket.wait('authorize' , 'landing_company').then(() => {
             init();
         });
     };

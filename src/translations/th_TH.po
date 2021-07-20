@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-27 05:33\n"
+"PO-Revision-Date: 2021-07-15 08:44\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2084,7 +2084,7 @@ msgid "Before using the trading robots or Expert Advisors and forward trade, the
 msgstr "ก่อนการใช้หุ่นยนต์ซื้อขาย หรือ Expert Advisors และการซื้อขายล่วงหน้า ลูกค้าควรทดลองใช้งานฟังก์ชันดังกล่าวจากบัญชีทดลองใช้เสียก่อน"
 
 msgid "Before you deactivate your account, you need to do the following:"
-msgstr ""
+msgstr "ก่อนที่คุณจะปิดใช้งานบัญชีของคุณ คุณต้องดำเนินการดังต่อไปนี้:"
 
 msgid "Beginner"
 msgstr "ผู้เริ่มต้น"
@@ -2852,7 +2852,7 @@ msgid "Close identity verification screen"
 msgstr "ปิดหน้าจอการยืนยันตัวตน"
 
 msgid "Close open positions"
-msgstr ""
+msgstr "ปิดตําแหน่งที่เปิด"
 
 msgid "Close your %1 account."
 msgstr "ปิดบัญชี %1 ของคุณ"
@@ -4865,11 +4865,8 @@ msgstr "ฉ. มาร์จินและเลเวอเลจ"
 msgid "FIX API"
 msgstr "FIX API"
 
-msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr "สกุลเงินหลัก (มาตรฐาน) สกุลเงินรอง หุ้นโภคภัณฑ์ สกุลเงินดิจิทัล"
-
-msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr "สกุลเงินหลัก (มาตรฐาน/ไมโครล็อต) สกุลเงินรอง หุ้นโภคภัณฑ์ สกุลเงินดิจิตอล"
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
+msgstr "FX-majors (มาตรฐาน/ไมโครล็อต), FX-minors, สินค้าโภคภัณฑ์, คริปโตเคอเรนซี่, หุ้น และดัชนีหุ้น"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "สกุลเงินหลัก สกุลเงินรอง สกุลเงินแปลกใหม่ สกุลเงินดิจิทัล"
@@ -6045,16 +6042,16 @@ msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to
 msgstr "หากท่านพบความเปราะบาง หรือ ช่องโหว่ของระบบ %1 โอเพ่นซอสของเรา %2 โปรดส่งข้อมูลการเปลี่ยนแปลงให้เราทราบทาง GitHub"
 
 msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง Binary ให้ไปที่ %1แคชเชียร์%2 เพื่อถอนเงินของคุณ"
 
 msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง Binary ให้ไปที่ %1พอร์ตโฟลิโอ%2 เพื่อปิดตำแหน่งที่เปิดอยู่"
 
 msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง DMT5 ให้ไปที่ %1แดชบอร์ด MT5%2 เพื่อถอนเงินของคุณ"
 
 msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง MT5 ให้เข้าสู่ระบบเพื่อปิดสถานะที่เปิดอยู่"
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "หากคุณมีข้อมูลอ้างอิงการชำระเงิน (ตัวอย่าง เช่น 122) คุณสามารถป้อนข้อมูลได้ที่นี่"
@@ -8031,8 +8028,8 @@ msgstr "หมายเหตุ %1ไม่เรียกเก็บค่า
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "หมายเหตุ: สำหรับคำถามใดๆ เกี่ยวกับบัญชีถูกปิดใช้งาน หรือ บัญชีที่ถูกตัดออก โปรดติดต่อ %1ฝ่ายลูกค้าสัมพันธ์%2"
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr "หมายเหตุ: การโอนเงินจากตัวแทนการชำระเงินจะใช้ได้เฉพาะกับบัญชีที่ลงทะเบียนกับ Deriv (SVG) LLC การทำธุรกรรมได้รับการยอมรับในสกุลเงินดอลลาร์สหรัฐเท่านั้น"
+msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
+msgstr "หมายเหตุ: การโอนเงินจากตัวแทนการชำระเงินจะใช้ได้เฉพาะกับบัญชีที่ลงทะเบียนกับ Deriv (SVG) LLC"
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "หมายเหตุ: ท่านถูกจำกัดสิทธิ์ไว้ที่สกุลเงิน fiat หนึ่งบัญชี สกุลเงินของบัญชีเงิน fiat ของท่านสามารถเปลี่ยนแปลงได้ก่อนที่ท่านจะฝากเข้าบัญชีเงิน fiat ของท่านเป็นครั้งแรก หรือ ก่อนเปิดบัญชี MT5 ท่านสามารถเปิดได้เพียงหนึ่งบัญชีสำหรับแต่ละสกุลเงินดิจิทัลที่รองรับ"
@@ -8364,6 +8361,9 @@ msgstr "คาดว่าฐานลูกค้าที่ใช้งาน
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "ธุรกิจของเราก่อตั้งขึ้นจากความร่วมมือและเรามุ่งมั่นที่จะสร้างความสัมพันธ์ระยะยาวและเป็นประโยชน์ร่วมกันกับหุ้นส่วนของเรา อย่างไรก็ตามเราจะไม่ลดทอนความมุ่งมั่นของเราที่มีต่อความซื่อสัตย์ทางธุรกิจ ในกรณีที่หุ้นส่วนของเราไม่เต็มใจหรือไม่สามารถปฏิบัติตามหลักการของเราได้ เราขอสงวนสิทธิ์ในการถอนตัวจากความสัมพันธ์ทางธุรกิจ"
 
+msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr "แคชเชียร์ของเราหยุดทํางานชั่วคราวเนื่องจากการบํารุงรักษาระบบ คุณสามารถเข้าถึงแคชเชียร์ได้ทันทีที่การบํารุงรักษาเสร็จสมบูรณ์"
+
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "โครงสร้างคอมมิชชั่นของเราเป็นแผน 2 ขั้น อย่างง่าย"
 
@@ -8372,6 +8372,9 @@ msgstr "คำมั่นสัญญาของเราต่อความ
 
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "บริษัทฯ ของเรามีการพัฒนาอย่างต่อเนื่องเพื่อขอใบอนุญาตบนเกาะ Isle of Man ในการให้บริการที่ดีขึ้นกับลูกค้าในประเทศสหราชอาณาจักร"
+
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr ""
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "เราเป็นที่นิยมชมชอบของลูกค้า ในกลางปี พ.ศ. 2557 (ค.ศ. 2014) %1 มีธุรกรรมมากกว่า 100 ล้านระเบียน และมีธุรกรรมใหม่ที่เกิดขึ้นรายวันกว่า 130,000 ธุรกรรม"
@@ -10356,6 +10359,9 @@ msgstr "ขออภัย ฟังก์ชันนี้ไม่พร้�
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "ขออภัย การถอนเงินสำหรับสกุลเงินนี้ ขณะนี้ถูกปิดการใช้งาน"
 
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "ขออภัย บัญชีของท่านไม่ได้รับอนุญาตในการซื้อสัญญาเพิ่ม"
+
 msgid "Source of income"
 msgstr "แหล่งที่มาของรายได้"
 
@@ -11556,11 +11562,11 @@ msgstr "ผลิตภัณฑ์ทางการเงินที่ DIEL 
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
 msgstr "บัญชี Financial (STP) เป็นการประมวลผลแบบตรง เป็นบัญชี 100% ที่หนังสือธุรกิจการค้าถูกส่งผ่านไปยังตลาดโดยตรง ซึ่งให้คุณเข้าถึงผู้ให้บริการสภาพคล่องอัตราแลกเปลี่ยนโดยตรงของฟอเร็กซ์ ซื้อขายคู่สกุลเงินหลัก สกุลเงินรอง สกุลเงินแปลกใหม่ และสกุลเงินดิจิทัล ที่มีสเปรดที่แคบและปริมาณการซื้อขายสูง"
 
-msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "บัญชี Financial (มีให้บริการในสกุลเงิน EUR และ GBP) เหมาะสำหรับผู้ซื้อขายที่หลากหลายทั้งมือใหม่หรือผู้มีประสบการณ์ ซื้อขายหุ้นโภคภัณฑ์ สกุลเงินดิจิทัล คู่สกุลเงินหลักและรอง ด้วยสเปรดที่แคบและยืดหยุ่น โดยไม่มีค่าคอมมิชชั่นและเงินฝากขั้นต่ำ"
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
+msgstr "บัญชีการเงิน (มีให้บริการในสกุลเงิน EUR และ GBP) เหมาะสําหรับเทรดเดอร์ที่หลากหลายทั้งใหม่หรือที่มีประสบการณ์ เทรดคู่เงินหลัก (มาตรฐานและไมโครล็อต) และคู่สกุลเงินรอง หุ้น ดัชนีหุ้น สินค้าโภคภัณฑ์ และคริปโตเคอเรนซี่"
 
-msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "บัญชี Financial เหมาะกับผู้ซื้อขายรายใหม่ และผู้ซื้อขายที่มีประสบการณ์ ในเลเวอเรจที่สูง และตัวแปรที่หลากหลายเพื่อความยืดหยุ่นสูงสุด สามารถซื้อขายหุ้นโภคภัณฑ์ เงินสกุลดิจิทัล คู่สกุลเงินหลัก (มาตรฐานและไมโครล็อต) และคู่สกุลเงินรองที่มีเลเวอเรจสูง"
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
+msgstr "บัญชีการเงินมีเทรดเดอร์ใหม่และมีประสบการณ์เลเวอเรจสูงและสเปรดแปรผันเพื่อความยืดหยุ่นสูงสุด เทรดคู่เงินหลัก (มาตรฐานและไมโครล็อต) และคู่สกุลเงินรอง หุ้น ดัชนีหุ้น สินค้าโภคภัณฑ์ และคริปโตเคอเรนซี่ที่มีเลเวอเรจสูง"
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "ตลาดแลกเปลี่ยนเงินตราต่างประเทศ (ฟอเร็กซ์) เป็นตลาดที่ใหญ่ที่สุดและมีสภาพคล่องมากที่สุดในโลก ซึ่งทุกคนสามารถซื้อขายและแลกเปลี่ยนสกุลเงินได้"
@@ -12606,7 +12612,7 @@ msgid "This feature is available to demo accounts only."
 msgstr "ฟีเจอร์นี้พร้อมใช้งานสําหรับบัญชีทดลองใช้เท่านั้น"
 
 msgid "This feature is not relevant to demo accounts."
-msgstr ""
+msgstr "คุณลักษณะนี้ไม่เกี่ยวข้องกับบัญชีทดลอง"
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "ฟังก์ชันนี้สัมพันธ์กับบัญชีตัวแทนชำระเงินเท่านั้น"
@@ -13967,6 +13973,9 @@ msgstr "มีทักษะในการจัดการที่ดี �
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "เราจะอัปเดตขีดจำกัดของคุณ คลิก %1เห็นด้วยและยอมรับ%2 เพื่อรับทราบว่าคุณต้องรับผิดชอบอย่างเต็มที่ต่อการกระทำของคุณและเราจะไม่รับผิดชอบต่อการเสพติดหรือการสูญเสียใดๆ"
 
+msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
+msgstr "เรากําลังอัปเดตระบบแคชเชียร์ของเราและจะกลับมาออนไลน์ในไม่ช้า โปรดดู%1หน้าสถานะ%2ของเราสําหรับการอัปเดต"
+
 msgid "We’ve sent you an email"
 msgstr "เราได้ส่งอีเมลถึงคุณแล้ว"
 
@@ -14340,7 +14349,7 @@ msgid "Withdraw funds from your MT5 account"
 msgstr "ถอนเงินจากบัญชี MT5 ของท่าน"
 
 msgid "Withdraw your funds"
-msgstr ""
+msgstr "ถอนเงินของคุณ"
 
 msgid "Withdrawal"
 msgstr "ถอนเงิน"
@@ -14575,6 +14584,9 @@ msgstr "คุณมีตําแหน่งที่เปิดในบั
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "คุณมีตําแหน่งที่เปิดในบัญชี MT5 เหล่านี้:"
+
+msgid "You have pending withdrawal(s) in these Binary accounts:"
+msgstr "คุณมีรอการถอนเงินในบัญชีไบนารีเหล่านี้:"
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "คุณอาจจะเห็นโบรกเกอร์และนักลงทุนฟอเร็กซ์หลายคนใช้คำว่า 'ไปยาว' และ 'ไปสั้น' เรามาเปรียบเทียบความแตกต่างระหว่างสองคำนี้:"
@@ -15086,8 +15098,20 @@ msgstr "หรืออัปโหลดรูปภาพ – ไม่อน�
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard เสนอวิธีการชำระเงินออนไลน์แบบใช้ใบสำคัญแทนการรับจ่ายเงินที่ไม่ต้องใช้บัญชีธนาคาร บัตรเครดิต หรือ ข้อมูลส่วนบุคคลอื่นๆ สำหรับข้อมูลเพิ่มเติม โปรดศึกษาจาก %1"
 
+msgid "position(s)"
+msgstr "ตำแหน่ง"
+
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "อัตราของทุนของบัญชีต่อมาร์จินรวม แสดงในรูปร้อยละ"
+
+msgid "regulated by the Malta Financial Services Authority (MFSA),"
+msgstr "ควบคุมโดยหน่วยงานบริการทางการเงินมอลตา (MFSA),"
+
+msgid "regulated by the Malta Gaming Authority,"
+msgstr "ควบคุมโดยหน่วยงานการเล่นเกมมอลตา"
+
+msgid "regulated by the UK Gaming Commission (UKGC),"
+msgstr "ควบคุมโดยคณะกรรมการการเล่นเกมแห่งสหราชอาณาจักร (UKGC)"
 
 msgid "second"
 msgstr "วินาที"
@@ -15151,6 +15175,9 @@ msgstr "วันนี้"
 
 msgid "today, Fridays"
 msgstr "วันนี้วันศุกร์"
+
+msgid "withdrawal(s)"
+msgstr "การถอนเงิน"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

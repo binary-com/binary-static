@@ -1,3 +1,4 @@
+
 import React                  from 'react';
 import OutdatedBrowserMessage from './outdated_browser_message.jsx';
 import Title                  from '../../_common/components/title.jsx';
@@ -35,6 +36,7 @@ const Layout = ({
             { css_files.map((css_file, idx) => (
                 <link key={idx} rel='stylesheet' href={`${css_file}?${it.static_hash}`} />
             ))}
+         
         </head>
 
         <body>

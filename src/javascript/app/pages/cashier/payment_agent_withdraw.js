@@ -108,7 +108,7 @@ const PaymentAgentWithdraw = (() => {
             $form.find('.wrapper-row-agent').find('label').append($('<span />', { text: '*', class: 'required_field_asterisk' }));
             $form.find('label[for="txtAmount"]').text(`${localize('Amount in')} ${Currency.getCurrencyDisplayCode(currency)}`);
             FormManager.init(form_id, [
-                { selector: field_ids.txt_amount,      validations: ['req', ['number', { type: 'float', decimals: Currency.getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$txt_amount.val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
+                { selector: field_ids.txt_amount,      validations: ['req', ['number', { type: 'float', decimals: Currency.getDecimalPlaces(currency), min, max, balance: Client.get('balance') }]], request_field: 'amount' },
                 { selector: field_ids.txt_payment_ref, validations: [['length', { min: 0, max: 30 }], ['regular', { regex: /^[0-9A-Za-z .,'-]{0,30}$/, message: localize('Only letters, numbers, space, hyphen, period, comma, and apostrophe are allowed.') }]],                 request_field: 'description', value: () => $txt_payment_ref.val() ? payment_ref_prefix + $txt_payment_ref.val() : '' },
 
                 { request_field: 'currency',              value: currency },
