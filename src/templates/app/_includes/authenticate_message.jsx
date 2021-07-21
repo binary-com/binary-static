@@ -36,7 +36,7 @@ const FileSelector = ({
                     <div className='gr-5 gr-12-m'>
                         <p className='font-s'>
                             {accepted_documents.length > 1
-                                ? `${it.L('Submit one of the documents below')}:`
+                                ? `${it.L('Please upload one of the documents below')}:`
                                 : `${it.L('Submit the document below')}:`
                             }
                         </p>
@@ -81,7 +81,7 @@ const FileSelector = ({
                                                 <React.Fragment>
                                                     <div className='gr-row form-row center-text-m'>
                                                         <div className='gr-4 gr-12-m'>
-                                                            <label htmlFor={`id_number_${j}`}>{it.L('ID number')}<span className='required_field_asterisk'>*</span>:</label>
+                                                            <label htmlFor={`id_number_${j}`}>{it.L('NIMC slip number')}:<span className='required_field_asterisk'>*</span></label>
                                                         </div>
                                                         <div className='gr-8 gr-12-m'>
                                                             <input id={`id_number_${j}`} type='text' maxLength='30' />
@@ -101,8 +101,8 @@ const FileSelector = ({
                                                             <label htmlFor={`nimc_${j}`} className='button'>{it.L('Add the NIMC slip')} <span className='add' /></label>
                                                         </div>
                                                         <div className='gr-12'>
-                                                            <input id={`dob_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={'other'} data-name={it.L('Age declaration document')} data-page-type='front' />
-                                                            <label htmlFor={`dob_${j}`} className='button'>{it.L('Add age declaration document')} <span className='add' /></label>
+                                                            <input id={`dob_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={'other'} data-name={it.L('Add proof of age')} data-page-type='front' />
+                                                            <label htmlFor={`dob_${j}`} className='button'>{it.L('Add proof of age')} <span className='add' /></label>
                                                         </div>
                                                     </div>
                                                 </React.Fragment>

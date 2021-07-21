@@ -1888,6 +1888,12 @@ body #not_authenticated_financial ul.checked > li {
     padding-right: 2.2em;
 }
 
+#not_authenticated_uns {
+    .ui-accordion-content {
+        padding: 0.9rem 1rem;
+    }
+}
+
 #nimc_notice_dialog {
     > div#dialog_content {
         box-sizing: border-box;
