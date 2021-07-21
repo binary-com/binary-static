@@ -229,9 +229,12 @@ const Authenticate = (() => {
         
         if (has_name) {
             default_text = `Add ${event.target.getAttribute('data-name')}`;
-        } else if (default_text !== 'Add') {
+        } else if (default_text !== 'Add' && event.target.id !== 'selfie') {
             default_text = default_text === 'Back' ? localize('Reverse Side') : localize('Front Side');
+        } else if (event.target.id === 'selfie') {
+            default_text =  localize('Add');
         }
+        
         fileTracker($target, false);
         // Remove previously selected file and set the label
         $target.val('').parent().find('label').text(default_text).removeClass('selected error')
