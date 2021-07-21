@@ -192,7 +192,7 @@ export const UnsupportedMessage = () => (
                 it.L('Minimum of six months validity'),
                 it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
                 it.L('Maximum upload size for each file is [_1]', '8MB'),
-                it.L('Upload both of NIMC slip and an age declaration document to prove your identity.'),
+                it.L('Upload both your NIMC slip and proof of age. Your proof of age can be either your birth certificate or age declaration document.'),
                 it.L('When taking your selfie, face forward and remove your glasses if necessary. Make sure your eyes are clearly visible and your face is within the frame.'),
             ]}
             type='nigeria'
