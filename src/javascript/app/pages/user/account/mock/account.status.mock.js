@@ -1,74 +1,162 @@
 // TODO: Mock data only for testing.
-export const reference_account_status = {
-    authentication: {
-        document: {
-            status: 'pending',
-        },
-        identity: {
-            services: {
-                idv: {
-                    // last_rejected: [],
-                    reported_properties: {},
-                    status             : 'rejected',
-                    submissions_left   : 0,
-                },
-                manual: {
-                    status: 'none',
-                },
-                onfido: {
-                    // country_code: 'GBR',
-                    documents_supported: [
-                        'Asylum Registration Card',
-                        'Certificate of Naturalisation',
-                        'Driving Licence',
-                        'Home Office Letter',
-                        'Immigration Status Document',
-                        'Passport',
-                        'Residence Permit',
-                        'Visa',
-                    ],
-                    // is_country_supported: 1,
-                    // last_rejected: [
-                    //     'The document you provided is not supported for your country. Please provide a supported document for your country.',
-                    //     "Your selfie isn't clear. Please take a clearer photo and try again. Ensure that there's enough light where you are and that your entire face is in the frame.",
-                    // ],
-                    reported_properties: {},
-                    status             : 'none',
-                    submissions_left   : 3,
-                },
-            },
+export const idv_unsupported_pob = {
+    echo_req          : { get_account_status: 1, req_id: 6 },
+    get_account_status: {
+        authentication: {
             attempts: {
+                count  : 3,
+                history: [
+                    {
+                        country_code: 'aq',
+                        id          : '4733c3d7-df0b-42be-ab06-967b9033bc2f',
+                        service     : 'onfido',
+                        status      : 'verified',
+                        timestamp   : 1626345707,
+                    },
+                    { country_code: 'ke', id: '25', service: 'idv', status: 'rejected', timestamp: 1626328805 },
+                    { country_code: 'ke', id: '23', service: 'idv', status: 'rejected', timestamp: 1626328148 },
+                ],
                 latest: {
-                    id          : 1,
+                    country_code: 'aq',
+                    id          : '4733c3d7-df0b-42be-ab06-967b9033bc2f',
                     service     : 'idv',
-                    country_code: 'gb',
-                    time        : 166321,
+                    status      : 'rejected',
+                    timestamp   : 1626345707,
                 },
-                count: 1,
             },
-            status: 'rejected',
+            document: { status: 'none' },
+            identity: {
+                expiry_date: 1893456000,
+                services   : {
+                    idv   : { last_rejected: [], reported_properties: {}, status: 'rejected', submissions_left: 0 },
+                    manual: { status: 'pending' },
+                    onfido: {
+                        country_code        : 'GBR',
+                        documents_supported : ['Passport'],
+                        is_country_supported: 1,
+                        last_rejected       : [],
+                        reported_properties : { first_name: 'melika', last_name: 'mahi' },
+                        status              : 'none',
+                        submissions_left    : 3,
+                    },
+                },
+                status: 'pending',
+            },
+            needs_verification: [],
         },
-        needs_verification: ['identity'],
+        currency_config              : { USD: { is_deposit_suspended: 0, is_withdrawal_suspended: 0 } },
+        prompt_client_to_authenticate: 0,
+        risk_classification          : 'low',
+        status                       : [
+            'allow_document_upload',
+            'financial_information_not_complete',
+            'trading_experience_not_complete',
+            'trading_password_required',
+        ],
     },
-    cashier_validation: ['ASK_SELF_EXCLUSION_MAX_TURNOVER_SET', 'ASK_UK_FUNDS_PROTECTION', 'unwelcome_status'],
-    currency_config   : {
-        GBP: {
-            is_deposit_suspended   : 0,
-            is_withdrawal_suspended: 0,
+    msg_type: 'get_account_status',
+    req_id  : 6,
+};
+
+export const idv_supported_pob = {
+    echo_req          : { get_account_status: 1, req_id: 6 },
+    get_account_status: {
+        authentication: {
+            attempts: {
+                count  : 2,
+                history: [
+                    { country_code: 'gh', id: '31', service: 'idv', status: 'rejected', timestamp: 1626334125 },
+                    { country_code: 'gh', id: '29', service: 'idv', status: 'rejected', timestamp: 1626334048 },
+                ],
+                latest: { country_code: 'gh', id: '31', service: 'idv', status: 'rejected', timestamp: 1626334125 },
+            },
+            document: { status: 'none' },
+            identity: {
+                services: {
+                    idv   : { last_rejected: [], reported_properties: {}, status: 'rejected', submissions_left: 0 },
+                    manual: { status: 'none' },
+                    onfido: {
+                        country_code       : 'IND',
+                        documents_supported: [
+                            'National Identity Card (Aadhaar Card)',
+                            'Passport',
+                            'Tax Id (PAN Card)',
+                            'Voter Id',
+                        ],
+                        is_country_supported: 1,
+                        last_rejected       : [],
+                        reported_properties : {},
+                        status              : 'none',
+                        submissions_left    : 3,
+                    },
+                },
+                status: 'rejected',
+            },
+            needs_verification: ['identity'],
         },
+        currency_config              : { EUR: { is_deposit_suspended: 0, is_withdrawal_suspended: 0 } },
+        prompt_client_to_authenticate: 0,
+        risk_classification          : 'low',
+        status                       : [
+            'allow_document_upload',
+            'financial_information_not_complete',
+            'trading_experience_not_complete',
+            'trading_password_required',
+        ],
     },
-    prompt_client_to_authenticate: 1,
-    risk_classification          : 'low',
-    status                       : [
-        'allow_document_upload',
-        'cashier_locked',
-        'document_under_review',
-        'financial_information_not_complete',
-        'max_turnover_limit_not_set',
-        'trading_experience_not_complete',
-        'trading_password_required',
-        'unwelcome',
-    ],
+    msg_type: 'get_account_status',
+    req_id  : 6,
+};
+
+export const idv_uk_new = {
+    echo_req          : { get_account_status: 1, req_id: 18 },
+    get_account_status: {
+        authentication: {
+            attempts: { count: 0, history: [], latest: null },
+            document: { status: 'none' },
+            identity: {
+                services: {
+                    idv   : { last_rejected: [], reported_properties: {}, status: 'none', submissions_left: 2 },
+                    manual: { status: 'none' },
+                    onfido: {
+                        country_code       : 'GBR',
+                        documents_supported: [
+                            'Asylum Registration Card',
+                            'Certificate of Naturalisation',
+                            'Driving Licence',
+                            'Home Office Letter',
+                            'Immigration Status Document',
+                            'Passport',
+                            'Residence Permit',
+                            'Visa',
+                        ],
+                        is_country_supported: 1,
+                        last_rejected       : [],
+                        reported_properties : {},
+                        status              : 'none',
+                        submissions_left    : 3,
+                    },
+                },
+                status: 'none',
+            },
+            needs_verification: ['document', 'identity'],
+        },
+        cashier_validation           : ['ASK_SELF_EXCLUSION_MAX_TURNOVER_SET', 'ASK_UK_FUNDS_PROTECTION', 'unwelcome_status'],
+        currency_config              : { USD: { is_deposit_suspended: 0, is_withdrawal_suspended: 0 } },
+        prompt_client_to_authenticate: 1,
+        risk_classification          : 'low',
+        status                       : [
+            'allow_document_upload',
+            'cashier_locked',
+            'financial_information_not_complete',
+            'max_turnover_limit_not_set',
+            'trading_experience_not_complete',
+            'trading_password_required',
+            'unwelcome',
+        ],
+    },
+    msg_type: 'get_account_status',
+    req_id  : 18,
 };
 
 // idv_none - Initial document verification for idv supported country
@@ -78,7 +166,6 @@ export const reference_account_status = {
 // idv_result_expired - Idv verification expired
 // idv_result_rejected - Idv verification rejected have submissions left
 // idv_result_rejected_limited - Idv verification rejected but no submissions left
-// onfido
 // Usage Guide:
 // const account_status = figmaAccountStatus('idv_result_rejected_limited');
 export const figmaAccountStatus = type => {
@@ -86,8 +173,12 @@ export const figmaAccountStatus = type => {
         case 'idv_none': {
             return {
                 authentication: {
+                    attempts: {
+                        latest: null,
+                        count : 0,
+                    },
                     document: {
-                        status: 'pending',
+                        status: 'none',
                     },
                     identity: {
                         services: {
@@ -100,14 +191,23 @@ export const figmaAccountStatus = type => {
                                 status: 'none',
                             },
                             onfido: {
-                                reported_properties: {},
-                                status             : 'none',
-                                submissions_left   : 3,
+                                country_code       : 'GBR',
+                                documents_supported: [
+                                    'Asylum Registration Card',
+                                    'Certificate of Naturalisation',
+                                    'Driving Licence',
+                                    'Home Office Letter',
+                                    'Immigration Status Document',
+                                    'Passport',
+                                    'Residence Permit',
+                                    'Visa',
+                                ],
+                                is_country_supported: 1,
+                                last_rejected       : [],
+                                reported_properties : {},
+                                status              : 'none',
+                                submissions_left    : 3,
                             },
-                        },
-                        attempts: {
-                            latest: null,
-                            count : 0,
                         },
                         status: 'none',
                     },
@@ -141,6 +241,10 @@ export const figmaAccountStatus = type => {
         case 'idv_none_poa': {
             return {
                 authentication: {
+                    attempts: {
+                        latest: null,
+                        count : 0,
+                    },
                     document: {
                         status: 'none',
                     },
@@ -155,14 +259,23 @@ export const figmaAccountStatus = type => {
                                 status: 'none',
                             },
                             onfido: {
-                                reported_properties: {},
-                                status             : 'none',
-                                submissions_left   : 3,
+                                country_code       : 'GBR',
+                                documents_supported: [
+                                    'Asylum Registration Card',
+                                    'Certificate of Naturalisation',
+                                    'Driving Licence',
+                                    'Home Office Letter',
+                                    'Immigration Status Document',
+                                    'Passport',
+                                    'Residence Permit',
+                                    'Visa',
+                                ],
+                                is_country_supported: 1,
+                                last_rejected       : [],
+                                reported_properties : {},
+                                status              : 'none',
+                                submissions_left    : 3,
                             },
-                        },
-                        attempts: {
-                            latest: null,
-                            count : 0,
                         },
                         status: 'none',
                     },
@@ -196,6 +309,15 @@ export const figmaAccountStatus = type => {
         case 'idv_result_pass': {
             return {
                 authentication: {
+                    attempts: {
+                        latest: {
+                            id          : 1,
+                            service     : 'idv',
+                            country_code: 'za',
+                            time        : 166321,
+                        },
+                        count: 0,
+                    },
                     document: {
                         status: 'none',
                     },
@@ -214,15 +336,6 @@ export const figmaAccountStatus = type => {
                                 status             : 'none',
                                 submissions_left   : 3,
                             },
-                        },
-                        attempts: {
-                            latest: {
-                                id          : 1,
-                                service     : 'idv',
-                                country_code: 'za',
-                                time        : 166321,
-                            },
-                            count: 0,
                         },
                         status: 'verified',
                     },
@@ -256,6 +369,15 @@ export const figmaAccountStatus = type => {
         case 'idv_result_pass_poa': {
             return {
                 authentication: {
+                    attempts: {
+                        latest: {
+                            id          : 1,
+                            service     : 'idv',
+                            country_code: 'za',
+                            time        : 166321,
+                        },
+                        count: 0,
+                    },
                     document: {
                         status: 'none',
                     },
@@ -274,15 +396,6 @@ export const figmaAccountStatus = type => {
                                 status             : 'none',
                                 submissions_left   : 3,
                             },
-                        },
-                        attempts: {
-                            latest: {
-                                id          : 1,
-                                service     : 'idv',
-                                country_code: 'za',
-                                time        : 166321,
-                            },
-                            count: 0,
                         },
                         status: 'verified',
                     },
@@ -316,6 +429,15 @@ export const figmaAccountStatus = type => {
         case 'idv_result_expired': {
             return {
                 authentication: {
+                    attempts: {
+                        latest: {
+                            id          : 1,
+                            service     : 'idv',
+                            country_code: 'za',
+                            time        : 166321,
+                        },
+                        count: 0,
+                    },
                     document: {
                         status: 'none',
                     },
@@ -334,15 +456,6 @@ export const figmaAccountStatus = type => {
                                 status             : 'none',
                                 submissions_left   : 3,
                             },
-                        },
-                        attempts: {
-                            latest: {
-                                id          : 1,
-                                service     : 'idv',
-                                country_code: 'za',
-                                time        : 166321,
-                            },
-                            count: 0,
                         },
                         status: 'expired',
                     },
@@ -376,6 +489,15 @@ export const figmaAccountStatus = type => {
         case 'idv_result_rejected': {
             return {
                 authentication: {
+                    attempts: {
+                        latest: {
+                            id          : 1,
+                            service     : 'idv',
+                            country_code: 'za',
+                            time        : 166321,
+                        },
+                        count: 1,
+                    },
                     document: {
                         status: 'pending',
                     },
@@ -399,15 +521,6 @@ export const figmaAccountStatus = type => {
                                 status             : 'none',
                                 submissions_left   : 3,
                             },
-                        },
-                        attempts: {
-                            latest: {
-                                id          : 1,
-                                service     : 'idv',
-                                country_code: 'za',
-                                time        : 166321,
-                            },
-                            count: 1,
                         },
                         status: 'rejected',
                     },
@@ -441,6 +554,15 @@ export const figmaAccountStatus = type => {
         case 'idv_result_rejected_limited': {
             return {
                 authentication: {
+                    attempts: {
+                        latest: {
+                            id          : 1,
+                            service     : 'idv',
+                            country_code: 'za',
+                            time        : 166321,
+                        },
+                        count: 1,
+                    },
                     document: {
                         status: 'pending',
                     },
@@ -464,15 +586,6 @@ export const figmaAccountStatus = type => {
                                 status             : 'none',
                                 submissions_left   : 3,
                             },
-                        },
-                        attempts: {
-                            latest: {
-                                id          : 1,
-                                service     : 'idv',
-                                country_code: 'za',
-                                time        : 166321,
-                            },
-                            count: 1,
                         },
                         status: 'rejected',
                     },
@@ -503,325 +616,7 @@ export const figmaAccountStatus = type => {
                 ],
             };
         }
-        case 'onfido':
-            return reference_account_status;
         default:
             return {};
     }
-};
-
-export const getAccountStatus = (service_type, status, last_attempt, submissions_left, last_rejected) => {
-    let updated_service = {};
-    switch (service_type) {
-        case 'idv':
-            updated_service = {
-                services: {
-                    idv: {
-                        last_rejected,
-                        reported_properties: {},
-                        status,
-                        submissions_left,
-                    },
-                    manual: {
-                        status: 'none',
-                    },
-                    onfido: {
-                        status: 'none',
-                    },
-                },
-                status,
-            };
-            break;
-        case 'onfido':
-            updated_service = {
-                services: {
-                    idv: {
-                        status: 'none',
-                    },
-                    manual: {
-                        status: 'none',
-                    },
-                    onfido: {
-                        country_code       : 'GBR',
-                        documents_supported: [
-                            'Asylum Registration Card',
-                            'Certificate of Naturalisation',
-                            'Driving Licence',
-                            'Home Office Letter',
-                            'Immigration Status Document',
-                            'Passport',
-                            'Residence Permit',
-                            'Visa',
-                        ],
-                        is_country_supported: 1,
-                        last_rejected,
-                        reported_properties : {},
-                        status,
-                        submissions_left,
-                    },
-                },
-                status,
-            };
-            break;
-        // defaults to manual
-        default:
-            updated_service = {
-                services: {
-                    idv: {
-                        status: 'none',
-                    },
-                    manual: {
-                        status,
-                    },
-                    onfido: {
-                        status: 'none',
-                    },
-                },
-                status,
-            };
-    }
-
-    const new_status = {
-        authentication: {
-            identity: {
-                attempts: {
-                    ...last_attempt,
-                },
-                ...updated_service,
-            },
-            needs_verification: ['identiy'],
-        },
-        cashier_validation: ['ASK_SELF_EXCLUSION_MAX_TURNOVER_SET', 'ASK_UK_FUNDS_PROTECTION', 'unwelcome_status'],
-        currency_config   : {
-            GBP: {
-                is_deposit_suspended   : 0,
-                is_withdrawal_suspended: 0,
-            },
-        },
-        prompt_client_to_authenticate: 1,
-        risk_classification          : 'low',
-        status                       : [
-            'allow_document_upload',
-            'cashier_locked',
-            'document_under_review',
-            'financial_information_not_complete',
-            'max_turnover_limit_not_set',
-            'trading_experience_not_complete',
-            'trading_password_required',
-            'unwelcome',
-        ],
-    };
-
-    return new_status;
-};
-
-export const getAccountResidence = country => {
-    let residence = {};
-
-    switch (country) {
-        case 'ghana':
-            residence = {
-                identity: {
-                    services: {
-                        idv: {
-                            documents_supported: {
-                                drivers_license: {
-                                    display_name: 'Drivers License',
-                                    format      : '^[A-Z0-9]{6,10}$',
-                                },
-                                national_id: {
-                                    display_name: 'National ID',
-                                    format      : '^GHA-[A-Z0-9]{9}-[A-Z0-9]{1}$',
-                                },
-                                passport: {
-                                    display_name: 'Passport',
-                                    format      : '^G[A-Z0-9]{7,9}$',
-                                },
-                                ssnit: {
-                                    display_name: 'SSNIT',
-                                    format      : '^[A-Z]{1}[A-Z0-9]{12,14}$',
-                                },
-                                voter_id: {
-                                    display_name: 'Voter ID',
-                                    format      : '^[0-9]{10,12}$',
-                                },
-                            },
-                            has_visual_sample   : 0,
-                            is_country_supported: 1,
-                        },
-                        onfido: {
-                            documents_supported: {
-                                driving_licence: {
-                                    display_name: 'Driving Licence',
-                                },
-                                national_identity_card: {
-                                    display_name: 'National Identity Card',
-                                },
-                                passport: {
-                                    display_name: 'Passport',
-                                },
-                            },
-                            is_country_supported: 1,
-                        },
-                    },
-                },
-                phone_idd : '233',
-                text      : 'Ghana',
-                tin_format: ['^[A-Za-z]d{10}$'],
-                value     : 'gh',
-            };
-            break;
-        case 'nigeria':
-            residence = {
-                identity: {
-                    services: {
-                        idv: {
-                            documents_supported: {
-                                bvn: {
-                                    display_name: 'BVN',
-                                    format      : '^[0-9]{11}$',
-                                },
-                                cac: {
-                                    display_name: 'CAC',
-                                    format      : '^(RC)?[0-9]{5,8}$',
-                                },
-                                drivers_license: {
-                                    display_name: 'Drivers License',
-                                    format      : '^(?=.*[0-9])(?=.*[A-Z])[A-Z0-9]{3}([ -]{1})?[A-Z0-9]{6,12}$',
-                                },
-                                nin: {
-                                    display_name: 'NIN',
-                                    format      : '^[0-9]{11}$',
-                                },
-                                nin_slip: {
-                                    display_name: 'NIN Slip',
-                                    format      : '^[0-9]{11}$',
-                                },
-                                tin: {
-                                    display_name: 'TIN',
-                                    format      : '^[0-9]{8,}-[0-9]{4,}$',
-                                },
-                                voter_id: {
-                                    display_name: 'Voter ID',
-                                    format      : '^([A-Z0-9]{19}|[A-Z0-9]{9})$',
-                                },
-                            },
-                            has_visual_sample   : 1,
-                            is_country_supported: 1,
-                        },
-                        onfido: {
-                            documents_supported: {
-                                driving_licence: {
-                                    display_name: 'Driving Licence',
-                                },
-                                national_identity_card: {
-                                    display_name: 'National Identity Card',
-                                },
-                                passport: {
-                                    display_name: 'Passport',
-                                },
-                                voter_id: {
-                                    display_name: 'Voter Id',
-                                },
-                            },
-                            is_country_supported: 1,
-                        },
-                    },
-                },
-                phone_idd : '234',
-                text      : 'Nigeria',
-                tin_format: ['^d{10}$', '^d{8}$', '^[A-Za-z]d{4,8}$', '^d{11}$'],
-                value     : 'ng',
-            };
-            break;
-        case 'kenya':
-            residence = {
-                identity: {
-                    services: {
-                        idv: {
-                            documents_supported: {
-                                alien_card: {
-                                    display_name: 'Alien Card',
-                                    format      : '^[0-9]{6,9}$',
-                                },
-                                national_id: {
-                                    display_name: 'National ID',
-                                    format      : '^[0-9]{1,9}$',
-                                },
-                                passport: {
-                                    display_name: 'Passport',
-                                    format      : '^[A-Z0-9]{7,9}$',
-                                },
-                            },
-                            has_visual_sample   : 1,
-                            is_country_supported: 1,
-                        },
-                        onfido: {
-                            documents_supported: {
-                                driving_licence: {
-                                    display_name: 'Driving Licence',
-                                },
-                                national_identity_card: {
-                                    display_name: 'National Identity Card',
-                                },
-                                passport: {
-                                    display_name: 'Passport',
-                                },
-                            },
-                            is_country_supported: 1,
-                        },
-                    },
-                },
-                phone_idd: '254',
-                text     : 'Kenya',
-                value    : 'ke',
-            };
-            break;
-        default:
-            residence = {
-                identity: {
-                    services: {
-                        idv: {
-                            documents_supported : {},
-                            has_visual_sample   : 0,
-                            is_country_supported: 0,
-                        },
-                        onfido: {
-                            documents_supported: {
-                                asylum_registration_card: {
-                                    display_name: 'Asylum Registration Card',
-                                },
-                                certificate_of_naturalisation: {
-                                    display_name: 'Certificate of Naturalisation',
-                                },
-                                driving_licence: {
-                                    display_name: 'Driving Licence',
-                                },
-                                home_office_letter: {
-                                    display_name: 'Home Office Letter',
-                                },
-                                immigration_status_document: {
-                                    display_name: 'Immigration Status Document',
-                                },
-                                passport: {
-                                    display_name: 'Passport',
-                                },
-                                residence_permit: {
-                                    display_name: 'Residence Permit',
-                                },
-                                visa: {
-                                    display_name: 'Visa',
-                                },
-                            },
-                            is_country_supported: 1,
-                        },
-                    },
-                },
-                phone_idd : '44',
-                text      : 'United Kingdom',
-                tin_format: ['^d{10}$', '^[A-Za-z]{2}d{6}[A-Za-z]$'],
-                value     : 'gb',
-            };
-    }
-    return residence;
 };

@@ -1,7 +1,7 @@
 const DocumentUploader        = require('@binary-com/binary-document-uploader');
+const Countries               = require('i18n-iso-countries');
 const Cookies                 = require('js-cookie');
 const Onfido                  = require('onfido-sdk-ui');
-const getCountryISO3          = require('country-iso-2-to-3');
 const onfido_phrases          = require('./onfido_phrases');
 const Client                  = require('../../../base/client');
 const Header                  = require('../../../base/header');
@@ -856,18 +856,15 @@ const Authenticate = (() => {
         });
     });
 
-    const getSelectedCountry = async (country_code) => {
-        let residence_list;
-        await BinarySocket.send({ residence_list: 1 })
-            .then(response => residence_list = response.residence_list);
-        return residence_list.find(r => r.value === country_code);
-    };
-
     const initOnfido = async (sdk_token, documents_supported, country_code) => {
         if (!$('#onfido').is(':parent')) {
             $('#onfido').setVisibility(1);
 
-            const onfido_documents = Object.keys(documents_supported).map(d => documents_supported[d].display_name);
+            const onfido_country_code = country_code.length < 3 ?
+                Countries.alpha2ToAlpha3(country_code.toUpperCase()) : country_code;
+
+            const onfido_documents = Array.isArray(documents_supported) ?
+                documents_supported : Object.keys(documents_supported).map(d => documents_supported[d].display_name);
 
             try {
                 onfido = Onfido.init({
@@ -889,10 +886,10 @@ const Authenticate = (() => {
                                 documentTypes: {
                                     passport       : onfido_documents.some(doc => /Passport/g.test(doc)),
                                     driving_licence: onfido_documents.some(doc => /Driving Licence/g.test(doc)) ? {
-                                        country: country_code,
+                                        country: onfido_country_code,
                                     } : false,
                                     national_identity_card: onfido_documents.some(doc => /National Identity Card/g.test(doc)) ? {
-                                        country: country_code,
+                                        country: onfido_country_code,
                                     } : false,
                                 },
                             },
@@ -990,16 +987,6 @@ const Authenticate = (() => {
         $('#limited_poi').setVisibility(0);
     };
 
-    const getSampleImage = (selected_document , country_code) => {
-        const { sample_image } = getDocumentData(country_code, selected_document.id.toLowerCase());
-        return sample_image;
-    };
-
-    const getExampleFormat = (selected_document , country_code) => {
-        const { example_format } = getDocumentData(country_code, selected_document.id.toLowerCase());
-        return example_format;
-    };
-
     const handleIdvCountrySelector = async () => {
         let residence_list;
         await BinarySocket.send({ residence_list: 1 })
@@ -1047,11 +1034,15 @@ const Authenticate = (() => {
 
             next_button.addEventListener('click', () => {
                 if (selected_country) {
+                    const is_idv_supported = selected_country.identity.services.idv.is_country_supported;
+                    const is_onfido_supported = selected_country.identity.services.onfido.is_country_supported;
+
                     $('#idv_country_selector').setVisibility(0);
-                    if (selected_country.identity.services.idv.is_country_supported) {
+                    if (is_idv_supported) {
                         handleIdvDocumentSubmit();
-                    } else if (selected_country.identity.services.onfido.is_country_supported) {
-                        handleOnfido();
+                    } else if (is_onfido_supported) {
+                        const { value: country_code, documents_supported } = selected_country.identity.services.onfido;
+                        handleOnfido(country_code, documents_supported);
                     } else {
                         handleManual();
                     }
@@ -1087,6 +1078,12 @@ const Authenticate = (() => {
         let document_type,
             document_number;
 
+        const available_document_list = Object.keys(documents_supported).map(d => {
+            const { new_display_name, example_format, sample_image } = getDocumentData(country_code, d);
+            const { format:regex, display_name } = documents_supported[d];
+            return { id: d, text: new_display_name || display_name, example_format, sample_image, regex };
+        });
+
         if (selected_country) {
             const $options_with_disabled = $('<select/>');
             $options_with_disabled.append(makeOption({
@@ -1095,11 +1092,10 @@ const Authenticate = (() => {
                 is_disabled: 'disabled',
             }));
             
-            Object.keys(documents_supported).forEach((item) => {
-                const { display_name } = documents_supported[item];
+            available_document_list.forEach((doc) => {
                 $options_with_disabled.append(makeOption({
-                    text       : display_name,
-                    value      : item,
+                    text       : doc.text,
+                    value      : doc.id,
                     is_disabled: false,
                 }));
             });
@@ -1109,34 +1105,30 @@ const Authenticate = (() => {
 
             // Update Sample Image and Example Format on Dropdown Change (If Available)
             $documents.on('change', (e) => {
-                document_type = documents_supported[e.target.value];
+                document_type = available_document_list.find(d => d.id === e.target.value);
+
+                const { sample_image, example_format } = document_type;
                 
-                if (has_visual_sample){
-                    Object.keys(documents_supported).forEach((key) =>  {
-                        const doc_sele = documents_supported[key];
-                        if (key.toLocaleLowerCase() === e.target.value.toLowerCase()) {document_type = { ...doc_sele , 'id': key };}
-                    });
+                if (has_visual_sample) {
+                    const sample_image_div = document.getElementById('idv_document_sample_image');
                     
-                    const $image_div = document.getElementById('idv_document_sample_image');
-                    const $image_url = getSampleImage(document_type , country_code);
-                    
-                    if ($image_url) {
+                    if (sample_image) {
                         if (!document.getElementById('programmatically_image')) {
                             const img = document.createElement('img');
-                            img.src = $image_url;
+                            img.src = sample_image;
                             img.id = 'programmatically_image';
-                            $image_div.appendChild(img);
+                            sample_image_div.appendChild(img);
                         } else {
                             const $prog_image = document.getElementById('programmatically_image');
-                            $prog_image.src = $image_url;
+                            $prog_image.src = sample_image;
                         }
-                        $($image_div).setVisibility(1);
+                        $(sample_image_div).setVisibility(1);
                     } else {
-                        $($image_div).setVisibility(0);
+                        $(sample_image_div).setVisibility(0);
                     }
                 }
                 if ($documents[0].selectedOptions){
-                    $example.html(`Example: ${getExampleFormat(document_type , country_code)}`);
+                    $example.html(`Example: ${example_format}`);
                 }
 
                 if (document_type) {
@@ -1145,14 +1137,15 @@ const Authenticate = (() => {
             });
 
             document_input.addEventListener('keyup', (e) => {
+                const { example_format, regex } = document_type;
                 e.preventDefault();
-                const format_regex = new RegExp(document_type.format);
+                const format_regex = new RegExp(regex);
                 if (format_regex.test(e.target.value)) {
                     document_number = e.target.value;
                     verify_button.classList.remove('button-disabled');
                     $example_format.classList.remove('red');
                 } else {
-                    $example.html(`Invalid format. Example: ${getExampleFormat(document_type , country_code)}`);
+                    $example.html(`Invalid format. Example: ${example_format}`);
                     $example_format.classList.add('red');
 
                     if (!verify_button.classList.contains('button-disabled')) {
@@ -1226,6 +1219,7 @@ const Authenticate = (() => {
                 break;
             case 'rejected':
                 $('#idv_document_failed').setVisibility(1);
+                // If IDV has remaining attempt
                 if (Number(submissions_left > 1)) {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
                         $('#idv_document_failed').setVisibility(0);
@@ -1234,7 +1228,8 @@ const Authenticate = (() => {
                 } else {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
                         $('#idv_document_failed').setVisibility(0);
-                        handleOnfido();
+                        const { country_code, documents_supported } = account_status.identity.services.onfido;
+                        handleOnfido(country_code, documents_supported);
                     });
                 }
                 break;
@@ -1265,7 +1260,7 @@ const Authenticate = (() => {
         }
     };
 
-    const handleOnfido = async () => {
+    const handleOnfido = async (country_code, documents_supported) => {
         $('#idv-container').setVisibility(0);
         $('#authentication_tab').setVisibility(1);
 
@@ -1299,30 +1294,12 @@ const Authenticate = (() => {
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
         } else {
-            onfido = account_status.identity.services.onfido;
             const needs_poa = account_status.needs_verification.length && account_status.needs_verification.includes('document');
             const {
                 status,
                 submissions_left,
                 last_rejected: rejected_reasons,
-            } = onfido;
-
-            // Get country from last attempt if country is not selected
-            if (!selected_country) {
-                const identity_last_attempt = account_status.attempts.latest;
-                selected_country = await getSelectedCountry(identity_last_attempt.country_code);
-            }
-                            
-            const {
-                identity: {
-                    services: {
-                        onfido: { documents_supported },
-                    },
-                },
-                value: country_code,
-            } = selected_country;
-
-            const onfido_country_code = getCountryISO3(country_code.toUpperCase());
+            } = account_status.identity.services.onfido;
     
             switch (status) {
                 case 'none':
@@ -1332,7 +1309,7 @@ const Authenticate = (() => {
                         $('#not_authenticated_uns').setVisibility(1);
                         initUnsupported();
                     } else {
-                        initOnfido(service_token_response.token, documents_supported, onfido_country_code);
+                        initOnfido(service_token_response.token, documents_supported, country_code);
                     }
                     break;
                 case 'pending':
@@ -1360,7 +1337,7 @@ const Authenticate = (() => {
                                 $('#not_authenticated_uns').setVisibility(1);
                                 initUnsupported();
                             } else {
-                                initOnfido(service_token_response.token, documents_supported, onfido_country_code);
+                                initOnfido(service_token_response.token, documents_supported, country_code);
                             }
                         });
                         if (has_minimum_reasons) {
@@ -1431,21 +1408,23 @@ const Authenticate = (() => {
         } else if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
-        }
-
-        switch (identity_last_attempt.service) {
-            case 'idv':
-                $('#authentication_tab').setVisibility(0);
-                handleIdv();
-                break;
-            case 'onfido':
-                handleOnfido();
-                break;
-            case 'manual':
-                handleManual();
-                break;
-            default:
-                break;
+        } else {
+            switch (identity_last_attempt.services) {
+                case 'idv':
+                    $('#authentication_tab').setVisibility(0);
+                    handleIdv();
+                    break;
+                case 'onfido': {
+                    const { country_code, documents_supported } = identity.services.onfido;
+                    handleOnfido(country_code, documents_supported);
+                }
+                    break;
+                case 'manual':
+                    handleManual();
+                    break;
+                default:
+                    break;
+            }
         }
 
         $('#authentication_loading').setVisibility(0);
@@ -1454,14 +1433,16 @@ const Authenticate = (() => {
 
     const onLoad = async () => {
         cleanElementVisibility();
-        account_status = await getAccountStatus();
-        const is_required = checkIsRequired(account_status);
         if (!isAuthenticationAllowed()) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
             $('#authentication_unneeded').setVisibility(1);
         }
+
+        account_status = await getAccountStatus();
+        const is_required = checkIsRequired(account_status);
         const has_svg_account = Client.hasSvgAccount();
+        
         if (is_required || has_svg_account){
             initTab();
             initAuthentication();
