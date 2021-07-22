@@ -36,7 +36,7 @@ const FileSelector = ({
                     <div className='gr-5 gr-12-m'>
                         <p className='font-s'>
                             {accepted_documents.length > 1
-                                ? `${it.L('Please upload one of the documents below')}:`
+                                ? `${it.L('Please upload one of the following documents below')}:`
                                 : `${it.L('Submit the document below')}:`
                             }
                         </p>
