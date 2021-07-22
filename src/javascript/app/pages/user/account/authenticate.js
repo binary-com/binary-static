@@ -84,6 +84,7 @@ const Authenticate = (() => {
         document.querySelector('#not_authenticated_uns').setVisibility(0);
         
         initOnfido(onfido_token, [data_show_onfido], country_code);
+        $(window).scrollTop(0);
     };
 
     const initUnsupported = () => {
