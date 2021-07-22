@@ -200,7 +200,7 @@ export const UnsupportedMessage = () => (
                 { name: it.L('Passport'), value: 'Passport' },
                 { name: it.L('Identity card'), value: 'National Identity Card' },
                 { name: it.L('Driving licence'), value: 'Driving Licence' },
-                { name: it.L('NIMC slip and an age declaration document'), value: 'National Identity Card', is_nimc: true },
+                { name: it.L('NIMC slip and proof of age'), value: 'National Identity Card', is_nimc: true },
             ]}
         />
 
