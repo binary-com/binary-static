@@ -40,11 +40,11 @@ const Security = () => (
             </div>
 
             <div className='gr-row gr-padding-30'>
-                <Column className='invisible' id='change_password' url='change_passwordws' image='account_password' header={it.L('Account Password')} text={it.L('Change your main login password.')} />
+                <Column id='change_password' url='change_passwordws' image='account_password' header={it.L('Account Password')} text={it.L('Change your main login and trading password.')} />
 
                 <Column className='real invisible' url='self_exclusionws' image='self-exclusion' header={it.L('Self Exclusion')} text={it.L('Facility that allows you to set limits on your account.')} />
 
-                <Column dataShow='-maltainvest' className='real invisible' url='limitsws' image='limits' header={it.L('Limits')} text={it.L('View your trading and withdrawal limits.')} />
+                <Column dataShow='-maltainvest, -optionsblocked' className='real invisible' url='limitsws' image='limits' header={it.L('Limits')} text={it.L('View your trading and withdrawal limits.')} />
 
                 <Column url='iphistoryws' image='iphistory' header={it.L('Login History')} text={it.L('View your login history.')} />
 

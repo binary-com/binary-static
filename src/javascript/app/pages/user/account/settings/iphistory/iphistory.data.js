@@ -15,14 +15,23 @@ const IPHistoryData = (() => {
             { name: 'IE',         regex: /trident\/\d+\.\d+;.*[rv:]+(\d+\.\d)/i },
             { name: 'Firefox',    regex: /firefox\/([\d\w.-]+)/i },
             { name: 'Binary app', regex: /binary\.com V([\d.]+)/i },
+            { name: 'iPhone', regex: /\b(iPhone\d*)\b.*(DP2P)\b/ig },
+            { name: 'Android', regex: /\b(Android\d*)\b.*(DP2P)\b/ig },
+            { name: 'Dart', regex: /dart\/([\d\w.-]+)/i },
         ];
         for (let i = 0; i < lookup.length; i++) {
             const info  = lookup[i];
-            const match = user_agent.match(info.regex);
+            let match = user_agent.match(info.regex);
             if (match !== null) {
+                let app;
+                if (['Android', 'iPhone'].includes(info.name)) {
+                    match = user_agent.match(/(:?DP2P\/([\d\w.-]+))/ig)[0].split('/');
+                    app = match[0];
+                }
                 return {
                     name   : info.name,
                     version: match[1],
+                    ...app && { app },
                 };
             }
         }

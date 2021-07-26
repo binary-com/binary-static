@@ -38,6 +38,190 @@ const AccountOpening = (() => {
         $notice_box.text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : response.error.message).end()
             .setVisibility(1);
         $.scrollTo($notice_box, 500, { offset: -150 });
+    }
+
+    const populateForm = (form_id, getValidations, is_financial) => {
+        getResidence(form_id, getValidations);
+        handleTaxIdentificationNumber();
+        const landing_company  = State.getResponse('landing_company');
+        const lc_to_upgrade_to = landing_company[is_financial ? 'financial_company' : 'gaming_company'] || landing_company.financial_company;
+        switch (lc_to_upgrade_to.shortcode){
+            case 'iom':
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), localize('regulated by the UK Gaming Commission (UKGC),'));
+                break;
+            case 'malta':
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), localize('regulated by the Malta Gaming Authority,'));
+                break;
+            case 'maltainvest':
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), localize('regulated by the Malta Financial Services Authority (MFSA),'));
+                break;
+            default:
+                break;
+        }
+
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), lc_to_upgrade_to.name);
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-country'), lc_to_upgrade_to.shortcode === 'iom' ? `the ${lc_to_upgrade_to.country}` : lc_to_upgrade_to.country);
+        if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
+            professionalClient.init(is_financial, false);
+        }
+        generateBirthDate(landing_company.minimum_age);
+        BinarySocket.wait('get_settings').then((response) => {
+            const get_settings = response.get_settings;
+            let $element,
+                value;
+            Object.keys(get_settings).forEach((key) => {
+                $element = $(`#${key}`);
+                value    = get_settings[key];
+                if (key === 'date_of_birth' && value) {
+                    const moment_val = moment.utc(value * 1000);
+                    get_settings[key] = moment_val.format('DD MMM, YYYY');
+                    $element.attr({
+                        'data-value': toISOFormat(moment_val),
+                        'value'     : toISOFormat(moment_val),
+                        'type'      : 'text',
+                    });
+                    $('.input-disabled').attr('disabled', 'disabled');
+                } else if (value) $element.val(value);
+            });
+            if (get_settings.has_secret_answer) {
+                $('.security').hide();
+            }
+        });
+    };
+
+    const getResidence = (form_id, getValidations) => {
+        BinarySocket.send({ residence_list: 1 }).then((response) => {
+            handleResidenceList(response.residence_list, form_id, getValidations);
+        });
+    };
+
+    const handleResidenceList = (residence_list, form_id, getValidations) => {
+        if (residence_list.length > 0) {
+            const $place_of_birth = $('#place_of_birth');
+            const $phone          = $('#phone');
+            const $date_of_birth  = $('#date_of_birth');
+            const residence_value = Client.get('residence') || '';
+            let residence_text    = '';
+
+            const $options               = $('<div/>');
+            const $options_with_disabled = $('<div/>');
+            residence_list.forEach((res) => {
+                $options.append(CommonFunctions.makeOption({ text: res.text, value: res.value }));
+                $options_with_disabled.append(CommonFunctions.makeOption({
+                    text       : res.text,
+                    value      : res.value,
+                    is_disabled: res.disabled,
+                }));
+
+                if (residence_value === res.value) {
+                    residence_text = res.text;
+                    if (res.phone_idd && !$phone.val()) {
+                        const phone = State.getResponse('get_settings.phone');
+                        $phone.val(phone || `+${res.phone_idd}`);
+                    }
+                }
+            });
+
+            $('#lbl_residence').html($('<strong/>', { text: residence_text }));
+
+            BinarySocket.wait('get_settings').then((response) => {
+                const citizen = response.get_settings.citizen;
+                const place_of_birth = response.get_settings.place_of_birth;
+                const tax_residence = response.get_settings.tax_residence;
+                const date_of_birth = response.get_settings.date_of_birth;
+                if (date_of_birth) {
+                    const dt_date_of_birth = moment.unix(date_of_birth);
+                    $date_of_birth
+                        .attr('data-value', toISOFormat(dt_date_of_birth))
+                        .val(toReadableFormat(dt_date_of_birth));
+                }
+
+                if ($place_of_birth.length) {
+                    if (place_of_birth) {
+                        const txt_place_of_birth =
+                            (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
+                        $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
+                    } else {
+                        $place_of_birth.html($options.html()).val(residence_value);
+                    }
+                    $place_of_birth.select2({
+                        matcher(params, data) {
+                            return SelectMatcher(params, data);
+                        },
+                    });
+                }
+
+                if (
+                    State.getResponse('authorize.upgradeable_landing_companies')
+                        .some(item => ['malta', 'maltainvest', 'iom'].some(lc => lc === item))
+                ) {
+                    const $citizen = $('#citizen');
+                    CommonFunctions.getElementById('citizen_row').setVisibility(1);
+                    if ($citizen.length) {
+                        if (citizen) {
+                            const txt_citizen = (residence_list.find(obj => obj.value === citizen) || {}).text;
+                            $citizen.replaceWith($('<span/>', { text: txt_citizen || citizen, 'data-value': citizen }));
+                        } else {
+                            $citizen.html($options.html()).val(residence_value);
+                        }
+                        $citizen.select2({
+                            matcher(params, data) {
+                                return SelectMatcher(params, data);
+                            },
+                        });
+                    }
+                }
+
+                const $tax_residence_select = $('#tax_residence');
+                $tax_residence_select.html($options.html());
+
+                if (tax_residence) {
+                    const tax_residences_arr = tax_residence.split(',');
+                    const txt_tax_residence = tax_residences_arr
+                        .map((current_residence) =>
+                            (residence_list.find(obj => obj.value === current_residence) || {}).text)
+                        .join(', ') || tax_residence;
+                    $('#lbl_tax_residence').text(txt_tax_residence);
+
+                    $tax_residence_select
+                        .select2(tax_residences_arr.length > 1 ? { multiple: true } : {}) // Multiple in some cases, users could prev select more than 1 residence
+                        .val(tax_residences_arr) // Set value for validation
+                        .attr({ 'data-force': true, 'data-value': tax_residence })
+                        .trigger('change');
+                    CommonFunctions.getElementById('row_lbl_tax_residence').setVisibility(1);
+                } else {
+                    $tax_residence_select
+                        .select2()
+                        .val(residence_value) // Attempt auto-assign country_residence to tax_residence if none set
+                        .trigger('change');
+                    CommonFunctions.getElementById('row_tax_residence').setVisibility(1);
+                }
+
+                Object.keys(response.get_settings).forEach((key) => {
+                    if (key === 'date_of_birth') return;
+                    const $el = $(`#${key}`);
+                    if (response.get_settings[key] && $el) {
+                        $el.val(response.get_settings[key]);
+                    }
+                });
+            });
+            BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
+        }
+    };
+
+    const handleTaxIdentificationNumber = () => {
+        BinarySocket.wait('get_settings').then((response) => {
+            const tax_identification_number = response.get_settings.tax_identification_number;
+            if (tax_identification_number) {
+                $('#lbl_tax_identification_number').text(tax_identification_number);
+                CommonFunctions.getElementById('row_lbl_tax_identification_number').setVisibility(1);
+                $('#tax_identification_number')
+                    .val(tax_identification_number) // Set value for validation
+                    .attr({ 'data-force': true, 'data-value': tax_identification_number });
+            } else {
+                CommonFunctions.getElementById('row_tax_identification_number').setVisibility(1);
+            }
+        });
     };
 
     const setCurrencyForFinancialAccount = async (currency_to_set) => {

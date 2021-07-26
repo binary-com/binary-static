@@ -60,7 +60,7 @@ const PersonalDetails = () => (
                 </div>
             </Fieldset>
 
-            <Fieldset id='tax_information_form' className='invisible' legend={it.L('Tax information')}>
+            <Fieldset id='tax_information_form' className='invisible RealAcc' legend={it.L('Tax information')}>
                 <TaxInformationForm />
             </Fieldset>
 

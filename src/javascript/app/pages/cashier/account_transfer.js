@@ -16,10 +16,11 @@ const AccountTransfer = (() => {
     const form_id_hash  = `#${form_id}`;
 
     const messages = {
-        parent : 'client_message',
-        error  : 'no_account',
-        balance: 'not_enough_balance',
-        deposit: 'no_balance',
+        parent  : 'client_message',
+        error   : 'no_account',
+        balance : 'not_enough_balance',
+        deposit : 'no_balance',
+        transfer: 'transfer_not_allowed',
     };
 
     let el_transfer_from,
@@ -244,10 +245,12 @@ const AccountTransfer = (() => {
             } else {
                 const req_transfer_between_accounts = BinarySocket.send({ transfer_between_accounts: 1 });
                 const get_account_status            = BinarySocket.send({ get_account_status: 1 });
+                const req_get_limits                = BinarySocket.send({ get_limits: 1 });
 
-                Promise.all([req_transfer_between_accounts, get_account_status]).then(() => {
+                Promise.all([req_transfer_between_accounts, get_account_status, req_get_limits]).then(() => {
                     const response_transfer = State.get(['response', 'transfer_between_accounts']);
                     const is_authenticated  = State.getResponse('get_account_status.status').some(state => state === 'authenticated');
+                    const response_internal_transfer_limits = State.getResponse('get_limits.daily_transfers.internal');
 
                     if (hasError(response_transfer)) {
                         return;
@@ -258,12 +261,20 @@ const AccountTransfer = (() => {
                         return;
                     }
 
-                    populateAccounts(accounts);
-                    setLimits(min_amount, is_authenticated).then(() => {
-                        showForm({ is_authenticated });
-                        populateHints();
-                    });
-
+                    const allowed_internal_transfer = response_internal_transfer_limits.allowed;
+                    const available_internal_transfer = response_internal_transfer_limits.available;
+                    if (available_internal_transfer === 0) {
+                        setLoadingVisibility(0);
+                        getElementById(messages.parent).setVisibility(1);
+                        elementTextContent(getElementById('allowed_internal_transfer'), allowed_internal_transfer);
+                        getElementById(messages.transfer).setVisibility(1);
+                    } else {
+                        populateAccounts(accounts);
+                        setLimits(min_amount, is_authenticated).then(() => {
+                            showForm({ is_authenticated });
+                            populateHints();
+                        });
+                    }
                 });
             }
         });

@@ -46,8 +46,6 @@ const PersonalDetails = (() => {
 
     const showHideTaxMessage = () => {
         const $tax_info_declaration = $('#tax_information_declaration');
-        const $tax_information_info = $('#tax_information_info');
-
         if (Client.shouldCompleteTax()) {
             $('#tax_information_note_toggle').off('click').on('click', (e) => {
                 e.stopPropagation();
@@ -55,7 +53,6 @@ const PersonalDetails = (() => {
                 $('#tax_information_note').slideToggle();
             });
         } else {
-            $tax_information_info.setVisibility(0); // hide tax info
             $tax_info_declaration.setVisibility(0); // hide tax info declaration
         }
     };
@@ -105,7 +102,8 @@ const PersonalDetails = (() => {
 
         const is_changeable_citizen = !get_settings.immutable_fields.includes('citizen');
         const is_changeable_pob     = !get_settings.immutable_fields.includes('place_of_birth');
-        if (is_changeable_pob || is_changeable_citizen) {
+        const is_changeable_tax     = !get_settings.immutable_fields.includes('tax_residence');
+        if (is_changeable_pob || is_changeable_citizen || is_changeable_tax) {
             const $options       = $('<div/>');
             const residence_list = State.getResponse('residence_list');
             residence_list.forEach((res) => {
@@ -122,6 +120,11 @@ const PersonalDetails = (() => {
                 $('#citizen')
                     .html($options.html())
                     .val(get_settings.citizen);
+            }
+            if (is_changeable_tax) {
+                $('#tax_residence')
+                    .html($options.html())
+                    .val(get_settings.tax_residence);
             }
         }
     };
@@ -148,6 +151,11 @@ const PersonalDetails = (() => {
                 (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
                 get_settings.citizen;
         }
+        if (get_settings.tax_residence && get_settings.immutable_fields.includes('tax_residence') && residence_list) {
+            get_settings.tax_residence =
+                (residence_list.find(obj => obj.value === get_settings.tax_residence) || {}).text ||
+                get_settings.tax_residence;
+        }
 
         displayGetSettingsData(get_settings);
 
@@ -157,7 +165,6 @@ const PersonalDetails = (() => {
             displayChangeableFields(data);
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
-            CommonFunctions.getElementById('tax_information_form').setVisibility(shouldShowTax(get_settings));
             if (is_fully_authenticated) {
                 $(real_acc_auth_elements).setVisibility(1);
             }
@@ -394,7 +401,7 @@ const PersonalDetails = (() => {
                 if (residence) {
                     if (shouldShowTax(get_settings_data)) {
                         $tax_residence = $('#tax_residence');
-                        $tax_residence.html($options_with_disabled.html()).promise().done(() => {
+                        $tax_residence.html($options.html()).promise().done(() => {
                             setTimeout(() => {
                                 const residence_value = get_settings_data.tax_residence ?
                                     get_settings_data.tax_residence.split(',') : residence || '';

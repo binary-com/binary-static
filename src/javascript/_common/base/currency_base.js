@@ -28,7 +28,7 @@ const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, min
     return sign + (exclude_currency ? money : money + formatCurrency(currency_value));
 };
 
-const formatCurrency = currency => `<span class="symbols">&nbsp;${getCurrencyDisplayCode(currency)}</span>`; // defined in binary-style
+const formatCurrency = currency => currency ? `<span class="symbols">&nbsp;${getCurrencyDisplayCode(currency)}</span>` : ''; // defined in binary-style
 
 const addComma = (num, decimal_points, is_crypto) => {
     let number = String(num || 0).replace(/,/g, '');

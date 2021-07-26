@@ -1,4 +1,4 @@
-import React   from 'react';
+import React from 'react';
 import Loading from '../../_common/components/loading.jsx';
 
 const Row = ({ id }) => (
@@ -33,6 +33,10 @@ const AccountTransfer = () => (
                     </span>
                     <span className='invisible' id='no_balance'>
                         {it.L('Please [_1]deposit[_2] to your account.', `<a href='${it.url_for('cashier/forwardws?action=deposit')}'>`, '</a>')}
+                        &nbsp;
+                    </span>
+                    <span className='invisible' id='transfer_not_allowed'>
+                        {it.L('You can only perform up to [_1] transfers a day. Please try again tomorrow.', '<span id="allowed_internal_transfer"></span>')}
                         &nbsp;
                     </span>
                 </p>

@@ -23,7 +23,7 @@ module.exports = [
     'Withdrawal',
 
     // longcode from statement
-    'virtual money credit to account',
+    'demo credit to account',
 
     // action from login_history
     'login',

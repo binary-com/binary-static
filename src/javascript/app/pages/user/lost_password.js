@@ -18,7 +18,8 @@ const LostPassword = (() => {
                     BinaryPjax.load(`${urlFor('user/reset_passwordws')}#token=${$('#txt_verification_code').val()}`);
                 }, false);
             } else {
-                $(form_id).html($('<div/>', { class: 'notice-msg', text: localize('Please check your email for the password reset link.') }));
+                $(form_id).html($('<div/>', { class: 'notice-msg', text: localize('If you have an account with us, we\'ll send you a link to your email in a few minutes to reset your password.') }));
+
             }
         } else if (response.error) {
             const $form_error = $('#form_error');

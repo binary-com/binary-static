@@ -84,7 +84,9 @@ export const Residence = ({ className, row_class, row_id }) => (
         className={className || ''}
         label={it.L('Country of residence')}
     >
-        <label id='lbl_residence' />
+        <div id='residence_container'>
+            <label id='lbl_residence' />
+        </div>
     </FormRow>
 );
 
@@ -217,7 +219,7 @@ export const Phone = ({ hint, row_class, row_id }) => (
 );
 
 export const SecretQuestion = () => (
-    <FormRow type='select' id='secret_question' label={it.L('Secret question')}>
+    <FormRow type='select' id='secret_question' className='center-select-m' label={it.L('Secret question')}>
         <option value='Favourite dish'>{it.L('Favourite dish')}</option>
         <option value="Mother's maiden name">{it.L('Mother\'s maiden name')}</option>
         <option value='Name of your pet'>{it.L('Name of your pet')}</option>
@@ -238,17 +240,34 @@ export const SecretAnswer = () => (
     />
 );
 
-export const Tnc = ({ className, row_id }) => (
-    <div className={`gr-row fieldset_margin_top ${className}`} id={row_id}>
-        <div className='gr-12-m gr-padding-10 add-account-tnc'>
-            <input type='checkbox' name='tnc' id='tnc' />
-            <label htmlFor='tnc'>
-                {it.L(
-                    'I agree to the [_1]terms and conditions[_2].',
-                    `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
-                    '</a>'
-                )}
-            </label>
+// export const Tnc = ({ className, row_id }) => (
+//     <div className={`gr-row fieldset_margin_top ${className}`} id={row_id}>
+//         <div className='gr-12-m gr-padding-10 add-account-tnc'>
+//             <input type='checkbox' name='tnc' id='tnc' />
+//             <label htmlFor='tnc'>
+//                 {it.L(
+//                     'I agree to the [_1]terms and conditions[_2].',
+//                     `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
+//                     '</a>'
+//                 )}
+//             </label>
+//             </div>
+//     </div>
+// )
+export const Tnc = () => (
+    <div className='center-text'>
+        <div className='gr-row'>
+            <div className='gr-12-m gr-padding-10 gr-centered'>
+                <input type='checkbox' name='tnc' id='tnc' />
+                <label htmlFor='tnc'>
+                    {it.L(
+                        'I have read and agree to the [_1]terms and conditions[_2] of the site.',
+                        `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
+                        '</a>'
+                    )}
+                </label>
+                <span className='required_field_asterisk'>*</span>
+            </div>
         </div>
     </div>
 );
@@ -256,7 +275,7 @@ export const Tnc = ({ className, row_id }) => (
 export const Jurisdiction = ({ row_id, className }) => (
     <Fieldset legend={it.L('Jurisdiction and choice of law')} id={row_id} className={className}>
         <div className='gr-12'>
-            <p>{it.L('Your account will be opened with [_1], and will be subject to the jurisdiction and laws of [_2].', '<span id="lc-name"></span>', '<span id="lc-country"></span>')}</p>
+            <p>{it.L('Your account will be opened with [_1], [_2] and will be subject to the laws of [_3].', '<span id="lc-name"></span>', '<span id="lc-regulator"></span>', '<span id="lc-country"></span>')}</p>
         </div>
     </Fieldset>
 );
@@ -283,8 +302,9 @@ export const TaxInformationForm = () => (
     <React.Fragment>
         <div id='tax_information_info' className='gr-12 gr-padding-10'>
             <label>{it.L('Deriv Investments (Europe) Limited is required to collect your tax information.')}&nbsp;
-                <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
+                <span id='tax_information_note_toggle' className='toggle-arrow'>{it.L('Read more.')}</span>
             </label>
+            <span className='required_field_asterisk'>*</span>
 
             <div id='tax_information_note' style={{ display: 'none' }}>
                 <p>{it.L('This requirement is mandated by the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
@@ -339,6 +359,7 @@ export const TaxInformationForm = () => (
                 <label htmlFor='chk_tax_id'>
                     {it.L('I hereby confirm that the tax information I provided is true and complete. I will also inform Deriv Investments (Europe) Limited about any changes to this information.')}
                 </label>
+                <span className='required_field_asterisk'>*</span>
             </div>
         </div>
     </React.Fragment>

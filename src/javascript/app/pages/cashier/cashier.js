@@ -76,7 +76,7 @@ const Cashier = (() => {
             new_el.class = 'toggle button button-disabled';
             new_el.href = '';
         }
-        el_virtual_topup_info.innerText = localize('Reset the balance of your virtual account to [_1] anytime.', [`${Client.get('currency')} 10,000.00`]);
+        el_virtual_topup_info.innerText = localize('Reset the balance of your demo account to [_1] anytime.', [`${Client.get('currency')} 10,000.00`]);
         $a.replaceWith($('<a/>', new_el));
         $(top_up_id).parent().setVisibility(1);
     };
@@ -93,6 +93,9 @@ const Cashier = (() => {
         const has_upgrade         = upgrade_info.can_upgrade || upgrade_info.can_open_multi
                                     || can_change;
         const account_action_text = has_upgrade ? `<br />${localize('[_1]Manage your accounts[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
+        const is_iom_client       = Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im';
+        const change_text_for_iom = is_iom_client ? localize('time') : localize('time or create an MT5 account');
+        const url_user_account    = `<a href=${Url.urlFor('user/accounts')}>`;
 
         const missingCriteria = (has_mt5, has_transaction) => {
             const existing_mt5_msg          = localize('You can no longer change the currency because you\'ve created an MT5 account.') + account_action_text;
@@ -113,7 +116,7 @@ const Cashier = (() => {
         const currency_hint = Currency.isCryptocurrency(currency)
             ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${Currency.getCurrencyDisplayCode(currency)}`) + account_action_text
             : has_no_mt5 && has_no_transaction
-                ? localize('You can [_1]set a new currency[_2] before you deposit for the first time or create an MT5 account.', can_change ? [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'] : ['', ''])
+                ? localize('You can [_1]set a new currency[_2] before you deposit for the first [_3].', [can_change ? url_user_account : '', can_change ? '</a>' : '', change_text_for_iom])
                 : missingCriteria(!has_no_mt5, !has_no_transaction);
 
         elementInnerHtml(el_current_currency, currency_message);

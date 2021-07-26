@@ -8,8 +8,8 @@ const FooterColumn = ({ header, items }) => (
     </div>
 );
 
-const SocialIcons = ({ networks }) => (
-    <div id='social-icons' className='social-icons flex-row'>
+const SocialIcons = ({ networks, dataShow }) => (
+    <div id='social-icons' className='social-icons flex-row' data-show={dataShow}>
         { networks.map((net, idx) => (
             <a key={idx} href={net.href} target='_blank' rel='noopener noreferrer'>
                 <img src={it.url_for(`images/pages/footer/${net.media}.svg`)} />
@@ -50,7 +50,7 @@ const Footer = () => (
                                     { text: it.L('About Us'),               href: it.url_for('about-us') },
                                     { text: it.L('Group History'),          href: it.url_for('group-history') },
                                     { text: it.L('Binary.com in Numbers'),  href: it.url_for('binary-in-numbers') },
-                                    { text: it.L('Careers'),                href: it.deriv_career_url },
+                                    { text: it.L('Careers'),                href: it.deriv_career_url ,                   target: '_blank' },
                                     { text: it.L('Patents'),                href: it.url_for('legal/us_patents') },
                                     { text: it.L('Contact Us'),             href: it.url_for('contact') },
                                 ]}
@@ -93,9 +93,9 @@ const Footer = () => (
                             <FooterColumn
                                 header={it.L('Trading')}
                                 items={[
-                                    { text: it.L('Platforms'),      href: it.url_for('platforms'),                dataShow: '-maltainvest' },
-                                    { text: it.L('Asset Index'),    href: it.url_for('resources/asset_indexws'),  dataShow: '-maltainvest' },
-                                    { text: it.L('Trading Times'),  href: it.url_for('resources/market_timesws'), dataShow: '-maltainvest' },
+                                    { text: it.L('Platforms'),      href: it.url_for('platforms'),                dataShow: '-maltainvest, -optionsblocked' },
+                                    { text: it.L('Asset Index'),    href: it.url_for('resources/asset_indexws'),  dataShow: '-maltainvest, -optionsblocked' },
+                                    { text: it.L('Trading Times'),  href: it.url_for('resources/market_timesws'), dataShow: '-maltainvest, -optionsblocked' },
                                     { text: it.L('Network Status'), href: 'https://binarycom.statuspage.io', target: '_blank' },
                                 ]}
                             />
@@ -132,12 +132,13 @@ const Footer = () => (
                                 </a>
                             </div>
                             <SocialIcons
+                                dataShow='-eucountry'
                                 networks={[
-                                    { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
-                                    { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
-                                    { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                                    { media: 'reddit',      href: 'https://www.reddit.com/user/Deriv_official/' },
+                                    { media: 'youtube',   href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                                    { media: 'facebook',  href: 'https://www.facebook.com/derivdotcom' },
+                                    { media: 'twitter',   href: 'https://www.twitter.com/derivdotcom' },
+                                    { media: 'telegram',  href: 'https://t.me/binarydotcom' },
+                                    { media: 'reddit',    href: 'https://www.reddit.com/user/Deriv_official/' },
                                 ]}
                             />
                         </div>
@@ -185,12 +186,26 @@ const Footer = () => (
                                 </div>
                             </div>
                             <SocialIcons
+                                dataShow='gbcountry'
                                 networks={[
-                                    { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'facebook',    href: 'https://www.facebook.com/derivdotcom' },
-                                    { media: 'twitter',     href: 'https://www.twitter.com/derivdotcom' },
-                                    { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                                    { media: 'reddit',      href: 'https://www.reddit.com/user/Deriv_official/' },
+                                    { media: 'youtube', href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                                    { media: 'facebook', href: 'https://www.facebook.com/derivUK/' },
+                                    { media: 'twitter', href: 'https://www.twitter.com/deriv_uk/' },
+                                    { media: 'instagram', href: 'https://www.instagram.com/deriv_uk/' },
+                                    { media: 'telegram', href: 'https://t.me/binarydotcom' },
+                                    { media: 'reddit', href: 'https://www.reddit.com/user/Deriv_official/' },
+                                ]}
+                            />
+
+                            <SocialIcons
+                                dataShow='-gbcountry'
+                                networks={[
+                                    { media: 'youtube', href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                                    { media: 'facebook', href: 'https://www.facebook.com/derivEU/' },
+                                    { media: 'twitter', href: 'https://www.twitter.com/deriv_eu/' },
+                                    { media: 'instagram', href: 'https://www.instagram.com/deriv_eu/' },
+                                    { media: 'telegram', href: 'https://t.me/binarydotcom' },
+                                    { media: 'reddit', href: 'https://www.reddit.com/user/Deriv_official/' },
                                 ]}
                             />
                         </div>
@@ -225,7 +240,7 @@ const Footer = () => (
                                 {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
                             </p>
                             <p className='eu-only invisible'>
-                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. [_1] of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.', '68%')}
+                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. [_1] of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.', '63%')}
                             </p>
                         </div>
                     </div>

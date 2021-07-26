@@ -1,8 +1,10 @@
-const Client           = require('../base/client');
+const isEuCountry      = require('./country_base').isEuCountry;
+const isUKCountry      = require('./country_base').isUKCountry;
 const BinarySocket     = require('../base/socket');
 const MetaTrader       = require('../pages/user/metatrader/metatrader');
 const State            = require('../../_common/storage').State;
 const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
+const Client = require('../base/client');
 
 /*
     data-show attribute controls element visibility based on
@@ -47,6 +49,7 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
 const visible_classname    = 'data-show-visible';
 const mt_company_rule      = 'mtcompany';
 const eu_country_rule      = 'eucountry';
+const uk_country_rule      = 'gbcountry';
 const options_blocked_rule = 'optionsblocked';
 
 const ContentVisibility = (() => {
@@ -113,19 +116,6 @@ const ContentVisibility = (() => {
         };
     };
 
-    const isEuCountry = () => {
-        const eu_shortcode_regex  = new RegExp('^(maltainvest|malta|iom)$');
-        const eu_excluded_regex   = new RegExp('^mt$');
-        const financial_shortcode = State.getResponse('landing_company.financial_company.shortcode');
-        const gaming_shortcode    = State.getResponse('landing_company.gaming_company.shortcode');
-        const clients_country     = Client.get('residence') || State.getResponse('website_status.clients_country');
-        return (
-            (financial_shortcode || gaming_shortcode) ?
-                (eu_shortcode_regex.test(financial_shortcode) || eu_shortcode_regex.test(gaming_shortcode)) :
-                eu_excluded_regex.test(clients_country)
-        );
-    };
-
     const isMT5FinRule = (rule) => /^mt5fin:/.test(rule);
 
     const parseMT5FinRule = (rule) => rule.match(/^mt5fin:(.+)$/)[1];
@@ -144,15 +134,18 @@ const ContentVisibility = (() => {
         const rule_set = new Set(names);
 
         const is_eu_country           = isEuCountry();
+        const is_uk_country           = isUKCountry();
         const rule_set_has_current    = rule_set.has(current_landing_company_shortcode);
         const rule_set_has_mt         = rule_set.has(mt_company_rule);
         const rule_set_has_eu_country = rule_set.has(eu_country_rule);
+        const rule_set_has_uk_country = rule_set.has(uk_country_rule);
         const options_blocked         = rule_set.has(options_blocked_rule);
 
         let show_element = false;
 
         if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
         else if (is_exclude !== rule_set_has_current) show_element = true;
+        if (rule_set_has_uk_country && is_uk_country) show_element = !is_exclude;
         if (rule_set_has_eu_country && is_eu_country) show_element = !is_exclude;
         else if (is_eu_country && current_landing_company_shortcode === 'default') { // for logged out EU clients, check if IP landing company matches
             const financial_shortcode = State.getResponse('landing_company.financial_company.shortcode');
@@ -202,16 +195,23 @@ const ContentVisibility = (() => {
     };
 
     const centerSelect = ($el) => {
-        const option_width = getTextWidth($el.children(':selected').html());
-        const empty_space = '280' - option_width; // in mobile all select drop-downs are hardcoded to be at 280px in css
-        $el.css('text-indent', (empty_space / 2) - 7); // 7px is for the drop-down arrow
+        const option_width = getTextWidth($el.children(':selected').text());
+        const center_option_text = option_width / 2;
+        $el.css('text-indent', `calc(50% - ${center_option_text}px)`);
     };
 
     const centerAlignSelect = (should_init) => {
         $(window).off('resize', centerAlignSelect);
-        $center_select_m = ((typeof should_init === 'boolean' && should_init) || !$center_select_m) ? $('.center-select-m') : $center_select_m;
+        $('#frm_real #trading_experience_form select, #frm_real #financial_info_form select').addClass('center-select-m');
+        $center_select_m = ((typeof should_init === 'boolean' && should_init) || !$center_select_m) ? $('#frm_real .center-select-m') : $center_select_m;
 
         if ($(window).width() <= 480) {
+            const financial_form_selects = $('#frm_real select');
+            financial_form_selects.get().forEach((element) => {
+                const option_width = getTextWidth($(element).children(':selected').text());
+                const center_option_text = option_width / 2;
+                $(element).css('text-indent', `calc(50% - ${center_option_text}px)`);
+            });
             $center_select_m.on('change', function() {
                 centerSelect($(this));
             });
