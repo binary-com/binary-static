@@ -71,7 +71,6 @@ commands:
       - run:
           name: Tag build
           command: echo "<< parameters.target_branch >> $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > dist/version
-
   docker_build_push:
     description: "Build Docker image"
     parameters:
@@ -176,7 +175,6 @@ jobs:
           k8s_svc_name: "production-binary-com"
           k8s_namespace: "www-binary-com-production"
           k8s_version: ${CIRCLE_TAG}
-
 workflows:
   test:
     jobs:
