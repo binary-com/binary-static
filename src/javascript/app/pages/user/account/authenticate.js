@@ -905,21 +905,24 @@ const Authenticate = (() => {
         }
     };
 
-    const showCTAButton = (type, status) => {
-        const { needs_verification } = authentication_object;
-        const type_required = type === 'identity' ? 'poi' : 'poa';
-        const type_pending = type === 'identity' ? 'poa' : 'poi';
-        const description_status = status !== 'verified';
-
-        $(`#text_verified_${type_pending}_required, #text_pending_${type_pending}_required`).setVisibility(0);
-        $(`#button_verified_${type_pending}_required, #button_pending_${type_pending}_required`).setVisibility(0);
-
-        if (needs_verification.includes(type)) {
-            $(`#text_${status}_${type_required}_required`).setVisibility(1);
-            $(`#button_${status}_${type_required}_required`).setVisibility(1);
-        } else if (description_status) {
-            $(`#text_${status}_${type_pending}_pending`).setVisibility(1);
-        }
+    const showCTAButton = async (type, status) => {
+        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
+            authentication_object = response.get_account_status.authentication;
+            const { needs_verification } = authentication_object;
+            const type_required = type === 'identity' ? 'poi' : 'poa';
+            const type_pending = type === 'identity' ? 'poa' : 'poi';
+            const description_status = status !== 'verified';
+    
+            $(`#text_verified_${type_pending}_required, #text_pending_${type_pending}_required`).setVisibility(0);
+            $(`#button_verified_${type_pending}_required, #button_pending_${type_pending}_required`).setVisibility(0);
+    
+            if (needs_verification.includes(type)) {
+                $(`#text_${status}_${type_required}_required`).setVisibility(1);
+                $(`#button_${status}_${type_required}_required`).setVisibility(1);
+            } else if (description_status) {
+                $(`#text_${status}_${type_pending}_pending`).setVisibility(1);
+            }
+        });
     };
 
     const handleComplete = (data) => {
@@ -1143,17 +1146,18 @@ const Authenticate = (() => {
                 if (format_regex.test(e.target.value)) {
                     document_number = e.target.value;
                     verify_button.classList.remove('button-disabled');
-                    $example_format.classList.remove('red');
+                    $example_format.classList.remove('error-text');
                 } else {
-                    $example.html(`Invalid format. Example: ${example_format}`);
-                    $example_format.classList.add('red');
+                    const error_text = localize('Please enter the correct format. Example:');
+                    $example.html(`${error_text} ${example_format}`);
+                    $example_format.classList.add('error-text');
 
                     if (!verify_button.classList.contains('button-disabled')) {
                         verify_button.classList.add('button-disabled');
                     }
                 }
                 if (e.target.value === '') {
-                    $example_format.classList.remove('red');
+                    $example_format.classList.remove('error-text');
                 }
             });
 

@@ -1182,6 +1182,16 @@ body #not_authenticated_financial ul.checked > li {
                 width: 100%;
                 border: none;
                 margin-bottom: 23px;
+
+                #document_example_format {
+                    width: 100%;
+                    font-size: 13px;
+                    margin-top: 8px;
+                    word-wrap: break-word;
+                }
+                .error-text {
+                    color: $COLOR_DARK_RED;
+                }
             }
         }
         &__right {
