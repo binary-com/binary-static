@@ -1145,8 +1145,7 @@ body #not_authenticated_financial ul.checked > li {
             margin-bottom: 16px;
         }
         &__input {
-            width: 100%;
-            padding: 2px 3px;
+            padding: 5px 16px;
         }
         &__dropdown {
             width: 100%;
@@ -1173,9 +1172,10 @@ body #not_authenticated_financial ul.checked > li {
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 350px;
 
             fieldset {
+                display: flex;
+                flex-direction: column;
                 width: 100%;
                 border: none;
                 margin-bottom: 23px;

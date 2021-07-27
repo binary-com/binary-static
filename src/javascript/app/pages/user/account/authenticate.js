@@ -1220,7 +1220,7 @@ const Authenticate = (() => {
             case 'rejected':
                 $('#idv_document_failed').setVisibility(1);
                 // If IDV has remaining attempt
-                if (Number(submissions_left > 1)) {
+                if (Number(submissions_left > 0)) {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
                         $('#idv_document_failed').setVisibility(0);
                         handleIdvCountrySelector();
