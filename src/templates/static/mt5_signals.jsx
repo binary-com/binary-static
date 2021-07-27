@@ -212,7 +212,7 @@ const Mt5Signals = () => (
                                         </div>
                                     </div>
                                 </div>
-                                <p>{it.L('[_1]Note:[_2] You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller.', '<strong>', '</strong>')}
+                                <p>{it.L('[_1]Note:[_2] You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on [_3]this page[_4] to register as a seller.', '<strong>', '</strong>', '<a href="https://www.metatrader5.com/en/terminal/help/signals/signal_provider" target="_blank">', '</a>')}
                                 </p>
                                 <div className='center-text gr-padding-20'>
                                     <a className='button' href={it.url_for('user/metatrader')}><span>{it.L('Go to the MT5 Terminal')}</span></a>

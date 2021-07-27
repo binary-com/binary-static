@@ -14,7 +14,7 @@ const Tick                  = require('./tick');
 const BinarySocket          = require('../../base/socket');
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const isCryptocurrency      = require('../../common/currency').isCryptocurrency;
-const onlyNumericOnKeypress = require('../../common/event_handler');
+const eventHandlers         = require('../../common/event_handler');
 const TimePicker            = require('../../components/time_picker');
 const GTM                   = require('../../../_common/base/gtm');
 const dateValueChanged      = require('../../../_common/common_functions').dateValueChanged;
@@ -123,7 +123,7 @@ const TradingEvents = (() => {
         const duration_amount_element = getElementById('duration_amount');
         let input_event_triggered     = false;          // For triggering one of the two events.
         if (duration_amount_element) {
-            duration_amount_element.addEventListener('keypress', onlyNumericOnKeypress);
+            duration_amount_element.addEventListener('keypress', eventHandlers.onlyNumericOnKeypress);
             // jquery needed for datepicker
             $('#duration_amount')
                 .on('input', CommonTrading.debounce((e) => {
@@ -187,7 +187,7 @@ const TradingEvents = (() => {
          * attach event to change in amount, request new price only
          */
         const amount_element = getElementById('amount');
-        amount_element.addEventListener('keypress', onlyNumericOnKeypress);
+        amount_element.addEventListener('keypress', eventHandlers.onlyNumericOnKeypress);
         amount_element.addEventListener('input', CommonTrading.debounce((e) => {
             e.target.value = e.target.value.replace(/[^0-9.]/g, '');
             const currency = Defaults.get('currency');
@@ -204,7 +204,7 @@ const TradingEvents = (() => {
          */
         const multiplier_element = document.getElementById('multiplier');
         if (multiplier_element) {
-            multiplier_element.addEventListener('keypress', onlyNumericOnKeypress);
+            multiplier_element.addEventListener('keypress', eventHandlers.onlyNumericOnKeypress);
 
             multiplier_element.addEventListener('input', CommonTrading.debounce((e) => {
                 e.target.value = e.target.value.replace(/^0*(\d\.?)/, '$1');
@@ -369,8 +369,9 @@ const TradingEvents = (() => {
          * attach an event to change in barrier
          */
         $('#barrier')
-            .on('keypress', (ev) => { onlyNumericOnKeypress(ev, [43, 45, 46]); })
+            .on('keypress', (ev) => { eventHandlers.onlyNumericOnKeypress(ev, [43, 45, 46]); })
             .on('input', CommonTrading.debounce((e) => {
+                e.target.value = eventHandlers.removeInvalidCharacters(e.target.value);// remove invalid characters on mobile
                 Barriers.validateBarrier();
                 Defaults.set('barrier', e.target.value);
                 Price.processPriceRequest();
@@ -382,13 +383,14 @@ const TradingEvents = (() => {
          */
         const low_barrier_element = getElementById('barrier_low');
         low_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            e.target.value = eventHandlers.removeInvalidCharacters(e.target.value);// remove invalid characters on mobile
             Barriers.validateBarrier();
             Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
         low_barrier_element.addEventListener('keypress', (ev) => {
-            onlyNumericOnKeypress(ev, [43, 45, 46]);
+            eventHandlers.onlyNumericOnKeypress(ev, [43, 45, 46]);
         });
 
         /*
@@ -396,13 +398,14 @@ const TradingEvents = (() => {
          */
         const high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            e.target.value = eventHandlers.removeInvalidCharacters(e.target.value);// remove invalid characters on mobile
             Barriers.validateBarrier();
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
         high_barrier_element.addEventListener('keypress', (ev) => {
-            onlyNumericOnKeypress(ev, [43, 45, 46]);
+            eventHandlers.onlyNumericOnKeypress(ev, [43, 45, 46]);
         });
 
         /*
