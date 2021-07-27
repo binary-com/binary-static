@@ -1,8 +1,8 @@
 const DocumentUploader        = require('@binary-com/binary-document-uploader');
 const Countries               = require('i18n-iso-countries');
 const Cookies                 = require('js-cookie');
-const Onfido                  = require('onfido-sdk-ui');
-const onfido_phrases          = require('./onfido_phrases');
+const Onfido                   = require('onfido-sdk-ui');
+const onfido_phrases           = require('./onfido_phrases');
 const Client                  = require('../../../base/client');
 const Header                  = require('../../../base/header');
 const BinarySocket            = require('../../../base/socket');
@@ -1409,7 +1409,7 @@ const Authenticate = (() => {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
         } else {
-            switch (identity_last_attempt.services) {
+            switch (identity_last_attempt.service) {
                 case 'idv':
                     $('#authentication_tab').setVisibility(0);
                     handleIdv();
@@ -1433,14 +1433,15 @@ const Authenticate = (() => {
 
     const onLoad = async () => {
         cleanElementVisibility();
+        account_status = await getAccountStatus();
+        const is_required = checkIsRequired(account_status);
+
         if (!isAuthenticationAllowed()) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_loading').setVisibility(0);
             $('#authentication_unneeded').setVisibility(1);
         }
 
-        account_status = await getAccountStatus();
-        const is_required = checkIsRequired(account_status);
         const has_svg_account = Client.hasSvgAccount();
         
         if (is_required || has_svg_account){
