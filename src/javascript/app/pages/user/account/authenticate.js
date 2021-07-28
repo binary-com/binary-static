@@ -1090,7 +1090,6 @@ const Authenticate = (() => {
         country_code = identity.services.onfido.country_code;
         onfido_unsupported = !identity.services.onfido.is_country_supported || country_code === 'NGA';
         const documents_supported = identity.services.onfido.documents_supported;
-            
         const has_submission_attempts = !!identity.services.onfido.submissions_left;
         const is_rejected = identity.status === 'rejected' || identity.status === 'suspected';
         const last_rejected_reasons = identity.services.onfido.last_rejected;
