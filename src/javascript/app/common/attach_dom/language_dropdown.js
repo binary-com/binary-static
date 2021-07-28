@@ -6,7 +6,6 @@ const createLanguageDropDown = (website_status) => {
     if ($languages.find('#display_language li').attr('class')) {
         return;
     }
-
     const select_language_id = '#select_language';
     const current_language   = Language.get();
 
