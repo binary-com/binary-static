@@ -229,7 +229,7 @@ const Authenticate = (() => {
         const has_name = default_text === 'Nimc' || default_text === 'Dob';
         
         if (has_name) {
-            default_text = `Add ${event.target.getAttribute('data-name')}`;
+            default_text = `${event.target.getAttribute('data-name')}`;
         } else if (default_text !== 'Add' && event.target.id !== 'selfie') {
             default_text = default_text === 'Back' ? localize('Reverse Side') : localize('Front Side');
         } else if (event.target.id === 'selfie') {
