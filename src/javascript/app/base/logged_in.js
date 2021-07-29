@@ -12,7 +12,6 @@ const isStorageSupported = require('../../_common/storage').isStorageSupported;
 const removeCookies      = require('../../_common/storage').removeCookies;
 const paramsHash         = require('../../_common/url').paramsHash;
 const urlFor             = require('../../_common/url').urlFor;
-const urlForLanguage     = require('../../_common/language').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const LoggedInHandler = (() => {
@@ -26,7 +25,7 @@ const LoggedInHandler = (() => {
             if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
                 // redirect url
                 const preferred_language   = response.authorize.preferred_language.toLowerCase();
-                redirect_url = urlForLanguage(preferred_language, sessionStorage.getItem('redirect_url'));
+                redirect_url = urlFor(sessionStorage.getItem('redirect_url') || '/', null, preferred_language);
                 LocalStore.set('preferred_language', preferred_language);
                 sessionStorage.removeItem('redirect_url');
                 storeClientAccounts(account_list);
