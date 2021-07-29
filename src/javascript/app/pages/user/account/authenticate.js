@@ -867,6 +867,7 @@ const Authenticate = (() => {
             showCTAButton('document', 'pending');
             $('#upload_complete').setVisibility(1);
             $('#msg_personal_details').setVisibility(0);
+            $(window).scrollTop(0);
         });
     };
 
