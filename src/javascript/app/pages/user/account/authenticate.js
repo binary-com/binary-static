@@ -1,8 +1,8 @@
 const DocumentUploader        = require('@binary-com/binary-document-uploader');
 const Countries               = require('i18n-iso-countries');
 const Cookies                 = require('js-cookie');
-const Onfido                   = require('onfido-sdk-ui');
-const onfido_phrases           = require('./onfido_phrases');
+const Onfido                  = require('onfido-sdk-ui');
+const onfido_phrases          = require('./onfido_phrases');
 const Client                  = require('../../../base/client');
 const Header                  = require('../../../base/header');
 const BinarySocket            = require('../../../base/socket');
@@ -32,6 +32,8 @@ const Authenticate = (() => {
     let file_checks_uns      = {};
     let onfido,
         account_status,
+        available_document_list,
+        residence_list,
         selected_country,
         $button,
         $submit_status,
@@ -991,11 +993,12 @@ const Authenticate = (() => {
     };
 
     const handleIdvCountrySelector = async () => {
-        let residence_list;
-        await BinarySocket.send({ residence_list: 1 })
-            .then(response => residence_list = response.residence_list);
         const $residence_dropdown = $('#country_dropdown');
         const next_button = document.getElementById('button_next_country_selected');
+        selected_country = null;
+        await BinarySocket.send({ residence_list: 1 })
+            .then(response => residence_list = response.residence_list);
+
         if (!selected_country) {
             next_button.classList.add('button-disabled');
         }
@@ -1039,12 +1042,13 @@ const Authenticate = (() => {
                 if (selected_country) {
                     const is_idv_supported = selected_country.identity.services.idv.is_country_supported;
                     const is_onfido_supported = selected_country.identity.services.onfido.is_country_supported;
-
                     $('#idv_country_selector').setVisibility(0);
+
                     if (is_idv_supported) {
                         handleIdvDocumentSubmit();
                     } else if (is_onfido_supported) {
-                        const { value: country_code, documents_supported } = selected_country.identity.services.onfido;
+                        const { documents_supported } = selected_country.identity.services.onfido;
+                        const country_code = selected_country.value;
                         handleOnfido(country_code, documents_supported);
                     } else {
                         handleManual();
@@ -1056,80 +1060,71 @@ const Authenticate = (() => {
  
     const handleIdvDocumentSubmit = async () => {
         $('#idv_document_submit').setVisibility(1);
+
         const $documents = $('#document_type');
         const $example = $('#document_example_format');
-        const $example_format = document.getElementById('document_example_format');
+        const left_container = document.getElementById('idv_document_left');
+        const right_container = document.getElementById('idv_document_right');
+        const example_format_text = document.getElementById('document_example_format');
         const document_input = document.getElementById('document_number');
+        const document_sample_img = document.getElementById('document_sample_image');
         const back_button = document.getElementById('idv_document_submit_back_btn');
         const verify_button = document.getElementById('idv_document_submit_verify_btn');
-        verify_button.classList.add('button-disabled');
-        document_input.disabled = true;
 
-        const {
-            value: country_code,
-            identity: {
-                services: {
-                    idv: {
-                        has_visual_sample,
-                        documents_supported,
-                    },
-                },
-            },
-        } = selected_country;
+        // Reset all states in case user navigates back and forth
+        document_input.disabled = true;
+        document_sample_img.src = '';
+        right_container.setVisibility(0);
+        verify_button.classList.add('button-disabled');
+        left_container.classList.remove('show-sample-image');
+
+        const country_code = selected_country.value;
+        const { has_visual_sample, documents_supported } = selected_country.identity.services.idv;
         const needs_poa = account_status.needs_verification.length && account_status.needs_verification.includes('document');
 
         let document_type,
             document_number;
 
-        const available_document_list = Object.keys(documents_supported).map(d => {
+        available_document_list = Object.keys(documents_supported).map(d => {
             const { new_display_name, example_format, sample_image } = getDocumentData(country_code, d);
             const { format:regex, display_name } = documents_supported[d];
             return { id: d, text: new_display_name || display_name, example_format, sample_image, regex };
         });
 
         if (selected_country) {
-            const $options_with_disabled = $('<select/>');
-            $options_with_disabled.append(makeOption({
+            const $enabled_options = $('<select/>');
+            $enabled_options.append(makeOption({
                 text       : localize('Please select a document type.'),
                 value      : 'initial',
                 is_disabled: 'disabled',
             }));
             
             available_document_list.forEach((doc) => {
-                $options_with_disabled.append(makeOption({
+                $enabled_options.append(makeOption({
                     text       : doc.text,
                     value      : doc.id,
                     is_disabled: false,
                 }));
             });
 
-            $documents.html($options_with_disabled.html());
+            $documents.html($enabled_options.html());
             $documents.val('initial');
 
             // Update Sample Image and Example Format on Dropdown Change (If Available)
             $documents.on('change', (e) => {
                 document_type = available_document_list.find(d => d.id === e.target.value);
-
                 const { sample_image, example_format } = document_type;
                 
-                if (has_visual_sample) {
-                    const sample_image_div = document.getElementById('idv_document_sample_image');
-                    
-                    if (sample_image) {
-                        if (!document.getElementById('programmatically_image')) {
-                            const img = document.createElement('img');
-                            img.src = sample_image;
-                            img.id = 'programmatically_image';
-                            sample_image_div.appendChild(img);
-                        } else {
-                            const $prog_image = document.getElementById('programmatically_image');
-                            $prog_image.src = sample_image;
-                        }
-                        $(sample_image_div).setVisibility(1);
-                    } else {
-                        $(sample_image_div).setVisibility(0);
-                    }
+                if (has_visual_sample && sample_image) {
+                    document_sample_img.src = sample_image;
+                    right_container.setVisibility(1);
+                    left_container.classList.add('show-sample-image');
+                } else {
+                    document_sample_img.src = '';
+                    right_container.setVisibility(0);
+                    left_container.classList.remove('show-sample-image');
                 }
+
                 if ($documents[0].selectedOptions){
                     $example.html(`Example: ${example_format}`);
                 }
@@ -1140,24 +1135,26 @@ const Authenticate = (() => {
             });
 
             document_input.addEventListener('keyup', (e) => {
-                const { example_format, regex } = document_type;
                 e.preventDefault();
+                const { example_format, regex } = document_type;
                 const format_regex = new RegExp(regex);
+
                 if (format_regex.test(e.target.value)) {
                     document_number = e.target.value;
                     verify_button.classList.remove('button-disabled');
-                    $example_format.classList.remove('error-text');
+                    example_format_text.classList.remove('error-text');
                 } else {
                     const error_text = localize('Please enter the correct format. Example:');
                     $example.html(`${error_text} ${example_format}`);
-                    $example_format.classList.add('error-text');
+                    example_format_text.classList.add('error-text');
 
                     if (!verify_button.classList.contains('button-disabled')) {
                         verify_button.classList.add('button-disabled');
                     }
                 }
+
                 if (e.target.value === '') {
-                    $example_format.classList.remove('error-text');
+                    example_format_text.classList.remove('error-text');
                 }
             });
 

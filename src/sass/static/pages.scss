@@ -1162,7 +1162,6 @@ body #not_authenticated_financial ul.checked > li {
         }
         p {
             margin: unset;
-            margin-bottom: 24px;
         }
         &__document-container {
             width: 100%;
@@ -1175,6 +1174,8 @@ body #not_authenticated_financial ul.checked > li {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            width: 100%;
 
             fieldset {
                 display: flex;
@@ -1188,6 +1189,7 @@ body #not_authenticated_financial ul.checked > li {
                     font-size: 13px;
                     margin-top: 8px;
                     word-wrap: break-word;
+                    text-align: left;
                 }
                 .error-text {
                     color: $COLOR_DARK_RED;
@@ -1195,21 +1197,33 @@ body #not_authenticated_financial ul.checked > li {
             }
         }
         &__right {
-            background-color: $COLOR_SHADY_WHITE;
-            padding: 14px 18px;
-            margin-left: 30px;
-
+            max-width: calc(50% - 30px);
+            margin: 16px 0 0 30px;
             @media (max-width: 768px) {
                 width: 90%;
                 padding: 0;
                 margin-left: 0;
             }
 
-            img {
-                width: 245px;
-                @media (max-width: 768px) {
-                    width: 90%;
-                    padding: 5%;
+            .sample-image-text {
+                font-size: 16px;
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 4px;
+            }
+            .sample-image-container {
+                background-color: $COLOR_SHADY_WHITE;
+                padding: 14px 18px;
+                min-width: 245px;
+                max-width: calc(50% - 30px - 36px);
+
+                img {
+                    min-width: 245px;
+                    max-width: calc(50% - 30px - 36px);
+                    @media (max-width: 768px) {
+                        width: 90%;
+                        padding: 5%;
+                    }
                 }
             }
         }
@@ -1231,6 +1245,9 @@ body #not_authenticated_financial ul.checked > li {
     }
     .document-submit {
         max-width: 540px;
+    }
+    .show-sample-image {
+        max-width: 50%;
     }
 }
 

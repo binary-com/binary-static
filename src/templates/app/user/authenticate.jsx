@@ -55,7 +55,7 @@ const Authenticate = () => (
                     <p>{it.L('Please select the document type and enter the document number.')}</p>
                 </div>
                 <div className='idv-container__document-container'>
-                    <div className='idv-container__left'>
+                    <div id='idv_document_left' className='idv-container__left'>
                         <fieldset>
                             <select className='idv-container__dropdown' type='select' id='document_type' />
                         </fieldset>
@@ -70,7 +70,12 @@ const Authenticate = () => (
                             <span id='document_example_format' />
                         </fieldset>
                     </div>
-                    <div id='idv_document_sample_image' className='idv-container__right invisible' />
+                    <div id='idv_document_right' className='idv-container__right invisible'>
+                        <p className='sample-image-text'>{it.L('Sample:')}</p>
+                        <div className='sample-image-container'>
+                            <img id='document_sample_image' alt='document sample image' />
+                        </div>
+                    </div>
                 </div>
                 <div className='idv-container__button-wrapper'>
                     <Button
