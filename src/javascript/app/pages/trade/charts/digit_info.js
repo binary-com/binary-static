@@ -122,6 +122,7 @@ const DigitInfo = (() => {
         $('#digit_underlying').html($(elem)).val(underlying);
         $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
         $('#digit_info_underlying').text($('#digit_underlying option:selected').text());
+        $('#digit_info_count').text($('#tick_count').val());
         CreateDropdown('#digit_underlying');
         CreateDropdown('#tick_count');
     };

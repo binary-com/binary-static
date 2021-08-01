@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-15 08:44\n"
+"PO-Revision-Date: 2021-07-27 11:08\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -472,8 +472,8 @@ msgstr "%1¿No está seguro?%1"
 msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
 msgstr "%1Nota:%2 Para obtener una selección más amplia de proveedores de señales, diríjase a %4 la página de presentación de MQL5 %3 y busque Deriv en el campo de servidor de broker."
 
-msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
-msgstr "%1Nota:%2 Necesita actualizar su cuenta MQL5 a estado de vendedor para poder agregar una señal. Si aún no la ha actualizado, siga los pasos de esta página para registrarse como vendedor."
+msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on %3this page%4 to register as a seller."
+msgstr "%1Nota:%2 Necesita actualizar su cuenta MQL5 a estado de vendedor para poder agregar una señal. Si aún no la ha actualizado, siga los pasos en %3esta página%4 para registrarse como vendedor."
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Por favor note que si vive en el Reino Unido, la autoexclusión no puede removerse hasta que el período haya expirado. %2Si desea continuar operando una vez haya expirado el período, llámenos al %3. Las solicitudes via chat o email no serán atendidas."
@@ -2234,9 +2234,6 @@ msgstr "La plataforma de Binary realiza en promedio %1 %2transacciones%3 por seg
 msgid "Binary.com Graduate Program"
 msgstr "Programa de Graduados de Binary.com"
 
-msgid "Binary.com Shop"
-msgstr "Tienda Binary.com"
-
 msgid "Binary.com in Numbers"
 msgstr "Binary en números"
 
@@ -3857,6 +3854,9 @@ msgstr "Deriv Investments (Europe) Limited agrupa los precios de compra y venta 
 msgid "Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta"
 msgstr "Deriv Investments (Europe) Limited y Deriv (Europe) Limited: Malta"
 
+msgid "Deriv Investments (Europe) Limited has prepared the Financial disclosures report in accordance with the Investment Firms Regulation and Directive. Read our report to understand how we comply with market discipline as a market participant."
+msgstr "Deriv Investments (Europe) Limited ha preparado el Informe de divulgación financiera de conformidad con el Reglamento y la Directiva de Empresas de Inversión. Lea nuestro informe para comprender cómo cumplimos con la disciplina del mercado como participante del mercado."
+
 msgid "Deriv Investments (Europe) Limited is a company established in Malta, at W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033. It is licensed in Malta and regulated by the Malta Financial Services Authority, Triq l-Imdina, Zone 1, Central Business District, Birkirkara CBD 1010, Malta, under the Investments Services Act to provide investment services in the European Union."
 msgstr "Deriv Investments (Europe) Limited es una empresa establecida en Malta, en W Business Center, Nivel 3, Triq Dun Karm, Birkirkara BKR 9033. Tiene licencia de Malta y está regulada por la Autoridad de Servicios Financieros de Malta, Triq l-Imdina, Zona 1 , Central Business District, Birkirkara CBD 1010, Malta, en virtud de la Ley de Servicios de Inversión para proporcionar servicios de inversión en la Unión Europea."
 
@@ -5032,6 +5032,9 @@ msgstr "Evaluación financiera"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Los derivados financieros que le permiten operar con los movimientos de activos subyacentes."
+
+msgid "Financial disclosure report"
+msgstr "Informe de divulgación financiera"
 
 msgid "Financial information"
 msgstr "Información financiera"
@@ -8362,7 +8365,7 @@ msgid "Our business is founded on collaboration and we aim to build long-term, m
 msgstr "Nuestro negocio se basa en la colaboración y nuestro objetivo es construir relaciones de beneficio mutuo a largo plazo con nuestros socios. Sin embargo, nunca comprometeremos nuestro compromiso hacia la integridad empresarial. En los casos en que nuestros socios no estén dispuestos o no puedan cumplir con nuestros principios, nos reservamos el derecho de retirarnos de la relación comercial."
 
 msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr ""
+msgstr "Nuestro cajero está temporalmente fuera de servicio debido al mantenimiento del sistema. Puede acceder al cajero tan pronto como se complete el mantenimiento."
 
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "Nuestra estructura de comisiones es un plan simple de 2 niveles."
@@ -8374,7 +8377,7 @@ msgid "Our company continues to thrive and obtains a license in the Isle of Man 
 msgstr "Nuestra empresa sigue creciendo y obtiene una licencia en la Isla de Man para servir mejor a nuestros clientes en el Reino Unido."
 
 msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr ""
+msgstr "Nuestro cajero de criptomonedas está temporalmente fuera de servicio debido al mantenimiento del sistema. Puede acceder al cajero tan pronto como se complete el mantenimiento."
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Nuestros clientes claramente confían en nosotros. A mediados de 2014, %1 tiene más de 100 millones de transacciones históricas y más de 130.000 nuevas transacciones diarias."
@@ -8678,12 +8681,6 @@ msgstr "Foto de su documento"
 
 msgid "Photo of your face"
 msgstr "Foto de su cara"
-
-msgid "Pillar 3 Disclosures"
-msgstr "Divulgaciones del Pilar 3"
-
-msgid "Pillar 3 disclosure report"
-msgstr "Informe de divulgación del Pilar 3"
 
 msgid "Pip"
 msgstr "Porcentaje en punto"
@@ -11563,10 +11560,10 @@ msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book 
 msgstr "La cuenta financiera Straight-Through Processing (STP o procesamiento directo) es una cuenta A Book 100% donde sus operaciones se transfieren directamente al mercado, lo que le brinda acceso directo a proveedores de liquidez forex. Opere con pares de divisas mayores, menores, exóticos y criptomonedas con diferenciales ajustados y mayores volúmenes comerciales."
 
 msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
-msgstr ""
+msgstr "La cuenta Financiera (disponible en EUR y GBP) es adecuada para una amplia gama de traders, tanto nuevos como experimentados. Opere con pares de divisas mayores (estándar y micro lotes) y menores, acciones, índices bursátiles, commodities y criptomonedas."
 
 msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
-msgstr ""
+msgstr "La cuenta Financiera ofrece a los traders nuevos y experimentados un alto apalancamiento y márgenes variables para una máxima flexibilidad. Opere con pares de divisas mayores (estándar y micro lotes) y menores, acciones, índices bursátiles, commodities y criptomonedas con alto apalancamiento."
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "El Mercado de Divisas (forex) es el mercado de mayor tamaño y liquidez del mundo, en el que cualquiera puede comprar, vender y cambiar divisas."
@@ -11642,9 +11639,6 @@ msgstr "La Parte que no pueda cumplir con sus obligaciones en virtud del present
 
 msgid "The Pearl of Borneo"
 msgstr "La Perla de Borneo"
-
-msgid "The Pillar 3 disclosure report of Deriv Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr "El informe de divulgación para el Tercer Pilar de Deriv Investments (Europe) Limited se ha elaborado de conformidad con la Directiva sobre requisitos de capital (DRC IV) y el reglamento de la UE nº 575/2013. Lea nuestro informe de divulgación del Tercer Pilar para comprender cómo cumplimos con las normas de mercado como participante del mercado."
 
 msgid "The Policy is supplemented by Appendix A, which provides further details to the Company's considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
 msgstr "La Política se complementa con el Apéndice A, el cual proporciona más detalles sobre las consideraciones de la Empresa, ya que están relacionadas con diferentes clases de activos. Ambos documentos deben leerse conjuntamente."
@@ -13972,7 +13966,7 @@ msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge tha
 msgstr "Actualizaremos sus límites. Haga clic en %1Acordar y aceptar%2 para reconocer que usted es totalmente responsable de sus acciones y que no somos responsables de ninguna adicción o pérdida."
 
 msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
-msgstr ""
+msgstr "Estamos actualizando nuestro sistema de cajero y pronto volverá a estar en línea. Consulte nuestra %1spágina de estado%2 para obtener actualizaciones."
 
 msgid "We’ve sent you an email"
 msgstr "Le hemos enviado un correo electrónico"
@@ -14584,7 +14578,7 @@ msgid "You have open positions in these MT5 accounts:"
 msgstr "Tiene posiciones abiertas en estas cuentas MT5:"
 
 msgid "You have pending withdrawal(s) in these Binary accounts:"
-msgstr ""
+msgstr "Tiene retiro(s) pendiente(s) en estas cuentas Binary:"
 
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Es probable que usted haya visto los términos \"asumir una posición larga\" y \"asumir una posición corta\" utilizados por muchos agentes y operadores forex. Comparemos las diferencias entre estos dos términos:"
@@ -15097,19 +15091,19 @@ msgid "paysafecard offers a voucher-based online payment method that does not re
 msgstr "paysafecard ofrece un método de pago en línea basado en cupones que no requiere una cuenta bancaria, tarjeta de crédito u otra información personal. Para más información, visite %1."
 
 msgid "position(s)"
-msgstr ""
+msgstr "posición(es)"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "relación entre el Capital de la Cuenta y el Margen Total, expresado en porcentaje"
 
 msgid "regulated by the Malta Financial Services Authority (MFSA),"
-msgstr ""
+msgstr "regulada por la Autoridad de Servicios Financieros de Malta (MFSA),"
 
 msgid "regulated by the Malta Gaming Authority,"
-msgstr ""
+msgstr "regulado por la Autoridad de Juego de Malta,"
 
 msgid "regulated by the UK Gaming Commission (UKGC),"
-msgstr ""
+msgstr "regulada por la Comisión de Juego del Reino Unido (UKGC),"
 
 msgid "second"
 msgstr "segundo"
@@ -15175,7 +15169,7 @@ msgid "today, Fridays"
 msgstr "hoy, los viernes"
 
 msgid "withdrawal(s)"
-msgstr ""
+msgstr "retiro(s)"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "Sin embargo, Binary Investments (Europe) Ltd ha evaluado su conocimiento y experiencia y considera el producto apropiado para usted."
