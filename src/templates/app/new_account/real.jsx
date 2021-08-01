@@ -21,7 +21,7 @@ import {
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
-    Tnc,
+    TncWithSubmitButton,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Real = () => (
@@ -61,13 +61,13 @@ const Real = () => (
             </Fieldset>
 
             <PepDeclaration />
-            <ProfessionalClient />
+            <ProfessionalClient row_id='fs_professional' className='invisible' />
             <Jurisdiction />
             <div className='invisible' id='risk_disclaimer'>
                 <RiskDisclaimer />
             </div>
 
-            <Tnc />
+            <TncWithSubmitButton />
         </form>
 
         <ClientMessage />

@@ -3,6 +3,7 @@ const SetCurrency          = require('./set_currency');
 const BinaryPjax           = require('../../base/binary_pjax');
 const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
+const AccountOpening       = require('../../common/account_opening');
 const showPopup            = require('../../common/attach_dom/popup');
 const Currency             = require('../../common/currency');
 const localize             = require('../../../_common/localize').localize;
@@ -106,7 +107,10 @@ const Accounts = (() => {
                             '<a/>',
                             {
                                 class: 'button',
-                                href : urlFor('/new_account/real_account', `account_type=${upgrade_info.can_upgrade_to[index]}`),
+                                href : AccountOpening.getSinupPageLink(
+                                    upgrade_info,
+                                    upgrade_info.can_upgrade_to[index]
+                                ),
                             },
                         )
                             .html($('<span/>', { text: localize('Create account') })))));

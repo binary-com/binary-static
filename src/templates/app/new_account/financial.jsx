@@ -23,7 +23,7 @@ import {
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
-    Tnc,
+    TncWithSubmitButton,
     TaxInformationForm,
 } from '../../_common/components/forms_common_rows.jsx';
 
@@ -70,13 +70,13 @@ const Financial = () => (
                     <SecretAnswer />
                 </Fieldset>
 
-                <ProfessionalClient />
+                <ProfessionalClient row_id='fs_professional' className='invisible' />
                 <FinancialForm />
                 <PepDeclaration />
                 <Jurisdiction />
                 <RiskDisclaimer />
 
-                <Tnc />
+                <TncWithSubmitButton />
             </form>
 
             <form id='financial-risk' className='invisible'>

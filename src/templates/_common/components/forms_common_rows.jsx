@@ -240,21 +240,22 @@ export const SecretAnswer = () => (
     />
 );
 
-// export const Tnc = ({ className, row_id }) => (
-//     <div className={`gr-row fieldset_margin_top ${className}`} id={row_id}>
-//         <div className='gr-12-m gr-padding-10 add-account-tnc'>
-//             <input type='checkbox' name='tnc' id='tnc' />
-//             <label htmlFor='tnc'>
-//                 {it.L(
-//                     'I agree to the [_1]terms and conditions[_2].',
-//                     `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
-//                     '</a>'
-//                 )}
-//             </label>
-//             </div>
-//     </div>
-// )
-export const Tnc = () => (
+export const Tnc = ({ className, row_id }) => (
+    <div className={`gr-row fieldset_margin_top ${className}`} id={row_id}>
+        <div className='gr-12-m gr-padding-10 add-account-tnc'>
+            <input type='checkbox' name='tnc' id='tnc' />
+            <label htmlFor='tnc'>
+                {it.L(
+                    'I have read and agree to the [_1]terms and conditions[_2] of the site.',
+                    `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
+                    '</a>'
+                )}
+            </label>
+        </div>
+    </div>
+);
+
+export const TncWithSubmitButton = () => (
     <div className='center-text'>
         <div className='gr-row'>
             <div className='gr-12-m gr-padding-10 gr-centered'>
@@ -269,6 +270,8 @@ export const Tnc = () => (
                 <span className='required_field_asterisk'>*</span>
             </div>
         </div>
+
+        <button className='button' type='submit'>{it.L('Open account')}</button>
     </div>
 );
 
