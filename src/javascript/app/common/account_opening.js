@@ -21,7 +21,7 @@ const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const AccountOpening = (() => {
 
-    const excluded_countries = ['im', 'au', 'sg', 'no', 'gb', 'be', 'de', 'es', 'it', 'lu', 'gr', 'fr'];
+    const excluded_countries = ['im', 'au', 'sg', 'no'];
 
     const getSinupPageLink = (upgrade_info, account_type) => {
         const get_settings = State.getResponse('get_settings');
