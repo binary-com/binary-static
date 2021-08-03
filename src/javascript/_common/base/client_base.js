@@ -37,9 +37,6 @@ const ClientBase = (() => {
      * @param {String|null} loginid        The account to set the value for
      */
     const set = (key, value, loginid = current_loginid) => {
-        if (key === 'preferred_language' && !LocalStore.get('preferred_language')) {
-            LocalStore.set('preferred_language', value);
-        }
         if (key === 'loginid' && value !== current_loginid) {
             LocalStore.set('active_loginid', value);
             current_loginid = value;
@@ -170,7 +167,6 @@ const ClientBase = (() => {
         set('landing_company_shortcode', authorize.landing_company_name);
         set('user_id', authorize.user_id);
         set('local_currency_config', local_currency_config);
-        set('preferred_language', authorize.preferred_language);
         updateAccountList(authorize.account_list);
     };
 
