@@ -97,11 +97,11 @@ const FileSelector = ({
                                                     </div>
                                                     <div className='gr-row form-row center-text-m'>
                                                         <div className='gr-12'>
-                                                            <input id={`nimc_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-is-lifetime-valid data-name={it.L('The NIMC slip')} data-page-type='front' />
+                                                            <input id={`nimc_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value}  data-document-type='nimc_slip' data-is-lifetime-valid data-name={it.L('The NIMC slip')} data-page-type='front' />
                                                             <label htmlFor={`nimc_${j}`} className='button'>{it.L('Add the NIMC slip')} <span className='add' /></label>
                                                         </div>
                                                         <div className='gr-12'>
-                                                            <input id={`dob_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={'other'} data-name={it.L('Add proof of age')} data-page-type='front' />
+                                                            <input id={`dob_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type='birth_certificate' data-document-type='birth_certificate' data-name={it.L('Add proof of age')} data-page-type='front' />
                                                             <label htmlFor={`dob_${j}`} className='button'>{it.L('Add proof of age')} <span className='add' /></label>
                                                         </div>
                                                     </div>
@@ -136,7 +136,7 @@ const FileSelector = ({
                                     <div className='fields'>
                                         <div className='gr-row form-row gr-centered'>
                                             <div className='gr-12'>
-                                                <input id='selfie' className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='other' data-name={it.L('Your selfie')} data-page-type='photo' />
+                                                <input id='selfie' className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='selfie_with_id' data-document-type='selfie_with_id' data-name={it.L('Your selfie')} data-page-type='photo' />
                                                 <label htmlFor='selfie' className='button'>{it.L('Add')} <span className='add' /></label>
                                             </div>
                                         </div>
@@ -200,7 +200,7 @@ export const UnsupportedMessage = () => (
                 { name: it.L('Passport'), value: 'Passport' },
                 { name: it.L('Identity card'), value: 'National Identity Card' },
                 { name: it.L('Driving licence'), value: 'Driving Licence' },
-                { name: it.L('NIMC slip and proof of age'), value: 'National Identity Card', is_nimc: true },
+                { name: it.L('NIMC slip and proof of age'), value: 'National Identity Card', abbr: 'nimc_slip' , is_nimc: true },
             ]}
         />
 

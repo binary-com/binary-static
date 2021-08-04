@@ -417,20 +417,31 @@ const Authenticate = (() => {
                 const lifetime_valid = Boolean($e.attr('data-is-lifetime-valid'));
                 const name           = $e.attr('data-name');
                 const page_type      = $e.attr('data-page-type');
+                const document_type  = `${($e.attr('data-document-type') || '').replace(/\s/g, '_').toLowerCase()}`;
                 const $inputs        = $e.closest('.fields').find('input[type="text"]');
+       
+                let exp_date;
+                if ($inputs.length) {
+                    exp_date  = $($inputs[1]).val();
+                }
+
                 const file_obj       = {
                     file     : e.files[0],
                     chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
                     class    : id,
                     type,
-                    lifetime_valid,
+                    ...(exp_date === '' && { lifetime_valid }),
                     name,
+                    document_type,
                     page_type,
                 };
+                
                 if ($inputs.length) {
                     file_obj.id_number = $($inputs[0]).val();
+                    file_obj.document_id = $($inputs[0]).val();
                     file_obj.exp_date  = $($inputs[1]).val();
                 }
+
                 fileTrackerUns($e, true);
                 files.push(file_obj);
 
