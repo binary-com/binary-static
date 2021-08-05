@@ -7,6 +7,7 @@ const hasAccountType = require('../../../../../_common/base/client_base').hasAcc
 const getElementById = require('../../../../../_common/common_functions').getElementById;
 const localize = require('../../../../../_common/localize').localize;
 const applyToAllElements = require('../../../../../_common/utility').applyToAllElements;
+const State = require('../../../../../_common/storage').State;
 
 const AccountClosure = (() => {
     let reason_checkbox_list,
@@ -30,6 +31,16 @@ const AccountClosure = (() => {
     const number_of_steps = 3;
     const max_reason_length = 250;
     selected_reasons = '';
+
+    const isDxtradeAllowed = () => {
+        const landing_companies = State.getResponse('landing_company');
+
+        if (!State.getResponse('website_status.clients_country') || !landing_companies || !Object.keys(landing_companies).length) { return true; }
+
+        return (
+            'dxtrade_financial_company' in landing_companies || 'dxtrade_gaming_company' in landing_companies
+        );
+    };
 
     const onLoad = () => {
         reason_checkbox_list = document.getElementsByName('reason-checkbox');
@@ -62,11 +73,9 @@ const AccountClosure = (() => {
                 BinarySocket.send({ statement: 1, limit: 1 });
                 BinarySocket.wait('landing_company', 'get_account_status', 'statement', 'website_status').then(async () => {
                     const is_eligible = await Metatrader.isEligible();
-                    // TODO: is_dxtrade_allowed should be populated based on `landing_company` response
-                    const is_dxtrade_allowed = Client.get('landing_company_shortcode') === 'svg';
 
                     if (is_eligible) {
-                        if (is_dxtrade_allowed) {
+                        if (isDxtradeAllowed()) {
                             applyToAllElements('.cfd-link', (element) => { element.setVisibility(1); });
                         } else {
                             applyToAllElements('.metatrader-link', (element) => { element.setVisibility(1); });
