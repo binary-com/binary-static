@@ -97,11 +97,11 @@ const FileSelector = ({
                                                     </div>
                                                     <div className='gr-row form-row center-text-m'>
                                                         <div className='gr-12'>
-                                                            <input id={`nimc_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type='nimc_slip' data-is-lifetime-valid data-name={it.L('nimc_slip')} data-page-type='front' />
+                                                            <input id={`nimc_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type='nimc_slip' data-is-lifetime-valid data-name={it.L('The NIMC slip')} data-page-type='front' />
                                                             <label htmlFor={`nimc_${j}`} className='button'>{it.L('Add the NIMC slip')} <span className='add' /></label>
                                                         </div>
                                                         <div className='gr-12'>
-                                                            <input id={`dob_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type='birth_certificate'  data-name={it.L('birth_certificate_front')} data-page-type='front' />
+                                                            <input id={`dob_${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type='birth_certificate'  data-name={it.L('Add proof of age')} data-page-type='front' />
                                                             <label htmlFor={`dob_${j}`} className='button'>{it.L('Add proof of age')} <span className='add' /></label>
                                                         </div>
                                                     </div>
@@ -136,7 +136,7 @@ const FileSelector = ({
                                     <div className='fields'>
                                         <div className='gr-row form-row gr-centered'>
                                             <div className='gr-12'>
-                                                <input id='selfie' className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='selfie_with_id' data-name={it.L('selfie_with_id')} data-page-type='photo' />
+                                                <input id='selfie' className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='selfie_with_id' data-name={it.L('Your selfie')} data-page-type='photo' />
                                                 <label htmlFor='selfie' className='button'>{it.L('Add')} <span className='add' /></label>
                                             </div>
                                         </div>
