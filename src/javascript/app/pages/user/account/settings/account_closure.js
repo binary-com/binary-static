@@ -241,38 +241,34 @@ const AccountClosure = (() => {
             const dxtrade_account = (dxtrade_accounts_list.find(acc => acc.account_id === account) || {});
             return Client.getMT5AccountDisplays(dxtrade_account.market_type, 'financial').short;
         };
-        if (response.error.details.open_positions) {
-            Object.keys(response.error.details.open_positions).forEach((account) => {
-                const txt_positions = `${response.error.details.open_positions[account]} ${localize('position(s)')}`;
-                if (/^MT/.test(account)) {
-                    section_id = 'account_closure_open_mt';
-                    display_name = getMTDisplay(account);
-                } else if (/^DX/.test(account)) {
-                    section_id = 'account_closure_open_dxtrade';
-                    display_name = getDxtradeDisplay(account);
-                } else {
-                    section_id = 'account_closure_open';
-                    display_name = Currency.getCurrencyName(Client.get('currency', account));
-                }
-                addSection(account, txt_positions);
-            });
-        }
-        if (response.error.details.balance) {
-            Object.keys(response.error.details.balance).forEach((account) => {
-                const txt_balance = `${response.error.details.balance[account].balance} ${response.error.details.balance[account].currency}`;
-                if (/^MT/.test(account)) {
-                    section_id = 'account_closure_balance_mt';
-                    display_name = getMTDisplay(account);
-                } else if (/^DX/.test(account)) {
-                    section_id = 'account_closure_balance_dxtrade';
-                    display_name = getDxtradeDisplay(account);
-                } else {
-                    section_id = 'account_closure_balance';
-                    display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);
-                }
-                addSection(account, txt_balance);
-            });
-        }
+        Object.keys(response.error.details.open_positions || {}).forEach((account) => {
+            const txt_positions = `${response.error.details.open_positions[account]} ${localize('position(s)')}`;
+            if (/^MT/.test(account)) {
+                section_id = 'account_closure_open_mt';
+                display_name = getMTDisplay(account);
+            } else if (/^DX/.test(account)) {
+                section_id = 'account_closure_open_dxtrade';
+                display_name = getDxtradeDisplay(account);
+            } else {
+                section_id = 'account_closure_open';
+                display_name = Currency.getCurrencyName(Client.get('currency', account));
+            }
+            addSection(account, txt_positions);
+        });
+        Object.keys(response.error.details.balance || {}).forEach((account) => {
+            const txt_balance = `${response.error.details.balance[account].balance} ${response.error.details.balance[account].currency}`;
+            if (/^MT/.test(account)) {
+                section_id = 'account_closure_balance_mt';
+                display_name = getMTDisplay(account);
+            } else if (/^DX/.test(account)) {
+                section_id = 'account_closure_balance_dxtrade';
+                display_name = getDxtradeDisplay(account);
+            } else {
+                section_id = 'account_closure_balance';
+                display_name = Currency.getCurrencyName(response.error.details.balance[account].currency);
+            }
+            addSection(account, txt_balance);
+        });
         if (response.error.details.pending_withdrawals) {
             Object.keys(response.error.details.pending_withdrawals).forEach((account) => {
                 const txt_pending_withdrawals = `${response.error.details.pending_withdrawals[account]} ${localize('withdrawal(s)')}`;
