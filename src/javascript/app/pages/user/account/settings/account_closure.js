@@ -202,6 +202,8 @@ const AccountClosure = (() => {
         });
     };
 
+    const getMT5MarketType = (mt5_account) => mt5_account.market_type === 'synthetic' ? 'gaming' : mt5_account.market_type;
+
     const showErrorPopUp = async (response) => {
         const mt5_login_list = (await BinarySocket.wait('mt5_login_list')).mt5_login_list;
         const dxtrade_accounts_list = (await BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' })).trading_platform_accounts;
@@ -234,7 +236,7 @@ const AccountClosure = (() => {
         };
         const getMTDisplay = (account) => {
             const mt5_account = (mt5_login_list.find(acc => acc.login === account) || {});
-            const market_type = mt5_account.market_type === 'synthetic' ? 'gaming' : mt5_account.market_type;
+            const market_type = getMT5MarketType(mt5_account);
             return Client.getMT5AccountDisplays(market_type, mt5_account.sub_account_type).short;
         };
         const getDxtradeDisplay = (account) => {
