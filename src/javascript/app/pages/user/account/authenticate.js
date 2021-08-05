@@ -417,7 +417,6 @@ const Authenticate = (() => {
                 const lifetime_valid = Boolean($e.attr('data-is-lifetime-valid'));
                 const name           = $e.attr('data-name');
                 const page_type      = $e.attr('data-page-type');
-                const document_type  = `${($e.attr('data-document-type') || '').replace(/\s/g, '_').toLowerCase()}`;
                 const $inputs        = $e.closest('.fields').find('input[type="text"]');
        
                 let exp_date;
@@ -432,7 +431,6 @@ const Authenticate = (() => {
                     type,
                     ...(exp_date === '' && { lifetime_valid }),
                     name,
-                    document_type,
                     page_type,
                 };
                 
