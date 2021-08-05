@@ -9,7 +9,7 @@ module.exports = [
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',                 'app/cashier/payment_methods',                 'default',    'Payment Methods'],
     ['cashier/session_expired',                 'app/cashier/session_expired',                 null,         'Cashier session expired'],
-    ['cashier/top_up_virtualws',                'app/user/top_up_virtual/top_up_virtual',      'default',    'Top Up Virtual Account'],
+    ['cashier/top_up_virtualws',                'app/user/top_up_virtual/top_up_virtual',      'default',    'Top Up Demo Account'],
 
     ['dashboard/overview',                      'app/dashboard/index',                         'dashboard',  'Dashboard'],
     ['dashboard/explore',                       'app/dashboard/index',                         'dashboard',  'Dashboard'],
@@ -23,7 +23,7 @@ module.exports = [
 
     ['new_account/maltainvestws',               'app/new_account/financial',                   'default',    'Financial Account Opening'],
     ['new_account/realws',                      'app/new_account/real',                        'default',    'Real Money Account Opening'],
-    ['new_account/virtualws',                   'app/new_account/virtual',                     'default',    'Create New Virtual-money Account'],
+    ['new_account/virtualws',                   'app/new_account/virtual',                     'default',    'Create New Demo Account'],
     ['new_account/welcome',                     'app/new_account/welcome_page',                'default',    'Welcome to Binary.com'],
     ['new_account/welcome_onboarding',          'app/new_account/welcome_onboarding',             'default',    'Welcome to Binary.com'],
 
@@ -59,7 +59,7 @@ module.exports = [
     ['user/settings/professional',              'app/user/settings/professional',              'default',    'Professional Client'],
     ['user/statementws',                        'app/user/statement',                          'default',    'Statement'],
     ['user/telegram-bot',                       'app/user/telegram_bot',                       'default',    'Telegram Bot'],
-    ['user/top_up_virtual_pop_up',              'app/user/top_up_virtual/pop_up',              'default',    'Top Up Virtual Account'],
+    ['user/top_up_virtual_pop_up',              'app/user/top_up_virtual/pop_up',              'default',    'Top Up Demo Account'],
     ['user/tnc_approvalws',                     'app/user/tnc_approval',                       'default',    'Terms and Conditions Approval'],
     ['user/video-facility',                     'app/user/video_facility',                     'default',    'Video Room Facility'],
 

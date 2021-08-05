@@ -154,10 +154,12 @@ const Price = (() => {
         return proposal;
     };
 
-    const display = (details, contract_type) => {
-        const proposal = details.proposal;
-        const id       = proposal ? proposal.id : '';
-        const params   = details.echo_req;
+    const display = async (details, contract_type) => {
+        const proposal            = details.proposal;
+        const id                  = proposal ? proposal.id : '';
+        const params              = details.echo_req;
+        const account_status      = !!Client.isLoggedIn() && await BinarySocket.wait('get_account_status');
+        const is_trading_disabled = account_status && account_status.get_account_status.status.some(state => state === 'no_trading');
 
         let type = params.contract_type;
         if (id && !type) {
@@ -230,12 +232,13 @@ const Price = (() => {
             purchase.parentNode.classList[enable ? 'remove' : 'add']('button-disabled');
         };
 
-        if (details.error) {
+        if (details.error || is_trading_disabled) {
+            const error_message = (details.error && details.error.message) || (is_trading_disabled && localize('Sorry, your account is not authorised for any further contract purchases.'));
             setPurchaseStatus(0);
             comment.hide();
             setData();
             error.show();
-            CommonFunctions.elementTextContent(error, details.error.message);
+            CommonFunctions.elementTextContent(error, error_message);
         } else {
             setData(proposal);
             if ($('#websocket_form').find('.error-field:visible').length > 0) {

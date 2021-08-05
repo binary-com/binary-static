@@ -8,7 +8,7 @@ const WelcomePage = () => (
         <SeparatorLine className='gr-padding-5' invisible />
 
         <h1>{it.L('Congratulations!')}</h1>
-        <p>{it.L('You have successfully created your Virtual Account.')}</p>
+        <p>{it.L('You have successfully created your Demo Account.')}</p>
 
         <SeparatorLine className='gr-padding-10' invisible />
 
@@ -28,8 +28,8 @@ const WelcomePage = () => (
                 <div className='gr-6 gr-12-p gr-12-m gr-parent'>
                     <div className='box border-gray gr-padding-10'>
                         <div>
-                            <strong>{it.L('Virtual Account')}</strong>
-                            <p className='font-s'>{it.L('Practice your trading strategies in a risk-free environment by using virtual funds.')}</p>
+                            <strong>{it.L('Demo Account')}</strong>
+                            <p className='font-s'>{it.L('Practice your trading strategies in a risk-free environment by using demo funds.')}</p>
                         </div>
                         <div className='box-item-end'>
                             <p><a className='button-secondary' href={it.url_for('trading')}><span>{it.L('Start trading')}</span></a></p>

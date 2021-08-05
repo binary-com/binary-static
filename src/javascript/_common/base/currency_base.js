@@ -28,7 +28,7 @@ const formatMoney = (currency_value, amount, exclude_currency, decimals = 0, min
     return sign + (exclude_currency ? money : money + formatCurrency(currency_value));
 };
 
-const formatCurrency = currency => `<span class="symbols">&nbsp;${getCurrencyDisplayCode(currency)}</span>`; // defined in binary-style
+const formatCurrency = currency => currency ? `<span class="symbols">&nbsp;${getCurrencyDisplayCode(currency)}</span>` : ''; // defined in binary-style
 
 const addComma = (num, decimal_points, is_crypto) => {
     let number = String(num || 0).replace(/,/g, '');
@@ -109,7 +109,8 @@ const getTransferLimits = (currency, which, type) => {
 };
 
 const getTransferFee = (currency_from, currency_to) => {
-    const transfer_fee = getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', currency_to]);
+    const transfer_to_currency = (currency_to === 'USDT' ? 'UST' : currency_to);
+    const transfer_fee = getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', transfer_to_currency]);
     return `${typeof transfer_fee === 'undefined' ? '1' : transfer_fee}%`;
 };
 

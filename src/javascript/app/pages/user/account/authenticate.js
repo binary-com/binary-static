@@ -865,10 +865,12 @@ const Authenticate = (() => {
                         phrases      : onfido_phrases,
                         mobilePhrases: onfido_phrases,
                     },
-                    token     : sdk_token,
-                    useModal  : false,
-                    onComplete: handleComplete,
-                    steps     : [
+                    token   : sdk_token,
+                    useModal: false,
+                    onComplete(data) {
+                        handleComplete(data);
+                    },
+                    steps: [
                         {
                             type   : 'document',
                             options: {
@@ -911,11 +913,16 @@ const Authenticate = (() => {
         }
     };
 
-    const handleComplete = () => {
+    const handleComplete = (data) => {
+        const document_ids = Object.keys(data).map(key => data[key].id);
+
         BinarySocket.send({
             notification_event: 1,
             category          : 'authentication',
             event             : 'poi_documents_uploaded',
+            args              : {
+                documents: document_ids,
+            },
         }).then(() => {
             onfido.tearDown();
             $('#authentication_loading').setVisibility(1);

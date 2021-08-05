@@ -20,7 +20,7 @@ const DepositWithdrawButton = ({ is_payment_agent, is_virtual }) => (
         <div className='gr-row gr-row-align-left gr-row-align-right-m'>
             { is_virtual ?
                 <div className='gr-adapt'>
-                    <Button className='toggle button' id='VRT_topup_link' text={it.L('Reset my virtual balance')} />
+                    <Button className='toggle button' id='VRT_topup_link' text={it.L('Reset my demo balance')} />
                 </div>
                 :
                 <React.Fragment>
@@ -80,7 +80,7 @@ const Cashier = () => (
         </div>
 
         <div className='gr-padding-10 table-body client_virtual invisible gr-parent'>
-            <h3 className='gr-padding-10'>{it.L('Reset your virtual balance')}</h3>
+            <h3 className='gr-padding-10'>{it.L('Reset your demo balance')}</h3>
             <div className='gr-row'>
                 <IconWithLink img_id='virtual_money_icon' img_src={it.url_for('images/pages/cashier/virtual_topup.svg')} />
                 <div className='gr-6 gr-8-m'>

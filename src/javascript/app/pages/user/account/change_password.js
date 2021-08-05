@@ -212,7 +212,7 @@ const ChangePassword = (() => {
             $(trading_form_id).trigger('reset');
             Password.removeCheck('#new_trading_password', true);
             setTimeout(() => {
-                $msg_success_trading.setVisibility(0);
+                $msg_success_trading_container.setVisibility(0);
             }, 5000);
         }
     };

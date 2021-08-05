@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-15 06:35\n"
+"PO-Revision-Date: 2021-07-27 05:50\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -199,11 +199,11 @@ msgstr "Karyawan dan afiliasi %1 harus menghindari konflik kepentingan. Sebagai 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stock indices, commodities, and synthetic indices."
 msgstr "%1 memberi semua cara mudah untuk berpartisipasi dalam pasar finansial. Bertrading dari serendah $1 USD pada pasangan mata uang mayor, indeks saham, komoditas, dan indeks sintetis."
 
+msgid "%1 has been credited into your Demo Account: %2."
+msgstr "%1 telah dikreditkan kedalam Akun Demo Anda: %2."
+
 msgid "%1 has been credited into your MT5 Demo Account: %2."
 msgstr "%1 telah dikreditkan kedalam Akun Demo MT5 Anda: %2."
-
-msgid "%1 has been credited into your Virtual Account: %2."
-msgstr "%1 telah dikreditkan kedalam Akun Virtual Anda: %2."
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 telah memperoleh reputasi tinggi untuk komitmen kami yang memenuhi standar etika dan kualitas pengalaman trading yang kami sediakan."
@@ -325,14 +325,14 @@ msgstr "Properti %1"
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 menyediakan layanan mitra usaha melalui program-program berikut."
 
+msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
+msgstr "%1 menyediakan fasilitas akun demo untuk melatih strategi trading Anda. Pindah ke akun demo Anda menggunakan menu di sudut kanan atas layar."
+
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr "%1 menyediakan pelanggan institusi diseluruh dunia dengan kutipan pasar dan eksekusi trading di berbagai aset, termasuk pasangan mata uang mayor, logam, indeks CFD dan mata uang crypto populer."
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
 msgstr "%1 menyediakan eksekusi terbaik bagi klien dengan memanfaatkan metode agregasi cerdas ketika mengelola pesanan yang masuk. Metode agregasi cerdas bekerja dengan"
-
-msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
-msgstr "%1 menyediakan fasilitas dana virtual untuk melatih strategi trading Anda. Beralih ke akun dana virtual Anda menggunakan menu di sudut kanan atas layar."
 
 msgid "%1 provides you with the opportunity to either self-exclude or %2set limits on your trading activities%3 on this website. You may also %4contact us%3 to state the limits you wish to set via email or phone. Available limits are:"
 msgstr "%1 memiliki fasilitas untuk pengecualian diri baik itu untuk mengecualikan-diri Anda atau %2menentukan batasan aktivitas trading%3 Anda pada website ini. Anda juga dapat %4menghubungi kami%3 untuk menyampaikan batasan yang Anda inginkan melalui email atau telepon. Batasan yang tersedia adalah sebagai berikut:"
@@ -430,8 +430,8 @@ msgstr "Teknologi harga %1 yang telah dipatenkan memberi kesempatan kepada Anda 
 msgid "%1's remarkable history"
 msgstr "Sejarah %1 yang luar biasa"
 
-msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
-msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pada akun virtual)."
+msgid "%1's systems are now processing in excess of 1 million transactions/day (including demo accounts)."
+msgstr "Sistem %1 telah memproses lebih dari 1 juta transaksi/hari (termasuk pada akun demo)."
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
 msgstr "%1Customer support tersedia 24/7%2 untuk meningkatkan pengalaman trading Anda"
@@ -472,8 +472,8 @@ msgstr "%1Tidak yakin?%1"
 msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
 msgstr "%1Catatan:%2 Untuk pilihan penyedia sinyal yang lebih luas pada Deriv, kunjungi %3Halaman showcase MQL5%4 dan cari Deriv di bawah kolom server Broker."
 
-msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
-msgstr "%1Catatan:%2 Anda perlu mengupgrade akun MQL5 Anda ke status penjual untuk dapat menambahkan sinyal. Jika Anda belum mengupgrade, ikuti langkah-langkah pada halaman ini untuk mendaftar sebagai penjual."
+msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on %3this page%4 to register as a seller."
+msgstr "%1Catatan:%2 Anda perlu mengupgrade akun MQL5 Anda ke status penjual untuk dapat menambahkan sinyal. Jika Anda belum mengupgrade, ikuti langkah-langkah pada %3halaman ini%4 untuk mendaftar sebagai penjual."
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "%1Mohon diketahui bahwa jika Anda berdomisili di Inggris, pengecualian diri tidak dapat dihapus hingga periodenya berakhir. %2Jika Anda ingin melanjutkan trading setelah periode pengecualian diri Anda berakhir, silakan ajukan permintaan dengan menghubungi %3. Permintaan melalui obrolan atau email tidak akan dilayani."
@@ -2233,9 +2233,6 @@ msgstr "Platform Binary memproses rata-rata %1 %2transaksi%3 per detik, 24/7"
 msgid "Binary.com Graduate Program"
 msgstr "Binary.com Graduate Program"
 
-msgid "Binary.com Shop"
-msgstr "Toko Binary.com"
-
 msgid "Binary.com in Numbers"
 msgstr "Binary.com dalam Angka"
 
@@ -2470,8 +2467,8 @@ msgstr "Kamera tidak berfungsi?"
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "Dapatkah saya menawarkan referal saya insentif untuk mendaftar melalui tautan afiliasi unik saya?"
 
-msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts."
-msgstr "Dapat digunakan untuk membeli dan menjual kontrak, memperbarui kontrak dan menambah saldo pada akun virtual."
+msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts."
+msgstr "Dapat digunakan untuk membeli dan menjual kontrak, memperbarui kontrak dan menambah saldo pada akun demo."
 
 msgid "Can be used to open accounts, set settings, manage token usage, and more."
 msgstr "Dapat digunakan untuk mendaftar akun, menyeting, mengelola penggunaan token dan banyak lagi."
@@ -3364,8 +3361,8 @@ msgstr "Daftar Akun"
 msgid "Create MetaTrader 5 account"
 msgstr "Daftar akun MetaTrader 5"
 
-msgid "Create New Virtual-money Account"
-msgstr "Daftar Akun Dana Virtual Baru"
+msgid "Create New Demo Account"
+msgstr "Daftar Akun Demo Baru"
 
 msgid "Create account"
 msgstr "Daftar akun"
@@ -3394,11 +3391,11 @@ msgstr "Daftar akun gratis menggunakan"
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr "Buat model matematika/statistik untuk penentuan harga, analisis fat tails untuk menilai persyaratan margin, dan kelola risiko untuk opsi eksotis, forex, dan CFD"
 
+msgid "Create new demo account"
+msgstr "Daftar akun demo baru"
+
 msgid "Create new token"
 msgstr "Membuat token baru"
-
-msgid "Create new virtual-money account"
-msgstr "Daftar akun dana virtual baru"
 
 msgid "Create or Manage Accounts"
 msgstr "Mendaftar atau Mengelola Akun"
@@ -3709,6 +3706,9 @@ msgstr "Demo Finansial STP"
 msgid "Demo Synthetic"
 msgstr "Demo Sintetis"
 
+msgid "Demo accounts do not have Payment Agent services."
+msgstr "Akun demo tidak memiliki layanan Agen Pembayaran."
+
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "Bergantung pada yurisdiksi tempat akun klien terdaftar sesuai dengan prosedur pendaftaran dan sebagaimana telah dirinci pada bagian Tentang Kami dalam situs web ini dan jenis produk yang ditawarkan, istilah \"Perusahaan\" adalah mewakili"
 
@@ -3852,6 +3852,9 @@ msgstr "Deriv Investments (Europe) Limited mengagregasikan harga Bid dan Ask dar
 
 msgid "Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta"
 msgstr "Deriv Investments (Europe) Limited dan Deriv (Europe) Limited: Malta"
+
+msgid "Deriv Investments (Europe) Limited has prepared the Financial disclosures report in accordance with the Investment Firms Regulation and Directive. Read our report to understand how we comply with market discipline as a market participant."
+msgstr "Deriv Investments (Europe) Limited telah menyiapkan laporan pengungkapan finansial sesuai dengan Regulasi dan Arahan Perusahaan Investasi. Baca laporan kami untuk memahami bagaimana kami mematuhi disiplin pasar sebagai peserta pasar."
 
 msgid "Deriv Investments (Europe) Limited is a company established in Malta, at W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033. It is licensed in Malta and regulated by the Malta Financial Services Authority, Triq l-Imdina, Zone 1, Central Business District, Birkirkara CBD 1010, Malta, under the Investments Services Act to provide investment services in the European Union."
 msgstr "Deriv Investments (Europe) Limited adalah perusahaan yang didirikan di Malta, di W Business Center, Level 3, Triq Dun Karm, Birkirkara BKR 9033. Dilisensikan di Malta dan diatur oleh Malta Financial Services Authority, Triq l-Imdina, Zona 1 , Central Business District, Birkirkara CBD 1010, Malta, di bawah Undang-Undang Layanan Investasi untuk menyediakan layanan investasi di Uni Eropa."
@@ -4861,11 +4864,8 @@ msgstr "F. Margin dan Leverage"
 msgid "FIX API"
 msgstr "API TETAP"
 
-msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr "FX-mayor (standar), FX-minor, Komoditas, Mata uang kripto"
-
-msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr "FX-mayor (standar/lot mikro), FX-minor, Komoditas, Mata uang kripto"
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
+msgstr "FX-mayor (standar/lot mikro), FX-minor, Komoditas, Mata Uang Kripto, Saham, dan Indeks Saham"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "FX-mayor, FX-minor, FX-eksotik, Mata uang kripto"
@@ -5031,6 +5031,9 @@ msgstr "Penilaian keuangan"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "Derivatif finansial yang memungkinkan Anda bertrading pada pergerakan aset dasar."
+
+msgid "Financial disclosure report"
+msgstr "Laporan pengungkapan finansial"
 
 msgid "Financial information"
 msgstr "Informasi keuangan"
@@ -6296,8 +6299,8 @@ msgstr "Pada pasar valuta asing, para trader dapat membeli kontrak berdasarkan p
 msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to the following rights with regards to the applicant's personal data:"
 msgstr "Dalam kaitannya dengan peraturan perlindungan data umum Uni Eropa 2016/679 dan UU perlindungan data 2018, pelamar berhak atas hak berikut berhubungan dengan data pribadi mereka:"
 
-msgid "In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
-msgstr "Agar penduduk Inggris dapat menggunakan akun virtual, klien pertama-tama harus melakukan verifikasi usia. Klien juga perlu memverifikasi sepenuhnya sebelum menggunakan akun uang riil. Verifikasi dapat dilakukan secara elektronik atau melalui penyerahan dokumen KYC."
+msgid "In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
+msgstr "Agar penduduk Inggris dapat menggunakan akun demo, klien pertama-tama harus melakukan verifikasi usia. Klien juga perlu memverifikasi sepenuhnya sebelum menggunakan akun uang riil. Verifikasi dapat dilakukan secara elektronik atau melalui penyerahan dokumen KYC."
 
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
 msgstr "Untuk mengakses Bot Telegram, silahkan hasilkan %1Token API%2 dan masukkan ke dalam box berikut."
@@ -8027,8 +8030,8 @@ msgstr "Catatan: %1 tidak membebankan biaya transfer."
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "Nota: Untuk pertanyaan mengenai akun non aktif atau pembatalan akun, silahkan hubungi %1Customer Support%2."
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr "Catatan: transfer agen pembayaran hanya tersedia untuk akun yang terdaftar pada Deriv (SVG) LLC. Transaksi diterima hanya dalam mata uang dolar AS."
+msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
+msgstr "Catatan: Transfer Agen Pembayaran hanya tersedia untuk akun yang terdaftar di Deriv (SVG) LLC."
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Catatan: Anda hanya dapat memiliki satu akun dalam mata uang fiat. Mata uang akun fiat Anda dapat dirubah jika Anda belum melakukan deposit perdana atau mendaftar akun MT5. Anda juga dapat mendaftar pada setiap akun mata uang kripto yang tersedia."
@@ -8360,6 +8363,9 @@ msgstr "Jumlah klien aktif diharapkan akan mencapai lebih dari  790.000 klien ta
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "Bisnis kami didasarkan pada kolaborasi dan kami ingin membangun hubungan kerjasama secara jangka panjang, saling menguntungkan dengan mitra kami. Namun, kami tidak akan pernah mengorbankan komitmen kami untuk integritas bisnis. Dalam kasus di mana mitra kami tidak bersedia atau tidak dapat mematuhi prinsip kami, kami berhak untuk menarik diri dari hubungan bisnis tersebut."
 
+msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr "Bagian kasir sementara tidak tersedia berhubung pemeliharaan sistem. Anda dapat mengakses kasir kembali setelah pemeliharaan selesai."
+
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "Struktur komisi kami adalah rencana 2 tingkat sederhana."
 
@@ -8368,6 +8374,9 @@ msgstr "Komitmen kami terhadap integritas dan keandalan berarti bahwa kami selal
 
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "Perusahaan kami terus berkembang dan memperoleh perijinan dari Isle of Man untuk melayani pelanggan di Inggris."
+
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr "Bagian kasir mata uang kripto sementara tidak tersedia berhubung pemeliharaan sistem. Anda dapat mengakses kasir kembali setelah pemeliharaan selesai."
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Pelanggan menyukai kami. Pada pertengahan 2014 %1 sudah memiliki transaksi historis lebih dari 100 juta transaksi dan lebih dari 130,000 transaksi harian."
@@ -8671,12 +8680,6 @@ msgstr "Foto dokumen Anda"
 
 msgid "Photo of your face"
 msgstr "Foto wajah Anda"
-
-msgid "Pillar 3 Disclosures"
-msgstr "Pengungkapan Pilar 3"
-
-msgid "Pillar 3 disclosure report"
-msgstr "Laporan Pengungkapan Pilar 3"
 
 msgid "Pip"
 msgstr "Pip"
@@ -9008,11 +9011,11 @@ msgstr "Kuat & sederhana"
 msgid "Powerful charting and technical analysis"
 msgstr "Charting lengkap dan analisis teknis"
 
-msgid "Practice account with replenishable 10,000 USD virtual credit."
-msgstr "Akun latihan dengan saldo USD 10.000 yang dapat diisi ulang."
+msgid "Practice account with replenishable 10,000 USD demo credit."
+msgstr "Akun latihan dengan saldo demo sebesar USD 10.000 yang dapat diisi ulang."
 
-msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
-msgstr "Latih strategi trading Anda tanpa risiko dengan menggunakan dana virtual."
+msgid "Practice your trading strategies in a risk-free environment by using demo funds."
+msgstr "Latih strategi trading Anda tanpa risiko dengan menggunakan dana demo."
 
 msgid "Practise with virtual funds"
 msgstr "Berlatih menggunakan akun virtual"
@@ -9503,8 +9506,8 @@ msgstr "Terima komisi melalui metode pembayaran favorit Anda"
 msgid "Recent years are easy to guess"
 msgstr "Beberapa tahun terakhir ini mudah ditebak"
 
-msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
-msgstr "Mengenal kompleksitas pasar keuangan, kami menjelaskan pilihan trading yang tersedia secara adil dan terperinci. Kami menyertakan Deskripsi produk yang akurat pada situs web kami, serta menyediakan webinar secara gratis. Kami menawarkan kepada klien kesempatan untuk membuat akun virtual agar dapat bereksperimen pada sistem kami secara gratis. Kami mendorong klien kami untuk mempelajari semua sumber informasi ini dengan seksama sebelum mereka bertrading."
+msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up demo accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
+msgstr "Mengenal kompleksitas pasar keuangan, kami menjelaskan pilihan trading yang tersedia secara adil dan terperinci. Kami menyertakan Deskripsi produk yang akurat pada situs web kami, serta menyediakan webinar secara gratis. Kami menawarkan kepada klien kesempatan untuk membuat akun demo agar dapat bereksperimen pada sistem kami secara gratis. Kami mendorong klien kami untuk mempelajari semua sumber informasi ini dengan seksama sebelum mereka bertrading."
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "Merekomendasikan alternatif bagi sistem yang tidak diperlukan atau usang"
@@ -9713,23 +9716,23 @@ msgstr "Waktu Reset"
 msgid "Reset investor password"
 msgstr "Reset kata sandi investor"
 
+msgid "Reset my demo balance"
+msgstr "Mereset saldo demo saya"
+
 msgid "Reset my password"
 msgstr "Reset kata sandi saya"
-
-msgid "Reset my virtual balance"
-msgstr "Reset saldo virtual saya"
 
 msgid "Reset password"
 msgstr "Reset kata sandi"
 
-msgid "Reset the balance of your virtual account to %1 anytime."
-msgstr "Reset saldo akun virtual Anda ke %1 kapan saja."
+msgid "Reset the balance of your demo account to %1 anytime."
+msgstr "Reset saldo akun demo Anda ke %1 kapan saja."
 
 msgid "Reset to original settings"
 msgstr "Reset ke pengaturan awal"
 
-msgid "Reset your virtual balance"
-msgstr "Reset saldo virtual Anda"
+msgid "Reset your demo balance"
+msgstr "Mereset saldo demo Anda"
 
 msgid "Residence permit"
 msgstr "Izin tinggal"
@@ -10351,6 +10354,9 @@ msgstr "Maaf, fitur ini tidak tersedia di yurisdiksi Anda."
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "Maaf, penarikan untuk mata uang ini sedang dinonaktifkan."
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "Maaf, akun Anda tidak dapat membeli kontrak selanjutnya."
 
 msgid "Source of income"
 msgstr "Sumber penghasilan"
@@ -11552,11 +11558,11 @@ msgstr "Produk Keuangan yang ditawarkan oleh DIEL adalah kontrak antara klien da
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
 msgstr "Akun Finansial STP (Straight Through Processing) adalah 100% akun buku A di mana trading yang Anda lakukan akan dikirim langsung pada pasar, memberi Anda akses langsung ke penyedia likuiditas Forex. Bertrading pasangan mata uang mayor, minor, eksotis, dan mata uang kripto dengan spread ketat serta volume trading yang lebih tinggi."
 
-msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "Akun Finansial (tersedia dalam mata uang EUR dan GBP) cocok untuk berbagai jenis trader, baik trader baru maupun trader berpengalaman. Bertrading pasar komoditas, mata uang kripto, pasangan mata uang mayor dan minor dengan spread ketat dan variabel tanpa komisi serta deposit yang sangat minimal."
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
+msgstr "Akun Finansial (tersedia dalam mata uang EUR dan GBP) cocok untuk semua trader, baik trader pemula maupun trader berpengalaman. Tradingkan pasangan mata uang mayor (standar dan mikro-lot) dan pasangan mata uang minor, saham, indeks saham, komoditas, dan mata uang kripto."
 
-msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "Akun Finansial menawarkan leverage tinggi dan spread variabel untuk fleksibilitas maksimum bagi trader baru dan berpengalaman. Bertrading komoditas, mata uang kripto, mayor (standard dan mikro-lot), dan pasangan mata uang minor dengan leverage tinggi."
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
+msgstr "Akun Finansial menawarkan trader pemula maupun trader berpengalaman leverage tinggi dan variabel spread dengan fleksibilitas maksimum. Tradingkan pasangan mata uang mayor (standar dan mikro-lot) dan pasangan mata uang minor, saham, indeks saham, komoditas, dan mata uang kripto dengan leverage tinggi."
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "Pasar Foreign Exhange (forex) adalah pasar terbesar dan paling likuid di dunia - dimana semua orang dapat menjual, membeli, dan menukar mata uang."
@@ -11632,9 +11638,6 @@ msgstr "Pihak yang tidak dapat memenuhi kewajibannya berdasarkan perjanjian ini 
 
 msgid "The Pearl of Borneo"
 msgstr "Mutiara Borneo"
-
-msgid "The Pillar 3 disclosure report of Deriv Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr "Laporan pengungkapan pilar 3 Deriv Investments (Europe) Limited telah disusun berdasarkan Kebutuhan Modal Directive IV dan Peraturan Persyaratan Modal. Baca laporan pengungkapan pilar 3 kami untuk memahami bagaimana kami mematuhi disiplin pasar sebagai peserta pasar."
 
 msgid "The Policy is supplemented by Appendix A, which provides further details to the Company's considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
 msgstr "Kebijakan ini dilengkapi dengan Lampiran A, yang memberikan rincian lebih lanjut untuk pertimbangan Perusahaan karena terkait dengan kelas aset yang berbeda. Lampiran A terlampir harus dibaca bersama dengan Kebijakan ini."
@@ -12597,11 +12600,11 @@ msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan ketentuan (\"Ketentua
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "Dokumen ini (\"Perjanjian\") menetapkan syarat dan ketentuan antara \"Perusahaan\", yaitu Deriv Services Ltd, dengan pihak yang telah mengajukan permohonan pada program ini (\"Afiliasi\"), sehubungan dengan aplikasi Afiliasi untuk menyiapkan akun afiliasi (dan keanggotaan program afiliasi jika aplikasi afiliasi diluluskan)."
 
-msgid "This feature is available to virtual accounts only."
-msgstr "Fasilitas ini hanya tersedia untuk rekening virtual saja."
+msgid "This feature is available to demo accounts only."
+msgstr "Fasilitas ini hanya tersedia untuk akun demo saja."
 
-msgid "This feature is not relevant to virtual-money accounts."
-msgstr "Fasilitas ini tidak tersedia untuk akun uang virtual."
+msgid "This feature is not relevant to demo accounts."
+msgstr "Fasilitas ini tidak tersedia untuk akun demo."
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "Fitur ini hanya relevan untuk akun agen pembayaran."
@@ -12618,8 +12621,8 @@ msgstr "Penyesuaian bunga ini (atau swap rate) berdasarkan suku bunga pinjaman a
 msgid "This is a complete list of supported payment methods. We'll show you which payment methods are available in your location on the deposit page."
 msgstr "Berikut adalah daftar lengkap metode pembayaran yang tersedia. Kami hanya akan menampilkan metode pembayaran yang tersedia untuk Anda pada halaman deposit."
 
-msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a virtual account rather than trading with real funds straightaway."
-msgstr "Ini adalah kelanjutan dari poin yang sama. %1 menawarkan klien berbagai cara untuk belajar bagaimana bertrading secara bertanggung jawab. Afiliasi harus memastikan bahwa mereka belajar, misalnya dengan mendorong mereka untuk membangun keahlian mereka menggunakan akun virtual daripada bertrading langsung menggunakan dana nyata."
+msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a demo account rather than trading with real funds straightaway."
+msgstr "Ini adalah kelanjutan dari poin yang sama. %1 menawarkan klien berbagai cara untuk belajar bagaimana bertrading secara bertanggung jawab. Afiliasi harus memastikan bahwa mereka belajar, misalnya dengan mendorong mereka untuk membangun keahlian mereka menggunakan akun demo daripada bertrading langsung menggunakan dana nyata."
 
 msgid "This is a staging server - For testing purposes only"
 msgstr "Ini adalah staging server - Untuk tujuan pengujian saja"
@@ -12855,20 +12858,20 @@ msgstr "Nama token"
 msgid "Too many failed attempts"
 msgstr "Terlalu banyak percobaan yang gagal"
 
-msgid "Top Up Virtual Account"
-msgstr "Isi Ulang Akun Virtual"
+msgid "Top Up Demo Account"
+msgstr "Isi Ulang Akun Demo"
 
 msgid "Top up"
 msgstr "Isi ulang"
 
-msgid "Top up Virtual Account"
-msgstr "Isi ulang Akun Virtual"
+msgid "Top up Demo Account"
+msgstr "Isi Ulang Akun Demo"
+
+msgid "Top up demo account"
+msgstr "Isi ulang akun demo"
 
 msgid "Top up error"
 msgstr "Isi ulang error"
-
-msgid "Top up virtual account"
-msgstr "Isi ulang akun virtual"
 
 msgid "Top-tier liquidity"
 msgstr "Likuiditas teratas"
@@ -13557,8 +13560,8 @@ msgstr "Gunakan Materi Pemasaran yang disediakan oleh Binary semata-mata untuk t
 msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the Binary Trademarks in a way that might compete with Binary's search engine optimisation without the prior written consent of Binary, which includes using the name '%1' on the title tag of the Introducing Broker's website"
 msgstr "Mengunakan nama 'Binary' atau derivasi dari nama itu seperti '%1' atau Merek Dagang Binary agar dapat bersaing dengan optimisasi mesin pencari Binary tanpa persetujuan tertulis sebelumnya dari Binary, yang termasuk menggunakan nama '%1' pada tag judul situs web Introducing Broker"
 
-msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
-msgstr "Manfaatkan kesempatan untuk bertrading gratis menggunakan fasilitas akun virtual yang kami tawarkan. Hal ini dapat membantu anda di dalam memahami fasilitas dan aturan yang tersedia."
+msgid "Use the opportunity provided by our website to practice for free with our demo account facility. This will enable you to get used to the functionalities and rules of the website."
+msgstr "Manfaatkan kesempatan untuk bertrading gratis menggunakan fasilitas akun demo yang kami tawarkan. Hal ini dapat membantu anda di dalam memahami fasilitas dan aturan yang tersedia."
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "Gunakan platform web dari sistem operasi Windows, MacOS, atau Linux - tidak memerlukan pengunduhan atau pemasangan."
@@ -13697,15 +13700,6 @@ msgstr "Lihat pernyataan Anda"
 
 msgid "View your trading and withdrawal limits."
 msgstr "Lihat batas trading dan penarikan Anda."
-
-msgid "Virtual"
-msgstr "Virtual"
-
-msgid "Virtual Account"
-msgstr "Akun Virtual"
-
-msgid "Virtual accounts do not have Payment Agent services."
-msgstr "Akun virtual tidak memiliki layanan Agen Pembayaran."
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa adalah perusahaan internasional yang mendukung pembayaran digital di seluruh dunia, biasanya melalui kartu kredit dan debit yang mereka miliki. Untuk informasi lebih lanjut, silakan kunjungi %1."
@@ -13970,6 +13964,9 @@ msgstr "Memiliki keterampilan dalam berorganisasi, administrasi, dan akuntansi y
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "Kami akan memperbarui batasan Anda. Klik %1Setuju dan terima%2 untuk mengakui bahwa Anda bertanggung jawab sepenuhnya atas tindakan Anda, dan kami tidak bertanggung jawab atas kecanduan atau kerugian apa pun."
+
+msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
+msgstr "Kami sedang memperbarui sistem kasir dan akan segera kembali sebentar lagi. Silakan lihat %1halaman status%2 kami untuk informasi terbaru."
 
 msgid "We’ve sent you an email"
 msgstr "Kami telah mengirimikan email"
@@ -14467,7 +14464,7 @@ msgid "You are expecting the base currency to rise in value so you can sell it b
 msgstr "Anda mengharapkan mata uang dasar naik nilainya sehingga Anda bisa menjualnya kembali untuk mendapatkan keuntungan."
 
 msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time %1."
-msgstr ""
+msgstr "Anda hanya dapat memiliki satu akun dalam mata uang fiat. Anda dapat merubah mata uang akun fiat sebelum melakukan %1."
 
 msgid "You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments."
 msgstr "Anda bertanggung jawab untuk mengurangi risiko dan penyalahgunaan yang kami hadapi dari penipuan dan pencucian uang. Untuk mencapai hal ini, Anda harus memantau, menganalisis, dan melakukan berbagai pemeriksaan anti-penipuan dan AML pada akun klien dan deposit. Anda akan bergabung dengan kami di Malta dibawah Kepala Pembayaran kami."
@@ -14476,7 +14473,7 @@ msgid "You are selling the base currency and buying the quote currency."
 msgstr "Anda menjual mata uang dasar dan membeli mata uang kutipan."
 
 msgid "You can %1set a new currency%2 before you deposit for the first %3."
-msgstr "Anda dapat memilih %1mata uang% baru sebelum mendeposit pertama %3."
+msgstr "Anda dapat memilih %1mata uang baru%2 sebelum mendeposit pertama %3."
 
 msgid "You can also decide to exclude yourself entirely from our website for a specified duration. Once the self-exclusion period has ended, you can either extend it further or resume trading immediately. If you wish to reduce or remove the self-exclusion period, contact our %1Customer Support%2."
 msgstr "Anda juga dapat memutuskan untuk mengecualikan diri Anda sepenuhnya dari situs web kami untuk durasi tertentu. Setelah periode pengecualian diri berakhir, Anda dapat memperpanjangnya lebih lanjut atau melanjutkan trading dengan segera. Jika Anda ingin mengurangi atau menghapus periode pengecualian diri, hubungi %1Customer Support%2 kami."
@@ -14506,10 +14503,13 @@ msgid "You can no longer change the currency because you've created an MT5 accou
 msgstr "Anda tidak dapat lagi mengubah mata uang karena Anda telah mendaftar akun MT5."
 
 msgid "You can no longer change the currency because you've made a first-time deposit."
-msgstr "Anda tidak dapat lagi mengubah mata uang karena sudah melakjukan deposit perdana."
+msgstr "Anda tidak dapat merubah mata uang berhubung sudah melakukan deposit."
 
 msgid "You can now return to your computer to continue"
 msgstr "Anda sekarang dapat kembali ke komputer untuk melanjutkan"
+
+msgid "You can only perform up to %1 transfers a day. Please try again tomorrow."
+msgstr "Anda hanya dapat melakukan hingga %1 transfer sehari. Silakan coba lagi besok."
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "Anda hanya dapat berlangganan ke satu penyedia sinyal menggunakan satu akun %1 pada satu waktu. Anda dapat menggunakan sinyal Anda pada 3 komputer yang berbeda."
@@ -14577,6 +14577,9 @@ msgstr "Anda memiliki posisi berjalan pada akun Binary ini:"
 msgid "You have open positions in these MT5 accounts:"
 msgstr "Anda memiliki posisi berjalan pada akun MT5 ini:"
 
+msgid "You have pending withdrawal(s) in these Binary accounts:"
+msgstr "Anda masih memiliki penarikan yang belum diproses pada akun Binary ini:"
+
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "Anda mungkin pernah melihat istilah 'going long' dan 'going short' digunakan oleh banyak broker dan trader forex. Mari bandingkan perbedaan antara kedua istilah tersebut:"
 
@@ -14592,8 +14595,8 @@ msgstr "Anda telah menjual kontrak pada %1 %2"
 msgid "You have successfully changed your account currency from %1 to %2."
 msgstr "Anda telah berhasil mengubah mata uang akun Anda dari %1 ke %2."
 
-msgid "You have successfully created your Virtual Account."
-msgstr "Anda telah berhasil mendaftar akun Virtual Anda."
+msgid "You have successfully created your Demo Account."
+msgstr "Anda telah berhasil mendaftar Akun Demo Anda."
 
 msgid "You have successfully created your real money %1account."
 msgstr "Anda telah berhasil mendaftar %1akun uang riil Anda."
@@ -14721,8 +14724,8 @@ msgstr "Anda membeli %1 dan menjual %2."
 msgid "You're selling the %1 and buying the %2."
 msgstr "Anda menjual %1 dan membeli %2."
 
-msgid "You're using a Virtual Account."
-msgstr "Anda menggunakan Akun Virtual."
+msgid "You're using a Demo Account."
+msgstr "Anda sedang menggunakan Akun Demo."
 
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "Anda telah melakukan transaksi signifikan pada pasar yang serupa dengan penawaran yang kami tawarkan, rata-rata 10 transaksi per kuartal untuk empat kuartal sebelumnya"
@@ -14763,6 +14766,9 @@ msgstr "Akun Binary Anda tidak terhubung dengan %1. Gunakan %2alamat email dan k
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Klien Anda akan menerima e-mail pemberitahuan bahwa transfer mereka telah diproses."
 
+msgid "Your Demo balance has been reset."
+msgstr "Saldo Demo Anda telah direset."
+
 msgid "Your Existing Accounts"
 msgstr "Akun Anda Sebelumnya"
 
@@ -14793,8 +14799,8 @@ msgstr "Akun Anda tetap di bawah kategori klien ritel."
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "Keamanan akun Anda sangat penting bagi kami. Mohon pertimbangkan beberapa inisiatif dan fasilitas berikut untuk meningkatkan keamanan akun Anda:"
 
-msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
-msgstr "Akun Anda akan didaftarkan pada %1, dan akan tunduk pada yurisdiksi dan hukum dari %2."
+msgid "Your account will be opened with %1, %2 and will be subject to the laws of %3."
+msgstr "Akun Anda akan didaftarkan pada %1, %2 dan akan tunduk pada yurisdiksi dan hukum dari %3."
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Aplikasi Anda sebagai klien profesional sedang diproses."
@@ -14931,9 +14937,6 @@ msgstr "Referensi transaksi Anda adalah"
 msgid "Your transaction reference number is %1"
 msgstr "Nomor referensi transaksi Anda adalah %1"
 
-msgid "Your virtual balance has been reset."
-msgstr "Saldo virtual Anda telah direset."
-
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "Browser web Anda (%1) sudah ketinggalan zaman yang dapat mempengaruhi pengalaman trading Anda. Lanjutkan dengan risiko sendiri. %2Perbarui browser%3"
 
@@ -15021,11 +15024,14 @@ msgstr "hari"
 msgid "days"
 msgstr "hari"
 
+msgid "demo credit to account"
+msgstr "saldo demo kedalam akun"
+
 msgid "deposit"
-msgstr ""
+msgstr "deposit"
 
 msgid "deposit or create an MT5 account"
-msgstr ""
+msgstr "deposit atau mendaftar akun MT5"
 
 msgid "details"
 msgstr "perincian"
@@ -15084,8 +15090,20 @@ msgstr "atau meng-upload foto - bukan scan atau fotokopi"
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard menawarkan metode pembayaran online berbasis voucher yang tidak memerlukan rekening bank, kartu kredit, atau informasi pribadi lainnya. Untuk informasi lebih lanjut, silakan kunjungi %1."
 
+msgid "position(s)"
+msgstr "posisi"
+
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "rasio dari Akun Ekuitas pada Total Margin, dinyatakan dalam persen"
+
+msgid "regulated by the Malta Financial Services Authority (MFSA),"
+msgstr "diatur oleh Otoritas Jasa Keuangan Malta (MFSA),"
+
+msgid "regulated by the Malta Gaming Authority,"
+msgstr "diatur oleh Otoritas Gaming Malta,"
+
+msgid "regulated by the UK Gaming Commission (UKGC),"
+msgstr "diatur oleh Komisi Gaming UK (UKGC),"
 
 msgid "second"
 msgstr "detik"
@@ -15139,10 +15157,10 @@ msgid "ticks"
 msgstr "tik"
 
 msgid "time"
-msgstr ""
+msgstr "kali"
 
 msgid "time or create an MT5 account"
-msgstr ""
+msgstr "kali atau mendaftar akun MT5"
 
 msgid "today"
 msgstr "hari ini"
@@ -15150,8 +15168,8 @@ msgstr "hari ini"
 msgid "today, Fridays"
 msgstr "hari ini, Jumat"
 
-msgid "virtual money credit to account"
-msgstr "dana virtual dikreditkan kedalam akun"
+msgid "withdrawal(s)"
+msgstr "penarikan"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

@@ -28,6 +28,7 @@ const DigitInfo = (() => {
             plotBackgroundColor: '#fff',
             plotBorderWidth    : 1,
             plotBorderColor    : '#ccc',
+            marginBottom       : 50,
             height             : 225, // This is "unresponsive", but so is leaving it empty where it goes to 400px.
         },
         title    : { text: '' },
@@ -95,6 +96,18 @@ const DigitInfo = (() => {
                 },
             },
         },
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 472,
+                },
+                chartOptions: {
+                    chart: {
+                        marginBottom: 70,
+                    },
+                },
+            }],
+        },
     };
 
     const addContent = (underlying) => {
@@ -109,6 +122,7 @@ const DigitInfo = (() => {
         $('#digit_underlying').html($(elem)).val(underlying);
         $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
         $('#digit_info_underlying').text($('#digit_underlying option:selected').text());
+        $('#digit_info_count').text($('#tick_count').val());
         CreateDropdown('#digit_underlying');
         CreateDropdown('#tick_count');
     };
@@ -166,7 +180,9 @@ const DigitInfo = (() => {
 
             const getTitle = () => (
                 {
-                    text: template($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]),
+                    text   : template($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]),
+                    useHTML: true,
+                    style  : { 'text-align': 'center' },
                 }
             );
 

@@ -8,6 +8,8 @@ const CommonFunctions  = require('../../../../_common/common_functions');
 const localize         = require('../../../../_common/localize').localize;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const toISOFormat      = require('../../../../_common/string_util').toISOFormat;
+const Client           = require('../../../base/client');
+const State            = require('../../../../../javascript/_common/storage').State;
 
 const TradingTimesUI = (() => {
     let $date,
@@ -80,6 +82,9 @@ const TradingTimesUI = (() => {
     };
 
     const populateTable = () => {
+        let markets;
+        const is_uk_residence = (Client.get('residence') === 'gb' || State.getResponse('website_status.clients_country') === 'gb');
+        
         if (!active_symbols || !trading_times) return;
         if (!active_symbols.length) {
             $container.empty();
@@ -97,7 +102,11 @@ const TradingTimesUI = (() => {
 
         $('#errorMsg').setVisibility(0);
 
-        const markets = trading_times.markets;
+        if (is_uk_residence && Client.isAccountOfType('virtual')) {
+            markets = trading_times.markets.filter(market =>  market.name === 'Synthetic Indices');
+        } else {
+            markets = trading_times.markets;
+        }
 
         const $ul       = $('<ul/>');
         const $contents = $('<div/>');

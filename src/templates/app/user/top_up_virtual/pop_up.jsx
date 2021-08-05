@@ -3,7 +3,7 @@ import React from 'react';
 const TopUpVirtualPopup = () => (
     <React.Fragment>
         <div id='top_up' className='gr-padding-10 gr-gutter'>
-            <h1>{it.L('Top up Virtual Account')}</h1>
+            <h1>{it.L('Top up Demo Account')}</h1>
             <p id='top_up_message' />
             <p>{it.L('Do you want to top up for another [_1]? If not, you can do this later on the [_2]Cashier page[_3], too.', '$10,000.00', `<a id='top_up_cashier_redirect' href='${it.url_for('cashier')}'>`, '</a>')}</p>
             <form id='frm_confirm'>

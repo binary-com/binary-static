@@ -52,7 +52,7 @@ const TopUpVirtualPopup = (() => {
                 Dialog.confirm({
                     id               : 'top_up_success',
                     localized_title  : localize('Top-up successful'),
-                    localized_message: localize('[_1] has been credited into your Virtual Account: [_2].', ['$10,000.00', Client.get('loginid')]),
+                    localized_message: localize('[_1] has been credited into your Demo Account: [_2].', ['$10,000.00', Client.get('loginid')]),
                     cancel_text      : localize('Go to statement'),
                     ok_text          : localize('Continue trading'),
                     onAbort          : () => {

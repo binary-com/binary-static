@@ -501,8 +501,11 @@ button .barspinner.white {
     .select2-container {
         max-width: 220px;
     }
+    .hide-product-checkbox {
+        display: none;
+    }
     .email-consent-container {
-        visibility: hidden !important;
+        display: none;
     }
 }
 
@@ -773,6 +776,9 @@ li strong.margin-right {
         color: $COLOR_BLACK;
         font-weight: 400;
         padding-left: 1rem;
+    }
+    .text-capitalize {
+        text-transform: capitalize !important;
     }
 
     @media screen and (max-width: 650px) {

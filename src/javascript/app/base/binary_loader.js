@@ -114,8 +114,8 @@ const BinaryLoader = (() => {
 
     const error_messages = {
         login            : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
-        only_virtual     : () => localize('This feature is available to virtual accounts only.'),
-        only_real        : () => localize('This feature is not relevant to virtual-money accounts.'),
+        only_virtual     : () => localize('This feature is available to demo accounts only.'),
+        only_real        : () => localize('This feature is not relevant to demo accounts.'),
         not_authenticated: () => localize('This page is only available to logged out clients.'),
         no_mf            : () => localize('Binary options trading is not available in your financial account.'),
         options_blocked  : () => localize('Binary options trading is not available in your country.'),

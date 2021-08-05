@@ -25,7 +25,7 @@ const ClientBase = (() => {
 
     const isValidLoginid = () => {
         if (!isLoggedIn()) return true;
-        const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG)[0-9]+$', 'i');
+        const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG|VRDW|DW)[0-9]+$', 'i');
         return getAllLoginids().every(loginid => valid_login_ids.test(loginid));
     };
 
@@ -133,7 +133,7 @@ const ClientBase = (() => {
             default  : localize('Real'),
             financial: localize('Investment'),
             gaming   : localize('Gaming'),
-            virtual  : localize('Virtual'),
+            virtual  : localize('Demo'),
         });
 
         return {

@@ -101,7 +101,7 @@ const Tac = () => (
                 <li>{it.L('Clients must register personally.')}</li>
                 <li>{it.L('Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, contact email address, and personal telephone number.')}</li>
                 <li>{it.L('The Company may, at its sole discretion or as required by regulations in place conduct appropriate "Know Your Customer" (KYC) procedures and require a client to provide proof of identity and suspend an account until satisfactory evidence of identity and address, source of funds, and/or source of wealth have been provided.')}</li>
-                <li>{it.L('In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents.')}</li>
+                <li>{it.L('In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents.')}</li>
                 <li>{it.L('Requested KYC documentation could include')}
                     <ul className='bullet'>
                         <li>{it.L('Proof of identity – such as ID card, passport or driving licence')}</li>

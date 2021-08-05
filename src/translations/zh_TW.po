@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-06-15 06:35\n"
+"PO-Revision-Date: 2021-07-27 11:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -199,11 +199,11 @@ msgstr "%1僱員和聯盟成員必須避免有利益衝突。例如，不可直�
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stock indices, commodities, and synthetic indices."
 msgstr "%1讓每個人都能輕鬆參與金融市場。可交易各主要貨幣、股票指數、商品和綜合指數，投資門檻低至1美元。"
 
-msgid "%1 has been credited into your MT5 Demo Account: %2."
+msgid "%1 has been credited into your Demo Account: %2."
 msgstr "%1 已記入您的MT5模擬帳戶: %2。"
 
-msgid "%1 has been credited into your Virtual Account: %2."
-msgstr "%1 已記入您的虛擬帳戶: %2。"
+msgid "%1 has been credited into your MT5 Demo Account: %2."
+msgstr "%1 已記入您的MT5模擬帳戶: %2。"
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 竭誠達到極高的道德標準和優質的交易體驗，因此獲得了令人羨慕的聲譽。"
@@ -325,14 +325,14 @@ msgstr "%1的財產"
 msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 通過以下計劃提供商業夥伴關係服務。"
 
+msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
+msgstr "%1提供虛擬貨幣設施讓您以模擬資金實踐交易策略。使用螢幕右上角的下拉清單可切換到模擬帳戶。"
+
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr "%1 向世界各地的機構客戶提供廣泛的資產市場報價和交易執行服務，包括主要貨幣對、現貨金屬、差價合約指數和受歡迎的加密貨幣。"
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
 msgstr "%1在管理傳入訂單時通過採用智慧型匯總方法為客戶提供最佳執行方案。智慧型匯總方法的工作原理是"
-
-msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
-msgstr "%1提供虛擬貨幣設施讓您以虛擬資金實踐交易策略。使用螢幕右上角的下拉清單可切換到虛擬貨幣帳戶。"
 
 msgid "%1 provides you with the opportunity to either self-exclude or %2set limits on your trading activities%3 on this website. You may also %4contact us%3 to state the limits you wish to set via email or phone. Available limits are:"
 msgstr "通過 %1，您可以在網站上自我禁止或為自己的交易活動%3%2設限。您也可以通過即時聊天、電郵或電話%4聯繫我們%3，告訴我們您想要設定的限額。可用的限額如下："
@@ -430,8 +430,8 @@ msgstr "利用 %1 受專利保護的報價技術，您可獲得與銀行間市�
 msgid "%1's remarkable history"
 msgstr "%1的輝煌發展歷程"
 
-msgid "%1's systems are now processing in excess of 1 million transactions/day (including virtual accounts)."
-msgstr "%1 系統每天處理超過百萬筆交易(包括虛擬帳戶)。"
+msgid "%1's systems are now processing in excess of 1 million transactions/day (including demo accounts)."
+msgstr "%1 每天處理超過百萬筆交易(包括模擬帳戶)。"
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
 msgstr "%1提供全天候客戶支援服務%2以增強您的交易體驗"
@@ -472,8 +472,8 @@ msgstr "%1不確定？%1"
 msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
 msgstr "%1注意：%2要檢視更多訊號提供者的選擇，請轉到%3 MQL5展示頁面%4，然後在經紀商伺服器欄位下搜索Deriv。"
 
-msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on this page to register as a seller."
-msgstr "%1注意：%2您須將MQL5帳戶升級為賣方狀態，才能新增訊號。如果尚未升級，請按照本頁面的步驟操作，以註冊成為賣方。"
+msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on %3this page%4 to register as a seller."
+msgstr "%1注意：%2您須將MQL5帳戶升級為賣方狀態，才能新增訊號。如果尚未升級，請按照%3本頁面%4的步驟操作，以註冊成為賣方。"
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
 msgstr "％1請注意，如果您在英國居住，則須在自我禁止期限到期後才能將其刪除。 ％2自我禁止期限過期後如果您希望恢復交易，請致電％3提出請求。以聊天或電子郵件方式提出的請求將不被接受。"
@@ -2233,9 +2233,6 @@ msgstr "Binary平台平均每秒鐘進行%1宗%2交易%3，全天候提供服務
 msgid "Binary.com Graduate Program"
 msgstr "Binary.com 研究生課程"
 
-msgid "Binary.com Shop"
-msgstr "Binary.com 商店"
-
 msgid "Binary.com in Numbers"
 msgstr "Binary.com 的統計數字"
 
@@ -2470,8 +2467,8 @@ msgstr "相機不能用？"
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "我是否可以讓我推薦的客戶不要直接註冊，而是通過我的聯盟專用連結註冊，從而獲得獎金？"
 
-msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts."
-msgstr "可用於合同購入與售出、給到期的購入合同延期、及給虛擬金錢帳戶存入資金。"
+msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts."
+msgstr "可用於合同購入與售出、給到期的購入合同延期、及給模擬帳戶存入資金。"
 
 msgid "Can be used to open accounts, set settings, manage token usage, and more."
 msgstr "可用於開帳戶、設定、代幣用法管理等。"
@@ -3364,8 +3361,8 @@ msgstr "開立帳戶"
 msgid "Create MetaTrader 5 account"
 msgstr "開立MetaTrader 5 帳戶"
 
-msgid "Create New Virtual-money Account"
-msgstr "開立新的虛擬貨幣帳戶"
+msgid "Create New Demo Account"
+msgstr "開設新的模擬帳戶"
 
 msgid "Create account"
 msgstr "開立帳戶"
@@ -3394,11 +3391,11 @@ msgstr "通過以下方式註冊免費帳戶"
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr "建立用於定價的數學/統計模型, 分析肥尾效應以評估保證金要求, 並管理奇異期權、外匯和差價合約的風險"
 
+msgid "Create new demo account"
+msgstr "開設新的模擬帳戶"
+
 msgid "Create new token"
 msgstr "新增新權杖"
-
-msgid "Create new virtual-money account"
-msgstr "開立新的虛擬貨幣帳戶"
 
 msgid "Create or Manage Accounts"
 msgstr "開立或管理帳戶"
@@ -3709,6 +3706,9 @@ msgstr "模擬金融 STP"
 msgid "Demo Synthetic"
 msgstr "模擬綜合"
 
+msgid "Demo accounts do not have Payment Agent services."
+msgstr "模擬帳戶沒有付款代理服務。"
+
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "根據網站的開戶程式對客戶帳戶所附的管轄權和「關於我們」部分的詳細說明以及提供的產品類型, 「公司」一詞應表示,"
 
@@ -3852,6 +3852,9 @@ msgstr "Deriv 投資 (歐洲) 有限公司從流動性供應商池聚集買入�
 
 msgid "Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta"
 msgstr "Deriv Investments (Europe) Limited 和 Deriv (Europe) Limited: 馬爾他"
+
+msgid "Deriv Investments (Europe) Limited has prepared the Financial disclosures report in accordance with the Investment Firms Regulation and Directive. Read our report to understand how we comply with market discipline as a market participant."
+msgstr "Deriv Investments (Europe) Limited 已根據投資公司規則和指令編寫了財務披露報告。請參閱此報告以瞭解我們作為市場參與者嚴格遵守市場紀律的方式。"
 
 msgid "Deriv Investments (Europe) Limited is a company established in Malta, at W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033. It is licensed in Malta and regulated by the Malta Financial Services Authority, Triq l-Imdina, Zone 1, Central Business District, Birkirkara CBD 1010, Malta, under the Investments Services Act to provide investment services in the European Union."
 msgstr "Deriv Investments (Europe) Limited 公司在馬爾他設立，地址是 W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033。由位於Triq l-Imdina, Zone 1, Central Business District, Birkirkara CBD 1010, Malta 的馬爾他金融服務機構根據投資服務法令授予執照並受其監管，在歐盟提供投資服務。"
@@ -4861,11 +4864,8 @@ msgstr "六、保證金和槓桿交易"
 msgid "FIX API"
 msgstr "FIX API"
 
-msgid "FX-majors (standard), FX-minors, Commodities, Cryptocurrencies"
-msgstr "外匯-主要貨幣對（標準）、外匯-次要貨幣對、大宗商品、加密貨幣"
-
-msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies"
-msgstr "外匯-主要貨幣對（標準/微手）， 外匯-次要貨幣對， 大宗商品， 加密貨幣"
+msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
+msgstr "外匯-主要貨幣對（標準/微手）、 外匯-次要貨幣對、大宗商品、加密貨幣、股票和股票指數"
 
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "外匯-主要貨幣對、外匯-次要貨幣對、外匯-奇異貨幣對、加密貨幣"
@@ -5031,6 +5031,9 @@ msgstr "金融評估"
 
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "金融衍生產品讓你交易基礎資產的走勢。"
+
+msgid "Financial disclosure report"
+msgstr "財務披露報告"
 
 msgid "Financial information"
 msgstr "金融資訊"
@@ -6041,7 +6044,7 @@ msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to
 msgstr "如您在我們的%1開源代碼%2中發現任何漏洞，請隨時在GitHub提交引入請求。"
 
 msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
-msgstr "如您有 Binary 真實帳戶，請前往%1收銀台%2提取資金。"
+msgstr "如您有 Binary 真實帳戶，請前往%1C收銀台%2提取資金。"
 
 msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
 msgstr "如您有 Binary 真實帳戶，請前往%1投資組合%2將全部持倉頭寸平倉。"
@@ -6295,8 +6298,8 @@ msgstr "在外匯市場中，交易者可以根據一種貨幣對另一種貨幣
 msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to the following rights with regards to the applicant's personal data:"
 msgstr "根據歐盟2016/679一般資料保護條例和2018資料保護法, 申請人對其個人資料有以下權利:"
 
-msgid "In order for a UK resident to make use of the virtual account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
-msgstr "為了讓英國居民能夠使用虛擬帳戶，客戶首先必須通過年齡驗證。使用真實資金帳戶前，客戶還必須通過全面驗證。驗證可以通過電子方式或提交KYC文件完成。"
+msgid "In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents."
+msgstr "為了讓英國居民能夠使用模擬帳戶，客戶首先必須通過年齡驗證。使用真實資金帳戶前，客戶還必須通過全面驗證。驗證可以通過電子方式或提交KYC文件完成。"
 
 msgid "In order to access Telegram Bot, please %1generate an API Token%2 and enter it in the input box below."
 msgstr "要訪問Telegram Bot，請%1生成 API 權杖%2並在下面的輸入框中輸入。"
@@ -8026,8 +8029,8 @@ msgstr "注意: %1不收取任何轉帳費用。"
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact %1Customer Support%2."
 msgstr "注: 如有任何關於禁用或隔離帳戶的查詢, 請與%1客服部%2聯繫。"
 
-msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC. Transactions are accepted only in US dollars."
-msgstr "注意：僅在 Deriv (SVG) LLC 註冊的帳號才能通過付款代理匯款。僅接受以美元進行所有交易。"
+msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
+msgstr "注意：僅在 Deriv (SVG) LLC 註冊的帳號才能通過付款代理匯款。"
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "注意: 您只能使用一個法定貨幣帳戶。首次把資金存入法定帳戶或開立 MT5 帳戶之前, 可以更改 法定帳戶的幣種。您還可以為每種受支持的加密貨幣開立專用帳戶。"
@@ -8359,6 +8362,9 @@ msgstr "我們今年的預計活躍客戶總數將超過79萬人。"
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "我們的業務建立在合作基礎上，我們旨在與合作夥伴建立長期的互利關係。但是，我們絕不會對業務誠信的堅持作出妥協。如果我們的合作夥伴不願意或無法遵守我們的原則，我們保留退出業務關係的權利。"
 
+msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr "由於系統維護，收銀台暫時無法使用。一旦維護完成，您即可存取收銀台。"
+
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "我們的佣金結構是簡單的二層級計劃。"
 
@@ -8367,6 +8373,9 @@ msgstr "我們對完整性和可靠性的承諾意味著我們一直都努力為
 
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "我們公司繼續茁壯成長，並在曼島獲得執照，可以為我們的英國客戶提供更好的服務。"
+
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
+msgstr "由於系統維護，加密貨幣收銀台暫時無法使用。一旦維護完成，您即可存取收銀台。"
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我們深受客戶喜愛。 2014年中旬，%1的歷史交易數量和每日新交易數量分別超過1億筆和13萬筆。"
@@ -8670,12 +8679,6 @@ msgstr "文件的相片"
 
 msgid "Photo of your face"
 msgstr "您臉部的照片"
-
-msgid "Pillar 3 Disclosures"
-msgstr "第3支柱資料披露"
-
-msgid "Pillar 3 disclosure report"
-msgstr "第3支柱資料披露報告"
 
 msgid "Pip"
 msgstr "點"
@@ -9007,11 +9010,11 @@ msgstr "簡單而強大"
 msgid "Powerful charting and technical analysis"
 msgstr "功能強大的圖表和技術分析"
 
-msgid "Practice account with replenishable 10,000 USD virtual credit."
-msgstr "擁有10,000美元可補充虛擬資金的練習帳戶。"
+msgid "Practice account with replenishable 10,000 USD demo credit."
+msgstr "擁有10,000美元可補充模擬資金的練習帳戶。"
 
-msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
-msgstr "使用虛擬資金在無風險的環境中實踐您的交易策略。"
+msgid "Practice your trading strategies in a risk-free environment by using demo funds."
+msgstr "使用模擬資金在無風險的環境中實踐您的交易策略。"
 
 msgid "Practise with virtual funds"
 msgstr "使用虛擬資金練習"
@@ -9502,8 +9505,8 @@ msgstr "通過您最傾向的付款方式領取收入"
 msgid "Recent years are easy to guess"
 msgstr "以最近年份作密碼很容易猜出"
 
-msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up virtual accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
-msgstr "認識到金融市場的複雜性，我們公平及詳細地描述了我們的交易選擇。我們在網站上提供準確的產品描述，以及免費的網絡研討會。我們為客戶提供建立虛擬帳戶的機會，以便免費試用交易系統。我們鼓勵客戶在交易前仔細研究所有這些資訊來源。"
+msgid "Recognising the complexities of the financial markets, we describe our trading options fairly and in detail. We include accurate product descriptions on our website, as well as free webinars. We offer clients the opportunity to set up demo accounts in order to experiment with the system free of charge. We encourage our clients to study all these sources of information carefully before they trade."
+msgstr "認識到金融市場的複雜性，我們公平及詳細地描述了我們的交易選擇。我們在網站上提供準確的產品描述，以及免費的網絡研討會。我們為客戶提供建立模擬帳戶的機會，以便免費試用交易系統。我們鼓勵客戶在交易前仔細研究所有這些資訊來源。"
 
 msgid "Recommend alternatives to redundant or obsolete systems"
 msgstr "推薦冗余或過時系統的替代品"
@@ -9712,23 +9715,23 @@ msgstr "重設時間"
 msgid "Reset investor password"
 msgstr "重設投資者密碼"
 
+msgid "Reset my demo balance"
+msgstr "重設模擬餘額"
+
 msgid "Reset my password"
 msgstr "重設密碼"
-
-msgid "Reset my virtual balance"
-msgstr "重設虛擬餘額"
 
 msgid "Reset password"
 msgstr "重設密碼"
 
-msgid "Reset the balance of your virtual account to %1 anytime."
-msgstr "隨時將虛擬帳戶餘額重設為 %1 。"
+msgid "Reset the balance of your demo account to %1 anytime."
+msgstr "隨時將模擬帳戶餘額重設為 %1 。"
 
 msgid "Reset to original settings"
 msgstr "重設為原始設定"
 
-msgid "Reset your virtual balance"
-msgstr "重設虛擬餘額"
+msgid "Reset your demo balance"
+msgstr "重設模擬餘額"
 
 msgid "Residence permit"
 msgstr "居留證"
@@ -10350,6 +10353,9 @@ msgstr "對不起，您的管轄權內無法使用此功能。"
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
 msgstr "抱歉，此貨幣的取款目前被禁用。"
+
+msgid "Sorry, your account is not authorised for any further contract purchases."
+msgstr "對不起，您的帳戶沒有進一步買入任何合約的權限。"
 
 msgid "Source of income"
 msgstr "收入來源"
@@ -11551,11 +11557,11 @@ msgstr "DIEL提供的金融產品交易為客戶和DIEL之間的合約。在這�
 msgid "The Financial Straight-Through Processing (STP) account is a 100% A Book account where your trades are passed straight through to the market, giving you direct access to forex liquidity providers. Trade major, minor, exotic currency pairs, and cryptocurrencies with tight spreads and higher trade volumes."
 msgstr "財務直通處理系統 (STP) 帳戶是100% A Book 帳戶。讓您直接進入市場交易，您也可直接存取外匯流動量提供商，並進行緊密利差、高交易量的主要、次要、特異貨幣對和加密貨幣外匯交易。"
 
-msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit."
-msgstr "財務帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。以微小和可變的差價進行大宗商品、加密貨幣、主要和次要貨幣對交易, 不收佣金費，也沒有最低存款限制。"
+msgid "The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies."
+msgstr "金融帳戶（可用歐元和英鎊）適用於各種新手或有經驗的交易者。交易主要（標準和微手）和次要貨幣對、股票、股票指數、大宗商品和加密貨幣。"
 
-msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage."
-msgstr "財務帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性，進行高槓桿大宗商品、加密貨幣、主要（標準和微手）和次要貨幣對交易。"
+msgid "The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage."
+msgstr "金融帳戶為新手或有經驗的交易者提供高槓桿率和可變的差價，達到最大的靈活性。高槓桿交易主要（標準和微手）和次要貨幣對、股票、股票指數、大宗商品和加密貨幣。"
 
 msgid "The Foreign Exchange Market (forex) is the world's largest and most liquid market – where anyone can buy, sell, and exchange currencies."
 msgstr "外匯市場（forex）是世界上最大、流動性最高的市場 ​​- 任何人都可以買、賣、交易貨幣。"
@@ -11631,9 +11637,6 @@ msgstr "本協議下因不可抗力事件無法履行義務的一方, 須在發�
 
 msgid "The Pearl of Borneo"
 msgstr "婆羅洲明珠"
-
-msgid "The Pillar 3 disclosure report of Deriv Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
-msgstr "Deriv Investments (Europe) Limited 的第3支柱資料披露報告根據第四資本要求指令和資本要求規則編寫而成。請參閱此第3支柱資料披露報告，瞭解我們作為市場參與者嚴格遵守市場紀律的方式。"
 
 msgid "The Policy is supplemented by Appendix A, which provides further details to the Company's considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
 msgstr "考慮到更多關於不同資產類別的細節，公司為政策提供附錄一作為補充。隨附的附錄一必須和政策同時閱讀。"
@@ -12595,11 +12598,11 @@ msgstr "本文檔 （「協定」） 規定了Deriv Services Ltd (「公司」) 
 msgid "This document (the \"Agreement\") sets out the terms and conditions between \"the Company\", which is Deriv Services Ltd, and the person who has applied for this programme (\"the Affiliate\"), in relation to the Affiliate's application to set up an affiliate account (and membership of the affiliate programme if the Affiliate's application is deemed successful)."
 msgstr "本文件（「協議」）規定了「公司」（即 Deriv Services Ltd.）與本計劃申請人(「聯盟會員」）之間關於聯盟會員申請設立聯盟會員帳戶（申請成功後還包括聯盟計劃的會員資格）以推廣網站的條款和條件。"
 
-msgid "This feature is available to virtual accounts only."
-msgstr "此功能僅適用於虛擬帳戶。"
+msgid "This feature is available to demo accounts only."
+msgstr "此功能僅適用於模擬帳戶。"
 
-msgid "This feature is not relevant to virtual-money accounts."
-msgstr "此功能不適用於虛擬資金帳戶。"
+msgid "This feature is not relevant to demo accounts."
+msgstr "此功能與模擬帳戶沒有關聯。"
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "此功能僅適用於支付代理帳戶。"
@@ -12616,8 +12619,8 @@ msgstr "此利率調整 (或掉期利率) 是基於銀行間借貸利率，再�
 msgid "This is a complete list of supported payment methods. We'll show you which payment methods are available in your location on the deposit page."
 msgstr "這是受支持的付款方式的完整清單。存款頁面會顯示您所在位置可用的付款方式。"
 
-msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a virtual account rather than trading with real funds straightaway."
-msgstr "此文繼續以上的說明。 ％1為客戶提供多種學習負責任交易的方式。聯盟成員須確保自己確實有在利用此資源，例如，通過虛擬帳戶建立自己的專業知識，而不是直接使用真實資金交易。"
+msgid "This is a continuation of the same point. %1 offers clients a variety of ways of learning how to trade responsibly. Affiliates should make sure that they do learn, for example by encouraging them to build up their expertise with a demo account rather than trading with real funds straightaway."
+msgstr "此文繼續以上的說明。 ％1為客戶提供多種學習負責任交易的方式。聯盟成員須確保自己確實有在利用此資源，例如，通過模擬帳戶建立自己的專業知識，而不是直接使用真實資金交易。"
 
 msgid "This is a staging server - For testing purposes only"
 msgstr "這是分期伺服器，僅用於測試目的"
@@ -12853,20 +12856,20 @@ msgstr "權杖名稱"
 msgid "Too many failed attempts"
 msgstr "失敗嘗試次數太多"
 
-msgid "Top Up Virtual Account"
-msgstr "給虛擬帳戶充值"
+msgid "Top Up Demo Account"
+msgstr "充值模擬帳戶"
 
 msgid "Top up"
 msgstr "充值"
 
-msgid "Top up Virtual Account"
-msgstr "給虛擬帳戶充值"
+msgid "Top up Demo Account"
+msgstr "充值模擬帳戶"
+
+msgid "Top up demo account"
+msgstr "充值模擬帳戶"
 
 msgid "Top up error"
 msgstr "充值錯誤"
-
-msgid "Top up virtual account"
-msgstr "給虛擬帳戶充值"
 
 msgid "Top-tier liquidity"
 msgstr "頂級流動性"
@@ -13555,8 +13558,8 @@ msgstr "Binary提供的行銷材料僅用於提供IB服務並遵從Binary的指�
 msgid "Use the name 'Binary' or any derivation of that name such as '%1' or the Binary Trademarks in a way that might compete with Binary's search engine optimisation without the prior written consent of Binary, which includes using the name '%1' on the title tag of the Introducing Broker's website"
 msgstr "未經Binary事先書面同意，用可能會與Binary的搜索引擎優化競爭的方式使用Binary名稱或該名稱的任何派生，例如%1或Binary商標，包括在推介經紀網站的標題標籤上使用%1名稱"
 
-msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
-msgstr "利用我們網站提供的機會，可以免費通過虛擬帳戶進行交易嘗試，同時熟悉本網站的各種功能和規則。"
+msgid "Use the opportunity provided by our website to practice for free with our demo account facility. This will enable you to get used to the functionalities and rules of the website."
+msgstr "利用我們網站提供的機會，可以免費通過模擬帳戶進行交易嘗試，同時熟悉本網站的各種功能和規則。"
 
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "網絡平台可在Windows、MacOS、或 Linux 操作系統上使用，不需下載或安裝。"
@@ -13695,15 +13698,6 @@ msgstr "檢視您的帳單"
 
 msgid "View your trading and withdrawal limits."
 msgstr "檢視您的交易和取款限額。"
-
-msgid "Virtual"
-msgstr "虛擬"
-
-msgid "Virtual Account"
-msgstr "虛擬帳戶"
-
-msgid "Virtual accounts do not have Payment Agent services."
-msgstr "虛擬帳戶沒有付款代理服務。"
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more information, please visit %1."
 msgstr "Visa是支援世界各地數位支付的國際公司, 最普遍的是通過其品牌的信用和轉帳卡。欲知詳情, 請存取 %1。"
@@ -13968,6 +13962,9 @@ msgstr "具備良好的組織、行政和會計技能"
 
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "我們將更新您的限額。點選％1同意和接受％2以確認您對自己的行為負全部責任，如果您因此而上癮或蒙受損失，我們將不承擔任何責任。"
+
+msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
+msgstr "我們的收銀台系統正在更新，很快即將線上提供服務。更新詳情請參閱我們的%1s狀態頁面%2。"
 
 msgid "We’ve sent you an email"
 msgstr "我們已給您傳送電子郵件"
@@ -14465,7 +14462,7 @@ msgid "You are expecting the base currency to rise in value so you can sell it b
 msgstr "您預計基礎貨幣將升值，因此您可將其賣出賺取利潤。"
 
 msgid "You are limited to one fiat account. You can change the currency of your fiat account anytime before you make a first-time %1."
-msgstr ""
+msgstr "您只能用一個法定帳戶。首次%1之前, 您可以隨時更改法定帳戶的幣種。"
 
 msgid "You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments."
 msgstr "您將負責減低我們因欺詐和洗錢而面臨的風險和弊端行為。為此，您必須對客戶帳戶和存款進行各種反欺詐和反洗錢檢查、分析和執行工作。您將在我們位於馬爾他的公司工作，並向支付主管匯報。"
@@ -14508,6 +14505,9 @@ msgstr "您已存入第一筆資金, 因此不能再更改幣種。"
 
 msgid "You can now return to your computer to continue"
 msgstr "您現在可以返回電腦繼續操作"
+
+msgid "You can only perform up to %1 transfers a day. Please try again tomorrow."
+msgstr "每天只能執行%1次轉帳。請明天重試。"
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "在任何給定時間，您只能使用一個%1帳戶訂閱一個訊號提供者。您最多可以在3台電腦上使用訊號。"
@@ -14575,6 +14575,9 @@ msgstr "您在以下 Binary 帳戶中持有未平倉頭寸："
 msgid "You have open positions in these MT5 accounts:"
 msgstr "您在以下 MT5 帳戶中持有未平倉頭寸："
 
+msgid "You have pending withdrawal(s) in these Binary accounts:"
+msgstr "您在以下 Binary 帳戶中有待定提款："
+
 msgid "You have probably seen the terms 'going long' and 'going short' being used by a lot of forex brokers and traders. Let's compare the differences between the two terms:"
 msgstr "您可能看過很多外匯經紀商和交易者使用「開多頭頭寸」和「開空頭頭寸」這兩個術語。讓我們來比較一下兩個術語之間的差異："
 
@@ -14590,8 +14593,8 @@ msgstr "您已經以 %1 %2 賣出此合約"
 msgid "You have successfully changed your account currency from %1 to %2."
 msgstr "您已成功將帳戶幣種從 %1 更改為 %2。"
 
-msgid "You have successfully created your Virtual Account."
-msgstr "您已成功開立虛擬帳戶。"
+msgid "You have successfully created your Demo Account."
+msgstr "您已成功開立模擬帳戶."
 
 msgid "You have successfully created your real money %1account."
 msgstr "您已成功開立%1真實資金帳戶。"
@@ -14719,8 +14722,8 @@ msgstr "您要買入%1，賣出%2。"
 msgid "You're selling the %1 and buying the %2."
 msgstr "您要賣出%1，買入%2。"
 
-msgid "You're using a Virtual Account."
-msgstr "您正在使用虛擬帳戶。"
+msgid "You're using a Demo Account."
+msgstr "您使用的是模擬帳戶。"
 
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "您在與我們類似的市場進行了相當多的交易, 過去四季度裡平均每季度進行了10筆交易"
@@ -14761,6 +14764,9 @@ msgstr "您的Binary帳戶已與%1解除連結。以後請用%2電子郵件和�
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "您的客戶將收到電子郵件通知，告知其轉帳交易已處理。"
 
+msgid "Your Demo balance has been reset."
+msgstr "您的模擬餘額已重設。"
+
 msgid "Your Existing Accounts"
 msgstr "您的目前帳戶"
 
@@ -14791,8 +14797,8 @@ msgstr "您的帳戶仍屬於零售客戶類別。"
 msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
 msgstr "您的帳戶安全對我們來說至關重要。請考慮採用以下措施和工具以增強您的帳戶安全:"
 
-msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
-msgstr "您的帳戶將透過％1開立，並受％2的管轄權和法律管轄。"
+msgid "Your account will be opened with %1, %2 and will be subject to the laws of %3."
+msgstr "您的帳戶將透過%1，%2開立，並受%3的法律管轄。"
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "您請求成為專業客戶的申請正在處理中。"
@@ -14929,9 +14935,6 @@ msgstr "您的交易參考號是"
 msgid "Your transaction reference number is %1"
 msgstr "您的交易號是 %1"
 
-msgid "Your virtual balance has been reset."
-msgstr "您的虛擬餘額已重設。"
-
 msgid "Your web browser (%1) is out of date and may affect your trading experience. Proceed at your own risk. %2Update browser%3"
 msgstr "您的網絡瀏覽器 (%1) 已過時，並可能會影響您的交易操作。繼續操作須自行承擔風險。%2更新瀏覽器%3"
 
@@ -15019,11 +15022,14 @@ msgstr "天"
 msgid "days"
 msgstr "天"
 
+msgid "demo credit to account"
+msgstr "模擬資金存入帳戶"
+
 msgid "deposit"
-msgstr ""
+msgstr "存款"
 
 msgid "deposit or create an MT5 account"
-msgstr ""
+msgstr "存款或開立MT5帳戶"
 
 msgid "details"
 msgstr "詳細資料"
@@ -15082,8 +15088,20 @@ msgstr "或上傳照片 - 不接受掃描件或影印件"
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more information, please visit %1."
 msgstr "paysafecard 提供基於憑證，不需要銀行帳戶、信用卡或其他個人資料的線上支付方法 。欲知詳情, 請存取 %1。"
 
+msgid "position(s)"
+msgstr "頭寸"
+
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "帳戶資金與保證金總額的比率，以百分比表示"
+
+msgid "regulated by the Malta Financial Services Authority (MFSA),"
+msgstr "由馬爾他金融服務管理局 (MFSA) 監管，"
+
+msgid "regulated by the Malta Gaming Authority,"
+msgstr "由馬爾他博彩局監管，"
+
+msgid "regulated by the UK Gaming Commission (UKGC),"
+msgstr "由英國博彩委員會(UKGC)監管，"
 
 msgid "second"
 msgstr "秒"
@@ -15137,10 +15155,10 @@ msgid "ticks"
 msgstr "跳動點"
 
 msgid "time"
-msgstr ""
+msgstr "時間"
 
 msgid "time or create an MT5 account"
-msgstr ""
+msgstr "時間或開立MT5帳戶"
 
 msgid "today"
 msgstr "今天"
@@ -15148,8 +15166,8 @@ msgstr "今天"
 msgid "today, Fridays"
 msgstr "今天，週五"
 
-msgid "virtual money credit to account"
-msgstr "虛擬資金存入帳戶"
+msgid "withdrawal(s)"
+msgstr "提款"
 
 msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
 msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."

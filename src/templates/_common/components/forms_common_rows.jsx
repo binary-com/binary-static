@@ -204,7 +204,7 @@ export const Tnc = () => (
 export const Jurisdiction = () => (
     <Fieldset legend={it.L('Jurisdiction and Choice of Law')}>
         <div className='gr-12'>
-            <p>{it.L('Your account will be opened with [_1], and will be subject to the jurisdiction and laws of [_2].', '<span id="lc-name"></span>', '<span id="lc-country"></span>')}</p>
+            <p>{it.L('Your account will be opened with [_1], [_2] and will be subject to the laws of [_3].', '<span id="lc-name"></span>', '<span id="lc-regulator"></span>', '<span id="lc-country"></span>')}</p>
         </div>
     </Fieldset>
 );

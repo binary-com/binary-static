@@ -23,7 +23,7 @@ const ApiToken = () => (
                             <label htmlFor='chk_scopes_read'><span data-balloon={it.L('Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more.')} data-balloon-length='xlarge'>{it.L('Read')}</span></label>
 
                             <input id='chk_scopes_trade' type='checkbox' value='trade' />
-                            <label htmlFor='chk_scopes_trade'><span data-balloon={it.L('Can be used to buy and sell contracts, renew expired purchases, and top-up virtual-money accounts.')} data-balloon-length='xlarge'>{it.L('Trade')}</span></label>
+                            <label htmlFor='chk_scopes_trade'><span data-balloon={it.L('Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts.')} data-balloon-length='xlarge'>{it.L('Trade')}</span></label>
 
                             <input id='chk_scopes_payments' type='checkbox' value='payments' />
                             <label htmlFor='chk_scopes_payments'><span data-balloon={it.L('Can be used to withdraw to payment agents and transfer funds between accounts.')} data-balloon-length='xlarge'>{it.L('Payments')}</span></label>

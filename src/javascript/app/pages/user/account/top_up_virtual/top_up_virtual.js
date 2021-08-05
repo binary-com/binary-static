@@ -18,7 +18,7 @@ const TopUpVirtual = (() => {
                 showMessage(response.error.message, false);
             } else {
                 showMessage(
-                    localize('Your virtual balance has been reset.'),
+                    localize('Your Demo balance has been reset.'),
                     true);
             }
             $('.barspinner').setVisibility(0);
