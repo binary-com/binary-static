@@ -43,7 +43,7 @@ jobs:
           echo "Checking out new branch [$branch_name]"
           git checkout -b "$branch_name"
 
-      - name: Sync translation with Crowdin
+      - name: Uploading new strings to Crowdin
         run: |
           last_messages_hash="$(git hash-object $(git rev-parse --show-toplevel)/src/translations/messages.pot)"
           echo "Generating messages.pot"          
@@ -69,6 +69,8 @@ jobs:
             echo "No new string detected. Skip uploading messages.pot to Crowdin."
           fi
 
+      - name: Downloading translation files from Crowdin
+        run: |
           echo "Downloading translation files from Crowdin (*.po)"
           crowdin download -T ${{ secrets.CROWDIN_API_KEY }}
           echo "Updating javascript translation files (*.js)"
