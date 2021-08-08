@@ -373,7 +373,7 @@ module.exports = [
     'Open your new bank account',
     'Opens',
     'Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.',
-    'Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete..',
+    'Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.',
     'Over/Under',
     'PM',
     'Page not available, you did not deactivate your account.',

@@ -264,7 +264,7 @@ const DepositWithdraw = (() => {
             if (/cashier_locked/.test(response_get_account_status.get_account_status.status)) {
                 if (/system_maintenance/.test(response_get_account_status.get_account_status.cashier_validation)) {
                     if (is_crypto) {
-                        showError('custom_error', localize('Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete..'));
+                        showError('custom_error', localize('Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.'));
                     } else {
                         showError('custom_error', localize('Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.'));
                     }

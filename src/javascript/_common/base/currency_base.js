@@ -109,7 +109,8 @@ const getTransferLimits = (currency, which, type) => {
 };
 
 const getTransferFee = (currency_from, currency_to) => {
-    const transfer_fee = getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', currency_to]);
+    const transfer_to_currency = (currency_to === 'USDT' ? 'UST' : currency_to);
+    const transfer_fee = getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', transfer_to_currency]);
     return `${typeof transfer_fee === 'undefined' ? '1' : transfer_fee}%`;
 };
 
