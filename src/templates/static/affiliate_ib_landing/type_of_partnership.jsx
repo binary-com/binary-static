@@ -234,7 +234,7 @@ const TypesOfPartnership = () => (
                                         ],
                                         [
                                             { text: it.L('Jump 100 Index') },
-                                            { text: it.L('5') },
+                                            { text: it.L('5.00') },
                                         ],
                                     ],
                                 }}
