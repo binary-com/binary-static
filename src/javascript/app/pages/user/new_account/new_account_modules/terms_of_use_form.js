@@ -1,5 +1,6 @@
 const getElementById = require('../../../../../_common/common_functions').getElementById;
-const State = require('../../../../../_common/storage').State;
+const localize       = require('../../../../../_common/localize').localize;
+const State          = require('../../../../../_common/storage').State;
 
 const TermsOfUseForm = (() => {
     const init = async (fields, real_account_signup_target) => {
@@ -11,6 +12,7 @@ const TermsOfUseForm = (() => {
             ] || landing_company.financial_company;
         getElementById('lc-name').innerHTML = lc_to_upgrade_to.name;
         getElementById('lc-country').innerHTML = lc_to_upgrade_to.country;
+        getElementById('lc-regulator').innerHTML = getRegulatorText(lc_to_upgrade_to.shortcode);
 
         $('#pep_declaration_note_toggle').off('click').on('click', (e) => {
             e.stopPropagation();
@@ -22,6 +24,19 @@ const TermsOfUseForm = (() => {
             getElementById(`${field.section}_section`).setVisibility(1);
             getElementById(`${field.id}_row`).setVisibility(1);
         });
+    };
+
+    const getRegulatorText = (shortcode) => {
+        switch (shortcode) {
+            case 'iom':
+                return localize('regulated by the UK Gaming Commission (UKGC),');
+            case 'malta':
+                return localize('regulated by the Malta Gaming Authority,');
+            case 'maltainvest':
+                return localize('regulated by the Malta Financial Services Authority (MFSA),');
+            default:
+                return '';
+        }
     };
 
     return {

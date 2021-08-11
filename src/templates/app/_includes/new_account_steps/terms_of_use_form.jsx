@@ -11,7 +11,7 @@ const TermsOfUseForm = () => (
         <div id='terms_of_use_section' className='gr-12 auto-margin'>
             <Jurisdiction row_id='jurisdiction_row' className='invisible' />
             <RiskDisclaimer row_id='risk_disclaimer_row' className='invisible' />
-            <PepDeclaration row_id='pep_declaration_row' className='invisible' />
+            <PepDeclaration is_new_flow row_id='pep_declaration_row' className='invisible' />
             <Tnc row_id='tnc_row' className='invisible' />
         </div>
         <div className='align-end' id='submit_section'>
