@@ -954,13 +954,16 @@ const Authenticate = (() => {
         });
     };
 
-    const getOnfidoServiceToken = () => new Promise((resolve) => {
+    const getOnfidoServiceToken = (country_code) => new Promise((resolve) => {
         const onfido_cookie = Cookies.get('onfido_token');
+        const onfido_country_code = country_code.length !== 2
+            ? Countries.alpha3ToAlpha2(country_code.toUpperCase()) : country_code;
 
         if (!onfido_cookie) {
             BinarySocket.send({
                 service_token: 1,
                 service      : 'onfido',
+                country      : onfido_country_code,
             }).then((response) => {
                 if (response.error) {
                     resolve({ error: response.error });
@@ -1265,7 +1268,7 @@ const Authenticate = (() => {
         $('#idv-container').setVisibility(0);
         $('#authentication_tab').setVisibility(1);
 
-        const service_token_response = await getOnfidoServiceToken();
+        const service_token_response = await getOnfidoServiceToken(country_code);
         let has_personal_details_error = false;
 
         if (
