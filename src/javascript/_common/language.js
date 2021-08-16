@@ -63,7 +63,7 @@ const Language = (() => {
     };
 
     const urlForLanguage = (lang, url = window.location.href) =>
-        url.replace(new RegExp(`/${languageFromUrl(url) || getLanguage()}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
+        url.replace(new RegExp(`/${getLanguage()}/`, 'i'), `/${(lang || default_language).trim().toLowerCase()}/`);
 
     const onChangeLanguage = () => {
         applyToAllElements('li', (el) => {
@@ -74,12 +74,6 @@ const Language = (() => {
                 elementTextContent(getElementById('display_language').getElementsByClassName('language'), e.target.textContent);
                 LocalStore.remove('ws_cache');
                 setCookieLanguage(lang);
-                if (LocalStore.get('active_loginid')) {
-                    const evt = document.createEvent('StorageEvent');
-                    evt.initStorageEvent('storage', false, false, 'preferred_language', LocalStore.get('preferred_language'), lang);
-                    dispatchEvent(evt);
-                    LocalStore.set('preferred_language', lang);
-                }
                 document.location = urlForLanguage(lang);
             });
         }, '', getElementById('select_language'));
