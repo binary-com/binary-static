@@ -4,7 +4,6 @@ const Client             = require('./client');
 const BinarySocket       = require('./socket');
 const GTM                = require('../../_common/base/gtm');
 const SocketCache        = require('../../_common/base/socket_cache');
-const LocalStore         = require('../../_common/storage').LocalStore;
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
@@ -24,10 +23,9 @@ const LoggedInHandler = (() => {
             const account_list = getPropertyValue(response, ['authorize', 'account_list']);
             if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
                 // redirect url
-                const preferred_language   = response.authorize.preferred_language.toLowerCase();
-                redirect_url = urlFor(sessionStorage.getItem('redirect_url') || '/', null, preferred_language);
-                LocalStore.set('preferred_language', preferred_language);
+                redirect_url = sessionStorage.getItem('redirect_url');
                 sessionStorage.removeItem('redirect_url');
+
                 storeClientAccounts(account_list);
             } else {
                 Client.doLogout({ logout: 1 });
