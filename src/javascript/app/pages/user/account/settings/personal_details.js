@@ -129,6 +129,16 @@ const PersonalDetails = (() => {
         }
     };
 
+    const modifyContactCSMessage = (immutable_fields) => {
+        if (!/tax/.test(immutable_fields.toString())) {
+            $('.rowCustomerSupport').text((index, text) => text.replace(localize('To change your name, date of birth, country of residence, email, or tax information'),
+                localize('To change your name, date of birth, country of residence, or email')));
+        }
+        if (!/name/.test(immutable_fields.toString())) {
+            $('.rowCustomerSupport').text((index, text) => text.replace(localize('To change your name, date of birth'), localize('To change your date of birth')));
+        }
+    };
+
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
         const get_settings         = $.extend({}, data);
         // date_of_birth can be 0 as a valid epoch
@@ -166,6 +176,7 @@ const PersonalDetails = (() => {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
             if (is_fully_authenticated) {
+                modifyContactCSMessage(get_settings.immutable_fields);
                 $(real_acc_auth_elements).setVisibility(1);
             }
         }
