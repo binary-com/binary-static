@@ -129,13 +129,15 @@ const PersonalDetails = (() => {
         }
     };
 
-    const modifyContactCSMessage = (immutable_fields) => {
-        if (!/tax/.test(immutable_fields.toString())) {
-            $('.rowCustomerSupport').text((index, text) => text.replace(localize('To change your name, date of birth, country of residence, email, or tax information'),
-                localize('To change your name, date of birth, country of residence, or email')));
-        }
-        if (!/name/.test(immutable_fields.toString())) {
-            $('.rowCustomerSupport').text((index, text) => text.replace(localize('To change your name, date of birth'), localize('To change your date of birth')));
+    const selectContactCSMessage = (immutable_fields) => {
+        if (/name/.test(immutable_fields.toString()) && /tax/.test(immutable_fields.toString())) {
+            $('.rowCustomerSupport').not('.full-cs-msg').setVisibility(0);
+        } else if (!/name/.test(immutable_fields.toString()) && !/tax/.test(immutable_fields.toString())) {
+            $('.rowCustomerSupport').not('.cs-msg-without-name-and-tax-info').setVisibility(0);
+        } else if (!/name/.test(immutable_fields.toString())) {
+            $('.rowCustomerSupport').not('.cs-msg-without-name').setVisibility(0);
+        } else if (!/tax/.test(immutable_fields.toString())) {
+            $('.rowCustomerSupport').not('.cs-msg-without-tax-info').setVisibility(0);
         }
     };
 
@@ -176,8 +178,8 @@ const PersonalDetails = (() => {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
             if (is_fully_authenticated) {
-                modifyContactCSMessage(get_settings.immutable_fields);
                 $(real_acc_auth_elements).setVisibility(1);
+                selectContactCSMessage(get_settings.immutable_fields);
             }
         }
 
