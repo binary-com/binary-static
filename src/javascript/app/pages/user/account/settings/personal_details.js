@@ -130,13 +130,15 @@ const PersonalDetails = (() => {
     };
 
     const selectContactCSMessage = (immutable_fields) => {
-        if (/name/.test(immutable_fields.toString()) && /tax/.test(immutable_fields.toString())) {
+        const has_name = /name/.test(immutable_fields.toString());
+        const has_tax_info = /tax/.test(immutable_fields.toString());
+        if (has_name && has_tax_info) {
             $('.rowCustomerSupport').not('.full-cs-msg').setVisibility(0);
-        } else if (!/name/.test(immutable_fields.toString()) && !/tax/.test(immutable_fields.toString())) {
+        } else if (!has_name && !has_tax_info) {
             $('.rowCustomerSupport').not('.cs-msg-without-name-and-tax-info').setVisibility(0);
-        } else if (!/name/.test(immutable_fields.toString())) {
+        } else if (!has_name) {
             $('.rowCustomerSupport').not('.cs-msg-without-name').setVisibility(0);
-        } else if (!/tax/.test(immutable_fields.toString())) {
+        } else if (!has_tax_info) {
             $('.rowCustomerSupport').not('.cs-msg-without-tax-info').setVisibility(0);
         }
     };
