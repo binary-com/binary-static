@@ -46,8 +46,8 @@ const ResetPassword = (() => {
         } else {
             Dialog.alert({
                 id               : 'change_password_success_dialog',
-                localized_message: localize('You have a new binary password.'),
-                localized_title  : localize('Binary password'),
+                localized_message: localize('You have a new Binary password to log in to Binary.com.'),
+                localized_title  : localize('Success'),
                 ok_text          : localize('Done'),
                 onConfirm        : () => Login.redirectToLogin(true),
             });

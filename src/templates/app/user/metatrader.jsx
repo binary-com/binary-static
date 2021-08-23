@@ -22,8 +22,8 @@ const AccountDesc = ({ title, description, account_type, landing_company_short, 
                     <li key={i}>{item}</li>
                 ))}
             </ul>
-            <p>
-                <a className='button' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>
+            <p className='center-text-m'>
+                <a className='button button-full-width-m' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>
                     <span>{it.L('Compare MetaTrader 5 accounts')}</span>
                 </a>
             </p>
@@ -146,7 +146,7 @@ const Metatrader = () => (
                 <div className='mt-panel'>
                     <div className='acc-actions'>
                         <a href='javascript:;' className='act_new_account new-account center-text invisible'>
-                            <span>{it.L('Create MetaTrader 5 account')}</span>
+                            <span>{it.L('Create a MetaTrader 5 account')}</span>
                         </a>
                         <a href='javascript:;' className='act_cashier has-account center-text invisible'>
                             <span>{it.L('Manage funds')}</span>
@@ -292,13 +292,17 @@ const Metatrader = () => (
                             <div id='view_3' className='gr-row invisible'>
                                 <div className='container gr-12'>
                                     <p id='trading_password_new_user' className='center-text notice-msg invisible'>
-                                        {it.L('Set a trading password. Use this to log in and trade on MT5.')}
+                                        {it.L('Create a MT5 password. You can use this password for all your MT5 accounts.')}
                                     </p>
-                                    <p id='trading_password_existing_user' className='notice-msg invisible'>
-                                        {it.L('Please enter your trading password to create an account. If you\'ve forgotten your password, click [_1]Reset password[_2]', '<strong>', '</strong>')}
+                                    <p id='trading_password_new_user_confirm' className='center-text notice-msg invisible'>
+                                        {it.L('Confirm to create your MT5 password')}
                                     </p>
+                                    <p id='trading_password_existing_user' className='center-text notice-msg invisible' />
                                     <p id='trading_password_reset_required' className='notice-msg center-text invisible'>
                                         {it.L('To many attempts. Please try again in a few minutes')}
+                                    </p>
+                                    <p id='trading_password_change_notice' className='error-msg center-text invisible'>
+                                        {it.L('This will change the password to all of your MT5 accounts.')}
                                     </p>
                                     <div id='trading_password_input' className='center-text'>
                                         <FormRow
@@ -308,15 +312,15 @@ const Metatrader = () => (
                                             required
                                             type='password'
                                             id='trading_password'
-                                            label={it.L('Trading password')}
+                                            label={it.L('MT5 password')}
                                         />
                                     </div>
                                     <div id='view_3-buttons_existing_user' className='gr-padding-10 center-text'>
                                         <p id='trading_password_existing_user_validation_error' className='align-start invisible'>
-                                            {it.L('Hint: You may have chosen a different trading password from your [_1] log in password.', it.website_name)}
+                                            {it.L('Hint: You may have chosen a different MT5 password from your [_1] log in password.', it.website_name)}
                                         </p>
                                         <button type='button' id='btn_forgot_trading_password' className='button button-secondary btn-back'>
-                                            {it.L('Reset password')}
+                                            {it.L('Forgot password?')}
                                         </button>
                                         <button className='button'  id='existing_user_btn_submit_new_account' type='submit' action='new_account'>
                                             {it.L('Add account')}
@@ -326,11 +330,14 @@ const Metatrader = () => (
                                         <button className='button button-secondary btn-cancel' id='new_user_cancel_button'>
                                             {it.L('Cancel')}
                                         </button>
-                                        <a className='button button-primary invisible' id='has_mt5_new_user_btn_submit_new_account' href={it.url_for('user/security/change_passwordws')}>
-                                            <span>{it.L('Set trading password')}</span>
+                                        <a className='button button-secondary btn-back-password invisible' id='new_user_back_button' href='javascript:;'>
+                                            <span>{it.L('Back')}</span>
                                         </a>
                                         <button className='button invisible' id='new_user_btn_submit_new_account' type='submit' action='new_account'>
-                                            {it.L('Set trading password')}
+                                            {it.L('Create MT5 password')}
+                                        </button>
+                                        <button className='button invisible' id='new_user_btn_submit_new_account_confirm' type='submit' action='new_account'>
+                                            {it.L('Create')}
                                         </button>
                                     </div>
                                     <div id='view_3-buttons_reset_password' className='gr-padding-10 center-text'>
@@ -378,29 +385,56 @@ const Metatrader = () => (
                         <div className='gr-6 gr-12-m flex'>
                             <div className='mt-panel mt-container' >
                                 <div className='center-text hint gr-padding-20 gr-parent'>
-                                    <div id='existing_client_message' className='invisible'>
-                                        <h3 className='secondary-color'>{it.L('You have a trading password for MT5')}</h3>
-                                        <p className='notice-msg  center-text font-n'>
-                                            {it.L('Use trading password to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices.')}
-                                        </p>
-                                        <a
-                                            href={it.url_for('user/security/change_passwordws')}
-                                            className='button mt5-web-link'
-                                        >
-                                            <span>{it.L('Manage trading password')}</span>
-                                        </a>
-                                    </div>
-                                    <div id='new_client_message'  className='invisible'>
-                                        <h3 className='secondary-color'>{it.L('Trading password — a new, easy way to sign in to your MT5 accounts')}</h3>
-                                        <p className='notice-msg  center-text  font-n'>
-                                            {it.L('A trading password is used to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices. ')}
-                                        </p>
-                                        <a
-                                            href={it.url_for('user/security/change_passwordws')}
-                                            className='button mt5-web-link'
-                                        >
-                                            <span>{it.L('Set trading password')}</span>
-                                        </a>
+                                    <div id='existing_client_message'>
+                                        <div className='step-1'>
+                                            <h3 className='password_change_title secondary-color'>{it.L('MT5 password')}</h3>
+                                            <p className='notice-msg center-text font-n'>
+                                                {it.L('Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps.')}
+                                            </p>
+                                            {/* TODO: temporary invisible. refactor this when design is updated */}
+                                            <div id='dummy_password' className='gr-row form-row center-text-m two-rows dummy-password invisible'>
+                                                <div className='gr-12'>
+                                                    <label htmlFor='dummy-password' className='dummy-password--label'>
+                                                        {it.L('MT5 password')}
+                                                    </label>
+                                                </div>
+                                                <div className='gr-12'>
+                                                    <div className='dummy-password--field-wrapper'>
+                                                        <input
+                                                            type='password'
+                                                            className='dummy-password--input-field'
+                                                            id='dummy_password_input'
+                                                            value='dummy_password_1234567890'
+                                                            readOnly
+                                                            disabled
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a
+                                                id='password_change_button'
+                                                href='javascript:;'
+                                                className='button mt5-web-link full-width'
+                                            >
+                                                <span>{it.L('Change password')}</span>
+                                            </a>
+                                        </div>
+                                        <div className='step-2 invisible'>
+                                            <h3 className='secondary-color password_change_title'>
+                                                {it.L('Confirm to change your MT5 password')}
+                                            </h3>
+                                            <p className='error-msg center-text password_change_warning'>
+                                                {it.L('This will change the password to all of your MT5 accounts.')}
+                                            </p>
+                                            <div id='password_change_confirm_buttons'>
+                                                <a className='button button-secondary btn_cancel' href='javascript:;'>
+                                                    <span>{it.L('Cancel')}</span>
+                                                </a>
+                                                <a className='button btn_ok' href='javascript:;'>
+                                                    <span>{it.L('Confirm')}</span>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -411,7 +445,7 @@ const Metatrader = () => (
                                     <div className='center-text hint gr-padding-20 gr-parent'>
                                         <h3 className='secondary-color'>{it.L('Change investor password')}</h3>
                                     </div>
-                                    <p className='no-margin'>{it.L('Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create a password, or you have forgotten your password, please reset it.')}</p>
+                                    <p className='no-margin'>{it.L('Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you\'ve forgotten your password.')}</p>
                                     <FormRow autoComplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current investor password')} />
                                     <FormRow autoComplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New investor password')} />
                                     <p className='no-margin font-s'>
