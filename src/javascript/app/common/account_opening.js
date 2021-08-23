@@ -39,8 +39,12 @@ const AccountOpening = (() => {
             BinaryPjax.loadPreviousUrl();
             return -1;
         }
+        const country_code = State.getResponse('get_settings').country_code;
 
         if (window.location.pathname.includes('/real_account')) { // new signup flow
+            if (excluded_countries.includes(country_code)) {
+                BinaryPjax.load('user/accounts');
+            }
             const real_account_signup_target = param('account_type');
             const is_in_correct_path = upgrade_info.can_upgrade_to.some(lc => lc === real_account_signup_target);
             if (!is_in_correct_path) {
@@ -54,6 +58,9 @@ const AccountOpening = (() => {
             }
             return 0;
         }  // old signup flow (only for excluded countries)
+        if (!excluded_countries.includes(country_code)) {
+            BinaryPjax.load('user/accounts');
+        }
         if (!upgrade_info.is_current_path) {
             const upgradable_accounts_count = Object.keys(upgrade_info.upgrade_links).length;
             if (upgradable_accounts_count > 1) {
@@ -382,27 +389,34 @@ const AccountOpening = (() => {
     const createNewAccount = async (account_details, submit_button) => {
         FormManager.disableButton(submit_button);
         const is_maltainvest_account = !!account_details.new_account_maltainvest;
-        const currency = account_details.currency;
+        account_details.client_type = $('#chk_professional').is(':checked') ? 'professional' : 'retail';
         delete account_details.tax_identification_confirm;
         delete account_details.tnc;
         delete account_details.pep_declaration;
-        if (is_maltainvest_account) delete account_details.currency;
+        delete account_details.fs_professional;
+        
+        // Set currency after account is created for Maltainvest only
+        if (is_maltainvest_account && account_details.currency) {
+            const currency = account_details.currency;
+            delete account_details.currency;
+            sessionStorage.setItem('new_financial_account_set_currency', currency);
+        }
 
         const response = await BinarySocket.send(account_details);
-        if (response.error) showResponseError(response);
-        else {
+        if (response.error) {
+            if (response.error.code === 'show risk disclaimer') return true;
+            showResponseError(response);
+        } else {
             localStorage.setItem('is_new_account', 1);
             const email = Client.get('email');
             const loginid = response[is_maltainvest_account ? 'new_account_maltainvest' : 'new_account_real'].client_id;
             const token = response[is_maltainvest_account ? 'new_account_maltainvest' : 'new_account_real'].oauth_token;
             ClientBase.setNewAccount({ email, loginid, token });
-            // Set currency after account is created for Maltainvest only
-            if (is_maltainvest_account) {
-                sessionStorage.setItem('new_financial_account_set_currency', currency);
-                window.location.reload();
-            } else window.location.replace(urlFor('user/set-currency'));
+            if (is_maltainvest_account) window.location.reload();
+            else window.location.replace(urlFor('user/set-currency'));
         }
         FormManager.enableButton(submit_button);
+        return false;
     };
 
     const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
@@ -418,6 +432,7 @@ const AccountOpening = (() => {
     return {
         commonValidations,
         createNewAccount,
+        excluded_countries,
         getSinupPageLink,
         handleNewAccount,
         populateForm,

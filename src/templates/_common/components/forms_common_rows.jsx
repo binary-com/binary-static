@@ -190,7 +190,7 @@ export const AddressState = (row_class, row_id) => (
     />
 );
 
-export const AddressPostcode = ({ children, hint, row_class, row_id }) => (
+export const AddressPostcode = ({ children, hint, row_class, row_id, is_full_width }) => (
     <FormRow
         type='text'
         id='address_postcode'
@@ -199,6 +199,7 @@ export const AddressPostcode = ({ children, hint, row_class, row_id }) => (
         attributes={{ maxLength: '20', 'data-lpignore': true }}
         hint={hint}
         row_class={`postcode-form-row ${row_class || ''}`}
+        has_geovalidator={!is_full_width}
         row_id={row_id}
     >
         {children}
@@ -246,7 +247,7 @@ export const Tnc = ({ className, row_id }) => (
             <input type='checkbox' name='tnc' id='tnc' />
             <label htmlFor='tnc'>
                 {it.L(
-                    'I have read and agree to the [_1]terms and conditions[_2] of the site.',
+                    'I agree to the [_1]terms and conditions[_2].',
                     `<a target="_blank" href="${it.url_for('terms-and-conditions')}">`,
                     '</a>'
                 )}

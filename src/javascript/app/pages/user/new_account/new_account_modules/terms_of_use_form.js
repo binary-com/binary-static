@@ -1,6 +1,7 @@
-const getElementById = require('../../../../../_common/common_functions').getElementById;
-const localize       = require('../../../../../_common/localize').localize;
-const State          = require('../../../../../_common/storage').State;
+const professionalClient = require('../../../../pages/user/account/settings/professional_client');
+const getElementById     = require('../../../../../_common/common_functions').getElementById;
+const localize           = require('../../../../../_common/localize').localize;
+const State              = require('../../../../../_common/storage').State;
 
 const TermsOfUseForm = (() => {
     const init = async (fields, real_account_signup_target) => {
@@ -11,7 +12,7 @@ const TermsOfUseForm = (() => {
                 : 'gaming_company'
             ] || landing_company.financial_company;
         getElementById('lc-name').innerHTML = lc_to_upgrade_to.name;
-        getElementById('lc-country').innerHTML = lc_to_upgrade_to.country;
+        getElementById('lc-country').innerHTML = lc_to_upgrade_to.shortcode === 'iom' ? `the ${lc_to_upgrade_to.country}` : lc_to_upgrade_to.country;
         getElementById('lc-regulator').innerHTML = getRegulatorText(lc_to_upgrade_to.shortcode);
 
         $('#pep_declaration_note_toggle').off('click').on('click', (e) => {
@@ -20,6 +21,9 @@ const TermsOfUseForm = (() => {
             $('#pep_declaration_note').slideToggle();
         });
 
+        if (lc_to_upgrade_to.shortcode === 'maltainvest') {
+            professionalClient.init(real_account_signup_target === 'maltainvest', false);
+        }
         fields.forEach(field => {
             getElementById(`${field.section}_section`).setVisibility(1);
             getElementById(`${field.id}_row`).setVisibility(1);

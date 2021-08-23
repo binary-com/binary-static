@@ -20,7 +20,6 @@ const RealAccountOpening = (() => {
         const currency_to_set = sessionStorage.getItem('new_financial_account_set_currency');
         if (currency_to_set) AccountOpening.setCurrencyForFinancialAccount(currency_to_set);
         else {
-            if (AccountOpening.redirectAccount()) return;
             const residence_list_promise = BinarySocket.send({ residence_list: 1 });
             const account_settings_promise = BinarySocket.send({ get_settings: 1 });
             const financial_assessment_promise = BinarySocket.send({ get_financial_assessment: 1 });
@@ -29,12 +28,13 @@ const RealAccountOpening = (() => {
             const account_settings = account_settings_response.get_settings;
             const residence_list = residence_list_response.residence_list;
             const financial_assessment = financial_assessment_response.get_financial_assessment || {};
+            if (AccountOpening.redirectAccount()) return;
             const upgrade_info = Client.getUpgradeInfo();
 
             account_details = { residence: account_settings.country_code };
             Object.assign(account_details,
                 real_account_signup_target === 'maltainvest'
-                    ? { new_account_maltainvest: 1 }
+                    ? { new_account_maltainvest: 1, accept_risk: 0 }
                     : { new_account_real: 1 }
             );
 
@@ -80,11 +80,11 @@ const RealAccountOpening = (() => {
         AccountOpening.createNewAccount(account_details, $('#financial_risk_accept'));
     };
 
-    const onStepSubmitted = (req) => {
+    const onStepSubmitted = async (req) => {
         Object.assign(account_details, req);
         if (current_step === steps.length - 1) {
-            if (real_account_signup_target === 'maltainvest') showFinancialRiskWarning();
-            else AccountOpening.createNewAccount(account_details, $('#new_account_submit'));
+            const should_show_financial_risk_warning = await AccountOpening.createNewAccount(account_details, $('#new_account_submit'));
+            if (should_show_financial_risk_warning) showFinancialRiskWarning();
         } else renderStep(current_step++);
     };
 

@@ -18,7 +18,7 @@ const AddressDetailForm = () => (
             <AddressLine2 row_id='address_line_2_row' row_class='invisible' />
             <AddressCity row_id='address_city_row' row_class='invisible' />
             <AddressState row_id='address_state_row' row_class='invisible' />
-            <AddressPostcode row_id='address_postcode_row' row_class=' invisible' />
+            <AddressPostcode row_id='address_postcode_row' row_class=' invisible' is_full_width />
         </div>
         <div className='align-end' id='submit_section'>
             <a className='button button-secondary btn_cancel action_previous margin-v-10 inline-block-button' href='javascript:;'><span>{it.L('Previous')}</span></a>

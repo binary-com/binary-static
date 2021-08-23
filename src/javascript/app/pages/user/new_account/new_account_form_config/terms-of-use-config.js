@@ -9,6 +9,12 @@ const getTermsOfUseConfig = [
         rules       : [],
     },
     {
+        id          : 'fs_professional',
+        section     : 'terms_of_use_section',
+        supported_in: ['maltainvest'],
+        rules       : [],
+    },
+    {
         id          : 'risk_disclaimer',
         section     : 'terms_of_use_section',
         supported_in: ['maltainvest', 'svg'],
