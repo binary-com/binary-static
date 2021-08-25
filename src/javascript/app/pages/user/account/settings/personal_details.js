@@ -16,7 +16,6 @@ const getPropertyValue = require('../../../../../_common/utility').getPropertyVa
 const PersonalDetails = (() => {
     const form_id                = '#frmPersonalDetails';
     const real_acc_elements      = '.RealAcc';
-    const row_customer_support = '.rowCustomerSupport';
     const name_fields            = ['first_name', 'last_name'];
 
     let is_for_new_account = false;
@@ -371,7 +370,7 @@ const PersonalDetails = (() => {
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
                     $(form_id).setVisibility(0);
                     $('#missing_details_notice').setVisibility(0);
-                    $(row_customer_support).setVisibility(0);
+                    $('.rowCustomerSupport').setVisibility(0);
                     $('#msg_main').setVisibility(1);
                     return;
                 }
