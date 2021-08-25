@@ -129,14 +129,23 @@ const PersonalDetails = (() => {
     };
 
     const selectContactCSMessage = (immutable_fields) => {
-        const has_name = /name/.test(immutable_fields.toString());
-        const has_tax_info = /tax/.test(immutable_fields.toString());
-        if (has_name && has_tax_info) {
+        const has_name          = /name/.test(immutable_fields.toString());
+        const has_date_of_birth = /date_of_birth/.test(immutable_fields.toString());
+        const has_tax_info      = /tax/.test(immutable_fields.toString());
+        if (has_name && has_date_of_birth && has_tax_info) {
             $('.full-cs-msg').setVisibility(1);
+        } else if (!has_name && !has_date_of_birth && !has_tax_info) {
+            $('.cs-msg-without-name-dob-and-tax-info').setVisibility(1);
+        } else if (!has_name && !has_date_of_birth) {
+            $('.cs-msg-without-name-and-dob').setVisibility(1);
+        } else if (!has_date_of_birth && !has_tax_info) {
+            $('.cs-msg-without-dob-and-tax-info').setVisibility(1);
         } else if (!has_name && !has_tax_info) {
             $('.cs-msg-without-name-and-tax-info').setVisibility(1);
         } else if (!has_name) {
             $('.cs-msg-without-name').setVisibility(1);
+        } else if (!has_date_of_birth) {
+            $('.cs-msg-without-dob').setVisibility(1);
         } else if (!has_tax_info) {
             $('.cs-msg-without-tax-info').setVisibility(1);
         }
