@@ -16,7 +16,7 @@ const getPropertyValue = require('../../../../../_common/utility').getPropertyVa
 const PersonalDetails = (() => {
     const form_id                = '#frmPersonalDetails';
     const real_acc_elements      = '.RealAcc';
-    const real_acc_auth_elements = '.RealAccAuth';
+    const row_customer_support = '.rowCustomerSupport';
     const name_fields            = ['first_name', 'last_name'];
 
     let is_for_new_account = false;
@@ -133,13 +133,13 @@ const PersonalDetails = (() => {
         const has_name = /name/.test(immutable_fields.toString());
         const has_tax_info = /tax/.test(immutable_fields.toString());
         if (has_name && has_tax_info) {
-            $('.rowCustomerSupport').not('.full-cs-msg').setVisibility(0);
+            $('.full-cs-msg').setVisibility(1);
         } else if (!has_name && !has_tax_info) {
-            $('.rowCustomerSupport').not('.cs-msg-without-name-and-tax-info').setVisibility(0);
+            $('.cs-msg-without-name-and-tax-info').setVisibility(1);
         } else if (!has_name) {
-            $('.rowCustomerSupport').not('.cs-msg-without-name').setVisibility(0);
+            $('.cs-msg-without-name').setVisibility(1);
         } else if (!has_tax_info) {
-            $('.rowCustomerSupport').not('.cs-msg-without-tax-info').setVisibility(0);
+            $('.cs-msg-without-tax-info').setVisibility(1);
         }
     };
 
@@ -180,7 +180,6 @@ const PersonalDetails = (() => {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
             if (is_fully_authenticated) {
-                $(real_acc_auth_elements).setVisibility(1);
                 selectContactCSMessage(get_settings.immutable_fields);
             }
         }
@@ -372,7 +371,7 @@ const PersonalDetails = (() => {
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
                     $(form_id).setVisibility(0);
                     $('#missing_details_notice').setVisibility(0);
-                    $('.rowCustomerSupport').setVisibility(0);
+                    $(row_customer_support).setVisibility(0);
                     $('#msg_main').setVisibility(1);
                     return;
                 }

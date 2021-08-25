@@ -80,10 +80,10 @@ const PersonalDetails = () => (
             <SubmitButton is_centered id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} className='gr-6 gr-centered' />
         </form>
 
-        <p className='required invisible RealAccAuth rowCustomerSupport full-cs-msg'>{it.L('To change your name, date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
-        <p className='required invisible RealAccAuth rowCustomerSupport cs-msg-without-name'>{it.L('To change your date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
-        <p className='required invisible RealAccAuth rowCustomerSupport cs-msg-without-tax-info'>{it.L('To change your name, date of birth, country of residence, or email, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
-        <p className='required invisible RealAccAuth rowCustomerSupport cs-msg-without-name-and-tax-info'>{it.L('To change your date of birth, country of residence, or email, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
+        <p className='required invisible rowCustomerSupport full-cs-msg'>{it.L('To change your name, date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
+        <p className='required invisible rowCustomerSupport cs-msg-without-name'>{it.L('To change your date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
+        <p className='required invisible rowCustomerSupport cs-msg-without-tax-info'>{it.L('To change your name, date of birth, country of residence, or email, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
+        <p className='required invisible rowCustomerSupport cs-msg-without-name-and-tax-info'>{it.L('To change your date of birth, country of residence, or email, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
     </React.Fragment>
 );
 
