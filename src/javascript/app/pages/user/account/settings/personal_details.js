@@ -14,9 +14,9 @@ const getHashValue     = require('../../../../../_common/url').getHashValue;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
-    const form_id                = '#frmPersonalDetails';
-    const real_acc_elements      = '.RealAcc';
-    const name_fields            = ['first_name', 'last_name'];
+    const form_id           = '#frmPersonalDetails';
+    const real_acc_elements = '.RealAcc';
+    const name_fields       = ['first_name', 'last_name'];
 
     let is_for_new_account = false;
 
