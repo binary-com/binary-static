@@ -40,7 +40,7 @@ const getRequiredFields = (landing_company, all_fields) =>
     all_fields.filter(field => field.supported_in.includes(landing_company));
 
 const termsOfUseConfig = ({ real_account_signup_target }) => ({
-    title           : localize('Terms of use'),
+    title           : localize('Terms and conditions'),
     body_module     : TermsOfUseForm,
     body_module_step: 'terms_of_use_step',
     fields          : getRequiredFields(real_account_signup_target, getTermsOfUseConfig),

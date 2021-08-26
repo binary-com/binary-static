@@ -58,7 +58,7 @@ const addressDetailsConfig = ({ real_account_signup_target, account_settings }) 
     const is_svg = real_account_signup_target === 'svg';
     const config = getAddressDetailsConfig({ account_settings, is_svg });
     return {
-        title           : localize('Address'),
+        title           : localize('Address details'),
         body_module     : AddressDetailForm,
         body_module_step: 'address_detail_step',
         fields          : getRequiredFields(real_account_signup_target, config),

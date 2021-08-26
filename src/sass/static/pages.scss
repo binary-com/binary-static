@@ -911,6 +911,10 @@ body #not_authenticated_financial ul.checked > li {
     margin-top: 20px;
 }
 
+#ui-datepicker-div {
+    z-index: 3 !important;
+}
+
 .center-select-m {
     text-align-last: center;
 }
