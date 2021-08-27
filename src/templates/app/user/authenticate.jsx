@@ -51,7 +51,7 @@ const Authenticate = () => (
             <div id='idv_document_submit' className='idv-container invisible'>
                 <div className='document-submit center-text'>
                     <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verify_identity.svg')} />
-                    <h1 className='idv-container__header'>{it.L('Verify Your Identity')}</h1>
+                    <h1 className='idv-container__header'>{it.L('Verify your identity')}</h1>
                     <p>{it.L('Please select the document type and enter the document number.')}</p>
                 </div>
                 <div className='idv-container__document-container'>
@@ -65,7 +65,7 @@ const Authenticate = () => (
                                 type='text'
                                 maxLength={20}
                                 className='idv-container__input'
-                                placeholder={it.L(('Enter Your Document Number'))}
+                                placeholder={it.L(('Enter your document number'))}
                             />
                             <span id='document_example_format' />
                         </fieldset>

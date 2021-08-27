@@ -1097,7 +1097,7 @@ const Authenticate = (() => {
         if (selected_country) {
             const $enabled_options = $('<select/>');
             $enabled_options.append(makeOption({
-                text       : localize('Please select a document type.'),
+                text       : localize('Choose a document type'),
                 value      : 'initial',
                 is_disabled: 'disabled',
             }));
