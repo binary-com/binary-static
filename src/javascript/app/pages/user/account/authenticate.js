@@ -18,6 +18,7 @@ const TabSelector             = require('../../../../_common/tab_selector');
 const Url                     = require('../../../../_common/url');
 const showLoadingImage        = require('../../../../_common/utility').showLoadingImage;
 const getDocumentData         = require('../../../../_common/utility').getDocumentData;
+const getRegex                = require('../../../../_common/utility').getRegex;
 
 /*
     To handle onfido unsupported country, we handle the functions separately,
@@ -1139,7 +1140,7 @@ const Authenticate = (() => {
             document_input.addEventListener('keyup', (e) => {
                 e.preventDefault();
                 const { example_format, regex } = document_type;
-                const format_regex = new RegExp(regex);
+                const format_regex = getRegex(regex);
 
                 if (format_regex.test(e.target.value)) {
                     document_number = e.target.value;
@@ -1417,9 +1418,8 @@ const Authenticate = (() => {
         const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
 
         if (identity_status === 'none') {
-            // $('#authentication_tab').setVisibility(0);
-            // handleIdvCountrySelector();
-            handleManual();
+            $('#authentication_tab').setVisibility(0);
+            handleIdvCountrySelector();
         } else if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);

@@ -384,9 +384,27 @@ const idv_document_data = {
     },
 };
 
+const getRegex = target_regex => {
+    const output_regex = regex.find(r => r.regex_string === target_regex);
+    if (output_regex) {
+        return new RegExp(output_regex.value, output_regex.flags);
+    }
+    return new RegExp(target_regex);
+};
+
+// Unsupported Regex List
+const regex = [
+    {
+        regex_string: '^(?i)G[a-zA-Z0-9]{7,9}$',
+        value       : '^G[a-zA-Z0-9]{7,9}$',
+        flags       : 'i',
+    },
+];
+
 module.exports = {
     showLoadingImage,
     getDocumentData,
+    getRegex,
     getHighestZIndex,
     downloadCSV,
     template,
