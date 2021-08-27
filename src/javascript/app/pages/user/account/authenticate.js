@@ -1395,6 +1395,8 @@ const Authenticate = (() => {
     const handleManual = () => {
         $('#idv-container').setVisibility(0);
         $('#authentication_tab').setVisibility(1);
+        $('#msg_personal_details').setVisibility(1);
+        TabSelector.updateTabDisplay();
         $('#not_authenticated_uns').setVisibility(1);
         initUnsupported();
     };
@@ -1415,8 +1417,9 @@ const Authenticate = (() => {
         const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
 
         if (identity_status === 'none') {
-            $('#authentication_tab').setVisibility(0);
-            handleIdvCountrySelector();
+            // $('#authentication_tab').setVisibility(0);
+            // handleIdvCountrySelector();
+            handleManual();
         } else if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
