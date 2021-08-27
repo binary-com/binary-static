@@ -107,7 +107,7 @@ const Authenticate = () => (
                 <p>{it.L('It looks like your identity document has expired. Please try again with a valid document.')}</p>
                 <Button
                     id='idv_expired_btn'
-                    className='button'
+                    className='button idv-status'
                     text={it.L('Try again')}
                 />
             </div>
@@ -116,11 +116,20 @@ const Authenticate = () => (
                 <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verification_failed.svg')} />
                 <h1 className='idv-container__header'>{it.L('Verification of document number failed')}</h1>
                 <p>{it.L('We were unable to verify your identity based on the details you entered.')}</p>
+                <p id='idv_document_failed_text' className='invisible'>
+                    {it.L('Please upload your identity document.')}
+                </p>
                 <Button
                     id='idv_document_failed_try_again_btn'
-                    className='button'
+                    className='button idv-status'
                     href={`${it.url_for('user/authenticate')}?authentication_tab=poi`}
                     text={it.L('Try again')}
+                />
+                <Button
+                    id='idv_document_failed_upload_btn'
+                    className='button idv-status'
+                    href={`${it.url_for('user/authenticate')}?authentication_tab=poi`}
+                    text={it.L('Upload identity document')}
                 />
             </div>
 
@@ -130,7 +139,7 @@ const Authenticate = () => (
                 <p>{it.L('We\'ll process your details within a few minutes and notify its status via email. Next, we\'ll need your proof of address')}</p>
                 <Button
                     id='idv_pending_submit_poa_btn'
-                    className='button'
+                    className='button idv-status'
                     text={it.L('Submit proof of address')}
                 />
             </div>
@@ -147,7 +156,7 @@ const Authenticate = () => (
                 <p>{it.L('Next, we\'ll need your proof of address')}</p>
                 <Button
                     id='idv_verified_poa_btn'
-                    className='button'
+                    className='button idv-status'
                     href={`${it.url_for('user/authenticate')}?authentication_tab=poa`}
                     text={it.L('Submit proof of address')}
                 />
@@ -160,7 +169,7 @@ const Authenticate = () => (
             <p>{it.L('We will inform you when your account needs to be authenticated.')}</p>
         </div>
 
-        <div id='authentication_tab' className='gr-padding-20'>
+        <div id='authentication_tab' className='gr-padding-20 invisible'>
             <TabContainer className='gr-parent full-width gr-11 gr-12-m gr-centered' theme='light'>
                 <div className='gr-row gr-hide gr-show-m mobile-menu'>
                     <ArrowsMobile parent='authentication_tab' direction='left' />

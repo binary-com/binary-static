@@ -1017,9 +1017,8 @@ const Authenticate = (() => {
             }));
             residence_list.forEach((res) => {
                 $residence_dropdown.append(makeOption({
-                    text       : res.text,
-                    value      : res.value,
-                    is_disabled: res.disabled,
+                    text : res.text,
+                    value: res.value,
                 }));
             });
 
@@ -1223,17 +1222,26 @@ const Authenticate = (() => {
                 break;
             case 'rejected':
                 $('#idv_document_failed').setVisibility(1);
+                $('#idv_document_failed_upload_btn').setVisibility(0);
                 // If IDV has remaining attempt
                 if (Number(submissions_left > 0)) {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
                         $('#idv_document_failed').setVisibility(0);
                         handleIdvCountrySelector();
                     });
-                } else {
+                } else if (selected_country.identity.services.onfido.is_country_supported) {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
                         $('#idv_document_failed').setVisibility(0);
                         const { country_code, documents_supported } = account_status.identity.services.onfido;
                         handleOnfido(country_code, documents_supported);
+                    });
+                } else {
+                    $('#idv_document_failed_try_again_btn').setVisibility(0);
+                    $('#idv_document_failed_text').setVisibility(1);
+                    $('#idv_document_failed_upload_btn').setVisibility(1);
+                    $('#idv_document_failed_upload_btn').on('click', () => {
+                        $('#idv_document_failed').setVisibility(0);
+                        handleManual();
                     });
                 }
                 break;
