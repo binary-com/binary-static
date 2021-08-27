@@ -14,6 +14,11 @@
         border-radius: $BORDER_RADIUS;
         margin-bottom: 20px;
 
+        .password_change_warning {
+            margin: 25px 0 32px;
+            font-size: $FONT_SIZE_L;
+            font-style: normal;
+        }
         & .password {
             &--message {
                 white-space: unset;
@@ -34,6 +39,20 @@
                 }
             }
         }
+        & .dummy-password {
+            margin-bottom: 17px;
+
+            &--field-wrapper {
+                position: relative;
+                max-width: auto;
+            }
+            &--input-field {
+                font-size: $FONT_SIZE_L;
+            }
+            &--label {
+                font-size: $FONT_SIZE_L;
+            }
+        }
         & #trading_password_input {
             padding-left: 7rem;
         }
@@ -45,6 +64,10 @@
                 width: calc(100% - 20px);
                 padding: initial;
 
+                .form-row {
+                    width: 250px;
+                    margin: 0 auto;
+                }
                 & .password--meter.password--meter-bg {
                     top: 28px;
                 }
@@ -69,6 +92,7 @@
         color: $COLOR_BLUE;
         background: $COLOR_LIGHT_GRAY;
         font-weight: bold;
+        text-align: center;
 
         &:before {
             content: '';
@@ -305,7 +329,6 @@
             }
             button .barspinner.white {
                 height: 13px;
-                margin: 3px;
             }
             #frm_cashier {
                 .mt-panel {
@@ -337,7 +360,7 @@
                 .change-investor-button {
                     margin-bottom: 10px;
                 }
-                #existing_client_message, #new_client_message {
+                #existing_client_message {
                     .notice-msg {
                         padding: 16px;
                     }
@@ -521,9 +544,21 @@
 }
 
 @media (max-width: 480px) {
-    #view_3-buttons_existing_user {
+    #view_3 {
+        .button {
+            width: 220px;
+            padding: 10px 20px;
+        }
         .button + .button {
             margin-left: 0 !important;
+        }
+    }
+    .button-full-width-m {
+        width: 100%;
+
+        span {
+            width: 100%;
+            box-sizing: border-box;
         }
     }
 }
@@ -581,4 +616,11 @@
 
 tbody#instruments > tr > td {
     width: 33%;
+}
+
+#password-change-email-popup, #success_reset_trading_pw_dialog {
+    #dialog_content {
+        max-width: 480px;
+        padding-top: 32px;
+    }
 }

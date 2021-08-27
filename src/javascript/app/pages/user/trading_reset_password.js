@@ -19,10 +19,10 @@ const TradingResetPassword = (() => {
         } else {
             Dialog.alert({
                 id               : 'success_reset_trading_pw_dialog',
-                localized_message: localize('You have a new trading password. Use this to log in to MetaTrader 5.'),
-                localized_title  : localize('Trading password'),
+                localized_message: localize('You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps.'),
+                localized_title  : localize('Success'),
                 ok_text          : localize('Done'),
-                onConfirm        : () => { BinaryPjax.load(Url.urlFor('trading')); },
+                onConfirm        : () => { BinaryPjax.load(Url.urlFor('user/metatrader')); },
             });
         }
     };
@@ -34,6 +34,7 @@ const TradingResetPassword = (() => {
             { selector: '#have_real_account',  validations: ['req'], exclude_request: 1 },
             { selector: '#new_password',       validations: ['req', 'password'] },
             { request_field: 'trading_platform_password_reset', value: 1 },
+            { request_field: 'platform', value: 'mt5' },
         ], true);
 
         FormManager.handleSubmit({

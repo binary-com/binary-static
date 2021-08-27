@@ -4,7 +4,7 @@ import { FormRow, Fieldset, SubmitButton } from '../../_common/components/forms.
 const TradingResetPassword = () => (
     <React.Fragment>
         <div className='static_full'>
-            <h1>{it.L('Trading password reset')}</h1>
+            <h1>{it.L('Change MT5 password')}</h1>
             <p className='notice-msg invisible' id='msg_trading_reset_password' />
 
             <div className='invisible' id='form_error'>
@@ -22,15 +22,15 @@ const TradingResetPassword = () => (
                 <form id='frm_trading_reset_password'>
                     <Fieldset legend={it.L('Details')}>
                         <div className='gr-12'>
-                            <p className='fieldset-subtitle'>{it.L('Enter a new trading password.')}</p>
+                            <p className='fieldset-subtitle'>{it.L('Create a new MT5 password.')}</p>
                             <FormRow
                                 autoComplete='new-password'
                                 has_password_meter
                                 type='password'
                                 id='new_password'
-                                label={it.L('New trading password')}
+                                label={it.L('MT5 password')}
                             />
-                            <SubmitButton type='submit' no_error text={it.L('Confirm password')} />
+                            <SubmitButton type='submit' no_error text={it.L('Create')} />
                         </div>
                     </Fieldset>
                 </form>
