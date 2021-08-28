@@ -1188,6 +1188,7 @@ const Authenticate = (() => {
                                 $('#authentication_tab').setVisibility(1);
                                 $('#not_authenticated').setVisibility(1);
                                 $('#poi').setVisibility(0);
+                                $('#poa').setVisibility(1);
                                 Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                                 TabSelector.updateTabDisplay();
                             });
@@ -1254,6 +1255,7 @@ const Authenticate = (() => {
                         $('#authentication_tab').setVisibility(1);
                         $('#not_authenticated').setVisibility(1);
                         $('#poi').setVisibility(0);
+                        $('#poa').setVisibility(1);
                         Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                         TabSelector.updateTabDisplay();
                     });
@@ -1380,6 +1382,7 @@ const Authenticate = (() => {
                     // if POI is verified and POA is not verified, redirect to POA tab
                     if (needs_poa) {
                         Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
+                        $('#poa').setVisibility(1);
                     }
                     showCTAButton('document', 'verified');
                     $('#verified').setVisibility(1);
