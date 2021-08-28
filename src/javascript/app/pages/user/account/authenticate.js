@@ -32,7 +32,6 @@ const Authenticate = (() => {
     let file_checks          = {};
     let file_checks_uns      = {};
     let onfido,
-        account_status,
         available_document_list,
         residence_list,
         selected_country,
@@ -854,7 +853,7 @@ const Authenticate = (() => {
 
     const getAccountStatus = () => new Promise((resolve) => {
         BinarySocket.wait('get_account_status').then((response) => {
-            const authentication_response = response.get_account_status.authentication;
+            const authentication_response = response.get_account_status;
             resolve(authentication_response);
         });
     });
@@ -1083,7 +1082,7 @@ const Authenticate = (() => {
 
         const country_code = selected_country.value;
         const { has_visual_sample, documents_supported } = selected_country.identity.services.idv;
-        const needs_poa = account_status.needs_verification.length && account_status.needs_verification.includes('document');
+        const needs_poa = authentication_object.needs_verification.length && authentication_object.needs_verification.includes('document');
 
         let document_type,
             document_number;
@@ -1179,7 +1178,10 @@ const Authenticate = (() => {
                     if (response.error) {
                         // Show some error message to user
                     } else {
-                        // Success
+                        // Success - Update authentication object with new status
+                        BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(res => {
+                            authentication_object = res.get_account_status.authentication;
+                        });
                         $('#idv_document_submit').setVisibility(0);
                         if (needs_poa) {
                             $('#idv_submit_pending_need_poa').setVisibility(1);
@@ -1201,11 +1203,12 @@ const Authenticate = (() => {
         }
     };
 
-    const handleIdv = () => {
-        const { idv } = account_status.identity.services;
-        const { status, submissions_left } = idv;
-        const needs_poa = account_status.needs_verification.length && account_status.needs_verification.includes('document');
+    const handleIdv = async () => {
+        const account_status = await getAccountStatus();
         const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
+        const { idv } = authentication_object.identity.services;
+        const { status, submissions_left } = idv;
+        const needs_poa = authentication_object.needs_verification.length && authentication_object.needs_verification.includes('document');
 
         switch (status) {
             case 'pending':
@@ -1235,7 +1238,7 @@ const Authenticate = (() => {
                 } else if (selected_country.identity.services.onfido.is_country_supported) {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
                         $('#idv_document_failed').setVisibility(0);
-                        const { country_code, documents_supported } = account_status.identity.services.onfido;
+                        const { country_code, documents_supported } = authentication_object.identity.services.onfido;
                         handleOnfido(country_code, documents_supported);
                     });
                 } else {
@@ -1310,12 +1313,12 @@ const Authenticate = (() => {
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
         } else {
-            const needs_poa = account_status.needs_verification.length && account_status.needs_verification.includes('document');
+            const needs_poa = authentication_object.needs_verification.length && authentication_object.needs_verification.includes('document');
             const {
                 status,
                 submissions_left,
                 last_rejected: rejected_reasons,
-            } = account_status.identity.services.onfido;
+            } = authentication_object.identity.services.onfido;
     
             switch (status) {
                 case 'none':
@@ -1407,18 +1410,18 @@ const Authenticate = (() => {
     };
 
     const initAuthentication = async () => {
-        account_status = await getAccountStatus();
+        const account_status = await getAccountStatus();
         if (!account_status || account_status.error) {
             $('#authentication_tab').setVisibility(0);
             $('#error_occured').setVisibility(1);
             return;
         }
-
-        const { attempts, document, identity, needs_verification } = account_status;
-        const identity_status = identity.status;
-        const identity_last_attempt = attempts.latest;
+        authentication_object = account_status.authentication;
         const is_idv_disallowed = account_status.status.some(status => status === 'idv_disallowed');
 
+        const { attempts, document, identity, needs_verification } = authentication_object;
+        const identity_status = identity.status;
+        const identity_last_attempt = attempts.latest;
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
         const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
 
@@ -1453,8 +1456,9 @@ const Authenticate = (() => {
 
     const onLoad = async () => {
         cleanElementVisibility();
-        account_status = await getAccountStatus();
-        const is_required = checkIsRequired(account_status);
+        const account_status = await getAccountStatus();
+        authentication_object = account_status.authentication;
+        const is_required = checkIsRequired(authentication_object);
 
         if (!isAuthenticationAllowed()) {
             $('#authentication_tab').setVisibility(0);
