@@ -996,7 +996,7 @@ const Authenticate = (() => {
         $('#limited_poi').setVisibility(0);
     };
 
-    const handleIdvCountrySelector = async () => {
+    const handleIdvCountrySelector = async (is_idv_disallowed = false) => {
         const $residence_dropdown = $('#country_dropdown');
         const next_button = document.getElementById('button_next_country_selected');
         selected_country = null;
@@ -1047,7 +1047,7 @@ const Authenticate = (() => {
                     const is_onfido_supported = selected_country.identity.services.onfido.is_country_supported;
                     $('#idv_country_selector').setVisibility(0);
 
-                    if (is_idv_supported) {
+                    if (is_idv_supported && !is_idv_disallowed) {
                         handleIdvDocumentSubmit();
                     } else if (is_onfido_supported) {
                         const { documents_supported } = selected_country.identity.services.onfido;
@@ -1205,6 +1205,7 @@ const Authenticate = (() => {
         const { idv } = account_status.identity.services;
         const { status, submissions_left } = idv;
         const needs_poa = account_status.needs_verification.length && account_status.needs_verification.includes('document');
+        const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
 
         switch (status) {
             case 'pending':
@@ -1226,10 +1227,10 @@ const Authenticate = (() => {
                 $('#idv_document_failed').setVisibility(1);
                 $('#idv_document_failed_upload_btn').setVisibility(0);
                 // If IDV has remaining attempt
-                if (Number(submissions_left > 0)) {
+                if (Number(submissions_left > 0) && !is_idv_disallowed) {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
                         $('#idv_document_failed').setVisibility(0);
-                        handleIdvCountrySelector();
+                        handleIdvCountrySelector(is_idv_disallowed);
                     });
                 } else if (selected_country.identity.services.onfido.is_country_supported) {
                     $('#idv_document_failed_try_again_btn').on('click', () => {
@@ -1267,7 +1268,7 @@ const Authenticate = (() => {
                 $('#idv_document_expired').setVisibility(1);
                 $('#idv_expired_btn').on('click', () => {
                     $('#idv_document_expired').setVisibility(0);
-                    handleIdvCountrySelector();
+                    handleIdvCountrySelector(is_idv_disallowed);
                 });
                 break;
             default:
@@ -1416,13 +1417,14 @@ const Authenticate = (() => {
         const { attempts, document, identity, needs_verification } = account_status;
         const identity_status = identity.status;
         const identity_last_attempt = attempts.latest;
+        const is_idv_disallowed = account_status.status.some(status => status === 'idv_disallowed');
 
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
         const should_allow_resubmission = needs_verification.includes('identity') || needs_verification.includes('document');
 
         if (identity_status === 'none') {
             $('#authentication_tab').setVisibility(0);
-            handleIdvCountrySelector();
+            handleIdvCountrySelector(is_idv_disallowed);
         } else if (is_fully_authenticated && !should_allow_resubmission) {
             $('#authentication_tab').setVisibility(0);
             $('#authentication_verified').setVisibility(1);
