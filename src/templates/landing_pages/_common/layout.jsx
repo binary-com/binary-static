@@ -3,7 +3,6 @@ import React                  from 'react';
 import OutdatedBrowserMessage from './outdated_browser_message.jsx';
 import Title                  from '../../_common/components/title.jsx';
 import AntiClickjack          from '../../_common/includes/anti_clickjack.jsx';
-import SurveyPopUp          from '../../_common/includes/survey_pop_up.jsx';
 import Favicons               from '../../_common/includes/favicons.jsx';
 
 const Layout = ({
@@ -15,7 +14,6 @@ const Layout = ({
     <html>
         <head>
             <AntiClickjack />
-            <SurveyPopUp />
 
             <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
             <meta httpEquiv='Content-Language' content={it.language} />

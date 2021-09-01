@@ -274,7 +274,7 @@ const MetaTrader = (() => {
         if (Validation.validate(`#frm_${action}`)) {
             MetaTraderUI.disableButton(action);
             // further validations before submit (password_check)
-            MetaTraderUI.postValidate(acc_type, action).then((is_ok) => {
+            MetaTraderUI.postValidate(acc_type, action).then(async (is_ok) => {
                 if (!is_ok) {
                     MetaTraderUI.enableButton(action);
                     return;
@@ -289,6 +289,25 @@ const MetaTrader = (() => {
                 }
 
                 const req = makeRequestObject(acc_type, action);
+                if (action === 'new_account' && MetaTraderUI.shouldSetTradingPassword()) {
+                    const { mt5_login_list } = await BinarySocket.send({ mt5_login_list: 1 });
+                    const has_mt5_account = mt5_login_list.length > 0;
+                    if (has_mt5_account && !MetaTraderUI.getTradingPasswordConfirmVisibility()) {
+                        MetaTraderUI.setTradingPasswordConfirmVisibility(1);
+                        MetaTraderUI.enableButton(action);
+                        return;
+                    }
+                    const response = await BinarySocket.send({
+                        trading_platform_password_change: 1,
+                        new_password                    : req.mainPassword,
+                        platform                        : 'mt5',
+                    });
+                    if (response.error) {
+                        MetaTraderUI.displayFormMessage(response.error.message, action);
+                        MetaTraderUI.enableButton(action, response);
+                        return;
+                    }
+                }
                 BinarySocket.send(req).then(async (response) => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);

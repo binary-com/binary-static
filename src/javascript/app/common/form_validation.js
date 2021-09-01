@@ -159,13 +159,14 @@ const Validation = (() => {
     // ------------------------------
     // ----- Validation Methods -----
     // ------------------------------
+
+    const validEmail        = value => /^(([a-zA-Z0-9][^!@£$%^&*=/?§±~<>(){}[\]\\.,;:\s@"'`]+(\.[^!@£$%^&*=/?§±~<>(){}[\]\\.,;:\s@"'`]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
     const validRequired     = (value, options, field) => {
         if (value.length) return true;
         // else
         ValidatorsMap.get().req.message = field.type === 'checkbox' ? localize('Please select the checkbox.') : localize('This field is required.');
         return false;
     };
-    const validEmail        = value => /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
     const validPassword     = (value, options, field) => {
         if (/^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])[ -~]*$/.test(value)) {
             Password.checkPassword(field.selector, true);
@@ -378,7 +379,7 @@ const Validation = (() => {
     };
 
     const showError = (field, localized_message) => {
-        if (field.$error.html() === localized_message) return;
+        if (field.$error.html() === localized_message && field.$error.is(':visible')) return;
         clearError(field);
         Password.removeCheck(field.selector);
         field.$error.html(localized_message).setVisibility(1);

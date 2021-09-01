@@ -854,6 +854,9 @@ body #not_authenticated_financial ul.checked > li {
         margin-top: 20px;
         margin-bottom: 16px;
     }
+    #deposit_btn {
+        margin-bottom: 16px;
+    }
 }
 
 .platforms-content {
@@ -1397,26 +1400,36 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
     &-box {
-        max-height: 86px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         border-radius: 9px;
         margin-top: 10px;
 
+        p {
+            font-size: 16px;
+        }
         &-desc {
             overflow: hidden;
             text-align: left;
-            margin-left: 15px;
+            margin-left: 7px;
             width: 80%;
             font-weight: 500;
 
             @media only screen and (max-width: 576px) {
-                font-size: 13px;
-                margin-top: 0.6rem;
-                width: 70%;
+                width: 72%;
                 word-wrap: break-word;
                 margin-left: 8px;
+
+                p {
+                    font-size: 13px;
+                }
+            }
+            @media only screen and (max-width: 390px) {
+                font-size: 13px;
+                width: 70%;
+                word-wrap: break-word;
+                margin-left: 5px;
             }
 
             p {
@@ -1436,12 +1449,15 @@ body #not_authenticated_financial ul.checked > li {
             }
 
             span {
-                padding: 0 0.5rem;
+                padding: 0 0.2rem;
                 border-left: 0.5px solid $COLOR_GRAY_SUB;
                 @media only screen and (max-width: 576px) {
                     padding: 0 0.2rem;
                 }
             }
+        }
+        &-icon {
+            height: 95px;
         }
         &-arrow {
             width: 5%;

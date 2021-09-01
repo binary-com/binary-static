@@ -83,7 +83,12 @@ const TickDisplay = (() => {
                 lang: { thousandsSep: ',' },
             });
             ChartSettings.setChartOptions(config);
-            chart = new Highstock.Chart(ChartSettings.getChartOptions());
+            
+            try {
+                chart = new Highstock.Chart(ChartSettings.getChartOptions());
+            } catch (e) {
+                // user switched to another page before the chart was loaded
+            }
 
             let resize_timeout;
             const el_chart_container = CommonFunctions.getElementById(id_render);

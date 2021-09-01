@@ -5,10 +5,7 @@ const GetCurrency = (() => {
     const getCurrenciesOfOtherAccounts = (is_different_company = false) => {
         const all_loginids     = Client.getAllLoginids();
         const other_currencies = [];
-        // console.log(Client.get('landing_company_shortcode'))
         const current_landing_company_shortcode = Client.get('landing_company_shortcode');
-        // console.log(Client.get('loginid'))
-        // console.log(all_loginids)
         all_loginids.forEach((loginid) => {
             // if it's not current client or under a different landing company, consider the currency
             if (is_different_company) {
@@ -54,34 +51,39 @@ const GetCurrency = (() => {
     };
 
     const getCurrencies = (landing_company, all_fiat) => {
-        const client_currency = Client.get('currency');
-        const is_crypto       = Currency.isCryptocurrency(client_currency);
-        const currency_values = getCurrencyValues();
+        let currencies_to_show = [];
+        const current_client_currency = Client.get('currency');
+        const is_crypto               = Currency.isCryptocurrency(current_client_currency);
+        const currency_values         = getCurrencyValues();
+        const is_virtual              = Client.get('is_virtual');
+        const has_real_account        = Client.hasAccountType('real');
+        const all_client_accounts     = Client.getAllAccountsObject();
+        const all_client_currencies   = Object.values(all_client_accounts).map(account => account.currency);
 
         const allowed_currencies =
               Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
 
         const available_crypto =
-              currency_values.cryptocurrencies.filter(c =>
-                  currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0 &&
-                  allowed_currencies.indexOf(c) > -1);
-        const can_open_crypto  = available_crypto.length;
+            currency_values.cryptocurrencies.filter(c =>
+                currency_values.other_currencies.concat(is_crypto ?
+                    current_client_currency : all_client_currencies).indexOf(c) < 0 &&
+                        allowed_currencies.indexOf(c) > -1);
 
-        let currencies_to_show = [];
+        const can_open_crypto = available_crypto.length;
 
         // only allow client to open more sub accounts if the last currency is not to be reserved for master account
-        if ((client_currency && (can_open_crypto || !currency_values.has_fiat)) ||
-            (!client_currency && (available_crypto.length > 1 || (can_open_crypto && !currency_values.has_fiat)))) {
+        if ((current_client_currency && (can_open_crypto || !currency_values.has_fiat)) ||
+            (!current_client_currency && (available_crypto.length > 1 ||
+                (can_open_crypto && !currency_values.has_fiat)))) {
             // if have sub account with fiat currency, or master account is fiat currency, only show cryptocurrencies
             // else show all
-            const is_virtual = Client.get('is_virtual');
 
             currencies_to_show =
-                !all_fiat && (currency_values.has_fiat || (!is_crypto && client_currency && !is_virtual)) ?
+                !all_fiat && (currency_values.has_fiat || (!is_crypto && current_client_currency && has_real_account)) ?
                     available_crypto : allowed_currencies;
             // remove client's currency and sub account currencies from list of currencies to show
             const currencies_to_compare = is_virtual ?
-                currency_values.other_currencies : currency_values.other_currencies.concat(client_currency);
+                currency_values.other_currencies : currency_values.other_currencies.concat(current_client_currency);
             currencies_to_show = currencies_to_show.filter(c => currencies_to_compare.indexOf(c) < 0);
         }
 
@@ -90,12 +92,12 @@ const GetCurrency = (() => {
 
     const getAllCurrencies = (landing_company) => {
         const allowed_currencies =
-              Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
-        const currency_values = getCurrencyValues();
-        const client_currency = Client.get('currency');
-        const is_virtual = Client.get('is_virtual');
-        const currencies_to_compare = is_virtual ?
-            currency_values.other_currencies : currency_values.other_currencies.concat(client_currency);
+            Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
+        const currency_values         = getCurrencyValues();
+        const current_client_currency = Client.get('currency');
+        const is_virtual              = Client.get('is_virtual');
+        const currencies_to_compare   = is_virtual ?
+            currency_values.other_currencies : currency_values.other_currencies.concat(current_client_currency);
 
         return allowed_currencies.filter(c => currencies_to_compare.indexOf(c) < 0);
     };

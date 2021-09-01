@@ -11,7 +11,8 @@ const urlFor               = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
     let landing_company;
-    const form_id = '#new_accounts';
+    const form_id          = '#new_accounts';
+    const has_real_account = Client.hasAccountType('real');
 
     const TableHeaders = (() => {
         let table_headers;
@@ -48,12 +49,12 @@ const Accounts = (() => {
 
             let element_to_show = '#no_new_accounts_wrapper';
             const upgrade_info  = Client.getUpgradeInfo();
-            if (upgrade_info.can_upgrade) {
+            if (upgrade_info.can_upgrade && !has_real_account) {
                 populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
-            if (upgrade_info.can_open_multi) {
+            if (upgrade_info.can_open_multi || has_real_account && Client.get('is_virtual')) {
                 populateMultiAccount();
             } else if (!can_change_currency) {
                 doneLoading(element_to_show);

@@ -299,6 +299,7 @@ const Header = (() => {
 
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
             const buildSpecificMessage = (string, additional) => template(string, [...additional]);
+            const buildMessageHref = (string, href) => template(string, [`<a href="${href}" target="_blank">`, '</a>']);
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
             const hasVerification = (string) => {
                 const { prompt_client_to_authenticate } = get_account_status;
@@ -357,6 +358,7 @@ const Header = (() => {
 
             const messages = {
                 cashier_locked          : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
+                system_maintenance      : () => buildMessageHref(localizeKeepPlaceholders('We’re updating our cashier system and it’ll be back online soon. Please see our [_1]status page[_2] for updates.'), 'https://deriv.statuspage.io/'),
                 currency                : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
                 unsubmitted             : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of identity and proof of address[_2].'),                                                                  'user/authenticate'),
                 expired                 : () => buildSpecificMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_3] and [_2]proof of address[_3] have expired.'),                                                   [`<a href='${Url.urlFor('user/authenticate')}'>`, `<a href='${Url.urlFor('user/authenticate')}?authentication_tab=poa'>`, '</a>']),
@@ -385,6 +387,7 @@ const Header = (() => {
 
             const validations = {
                 cashier_locked          : () => hasStatus('cashier_locked'),
+                system_maintenance      : () => hasStatus('system_maintenance'),
                 currency                : () => !Client.get('currency'),
                 unsubmitted             : () => hasVerification('unsubmitted'),
                 expired                 : () => hasVerification('expired'),
@@ -429,6 +432,7 @@ const Header = (() => {
                 'document',
                 'unwelcome',
                 'no_withdrawal_or_trading',
+                'system_maintenance',
                 'cashier_locked',
                 'withdrawal_locked_review',
                 'withdrawal_locked',
@@ -456,11 +460,14 @@ const Header = (() => {
             } else {
                 const el_account_status = createElement('span', { class: 'authenticated', 'data-balloon': localize('Account Authenticated'), 'data-balloon-pos': 'down' });
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
-                    authentication = State.getResponse('get_account_status.authentication') || {};
-                    get_account_status = State.getResponse('get_account_status') || {};
-                    status             = get_account_status.status;
+                    /* eslint-disable max-len */
+                    authentication               = State.getResponse('get_account_status.authentication') || {};
+                    get_account_status           = State.getResponse('get_account_status') || {};
+                    const has_cashier_validation = !!get_account_status.cashier_validation;
+                    const cashier_validation     = has_cashier_validation ? [...get_account_status.cashier_validation] : [];
+                    status                       = [...cashier_validation , ...get_account_status.status];
                     checkStatus(check_statuses_real);
-                    is_fully_authenticated = hasStatus('authenticated') && !+get_account_status.prompt_client_to_authenticate;
+                    is_fully_authenticated       = hasStatus('authenticated') && !+get_account_status.prompt_client_to_authenticate;
                     $('.account-id')[is_fully_authenticated ? 'append' : 'remove'](el_account_status);
                 });
             }

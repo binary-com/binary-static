@@ -43,18 +43,18 @@ const AccountOpening = (() => {
         const lc_to_upgrade_to = landing_company[is_financial ? 'financial_company' : 'gaming_company'] || landing_company.financial_company;
         switch (lc_to_upgrade_to.shortcode){
             case 'iom':
-                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), 'regulated by the UK Gaming Commission (UKGC),');
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), localize('regulated by the UK Gaming Commission (UKGC),'));
                 break;
             case 'malta':
-                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), 'regulated by the Malta Gaming Authority,');
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), localize('regulated by the Malta Gaming Authority,'));
                 break;
             case 'maltainvest':
-                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), 'regulated by the Malta Financial Services Authority (MFSA),');
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-regulator'), localize('regulated by the Malta Financial Services Authority (MFSA),'));
                 break;
             default:
                 break;
         }
-       
+
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), lc_to_upgrade_to.name);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-country'), lc_to_upgrade_to.shortcode === 'iom' ? `the ${lc_to_upgrade_to.country}` : lc_to_upgrade_to.country);
         if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
@@ -276,6 +276,7 @@ const AccountOpening = (() => {
     };
 
     const commonValidations = () => {
+        const residence = Client.get('residence');
         const req = [
             { selector: '#salutation',                  validations: ['req'] },
             { selector: '#first_name',                  validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]] },
@@ -284,8 +285,8 @@ const AccountOpening = (() => {
             { selector: '#address_line_1',              validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
             { selector: '#address_line_2',              validations: ['address', ['length', { min: 0, max: 70 }]] },
             { selector: '#address_city',                validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
-            { selector: '#address_state',               validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',            validations: [Client.get('residence') === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').some(lc => lc === 'iom') ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#address_state',               validations: [residence === 'au' ? 'req' : '', $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]]] },
+            { selector: '#address_postcode',            validations: [residence === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').some(lc => lc === 'iom') ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',                       validations: ['req', 'phone', ['length', { min: 9, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
             { selector: '#secret_question',             validations: ['req'] },
             { selector: '#secret_answer',               validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },

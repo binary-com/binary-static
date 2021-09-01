@@ -51,13 +51,13 @@ const TypesOfAccounts = () => (
                 className='invisible show-maltainvest'
                 image='financial'
                 title={it.L('Financial')}
-                text={it.L('The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade commodities, cryptocurrencies, major and minor currency pairs with tight and variable spreads without commissions and a minimum deposit.')}
+                text={it.L('The Financial account (available in EUR and GBP) is suitable for a wide range of traders, both new or experienced. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies.')}
             />
             <Box
                 className='hide-maltainvest'
                 image='financial'
                 title={it.L('Financial')}
-                text={it.L('The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade commodities, cryptocurrencies, major (standard and micro-lots), and minor currency pairs with high leverage.')}
+                text={it.L('The Financial account offers new and experienced traders high leverage and variable spreads for maximum flexibility. Trade major (standard and micro-lots) and minor currency pairs, stocks, stock indices, commodities, and cryptocurrencies with high leverage.')}
             />
             <Box
                 className='hide-maltainvest'
@@ -95,7 +95,7 @@ const TypesOfAccounts = () => (
                                 [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '50%' },                                                                             { text: '50%' },                                     { text: '50%' }],
                                 [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                                                             { text: '50+' },                                     { text: '10+' }],
                                 [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                                                            { text: '24/7' },                                     { text: it.L('N/A') }],
-                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies') }, { text: it.L('FX-majors, FX-minors, FX-exotics, Cryptocurrencies') },  { text: it.L('Synthetics') }],
+                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices') }, { text: it.L('FX-majors, FX-minors, FX-exotics, Cryptocurrencies') },  { text: it.L('Synthetics') }],
                             ],
                         }}
                         tbody_id='instruments'
@@ -119,7 +119,7 @@ const TypesOfAccounts = () => (
                                 [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '50%' },                                                                             { text: '50%' }],
                                 [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                                                             { text: '10+' }],
                                 [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                                                            { text: it.L('N/A') }],
-                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard), FX-minors, Commodities, Cryptocurrencies') }, { text: it.L('Synthetics') }],
+                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices') }, { text: it.L('Synthetics') }],
                             ],
                         }}
                     />

@@ -104,12 +104,16 @@ table {
         }
     }
     #statement-table, #profit-table {
+        th {
+            text-align: center;
+        }
         tr {
             & > th.details, & > td.details {
                 display: none !important;
             }
             td {
                 overflow: initial;
+                text-align: center;
             }
             td.desc {
                 max-width: 30em;
@@ -122,7 +126,6 @@ table {
 
                     .button {
                         padding: 8px 15px;
-                        position: absolute;
                         top: 0.25rem;
                     }
                 }

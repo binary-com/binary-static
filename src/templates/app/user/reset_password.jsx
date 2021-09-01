@@ -16,15 +16,15 @@ const ResetPassword = () => (
                 <form id='frm_reset_password'>
                     <Fieldset legend={it.L('Details')}>
                         <div className='gr-12'>
-                            <p className='fieldset-subtitle'>{it.L('Enter a new Binary password.')}</p>
+                            <p className='fieldset-subtitle'>{it.L('Create a new Binary password.')}</p>
                             <FormRow
                                 autoComplete='new-password'
                                 has_password_meter
                                 type='password'
                                 id='new_password'
-                                label={it.L('New Binary password')}
+                                label={it.L('Binary password')}
                             />
-                            <SubmitButton type='submit' no_error text={it.L('Reset my password')} />
+                            <SubmitButton type='submit' no_error text={it.L('Create')} />
                         </div>
                     </Fieldset>
                 </form>
