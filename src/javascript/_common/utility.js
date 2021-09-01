@@ -297,50 +297,50 @@ const idv_document_data = {
         },
         national_id: {
             new_display_name: '',
-            example_format  : '123456789',
+            example_format  : '12345678',
             sample_image    : getImageLocation('ke_national_identity_card.png'),
         },
         passport: {
             new_display_name: '',
-            example_format  : 'A123456789',
+            example_format  : 'A12345678',
             sample_image    : getImageLocation('ke_passport.png'),
         },
     },
     za: {
         national_id: {
-            new_display_name: '',
-            example_format  : '1234567890123',
+            new_display_name: 'National ID',
+            example_format  : '123456789012',
             sample_image    : getImageLocation('za_national_identity_card.png'),
         },
         national_id_no_photo: {
-            new_display_name: '',
-            example_format  : '1234567890123',
+            new_display_name: 'National ID (No Photo)',
+            example_format  : '123456789012',
             sample_image    : '',
         },
     },
     ng: {
         bvn: {
-            new_display_name: 'Bank verification number',
+            new_display_name: 'Bank Verification Number',
             example_format  : '12345678901',
             sample_image    : '',
         },
         cac: {
-            new_display_name: 'Corporate affairs commission',
+            new_display_name: 'Corporate Affairs Commission',
             example_format  : '12345678',
             sample_image    : '',
         },
         drivers_license: {
             new_display_name: '',
-            example_format  : 'ABC123456789012',
+            example_format  : 'ABC123456789',
             sample_image    : getImageLocation('ng_drivers_license.png'),
         },
         nin: {
-            new_display_name: 'National identity number',
+            new_display_name: 'National Identity Number',
             example_format  : '12345678901',
             sample_image    : '',
         },
         nin_slip: {
-            new_display_name: 'National identity number slip',
+            new_display_name: 'National Identity Number Slip',
             example_format  : '12345678901',
             sample_image    : getImageLocation('ng_nin_slip.png'),
         },

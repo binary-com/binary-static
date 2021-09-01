@@ -983,13 +983,6 @@ const Authenticate = (() => {
         }
     });
 
-    const checkIsRequired = (authentication_status) => {
-        const { identity, document, needs_verification } = authentication_status;
-        const is_not_required = identity.status === 'none' && document.status === 'none' && !needs_verification.length;
-
-        return !is_not_required;
-    };
-
     const cleanElementVisibility = () => {
         $('#personal_details_error').setVisibility(0);
         $('#limited_poi').setVisibility(0);
@@ -1011,7 +1004,7 @@ const Authenticate = (() => {
         if (residence_list.length > 0) {
             $('#idv_country_selector').setVisibility(1);
             $residence_dropdown.append(makeOption({
-                text       : localize('Please select the country of document issuance.'),
+                text       : localize('Please select the country of document issuance'),
                 value      : 'initial',
                 is_disabled: 'disabled',
             }));
@@ -1059,7 +1052,7 @@ const Authenticate = (() => {
             });
         }
     };
- 
+
     const handleIdvDocumentSubmit = async () => {
         $('#idv_document_submit').setVisibility(1);
 
@@ -1074,6 +1067,7 @@ const Authenticate = (() => {
         const verify_button = document.getElementById('idv_document_submit_verify_btn');
 
         // Reset all states in case user navigates back and forth
+        document_input.value = '';
         document_input.disabled = true;
         document_sample_img.src = '';
         right_container.setVisibility(0);
@@ -1096,7 +1090,7 @@ const Authenticate = (() => {
         if (selected_country) {
             const $enabled_options = $('<select/>');
             $enabled_options.append(makeOption({
-                text       : localize('Choose a document type'),
+                text       : localize('Choose the document type'),
                 value      : 'initial',
                 is_disabled: 'disabled',
             }));
@@ -1112,9 +1106,34 @@ const Authenticate = (() => {
             $documents.html($enabled_options.html());
             $documents.val('initial');
 
+            const validateInput = () => {
+                const input_value = document_input.value;
+                const { example_format, regex } = document_type;
+                const format_regex = getRegex(regex);
+
+                if (format_regex.test(input_value)) {
+                    document_number = input_value;
+                    verify_button.classList.remove('button-disabled');
+                    example_format_text.classList.remove('error-text');
+                } else {
+                    const error_text = localize('Please enter the correct format. Example:');
+                    $example.html(`${error_text} ${example_format}`);
+                    example_format_text.classList.add('error-text');
+
+                    if (!verify_button.classList.contains('button-disabled')) {
+                        verify_button.classList.add('button-disabled');
+                    }
+                }
+
+                if (input_value === '') {
+                    example_format_text.classList.remove('error-text');
+                }
+            };
+
             // Update Sample Image and Example Format on Dropdown Change (If Available)
             $documents.on('change', (e) => {
                 document_type = available_document_list.find(d => d.id === e.target.value);
+                validateInput();
                 const { sample_image, example_format } = document_type;
                 
                 if (has_visual_sample && sample_image) {
@@ -1138,26 +1157,7 @@ const Authenticate = (() => {
 
             document_input.addEventListener('keyup', (e) => {
                 e.preventDefault();
-                const { example_format, regex } = document_type;
-                const format_regex = getRegex(regex);
-
-                if (format_regex.test(e.target.value)) {
-                    document_number = e.target.value;
-                    verify_button.classList.remove('button-disabled');
-                    example_format_text.classList.remove('error-text');
-                } else {
-                    const error_text = localize('Please enter the correct format. Example:');
-                    $example.html(`${error_text} ${example_format}`);
-                    example_format_text.classList.add('error-text');
-
-                    if (!verify_button.classList.contains('button-disabled')) {
-                        verify_button.classList.add('button-disabled');
-                    }
-                }
-
-                if (e.target.value === '') {
-                    example_format_text.classList.remove('error-text');
-                }
+                validateInput();
             });
 
             back_button.addEventListener('click', (e) => {
@@ -1458,23 +1458,14 @@ const Authenticate = (() => {
         cleanElementVisibility();
         const account_status = await getAccountStatus();
         authentication_object = account_status.authentication;
-        const is_required = checkIsRequired(authentication_object);
 
-        if (!isAuthenticationAllowed()) {
-            $('#authentication_tab').setVisibility(0);
-            $('#authentication_loading').setVisibility(0);
-            $('#authentication_unneeded').setVisibility(1);
-        }
-
-        const has_svg_account = Client.hasSvgAccount();
-        
-        if (is_required || has_svg_account){
+        if (isAuthenticationAllowed()) {
             initTab();
             initAuthentication();
         } else {
             $('#authentication_tab').setVisibility(0);
-            $('#not_required_msg').setVisibility(1);
             $('#authentication_loading').setVisibility(0);
+            $('#authentication_unneeded').setVisibility(1);
         }
     };
 
