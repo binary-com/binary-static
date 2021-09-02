@@ -57,7 +57,7 @@ const Authenticate = () => (
                 <div className='idv-container__document-container'>
                     <div id='idv_document_left' className='idv-container__left'>
                         <fieldset>
-                            <select className='idv-container__dropdown' type='select' id='document_type' />
+                            <select className='idv-container__dropdown long-text' type='select' id='document_type' />
                         </fieldset>
                         <fieldset>
                             <input
