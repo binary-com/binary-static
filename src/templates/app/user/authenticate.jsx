@@ -39,7 +39,7 @@ const Authenticate = () => (
             <div id='idv_country_selector' className='idv-container country-selector invisible'>
                 <h1 className='idv-container__header'>{it.L('Verify your identity')}</h1>
                 <p>{it.L('In which country was your document issued?')}</p>
-                <select className='idv-container__dropdown' type='select' id='country_dropdown' />
+                <select className='idv-container__dropdown long-text' type='select' id='country_dropdown' />
                 <Button
                     id='button_next_country_selected'
                     className='button gr-padding-20'
