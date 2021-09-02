@@ -905,7 +905,7 @@ const Authenticate = (() => {
                 documents_supported : Object.keys(documents_supported).map(d => documents_supported[d].display_name);
     
             try {
-                onfido_sdk = Onfido.init({
+                onfido_sdk = await Onfido.init({
                     containerId: 'onfido',
                     language   : {
                         locale       : getLanguage().toLowerCase() || 'en',
