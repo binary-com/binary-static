@@ -1340,7 +1340,7 @@ const Authenticate = (() => {
                 handleCountrySelector();
                 break;
             case 'pending':
-                $('#pending_poa').setVisibility(1);
+                $('#upload_complete').setVisibility(1);
                 showCTAButton('document', 'pending');
                 break;
             case 'suspected':
@@ -1483,13 +1483,10 @@ const Authenticate = (() => {
                     break;
                 }
                 case 'pending':
-                    showCTAButton('identity', 'pending');
                     $('#pending_poa').setVisibility(1);
                     break;
-                case 'rejected':
-                    $('#unverified_poa').setVisibility(1);
-                    break;
                 case 'suspected':
+                case 'rejected':
                     $('#unverified_poa').setVisibility(1);
                     break;
                 case 'verified':
