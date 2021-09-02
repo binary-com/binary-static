@@ -1228,11 +1228,12 @@ const Authenticate = (() => {
                         });
                         $('#idv_document_submit').setVisibility(0);
                         if (needs_poa) {
+                            $('#authentication_tab').setVisibility(1);
                             $('#idv_submit_pending_need_poa').setVisibility(1);
+                            Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                            TabSelector.updateTabDisplay();
                             $('#idv_pending_submit_poa_btn').on('click', () => {
                                 init();
-                                $('#idv_submit_pending_need_poa').setVisibility(0);
-                                $('#authentication_tab').setVisibility(1);
                                 $('#not_authenticated').setVisibility(1);
                                 Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                                 TabSelector.updateTabDisplay();
@@ -1257,12 +1258,12 @@ const Authenticate = (() => {
 
         switch (status) {
             case 'pending':
+                $('#authentication_tab').setVisibility(1);
                 if (needs_poa) {
                     $('#idv_submit_pending_need_poa').setVisibility(1);
                     $('#idv_pending_submit_poa_btn').on('click', () => {
                         $('#idv_submit_pending_need_poa').setVisibility(0);
                         init();
-                        $('#authentication_tab').setVisibility(1);
                         $('#not_authenticated').setVisibility(1);
                         Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                         $('#poa').setVisibility(1);
@@ -1296,12 +1297,13 @@ const Authenticate = (() => {
                 }
                 break;
             case 'verified':
+                $('#authentication_tab').setVisibility(1);
+                Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                TabSelector.updateTabDisplay();
                 if (needs_poa) {
                     $('#idv_document_verified_need_poa').setVisibility(1);
                     $('#idv_verified_poa_btn').on('click', () => {
                         init();
-                        $('#authentication_tab').setVisibility(1);
-                        $('#idv_document_verified_need_poa').setVisibility(0);
                         $('#not_authenticated').setVisibility(1);
                         $('#poa').setVisibility(1);
                         Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
@@ -1386,10 +1388,11 @@ const Authenticate = (() => {
                 }
                 break;
             case 'verified':
-                // if POI is verified and POA is not verified, redirect to POA tab
+                $('#authentication_tab').setVisibility(1);
+                Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                TabSelector.updateTabDisplay();
                 if (needs_poa) {
                     init();
-                    $('#authentication_tab').setVisibility(1);
                     Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                     $('#poa').setVisibility(1);
                     TabSelector.updateTabDisplay();

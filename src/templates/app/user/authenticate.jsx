@@ -133,33 +133,10 @@ const Authenticate = () => (
                 />
             </div>
 
-            <div id='idv_submit_pending_need_poa' className='center-text gr-padding-20 invisible'>
-                <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/submit_successfully.svg')} />
-                <h1 className='gr-padding-10'>{it.L('We\'ve received your document number')}</h1>
-                <p>{it.L('We\'ll process your details within a few minutes and notify its status via email. Next, we\'ll need your proof of address')}</p>
-                <Button
-                    id='idv_pending_submit_poa_btn'
-                    className='button idv-status'
-                    text={it.L('Submit proof of address')}
-                />
-            </div>
-
             <div id='idv_submit_pending' className='center-text gr-padding-20 invisible'>
                 <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/submit_successfully.svg')} />
                 <h1 className='gr-padding-10'>{it.L('We\'ve received your document number')}</h1>
                 <p>{it.L('We\'ll process your details within a few minutes and notify its status via email.')}</p>
-            </div>
-
-            <div id='idv_document_verified_need_poa' className='idv-container invisible'>
-                <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verification_passed.svg')} />
-                <h1 className='idv-container__header'>{it.L('Your document number has been verified')}</h1>
-                <p>{it.L('Next, we\'ll need your proof of address')}</p>
-                <Button
-                    id='idv_verified_poa_btn'
-                    className='button idv-status'
-                    href={`${it.url_for('user/authenticate')}?authentication_tab=poa`}
-                    text={it.L('Submit proof of address')}
-                />
             </div>
         </div>
 
@@ -282,6 +259,31 @@ const Authenticate = () => (
                                 text={it.L('Update my details')}
                             />
                             <p>{it.L('Need help? [_1]Contact us[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+                        </div>
+
+                        <div id='idv-container' className='idv-main-container'>
+                            <div id='idv_submit_pending_need_poa' className='center-text gr-padding-20 invisible'>
+                                <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/submit_successfully.svg')} />
+                                <h1 className='gr-padding-10'>{it.L('We\'ve received your document number')}</h1>
+                                <p>{it.L('We\'ll process your details within a few minutes and notify its status via email. Next, we\'ll need your proof of address')}</p>
+                                <Button
+                                    id='idv_pending_submit_poa_btn'
+                                    className='button idv-status'
+                                    text={it.L('Submit proof of address')}
+                                />
+                            </div>
+
+                            <div id='idv_document_verified_need_poa' className='idv-container invisible'>
+                                <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verification_passed.svg')} />
+                                <h1 className='idv-container__header'>{it.L('Your document number has been verified')}</h1>
+                                <p>{it.L('Next, we\'ll need your proof of address')}</p>
+                                <Button
+                                    id='idv_verified_poa_btn'
+                                    className='button idv-status'
+                                    href={`${it.url_for('user/authenticate')}?authentication_tab=poa`}
+                                    text={it.L('Submit proof of address')}
+                                />
+                            </div>
                         </div>
                     </TabContent>
                     <TabContent id='poa'>
