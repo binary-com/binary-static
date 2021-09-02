@@ -34,6 +34,7 @@ jobs:
           echo "Setting up Git identity"
           git config --global user.name "DerivFE"
           git config --global user.email "80095553+DerivFE@users.noreply.github.com"
+          git config --global --add url."git@github.com:".insteadOf "https://github.com/"
 
           echo "Installing Crowdin CLI"
           sudo npm i -g @crowdin/cli
