@@ -1258,11 +1258,10 @@ const Authenticate = (() => {
 
         switch (status) {
             case 'pending':
-                $('#authentication_tab').setVisibility(1);
                 if (needs_poa) {
+                    $('#authentication_tab').setVisibility(1);
                     $('#idv_submit_pending_need_poa').setVisibility(1);
                     $('#idv_pending_submit_poa_btn').on('click', () => {
-                        $('#idv_submit_pending_need_poa').setVisibility(0);
                         init();
                         $('#not_authenticated').setVisibility(1);
                         Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
@@ -1297,10 +1296,10 @@ const Authenticate = (() => {
                 }
                 break;
             case 'verified':
-                $('#authentication_tab').setVisibility(1);
-                Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
-                TabSelector.updateTabDisplay();
                 if (needs_poa) {
+                    $('#authentication_tab').setVisibility(1);
+                    Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                    TabSelector.updateTabDisplay();
                     $('#idv_document_verified_need_poa').setVisibility(1);
                     $('#idv_verified_poa_btn').on('click', () => {
                         init();
@@ -1452,8 +1451,7 @@ const Authenticate = (() => {
                     $('#limited_poi').setVisibility(1);
                     break;
                 case 'verified':
-                    showCTAButton('document', 'verified');
-                    $('#verified_poa').setVisibility(1);
+                    $('#verified').setVisibility(1);
                     break;
                 case 'expired':
                     $('#expired_poi').setVisibility(1);
