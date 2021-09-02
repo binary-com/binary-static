@@ -41,7 +41,7 @@ module.exports = [
     ['user/reality_check_frequency',            'app/user/reality_check/frequency',            'default',    'Reality Check'],
     ['user/reality_check_summary',              'app/user/reality_check/summary',              'default',    'Reality Check'],
     ['user/reset_passwordws',                   'app/user/reset_password',                     'default',    'Password Reset'],
-    ['user/trading_reset_passwordws',           'app/user/trading_reset_password',             'default',    'Trading Password Reset'],
+    ['user/trading_reset_passwordws',           'app/user/trading_reset_password',             'default',    'Change MT5 Password'],
     ['user/securityws',                         'app/user/security',                           'default',    'Security'],
     ['user/security/closure',                   'app/user/security/account_closure',           'default',    'Account Closure'],
     ['user/security/api_tokenws',               'app/user/security/api_token',                 'default',    'API Token'],

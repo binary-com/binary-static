@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-27 05:54\n"
+"PO-Revision-Date: 2021-08-18 06:22\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -867,9 +867,6 @@ msgstr "ช่วงห่างของราคา (Tick) คือ การ
 
 msgid "A trade is opened by either executing a \"Buy\" or a \"Sell\" Order based on a specified number of lots (volume) that constitute the Underlying Instrument of the relevant market."
 msgstr "การเริ่มการซื้อขาย ทำได้โดยการดำเนินการคำสั่ง \"ซื้อ\" หรือ \"ขาย\" ตามจำนวนที่ระบุในแต่ละคราว (จำนวนคำสั่ง) ซึ่งถือเป็นเครื่องมืออ้างอิงของตลาดที่เกี่ยวข้อง"
-
-msgid "A trading password is used to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices. "
-msgstr "รหัสผ่านการซื้อขายใช้เพื่อลงชื่อเข้าใช้บัญชี MT5 ของคุณเมื่อใช้แอพ MT5 บนมือถือหรืออุปกรณ์อื่น ๆ ของคุณ "
 
 msgid "A university degree in Accounting/Finance or its equivalent"
 msgstr "สำเร็จการศึกษาระดับปริญญาด้านบัญชี/การเงินหรือเทียบเท่า"
@@ -2563,6 +2560,12 @@ msgstr "Champion Group Ltd: วานูอาตู"
 msgid "Change API Endpoint"
 msgstr "เปลี่ยน API ปลายทาง"
 
+msgid "Change MT5 Password"
+msgstr ""
+
+msgid "Change MT5 password"
+msgstr ""
+
 msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
 
@@ -2578,8 +2581,8 @@ msgstr "เปลี่ยนรหัสผ่าน"
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "การเปลี่ยนแปลงอัตรามาร์จินสัมพันธ์กับโพซิชั่นที่เปิดอยู่และคำสั่งซื้อใหม่"
 
-msgid "Change your main login and trading password."
-msgstr "เปลี่ยนการเข้าสู่ระบบหลักและรหัสผ่านการซื้อขายของคุณ"
+msgid "Change your Binary password and MT5 password."
+msgstr ""
 
 msgid "Changes to this privacy policy"
 msgstr "เปลี่ยนนโยบายการรักษาข้อมูลส่วนบุคคลนี้"
@@ -3091,6 +3094,12 @@ msgstr "ยืนยันการเปลี่ยนแปลง"
 msgid "Confirm password"
 msgstr "ยืนยันรหัสผ่าน"
 
+msgid "Confirm to change your MT5 password"
+msgstr ""
+
+msgid "Confirm to create your MT5 password"
+msgstr ""
+
 msgid "Conflicts Policy"
 msgstr "นโยบายการบริหารความขัดแย้ง"
 
@@ -3359,11 +3368,23 @@ msgstr "สร้างบัญชี %1"
 msgid "Create Account"
 msgstr "สร้างบัญชี"
 
-msgid "Create MetaTrader 5 account"
-msgstr "สร้างบัญชี MetaTrader 5"
+msgid "Create MT5 password"
+msgstr ""
 
 msgid "Create New Demo Account"
 msgstr "สร้างบัญชีทดลองใหม่"
+
+msgid "Create a MT5 password. You can use this password for all your MT5 accounts."
+msgstr ""
+
+msgid "Create a MetaTrader 5 account"
+msgstr ""
+
+msgid "Create a new Binary password."
+msgstr ""
+
+msgid "Create a new MT5 password."
+msgstr ""
 
 msgid "Create account"
 msgstr "สร้างบัญชี"
@@ -4433,14 +4454,8 @@ msgstr "ให้แน่ใจว่าการออกแบบและพ
 msgid "Ensure the integrity of releases by coordinating testing activities"
 msgstr "ให้แน่ใจถึงความสมบูรณ์ของการเปิดตัวโดยประสานงานกิจกรรมการทดสอบ"
 
-msgid "Enter a new Binary password."
-msgstr "ป้อนรหัสผ่าน Binaryใหม่"
-
 msgid "Enter a new password for your Binary account."
 msgstr "ป้อนรหัสผ่านใหม่สําหรับบัญชี Binary ของคุณ"
-
-msgid "Enter a new trading password."
-msgstr "ป้อนรหัสผ่านการซื้อขายใหม่"
 
 msgid "Enter mobile number"
 msgstr "ป้อนหมายเลขโทรศัพท์มือถือ"
@@ -4450,6 +4465,9 @@ msgstr "ป้อนรหัสของตัวแทนชำระเงิ
 
 msgid "Enter the authentication code generated by the app below:"
 msgstr "ป้อนรหัสการรับรองความถูกต้องที่สร้างโดยแอพพลิเคชันด้านล่าง"
+
+msgid "Enter your MT5 password to add a %1 MT5 %2 account."
+msgstr ""
 
 msgid "Enter your email"
 msgstr "ป้อนอีเมล์ของท่าน"
@@ -5225,8 +5243,8 @@ msgstr "การซื้อขายฟอเร็กซ์เกี่ยว
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "การซื้อขายฟอเร็กซ์เกี่ยวข้องกับการซื้อหรือขาย \"คู่สกุลเงิน\" เหล่านี้ เมื่อท่านซื้อคู่สกุลเงินหนึ่งๆ เช่น EUR/USD หมายความว่า ท่านกำลังซื้อยูโร และ ขายดอลลาร์สหรัฐในเวลาเดียวกัน"
 
-msgid "Forgot password"
-msgstr "ลืมรหัสผ่าน"
+msgid "Forgot password?"
+msgstr ""
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 ก่อตั้งขึ้นในปี ค.ศ. 1999 (พ.ศ. 2542) เป็นชื่อที่เก่าแก่ที่สุด และได้รับการยอมรับมากที่สุดในการซื้อขายไบนารีออนไลน์"
@@ -5630,8 +5648,8 @@ msgstr "ซื้อขาย Higher/Lower "
 msgid "Highlights"
 msgstr "ไฮไลท์"
 
-msgid "Hint: You may have chosen a different trading password from your %1 log in password."
-msgstr "คําแนะนํา: คุณอาจเลือกรหัสผ่านการซื้อขายอื่นจากรหัสผ่านเข้าสู่ระบบ %1 ของคุณ"
+msgid "Hint: You may have chosen a different MT5 password from your %1 log in password."
+msgstr ""
 
 msgid "Historical Mediterranean island"
 msgstr "เกาะประวัติศาสตร์เมดิเตอร์เรเนียน"
@@ -7193,6 +7211,9 @@ msgstr "MT5 สำหรับ iOS"
 msgid "MT5 for macOS"
 msgstr "MT5 สำหรับ macOS"
 
+msgid "MT5 password"
+msgstr ""
+
 msgid "MT5 real-money account for Synthetic Indices only."
 msgstr "บัญชีเงินจริง MT5 สำหรับดัชนีสังเคราะห์เท่านั้น"
 
@@ -7364,9 +7385,6 @@ msgstr "จัดการการรักษาความปลอดภั
 
 msgid "Manage the funds in your cryptocurrency account."
 msgstr "จัดการหลักประกันในบัญชีเงินดิจิทัลของท่าน"
-
-msgid "Manage trading password"
-msgstr "จัดการรหัสผ่านการซื้อขาย"
 
 msgid "Manage your authorised applications."
 msgstr "จัดการแอพพลิเคชันที่ลงทะเบียน"
@@ -7904,9 +7922,6 @@ msgstr "มือใหม่กับฟอเร็กซ์หรือไม
 
 msgid "New token created."
 msgstr "สร้างโทเค่นใหม่แล้ว"
-
-msgid "New trading password"
-msgstr "รหัสผ่านใหม่สําหรับการซื้อขาย"
 
 msgid "Next"
 msgstr "ถัดไป"
@@ -8784,8 +8799,11 @@ msgstr "โปรดตรวจสอบกล่องจดหมายขอ
 msgid "Please choose a currency"
 msgstr "โปรดเลือกสกุลเงิน"
 
-msgid "Please click on the link in the email to reset your binary password."
-msgstr "โปรดคลิกที่ลิงค์ในอีเมลเพื่อรีเซ็ตรหัสผ่านไบนารีของคุณ"
+msgid "Please click on the link in the email to change your MT5 password."
+msgstr ""
+
+msgid "Please click on the link in the email to change your binary password."
+msgstr ""
 
 msgid "Please click on the link in the email to reset your trading password."
 msgstr "โปรดคลิกที่ลิงค์ในอีเมลเพื่อรีเซ็ตรหัสผ่านการซื้อขายของคุณ"
@@ -8852,9 +8870,6 @@ msgstr "โปรดกรอกที่อยู่ของท่านให
 
 msgid "Please enter your full home address to avoid authentication delays."
 msgstr "โปรดกรอกที่อยู่ของท่านให้สมบูรณ์เพื่อหลีกเลี่ยงความล่าช้าในการตรวจสอบความถูกต้อง"
-
-msgid "Please enter your trading password to create an account. If you've forgotten your password, click %1Reset password%2"
-msgstr "โปรดป้อนรหัสผ่านการซื้อขายของคุณเพื่อสร้างบัญชี ถ้าคุณลืมรหัสผ่าน ให้คลิก %1ตั้งรหัสผ่าน%2"
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "โปรดกรอกรหัสผู้ใช้งาน และจำนวนเงินที่ท่านต้องการโอนให้กับลูกค้าของท่านในแบบฟอร์มด้านล่าง"
@@ -9720,9 +9735,6 @@ msgstr "รีเซ็ตรหัสผ่านนักลงทุน"
 msgid "Reset my demo balance"
 msgstr "รีเซ็ตงบทดลองของฉัน"
 
-msgid "Reset my password"
-msgstr "รีเซ็ตรหัสผ่าน"
-
 msgid "Reset password"
 msgstr "ตั้งรหัสผ่านใหม่"
 
@@ -10149,9 +10161,6 @@ msgstr "รอบระยะเวลาการซื้อขาย:"
 msgid "Set Currency"
 msgstr "ตั้งค่าสกุลเงิน"
 
-msgid "Set a trading password. Use this to log in and trade on MT5."
-msgstr "ตั้งรหัสผ่านการซื้อขาย ใช้สิ่งนี้เพื่อเข้าสู่ระบบและซื้อขายบน MT5"
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "ตั้งค่า Barrier เพื่อกำหนดตำแหน่งของท่าน และกำหนดผลของตัวเงินที่ท่านจะได้รับ"
 
@@ -10166,9 +10175,6 @@ msgstr "ตั้งระยะเวลาของการซื้อขา
 
 msgid "Set the standard for our technical documentation by creating a technical style guide that can be followed across the company"
 msgstr "กำหนดมาตรฐานสำหรับเอกสารทางเทคนิคของเรา โดยสร้างคู่มือรูปแบบทางเทคนิคที่สามารถปฏิบัติตามได้ทั่วทั้งบริษัท"
-
-msgid "Set trading password"
-msgstr "ตั้งรหัสผ่านการซื้อขาย"
 
 msgid "Set up %1 on your device now"
 msgstr "ติดตั้ง%1บนอุปกรณ์ของคุณเดี๋ยวนี้"
@@ -10658,6 +10664,9 @@ msgstr "ส่งแล้ว"
 
 msgid "Submitting"
 msgstr "กำลังส่ง"
+
+msgid "Success"
+msgstr ""
 
 msgid "Success!"
 msgstr "ความสําเร็จ!"
@@ -12677,6 +12686,12 @@ msgstr "หน้านี้ไม่มีให้บริการในป
 msgid "This page is only available to logged out clients."
 msgstr "หน้านี้สำหรับแสดงให้กับผู้ใช้งานที่ออกจากระบบแล้ว"
 
+msgid "This password is for logging in to your Binary.com account."
+msgstr ""
+
+msgid "This password is for logging in to your MT5 accounts on the desktop, web, and mobile apps."
+msgstr ""
+
 msgid "This password is on the blacklist"
 msgstr "รหัสผ่านนี้อยู่ในบัญชีดํา"
 
@@ -12697,6 +12712,9 @@ msgstr "ในวรรคนี้ของกรณีเหตุสุดว
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
 msgstr "บริการของเว็บไซต์นี้ไม่มีให้บริการในบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ฮ่องกง หรือสำหรับผู้ที่มีอายุต่ำกว่า 18 ปี"
+
+msgid "This will change the password to all of your MT5 accounts."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "ตลอดจนทักษะความรู้ในการทำสคริปต์แบช (Bash) และประสบการณ์ในการใช้ภาษาเพิร์ล (Perl)"
@@ -13058,9 +13076,6 @@ msgstr "ข้อมูลการซื้อขาย"
 msgid "Trading Limits"
 msgstr "วงเงินในการซื้อขาย"
 
-msgid "Trading Password Reset"
-msgstr "รีเซ็ตรหัสผ่านการซื้อขาย"
-
 msgid "Trading Platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
 
@@ -13114,15 +13129,6 @@ msgstr "วงเงินในการซื้อขาย"
 
 msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
 msgstr "การซื้อขายบน%1สามารถทำให้เสพติดได้ หากคุณต้องการพักจากเว็บไซต์ โปรดใช้%2sเครื่องมือสำหรับพักการซื้อขาย%3"
-
-msgid "Trading password"
-msgstr "รหัสผ่านการซื้อขาย"
-
-msgid "Trading password reset"
-msgstr "รีเซ็ตรหัสผ่านการซื้อขาย"
-
-msgid "Trading password — a new, easy way to sign in to your MT5 accounts"
-msgstr "รหัสผ่านการซื้อขาย - วิธีใหม่ที่ง่ายในการลงชื่อเข้าใช้บัญชี MT5 ของคุณ"
 
 msgid "Trading platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
@@ -13574,20 +13580,14 @@ msgstr "ใช้ความพยายามอย่างสุดควา
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "ใช้ความพยายามอย่างสุดความสามารถของเขาเพื่อสร้างความสนใจต่อลูกค้าของ Binary"
 
-msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create a password, or you have forgotten your password, please reset it."
-msgstr "ใช้รหัสผ่านนี้เพื่อให้สิทธิ์การดูแก่ผู้ใช้อื่น ในขณะที่พวกเขาอาจดูบัญชีซื้อขายของคุณพวกเขาจะไม่สามารถซื้อขายหรือดําเนินการอื่น ๆ ถ้านี่เป็นครั้งแรกที่คุณพยายามสร้างรหัสผ่าน หรือคุณลืมรหัสผ่าน โปรดตั้งค่ารหัสผ่านใหม่"
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you've forgotten your password."
+msgstr ""
 
-msgid "Use this to log in and trade with MT5."
-msgstr "ใช้สิ่งนี้เพื่อเข้าสู่ระบบและเทรดกับ MT5"
-
-msgid "Use this to log in to Binary.com, SmartTrader, Binary Bot, and Webtrader."
-msgstr "ใช้เพื่อล็อกอินเข้าสู่ Binary.com, SmartTrader, Binary Bot และ Webtrader"
+msgid "Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps."
+msgstr ""
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "ใช้คุณลักษณะเพิ่มเติมที่เป็นไปได้จากผู้ให้บริการชำระเงินเพื่อให้เกิดประโยชน์สูงสุด"
-
-msgid "Use trading password to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices."
-msgstr "ใช้รหัสผ่านการซื้อขายเพื่อลงชื่อเข้าใช้บัญชี MT5 ของคุณเมื่อใช้แอพ MT5 บนมือถือหรืออุปกรณ์อื่นๆ ของคุณ"
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของโปรแกรมเมอร์ และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของบริษัทฯ ได้ใช้งานแอพพลิเคชันของโปรแกรมเมอร์"
@@ -14540,14 +14540,11 @@ msgstr "คุณคาดว่า %1 จะมีมูลค่าลดล�
 msgid "You expect the %1 to rise in value so you can sell it back for a profit."
 msgstr "คุณคาดว่า %1 จะมีมูลค่าเพิ่มขึ้นเพื่อให้คุณสามารถขายคืนเพื่อทำกำไร"
 
-msgid "You have a new binary password."
-msgstr "คุณมีรหัสผ่านไบนารีใหม่"
+msgid "You have a new Binary password to log in to Binary.com."
+msgstr ""
 
-msgid "You have a new trading password. Use this to log in to MetaTrader 5."
-msgstr "คุณมีรหัสผ่านการซื้อขายใหม่ ใช้สิ่งนี้เพื่อเข้าสู่ระบบ MetaTrader 5"
-
-msgid "You have a trading password for MT5"
-msgstr "คุณมีรหัสผ่านการซื้อขายสําหรับ MT5"
+msgid "You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps."
+msgstr ""
 
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "คุณได้ทำการถอนเงิน %1%2 หรือเทียบเท่าในช่วง %3 วันที่ผ่านมา"
@@ -14729,6 +14726,9 @@ msgstr "คุณกำลังขาย %1 และกำลังซื้�
 msgid "You're using a Demo Account."
 msgstr "คุณกําลังใช้บัญชีทดลองใช้"
 
+msgid "You're using your %1 account to log in to your Binary.com account. To change your login method into using a username and password, click the %2Unlink%3 button."
+msgstr ""
+
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "ท่านได้ดำเนินการธุรกรรมในตลาดคล้ายกับที่เราได้นำเสนอ เฉลี่ยรวม 10 ธุรกรรม ต่อ ไตรมาส ภายในระยะเวลา 4 ไตรมาสที่ผ่านมา"
 
@@ -14809,9 +14809,6 @@ msgstr "ใบสมัครของท่านเพื่อปรับส
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "ใบสมัครของท่านจะถูกทวนสอบโดยฝ่ายการตลาดและฝ่ายตรวจสอบของเรา เมื่อได้รับการอนุมัติ ชื่อของท่านจะถูกแสดงในรายชื่อ %1ตัวแทนรับชำระเงิน%2 ของเรา"
-
-msgid "Your binary password has been changed. Please log in again."
-msgstr "รหัสผ่านไบนารีของคุณถูกเปลี่ยนแล้ว กรุณาเข้าสู่ระบบอีกครั้ง"
 
 msgid "Your cashier is locked."
 msgstr "แคชเชียร์ของท่านถูกล็อก"
@@ -14924,12 +14921,6 @@ msgstr "โทเค่นของท่านหมดอายุแล้ว
 msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "โทเค่นของท่านหมดอายุแล้ว โปรดคลิก<a href=\"%1\">ที่นี่</a> เพื่อดำเนินกระบวนการตรวจสอบ"
 
-msgid "Your trading password has been changed. Please use this to log in to MetaTrader 5."
-msgstr "รหัสผ่านการซื้อขายของคุณมีการเปลี่ยนแปลง กรุณาใช้ข้อมูลนี้เข้าสู่ระบบ MetaTrader 5"
-
-msgid "Your trading password has been set. Please use this to log in to MetaTrader 5."
-msgstr "รหัสผ่านการซื้อขายของคุณได้รับการตั้งค่าแล้ว กรุณาใช้ข้อมูลนี้เข้าสู่ระบบ MetaTrader 5"
-
 msgid "Your trading statistics since %1."
 msgstr "สถิติการซื้อขายของท่านตั้งแต่ %1"
 
@@ -15026,6 +15017,9 @@ msgstr "วัน"
 msgid "days"
 msgstr "วัน"
 
+msgid "demo"
+msgstr ""
+
 msgid "demo credit to account"
 msgstr "ทดลองใช้เครดิตเข้าบัญชี"
 
@@ -15097,6 +15091,9 @@ msgstr "ตำแหน่ง"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "อัตราของทุนของบัญชีต่อมาร์จินรวม แสดงในรูปร้อยละ"
+
+msgid "real"
+msgstr ""
 
 msgid "regulated by the Malta Financial Services Authority (MFSA),"
 msgstr "ควบคุมโดยหน่วยงานบริการทางการเงินมอลตา (MFSA),"

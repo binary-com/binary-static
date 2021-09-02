@@ -4,6 +4,7 @@ const Client             = require('./client');
 const BinarySocket       = require('./socket');
 const GTM                = require('../../_common/base/gtm');
 const SocketCache        = require('../../_common/base/socket_cache');
+const LocalStore         = require('../../_common/storage').LocalStore;
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
@@ -11,6 +12,7 @@ const isStorageSupported = require('../../_common/storage').isStorageSupported;
 const removeCookies      = require('../../_common/storage').removeCookies;
 const paramsHash         = require('../../_common/url').paramsHash;
 const urlFor             = require('../../_common/url').urlFor;
+const urlForLanguage     = require('../../_common/language').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const LoggedInHandler = (() => {
@@ -23,7 +25,13 @@ const LoggedInHandler = (() => {
             const account_list = getPropertyValue(response, ['authorize', 'account_list']);
             if (isStorageSupported(localStorage) && isStorageSupported(sessionStorage) && account_list) {
                 // redirect url
-                redirect_url = sessionStorage.getItem('redirect_url');
+                const preferred_language   = response.authorize.preferred_language.toLowerCase();
+                if (!sessionStorage.getItem('redirect_url')) {
+                    redirect_url = urlFor('/', null, preferred_language);
+                } else {
+                    redirect_url = urlForLanguage(preferred_language, sessionStorage.getItem('redirect_url'));
+                }
+                LocalStore.set('preferred_language', preferred_language);
                 sessionStorage.removeItem('redirect_url');
 
                 storeClientAccounts(account_list);

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-28 13:10\n"
+"PO-Revision-Date: 2021-08-18 06:22\n"
 "Last-Translator: \n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -867,9 +867,6 @@ msgstr "Un « tick » représente l'unité de fluctuation minimum du cours d'u
 
 msgid "A trade is opened by either executing a \"Buy\" or a \"Sell\" Order based on a specified number of lots (volume) that constitute the Underlying Instrument of the relevant market."
 msgstr "Un trade est ouvert par l'exécution d'un Ordre d' « Achat » ou de « Vente » basé sur un nombre spécifié de lots (volume) qui constituent l'Instrument Sous-jacent du marché concerné."
-
-msgid "A trading password is used to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices. "
-msgstr "Un mot de passe de trading est utilisé pour vous connecter à n'importe quel compte MT5 lorsque vous utilisez une application MT5 sur votre téléphone ou tout autre appareil. "
 
 msgid "A university degree in Accounting/Finance or its equivalent"
 msgstr "Un diplôme universitaire en Comptabilité/Finance ou son équivalent"
@@ -2563,6 +2560,12 @@ msgstr "Champion Group Ltd: Vanuatu"
 msgid "Change API Endpoint"
 msgstr "Modifier le point terminal de l'API"
 
+msgid "Change MT5 Password"
+msgstr ""
+
+msgid "Change MT5 password"
+msgstr ""
+
 msgid "Change Password"
 msgstr "Modifier le mot de passe"
 
@@ -2578,8 +2581,8 @@ msgstr "Modifier le mot de passe"
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "Changer le taux de Marge en relation avec à la fois les Positions Ouvertes et les nouveaux Ordres"
 
-msgid "Change your main login and trading password."
-msgstr "Modifier votre mot de passe de connexion principal et trading."
+msgid "Change your Binary password and MT5 password."
+msgstr ""
 
 msgid "Changes to this privacy policy"
 msgstr "Modifications apportées à cette politique de confidentialité"
@@ -3091,6 +3094,12 @@ msgstr "Confirmer les modifications"
 msgid "Confirm password"
 msgstr "Confirmer le mot de passe"
 
+msgid "Confirm to change your MT5 password"
+msgstr ""
+
+msgid "Confirm to create your MT5 password"
+msgstr ""
+
 msgid "Conflicts Policy"
 msgstr "Gestion des conflits d'intérêts"
 
@@ -3358,11 +3367,23 @@ msgstr "Créer un compte %1"
 msgid "Create Account"
 msgstr "Créer un compte"
 
-msgid "Create MetaTrader 5 account"
-msgstr "Créer un compte MetaTrader 5"
+msgid "Create MT5 password"
+msgstr ""
 
 msgid "Create New Demo Account"
 msgstr "Ouvrir un compte démo"
+
+msgid "Create a MT5 password. You can use this password for all your MT5 accounts."
+msgstr ""
+
+msgid "Create a MetaTrader 5 account"
+msgstr ""
+
+msgid "Create a new Binary password."
+msgstr ""
+
+msgid "Create a new MT5 password."
+msgstr ""
 
 msgid "Create account"
 msgstr "Créer un compte"
@@ -3854,7 +3875,7 @@ msgid "Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta"
 msgstr "Deriv Investments (Europe) Limited et Deriv (Europe) Limited: Malte"
 
 msgid "Deriv Investments (Europe) Limited has prepared the Financial disclosures report in accordance with the Investment Firms Regulation and Directive. Read our report to understand how we comply with market discipline as a market participant."
-msgstr ""
+msgstr "Deriv Investments (Europe) Limited a préparé le rapport sur les informations financières conformément à la réglementation et à la directive sur les entreprises d'investissement. Lisez notre rapport pour comprendre comment nous respectons la discipline de marché en tant que participant au marché."
 
 msgid "Deriv Investments (Europe) Limited is a company established in Malta, at W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033. It is licensed in Malta and regulated by the Malta Financial Services Authority, Triq l-Imdina, Zone 1, Central Business District, Birkirkara CBD 1010, Malta, under the Investments Services Act to provide investment services in the European Union."
 msgstr "Deriv Investments (Europe) Limited est une société établie à Malte, au W ​​Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033. Elle est agréée à Malte et réglementée par la Malta Financial Services Authority, Triq l-Imdina, Zone 1 , Central Business District, Birkirkara CBD 1010, Malte, en vertu de la Loi sur les services d'investissement pour fournir des services d'investissement dans l'Union européenne."
@@ -4432,14 +4453,8 @@ msgstr "S'assurer que le design et développement de chaque page ou produit est 
 msgid "Ensure the integrity of releases by coordinating testing activities"
 msgstr "S'assurer de l'intégrité des versions en coordonnant les activités de test"
 
-msgid "Enter a new Binary password."
-msgstr "Entrez un nouveau mot de passe Binary."
-
 msgid "Enter a new password for your Binary account."
 msgstr "Rentrez un nouveau mot de passe pour votre compte Binary."
-
-msgid "Enter a new trading password."
-msgstr "Entrez un nouveau mot de passe de trading."
 
 msgid "Enter mobile number"
 msgstr "Entrez votre numéro de mobile"
@@ -4449,6 +4464,9 @@ msgstr "Entrez l'ID de l'agent de paiement"
 
 msgid "Enter the authentication code generated by the app below:"
 msgstr "Entrez le code d’authentification généré par l’application ci-dessous :"
+
+msgid "Enter your MT5 password to add a %1 MT5 %2 account."
+msgstr ""
 
 msgid "Enter your email"
 msgstr "Saisissez votre adresse e-mail"
@@ -5033,7 +5051,7 @@ msgid "Financial derivatives that allow you to trade on the movement of underlyi
 msgstr "Produits financiers dérivés qui vous permettent de trader sur la circulation des actifs sous-jacents."
 
 msgid "Financial disclosure report"
-msgstr ""
+msgstr "Rapport de divulgation financière"
 
 msgid "Financial information"
 msgstr "Informations financières"
@@ -5224,8 +5242,8 @@ msgstr "Le trading Forex consiste à acheter une devise et à en vendre une autr
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "Le trading Forex consiste à acheter ou à vendre ces « paires de devises ». Lorsque vous achetez une paire de devises comme EUR/USD, cela signifie que vous êtes à l'achat sur l’EURO et vendez des USD en même temps."
 
-msgid "Forgot password"
-msgstr "Mot de passe oublié"
+msgid "Forgot password?"
+msgstr ""
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Fondée en 1999, %1 est un des noms les plus anciens et les plus respectés dans le trading d'options binaires en ligne."
@@ -5629,8 +5647,8 @@ msgstr "Contrats Supérieur/Inférieur"
 msgid "Highlights"
 msgstr "Faits marquants"
 
-msgid "Hint: You may have chosen a different trading password from your %1 log in password."
-msgstr "Astuce: Vous avez peut-ềtre choisi un mot de passe de trading différent de votre mot de passe %1."
+msgid "Hint: You may have chosen a different MT5 password from your %1 log in password."
+msgstr ""
 
 msgid "Historical Mediterranean island"
 msgstr "Île de la Méditerranée historique"
@@ -7193,6 +7211,9 @@ msgstr "MT5 pour IOS"
 msgid "MT5 for macOS"
 msgstr "MT5 pour macOS"
 
+msgid "MT5 password"
+msgstr ""
+
 msgid "MT5 real-money account for Synthetic Indices only."
 msgstr "Compte MT5 en argent réel pour les Indices Synthétiques uniquement."
 
@@ -7363,9 +7384,6 @@ msgstr "Assurer la sécurité, la détection d'intrusion, la protection contre l
 
 msgid "Manage the funds in your cryptocurrency account."
 msgstr "Gérer les fonds dans votre compte de crypto devises."
-
-msgid "Manage trading password"
-msgstr "Gérer votre mot de passe de trading"
 
 msgid "Manage your authorised applications."
 msgstr "Gestion de vos applications autorisées."
@@ -7903,9 +7921,6 @@ msgstr "Nouveau sur le Forex ? Nous expliquons les bases du plus grand et du pl
 
 msgid "New token created."
 msgstr "Nouveau jeton d'authentification créé."
-
-msgid "New trading password"
-msgstr "Nouveau mot de passe trading"
 
 msgid "Next"
 msgstr "Suivant"
@@ -8783,8 +8798,11 @@ msgstr "Veuillez vérifier votre boîte de réception pour plus de détails."
 msgid "Please choose a currency"
 msgstr "Veuillez choisir une monnaie"
 
-msgid "Please click on the link in the email to reset your binary password."
-msgstr "Veuillez cliquer sur le lien dans l'e-mail pour réinitialiser votre mot de binary passe."
+msgid "Please click on the link in the email to change your MT5 password."
+msgstr ""
+
+msgid "Please click on the link in the email to change your binary password."
+msgstr ""
 
 msgid "Please click on the link in the email to reset your trading password."
 msgstr "Merci de cliquer sur le lien reçu par email afin de réinitialiser votre mot de passe trading."
@@ -8851,9 +8869,6 @@ msgstr "Veuillez entrer votre adresse complète pour éviter les retards d’aut
 
 msgid "Please enter your full home address to avoid authentication delays."
 msgstr "Veuillez entrer votre adresse domiciliaire complète pour éviter les retards d'authentification."
-
-msgid "Please enter your trading password to create an account. If you've forgotten your password, click %1Reset password%2"
-msgstr "Merci d'entrer votre mot de passe de trading pour créer un compte. Si vous avez oublié votre mot de passe, cliquez sur %1Réinitialiser le mot de passe%2"
 
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "Veuillez compléter votre Identifiant de connexion et le Montant que vous souhaitez transférer à votre Client dans le formulaire ci-dessous:"
@@ -9720,9 +9735,6 @@ msgstr "Réinitialisation de mot de passe investisseur"
 msgid "Reset my demo balance"
 msgstr "Réinitialiser mon solde démo"
 
-msgid "Reset my password"
-msgstr "Réinitialiser mon mot de passe"
-
 msgid "Reset password"
 msgstr "Réinitialiser le mot de passe"
 
@@ -10149,9 +10161,6 @@ msgstr "Durée de session :"
 msgid "Set Currency"
 msgstr "Définir la devise"
 
-msgid "Set a trading password. Use this to log in and trade on MT5."
-msgstr "Créez un mot de passe trading. Utilisez-le pour vous connecter et trader sur MT5."
-
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Sélectionnez des barrières pour définir votre position et visualiser le paiement que vous percevrez."
 
@@ -10166,9 +10175,6 @@ msgstr "Réglez la longueur de votre trade de 10 secondes à 365 jours, si vous 
 
 msgid "Set the standard for our technical documentation by creating a technical style guide that can be followed across the company"
 msgstr "Établir la norme pour notre documentation technique en créant un guide de style technique qui peut être suivi dans toute l'entreprise"
-
-msgid "Set trading password"
-msgstr "Créer le mot de passe de trading"
 
 msgid "Set up %1 on your device now"
 msgstr "Installez maintenant %1 sur votre appareil"
@@ -10658,6 +10664,9 @@ msgstr "Soumis"
 
 msgid "Submitting"
 msgstr "En cours de soumission"
+
+msgid "Success"
+msgstr ""
 
 msgid "Success!"
 msgstr "Succès!"
@@ -12675,6 +12684,12 @@ msgstr "Cette page n'est pas disponible dans votre pays de résidence."
 msgid "This page is only available to logged out clients."
 msgstr "Cette page est uniquement disponible pour les clients connectés."
 
+msgid "This password is for logging in to your Binary.com account."
+msgstr ""
+
+msgid "This password is for logging in to your MT5 accounts on the desktop, web, and mobile apps."
+msgstr ""
+
 msgid "This password is on the blacklist"
 msgstr "Ce mot de passe est sur la liste noire"
 
@@ -12695,6 +12710,9 @@ msgstr "Cette section sur les événements de force majeure ne s'applique pas au
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
 msgstr "Les services de ce site Web ne sont pas offerts dans certains pays comme les États-Unis, le Canada, le Hong Kong, ou aux personnes âgées de moins de 18 ans."
+
+msgid "This will change the password to all of your MT5 accounts."
+msgstr ""
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "Connaissance approfondie de script bash et expérience avec le langage de script Perl"
@@ -13056,9 +13074,6 @@ msgstr "Information de trading"
 msgid "Trading Limits"
 msgstr "Limites de trading"
 
-msgid "Trading Password Reset"
-msgstr "Réinitialisation de mot de passe trading"
-
 msgid "Trading Platforms"
 msgstr "Plateformes de trading"
 
@@ -13112,15 +13127,6 @@ msgstr "Limites de trading"
 
 msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
 msgstr "Le trading sur %1 peut devenir addictif. Si vous ressentez le besoin de vous exclure du site Web, veuillez utiliser l'%2option d'auto exclusion%3."
-
-msgid "Trading password"
-msgstr "De mot de passe trading"
-
-msgid "Trading password reset"
-msgstr "Réinitialisation de mot de passe trading"
-
-msgid "Trading password — a new, easy way to sign in to your MT5 accounts"
-msgstr "Mot de passe de trading — une façon nouvelle et plus facile de vous connecter à vos comptes MT5"
 
 msgid "Trading platforms"
 msgstr "Plateformes de trading"
@@ -13572,20 +13578,14 @@ msgstr "Faire tout leur possible et faire preuve de diligence pour transférer l
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "Faire de leur mieux pour attirer des clients potentiels pour Binary"
 
-msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create a password, or you have forgotten your password, please reset it."
-msgstr "Utilisez ce mot de passe pour donner un accès de visualisation à d'autres utilisateurs. S'ils sont capables de voir vos trades, ils ne pourront pas trader ou avoir accès à toute autre action. Si c'est la première fois que vous essayez de créer un mot de passe, ou si vous l'avez oublié, veuillez le réinitialiser."
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you've forgotten your password."
+msgstr ""
 
-msgid "Use this to log in and trade with MT5."
-msgstr "Utilisez-le pour vous connecter et trader avec MT5."
-
-msgid "Use this to log in to Binary.com, SmartTrader, Binary Bot, and Webtrader."
-msgstr "Utilisez-le pour vous connecter sur Binary.com, SmartTrader, Binary Bot, et Webtrader."
+msgid "Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps."
+msgstr ""
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "Utiliser au maximum les fonctionnalités supplémentaires que certains processeurs de paiement offrent"
-
-msgid "Use trading password to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices."
-msgstr "Merci d'utiliser votre mot de passe de trading pour vous connecter à n'importe quel compte MT5 lorsque vous utilisez une application MT5 sur votre téléphone ou tout autre appareil."
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "Utiliser, exécuter et afficher l'Application du Programmeur et son contenu à des fins de marketing, de démonstration et de mise à disposition de l'Application du Programmeur aux clients de la Compagnie."
@@ -14538,14 +14538,11 @@ msgstr "Vous vous attendez à ce que %1 baisse en valeur, afin que vous puissiez
 msgid "You expect the %1 to rise in value so you can sell it back for a profit."
 msgstr "Vous vous attendez à ce que %1 augmente en valeur, afin que vous puissiez la revendre pour faire un profit."
 
-msgid "You have a new binary password."
-msgstr "Vous avez un nouveau mot de passe Binary."
+msgid "You have a new Binary password to log in to Binary.com."
+msgstr ""
 
-msgid "You have a new trading password. Use this to log in to MetaTrader 5."
-msgstr "Vous avez un nouveau mot de passe de trading. Utilisez-le pour vous connecter à MetaTrader5."
-
-msgid "You have a trading password for MT5"
-msgstr "Vous avez un mot de passe de trading pour MT5"
+msgid "You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps."
+msgstr ""
 
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "Vous avez déjà retiré l'équivalent de %1%2 au total au cours des %3 derniers jours."
@@ -14727,6 +14724,9 @@ msgstr "Vous vendez %1 et achetez %2."
 msgid "You're using a Demo Account."
 msgstr "Vous utilisez un compte démo."
 
+msgid "You're using your %1 account to log in to your Binary.com account. To change your login method into using a username and password, click the %2Unlink%3 button."
+msgstr ""
+
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "Vous avez effectué d’importantes transactions sur des marchés similaires à ceux que nous offrons, avec une moyenne de 10 transactions par trimestre pour les quatre trimestres précédents"
 
@@ -14807,9 +14807,6 @@ msgstr "Votre application doit être traitée comme un client professionnel est 
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Votre demande sera ensuite examinée par nos services de conformité et de marketing. Une fois approuvée, nous vous ajouterons en ligne dans notre liste %1d'agents de paiement%2."
-
-msgid "Your binary password has been changed. Please log in again."
-msgstr "Votre mot de passe binary a été modifié. Veuillez vous connecter à nouveau."
 
 msgid "Your cashier is locked."
 msgstr "Votre caisse est verrouillée."
@@ -14922,12 +14919,6 @@ msgstr "Votre jeton a expiré ou est invalide. Veuillez cliquer %1ici%2 pour rel
 msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "Votre jeton a expiré ou n’est pas valide. S’il vous plaît cliquez <a href=\"%1\"> ici</a> pour relancer le processus de vérification."
 
-msgid "Your trading password has been changed. Please use this to log in to MetaTrader 5."
-msgstr "Votre mot de passe de trading a été changé. Veuillez l'utiliser pour vous connecter à votre compte MetaTrader 5. "
-
-msgid "Your trading password has been set. Please use this to log in to MetaTrader 5."
-msgstr "Votre mot de passe de trading a été créé. Veuillez l'utiliser pour vous connecter à votre compte MetaTrader 5."
-
 msgid "Your trading statistics since %1."
 msgstr "Vos statistiques de trading depuis %1."
 
@@ -15024,6 +15015,9 @@ msgstr "jour"
 msgid "days"
 msgstr "jours"
 
+msgid "demo"
+msgstr ""
+
 msgid "demo credit to account"
 msgstr "Solde démo sur le compte"
 
@@ -15095,6 +15089,9 @@ msgstr "position(s)"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "ratio de vos fonds par rapport à la marge totale, exprimé en pourcentage"
+
+msgid "real"
+msgstr ""
 
 msgid "regulated by the Malta Financial Services Authority (MFSA),"
 msgstr "réglementée par la Malta Financial Services Authority (MFSA),"

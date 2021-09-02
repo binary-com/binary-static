@@ -38,7 +38,7 @@ class Contracts extends React.Component {
     }
 
     openDropDown = () => {
-        if (this.state.contracts_tree.length <= 1) return;
+        if (this.state.contracts_tree.length < 1) return;
         this.positionDropDown();
         this.setState({ open: true });
     };
@@ -114,12 +114,12 @@ class Contracts extends React.Component {
         return (
             <div className='contracts'>
                 <div
-                    className={`contract_current ${contracts_tree.length <= 1 ? 'disabled' : ''}`}
+                    className={`contract_current ${contracts_tree.length < 1 ? 'disabled' : ''}`}
                     onClick={this.openDropDown}
                 >
                     <span className='type'>
                         {this.getCurrentType()}
-                        <span className={`arrow_down ${contracts_tree.length <= 1 ? 'invisible' : ''}`} />
+                        <span className={`arrow_down ${contracts_tree.length < 1 ? 'invisible' : ''}`} />
                     </span>
                     <span className='contract'>{this.getCurrentContract()}</span>
                 </div>

@@ -504,9 +504,6 @@ button .barspinner.white {
     .hide-product-checkbox {
         display: none;
     }
-    .email-consent-container {
-        display: none;
-    }
 }
 
 .password {
@@ -516,6 +513,10 @@ button .barspinner.white {
 
         input {
             width: 202px;
+
+            &::-ms-reveal {
+                display: none;
+            }
         }
         @media screen and (max-width: 480px) {
             margin: 0 auto;

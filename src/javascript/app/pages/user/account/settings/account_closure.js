@@ -296,7 +296,7 @@ const AccountClosure = (() => {
         if (el_suggested_improves.value.length !== 0) {
             reason_string += `,${el_suggested_improves.value}`;
         }
-        return reason_string;
+        return reason_string.replace(/(\r\n|\n|\r)/gm, ' ');
     };
 
     return {
