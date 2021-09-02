@@ -1149,15 +1149,21 @@ body #not_authenticated_financial ul.checked > li {
         }
         &__input {
             padding: 5px 16px;
+
+            @media (max-width: 768px) {
+                padding: 4px;
+                width: unset;
+            }
         }
         &__dropdown {
             width: 100%;
             padding: 5px 16px;
             height: fit-content;
-            margin-top: 25px;
+            margin-top: 24px;
+            word-wrap: break-word;
 
             @media (max-width: 768px) {
-                margin-top: 5px;
+                padding: 4px;
             }
         }
         p {
@@ -1169,6 +1175,11 @@ body #not_authenticated_financial ul.checked > li {
             flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 24px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         &__left {
             display: flex;
@@ -1200,7 +1211,8 @@ body #not_authenticated_financial ul.checked > li {
             max-width: calc(50% - 30px);
             margin: 16px 0 0 30px;
             @media (max-width: 768px) {
-                width: 90%;
+                width: 100%;
+                max-width: unset;
                 padding: 0;
                 margin-left: 0;
             }
@@ -1216,13 +1228,18 @@ body #not_authenticated_financial ul.checked > li {
                 padding: 14px 18px;
                 min-width: 245px;
                 max-width: calc(50% - 30px - 36px);
+                @media (max-width: 768px) {
+                    min-width: unset;
+                    max-width: unset;
+                }
 
                 img {
                     min-width: 245px;
                     max-width: calc(50% - 30px - 36px);
                     @media (max-width: 768px) {
-                        width: 90%;
-                        padding: 5%;
+                        min-width: unset;
+                        max-width: unset;
+                        width: 100%;
                     }
                 }
             }
@@ -1248,6 +1265,10 @@ body #not_authenticated_financial ul.checked > li {
     }
     .show-sample-image {
         max-width: 50%;
+
+        @media (max-width: 768px) {
+            max-width: unset;
+        }
     }
     .idv-status {
         margin-top: 32px;

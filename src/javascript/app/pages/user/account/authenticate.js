@@ -1048,7 +1048,7 @@ const Authenticate = (() => {
             $('#idv_country_selector').setVisibility(1);
 
             $residence_dropdown.append(makeOption({
-                text       : localize('Please select the country of document issuance'),
+                text       : localize('Select document issuance country'),
                 value      : 'initial',
                 is_disabled: 'disabled',
             }));
