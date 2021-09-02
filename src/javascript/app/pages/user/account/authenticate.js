@@ -1427,6 +1427,7 @@ const Authenticate = (() => {
         const identity_status = identity.status;
         const identity_last_attempt = attempts.latest;
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
+        const needs_poa = account_status.authentication.needs_verification.length && account_status.authentication.needs_verification.includes('document');
 
         if (identity_status === 'none' || allow_poi_resubmission) {
             handleCountrySelector();
@@ -1437,6 +1438,7 @@ const Authenticate = (() => {
             $('#authentication_tab').setVisibility(1);
             switch (identity_status) {
                 case 'pending':
+                    showCTAButton('document', 'pending');
                     $('#upload_complete').setVisibility(1);
                     break;
                 case 'suspected':
@@ -1469,6 +1471,38 @@ const Authenticate = (() => {
                 default:
                     break;
             }
+        }
+
+        if (!needs_poa) {
+            switch (document.status) {
+                case 'none': {
+                    init();
+                    $('#not_authenticated').setVisibility(1);
+                    break;
+                }
+                case 'pending':
+                    showCTAButton('identity', 'pending');
+                    $('#pending_poa').setVisibility(1);
+                    break;
+                case 'rejected':
+                    $('#unverified_poa').setVisibility(1);
+                    break;
+                case 'suspected':
+                    $('#unverified_poa').setVisibility(1);
+                    break;
+                case 'verified':
+                    showCTAButton('document', 'verified');
+                    $('#verified_poa').setVisibility(1);
+                    break;
+                case 'expired':
+                    $('#expired_poa').setVisibility(1);
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            init();
+            $('#not_authenticated').setVisibility(1);
         }
 
         $('#authentication_loading').setVisibility(0);
