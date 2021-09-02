@@ -414,7 +414,7 @@ const Metatrader = () => (
                                             <a
                                                 id='password_change_button'
                                                 href='javascript:;'
-                                                className='button mt5-web-link full-width'
+                                                className='button full-width'
                                             >
                                                 <span>{it.L('Change password')}</span>
                                             </a>

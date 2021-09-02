@@ -297,11 +297,16 @@ const MetaTrader = (() => {
                         MetaTraderUI.enableButton(action);
                         return;
                     }
-                    await BinarySocket.send({
+                    const response = await BinarySocket.send({
                         trading_platform_password_change: 1,
                         new_password                    : req.mainPassword,
                         platform                        : 'mt5',
                     });
+                    if (response.error) {
+                        MetaTraderUI.displayFormMessage(response.error.message, action);
+                        MetaTraderUI.enableButton(action, response);
+                        return;
+                    }
                 }
                 BinarySocket.send(req).then(async (response) => {
                     if (response.error) {
