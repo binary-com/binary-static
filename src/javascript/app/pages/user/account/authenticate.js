@@ -1026,6 +1026,7 @@ const Authenticate = (() => {
 
     const handleCountrySelector = async () => {
         $('#authentication_tab').setVisibility(0);
+        $('#idv-container').setVisibility(1);
         const $residence_dropdown = $('#country_dropdown');
         const next_button = document.getElementById('button_next_country_selected');
         const { idv, onfido } = account_status.authentication.identity.services;
@@ -1333,7 +1334,11 @@ const Authenticate = (() => {
         } = account_status.authentication.identity.services.onfido;
     
         switch (status) {
+            case 'none':
+                handleCountrySelector();
+                break;
             case 'pending':
+                $('#pending_poa').setVisibility(1);
                 showCTAButton('document', 'pending');
                 break;
             case 'suspected':
@@ -1422,7 +1427,6 @@ const Authenticate = (() => {
         const identity_status = identity.status;
         const identity_last_attempt = attempts.latest;
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
-        const needs_poa = authentication_object.needs_verification.length && authentication_object.needs_verification.includes('document');
 
         if (identity_status === 'none' || allow_poi_resubmission) {
             handleCountrySelector();
@@ -1430,9 +1434,10 @@ const Authenticate = (() => {
             $('#authentication_verified').setVisibility(1);
         // For statuses set from BO, last attempt will be null
         } else if (!identity_last_attempt) {
+            $('#authentication_tab').setVisibility(1);
             switch (identity_status) {
                 case 'pending':
-                    showCTAButton('document', 'pending');
+                    $('#upload_complete').setVisibility(1);
                     break;
                 case 'suspected':
                     $('#unverified').setVisibility(1);
@@ -1441,14 +1446,8 @@ const Authenticate = (() => {
                     $('#limited_poi').setVisibility(1);
                     break;
                 case 'verified':
-                    // if POI is verified and POA is not verified, redirect to POA tab
-                    if (needs_poa) {
-                        $('#authentication_tab').setVisibility(1);
-                        Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
-                        $('#poa').setVisibility(1);
-                    }
                     showCTAButton('document', 'verified');
-                    $('#verified').setVisibility(1);
+                    $('#verified_poa').setVisibility(1);
                     break;
                 case 'expired':
                     $('#expired_poi').setVisibility(1);
