@@ -1120,7 +1120,6 @@ const Authenticate = (() => {
 
         const country_code = selected_country.value;
         const { has_visual_sample, documents_supported } = selected_country.identity.services.idv;
-        const needs_poa = account_status.authentication.needs_verification.length && account_status.authentication.needs_verification.includes('document');
 
         let document_type,
             document_number;
@@ -1225,22 +1224,23 @@ const Authenticate = (() => {
                         // Success - Update authentication object with new status
                         BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(res => {
                             account_status = res.get_account_status;
-                        });
-                        $('#idv_document_submit').setVisibility(0);
-                        if (needs_poa) {
-                            $('#authentication_tab').setVisibility(1);
-                            $('#idv_submit_pending_need_poa').setVisibility(1);
-                            Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
-                            TabSelector.updateTabDisplay();
-                            $('#idv_pending_submit_poa_btn').on('click', () => {
-                                init();
-                                $('#not_authenticated').setVisibility(1);
-                                Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
+                            const needs_poa = account_status.authentication.needs_verification.length && account_status.authentication.needs_verification.includes('document');
+                            $('#idv_document_submit').setVisibility(0);
+                            if (needs_poa) {
+                                $('#authentication_tab').setVisibility(1);
+                                $('#idv_submit_pending_need_poa').setVisibility(1);
+                                Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
                                 TabSelector.updateTabDisplay();
-                            });
-                        } else {
-                            $('#idv_submit_pending').setVisibility(1);
-                        }
+                                $('#idv_pending_submit_poa_btn').on('click', () => {
+                                    init();
+                                    $('#not_authenticated').setVisibility(1);
+                                    Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
+                                    TabSelector.updateTabDisplay();
+                                });
+                            } else {
+                                $('#idv_submit_pending').setVisibility(1);
+                            }
+                        });
                     }
                 });
             });
