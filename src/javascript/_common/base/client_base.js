@@ -230,7 +230,7 @@ const ClientBase = (() => {
 
     const isAuthenticationAllowed = () => {
         const acccount = State.getResponse('get_account_status');
-        return acccount.status.some(s => s === 'allow_document_upload');
+        return acccount.status.some(s => s === 'allow_document_upload' || s === 'allow_poi_resubmission');
     };
 
     // * MT5 login list returns these:
