@@ -896,6 +896,7 @@ const Authenticate = (() => {
         if (has_personal_details_error) {
             $('#personal_details_error').setVisibility(1);
         } else if (!$('#onfido').is(':parent')) {
+            $('#onfido').setVisibility(1);
             const onfido_country_code = country_code.length < 3 ?
                 Countries.alpha2ToAlpha3(country_code.toUpperCase()) : country_code;
     
@@ -934,7 +935,6 @@ const Authenticate = (() => {
                     ],
                 });
                 $('#authentication_loading').setVisibility(0);
-                $('#onfido').setVisibility(1);
             } catch (err) {
                 $('#error_occured').setVisibility(1);
                 $('#authentication_loading').setVisibility(0);
