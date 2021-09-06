@@ -867,6 +867,8 @@ const Authenticate = (() => {
         const country_code = selected_country.value;
         const documents_supported = selected_country.identity.services.onfido.documents_supported;
         const service_token_response = await getOnfidoServiceToken(country_code);
+        // eslint-disable-next-line
+        console.log(service_token_response);
         let has_personal_details_error = false;
 
         if (
