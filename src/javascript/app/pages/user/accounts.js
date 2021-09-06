@@ -1,18 +1,17 @@
-const moment               = require('moment');
-const SetCurrency          = require('./set_currency');
-const BinaryPjax           = require('../../base/binary_pjax');
-const Client               = require('../../base/client');
-const BinarySocket         = require('../../base/socket');
-const showPopup            = require('../../common/attach_dom/popup');
-const Currency             = require('../../common/currency');
-const localize             = require('../../../_common/localize').localize;
-const State                = require('../../../_common/storage').State;
-const urlFor               = require('../../../_common/url').urlFor;
+const moment       = require('moment');
+const SetCurrency  = require('./set_currency');
+const BinaryPjax   = require('../../base/binary_pjax');
+const Client       = require('../../base/client');
+const BinarySocket = require('../../base/socket');
+const showPopup    = require('../../common/attach_dom/popup');
+const Currency     = require('../../common/currency');
+const localize     = require('../../../_common/localize').localize;
+const State        = require('../../../_common/storage').State;
+const urlFor       = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
     let landing_company;
-    const form_id          = '#new_accounts';
-    const has_real_account = Client.hasAccountType('real');
+    const form_id = '#new_accounts';
 
     const TableHeaders = (() => {
         let table_headers;
@@ -44,17 +43,22 @@ const Accounts = (() => {
         BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list').then(() => {
             landing_company           = State.getResponse('landing_company');
             const can_change_currency = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'));
-
+            const is_virtual          = Client.get('is_virtual');
+            const has_real_account    = Client.hasAccountType('real');
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';
             const upgrade_info  = Client.getUpgradeInfo();
-            if (upgrade_info.can_upgrade && !has_real_account) {
-                populateNewAccounts(upgrade_info);
-                element_to_show = '#new_accounts_wrapper';
+            if (upgrade_info.can_upgrade) {
+                // VRTC SVG has can_upgrade, but they are only allowed to open crypto related
+                // accounts. This is a check to ignore the account creation form for them
+                if (upgrade_info.can_open_multi || !upgrade_info.can_upgrade_to.includes('svg') || !has_real_account) {
+                    populateNewAccounts(upgrade_info);
+                    element_to_show = '#new_accounts_wrapper';
+                }
             }
 
-            if (upgrade_info.can_open_multi || has_real_account && Client.get('is_virtual')) {
+            if (upgrade_info.can_open_multi || (upgrade_info.can_upgrade_to.includes('svg') && is_virtual && has_real_account)) {
                 populateMultiAccount();
             } else if (!can_change_currency) {
                 doneLoading(element_to_show);
@@ -73,7 +77,7 @@ const Accounts = (() => {
     const clearPopup = () => {
         SetCurrency.cleanupPopup();
     };
-    
+
     const doneLoading = (element_to_show) => {
         $(element_to_show).setVisibility(1);
         $('#accounts_loading').remove();
@@ -87,12 +91,22 @@ const Accounts = (() => {
     const populateNewAccounts = (upgrade_info) => {
         const table_headers = TableHeaders.get();
         upgrade_info.type.forEach((new_account_type, index) => {
+            const getAccountTitle = () => {
+                if (new_account_type === 'financial') {
+                    return localize('Financial Account');
+                }
+                if (upgrade_info.can_upgrade_to[index] === 'malta') {
+                    return localize('Gaming Account');
+                }
+
+                return localize('Real Account');
+            };
+
             const account           = {
                 real     : new_account_type === 'real',
                 financial: new_account_type === 'financial',
             };
-            const new_account_title = new_account_type === 'financial' ? localize('Financial Account') :
-                upgrade_info.can_upgrade_to[index] === 'malta' ? localize('Gaming Account') : localize('Real Account');
+            const new_account_title = getAccountTitle();
             $(form_id).find('tbody')
                 .append($('<tr/>')
                     .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
@@ -129,7 +143,12 @@ const Accounts = (() => {
                 })))
                 .append($('<td/>', { text: getAvailableMarkets(loginid), datath: table_headers.available_markets }))
                 .append($('<td/>', { id: 'change_currency_action' })
-                    .html($('<button/>', { id: 'change_currency_btn', class: 'button no-margin', type: 'button', text: localize('Change currency') }).click(() => showCurrencyPopUp('change')))));
+                    .html($('<button/>', {
+                        id   : 'change_currency_btn',
+                        class: 'button no-margin',
+                        type : 'button',
+                        text : localize('Change currency'),
+                    }).on('click', () => showCurrencyPopUp('change')))));
 
         // Replace note to reflect ability to change currency
         $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency.')}`);
@@ -153,9 +172,9 @@ const Accounts = (() => {
             url               : urlFor('user/set-currency'),
             content_id        : '#set_currency',
             form_id           : 'frm_set_currency',
-            additionalFunction: () => {
+            additionalFunction: async () => {
                 localStorage.setItem('popup_action', action_map[action]);
-                SetCurrency.onLoad(onConfirmSetCurrency);
+                await SetCurrency.onLoad(onConfirmSetCurrency);
             },
         });
     };
@@ -185,15 +204,15 @@ const Accounts = (() => {
         const account_type_prop = { text: Client.getAccountTitle(loginid) };
 
         if (!Client.isAccountOfType('virtual', loginid)) {
-            const company_name    = getCompanyName(loginid);
-            const company_country = getCompanyCountry(loginid);
-            account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}, ${localize('Jurisdiction')}: ${company_country}`;
+            const company_name                       = getCompanyName(loginid);
+            const company_country                    = getCompanyCountry(loginid);
+            account_type_prop['data-balloon']        = `${localize('Counterparty')}: ${company_name}, ${localize('Jurisdiction')}: ${company_country}`;
             account_type_prop['data-balloon-length'] = 'large';
         }
 
         const is_disabled    = Client.get('is_disabled', loginid);
         const excluded_until = Client.get('excluded_until', loginid);
-        let txt_markets = '';
+        let txt_markets;
         if (is_disabled) {
             txt_markets = localize('This account is disabled');
         } else if (excluded_until) {
@@ -202,13 +221,17 @@ const Accounts = (() => {
             txt_markets = getAvailableMarkets(loginid);
         }
 
+        const showSetCurrency = () => showCurrencyPopUp('set');
         $('#existing_accounts').find('tbody')
             .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'color-dark-white' : '') })
                 .append($('<td/>', { text: loginid, datath: table_headers.account }))
                 .append($('<td/>', { datath: table_headers.type }).html($('<span/>', account_type_prop)))
                 .append($('<td/>', { text: txt_markets, datath: table_headers.available_markets }))
                 .append($('<td/>', { datath: table_headers.currency })
-                    .html(!account_currency && loginid === Client.get('loginid') ? $('<button/>', { text: localize('Set currency'), type: 'button' }).click(() => showCurrencyPopUp('set')) : (Currency.getCurrencyFullName(account_currency) || '-'))));
+                    .html(!account_currency && loginid === Client.get('loginid') ? $('<button/>', {
+                        text: localize('Set currency'),
+                        type: 'button',
+                    }).on('click', showSetCurrency) : (Currency.getCurrencyFullName(account_currency) || '-'))));
 
         if (is_disabled || excluded_until) {
             $('#note_support').setVisibility(1);
@@ -253,6 +276,7 @@ const Accounts = (() => {
     const populateMultiAccount = () => {
         const table_headers = TableHeaders.get();
         const account       = { real: 1 };
+        const handleClick = () => showCurrencyPopUp('create');
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
@@ -261,17 +285,20 @@ const Accounts = (() => {
                     'data-balloon-length': 'large',
                 })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }), datath: table_headers.available_markets }))
-                .append($('<td/>').html($('<button/>', { text: localize('Create account'), type: 'button' }).click(() => showCurrencyPopUp('create')))));
+                .append($('<td/>').html($('<button/>', {
+                    text: localize('Create account'),
+                    type: 'button',
+                }).on('click' , handleClick))));
 
         $('#note').setVisibility(1);
 
         doneLoading('#new_accounts_wrapper');
     };
 
-    const onUnload = () =>{
+    const onUnload = () => {
         clearPopup();
     };
-    
+
     return {
         onLoad,
         onUnload,
