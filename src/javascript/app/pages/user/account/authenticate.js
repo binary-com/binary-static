@@ -1021,6 +1021,7 @@ const Authenticate = (() => {
     const cleanElementVisibility = () => {
         $('#personal_details_error').setVisibility(0);
         $('#limited_poi').setVisibility(0);
+        $('#idv-container').setVisibility(0);
     };
 
     const handleCountrySelector = async () => {
@@ -1256,6 +1257,7 @@ const Authenticate = (() => {
         const { status, submissions_left: idv_submissions_left } = idv;
         const { submissions_left: onfido_submissions_left } = onfido;
         const needs_poa = account_status.authentication.needs_verification.length && account_status.authentication.needs_verification.includes('document');
+        $('#idv-container').setVisibility(1);
 
         switch (status) {
             case 'pending':
@@ -1326,15 +1328,15 @@ const Authenticate = (() => {
     };
 
     const handleOnfido = async () => {
-        $('#authentication_tab').setVisibility(1);
         $('#idv-container').setVisibility(0);
-
+        account_status = await getAccountStatus();
         const needs_poa = account_status.authentication.needs_verification.length && account_status.authentication.needs_verification.includes('document');
         const {
             status,
             submissions_left,
             last_rejected: rejected_reasons,
         } = account_status.authentication.identity.services.onfido;
+        $('#authentication_tab').setVisibility(1);
     
         switch (status) {
             case 'none':
