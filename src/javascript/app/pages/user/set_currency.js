@@ -99,9 +99,8 @@ const SetCurrency = (() => {
 
         onSelection($currency_list, $error, true);
     };
-
     const getAvailableCurrencies = (landing_company, payout_currencies) =>
-        Client.get('landing_company_shortcode') === 'svg' ? GetCurrency.getCurrencies(landing_company) : payout_currencies;
+        Client.hasSvgAccount() ? GetCurrency.getCurrencies(landing_company) : payout_currencies;
 
     const getCurrencyChangeOptions = (landing_company) => {
         const allowed_currencies = Client.getLandingCompanyValue(Client.get('loginid'), landing_company, 'legal_allowed_currencies');
@@ -121,7 +120,6 @@ const SetCurrency = (() => {
             const $wrapper = $('<div/>', { class: 'gr-2 gr-6-m currency_wrapper', id: c });
             const $image   = $('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) }));
             const $name    = $('<div/>', { class: 'currency-name' });
-
             if (Currency.isCryptocurrency(c)) {
                 const $display_name = $('<span/>', {
                     text: Currency.getCurrencyName(c) || c,

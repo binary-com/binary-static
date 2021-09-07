@@ -14,10 +14,9 @@ const getHashValue     = require('../../../../../_common/url').getHashValue;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
-    const form_id                = '#frmPersonalDetails';
-    const real_acc_elements      = '.RealAcc';
-    const real_acc_auth_elements = '.RealAccAuth';
-    const name_fields            = ['first_name', 'last_name'];
+    const form_id           = '#frmPersonalDetails';
+    const real_acc_elements = '.RealAcc';
+    const name_fields       = ['first_name', 'last_name'];
 
     let is_for_new_account = false;
 
@@ -129,6 +128,29 @@ const PersonalDetails = (() => {
         }
     };
 
+    const selectContactCSMessage = (immutable_fields) => {
+        const has_name          = /name/.test(immutable_fields.toString());
+        const has_date_of_birth = /date_of_birth/.test(immutable_fields.toString());
+        const has_tax_info      = /tax/.test(immutable_fields.toString());
+        if (has_name && has_date_of_birth && has_tax_info) {
+            $('.full-cs-msg').setVisibility(1);
+        } else if (!has_name && !has_date_of_birth && !has_tax_info) {
+            $('.cs-msg-without-name-dob-and-tax-info').setVisibility(1);
+        } else if (!has_name && !has_date_of_birth) {
+            $('.cs-msg-without-name-and-dob').setVisibility(1);
+        } else if (!has_date_of_birth && !has_tax_info) {
+            $('.cs-msg-without-dob-and-tax-info').setVisibility(1);
+        } else if (!has_name && !has_tax_info) {
+            $('.cs-msg-without-name-and-tax-info').setVisibility(1);
+        } else if (!has_name) {
+            $('.cs-msg-without-name').setVisibility(1);
+        } else if (!has_date_of_birth) {
+            $('.cs-msg-without-dob').setVisibility(1);
+        } else if (!has_tax_info) {
+            $('.cs-msg-without-tax-info').setVisibility(1);
+        }
+    };
+
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
         const get_settings         = $.extend({}, data);
         // date_of_birth can be 0 as a valid epoch
@@ -166,7 +188,7 @@ const PersonalDetails = (() => {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
             if (is_fully_authenticated) {
-                $(real_acc_auth_elements).setVisibility(1);
+                selectContactCSMessage(get_settings.immutable_fields);
             }
         }
 

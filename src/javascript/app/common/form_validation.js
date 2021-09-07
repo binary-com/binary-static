@@ -383,7 +383,7 @@ const Validation = (() => {
     };
 
     const showError = (field, localized_message) => {
-        if (field.$error.html() === localized_message) return;
+        if (field.$error.html() === localized_message && field.$error.is(':visible')) return;
         clearError(field);
         Password.removeCheck(field.selector);
         field.$error.html(localized_message).setVisibility(1);

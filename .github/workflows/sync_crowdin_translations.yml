@@ -23,9 +23,6 @@ jobs:
 
       - name: Checkout master branch
         uses: actions/checkout@v2
-        with:
-          repository: "binary-com/binary-static"
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Setup Project and environment
         run: |
@@ -46,12 +43,12 @@ jobs:
       - name: Uploading new strings to Crowdin
         run: |
           last_messages_hash="$(git hash-object $(git rev-parse --show-toplevel)/src/translations/messages.pot)"
-          echo "Generating messages.pot"          
+          echo "Generating messages.pot"
           node ./scripts/render.js -t
           current_messages_hash="$(git hash-object $(git rev-parse --show-toplevel)/src/translations/messages.pot)"
           echo "- [crowdin]:   message.pot hash is: $last_messages_hash"
           echo "- [generated]: message.pot hash is: $current_messages_hash"
-          
+
           # We compare the generated messages.pot with the last messages.pot.
           # Only send a Slack message and upload it to Crowdin if there were any changes made to messages.pot.
           if [ "$last_messages_hash" != "$current_messages_hash" ]; then
@@ -78,7 +75,7 @@ jobs:
 
       - name: Create and merge translation PR
         run: |
-          branch_name="binary_static_translations"        
+          branch_name="binary_static_translations"
           if [ -z "$(git status --porcelain)" ]; then
             echo "Found no new translation files that need to be merged with master. Not creating a PR."
           else
@@ -87,7 +84,7 @@ jobs:
             cd $(git rev-parse --show-toplevel)
             git add .
             git commit -m "translations: 📚 sync translations with crowdin"
-            
+
             # Force push to this branch in case a previous run created it.
             git push --set-upstream origin "$branch_name" -f
 
@@ -97,6 +94,6 @@ jobs:
             gh pr create --fill --base "master" --head "binary-com:$branch_name"
 
             echo "Attempting to merge the PR."
-            gh pr merge "$branch_name" --squash
+            gh pr merge "$branch_name" --admin --squash
             echo "**The translation PR has beed merged successfully.**"
           fi

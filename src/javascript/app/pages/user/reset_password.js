@@ -7,6 +7,7 @@ const getElementById = require('../../../_common/common_functions').getElementBy
 const localize       = require('../../../_common/localize').localize;
 const State          = require('../../../_common/storage').State;
 const toTitleCase    = require('../../../_common/string_util').toTitleCase;
+const Client         = require('../../base/client');
 
 const ResetPassword = (() => {
     let form_reset_pw_id,
@@ -49,7 +50,7 @@ const ResetPassword = (() => {
                 localized_message: localize('You have a new Binary password to log in to Binary.com.'),
                 localized_title  : localize('Success'),
                 ok_text          : localize('Done'),
-                onConfirm        : () => Login.redirectToLogin(true),
+                onConfirm        : () => Client.sendLogoutRequest(true),
             });
         }
     };

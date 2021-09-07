@@ -374,6 +374,7 @@ module.exports = [
     'Open the link on your mobile',
     'Open your new bank account',
     'Opens',
+    'Our MT5 servers are temporarily unavailable. We\'re working to restore them. Please try again in a few minutes.',
     'Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.',
     'Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.',
     'Over/Under',
