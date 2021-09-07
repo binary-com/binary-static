@@ -1226,7 +1226,8 @@ const Authenticate = (() => {
                         // Success - Update authentication object with new status
                         BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(res => {
                             account_status = res.get_account_status;
-                            const needs_poa = account_status.authentication.needs_verification.length && account_status.authentication.needs_verification.includes('document');
+                            const needs_verification = account_status.authentication.needs_verification;
+                            const needs_poa = needs_verification.length && needs_verification.includes('document');
                             $('#idv_document_submit').setVisibility(0);
                             if (needs_poa) {
                                 $('#authentication_tab').setVisibility(1);
@@ -1433,7 +1434,8 @@ const Authenticate = (() => {
         const identity_status = identity.status;
         const identity_last_attempt = attempts.latest;
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
-        const needs_poa = account_status.authentication.needs_verification.length && account_status.authentication.needs_verification.includes('document');
+        const needs_verification = account_status.authentication.needs_verification;
+        const needs_poa = needs_verification.length && needs_verification.includes('document');
 
         if (identity_status === 'none' || allow_poi_resubmission) {
             handleCountrySelector();
