@@ -1116,6 +1116,8 @@ const Authenticate = (() => {
         right_container.setVisibility(0);
         verify_button.classList.add('button-disabled');
         left_container.classList.remove('show-sample-image');
+        example_format_text.classList.remove('error-text');
+        $example.html('');
 
         const country_code = selected_country.value;
         const { has_visual_sample, documents_supported } = selected_country.identity.services.idv;
