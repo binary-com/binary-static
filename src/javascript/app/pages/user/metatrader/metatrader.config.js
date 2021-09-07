@@ -538,8 +538,11 @@ const MetaTraderConfig = (() => {
     // otherwise, use this function to format login into display login
     const getDisplayLogin = login => login.replace(/^MT[DR]?/i, '');
 
-    const isAuthenticated = () =>
-        State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
+    const isAuthenticated = () => {
+        const authentication = State.getResponse('get_account_status').authentication;
+        const { identity, needs_verification } = authentication;
+        return identity.status === 'verified' && needs_verification.length === 0;
+    };
 
     const isAuthenticationPromptNeeded = () => {
         const authentication = State.getResponse('get_account_status.authentication');
