@@ -1320,7 +1320,7 @@ const Authenticate = (() => {
                     const is_visible = 1;
                     if (is_idv_disallowed) {
                         $('#authentication_tab').setVisibility(is_visible);
-                        Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                        Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                         TabSelector.updateTabDisplay();
                         $('#poa').setVisibility(is_visible);
                         $('#idv_document_verified_poi').setVisibility(is_visible);
