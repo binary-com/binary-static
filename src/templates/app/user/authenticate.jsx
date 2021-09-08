@@ -266,7 +266,7 @@ const Authenticate = () => (
                             <p>{it.L('Need help? [_1]Contact us[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
                         </div>
 
-                        <div id='idv-container' className='idv-main-container'>
+                        <div className='idv-main-container'>
                             <div id='idv_submit_pending_need_poa' className='center-text gr-padding-20 invisible'>
                                 <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/submit_successfully.svg')} />
                                 <h1 className='gr-padding-10'>{it.L('We\'ve received your document number')}</h1>
@@ -278,9 +278,9 @@ const Authenticate = () => (
                                 />
                             </div>
 
-                            <div id='idv_document_verified_need_poa' className='idv-container invisible'>
-                                <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verification_passed.svg')} />
-                                <h1 className='idv-container__header'>{it.L('Your document number has been verified')}</h1>
+                            <div id='idv_document_verified_need_poa' className='center-text gr-padding-20 invisible'>
+                                <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/verification_passed.svg')} />
+                                <h1 className='gr-padding-10'>{it.L('Your document number has been verified')}</h1>
                                 <p>{it.L('Next, we\'ll need your proof of address')}</p>
                                 <Button
                                     id='idv_verified_poa_btn'
@@ -290,9 +290,9 @@ const Authenticate = () => (
                                 />
                             </div>
 
-                            <div id='idv_document_verified_poi' className='idv-container invisible'>
-                                <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verification_passed.svg')} />
-                                <h1 className='idv-container__header'>{it.L('We\'ve successfully verified your document number')}</h1>
+                            <div id='idv_document_verified_poi' className='center-text gr-padding-20 invisible'>
+                                <img className='gr-padding-20' src={it.url_for('images/pages/authenticate/verification_passed.svg')} />
+                                <h1 className='gr-padding-10'>{it.L('We\'ve successfully verified your document number')}</h1>
                             </div>
                         </div>
                     </TabContent>
