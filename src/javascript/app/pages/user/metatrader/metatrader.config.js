@@ -331,7 +331,6 @@ const MetaTraderConfig = (() => {
                 response.binary_transaction_id,
             ]),
             prerequisites: acc_type => new Promise((resolve) => {
-                console.log('prerequisites')
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (getAccountsInfo(acc_type).sub_account_type === 'financial' && getAccountsInfo(acc_type).landing_company_short !== 'svg') {
