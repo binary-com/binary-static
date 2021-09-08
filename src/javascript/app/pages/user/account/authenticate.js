@@ -946,6 +946,8 @@ const Authenticate = (() => {
         BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
             account_status = response.get_account_status;
             const { needs_verification } = account_status.authentication;
+            const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
+            
             const type_required = type === 'identity' ? 'poi' : 'poa';
             const type_pending = type === 'identity' ? 'poa' : 'poi';
             const description_status = status !== 'verified';
@@ -954,6 +956,9 @@ const Authenticate = (() => {
             $(`#button_verified_${type_pending}_required, #button_pending_${type_pending}_required`).setVisibility(0);
     
             if (needs_verification.includes(type)) {
+                $(`#text_${status}_${type_required}_required`).setVisibility(1);
+                $(`#button_${status}_${type_required}_required`).setVisibility(1);
+            } else if (is_idv_disallowed) {
                 $(`#text_${status}_${type_required}_required`).setVisibility(1);
                 $(`#button_${status}_${type_required}_required`).setVisibility(1);
             } else if (description_status) {
@@ -1306,8 +1311,6 @@ const Authenticate = (() => {
                     TabSelector.updateTabDisplay();
                     $('#idv_document_verified_need_poa').setVisibility(1);
                     $('#idv_verified_poa_btn').on('click', () => {
-                        init();
-                        $('#not_authenticated').setVisibility(1);
                         $('#poa').setVisibility(1);
                         Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                         TabSelector.updateTabDisplay();
@@ -1337,6 +1340,7 @@ const Authenticate = (() => {
             submissions_left,
             last_rejected: rejected_reasons,
         } = account_status.authentication.identity.services.onfido;
+        const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
         $('#authentication_tab').setVisibility(1);
     
         switch (status) {
@@ -1394,8 +1398,7 @@ const Authenticate = (() => {
                 $('#authentication_tab').setVisibility(1);
                 Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
                 TabSelector.updateTabDisplay();
-                if (needs_poa) {
-                    init();
+                if (needs_poa || is_idv_disallowed) {
                     Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                     $('#poa').setVisibility(1);
                     TabSelector.updateTabDisplay();
@@ -1435,6 +1438,7 @@ const Authenticate = (() => {
         const allow_poi_resubmission = account_status.status.some(s => s === 'allow_poi_resubmission');
 
         const { attempts, document, identity } = authentication_object;
+        const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
         const identity_status = identity.status;
         const identity_last_attempt = attempts.latest;
         const is_fully_authenticated = identity.status === 'verified' && document.status === 'verified';
@@ -1461,6 +1465,9 @@ const Authenticate = (() => {
                     break;
                 case 'verified':
                     $('#verified').setVisibility(1);
+                    if (is_idv_disallowed) {
+                        showCTAButton('document', 'verified');
+                    }
                     break;
                 case 'expired':
                     $('#expired_poi').setVisibility(1);
