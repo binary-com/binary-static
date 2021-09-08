@@ -551,7 +551,7 @@ const MetaTraderConfig = (() => {
         const is_identity_authenticated = /^(verified)$/.test(identity.status);
         const is_document_authenticated = /^(verified)$/.test(document.status);
         const has_been_authenticated = (is_identity_authenticated && is_document_authenticated)
-            || !is_need_verification;
+            && !is_need_verification;
 
         return !has_been_authenticated;
     };

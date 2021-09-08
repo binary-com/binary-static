@@ -1405,6 +1405,10 @@ const Authenticate = (() => {
                 break;
             case 'expired':
                 $('#expired_poi').setVisibility(1);
+                $('#expired_button').off('click').on('click', () => {
+                    $('#expired_poi').setVisibility(0);
+                    handleCountrySelector();
+                });
                 break;
             default:
                 break;
@@ -1460,6 +1464,10 @@ const Authenticate = (() => {
                     break;
                 case 'expired':
                     $('#expired_poi').setVisibility(1);
+                    $('#expired_button').off('click').on('click', () => {
+                        $('#expired_poi').setVisibility(0);
+                        handleCountrySelector();
+                    });
                     break;
                 default:
                     break;
