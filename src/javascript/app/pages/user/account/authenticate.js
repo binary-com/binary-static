@@ -946,7 +946,6 @@ const Authenticate = (() => {
         BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(response => {
             account_status = response.get_account_status;
             const { needs_verification } = account_status.authentication;
-            const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
             
             const type_required = type === 'identity' ? 'poi' : 'poa';
             const type_pending = type === 'identity' ? 'poa' : 'poi';
@@ -956,9 +955,6 @@ const Authenticate = (() => {
             $(`#button_verified_${type_pending}_required, #button_pending_${type_pending}_required`).setVisibility(0);
     
             if (needs_verification.includes(type)) {
-                $(`#text_${status}_${type_required}_required`).setVisibility(1);
-                $(`#button_${status}_${type_required}_required`).setVisibility(1);
-            } else if (is_idv_disallowed) {
                 $(`#text_${status}_${type_required}_required`).setVisibility(1);
                 $(`#button_${status}_${type_required}_required`).setVisibility(1);
             } else if (description_status) {
@@ -1267,17 +1263,22 @@ const Authenticate = (() => {
 
         switch (status) {
             case 'pending':
-                if (needs_poa || is_idv_disallowed) {
+                if (needs_poa) {
                     $('#authentication_tab').setVisibility(1);
                     $('#idv_submit_pending_need_poa').setVisibility(1);
                     $('#idv_pending_submit_poa_btn').on('click', () => {
-                        init();
                         $('#not_authenticated').setVisibility(1);
                         Url.updateParamsWithoutReload({ authentication_tab: 'poa' }, true);
                         $('#poa').setVisibility(1);
                         TabSelector.updateTabDisplay();
                     });
                 } else {
+                    if (is_idv_disallowed) {
+                        $('#authentication_tab').setVisibility(1);
+                        Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                        TabSelector.updateTabDisplay();
+                        $('#poa').setVisibility(1);
+                    }
                     $('#idv_submit_pending').setVisibility(1);
                 }
                 break;
@@ -1305,7 +1306,7 @@ const Authenticate = (() => {
                 }
                 break;
             case 'verified':
-                if (needs_poa || is_idv_disallowed) {
+                if (needs_poa) {
                     $('#authentication_tab').setVisibility(1);
                     Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
                     TabSelector.updateTabDisplay();
@@ -1316,6 +1317,13 @@ const Authenticate = (() => {
                         TabSelector.updateTabDisplay();
                     });
                 } else {
+                    if (is_idv_disallowed) {
+                        $('#authentication_tab').setVisibility(1);
+                        Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                        TabSelector.updateTabDisplay();
+                        $('#poa').setVisibility(1);
+                    }
+                    
                     $('#idv_document_verified').setVisibility(1);
                 }
                 break;
@@ -1465,8 +1473,12 @@ const Authenticate = (() => {
                     break;
                 case 'verified':
                     $('#verified').setVisibility(1);
+
                     if (is_idv_disallowed) {
-                        showCTAButton('document', 'verified');
+                        $('#authentication_tab').setVisibility(1);
+                        Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                        TabSelector.updateTabDisplay();
+                        $('#poa').setVisibility(1);
                     }
                     break;
                 case 'expired':
