@@ -1262,7 +1262,7 @@ const Authenticate = (() => {
 
         switch (status) {
             case 'pending':
-                if (needs_poa) {
+                if (needs_poa || is_idv_disallowed) {
                     $('#authentication_tab').setVisibility(1);
                     $('#idv_submit_pending_need_poa').setVisibility(1);
                     $('#idv_pending_submit_poa_btn').on('click', () => {
@@ -1300,7 +1300,7 @@ const Authenticate = (() => {
                 }
                 break;
             case 'verified':
-                if (needs_poa) {
+                if (needs_poa || is_idv_disallowed) {
                     $('#authentication_tab').setVisibility(1);
                     Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
                     TabSelector.updateTabDisplay();
