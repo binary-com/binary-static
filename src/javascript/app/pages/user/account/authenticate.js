@@ -1317,14 +1317,16 @@ const Authenticate = (() => {
                         TabSelector.updateTabDisplay();
                     });
                 } else {
+                    const is_visible = 1;
                     if (is_idv_disallowed) {
-                        $('#authentication_tab').setVisibility(1);
+                        $('#authentication_tab').setVisibility(is_visible);
                         Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
                         TabSelector.updateTabDisplay();
-                        $('#poa').setVisibility(1);
+                        $('#poa').setVisibility(is_visible);
+                        $('#idv_document_verified_poi').setVisibility(is_visible);
+                    } else {
+                        $('#idv_document_verified').setVisibility(is_visible);
                     }
-                    
-                    $('#idv_document_verified').setVisibility(1);
                 }
                 break;
             case 'expired':

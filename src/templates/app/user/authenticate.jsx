@@ -289,6 +289,11 @@ const Authenticate = () => (
                                     text={it.L('Submit proof of address')}
                                 />
                             </div>
+
+                            <div id='idv_document_verified_poi' className='idv-container invisible'>
+                                <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verification_passed.svg')} />
+                                <h1 className='idv-container__header'>{it.L('We\'ve successfully verified your document number')}</h1>
+                            </div>
                         </div>
                     </TabContent>
                     <TabContent id='poa'>
