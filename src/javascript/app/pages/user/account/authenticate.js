@@ -858,7 +858,6 @@ const Authenticate = (() => {
     };
 
     const initOnfidoVerification = async () => {
-        init();
         $('#idv-container').setVisibility(0);
         $('#authentication_tab').setVisibility(1);
         Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
