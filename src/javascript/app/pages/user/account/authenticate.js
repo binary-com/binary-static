@@ -1102,6 +1102,7 @@ const Authenticate = (() => {
 
         const $documents = $('#document_type');
         const $example = $('#document_example_format');
+        const $personal_detail_msg = $('#idv_personal_detail_msg');
         const left_container = document.getElementById('idv_document_left');
         const right_container = document.getElementById('idv_document_right');
         const example_format_text = document.getElementById('document_example_format');
@@ -1115,6 +1116,7 @@ const Authenticate = (() => {
         document_input.disabled = true;
         document_sample_img.src = '';
         right_container.setVisibility(0);
+        $personal_detail_msg.setVisibility(0);
         verify_button.classList.add('button-disabled');
         left_container.classList.remove('show-sample-image');
         example_format_text.classList.remove('error-text');
@@ -1196,6 +1198,7 @@ const Authenticate = (() => {
                 }
 
                 if (document_type) {
+                    $personal_detail_msg.setVisibility(1);
                     document_input.disabled = false;
                 }
             });

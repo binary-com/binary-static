@@ -52,9 +52,10 @@ const Authenticate = () => (
                 <div className='document-submit center-text'>
                     <img className='idv-container__main-icon' src={it.url_for('images/pages/authenticate/verify_identity.svg')} />
                     <h1 className='idv-container__header'>{it.L('Verify your identity')}</h1>
-                    <p>{it.L('Please select the document type and enter the document number.')}</p>
+                    <p className='btm-spacer'>{it.L('Please select the document type and enter the document number.')}</p>
                 </div>
                 <div className='idv-container__document-container'>
+                    <p id='idv_personal_detail_msg' className='invisible'>{it.L('Please ensure all your personal details are the same as in your chosen document. If you wish to update your personal details, go to [_1]account settings[_2].', `<a class="idv-container__link" href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</p>
                     <div id='idv_document_left' className='idv-container__left'>
                         <fieldset>
                             <select className='idv-container__dropdown long-text' type='select' id='document_type' />

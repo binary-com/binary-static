@@ -1213,6 +1213,13 @@ body #not_authenticated_financial ul.checked > li {
         text-align: center;
         min-height: 382px;
 
+        &__link {
+            font-weight: bold;
+            color: $COLOR_BLUE;
+        }
+        .btm-spacer {
+            margin-bottom: 24px;
+        }
         &__main-icon {
             width: 140px;
             margin-bottom: 24px;
