@@ -1,10 +1,12 @@
-const BinarySocket     = require('../../../base/socket');
-const Client           = require('../../../base/client');
-const getElementById   = require('../../../../_common/common_functions').getElementById;
-const localize         = require('../../../../_common/localize').localize;
-const Url              = require('../../../../_common/url');
-const createElement    = require('../../../../_common/utility').createElement;
-const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
+const BinarySocket       = require('../../../base/socket');
+const Client             = require('../../../base/client');
+const excluded_countries = require('../../../common/account_opening').excluded_countries;
+const getElementById     = require('../../../../_common/common_functions').getElementById;
+const localize           = require('../../../../_common/localize').localize;
+const State              = require('../../../../_common/storage').State;
+const Url                = require('../../../../_common/url');
+const createElement      = require('../../../../_common/utility').createElement;
+const showLoadingImage   = require('../../../../_common/utility').showLoadingImage;
 
 const WelcomePage = (() => {
     const onLoad = () => {
@@ -28,19 +30,28 @@ const WelcomePage = (() => {
             }
             el_upgrade_title.html(upgrade_btn_txt);
             el_welcome_container.setVisibility(1);
-
+           
             const upgrade_url = upgrade_info.can_upgrade_to.length > 1
-                ? 'user/accounts'
-                : Object.values(upgrade_info.upgrade_links)[0];
+                ? Url.urlFor('user/accounts')
+                : getUpgradeAccountLink(upgrade_info);
 
             if (upgrade_info.can_upgrade) {
                 const upgrade_btn = getElementById('upgrade_btn');
                 if (upgrade_btn) {
-                    upgrade_btn.html(createElement('span', { text: localize('Upgrade now') })).setAttribute('href', Url.urlFor(upgrade_url));
+                    upgrade_btn.html(createElement('span', { text: localize('Upgrade now') })).setAttribute('href', upgrade_url);
                     upgrade_btn.classList.remove('button-disabled');
                 }
             }
         });
+    };
+
+    const getUpgradeAccountLink = (upgrade_info) => {
+        const country_code = State.getResponse('get_settings').country_code;
+        if (!excluded_countries.includes(country_code)) { // old flow
+            return Url.urlFor(Object.values(upgrade_info.upgrade_links)[0]);
+        }
+        return Url.urlFor('/new_account/real_account', `account_type=${upgrade_info.can_upgrade_to[0]}`);
+
     };
 
     return {

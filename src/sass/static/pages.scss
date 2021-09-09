@@ -805,9 +805,14 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 #set_currency {
-    #frm_set_currency {
+    #currency_step_form {
         .section-divider {
-            max-width: 500px;
+            max-width: 600px;
+        }
+    }
+    .set_currency_hint {
+        @media screen and (max-width: 480px) {
+            text-align: left;
         }
     }
     .currency_list > div {
@@ -856,6 +861,78 @@ body #not_authenticated_financial ul.checked > li {
     }
     #deposit_btn {
         margin-bottom: 16px;
+    }
+}
+
+#submit_section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid $COLOR_LIGHT_GRAY;
+}
+
+#page_title {
+    @media screen and (max-width: 480px) {
+        font-size: $FONT_SIZE_XL;
+        margin-bottom: 0;
+    }
+}
+
+.add-account-tnc {
+    margin-left: 10px;
+}
+
+.margin-zero {
+    margin: 0;
+}
+
+.margin-v-10 {
+    margin: 10px 0;
+}
+
+.inline-block-button {
+    display: inline-block;
+}
+
+.select-center-mobile {
+    text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+#account_opening_steps {
+    .select2-container {
+        width: 100% !important;
+        @media screen and (min-width: 768px) {
+            width: 360px !important;
+        }
+    }
+}
+
+#content.real_account-content {
+    margin-top: 20px;
+}
+
+#ui-datepicker-div {
+    z-index: 3 !important;
+}
+
+.center-select-m {
+    text-align-last: center;
+}
+
+.currency_list {
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.padding-h35 {
+    @media screen and (min-width: 768px) {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    @media screen and (max-width: 480px) {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

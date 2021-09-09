@@ -194,6 +194,10 @@ label {
     line-height: 25px;
 }
 
+.fieldset_margin_top {
+    margin-top: 2rem;
+}
+
 /* used for form label in grid structure */
 .form_label {
     @include BIDIR_VALUE(text-align, right, left);
@@ -230,6 +234,10 @@ label {
 
 .no-margin {
     margin: 0 !important;
+}
+
+.auto-margin {
+    margin: auto !important;
 }
 
 .full-height {
@@ -943,6 +951,14 @@ label + input {
                 }
             }
         }
+    }
+}
+
+#real_account_wrapper input {
+    width: 100%;
+    max-width: 340px;
+    @media screen and (max-width: 768px) {
+        box-sizing: border-box;
     }
 }
 

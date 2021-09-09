@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Fieldset = ({ children, legend, id, className }) => (
+export const Fieldset = ({ children, legend, legend_id, id, className }) => (
     <fieldset id={id} className={className}>
         {legend &&
-            <legend>{legend}</legend>
+            <legend id={legend_id || ''}>{legend}</legend>
         }
         {children}
     </fieldset>

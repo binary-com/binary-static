@@ -21,11 +21,13 @@ module.exports = [
 
     ['trading',                                 'app/trade/trading',                           'default',    'SmartTrader'],
 
+    // TODO: Remove 'maltainvestws' and 'realws' after completely change the signup flow for all countries as these only being used for exceptional countries.
     ['new_account/maltainvestws',               'app/new_account/financial',                   'default',    'Financial Account Opening'],
     ['new_account/realws',                      'app/new_account/real',                        'default',    'Real Money Account Opening'],
+    ['new_account/real_account',                'app/new_account/real_account',                'default',    'Real Account Opening'],
     ['new_account/virtualws',                   'app/new_account/virtual',                     'default',    'Create New Demo Account'],
     ['new_account/welcome',                     'app/new_account/welcome_page',                'default',    'Welcome to Binary.com'],
-    ['new_account/welcome_onboarding',          'app/new_account/welcome_onboarding',             'default',    'Welcome to Binary.com'],
+    ['new_account/welcome_onboarding',          'app/new_account/welcome_onboarding',          'default',    'Welcome to Binary.com'],
 
     ['resources',                               'app/resources/index',                         'default',    'Resources'],
     ['resources/asset_indexws',                 'app/resources/asset_index',                   'full_width', 'Asset Index'],

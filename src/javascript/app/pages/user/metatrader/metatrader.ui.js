@@ -85,58 +85,62 @@ const MetaTraderUI = (() => {
             supported: 0,
             used     : 0,
         };
-
-        State.getResponse('trading_servers').forEach(trading_server => {
-            // if server is not added to account type, and in accounts_info we are not storing it with server
-            if (!/\d$/.test(account_type) && !getAccountsInfo(account_type)) {
-                account_type += `_${trading_server.id}`;
-            }
-            const new_account_info = getAccountsInfo(account_type);
-            const { market_type, sub_account_type } = new_account_info;
-            const { supported_accounts = [] } = trading_server;
-            const is_server_supported = isSupportedServer(market_type, sub_account_type, supported_accounts);
-
-            if (is_server_supported) {
-                num_servers.supported += 1;
-                const is_used_server = isUsedServer(is_server_supported, trading_server);
-
-                const is_disabled = trading_server.disabled === 1;
-
-                const input_attributes = {
-                    disabled: is_used_server || is_disabled,
-                    type    : 'radio',
-                    name    : 'ddl_trade_server',
-                    value   : trading_server.id,
-                    ...(trading_server.recommended && !is_used_server && !is_disabled && { checked: 'checked' }),
-                };
-
-                const { region, sequence } = trading_server.geolocation;
-                let label_text = sequence > 1 ? `${region} ${sequence}` : region;
-
-                if (is_used_server) {
-                    num_servers.used += 1;
-                    label_text += localize(' (Region added)');
-                } else if (is_disabled) {
-                    num_servers.disabled += 1;
-                    label_text += localize(' (Temporarily unavailable)');
+        
+        try {
+            const trading_servers = State.getResponse('trading_servers');
+            trading_servers.forEach(trading_server => {
+                // if server is not added to account type, and in accounts_info we are not storing it with server
+                if (!/\d$/.test(account_type) && !getAccountsInfo(account_type)) {
+                    account_type += `_${trading_server.id}`;
                 }
+                const new_account_info = getAccountsInfo(account_type);
+                const { market_type, sub_account_type } = new_account_info;
+                const { supported_accounts = [] } = trading_server;
+                const is_server_supported = isSupportedServer(market_type, sub_account_type, supported_accounts);
 
-                $ddl_trade_server
-                    .append(
-                        $('<div />', { id: trading_server.id, class: 'gr-padding-10 gr-parent' })
-                            .append($('<input />', input_attributes))
-                            .append($('<label />', { htmlFor: trading_server.id })
-                                .append($('<span />', { text: label_text }))
-                            )
-                    );
+                if (is_server_supported) {
+                    num_servers.supported += 1;
+                    const is_used_server = isUsedServer(is_server_supported, trading_server);
+
+                    const is_disabled = trading_server.disabled === 1;
+
+                    const input_attributes = {
+                        disabled: is_used_server || is_disabled,
+                        type    : 'radio',
+                        name    : 'ddl_trade_server',
+                        value   : trading_server.id,
+                        ...(trading_server.recommended && !is_used_server && !is_disabled && { checked: 'checked' }),
+                    };
+
+                    const { region, sequence } = trading_server.geolocation;
+                    let label_text = sequence > 1 ? `${region} ${sequence}` : region;
+
+                    if (is_used_server) {
+                        num_servers.used += 1;
+                        label_text += localize(' (Region added)');
+                    } else if (is_disabled) {
+                        num_servers.disabled += 1;
+                        label_text += localize(' (Temporarily unavailable)');
+                    }
+
+                    $ddl_trade_server
+                        .append(
+                            $('<div />', { id: trading_server.id, class: 'gr-padding-10 gr-parent trade-server-item' })
+                                .append($('<input />', input_attributes))
+                                .append($('<label />', { htmlFor: trading_server.id })
+                                    .append($('<span />', { text: label_text }))
+                                )
+                        );
+                }
+            });
+
+            // Check whether any of the servers is checked, if not, check one.
+            if ($ddl_trade_server.find('input[checked]').length === 0) {
+                $ddl_trade_server.find('input:not(:disabled):first').attr('checked', 'checked');
             }
-        });
-
-        // Check whether any of the servers is checked, if not, check one.
-        if ($ddl_trade_server.find('input[checked]').length === 0) {
-            $ddl_trade_server.find('input:not(:disabled):first').attr('checked', 'checked');
+        } catch (e) {
+            displayMainMessage(localize('Our MT5 servers are temporarily unavailable. We\'re working to restore them. Please try again in a few minutes.'));
         }
-
         return num_servers;
     };
 
@@ -817,16 +821,13 @@ const MetaTraderUI = (() => {
         });
 
         $form.find('#ddl_trade_server').off('click').on('click', (e) => {
-            $form.find('#ddl_trade_server').find('input').not(':input[disabled]').removeAttr('checked');
+            const $target_input = $(e.target).parents('.trade-server-item').children('input');
 
-            if (e.target.nodeName === 'SPAN') {
-                $(e.target.parentElement).parent().find('input').not(':input[disabled]').attr('checked', 'checked');
-            }
-            if (e.target.nodeName === 'LABEL') {
-                $(e.target.parentElement).find('input').not(':input[disabled]').attr('checked', 'checked');
-            }
-            if (e.target.nodeName === 'INPUT') {
-                $(e.target).not(':input[disabled]').attr('checked', 'checked');
+            if ($target_input.attr('disabled')) return;
+
+            if ($target_input.length) {
+                $form.find('#ddl_trade_server').find('input').not(':input[disabled]').removeAttr('checked');
+                $target_input.not(':input[disabled]').attr('checked', 'checked');
             }
 
             const new_user_submit_button = $form.find('#new_user_btn_submit_new_account');

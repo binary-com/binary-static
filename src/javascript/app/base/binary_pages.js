@@ -40,8 +40,10 @@ const Accounts                = require('../pages/user/accounts');
 const LostPassword            = require('../pages/user/lost_password');
 const MetaTrader              = require('../pages/user/metatrader/metatrader');
 const TypesOfAccounts         = require('../pages/user/metatrader/types_of_accounts');
+// TODO: Remove 'FinancialAccOpening' and 'RealAccOpening' after completely change the signup flow for all countries
 const FinancialAccOpening     = require('../pages/user/new_account/financial_acc_opening');
 const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
+const RealAccountOpening      = require('../pages/user/new_account/real_account_opening');
 const VirtualAccOpening       = require('../pages/user/new_account/virtual_acc_opening');
 const WelcomePage             = require('../pages/user/new_account/welcome_page');
 const WelcomePageOnboarding   = require('../pages/user/new_account/welcome_onboarding');
@@ -109,6 +111,7 @@ const pages_config = {
     logged_inws              : { module: LoggedInHandler },
     lost_passwordws          : { module: LostPassword,               not_authenticated: true },
     malta                    : { module: StaticPages.Locations },
+    // TODO: Remove 'maltainvestws' after completely change the signup flow for all countries
     maltainvestws            : { module: FinancialAccOpening,        is_authenticated: true },
     market_timesws           : { module: TradingTimesUI,             no_mf: true, no_blocked_country: true },
     metals                   : { module: GetStarted.Metals },
@@ -120,7 +123,9 @@ const pages_config = {
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
+    // TODO: Remove 'realws' after completely change the signup flow for all countries
     realws                   : { module: RealAccOpening,             is_authenticated: true },
+    real_account             : { module: RealAccountOpening,         is_authenticated: true },
     redirect                 : { module: Redirect },
     regulation               : { module: Regulation },
     reset_passwordws         : { module: ResetPassword },

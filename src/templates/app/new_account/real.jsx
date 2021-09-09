@@ -1,6 +1,7 @@
 import React from 'react';
 import PepDeclaration from '../_includes/pep_declaration.jsx';
 import ProfessionalClient from '../_includes/professional_client.jsx';
+import Loading from '../../_common/components/loading.jsx';
 import { Fieldset, FormRow } from '../../_common/components/forms.jsx';
 import {
     Salutation,
@@ -21,16 +22,19 @@ import {
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
-    Tnc,
+    TncWithSubmitButton,
 } from '../../_common/components/forms_common_rows.jsx';
 
 const Real = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Real Money Account Opening')}</h1>
+        <div id='real_loading'>
+            <Loading />
+        </div>
         <div className='notice-msg invisible' id='ukgc_age_verification'>
             <p>{it.L('Please complete the Real Account form to verify your age as required by the [_1]UK Gambling[_2] Commission (UKGC).', '<strong>', '</strong>')}</p>
         </div>
-        <form id='frm_real' className='gr-padding-10'>
+        <form id='frm_real' className='gr-padding-10 invisible'>
             <Fieldset legend={it.L('Details')}>
                 <Salutation className='input-disabled' />
                 <FirstName className='input-disabled' />
@@ -61,13 +65,13 @@ const Real = () => (
             </Fieldset>
 
             <PepDeclaration />
-            <ProfessionalClient />
+            <ProfessionalClient row_id='fs_professional' className='invisible' />
             <Jurisdiction />
             <div className='invisible' id='risk_disclaimer'>
                 <RiskDisclaimer />
             </div>
 
-            <Tnc />
+            <TncWithSubmitButton />
         </form>
 
         <ClientMessage />

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Fieldset } from '../../_common/components/forms.jsx';
 
-const ProfessionalClient = () => (
-    <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>
+const ProfessionalClient = ({ row_id, className }) => (
+    <Fieldset legend={it.L('Professional Client')} id={row_id} className={className}>
         <div className='gr-padding-10 gr-12'>
             <p>{it.L('By default, all [_1] clients are retail clients but anyone can request to be treated as a professional client.', it.website_name)}</p>
             <input id='chk_professional' type='checkbox' />

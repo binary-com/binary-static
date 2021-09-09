@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-05 06:48\n"
+"PO-Revision-Date: 2021-09-07 10:04\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -580,6 +580,9 @@ msgstr "0.4%"
 msgid "0.5%"
 msgstr "0.5%"
 
+msgid "0.50"
+msgstr "0.50"
+
 msgid "0.75"
 msgstr "0.75"
 
@@ -601,6 +604,9 @@ msgstr "1. Подтверждение личности"
 msgid "1. This link was sent by you"
 msgstr "1. Эта ссылка была отправлена вами"
 
+msgid "1.25"
+msgstr "1.25"
+
 msgid "1.5%"
 msgstr "1.5%"
 
@@ -612,9 +618,6 @@ msgstr "11-39 контрактов за последние 12 месяцев"
 
 msgid "150+"
 msgstr "более 150"
-
-msgid "15O"
-msgstr "15O"
 
 msgid "16th MENA Financial Forum & Expo"
 msgstr "16й Финансовый форум MENA Financial Forum & Expo"
@@ -636,6 +639,9 @@ msgstr "2. Окно программы остается открытым."
 
 msgid "2.5"
 msgstr "2.5"
+
+msgid "2.50"
+msgstr "2.50"
 
 msgid "20 – 39.999%"
 msgstr "20 – 39.999%"
@@ -837,6 +843,9 @@ msgstr "Жюри с участием лидеров нашей индустри�
 
 msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
 msgstr "Политически значимое лицо (ПЗЛ) – это человек, который выполняет или в прошлом выполнял важную политическую роль. Этот статус распространяется на родственников и близких друзей ПЗЛ. ПЗЛ, переставшее выполнять важную политическую роль на протяжении минимум 12 месяцев, больше не рассматривается в качестве ПЗЛ."
+
+msgid "A politically exposed person (PEP) is someone appointed with a prominent public position. Close associates and family members of a PEP are also considered to be PEPs."
+msgstr "Политически значимое лицо (ПЗЛ) – это человек, который выполняет или в прошлом выполнял важную политическую роль. Данный статус распространяется на родственников и близких друзей ПЗЛ."
 
 msgid "A proactive approach in problem-solving"
 msgstr "Активный подход к решению проблем"
@@ -1590,6 +1599,9 @@ msgstr "Здравый и непредвзятый подход к выполн�
 
 msgid "Appropriateness"
 msgstr "Целесообразность"
+
+msgid "Appropriateness Test: WARNING:"
+msgstr "Тест на целесообразность: ПРЕДУПРЕЖДЕНИЕ:"
 
 msgid "Appropriateness test"
 msgstr "Тест на целесообразность"
@@ -2947,6 +2959,9 @@ msgstr "Процент комиссии"
 msgid "Commission shall only be paid where the following are met cumulatively:"
 msgstr "Комиссионное вознаграждение выплачивается при соблюдении всех этих условий:"
 
+msgid "Commission structure"
+msgstr "Структура комиссионных"
+
 msgid "Commission will not be paid for Accounts that have been opened or traded by an Associate of the Introducing Broker."
 msgstr "Комиссионные не выплачиваются за счета, которые были открыты или торговля на которых ведётся ассоциатом Представляющего брокера."
 
@@ -3760,6 +3775,9 @@ msgstr "Внесите на счёт всего 5 USD и начните торг
 msgid "Deposit into or withdraw from your real account"
 msgstr "Пополнение или вывод средств с вашего реального счета"
 
+msgid "Deposit now"
+msgstr "Пополнить сейчас"
+
 msgid "Deposit or withdraw below"
 msgstr "Пополните счёт или выведите средства"
 
@@ -4303,8 +4321,8 @@ msgstr "Получите денежное вознаграждение за до
 msgid "Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship."
 msgstr "Получайте дополнительный доход с нами, расширяя свое сообщество потенциальных и существующих онлайн-трейдеров с помощью полезных торговых идей и наставничества."
 
-msgid "Earn daily commissions on the trading activities of the clients you refer to the %1 MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day."
-msgstr "Зарабатывайте ежедневные комиссионные от торговой деятельности клиентов, привлечённых вами на платформу MetaTrader 5 (MT5) от %1. Сумма заработанных комиссионных будет начисляться на ваш счёт в конце каждого дня."
+msgid "Earn daily commission on your referred clients' trades on the %1 MetaTrader 5 (MT5) platform. Your total commission will be credited into your account at the end of every day."
+msgstr "Получайте ежедневную комиссию за контракты ваших рефералов на платформе %1 MetaTrader 5 (MT5). Заработанные комиссионные будут начисляться на ваш счёт в конце каждого дня."
 
 msgid "Earn money for any verifiable errors that you find."
 msgstr "Зарабатывайте деньги на любых доказанных ошибках, которые вы обнаружите."
@@ -4942,9 +4960,6 @@ msgstr "Знание процессов тестирования и устран
 msgid "Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular"
 msgstr "Знание различных стандартов JavaScript, библиотек, фреймворков, компиляторов и компиляторов \"исходный код в исходный код,\" включая ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React и Angular"
 
-msgid "Family name"
-msgstr "Фамилия"
-
 msgid "FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more information, please visit %1."
 msgstr "FasaPay позволяет выполнять электронные переводы для индивидуальных лиц и платёжных систем для продавцов. Более подробную информацию можно найти на сайте %1."
 
@@ -4981,6 +4996,9 @@ msgstr "Фиатные"
 
 msgid "Fiat Currency"
 msgstr "Фиатная валюта"
+
+msgid "Fiat currencies"
+msgstr "Фиатные валюты"
 
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "Спустя пятнадцать лет мы все еще вносим инновации, растем и работаем над новыми способами предложения лучших услуг нашим клиентам. Недавно мы начали предлагать краткосрочные контракты Касание/Нет касания и представили новые графические приложения. Мы уверены, что у нас самая конкурентоспособная онлайн платформа для торговли бинарными опционами, которая доступна для всех пользователей."
@@ -5081,8 +5099,8 @@ msgstr "Завершить"
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
 msgstr "Отличное понимание расширенных концепций управления риском, включая хеджирование, \"греческие\" коэффициенты (первое и второе поколение), модель VaR и т.д."
 
-msgid "First line"
-msgstr "Первая строка"
+msgid "First line of address"
+msgstr "Первая строка адреса"
 
 msgid "First line of home address"
 msgstr "Адрес (улица, дом, кв.)"
@@ -5774,6 +5792,12 @@ msgstr "Отдел кадров"
 msgid "I acknowledge that I am not a politically exposed person (PEP)."
 msgstr "Настоящим я заявляю, что не являюсь политически значимым лицом (ПЗЛ)."
 
+msgid "I agree to the %1terms and conditions%2."
+msgstr "Я согласен с %1правилами и условиями%2."
+
+msgid "I am not a PEP, and I have not been a PEP in the last 12 months."
+msgstr "Я не являюсь ПЗЛ и не являлся ПЗЛ в течение последних 12 месяцев."
+
 msgid "I forgot my password, what should I do?"
 msgstr "Я забыл(а) пароль, что делать?"
 
@@ -6335,6 +6359,9 @@ msgstr "Чтобы получить прибыль от торгового ку�
 msgid "In providing IB services, the Introducing Broker shall"
 msgstr "При предоставлении услуг ПБ Представляющий брокер обязуется"
 
+msgid "In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
+msgstr "Перед предоставлением вам услуг нам необходимо получить от вас некоторую информацию с целью оценить, подходит ли вам определённый продукт или услуга (то есть обладаете ли вы опытом и знаниями, чтобы понимать связанные с этим риски)."
+
 msgid "In providing the Agent's services, the Agent shall do the following:"
 msgstr "При предоставлении услуг, Агент должен выполнить следующие действия:"
 
@@ -6587,6 +6614,9 @@ msgstr "Доход от инвестиций"
 msgid "Investment Products to EEA residents are provided by Deriv Investments (Europe) Limited (\"DIEL\"), which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "Инвестиционные продукты для резидентов Европейской экономической зоны предоставляются компанией Deriv Investments (Europe) Limited (\"DIEL\"), которая авторизована и регулируется Мальтийским управлением финансовых услуг (Malta Financial Services Authority) в рамках акта об инвестиционных услугах Мальты (Malta Investment Services Act) для осуществления операций с инвестиционными продуктами на своем счете."
 
+msgid "Investments & Dividends"
+msgstr "Инвестиции и дивиденды"
+
 msgid "Investments &amp; Dividends"
 msgstr "Инвестиции и дивиденды"
 
@@ -6722,6 +6752,21 @@ msgstr "Июл"
 msgid "July"
 msgstr "Июль"
 
+msgid "Jump 10 Index"
+msgstr "Индекс Jump 10"
+
+msgid "Jump 100 Index"
+msgstr "Индекс Jump 100"
+
+msgid "Jump 25 Index"
+msgstr "Индекс Jump 25"
+
+msgid "Jump 50 Index"
+msgstr "Индекс Jump 50"
+
+msgid "Jump 75 Index"
+msgstr "Индекс Jump 75"
+
 msgid "Jun"
 msgstr "Июн"
 
@@ -6731,7 +6776,7 @@ msgstr "Июнь"
 msgid "Jurisdiction"
 msgstr "Юрисдикция"
 
-msgid "Jurisdiction and Choice of Law"
+msgid "Jurisdiction and choice of law"
 msgstr "Юрисдикция и законодательство"
 
 msgid "K. Event of Default"
@@ -6871,6 +6916,9 @@ msgstr "Последние"
 
 msgid "Last digit stats for the latest %1 ticks on %2"
 msgstr "Статистика последних десятичных в последних %1 тиков для %2"
+
+msgid "Last name"
+msgstr "Фамилия"
 
 msgid "Latest bank statement or any government-issued letter which contains your name and address"
 msgstr "Последняя банковская выписка или любое правительственное письмо, в котором указаны ваше имя и адрес."
@@ -7274,8 +7322,8 @@ msgstr "Основные, вторичные и экзотические пар�
 msgid "Make a Deposit"
 msgstr "Пополнить"
 
-msgid "Make a deposit"
-msgstr "Пополните счёт"
+msgid "Make a deposit now to start trading."
+msgstr "Пополните счет сейчас, чтобы начать торговать."
 
 msgid "Make a deposit or withdrawal on your account by buying and selling fiat currencies from anywhere in the world."
 msgstr "Пополняйте счет или выводите средства, покупая и продавая фиатные валюты из любой точки мира."
@@ -7532,6 +7580,9 @@ msgstr "Максимальный размер каждого файла: %1"
 msgid "May"
 msgstr "Май"
 
+msgid "Maybe later"
+msgstr "Может быть позже"
+
 msgid "Memorable date"
 msgstr "Важная дата"
 
@@ -7646,9 +7697,6 @@ msgstr "искажать услуги, предоставляемые Агент
 msgid "Mo"
 msgstr "Пн"
 
-msgid "Mobile number"
-msgstr "Мобильный телефон"
-
 msgid "Modification/amendment"
 msgstr "Изменения/поправки"
 
@@ -7656,7 +7704,7 @@ msgid "Monday"
 msgstr "Понедельник"
 
 msgid "Monetise your online trading discussions with your audience of trading enthusiasts while helping them improve their trading experience."
-msgstr "Превращайте в прибыль дискуссии с вашими посетителями об онлайн-трейдинге, помогая им улучшать и совершенствовать торговый опыт."
+msgstr "Монетизируйте дискуссии с вашими посетителями об онлайн-трейдинге, помогая им улучшать и совершенствовать торговый опыт."
 
 msgid "Money collected from clients is not invested in any securities, futures, currencies, derivatives or other investments, on behalf of clients."
 msgstr "Денежные средства, полученные от клиентов, не могут быть инвестированы в какие-либо ценные бумаги, фьючерсы, валюты, производные и другие активы от имени клиентов."
@@ -8237,6 +8285,9 @@ msgstr "Допускаются только буквы латинского ал
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Разрешается иметь только один счет на человека. Вывод средств или компенсация не может перечисляться на счета, открытые на вымышленное имя, или на множественные счета, открытые одним и тем же лицом."
 
+msgid "Only use an address for which you have proof of residence"
+msgstr "Указывайте только тот адрес, который можете подтвердить"
+
 msgid "Only your face can be in the selfie"
 msgstr "На селфи может быть только ваше лицо"
 
@@ -8348,6 +8399,9 @@ msgstr "Другие предупреждения и нормативные ув
 msgid "Other best execution factors, such as speed of execution, likelihood of execution and settlement, size, nature, or any other considerations relevant to the execution of a particular order, may also be applied by DIEL in order to obtain the best possible results for the client."
 msgstr "Другие факторы политики лучшего исполнения включают скорость исполнения, вероятность исполнения и окончания, размер, природу или любые другие факторы, имеющие отношение к исполнению конкретного ордера, которые также могут применяться DIEL для предоставления клиенту наилучших результатов."
 
+msgid "Other details"
+msgstr "Другие данные"
+
 msgid "Other obligations"
 msgstr "Другие обязательства"
 
@@ -8362,6 +8416,9 @@ msgstr "Наш бухгалтерский отдел управляет широ
 
 msgid "Our Company"
 msgstr "Наша компания"
+
+msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
+msgstr "Наши серверы MT5 временно недоступны. Мы работаем над их восстановлением. Пожалуйста, попробуйте еще раз через несколько минут."
 
 msgid "Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products."
 msgstr "Финансовый STP счёт MetaTrader 5 даёт вам узкие спреды, более высокий размер билета и предоставляет больше продуктов."
@@ -8690,6 +8747,9 @@ msgstr "Personal Wealth Awards 2017"
 msgid "Personal details"
 msgstr "Личные данные"
 
+msgid "Phone number"
+msgstr "Номер телефона"
+
 msgid "Photo of your document"
 msgstr "Фото вашего документа"
 
@@ -8790,7 +8850,7 @@ msgid "Please check your email for the verification code to complete the process
 msgstr "Пожалуйста, проверьте свой email. Вам должен прийти проверочный код, необходимый для завершения процесса."
 
 msgid "Please check your email for the verification link to complete the process."
-msgstr "Пожалуйста, проверьте свой email. Вам должна прийти проверочная ссылка для успешного завершения процесса."
+msgstr "Пожалуйста, проверьте свой email. Вам должна прийти проверочная ссылка, необходимая для успешного завершения процесса."
 
 msgid "Please check your inbox for details."
 msgstr "Пожалуйста, проверьте электронную почту."
@@ -8799,7 +8859,7 @@ msgid "Please choose a currency"
 msgstr "Пожалуйста, выберите валюту"
 
 msgid "Please click on the link in the email to change your MT5 password."
-msgstr "Нажмите на ссылку в письме, чтобы сбросить пароль MT5."
+msgstr "Нажмите на ссылку в письме, чтобы изменить пароль MT5."
 
 msgid "Please click on the link in the email to change your binary password."
 msgstr "Нажмите на ссылку в письме, чтобы изменить пароль Binary."
@@ -9458,6 +9518,9 @@ msgstr "Реальный"
 msgid "Real Account"
 msgstr "Реальный счет"
 
+msgid "Real Account Opening"
+msgstr "Открытие реального счета"
+
 msgid "Real Estate"
 msgstr "Недвижимость"
 
@@ -9473,8 +9536,14 @@ msgstr "Открытие реального счета"
 msgid "Real Synthetic"
 msgstr "Реальный Синтетический"
 
+msgid "Real accounts are not available to politically exposed persons (PEPs)."
+msgstr "Реальные счета недоступны для политически значимых лиц (ПЗЛ)."
+
 msgid "Real accounts will be archived after %1 days of inactivity. The client can request for the reactivation of a real account via %2live chat%3."
 msgstr "Реальные счета будут архивированы через %1 дней бездействия. Клиент может запросить повторную активацию реального счета через %2чат%3."
+
+msgid "Real money account opening"
+msgstr "Открытие реального счета"
 
 msgid "Real-Money Account"
 msgstr "Реальный счёт"
@@ -9887,6 +9956,9 @@ msgstr "Риск проскальзывания"
 msgid "Risk of stop order"
 msgstr "Риск стоп ордера"
 
+msgid "Risk warning"
+msgstr "Предупреждение о риске"
+
 msgid "Risk warnings and notices related to Transactions and investments in the proposed instruments"
 msgstr "Предупреждения и уведомления о риске, относящиеся к контрактам и инвестициям в предложенные инструменты"
 
@@ -9983,8 +10055,8 @@ msgstr "Искать страну"
 msgid "Search..."
 msgstr "Поиск..."
 
-msgid "Second line"
-msgstr "Вторая строка"
+msgid "Second line of address"
+msgstr "Вторая строка адреса"
 
 msgid "Secondary"
 msgstr "Среднее"
@@ -10433,6 +10505,9 @@ msgstr "Государственные пособия"
 msgid "State/Province"
 msgstr "Штат/провинция/область"
 
+msgid "State/province"
+msgstr "Область/регион"
+
 msgid "Stated limits are subject to change without prior notice."
 msgstr "Указанные лимиты могут быть изменены без предварительного уведомления."
 
@@ -10469,6 +10544,9 @@ msgstr "Контракты Останется между/Выйдет за пр�
 msgid "Step"
 msgstr "Шаг"
 
+msgid "Step %1: %2 (%1 of %3)"
+msgstr ""
+
 msgid "Step 1"
 msgstr "Шаг 1"
 
@@ -10502,7 +10580,7 @@ msgstr "Шаг 3: Как купить первую валютную пару"
 msgid "Step 3: Make your trade"
 msgstr "Шаг 3: Купите контракт"
 
-msgid "Step Index"
+msgid "Step index"
 msgstr "Индекс Step"
 
 msgid "Step indices"
@@ -10772,6 +10850,9 @@ msgstr "Синтетические индексы, имитирующие вол
 msgid "Synthetics"
 msgstr "Синтетические активы"
 
+msgid "Synthetics Account"
+msgstr "Синтетический счет"
+
 msgid "System Administrator"
 msgstr "Системный администратор"
 
@@ -10909,6 +10990,9 @@ msgstr "Согласие с правилами и условиями"
 
 msgid "Terms and conditions"
 msgstr "Правила и условия"
+
+msgid "Terms of use"
+msgstr ""
 
 msgid "Tertiary"
 msgstr "Высшее"
@@ -12116,8 +12200,8 @@ msgstr "Вышеуказанные факторы перечислены не в
 msgid "The financial trading services contained within this site are only suitable for clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
 msgstr "Финансовые услуги, предлагаемые на этом сайте, подходят только для клиентов, способных нести ответственность за возможную потерю всех инвестированных финансовых средств, осознающих риск и имеющих опыт риска, связанного с приобретением финансовых контрактов."
 
-msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
-msgstr "Финансовые услуги, предоставляемые в рамках данного сайта, подходят только для клиентов, готовых нести ответственность за возможную потерю всех инвестированных средств, а также осознающих риск и имеющих опыт риска, связанного с покупкой финансовых контрактов. Заключение сделок на финансовых контрактах предполагает высокий уровень риска. Если приобретённые контракты истекут, не принеся прибыли, вы потеряете всю сумму своей инвестиции в контракт."
+msgid "The financial trading services offered on this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the purchase of financial contracts. Transactions in financial contracts carry a high degree of risk. If the contracts you purchased expire as worthless, you will lose all your investment, which includes the contract premium."
+msgstr ""
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Первый шаг: установите параметры контракта. Настройте пять параметров, чтобы узнать цену контракта:"
@@ -12776,6 +12860,9 @@ msgstr "Советы:"
 msgid "Title"
 msgstr "Заголовок"
 
+msgid "Title and name"
+msgstr ""
+
 msgid "To"
 msgstr "До"
 
@@ -12789,28 +12876,28 @@ msgid "To be able to trade OTC instruments available on the MT5 trading platform
 msgstr "Чтобы иметь возможность торговать внебиржевыми инструментами, доступными на торговой платформе MT5, клиенту необходимо выполнить следующие действия"
 
 msgid "To change your country of residence, email, or tax information, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Чтобы изменить страну проживания, эл. адрес или налоговую информацию, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To change your country of residence, or email, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Чтобы изменить страну проживания или эл. адрес, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To change your date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Чтобы изменить дату рождения, страну проживания, эл. адрес или налоговую информацию, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To change your date of birth, country of residence, or email, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Чтобы изменить дату рождения, страну проживания или эл. адрес, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To change your name, country of residence, email, or tax information, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Чтобы изменить имя, страну проживания, эл. адрес или налоговую информацию, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To change your name, country of residence, or email, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Чтобы изменить имя, страну проживания или эл. адрес, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr "Чтобы изменить имя, дату рождения, страну проживания или эл. адрес или налоговую информацию, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To change your name, date of birth, country of residence, or email, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Чтобы изменить имя, дату рождения, страну проживания или эл. адрес, пожалуйста, обратитесь в %1службу поддержки%2."
 
 msgid "To create a MetaTrader 5 account:"
 msgstr "Чтобы открыть счёт MetaTrader 5:"
@@ -12961,6 +13048,9 @@ msgstr "Туризм"
 
 msgid "Town/City"
 msgstr "Город"
+
+msgid "Town/city"
+msgstr ""
 
 msgid "Track and document thoroughly the bugs that you find"
 msgstr "Отслеживание и тщательное документирование найденных вами багов"
@@ -14454,7 +14544,7 @@ msgid "XRP/USD"
 msgstr "XRP/USD"
 
 msgid "XTB International Limited (XTB)"
-msgstr ""
+msgstr "XTB International Limited (XTB)"
 
 msgid "Yes"
 msgstr "Да"
@@ -14567,6 +14657,9 @@ msgstr "У вас теперь новый пароль для входа на Bi
 msgid "You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps."
 msgstr "У вас теперь новый пароль для входа на счета MT5 с веб-браузеров и мобильных приложений."
 
+msgid "You have added a %1 account."
+msgstr ""
+
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "Вы уже в сумме вывели %1%2 за последние %3 суток."
 
@@ -14617,9 +14710,6 @@ msgstr "Вы успешно изменили валюту счёта с %1 на 
 
 msgid "You have successfully created your Demo Account."
 msgstr "Вы успешно открыли демо-счет."
-
-msgid "You have successfully created your real money %1account."
-msgstr "Вы успешно открыли реальный счёт %1."
 
 msgid "You have successfully disabled two-factor authentication for your account."
 msgstr "Вы успешно отключили двухступенчатую аутентификацию на вашем счете."
@@ -14716,6 +14806,9 @@ msgstr "Вы сможете рассказать о своих услугах и
 
 msgid "You will need to set a password to complete the process."
 msgstr "Вам нужно будет установить пароль, чтобы завершить процесс."
+
+msgid "You will not be able to change currency once you have made a deposit."
+msgstr ""
 
 msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
 msgstr "Вы не сможете изменить валюту фиатного счета после открытия этого счета MT5. Вы уверены, что хотите продолжить?"
@@ -15061,9 +15154,6 @@ msgstr "напр., frontend.binaryws.com"
 
 msgid "for account %1"
 msgstr "для счёта %1"
-
-msgid "gaming"
-msgstr "игровой"
 
 msgid "hour"
 msgstr "час."

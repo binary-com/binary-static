@@ -1,13 +1,14 @@
-const moment       = require('moment');
-const SetCurrency  = require('./set_currency');
-const BinaryPjax   = require('../../base/binary_pjax');
-const Client       = require('../../base/client');
-const BinarySocket = require('../../base/socket');
-const showPopup    = require('../../common/attach_dom/popup');
-const Currency     = require('../../common/currency');
-const localize     = require('../../../_common/localize').localize;
-const State        = require('../../../_common/storage').State;
-const urlFor       = require('../../../_common/url').urlFor;
+const moment               = require('moment');
+const SetCurrency          = require('./set_currency');
+const BinaryPjax           = require('../../base/binary_pjax');
+const Client               = require('../../base/client');
+const BinarySocket         = require('../../base/socket');
+const AccountOpening       = require('../../common/account_opening');
+const showPopup            = require('../../common/attach_dom/popup');
+const Currency             = require('../../common/currency');
+const localize             = require('../../../_common/localize').localize;
+const State                = require('../../../_common/storage').State;
+const urlFor               = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
     let landing_company;
@@ -121,7 +122,10 @@ const Accounts = (() => {
                             '<a/>',
                             {
                                 class: 'button',
-                                href : urlFor(upgrade_info.upgrade_links[upgrade_info.can_upgrade_to[index]]),
+                                href : AccountOpening.getSinupPageLink(
+                                    upgrade_info,
+                                    upgrade_info.can_upgrade_to[index]
+                                ),
                             },
                         )
                             .html($('<span/>', { text: localize('Create account') })))));
@@ -275,7 +279,7 @@ const Accounts = (() => {
 
     const populateMultiAccount = () => {
         const table_headers = TableHeaders.get();
-        const account       = { real: 1 };
+        const account     = { real: 1 };
         const handleClick = () => showCurrencyPopUp('create');
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })

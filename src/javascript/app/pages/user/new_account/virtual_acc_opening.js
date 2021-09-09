@@ -58,8 +58,18 @@ const VirtualAccOpening = (() => {
     };
 
     const handleWebsiteStatus = (website_status = {}, $residence) => {
-        const email_consent_container = $('#consent_checkbox');
-        const consent_checkbox = $('#email_consent');
+        const $email_consent_container = $('#consent_checkbox');
+
+        const handleEmailConsent = () => {
+            const updated_selected_value = $('#residence').val();
+            const eu_country             = isEuCountrySelected(updated_selected_value);
+            if (eu_country) {
+                $email_consent_container.setVisibility(1);
+            } else {
+                $email_consent_container.setVisibility(0);
+            }
+        };
+
         if (!website_status || Utility.isEmptyObject(website_status)) return;
         const clients_country = website_status.clients_country;
 
@@ -75,25 +85,10 @@ const VirtualAccOpening = (() => {
                 },
             })
             .setVisibility(1);
-            
+
         const residence_dropdown = $('#residence');
-        if (isEuCountrySelected(residence_dropdown.val())) {
-            consent_checkbox.removeClass('hidden-consent-checkbox');
-            email_consent_container.removeClass('email-consent-container');
-        } else {
-            consent_checkbox.addClass('hidden-consent-checkbox');
-        }
-        residence_dropdown.on('change', () => {
-            const updated_selected_value = $('#residence').val();
-            const eu_country = isEuCountrySelected(updated_selected_value);
-            if (eu_country) {
-                consent_checkbox.removeClass('hidden-consent-checkbox');
-                email_consent_container.removeClass('email-consent-container');
-            } else {
-                consent_checkbox.addClass('hidden-consent-checkbox');
-                email_consent_container.addClass('email-consent-container');
-            }
-        });
+        handleEmailConsent();
+        residence_dropdown.on('change', handleEmailConsent);
     };
 
     const bindValidation = () => {
@@ -185,7 +180,7 @@ const VirtualAccOpening = (() => {
             return urlFor('new_account/welcome_onboarding');
         }
         if (residence === 'au') return urlFor('user/metatrader');
-        
+
         return urlFor('new_account/welcome');
     };
     const showFormError = (message, url) => {

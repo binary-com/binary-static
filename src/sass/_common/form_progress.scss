@@ -1,0 +1,81 @@
+.form-progress {
+    width: 100%;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        @media (min-width: 768px) {
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__step {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 6rem;
+        justify-content: space-around;
+        width: var(--step_width);
+
+        & .identifier {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: $COLOR_LIGHT_GRAY;
+            border: 1px solid $COLOR_LIGHT_GRAY;
+            color: $COLOR_BLACK;
+            line-height: 40px;
+            z-index: 2;
+
+            &--active {
+                background-color: $COLOR_ORANGE !important;
+                color: $COLOR_WHITE;
+                border: 1px solid $COLOR_ORANGE !important;
+                transition: all 0.3s ease;
+            }
+        }
+        &-title {
+            font-size: $FONT_SIZE_S;
+            @media (max-width: 480px) {
+                margin: 0.5rem 0;
+            }
+        }
+    }
+    &__steps {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        position: relative;
+
+        &--before {
+            bottom: 0;
+            content: '';
+            left: 0;
+            margin: 0 auto; /* this centers the line to the full width specified */
+            position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+            right: 0;
+            top: 1.4rem;
+            border-top: 2px solid $COLOR_LIGHT_GRAY;
+            z-index: 0;
+        }
+        &--after {
+            border-top: 2px solid $COLOR_ORANGE;
+            bottom: 0;
+            content: '';
+            left: 0;
+            margin: 0 auto; /* this centers the line to the full width specified */
+            position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+            top: 1.4rem;
+            transition: width 0.3s ease;
+            transform: translateX(100px);
+            z-index: 1;
+        }
+    }
+}
