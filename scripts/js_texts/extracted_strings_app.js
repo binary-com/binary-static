@@ -737,7 +737,6 @@ module.exports = [
     'You have added a [_1] account.',
     'You have already withdrawn [_1][_2] in aggregate over the last [_3] days.',
     'You have already withdrawn [_1][_2].',
-    'You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.',
     'You have insufficient funds in your MT5 account.',
     'You have not granted access to any applications.',
     'You have reached the rate limit of requests per second. Please try later.',
