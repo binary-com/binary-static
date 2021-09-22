@@ -560,6 +560,8 @@ const MetaTraderUI = (() => {
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
             const should_show_transfer_fee = client_currency !== mt_currency;
+            const txt_amount_deposit_element = $form.find('#txt_amount_deposit');
+            
             if (should_show_transfer_fee) {
                 $('#transfer_fee_amount_to').text(getTransferFee(client_currency, mt_currency));
                 $('#transfer_fee_minimum_to').text(Currency.getMinimumTransferFee(client_currency));
@@ -567,6 +569,17 @@ const MetaTraderUI = (() => {
                 $('#transfer_fee_minimum_from').text(Currency.getMinimumTransferFee(mt_currency));
             }
             $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(should_show_transfer_fee);
+
+            txt_amount_deposit_element.on('input', () => {
+                const balance = Client.get('balance');
+                const insufficient_funds_error = $form.find('#insufficient_funds');
+                const is_balance_more_than_entered = balance >= txt_amount_deposit_element.val();
+
+                if (is_balance_more_than_entered) {
+                    return insufficient_funds_error.setVisibility(0);
+                }
+                return insufficient_funds_error.setVisibility(1);
+            });
 
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {

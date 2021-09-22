@@ -8,7 +8,6 @@ const Validation   = require('../../../common/form_validation');
 const GTM          = require('../../../../_common/base/gtm');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
-const urlFor       = require('../../../../_common/url').urlFor;
 const isBinaryApp  = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
@@ -440,28 +439,14 @@ const MetaTraderConfig = (() => {
                 selector   : fields.deposit.txt_amount.id,
                 validations: [
                     ['req', { hide_asterisk: true }],
-                    // check if entered amount is less than the available balance
-                    // e.g. transfer amount is 10 but client balance is 5
-                    ['custom', {
-                        func: () => {
-                            const balance = Client.get('balance');
-
-                            const is_balance_more_than_entered = +balance >= +$(fields.deposit.txt_amount.id).val();
-
-                            return balance && is_balance_more_than_entered;
-                        },
-                        message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')),
-                    }],
                     // check if balance is less than the minimum limit for transfer
                     // e.g. client balance could be 0.45 but min limit could be 1
                     ['custom', {
                         func: () => {
-                            const balance         = Client.get('balance');
+                            const deposit_input_value   = document.querySelector('#txt_amount_deposit').value;
                             const min_req_balance = Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5');
 
-                            const is_balance_more_than_min_req = +balance >= +min_req_balance;
-
-                            return balance && is_balance_more_than_min_req;
+                            return +deposit_input_value > +min_req_balance;
                         },
                         message: localize('Should be more than [_1]', Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5')),
                     }],

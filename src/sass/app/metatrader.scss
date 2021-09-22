@@ -340,6 +340,12 @@
                     font-weight: bold;
                     color: $COLOR_GRAY_SHADE;
                 }
+                #insufficient_funds {
+                    .insufficient-funds-error-link {
+                        color: $COLOR_RED;
+                    }
+                    text-align: left;
+                }
                 #mt5_remaining_transfers .empty {
                     color: $COLOR_RED;
                 }

@@ -543,6 +543,9 @@ const Metatrader = () => (
 
                                         <div className='form'>
                                             <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('Subject to [_1] transfer fee or [_2], whichever is higher', '<strong id="transfer_fee_amount_to"></strong>', '<strong id="transfer_fee_minimum_to"></strong>')} />
+                                            <p id='insufficient_funds' className='error-msg center-text invisible'>
+                                                {it.L('You have insufficient funds in your Binary account, please <a class="insufficient-funds-error-link" href="[_1]">add funds</a>.', it.url_for('cashier'))}
+                                            </p>
                                             <SubmitButton
                                                 is_centered
                                                 is_full_width
