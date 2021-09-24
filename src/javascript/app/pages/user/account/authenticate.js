@@ -1127,8 +1127,13 @@ const Authenticate = (() => {
 
         let document_type,
             document_number;
+        
+        const filtered_documents =
+            country_code === 'gh'
+                ? Object.keys(documents_supported).filter(d => d !== 'voter_id')
+                : Object.keys(documents_supported);
 
-        available_document_list = Object.keys(documents_supported).map(d => {
+        available_document_list = filtered_documents.map(d => {
             const { new_display_name, example_format, sample_image } = getDocumentData(country_code, d);
             const { format:regex, display_name } = documents_supported[d];
             return { id: d, text: new_display_name || display_name, example_format, sample_image, regex };
