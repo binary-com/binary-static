@@ -258,18 +258,15 @@ const TypesOfPartnership = () => (
                                             { text: it.L('Asset'), attributes: { rowSpan: 2 } },
                                             { text: it.L('Commission per lot') },
                                         ],
-                                        [
-                                            { text: it.L('(1 standard forex lot is 100k units)'), className: 'center-text' },
-                                        ],
                                     ],
                                     tbody: [
                                         [
                                             { text: it.L('Forex') },
-                                            { text: it.L('5') },
+                                            { text: it.L('USD 2') },
                                         ],
                                         [
                                             { text: it.L('Metals') },
-                                            { text: it.L('5') },
+                                            { text: it.L('USD 4') },
                                         ],
                                     ],
                                 }}
@@ -376,7 +373,7 @@ const TypesOfPartnership = () => (
                             />
                             <div className='affiliate-ib-calculation'>
                                 <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
-                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:')}</p>
+                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot will pay out USD 2 in commission based on the following formula (using EUR/USD as an example):')}</p>
                                 <img
                                     src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-forex.svg')}
                                     width='100%'

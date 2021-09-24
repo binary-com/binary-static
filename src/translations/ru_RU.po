@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-20 08:16\n"
+"PO-Revision-Date: 2021-09-22 11:54\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,6 @@ msgstr "1"
 
 msgid "2"
 msgstr "2"
-
-msgid "5"
-msgstr "5"
 
 msgid "20"
 msgstr "20"
@@ -507,9 +504,6 @@ msgstr "Награда “Лучшая компания по опционам с
 
 msgid "'Financial Trading Operator of the Year' award by eGaming Review"
 msgstr "Награда \"Торговый оператор года\" от eGaming Review"
-
-msgid "(1 standard forex lot is 100k units)"
-msgstr "(1 стандартный лот forex - 100k единиц)"
 
 msgid "(1 standard lot is 100k units)"
 msgstr "(1 стандартный лот - 100k единиц)"
@@ -4844,7 +4838,7 @@ msgid "Expertise in the application of object-oriented programming languages (C+
 msgstr "Знание и умение применять объектно-ориентированные языки программирования (C++, Perl и Java), а также умение писать высококачественный код"
 
 msgid "Expiry date"
-msgstr "Срок истечения"
+msgstr "Истечения"
 
 msgid "Expiry date is required for %1."
 msgstr "Срок истечения необходим для %1."
@@ -5192,8 +5186,8 @@ msgstr "Для котировок рынка Forex время закрытия �
 msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:"
 msgstr "На forex за контракт на 1 лот EUR/USD будет выплачена комиссия в размере EUR 2.5 согласно следующей формуле:"
 
-msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:"
-msgstr "На forex за контракт на 1 лот EUR/USD будет выплачена комиссия в размере EUR 5 согласно следующей формуле:"
+msgid "For forex, a deal for 1 lot will pay out USD 2 in commission based on the following formula (using EUR/USD as an example):"
+msgstr "На forex за контракт на 1 лот будет выплачена комиссия в размере USD 2 согласно следующей формуле (на примере EUR / USD):"
 
 msgid "For forex, your commission is represented in the base currency (EUR in the above example)."
 msgstr "На forex ваша комиссия представлена в базовой валюте (EUR в приведенном выше примере)."
@@ -13471,6 +13465,12 @@ msgstr "USD 1"
 
 msgid "USD 10"
 msgstr "USD 10"
+
+msgid "USD 2"
+msgstr "USD 2"
+
+msgid "USD 4"
+msgstr "USD 4"
 
 msgid "USD Coin"
 msgstr "USD Coin"
