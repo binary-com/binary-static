@@ -106,7 +106,7 @@ const TypesOfAccounts = () => (
                         scroll
                         data={{
                             thead: [
-                                [{ text: '' }, { text: it.L('Financial') }, { text: it.L('Synthetic') }],
+                                [{ text: '' }, { text: it.L('Financial') }],
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('EUR/GBP') },                                                                   { text: it.L('EUR') }],
