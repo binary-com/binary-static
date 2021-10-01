@@ -211,6 +211,7 @@ const Accounts = (() => {
         const table_headers     = TableHeaders.get();
         const account_currency  = Client.get('currency', loginid);
         const account_type_prop = { text: Client.getAccountTitle(loginid) };
+        const can_currency_change_id = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'), loginid);
 
         if (!Client.isAccountOfType('virtual', loginid)) {
             const company_name                       = getCompanyName(loginid);
@@ -241,7 +242,9 @@ const Accounts = (() => {
                         text: localize('Set currency'),
                         type: 'button',
                     }).on('click', showSetCurrency) : (Currency.getCurrencyFullName(account_currency) || '-'))));
-
+        if (can_currency_change_id) {
+            $('#note_change_currency').setVisibility(1);
+        }
         if (is_disabled || excluded_until) {
             $('#note_support').setVisibility(1);
         }

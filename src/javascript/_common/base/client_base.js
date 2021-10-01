@@ -384,8 +384,8 @@ const ClientBase = (() => {
 
     const hasSvgAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const canChangeCurrency = (statement, mt5_login_list, is_current = true) => {
-        const currency             = get('currency');
+    const canChangeCurrency = (statement, mt5_login_list, loginid, is_current = true) => {
+        const currency             = get('currency', loginid);
         const has_no_mt5           = !mt5_login_list || !mt5_login_list.length;
         const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
         const has_account_criteria = has_no_transaction && has_no_mt5;
@@ -395,7 +395,7 @@ const ClientBase = (() => {
         // 2. User must not have any MT5 account
         // 3. Not be a crypto account
         // 4. Not be a virtual account
-        return is_current ? currency && !get('is_virtual') && has_account_criteria && !isCryptocurrency(currency) : has_account_criteria;
+        return is_current ? currency && !get('is_virtual', loginid) && has_account_criteria && !isCryptocurrency(currency) : has_account_criteria;
     };
 
     const isOptionsBlocked = () => {
