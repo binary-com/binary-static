@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-27 06:30\n"
+"PO-Revision-Date: 2021-10-01 03:48\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -747,6 +747,9 @@ msgstr "Một bằng cử nhân trong ngành thương mại hoặc bất kỳ l�
 
 msgid "A bachelor's degree in commerce or any business-related field, law, or risk management"
 msgstr "Một bằng cử nhân trong ngành thương mại hoặc bất kỳ lĩnh vực nào liên quan đến kinh tế, luật pháp, hoặc quản trị rủi ro"
+
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is synthetic indices."
+msgstr ""
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
 msgstr "Lựa chọn nhị phân là một hợp đồng trong đó một bên cam kết trả tiền bên kia một số tiền nếu giá trị của một tài sản nhất định thay đổi theo một hướng cụ thể trong một khoảng thời gian định trước. Các ba yếu tố lớn nằm bên dưới các lớp tài sản cho các lựa chọn nhị phân được cung cấp bởi công ty là"
@@ -2438,11 +2441,17 @@ msgstr "Các thị trường CFD"
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFDs là công cụ phức tạp và đi kèm với rủi ro cao do áp dụng đòn bẩy tài chính. Khoảng %1 các tài khoản đầu tư lẻ đều mất tiền khi giao dịch CFDs với Công ty TNHH Đầu tư Deriv Limited (Châu Âu). bạn nên cân nhắc kỹ lưỡng liệu mình đã đủ am hiểu về CFDs và sãn sàng chấp nhận rủi ro thua lỗ cao."
 
+msgid "CFDs on Synthetic Indices"
+msgstr ""
+
 msgid "CFDs on commodities"
 msgstr "CFD trên hàng hóa"
 
-msgid "CFDs on indices"
-msgstr "CFD trên các chỉ số"
+msgid "CFDs on stock indices"
+msgstr ""
+
+msgid "CFDs on stocks"
+msgstr ""
 
 msgid "CFH Clearing Limited"
 msgstr "CFH loại bỏ giới hạn"
@@ -3746,8 +3755,8 @@ msgstr "Các tài khoản demo không có các dịch vụ của Đại lý than
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "Tùy thuộc vào thẩm quyền mà tài khoản của khách hàng đã được đính kèm theo quy trình mở tài khoản của trang web và được nêu chi tiết trong phần Giới thiệu về chúng tôi của trang web, thuật ngữ \"Công ty\" sẽ biểu thị,"
 
-msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote either"
-msgstr "Tùy thuộc vào thẩm quyền mà tài khoản của khách hàng đã được đính kèm theo quy trình mở tài khoản của trang web, thuật ngữ 'Công ty' hoặc '%1 'sẽ biểu thị"
+msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote"
+msgstr ""
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
 msgstr "Tùy theo mức độ rủi ro mà Công Ty đang tiếp xúc với khi đóng vai trò là đối tác của khách hàng, chúng tôi chủ yếu là hành động trên quy tắc chính trong các giao dịch của khách hàng. Như vậy, địa điểm thực hiện thường sẽ là %1. Tuy nhiên, Công Ty có thể truyền lệnh mua bán của khách hàng cho các nhà cung cấp thanh khoản thuộc bên thứ ba, trong trường hợp này Công Ty sẽ xác định địa điểm thực hiện trên cơ sở mô tả ở trên."
@@ -3821,14 +3830,8 @@ msgstr "Deriv Limited (Europe),"
 msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%3) and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
 msgstr ""
 
-msgid "Deriv (Europe) Limited, or"
-msgstr "Deriv Limited (Europe), hoặc"
-
 msgid "Deriv (FX) Ltd"
 msgstr "Deriv (FX) Ltd"
-
-msgid "Deriv (FX) Ltd,"
-msgstr "Deriv (FX) Ltd,"
 
 msgid "Deriv (FX) Ltd, or"
 msgstr "Deriv (FX) Ltd, hoặc"
@@ -11296,8 +11299,8 @@ msgstr "Công ty không cho phép bất cứ hành vi thiếu chuẩn mự
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Công ty cố gắng để mở hoặc đóng các giao dịch mà Lệnh của khách hàng được đưa ra với mức giá hợp lý có thể chấp nhận với Công ty, phù hợp với nhiệm vụ mang lại dịch vụ tốt nhất cho khách hàng của Công ty. Nghĩa là Công ty phải thực hiện đầy đủ nghĩa vụ, khi lệnh đang được thực hiện để mang lại kết quả tốt nhất có thể cho các khách hàng, khi tính đến giá cả, chi phí, tốc độ, khả năng thực hiện và giải quyết, kích thước, tính tự nhiên hay bất kỳ điều gì khác liên quan đến việc thực hiện Lệnh giao dịch."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "Công Ty có chính sách Dừng khi khách hàng mất nhiều hơn số tiền họ đã ký gửi. Tuy nhiên, trong trường hợp các Phiên mở của khách hàng không được đóng khi Mức ký quỹ cho Tài khoản Thực MT5 đạt đến Mức Dừng, Công ty có thể từ bỏ số dư âm của khách hàng bằng cách ghi thêm vào tài khoản của mình nếu Số dư Tài khoản của khách hàng đi vào số dư âm. Số dư âm được xác định bằng cách tổng hợp tất cả số dư âm phát sinh trong khoảng thời gian 24 giờ trên tất cả các tài khoản do khách hàng nắm giữ. khách hàng chấp nhận, trừ khi họ là khách hàng bán lẻ của Công ty Deriv Investments Limited (Europe), của Deriv Limited (Châu Âu), hoặc một khách bản lẻ tại ÚC, việc Công Ty bảo vệ số dư âm cho khách hàng là được quyết định hoàn toàn bởi Công ty và chúng tôi có quyền thay đổi các tính năng và tiêu chí để đáp ứng điều kiện của Bảo Vệ Số Dư Âm bất cứ lúc nào. Các điều khoản của Bảo Vệ Số Dư Âm không áp dụng cho các trường hợp sau:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Nhiệm vụ chung của Công Ty là hoạt động kinh doanh trung thực, công bằng, chuyên nghiệp, và mang lại cho khách hàng mức lãi suất tốt nhất khi mở và đóng những giao dịch binary options."
@@ -15157,6 +15160,9 @@ msgstr "Ví dụ. Hợp chủng quốc Hoa kì"
 
 msgid "e.g. frontend.binaryws.com"
 msgstr "ví dụ: frontend.binaryws.com"
+
+msgid "either"
+msgstr ""
 
 msgid "for account %1"
 msgstr "cho tài khoản %1"

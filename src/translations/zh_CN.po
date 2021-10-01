@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-30 02:55\n"
+"PO-Revision-Date: 2021-10-01 03:48\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -747,6 +747,9 @@ msgstr "商业或任何商业相关领域、信息技术相关领域、或犯罪
 
 msgid "A bachelor's degree in commerce or any business-related field, law, or risk management"
 msgstr "商业或任何商业相关领域、法律或风险管理学士学位"
+
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is synthetic indices."
+msgstr ""
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
 msgstr "二元期权是指一方承诺如果某一资产的价值在预定期间内朝着特定方向发生变化，将向另一方支付特定数额的合约 。公司提供的二元期权三大基础资产类别是"
@@ -2437,11 +2440,17 @@ msgstr "差价合约"
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "差价合约是复杂的工具, 并且由于杠杆作用，资金迅速亏损的风险很高。通过 Deriv Investments (Europe) Limited. 进行差价合约交易时有%1的零售投资者账户蒙受亏损。 您必须考虑自己是否了解差价合约的运作方式, 以及是否能够承担资金亏损的高风险。"
 
+msgid "CFDs on Synthetic Indices"
+msgstr ""
+
 msgid "CFDs on commodities"
 msgstr "大宗商品差价合约"
 
-msgid "CFDs on indices"
-msgstr "指数差价合约"
+msgid "CFDs on stock indices"
+msgstr ""
+
+msgid "CFDs on stocks"
+msgstr ""
 
 msgid "CFH Clearing Limited"
 msgstr "CFH Clearing 有限公司"
@@ -3746,8 +3755,8 @@ msgstr "模拟账户没有付款代理服务。"
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "根据网站的开户程式对客户账户所附的管辖权和“关于我们”部分的详细说明以及提供的产品类型, “公司”一词应表示,"
 
-msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote either"
-msgstr "根据网站的开户程式对客户账户所附的管辖权, “公司”或“%1”等词应表示"
+msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote"
+msgstr ""
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
 msgstr "基于公司作为客户的交易相对方所接触的风险水平，公司在客户的交易中参与大部分的主要活动。因此，执行场所通常是在%1。然而，公司可能会将客户的订单转给第三方流动性提供商。在这种情况下，公司将根据以上所述自行确定执行场所。"
@@ -3821,14 +3830,8 @@ msgstr "Deriv (Europe) Limited,"
 msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%3) and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
 msgstr "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, （%1的综合指数交易 - 仅博彩产品）由位于马耳他的马耳他博彩局授予牌照和监管（%2牌照号MGA/B2C/102/2000%3），爱尔兰客户由税务局授予牌照和监管 (牌照号: 1010285)。"
 
-msgid "Deriv (Europe) Limited, or"
-msgstr "Deriv (Europe) Limited, 或"
-
 msgid "Deriv (FX) Ltd"
 msgstr "Deriv (FX) Ltd"
-
-msgid "Deriv (FX) Ltd,"
-msgstr "Deriv (FX) Ltd,"
 
 msgid "Deriv (FX) Ltd, or"
 msgstr "Deriv (FX) Ltd, 或"
@@ -11295,8 +11298,8 @@ msgstr "公司不容忍任何形式的不当行为，包括使用冒犯性语言
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "公司按照最佳执行责任行事，努力以与客户的订单相关的合理可用价格开盘或平仓交易。最佳执行意味着公司在执行订单时必须采取足够措施，考虑价格、成本、速度、执行和结算的可能性、大小、性质或任何其他考虑因素以为客户获取最大效益。"
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "公司的止损政策可以防止客户的亏损大于其存入资金。但是，当客户的MT5真实账户的保证金水平达到止损水平时，如果客户的持仓头寸未平仓，公司可以全权酌情决定通过注入资金减免客户的负余额（如果客户的账户余额为负）。负余额是通过汇总24个小时内客户持有的所有账户的所有负余额来确定的。客户确认，除非他们是Deriv Investments（Europe）Limited的零售客户、Deriv（Europe）Limited的客户或在澳大利亚居住的零售客户，公司向客户提供负余额保护的措施可由公司自行全权决定，并且公司保留随时更改负余额保护功能和资格标准的权利。负余额保护的规定不适用于以下情况："
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "公司的一般性义务包括：以诚实、公正和专业的方式向客户提供服务，并在开始和结束二元期权交易时为客户争取最大的利益。"
@@ -15156,6 +15159,9 @@ msgstr "例如美国"
 
 msgid "e.g. frontend.binaryws.com"
 msgstr "例如 frontend.binaryws.com"
+
+msgid "either"
+msgstr ""
 
 msgid "for account %1"
 msgstr "用于%1账户"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-30 02:55\n"
+"PO-Revision-Date: 2021-10-01 03:48\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -747,6 +747,9 @@ msgstr "Gelar sarjana dalam bidang perdagangan atau bisnis apa pun terkait denga
 
 msgid "A bachelor's degree in commerce or any business-related field, law, or risk management"
 msgstr "Gelar sarjana dalam bidang perdagangan atau bidang yang berkaitan dengan bisnis, hukum, atau manajemen risiko"
+
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is synthetic indices."
+msgstr ""
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
 msgstr "Opsi binary adalah kontrak di mana satu pihak melakukan pembayaran kepada pihak lain sejumlah tertentu jika nilai aset yang diberikan berubah dalam arah tertentu dalam periode yang ditentukan sebelumnya. Tiga kelas aset utama yang mendasari untuk opsi binary yang ditawarkan oleh Perusahaan adalah"
@@ -2437,11 +2440,17 @@ msgstr "CFD"
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFD adalah instrumen yang sangat kompleks dan memiliki risiko kehilangan dana yang tinggi dengan cepat berhubung adanya leverage. %1 akun investor ritel kehilangan dana ketika bertrading CFD pada Deriv Investments (Europe) Limited. Anda harus mempertimbangkan lebih lanjut apakah Anda benar benar memahami cara kerja CFD dan apakah Anda mampu mengambil risiko tinggi untuk kehilangan seluruh dana Anda."
 
+msgid "CFDs on Synthetic Indices"
+msgstr ""
+
 msgid "CFDs on commodities"
 msgstr "CFD pada komoditas"
 
-msgid "CFDs on indices"
-msgstr "CFD pada indeks"
+msgid "CFDs on stock indices"
+msgstr ""
+
+msgid "CFDs on stocks"
+msgstr ""
 
 msgid "CFH Clearing Limited"
 msgstr "CFH Clearing Limited"
@@ -3745,8 +3754,8 @@ msgstr "Akun demo tidak memiliki layanan Agen Pembayaran."
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "Bergantung pada yurisdiksi tempat akun klien terdaftar sesuai dengan prosedur pendaftaran dan sebagaimana telah dirinci pada bagian Tentang Kami dalam situs web ini dan jenis produk yang ditawarkan, istilah \"Perusahaan\" adalah mewakili"
 
-msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote either"
-msgstr "Tergantung pada yurisdiksi dimana akun klien didaftarkan pada saat melengkapi prosedur pendaftaran pada situs web, istilah 'Perusahaan' dan '%1' akan tertuju pada"
+msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote"
+msgstr ""
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
 msgstr "Bergantung pada tingkat risiko yang dihadapi Perusahaan saat bertindak sebagai mitra klien, Perusahaan bertindak sebagian besar dalam kapasitas utama dari trading klien. Dengan demikian, tempat pelaksanaan biasanya adalah %1. Namun, Perusahaan dapat mengirimkan order klien ke penyedia likuiditas pihak ketiga, dalam hal mana Perusahaan akan menentukan tempat pelaksanaan atas dasar yang dijelaskan di atas."
@@ -3820,14 +3829,8 @@ msgstr "Deriv (Europe) Limited,"
 msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%3) and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
 msgstr "Deriv (Europe) Limited, yang beralamat di W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta berlisensi dan diatur (khusus untuk Indeks Sintetis %1) oleh Otoritas Gaming Malta di Malta (%2nomer lisensi MGA/B2C/102/2000%3) dan oleh Komisaris Pendapatan untuk klien yang berdomisili di Irlandia (nomer lisensi 1010285)."
 
-msgid "Deriv (Europe) Limited, or"
-msgstr "Deriv (Europe) Limited, atau"
-
 msgid "Deriv (FX) Ltd"
 msgstr "Deriv (FX) Ltd"
-
-msgid "Deriv (FX) Ltd,"
-msgstr "Deriv (FX) Ltd,"
 
 msgid "Deriv (FX) Ltd, or"
 msgstr "Deriv (FX) Ltd, atau"
@@ -11294,8 +11297,8 @@ msgstr "Perusahaan tidak mentolerir segala bentuk perilaku yang tidak pantas. Ha
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Perusahaan berupaya untuk membuka atau menutup transaksi yang terkait dengan Order klien dengan harga yang wajar tersedia bagi Perusahaan, bertindak sesuai dengan tugas Perusahaan untuk melaksanakan eksekusi terbaik. Eksekusi terbaik berarti bahwa, ketika melaksanakan Order, Perusahaan harus mengambil semua langkah yang cukup untuk mendapatkan hasil sebaik mungkin bagi klien, dengan mempertimbangkan harga, biaya, kecepatan, kemungkinan eksekusi dan penyelesaian, ukuran, sifat, atau pertimbangan lain relevan dengan pelaksanaan Order."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "Perusahaan memiliki kebijakan Stop Out untuk mencegah klien kehilangan lebih dari dana deposit mereka. Namun, jika Posisi Berjalan klien tidak ditutup ketika Level margin pada akun riil MT5 mereka mencapai level stop out, perusahaan, atas kebijakannya sendiri, dapat mengesampingkan saldo negatif klien dengan mengkreditkan akun mereka jika akun mereka memiliki saldo negatif. Saldo negatif ditentukan dengan menggabungkan semua saldo negatif yang dimiliki selama periode 24-jam pada semua akun yang dimiliki oleh klien. Klien mengakui bahwa, kecuali jika mereka adalah pelanggan ritel Deriv Investments (Europe) Limited atau klien dari Deriv (Europe) Limited, atau pelanggan yang berdomisili di Australia, tawaran perlindungan saldo negatif oleh perusahaan kepada klien adalah atas kebijakan tunggal perusahaan dan perusahaan berhak untuk mengubah fitur dan kriteria kelayakan perlindungan saldo negatif tersebut setiap saat. Ketentuan perlindungan saldo negatif tidak berlaku pada situasi berikut:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Perusahaan berkewajiban umum untuk menjalankan bisnisnya dengan klien secara jujur, adil, dan profesional serta bertindak demi kepentingan terbaik klien saat membuka dan menutup opsi trading binary bersama klien."
@@ -15155,6 +15158,9 @@ msgstr "contoh Amerika Serikat"
 
 msgid "e.g. frontend.binaryws.com"
 msgstr "misalnya frontend.binaryws.com"
+
+msgid "either"
+msgstr ""
 
 msgid "for account %1"
 msgstr "pada akun %1"
