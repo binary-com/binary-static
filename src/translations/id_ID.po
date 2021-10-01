@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-01 05:28\n"
+"PO-Revision-Date: 2021-10-01 11:03\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1597,6 +1597,9 @@ msgstr "Mengerjakan tugas terkecil sekalipun dengan pikiran terbuka dan mempelaj
 msgid "Appropriateness"
 msgstr "Kelayakan"
 
+msgid "Appropriateness Test: WARNING:"
+msgstr ""
+
 msgid "Appropriateness test"
 msgstr "Tes kelayakan"
 
@@ -2200,13 +2203,10 @@ msgstr "Pengalaman trading opsi Binary"
 msgid "Binary options trading frequency"
 msgstr "Frekuensi trading opsi binary"
 
-msgid "Binary options trading is not available in your Multipliers account."
-msgstr ""
-
 msgid "Binary options trading is not available in your country."
 msgstr "Trading opsi binary tidak tersedia di negara Anda."
 
-msgid "Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account."
+msgid "Binary options trading is not available in your financial account."
 msgstr ""
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
@@ -2436,9 +2436,6 @@ msgstr "Frekuensi trading CFD"
 
 msgid "CFDs"
 msgstr "CFD"
-
-msgid "CFDs Account"
-msgstr ""
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFD adalah instrumen yang sangat kompleks dan memiliki risiko kehilangan dana yang tinggi dengan cepat berhubung adanya leverage. %1 akun investor ritel kehilangan dana ketika bertrading CFD pada Deriv Investments (Europe) Limited. Anda harus mempertimbangkan lebih lanjut apakah Anda benar benar memahami cara kerja CFD dan apakah Anda mampu mengambil risiko tinggi untuk kehilangan seluruh dana Anda."
@@ -2740,14 +2737,14 @@ msgstr "Pegawai"
 msgid "Click OK to proceed."
 msgstr "Klik OK untuk melanjutkan."
 
-msgid "Click here to open a Multipliers Account"
+msgid "Click here to open a Financial Account"
+msgstr ""
+
+msgid "Click here to open a Gaming account"
 msgstr ""
 
 msgid "Click here to open a Real Account"
 msgstr "Klik disini untuk mendaftar Akun Riil"
-
-msgid "Click here to open an Options account"
-msgstr ""
 
 msgid "Click here to retry"
 msgstr "Klik disini untuk mencoba lagi"
@@ -3015,6 +3012,9 @@ msgstr "Kewajiban perusahaan"
 
 msgid "Company's rights"
 msgstr "Hak perusahaan"
+
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "Kompensasi berdasarkan Skema Kompensasi Investor"
@@ -3388,17 +3388,17 @@ msgstr "Daftar akun %1"
 msgid "Create Account"
 msgstr "Daftar Akun"
 
+msgid "Create MT5 password"
+msgstr ""
+
 msgid "Create New Demo Account"
 msgstr "Daftar Akun Demo Baru"
 
-msgid "Create a CFDs account"
+msgid "Create a MT5 password. You can use this password for all your MT5 accounts."
 msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr "Daftar akun MetaTrader 5"
-
-msgid "Create a New Demo Account"
-msgstr ""
 
 msgid "Create a new Binary password."
 msgstr "Buat kata sandi Binary baru."
@@ -3411,12 +3411,6 @@ msgstr "Daftar akun"
 
 msgid "Create an MT5 account now"
 msgstr "Daftar akun MT5 sekarang"
-
-msgid "Create an MT5 password for logging in to your CFDs account."
-msgstr ""
-
-msgid "Create an MT5 password. You can use this password for all your MT5 accounts."
-msgstr ""
 
 msgid "Create and maintain wireframes and mockups for new and existing products"
 msgstr "Membuat dan memelihara wireframes dan mockup untuk produk baru dan yang sudah ada"
@@ -3439,7 +3433,7 @@ msgstr "Daftar akun gratis menggunakan"
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr "Buat model matematika/statistik untuk penentuan harga, analisis fat tails untuk menilai persyaratan margin, dan kelola risiko untuk opsi eksotis, forex, dan CFD"
 
-msgid "Create new Demo account"
+msgid "Create new demo account"
 msgstr ""
 
 msgid "Create new token"
@@ -3447,6 +3441,9 @@ msgstr "Membuat token baru"
 
 msgid "Create or Manage Accounts"
 msgstr "Mendaftar atau Mengelola Akun"
+
+msgid "Create or reset password"
+msgstr ""
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "Buat strategi melawan potensi risiko yang mungkin timbul karena inovasi yang mengganggu"
@@ -3742,7 +3739,7 @@ msgstr "Akun Demo"
 msgid "Demo Accounts"
 msgstr "Akun Demo"
 
-msgid "Demo CFDs"
+msgid "Demo Financial"
 msgstr ""
 
 msgid "Demo Financial STP"
@@ -5080,9 +5077,6 @@ msgstr "Informasi keuangan"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "Temukan platform trading yang sesuai dengan pengalaman dan strategi pilihan Anda - baik Anda seorang trader baru atau berpengalaman."
 
-msgid "Find out more"
-msgstr ""
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "Cari tahu lebih lanjut mengenai biaya dan rincian dari setiap aset CFD yang kami tawarkan."
 
@@ -5266,6 +5260,9 @@ msgstr "Trading forex melibatkan pembelian satu mata uang dan penjualan mata uan
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "Trading forex akan melibatkan pembelian dan penjualan \"pasangan mata uang\" ini. Ketika Anda membeli suatu pasangan mata uang seperti EUR/USD, berarti Anda membeli EURO dan menjual USD pada saat yang bersamaan."
 
+msgid "Forgot password?"
+msgstr ""
+
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Didirikan pada tahun 1999, %1 merupakan salah satu nama tertua dan dihormati pada trading online binary."
 
@@ -5377,6 +5374,12 @@ msgstr "GMT adalah singkatan dari Greenwich Mean Time, waktu resmi digunakan di 
 msgid "GamCare"
 msgstr "GamCare"
 
+msgid "Gaming"
+msgstr ""
+
+msgid "Gaming Account"
+msgstr ""
+
 msgid "General"
 msgstr "Umum"
 
@@ -5475,9 +5478,6 @@ msgstr "Go long dan short"
 
 msgid "Go short = sell"
 msgstr "Go short = jual"
-
-msgid "Go to DTrader"
-msgstr ""
 
 msgid "Go to MT5 download page"
 msgstr "Kunjungi halaman unduh MT5"
@@ -6359,6 +6359,9 @@ msgstr "Untuk memperoleh keuntungan dari kurs trading, perlu dilakukan penutupan
 msgid "In providing IB services, the Introducing Broker shall"
 msgstr "Dalam menyediakan layanan IB, Introducing Broker harus"
 
+msgid "In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
+msgstr ""
+
 msgid "In providing the Agent's services, the Agent shall do the following:"
 msgstr "Dalam memberikan layanan Agen, Agen harus melakukan hal berikut:"
 
@@ -6601,6 +6604,9 @@ msgstr "Berinvestasi pada produk kompleks, seperti CFD dan FX dapat menimbulkan 
 
 msgid "Investing or trading in contracts exposes the client to the performance of the underlying or reference instrument or asset to which the Binary contract refers, including foreign exchange, stock indices, and commodities, each of which have their own features and risks."
 msgstr "Investasi atau perdagangan dalam kontrak memaparkan klien pada kinerja instrumen atau aset yang mendasari atau referensi yang mengacu pada kontrak Binary, termasuk valuta asing, indeks saham, dan komoditas, yang masing-masing memiliki fitur dan risiko sendiri."
+
+msgid "Investment"
+msgstr ""
 
 msgid "Investment Income"
 msgstr "Pendapatan Investasi"
@@ -7805,9 +7811,6 @@ msgstr "Multiplier Up"
 msgid "Multipliers"
 msgstr "Multiplier"
 
-msgid "Multipliers Account"
-msgstr ""
-
 msgid "Must be a clear, colour photo"
 msgstr "Harus foto yang jelas dan berwarna"
 
@@ -8303,7 +8306,7 @@ msgstr "Open Source"
 msgid "Open a %1 account through DIEL's website %2"
 msgstr "Mendaftar akun %1 melalui situs DIEL %2"
 
-msgid "Open a Multipliers Account"
+msgid "Open a Financial Account"
 msgstr ""
 
 msgid "Open a Real Account"
@@ -8356,12 +8359,6 @@ msgstr "Harge pembukaan"
 
 msgid "Opens"
 msgstr "Dibuka"
-
-msgid "Options"
-msgstr ""
-
-msgid "Options Account"
-msgstr ""
 
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "Opsi yang memberi Anda kesempatan untuk \"melihat kembali\" nilai optimal tinggi dan rendah yang telah dicapai pasar untuk menentukan jumlah hasil."
@@ -8417,9 +8414,6 @@ msgstr "Selain dari pembayaran Komisi, Binary tidak bertanggung jawab kepada Int
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "Tim Accounting &amp; Payments mengelola berbagai macam rekening bank dan sistem e-currency kami, serta volume transaksi besar yang terjadi setiap hari."
 
-msgid "Our CFDs account is suitable for both new and experienced traders."
-msgstr ""
-
 msgid "Our Company"
 msgstr "Perusahaan Kami"
 
@@ -8470,9 +8464,6 @@ msgstr "Pasangan logam yang tersedia biasanya ditradingkan dalam jumlah lot. Sec
 
 msgid "Our office in Dubai is located at the world-class Jumeirah Lake Towers (JLT) free zone. JLT is home to universities, commercial and residential towers, parks, and over 500 retail outlets, giving you exceptional convenience and a quality of life that you won't find anywhere else."
 msgstr "Kantor kami di Dubai terletak di zona bebas berkelas dunia Jumeirah Lake Towers (JLT). JLT adalah rumah bagi universitas, menara komersial dan perumahan, taman, dan lebih dari 500 outlet ritel, memberi Anda kenyamanan luar biasa dan kualitas hidup yang tidak akan Anda temukan di tempat lain."
-
-msgid "Our products and services may expose you to risks that can be substantial at times, including the risk of losing your entire investment. Please note that by clicking %1Continue%2, you’ll be accepting these risks."
-msgstr ""
 
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "Indeks proprietary sintesis kami yang mensimulasikan kekuatan pasar"
@@ -8977,9 +8968,6 @@ msgstr "Silakan reload halaman"
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "Mohon diingat setiap waktu bahwa trading opsi binary dapat menjadi aktivitas yang menyenangkan, tetapi kami memiliki kewajiban moral untuk mengingatkan Anda mengenai risiko yang mungkin Anda hadapi. Trading opsi dapat menyebabkan ketagihan sama seperti aktivitas lain yang dilakukan melebihi batas. Kami menyarankan Anda untuk melakukan pengecekan jika berisiko untuk menghindari ketagihan dimana penting untuk mengikuti panduan dan prinsip dasar."
-
-msgid "Please remember that it is your responsibility to keep your answers accurate and up to date."
-msgstr ""
 
 msgid "Please resolve all pending issues to continue"
 msgstr "Mohon selesaikan semua masalah yang tertunda untuk melanjutkan"
@@ -9533,11 +9521,11 @@ msgstr "Akun Riil"
 msgid "Real Account Opening"
 msgstr "Pendaftaran Akun Riil"
 
-msgid "Real CFDs"
-msgstr ""
-
 msgid "Real Estate"
 msgstr "Perumahan"
+
+msgid "Real Financial"
+msgstr ""
 
 msgid "Real Financial STP"
 msgstr "Riil Finansial STP"
@@ -10226,7 +10214,7 @@ msgstr "Urutan seperti abc atau 6543 adalah mudah ditebak"
 msgid "Server"
 msgstr "Server"
 
-msgid "Server maintenance starts at 01:00 (GMT) every Sunday. This process may take up to 2 hours to complete. You may experience service disruption during this time."
+msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
 msgstr ""
 
 msgid "Server:"
@@ -10243,9 +10231,6 @@ msgstr "Sesi durasi:"
 
 msgid "Set Currency"
 msgstr "Atur Mata Uang"
-
-msgid "Set MT5 password"
-msgstr ""
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Tetapkan batasan untuk menentukan posisi dan memicu hasil yang Anda akan dapatkan."
@@ -10646,6 +10631,9 @@ msgstr "Prosedur Penyimpanan"
 msgid "Straight rows of keys are easy to guess"
 msgstr "Baris tombol lurus mudah ditebak"
 
+msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
+msgstr ""
+
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "Kuat dalam analitis dan terbukti dalam kapasitas sebelumnya atau berminat untuk pindah ke area ini"
 
@@ -10666,9 +10654,6 @@ msgstr "Terampil berkomunikasi secara lisan dan tertulis baik berbagai bahasa lo
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
 msgstr "Sandi yang kuat berisi minimal 8 karakter, menggabungkan huruf besar dan kecil, angka, serta simbol."
-
-msgid "Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols."
-msgstr ""
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "Memahami dengan baik mengenai warna, tipografi, desain identitas, dan branding"
@@ -13176,7 +13161,7 @@ msgstr "Bertrading dengan mudah dengan pilihan luas metode deposit dan penarikan
 msgid "Trade with leverage"
 msgstr "Bertrading dengan leverage"
 
-msgid "Trade with real funds and get access to competitive trading conditions."
+msgid "Trade with real funds and access to competitive trading conditions."
 msgstr ""
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology."
@@ -13554,9 +13539,6 @@ msgstr "Dimengerti"
 msgid "Unemployed"
 msgstr "Pengangguran"
 
-msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
-msgstr ""
-
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "Memiliki gelar universitas dalam Pemasaran, Matematika, IT/Programming atau bidang terkait"
 
@@ -13665,9 +13647,6 @@ msgstr "Setelah berakhirnya atau pengakhiran Perjanjian ini, untuk alasan apa pu
 msgid "Usage limit"
 msgstr "Batas penggunaan"
 
-msgid "Use MT5 password to sign in to any of your CFDs accounts when using MT5 apps on your mobile or other devices."
-msgstr ""
-
 msgid "Use a few words, avoid common phrases"
 msgstr "Gunakan beberapa kata, hindari frasa umum"
 
@@ -13716,7 +13695,10 @@ msgstr "Menggunakan upaya terbaik dan ketekunan mereka untuk mentransfer dana ya
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "Menggunakan upaya terbaik mereka untuk menarik klien potensial ke Binary"
 
-msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create password, or you have forgotten your password, please reset it."
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you've forgotten your password."
+msgstr ""
+
+msgid "Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps."
 msgstr ""
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
@@ -13874,9 +13856,6 @@ msgstr "Langkah volume"
 
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
-
-msgid "WARNING"
-msgstr ""
 
 msgid "Waiting for contract settlement."
 msgstr "Menunggu penyelesaian kontrak."
@@ -14661,9 +14640,6 @@ msgstr "Anda berkesempatan untuk menutup kontrak sebelum berakhir untuk menguran
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "Anda dapat mengisi ulang akun demo Anda dengan tambahan %1 jika saldo Anda %2 atau kurang."
 
-msgid "You can update personal details at any time in your account settings."
-msgstr ""
-
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "Anda dapat menggunakan agen pembayaran untuk mendeposit dan menarik dana menggunakan transfer bank lokal atau e-cash yang tidak disediakan oleh %1. Sangat mudah."
 
@@ -14687,9 +14663,6 @@ msgstr "Anda memiliki kata sandi baru untuk mengakses Binary.com."
 
 msgid "You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps."
 msgstr "Anda memiliki kata sandi MT5 baru untuk mengakses akun MT5 Anda melalui web dan aplikasi seluler."
-
-msgid "You have a trading password for MT5"
-msgstr ""
 
 msgid "You have added a %1 account."
 msgstr "Anda telah mendaftar akun %1."
@@ -14844,7 +14817,7 @@ msgstr "Anda perlu mengatur kata sandi untuk menyelesaikan proses."
 msgid "You will not be able to change currency once you have made a deposit."
 msgstr "Anda tidak akan dapat mengubah mata uang akun setelah melakukan deposit."
 
-msgid "You will not be able to change your fiat account currency after creating this CFDs account. Are you sure you want to proceed?"
+msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
 msgstr ""
 
 msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
@@ -15174,7 +15147,7 @@ msgstr "saldo demo kedalam akun"
 msgid "deposit"
 msgstr "deposit"
 
-msgid "deposit or create a CFDs account"
+msgid "deposit or create an MT5 account"
 msgstr ""
 
 msgid "details"
