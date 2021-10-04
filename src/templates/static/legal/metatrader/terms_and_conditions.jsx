@@ -21,12 +21,12 @@ const TermsAndConditions = () => (
         <h2 data-anchor='introduction-and-scope-of-agreement'>{it.L('A. Introduction and scope of agreement')}</h2>
         <ol>
             <li>
-                {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote either', it.website_name)}&nbsp;
+                {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website, the terms \'the Company\' and \'[_1]\' shall denote', it.website_name)}&nbsp;
+                <span data-show='-eucountry'>{it.L('either')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Deriv (V) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Deriv (SVG) LLC,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Deriv (BVI) Ltd,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Deriv (FX) Ltd,')}&nbsp;</span>
-                <span>{it.L('Deriv (Europe) Limited, or')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Deriv (FX) Ltd, or')}&nbsp;</span>
                 <span>{it.L('Deriv Investments (Europe) Limited.')}</span>
             </li>
 
@@ -205,7 +205,7 @@ const TermsAndConditions = () => (
             </li>
             <li>
                 {it.L('Negative Balance Protection')}
-                <p>{it.L('The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client\'s Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client\'s negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company\'s sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:')}
+                <p>{it.L('The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client\'s Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client\'s negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company\'s sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:')}
                     <ol>
                         <li>{it.L('When a force majeure event occurs')}</li>
                         <li>{it.L('When the market conditions or market movements/volatility are abnormal')}</li>

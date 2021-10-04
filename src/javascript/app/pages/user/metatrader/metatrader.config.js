@@ -95,7 +95,7 @@ const MetaTraderConfig = (() => {
                                 $('#authenticate_loading').setVisibility(1);
                                 await setMaltaInvestIntention();
                                 $('#authenticate_loading').setVisibility(0);
-                                $message.find('.authenticate').setVisibility(1);
+                                $message.find('.authenticate_msg').setVisibility(1);
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && sample_account.sub_account_type === 'financial_stp') {
@@ -104,7 +104,7 @@ const MetaTraderConfig = (() => {
                                 $('#authenticate_loading').setVisibility(1);
                                 await setLabuanFinancialSTPIntention();
                                 $('#authenticate_loading').setVisibility(0);
-                                $message.find('.authenticate').setVisibility(1);
+                                $message.find('.authenticate_msg').setVisibility(1);
                                 is_ok = false;
                             }
 
@@ -523,8 +523,11 @@ const MetaTraderConfig = (() => {
     // otherwise, use this function to format login into display login
     const getDisplayLogin = login => login.replace(/^MT[DR]?/i, '');
 
-    const isAuthenticated = () =>
-        State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
+    const isAuthenticated = () => {
+        const authentication = State.getResponse('get_account_status.authentication');
+        const { identity, document, needs_verification } = authentication;
+        return identity.status === 'verified' && document.status === 'verified' && needs_verification.length === 0;
+    };
 
     const isAuthenticationPromptNeeded = () => {
         const authentication = State.getResponse('get_account_status.authentication');

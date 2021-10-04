@@ -221,6 +221,7 @@ CookieStorage.prototype = {
             path  : this.path,
             domain: this.domain,
         });
+        this.value = {};
     },
 };
 

@@ -99,17 +99,17 @@ const VirtualAccOpening = (() => {
 
         const req = [
             { selector: '#client_password', validations: ['req', 'password'] },
-
-            { selector: '#residence' , validations: ['req'] },
+            { selector: '#residence' ,      validations: ['req'] },
             { selector: '#email_consent' },
-            { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
             { request_field: 'signup_device',       value: signup_device },
         ];
 
-        if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
-        if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
-        if (date_first_contact)    req.push({ request_field: 'date_first_contact',  value: date_first_contact });
+        Object.keys(utm_data).forEach((field) => {
+            if (utm_data[field]) req.push({ request_field: field, value: utm_data[field] });
+        });
+
+        if (date_first_contact) req.push({ request_field: 'date_first_contact',  value: date_first_contact });
         const gclid = LocalStore.get('gclid');
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 

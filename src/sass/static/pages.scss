@@ -1201,6 +1201,176 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.idv-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .idv-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 382px;
+
+        &__link {
+            font-weight: bold;
+            color: $COLOR_BLUE;
+        }
+        .btm-spacer {
+            margin-bottom: 24px;
+        }
+        &__main-icon {
+            width: 140px;
+            margin-bottom: 24px;
+        }
+        &__header {
+            font-size: 28px;
+            font-weight: 300;
+            line-height: 32px;
+            color: $COLOR_ORANGE;
+            margin-bottom: 16px;
+        }
+        &__input {
+            padding: 5px 16px;
+
+            @media (max-width: 768px) {
+                padding: 4px;
+                width: unset;
+            }
+        }
+        &__dropdown {
+            width: 100%;
+            padding: 5px 16px;
+            height: fit-content;
+            margin-top: 24px;
+            word-wrap: break-word;
+
+            @media (max-width: 768px) {
+                padding: 4px;
+            }
+        }
+        .long-text {
+            @media (max-width: 768px) {
+                padding: 4px;
+                font-size: 0.85rem;
+            }
+
+            .placeholder {
+                @media (max-width: 768px) {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+        p {
+            margin: unset;
+        }
+        &__document-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 24px;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        &__left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            fieldset {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                border: none;
+                margin-bottom: 23px;
+
+                #document_example_format {
+                    width: 100%;
+                    font-size: 13px;
+                    margin-top: 8px;
+                    word-wrap: break-word;
+                    text-align: left;
+                }
+                .error-text {
+                    color: $COLOR_DARK_RED;
+                }
+            }
+        }
+        &__right {
+            max-width: calc(50% - 30px);
+            margin: 16px 0 0 30px;
+            @media (max-width: 768px) {
+                width: 100%;
+                max-width: unset;
+                padding: 0;
+                margin-left: 0;
+            }
+
+            .sample-image-text {
+                font-size: 16px;
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 4px;
+            }
+            .sample-image-container {
+                background-color: $COLOR_SHADY_WHITE;
+                padding: 14px 18px;
+                min-width: 245px;
+                max-width: calc(50% - 30px - 36px);
+                @media (max-width: 768px) {
+                    min-width: unset;
+                    max-width: unset;
+                }
+
+                img {
+                    min-width: 245px;
+                    max-width: calc(50% - 30px - 36px);
+                    @media (max-width: 768px) {
+                        min-width: unset;
+                        max-width: unset;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &__button-wrapper {
+            display: inline-flex;
+
+            .child-span {
+                padding: 10px 15px;
+
+                img {
+                    height: 18px;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+    .country-selector {
+        max-width: unset;
+    }
+    .document-submit {
+        max-width: 540px;
+    }
+    .show-sample-image {
+        max-width: 50%;
+
+        @media (max-width: 768px) {
+            max-width: unset;
+        }
+    }
+    .idv-status {
+        margin-top: 32px;
+    }
+}
+
 #content.careers-content {
     margin-top: 0;
 

@@ -40,7 +40,7 @@ const Tac = () => (
                         id     : 'risk',
                         text   : it.L('Risk Disclaimer'),
                         submenu: [
-                            { id: 'risk-binary', text: it.L('Binary Options') },
+                            { id: 'risk-binary', text: it.L('Options') },
                             { id: 'risk-mt',     text: it.L('MetaTrader') },
                         ],
                     },
@@ -48,7 +48,7 @@ const Tac = () => (
                         id     : 'order-execution',
                         text   : it.L('Order Execution'),
                         submenu: [
-                            { id: 'order-execution-binary', text: it.L('Binary Options'), dataShow: 'eucountry' },
+                            { id: 'order-execution-binary', text: it.L('Options'), dataShow: 'eucountry' },
                             { id: 'order-execution-mt',     text: it.L('MetaTrader') },
                         ],
                     },
