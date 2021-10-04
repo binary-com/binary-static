@@ -533,7 +533,7 @@ const MetaTraderConfig = (() => {
         const authentication = State.getResponse('get_account_status.authentication');
         const { identity, needs_verification } = authentication;
         const is_verification_needed = needs_verification.length && (needs_verification.includes('identity') || needs_verification.includes('document'));
-        const has_been_authenticated = /^(rejected|expired|verified)$/.test(identity.status);
+        const has_been_authenticated = identity.status === 'verified' && document.status === 'verified';
         return is_verification_needed && !has_been_authenticated;
     };
 
