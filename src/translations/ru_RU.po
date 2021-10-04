@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-22 11:54\n"
+"PO-Revision-Date: 2021-10-03 15:12\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -747,6 +747,9 @@ msgstr "Степень бакалавра в области коммерции �
 
 msgid "A bachelor's degree in commerce or any business-related field, law, or risk management"
 msgstr "Степень бакалавра в области финансов, бизнеса, в любой смежной области, юриспруденции или сфере управления риском"
+
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is synthetic indices."
+msgstr "Бинарный опцион – это контракт, при котором одна сторона берет на себя обязательства выплатить другой стороне заранее установленную сумму, если цена заданного актива изменится в определенном направлении за указанный период времени. Основным классом базовых активов для бинарных опционов, предлагаемых Компанией, являются синтетические индексы."
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
 msgstr "Бинарный опцион – это контракт, при котором одна сторона берёт на себя обязательства выплатить другой стороне заранее определённую сумму, если цена заданного актива изменится в определённом направлении за указанный период времени. Компания предоставляет три основных класса базовых активов для торговли бинарными опционами:"
@@ -2204,7 +2207,7 @@ msgid "Binary options trading is not available in your country."
 msgstr "Торговля бинарными опционами недоступна в вашей стране."
 
 msgid "Binary options trading is not available in your financial account."
-msgstr "Торговля бинарными опционами недоступна на вашем финансовом счёте."
+msgstr "Торговля бинарными опционами недоступна на вашем финансовом счете."
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "Торговать бинарными опционами достаточно просто. Вы можете купить контракт всего в три шага:"
@@ -2437,11 +2440,17 @@ msgstr "CFD"
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFD или контракты на разницу являются сложными инструментами и сопряжены с высоким риском быстрой потери всех средств, ввиду применения кредитного плеча. %1 индивидуальных инвесторов теряют средства при торговле CFD с Deriv Investments (Europe) Limited. В этой связи, пожалуйста, убедитесь, что вы хорошо понимаете принципы работы CFD и готовы нести риск потери своих средств."
 
+msgid "CFDs on Synthetic Indices"
+msgstr "CFD на синтетических индексах"
+
 msgid "CFDs on commodities"
 msgstr "CFD на сырьевых товарах;"
 
-msgid "CFDs on indices"
-msgstr "CFD на индексах"
+msgid "CFDs on stock indices"
+msgstr "CFD на фондовых индексах"
+
+msgid "CFDs on stocks"
+msgstr "CFD на акциях"
 
 msgid "CFH Clearing Limited"
 msgstr "CFH Clearing Limited."
@@ -2729,10 +2738,10 @@ msgid "Click OK to proceed."
 msgstr "Нажмите OK, чтобы продолжить."
 
 msgid "Click here to open a Financial Account"
-msgstr "Нажмите здесь для открытия Финансового счёта"
+msgstr "Нажмите здесь для открытия Финансового счета"
 
 msgid "Click here to open a Gaming account"
-msgstr "Нажмите здесь для открытия Игрового счёта"
+msgstr "Нажмите здесь для открытия Игрового счета"
 
 msgid "Click here to open a Real Account"
 msgstr "Нажмите здесь для открытия Реального счёта"
@@ -2818,11 +2827,14 @@ msgstr "Клиенты должны зарегистрироваться лич�
 msgid "Clients need to satisfy at least two of the following criteria in order to receive Professional Client status:"
 msgstr "Чтобы получить статус Профессионального клиента, необходимо удовлетворить минимум два из нижеперечисленных критериев:"
 
+msgid "Clients registered with Deriv (Europe) Limited can refer their complaints to the Malta Gaming Authority via the %1Player Support Unity%3. They can file their unresolved disputes with the European Commission’s %2Online Dispute Resolution (ODR)%3."
+msgstr "Клиенты, зарегистрированные в Deriv (Europe) Limited, могут направить свои жалобы в управление по азартным играм Мальты через %1отдел поддержки игроков%3. Неурегулированные споры можно подать в службу %2онлайн разрешения споров (ODR)%3 Европейской комиссии."
+
 msgid "Clients registered with Deriv (MX) Ltd can formally submit a complaint to their local Supervisory Authority."
 msgstr "Клиенты, зарегистрированные в Deriv (MX) Ltd, могут подать официальную жалобу в свой местный надзорный орган."
 
-msgid "Clients registered with Deriv (MX) Ltd or Deriv (Europe) Limited can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2. Alternatively, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %3here%4. Clients registered with Deriv (Europe) Limited can also refer their unresolved disputes to the Malta Gaming Authority via the %5Player Support Unit%6."
-msgstr "Клиенты, зарегистрированные в Deriv (MX) Ltd или Deriv (Europe) Limited, могут направить неразрешенные споры в IBAS, альтернативный орган по урегулированию споров, заполнив заявление на разбирательство на %1сайте%2 данного органа. Также клиенты могут воспользоваться платформой Европейской комиссии по разрешению онлайн споров, которая находится %3здесь%4. Клиенты, зарегистрированные в Deriv (Europe) Limited, также могут передать свои неразрешенные споры в Управление по азартным играм Мальты через %5Отдел поддержки игроков%6."
+msgid "Clients registered with Deriv (MX) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filing the adjudication form on the %1ADR entity's website%2."
+msgstr "Клиенты, зарегистрированные в компании Deriv (MX) Ltd, могут направить неразрешенные жалобы в орган альтернативного урегулирования споров IBAS (независимая организация по разрешению споров, связанных с азартными играми), заполнив заявление на %1сайте организации%2."
 
 msgid "Clients registered with Deriv Investments (Europe) Limited can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter's Office can be found %1here%2."
 msgstr "Клиенты, зарегистрированные в компании Deriv Investments (Europe) Limited, могут подать заявку на рассмотрение неурегулированных споров арбитру в сфере финансовых услуг. Контактная информация и руководство по подаче жалобы арбитру можно найти %1здесь%2."
@@ -3422,7 +3434,7 @@ msgid "Create mathematical/statistical models for pricing, analyse fat tails to 
 msgstr "Создание математических/статистических моделей цен, анализ \"тяжёлых хвостов\" для оценки маржинальных требований, а также управление рисками экзотических опционов, forex и CFD"
 
 msgid "Create new demo account"
-msgstr "Открыть новый демо-счёт"
+msgstr "Открыть новый демо-счет"
 
 msgid "Create new token"
 msgstr "Создать новый ключ"
@@ -3742,8 +3754,8 @@ msgstr "Услуги платежных агентов недоступны на
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "В зависимости от вида предоставляемых продуктов, юрисдикции, к которой относится счёт клиента, а также согласно процедуре открытия счёта, указанной на вебсайте и в разделе О нас, термин \"Компания\" обозначает,"
 
-msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote either"
-msgstr "В зависимости от юрисдикции, к которой относится счёт клиента, а также согласно процедуре открытия счёта, указанной на вебсайте, термины \"Компания\" и \"%1\" обозначают"
+msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote"
+msgstr "В зависимости от юрисдикции, к которой относится счет клиента, а также согласно процедуре открытия счета, указанной на вебсайте, термины \"Компания\" и \"%1\" обозначают"
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
 msgstr "В зависимости от уровня риска, которому подвергается Компания, выступая в качестве контрагента клиента, Компания действует в рамках контракта клиента. Таким образом, как правило, местом исполнения контракта будет являться %1. Тем не менее, Компания может передать ордер клиента сторонним поставщикам ликвидности. В данном случае Компания самостоятельно определит место исполнения контракта на основе параметров, указанных выше."
@@ -3814,17 +3826,11 @@ msgstr "Deriv (Europe) Limited"
 msgid "Deriv (Europe) Limited,"
 msgstr "Deriv (Europe) Limited,"
 
-msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%4), by the Gambling Commission for clients in Great Britain under (%3account no. 39495%4), and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
-msgstr "Компания Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, лицензирована и регулируется (только в отношении игорных продуктов - синтетических индексов %1) Управлением по азартным играм Мальты (%2номер лицензии MGA/B2C/102/2000%4), Комиссией по азартным играм для клиентов в Великобритании под %3учетной записью № 39495%4 и Уполномоченным по доходам для клиентов в Ирландии (лицензия № 1010285)."
-
-msgid "Deriv (Europe) Limited, or"
-msgstr "Deriv (Europe) Limited или"
+msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%3) and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
+msgstr "Компания Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, лицензирована и регулируется (только в отношении игорных продуктов - синтетических индексов %1) управлением по азартным играм Мальты (%2номер лицензии MGA/B2C/102/2000%3),  и уполномоченным по доходам для клиентов в Ирландии (лицензия № 1010285)."
 
 msgid "Deriv (FX) Ltd"
 msgstr "Deriv (FX) Ltd"
-
-msgid "Deriv (FX) Ltd,"
-msgstr "Deriv (FX) Ltd,"
 
 msgid "Deriv (FX) Ltd, or"
 msgstr "Deriv (FX) Ltd или"
@@ -4838,7 +4844,7 @@ msgid "Expertise in the application of object-oriented programming languages (C+
 msgstr "Знание и умение применять объектно-ориентированные языки программирования (C++, Perl и Java), а также умение писать высококачественный код"
 
 msgid "Expiry date"
-msgstr "Истечения"
+msgstr "Действует до"
 
 msgid "Expiry date is required for %1."
 msgstr "Срок истечения необходим для %1."
@@ -5370,10 +5376,10 @@ msgid "GamCare"
 msgstr "GamCare"
 
 msgid "Gaming"
-msgstr "Игры"
+msgstr ""
 
 msgid "Gaming Account"
-msgstr "Игровой счет"
+msgstr ""
 
 msgid "General"
 msgstr "Общие положения"
@@ -6354,7 +6360,7 @@ msgid "In providing IB services, the Introducing Broker shall"
 msgstr "При предоставлении услуг ПБ Представляющий брокер обязуется"
 
 msgid "In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
-msgstr "Перед предоставлением вам услуг нам необходимо получить от вас некоторую информацию с целью оценить, подходит ли вам определённый продукт или услуга (то есть обладаете ли вы опытом и знаниями, чтобы понимать связанные с этим риски)."
+msgstr ""
 
 msgid "In providing the Agent's services, the Agent shall do the following:"
 msgstr "При предоставлении услуг, Агент должен выполнить следующие действия:"
@@ -6386,8 +6392,8 @@ msgstr "Компания Deriv Investments (Europe) Limited, расположе�
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "На территории ЕС финансовые продукты предоставляются компанией Deriv Investments (Europe) Limited. Компания расположена по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, регулируется Мальтийским управлением финансовых услуг в качестве поставщика инвестиционных услуг 3-й категории (%1лицензия номер IS/70156%2)."
 
-msgid "In the Isle of Man and the UK, Synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under %1account no. 39172%3 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr "На острове Мэн и в Великобритании синтетические индексы предоставлены компанией Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man. Компания лицензирована и регулируется в Великобритании (1) Комиссией по азартным играм под %1учетной записью № 39172%3 и (2) Комиссией по надзору за азартными играми острова Мэн (%2см. лицензию%3)."
+msgid "In the Isle of Man and the UK, virtual events based bets on synthetic indices offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under account no. 39172 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
+msgstr ""
 
 msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Limited. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr "Наши клиенты из Великобритании работают через Deriv (MX) Ltd и Deriv Investments (Europe) Limited. Клиентов с Острова Мэн обслуживает компания Deriv (MX) Ltd. Клиенты из Европейского Союза (за исключением Великобритании) работают через Deriv (Europe) Limited и Deriv Investments (Europe) Limited. Клиенты из других стран мира работают через Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd и Deriv (FX) Ltd."
@@ -6419,8 +6425,8 @@ msgstr "в случае, когда Компания не получила от 
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Deriv group of companies for, any claims or demands made against the Company or any member of the Deriv group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "Если Компании станет известно о нарушении Партнёром любых вышеперечисленных положений, Компания оставляет за собой право (в дополнение к любым правам и средствам правовой защиты, предоставленным ей в рамках данного Соглашения или применимого законодательства) незамедлительно заблокировать доступ Партнёра к данной программе. Настоящим Партнёр окончательно отказывается от своего права, а также обязуется оградить Компанию и любого члена группы компаний Deriv Group от подачи какой-либо претензии или иска против Компании или любого другого представителя группы компаний Deriv Group, их директоров, акционеров, работников, а также против сайта %1 (в случае, когда Компания заблокировала доступ Партнёра к данной программе)."
 
-msgid "In the rest of the EU, Synthetic Indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority (%1licence no. MGA/B2C/102/2000%4), by (2) the Gambling Commission for clients in Great Britain under %2account no. 39495%4, and by (3) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete %3Regulatory Information%4."
-msgstr "В остальных странах ЕС синтетические индексы предоставлены компанией Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta. Компания лицензирована и регулируется (1) Управлением по азартным играм Мальты (%1номер лицензии MGA/B2C/102/2000%4), (2) Комиссией по азартным играм для клиентов в Великобритании под %2учетной записью № 39495%4 и (3) Уполномоченным по доходам для клиентов в Ирландии (лицензия № 1010285). См. полную %3Нормативную информацию%4."
+msgid "In the rest of the EU, Synthetic Indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority (%1licence no. MGA/B2C/102/2000%3) and (2) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete %2Regulatory Information%3."
+msgstr "В остальных странах ЕС синтетические индексы предоставлены компанией Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta. Компания лицензирована и регулируется (1) управлением по азартным играм Мальты (%1номер лицензии MGA/B2C/102/2000%3) и (2) уполномоченным по доходам для клиентов в Ирландии (лицензия № 1010285). См. полную %2нормативную информацию%3."
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "В рамках данного соглашения и если контекст не предполагает иного, нижеуказанные термины должны иметь следующее толкование:"
@@ -6600,7 +6606,7 @@ msgid "Investing or trading in contracts exposes the client to the performance o
 msgstr "Инвестирование или торговля на контрактах подвергает клиента зависимости от результатов инструмента или актива, к которым относится бинарный контракт, включая иностранные валюты, фондовые индексы и сырьевые товары, каждые из которых имеют свои особенности и риски."
 
 msgid "Investment"
-msgstr "Инвестиции"
+msgstr ""
 
 msgid "Investment Income"
 msgstr "Доход от инвестиций"
@@ -8301,7 +8307,7 @@ msgid "Open a %1 account through DIEL's website %2"
 msgstr "Откройте счёт %1 на сайте DIEL %2"
 
 msgid "Open a Financial Account"
-msgstr "Открыть Финансовый счёт"
+msgstr ""
 
 msgid "Open a Real Account"
 msgstr "Открыть Реальный счёт"
@@ -8353,6 +8359,9 @@ msgstr "Цена открытия"
 
 msgid "Opens"
 msgstr "Открывается"
+
+msgid "Options"
+msgstr ""
 
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "Опционы, позволяющие “оглянуться” на оптимальный максимум и минимум, достигнутые ценой актива, чтобы определить выплату."
@@ -9519,7 +9528,7 @@ msgid "Real Estate"
 msgstr "Недвижимость"
 
 msgid "Real Financial"
-msgstr "Реальный Финансовый"
+msgstr ""
 
 msgid "Real Financial STP"
 msgstr "Реальный Финансовый STP"
@@ -10209,7 +10218,7 @@ msgid "Server"
 msgstr "Сервер"
 
 msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "Технические работы на сервере начинаются в 01:00 GMT каждое воскресенье. Этот процесс может занять до 2 часов. В это время сервисы и платформы могут быть недоступны."
+msgstr ""
 
 msgid "Server:"
 msgstr "Сервер:"
@@ -10626,7 +10635,7 @@ msgid "Straight rows of keys are easy to guess"
 msgstr "Прямые ряды клавиш легко угадать"
 
 msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
-msgstr "Надежный пароль состоит как минимум из 8 знаков и комбинации чисел, строчных и заглавных букв."
+msgstr ""
 
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "Сильные аналитические способности, подтвержденные на предыдущем месте работы, или большой интерес к работе в этой области"
@@ -11291,8 +11300,8 @@ msgstr "Компания не терпит любых форм неприемл�
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Компания обязуется предпринять все разумные усилия, чтобы открыть или закрыть контракт, к которому относится ордер клиента, по доступной Компании цене, руководствуясь обязательством наилучшего исполнения. Лучшее исполнение означает, что при исполнении ордеров Компания должна предпринять все возможные меры, чтобы получить для клиента наилучший результат, принимая во внимание цену, расходы, скорость, вероятность исполнения и закрытия контракта, размер, характер или любые другие аспекты, имеющие отношение к исполнению ордера."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "В Компании действует политика стоп аут (политика принудительного закрытия позиций), которая не позволит клиенту потерять сумму, превышающую депозит. Тем не менее, если открытые позиции клиента не закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп аут, Компания по своему единоличному усмотрению может ликвидировать отрицательный баланс клиента, предоставив клиенту небольшой кредит, если баланс счёта станет отрицательным. Отрицательный баланс образуется путём суммирования отрицательного баланса, появившегося за последние 24 часа на всех счетах клиента. Клиент признает, что, если он не является розничным клиентом Deriv Investments (Europe) Limited, клиентом Deriv (Europe) Limited или розничным клиентом, проживающим в Австралии, предложение защиты от негативного баланса со стороны Компании производится по единоличному усмотрению Компании. Также Компания оставляет за собой право в любое время изменить характеристики и критерии отбора для защиты от отрицательного баланса. Положения политики защиты от отрицательного баланса не применимы в следующих случаях:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr "В Компании действует политика стоп аут (политика принудительного закрытия позиций), которая не позволит клиенту потерять сумму, превышающую депозит. Тем не менее, если открытые позиции клиента не закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп аут, Компания по своему единоличному усмотрению может ликвидировать отрицательный баланс клиента, предоставив клиенту небольшой кредит, если баланс счета станет отрицательным. Отрицательный баланс образуется путем суммирования отрицательного баланса, появившегося за последние 24 часа на всех счетах клиента. Клиент признает, что, если он не является розничным клиентом Deriv Investments (Europe) Limited или частным клиентом, проживающим в Австралии, предложение защиты от негативного баланса со стороны Компании производится по единоличному усмотрению Компании. Также Компания оставляет за собой право в любое время изменить характеристики и критерии отбора для защиты от отрицательного баланса. Положения политики защиты от отрицательного баланса не применимы в следующих случаях:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Основная обязанность Компании – честно, справедливо и профессионально вести совместный бизнес с клиентом, а также действовать в интересах клиента при открытии и закрытии контрактов на бинарных опционах."
@@ -13155,7 +13164,7 @@ msgid "Trade with leverage"
 msgstr "Торгуйте с кредитным плечом"
 
 msgid "Trade with real funds and access to competitive trading conditions."
-msgstr "Торгуйте на реальные средства, получая конкурентоспособные торговые условия."
+msgstr ""
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology."
 msgstr "Торгуйте с пионером индустрии, разработчиком уникальной ценовой технологии."
@@ -13196,9 +13205,6 @@ msgstr "На вашем счете заблокирована торговля �
 msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
 msgstr "Торговля бинарными опционами и CFD сопряжена с существенными рисками. Не работайте с деньгами, которые вы не можете позволить себе потерять и никогда не торгуйте на деньги, взятые в долг. Узнайте больше об %1ответственной торговле%2."
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset."
-msgstr "Торговля бинарными опционами подходит далеко не всем, поэтому просим убедиться, что вы полностью осознаёте все возможные риски. Ваш убыток может превысить сумму первоначального пополнения счёта, а вы не получаете никаких процентов с активов, на которых заключаете контракты."
-
 msgid "Trading contracts for difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
 msgstr "Торговля контрактами на разницу (CFD) на Синтетических индексах подходит далеко не для всех. Пожалуйста, убедитесь, что вы хорошо осознаёте все сопряженные риски, включая риск потерять все средства на счете MT5. Торговая деятельность может вызвать привыкание, поэтому, пожалуйста, торгуйте ответственно."
 
@@ -13231,6 +13237,9 @@ msgstr "Торговые лимиты"
 
 msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
 msgstr "Торговля на %1 может вызвать привыкание. Если Вы ощущаете необходимость отстранить себя с сайта, пожалуйста, воспользуйтесь нашими %2инструментами самоограничения%3."
+
+msgid "Trading options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset."
+msgstr ""
 
 msgid "Trading platforms"
 msgstr "Торговые платформы"
@@ -13689,10 +13698,10 @@ msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "предпринять все разумные меры для привлечения потенциальных клиентов на Binary,"
 
 msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you've forgotten your password."
-msgstr "Используйте этот пароль, чтобы дать другим пользователям доступ к просмотру. Они смогут просматривать ваш торговый счет, но не смогут торговать или совершать какие-либо другие действия. Нажмите «Создать или сбросить пароль», если это ваш первый инвесторский пароль или вы забыли свой пароль."
+msgstr ""
 
 msgid "Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps."
-msgstr "Используйте этот пароль для входа на счета MT5 с веб-браузеров, настольных и мобильных приложений."
+msgstr ""
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "Использовать любые дополнительные функции, предлагаемые платёжными системами, для получения наибольших преимуществ"
@@ -14811,7 +14820,7 @@ msgid "You will not be able to change currency once you have made a deposit."
 msgstr "Вы не сможете изменить валюту счета после пополнения."
 
 msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
-msgstr "Вы не сможете изменить валюту фиатного счета после открытия этого счета MT5. Вы уверены, что хотите продолжить?"
+msgstr ""
 
 msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
 msgstr "Вы не сможете изменить валюту фиатного счета после его пополнения. Вы уверены, что хотите продолжить?"
@@ -15141,7 +15150,7 @@ msgid "deposit"
 msgstr "пополнение"
 
 msgid "deposit or create an MT5 account"
-msgstr "пополнение или не открывали счет MT5"
+msgstr ""
 
 msgid "details"
 msgstr "подробности"
@@ -15151,6 +15160,9 @@ msgstr "например США"
 
 msgid "e.g. frontend.binaryws.com"
 msgstr "напр., frontend.binaryws.com"
+
+msgid "either"
+msgstr ""
 
 msgid "for account %1"
 msgstr "для счёта %1"

@@ -21,7 +21,7 @@ const Login = (() => {
 
     const loginUrl = () => {
         const server_url         = localStorage.getItem('config.server_url');
-        const language           = getLanguage() || LocalStore.get('preferred_language') ;
+        const language           = getLanguage() || LocalStore.get('preferred_language');
         const signup_device      = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
         const date_first_contact = LocalStore.get('date_first_contact');
         const marketing_queries  = `&signup_device=${signup_device}${date_first_contact ? `&date_first_contact=${date_first_contact}` : ''}`;
@@ -32,8 +32,8 @@ const Login = (() => {
         );
     };
 
-    const socialLoginUrl = (brand, affiliate_token, utm_source, utm_medium, utm_campaign) => (
-        `${loginUrl()}&social_signup=${brand}${affiliate_token}${utm_source}${utm_medium}${utm_campaign}`
+    const socialLoginUrl = (brand, affiliate_token, utm_data) => (
+        `${loginUrl()}&social_signup=${brand}${affiliate_token}${utm_data}`
     );
 
     const initOneAll = () => {
@@ -43,13 +43,13 @@ const Login = (() => {
 
                 const affiliate_tracking   = Cookies.getJSON('affiliate_tracking');
                 const utm_data             = TrafficSource.getData();
-                const utm_source           = TrafficSource.getSource(utm_data);
-                const utm_source_link      = utm_source ? `&utm_source=${utm_source}` : '';
-                const utm_medium_link      = utm_data.utm_medium ? `&utm_medium=${utm_data.utm_medium}` : '';
-                const utm_campaign_link    = utm_data.utm_campaign ? `&utm_campaign=${utm_data.utm_campaign}` : '';
                 const affiliate_token_link = affiliate_tracking ? `&affiliate_token=${affiliate_tracking.t}` : '';
-                const social_login_url     = socialLoginUrl(provider, affiliate_token_link,
-                    utm_source_link, utm_medium_link, utm_campaign_link);
+
+                let utm_data_link = '';
+                Object.keys(utm_data).forEach((key) => {
+                    if (utm_data[key]) utm_data_link += `&${key}=${utm_data[key]}`;
+                });
+                const social_login_url = socialLoginUrl(provider, affiliate_token_link, utm_data_link);
 
                 window.location.href = social_login_url;
             });

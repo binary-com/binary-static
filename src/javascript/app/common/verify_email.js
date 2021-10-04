@@ -12,11 +12,7 @@ const getFormRequest = () => {
         {
             request_field: 'url_parameters',
             value        : {
-                utm_source: TrafficSource.getSource(utm_data),
-                ...(utm_data.utm_campaign && {
-                    utm_medium  : utm_data.utm_medium,
-                    utm_campaign: utm_data.utm_campaign,
-                }),
+                ...utm_data,
                 ...(affiliate_token && { affiliate_token: affiliate_token.t }),
             },
         },
