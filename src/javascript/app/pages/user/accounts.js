@@ -243,6 +243,7 @@ const Accounts = (() => {
                         type: 'button',
                     }).on('click', showSetCurrency) : (Currency.getCurrencyFullName(account_currency) || '-'))));
         if (can_currency_change_id) {
+            $('#change_currency').text(account_currency);
             $('#note_change_currency').setVisibility(1);
         }
         if (is_disabled || excluded_until) {

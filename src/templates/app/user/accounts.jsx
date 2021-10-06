@@ -64,7 +64,7 @@ const Accounts = () => (
             </div>
             <div id='note_change_currency' className='invisible fill-bg-color gr-padding-10 gr-gutter'>
                 <div className='gr-gutter hint'>
-                    {it.L('Note: Please switch to your fiat account to change currencies.')}
+                    {it.L('Note: Please switch to your [_1] account to change currencies.', '<span id="change_currency"></span>')}
                 </div>
             </div>
 
