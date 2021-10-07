@@ -135,9 +135,9 @@ const PersonalDetails = (() => {
 
         $('p').each(function() {
             if (this.className.indexOf('cs-msg') > -1){
-                this.setVisibility(0)
+                this.setVisibility(0);
             }
-        })
+        });
 
         if (has_name && has_date_of_birth && has_tax_info) {
             $('.full-cs-msg').setVisibility(1);
