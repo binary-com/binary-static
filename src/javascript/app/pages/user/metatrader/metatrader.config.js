@@ -531,14 +531,8 @@ const MetaTraderConfig = (() => {
 
     const isAuthenticationPromptNeeded = () => {
         const authentication = State.getResponse('get_account_status.authentication');
-        const { identity, document, needs_verification } = authentication;
-        const is_need_verification = needs_verification.length;
-        const is_identity_authenticated = /^(verified)$/.test(identity.status);
-        const is_document_authenticated = /^(verified)$/.test(document.status);
-        const has_been_authenticated = (is_identity_authenticated && is_document_authenticated)
-            && !is_need_verification;
-
-        return !has_been_authenticated;
+        const { needs_verification } = authentication;
+        return needs_verification.length && (needs_verification.includes('identity') || needs_verification.includes('document'));
     };
 
     // remove server from acc_type for cases where we don't need it
