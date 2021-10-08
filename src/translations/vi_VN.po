@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-06 08:19\n"
+"PO-Revision-Date: 2021-10-08 02:33\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1598,9 +1598,6 @@ msgstr "Hoàn thành các tác vụ từ nhỏ đến lớn với một tâm tr�
 msgid "Appropriateness"
 msgstr "Tương thích"
 
-msgid "Appropriateness Test: WARNING:"
-msgstr "Bài kiểm tra sự thích hợp: CẢNH BÁO:"
-
 msgid "Appropriateness test"
 msgstr "Kiểm tra tính Tương thích"
 
@@ -2207,8 +2204,8 @@ msgstr "Tần xuất giao dịch các lựa chọn nhị phân"
 msgid "Binary options trading is not available in your country."
 msgstr "Quyền chọn giao dịch nhị phân không khả dụng tại quốc gia của bạn."
 
-msgid "Binary options trading is not available in your financial account."
-msgstr "Giao dịch Quyền chọn nhị phân không khả dụng cho tài khoản tài chính của bạn."
+msgid "Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account."
+msgstr ""
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "Giao dịch lựa chọn nhị phân tương đối dễ dàng. Bạn có thể mua một hợp đồng trong chỉ ba bước:"
@@ -2437,6 +2434,9 @@ msgstr "Tần xuất giao dịch CFD"
 
 msgid "CFDs"
 msgstr "Các thị trường CFD"
+
+msgid "CFDs Account"
+msgstr ""
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFDs là công cụ phức tạp và đi kèm với rủi ro cao do áp dụng đòn bẩy tài chính. Khoảng %1 các tài khoản đầu tư lẻ đều mất tiền khi giao dịch CFDs với Công ty TNHH Đầu tư Deriv Limited (Châu Âu). bạn nên cân nhắc kỹ lưỡng liệu mình đã đủ am hiểu về CFDs và sãn sàng chấp nhận rủi ro thua lỗ cao."
@@ -2741,14 +2741,14 @@ msgstr "Thư ký"
 msgid "Click OK to proceed."
 msgstr "Nhấp vào OK để tiến tục."
 
-msgid "Click here to open a Financial Account"
-msgstr "Nhấp vào đây để mở một Tài Khoản Tài Chính"
-
-msgid "Click here to open a Gaming account"
-msgstr "Nhấp vào đây để mở một tài khoản Gaming"
+msgid "Click here to open a Multipliers Account"
+msgstr ""
 
 msgid "Click here to open a Real Account"
 msgstr "Nhấp vào đây để mở một Tài Khoản Thực"
+
+msgid "Click here to open an Options account"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "Vui lòng nhấp vào đây để thử lại"
@@ -3016,9 +3016,6 @@ msgstr "Nghĩa vụ của Công ty"
 
 msgid "Company's rights"
 msgstr "Quyền của công ty"
-
-msgid "Compare MetaTrader 5 accounts"
-msgstr "So sánh các tài khoản MetaTrader 5"
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "Bồi thường theo Đề Án Bồi Thường Nhà Đầu Tư"
@@ -3392,14 +3389,11 @@ msgstr "Tạo tài khoản %1"
 msgid "Create Account"
 msgstr "Tạo Tài Khoản"
 
-msgid "Create MT5 password"
-msgstr "Tạo mật khẩu MT5"
-
 msgid "Create New Demo Account"
 msgstr "Tạo tài khoản Demo mới"
 
-msgid "Create a MT5 password. You can use this password for all your MT5 accounts."
-msgstr "Tạo một mật khẩu MT5. Bạn có thể sử dụng mật khẩu này cho tất cả tài khoản MT5 của mình."
+msgid "Create a CFDs account"
+msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr "Tạo một tài khoản MetaTrader 5"
@@ -3415,6 +3409,12 @@ msgstr "Tạo tài khoản"
 
 msgid "Create an MT5 account now"
 msgstr "Tạo một tài khoản MT5 ngay bây giờ"
+
+msgid "Create an MT5 password for logging in to your CFDs account."
+msgstr ""
+
+msgid "Create an MT5 password. You can use this password for all your MT5 accounts."
+msgstr ""
 
 msgid "Create and maintain wireframes and mockups for new and existing products"
 msgstr "Tạo và duy trì các công cụ trực quan và mô hình hướng dẫn cho những sản phẩm mới và sẵn có"
@@ -3445,9 +3445,6 @@ msgstr "Tạo token mới"
 
 msgid "Create or Manage Accounts"
 msgstr "Tạo hoặc Quản Lý Tài Khoản"
-
-msgid "Create or reset password"
-msgstr "Tạo hoặc cài đặt lại mật khẩu"
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "Khởi tạo các chiến thuật để đối phó với những rủi ro tiềm tàng mà có thể xảy ra từ việc đổi mới đột phá"
@@ -3743,8 +3740,8 @@ msgstr "Tài khoản Demo"
 msgid "Demo Accounts"
 msgstr "Tài khoản demo"
 
-msgid "Demo Financial"
-msgstr "Demo Tài Chính"
+msgid "Demo CFDs"
+msgstr ""
 
 msgid "Demo Financial STP"
 msgstr "Demo Tài chính STP"
@@ -5084,6 +5081,9 @@ msgstr "Thông tin tài chính"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "Tìm một sàn giao dịch phù hợp với kinh nghiệm và chiến lược mà bạn nắm rõ, dù bạn là một nhà giao dịch mới hay đã có kinh nghiệm."
 
+msgid "Find out more"
+msgstr ""
+
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "Tìm hiểu thêm về các chi phí và các chi tiết của mỗi tài sản CFD chúng tôi cung cấp."
 
@@ -5267,9 +5267,6 @@ msgstr "Giao dịch ngoại hối liên quan đến việc mua một loại ti�
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "Giao dịch ngoại hối liên quan đến việc mua hoặc bán \"các cặp tiền tệ\" này. Khi bạn mua một cặp tiền tệ như EUR/USD, có nghĩa là bạn đang mua đồng EURO và bán USD tại cùng một thời gian."
 
-msgid "Forgot password?"
-msgstr "Quên mật khẩu?"
-
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "Thành lập vào năm 1999, %1 là một trong những tên tuổi lâu đời nhất và được đánh giá cao trong lĩnh vực giao dịch nhị phân trực tuyến."
 
@@ -5381,9 +5378,6 @@ msgstr "GMT là viết tắt của Greenwich Mean Time, thời gian chính t
 msgid "GamCare"
 msgstr "Hội GamCare"
 
-msgid "Gaming"
-msgstr "Gaming"
-
 msgid "Gaming Account"
 msgstr "Tài khoản Gaming"
 
@@ -5488,6 +5482,9 @@ msgstr "Đi lên và xuống"
 
 msgid "Go short = sell"
 msgstr "Đi xuống = bán"
+
+msgid "Go to DTrader"
+msgstr ""
 
 msgid "Go to MT5 download page"
 msgstr "Vào trang tải MT5"
@@ -6369,9 +6366,6 @@ msgstr "Để thu được lợi nhuận từ tỷ lệ giao dịch, thì
 msgid "In providing IB services, the Introducing Broker shall"
 msgstr "Để cung cấp các dịch vụ IB, Người giới thiệu Môi giới sẽ phải"
 
-msgid "In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
-msgstr "Trong quá trình cung cấp dịch vụ tới bạn, chúng tôi cần thu thập thông tin từ bạn để đánh giá xem một sản phẩm hoặc dịch vụ nhất định có thích hợp cho bạn hay không (đó là, cho dù bạn có kinh nghiệm và kiến thức để hiểu các rủi ro liên quan)."
-
 msgid "In providing the Agent's services, the Agent shall do the following:"
 msgstr "Để cung cấp các dịch vụ Đại lý, họ sẽ phải thực hiện các điều sau:"
 
@@ -6618,9 +6612,6 @@ msgstr "Đầu tư vào các sản phẩm như CFD và FX có thể đem lại l
 
 msgid "Investing or trading in contracts exposes the client to the performance of the underlying or reference instrument or asset to which the Binary contract refers, including foreign exchange, stock indices, and commodities, each of which have their own features and risks."
 msgstr "Đầu tư hoặc giao dịch các hợp đồng cho khách hàng thấy hiệu suất của công cụ phận tích cơ bản hoặc tham chiếu hoặc tài sản mà hợp đồng nhị phân đề cập đến, bao gồm ngoại hối, chỉ số chứng khoán và hàng hóa, mỗi loại đều có những đặc điểm và rủi ro riêng."
-
-msgid "Investment"
-msgstr "Đầu tư"
 
 msgid "Investment Income"
 msgstr "Thu Nhập Đầu Tư"
@@ -7825,6 +7816,9 @@ msgstr "Số nhân Tăng"
 msgid "Multipliers"
 msgstr "Cấp số nhân"
 
+msgid "Multipliers Account"
+msgstr ""
+
 msgid "Must be a clear, colour photo"
 msgstr "Phải có một bức ảnh màu sắc rõ ràng,"
 
@@ -8326,8 +8320,8 @@ msgstr "Nguồn Mở"
 msgid "Open a %1 account through DIEL's website %2"
 msgstr "Mở một tài khoản %1 thông qua trang web %2 của DIEL"
 
-msgid "Open a Financial Account"
-msgstr "Mở một Tài Khoản Tài Chính"
+msgid "Open a Multipliers Account"
+msgstr ""
 
 msgid "Open a Real Account"
 msgstr "Mở một Tài Khoản Thực"
@@ -8383,6 +8377,9 @@ msgstr "Mở"
 msgid "Options"
 msgstr "Tùy chỉnh"
 
+msgid "Options Account"
+msgstr ""
+
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "Các tùy chọn cho phép bạn \"nhìn lại\" trên điểm cao tối ưu hoặc điểm thấp của thị trường để xác định khoảng được trả."
 
@@ -8437,6 +8434,9 @@ msgstr "Ngoài việc thanh toán hoa hồng, Binary không chịu trách nhi�
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "Đội ngũ Kế Toán và Thanh Toán &amp; của chúng tôi sẽ quản lý một diện rộng các tài khoản ngân hàng và hệ thống tiền điện tử, cũng như một số lượng lớn các giao dịch diễn ra hàng ngày."
 
+msgid "Our CFDs account is suitable for both new and experienced traders."
+msgstr ""
+
 msgid "Our Company"
 msgstr "Công Ty Của Chúng Tôi"
 
@@ -8487,6 +8487,9 @@ msgstr "Các cặp kim loại của chúng tôi thường được giao dịch t
 
 msgid "Our office in Dubai is located at the world-class Jumeirah Lake Towers (JLT) free zone. JLT is home to universities, commercial and residential towers, parks, and over 500 retail outlets, giving you exceptional convenience and a quality of life that you won't find anywhere else."
 msgstr "Văn phòng của chúng tôi ở Dubai nằm tại vùng tự do Jumeirah Lake Towers (JLT). JLT là một tổ hợp gồm các trường đại học, khu thương mại cùng với các tòa cư dân, công viên và hơn 500 cửa hàng bán lẻ, mang lại cho bạn rất nhiều tiện ích và một cuộc sống chất lượng ít nơi sánh bằng."
+
+msgid "Our products and services may expose you to risks that can be substantial at times, including the risk of losing your entire investment. Please note that by clicking %1Continue%2, you’ll be accepting these risks."
+msgstr ""
 
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "Chúng tôi chỉ số tổng hợp độc quyền để mô phỏng các lực lượng thị trường"
@@ -8997,6 +9000,9 @@ msgstr "Xin vui lòng tải lại trang"
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "Vui lòng luôn nhớ rằng giao dịch hợp đồng Các lựa chọn Nhị phân có thể là một hoạt động thú vị, nhưng chúng tôi có trách nhiệm nhắc bạn rủi ro mà bạn có thể gặp phải. Giao dịch Các lựa chọn Nhị phân có thể gây nghiện, như những hoạt động khác muốn cố gắng để đạt được tới giới hạn. Chúng tôi muốn bạn tự phân tích cẩn thận để kiểm tra xem liệu bạn có đang gặp rủi ro hay không. Để tránh nguy hại của việc gây nghiện này, quan trọng là bạn nên tuân theo một số nguyên tắc và hướng dẫn cơ bản."
+
+msgid "Please remember that it is your responsibility to keep your answers accurate and up to date."
+msgstr ""
 
 msgid "Please resolve all pending issues to continue"
 msgstr "Xin vui lòng giải quyết tất cả các vấn đề đang chờ giải quyết để tiếp tục"
@@ -9559,11 +9565,11 @@ msgstr "Tài khoản Thực"
 msgid "Real Account Opening"
 msgstr "Mở Tài khoản Thực "
 
+msgid "Real CFDs"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "Bất Động Sản"
-
-msgid "Real Financial"
-msgstr "Tài Chính Thực"
 
 msgid "Real Financial STP"
 msgstr "Tài chính STP thực"
@@ -10255,8 +10261,8 @@ msgstr "Các chuỗi như abc hoặc 6543 rất dễ đoán"
 msgid "Server"
 msgstr "Máy chủ"
 
-msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "Việc bảo trì máy chủ sẽ bắt đầu vào 01:00 GMT Chủ Nhật hàng tuần. Quá trình này có thể mất tới 2 giờ để hoàn thành. Dịch vụ có thể bị gián đoạn trong thời gian này."
+msgid "Server maintenance starts at 01:00 (GMT) every Sunday. This process may take up to 2 hours to complete. You may experience service disruption during this time."
+msgstr ""
 
 msgid "Server:"
 msgstr "Máy chủ:"
@@ -10272,6 +10278,9 @@ msgstr "Thời hạn phiên:"
 
 msgid "Set Currency"
 msgstr "Thiết lập tiền tệ"
+
+msgid "Set MT5 password"
+msgstr ""
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Thiết lập giới hạn để xác định vị trí của bạn và kích hoạt thanh toán bạn sẽ nhận được."
@@ -10672,9 +10681,6 @@ msgstr "Lưu Trữ Thủ Tục"
 msgid "Straight rows of keys are easy to guess"
 msgstr "Các hàng phím thẳng rất dễ đoán"
 
-msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
-msgstr "Mật khẩu mạnh cần chứa ít nhất 8 ký tự, bao gồm chữ viết hoa, chữ viết thường và số."
-
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "Khả năng phân tích tốt đã được chứng minh trong công việc trước đây hoặc có ý muốn quan tâm học hỏi ở lĩnh vực này"
 
@@ -10695,6 +10701,9 @@ msgstr "Kỹ năng giao tiếp bằng lời và văn bản tốt bằng cả ti�
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
 msgstr "Mật khẩu mạnh chứa ít nhất 8 ký tự, bao gồm chữ viết hoa, chữ viết thường, số và ký hiệu."
+
+msgid "Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols."
+msgstr ""
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "Hiểu biết rõ ràng về màu sắc, kiểu chữ, sáng tạo trong thiết kế và biết xây dựng thương hiệu"
@@ -13205,8 +13214,8 @@ msgstr "Giao dịch một cách dễ dàng với %1 cùng các phạm vi rộng 
 msgid "Trade with leverage"
 msgstr "Giao dịch với đòn bẩy"
 
-msgid "Trade with real funds and access to competitive trading conditions."
-msgstr "Giao dịch với các khoản tiền thật và được tiếp cận với các điều khoản giao dịch cạnh tranh."
+msgid "Trade with real funds and get access to competitive trading conditions."
+msgstr ""
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology."
 msgstr "Giao dịch với nhà tiên phong trong lĩnh vực và là chủ sở hữu của một loạt các bằng sáng chế công nghệ."
@@ -13281,7 +13290,7 @@ msgid "Trading on %1 can become addictive. If you feel the need to exclude yours
 msgstr "Giao dịch trên %1 có thể gâynghiện. Nếu bạn cảm thấy cần thiết để tách rời bản thân ra khỏi trang web này, xin vui lòng sử dụng công cụ tự loại trừ%3."
 
 msgid "Trading options may not be suitable for everyone, so please ensure that you fully understand the risks involved."
-msgstr ""
+msgstr "Giao dịch quyền chọn có thể không phù hợp cho mọi người, vì thế hãy vui lòng đảm bảo rằng bạn đã hoàn toàn hiểu đầy đủ về các rủi ro liên quan."
 
 msgid "Trading platforms"
 msgstr "Sàn giao dịch"
@@ -13583,6 +13592,9 @@ msgstr "Đã hiểu"
 msgid "Unemployed"
 msgstr "Không có việc làm"
 
+msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
+msgstr ""
+
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "Bằng Cử Nhân Đại Học trong Marketing, Toán Học, IT/Lập Trình hoặc bất kỳ lĩnh vực có liên quan"
 
@@ -13694,6 +13706,9 @@ msgstr "Khi Thỏa thuận này hết hạn hay chấm dứt, vì bất kỳ lý
 msgid "Usage limit"
 msgstr "Giới hạn sử dụng"
 
+msgid "Use MT5 password to sign in to any of your CFDs accounts when using MT5 apps on your mobile or other devices."
+msgstr ""
+
 msgid "Use a few words, avoid common phrases"
 msgstr "Sử dụng một vài từ, tránh các cụm từ phổ biến"
 
@@ -13742,11 +13757,8 @@ msgstr "Sử dụng hết khả năng và trách nhiệm của mình để c
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "Sử dụng hết khả năng của mình để thu hút khách hàng đến với Binary"
 
-msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you've forgotten your password."
-msgstr "Sử dụng mật khẩu này để cấp quyền truy cập cho người dùng khác. Mặc dù họ có thể xem tài khoản giao dịch của bạn, họ sẽ không thể giao dịch hay làm bất kỳ thao tác nào khác. Nhấn vào Tạo hoặc cài lại mật khẩu, nếu như đây là mật khẩu nhà đầu tư lần đầu của bạn hoặc nếu bạn quên mật khẩu."
-
-msgid "Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps."
-msgstr "Sử dụng mật khẩu này để đăng nhập vào các tài khoản MT5 của bạn trên máy tính, trang web, và các ứng dụng điện thoại."
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create password, or you have forgotten your password, please reset it."
+msgstr ""
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "Sử dụng tất cả các lợi ích của bất kỳ tính năng hỗ trợ nào mà các nhà cung cấp dịch vụ thanh khoản cung cấp"
@@ -13912,6 +13924,9 @@ msgstr "Bước khối lượng"
 
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
+
+msgid "WARNING"
+msgstr ""
 
 msgid "Waiting for contract settlement."
 msgstr "Đang chờ giải quyết hợp đồng."
@@ -14711,6 +14726,9 @@ msgstr "Bạn có thể bán hợp đồng của bạn trước khi hết thời
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "Bạn có thể nạp %1 vào tài khoản demo nếu số dư của bạn là từ %2 trở xuống."
 
+msgid "You can update personal details at any time in your account settings."
+msgstr ""
+
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "Bạn có thể sử dụng một đại lý thanh toán uỷ quyền để xử lý các khoản tiền gửi vào và rút ra để thực hiện phương thức thanh toán, hoặc để sử dụng nội tệ không được hỗ trợ bởi %1. Rất dễ dàng để làm."
 
@@ -14734,6 +14752,9 @@ msgstr "Bạn có mật khẩu Binary mới để đăng nhập vào Binary.com.
 
 msgid "You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps."
 msgstr "Bạn có mật khẩu MT5 mới để đăng nhập vào tài khoản MT5 của mình trên web và ứng dụng dành cho thiết bị di động."
+
+msgid "You have a trading password for MT5"
+msgstr ""
 
 msgid "You have added a %1 account."
 msgstr "Bạn đã thêm vào một tài khoản %1."
@@ -14888,8 +14909,8 @@ msgstr "Bạn sẽ cần phải đặt một mật khẩu để hoàn tất quy 
 msgid "You will not be able to change currency once you have made a deposit."
 msgstr "Bạn sẽ không thể thay đổi tiền tệ sau khi bạn đã nạp tiền."
 
-msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
-msgstr "Bạn sẽ không thể thay đổi đơn vị tiền tệ của tài khoản tiền pháp định của bạn sau khi tạo xong tài khoản MT5 này. Bạn có chắc chắn muốn tiếp tục?"
+msgid "You will not be able to change your fiat account currency after creating this CFDs account. Are you sure you want to proceed?"
+msgstr ""
 
 msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
 msgstr "Bạn sẽ không thể thay đổi đơn vị tiền tệ cho tài khoản fiat của mình sau lần gửi tiền này. Bạn có chắc là muốn tiếp tục không?"
@@ -15218,8 +15239,8 @@ msgstr "tín dụng demo được thêm vào tài khoản"
 msgid "deposit"
 msgstr "gửi tiền"
 
-msgid "deposit or create an MT5 account"
-msgstr "gửi tiền hoặc tạo một tài khoản MT5"
+msgid "deposit or create a CFDs account"
+msgstr ""
 
 msgid "details"
 msgstr "chi tiết"

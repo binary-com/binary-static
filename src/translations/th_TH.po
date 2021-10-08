@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-06 08:19\n"
+"PO-Revision-Date: 2021-10-08 02:33\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1597,9 +1597,6 @@ msgstr "มีความสนใจในการทำงานแม้เ
 msgid "Appropriateness"
 msgstr "ความเหมาะสม"
 
-msgid "Appropriateness Test: WARNING:"
-msgstr "การทดสอบความเหมาะสม: คำเตือน:"
-
 msgid "Appropriateness test"
 msgstr "การทดสอบความเหมาะสม"
 
@@ -2206,8 +2203,8 @@ msgstr "ความถี่ในการซื้อขายไบนาร
 msgid "Binary options trading is not available in your country."
 msgstr "การซื้อขายตัวเลือกไบนารีไม่สามารถใช้ได้ในประเทศของคุณ"
 
-msgid "Binary options trading is not available in your financial account."
-msgstr "การซื้อขายตัวเลือกไบนารีไม่สามารถใช้ได้ในบัญชีทางการเงินของคุณ"
+msgid "Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account."
+msgstr ""
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "การซื้อขายไบนารีออปชันทำได้ง่ายๆ ท่านสามารถซื้อสัญญาได้ในสามขั้นตอน"
@@ -2436,6 +2433,9 @@ msgstr "ความถี่ในการซื้อขาย CFD"
 
 msgid "CFDs"
 msgstr "CFD"
+
+msgid "CFDs Account"
+msgstr ""
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFD เป็นเครื่องมือทางการเงินที่ซับซ้อนและมีความเสี่ยงสูงที่จะสูญเสียเงินอย่างรวดเร็วเนื่องจากเลเวอเรจ %1 ของบัญชีนักลงทุนรายย่อยสูญเสียเงินเมื่อทำการซื้อขาย CFD กับ Deriv Investments (Europe) Limited คุณควรพิจารณาว่าคุณเข้าใจวิธีการทำงานของ CFD หรือไม่และคุณสามารถรับความเสี่ยงสูงที่จะสูญเสียเงินของคุณได้หรือไม่"
@@ -2740,14 +2740,14 @@ msgstr "เสมียน"
 msgid "Click OK to proceed."
 msgstr "คลิก OK เพื่อดำเนินการต่อไป"
 
-msgid "Click here to open a Financial Account"
-msgstr "คลิกที่นี่เพื่อเปิดบัญชีการเงิน"
-
-msgid "Click here to open a Gaming account"
-msgstr "คลิกที่นี่เพื่อเปิดบัญชี"
+msgid "Click here to open a Multipliers Account"
+msgstr ""
 
 msgid "Click here to open a Real Account"
 msgstr "คลิกที่นี่ เพื่อเปิดบัญชีจริง"
+
+msgid "Click here to open an Options account"
+msgstr ""
 
 msgid "Click here to retry"
 msgstr "คลิกที่นี่เพื่อลองใหม่"
@@ -3015,9 +3015,6 @@ msgstr "หน้าที่ของบริษัทฯ"
 
 msgid "Company's rights"
 msgstr "สิทธิ์ของบริษัทฯ"
-
-msgid "Compare MetaTrader 5 accounts"
-msgstr "เปรียบเทียบบัญชี MetaTrader 5"
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "ค่าตอบแทนภายใต้แผนค่าตอบแทนต่อนักลงทุน (Investor Compensation Scheme)"
@@ -3392,14 +3389,11 @@ msgstr "สร้างบัญชี %1"
 msgid "Create Account"
 msgstr "สร้างบัญชี"
 
-msgid "Create MT5 password"
-msgstr "สร้างรหัสผ่าน MT5"
-
 msgid "Create New Demo Account"
 msgstr "สร้างบัญชีทดลองใหม่"
 
-msgid "Create a MT5 password. You can use this password for all your MT5 accounts."
-msgstr "สร้างรหัสผ่าน MT5 คุณสามารถใช้รหัสผ่านนี้สําหรับบัญชี MT5 ของคุณทั้งหมด"
+msgid "Create a CFDs account"
+msgstr ""
 
 msgid "Create a MetaTrader 5 account"
 msgstr "สร้างบัญชี MetaTrader 5"
@@ -3415,6 +3409,12 @@ msgstr "สร้างบัญชี"
 
 msgid "Create an MT5 account now"
 msgstr "สร้างบัญชี MT5 ตอนนี้"
+
+msgid "Create an MT5 password for logging in to your CFDs account."
+msgstr ""
+
+msgid "Create an MT5 password. You can use this password for all your MT5 accounts."
+msgstr ""
 
 msgid "Create and maintain wireframes and mockups for new and existing products"
 msgstr "สร้างและรักษาโครงร่างของเว็บไซต์และแบบจำลองสำหรับผลิตภัณฑ์ใหม่และอันที่มีอยู่"
@@ -3445,9 +3445,6 @@ msgstr "สร้างโทเค่นใหม่"
 
 msgid "Create or Manage Accounts"
 msgstr "สร้าง หรือ จัดการบัญชี"
-
-msgid "Create or reset password"
-msgstr "สร้างหรือรีเซ็ตรหัสผ่าน"
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "สร้างกลยุทธ์เพื่อจัดการความเสี่ยงที่อาจเกิดขึ้นเนื่องจากนวัตกรรมที่เข้ามาขัดขวาง"
@@ -3743,8 +3740,8 @@ msgstr "บัญชีทดลองใช้"
 msgid "Demo Accounts"
 msgstr "บัญชีทดลองใช้"
 
-msgid "Demo Financial"
-msgstr "บัญชีทดลอง Financial"
+msgid "Demo CFDs"
+msgstr ""
 
 msgid "Demo Financial STP"
 msgstr "บัญชีทดลอง Financial STP"
@@ -5084,6 +5081,9 @@ msgstr "ข้อมูลทางการเงิน"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "พบแพลตฟอร์มการซื้อขายที่เหมาะสมกับประสบการณ์ของคุณและกลยุทธ์ที่คุณกำหนดได้ ไม่ว่าคุณจะเป็นนักลงทุนใหม่ หรือ นักลงทุนผู้เชี่ยวชาญ"
 
+msgid "Find out more"
+msgstr ""
+
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "ค้นหาข้อมูลเพิ่มเติมเกี่ยวกับต้นทุนและรายละเอียดของสินทรัพย์ CFD แต่ละรายการที่เรานำเสนอ"
 
@@ -5267,9 +5267,6 @@ msgstr "การซื้อขายฟอเร็กซ์เกี่ยว
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "การซื้อขายฟอเร็กซ์เกี่ยวข้องกับการซื้อหรือขาย \"คู่สกุลเงิน\" เหล่านี้ เมื่อท่านซื้อคู่สกุลเงินหนึ่งๆ เช่น EUR/USD หมายความว่า ท่านกำลังซื้อยูโร และ ขายดอลลาร์สหรัฐในเวลาเดียวกัน"
 
-msgid "Forgot password?"
-msgstr "ลืมรหัสผ่าน?"
-
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 ก่อตั้งขึ้นในปี ค.ศ. 1999 (พ.ศ. 2542) เป็นชื่อที่เก่าแก่ที่สุด และได้รับการยอมรับมากที่สุดในการซื้อขายไบนารีออนไลน์"
 
@@ -5381,9 +5378,6 @@ msgstr "GMT คือตัวข่อของ Greenwich Mean Time เวล�
 msgid "GamCare"
 msgstr "GamCare"
 
-msgid "Gaming"
-msgstr "การพนัน"
-
 msgid "Gaming Account"
 msgstr "บัญชีการพนัน"
 
@@ -5488,6 +5482,9 @@ msgstr "เปิดสัญญา Short และ Long"
 
 msgid "Go short = sell"
 msgstr "ส่งคำสั่ง Short = ขาย"
+
+msgid "Go to DTrader"
+msgstr ""
 
 msgid "Go to MT5 download page"
 msgstr "ไปที่หน้าดาวน์โหลด MT5"
@@ -6368,9 +6365,6 @@ msgstr "เพื่อการทำกำไรจากอัตรากา
 msgid "In providing IB services, the Introducing Broker shall"
 msgstr "ในการให้บริการ IB โบรกเกอร์แนะนำจะ"
 
-msgid "In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
-msgstr "ในการให้บริการ พวกเราขออนุญาตสอบถามข้อมูลจากท่านเพื่อประเมินผลิตภัณฑ์และบริการที่เหมาะสมให้กับท่าน (ซึ่งรายละเอียดจะเกี่ยวข้องกับประสบการณ์และความรู้ของท่านเพื่อให้เข้าใจถึงระดับความเสี่ยงที่เกี่ยวข้องในผลิตภัณฑ์แต่ละประเภท)"
-
 msgid "In providing the Agent's services, the Agent shall do the following:"
 msgstr "ในการให้บริการต่างๆ ของตัวแทนฯ ตัวแทนฯ จะดำเนินการในเรื่องต่อไปนี้"
 
@@ -6616,9 +6610,6 @@ msgstr "การลงทุนในผลิตภัณฑ์ที่ซั
 
 msgid "Investing or trading in contracts exposes the client to the performance of the underlying or reference instrument or asset to which the Binary contract refers, including foreign exchange, stock indices, and commodities, each of which have their own features and risks."
 msgstr "การลงทุนหรือการซื้อขายในสัญญา ทำให้ลูกค้าเห็นถึงผลการดำเนินงานของแต่ละผลิตภัณฑ์อ้างอิง หรือเครื่องมืออ้างอิง หรือสินทรัพย์ที่เกี่ยวข้องกับสัญญาไบนารี่ รวมถึงการแลกเปลี่ยนเงินตราต่างประเทศ ดัชนีหุ้น และหุ้นโภคภัณฑ์ ซึ่งแต่ละประเภทมีคุณลักษณะและความเสี่ยงของตัวเอง"
-
-msgid "Investment"
-msgstr "การลงทุน"
 
 msgid "Investment Income"
 msgstr "รายได้จากลงทุน"
@@ -7824,6 +7815,9 @@ msgstr "ตัวคูณขึ้น"
 msgid "Multipliers"
 msgstr "ตัวคูณ"
 
+msgid "Multipliers Account"
+msgstr ""
+
 msgid "Must be a clear, colour photo"
 msgstr "ต้องเป็นภาพถ่ายสีที่มีความชัดเจน"
 
@@ -8325,8 +8319,8 @@ msgstr "โอเพ่นซอส"
 msgid "Open a %1 account through DIEL's website %2"
 msgstr "เปิดบัญชี %1 ผ่านเว็บไซต์ของ DIEL %2"
 
-msgid "Open a Financial Account"
-msgstr "เปิดบัญชีทางการเงิน"
+msgid "Open a Multipliers Account"
+msgstr ""
 
 msgid "Open a Real Account"
 msgstr "เปิดบัญชีจริง"
@@ -8382,6 +8376,9 @@ msgstr "เปิด"
 msgid "Options"
 msgstr "ออปชัน"
 
+msgid "Options Account"
+msgstr ""
+
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "ออปชั่นที่ให้ท่านได้ \"Look Back\" เพื่อดูมูลค่าสูง หรือ ต่ำ ที่ตลาดได้ทำเอาไว้เพื่อพิจารณาการชำระเงิน"
 
@@ -8436,6 +8433,9 @@ msgstr "นอกจากการจ่ายค่าคอมมิชชั
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "ทีมบัญชี&amp; การจ่ายเงินของเราจัดการบัญชีธนาคาร และระบบสกุลเงินอิเล็กทรอนิกส์ที่หลากหลาย และธุรกิจจำนวนมากที่เกิดขึ้นทุกวัน"
 
+msgid "Our CFDs account is suitable for both new and experienced traders."
+msgstr ""
+
 msgid "Our Company"
 msgstr "บริษัทฯ ของเรา"
 
@@ -8486,6 +8486,9 @@ msgstr "โดยทั่วไปแล้วการซื้อขายค
 
 msgid "Our office in Dubai is located at the world-class Jumeirah Lake Towers (JLT) free zone. JLT is home to universities, commercial and residential towers, parks, and over 500 retail outlets, giving you exceptional convenience and a quality of life that you won't find anywhere else."
 msgstr "สำนักงานของเราตั้งอยู่ที่เขตปลอดอากร อาคาร Jumeirah Lake (JLT) ระดับโลก JLT เป็นแหล่งของมหาวิทยาลัย ย่านการค้าและที่พักอาศัย สวนสาธารณะ และร้านค้าย่อยกว่า 500 แห่ง ให้ท่านได้ทั้งความสะดวกที่เป็นเลิศ และคุณภาพชีวิต ที่ท่านจะหาที่ไหนไม่ได้"
+
+msgid "Our products and services may expose you to risks that can be substantial at times, including the risk of losing your entire investment. Please note that by clicking %1Continue%2, you’ll be accepting these risks."
+msgstr ""
 
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "ดัชนีที่ถูกพัฒนาและเป็นกรรมสิทธิ์ของบริษัทฯ ซึ่งจำลองกลไกตลาด"
@@ -8996,6 +8999,9 @@ msgstr "โปรดโหลดหน้านี้อีกครั้ง"
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "โปรดตระหนักว่า การซื้อขายไบนารีออปชั่นเป็นกิจกรรมที่น่าตื่นเต้น แต่พวกเรามีหน้าที่เพื่อความถูกต้องในการแจ้งให้ท่านทราบถึงความเสี่ยงที่กำลังจะเกิดขึ้น การซื้อขายออปชั่นสามารถกลายเป็นพฤติกรรมเสพติด หรือทำให้เกินกว่าวงเงินที่กำหนด พวกเราจะหมั่นติดตามและสอบถามท่านเพื่อให้มีการบวนการวิเคราะห์ของตัวท่านเองเพื่อตรวจสอบหากท่านกำลังมีภาวะความเสี่ยง เพื่อหลีกเลี่ยงความอันตรายและความสูญเสีย โดยสิ่งที่สำคัญคือท่านควรปฏิบัติตามหลักเกณฑ์และแนวปฏิบัติพื้นฐาน"
+
+msgid "Please remember that it is your responsibility to keep your answers accurate and up to date."
+msgstr ""
 
 msgid "Please resolve all pending issues to continue"
 msgstr "โปรดแก้ไขทุกประเด็นให้ลุล่วงเพื่อดำเนินการต่อ"
@@ -9558,11 +9564,11 @@ msgstr "บัญชีจริง"
 msgid "Real Account Opening"
 msgstr "การเปิดบัญชีจริง"
 
+msgid "Real CFDs"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "อสังหาริมทรัพย์"
-
-msgid "Real Financial"
-msgstr "บัญชีจริง Financial"
 
 msgid "Real Financial STP"
 msgstr "บัญชีจริง Financial STP"
@@ -10254,8 +10260,8 @@ msgstr "ลําดับ เช่น abc หรือ 6543 นั้นง่
 msgid "Server"
 msgstr "เซิร์ฟเวอร์"
 
-msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "การบำรุงรักษาเซิร์ฟเวอร์เริ่มตั้งแต่ 01:00 GMT ทุกวันอาทิตย์ กระบวนการนี้อาจใช้เวลาถึง 2 ชั่วโมงในการดําเนินการให้เสร็จสมบูรณ์ บริการอาจหยุดชะงักในช่วงเวลานี้"
+msgid "Server maintenance starts at 01:00 (GMT) every Sunday. This process may take up to 2 hours to complete. You may experience service disruption during this time."
+msgstr ""
 
 msgid "Server:"
 msgstr "เซิร์ฟเวอร์:"
@@ -10271,6 +10277,9 @@ msgstr "รอบระยะเวลาการซื้อขาย:"
 
 msgid "Set Currency"
 msgstr "ตั้งค่าสกุลเงิน"
+
+msgid "Set MT5 password"
+msgstr ""
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "ตั้งค่า Barrier เพื่อกำหนดตำแหน่งของท่าน และกำหนดผลของตัวเงินที่ท่านจะได้รับ"
@@ -10671,9 +10680,6 @@ msgstr "สตรอโพรซีเยอร์"
 msgid "Straight rows of keys are easy to guess"
 msgstr "แถวตรงของแป้นคาดเดาได้ง่าย"
 
-msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
-msgstr "รหัสผ่านที่ยากต่อการคาดเดาประกอบด้วยอักขระอย่างน้อย 8 ตัว รวมตัวอักษรตัวพิมพ์ใหญ่และตัวพิมพ์เล็กและตัวเลขเข้าด้วยกัน"
-
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "มีความสามารถในการวิเคราะห์ซึ่งได้มีการพิสูจน์ก่อนหน้า หรือมีความสนใจกระตือรือร้นที่จะย้ายเข้ามาในส่วนนี้"
 
@@ -10694,6 +10700,9 @@ msgstr "มีทักษะการสื่อสารทั้งการ
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
 msgstr "รหัสผ่านที่คาดเดาได้ยากประกอบด้วยอย่างน้อย 8 ตัวอักษร รวมตัวอักษรตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์"
+
+msgid "Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols."
+msgstr ""
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "มีความเข้าใจที่ลึกซึ่งในเรื่องสี การพิม์ การออกแบบอัตลักษณ์ และการออกแบบตราสัญลักษณ์"
@@ -13205,8 +13214,8 @@ msgstr "ซื้อขายง่ายด้วยวิธีการฝา
 msgid "Trade with leverage"
 msgstr "ซื้อขายด้วยเลเวอเรจ (พลังทวี)"
 
-msgid "Trade with real funds and access to competitive trading conditions."
-msgstr "ซื้อขายด้วยเงินจริงและเข้าถึงเงื่อนไขการซื้อขายที่มีศักยภาพในการแข่งขัน"
+msgid "Trade with real funds and get access to competitive trading conditions."
+msgstr ""
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology."
 msgstr "ซื้อขายกับผู้บุกเบิกอุตสาหกรรมและเป็นผู้ได้รับสิทธิบัตรในเทคโนโลยีการกำหนดราคา"
@@ -13281,7 +13290,7 @@ msgid "Trading on %1 can become addictive. If you feel the need to exclude yours
 msgstr "การซื้อขายบน%1สามารถทำให้เสพติดได้ หากคุณต้องการพักจากเว็บไซต์ โปรดใช้%2sเครื่องมือสำหรับพักการซื้อขาย%3"
 
 msgid "Trading options may not be suitable for everyone, so please ensure that you fully understand the risks involved."
-msgstr ""
+msgstr "การซื้อขายออปชันอาจไม่เหมาะสมสำหรับทุกคน ดังนั้นโปรดแน่ใจว่าคุณเข้าใจความเสี่ยงที่เกี่ยวข้อง"
 
 msgid "Trading platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
@@ -13583,6 +13592,9 @@ msgstr "เข้าใจ"
 msgid "Unemployed"
 msgstr "ว่างงาน"
 
+msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
+msgstr ""
+
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "สำเร็จการศึกษาจากสาขาการตลาด คณิตศาสตร์ ไอที/การเขียนโปรแกรม และสาขาอื่นๆ ที่เกี่ยวข้อง"
 
@@ -13694,6 +13706,9 @@ msgstr "เมื่อข้อตกลงนี้หมดอายุ ห�
 msgid "Usage limit"
 msgstr "วงเงินที่ใช้"
 
+msgid "Use MT5 password to sign in to any of your CFDs accounts when using MT5 apps on your mobile or other devices."
+msgstr ""
+
 msgid "Use a few words, avoid common phrases"
 msgstr "ใช้คำไม่กี่คำ หลีกเลี่ยงคำวลีทั่วไป"
 
@@ -13742,11 +13757,8 @@ msgstr "ใช้ความพยายามอย่างสุดควา
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "ใช้ความพยายามอย่างสุดความสามารถของเขาเพื่อสร้างความสนใจต่อลูกค้าของ Binary"
 
-msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you've forgotten your password."
-msgstr "ใช้รหัสผ่านนี้เพื่อให้สิทธิ์การดูแก่ผู้ใช้อื่น ในขณะที่พวกเขาอาจดูบัญชีซื้อขายของคุณพวกเขาจะไม่สามารถซื้อขายหรือดําเนินการอื่น ๆ คลิก สร้างหรือรีเซ็ตรหัสผ่าน"
-
-msgid "Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps."
-msgstr "ใช้รหัสผ่านนี้เพื่อเข้าสู่ระบบบัญชี MT5 ของคุณบนเดสก์ท็อป เว็บ และแอปสําหรับอุปกรณ์เคลื่อนที่"
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create password, or you have forgotten your password, please reset it."
+msgstr ""
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "ใช้คุณลักษณะเพิ่มเติมที่เป็นไปได้จากผู้ให้บริการชำระเงินเพื่อให้เกิดประโยชน์สูงสุด"
@@ -13912,6 +13924,9 @@ msgstr "ระดับของจำนวน"
 
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
+
+msgid "WARNING"
+msgstr ""
 
 msgid "Waiting for contract settlement."
 msgstr "รอการชำระเงินตามสัญญา"
@@ -14711,6 +14726,9 @@ msgstr "ท่านสามารถขายสัญญาซื้อขา
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "ท่านสามารถเติมเงินในบัญชีทดลอง จำนวน %1 หากมียอดคงเหลือในบัญชี %2 หรือน้อยกว่า"
 
+msgid "You can update personal details at any time in your account settings."
+msgstr ""
+
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "ท่านสามารถใช้ตัวแทนรับชำระเงินที่ได้รับอนุญาตในการดำเนินการฝากเงิน และ ถอนเงิน ตามวิธีชำระเงิน หรือ สกุลเงินท้องถิ่นที่ไม่ได้รับรองโดย %1 ซึ่งเป็นวิธีที่ง่ายกว่าในทางปฏิบัติ"
 
@@ -14734,6 +14752,9 @@ msgstr "คุณมีรหัสผ่านไบนารีใหม่เ
 
 msgid "You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps."
 msgstr "คุณมีรหัสผ่าน MT5 ใหม่เพื่อเข้าสู่ระบบบัญชี MT5 ของคุณบนเว็บและแอพมือถือ"
+
+msgid "You have a trading password for MT5"
+msgstr ""
 
 msgid "You have added a %1 account."
 msgstr "คุณได้เพิ่มบัญชี %1 แล้ว"
@@ -14888,8 +14909,8 @@ msgstr "คุณจะต้องตั้งรหัสผ่านเพื
 msgid "You will not be able to change currency once you have made a deposit."
 msgstr "คุณจะไม่สามารถเปลี่ยนสกุลเงินได้เมื่อคุณทำการฝากเงิน."
 
-msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
-msgstr "ท่านจะไม่สามารถแก้ไขสกุลเงินของบัญชีเงินกระดาษได้หลังจากท่านเปิดบัญชี MT5 ท่านต้องการดำเนินการต่อหรือไม่?"
+msgid "You will not be able to change your fiat account currency after creating this CFDs account. Are you sure you want to proceed?"
+msgstr ""
 
 msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
 msgstr "ท่านจะไม่สามารถแก้ไขสกุลเงินของบัญชีเงิน fiat ได้หลังจากท่านฝากเงินครั้งนี้ ท่านต้องการดำเนินการต่อหรือไม่?"
@@ -15218,8 +15239,8 @@ msgstr "ทดลองใช้เครดิตเข้าบัญชี"
 msgid "deposit"
 msgstr "ฝากเข้าบัญชีเงิน"
 
-msgid "deposit or create an MT5 account"
-msgstr "ฝากเข้าบัญชีเงิน fiat ของท่านเป็นครั้งแรก หรือ ก่อนเปิดบัญชี MT5 ท่าน"
+msgid "deposit or create a CFDs account"
+msgstr ""
 
 msgid "details"
 msgstr "รายละเอียด"
