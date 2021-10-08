@@ -241,7 +241,6 @@ module.exports = [
     'Get your secure link',
     'Glare detected',
     'Go back',
-    'Go to DTrader',
     'Go to statement',
     'Goes Outside',
     'Got it',
