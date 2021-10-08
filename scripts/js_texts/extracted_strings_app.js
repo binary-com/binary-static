@@ -58,6 +58,7 @@ module.exports = [
     'Binance USD',
     'Binary Coin',
     'Binary Password Reset',
+    'Binary options trading is not available in your Multipliers account.',
     'Binary options trading is not available in your country.',
     'Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account.',
     'Binary password',

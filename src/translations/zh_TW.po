@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-08 02:33\n"
+"PO-Revision-Date: 2021-10-08 03:13\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2200,11 +2200,14 @@ msgstr "二元期權交易經驗"
 msgid "Binary options trading frequency"
 msgstr "二元期權交易頻率"
 
+msgid "Binary options trading is not available in your Multipliers account."
+msgstr ""
+
 msgid "Binary options trading is not available in your country."
 msgstr "您的國家無法進行二元期權交易。"
 
 msgid "Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account."
-msgstr ""
+msgstr "通過乘數帳戶無法進行二元期權交易。<br/>請轉回到期權帳戶。"
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "相對說來，二元期權交易是很容易的。您可以通過三個簡單步驟購買合約："
@@ -2435,7 +2438,7 @@ msgid "CFDs"
 msgstr "差價合約"
 
 msgid "CFDs Account"
-msgstr ""
+msgstr "差價合約帳戶"
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "差價合約是複雜的工具, 並且由於槓桿作用，資金迅速虧損的風險很高。透過 Deriv Investments (Europe) Limited 進行差價合約交易時有%1的零售投資者帳戶蒙受虧損。您必須考慮自己是否了解差價合約的運作方式, 以及是否能夠承擔資金虧損的高風險。"
@@ -2741,13 +2744,13 @@ msgid "Click OK to proceed."
 msgstr "按一下「確定」繼續。"
 
 msgid "Click here to open a Multipliers Account"
-msgstr ""
+msgstr "按一下此處開立乘數帳戶"
 
 msgid "Click here to open a Real Account"
 msgstr "按一下此處開立真實帳戶"
 
 msgid "Click here to open an Options account"
-msgstr ""
+msgstr "按一下此處開立期權帳戶"
 
 msgid "Click here to retry"
 msgstr "點選此處重試"
@@ -3392,10 +3395,13 @@ msgid "Create New Demo Account"
 msgstr "開設新的模擬帳戶"
 
 msgid "Create a CFDs account"
-msgstr ""
+msgstr "開立差價合約帳戶"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "建立MetaTrader 5 帳戶"
+
+msgid "Create a New Demo Account"
+msgstr ""
 
 msgid "Create a new Binary password."
 msgstr "建立新的 Binary 密碼。"
@@ -3410,10 +3416,10 @@ msgid "Create an MT5 account now"
 msgstr "立刻開立MT5帳戶"
 
 msgid "Create an MT5 password for logging in to your CFDs account."
-msgstr ""
+msgstr "建立 MT5 密碼是用於登入差價合約帳戶."
 
 msgid "Create an MT5 password. You can use this password for all your MT5 accounts."
-msgstr ""
+msgstr "建立 MT5 密碼。您可在所有 MT5 帳戶使用此密碼。"
 
 msgid "Create and maintain wireframes and mockups for new and existing products"
 msgstr "為新產品和現有產品建立和維護線框和模型"
@@ -3436,8 +3442,8 @@ msgstr "通過以下方式註冊免費帳戶"
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr "建立用於定價的數學/統計模型, 分析肥尾效應以評估保證金要求, 並管理奇異期權、外匯和差價合約的風險"
 
-msgid "Create new demo account"
-msgstr "開設新的模擬帳戶"
+msgid "Create new Demo account"
+msgstr ""
 
 msgid "Create new token"
 msgstr "新增新權杖"
@@ -3740,7 +3746,7 @@ msgid "Demo Accounts"
 msgstr "模擬帳戶"
 
 msgid "Demo CFDs"
-msgstr ""
+msgstr "模擬差價合約"
 
 msgid "Demo Financial STP"
 msgstr "模擬金融 STP"
@@ -5081,7 +5087,7 @@ msgid "Find a trading platform that suits your experience and preferred strategy
 msgstr "無論您是新手還是經驗豐富的交易員，都有適合您的交易策略的平台-。"
 
 msgid "Find out more"
-msgstr ""
+msgstr "尋找更多訊息"
 
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我們提供的每個差價合約資產的成本和詳細資料。"
@@ -5483,7 +5489,7 @@ msgid "Go short = sell"
 msgstr "空頭頭寸 = 賣出"
 
 msgid "Go to DTrader"
-msgstr ""
+msgstr "前往 DTrader"
 
 msgid "Go to MT5 download page"
 msgstr "前往 MT5 下載頁面"
@@ -7814,7 +7820,7 @@ msgid "Multipliers"
 msgstr "乘數期權"
 
 msgid "Multipliers Account"
-msgstr ""
+msgstr "乘數帳戶"
 
 msgid "Must be a clear, colour photo"
 msgstr "必須是清晰的彩色照片"
@@ -8318,7 +8324,7 @@ msgid "Open a %1 account through DIEL's website %2"
 msgstr "在DIEL的網站 %2開立 %1 帳戶"
 
 msgid "Open a Multipliers Account"
-msgstr ""
+msgstr "開立乘數帳戶"
 
 msgid "Open a Real Account"
 msgstr "開立真實帳戶"
@@ -8375,7 +8381,7 @@ msgid "Options"
 msgstr "期權"
 
 msgid "Options Account"
-msgstr ""
+msgstr "期權帳戶"
 
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "此選項讓你「回顧」市場達到的最高或最低價, 以確定賠付額。"
@@ -8432,7 +8438,7 @@ msgid "Our Accounting &amp; Payments team manages our wide range of bank account
 msgstr "我們的帳戶處理和款項支付團隊管理廣泛的銀行帳戶和電子貨幣系統以及每天進行的大量交易。"
 
 msgid "Our CFDs account is suitable for both new and experienced traders."
-msgstr ""
+msgstr "我們的差價合約帳戶適用于新手和經驗豐富的交易者。"
 
 msgid "Our Company"
 msgstr "我們公司"
@@ -8486,7 +8492,7 @@ msgid "Our office in Dubai is located at the world-class Jumeirah Lake Towers (J
 msgstr "公司的杜拜辦事處位於世界級的Jumeirah Lake Towers（JLT）自由區。JLT集大學、商業和住宅樓、公園和500多家零售店於一體，為您提供其他任何地方都沒有的獨特便利和生活品質。"
 
 msgid "Our products and services may expose you to risks that can be substantial at times, including the risk of losing your entire investment. Please note that by clicking %1Continue%2, you’ll be accepting these risks."
-msgstr ""
+msgstr "我們的產品和服務有時可能會使您面臨巨大的風險，包括失去全部投資的風險。 請注意，通過點選%1繼續%2，您將接受這些風險。"
 
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "我們專有的、模擬市場力量的綜合指數"
@@ -8999,7 +9005,7 @@ msgid "Please remember at all times that trading binary options can be an exciti
 msgstr "請記住，二元期權交易不論在什麼時候都會是一項令人興奮的活動，但出於道義，我們有責任提醒您可能會遇到的風險。像其它追求極限的活動一樣，期權交易可能會使人上癮。我們懇請您參與認真的自我剖析，評估自身是否已經上癮。為了避免上癮，請您遵循一些基本的原則和指導方針，這是很重要的。"
 
 msgid "Please remember that it is your responsibility to keep your answers accurate and up to date."
-msgstr ""
+msgstr "請記住，保持答案準確和更新是您的責任。"
 
 msgid "Please resolve all pending issues to continue"
 msgstr "請解決所有未決問題以繼續"
@@ -9563,7 +9569,7 @@ msgid "Real Account Opening"
 msgstr "開立真實帳戶"
 
 msgid "Real CFDs"
-msgstr ""
+msgstr "真實差價合約"
 
 msgid "Real Estate"
 msgstr "房地產"
@@ -10259,7 +10265,7 @@ msgid "Server"
 msgstr "伺服器"
 
 msgid "Server maintenance starts at 01:00 (GMT) every Sunday. This process may take up to 2 hours to complete. You may experience service disruption during this time."
-msgstr ""
+msgstr "伺服器維護每週日從格林尼治標準時間01:00開始。此過程最多可能需要2個小時才能完成。此期間內服務可能會中斷。"
 
 msgid "Server:"
 msgstr "伺服器:"
@@ -10277,7 +10283,7 @@ msgid "Set Currency"
 msgstr "設定貨幣"
 
 msgid "Set MT5 password"
-msgstr ""
+msgstr "設定 MT5 密碼"
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "您可設定用於確認頭寸參數以及觸發賠付的障礙水平。"
@@ -10700,7 +10706,7 @@ msgid "Strong passwords contain at least 8 characters, combine uppercase and low
 msgstr "強密碼須至少8個字元，及包含大小寫字母、數字和符號。"
 
 msgid "Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols."
-msgstr ""
+msgstr "強密碼須至少8個字元。包含大小寫字母、數字和符號。"
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "對顏色、排版、辨識設計和品牌非常熟悉"
@@ -13211,7 +13217,7 @@ msgid "Trade with leverage"
 msgstr "利用槓桿進行交易"
 
 msgid "Trade with real funds and get access to competitive trading conditions."
-msgstr ""
+msgstr "用真實資金交易, 擁有競爭力強的交易條件。"
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology."
 msgstr "通過擁有受專利保護的報價技術的業內領先企業進行交易。"
@@ -13589,7 +13595,7 @@ msgid "Unemployed"
 msgstr "失業人員"
 
 msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
-msgstr ""
+msgstr "很遺憾，您所在的國家/地區不提供此服務。 如果您想交易乘數，請嘗試 Deriv 的 DTrader。"
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "市場行銷、數學、資訊技術/程式設計或任何相關領域的大學學位"
@@ -13703,7 +13709,7 @@ msgid "Usage limit"
 msgstr "使用限制"
 
 msgid "Use MT5 password to sign in to any of your CFDs accounts when using MT5 apps on your mobile or other devices."
-msgstr ""
+msgstr "在手機或其他裝置使用MT5應用時使用 MT5 密碼登入任何差價合約帳戶。"
 
 msgid "Use a few words, avoid common phrases"
 msgstr "用幾個詞，避免常用短語"
@@ -13754,7 +13760,7 @@ msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "盡全力為Binary爭取潛能客戶"
 
 msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create password, or you have forgotten your password, please reset it."
-msgstr ""
+msgstr "用此密碼給予其他使用者檢視權限。該使用者檢視您的交易帳戶時將無法交易或採取任何其他行動。如果這是您第一次嘗試建立或忘了密碼，請重設密碼。"
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "充分利用某些支付處理器提供的任何可用的附加功能"
@@ -13922,7 +13928,7 @@ msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
 msgid "WARNING"
-msgstr ""
+msgstr "警告"
 
 msgid "Waiting for contract settlement."
 msgstr "等待合約結算。"
@@ -14723,7 +14729,7 @@ msgid "You can top up your demo account with an additional %1 if your balance is
 msgstr "如果您的餘額為 %2 或更低, 您可以在模擬帳戶內新增 %1。"
 
 msgid "You can update personal details at any time in your account settings."
-msgstr ""
+msgstr "您可以隨時在帳戶設定中更新個人詳細資料。"
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "對於不受 %1  支持的支付方式或本地貨幣， 您可使用授權支付代理輕鬆處理存款和取款。"
@@ -14750,7 +14756,7 @@ msgid "You have a new MT5 password to log in to your MT5 accounts on the web and
 msgstr "您有了新的 MT5 密碼，用於登入網絡和手機應用上的 MT5 帳戶."
 
 msgid "You have a trading password for MT5"
-msgstr ""
+msgstr "您有了MT5的交易密碼"
 
 msgid "You have added a %1 account."
 msgstr "您已建立了 %1帳戶。"
@@ -14906,7 +14912,7 @@ msgid "You will not be able to change currency once you have made a deposit."
 msgstr "存款後將無法更改幣種."
 
 msgid "You will not be able to change your fiat account currency after creating this CFDs account. Are you sure you want to proceed?"
-msgstr ""
+msgstr "開立此差價合約帳戶後, 將無法更改法定帳戶的幣種。確定要繼續嗎？"
 
 msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
 msgstr "存入此款項後, 將無法更改法定帳戶的幣種。確定要繼續嗎？"
@@ -15236,7 +15242,7 @@ msgid "deposit"
 msgstr "存款"
 
 msgid "deposit or create a CFDs account"
-msgstr ""
+msgstr "存款或開立差價合約帳戶"
 
 msgid "details"
 msgstr "詳細資料"
