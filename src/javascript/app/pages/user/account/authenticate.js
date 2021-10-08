@@ -1467,7 +1467,7 @@ const Authenticate = (() => {
         } else if (is_fully_authenticated) {
             $('#authentication_verified').setVisibility(1);
         // For statuses set from BO, last attempt will be null
-        } else if (!identity_last_attempt) {
+        } else if (!identity_last_attempt || identity_last_attempt.status !== identity_status) {
             $('#authentication_tab').setVisibility(1);
             switch (identity_status) {
                 case 'pending':
