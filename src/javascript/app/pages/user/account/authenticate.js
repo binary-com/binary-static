@@ -1466,7 +1466,7 @@ const Authenticate = (() => {
             handleCountrySelector();
         } else if (is_fully_authenticated) {
             $('#authentication_verified').setVisibility(1);
-        // For statuses set from BO, last attempt will be null
+        // If status from last attempt does not match, status is modified from the BO
         } else if (!identity_last_attempt || identity_last_attempt.status !== identity_status) {
             $('#authentication_tab').setVisibility(1);
             switch (identity_status) {
