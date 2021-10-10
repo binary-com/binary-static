@@ -127,6 +127,8 @@ const Header = (() => {
         window.location.reload();
     };
 
+    const restricted_country_list = ['fr'];
+    
     const upgradeMessageVisibility = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             const upgrade_msg = document.getElementsByClassName('upgrademessage');
@@ -153,8 +155,9 @@ const Header = (() => {
                 });
             };
 
-            const upgrade_info     = Client.getUpgradeInfo();
-            const show_upgrade_msg = upgrade_info.can_upgrade;
+            const is_restricted_country = restricted_country_list.includes(Client.get('residence'));
+            const upgrade_info          = Client.getUpgradeInfo();
+            const show_upgrade_msg      = !is_restricted_country && upgrade_info.can_upgrade;
             let upgrade_link_txt = '';
             let upgrade_btn_txt = '';
 
@@ -172,7 +175,7 @@ const Header = (() => {
                     : localize('Open a Real Account');
             }
 
-            if (Client.get('is_virtual')) {
+            if (Client.get('is_virtual') && !is_restricted_country) {
                 applyToAllElements(upgrade_msg, (el) => {
                     el.setVisibility(1);
                     const span = el.getElementsByTagName('span')[0];
