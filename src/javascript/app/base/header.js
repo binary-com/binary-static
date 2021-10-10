@@ -20,6 +20,9 @@ const findParent               = require('../../_common/utility').findParent;
 const template                 = require('../../_common/utility').template;
 
 const Header = (() => {
+    const restricted_country_list = ['fr'];
+    let is_restricted_country = false;
+
     const onLoad = () => {
         populateAccountsList();
         bindClick();
@@ -72,6 +75,7 @@ const Header = (() => {
     const populateAccountsList = () => {
         if (!Client.isLoggedIn()) return;
         BinarySocket.wait('authorize').then(() => {
+            is_restricted_country = restricted_country_list.includes(Client.get('residence'));
             const loginid_select = document.createElement('div');
             Client.getAllLoginids().forEach((loginid) => {
                 if (!Client.get('is_disabled', loginid) && Client.get('token', loginid)) {
@@ -127,8 +131,6 @@ const Header = (() => {
         window.location.reload();
     };
 
-    const restricted_country_list = ['fr'];
-    
     const upgradeMessageVisibility = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings', 'get_account_status').then(() => {
             const upgrade_msg = document.getElementsByClassName('upgrademessage');
@@ -155,7 +157,6 @@ const Header = (() => {
                 });
             };
 
-            const is_restricted_country = restricted_country_list.includes(Client.get('residence'));
             const upgrade_info          = Client.getUpgradeInfo();
             const show_upgrade_msg      = !is_restricted_country && upgrade_info.can_upgrade;
             let upgrade_link_txt = '';
@@ -222,6 +223,9 @@ const Header = (() => {
     const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
 
     const showHideNewAccount = (upgrade_info) => {
+        if (is_restricted_country) {
+            getElementById('user_accounts').classList.add('invisible');
+        }
         if (upgrade_info.can_upgrade || upgrade_info.can_open_multi) {
             changeAccountsText(1, localize('Create Account'));
         } else {
