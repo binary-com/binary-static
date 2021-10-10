@@ -16,16 +16,23 @@ const MetaTrader = (() => {
     const fields          = MetaTraderConfig.fields;
     const getAccountsInfo = MetaTraderConfig.getAccountsInfo;
 
-    const onLoad = () => {
+    const onLoad = async () => {
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
             await BinarySocket.send({ trading_servers: 1, platform: 'mt5' });
 
-            if (isEligible()) {
+            if (await isEligible()) {
+                const landing_company_short = State.getResponse('landing_company.gaming_company.shortcode');
+
                 if (Client.get('is_virtual')) {
                     addAllAccounts();
                 } else {
                     BinarySocket.send({ get_limits: 1 }).then(addAllAccounts);
+                }
+
+                // hide New account button for MLT clients
+                if (landing_company_short === 'malta') {
+                    MetaTraderUI.disableNewAccountButton();
                 }
             } else {
                 MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
@@ -33,11 +40,24 @@ const MetaTrader = (() => {
         });
     };
 
-    const isEligible = () => {
+    const isEligible = async () => {
         const landing_company = State.getResponse('landing_company');
+        const landing_company_short = landing_company.gaming_company ? landing_company.gaming_company.shortcode : '';
+
         // hide MT5 dashboard for IOM account or VRTC of IOM landing company
-        if (State.getResponse('landing_company.gaming_company.shortcode') === 'iom' && !Client.isAccountOfType('financial')) {
+        if (landing_company_short === 'iom' && !Client.isAccountOfType('financial')) {
             return false;
+        }
+
+        // hide MT5 dashboard for MLT clients if they don't have any MT5 accounts yet
+        if (landing_company_short === 'malta'){
+            let has_mt5 = false;
+
+            await BinarySocket.wait('mt5_login_list').then((response) => {
+                has_mt5 = response.mt5_login_list.length > 0;
+            });
+
+            return has_mt5;
         }
         return 'mt_gaming_company' in landing_company || 'mt_financial_company' in landing_company;
     };
@@ -480,7 +500,7 @@ const MetaTrader = (() => {
 
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(async () => {
-            if (isEligible()) {
+            if (await isEligible()) {
                 const mt_visibility = document.getElementsByClassName('mt_visibility');
                 applyToAllElements(mt_visibility, (el) => {
                     el.setVisibility(1);

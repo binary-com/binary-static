@@ -40,7 +40,9 @@ const Security = () => (
             </div>
 
             <div className='gr-row gr-padding-30'>
-                <Column id='change_password' url='change_passwordws' image='account_password' header={it.L('Account Password')} text={it.L('Change your Binary password and MT5 password.')} />
+                <Column id='change_password' dataShow='malta' url='change_passwordws' image='account_password' header={it.L('Account Password')} text={it.L('Change your Binary password.')} />
+
+                <Column id='change_password' dataShow='-malta' url='change_passwordws' image='account_password' header={it.L('Account Password')} text={it.L('Change your Binary password and MT5 password.')} />
 
                 <Column className='real invisible' url='self_exclusionws' image='self-exclusion' header={it.L('Self Exclusion')} text={it.L('Facility that allows you to set limits on your account.')} />
 
