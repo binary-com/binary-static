@@ -145,7 +145,7 @@ const BinaryLoader = (() => {
                             displayMessage(error_messages.only_virtual());
                         } else if (config.only_real && Client.get('is_virtual')) {
                             displayMessage(error_messages.only_real());
-                        } else if ((config.no_mf || config.only_virtual) && ClientBase.get('residence') === 'fr') { // We don't offer service for France residence clients on Binary any more
+                        } else if ((config.no_mf || config.only_virtual || window.location.href.includes('metatrader')) && ClientBase.get('residence') === 'fr') { // We don't offer service for France residence clients on Binary any more
                             displayMessage(error_messages.only_deriv(), error_actions.only_deriv());
                         } else {
                             loadActiveScript(config);
