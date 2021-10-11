@@ -223,7 +223,6 @@ module.exports = [
     'File type not supported',
     'Final price',
     'Financial',
-    'Financial Account Opening',
     'Financial STP',
     'Financial assessment',
     'Finish',
