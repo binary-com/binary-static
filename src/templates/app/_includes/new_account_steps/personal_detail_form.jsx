@@ -17,6 +17,10 @@ import { Fieldset } from '../../../_common/components/forms.jsx';
 const PersonalDetailForm = () => (
     <React.Fragment>
         <form id='personal_detail_step_form' className='gr-padding-10'>
+            <div id='accurate_answer_warning_row' className='signup-warning-message auto-margin gr-10 gr-12-m invisible'>
+                <p className='no-margin'>{it.L('Please remember that it is your responsibility to keep your answers accurate and up to date.')}</p>
+                <p className='no-margin'>{it.L('You can update personal details at any time in your account settings.')}</p>
+            </div>
             <div className='gr-9 gr-12-m auto-margin'>
                 <Fieldset id='name_section' legend={it.L('Name')} legend_id='name_section_legend' className='invisible'>
                     <Salutation row_id='salutation_row' row_class='input-disabled invisible' />

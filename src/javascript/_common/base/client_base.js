@@ -132,17 +132,17 @@ const ClientBase = (() => {
     const TypesMapConfig = (() => {
         let types_map_config;
 
-        const initTypesMap = () => ({
+        const initTypesMap = (loginid) => ({
             default  : localize('Real'),
-            financial: localize('Investment'),
-            gaming   : localize('Gaming'),
+            financial: localize('Multipliers'),
+            gaming   : get('residence', loginid) === 'gb' ? localize('Gaming') : localize('Options'),
             virtual  : localize('Demo'),
         });
 
         return {
-            get: () => {
+            get: (loginid) => {
                 if (!types_map_config) {
-                    types_map_config = initTypesMap();
+                    types_map_config = initTypesMap(loginid);
                 }
                 return types_map_config;
             },
@@ -150,7 +150,7 @@ const ClientBase = (() => {
     })();
 
     const getAccountTitle = loginid => {
-        const types_map = TypesMapConfig.get();
+        const types_map = TypesMapConfig.get(loginid);
         return (types_map[getAccountType(loginid)] || types_map.default);
     };
 
@@ -237,11 +237,14 @@ const ClientBase = (() => {
     // market_type: "financial" | "gaming"
     // sub_account_type: "financial" | "financial_stp" | "swap_free"
     // *
-    const getMT5AccountDisplays = (market_type, sub_account_type, is_demo) => {
+    const getMT5AccountDisplays = (market_type, sub_account_type, is_demo, landing_company_short, is_eu) => {
         // needs to be declared inside because of localize
         // TODO: handle swap_free when ready
 
         const account_market_type = (market_type === 'synthetic' || market_type === 'gaming') ? 'gaming' : market_type;
+        const real_financial = is_eu ? localize('Real CFDs') : localize('Real Financial');
+        const demo_financial = is_eu ? localize('Demo CFDs') : localize('Demo Financial');
+
         const obj_display = {
             gaming: {
                 financial: {
@@ -251,8 +254,8 @@ const ClientBase = (() => {
             },
             financial: {
                 financial: {
-                    short: localize('Financial'),
-                    full : is_demo ? localize('Demo Financial') : localize('Real Financial'),
+                    short: landing_company_short === 'maltainvest' ? localize('CFDs') : localize('Financial'),
+                    full : is_demo ? demo_financial : real_financial,
                 },
                 financial_stp: {
                     short: localize('Financial STP'),
@@ -399,7 +402,7 @@ const ClientBase = (() => {
     };
 
     const isOptionsBlocked = () => {
-        const options_blocked_countries = ['au'];
+        const options_blocked_countries = ['au', 'fr'];
         const country = State.getResponse('authorize.country');
 
         return options_blocked_countries.includes(country);

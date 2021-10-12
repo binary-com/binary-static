@@ -32,7 +32,7 @@ const MobileMenu = () => (
                     text={it.L('Resources')}
                     href={it.url_for('resources')}
                     className='ico-only-hide client_logged_in invisible'
-                    dataShow='-maltainvest'
+                    dataShow='-maltainvest, -optionsblocked'
                     subitems={[
                         { text: it.L('Asset Index'),       href: it.url_for('resources/asset_indexws') },
                         { text: it.L('Trading Times'),     href: it.url_for('resources/market_timesws') },

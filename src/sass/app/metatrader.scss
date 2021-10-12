@@ -366,6 +366,11 @@
                 .change-investor-button {
                     margin-bottom: 10px;
                 }
+                .change-investor-password {
+                    .password--field-wrapper {
+                        max-width: 95%;
+                    }
+                }
                 #existing_client_message {
                     .notice-msg {
                         padding: 16px;
@@ -498,6 +503,7 @@
             span {
                 padding: 10px 5px;
                 line-height: 18px;
+                width: 95%;
             }
         }
     }

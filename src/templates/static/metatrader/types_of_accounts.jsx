@@ -37,7 +37,7 @@ const Row = ({ number, text }) => (
 );
 
 const TypesOfAccounts = () => (
-    <div id='mt5_types_of_accounts' className='static_full'>
+    <div data-show='-eucountry' id='mt5_types_of_accounts' className='static_full'>
         <h1>{it.L('Types of MetaTrader 5 accounts')}</h1>
 
         <div id='loading_types'>

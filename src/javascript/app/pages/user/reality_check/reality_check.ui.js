@@ -3,6 +3,8 @@ const showLocalTimeOnHover = require('../../../base/clock').showLocalTimeOnHover
 const BinarySocket         = require('../../../base/socket');
 const FormManager          = require('../../../common/form_manager');
 const urlFor               = require('../../../../_common/url').urlFor;
+const Client               = require('../../../base/client');
+const localize             = require('../../../../_common/localize').localize;
 require('../../../../_common/lib/polyfills/array.includes');
 require('../../../../_common/lib/polyfills/string.includes');
 
@@ -29,8 +31,11 @@ const RealityCheckUI = (() => {
 
     const ajaxSuccess = (reality_check_text, summary) => {
         const content = 'reality_check_content';
+        const account_type_label = Client.get('residence') === 'gb' ? 'Gaming' : 'Options';
+
         if (reality_check_text.includes(content) && $('#reality_check').length === 0) {
             $('body').append($('<div/>', { id: 'reality_check', class: 'lightbox' }).append($(reality_check_text).find(`#${content}`)));
+            $('#reality_check_note').text(localize('[_1] trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis.', account_type_label));
             $(form.num_reality_duration).val(Math.floor(+RealityCheckData.get('interval') / 60 / 1000));
             $('#statement').off('click').on('click dblclick', onStatementClick);
             $('#logout').off('click').on('click dblclick', onLogoutClick);

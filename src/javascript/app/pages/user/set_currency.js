@@ -176,7 +176,7 @@ const SetCurrency = (() => {
             if (should_show_confirmation) {
                 const currency            = $clicked_currency.attr('id');
                 const is_iom_client       = Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im';
-                const change_text_for_iom = is_iom_client ? localize('deposit') : localize('deposit or create an MT5 account');
+                const change_text_for_iom = is_iom_client ? localize('deposit') : localize('deposit or create a CFDs account');
                 let localized_message     = '';
                 let localized_footnote    = '';
 

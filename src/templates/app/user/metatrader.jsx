@@ -22,9 +22,9 @@ const AccountDesc = ({ title, description, account_type, landing_company_short, 
                     <li key={i}>{item}</li>
                 ))}
             </ul>
-            <p className='center-text-m'>
+            <p  data-show='-eucountry' className='center-text-m'>
                 <a className='button button-full-width-m' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>
-                    <span>{it.L('Compare MetaTrader 5 accounts')}</span>
+                    <span>{it.L('Find out more')}</span>
                 </a>
             </p>
         </div>
@@ -140,13 +140,14 @@ const Metatrader = () => (
 
                 <div className='hint gr-padding-20 gr-parent no-margin'>
                     <p className='no-margin'>
-                        {it.L('Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time.')}
+                        {it.L('Server maintenance starts at 01:00 (GMT) every Sunday. This process may take up to 2 hours to complete. You may experience service disruption during this time.')}
                     </p>
                 </div>
                 <div className='mt-panel'>
                     <div className='acc-actions'>
                         <a href='javascript:;' className='act_new_account new-account center-text invisible'>
-                            <span>{it.L('Create a MetaTrader 5 account')}</span>
+                            <span className='client-general'>{it.L('Create a MetaTrader 5 account')}</span>
+                            <span className='client-eu invisible'>{it.L('Create a CFDs account')}</span>
                         </a>
                         <a href='javascript:;' className='act_cashier has-account center-text invisible'>
                             <span>{it.L('Manage funds')}</span>
@@ -200,6 +201,18 @@ const Metatrader = () => (
                         title={it.L('Choose an account')}
                         description={it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you\'re an experienced trader or just starting out.', it.website_name)}
                     />
+
+                    <AccountDesc
+                        id='general_desc_eu'
+                        title={it.L('CFDs Account')}
+                        description={it.L('Our CFDs account is suitable for both new and experienced traders.')}
+                        items={[
+                            it.L('Leverage up to [_1]', '1:30'),
+                            it.L('Market execution'),
+                            it.L('No commission'),
+                            it.L('Negative balance protection'),
+                        ]}
+                    />
                     {/* first item should be the general description
                         if there are any landing company specific descriptions,
                         they should be below this with landing_company_short prop */}
@@ -214,21 +227,21 @@ const Metatrader = () => (
                             it.L('No commission'),
                         ]}
                     />
+
                     <AccountDesc
                         account_type={'financial_financial'}
                         landing_company_short='maltainvest'
-                        title={it.L('Financial Account')}
-                        description={it.L('Our MetaTrader 5 Financial account is suitable for both new and experienced traders.')}
+                        title={it.L('CFDs Account')}
+                        description={it.L('Our CFDs account is suitable for both new and experienced traders.')}
                         items={[
                             it.L('Leverage up to [_1]', '1:30'),
-                            it.L('Variable spreads'),
                             it.L('Market execution'),
                             it.L('No commission'),
                             it.L('Negative balance protection'),
                         ]}
                     />
 
-                    <AccountDesc
+                    {/* <AccountDesc
                         account_type={'financial_financial_stp'}
                         title={it.L('Financial STP Account')}
                         description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
@@ -238,9 +251,9 @@ const Metatrader = () => (
                             it.L('Market execution'),
                             it.L('No commission'),
                         ]}
-                    />
+                    /> */}
 
-                    <AccountDesc
+                    {/* <AccountDesc
                         account_type={'gaming_financial'}
                         title={it.L('Synthetic Account')}
                         description={it.L('Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
@@ -250,7 +263,7 @@ const Metatrader = () => (
                             it.L('Market execution'),
                             it.L('No commission'),
                         ]}
-                    />
+                    /> */}
                 </div>
                 <div id='frm_new_accounts'>
                     <form id='frm_new_account'>
@@ -261,7 +274,7 @@ const Metatrader = () => (
                                         title={it.L('Step 1: Choose demo or real account')}
                                         types={[
                                             { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with virtual funds in a risk-free environment.') },
-                                            { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and access to competitive trading conditions.') },
+                                            { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and get access to competitive trading conditions.') },
                                         ]}
                                     />
                                 </div>
@@ -274,7 +287,7 @@ const Metatrader = () => (
                                             { type: 'template_real', desc: 'financial' },
                                         ]}
                                     >
-                                        <a className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
+                                        <a data-show='-eucountry' className='hint hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Which account is right for me?')}</a>
                                     </TypeGroup>
                                 </div>
                                 <div id='authenticate_loading' className='invisible'><Loading /></div>
@@ -292,7 +305,8 @@ const Metatrader = () => (
                             <div id='view_3' className='gr-row invisible'>
                                 <div className='container gr-12'>
                                     <p id='trading_password_new_user' className='center-text notice-msg invisible'>
-                                        {it.L('Create a MT5 password. You can use this password for all your MT5 accounts.')}
+                                        <span className='client-general'>{it.L('Create an MT5 password. You can use this password for all your MT5 accounts.')}</span>
+                                        <span className='client-eu invisible'>{it.L('Create an MT5 password for logging in to your CFDs account.')}</span>
                                     </p>
                                     <p id='trading_password_new_user_confirm' className='center-text notice-msg invisible'>
                                         {it.L('Confirm to create your MT5 password')}
@@ -319,8 +333,8 @@ const Metatrader = () => (
                                         <p id='trading_password_existing_user_validation_error' className='align-start invisible'>
                                             {it.L('Hint: You may have chosen a different MT5 password from your [_1] log in password.', it.website_name)}
                                         </p>
-                                        <button type='button' id='btn_forgot_trading_password' className='button button-secondary btn-back'>
-                                            {it.L('Forgot password?')}
+                                        <button type='button' id='new_user_cancel_button' className='button button-secondary btn-cancel'>
+                                            {it.L('Cancel')}
                                         </button>
                                         <button className='button'  id='existing_user_btn_submit_new_account' type='submit' action='new_account'>
                                             {it.L('Add account')}
@@ -334,7 +348,7 @@ const Metatrader = () => (
                                             <span>{it.L('Back')}</span>
                                         </a>
                                         <button className='button invisible' id='new_user_btn_submit_new_account' type='submit' action='new_account'>
-                                            {it.L('Create MT5 password')}
+                                            {it.L('Set MT5 password')}
                                         </button>
                                         <button className='button invisible' id='new_user_btn_submit_new_account_confirm' type='submit' action='new_account'>
                                             {it.L('Create')}
@@ -387,9 +401,9 @@ const Metatrader = () => (
                                 <div className='center-text hint gr-padding-20 gr-parent'>
                                     <div id='existing_client_message'>
                                         <div className='step-1'>
-                                            <h3 className='password_change_title secondary-color'>{it.L('MT5 password')}</h3>
+                                            <h3 className='password_change_title secondary-color'>{it.L('You have a trading password for MT5')}</h3>
                                             <p className='notice-msg center-text font-n'>
-                                                {it.L('Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps.')}
+                                                {it.L('Use MT5 password to sign in to any of your CFDs accounts when using MT5 apps on your mobile or other devices.')}
                                             </p>
                                             {/* TODO: temporary invisible. refactor this when design is updated */}
                                             <div id='dummy_password' className='gr-row form-row center-text-m two-rows dummy-password invisible'>
@@ -416,7 +430,7 @@ const Metatrader = () => (
                                                 href='javascript:;'
                                                 className='button full-width'
                                             >
-                                                <span>{it.L('Change password')}</span>
+                                                <span>{it.L('Manage MT5 password')}</span>
                                             </a>
                                         </div>
                                         <div className='step-2 invisible'>
@@ -445,11 +459,11 @@ const Metatrader = () => (
                                     <div className='center-text hint gr-padding-20 gr-parent'>
                                         <h3 className='secondary-color'>{it.L('Change investor password')}</h3>
                                     </div>
-                                    <p className='no-margin'>{it.L('Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you\'ve forgotten your password.')}</p>
-                                    <FormRow autoComplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current investor password')} />
-                                    <FormRow autoComplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New investor password')} />
+                                    <p className='no-margin'>{it.L('Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create password, or you have forgotten your password, please reset it.')}</p>
+                                    <FormRow autoComplete='current-password' is_two_rows type='password' id='txt_old_password' label={it.L('Current investor password')} row_class='change-investor-password' />
+                                    <FormRow autoComplete='new-password' is_two_rows has_password_meter type='password' id='txt_new_password' label={it.L('New investor password')} row_class='change-investor-password' />
                                     <p className='no-margin font-s'>
-                                        {it.L('Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers.')}
+                                        {it.L('Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols.')}
                                     </p>
                                     <SubmitButton
                                         no_wrapper
@@ -459,16 +473,6 @@ const Metatrader = () => (
                                         text={it.L('Change investor password')}
                                         attributes={{ action: 'password_change' }}
                                     />
-                                </form>
-                                <form className='invisible' id='frm_verify_password_reset'>
-                                    <p className='center-text notice-msg no-margin invisible' id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</p>
-                                    <button
-                                        type='submit'
-                                        className='button-secondary button-full-width'
-                                        action='verify_password_reset'
-                                    >
-                                        {it.L('Create or reset password')}
-                                    </button>
                                 </form>
                                 <form className='invisible' id='frm_verify_password_reset_token'>
                                     <div className='gr-padding-10'>

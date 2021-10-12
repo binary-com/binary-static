@@ -163,12 +163,12 @@ const Header = (() => {
                 upgrade_btn_txt = localize('Open a Real Account');
             } else if (upgrade_info.can_upgrade_to.length === 1) {
                 upgrade_link_txt = upgrade_info.type[0] === 'financial'
-                    ? localize('Click here to open a Financial Account')
+                    ? localize('Click here to open a Multipliers Account')
                     : upgrade_info.can_upgrade_to[0] === 'malta' ?
-                        localize('Click here to open a Gaming account') :
+                        localize('Click here to open an Options account') :
                         localize('Click here to open a Real Account');
                 upgrade_btn_txt = upgrade_info.type[0] === 'financial'
-                    ? localize('Open a Financial Account')
+                    ? localize('Open a Multipliers Account')
                     : localize('Open a Real Account');
             }
 

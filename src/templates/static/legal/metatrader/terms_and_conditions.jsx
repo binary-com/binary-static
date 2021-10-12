@@ -26,7 +26,8 @@ const TermsAndConditions = () => (
                 <span data-show='-eucountry'>{it.L('Deriv (V) Ltd,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Deriv (SVG) LLC,')}&nbsp;</span>
                 <span data-show='-eucountry'>{it.L('Deriv (BVI) Ltd,')}&nbsp;</span>
-                <span data-show='-eucountry'>{it.L('Deriv (FX) Ltd, or')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Deriv (FX) Ltd,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('or')}&nbsp;</span>
                 <span>{it.L('Deriv Investments (Europe) Limited.')}</span>
             </li>
 

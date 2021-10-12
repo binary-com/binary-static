@@ -248,6 +248,10 @@ label {
     width: 100%;
 }
 
+.strong {
+    font-weight: bold;
+}
+
 .width-50 {
     width: 50%;
 }
@@ -393,6 +397,20 @@ input[type=checkbox] {
 .logged_out_title_container {
     margin-top: 40px;
     margin-bottom: 40px;
+    text-align: center;
+}
+
+.signup-warning-message {
+    padding-bottom: 40px;
+}
+
+.padding-2rem {
+    padding: 2rem;
+}
+
+.padding-x-30 {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
 }
 
 .red {

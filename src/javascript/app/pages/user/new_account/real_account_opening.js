@@ -102,10 +102,7 @@ const RealAccountOpening = (() => {
     }));
 
     const setPageTitle = () => {
-        getElementById('page_title').innerHTML =
-            real_account_signup_target === 'maltainvest'
-                ? localize('Financial Account Opening')
-                : localize('Real money account opening');
+        getElementById('page_title').innerHTML = localize('Real money account opening');
     };
 
     const onUnload = () => { AccountOpening.showHidePulser(1); };

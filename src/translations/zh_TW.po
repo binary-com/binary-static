@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-06 08:19\n"
+"PO-Revision-Date: 2021-10-11 15:03\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -325,8 +325,8 @@ msgstr "%1 通過以下計劃提供商業夥伴關係服務。"
 msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
 msgstr "%1提供虛擬貨幣設施讓您以模擬資金實踐交易策略。使用螢幕右上角的下拉清單可切換到模擬帳戶。"
 
-msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
-msgstr "%1 向世界各地的機構客戶提供廣泛的資產市場報價和交易執行服務，包括主要貨幣對、現貨金屬、差價合約指數和受歡迎的加密貨幣。"
+msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, stocks, stock indices, popular cryptocurrencies, and Synthetic indices."
+msgstr "%1 向世界各地的機構客戶提供廣泛的資產市場報價和交易執行服務，包括主要貨幣對、現貨金屬、股票、股票指數、受歡迎的加密貨幣和綜合指數。"
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
 msgstr "%1在管理傳入訂單時通過採用智慧型匯總方法為客戶提供最佳執行方案。智慧型匯總方法的工作原理是"
@@ -360,6 +360,9 @@ msgstr "%1支持%2。這是英國一家領先的慈善機構，致力於消除�
 
 msgid "%1 takes home first prize in the Financial Trading Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1在久負盛名的倫敦EGR操作員頒獎儀式中榮獲2015年金融交易操作員第一獎。"
+
+msgid "%1 trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr "%1交易就像任何其他活動一樣，過於沉迷可能會上癮。為了避免發生此種風險，我們定期向您提供交易和財務的實況簡報。"
 
 msgid "%1 tries to maintain a reasonable relation between the quoted prices of each underlying asset that a Binary Option refers to and the actual market prices of such an asset. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 努力讓二元期權所提交的每個標的資產報價與該資產的實際市價保持合理關係。%1 不保證、表達或意味着所報的價代表當時市價。"
@@ -748,11 +751,8 @@ msgstr "商業或任何商業相關領域、資訊技術相關領域、或犯罪
 msgid "A bachelor's degree in commerce or any business-related field, law, or risk management"
 msgstr "商業或任何商業相關領域、法律或風險管理學士學位"
 
-msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is synthetic indices."
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is Synthetic Indices."
 msgstr "二元期權是指一方承諾如果某一資產的價值在預定期間內朝著特定方向發生變化，將向另一方支付特定數額的合約 。公司提供的二元期權主要基礎資產類別是綜合指數."
-
-msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
-msgstr "二元期權是指一方承諾如果某一資產的價值在預定期間內朝著特定方向發生變化，將向另一方支付特定數額的合約 。公司提供的二元期權三大基礎資產類別是"
 
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
 msgstr "二元期權為交易者所買入之合約，如果預測正確即可獲得預先確定的獲利金額。"
@@ -1597,9 +1597,6 @@ msgstr "就算是極微小的任務也能以開放的心態對待, 並學習新�
 msgid "Appropriateness"
 msgstr "合適性"
 
-msgid "Appropriateness Test: WARNING:"
-msgstr "合適性測試:警告:"
-
 msgid "Appropriateness test"
 msgstr "合適性測試"
 
@@ -2203,11 +2200,14 @@ msgstr "二元期權交易經驗"
 msgid "Binary options trading frequency"
 msgstr "二元期權交易頻率"
 
+msgid "Binary options trading is not available in your Multipliers account."
+msgstr "您的乘數帳戶無法進行二元期權交易。"
+
 msgid "Binary options trading is not available in your country."
 msgstr "您的國家無法進行二元期權交易。"
 
-msgid "Binary options trading is not available in your financial account."
-msgstr "您的金融帳戶無法進行二元期權交易。"
+msgid "Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account."
+msgstr "通過乘數帳戶無法進行二元期權交易。<br/>請轉回到期權帳戶。"
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "相對說來，二元期權交易是很容易的。您可以通過三個簡單步驟購買合約："
@@ -2436,6 +2436,9 @@ msgstr "差價合約交易頻率"
 
 msgid "CFDs"
 msgstr "差價合約"
+
+msgid "CFDs Account"
+msgstr "差價合約帳戶"
 
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "差價合約是複雜的工具, 並且由於槓桿作用，資金迅速虧損的風險很高。透過 Deriv Investments (Europe) Limited 進行差價合約交易時有%1的零售投資者帳戶蒙受虧損。您必須考慮自己是否了解差價合約的運作方式, 以及是否能夠承擔資金虧損的高風險。"
@@ -2740,14 +2743,14 @@ msgstr "辦事員"
 msgid "Click OK to proceed."
 msgstr "按一下「確定」繼續。"
 
-msgid "Click here to open a Financial Account"
-msgstr "按一下此處開立財務帳戶"
-
-msgid "Click here to open a Gaming account"
-msgstr "按一下此處開立博彩帳戶"
+msgid "Click here to open a Multipliers Account"
+msgstr "按一下此處開立乘數帳戶"
 
 msgid "Click here to open a Real Account"
 msgstr "按一下此處開立真實帳戶"
+
+msgid "Click here to open an Options account"
+msgstr "按一下此處開立期權帳戶"
 
 msgid "Click here to retry"
 msgstr "點選此處重試"
@@ -3015,9 +3018,6 @@ msgstr "公司的義務"
 
 msgid "Company's rights"
 msgstr "公司權利"
-
-msgid "Compare MetaTrader 5 accounts"
-msgstr "比較MetaTrader 5 帳戶"
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "投資者補償計畫下的補償"
@@ -3391,17 +3391,17 @@ msgstr "開立%1帳戶"
 msgid "Create Account"
 msgstr "開立帳戶"
 
-msgid "Create MT5 password"
-msgstr "建立 MT5 密碼"
-
 msgid "Create New Demo Account"
 msgstr "開設新的模擬帳戶"
 
-msgid "Create a MT5 password. You can use this password for all your MT5 accounts."
-msgstr "建立 MT5 密碼。您可在所有 MT5 帳戶使用此密碼。"
+msgid "Create a CFDs account"
+msgstr "開立差價合約帳戶"
 
 msgid "Create a MetaTrader 5 account"
 msgstr "建立MetaTrader 5 帳戶"
+
+msgid "Create a New Demo Account"
+msgstr "開設新的模擬帳戶"
 
 msgid "Create a new Binary password."
 msgstr "建立新的 Binary 密碼。"
@@ -3414,6 +3414,12 @@ msgstr "開立帳戶"
 
 msgid "Create an MT5 account now"
 msgstr "立刻開立MT5帳戶"
+
+msgid "Create an MT5 password for logging in to your CFDs account."
+msgstr "建立 MT5 密碼是用於登入差價合約帳戶."
+
+msgid "Create an MT5 password. You can use this password for all your MT5 accounts."
+msgstr "建立 MT5 密碼。您可在所有 MT5 帳戶使用此密碼。"
 
 msgid "Create and maintain wireframes and mockups for new and existing products"
 msgstr "為新產品和現有產品建立和維護線框和模型"
@@ -3436,7 +3442,7 @@ msgstr "通過以下方式註冊免費帳戶"
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr "建立用於定價的數學/統計模型, 分析肥尾效應以評估保證金要求, 並管理奇異期權、外匯和差價合約的風險"
 
-msgid "Create new demo account"
+msgid "Create new Demo account"
 msgstr "開設新的模擬帳戶"
 
 msgid "Create new token"
@@ -3444,9 +3450,6 @@ msgstr "新增新權杖"
 
 msgid "Create or Manage Accounts"
 msgstr "開立或管理帳戶"
-
-msgid "Create or reset password"
-msgstr "建立或重設密碼"
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
 msgstr "針對因破壞性創新而可能產生的潛在風險制定策略"
@@ -3742,6 +3745,9 @@ msgstr "模擬帳戶"
 msgid "Demo Accounts"
 msgstr "模擬帳戶"
 
+msgid "Demo CFDs"
+msgstr "模擬差價合約"
+
 msgid "Demo Financial"
 msgstr "示範財務"
 
@@ -3829,11 +3835,11 @@ msgstr "Deriv (歐洲) 有限公司"
 msgid "Deriv (Europe) Limited,"
 msgstr "Deriv (Europe) Limited,"
 
-msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%3) and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
-msgstr "Deriv  (Europe) Limited，地址為 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta，(%1的綜合指數交易 - 僅博彩產品) 由位於馬爾他的馬爾他博彩局授予執照和監管（%2執照號MGA/B2C/102/2000%3), ，愛爾蘭客戶由稅務局授予執照和監管(執照號: 1010285)。"
-
 msgid "Deriv (FX) Ltd"
 msgstr "Deriv (FX) Ltd"
+
+msgid "Deriv (FX) Ltd,"
+msgstr "Deriv (FX) Ltd,"
 
 msgid "Deriv (FX) Ltd, or"
 msgstr "Deriv (FX) Ltd, 或"
@@ -4486,8 +4492,8 @@ msgstr "輸入付款代理 ID"
 msgid "Enter the authentication code generated by the app below:"
 msgstr "輸入以下應用程式生成的身份驗證代碼:"
 
-msgid "Enter your MT5 password to add a %1 MT5 %2 account."
-msgstr "輸入 MT5 密碼以新增 %1 MT5 %2 帳戶。"
+msgid "Enter your MT5 password to add a %1 %2 account."
+msgstr "輸入 MT5 密碼以新增 %1 %2 帳戶。"
 
 msgid "Enter your document number"
 msgstr "輸入文件號"
@@ -5059,9 +5065,6 @@ msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫%1客服�
 msgid "Financial STP"
 msgstr "金融 STP"
 
-msgid "Financial STP Account"
-msgstr "金融 STP 帳戶"
-
 msgid "Financial STP account"
 msgstr "金融 STP 帳戶"
 
@@ -5082,6 +5085,9 @@ msgstr "金融資訊"
 
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "無論您是新手還是經驗豐富的交易員，都有適合您的交易策略的平台-。"
+
+msgid "Find out more"
+msgstr "尋找更多訊息"
 
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我們提供的每個差價合約資產的成本和詳細資料。"
@@ -5118,9 +5124,6 @@ msgstr "選擇您的頭寸參數..."
 
 msgid "First-class client service."
 msgstr "一流的客戶服務。"
-
-msgid "Fixed spreads"
-msgstr "固定利差"
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "解決問題並提供改進建議。"
@@ -5265,9 +5268,6 @@ msgstr "外匯交易涉及買入一種貨幣並同時賣出另一種貨幣。因
 
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "外匯交易涉及買入或賣出這些「貨幣對」。當您買入例如歐元/美元的貨幣對時，意味著您正在買入歐元並同時賣出美元。"
-
-msgid "Forgot password?"
-msgstr "忘記密碼?"
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 成立於1999年，是線上二元期權交易行業中歷史最悠久、享有最高聲譽之佼佼者之一。"
@@ -5487,6 +5487,9 @@ msgstr "多頭和空頭頭寸"
 
 msgid "Go short = sell"
 msgstr "空頭頭寸 = 賣出"
+
+msgid "Go to DTrader"
+msgstr ""
 
 msgid "Go to MT5 download page"
 msgstr "前往 MT5 下載頁面"
@@ -6367,9 +6370,6 @@ msgstr "為了從交易利率中獲利，有必要平倉。執行與首次交易
 msgid "In providing IB services, the Introducing Broker shall"
 msgstr "提供IB服務時，推介經紀須"
 
-msgid "In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
-msgstr "為了給您提供服務，我們需要向您獲取資訊，以便評估某項產品或服務是否適合您（也就是說，要看您是否擁有足夠的經驗和知識來了解相關的風險）。"
-
 msgid "In providing the Agent's services, the Agent shall do the following:"
 msgstr "提供代理服務時，代理必須辦理以下各項:"
 
@@ -6400,8 +6400,8 @@ msgstr "歐盟國家的金融產品交易由 Deriv Investments (Europe) Limited 
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "歐盟國家的金融產品交易由 Deriv Investments (Europe) Limited 提供，地址為W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta，由馬爾他金融服務機構監管為3級投資服務提供商 (執照號碼為%1IS/70156%2)。"
 
-msgid "In the Isle of Man and the UK, virtual events based bets on synthetic indices offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under account no. 39172 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr "英國和曼島基於虛擬事件的綜合指數博彩由 Deriv (MX) Ltd. 提供，地址為：Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man，已經在英國由(1)博彩委員會通過帳號39172及由 (2) 曼島博彩監管委員會授予執照和監管 (%2 檢視執照%3）。"
+msgid "In the Isle of Man and the UK, virtual-events-based bets on synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under %1account no. 39172%3 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
+msgstr "英國和曼島基於虛擬事件的綜合指數博彩由 Deriv (MX) Ltd. 提供，地址為：Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man，已經在英國由(1)博彩委員會通過%1帳號39172%3及由 (2) 曼島博彩監管委員會授予執照和監管 (%2 檢視執照%3）。"
 
 msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Limited. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr "在英國，我們的客戶通過 Deriv (MX) Ltd 和 Deriv Investments (Europe) Limited 進行交易。在曼島，他們通過 Deriv (MX) Ltd 進行交易。在歐盟（除了英國），他們通過 Deriv (Europe) Limited 和 Deriv Investments (Europe) Limited 進行交易。在全世界其他地區，他們通過 Deriv (SVG) LLC，Deriv (V) Ltd，Deriv (BVI) Ltd 和 Deriv (FX) Ltd 進行交易。"
@@ -6433,8 +6433,8 @@ msgstr "交易日結束前如果公司沒有收到客戶對持倉頭寸決定平
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Deriv group of companies for, any claims or demands made against the Company or any member of the Deriv group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "如公司發現聯盟會員違反任何上述規定，除了擁有根據本協議或適用法律的任何其他權利或賠償權利，公司有權立即阻止該聯盟會員對公司的存取。該聯盟會員因此不可撤銷地放棄其權利，而且如果公司撤銷該聯盟會員對公司的存取，聯盟會員須對公司及任何 Deriv 集團公司成員、其董事、職員、股東、僱員或由公司針對%1網站的任何索賠或要求索賠作出賠償。"
 
-msgid "In the rest of the EU, Synthetic Indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority (%1licence no. MGA/B2C/102/2000%3) and (2) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete %2Regulatory Information%3."
-msgstr "歐盟其他地區的綜合指數交易由Deriv (Europe) Limited提供，地址為 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta，由(1) 馬爾他博彩局授予執照和監管（%1執照號MGA/B2C/102/2000%3), ， 及 (2) 愛爾蘭客戶由稅務局授予執照和監管(執照號: 1010285)。查閱完整的%2監管資訊%3。"
+msgid "In the rest of the EU, Synthetic indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority (%1licence no. MGA/B2C/102/2000%3)  and (2) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete %2Regulatory Information%3."
+msgstr "歐盟其他地區的綜合指數交易由Deriv (Europe) Limited提供，地址為 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta，由(1) 馬爾他博彩局授予執照和監管 (%1執照號MGA/B2C/102/2000%3), ， 及 (2) 愛爾蘭客戶由稅務局授予執照和監管(執照號: 1010285)。查閱完整的%2監管資訊%3。"
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "本協議中，除非上下文另有解釋，否則以下定義應適用："
@@ -6615,9 +6615,6 @@ msgstr "差價合約和外匯等複雜產品投資可能會令您蒙受損失，
 
 msgid "Investing or trading in contracts exposes the client to the performance of the underlying or reference instrument or asset to which the Binary contract refers, including foreign exchange, stock indices, and commodities, each of which have their own features and risks."
 msgstr "合同投資或交易將客戶顯示在 Binary 合同所指的標的或參考工具或資產的效能中，包括外匯、股票指數和大宗商品，每一種都各有其自身的特點和風險。"
-
-msgid "Investment"
-msgstr "投資"
 
 msgid "Investment Income"
 msgstr "投資收入"
@@ -7822,6 +7819,9 @@ msgstr "乘數上漲"
 msgid "Multipliers"
 msgstr "乘數期權"
 
+msgid "Multipliers Account"
+msgstr "乘數帳戶"
+
 msgid "Must be a clear, colour photo"
 msgstr "必須是清晰的彩色照片"
 
@@ -8323,8 +8323,8 @@ msgstr "開源"
 msgid "Open a %1 account through DIEL's website %2"
 msgstr "在DIEL的網站 %2開立 %1 帳戶"
 
-msgid "Open a Financial Account"
-msgstr "開設金融帳戶"
+msgid "Open a Multipliers Account"
+msgstr "開立乘數帳戶"
 
 msgid "Open a Real Account"
 msgstr "開立真實帳戶"
@@ -8380,14 +8380,14 @@ msgstr "開盤"
 msgid "Options"
 msgstr "期權"
 
+msgid "Options Account"
+msgstr "期權帳戶"
+
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "此選項讓你「回顧」市場達到的最高或最低價, 以確定賠付額。"
 
 msgid "Options that offer a fixed payout based on a simple yes/no proposition."
 msgstr "基於簡單的「是/否」合約，並且固定賠付額的期權。"
-
-msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
-msgstr "二元期權交易就像任何其他活動一樣，過於沉迷可能會上癮。為了避免發生此種過於入迷的風險，我們定期向您提供交易和財務的實況簡報。"
 
 msgid "Order"
 msgstr "訂單"
@@ -8434,20 +8434,17 @@ msgstr "除了佣金支付，Binary不對推介經紀或其夥伴或任何其他
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "我們的帳戶處理和款項支付團隊管理廣泛的銀行帳戶和電子貨幣系統以及每天進行的大量交易。"
 
+msgid "Our CFDs account is suitable for both new and experienced traders."
+msgstr "我們的差價合約帳戶適用于新手和經驗豐富的交易者。"
+
 msgid "Our Company"
 msgstr "我們公司"
 
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "MT5 伺服器暫時不能用。正在修復中。請於數分鐘後重試。"
 
-msgid "Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products."
-msgstr "我們的 MetaTrader 5 財務 STP 帳戶為您提供極低的差價, 更高的票證大小, 並提供更多的產品。"
-
 msgid "Our MetaTrader 5 Financial account is suitable for both new and experienced traders."
 msgstr "我們的 MetaTrader 5 財務帳戶適用于新手和經驗豐富的交易者。"
-
-msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
-msgstr "我們的綜合帳戶允許您對綜合指數進行差價交易 - 這是我們專有的綜合資產，可模擬市場力量。"
 
 msgid "Our active client base is expected to reach over 790,000 total clients this year."
 msgstr "我們今年的預計活躍客戶總數將超過79萬人。"
@@ -8485,6 +8482,9 @@ msgstr "我們的金屬對通常以手為交易單位。一個標準手數相當
 msgid "Our office in Dubai is located at the world-class Jumeirah Lake Towers (JLT) free zone. JLT is home to universities, commercial and residential towers, parks, and over 500 retail outlets, giving you exceptional convenience and a quality of life that you won't find anywhere else."
 msgstr "公司的杜拜辦事處位於世界級的Jumeirah Lake Towers（JLT）自由區。JLT集大學、商業和住宅樓、公園和500多家零售店於一體，為您提供其他任何地方都沒有的獨特便利和生活品質。"
 
+msgid "Our products and services may expose you to risks that can be substantial at times, including the risk of losing your entire investment. Please note that by clicking %1Continue%2, you’ll be accepting these risks."
+msgstr "我們的產品和服務有時可能會使您面臨巨大的風險，包括失去全部投資的風險。 請注意，通過點選%1繼續%2，您將接受這些風險。"
+
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "我們專有的、模擬市場力量的綜合指數"
 
@@ -8509,8 +8509,8 @@ msgstr "我們的價值觀"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "我們網站使用 cookie 為您提供最佳的使用者體驗。請%1參閱我們的政策 %2。"
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "歐盟以外地區，金融產品由 Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines 提供服務。Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu提供服務，受瓦努阿圖金融服務委員會監管（%1查看執照%2），或由Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands 提供服務，受英屬維爾京群島金融服務委員會監管（%3執照編號SIBA/L/18/1114%4）以及由Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia提供服務，受納閩金融服務管理局監管，並開展貨幣經紀業務（%5執照編號MB/18/0024%6）。"
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr "歐盟以外地區，金融產品由 Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines 提供服務。Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu提供服務，受瓦努阿圖金融服務委員會監管（%1查看執照%2），或由Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands 提供服務，受英屬維爾京群島金融服務委員會監管（%3執照編號SIBA/L/18/1114%4）以及由Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia提供服務，受納閩金融服務管理局監管，並開展貨幣經紀業務（%5執照編號MB/18/0024%6）。"
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "出色的書面和口頭交流能力以及傑出的英語水平"
@@ -8994,6 +8994,9 @@ msgstr "請重新載入頁面"
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "請記住，二元期權交易不論在什麼時候都會是一項令人興奮的活動，但出於道義，我們有責任提醒您可能會遇到的風險。像其它追求極限的活動一樣，期權交易可能會使人上癮。我們懇請您參與認真的自我剖析，評估自身是否已經上癮。為了避免上癮，請您遵循一些基本的原則和指導方針，這是很重要的。"
+
+msgid "Please remember that it is your responsibility to keep your answers accurate and up to date."
+msgstr "請記住，保持答案準確和更新是您的責任。"
 
 msgid "Please resolve all pending issues to continue"
 msgstr "請解決所有未決問題以繼續"
@@ -9555,6 +9558,9 @@ msgstr "真實帳戶"
 
 msgid "Real Account Opening"
 msgstr "開立真實帳戶"
+
+msgid "Real CFDs"
+msgstr "真實差價合約"
 
 msgid "Real Estate"
 msgstr "房地產"
@@ -10252,7 +10258,7 @@ msgstr "像abc或6543這樣的序列密碼很容易猜到"
 msgid "Server"
 msgstr "伺服器"
 
-msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
+msgid "Server maintenance starts at 01:00 (GMT) every Sunday. This process may take up to 2 hours to complete. You may experience service disruption during this time."
 msgstr "伺服器維護每週日從格林尼治標準時間01:00開始。此過程最多可能需要2個小時才能完成。此期間內服務可能會中斷。"
 
 msgid "Server:"
@@ -10269,6 +10275,9 @@ msgstr "工作階段時間："
 
 msgid "Set Currency"
 msgstr "設定貨幣"
+
+msgid "Set MT5 password"
+msgstr "設定 MT5 密碼"
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "您可設定用於確認頭寸參數以及觸發賠付的障礙水平。"
@@ -10669,9 +10678,6 @@ msgstr "儲存過程"
 msgid "Straight rows of keys are easy to guess"
 msgstr "直線排列鍵很容易猜到"
 
-msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
-msgstr "強密碼須至少8個字元，及包含大小寫字母和數字。"
-
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "經證明具優秀的問題分析能力或對進入本領域有濃厚興趣"
 
@@ -10692,6 +10698,9 @@ msgstr "流利區域語言和英語溝通（口頭/書面）技巧"
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
 msgstr "強密碼須至少8個字元，及包含大小寫字母、數字和符號。"
+
+msgid "Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols."
+msgstr "強密碼須至少8個字元。包含大小寫字母、數字和符號。"
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "對顏色、排版、辨識設計和品牌非常熟悉"
@@ -10866,9 +10875,6 @@ msgstr "符號"
 
 msgid "Synthetic"
 msgstr "綜合"
-
-msgid "Synthetic Account"
-msgstr "綜合帳戶"
 
 msgid "Synthetic Indices"
 msgstr "綜合指數"
@@ -13111,6 +13117,9 @@ msgstr "全天均可交易，包括週末。"
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "不需擁有實物也能交易比特幣、以太幣和萊特幣。我們的加密貨幣對報出例如比特幣的加密貨幣與例如美元的法定貨幣的兌換價格。"
 
+msgid "Trade CFDs on forex, stocks, stock indices, commodities, Synthetic Indices, and cryptocurrencies on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
+msgstr "使用提供出色的交易選項和技術分析工具的多資產平台MetaTrader 5進行外匯、股票、股票指數、大宗商品、綜合指數和加密貨幣的差價合約交易。"
+
 msgid "Trade a larger position than your exisiting capital."
 msgstr "進行比您現有資本更大頭寸的交易。"
 
@@ -13143,9 +13152,6 @@ msgstr "在我們受歡迎的多資產平台進行外匯和差價合約交易。
 
 msgid "Trade forex and CFDs with a powerful platform recognised as the global standard."
 msgstr "透過被公認為符合全球標準的平台進行外匯和差價合約交易。"
-
-msgid "Trade forex and contracts for difference (CFDs) on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
-msgstr "使用提供出色的交易選項和技術分析工具的多資產平台 MetaTrader 5 進行外匯和差價合約 (CFD) 交易。"
 
 msgid "Trade in the world's financial markets"
 msgstr "在世界金融市場交易"
@@ -13201,8 +13207,8 @@ msgstr "易進易出- %1 提供廣泛的存取款方式。您的資金將由安�
 msgid "Trade with leverage"
 msgstr "利用槓桿進行交易"
 
-msgid "Trade with real funds and access to competitive trading conditions."
-msgstr "用真實資金交易, 享受競爭力強的交易條件。"
+msgid "Trade with real funds and get access to competitive trading conditions."
+msgstr "用真實資金交易, 擁有競爭力強的交易條件。"
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology."
 msgstr "通過擁有受專利保護的報價技術的業內領先企業進行交易。"
@@ -13277,7 +13283,7 @@ msgid "Trading on %1 can become addictive. If you feel the need to exclude yours
 msgstr "透過 %1交易可能會上癮。如果您覺得有必要限制自己進入此網站, 請使用 %2自我禁止設施%3。"
 
 msgid "Trading options may not be suitable for everyone, so please ensure that you fully understand the risks involved."
-msgstr ""
+msgstr "期權交易並不適合所有人，請確保您完全明白有關的風險。"
 
 msgid "Trading platforms"
 msgstr "交易平台"
@@ -13579,6 +13585,9 @@ msgstr "理解"
 msgid "Unemployed"
 msgstr "失業人員"
 
+msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
+msgstr "很遺憾，您所在的國家/地區不提供此服務。 如果您想交易乘數，請嘗試 Deriv 的 DTrader。"
+
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "市場行銷、數學、資訊技術/程式設計或任何相關領域的大學學位"
 
@@ -13690,6 +13699,9 @@ msgstr "本協議到期或終止時（不論是什麼原因），所有通過本
 msgid "Usage limit"
 msgstr "使用限制"
 
+msgid "Use MT5 password to sign in to any of your CFDs accounts when using MT5 apps on your mobile or other devices."
+msgstr "在手機或其他裝置使用MT5應用時使用 MT5 密碼登入任何差價合約帳戶。"
+
 msgid "Use a few words, avoid common phrases"
 msgstr "用幾個詞，避免常用短語"
 
@@ -13738,11 +13750,8 @@ msgstr "盡全力和責任將存入%1 代理帳戶的資金分別轉入%1 客戶
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "盡全力為Binary爭取潛能客戶"
 
-msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. Click Create or reset password, if this is your first investor password or if you've forgotten your password."
-msgstr "用此密碼給予其他使用者檢視權限。該使用者檢視您的交易帳戶時將無法交易或採取任何其他行動。如果這是您的首個投資者密碼或忘了密碼，請點選建立或重設密碼。"
-
-msgid "Use this password to log in to your MT5 accounts on the desktop, web, and mobile apps."
-msgstr "使用此密碼登入桌面、網絡和手機應用上的 MT5 帳戶."
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create password, or you have forgotten your password, please reset it."
+msgstr "用此密碼給予其他使用者檢視權限。該使用者檢視您的交易帳戶時將無法交易或採取任何其他行動。如果這是您第一次嘗試建立或忘了密碼，請重設密碼。"
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "充分利用某些支付處理器提供的任何可用的附加功能"
@@ -13908,6 +13917,9 @@ msgstr "量額步驟"
 
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
+
+msgid "WARNING"
+msgstr "警告"
 
 msgid "Waiting for contract settlement."
 msgstr "等待合約結算。"
@@ -14707,6 +14719,9 @@ msgstr "您可在合約到期前賣出交易合約，以鎖定利潤或將虧損
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "如果您的餘額為 %2 或更低, 您可以在模擬帳戶內新增 %1。"
 
+msgid "You can update personal details at any time in your account settings."
+msgstr "您可以隨時在帳戶設定中更新個人詳細資料。"
+
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "對於不受 %1  支持的支付方式或本地貨幣， 您可使用授權支付代理輕鬆處理存款和取款。"
 
@@ -14730,6 +14745,9 @@ msgstr "您有了新的 Binary 密碼，用於登入 Binary.com。"
 
 msgid "You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps."
 msgstr "您有了新的 MT5 密碼，用於登入網絡和手機應用上的 MT5 帳戶."
+
+msgid "You have a trading password for MT5"
+msgstr "您有了MT5的交易密碼"
 
 msgid "You have added a %1 account."
 msgstr "您已建立了 %1帳戶。"
@@ -14884,8 +14902,8 @@ msgstr "必須設定密碼以完成流程。"
 msgid "You will not be able to change currency once you have made a deposit."
 msgstr "存款後將無法更改幣種."
 
-msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
-msgstr "開立此 MT5 帳戶後, 將無法更改法定帳戶的幣種。確定要繼續嗎？"
+msgid "You will not be able to change your fiat account currency after creating this %1 account. Are you sure you want to proceed?"
+msgstr "開立此%1帳戶後, 將無法更改法定帳戶的幣種。確定要繼續嗎？"
 
 msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
 msgstr "存入此款項後, 將無法更改法定帳戶的幣種。確定要繼續嗎？"
@@ -15214,8 +15232,8 @@ msgstr "模擬資金存入帳戶"
 msgid "deposit"
 msgstr "存款"
 
-msgid "deposit or create an MT5 account"
-msgstr "存款或開立MT5帳戶"
+msgid "deposit or create a CFDs account"
+msgstr "存款或開立差價合約帳戶"
 
 msgid "details"
 msgstr "詳細資料"
@@ -15366,4 +15384,7 @@ msgstr "{SPAIN ONLY}This is a product with leverage. You should be aware that lo
 
 msgid "{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for difference and forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity."
 msgstr "{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for difference and forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity."
+
+msgid "“Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated for digital options on synthetic indices by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000[_4]) and by Revenue Commissioners for clients in Ireland (licence no. 1010285)."
+msgstr "“Deriv  (Europe) Limited，地址為 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta，綜合指數的數字期權由位於馬爾他的馬爾他博彩局授予執照和監管 (%2執照號MGA/B2C/102/2000[_4]), ，愛爾蘭客戶由稅務局授予執照和監管(執照號: 1010285)。"
 
