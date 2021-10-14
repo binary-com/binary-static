@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-13 06:30\n"
+"PO-Revision-Date: 2021-10-14 13:19\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -462,9 +462,6 @@ msgstr "%1管理您的帳戶%2"
 
 msgid "%1Maximise returns%2 by %3risking more%4 than you put in."
 msgstr "比投注金額%3更大的虧損風險%4可能獲取%1最大的回報%2。"
-
-msgid "%1No, change my fiat account's currency now%2"
-msgstr "%1不, 請立刻更改我的法定帳戶的幣種%2"
 
 msgid "%1Not Sure?%1"
 msgstr "%1不確定？%1"
@@ -1147,8 +1144,14 @@ msgstr "新增"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "透過新增+/-給障礙偏移量定義。例如, +0.005 表示比入市現價高0.005 的障礙。"
 
+msgid "Add a cryptocurrency account"
+msgstr ""
+
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "新增説明，然後點選％1儲存％2以完成註冊。"
+
+msgid "Add a fiat currency account"
+msgstr ""
 
 msgid "Add account"
 msgstr "新增帳戶"
@@ -1158,6 +1161,12 @@ msgstr "加上一兩個字。不常見的詞更好。"
 
 msgid "Add funds"
 msgstr "增加基金"
+
+msgid "Add new account"
+msgstr ""
+
+msgid "Add new crypto account"
+msgstr ""
 
 msgid "Additional business exposure:"
 msgstr "附加商業風險:"
@@ -1629,9 +1638,6 @@ msgstr "確定要在 %1 開立法定帳戶嗎？"
 
 msgid "Are you sure you want to create your %1 account now?"
 msgstr "確定要現在開立 %1 帳戶嗎？"
-
-msgid "Are you sure you want to deposit in %1?"
-msgstr "確認將款存入%1?"
 
 msgid "Are you sure you want to unlink from %1?"
 msgstr "是否確認與%1 解除連結？"
@@ -2662,6 +2668,9 @@ msgstr "檢查中"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "執行長、高級官員和立法委員"
 
+msgid "Choose a cryptocurrency account"
+msgstr ""
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "合約期限的選擇範圍為10 秒到365 天。"
 
@@ -2692,6 +2701,15 @@ msgstr "隨時從一百多萬個交易選項中挑選，並按照您傾向的策
 msgid "Choose from three main trade types:"
 msgstr "從三種主要交易類型中挑選："
 
+msgid "Choose one of your accounts"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new account"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new cryptocurrency account"
+msgstr ""
+
 msgid "Choose scopes:"
 msgstr "選擇範圍:"
 
@@ -2718,6 +2736,9 @@ msgstr "選擇時間範圍為10 秒到365 天。"
 
 msgid "Choose your own strike."
 msgstr "選擇您自己的履約價格。"
+
+msgid "Choose your preferred cryptocurrency"
+msgstr ""
 
 msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
 msgstr "選擇您的首選計劃，填寫申請表，並在獲得批准後接收聯盟會員連結。"
@@ -3403,6 +3424,9 @@ msgstr "建立MetaTrader 5 帳戶"
 msgid "Create a New Demo Account"
 msgstr "開設新的模擬帳戶"
 
+msgid "Create a cryptocurrency account"
+msgstr ""
+
 msgid "Create a new Binary password."
 msgstr "建立新的 Binary 密碼。"
 
@@ -3501,9 +3525,6 @@ msgstr "比特幣和以太幣等加密貨幣是區塊鏈上的分散式數字貨
 
 msgid "Cryptocurrencies*"
 msgstr "加密貨幣*"
-
-msgid "Cryptocurrency"
-msgstr "加密貨幣"
 
 msgid "Cryptocurrency contract specifications"
 msgstr "加密貨幣合約規格"
@@ -3790,14 +3811,26 @@ msgstr "通過國際銀行電匯存入和提取資金。"
 msgid "Deposit as little as 5 USD to start trading."
 msgstr "存款最低僅需5美元即可開始交易."
 
-msgid "Deposit into or withdraw from your real account"
-msgstr "透過您的真實帳戶存取款"
+msgid "Deposit cryptocurrencies"
+msgstr ""
+
+msgid "Deposit in your local currency via an authorised, independent payment agent in your country."
+msgstr ""
 
 msgid "Deposit now"
 msgstr "立刻存款"
 
 msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
+
+msgid "Deposit via bank wire, credit card, and e-wallet"
+msgstr ""
+
+msgid "Deposit via bank wire, credit card, and e-wallet."
+msgstr ""
+
+msgid "Deposit via payment agents"
+msgstr ""
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "存款： %1區塊鏈確認"
@@ -4071,9 +4104,6 @@ msgstr "您是否提供任何工具，以便我管理客戶交易？"
 
 msgid "Do you run a website that promotes forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "您是否在經營促進外匯或二元期權的網站？請加入我們的全球聯盟網路, 將您的線上流量轉成收益。"
-
-msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
-msgstr "想要法定帳戶或加密帳戶？請選擇:"
 
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "想獲取更多有關市場及如何進行交易的資訊嗎？請檢視以下資源。"
@@ -5008,9 +5038,6 @@ msgstr "盛大節日"
 msgid "Fiat"
 msgstr "Fiat"
 
-msgid "Fiat Currency"
-msgstr "法定貨幣"
-
 msgid "Fiat currencies"
 msgstr "法定貨幣"
 
@@ -5163,9 +5190,6 @@ msgstr "加密貨幣資產1手比特幣/美元的一回合交易（比特幣換�
 
 msgid "For details on submitting a complaint to the Company's lead supervisory authority on data processing practices, the client is encouraged to check %1's %2Complaints and disputes%3 section."
 msgstr "關於就公司的資料處理方式事宜向公司的主要監督機構提交投訴的詳細資訊, 建議客戶查看%1的控訴和爭議%2 章節。"
-
-msgid "For e-wallets or local currencies not supported by %1."
-msgstr "%1不支持的電子錢包方式或本地貨幣。"
 
 msgid "For example, if you buy a 100 USD contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "例如，如果您買入美國100合約，但它的走勢與您的推測不同，您只要按照當前的市價賣出就可以減少損失。"
@@ -7441,9 +7465,6 @@ msgstr "管理我們的 bug 通報獎勵計劃"
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
 msgstr "所有伺服器的安全、入侵檢測、DDoS 保護和PCI 法規遵從性措施管理工作"
 
-msgid "Manage the funds in your cryptocurrency account."
-msgstr "管理加密貨幣帳戶資金。"
-
 msgid "Manage your authorised applications."
 msgstr "管理您的授權應用程式。"
 
@@ -7776,9 +7797,6 @@ msgstr "遠離直射光"
 
 msgid "Move away from direct light — no glare"
 msgstr "遠離直射光 - 無眩光現象"
-
-msgid "Move funds in and out of your real account."
-msgstr "透過真實帳戶將資金移入和移出。"
 
 msgid "Mr"
 msgstr "先生"
@@ -10873,6 +10891,15 @@ msgstr "空頭掉期 (每年)"
 msgid "Swiss franc vs Japanese yen"
 msgstr "瑞士法郎兌日圓"
 
+msgid "Switch account"
+msgstr ""
+
+msgid "Switch account?"
+msgstr ""
+
+msgid "Switch to crypto account?"
+msgstr ""
+
 msgid "Symbol"
 msgstr "符號"
 
@@ -12952,6 +12979,12 @@ msgstr "如需更改姓名、生日、居住國或電子郵件地址，請與%1�
 msgid "To create a MetaTrader 5 account:"
 msgstr "想要開立 MetaTrader 5 帳戶:"
 
+msgid "To deposit cryptocurrency, switch your account."
+msgstr ""
+
+msgid "To deposit money, please switch to your %1 account."
+msgstr ""
+
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
 msgstr "要禁用雙因素身份驗證, 請輸入以下應用程式生成的代碼:"
 
@@ -13012,8 +13045,14 @@ msgstr "為了順利驗證，我們需要更好的照片"
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr "執行本協議時，由於各方沒有過錯，該協議已經或隨後已進入公共領域"
 
+msgid "To withdraw cryptocurrency, switch your account."
+msgstr ""
+
 msgid "To withdraw from MetaTrader 5 %1 please %2Authenticate%3 your Binary account."
 msgstr "如果您想從MetaTrader 5 %1帳戶提款，請先通過Binary帳戶的%2驗證%3。"
+
+msgid "To withdraw money, please switch to your %1 account."
+msgstr ""
 
 msgid "Today"
 msgstr "今天"
@@ -13954,6 +13993,9 @@ msgstr "星期三"
 msgid "We accept"
 msgstr "我們接受"
 
+msgid "We accept the following cryptocurrencies:"
+msgstr ""
+
 msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
 msgstr "我們以客戶為中心，致力於打造最佳交易體驗的產品和服務。"
 
@@ -14638,9 +14680,6 @@ msgstr "XTB 國際有限公司 (XTB)"
 msgid "Yes"
 msgstr "是的"
 
-msgid "Yes I'm sure"
-msgstr "是的, 我確認"
-
 msgid "Yes, I'm sure"
 msgstr "是的, 我確認"
 
@@ -14715,6 +14754,9 @@ msgstr "每天只能執行%1次轉帳。請明天重試。"
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "在任何給定時間，您只能使用一個%1帳戶訂閱一個訊號提供者。您最多可以在3台電腦上使用訊號。"
+
+msgid "You can open an account for each cryptocurrency."
+msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "您可在合約到期前賣出交易合約，以鎖定利潤或將虧損減至最低。"
@@ -14907,9 +14949,6 @@ msgstr "存款後將無法更改幣種."
 
 msgid "You will not be able to change your fiat account currency after creating this %1 account. Are you sure you want to proceed?"
 msgstr "開立此%1帳戶後, 將無法更改法定帳戶的幣種。確定要繼續嗎？"
-
-msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
-msgstr "存入此款項後, 將無法更改法定帳戶的幣種。確定要繼續嗎？"
 
 msgid "You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue."
 msgstr "您須解決複雜的使用者體驗問題, 並通過有意義的設計與我們的使用者密切溝通產品功能和功效。您將在建立直觀和功能強大的產品方面發揮關鍵作用, 為我們的使用者提供最佳體驗, 以便我們的使用者群和收入能不斷增長。"
@@ -15389,5 +15428,5 @@ msgid "{SPAIN ONLY}You are about to purchase a product that is not simple and ma
 msgstr "{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for difference and forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity."
 
 msgid "“Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated for digital options on synthetic indices by the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%2) and by Revenue Commissioners for clients in Ireland (licence no. 1010285)."
-msgstr ""
+msgstr "“Deriv  (Europe) Limited，地址為 W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta，綜合指數的數字期權由位於馬爾他的馬爾他博彩局授予執照和監管 (%1執照號MGA/B2C/102/2000%2), ，愛爾蘭客戶由稅務局授予執照和監管(執照號: 1010285)。"
 

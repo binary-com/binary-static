@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-13 06:30\n"
+"PO-Revision-Date: 2021-10-14 13:19\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -462,9 +462,6 @@ msgstr "%1Quản lý tài khoản của bạn%2"
 
 msgid "%1Maximise returns%2 by %3risking more%4 than you put in."
 msgstr "%1Tối đa lợi nhuận%2bằng cách %3mạo hiểm hơn%4 với số tiền bạn bỏ ra."
-
-msgid "%1No, change my fiat account's currency now%2"
-msgstr "%1Không, thay đổi tài khoản tiền fiat bây giờ%2"
 
 msgid "%1Not Sure?%1"
 msgstr "%1Chưa chắc chắn?%1"
@@ -1147,8 +1144,14 @@ msgstr "Thêm"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "Thêm /-để xác định một độ lệch giới hạn. Ví dụ, +0.005 có nghĩa là một giới hạn mà cao hơn 0,005 so với điểm khởi đầu."
 
+msgid "Add a cryptocurrency account"
+msgstr ""
+
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "Thêm mô tả và nhấp vào %1Lưu%2 để hoàn tất đăng ký."
+
+msgid "Add a fiat currency account"
+msgstr ""
 
 msgid "Add account"
 msgstr "Thêm tài khoản"
@@ -1158,6 +1161,12 @@ msgstr "Thêm một hoặc hai từ khác. Những từ không phổ biến sẽ
 
 msgid "Add funds"
 msgstr "Thêm quỹ"
+
+msgid "Add new account"
+msgstr ""
+
+msgid "Add new crypto account"
+msgstr ""
 
 msgid "Additional business exposure:"
 msgstr "Sự tiếp xúc kinh doanh bổ sung:"
@@ -1630,9 +1639,6 @@ msgstr "Bạn có chắc chắn muốn tạo một tài khoản fiat tại
 
 msgid "Are you sure you want to create your %1 account now?"
 msgstr "Bạn có chắc chắn muốn tạo một tài khoản %1 ngay bây giờ?"
-
-msgid "Are you sure you want to deposit in %1?"
-msgstr "Bạn có chắc muốn nạp tiền với đơn vị tiền là %1?"
 
 msgid "Are you sure you want to unlink from %1?"
 msgstr "Bạn có chắc muốn bỏ liên kết từ %1?"
@@ -2663,6 +2669,9 @@ msgstr "Đang kiểm tra"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Giám đốc điều hành, quan chức cấp cao và các nhà lập pháp"
 
+msgid "Choose a cryptocurrency account"
+msgstr ""
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Chọn thời hạn từ 10 giây tới 365 ngày."
 
@@ -2693,6 +2702,15 @@ msgstr "Chọn từ hơn một triệu các biến số giao dịch bất cứ l
 msgid "Choose from three main trade types:"
 msgstr "Chọn từ ba loại giao dịch chính:"
 
+msgid "Choose one of your accounts"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new account"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new cryptocurrency account"
+msgstr ""
+
 msgid "Choose scopes:"
 msgstr "Chọn loại:"
 
@@ -2719,6 +2737,9 @@ msgstr "Chọn khung thời gian từ 10 giây đến 365 ngày."
 
 msgid "Choose your own strike."
 msgstr "Chọn giá thực hiện của riêng bạn."
+
+msgid "Choose your preferred cryptocurrency"
+msgstr ""
 
 msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
 msgstr "Chọn chương trình tương thích, hoàn thành đơn đăng ký, nhận link liên kết của bạn ngay khi hoàn thành."
@@ -3404,6 +3425,9 @@ msgstr "Tạo một tài khoản MetaTrader 5"
 msgid "Create a New Demo Account"
 msgstr ""
 
+msgid "Create a cryptocurrency account"
+msgstr ""
+
 msgid "Create a new Binary password."
 msgstr "Tạo một mật khẩu Binary mới."
 
@@ -3502,9 +3526,6 @@ msgstr "Cryptocurrencies như Bitcoin và Ethereum là các loại tiền tệ k
 
 msgid "Cryptocurrencies*"
 msgstr "Cryptocurrencies*"
-
-msgid "Cryptocurrency"
-msgstr "Cryptocurrency"
 
 msgid "Cryptocurrency contract specifications"
 msgstr "Thông số hợp đồng Cryptocurrency"
@@ -3791,14 +3812,26 @@ msgstr "Gửi tiền và rút tiền của bạn thông qua chuyển khoản ng�
 msgid "Deposit as little as 5 USD to start trading."
 msgstr "Chỉ cần nạp tối thiểu 5 USD để bắt đầu giao dịch."
 
-msgid "Deposit into or withdraw from your real account"
-msgstr "Nạp vào hoặc rút ra từ tài khoản thực của bạn"
+msgid "Deposit cryptocurrencies"
+msgstr ""
+
+msgid "Deposit in your local currency via an authorised, independent payment agent in your country."
+msgstr ""
 
 msgid "Deposit now"
 msgstr "Gửi tiền ngay"
 
 msgid "Deposit or withdraw below"
 msgstr "Gửi tiền hoặc rút dưới đây"
+
+msgid "Deposit via bank wire, credit card, and e-wallet"
+msgstr ""
+
+msgid "Deposit via bank wire, credit card, and e-wallet."
+msgstr ""
+
+msgid "Deposit via payment agents"
+msgstr ""
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Đặt cọc: %1 blockchain xác nhận"
@@ -4072,9 +4105,6 @@ msgstr "Các bạn có cung cấp bất kỳ công cụ nào để quản lý c�
 
 msgid "Do you run a website that promotes forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "Bạn có đang chạy một trang web quảng bá forex hoặc quyền chọn nhị phân? Hãy tham gia mạng lưới toàn cầu của các nhà liên kết và biến những lượt truy cập trang web của bạn thành doanh thu."
-
-msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
-msgstr "Bạn có muốn này là một tài khoản fiat hoặc tài khoản tiền crypto? Hãy chọn một trong hai:"
 
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "Bạn có muốn tìm hiểu thêm về thị trường và các cách giao dịch không? Hãy xem các thông tin dưới đây."
@@ -5009,9 +5039,6 @@ msgstr "Các lễ hội đông đúc"
 msgid "Fiat"
 msgstr "Fiat"
 
-msgid "Fiat Currency"
-msgstr "Tiền tệ pháp định"
-
 msgid "Fiat currencies"
 msgstr "Tiền tệ pháp định"
 
@@ -5164,9 +5191,6 @@ msgstr "Với các tài sản cryptocurrency, một giao dịch cho 1 lô BTC/US
 
 msgid "For details on submitting a complaint to the Company's lead supervisory authority on data processing practices, the client is encouraged to check %1's %2Complaints and disputes%3 section."
 msgstr "Chi tiết về cách gửi khiếu nại đến thẩm quyền giám sát đứng đầu về cách thức xử lý dữ liệu của chúng tôi, vui lòng xem mục %1Khiếu Nại và Tranh Chấp%2."
-
-msgid "For e-wallets or local currencies not supported by %1."
-msgstr "Đối với ví điện tử hoặc nội tệ không được hỗ trợ bởi %1."
 
 msgid "For example, if you buy a 100 USD contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Ví dụ: nếu bạn mua hợp đồng 100 USD và nó không diễn ra theo kế hoạch, bạn chỉ cần bán nó để cắt lỗ theo giá thị trường hiện tại."
@@ -7444,9 +7468,6 @@ msgstr "Quản lý chương trình phát hiện lỗi"
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
 msgstr "Quản lý bảo mật, phát hiện xâm nhập, bảo vệ tấn công DDoS và các biện pháp tuân thủ PCI đối với mỗi máy chủ đã triển khai"
 
-msgid "Manage the funds in your cryptocurrency account."
-msgstr "Quản lý những khoản tiền trong tài khoản cryptocurrency của bạn."
-
 msgid "Manage your authorised applications."
 msgstr "Quản lý các ứng dụng được cho phép của bạn."
 
@@ -7779,9 +7800,6 @@ msgstr "Tránh khỏi ánh sáng trực tiếp"
 
 msgid "Move away from direct light — no glare"
 msgstr "Tránh khỏi ánh sáng trực tiếp — không bị lóa"
-
-msgid "Move funds in and out of your real account."
-msgstr "Chuyển tiền vào và ra khỏi tài khoản thực của bạn."
 
 msgid "Mr"
 msgstr "Ngài"
@@ -10876,6 +10894,15 @@ msgstr "Phí qua đêm Bán (hàng năm)"
 msgid "Swiss franc vs Japanese yen"
 msgstr "Đồng franc Thụy Sĩ vs Yên Nhật"
 
+msgid "Switch account"
+msgstr ""
+
+msgid "Switch account?"
+msgstr ""
+
+msgid "Switch to crypto account?"
+msgstr ""
+
 msgid "Symbol"
 msgstr "Ký hiệu"
 
@@ -12956,6 +12983,12 @@ msgstr "Để thay đổi teenm ngày sinh, quốc gia cư trú, hoặc email c�
 msgid "To create a MetaTrader 5 account:"
 msgstr "Để tạo một tài khoản Meta Trader 5:"
 
+msgid "To deposit cryptocurrency, switch your account."
+msgstr ""
+
+msgid "To deposit money, please switch to your %1 account."
+msgstr ""
+
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
 msgstr "Để vô hiệu hóa xác thực 2 yếu tố, vui lòng nhập mã được tạo ra bởi ứng dụng dưới đây:"
 
@@ -13016,7 +13049,13 @@ msgstr "Để việc xác minh dễ dàng, chúng tôi cần một bức ảnh c
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr "Tại đó, ở thời điểm thực hiện Thỏa thuận đã hoặc sau đó trở thành các khu vực công cộng mà không phải do lỗi của các bên"
 
+msgid "To withdraw cryptocurrency, switch your account."
+msgstr ""
+
 msgid "To withdraw from MetaTrader 5 %1 please %2Authenticate%3 your Binary account."
+msgstr ""
+
+msgid "To withdraw money, please switch to your %1 account."
 msgstr ""
 
 msgid "Today"
@@ -13958,6 +13997,9 @@ msgstr "Thứ 4"
 msgid "We accept"
 msgstr "Chúng tôi chấp nhận"
 
+msgid "We accept the following cryptocurrencies:"
+msgstr ""
+
 msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
 msgstr "Chúng tôi luôn đặt khách hàng của mình lên hàng đầu và cống hiến bản thân để xây dựng các sản phẩm và dịch vụ cung cấp cho họ trải nghiệm giao dịch tốt nhất có thể."
 
@@ -14642,9 +14684,6 @@ msgstr "Công Ty Trách Nhiệm Hữu Hạn Quốc Tế XTB (XTB)"
 msgid "Yes"
 msgstr "Có"
 
-msgid "Yes I'm sure"
-msgstr "Vâng, tôi chắc chắn"
-
 msgid "Yes, I'm sure"
 msgstr "Vâng, tôi chắc chắn"
 
@@ -14719,6 +14758,9 @@ msgstr "Bạn chỉ có thể thực hiện đến %1 lần chuyển tiền tron
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "Bạn chỉ có thể đăng ký một nhà cung cấp tín hiệu với một tài khoản %1 tại bất kỳ thời điểm nào. Bạn có thể sử dụng tín hiệu của mình trên tối đa 3 máy tính."
+
+msgid "You can open an account for each cryptocurrency."
+msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Bạn có thể bán hợp đồng của bạn trước khi hết thời hạn để giữ bất kỳ lợi nhuận bạn có thể thực hiện hoặc để giảm thiểu thua lỗ của bạn."
@@ -14911,9 +14953,6 @@ msgstr "Bạn sẽ không thể thay đổi tiền tệ sau khi bạn đã nạp
 
 msgid "You will not be able to change your fiat account currency after creating this %1 account. Are you sure you want to proceed?"
 msgstr ""
-
-msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
-msgstr "Bạn sẽ không thể thay đổi đơn vị tiền tệ cho tài khoản fiat của mình sau lần gửi tiền này. Bạn có chắc là muốn tiếp tục không?"
 
 msgid "You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue."
 msgstr "Bạn sẽ giải quyết các vấn đề về trải nghiệm người dùng phức tạp và truyền đạt liền mạch các tính năng và chức năng của sản phẩm tới người dùng của chúng tôi thông qua thiết kế có ý nghĩa. Bạn sẽ đóng vai trò chính trong việc tạo ra các sản phẩm và chức năng trực quan nhằm mang đến cho người dùng trải nghiệm tốt nhất có thể để chúng tôi tiếp tục phát triển cơ sở người dùng của mình và phát triển doanh thu."

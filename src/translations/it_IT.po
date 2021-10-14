@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-13 06:30\n"
+"PO-Revision-Date: 2021-10-14 13:19\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -462,9 +462,6 @@ msgstr "%1Gestisci i tuoi conti%2"
 
 msgid "%1Maximise returns%2 by %3risking more%4 than you put in."
 msgstr "%1Massimizza il profitto%2 %3rischiando importi maggiori%4 di quello iniziale."
-
-msgid "%1No, change my fiat account's currency now%2"
-msgstr "%1No, desidero cambiare la valuta del conto fiat ora%2"
 
 msgid "%1Not Sure?%1"
 msgstr "%1Non sei sicuro?%1"
@@ -1147,8 +1144,14 @@ msgstr "Aggiungi"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "Aggiungi +/– per definire una compensazione della barriera. Per esempio, +0,005 indica che una barriera è superiore di 0,005 rispetto al punto di entrata."
 
+msgid "Add a cryptocurrency account"
+msgstr ""
+
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "Aggiungi una descrizione e clicca su %1Salva%2 per completare la registrazione."
+
+msgid "Add a fiat currency account"
+msgstr ""
 
 msgid "Add account"
 msgstr "Aggiungi conto"
@@ -1158,6 +1161,12 @@ msgstr "Aggiungi una o due parole. Sono preferibili parole non comuni."
 
 msgid "Add funds"
 msgstr "Aggiungi fondi"
+
+msgid "Add new account"
+msgstr ""
+
+msgid "Add new crypto account"
+msgstr ""
 
 msgid "Additional business exposure:"
 msgstr "Ulteriore esposizione commerciale:"
@@ -1629,9 +1638,6 @@ msgstr "Sei sicuro di voler creare un conto fiat in %1?"
 
 msgid "Are you sure you want to create your %1 account now?"
 msgstr "Sei sicuro di voler creare il tuo conto %1 ora?"
-
-msgid "Are you sure you want to deposit in %1?"
-msgstr "Sei sicuro di voler effettuare il deposito in %1?"
 
 msgid "Are you sure you want to unlink from %1?"
 msgstr "Vuoi davvero scollegarti da %1?"
@@ -2662,6 +2668,9 @@ msgstr "Verifica in corso"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Amministratori delegati, Alti funzionari e Legislatori"
 
+msgid "Choose a cryptocurrency account"
+msgstr ""
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Puoi scegliere la durata tra 10 secondi a 365 giorni."
 
@@ -2692,6 +2701,15 @@ msgstr "Scegli fra oltre un milione di possibili variazioni di trade in qualsias
 msgid "Choose from three main trade types:"
 msgstr "Scegli fra tre tipologie di trade principali:"
 
+msgid "Choose one of your accounts"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new account"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new cryptocurrency account"
+msgstr ""
+
 msgid "Choose scopes:"
 msgstr "Seleziona gli ambiti:"
 
@@ -2718,6 +2736,9 @@ msgstr "Scegli intervalli di tempo da 10 secondi a 365 giorni."
 
 msgid "Choose your own strike."
 msgstr "Scegli il tuo obiettivo."
+
+msgid "Choose your preferred cryptocurrency"
+msgstr ""
 
 msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
 msgstr "Scegli un programma e completa il modulo di iscrizione per ricevere il link di affiliato, previa approvazione."
@@ -3403,6 +3424,9 @@ msgstr "Crea un conto MetaTrader 5"
 msgid "Create a New Demo Account"
 msgstr ""
 
+msgid "Create a cryptocurrency account"
+msgstr ""
+
 msgid "Create a new Binary password."
 msgstr "Crea una nuova password Binary."
 
@@ -3501,9 +3525,6 @@ msgstr "Criptovalute come Bitcoin e Ethereum sono valute digitali decentralizzat
 
 msgid "Cryptocurrencies*"
 msgstr "Criptovalute*"
-
-msgid "Cryptocurrency"
-msgstr "Criptovaluta"
 
 msgid "Cryptocurrency contract specifications"
 msgstr "Specifiche del contratto in criptovalute"
@@ -3790,14 +3811,26 @@ msgstr "Deposita e preleva i tuoi fondi tramite bonifico bancario internazionale
 msgid "Deposit as little as 5 USD to start trading."
 msgstr "Deposita anche solo 5 USD per iniziare a fare trading."
 
-msgid "Deposit into or withdraw from your real account"
-msgstr "Trasferisci fondi con il conto reale"
+msgid "Deposit cryptocurrencies"
+msgstr ""
+
+msgid "Deposit in your local currency via an authorised, independent payment agent in your country."
+msgstr ""
 
 msgid "Deposit now"
 msgstr "Deposita adesso"
 
 msgid "Deposit or withdraw below"
 msgstr "Deposita o preleva qui sotto"
+
+msgid "Deposit via bank wire, credit card, and e-wallet"
+msgstr ""
+
+msgid "Deposit via bank wire, credit card, and e-wallet."
+msgstr ""
+
+msgid "Deposit via payment agents"
+msgstr ""
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Deposito: %1 conferme di blockchain"
@@ -4071,9 +4104,6 @@ msgstr "Avete a disposizione qualche strumento per gestire i trade dei clienti?"
 
 msgid "Do you run a website that promotes forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "Gestisci un sito web che promuove il Forex o le opzioni binarie? Unisci alla nostra rete globale di associati e trasforma il tuo traffico online in entrate."
-
-msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
-msgstr "Desideri che sia un conto fiat o di criptovalute? Scegli un'opzione:"
 
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "Desideri saperne di più sui mercati e su come fare trading? Dai uno sguardo alle risorse qui sotto."
@@ -5008,9 +5038,6 @@ msgstr "Numerosi festival"
 msgid "Fiat"
 msgstr "Fiat"
 
-msgid "Fiat Currency"
-msgstr "Moneta Fiat"
-
 msgid "Fiat currencies"
 msgstr "Moneta Fiat"
 
@@ -5163,9 +5190,6 @@ msgstr "Per le criptovalute, 1 lotto di BTC/USD (con un tasso di cambio da BTC a
 
 msgid "For details on submitting a complaint to the Company's lead supervisory authority on data processing practices, the client is encouraged to check %1's %2Complaints and disputes%3 section."
 msgstr "Per maggiori informazioni sulla presentazione di un reclamo all'autorità di vigilanza della Società circa le modalità di elaborazione dei dati, invitiamo il cliente a consultare la sezione %2Reclami e controversie%3 di %1."
-
-msgid "For e-wallets or local currencies not supported by %1."
-msgstr "Per le valute locali e i portafogli elettronici non supportati da %1."
 
 msgid "For example, if you buy a 100 USD contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Ad esempio, se acquisti un contratto per 100 USD e non sta andando come previsto, per contenere le perdite, sarà sufficiente venderlo al prezzo corrente di mercato."
@@ -7441,9 +7465,6 @@ msgstr "Gestire il nostro programma di bug bounty"
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
 msgstr "Gestire sicurezza, rilevamento delle intrusioni, protezione DDoS e misure per la conformità PCI per ogni server offerto"
 
-msgid "Manage the funds in your cryptocurrency account."
-msgstr "Gestisci i fondi del tuo account in criptovalute."
-
 msgid "Manage your authorised applications."
 msgstr "Gestisci le tue applicazioni autorizzate."
 
@@ -7776,9 +7797,6 @@ msgstr "Allontanati dalla luce diretta"
 
 msgid "Move away from direct light — no glare"
 msgstr "Allontanati dalla luce diretta per evitare riflessi"
-
-msgid "Move funds in and out of your real account."
-msgstr "Trasferisci fondi versandoli o prelevandoli dal conto reale."
 
 msgid "Mr"
 msgstr "Sig."
@@ -10873,6 +10891,15 @@ msgstr "Swap a breve termine (annuo)"
 msgid "Swiss franc vs Japanese yen"
 msgstr "Franco svizzero vs yen giapponese"
 
+msgid "Switch account"
+msgstr ""
+
+msgid "Switch account?"
+msgstr ""
+
+msgid "Switch to crypto account?"
+msgstr ""
+
 msgid "Symbol"
 msgstr "Simbolo"
 
@@ -12952,6 +12979,12 @@ msgstr "Per modificare nome, data di nascita, Paese di residenza o indirizzo e-m
 msgid "To create a MetaTrader 5 account:"
 msgstr "Per aprire un conto MetaTrader 5:"
 
+msgid "To deposit cryptocurrency, switch your account."
+msgstr ""
+
+msgid "To deposit money, please switch to your %1 account."
+msgstr ""
+
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
 msgstr "Per disabilitare l'autenticazione a due fattori, inserisci il codice generato dalla app qui sotto:"
 
@@ -13012,7 +13045,13 @@ msgstr "Per verificare facilmente la tua identità occorre una foto più nitida"
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr "nella misura in cui, durante l'esecuzione del presente Contratto, le informazioni in oggetto erano di dominio pubblico o lo sono diventate successivamente per cause non attribuibili alle parti."
 
+msgid "To withdraw cryptocurrency, switch your account."
+msgstr ""
+
 msgid "To withdraw from MetaTrader 5 %1 please %2Authenticate%3 your Binary account."
+msgstr ""
+
+msgid "To withdraw money, please switch to your %1 account."
 msgstr ""
 
 msgid "Today"
@@ -13954,6 +13993,9 @@ msgstr "Noi"
 msgid "We accept"
 msgstr "Accettiamo"
 
+msgid "We accept the following cryptocurrencies:"
+msgstr ""
+
 msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
 msgstr "Per noi i clienti sono sempre al primo posto, e ci impegniamo a creare prodotti e servizi che garantiscano loro la miglior esperienza di trading possibile."
 
@@ -14638,9 +14680,6 @@ msgstr "XTB International Limited (XTB)"
 msgid "Yes"
 msgstr "Sì"
 
-msgid "Yes I'm sure"
-msgstr "Sì, sono sicuro"
-
 msgid "Yes, I'm sure"
 msgstr "Sì, sono sicuro"
 
@@ -14715,6 +14754,9 @@ msgstr "Puoi effettuare al massimo %1 trasferimenti al giorno. Riprova domani."
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "Puoi abbonarti a un solo fornitore di segnali con un conto %1, in qualsiasi momento. Potrai usare i segnali su massimo di 3 computer diversi."
+
+msgid "You can open an account for each cryptocurrency."
+msgstr ""
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Puoi vendere i tuoi contratti prima della scadenza in modo da realizzare eventuali guadagni oppure ridurre eventuali perdite."
@@ -14907,9 +14949,6 @@ msgstr "Una volta eseguito il deposito, non potrai cambiare valuta."
 
 msgid "You will not be able to change your fiat account currency after creating this %1 account. Are you sure you want to proceed?"
 msgstr ""
-
-msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
-msgstr "Dopo aver effettuato il deposito, non sarà possibile cambiare la valuta del conto fiat. Si desidera procedere?"
 
 msgid "You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue."
 msgstr "Ti occuperai di risolvere complesse problematiche della user experience e di comunicare chiaramente caratteristiche e funzioni del prodotto agli utenti attraverso un design d'impatto. Giocherai un ruolo fondamentale nella creazione di prodotti intuitivi e funzionali che offrano agli utenti la miglior esperienza possibile, così da continuare ad aumentare la nostra base di utenti e le nostre entrate."

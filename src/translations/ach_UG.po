@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-13 06:30\n"
+"PO-Revision-Date: 2021-10-14 13:19\n"
 "Last-Translator: \n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -462,9 +462,6 @@ msgstr "crwdns53230:0%1crwdnd53230:0%2crwdne53230:0"
 
 msgid "%1Maximise returns%2 by %3risking more%4 than you put in."
 msgstr "crwdns163490:0%1crwdnd163490:0%2crwdnd163490:0%3crwdnd163490:0%4crwdne163490:0"
-
-msgid "%1No, change my fiat account's currency now%2"
-msgstr "crwdns53232:0%1crwdnd53232:0%2crwdne53232:0"
 
 msgid "%1Not Sure?%1"
 msgstr "crwdns163492:0%1crwdnd163492:0%1crwdne163492:0"
@@ -1147,8 +1144,14 @@ msgstr "crwdns41739:0crwdne41739:0"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "crwdns45174:0crwdne45174:0"
 
+msgid "Add a cryptocurrency account"
+msgstr "crwdns167737:0crwdne167737:0"
+
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "crwdns161126:0%1Scrwdnd161126:0%2crwdne161126:0"
+
+msgid "Add a fiat currency account"
+msgstr "crwdns167739:0crwdne167739:0"
 
 msgid "Add account"
 msgstr "crwdns162126:0crwdne162126:0"
@@ -1158,6 +1161,12 @@ msgstr "crwdns160066:0crwdne160066:0"
 
 msgid "Add funds"
 msgstr "crwdns43127:0crwdne43127:0"
+
+msgid "Add new account"
+msgstr "crwdns167741:0crwdne167741:0"
+
+msgid "Add new crypto account"
+msgstr "crwdns167743:0crwdne167743:0"
 
 msgid "Additional business exposure:"
 msgstr "crwdns37695:0crwdne37695:0"
@@ -1629,9 +1638,6 @@ msgstr "crwdns53234:0%1crwdne53234:0"
 
 msgid "Are you sure you want to create your %1 account now?"
 msgstr "crwdns53236:0%1crwdne53236:0"
-
-msgid "Are you sure you want to deposit in %1?"
-msgstr "crwdns68502:0%1crwdne68502:0"
 
 msgid "Are you sure you want to unlink from %1?"
 msgstr "crwdns162130:0%1crwdne162130:0"
@@ -2662,6 +2668,9 @@ msgstr "crwdns45986:0crwdne45986:0"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "crwdns38005:0crwdne38005:0"
 
+msgid "Choose a cryptocurrency account"
+msgstr "crwdns167745:0crwdne167745:0"
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "crwdns38007:0crwdne38007:0"
 
@@ -2692,6 +2701,15 @@ msgstr "crwdns89864:0crwdne89864:0"
 msgid "Choose from three main trade types:"
 msgstr "crwdns42069:0crwdne42069:0"
 
+msgid "Choose one of your accounts"
+msgstr "crwdns167747:0crwdne167747:0"
+
+msgid "Choose one of your accounts or add a new account"
+msgstr "crwdns167749:0crwdne167749:0"
+
+msgid "Choose one of your accounts or add a new cryptocurrency account"
+msgstr "crwdns167751:0crwdne167751:0"
+
 msgid "Choose scopes:"
 msgstr "crwdns53622:0crwdne53622:0"
 
@@ -2718,6 +2736,9 @@ msgstr "crwdns89866:0crwdne89866:0"
 
 msgid "Choose your own strike."
 msgstr "crwdns38023:0crwdne38023:0"
+
+msgid "Choose your preferred cryptocurrency"
+msgstr "crwdns167753:0crwdne167753:0"
 
 msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
 msgstr "crwdns66524:0crwdne66524:0"
@@ -3403,6 +3424,9 @@ msgstr "crwdns165311:0crwdne165311:0"
 msgid "Create a New Demo Account"
 msgstr "crwdns167601:0crwdne167601:0"
 
+msgid "Create a cryptocurrency account"
+msgstr "crwdns167755:0crwdne167755:0"
+
 msgid "Create a new Binary password."
 msgstr "crwdns165313:0crwdne165313:0"
 
@@ -3501,9 +3525,6 @@ msgstr "crwdns42092:0crwdne42092:0"
 
 msgid "Cryptocurrencies*"
 msgstr "crwdns159684:0crwdne159684:0"
-
-msgid "Cryptocurrency"
-msgstr "crwdns38178:0crwdne38178:0"
 
 msgid "Cryptocurrency contract specifications"
 msgstr "crwdns157406:0crwdne157406:0"
@@ -3790,14 +3811,26 @@ msgstr "crwdns46472:0crwdne46472:0"
 msgid "Deposit as little as 5 USD to start trading."
 msgstr "crwdns89884:0crwdne89884:0"
 
-msgid "Deposit into or withdraw from your real account"
-msgstr "crwdns158864:0crwdne158864:0"
+msgid "Deposit cryptocurrencies"
+msgstr "crwdns167757:0crwdne167757:0"
+
+msgid "Deposit in your local currency via an authorised, independent payment agent in your country."
+msgstr "crwdns167759:0crwdne167759:0"
 
 msgid "Deposit now"
 msgstr "crwdns165687:0crwdne165687:0"
 
 msgid "Deposit or withdraw below"
 msgstr "crwdns42109:0crwdne42109:0"
+
+msgid "Deposit via bank wire, credit card, and e-wallet"
+msgstr "crwdns167761:0crwdne167761:0"
+
+msgid "Deposit via bank wire, credit card, and e-wallet."
+msgstr "crwdns167763:0crwdne167763:0"
+
+msgid "Deposit via payment agents"
+msgstr "crwdns167765:0crwdne167765:0"
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "crwdns43626:0%1crwdne43626:0"
@@ -4071,9 +4104,6 @@ msgstr "crwdns53360:0crwdne53360:0"
 
 msgid "Do you run a website that promotes forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "crwdns89886:0crwdne89886:0"
-
-msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
-msgstr "crwdns53244:0crwdne53244:0"
 
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "crwdns38269:0crwdne38269:0"
@@ -5008,9 +5038,6 @@ msgstr "crwdns46416:0crwdne46416:0"
 msgid "Fiat"
 msgstr "crwdns44589:0crwdne44589:0"
 
-msgid "Fiat Currency"
-msgstr "crwdns38448:0crwdne38448:0"
-
 msgid "Fiat currencies"
 msgstr "crwdns165689:0crwdne165689:0"
 
@@ -5163,9 +5190,6 @@ msgstr "crwdns161598:0crwdne161598:0"
 
 msgid "For details on submitting a complaint to the Company's lead supervisory authority on data processing practices, the client is encouraged to check %1's %2Complaints and disputes%3 section."
 msgstr "crwdns54474:0%1crwdnd54474:0%2Ccrwdnd54474:0%3crwdne54474:0"
-
-msgid "For e-wallets or local currencies not supported by %1."
-msgstr "crwdns45941:0%1crwdne45941:0"
 
 msgid "For example, if you buy a 100 USD contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "crwdns89944:0crwdne89944:0"
@@ -7441,9 +7465,6 @@ msgstr "crwdns52164:0crwdne52164:0"
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
 msgstr "crwdns52166:0crwdne52166:0"
 
-msgid "Manage the funds in your cryptocurrency account."
-msgstr "crwdns39129:0crwdne39129:0"
-
 msgid "Manage your authorised applications."
 msgstr "crwdns39130:0crwdne39130:0"
 
@@ -7776,9 +7797,6 @@ msgstr "crwdns158430:0crwdne158430:0"
 
 msgid "Move away from direct light — no glare"
 msgstr "crwdns158432:0crwdne158432:0"
-
-msgid "Move funds in and out of your real account."
-msgstr "crwdns158874:0crwdne158874:0"
 
 msgid "Mr"
 msgstr "crwdns39220:0crwdne39220:0"
@@ -10873,6 +10891,15 @@ msgstr "crwdns159346:0crwdne159346:0"
 msgid "Swiss franc vs Japanese yen"
 msgstr "crwdns90082:0crwdne90082:0"
 
+msgid "Switch account"
+msgstr "crwdns167767:0crwdne167767:0"
+
+msgid "Switch account?"
+msgstr "crwdns167769:0crwdne167769:0"
+
+msgid "Switch to crypto account?"
+msgstr "crwdns167771:0crwdne167771:0"
+
 msgid "Symbol"
 msgstr "crwdns39888:0crwdne39888:0"
 
@@ -12952,6 +12979,12 @@ msgstr "crwdns165617:0%1Ccrwdnd165617:0%2crwdne165617:0"
 msgid "To create a MetaTrader 5 account:"
 msgstr "crwdns67002:0crwdne67002:0"
 
+msgid "To deposit cryptocurrency, switch your account."
+msgstr "crwdns167773:0crwdne167773:0"
+
+msgid "To deposit money, please switch to your %1 account."
+msgstr "crwdns167775:0%1crwdne167775:0"
+
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
 msgstr "crwdns45875:0crwdne45875:0"
 
@@ -13012,8 +13045,14 @@ msgstr "crwdns158574:0crwdne158574:0"
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr "crwdns55800:0crwdne55800:0"
 
+msgid "To withdraw cryptocurrency, switch your account."
+msgstr "crwdns167777:0crwdne167777:0"
+
 msgid "To withdraw from MetaTrader 5 %1 please %2Authenticate%3 your Binary account."
 msgstr "crwdns167669:0%1crwdnd167669:0%2crwdnd167669:0%3crwdne167669:0"
+
+msgid "To withdraw money, please switch to your %1 account."
+msgstr "crwdns167779:0%1crwdne167779:0"
 
 msgid "Today"
 msgstr "crwdns40210:0crwdne40210:0"
@@ -13954,6 +13993,9 @@ msgstr "crwdns40403:0crwdne40403:0"
 msgid "We accept"
 msgstr "crwdns41775:0crwdne41775:0"
 
+msgid "We accept the following cryptocurrencies:"
+msgstr "crwdns167781:0crwdne167781:0"
+
 msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
 msgstr "crwdns46442:0crwdne46442:0"
 
@@ -14638,9 +14680,6 @@ msgstr "crwdns165619:0crwdne165619:0"
 msgid "Yes"
 msgstr "crwdns52826:0crwdne52826:0"
 
-msgid "Yes I'm sure"
-msgstr "crwdns53254:0crwdne53254:0"
-
 msgid "Yes, I'm sure"
 msgstr "crwdns53256:0crwdne53256:0"
 
@@ -14715,6 +14754,9 @@ msgstr "crwdns163940:0%1crwdne163940:0"
 
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "crwdns161190:0%1crwdne161190:0"
+
+msgid "You can open an account for each cryptocurrency."
+msgstr "crwdns167783:0crwdne167783:0"
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "crwdns40628:0crwdne40628:0"
@@ -14907,9 +14949,6 @@ msgstr "crwdns165739:0crwdne165739:0"
 
 msgid "You will not be able to change your fiat account currency after creating this %1 account. Are you sure you want to proceed?"
 msgstr "crwdns167651:0%1crwdne167651:0"
-
-msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
-msgstr "crwdns53274:0crwdne53274:0"
 
 msgid "You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue."
 msgstr "crwdns52484:0crwdne52484:0"
