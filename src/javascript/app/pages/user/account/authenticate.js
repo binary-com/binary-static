@@ -1454,7 +1454,7 @@ const Authenticate = (() => {
         const authentication_object = account_status.authentication;
         const allow_poi_resubmission = account_status.status.some(s => s === 'allow_poi_resubmission');
 
-        const { attempts, document, identity, idv, onfido } = authentication_object;
+        const { attempts, document, identity } = authentication_object;
         const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
         const identity_status = identity.status;
         const identity_last_attempt = attempts.latest;
@@ -1467,7 +1467,9 @@ const Authenticate = (() => {
         } else if (is_fully_authenticated) {
             $('#authentication_verified').setVisibility(1);
         // If status from last attempt does not match, status is modified from the BO
-        } else if (!identity_last_attempt) {
+        } else if (!identity_last_attempt ||
+            // Prioritise verified status from back office. How we know this is if there is mismatch between current statuses (Should be refactored)
+            (identity_status === 'verified' && identity_status !== identity_last_attempt.status)) {
             $('#authentication_tab').setVisibility(1);
             switch (identity_status) {
                 case 'pending':
@@ -1499,15 +1501,6 @@ const Authenticate = (() => {
                     break;
                 default:
                     break;
-            }
-        } else if (identity_last_attempt.status !== identity_status) {
-            // Get matching service status with current identity satus
-            if (idv.status === identity_status) {
-                handleIdv();
-            } else if (onfido.status === identity_status) {
-                handleOnfido();
-            } else {
-                handleManual();
             }
         }  else {
             switch (identity_last_attempt.service) {
