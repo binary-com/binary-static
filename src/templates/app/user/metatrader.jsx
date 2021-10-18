@@ -590,11 +590,11 @@ const Metatrader = () => (
                 </div>
                 <div id='messages'>
                     <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
-                    <div id='msg_switch'>
+                    {/* <div id='msg_switch'>
                         {it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}
                         <br />
                         {it.L('If you do not have a [_1] Real Account yet, please [_2]create one[_3].', it.website_name, `<a href="${it.url_for('user/accounts')}">`, '</a>')}
-                    </div>
+                    </div> */}
                     <div id='msg_real_financial'>
                         <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account:')}</span>
                         <ul className='bullet'>
