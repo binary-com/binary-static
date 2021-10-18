@@ -84,7 +84,7 @@ const pages_config = {
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
     careers                  : { module: StaticPages.Careers },
-    cashier                  : { module: Cashier },
+    cashier                  : { module: Cashier,                    is_authenticated: true },
     cfds                     : { module: GetStarted.CFDs },
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },

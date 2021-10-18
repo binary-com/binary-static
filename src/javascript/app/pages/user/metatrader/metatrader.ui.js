@@ -175,6 +175,9 @@ const MetaTraderUI = (() => {
         const $button = $mng_passwd.find('#password_change_button');
         const $confirm_button = $mng_passwd.find('#password_change_confirm_buttons .btn_ok');
         const $cancel_button = $mng_passwd.find('#password_change_confirm_buttons .btn_cancel');
+        const $trading_password_info = $mng_passwd.find('#trading_password_info');
+        const $trading_password_change_notice = $mng_passwd.find('.trading_password_change_notice');
+        
         const setStep = (step) => {
             switch (step) {
                 case STEPS.PASSWORD_INSERT:
@@ -202,6 +205,21 @@ const MetaTraderUI = (() => {
         $cancel_button.off('click').on('click', () => {
             setStep(STEPS.PASSWORD_INSERT);
         });
+
+        const mt5_label =  isEuCountry() ? 'CFDs' : 'MT5';
+        
+        $trading_password_info.text(
+            localize('Use MT5 password to sign in to any of your [_1] accounts when using MT5 apps on your mobile or other devices.',
+                mt5_label
+            )
+        );
+
+        $trading_password_change_notice.text(
+            localize('This will change the password to all of your [_1] accounts.',
+                mt5_label
+            )
+        );
+      
     };
 
     const populateAccountList = () => {
@@ -519,10 +537,13 @@ const MetaTraderUI = (() => {
         if ($target.prop('tagName').toLowerCase() !== 'a') {
             $target = $target.parents('a');
         }
-        $main_msg.setVisibility(0);
 
         const acc_type = Client.get('mt5_account');
         const action   = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
+
+        if (!$action.find(`#frm_${action}`).length) {
+            $main_msg.setVisibility(0);
+        }
 
         const cloneForm = () => {
             $form = $templates.find(`#frm_${action}`).clone();
@@ -647,11 +668,6 @@ const MetaTraderUI = (() => {
                 $container.find(`[class~=act_${action}]`).addClass('selected');
                 return;
             }
-
-            if (!$action.find(`#frm_${action}`).length) {
-                $main_msg.setVisibility(0);
-            }
-
             cloneForm();
         });
     };

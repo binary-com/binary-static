@@ -1,11 +1,13 @@
 const CurrencyForm = require('../new_account_modules/currency_form');
 const localize = require('../../../../../_common/localize').localize;
 
+const choosenCurrency = localStorage.getItem('choosenCurrency');
+
 const currency_selector_fields = [
     {
         id           : 'currency',
         supported_in : ['maltainvest', 'malta', 'svg', 'iom'],
-        default_value: '',
+        default_value: choosenCurrency || '',
         rules        : [['custom', {
             value  : () => $('.currency_wrapper.selected').attr('id') || '',
             func   : (value) => value !== '',

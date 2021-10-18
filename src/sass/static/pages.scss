@@ -1,5 +1,10 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+}
+
 .payment-methods__reference {
     display: inline-block;
     height: 30px;
@@ -292,6 +297,19 @@
                 }
             }
         }
+    }
+}
+
+#frm_confirm {
+    display: flex;
+    align-items: flex-end;
+
+    .switch-cancel-btn {
+        width: unset !important;
+    }
+    .switch-ok-btn {
+        width: unset !important;
+        flex: 1;
     }
 }
 
@@ -818,6 +836,7 @@ body #not_authenticated_financial ul.checked > li {
     .currency_list > div {
         padding: 15px;
         background-image: url('../images/pages/set_currency/tick-normal.svg');
+        background-size: 16px;
         background-repeat: no-repeat;
         background-position: center bottom;
         line-height: 30px;
@@ -840,15 +859,33 @@ body #not_authenticated_financial ul.checked > li {
 
 .lightbox #set_currency {
     padding: 25px;
-    padding-bottom: 4px;
+    padding-bottom: 20px;
     width: 40em;
 
     #set_currency_text {
         margin-top: 0;
+        margin-bottom: 1.9rem;
+    }
+    #set_currency_text_secondary {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    #set_currency_text_note {
+        font-size: 10px;
+        margin-top: 0.4rem;
     }
     #fiat_currencies, #crypto_currencies {
         + div {
             max-width: 30em;
+        }
+        .note {
+            margin: 0.4rem auto 0;
+            font-size: 10px;
+        }
+    }
+    #crypto_currencies {
+        .text {
+            margin: 0 auto;
         }
     }
     .section-divider {
@@ -856,8 +893,21 @@ body #not_authenticated_financial ul.checked > li {
         margin-bottom: 0;
     }
     #submit_section {
-        margin-top: 20px;
-        margin-bottom: 16px;
+        border: 0;
+        display: flex;
+        max-width: 24em;
+        margin: 20px auto 16px;
+    }
+    .btn_cancel {
+        @media screen and (min-width: 768px) {
+            flex: 1;
+        }
+    }
+    #btn_ok {
+        flex: 1;
+    }
+    .button span {
+        display: block;
     }
     #deposit_btn {
         margin-bottom: 16px;
@@ -920,9 +970,7 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .currency_list {
-    @media screen and (min-width: 768px) {
-        justify-content: center;
-    }
+    justify-content: center;
 }
 
 .padding-h35 {

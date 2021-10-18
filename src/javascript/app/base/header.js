@@ -111,7 +111,7 @@ const Header = (() => {
         }
     };
 
-    const switchLoginid = (loginid) => {
+    const switchLoginid = (loginid, redirect_to) => {
         if (!loginid || loginid.length === 0) return;
         const token = Client.get('token', loginid);
         if (!token || token.length === 0) {
@@ -124,7 +124,18 @@ const Header = (() => {
         GTM.setLoginFlag('account_switch');
         Client.set('loginid', loginid);
         SocketCache.clear();
-        window.location.reload();
+
+        if (redirect_to === 'deposit') {
+            window.location.href = `${Url.urlFor('cashier/forwardws')}?action=deposit`;
+        } else if (redirect_to === 'withdrawal') {
+            window.location.href = `${Url.urlFor('cashier/forwardws')}?action=withdraw`;
+        } else if (redirect_to === 'payment_agent_deposit') {
+            window.location.href = Url.urlFor('/cashier/payment_agent_listws');
+        } else if (redirect_to === 'payment_agent_withdrawal') {
+            window.location.href = Url.urlFor('/paymentagent/withdrawws');
+        } else {
+            window.location.reload();
+        }
     };
 
     const upgradeMessageVisibility = () => {
@@ -483,6 +494,8 @@ const Header = (() => {
         hideNotification,
         displayAccountStatus,
         loginOnClick,
+        switchLoginid,
+        loginIDOnClick,
     };
 })();
 

@@ -92,6 +92,10 @@ button.button-disabled {
     }
 }
 
+a.button-disabled {
+    pointer-events: none;
+}
+
 span.checked {
     background: url('../images/pages/authenticate/checked.svg') no-repeat;
     width: 16px;

@@ -174,16 +174,17 @@ const Accounts = (() => {
         create: 'multi_account',
         set   : 'set_currency',
         change: 'change_currency',
+        switch: 'switch_account',
     };
 
-    const showCurrencyPopUp = (action) => {
+    const showCurrencyPopUp = (action, redirect_to, all_fiat, all_crypto) => {
         showPopup({
             url               : urlFor('user/set-currency'),
             content_id        : '#set_currency',
             form_id           : 'frm_set_currency',
             additionalFunction: async () => {
                 localStorage.setItem('popup_action', action_map[action]);
-                await SetCurrency.onLoad(onConfirmSetCurrency);
+                await SetCurrency.onLoad(onConfirmSetCurrency, redirect_to, all_fiat, all_crypto);
             },
         });
     };
@@ -285,7 +286,11 @@ const Accounts = (() => {
     const populateMultiAccount = () => {
         const table_headers = TableHeaders.get();
         const account     = { real: 1 };
-        const handleClick = () => showCurrencyPopUp('create');
+        const has_fiat_account    = Client.hasCurrencyType('fiat');
+        const handleClick = () => {
+            if (has_fiat_account) showCurrencyPopUp('create', '', false, true);
+            else showCurrencyPopUp('create', '', false, false);
+        };
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
@@ -311,6 +316,8 @@ const Accounts = (() => {
     return {
         onLoad,
         onUnload,
+        showCurrencyPopUp,
+        populateMultiAccount,
     };
 })();
 

@@ -6,7 +6,7 @@ const Dialog = () => (
             <div className='gr-gutter'>
                 <div className='gr-gutter'>
                     <h1 id='dialog_title' className='invisible' />
-                    <p id='dialog_message' className='gr-padding-10 no-margin strong' />
+                    <p id='dialog_message' className='gr-padding-10 no-margin' />
                     <div className='gr-row gr-row-align-right gr-padding-10'>
                         <form id='frm_confirm'>
                             <a className='button button-secondary' id='btn_cancel' href='javascript:;'><span>{it.L('Cancel')}</span></a>

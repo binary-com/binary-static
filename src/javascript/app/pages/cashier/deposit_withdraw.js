@@ -2,7 +2,6 @@ const BinaryPjax             = require('../../base/binary_pjax');
 const Client                 = require('../../base/client');
 const BinarySocket           = require('../../base/socket');
 const Header                 = require('../../base/header');
-const Dialog                 = require('../../common/attach_dom/dialog');
 const Currency               = require('../../common/currency');
 const FormManager            = require('../../common/form_manager');
 const validEmailToken        = require('../../common/form_validation').validEmailToken;
@@ -205,18 +204,6 @@ const DepositWithdraw = (() => {
             }
         } else {
             const client_currency = Client.get('currency');
-            if (cashier_type === 'deposit' && has_no_balance && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
-                Dialog.confirm({
-                    id                : 'deposit_currency_change_popup_container',
-                    ok_text           : localize('Yes I\'m sure'),
-                    cancel_text       : localize('Cancel'),
-                    localized_title   : localize('Are you sure you want to deposit in [_1]?', [client_currency]),
-                    localized_message : localize('You will not be able to change your fiat account\'s currency after making this deposit. Are you sure you want to proceed?'),
-                    localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
-                    onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
-                });
-            }
-
             $iframe = $(container).find('#cashier_iframe');
 
             if (Currency.isCryptocurrency(client_currency)) {

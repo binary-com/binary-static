@@ -4,11 +4,12 @@ const Header       = require('../../../base/header');
 const BinarySocket = require('../../../base/socket');
 const Dialog       = require('../../../common/attach_dom/dialog');
 const Currency     = require('../../../common/currency');
+const localize     = require('../../../../_common/localize').localize;
 const Validation   = require('../../../common/form_validation');
 const GTM          = require('../../../../_common/base/gtm');
-const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 const isBinaryApp  = require('../../../../config').isBinaryApp;
+const isEuCountry  = require('../../../common/country_base').isEuCountry;
 
 const MetaTraderConfig = (() => {
     const accounts_info = {};
@@ -335,7 +336,19 @@ const MetaTraderConfig = (() => {
                 } else if (getAccountsInfo(acc_type).sub_account_type === 'financial' && getAccountsInfo(acc_type).landing_company_short !== 'svg') {
                     BinarySocket.wait('get_account_status').then(() => {
                         if (isAuthenticationPromptNeeded()) {
-                            resolve($messages.find('#msg_authenticate').html());
+                      
+                            const $message_auth =   $messages.find('#msg_authenticate');
+                            const auth_link = $message_auth.data('auth-url');
+                            
+                            const message = localize('To withdraw from MetaTrader 5 [_1] please [_2]Authenticate[_3] your Binary account.',
+                                [isEuCountry() ? 'CFDs Account' : 'Account',
+                                    `<a href="${auth_link}">`,
+                                    '</a>']
+                            );
+
+                            $message_auth.html(message);
+
+                            resolve(message);
                         }
 
                         resolve();

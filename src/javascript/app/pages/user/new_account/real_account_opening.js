@@ -18,6 +18,8 @@ const RealAccountOpening = (() => {
     const onLoad = async () => {
         real_account_signup_target = param('account_type');
         const currency_to_set = sessionStorage.getItem('new_financial_account_set_currency');
+        const shouldShowAccountCurrency = localStorage.getItem('SignAccountCurrencyForm');
+        const choosenCurrency = localStorage.getItem('choosenCurrency');
         if (currency_to_set) AccountOpening.setCurrencyForFinancialAccount(currency_to_set);
         else {
             const residence_list_promise = BinarySocket.send({ residence_list: 1 });
@@ -50,6 +52,13 @@ const RealAccountOpening = (() => {
                 financial_assessment,
             });
             current_step = 0;
+
+            if (shouldShowAccountCurrency) {
+                current_step = 1;
+                Object.assign(account_details, { currency: choosenCurrency });
+            }
+            localStorage.removeItem('SignAccountCurrencyForm');
+            localStorage.removeItem('choosenCurrency');
             steps.forEach(step => { step.body_module.init(step.fields, real_account_signup_target); });
 
             setPageTitle();
@@ -73,7 +82,6 @@ const RealAccountOpening = (() => {
         });
         $.scrollTo(0, 500);
     };
-
     const onRiskAccept = (e) => {
         e.preventDefault();
         Object.assign(account_details, { accept_risk: 1 });

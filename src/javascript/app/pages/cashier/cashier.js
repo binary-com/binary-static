@@ -8,6 +8,11 @@ const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const Url              = require('../../../_common/url');
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
+const Dialog           = require('../../common/attach_dom/dialog');
+const BinaryPjax       = require('../../base/binary_pjax');
+const Accounts         = require('../user/accounts');
+const Header           = require('../../base/header');
+const isEuCountry      = require('../../common/country_base').isEuCountry;
 
 const Cashier = (() => {
     let href = '';
@@ -37,9 +42,7 @@ const Cashier = (() => {
         // TODO: remove `wait` & residence check to release to all countries
         BinarySocket.wait('authorize').then(() => {
             $('.cashier_note').setVisibility(
-                Client.isLoggedIn() &&                          // only show to logged-in clients
-                !Client.get('is_virtual') &&                    // only show to real accounts
-                !Currency.isCryptocurrency(Client.get('currency'))       // only show to fiat currencies
+                Client.isLoggedIn()                         // only show to logged-in clients
             );
         });
     };
@@ -211,6 +214,50 @@ const Cashier = (() => {
         });
     };
 
+    const switchToAccount = (account_type, transaction_type, fiat_account) => {
+        const ok_text = localize('Switch account');
+        const fiat_currency = Client.get('currency', fiat_account);
+        let localized_title = '';
+        let localized_message = '';
+
+        if (account_type === 'fiat') {
+            localized_title = localize('Switch account?');
+            if (transaction_type === 'deposit') {
+                localized_message = localize('To deposit money, please switch to your [_1] account.', fiat_currency);
+            } else {
+                localized_message = localize('To withdraw money, please switch to your [_1] account.', fiat_currency);
+            }
+        } else {
+            localized_title = localize('Switch to crypto account?');
+            if (transaction_type === 'deposit') {
+                localized_message = localize('To deposit cryptocurrency, switch your account.');
+            } else {
+                localized_message = localize('To withdraw cryptocurrency, switch your account.');
+            }
+        }
+
+        BinarySocket.send({ authorize: 1 }).then(() => {
+            Dialog.confirm({
+                id          : 'deposit_currency_change_popup_container',
+                ok_text,
+                ok_class    : 'switch-ok-btn',
+                cancel_text : localize('Cancel'),
+                cancel_class: 'switch-cancel-btn',
+                localized_title,
+                localized_message,
+                onConfirm   : () => {
+                    if (account_type === 'fiat') {
+                        Header.switchLoginid(fiat_account, transaction_type);
+                    } else {
+                        Accounts.showCurrencyPopUp('switch', transaction_type, false, true);
+                    }
+                },
+                onAbort: () => BinaryPjax.load(Url.urlFor('cashier')),
+            });
+        
+        });
+    };
+
     const onLoad = () => {
         const is_virtual = Client.get('is_virtual');
         if (is_virtual && isDefaultVirtualBalance()) {
@@ -219,7 +266,7 @@ const Cashier = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
             BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status', 'landing_company').then(() => {
-                checkStatusIsLocked(State.getResponse('get_account_status'));
+                if (!is_virtual) checkStatusIsLocked(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
                 if (is_virtual) {
@@ -250,13 +297,103 @@ const Cashier = (() => {
                     });
                 }
 
-                if (Currency.isCryptocurrency(currency)) {
+                const has_fiat_account = Client.hasCurrencyType('fiat');
+                const has_crypto_account = Client.hasCurrencyType('crypto');
+                const is_cryptocurrency_account = Currency.isCryptocurrency(currency);
+                const is_virtual_account = Client.get('is_virtual');
+                const el_fiat_deposit = $('#fiat_deposit_link');
+                const el_fiat_withdraw = $('#fiat_withdraw_link');
+                const el_crypto_deposit = $('#crypto_deposit_link');
+                const el_crypto_withdraw = $('#crypto_withdraw_link');
+                const el_paymentmethod_deposit = $('#payment_agent_deposit_link');
+                const el_paymentmethod_withdraw  = $('#payment_agent_withdraw_link');
+                if (!isEuCountry()) {
                     $('.crypto_currency').setVisibility(1);
+                    $('#payment-agent-section').setVisibility(1);
+                }
 
-                    const previous_href = $('#view_payment_methods').attr('href');
-                    $('#view_payment_methods').attr('href', previous_href.concat('?anchor=cryptocurrency'));
+                if (is_virtual_account || is_cryptocurrency_account) {
+                    $('.normal_currency').setVisibility(1);
+                    $('.payment-agent-section').setVisibility(1);
+                    if (has_fiat_account) {
+                        el_fiat_deposit.on('click', () => {
+                            switchToAccount('fiat', 'deposit', has_fiat_account);
+                            return false;
+                        });
+                        el_fiat_withdraw.on('click', () => {
+                            switchToAccount('fiat', 'withdrawal', has_fiat_account);
+                            return false;
+                        });
+                    } else {
+                        el_fiat_deposit.on('click', ()=>{
+                            Accounts.showCurrencyPopUp('create', 'deposit', true);
+                            return false;
+                        });
+                        el_fiat_withdraw.on('click', ()=>{
+                            Accounts.showCurrencyPopUp('create', 'withdrawal', true);
+                            return false;
+                        });
+                    }
                 } else {
                     $('.normal_currency').setVisibility(1);
+                    el_fiat_deposit.attr('href',`${Url.urlFor('cashier/forwardws')}?action=deposit`);
+                    el_fiat_withdraw.attr('href',`${Url.urlFor('cashier/forwardws')}?action=withdraw`);
+                }
+
+                if (is_virtual_account || !is_cryptocurrency_account){
+                    $('.normal_currency').setVisibility(1);
+                    if (has_crypto_account) {
+                        el_crypto_deposit.on('click', () => {
+                            switchToAccount('crypto', 'deposit');
+                            return false;
+                        });
+                        el_crypto_withdraw.on('click', () => {
+                            switchToAccount('crypto', 'withdrawal');
+                            return false;
+                        });
+                    } else {
+                        el_crypto_deposit.on('click', ()=>{
+                            Accounts.showCurrencyPopUp('create', 'deposit', false, true);
+                            return false;
+                        });
+                        el_crypto_withdraw.on('click', ()=>{
+                            Accounts.showCurrencyPopUp('create', 'withdrawal', false, true);
+                            return false;
+                        });
+                    }
+                } else {
+                    $('.normal_currency').setVisibility(1);
+                    el_crypto_deposit.on('click', ()=>{
+                        Accounts.showCurrencyPopUp('switch', 'deposit', false, true);
+                        return false;
+                    });
+                    el_crypto_withdraw.on('click', ()=>{
+                        Accounts.showCurrencyPopUp('switch', 'withdrawal', false, true);
+                        return false;
+                    });
+                }
+              
+                if (has_fiat_account || has_crypto_account){
+                    el_paymentmethod_deposit.on('click', () => {
+                        BinarySocket.send({ authorize: 1 }).then(() => {
+                            Accounts.showCurrencyPopUp('switch', 'payment_agent_deposit', false, false);
+                        });
+                        return false;
+                    });
+                    el_paymentmethod_withdraw.on('click', () => {
+                        BinarySocket.send({ authorize: 1 }).then(() => {
+                            Accounts.showCurrencyPopUp('switch', 'payment_agent_withdrawal', false, false);
+                        });
+                        return false;
+                    });
+                    
+                } else {
+                    el_paymentmethod_deposit.on('click', () => {
+                        el_paymentmethod_deposit.attr('href', Url.urlFor('/new_account/real_account'));
+                    });
+                    el_paymentmethod_withdraw.on('click', () => {
+                        el_paymentmethod_withdraw.attr('href', Url.urlFor('/new_account/real_account'));
+                    });
                 }
             });
         }

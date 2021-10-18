@@ -4,6 +4,7 @@ const FormManager    = require('../../common/form_manager');
 const localize       = require('../../../_common/localize').localize;
 const getElementById = require('../../../_common/common_functions').getElementById;
 const Url            = require('../../../_common/url');
+const isEuCountry      = require('../../common/country_base').isEuCountry;
 
 const TradingResetPassword = (() => {
     const responseHandler = (response) => {
@@ -19,7 +20,7 @@ const TradingResetPassword = (() => {
         } else {
             Dialog.alert({
                 id               : 'success_reset_trading_pw_dialog',
-                localized_message: localize('You have a new MT5 password to log in to your MT5 accounts on the web and mobile apps.'),
+                localized_message: localize('You have a new MT5 password to log in to your [_1] accounts on the web and mobile apps.', isEuCountry() ? 'CFDs' : 'MT5'),
                 localized_title  : localize('Success'),
                 ok_text          : localize('Done'),
                 onConfirm        : () => { BinaryPjax.load(Url.urlFor('user/metatrader')); },

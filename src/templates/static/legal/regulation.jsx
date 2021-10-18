@@ -549,7 +549,7 @@ const Regulation = () => {
 
             <div data-show='eucountry'>
                 <Box header={it.L('Deriv (Europe) Limited')} >
-                    <p>{it.L('“Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated for digital options on synthetic indices by the Malta Gaming Authority in Malta ([_2]licence no. MGA/B2C/102/2000[_4]) and by Revenue Commissioners for clients in Ireland (licence no. 1010285).', it.website_name, `<a href=${it.url_for('download/regulation/MGA_licence.pdf')} target="_blank">`)}</p>
+                    <p>{it.L('“Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated for digital options on synthetic indices by the Malta Gaming Authority in Malta ([_1]licence no. MGA/B2C/102/2000[_2]) and by Revenue Commissioners for clients in Ireland (licence no. 1010285).',`<a href=${it.url_for('download/regulation/MGA_licence.pdf')} target="_blank" rel="noopener noreferrer">`,'</a>')}</p>
                     <p>{it.L('Clients in the European Union who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited.')}</p>
                     <RegulatorText />
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
