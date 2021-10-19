@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-14 13:29\n"
+"PO-Revision-Date: 2021-10-19 13:04\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -3851,11 +3851,11 @@ msgstr "Depósito: Instantáneo"
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "Los depósitos y retiros de su cuenta MetaTrader 5 siempre pasan por su cuenta de opciones binarias."
 
-msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "Depósitos y retiros han sido deshabilitados en su cuenta. Por favor revise su correo electrónico para más detalles."
-
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "Los depósitos y/o pagos vencidos deben hacerse en la divisa elegida por el cliente entre las que DIEL especifica de manera periódica."
+
+msgid "Deposits are temporarily unavailable due to system maintenance. You can make your deposits when the maintenance is complete."
+msgstr ""
 
 msgid "Deriv"
 msgstr "Deriv"
@@ -5095,9 +5095,6 @@ msgstr "Evaluación financiera"
 
 msgid "Financial Markets Analyst"
 msgstr "Analista de mercados financieros"
-
-msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
-msgstr "Es necesaria la aprobación del riesgo financiero. Por favor, póngase en contacto con %1nuestro servicio%2 de atención al cliente para obtener más información."
 
 msgid "Financial STP"
 msgstr "Financiera STP"
@@ -8487,8 +8484,11 @@ msgstr "Se espera que nuestra base total de clientes activos supere los 790,000 
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "Nuestro negocio se basa en la colaboración y nuestro objetivo es construir relaciones de beneficio mutuo a largo plazo con nuestros socios. Sin embargo, nunca comprometeremos nuestro compromiso hacia la integridad empresarial. En los casos en que nuestros socios no estén dispuestos o no puedan cumplir con nuestros principios, nos reservamos el derecho de retirarnos de la relación comercial."
 
-msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "Nuestro cajero está temporalmente fuera de servicio debido al mantenimiento del sistema. Puede acceder al cajero tan pronto como se complete el mantenimiento."
+msgid "Our cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
+
+msgid "Our cashier is temporarily down due to system maintenance.You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
 
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "Nuestra estructura de comisiones es un plan simple de 2 niveles."
@@ -8499,8 +8499,8 @@ msgstr "Nuestro compromiso con la integridad y la fiabilidad significa que siemp
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "Nuestra empresa sigue creciendo y obtiene una licencia en la Isla de Man para servir mejor a nuestros clientes en el Reino Unido."
 
-msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "Nuestro cajero de criptomonedas está temporalmente fuera de servicio debido al mantenimiento del sistema. Puede acceder al cajero tan pronto como se complete el mantenimiento."
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Nuestros clientes claramente confían en nosotros. A mediados de 2014, %1 tiene más de 100 millones de transacciones históricas y más de 130.000 nuevas transacciones diarias."
@@ -8871,17 +8871,11 @@ msgstr "Por favor, %1autentique su cuenta%2 antes de crear una cuenta MT5."
 msgid "Please %1authenticate%2 your account to continue trading."
 msgstr "Por favor, %1autentique%2 su cuenta para continuar operando."
 
-msgid "Please %1authenticate%2 your account."
-msgstr "Por favor, %1autentique%2 su cuenta."
-
 msgid "Please %1complete the financial assessment%2 to open an MT5 account."
 msgstr "Por favor, %1complete la evaluación financiera%2 para abrir una cuenta MT5."
 
 msgid "Please %1complete the trading experience section%2 in the financial assessment to open an MT5 account."
 msgstr "Por favor, %1complete la sección de experiencia comercial%2 en la evaluación financiera para abrir una cuenta MT5."
-
-msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
-msgstr "Por favor \"complete su perfil\" para aumentar el límite de retiro y negociación de su cuenta."
 
 msgid "Please %1deposit%2 before transferring to client."
 msgstr "Por favor %1deposite%2 saldo antes de transferir a un cliente."
@@ -8925,14 +8919,11 @@ msgstr "Haga clic en el enlace del correo electrónico para restablecer su contr
 msgid "Please complete the %1Real Account form%2 to verify your age as required by the %3UK Gambling%4 Commission (UKGC)."
 msgstr "Por favor, complete el %1formulario de la Cuenta Real%2 para verificar su edad según lo requerido por la %3Comisión de juegos de azar de Reino Unido%4 (UKGC)."
 
-msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
-msgstr "Por favor complete el %1formulario de evaluación financiera%2 para aumentar el límite de retiro y operación de su cuenta."
+msgid "Please complete the Appropriateness Test to access your cashier."
+msgstr ""
 
 msgid "Please complete the Real Account form to verify your age as required by the %1UK Gambling%2 Commission (UKGC)."
 msgstr "Por favor, complete el formulario de la Cuenta Real para verificar su edad según lo requerido por la %3Comisión de juegos de azar de Reino Unido%4 (UKGC)."
-
-msgid "Please complete your %1personal details%2 before you proceed."
-msgstr "Por favor complete sus %1datos personales%2 antes de continuar."
 
 msgid "Please complete your personal details before you proceed."
 msgstr "Por favor complete sus datos personales antes de continuar."
@@ -9072,17 +9063,8 @@ msgstr "Por favor, seleccione el rango de fechas de su extracto:"
 msgid "Please select the document type and enter the document number."
 msgstr ""
 
-msgid "Please set %1country of residence%2 before upgrading to a real-money account."
-msgstr "Por favor seleccione el %1país de residencia%2 antes de actualizar a una cuenta de dinero real."
-
-msgid "Please set the %1currency%2 of your account."
-msgstr "Seleccione la %1moneda%2 para su cuenta."
-
-msgid "Please set your %130-day turnover limit%2 to access the cashier."
-msgstr "Configure su %1límite de facturación de 30 días%2 para acceder al cajero."
-
-msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
-msgstr "Por favor, establezca su %1Límite de volumen de transacciones de 30 días%2 para eliminar los límites de depósito."
+msgid "Please set your %1account currency%2 to enable deposits and withdrawals."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Por favor indique su intervalo de verificacón de realidad preferido en minutos"
@@ -9092,9 +9074,6 @@ msgstr "Por favor, envíe la información anterior a %1."
 
 msgid "Please submit your %1proof of address%2."
 msgstr "Envíe su %1comprobante de dirección%2."
-
-msgid "Please submit your %1proof of identity and proof of address%2."
-msgstr "Envíe su %1comprobante de identidad y de dirección%2."
 
 msgid "Please submit your %1proof of identity%2."
 msgstr "Envíe su %1comprobante de identidad%2."
@@ -10503,9 +10482,6 @@ msgstr "Lo sentimos, ha ocurrido un error mientras se procesaba su cuenta."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Lo sentimos, ha ocurrido un error mientras se procesaba su solicitud."
 
-msgid "Sorry, deposits for this currency are currently disabled."
-msgstr "Lo sentimos, los depósitos para esta moneda están actualmente deshabilitados."
-
 msgid "Sorry, mobile version is not available yet."
 msgstr "Lo sentimos, la versión móvil aún no está disponible."
 
@@ -11451,6 +11427,9 @@ msgstr "Según la legislación de protección de datos, la Empresa debe notifica
 msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, email, and email management software, along with any modifications."
 msgstr ""
 
+msgid "The Company likewise reserves the right to cancel any request for a deposit, withdrawal, or refund of the client’s funds."
+msgstr ""
+
 msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platform."
 msgstr "La Empresa proporciona principalmente contratos por diferencias (CFD) a través de la plataforma MT5."
 
@@ -11554,6 +11533,9 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "La Empresa se reserva el derecho, bajo su propia discreción, de rechazar y/o cancelar servicios, cobrar comisiones de depósito y/o retiro a cualquiera por cualquier razón, incluyendo pero no limitado a lo siguiente:"
 
 msgid "The Company reserves the right to accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
+msgstr ""
+
+msgid "The Company reserves the right to block or withhold the funds in the client’s account and/or suspend or close the client’s account if it is known or there is reason to believe that one or more of the following cases are true:"
 msgstr ""
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug, or glitch in the Company website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, manifest mis-calculation of prices, or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors, or suspected system inadequacies that they may experience and may not abuse, or arbitrage based on, such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between the client and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot)."
@@ -12327,6 +12309,9 @@ msgstr "La naturaleza"
 msgid "The high-risk and speculative nature of forex and CFDs"
 msgstr "El alto riesgo y la naturaleza especulativa de las divisas y CFDs"
 
+msgid "The identification documents you submitted have expired. Please submit valid identity documents to unlock Cashier."
+msgstr ""
+
 msgid "The information outlined in Paragraph 1 of this section shall be submitted to %1partners@binary.com%2."
 msgstr "La información descrita en el párrafo 1 de la presente sección se enviará a %1partners@binary.com%2."
 
@@ -12788,9 +12773,6 @@ msgstr "Este documento (el \"Acuerdo\") establece los términos y condiciones en
 
 msgid "This feature is available to demo accounts only."
 msgstr "Esta característica está disponible solo para cuentas virtuales."
-
-msgid "This feature is not relevant to demo accounts."
-msgstr "Esta característica no es relevante para cuentas de dinero virtual."
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "Esta característica sólo es relevante para las cuentas de los agentes de pago."
@@ -13302,12 +13284,6 @@ msgstr "Horarios del mercado"
 msgid "Trading and Withdrawal Limits"
 msgstr "Límites de trading y de retiro"
 
-msgid "Trading and deposits have been disabled on your account. Kindly allow us some time to review the account."
-msgstr "El trading y los depósitos se han desactivado en su cuenta. Por favor, permítanos un tiempo para revisar la cuenta."
-
-msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "Se han desactivado las operaciones y retiros en su cuenta. Por favor %1póngase en contacto con nuestro servicio de atención al cliente%2 para recibir asistencia."
-
 msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
 msgstr "El comercio de opciones binarias y CFDs puede implicar riesgos sustanciales. No opere con dinero que no pueda permitirse perder, y nunca opere con dinero prestado. Aprenda sobre %1Comercio Responsable%2."
 
@@ -13648,6 +13624,12 @@ msgid "Unemployed"
 msgstr "Desempleado"
 
 msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
+msgstr ""
+
+msgid "Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals."
+msgstr ""
+
+msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits."
 msgstr ""
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
@@ -14226,9 +14208,6 @@ msgstr "Habilidades organizacionales, administrativas y contables bien desarroll
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "Actualizaremos sus límites. Haga clic en %1Acordar y aceptar%2 para reconocer que usted es totalmente responsable de sus acciones y que no somos responsables de ninguna adicción o pérdida."
 
-msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
-msgstr "Estamos actualizando nuestro sistema de cajero y pronto volverá a estar en línea. Consulte nuestra %1spágina de estado%2 para obtener actualizaciones."
-
 msgid "We’ve sent you an email"
 msgstr "Le hemos enviado un correo electrónico"
 
@@ -14631,8 +14610,8 @@ msgstr "Retiro: %1 a %2 días hábiles"
 msgid "Withdrawal: Not applicable"
 msgstr "Retiro: no disponible"
 
-msgid "Withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "Los retiros están deshabilitado en su cuenta. Por favor revise su correo electrónico para más detalles."
+msgid "Withdrawals are temporarily unavailable due to system maintenance. You can make your withdrawals when the maintenance is complete."
+msgstr ""
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
 msgstr "Los retiros han sido deshabilitados en su cuenta. Espere hasta que se verifiquen sus documentos cargados."
@@ -14733,6 +14712,9 @@ msgstr "Usted es responsable de mitigar los riesgos y abusos a los que nos enfre
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "Usted está vendiendo la moneda base y comprando la moneda secundaria."
 
+msgid "You are using a demo account. Please switch to a real account or create one to access Cashier."
+msgstr ""
+
 msgid "You can %1set a new currency%2 before you deposit for the first %3."
 msgstr "Puede %1sestablecer una nueva moneda%2 antes de depositar por primera %3."
 
@@ -14823,6 +14805,9 @@ msgstr "Usted ya retiró un total de %1%2  en los últimos %3 días."
 msgid "You have already withdrawn %1%2."
 msgstr "Usted ya retiró %1%2."
 
+msgid "You have chosen to exclude yourself from trading on our website until %1. If you are unable to place a trade or deposit after your self-exclusion period, please contact us via live chat."
+msgstr ""
+
 msgid "You have created all accounts available to you."
 msgstr "Usted ha creado todas las cuentas disponibles."
 
@@ -14840,6 +14825,9 @@ msgstr "No tiene fondos suficientes en su cuenta MT5."
 
 msgid "You have not granted access to any applications."
 msgstr "Usted no ha concedido acceso a ninguna aplicación."
+
+msgid "You have not provided your tax identification number. This information is necessary for legal and regulatory requirements. Please go to %1Personal details%2 in your account settings, and fill in your latest tax identification number."
+msgstr ""
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "Tiene posiciones abiertas en estas cuentas Binary:"
@@ -15012,6 +15000,15 @@ msgstr "Usted ha trabajado en el sector financiero durante al menos un año en u
 msgid "Your %1 day withdrawal limit is currently %2%3."
 msgstr "Su límite de retiro diario %1 es actualmente %2%3."
 
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits and withdrawals."
+msgstr ""
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits."
+msgstr ""
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable withdrawals."
+msgstr ""
+
 msgid "Your %1proof of address%2 has expired."
 msgstr "Su %1prueba de dirección%2 ha caducado."
 
@@ -15023,9 +15020,6 @@ msgstr "Su %1prueba de identidad%2 ha caducado."
 
 msgid "Your %1proof of identity%2 has not been verified."
 msgstr "Su %1prueba de identidad%2 no ha sido verificada."
-
-msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
-msgstr "Su %1prueba de identidad%3 y %2prueba de dirección%3 han caducado."
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
 msgstr "Su %1prueba de identidad%3 y %2prueba de dirección%3 no se han verificado."
@@ -15042,6 +15036,9 @@ msgstr "Su saldo virtual se ha restablecido."
 msgid "Your Existing Accounts"
 msgstr "Sus Cuentas Existentes"
 
+msgid "Your access to Cashier has been temporarily disabled as you have not set your 30-day turnover limit. Please go to %1Self-exclusion%2 and set your 30-day turnover limit."
+msgstr ""
+
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "Su cuenta no necesita autenticación en este momento.%1Le informaremos si se requiere autenticación en el futuro."
 
@@ -15050,6 +15047,12 @@ msgstr "Su cuenta ha sido verificada exitosamente"
 
 msgid "Your account has no Login/Logout activity."
 msgstr "Su cuenta no tiene actividad de accesos/cierres de sesión."
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and access your cashier."
+msgstr ""
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and request for withdrawals."
+msgstr ""
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Su cuenta está totalmente autenticada y su límite de retirada ha sido aumentado."
@@ -15060,8 +15063,8 @@ msgstr "Su cuenta ahora está desactivada."
 msgid "Your account is now deactived."
 msgstr "Su cuenta ahora está desactivada."
 
-msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
-msgstr "Su cuenta está restringida. %1Póngase en contacto con atención al cliente%2 para obtener ayuda."
+msgid "Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again."
+msgstr ""
 
 msgid "Your account remains under the retail client category."
 msgstr "Su cuenta permanece bajo la categoría de cliente minorista."
@@ -15078,8 +15081,17 @@ msgstr "Su solicitud para ser tratado como un cliente profesional es procesada."
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Su solicitud será revisada por nuestros departamentos de cumplimiento y de marketing. Una vez aprobada, vamos a poner su información en vivo en nuestra lista de %1Agentes de Pago%2."
 
+msgid "Your cashier is currently locked. Please contact us via live chat to find out how to unlock it."
+msgstr ""
+
 msgid "Your cashier is locked."
 msgstr "Su cajero está bloqueado."
+
+msgid "Your cashier is locked. Please complete the %1financial assessment%2 to unlock it."
+msgstr ""
+
+msgid "Your cashier is locked. See %1how we protect your funds%2 before you proceed."
+msgstr ""
 
 msgid "Your cashier session has expired. Please try again."
 msgstr "Su sesión de cajero ha expirado. Por favor, inténtelo de nuevo."
@@ -15213,6 +15225,9 @@ msgstr "Su límite de retiro es %1%2."
 msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
 msgstr "Deberá ingresar fondos en su cuenta MQL5 para suscribirse a las señales de pago. Aprenda %1hocómo depositar fondos en su cuenta%2."
 
+msgid "You’ve not set your country of residence. To access Cashier, please update your %1country of residence%2 in the Personal details section in your account settings."
+msgstr ""
+
 msgid "ZEC vs US dollar"
 msgstr "ZEC vs dólar estadounidense"
 
@@ -15255,6 +15270,9 @@ msgstr "una unidad de transacción que representa una cantidad estandarizada del
 msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's web interface, or"
 msgstr "a) Acceder a la plataforma de operaciones MT5 a través del enlace directo %1 de la interfaz web de DIEL o,"
 
+msgid "a. Account opened under a false name"
+msgstr ""
+
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "una Orden que ejecute una transacción para cerrar una Posición Abierta cuando se alcanza el precio especificado por el cliente"
 
@@ -15270,11 +15288,17 @@ msgstr "una instrucción de ejecución de parte del cliente para la Empresa de a
 msgid "b. Download and install the MT5 trading platform through the link %1"
 msgstr "b. Descargar e instalar la plataforma de trading MT5 a través del enlace %1"
 
+msgid "b. Submission of fraudulent or tampered document"
+msgstr ""
+
 msgid "back"
 msgstr "atrás"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading stock indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "opciones binarias, forex, mercado de forex, comercio en línea, comercio financiero, comercio binario, comercio de índices, operar con índices bursátiles, operaciones de divisas, operaciones con materias primas, estrategia de opciones binarias, corredor binario, apuesta binaria, plataforma de operaciones con opciones binarias, estrategia binaria, finanzas, inversión, trading"
+
+msgid "c. Opening of more than one Binary.com account"
+msgstr ""
 
 msgid "close"
 msgstr "cerrar"
