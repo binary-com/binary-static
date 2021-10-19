@@ -140,12 +140,12 @@ const TypesOfPartnership = () => (
                 </div>
                 <div id='ib'>
                     <div className='gr-12 gr-padding-20 white-bg-color'>
-                        <p className='no-margin'>{it.L('Earn daily commissions on the trading activities of the clients you refer to the [_1] MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day.', it.website_name)}</p>
+                        <p className='no-margin'>{it.L('Earn daily commission on your referred clients\' trades on the [_1] MetaTrader 5 (MT5) platform. Your total commission will be credited into your account at the end of every day.', it.website_name)}</p>
 
                         <div className='gr-10 gr-12-m gr-parent gr-centered'>
-                            <h3 id='ib_header' className='secondary-color'>{it.L('Commision structure')}</h3>
+                            <h3 id='ib_header' className='secondary-color'>{it.L('Commission structure')}</h3>
 
-                            <h3>{it.L('Synthetic Account')}</h3>
+                            <h3>{it.L('Synthetics Account')}</h3>
                             <p>{it.L('Earn when your clients trade on an MT5 Synthetics account.')}</p>
                             <Table
                                 data={{
@@ -213,8 +213,28 @@ const TypesOfPartnership = () => (
                                             { text: it.L('7.50') },
                                         ],
                                         [
-                                            { text: it.L('Step Index') },
+                                            { text: it.L('Step index') },
                                             { text: it.L('0.10') },
+                                        ],
+                                        [
+                                            { text: it.L('Jump 10 Index') },
+                                            { text: it.L('0.50') },
+                                        ],
+                                        [
+                                            { text: it.L('Jump 25 Index') },
+                                            { text: it.L('1.25') },
+                                        ],
+                                        [
+                                            { text: it.L('Jump 50 Index') },
+                                            { text: it.L('2.50') },
+                                        ],
+                                        [
+                                            { text: it.L('Jump 75 Index') },
+                                            { text: it.L('3.75') },
+                                        ],
+                                        [
+                                            { text: it.L('Jump 100 Index') },
+                                            { text: it.L('5.00') },
                                         ],
                                     ],
                                 }}
@@ -238,18 +258,15 @@ const TypesOfPartnership = () => (
                                             { text: it.L('Asset'), attributes: { rowSpan: 2 } },
                                             { text: it.L('Commission per lot') },
                                         ],
-                                        [
-                                            { text: it.L('(1 standard forex lot is 100k units)'), className: 'center-text' },
-                                        ],
                                     ],
                                     tbody: [
                                         [
                                             { text: it.L('Forex') },
-                                            { text: it.L('5') },
+                                            { text: it.L('USD 2') },
                                         ],
                                         [
                                             { text: it.L('Metals') },
-                                            { text: it.L('5') },
+                                            { text: it.L('USD 4') },
                                         ],
                                     ],
                                 }}
@@ -325,7 +342,7 @@ const TypesOfPartnership = () => (
                                         ],
                                         [
                                             { text: it.L('IOT/USD') },
-                                            { text: it.L('15O') },
+                                            { text: it.L('150') },
                                         ],
                                         [
                                             { text: it.L('NEO/USD') },
@@ -356,7 +373,7 @@ const TypesOfPartnership = () => (
                             />
                             <div className='affiliate-ib-calculation'>
                                 <h3 className='text-align-left'><strong>{it.L('How it’s calculated')}</strong></h3>
-                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:')}</p>
+                                <p className='text-align-left'>{it.L('For forex, a deal for 1 lot will pay out USD 2 in commission based on the following formula (using EUR/USD as an example):')}</p>
                                 <img
                                     src={it.url_for('images/pages/affiliates_ib_landing/formulas/formula-financial-forex.svg')}
                                     width='100%'

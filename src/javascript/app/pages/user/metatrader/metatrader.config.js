@@ -4,12 +4,12 @@ const Header       = require('../../../base/header');
 const BinarySocket = require('../../../base/socket');
 const Dialog       = require('../../../common/attach_dom/dialog');
 const Currency     = require('../../../common/currency');
+const localize     = require('../../../../_common/localize').localize;
 const Validation   = require('../../../common/form_validation');
 const GTM          = require('../../../../_common/base/gtm');
-const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
-const urlFor       = require('../../../../_common/url').urlFor;
 const isBinaryApp  = require('../../../../config').isBinaryApp;
+const isEuCountry  = require('../../../common/country_base').isEuCountry;
 
 const MetaTraderConfig = (() => {
     const accounts_info = {};
@@ -96,7 +96,7 @@ const MetaTraderConfig = (() => {
                                 $('#authenticate_loading').setVisibility(1);
                                 await setMaltaInvestIntention();
                                 $('#authenticate_loading').setVisibility(0);
-                                $message.find('.authenticate').setVisibility(1);
+                                $message.find('.authenticate_msg').setVisibility(1);
                                 is_ok = false;
                             }
                             if (is_ok && !isAuthenticated() && sample_account.sub_account_type === 'financial_stp') {
@@ -105,7 +105,7 @@ const MetaTraderConfig = (() => {
                                 $('#authenticate_loading').setVisibility(1);
                                 await setLabuanFinancialSTPIntention();
                                 $('#authenticate_loading').setVisibility(0);
-                                $message.find('.authenticate').setVisibility(1);
+                                $message.find('.authenticate_msg').setVisibility(1);
                                 is_ok = false;
                             }
 
@@ -336,7 +336,19 @@ const MetaTraderConfig = (() => {
                 } else if (getAccountsInfo(acc_type).sub_account_type === 'financial' && getAccountsInfo(acc_type).landing_company_short !== 'svg') {
                     BinarySocket.wait('get_account_status').then(() => {
                         if (isAuthenticationPromptNeeded()) {
-                            resolve($messages.find('#msg_authenticate').html());
+                      
+                            const $message_auth =   $messages.find('#msg_authenticate');
+                            const auth_link = $message_auth.data('auth-url');
+                            
+                            const message = localize('To withdraw from MetaTrader 5 [_1] please [_2]Authenticate[_3] your Binary account.',
+                                [isEuCountry() ? 'CFDs Account' : 'Account',
+                                    `<a href="${auth_link}">`,
+                                    '</a>']
+                            );
+
+                            $message_auth.html(message);
+
+                            resolve(message);
                         }
 
                         resolve();
@@ -440,28 +452,14 @@ const MetaTraderConfig = (() => {
                 selector   : fields.deposit.txt_amount.id,
                 validations: [
                     ['req', { hide_asterisk: true }],
-                    // check if entered amount is less than the available balance
-                    // e.g. transfer amount is 10 but client balance is 5
-                    ['custom', {
-                        func: () => {
-                            const balance = Client.get('balance');
-
-                            const is_balance_more_than_entered = +balance >= +$(fields.deposit.txt_amount.id).val();
-
-                            return balance && is_balance_more_than_entered;
-                        },
-                        message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', urlFor('cashier')),
-                    }],
                     // check if balance is less than the minimum limit for transfer
                     // e.g. client balance could be 0.45 but min limit could be 1
                     ['custom', {
                         func: () => {
-                            const balance         = Client.get('balance');
+                            const deposit_input_value   = document.querySelector('#txt_amount_deposit').value;
                             const min_req_balance = Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5');
 
-                            const is_balance_more_than_min_req = +balance >= +min_req_balance;
-
-                            return balance && is_balance_more_than_min_req;
+                            return +deposit_input_value > +min_req_balance;
                         },
                         message: localize('Should be more than [_1]', Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5')),
                     }],
@@ -538,18 +536,16 @@ const MetaTraderConfig = (() => {
     // otherwise, use this function to format login into display login
     const getDisplayLogin = login => login.replace(/^MT[DR]?/i, '');
 
-    const isAuthenticated = () =>
-        State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
+    const isAuthenticated = () => {
+        const authentication = State.getResponse('get_account_status.authentication');
+        const { identity, document, needs_verification } = authentication;
+        return identity.status === 'verified' && document.status === 'verified' && needs_verification.length === 0;
+    };
 
     const isAuthenticationPromptNeeded = () => {
         const authentication = State.getResponse('get_account_status.authentication');
-        const { identity, needs_verification } = authentication;
-        const is_need_verification = needs_verification.length;
-        const has_been_authenticated = /^(rejected|expired|verified)$/.test(identity.status);
-
-        if (has_been_authenticated) return false;
-
-        return is_need_verification;
+        const { needs_verification } = authentication;
+        return needs_verification.length && (needs_verification.includes('identity') || needs_verification.includes('document'));
     };
 
     // remove server from acc_type for cases where we don't need it

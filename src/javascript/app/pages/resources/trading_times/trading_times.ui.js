@@ -50,23 +50,37 @@ const TradingTimesUI = (() => {
         });
         $date.val(localize('Today'));
         if ($(window).width() < 480) {
-            // Create a label to be friendlier
-            const $label = $('label[for=trading-date]');
-            $label.append($('<span/>', { class: 'ux-date foot-note' }));
+            const $input_group = $('#trading-date-container .input-group');
+            const $date_input = $input_group.find('input');
+
+            $input_group.append($('<span/>', { class: 'ux-date foot-note' }));
+
+            const $date_caption = $('span.ux-date');
+
             if (!$date.val()) {
-                $('span.ux-date').text(localize('Today'));
+                $date_caption.text(localize('Today'));
                 $date.val(isoFormattedDate);
                 $date.attr('value', isoFormattedDate);
             }
             $date.change(() => {
                 const diffInDays = moment().diff(moment($date.val()), 'days', true);
                 if (diffInDays < 0 || diffInDays >= 1) {
-                    $('span.ux-date').text('');
+                    $date_caption.text('').hide();
+                    $date_input.show();
+                    $date_input.css('opacity',1);
                 } else {
-                    $('span.ux-date').text('Today');
+                    $date_caption.text(localize('Today')).show();
+                    $date_input.css('opacity',0);
                 }
             });
+
+            $('#trading-date').trigger('change');
+
+            $date_input.click(() => {
+                $date_input.show();
+            });
         }
+
         $date.change(function () {
             if (!CommonFunctions.dateValueChanged(this, 'date')) {
                 return false;

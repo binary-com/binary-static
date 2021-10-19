@@ -4,10 +4,14 @@ const moment             = require('moment');
 const generateBirthDate  = require('./attach_dom/birth_date_picker');
 const FormManager        = require('./form_manager');
 const BinaryPjax         = require('../base/binary_pjax');
-const Client             = require('../base/client');
+const Header             = require('../base/header');
 const BinarySocket       = require('../base/socket');
+const Client             = require('../base/client');
 const professionalClient = require('../pages/user/account/settings/professional_client');
+const param              = require('../../_common/url').param;
+const ClientBase         = require('../../_common/base/client_base');
 const CommonFunctions    = require('../../_common/common_functions');
+const getElementById     = require('../../_common/common_functions').getElementById;
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const toISOFormat        = require('../../_common/string_util').toISOFormat;
@@ -16,14 +20,47 @@ const urlFor             = require('../../_common/url').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const AccountOpening = (() => {
+
+    const excluded_countries = ['im', 'au', 'sg', 'no'];
+
+    const getSinupPageLink = (upgrade_info, account_type) => {
+        const get_settings = State.getResponse('get_settings');
+        const country_code = get_settings.country_code;
+        if (excluded_countries.includes(country_code)) { // old flow
+            return urlFor(upgrade_info.upgrade_links[account_type]);
+        }  // new flow
+        return urlFor('/new_account/real_account', `account_type=${account_type}`);
+        
+    };
+
     const redirectAccount = () => {
         const upgrade_info = Client.getUpgradeInfo();
-
         if (!upgrade_info.can_upgrade) {
             BinaryPjax.loadPreviousUrl();
             return -1;
         }
+        const country_code = State.getResponse('get_settings').country_code;
 
+        if (window.location.pathname.includes('/real_account')) { // new signup flow
+            if (excluded_countries.includes(country_code)) {
+                BinaryPjax.load('user/accounts');
+            }
+            const real_account_signup_target = param('account_type');
+            const is_in_correct_path = upgrade_info.can_upgrade_to.some(lc => lc === real_account_signup_target);
+            if (!is_in_correct_path) {
+                const upgradable_accounts_count = upgrade_info.can_upgrade_to.length;
+                if (upgradable_accounts_count > 1) {
+                    BinaryPjax.load('user/accounts');
+                } else if (upgradable_accounts_count === 1) {
+                    window.location.replace(urlFor('/new_account/real_account', `account_type=${upgrade_info.can_upgrade_to[0]}`));
+                }
+                return 1;
+            }
+            return 0;
+        }  // old signup flow (only for excluded countries)
+        if (!excluded_countries.includes(country_code)) {
+            BinaryPjax.load('user/accounts');
+        }
         if (!upgrade_info.is_current_path) {
             const upgradable_accounts_count = Object.keys(upgrade_info.upgrade_links).length;
             if (upgradable_accounts_count > 1) {
@@ -34,6 +71,17 @@ const AccountOpening = (() => {
             return 1;
         }
         return 0;
+        
+    };
+
+    const showResponseError = (response) => {
+        getElementById('loading').setVisibility(0);
+        getElementById('real_account_wrapper').setVisibility(1);
+        const $notice_box = $('#client_message').find('.notice-msg');
+        $('#submit-message').empty();
+        $notice_box.text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : response.error.message).end()
+            .setVisibility(1);
+        $.scrollTo($notice_box, 500, { offset: -150 });
     };
 
     const populateForm = (form_id, getValidations, is_financial) => {
@@ -205,21 +253,6 @@ const AccountOpening = (() => {
         }
     };
 
-    const handleTaxIdentificationNumber = () => {
-        BinarySocket.wait('get_settings').then((response) => {
-            const tax_identification_number = response.get_settings.tax_identification_number;
-            if (tax_identification_number) {
-                $('#lbl_tax_identification_number').text(tax_identification_number);
-                CommonFunctions.getElementById('row_lbl_tax_identification_number').setVisibility(1);
-                $('#tax_identification_number')
-                    .val(tax_identification_number) // Set value for validation
-                    .attr({ 'data-force': true, 'data-value': tax_identification_number });
-            } else {
-                CommonFunctions.getElementById('row_tax_identification_number').setVisibility(1);
-            }
-        });
-    };
-
     const handleState = (states_list, form_id, getValidations) => {
         const address_state_id = '#address_state';
         BinarySocket.wait('get_settings').then((response) => {
@@ -256,6 +289,7 @@ const AccountOpening = (() => {
             }
         });
     };
+
     const handleNewAccount = (response, message_type) => {
         if (response.error) {
             const error_message = response.error.message;
@@ -275,7 +309,23 @@ const AccountOpening = (() => {
         }
     };
 
+    const handleTaxIdentificationNumber = () => {
+        BinarySocket.wait('get_settings').then((response) => {
+            const tax_identification_number = response.get_settings.tax_identification_number;
+            if (tax_identification_number) {
+                $('#lbl_tax_identification_number').text(tax_identification_number);
+                CommonFunctions.getElementById('row_lbl_tax_identification_number').setVisibility(1);
+                $('#tax_identification_number')
+                    .val(tax_identification_number) // Set value for validation
+                    .attr({ 'data-force': true, 'data-value': tax_identification_number });
+            } else {
+                CommonFunctions.getElementById('row_tax_identification_number').setVisibility(1);
+            }
+        });
+    };
+
     const commonValidations = () => {
+        const residence = Client.get('residence');
         const req = [
             { selector: '#salutation',                  validations: ['req'] },
             { selector: '#first_name',                  validations: ['req', 'letter_symbol', ['length', { min: 2, max: 50 }]] },
@@ -284,8 +334,8 @@ const AccountOpening = (() => {
             { selector: '#address_line_1',              validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
             { selector: '#address_line_2',              validations: ['address', ['length', { min: 0, max: 70 }]] },
             { selector: '#address_city',                validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
-            { selector: '#address_state',               validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
-            { selector: '#address_postcode',            validations: [Client.get('residence') === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').some(lc => lc === 'iom') ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+            { selector: '#address_state',               validations: [residence === 'au' ? 'req' : '', $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]]] },
+            { selector: '#address_postcode',            validations: [residence === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').some(lc => lc === 'iom') ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',                       validations: ['req', 'phone', ['length', { min: 9, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
             { selector: '#secret_question',             validations: ['req'] },
             { selector: '#secret_answer',               validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
@@ -312,7 +362,7 @@ const AccountOpening = (() => {
             id = $(this).attr('id');
             if (!/^(tnc|address_state|chk_professional|chk_tax_id|citizen)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
-                if (id === 'not_pep') {
+                if (id === 'pep_declaration') {
                     validation.exclude_request = 1;
                     validation.validations = [['req', { message: localize('Please confirm that you are not a politically exposed person.') }]];
                 }
@@ -320,6 +370,54 @@ const AccountOpening = (() => {
             }
         });
         return validations;
+    };
+
+    const setCurrencyForFinancialAccount = async (currency_to_set) => {
+        sessionStorage.removeItem('new_financial_account_set_currency');
+        await BinarySocket.wait('authorize');
+        const response = await BinarySocket.send({ set_account_currency: currency_to_set });
+        if (response.error) {
+            showResponseError(response);
+        } else {
+            Client.set('currency', currency_to_set);
+            BinarySocket.send({ balance: 1 });
+            BinarySocket.send({ payout_currencies: 1 }, { forced: true });
+            Header.displayAccountStatus();
+            setTimeout(() => { window.location.replace(urlFor('user/set-currency') || urlFor('trading')); }, 500); // need to redirect not using pjax
+        }
+    };
+
+    const createNewAccount = async (account_details, submit_button) => {
+        FormManager.disableButton(submit_button);
+        const is_maltainvest_account = !!account_details.new_account_maltainvest;
+        account_details.client_type = $('#chk_professional').is(':checked') ? 'professional' : 'retail';
+        delete account_details.tax_identification_confirm;
+        delete account_details.tnc;
+        delete account_details.pep_declaration;
+        delete account_details.fs_professional;
+        
+        // Set currency after account is created for Maltainvest only
+        if (is_maltainvest_account && account_details.currency) {
+            const currency = account_details.currency;
+            delete account_details.currency;
+            sessionStorage.setItem('new_financial_account_set_currency', currency);
+        }
+
+        const response = await BinarySocket.send(account_details);
+        if (response.error) {
+            if (response.error.code === 'show risk disclaimer') return true;
+            showResponseError(response);
+        } else {
+            localStorage.setItem('is_new_account', 1);
+            const email = Client.get('email');
+            const loginid = response[is_maltainvest_account ? 'new_account_maltainvest' : 'new_account_real'].client_id;
+            const token = response[is_maltainvest_account ? 'new_account_maltainvest' : 'new_account_real'].oauth_token;
+            ClientBase.setNewAccount({ email, loginid, token });
+            if (is_maltainvest_account) window.location.reload();
+            else window.location.replace(urlFor('user/set-currency'));
+        }
+        FormManager.enableButton(submit_button);
+        return false;
     };
 
     const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
@@ -333,13 +431,17 @@ const AccountOpening = (() => {
     };
 
     return {
-        redirectAccount,
-        populateForm,
-        handleNewAccount,
         commonValidations,
-        selectCheckboxValidation,
-        showHidePulser,
+        createNewAccount,
+        excluded_countries,
+        getSinupPageLink,
+        handleNewAccount,
+        populateForm,
+        redirectAccount,
         registerPepToggle,
+        selectCheckboxValidation,
+        setCurrencyForFinancialAccount,
+        showHidePulser,
     };
 })();
 

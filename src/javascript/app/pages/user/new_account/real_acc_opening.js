@@ -39,12 +39,16 @@ const RealAccOpening = (() => {
                     $('#tax_information_note_toggle').toggleClass('open');
                     $('#tax_information_note').slideToggle();
                 });
+                
+                getElementById('real_loading').setVisibility(0);
+                getElementById('frm_real').setVisibility(1);
+        
+                AccountOpening.showHidePulser(0);
+                AccountOpening.registerPepToggle();
             });
         } else {
             BinaryPjax.loadPreviousUrl();
         }
-        AccountOpening.showHidePulser(0);
-        AccountOpening.registerPepToggle();
     };
 
     const getValidations = () => {

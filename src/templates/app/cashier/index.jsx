@@ -1,5 +1,5 @@
-import React             from 'react';
-import { Button }        from '../../_common/components/elements.jsx';
+import React from 'react';
+import { Button } from '../../_common/components/elements.jsx';
 import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
@@ -14,34 +14,64 @@ const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
     </div>
 );
 
-const DepositWithdrawButton = ({ is_payment_agent, is_virtual }) => (
-    <div className= {is_virtual ? 'gr-4 gr-12-m' : 'gr-2 gr-12-m'}>
+const DepositWithdrawButtonRealMoney = ({ is_virtual }) => (
+    <div className={is_virtual ? 'gr-4 gr-12-m' : 'gr-2 gr-12-m'}>
         <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
         <div className='gr-row gr-row-align-left gr-row-align-right-m'>
-            { is_virtual ?
+            {is_virtual ?
                 <div className='gr-adapt'>
                     <Button className='toggle button' id='VRT_topup_link' text={it.L('Reset my demo balance')} />
                 </div>
                 :
                 <React.Fragment>
-                    <div className='gr-adapt gr-no-gutter-m client_real invisible gr-parent'>
+                    <div className='gr-adapt gr-no-gutter-m client_real client_virtual invisible gr-parent'>
                         <Button
-                            className='toggle button client_real invisible deposit_btn_cashier'
-                            href={it.url_for(is_payment_agent ? '/cashier/payment_agent_listws' : '/cashier/forwardws?action=deposit')}
+                            className='toggle button client_real client_virtual invisible deposit_btn_cashier'
+                            id='fiat_deposit_link'
+                            href='javasript:;'
                             text={it.L('Deposit')}
                             text_className='deposit'
                         />
                     </div>
-                    <div className='gr-adapt client_real invisible'>
+                    <div className='gr-adapt client_real client_virtual invisible'>
                         <Button
-                            className='toggle button client_real invisible withdraw_btn_cashier'
-                            href={it.url_for(is_payment_agent ? '/paymentagent/withdrawws' : '/cashier/forwardws?action=withdraw')}
+                            id='fiat_withdraw_link'
+                            className='toggle button client_real client_virtual invisible withdraw_btn_cashier'
+                            href={it.url_for('/cashier/forwardws?action=withdraw')}
                             text={it.L('Withdraw')}
                             text_className='withdraw'
                         />
                     </div>
                 </React.Fragment>
             }
+        </div>
+    </div>
+);
+
+const DepositWithdrawButtonCryptocurrencies = ({ is_cryptocurrencies_method }) => (
+    <div className='gr-2 gr-12-m'>
+        <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
+        <div className='gr-row gr-row-align-left gr-row-align-right-m'>
+            <React.Fragment>
+                <div className='gr-adapt gr-no-gutter-m client_real client_virtual invisible gr-parent'>
+                    <Button
+                        className='toggle button client_real client_virtual invisible deposit_btn_cashier'
+                        id={is_cryptocurrencies_method ? 'crypto_deposit_link' : 'payment_agent_deposit_link'}
+                        href='javasript:;'
+                        text={it.L('Deposit')}
+                        text_className='deposit'
+                    />
+                </div>
+                <div className='gr-adapt client_real client_virtual invisible'>
+                    <Button
+                        className='toggle button client_real client_virtual invisible withdraw_btn_cashier'
+                        id={is_cryptocurrencies_method ? 'crypto_withdraw_link' : 'payment_agent_withdraw_link'}
+                        href={is_cryptocurrencies_method ? it.url_for('/cashier/forwardws?action=withdraw') : it.url_for('/paymentagent/withdrawws')}
+                        text={it.L('Withdraw')}
+                        text_className='withdraw'
+                    />
+                </div>
+            </React.Fragment>
         </div>
     </div>
 );
@@ -86,16 +116,15 @@ const Cashier = () => (
                 <div className='gr-6 gr-8-m'>
                     <span id={'virtual_topup_info'} />
                 </div>
-                <DepositWithdrawButton is_virtual />
+                <DepositWithdrawButtonRealMoney is_virtual />
             </div>
         </div>
 
-        <div className='gr-padding-10 client_virtual invisible' />
+        <SeparatorLine className='gr-padding-10 client_virtual invisible' />
 
-        <div className='gr-padding-10 table-body'>
+        <div className='gr-padding-10 table-body normal_currency'>
             <h3 className='gr-padding-10'>
-                <span className='invisible normal_currency client_logged_out'>{it.L('Deposit into or withdraw from your real account')}</span>
-                <span className='invisible crypto_currency'>{it.L('Cryptocurrency')}</span>
+                <span className='client_virtual'>{it.L('Deposit via bank wire, credit card, and e-wallet')}</span>
             </h3>
             <div className='gr-row'>
                 <IconWithLink
@@ -105,23 +134,47 @@ const Cashier = () => (
                     img_src={it.url_for('images/pages/cashier/payment-methods.svg')}
                 />
                 <div className='gr-6 gr-8-m'>
-                    <span className='invisible normal_currency client_logged_out'>{it.L('Move funds in and out of your real account.')}</span>
-                    <span className='invisible crypto_currency'>{it.L('Manage the funds in your cryptocurrency account.')}</span>
+                    <span className='client_virtual'>{it.L('Deposit via bank wire, credit card, and e-wallet.')}</span>
                     &nbsp;
-                    <a className='invisible normal_currency crypto_currency' href={`${it.url_for('cashier/payment_methods')}`} id='view_payment_methods'>
+                    <a className='client_virtual' href={`${it.url_for('cashier/payment_methods')}`} id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
                 </div>
                 <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />
-                <DepositWithdrawButton />
+                <DepositWithdrawButtonRealMoney />
+            </div>
+        </div>
+
+        <div className='gr-padding-10 table-body invisible crypto_currency'>
+            <h3 className='gr-padding-10'>
+                {it.L('Deposit cryptocurrencies')}
+            </h3>
+            <div className='gr-row'>
+                <IconWithLink
+                    img_src={it.url_for('images/pages/cashier/cryptocurrencies.svg')}
+                />
+                <div className='gr-6 gr-8-m'>
+                    <span >{it.L('We accept the following cryptocurrencies:')}</span>
+                &nbsp;
+                    <div className='crypto_container'>
+                        <img  className='crypto_icon' src={it.url_for('images/pages/cashier/bitcoin-icon.svg')} alt='bitcoin-icon_logo' />
+                        <img  className='crypto_icon' src={it.url_for('images/pages/cashier/ethereum-icon.svg')} alt='ethereum-icon_logo' />
+                        <img  className='crypto_icon' src={it.url_for('images/pages/cashier/litecoin-icon.svg')} alt='litecoin-icon_logo' />
+                        <img  className='crypto_icon' src={it.url_for('images/pages/cashier/usdc-icon.svg')} alt='usdc-icon_logo' />
+                        <img  src={it.url_for('images/pages/cashier/usdt-tether-icon.svg')} alt='usdt-tether_logo' />
+                    </div>
+                </div>
+                <DepositWithdrawButtonCryptocurrencies is_cryptocurrencies_method />
             </div>
         </div>
 
         <div className='gr-padding-10' />
 
-        <div className='gr-padding-10 table-body payment-agent invisible' id='payment-agent-section'>
-            <h3 className='gr-padding-10'>{it.L('Payment Agent')}</h3>
+        <div className='gr-padding-10 table-body invisible payment-agent' id='payment-agent-section'>
+            <h3 className='gr-padding-10'>
+                {it.L('Deposit via payment agents')}
+            </h3>
             <div className='gr-row'>
                 <IconWithLink
                     button_link={it.url_for('cashier/payment_agent_listws')}
@@ -130,11 +183,11 @@ const Cashier = () => (
                     img_src={it.url_for('images/pages/cashier/payment-agents.svg')}
                 />
                 <div className='gr-6 gr-8-m'>
-                    <span>{it.L('For e-wallets or local currencies not supported by [_1].', it.website_name)}</span>
+                    <span>{it.L('Deposit in your local currency via an authorised, independent payment agent in your country.')}</span>
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
                 </div>
                 <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
-                <DepositWithdrawButton is_payment_agent />
+                <DepositWithdrawButtonCryptocurrencies />
             </div>
         </div>
 

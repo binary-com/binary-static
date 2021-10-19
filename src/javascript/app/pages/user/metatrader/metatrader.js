@@ -7,6 +7,7 @@ const Validation         = require('../../../common/form_validation');
 const localize           = require('../../../../_common/localize').localize;
 const State              = require('../../../../_common/storage').State;
 const applyToAllElements = require('../../../../_common/utility').applyToAllElements;
+const isEuCountry        = require('../../../common/country_base').isEuCountry;
 
 const MetaTrader = (() => {
     let show_new_account_popup = true;
@@ -130,8 +131,13 @@ const MetaTrader = (() => {
 
                     ['demo', 'real'].forEach((account_type) => {
                         const is_demo = account_type === 'demo';
-                        const display_name =
-                            Client.getMT5AccountDisplays(market_type, sub_account_type, is_demo);
+                        const display_name = Client.getMT5AccountDisplays(
+                            market_type,
+                            sub_account_type,
+                            is_demo,
+                            landing_company_short,
+                            isEuCountry()
+                        );
                         const leverage = getLeverage(market_type, sub_account_type, landing_company_short);
 
                         const addAccountsInfo = (trading_server) => {
@@ -274,7 +280,7 @@ const MetaTrader = (() => {
         if (Validation.validate(`#frm_${action}`)) {
             MetaTraderUI.disableButton(action);
             // further validations before submit (password_check)
-            MetaTraderUI.postValidate(acc_type, action).then((is_ok) => {
+            MetaTraderUI.postValidate(acc_type, action).then(async (is_ok) => {
                 if (!is_ok) {
                     MetaTraderUI.enableButton(action);
                     return;
@@ -289,6 +295,25 @@ const MetaTrader = (() => {
                 }
 
                 const req = makeRequestObject(acc_type, action);
+                if (action === 'new_account' && MetaTraderUI.shouldSetTradingPassword()) {
+                    const { mt5_login_list } = await BinarySocket.send({ mt5_login_list: 1 });
+                    const has_mt5_account = mt5_login_list.length > 0;
+                    if (has_mt5_account && !MetaTraderUI.getTradingPasswordConfirmVisibility()) {
+                        MetaTraderUI.setTradingPasswordConfirmVisibility(1);
+                        MetaTraderUI.enableButton(action);
+                        return;
+                    }
+                    const response = await BinarySocket.send({
+                        trading_platform_password_change: 1,
+                        new_password                    : req.mainPassword,
+                        platform                        : 'mt5',
+                    });
+                    if (response.error) {
+                        MetaTraderUI.displayFormMessage(response.error.message, action);
+                        MetaTraderUI.enableButton(action, response);
+                        return;
+                    }
+                }
                 BinarySocket.send(req).then(async (response) => {
                     if (response.error) {
                         MetaTraderUI.displayFormMessage(response.error.message, action);

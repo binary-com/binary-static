@@ -86,7 +86,7 @@ const checkPassword = (password_selector, should_show_error) => {
 const removeCheck = (password_selector, should_reset_meter) => {
     const el_password = document.querySelector(password_selector);
     const el_meter_bar = el_password.parentNode.querySelector('.password--meter-fill');
-    const password_value = el_password.value.trim();
+    const password_value = (el_password.value || '').trim();
     const el_feedback_message = el_password.parentNode.querySelector('.password--message');
     if (el_meter_bar && password_value.length < 1 || should_reset_meter) {
         el_meter_bar.style.transform = 'scale(0, 1)';

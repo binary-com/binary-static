@@ -19,15 +19,17 @@ const Guide = (() => {
 
     const init = (options) => {
         opt = {
-            script        : '',      // the script name in scripts
-            autoStart     : false,   // false: start by button click
-            guideBtnID    : '#guideBtn',
-            btnText       : localize('Guide'),  // guide start button's text
-            blink_class   : 'highlight',
-            blink_inDelay : 1000,
-            blink_outDelay: 1000,
-            blink_interval: 3000,    // 0: continous blinking (blink_inDelay + blink_outDelay)
-            blink_count   : 0,        // 0: infinite
+            script               : '',      // the script name in scripts
+            autoStart            : false,   // false: start by button click
+            guide_btn_id         : '#guideBtn',
+            btnText              : localize('Guide'),  // guide start button's text
+            blink_class          : 'highlight',
+            blink_inDelay        : 1000,
+            blink_outDelay       : 1000,
+            blink_interval       : 3000,    // 0: continous blinking (blink_inDelay + blink_outDelay)
+            blink_count          : 0,        // 0: infinite
+            contract_list_id     : '#contracts_list',
+            close_confirmation_id: '#close_confirmation_container',
         };
         $.extend(true, opt, options);
 
@@ -35,12 +37,12 @@ const Guide = (() => {
         btn_next    = { className: 'button', html: $('<span/>', { text: localize('Next') }) };
         btn_finish  = { className: 'button btnFinish', html: $('<span/>', { text: localize('Finish') }) };
 
-        if ($(opt.guideBtnID).length === 0 || opt.script.length === 0) {
+        if ($(opt.guide_btn_id).length === 0 || opt.script.length === 0) {
             return;
         }
 
         if (isDisabled()) {
-            $(opt.guideBtnID).remove();
+            $(opt.guide_btn_id).remove();
             return;
         }
 
@@ -68,15 +70,15 @@ const Guide = (() => {
      *  generate the button's html
      */
     const makeButton = () => {
-        if ($(opt.guideBtnID).children().length > 0) {
+        if ($(opt.guide_btn_id).children().length > 0) {
             return;
         }
 
-        $(opt.guideBtnID)
+        $(opt.guide_btn_id)
             .addClass('gr-hide-m pulser')
             .append($('<span/>', { class: 'close', text: 'X' }))
             .append($('<strong/>'));
-        $(`${opt.guideBtnID} strong`).html(`<span></span>${opt.btnText}`);
+        $(`${opt.guide_btn_id} strong`).html(`<span></span>${opt.btnText}`);
 
         setEvents();
     };
@@ -85,20 +87,23 @@ const Guide = (() => {
      *  both buttons' click event
      */
     const setEvents = () => {
-        $(`${opt.guideBtnID} strong`).click(() => {
+        $(`${opt.guide_btn_id} strong`).click(() => {
             const enjoyhint_instance = new EnjoyHint({});
             enjoyhint_instance.setScript(getScript(opt.script));
             enjoyhint_instance.runScript();
+            if ($(opt.contract_list_id).css('display') === 'none') {
+                $(opt.close_confirmation_id).click();
+            }
         });
 
         if (opt.autoStart) {
-            $(opt.guideBtnID).click();
+            $(opt.guide_btn_id).click();
         }
 
         // Hide button
-        $(`${opt.guideBtnID} span.close`).click(() => {
+        $(`${opt.guide_btn_id} span.close`).click(() => {
             setDisabled();
-            $(opt.guideBtnID).remove();
+            $(opt.guide_btn_id).remove();
         });
     };
 

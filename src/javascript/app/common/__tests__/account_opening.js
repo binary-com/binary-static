@@ -12,7 +12,7 @@ describe('AccountOpening', () => {
             expect(AccountOpening.redirectAccount()).to.eq(1);
         });
         it('will not redirect client who is already on maltainvest account opening page again', () => {
-            setURL(`${Url.websiteUrl()}en/maltainvestws.html`);
+            setURL(`${Url.websiteUrl()}en/new_account/real_account.html?account_type=maltainvest`);
             expect(AccountOpening.redirectAccount()).to.eq(0);
         });
         it('will redirect client who cannot upgrade their account to the previous page', () => {

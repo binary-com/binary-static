@@ -67,6 +67,9 @@ const Page = (() => {
                             reload(true);
                         }
                         break;
+                    case 'preferred_language':
+                        BinarySocket.send({ set_settings: 1, preferred_language: evt.newValue });
+                        break;
                     // no default
                 }
             });

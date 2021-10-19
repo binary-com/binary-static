@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-27 05:54\n"
+"PO-Revision-Date: 2021-10-17 08:21\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,6 @@ msgstr "1"
 
 msgid "2"
 msgstr "2"
-
-msgid "5"
-msgstr "5"
 
 msgid "20"
 msgstr "20"
@@ -48,6 +45,9 @@ msgstr " (ปิดให้บริการชั่วคราว)"
 
 msgid " All calls are recorded for training and monitoring purposes."
 msgstr " ทุกสายการสนทนาจะถูกบันทึกเพื่อการพัฒนาบุคลากรและการปรับปรุงคุณภาพ"
+
+msgid " The Company reserves the right to change the requirements of transactions between the Agent’s account and clients."
+msgstr ""
 
 msgid " means %1."
 msgstr " หมายถึง %1"
@@ -328,8 +328,8 @@ msgstr "%1 มีบริการสำหรับพันธมิตรท
 msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
 msgstr "%1 มีสิ่งอํานวยความสะดวกในการทดลองใช้เพื่อฝึกกลยุทธ์การเทรดของคุณด้วยเงินทุนเสมือน สลับไปยังบัญชีทดลองใช้ของคุณโดยใช้กล่องแบบหล่นลงที่มุมขวาบนของหน้าจอ"
 
-msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
-msgstr "%1 นำเสนอราคาตลาดและการดำเนินการการซื้อขายหลากหลายผลิตภัณฑ์ รวมถึงคู่สกุลเงินหลักต่างๆ โลหะมีค่า ดัชนี CFD และเงินดิจิทัลที่เป็นที่นิยมให้แก่ลูกค้าสถาบันทั่วโลก"
+msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, stocks, stock indices, popular cryptocurrencies, and Synthetic indices."
+msgstr "%1 ให้ลูกค้าสถาบันทั่วโลกมีราคาตลาดและการดําเนินการทางการค้าในสินทรัพย์ที่หลากหลายรวมถึงคู่สกุลเงินหลักโลหะสปอตหุ้นดัชนีหุ้นสกุลเงินดิจิทัลยอดนิยมและดัชนีสังเคราะห์"
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
 msgstr "%1 นำเสนอการประมวลผลที่ดีที่สุดในการจัดการคำสั่งซื้อโดยวิธีการรวมกันอย่างชาญฉลาด ซึ่งมีกลไกการทำงานโดย"
@@ -363,6 +363,9 @@ msgstr "%1 ให้การสนับสนุน %2 ซึ่งเป็�
 
 msgid "%1 takes home first prize in the Financial Trading Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 ได้รับรางวัลชนะเลิศ ประเภท Financial Trading Operator ในงานเกียรติยศ EGR Operator Awards ปี ค.ศ. 2015 จัดที่เมืองลอนดอน"
+
+msgid "%1 trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
+msgstr "การซื้อขาย %1 อาจกลายเป็นการเสพติดที่แท้จริงเช่นเดียวกับกิจกรรมอื่น ๆ ที่ถูกผลักดันให้ถึงขีด จํากัด เพื่อหลีกเลี่ยงอันตรายจากการเสพติดดังกล่าวเราให้การตรวจสอบความเป็นจริงที่ให้สรุปการซื้อขายและบัญชีของคุณเป็นประจํา"
 
 msgid "%1 tries to maintain a reasonable relation between the quoted prices of each underlying asset that a Binary Option refers to and the actual market prices of such an asset. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 พยายามรักษาความสัมพันธ์ระหว่างราคาที่เสนอของสินทรัพย์ที่ไบนารีออปชั่นอ้างอิงถึง กับราคาจริงในตลาดของสินทรัพย์ดังกล่าว %1จะไม่รับรองอย่างชัดแจ้งหรือโดยนัยว่า ราคาที่นำเสนอนั้น คือ ราคาทั่วไปของตลาด"
@@ -463,9 +466,6 @@ msgstr "%1จัดการบัญชีของท่าน%2"
 msgid "%1Maximise returns%2 by %3risking more%4 than you put in."
 msgstr "%1เพิ่มผลตอบแทนสูงสุด%2โดย %3ความเสี่ยง%4 มากกว่าที่คุณใส่"
 
-msgid "%1No, change my fiat account's currency now%2"
-msgstr "%1ไม่ เปลี่ยนสกุลเงินบัญชีเงิน fiat ของฉัน ตอนนี้%2"
-
 msgid "%1Not Sure?%1"
 msgstr "%1ไม่แน่ใจ?%1"
 
@@ -507,9 +507,6 @@ msgstr "รางวัล ‘Best Fixed-Odds Firm ค.ศ. 2012’ ได้ร
 
 msgid "'Financial Trading Operator of the Year' award by eGaming Review"
 msgstr "รางวัล ‘Financial Trading Operator of the Year’ ได้รับจาก eGaming Review"
-
-msgid "(1 standard forex lot is 100k units)"
-msgstr "(ฟอเร็กซ์ล็อตมาตรฐาน 1 ล็อตคือ 100,000 หน่วย)"
 
 msgid "(1 standard lot is 100k units)"
 msgstr "(1 ล็อตมาตรฐานคือ 100,000 หน่วย)"
@@ -580,6 +577,9 @@ msgstr "0.4%"
 msgid "0.5%"
 msgstr "0.5%"
 
+msgid "0.50"
+msgstr "0.50"
+
 msgid "0.75"
 msgstr "0.75"
 
@@ -601,6 +601,9 @@ msgstr "1. หลักฐานแสดงตัวบุคคล"
 msgid "1. This link was sent by you"
 msgstr "1. ลิงก์นี้ถูกส่งโดยคุณ"
 
+msgid "1.25"
+msgstr "1.25"
+
 msgid "1.5%"
 msgstr "1.5%"
 
@@ -612,9 +615,6 @@ msgstr "มี 11-39 ธุรกรรมในระยะเวลา 12 เ�
 
 msgid "150+"
 msgstr "150+"
-
-msgid "15O"
-msgstr "15O"
 
 msgid "16th MENA Financial Forum & Expo"
 msgstr "เวทีการเงินและเอ็กซ์โป MENA ครั้งที่ 16"
@@ -636,6 +636,9 @@ msgstr "2. หน้าต่างเดสก์ท็อปของคุณ
 
 msgid "2.5"
 msgstr "2.5"
+
+msgid "2.50"
+msgstr "2.50"
 
 msgid "20 – 39.999%"
 msgstr "20 – 39.999%"
@@ -748,8 +751,8 @@ msgstr "สำเร็จการศึกษาระดับปริญญ
 msgid "A bachelor's degree in commerce or any business-related field, law, or risk management"
 msgstr "สำเร็จการศึกษาระดับปริญญาตรีสาขาพาณิชย์ศาสตร์ หรือ สาขาที่เกี่ยวข้องกับการบริหารธุรกิจ นิติศาสตร์ หรือ การบริหารความเสี่ยง"
 
-msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
-msgstr "ไบนารีออปชัน คือ สัญญาซึ่งฝ่ายหนึ่งจะต้องจ่ายเงินจำนวนหนึ่งให้แก่อีกฝ่าย หากมูลค่าของสินทรัพย์นั้นเปลี่ยนไปในทิศทางเฉพาะภายในเวลาที่กำหนดไว้ ระดับของสินทรัพย์อ้างอิงหลักสามประเภทของไบนารีออปชันที่บริษัทฯ นำเสนอ คือ"
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is Synthetic Indices."
+msgstr "ตัวเลือกไบนารีคือสัญญาที่ฝ่ายหนึ่งดําเนินการจ่ายเงินจํานวนที่ระบุให้กับอีกฝ่ายหากมูลค่าของสินทรัพย์ที่กําหนดมีการเปลี่ยนแปลงในทิศทางเฉพาะภายในระยะเวลาที่กําหนดไว้ ประเภทสินทรัพย์อ้างอิงที่สําคัญสําหรับตัวเลือกไบนารีที่นําเสนอโดย บริษัท คือดัชนีสังเคราะห์"
 
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
 msgstr "ไบนารีออปชั่นเป็นสัญญาซื้อขายประเภทหนึ่งที่ผู้ซื้อขายจะได้รับเงินตามจำนวนเงินที่กำหนด หากผลการทำนายของเขาถูกต้อง"
@@ -838,6 +841,9 @@ msgstr "เหล่าคณะผู้นำในวงการมอบร
 msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
 msgstr "บุคคลที่เกี่ยวข้องกับการเมือง (PEP) คือ บุคคลธรรมดาผู้ได้รับมอบหมายให้ปฏิบัติงานต่อสาธารณะ สมาชิกในครอบครัว เครือญาติ และบุคคลใกล้ชิดของบุคคลที่เกี่ยวข้องกับการเมือง เป็นผู้ถูกพิจารณาเสมือนเป็นบุคคลที่เกี่ยวข้องกับการเมือง หากแต่บุคคลที่เกี่ยวข้องกับการเมืองนั้นได้สิ้นสุดสภาพดังกล่าวแล้วอย่างน้อย 12 เดือน จึงจะถูกถอนถอนจากสภาพบุคคลที่เกี่ยวข้องกับการเมือง"
 
+msgid "A politically exposed person (PEP) is someone appointed with a prominent public position. Close associates and family members of a PEP are also considered to be PEPs."
+msgstr "บุคคลผู้อยู่ในข่ายอำนาจทางการเมือง (PEP) คือ ใครบางคนที่ได้รับการแต่งตั้ง และดำรงตำแหน่งโดดเด่นในที่สาธารณะ หรือผู้ร่วมงานที่ใกล้ชิดและสมาชิกในครอบครัวของ PEP ถือว่าเป็น PEP เช่นกัน"
+
 msgid "A proactive approach in problem-solving"
 msgstr "วิธีการเชิงรุกในการแก้ปัญหา"
 
@@ -867,9 +873,6 @@ msgstr "ช่วงห่างของราคา (Tick) คือ การ
 
 msgid "A trade is opened by either executing a \"Buy\" or a \"Sell\" Order based on a specified number of lots (volume) that constitute the Underlying Instrument of the relevant market."
 msgstr "การเริ่มการซื้อขาย ทำได้โดยการดำเนินการคำสั่ง \"ซื้อ\" หรือ \"ขาย\" ตามจำนวนที่ระบุในแต่ละคราว (จำนวนคำสั่ง) ซึ่งถือเป็นเครื่องมืออ้างอิงของตลาดที่เกี่ยวข้อง"
-
-msgid "A trading password is used to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices. "
-msgstr "รหัสผ่านการซื้อขายใช้เพื่อลงชื่อเข้าใช้บัญชี MT5 ของคุณเมื่อใช้แอพ MT5 บนมือถือหรืออุปกรณ์อื่น ๆ ของคุณ "
 
 msgid "A university degree in Accounting/Finance or its equivalent"
 msgstr "สำเร็จการศึกษาระดับปริญญาด้านบัญชี/การเงินหรือเทียบเท่า"
@@ -955,8 +958,8 @@ msgstr "เกี่ยวกับเรา"
 msgid "About the Company and these Terms"
 msgstr "เกี่ยวกับบริษัทฯ และเงื่อนไขเหล่านี้"
 
-msgid "Abusively or fraudulently use, for any purpose, the Application Programme Interface (API) of %1"
-msgstr "การใช้ Application Programme Interface (API) ของ %1อย่างไม่ถูกต้อง หรือ ผิดกฎหมาย"
+msgid "Abusively or fraudulently use, for any purpose, the Application Program Interface (API) of %1."
+msgstr "การใช้ Application Program Interface (API) ของ %1อย่างไม่ถูกต้อง หรือ ผิดกฎหมาย"
 
 msgid "Accept"
 msgstr "ยอมรับ"
@@ -1144,8 +1147,14 @@ msgstr "เพิ่ม"
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
 msgstr "เพิ่ม +/ – เพื่อกำหนด Barrier Offset เช่น +0.005 หมายถึง อุปสรรคที่อยู่สูงกว่าสปอตเริ่มต้นอยู่ 0.005"
 
+msgid "Add a cryptocurrency account"
+msgstr ""
+
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "เพิ่มคำอธิบายและคลิก %1บันทึก%2 เพื่อลงทะเบียนให้เสร็จสมบูรณ์"
+
+msgid "Add a fiat currency account"
+msgstr ""
 
 msgid "Add account"
 msgstr "เพิ่มบัญชี"
@@ -1155,6 +1164,12 @@ msgstr "เพิ่มคำอื่นหรือสองคำ ไม่�
 
 msgid "Add funds"
 msgstr "ฝากเงิน"
+
+msgid "Add new account"
+msgstr ""
+
+msgid "Add new crypto account"
+msgstr ""
 
 msgid "Additional business exposure:"
 msgstr "การเปิดทางธุรกิจเพิ่มเติม"
@@ -1507,8 +1522,8 @@ msgstr "ลูกค้าใดๆ ที่เป็นพนักงาน�
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to, and finally determined by, an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. The Affiliate is also responsible for any and all costs related to such arbitration."
 msgstr "ข้อคัดค้านใดๆ ข้อโต้เถียงอย่างรุนแรงใดๆ หรือ การอ้างถึงผล หรือ สิ่งที่เกี่ยวข้องกับข้อตกลงนี้ บริษัทฯ จะอ้างอิงถึงและเป็นการถึงที่สุดโดยอนุญาโตตุลาการที่ถูกสรรหาโดยบริษัทฯ ภาษาที่ใช้ในการพิจารณาคดีจะเป็นภาษาอังกฤษ การตัดสินจะดำเนินการโดยคณะอนุญาโตตุลาการที่มีอำนาจในการตัดสินคดีตามกฎหมาย พันธมิตรนายหน้าออนไลน์เป็นผู้รับผิดชอบค่าใช้จ่ายที่เกี่ยวข้องทั้งหมด หรือ บางส่วนในการตัดสินข้อพิพาทนั้น"
 
-msgid "Any event capable to have a material adverse effect on the Agent's ability to perform any of their duties and obligations in accordance with this agreement"
-msgstr "เหตุการณ์ใดๆ สามารถทำให้มีผลกระทบอย่างมากที่เกิดจากผลของความสามารถของตัวแทนฯ ในการปฏิบัติภาระหน้าที่ต่างๆ ของตัวแทนฯ ตามข้อตกลงนี้"
+msgid "Any event capable of having a material adverse effect on the Agent's ability to perform any of their duties and obligations in accordance with this agreement"
+msgstr ""
 
 msgid "Any failure on the Programmer's part to maintain the security of any security devices or procedures used in or in association with the %1 API"
 msgstr "ข้อผิดพลาดใดๆ ในส่วนของโปรแกรมเมอร์ที่เกี่ยวข้องกับการปรับปรุงความปลอดภัยของอุปกรณ์ความปลอดภัยต่างๆ หรือ กระบวนวิธีที่ใช้ใน หรือ ร่วมใน API ของ %1"
@@ -1519,8 +1534,8 @@ msgstr "สแปมในรูปแบบใดๆ ก็ตามจะส�
 msgid "Any information given on these pages, and/or emails or newsletters sent by the Company related thereto, is not intended as financial or investment advice and the Company will not accept any liability in this respect."
 msgstr "ข้อมูลในหน้าเหล่านี้ และ/หรือ อีเมล์ หรือ จดหมายข่าว ที่เกี่ยวข้องที่บริษัทฯ ส่งนั้น ไม่ได้ประสงค์ที่จะให้คำแนะนำทางการเงิน หรือ การลงทุน และบริษัทฯ จะไม่รับผิดชอบใดๆ ทั้งสิ้น"
 
-msgid "Any information that the Agent provided or will provide to the Company in relation to the Agent's financial position, domicile, or other matters is accurate and not misleading."
-msgstr "ข้อมูลใดๆ ที่ตัวแทนฯ ให้ หรือ ได้ให้ไว้กับบริษัทฯ ที่เกี่ยวข้องกับสถานะการเงิน ภูมิลำเนา หรือเรื่องอื่นๆ ใดๆ ก็ตาม ของตัวแทนฯ จะต้องเป็นข้อมูลที่ถูกต้องและไม่บิดเบือน"
+msgid "Any information that the Agent has provided or will provide to the Company in relation to the Agent's financial position, domicile, or other matters is accurate and not misleading."
+msgstr ""
 
 msgid "Any information which the client provides or have provided to the Company in respect of their financial position, domicile, or other matters is accurate and not misleading in any material respect."
 msgstr "ข้อมูลใดๆ ที่ท่านให้ไว้ หรือ ได้ให้ไว้กับบริษัทฯ ในส่วนที่เกี่ยวกับฐานะทางการเงินของท่าน ภูมิลำเนา และข้อมูลอื่นๆ นั้นถูกต้องและไม่ทำให้เกิดความเข้าใจผิดในประเด็นสำคัญที่ต้องพึงทราบ"
@@ -1572,6 +1587,9 @@ msgstr "ภาคผนวก - นโยบายจำเพาะของผ
 
 msgid "Applicant's rights"
 msgstr "สิทธิของผู้สมัคร"
+
+msgid "Application to become a payment agent is reviewed only if the applicant has a Binary.com account with a balance equal to or more than the minimum amount required for the applicant’s country of residence."
+msgstr ""
 
 msgid "Applications"
 msgstr "แอพพลิเคชัน"
@@ -1626,9 +1644,6 @@ msgstr "ท่านแน่ใจหรือไม่ว่า ท่าน�
 
 msgid "Are you sure you want to create your %1 account now?"
 msgstr "ท่านแน่ใจหรือไม่ว่า ท่านต้องการสร้างบัญชี %1 ของท่านขณะนี้?"
-
-msgid "Are you sure you want to deposit in %1?"
-msgstr "คุณแน่ใจหรือไม่ ว่าต้องการฝากเงินกับ %1? "
 
 msgid "Are you sure you want to unlink from %1?"
 msgstr "แน่ใจไหมว่าต้องการยกเลิกการลิงก์จาก %1"
@@ -2197,11 +2212,14 @@ msgstr "ประสบการณ์การซื้อขายไบนา
 msgid "Binary options trading frequency"
 msgstr "ความถี่ในการซื้อขายไบนารีออปชัน"
 
+msgid "Binary options trading is not available in your Multipliers account."
+msgstr "การซื้อขายตัวเลือกไบนารีไม่สามารถใช้ได้ในบัญชีตัวคูณของคุณ"
+
 msgid "Binary options trading is not available in your country."
 msgstr "การซื้อขายตัวเลือกไบนารีไม่สามารถใช้ได้ในประเทศของคุณ"
 
-msgid "Binary options trading is not available in your financial account."
-msgstr "การซื้อขายตัวเลือกไบนารีไม่สามารถใช้ได้ในบัญชีทางการเงินของคุณ"
+msgid "Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account."
+msgstr "การซื้อขายตัวเลือกไบนารีไม่สามารถใช้ได้ผ่านบัญชีตัวคูณของคุณ<br/> กรุณาสลับกลับไปยังบัญชีตัวเลือกของคุณ"
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "การซื้อขายไบนารีออปชันทำได้ง่ายๆ ท่านสามารถซื้อสัญญาได้ในสามขั้นตอน"
@@ -2431,17 +2449,26 @@ msgstr "ความถี่ในการซื้อขาย CFD"
 msgid "CFDs"
 msgstr "CFD"
 
+msgid "CFDs Account"
+msgstr "บัญชี CFD"
+
 msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1 of retail investor accounts lose money when trading CFDs with Deriv Investments (Europe) Limited. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
 msgstr "CFD เป็นเครื่องมือทางการเงินที่ซับซ้อนและมีความเสี่ยงสูงที่จะสูญเสียเงินอย่างรวดเร็วเนื่องจากเลเวอเรจ %1 ของบัญชีนักลงทุนรายย่อยสูญเสียเงินเมื่อทำการซื้อขาย CFD กับ Deriv Investments (Europe) Limited คุณควรพิจารณาว่าคุณเข้าใจวิธีการทำงานของ CFD หรือไม่และคุณสามารถรับความเสี่ยงสูงที่จะสูญเสียเงินของคุณได้หรือไม่"
+
+msgid "CFDs on Synthetic Indices"
+msgstr "CFD ในดัชนีสังเคราะห์"
 
 msgid "CFDs on commodities"
 msgstr "CFDs ของสินค้าโภคภัณฑ์"
 
-msgid "CFDs on indices"
-msgstr "CFDs ของดัชนีต่างๆ"
+msgid "CFDs on cryptocurrencies"
+msgstr ""
 
-msgid "CFH Clearing Limited"
-msgstr "บริษัท CFH Clearing จำกัด"
+msgid "CFDs on stock indices"
+msgstr "CFD ในดัชนีหุ้น"
+
+msgid "CFDs on stocks"
+msgstr "CFD ในหุ้น"
 
 msgid "CPA (EU only)"
 msgstr "CPA (EU เท่านั้น)"
@@ -2563,6 +2590,12 @@ msgstr "Champion Group Ltd: วานูอาตู"
 msgid "Change API Endpoint"
 msgstr "เปลี่ยน API ปลายทาง"
 
+msgid "Change MT5 Password"
+msgstr "เปลี่ยนรหัสผ่าน MT5"
+
+msgid "Change MT5 password"
+msgstr "เปลี่ยนรหัสผ่าน MT5"
+
 msgid "Change Password"
 msgstr "เปลี่ยนรหัสผ่าน"
 
@@ -2578,8 +2611,8 @@ msgstr "เปลี่ยนรหัสผ่าน"
 msgid "Change the Margin rate in relation to both Open Positions and new Orders"
 msgstr "การเปลี่ยนแปลงอัตรามาร์จินสัมพันธ์กับโพซิชั่นที่เปิดอยู่และคำสั่งซื้อใหม่"
 
-msgid "Change your main login and trading password."
-msgstr "เปลี่ยนการเข้าสู่ระบบหลักและรหัสผ่านการซื้อขายของคุณ"
+msgid "Change your Binary password and MT5 password."
+msgstr "เปลี่ยนรหัสผ่าน Binary และรหัสผ่าน MT5 ของคุณ"
 
 msgid "Changes to this privacy policy"
 msgstr "เปลี่ยนนโยบายการรักษาข้อมูลส่วนบุคคลนี้"
@@ -2641,6 +2674,9 @@ msgstr "กำลังตรวจสอบ"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "ผู้บริหารระดับสูง เจ้าหน้าที่อาวุโส และสมาชิกของสภานิติบัญญัติ"
 
+msgid "Choose a cryptocurrency account"
+msgstr "เลือกบัญชีคริปโตเคอเรนซี่"
+
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "กำหนด ระยะเวลา จาก 10 วินาที ถึง 365 วัน"
 
@@ -2671,8 +2707,20 @@ msgstr "เลือกจากการซื้อขายหลากหล
 msgid "Choose from three main trade types:"
 msgstr "เลือกจากประเภทการซื้อขายหลักสามประเภท"
 
+msgid "Choose one of your accounts"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new account"
+msgstr ""
+
+msgid "Choose one of your accounts or add a new cryptocurrency account"
+msgstr "เลือกบัญชีใดบัญชีหนึ่งของคุณหรือเพิ่มบัญชีสกุลเงินดิจิทัลใหม่"
+
 msgid "Choose scopes:"
 msgstr "กำหนดขอบเขต:"
+
+msgid "Choose the document type"
+msgstr "เลือกประเภทเอกสาร"
 
 msgid "Choose the market, trade type, duration, barrier, and payout."
 msgstr "เลือกตลาด ประเภทการซื้อขาย ระยะเวลา อุปสรรค และการชำระเงิน"
@@ -2694,6 +2742,9 @@ msgstr "เลือกระยะเวลาตั้งแต่ 10 วิ�
 
 msgid "Choose your own strike."
 msgstr "กำหนดราคาใช้สิทธิของท่าน"
+
+msgid "Choose your preferred cryptocurrency"
+msgstr "เลือกสกุลเงินดิจิทัลที่คุณต้องการ"
 
 msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
 msgstr "เลือกโปรแกรมที่ต้องการ กรอกใบสมัคร และรับลิงค์พันธมิตรฯ ของคุณ เมื่อได้รับการอนุมัติ"
@@ -2719,14 +2770,14 @@ msgstr "เสมียน"
 msgid "Click OK to proceed."
 msgstr "คลิก OK เพื่อดำเนินการต่อไป"
 
-msgid "Click here to open a Financial Account"
-msgstr "คลิกที่นี่ เพื่อเปิดบัญชีการเงิน"
-
-msgid "Click here to open a Gaming account"
-msgstr "คลิกที่นี่เพื่อเปิดบัญชี"
+msgid "Click here to open a Multipliers Account"
+msgstr "คลิกที่นี่เพื่อเปิดบัญชีตัวคูณ"
 
 msgid "Click here to open a Real Account"
 msgstr "คลิกที่นี่ เพื่อเปิดบัญชีจริง"
+
+msgid "Click here to open an Options account"
+msgstr "คลิกที่นี่เพื่อเปิดบัญชีตัวเลือก"
 
 msgid "Click here to retry"
 msgstr "คลิกที่นี่เพื่อลองใหม่"
@@ -2809,11 +2860,14 @@ msgstr "ลูกค้าต้องลงทะเบียนโดยตร
 msgid "Clients need to satisfy at least two of the following criteria in order to receive Professional Client status:"
 msgstr "ลูกค้าจะต้องมีคุณสมบัติตามเกณฑ์ดังต่อไปนี้อย่างน้อยสองข้อเพื่อปรับสถานะเป็นลูกค้าผู้เชี่ยวชาญ (Professional Client)"
 
+msgid "Clients registered with Deriv (Europe) Limited can refer their complaints to the Malta Gaming Authority via the %1Player Support Unity%3. They can file their unresolved disputes with the European Commission’s %2Online Dispute Resolution (ODR)%3."
+msgstr "ลูกค้าที่ลงทะเบียนกับ Deriv (Europe) Limited สามารถส่งเรื่องร้องเรียนไปยังหน่วยงานการเล่นเกมของมอลตาผ่านทาง %1Player Support Unity%3 พวกเขาสามารถยื่นข้อพิพาทที่ยังไม่ได้แก้ไขกับ %2Online Dispute Resolution (ODR)%3 ของคณะกรรมาธิการยุโรป"
+
 msgid "Clients registered with Deriv (MX) Ltd can formally submit a complaint to their local Supervisory Authority."
 msgstr "ลูกค้าที่ลงทะเบียนกับ Deriv (MX) Ltd สามารถส่งข้อพิพาทอย่างเป็นทางการไปที่หน่วยงานท้องถิ่น Supervisory Authority ของพวกเขา"
 
-msgid "Clients registered with Deriv (MX) Ltd or Deriv (Europe) Limited can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2. Alternatively, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %3here%4. Clients registered with Deriv (Europe) Limited can also refer their unresolved disputes to the Malta Gaming Authority via the %5Player Support Unit%6."
-msgstr "ลูกค้าที่ลงทะเบียนกับ Deriv (MX) Ltd หรือ Deriv (Europe) Limited สามารถยกข้อพิพาทที่ยังไม่ได้รับการแก้ไขกับองค์กรระงับข้อพิพาททางเลือก IBAS โดยกรอกแบบฟอร์มการตัดสินใน %1 เว็บไซต์ %2 ของนิติบุคคล ADR หรืออีกวิธีหนึ่งคือพวกเขาสามารถใช้ประโยชน์จากแพลตฟอร์ม Online Dispute Resolution (ODR) ของคณะกรรมาธิการยุโรปได้  %3he ที่นี่ %4 ลูกค้าที่ลงทะเบียนกับ Deriv (Europe) Limited ยังสามารถอ้างอิงข้อพิพาทที่ยังไม่ได้รับการแก้ไขไปยัง Malta Gaming Authority ผ่านทาง %5 หน่วยสนับสนุนผู้เล่น %6"
+msgid "Clients registered with Deriv (MX) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filing the adjudication form on the %1ADR entity's website%2."
+msgstr "ลูกค้าที่เปิดบัญชีกับ Deriv (MX) Ltd สามารถแจ้งข้อพิพาทต่างๆ ที่ยังไม่ได้ข้อสรุปของพวกเขา และทางเลือกในการแก้ไขข้อพิพาทต่อ IBAS โดยการกรอกแบบฟอร์ม %1ADR เว็บไซต์%2"
 
 msgid "Clients registered with Deriv Investments (Europe) Limited can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter's Office can be found %1here%2."
 msgstr "ลูกค้าที่ลงทะเบียนกับ Deriv Investments (Europe) Limited สามารถแจ้งข้อพิพาทที่ยังไม่ได้รับการแก้ไขให้กับสำนักงานตุลาการด้านการให้บริการทางการเงิน Office of the Arbiter for Financial Services สามารถหารายละเอียดติดต่อและแนวทางในการยื่นคำร้องเรียนกับสำนักงานตุลาการได้ %1he ที่นี่ %2"
@@ -2944,6 +2998,9 @@ msgstr "อัตราค่าคอมมิชชัน"
 msgid "Commission shall only be paid where the following are met cumulatively:"
 msgstr "ค่าคอมมิชชั่นจะจ่ายเมื่อมีเงื่อนไขต่อไปนี้ครบถ้วน"
 
+msgid "Commission structure"
+msgstr "โครงสร้างคอมมิชชัน"
+
 msgid "Commission will not be paid for Accounts that have been opened or traded by an Associate of the Introducing Broker."
 msgstr "จะไม่มีการจ่ายค่าคอมมิชชั่นให้กับบัญชีที่เปิดหรือซื้อขายโดยผู้มีความสัมพันธ์กับโบรกเกอร์แนะนำ"
 
@@ -2988,9 +3045,6 @@ msgstr "หน้าที่ของบริษัทฯ"
 
 msgid "Company's rights"
 msgstr "สิทธิ์ของบริษัทฯ"
-
-msgid "Compare MetaTrader 5 accounts"
-msgstr "เปรียบเทียบบัญชี MetaTrader 5"
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "ค่าตอบแทนภายใต้แผนค่าตอบแทนต่อนักลงทุน (Investor Compensation Scheme)"
@@ -3090,6 +3144,12 @@ msgstr "ยืนยันการเปลี่ยนแปลง"
 
 msgid "Confirm password"
 msgstr "ยืนยันรหัสผ่าน"
+
+msgid "Confirm to change your MT5 password"
+msgstr "ยืนยันเปลี่ยนรหัสผ่าน MT5 ของคุณ"
+
+msgid "Confirm to create your MT5 password"
+msgstr "ยืนยันการสร้างรหัสผ่าน MT5 ของคุณ"
 
 msgid "Conflicts Policy"
 msgstr "นโยบายการบริหารความขัดแย้ง"
@@ -3359,17 +3419,38 @@ msgstr "สร้างบัญชี %1"
 msgid "Create Account"
 msgstr "สร้างบัญชี"
 
-msgid "Create MetaTrader 5 account"
-msgstr "สร้างบัญชี MetaTrader 5"
-
 msgid "Create New Demo Account"
 msgstr "สร้างบัญชีทดลองใหม่"
+
+msgid "Create a CFDs account"
+msgstr "สร้างบัญชี CFD"
+
+msgid "Create a MetaTrader 5 account"
+msgstr "สร้างบัญชี MetaTrader 5"
+
+msgid "Create a New Demo Account"
+msgstr "สร้างบัญชีทดลองใหม่"
+
+msgid "Create a cryptocurrency account"
+msgstr "สร้างบัญชีสกุลเงินดิจิทัล"
+
+msgid "Create a new Binary password."
+msgstr "สร้างรหัสผ่าน Binary ใหม่"
+
+msgid "Create a new MT5 password."
+msgstr "สร้างรหัสผ่านใหม่ MT5"
 
 msgid "Create account"
 msgstr "สร้างบัญชี"
 
 msgid "Create an MT5 account now"
 msgstr "สร้างบัญชี MT5 ตอนนี้"
+
+msgid "Create an MT5 password for logging in to your CFDs account."
+msgstr "สร้างรหัสผ่าน MT5 สําหรับการเข้าสู่ระบบบัญชี CFD ของคุณ"
+
+msgid "Create an MT5 password. You can use this password for all your MT5 accounts."
+msgstr "สร้างรหัสผ่าน MT5 คุณสามารถใช้รหัสผ่านนี้สําหรับบัญชี MT5 ทั้งหมดของคุณ"
 
 msgid "Create and maintain wireframes and mockups for new and existing products"
 msgstr "สร้างและรักษาโครงร่างของเว็บไซต์และแบบจำลองสำหรับผลิตภัณฑ์ใหม่และอันที่มีอยู่"
@@ -3392,8 +3473,8 @@ msgstr "สร้างบัญชีฟรีกับ"
 msgid "Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, forex, and CFDs"
 msgstr "สร้างแบบจำลองทางคณิตศาสตร์/สถิติสำหรับการกำหนดราคา วิเคราะห์เพื่อประเมินความต้องการมาร์จิ้นและจัดการความเสี่ยงสำหรับออปชันที่แปลกใหม่ ฟอเร็กซ์ และ CFD"
 
-msgid "Create new demo account"
-msgstr "สร้างบัญชีทดลองใช้ใหม่"
+msgid "Create new Demo account"
+msgstr "สร้างบัญชีทดลองใหม่"
 
 msgid "Create new token"
 msgstr "สร้างโทเค่นใหม่"
@@ -3451,9 +3532,6 @@ msgstr "เงินดิจิทัล ได้แก่ บิทคอย�
 
 msgid "Cryptocurrencies*"
 msgstr "สกุลเงินดิจิตอล*"
-
-msgid "Cryptocurrency"
-msgstr "เงินดิจิทัล"
 
 msgid "Cryptocurrency contract specifications"
 msgstr "ข้อกำหนดสัญญาเงินดิจิทัล"
@@ -3698,6 +3776,9 @@ msgstr "บัญชีทดลองใช้"
 msgid "Demo Accounts"
 msgstr "บัญชีทดลองใช้"
 
+msgid "Demo CFDs"
+msgstr "สาธิต CFD"
+
 msgid "Demo Financial"
 msgstr "บัญชีทดลอง Financial"
 
@@ -3713,8 +3794,8 @@ msgstr "บัญชีทดลองใช้ไม่มีบริการ
 msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term \"the Company\" shall denote,"
 msgstr "ขึ้นอยู่กับเขตอำนาจศาลที่บัญชีของลูกค้าที่ได้เปิดไว้ ตามขั้นตอนในการเปิดบัญชีของเว็บไซต์ และตามที่ได้ให้รายละเอียดไว้ในส่วนเกี่ยวกับเราในเว็บไซต์ และประเภทของผลิตภัณฑ์ที่นำเสนอ คำว่า \"บริษัทฯ\" จะหมายถึงอย่างใดอย่างหนึ่งต่อไปนี้"
 
-msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote either"
-msgstr "ขึ้นอยู่กับเขตอำนาจศาลที่บัญชีของลูกค้าที่ได้เปิดไว้ ตามขั้นตอนในการเปิดบัญชีของเว็บไซต์ คำว่า 'บริษัทฯ' และ '%1' จะหมายถึง"
+msgid "Depending on the jurisdiction to which a client's account has been attached in accordance with the account opening procedures of the website, the terms 'the Company' and '%1' shall denote"
+msgstr "ขึ้นอยู่กับเขตอํานาจศาลที่มีการแนบบัญชีของลูกค้าตามขั้นตอนการเปิดบัญชีของเว็บไซต์คําว่า 'บริษัท' และ '%1' จะหมายถึง"
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
 msgstr "ขึ้นอยู่กับระดับของความเสี่ยงที่บริษัทต้องเผชิญในการทำหน้าที่เป็นคู่สัญญาของลูกค้า บริษัททำหน้าที่ส่วนใหญ่เป็นศักยภาพหลักของการซื้อขายของลูกค้า เช่นนั้นแล้ว สถานที่ในการดำเนินการมักจะเป็น %1 อย่างไรก็ตามบริษัทอาจจะส่งคำสั่งซื้อของลูกค้าไปยังบุคคลที่สามที่เป็นผู้ให้บริการสภาพคล่อง ซึ่งเป็นกรณีที่บริษัทจะพิจารณาสถานที่ในการดำเนินการตามพื้นฐานที่อธิบายไว้ข้างต้น"
@@ -3737,11 +3818,26 @@ msgstr "ฝากและถอนเงินของคุณผ่านท
 msgid "Deposit as little as 5 USD to start trading."
 msgstr "ฝากเงินแค่เพียง 5 USD เพื่อเริ่มการซื้อขาย"
 
-msgid "Deposit into or withdraw from your real account"
-msgstr "ฝากเงินเข้าหรือถอนเงินจากบัญชีจริงของคุณ"
+msgid "Deposit cryptocurrencies"
+msgstr "ฝากเงินคริปโตเคอเรนซี่"
+
+msgid "Deposit in your local currency via an authorised, independent payment agent in your country."
+msgstr "ฝากเงินในสกุลเงินท้องถิ่นของคุณผ่านตัวแทนการชำระเงินอิสระที่ได้รับอนุญาตในประเทศของคุณ"
+
+msgid "Deposit now"
+msgstr "ฝากเงินตอนนี้"
 
 msgid "Deposit or withdraw below"
 msgstr "ฝากเงิน หรือ ถอนเงิน ด้านล่าง"
+
+msgid "Deposit via bank wire, credit card, and e-wallet"
+msgstr "ฝากเงินผ่านธนาคารบัตรเครดิตและ e-wallet"
+
+msgid "Deposit via bank wire, credit card, and e-wallet."
+msgstr "ฝากเงินผ่านธนาคารบัตรเครดิตและ e-wallet."
+
+msgid "Deposit via payment agents"
+msgstr "ฝากเงินผ่านตัวแทนชําระเงิน"
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "ฝากเงิน: %1 การยืนยันจากบล็อกเชน"
@@ -3781,12 +3877,6 @@ msgstr "Deriv (Europe) Limited"
 
 msgid "Deriv (Europe) Limited,"
 msgstr "Deriv (Europe) Limited,"
-
-msgid "Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated (for gambling products only - %1's Synthetic Indices) by the Malta Gaming Authority in Malta (%2licence no. MGA/B2C/102/2000%4), by the Gambling Commission for clients in Great Britain under (%3account no. 39495%4), and by the Revenue Commissioners for clients in Ireland (licence no. 1010285)."
-msgstr "Deriv (Europe) Limited, W Business Center, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta ได้รับอนุญาตและควบคุม (สำหรับผลิตภัณฑ์การพนันเท่านั้น - ดัชนีสังเคราะห์ %1) โดย Malta Gaming Authority ในมอลตา (%2ใบอนุญาตเลขที่ MGA/B2C/102/2000%4) โดย Gambling Commission สำหรับลูกค้าในบริเตนใหญ่ภายใต้ (%3เลขที่บัญชี 39495%4) และโดย Revenue Commission สำหรับลูกค้าในไอร์แลนด์ (ใบอนุญาตเลขที่ 1010285)"
-
-msgid "Deriv (Europe) Limited, or"
-msgstr "Deriv (Europe) Limited หรือ"
 
 msgid "Deriv (FX) Ltd"
 msgstr "Deriv (FX) Ltd"
@@ -4021,9 +4111,6 @@ msgstr "ท่านมีเครื่องมือใดๆ ในกา�
 
 msgid "Do you run a website that promotes forex or binary options? Join our global network of affiliates and turn your online traffic into revenue."
 msgstr "คุณบริหารเว็บไซต์ที่ส่งเสริมฟอเร็กซ์ หรือ ไบนารี่ออปชันหรือไม่? เข้าร่วมในเครือข่ายพันธมิตรทั่วโลกของเรา แล้วเปลี่ยนจำนวนผู้เข้าชมเว็บไซต์ออนไลน์ของคุณให้เป็นรายได้"
-
-msgid "Do you want this to be a fiat account or crypto account? Please choose one:"
-msgstr "ท่านต้องการใช้กับบัญชีเงิน fiat หรือ บัญชีเงินดิจิทัล? โปรดเลือกหนึ่งประเภทบัญชี"
 
 msgid "Do you want to learn more about the markets and how to trade them? Check out the resources below."
 msgstr "ท่านต้องการศึกษาตลาดเพิ่มเติม และวิธีการเทรดไหม? ศึกษาได้ทันทีจากแหล่งข้อมูลที่รวบรวมไว้ด้านล่างนี้"
@@ -4283,8 +4370,8 @@ msgstr "ได้รับรางวัลที่เป็นตัวเง
 msgid "Earn additional income with us as you grow your community of potential and existing online traders through useful trading insights and mentorship."
 msgstr "สร้างรายได้เพิ่มเติมกับเราในขณะที่ท่านสามารถให้ชุมชนนักลงทุนที่มีศักยภาพและนักลงทุนที่มีอยู่เติบโตขึ้น ผ่านทางความเข้าใจอย่างลึกซึ้งในการซื้อขายและการให้คำปรึกษาที่เป็นประโยชน์"
 
-msgid "Earn daily commissions on the trading activities of the clients you refer to the %1 MetaTrader 5 (MT5) platform. Your total commissions will be credited into your account by the end of the day."
-msgstr "รับค่าคอมมิชชั่นรายวันจากการซื้อขายของลูกค้าที่คุณเชิญมาให้ใช้แพลตฟอร์ม MetaTrader 5 (MT5) ของ %1 ค่าคอมมิชชั่นทั้งหมดของคุณจะถูกโอนเข้าไปในบัญชีของคุณเมื่อสิ้นวัน"
+msgid "Earn daily commission on your referred clients' trades on the %1 MetaTrader 5 (MT5) platform. Your total commission will be credited into your account at the end of every day."
+msgstr "รับค่าคอมมิชชั่นรายวันจากการเทรดของลูกค้าที่อ้างอิงบนแพลตฟอร์ม %1 MetaTrader 5 (MT5) ค่าคอมมิชชั่นทั้งหมดของคุณจะถูกโอนเข้าบัญชีของคุณในตอนท้ายของทุกวัน"
 
 msgid "Earn money for any verifiable errors that you find."
 msgstr "ท่านสามารถมีรายได้จากข้อผิดพลาดใดๆ ที่มีการพิสูจน์ได้ที่ท่านพบ"
@@ -4400,10 +4487,10 @@ msgstr "มีส่วนร่วมในการพัฒนาตลาด
 msgid "Engage in misleading or deceptive conduct or illusory or deceptive advertising"
 msgstr "ทำให้เข้าใจผิด หรือ จงใจหลอกลวง หรือ จอมปลอม หรือเป็นโฆษณาหลอกลวง"
 
-msgid "Engage in misleading, illusory, or deceptive advertising or promises"
+msgid "Engage in misleading, illusory, or deceptive advertising or promises."
 msgstr "ทำให้เข้าใจผิด หรือ จอมปลอม หรือ เป็นโฆษณาหลอกลวง หรือ ให้คำมั่นสัญญา"
 
-msgid "Engage in misleading, illusory, or deceptive conduct"
+msgid "Engage in misleading, illusory, or deceptive conduct."
 msgstr "ทำให้เข้าใจผิด หรือ จอมปลอม หรือชักชวนไปในทางหลอกลวง"
 
 msgid "Enhanced performance. Intuitively simple."
@@ -4433,14 +4520,8 @@ msgstr "ให้แน่ใจว่าการออกแบบและพ
 msgid "Ensure the integrity of releases by coordinating testing activities"
 msgstr "ให้แน่ใจถึงความสมบูรณ์ของการเปิดตัวโดยประสานงานกิจกรรมการทดสอบ"
 
-msgid "Enter a new Binary password."
-msgstr "ป้อนรหัสผ่าน Binaryใหม่"
-
 msgid "Enter a new password for your Binary account."
 msgstr "ป้อนรหัสผ่านใหม่สําหรับบัญชี Binary ของคุณ"
-
-msgid "Enter a new trading password."
-msgstr "ป้อนรหัสผ่านการซื้อขายใหม่"
 
 msgid "Enter mobile number"
 msgstr "ป้อนหมายเลขโทรศัพท์มือถือ"
@@ -4450,6 +4531,12 @@ msgstr "ป้อนรหัสของตัวแทนชำระเงิ
 
 msgid "Enter the authentication code generated by the app below:"
 msgstr "ป้อนรหัสการรับรองความถูกต้องที่สร้างโดยแอพพลิเคชันด้านล่าง"
+
+msgid "Enter your MT5 password to add a %1 %2 account."
+msgstr "ใส่รหัสผ่าน MT5 ของคุณเพื่อเพิ่ม %1 %2 บัญชี"
+
+msgid "Enter your document number"
+msgstr "ใส่หมายเลขเอกสารของคุณ"
 
 msgid "Enter your email"
 msgstr "ป้อนอีเมล์ของท่าน"
@@ -4624,6 +4711,9 @@ msgstr "เวลาพักไม่น้อยกว่า 6 เดือน
 
 msgid "Excluded from the website until"
 msgstr "ถูกพักการใช้งานจากเว็บไซต์จนถึง"
+
+msgid "Exclusive Markets Ltd"
+msgstr ""
 
 msgid "Exclusive binary trading technology."
 msgstr "เทคโนโลยีเทรดไบนารีโดยเฉพาะ"
@@ -4871,9 +4961,6 @@ msgstr "FX-majors (มาตรฐาน/ไมโครล็อต), FX-minors
 msgid "FX-majors, FX-minors, FX-exotics, Cryptocurrencies"
 msgstr "สกุลเงินหลัก สกุลเงินรอง สกุลเงินแปลกใหม่ สกุลเงินดิจิทัล"
 
-msgid "FXOpen"
-msgstr "FXOpen"
-
 msgid "Face forward and make sure your eyes are clearly visible"
 msgstr "โปรดตรวจสอบให้แน่ใจว่า ใบหน้าดวงตาของคุณสามารถมองเห็นได้ชัดเจน"
 
@@ -4898,8 +4985,8 @@ msgstr "การแข่งขันที่เป็นธรรม"
 msgid "Fairly and accurately describe Binary's business and services in a transparent manner to the clients"
 msgstr "มีความยุติธรรม และแม่นยำในการให้ข้อมูลกับลูกค้าเกี่ยวกับกิจการของไบนารีและบริการต่างๆ อย่างโปร่งใส"
 
-msgid "Fairly and accurately describe the Agent's services to the clients"
-msgstr "มีความยุติธรรม และแม่นยำในการให้ข้อมูลกับลูกค้าเกี่ยวกับบริการของตัวแทนฯ"
+msgid "Fairly and accurately describe the Agent's services to the clients."
+msgstr ""
 
 msgid "Familiarity with Git"
 msgstr "ความคุ้นเคยกับ Git"
@@ -4924,9 +5011,6 @@ msgstr "มีความคุ้นเคยกับกระบวนกา
 
 msgid "Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular"
 msgstr "มีความคุ้นเคยกับมาตรฐาน JavaScript ห้องสมุด กรอบงาน compiler และ transpiler รวมถึง ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React และ Angular"
-
-msgid "Family name"
-msgstr "นามสกุล"
 
 msgid "FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more information, please visit %1."
 msgstr "FasaPay ดำเนินการโอนเงินอิเล็กทรอนิกส์สำหรับบุคคล หรือ เป็นตัวกลางการชำระเงินสำหรับร้านค้า สำหรับข้อมูลเพิ่มเติม โปรดศึกษาจาก %1"
@@ -4961,8 +5045,8 @@ msgstr "เทศกาลมากมาย"
 msgid "Fiat"
 msgstr "สกุลเงิน Fiat"
 
-msgid "Fiat Currency"
-msgstr "สกุลเงิน fiat"
+msgid "Fiat currencies"
+msgstr "สกุลเงิน Fiat"
 
 msgid "Fifteen years on, and we're still innovating, growing and working on new ways to serve our customers better. For the first time, we offer short-term touch/no-touch trades and introduce a new charting application. We believe we have the most competitive and comprehensive digital options platform available to the retail public."
 msgstr "สิบห้าปีมาแล้วที่เรายืนหยัดอยู่ในตลาด และเรายังคงพัฒนานวัตกรรม เติบโต และทำงานโดยใช้แนวทางใหม่ๆ เพื่อบริการลูกค้าของเราให้ดีขึ้น ในเบื้องแรก เราขอแนะนำการซื้อขายแบบ Touch/No-Touch ระยะสั้น และแนะนำแอพพลิเคชันใหม่สำหรับการวิเคราะห์ข้อมูลโดยกราฟ พวกเราเชื่อว่า เราเป็นที่สุดและมีระบบการเทรดออปชั่นดิจิทัลที่เข้าใจง่ายที่มีอยู่ในตลาดขณะนี้"
@@ -5018,9 +5102,6 @@ msgstr "ต้องมีการอนุมัติความเสี่
 msgid "Financial STP"
 msgstr "บัญชี Financial STP"
 
-msgid "Financial STP Account"
-msgstr "บัญชี Financial STP"
-
 msgid "Financial STP account"
 msgstr "บัญชี Financial STP"
 
@@ -5041,6 +5122,9 @@ msgstr "ข้อมูลทางการเงิน"
 
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "พบแพลตฟอร์มการซื้อขายที่เหมาะสมกับประสบการณ์ของคุณและกลยุทธ์ที่คุณกำหนดได้ ไม่ว่าคุณจะเป็นนักลงทุนใหม่ หรือ นักลงทุนผู้เชี่ยวชาญ"
+
+msgid "Find out more"
+msgstr "ดูข้อมูลเพิ่มเติม"
 
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "ค้นหาข้อมูลเพิ่มเติมเกี่ยวกับต้นทุนและรายละเอียดของสินทรัพย์ CFD แต่ละรายการที่เรานำเสนอ"
@@ -5063,8 +5147,8 @@ msgstr "เสร็จสิ้น"
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
 msgstr "มีความเข้าใจอย่าถ่องแท้ในแนวคิดการบริหารความเสี่ยง รวมถึง การป้องกันความเสี่ยง Greeks (รุ่นแรก และรุ่นที่สอง) แบบจำลองมูลค่าความเสี่ยง ฯลฯ"
 
-msgid "First line"
-msgstr "บรรทัดแรก"
+msgid "First line of address"
+msgstr "บรรทัดแรกของที่อยู่"
 
 msgid "First line of home address"
 msgstr "บรรทัดแรกของที่อยู่"
@@ -5077,9 +5161,6 @@ msgstr "ขั้นแรก กำหนดโพซิชั่นของ�
 
 msgid "First-class client service."
 msgstr "บริการลูกค้าชั้นเลิศ"
-
-msgid "Fixed spreads"
-msgstr "สเปรดแบบคงที่"
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "แก้ปัญหาและให้ข้อมูลเพื่อการปรับปรุงแก้ไขในระยะยาว"
@@ -5105,8 +5186,8 @@ msgstr "ทำตามขั้นตอนต่อไปนี้เพื่
 msgid "Follow up on the recommendations and timeline for corrective actions with department heads"
 msgstr "ติดตามผลในคำแนะนำและระยะเวลาสำหรับการดำเนินการเพื่อแก้ปัญหากับหัวหน้าแผนก"
 
-msgid "Follow, comply, and implement with all business-related directions, policies, and procedures of the Company as amended or re-enacted or replaced from time to time"
-msgstr "ปฏิบัติตาม เป็นไปตามหลักการ และการนำไปใช้เพื่อเป็นแนวทางที่เกี่ยวข้องกับการดำเนินธุรกิจทั้งหมด นโยบายต่างๆ และกระบวนการของบริษัทฯ ตามที่ได้แก้ไข หรือ ทำซ้ำ หรือ แทนที่ แล้วแต่กรณี"
+msgid "Follow, comply, and implement with all business-related directions, policies, and procedures of the Company as amended or re-enacted or replaced from time to time."
+msgstr ""
 
 msgid "Food Services"
 msgstr "งานบริการเกี่ยวกับอาหาร"
@@ -5116,9 +5197,6 @@ msgstr "สำหรับสินทรัพย์สกุลเงินด
 
 msgid "For details on submitting a complaint to the Company's lead supervisory authority on data processing practices, the client is encouraged to check %1's %2Complaints and disputes%3 section."
 msgstr "สำหรับรายละเอียดเกี่ยวกับการส่งคำร้องมายังหัวหน้าหน่วยงานกำกับดูแลเกี่ยวกับการปฏิบัติการประมวลผลข้อมูลของบริษัทฯ ให้ลูกค้าโปรดตรวจสอบที่ %1 ของ %2 ในส่วนคำร้องและข้อพิพาท %3"
-
-msgid "For e-wallets or local currencies not supported by %1."
-msgstr "สำหรับกระเป๋าเงินอิเล็กทรอนิกส์ หรือ สกุลเงินท้องถิ่น ไม่สามารถใช้ได้กับ %1"
 
 msgid "For example, if you buy a 100 USD contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "ตัวอย่าง เช่น หากคุณซื้อสัญญา 100 USD และไม่เป็นไปตามแผนที่วางไว้ คุณเพียงแค่ต้องขายเพื่อลดการขาดทุนในราคาตลาดปัจจุบัน"
@@ -5156,8 +5234,8 @@ msgstr "สำหรับราคาฟอเร็กซ์ เวลาป�
 msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 2.5 in commission based on the following formula:"
 msgstr "สำหรับ forex ดีลสำหรับ 1 ล็อต EUR/USD จะจ่ายค่าคอมมิชชั่น EUR 2.5 ตามสูตรต่อไปนี้:"
 
-msgid "For forex, a deal for 1 lot of EUR/USD will pay out EUR 5 in commission based on the following formula:"
-msgstr "สำหรับ forex ดีลสำหรับ 1 ล็อต EUR/USD จะจ่ายค่าคอมมิชชั่น EUR 5 ตามสูตรต่อไปนี้:"
+msgid "For forex, a deal for 1 lot will pay out USD 2 in commission based on the following formula (using EUR/USD as an example):"
+msgstr "สำหรับ forex ข้อตกลงสำหรับ 1 ล็อตจะจ่ายเป็นค่าคอมมิชชั่น 2 USD ตามสูตรต่อไปนี้ (โดยใช้ EUR/USD เป็นตัวอย่าง):"
 
 msgid "For forex, your commission is represented in the base currency (EUR in the above example)."
 msgstr "สำหรับ forex ค่าคอมมิชชั่นของคุณจะแสดงในสกุลเงินหลัก (EUR ในตัวอย่างด้านบน)"
@@ -5224,9 +5302,6 @@ msgstr "การซื้อขายฟอเร็กซ์เกี่ยว
 
 msgid "Forex trading involves buying or selling these \"currency pairs\". When you buy a currency pair such as EUR/USD, it means that you are buying the EURO and selling the USD at the same time."
 msgstr "การซื้อขายฟอเร็กซ์เกี่ยวข้องกับการซื้อหรือขาย \"คู่สกุลเงิน\" เหล่านี้ เมื่อท่านซื้อคู่สกุลเงินหนึ่งๆ เช่น EUR/USD หมายความว่า ท่านกำลังซื้อยูโร และ ขายดอลลาร์สหรัฐในเวลาเดียวกัน"
-
-msgid "Forgot password"
-msgstr "ลืมรหัสผ่าน"
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 ก่อตั้งขึ้นในปี ค.ศ. 1999 (พ.ศ. 2542) เป็นชื่อที่เก่าแก่ที่สุด และได้รับการยอมรับมากที่สุดในการซื้อขายไบนารีออนไลน์"
@@ -5318,14 +5393,17 @@ msgstr "GAMSTOP เป็นบริการฟรีที่ช่วยใ�
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain. To find out more and to sign up, please visit %1."
 msgstr "GAMSTOP เป็นบริการฟรีที่ช่วยให้คุณสามารถป้องกันตนเอง จากบริษัทการพนันออนไลน์ทั้งหมด ที่ได้รับอนุญาตในสหราชอาณาจักร หากต้องการข้อมูลเพิ่มเติมและลงทะเบียนใช้ โปรดไปที่ %1"
 
-msgid "GBE Brokers"
-msgstr "โบรกเกอร์ GBE"
+msgid "GBE Brokers Ltd"
+msgstr ""
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "ดัชนี GBP - วัดค่าของเงินปอนด์สเตอริงอังกฤษต่อ 5 สกุลเงินหลักของโลก (USD, EUR, AUD, JPY, CAD) โดยมีน้ำหนักของแต่ละสกุลเงินที่ 20%"
 
 msgid "GBP/USD currency pair and its bid-ask price."
 msgstr "คู่สกุลเงิน GBP/USD และราคาจะซื้อจะขาย"
+
+msgid "GC Exchange Limited"
+msgstr ""
 
 msgid "GDPR"
 msgstr "GDPR"
@@ -5432,6 +5510,9 @@ msgstr "อภิธานศัพท์"
 msgid "Go"
 msgstr "ไป"
 
+msgid "Go Back"
+msgstr "ย้อนกลับ"
+
 msgid "Go back"
 msgstr "ย้อนกลับ"
 
@@ -5443,6 +5524,9 @@ msgstr "เปิดสัญญา Short และ Long"
 
 msgid "Go short = sell"
 msgstr "ส่งคำสั่ง Short = ขาย"
+
+msgid "Go to DTrader"
+msgstr "ไปที่ DTrader"
 
 msgid "Go to MT5 download page"
 msgstr "ไปที่หน้าดาวน์โหลด MT5"
@@ -5630,8 +5714,8 @@ msgstr "ซื้อขาย Higher/Lower "
 msgid "Highlights"
 msgstr "ไฮไลท์"
 
-msgid "Hint: You may have chosen a different trading password from your %1 log in password."
-msgstr "คําแนะนํา: คุณอาจเลือกรหัสผ่านการซื้อขายอื่นจากรหัสผ่านเข้าสู่ระบบ %1 ของคุณ"
+msgid "Hint: You may have chosen a different MT5 password from your %1 log in password."
+msgstr "คําแนะนํา: คุณอาจเลือกรหัสผ่าน MT5 อื่นจากรหัสผ่านเข้าสู่ระบบ %1 ของคุณ"
 
 msgid "Historical Mediterranean island"
 msgstr "เกาะประวัติศาสตร์เมดิเตอร์เรเนียน"
@@ -5756,6 +5840,12 @@ msgstr "ฝ่ายทรัพยากรบุคคล"
 msgid "I acknowledge that I am not a politically exposed person (PEP)."
 msgstr "ข้าพเจ้าแสดงเจตนารมณ์ ข้าพเจ้าไม่ใช่บุคคลที่เกี่ยวข้องกับการเมือง"
 
+msgid "I agree to the %1terms and conditions%2."
+msgstr "ฉันยอมรับ %1ข้อกำหนดเงื่อนไขในการให้บริการ%2"
+
+msgid "I am not a PEP, and I have not been a PEP in the last 12 months."
+msgstr "ฉันไม่ใช่ PEP และฉันไม่ได้เป็น PEP ในช่วง 12 เดือนที่ผ่านมา"
+
 msgid "I forgot my password, what should I do?"
 msgstr "ฉันลืมรหัสผ่าน ฉันจะทำอย่างไร?"
 
@@ -5805,7 +5895,7 @@ msgid "IB programme FAQ"
 msgstr "คำถามที่พบบ่อยของโปรแกรม IB"
 
 msgid "ID number"
-msgstr "เลขที่บัตรประจำตัวประชาชน"
+msgstr "หมายเลขประจำตัว"
 
 msgid "ID number is required for %1."
 msgstr "เลขบัตรประชาชนจำเป็นสำหรับ %1"
@@ -5905,6 +5995,9 @@ msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่�
 
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "ถ้า<strong>ช่วงราคาสุดท้าย</strong>เท่ากับ ค่าเฉลี่ยของช่วงราคา ท่านจะไม่ได้รับเงิน"
+
+msgid "If the Agent’s Binary.com account balance drops below the minimum amount required for the Agent’s country of residence, the Company will give the Agent a 30-day notice and then 30 days grace period to eliminate the deficit. At the end of these 60 days, if the Agent’s account balance does not meet or exceed the minimum required amount, the Company’s contract with the Agent shall be terminated."
+msgstr ""
 
 msgid "If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client's account and withhold any funds accumulated therein."
 msgstr "หากบริษัทฯ (โดยดุลยพินิจของบริษัทฯ) พบว่า ลูกค้าไม่พึงปฏิบัติตาม หรือ ลูกค้าไม่ได้ให้ความร่วมมือในการให้ข้อมูลตามการร้องขอของบริษัทฯ บริษัทฯ สามารถยกเลิกบัญชีของลูกค้า และระงับการชำระเงินที่เกี่ยวข้องทั้งหมด"
@@ -6347,8 +6440,8 @@ msgstr "ในสหภาพยุโรปผลิตภัณฑ์ทาง
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "ในสหภาพยุโรป ผลิตภัณฑ์ทางการเงินมีให้บริการโดย Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033 ประเทศมอลตาได้รับการควบคุมโดยผู้ให้บริการการลงทุนประเภทที่ 3 Malta Financial Services Authority (%1liใบอนุญาตหมายเลข IS/70156%2)"
 
-msgid "In the Isle of Man and the UK, Synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under %1account no. 39172%3 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr "ในเกาะแมนและสหราชอาณาจักรดัชนีสังเคราะห์จะนําเสนอโดย Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW ในเกาะไอล์ออฟแมน ได้รับอนุญาตและควบคุมในสหราชอาณาจักรโดย (1) คณะกรรมาธิการการพนันภายใต้ %1จํานวน 39172%3 และโดย (2) คณะกรรมการกํากับดูแลการพนันในเกาะแมน (%2ดูใบอนุญาต%3)"
+msgid "In the Isle of Man and the UK, virtual-events-based bets on synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under %1account no. 39172%3 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
+msgstr "ในเกาะแมนและสหราชอาณาจักร เหตุการณ์เสมือนจริงที่อิงจากดัชนีสังเคราะห์ที่เสนอโดย Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW ในเกาะไอล์ออฟแมน ได้รับอนุญาตและควบคุมในสหราชอาณาจักรโดย (1) คณะกรรมาธิการการพนันภายใต้ %1จํานวน 39172%3 และโดย (2) คณะกรรมการกํากับดูแลการพนันในเกาะแมน (%2ดูใบอนุญาต%3)"
 
 msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Limited. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr "ในสหราชอาณาจักรลูกค้าของเราซื้อขายผ่าน Deriv (MX) Ltd และ Deriv Investments (Europe) Limited ในเกาะไอล์ออฟแมน พวกเขาซื้อขายผ่าน Deriv (MX) Ltd ในสหภาพยุโรป (ยกเว้นสหราชอาณาจักร) พวกเขาซื้อขายผ่าน Deriv (Europe) Limited และ Deriv Investments (Europe) Limited ในส่วนประเทศอื่นๆ พวกเขาซื้อขายผ่าน Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd และ Deriv (FX) Ltd"
@@ -6380,8 +6473,8 @@ msgstr "ในกรณีที่บริษัทฯ ไม่ได้ร�
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this programme. The Affiliate hereby irrevocably waives their rights to, and shall indemnify the Company and any member of the Deriv group of companies for, any claims or demands made against the Company or any member of the Deriv group of companies, their directors, officers, shareholders, or employees or against the %1 website if the Company revokes the Affiliate's access to the programme."
 msgstr "ในกรณีใดๆ อันจะพึงเกิดขึ้นหากบริษัท ได้รับทราบถึงพันธมิตรนายหน้าออนไลน์ผู้ซึ่งประพฤติขัดต่อกฎ หรือนโยบายข้างต้น บริษัทมีสิทธิ์นอกเหนือจากสิทธิ์หรือการแก้ไขที่มีภายใต้ข้อตกลงนี้หรือกฎหมายที่เกี่ยวข้อง ที่จะจำกัดพันธมิตร ในการเข้าถึงหรือใช้งานโปรแกรมได้ทันที พันธมิตรนายหน้าออนไลน์สละสิทธิ์ที่จะดำเนินการใน และจะชดใช้ค่าเสียหายให้กับบริษัท และสมาชิกของกลุ่มบริษัทในเครือ Deriv อื่นๆ ต่อข้อเรียกร้องใดต่อบริษัท และสมาชิกของกลุ่มบริษัทในเครือ Deriv อื่นๆ ต่อผู้อำนวยการ ต่อเจ้าหน้าที่ ต่อผู้ถือหุ้น ต่อพนักงาน หรือต่อเว็บไซต์ของ %1 หากบริษัทเพิกถอนการเข้าถึงหรือใช้งานโปรแกรมของพันธมิตร"
 
-msgid "In the rest of the EU, Synthetic Indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority (%1licence no. MGA/B2C/102/2000%4), by (2) the Gambling Commission for clients in Great Britain under %2account no. 39495%4, and by (3) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete %3Regulatory Information%4."
-msgstr "ในส่วนที่เหลือของสหภาพยุโรปดัชนีสังเคราะห์จะถูกนําเสนอโดย Deriv (Europe) Limited, W Business Center, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; ได้รับอนุญาตและควบคุมโดย (1) Malta Gaming Authority (%1ใบอนุญาตเลขที่ MGA/B2C/102/2000%4)โดย (2) Gambling Commission สำหรับลูกค้าในบริเตนใหญ่ภายใต้ %3เลขที่บัญชี 39495%4 และโดย (3) Revenue Commission สำหรับลูกค้าในไอร์แลนด์ (ใบอนุญาตเลขที่ 1010285) ดูข้อมูล %3ข้อกําหนดการบังคับเสร็จสมบูรณ์%4"
+msgid "In the rest of the EU, Synthetic indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority (%1licence no. MGA/B2C/102/2000%3)  and (2) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete %2Regulatory Information%3."
+msgstr "ในส่วนที่เหลือของสหภาพยุโรปดัชนีสังเคราะห์จะถูกนําเสนอโดย Deriv (Europe) Limited, W Business Center, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; ได้รับอนุญาตและควบคุมโดย (1) Malta Gaming Authority (%1ใบอนุญาตเลขที่ MGA/B2C/102/2000%3) และ (2) Revenue Commission สำหรับลูกค้าในไอร์แลนด์ (ใบอนุญาตเลขที่ 1010285) ดูข้อมูล %2ข้อกําหนดการบังคับเสร็จสมบูรณ์%3"
 
 msgid "In this Agreement, unless the context otherwise requires, the following definitions hold:"
 msgstr "ในสัญญานี้ ยกเว้นว่าบริบทกำหนดให้เป็นอย่างอื่น นิยามจะมีรายละเอียดดังต่อไปนี้"
@@ -6392,6 +6485,9 @@ msgstr "ในกรณีนี้ ท่านคาดการณ์ว่�
 msgid "In this case, you predict that the price will rise. This is also known as 'going long'."
 msgstr "ในกรณีนี้ ท่านคาดการณ์ว่า ราคาจะสูงขึ้น ให้ \"ส่งคำสั่ง Long\""
 
+msgid "In which country was your document issued?"
+msgstr "เอกสารของคุณออกในประเทศใด"
+
 msgid "In-depth knowledge of accounting principles, best practices, standards, and regulations"
 msgstr "มีความรู้เชิงลึกในหลักการบัญชี วิธีปฏิบัติที่ดีที่สุด มาตรฐาน และกฎระเบียบ"
 
@@ -6401,8 +6497,8 @@ msgstr "In/Out"
 msgid "In/Out trades"
 msgstr "การซื้อขาย In/Out"
 
-msgid "Include a disclaimer and/or notice that any intellectual property rights, including any trademark or slogan whatsoever, belong to the Company, and any unauthorised use is strictly prohibited"
-msgstr "รวมถึงการสงวนสิทธิ์ และ/หรือประกาศสิทธิ์ของทรัพย์สินทางปัญญา รวมถึงเครื่องหมายการค้า หรือคำขวัญใดๆ ล้วนเป็นกรรมสิทธิ์ของบริษัทฯ และห้ามมิให้ใช้โดยไม่ได้รับอนุญาต"
+msgid "Include a disclaimer and/or notice that any intellectual property rights — including any trademark or slogan whatsoever — belong to the Company, and any unauthorised use is strictly prohibited."
+msgstr ""
 
 msgid "Include a disclaimer or notice that the intellectual property rights of the Trademark solely belong to Binary and any use of it is strictly prohibited unless Binary has given such authorisation."
 msgstr "ระบุข้อสงวนสิทธิ์หรือประกาศที่ระบุว่า สิทธิ์ในทรัพย์สินทางปัญญาของเครื่องหมายการค้าเป็นของ Binary แต่เพียงผู้เดียว และห้ามนำไปใช้ ยกเว้นว่าจะได้รับอนุญาตจาก Binary แล้ว"
@@ -6560,14 +6656,14 @@ msgstr "การลงทุนในผลิตภัณฑ์ที่ซั
 msgid "Investing or trading in contracts exposes the client to the performance of the underlying or reference instrument or asset to which the Binary contract refers, including foreign exchange, stock indices, and commodities, each of which have their own features and risks."
 msgstr "การลงทุนหรือการซื้อขายในสัญญา ทำให้ลูกค้าเห็นถึงผลการดำเนินงานของแต่ละผลิตภัณฑ์อ้างอิง หรือเครื่องมืออ้างอิง หรือสินทรัพย์ที่เกี่ยวข้องกับสัญญาไบนารี่ รวมถึงการแลกเปลี่ยนเงินตราต่างประเทศ ดัชนีหุ้น และหุ้นโภคภัณฑ์ ซึ่งแต่ละประเภทมีคุณลักษณะและความเสี่ยงของตัวเอง"
 
-msgid "Investment"
-msgstr "การลงทุน"
-
 msgid "Investment Income"
 msgstr "รายได้จากลงทุน"
 
 msgid "Investment Products to EEA residents are provided by Deriv Investments (Europe) Limited (\"DIEL\"), which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products."
 msgstr "ผลิตภัณฑ์เพื่อการลงทุนสำหรับผู้อยู่อาศัยใน EEA จัดทำโดย Deriv Investments (Europe) Limited (\"DIEL\") ซึ่งได้รับอนุญาตและควบคุมโดย Malta Financial Services Authority ภายใต้กฎหมายบริการการลงทุนของมอลตาเพื่อจัดการในบัญชีของตัวเองในผลิตภัณฑ์การลงทุน"
+
+msgid "Investments & Dividends"
+msgstr "การลงทุนและเงินปันผล"
 
 msgid "Investments &amp; Dividends"
 msgstr "เงินปันผลและการลงทุน"
@@ -6647,6 +6743,9 @@ msgstr "เป็นความรับผิดชอบของลูกค
 msgid "It is the responsibility of each client to read and understand this legal notice and the terms and conditions (\"Terms\") pursuant to which an acquisition of financial contracts via this site is governed."
 msgstr "ถือเป็นความรับผิดชอบของลูกค้าแต่ละรายที่จะอ่านและทำความเข้าใจประกาศกฎเกณฑ์ต่างๆ และข้อตกลงและเงื่อนไข ('ข้อกําหนด') ที่วางระเบียบ และควบคุมถึงการได้มาของสัญญาทางการเงินผ่านเว็บไซต์นี้"
 
+msgid "It looks like your identity document has expired. Please try again with a valid document."
+msgstr "ดูเหมือนว่าเอกสารระบุตัวตนของคุณหมดอายุแล้ว โปรดลองอีกครั้งด้วยเอกสารที่ถูกต้อง"
+
 msgid "It may be disconnected. <fallback>Try using your phone instead</fallback>."
 msgstr "อาจถูกยกเลิกการเชื่อมต่อ <fallback>ลองใช้โทรศัพท์ของคุณแทน</fallback>"
 
@@ -6704,6 +6803,21 @@ msgstr "ก.ค."
 msgid "July"
 msgstr "กรกฎาคม"
 
+msgid "Jump 10 Index"
+msgstr "ดัชนี Jump 10"
+
+msgid "Jump 100 Index"
+msgstr "ดัชนี Jump 100"
+
+msgid "Jump 25 Index"
+msgstr "ดัชนี Jump 25"
+
+msgid "Jump 50 Index"
+msgstr "ดัชนี Jump 50"
+
+msgid "Jump 75 Index"
+msgstr "ดัชนี Jump 75"
+
 msgid "Jun"
 msgstr "มิ.ย."
 
@@ -6713,7 +6827,7 @@ msgstr "มิถุนายน"
 msgid "Jurisdiction"
 msgstr "เขตอำนาจศาล"
 
-msgid "Jurisdiction and Choice of Law"
+msgid "Jurisdiction and choice of law"
 msgstr "เขตอำนาจศาลและกฎหมายบังคับ"
 
 msgid "K. Event of Default"
@@ -6760,9 +6874,6 @@ msgstr "เมื่อเวลาย้อนกลับ ท่านจะ�
 
 msgid "Kindly send a scan of a valid proof of address to %1support@binary.com%2"
 msgstr "โปรดส่งเอกสารแสดงที่อยู่ที่ยังไม่หมดอายุ มายัง %1support@binary.com%2"
-
-msgid "Kindly send a scan of a valid proof of identity to %1support@binary.com%2"
-msgstr "โปรดส่งเอกสารแสดงตัวบุคคลที่ยังไม่หมดอายุ มายัง %1support@binary.com%2"
 
 msgid "Know how much you will win or lose before you purchase the contract."
 msgstr "รู้ว่าคุณจะได้รับเงินหรือสูญเสียเท่าไหร่ ก่อนที่คุณจะซื้อสัญญา"
@@ -6853,6 +6964,9 @@ msgstr "ใช้ครั้งสุดท้าย"
 
 msgid "Last digit stats for the latest %1 ticks on %2"
 msgstr "สถิติตัวเลขสุดท้ายสำหรับ %1 ล่าสุด ช่วงราคาของ %2"
+
+msgid "Last name"
+msgstr "ชื่อสกุล"
 
 msgid "Latest bank statement or any government-issued letter which contains your name and address"
 msgstr "เอกสารแสดงรายการเดินบัญชีล่าสุด หรือ จดหมายที่ออกโดยรัฐบาลซึ่งมีชื่อและที่อยู่ของท่าน"
@@ -7193,6 +7307,9 @@ msgstr "MT5 สำหรับ iOS"
 msgid "MT5 for macOS"
 msgstr "MT5 สำหรับ macOS"
 
+msgid "MT5 password"
+msgstr "รหัสผ่าน MT5"
+
 msgid "MT5 real-money account for Synthetic Indices only."
 msgstr "บัญชีเงินจริง MT5 สำหรับดัชนีสังเคราะห์เท่านั้น"
 
@@ -7253,8 +7370,8 @@ msgstr "คู่สกุลเงินหลัก คู่รอง แล�
 msgid "Make a Deposit"
 msgstr "ฝากเงิน"
 
-msgid "Make a deposit"
-msgstr "ฝากเงิน"
+msgid "Make a deposit now to start trading."
+msgstr "ทําการฝากเงินตอนนี้เพื่อเริ่มต้นการซื้อขาย"
 
 msgid "Make a deposit or withdrawal on your account by buying and selling fiat currencies from anywhere in the world."
 msgstr "ทำการฝากหรือถอนจากบัญชีของคุณ โดยการซื้อและขายสกุลเงิน fiat จากที่ใดก็ได้ในโลก"
@@ -7361,12 +7478,6 @@ msgstr "จัดการโปรแกรมนักล่าข้อผิ
 
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
 msgstr "จัดการการรักษาความปลอดภัย การตรวจจับการบุกรุก การป้องกัน DDoS และมาตรการปฏิบัติตาม PCI สำหรับเซิร์ฟเวอร์แต่ละอันที่ใช้งาน"
-
-msgid "Manage the funds in your cryptocurrency account."
-msgstr "จัดการหลักประกันในบัญชีเงินดิจิทัลของท่าน"
-
-msgid "Manage trading password"
-msgstr "จัดการรหัสผ่านการซื้อขาย"
 
 msgid "Manage your authorised applications."
 msgstr "จัดการแอพพลิเคชันที่ลงทะเบียน"
@@ -7515,6 +7626,9 @@ msgstr "ขนาดอัพโหลดที่สูงที่สุดส
 msgid "May"
 msgstr "พฤษภาคม"
 
+msgid "Maybe later"
+msgstr "ไว้ทีหลัง"
+
 msgid "Memorable date"
 msgstr "วันแห่งความทรงจำ"
 
@@ -7623,14 +7737,11 @@ msgstr "นาที"
 msgid "Misrepresent Binary or the services that are offered by Binary"
 msgstr "บิดเบือนข้อเท็จจริงเกี่ยวกับ Binary หรือ บริการของ Binary"
 
-msgid "Misrepresent the services that the Agent provides to the clients"
-msgstr "การแถลงถ้อยความที่เกี่ยวกับบริการต่างๆ ที่เป็นเท็จ ที่ตัวแทนฯ นำเสนอให้กับลูกค้า"
+msgid "Misrepresent the services that the Agent provides to the clients."
+msgstr ""
 
 msgid "Mo"
 msgstr "จ"
-
-msgid "Mobile number"
-msgstr "หมายเลขโทรศัพท์มือถือ"
 
 msgid "Modification/amendment"
 msgstr "การปรับเปลี่ยน/การแก้ไข"
@@ -7701,9 +7812,6 @@ msgstr "หลีกเลี่ยงแสงโดยตรง"
 msgid "Move away from direct light — no glare"
 msgstr "ย้ายออกจากแสงโดยตรง — ไม่มีแสงจ้า"
 
-msgid "Move funds in and out of your real account."
-msgstr "ย้ายเงินเข้าและออกจากบัญชีจริงของคุณ"
-
 msgid "Mr"
 msgstr "นาย"
 
@@ -7745,6 +7853,9 @@ msgstr "ตัวคูณขึ้น"
 
 msgid "Multipliers"
 msgstr "ตัวคูณ"
+
+msgid "Multipliers Account"
+msgstr "บัญชีตัวคูณ"
 
 msgid "Must be a clear, colour photo"
 msgstr "ต้องเป็นภาพถ่ายสีที่มีความชัดเจน"
@@ -7896,6 +8007,9 @@ msgstr "สำนักงานใหม่ที่ลาบวน ประ�
 msgid "New password"
 msgstr "รหัสผ่านใหม่"
 
+msgid "New proof of identity document needed"
+msgstr "ต้องการเอกสารหลักฐานยืนยันตัวตนใหม่"
+
 msgid "New to CFD trading? We explain a few basics that all CFD traders need to know before they start trading."
 msgstr "มือใหม่ต่อการซื้อขาย CFD ใช่ไหม? เราสามารถอธิบายพื้นฐานไม่กี่ข้อที่นักลงทุน CFD ทุกคนจะต้องรู้ ก่อนเริ่มการซื้อขาย"
 
@@ -7905,14 +8019,14 @@ msgstr "มือใหม่กับฟอเร็กซ์หรือไม
 msgid "New token created."
 msgstr "สร้างโทเค่นใหม่แล้ว"
 
-msgid "New trading password"
-msgstr "รหัสผ่านใหม่สําหรับการซื้อขาย"
-
 msgid "Next"
 msgstr "ถัดไป"
 
 msgid "Next Available Price"
 msgstr "ราคาที่มีอยู่ในลำดับถัดไป"
+
+msgid "Next, we'll need your proof of address"
+msgstr "ต่อไป เราต้องการหลักฐานที่อยู่ของคุณ"
 
 msgid "No"
 msgstr "ไม่ใช่"
@@ -8223,6 +8337,9 @@ msgstr "ตัวอักษร ช่องว่าง ขีดกลาง 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "อนุญาตให้มีบัญชีเพียง 1 บัญชีต่อบุคคล จะไม่มีการถอน และ/หรือ คืนเงินจากบัญชีที่เปิดด้วยชื่อที่ไม่ถูกต้อง หรือ หลายๆบัญชีที่เปิดโดยคนเดียวกัน"
 
+msgid "Only use an address for which you have proof of residence"
+msgstr "ใช้ที่อยู่ที่คุณมีหลักฐานการพํานักเท่านั้น"
+
 msgid "Only your face can be in the selfie"
 msgstr "ภาพเซลฟี่เฉพาะใบหน้าของคุณเท่านั้น"
 
@@ -8241,8 +8358,8 @@ msgstr "โอเพ่นซอส"
 msgid "Open a %1 account through DIEL's website %2"
 msgstr "เปิดบัญชี %1 ผ่านเว็บไซต์ของ DIEL %2"
 
-msgid "Open a Financial Account"
-msgstr "เปิดบัญชีทางการเงิน"
+msgid "Open a Multipliers Account"
+msgstr "เปิดบัญชีตัวคูณ"
 
 msgid "Open a Real Account"
 msgstr "เปิดบัญชีจริง"
@@ -8295,14 +8412,17 @@ msgstr "ราคาเปิด"
 msgid "Opens"
 msgstr "เปิด"
 
+msgid "Options"
+msgstr "ออปชัน"
+
+msgid "Options Account"
+msgstr "ตัวเลือกบัญชีผู้ใช้"
+
 msgid "Options that let you “look back” on the optimum high or low achieved by the market to determine the payout."
 msgstr "ออปชั่นที่ให้ท่านได้ \"Look Back\" เพื่อดูมูลค่าสูง หรือ ต่ำ ที่ตลาดได้ทำเอาไว้เพื่อพิจารณาการชำระเงิน"
 
 msgid "Options that offer a fixed payout based on a simple yes/no proposition."
 msgstr "ออปชั่นที่เสนอเงินจำนวนคงที่ จากข้อเสนอแสนง่าย ในรูปแบบ ใช่/ไม่ใช่"
-
-msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
-msgstr "การซื้อขายออปชั่นสามารถทำให้ท่านเสพติดได้จริง ราวกับกิจกรรมอื่น เพื่อหลีกเลี่ยงความไม่ปลอดภัยที่จะทำให้เสพติดกิจกรรมเหล่านั้น พวกเราได้มีบริการในการตรวจสอบการใช้งาน การซื้อขายของท่านตามปกติ เพื่อให้ท่านมีรายงานสรุปของการซื้อขายและบัญชีของท่าน"
 
 msgid "Order"
 msgstr "คำสั่ง"
@@ -8334,6 +8454,9 @@ msgstr "คำเตื่อนอื่นๆ และ บททบัญญ�
 msgid "Other best execution factors, such as speed of execution, likelihood of execution and settlement, size, nature, or any other considerations relevant to the execution of a particular order, may also be applied by DIEL in order to obtain the best possible results for the client."
 msgstr "ปัจจัยในการดำเนินการที่ดีที่สุดอื่นๆ เช่น การดำเนินการอย่างรวดเร็ว ความเป็นไปได้ในการส่งคำสั่งและชำระมูลค่า ขนาด ธรรมชาติ หรือสิ่งที่เกี่ยวข้องกับการดำเนินการในคำสั่งพิเศษต่างๆ ซึ่งใช้ระบบของ DIEL เพื่อทำให้เกิดผลลัพธ์ที่ดีที่สุดสำหรับลูกค้า"
 
+msgid "Other details"
+msgstr "รายละเอียดอื่นๆ"
+
 msgid "Other obligations"
 msgstr "ข้อผูกพันอื่นๆ"
 
@@ -8346,17 +8469,17 @@ msgstr "นอกจากการจ่ายค่าคอมมิชชั
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
 msgstr "ทีมบัญชี&amp; การจ่ายเงินของเราจัดการบัญชีธนาคาร และระบบสกุลเงินอิเล็กทรอนิกส์ที่หลากหลาย และธุรกิจจำนวนมากที่เกิดขึ้นทุกวัน"
 
+msgid "Our CFDs account is suitable for both new and experienced traders."
+msgstr "บัญชี CFD ของเราเหมาะสําหรับทั้งผู้ค้าใหม่และมีประสบการณ์"
+
 msgid "Our Company"
 msgstr "บริษัทฯ ของเรา"
 
-msgid "Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products."
-msgstr "บัญชี MetaTrader 5 Financial STP ของเรามีสเปรดที่แคบ ขนาดตั๋วที่สูงขึ้น และนำเสนอผลิตภัณฑ์เพิ่มเติม"
+msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
+msgstr "เซิร์ฟเวอร์ MT5 ของเราไม่พร้อมใช้งานชั่วคราว เรากําลังดําเนินการเพื่อฟื้นฟูพวกเขา โปรดลองอีกครั้งในอีกสักครู่"
 
 msgid "Our MetaTrader 5 Financial account is suitable for both new and experienced traders."
 msgstr "บัญชี MetaTrader 5 Financial ของเราเหมาะสำหรับผู้ซื้อขายมือใหม่และผู้มีประสบการณ์"
-
-msgid "Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces."
-msgstr "บัญชีสังเคราะห์ ของเราอนุญาตให้คุณซื้อขาย CFD ในดัชนีสังเคราะห์ - สินทรัพย์สังเคราะห์ที่เป็นกรรมสิทธิ์ของเราจากการจำลองเหตุการณ์ที่เป็นไปตามกลไกของตลาด"
 
 msgid "Our active client base is expected to reach over 790,000 total clients this year."
 msgstr "คาดว่าฐานลูกค้าที่ใช้งานอยู่ของเราทั้งหมดจะเกิน 790,000 รายปีนี้"
@@ -8394,6 +8517,9 @@ msgstr "โดยทั่วไปแล้วการซื้อขายค
 msgid "Our office in Dubai is located at the world-class Jumeirah Lake Towers (JLT) free zone. JLT is home to universities, commercial and residential towers, parks, and over 500 retail outlets, giving you exceptional convenience and a quality of life that you won't find anywhere else."
 msgstr "สำนักงานของเราตั้งอยู่ที่เขตปลอดอากร อาคาร Jumeirah Lake (JLT) ระดับโลก JLT เป็นแหล่งของมหาวิทยาลัย ย่านการค้าและที่พักอาศัย สวนสาธารณะ และร้านค้าย่อยกว่า 500 แห่ง ให้ท่านได้ทั้งความสะดวกที่เป็นเลิศ และคุณภาพชีวิต ที่ท่านจะหาที่ไหนไม่ได้"
 
+msgid "Our products and services may expose you to risks that can be substantial at times, including the risk of losing your entire investment. Please note that by clicking %1Continue%2, you’ll be accepting these risks."
+msgstr "ผลิตภัณฑ์และบริการของเราอาจเปิดเผยความเสี่ยงที่อาจส่งผลอย่างมากในบางครั้ง รวมถึงความเสี่ยงในการสูญเสียการลงทุนทั้งหมดของคุณ โปรดสังเกตว่าเมื่อคลิก %1หยุด%2 คุณจะยอมรับความเสี่ยงเหล่านี้"
+
 msgid "Our proprietary synthetic indices that simulate market forces"
 msgstr "ดัชนีที่ถูกพัฒนาและเป็นกรรมสิทธิ์ของบริษัทฯ ซึ่งจำลองกลไกตลาด"
 
@@ -8418,8 +8544,8 @@ msgstr "ค่านิยมของเรา"
 msgid "Our website uses cookies to give you the best user experience. For more information, %1view our policy%2."
 msgstr "เว็บไซต์ของเราใช้คุกกี้ที่จะให้ประสบการณ์การใช้งานที่ดีที่สุดแก่ท่าน สำหรับข้อมูลเพิ่มเติม %1ดูนโยบาย%2"
 
-msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
-msgstr "นอกสหภาพยุโรป ผลิตภัณฑ์ทางการเงินมีให้บริการโดย Deriv (SVG) LLC, Hinds Building, Kingstown, เซนต์วินเซนต์และเกรนาดีนส์; Deriv (V) Ltd, Govant Building, Port Vila, P.O. Box 1276 ประเทศวานูอาตูได้รับการควบคุมโดย Vanuatu Financial Services Commission (%1ดูใบอนุญาต%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola หมู่เกาะบริติชเวอร์จินได้รับการควบคุมโดย British Virgin Islands Financial Services Commission (%3liใบอนุญาตหมายเลข SIBA/L/18/1114%4); และ Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan ประเทศมาเลเซียได้รับการควบคุมโดย Labuan Financial Services Authority ในการดำเนินธุรกิจตัวแทนด้านการเงิน (%5liใบอนุญาตหมายเลข MB/18/0024%6)"
+msgid "Outside the EU, financial products are offered by Deriv (SVG) LLC, Hinds Building, Kingstown, St. Vincent and the Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4); and Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)."
+msgstr "นอกสหภาพยุโรป ผลิตภัณฑ์ทางการเงินมีให้บริการโดย Deriv (SVG) LLC, Hinds Building, Kingstown, St Vincent และ Grenadines; Deriv (V) Ltd, Govant Building, Port Vila, P.O. Box 1276 ประเทศวานูอาตูได้รับการควบคุมโดย Vanuatu Financial Services Commission (%1ดูใบอนุญาต%2); Deriv (BVI) Ltd, Kingston Chambers, P.O. Box 173, Road Town, Tortola หมู่เกาะบริติชเวอร์จินได้รับการควบคุมโดย British Virgin Islands Financial Services Commission (%3liใบอนุญาตหมายเลข SIBA/L/18/1114%4); และ Deriv (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan ประเทศมาเลเซียได้รับการควบคุมโดย Labuan Financial Services Authority ในการดำเนินธุรกิจตัวแทนด้านการเงิน (%5liใบอนุญาตหมายเลข MB/18/0024%6)"
 
 msgid "Outstanding written and verbal communication skills and excellent command of English"
 msgstr "มีทักษะในการเขียนและสื่อสารทางการพูดที่โดดเด่นและสามารถสื่อสารภาษาอังกฤษได้ดีเยี่ยม"
@@ -8649,8 +8775,8 @@ msgstr "ทำการทดสอบเจาะระบบเข้าใน
 msgid "Perform tests to ensure database performance and security, as well as data integrity"
 msgstr "ทำการทดสอบเพื่อให้แน่ใจถึงประสิทธิภาพและความปลอดภัยของฐานข้อมูล และความสมบูรณ์ของข้อมูล"
 
-msgid "Perform the Agent's services and other obligations hereunder at their own cost and risk"
-msgstr "ดำเนินการให้บริการของตัวแทนฯ และภาระผูกพันอื่นๆ ตามคุณค่าและความเสี่ยงของตัวแทนฯ เอง"
+msgid "Perform the Agent's services and other obligations hereunder at their own cost and risk."
+msgstr ""
 
 msgid "Performance Tuning,"
 msgstr "การปรับแต่งเพื่อเพิ่มศักยภาพของระบบ"
@@ -8675,6 +8801,9 @@ msgstr "รางวัลผู้จัดการความมั่งค
 
 msgid "Personal details"
 msgstr "รายละเอียดส่วนบุคคล"
+
+msgid "Phone number"
+msgstr "หมายเลขโทรศัพท์"
 
 msgid "Photo of your document"
 msgstr "ภาพถ่ายของเอกสารของคุณ"
@@ -8784,8 +8913,11 @@ msgstr "โปรดตรวจสอบกล่องจดหมายขอ
 msgid "Please choose a currency"
 msgstr "โปรดเลือกสกุลเงิน"
 
-msgid "Please click on the link in the email to reset your binary password."
-msgstr "โปรดคลิกที่ลิงค์ในอีเมลเพื่อรีเซ็ตรหัสผ่านไบนารีของคุณ"
+msgid "Please click on the link in the email to change your MT5 password."
+msgstr "โปรดคลิกที่ลิงค์ในอีเมลเพื่อเปลี่ยนรหัสผ่าน MT5 ของคุณ"
+
+msgid "Please click on the link in the email to change your binary password."
+msgstr "โปรดคลิกที่ลิงค์ในอีเมลเพื่อเปลี่ยนรหัสผ่าน binary ของคุณ"
 
 msgid "Please click on the link in the email to reset your trading password."
 msgstr "โปรดคลิกที่ลิงค์ในอีเมลเพื่อรีเซ็ตรหัสผ่านการซื้อขายของคุณ"
@@ -8823,6 +8955,9 @@ msgstr "โปรดติดต่อตัวแทนชำระเงิน
 msgid "Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals."
 msgstr "กรุณาอย่าใช้บัญชีธนาคาร บัตรเครดิต หรือกระเป๋าเงินอิเล็กทรอนิกส์กับลูกค้าอื่น เพราะอาจทำให้เกิดความล่าช้าในการถอนเงินของคุณ"
 
+msgid "Please ensure all your personal details are the same as in your chosen document. If you wish to update your personal details, go to %1account settings%2."
+msgstr "โปรดตรวจสอบให้แน่ใจว่ารายละเอียดส่วนบุคคลทั้งหมดของคุณเหมือนกับในเอกสารที่คุณเลือก หากคุณต้องการอัปเดตรายละเอียดส่วนบุคคลของคุณ ไปที่ %1การตั้งค่าบัญชี%2"
+
 msgid "Please ensure that you have the Telegram app installed on your device."
 msgstr "โปรดตรวจให้แน่ใจว่า ท่านมีแอพพลิเคชัน Telegram ติดตั้งในอุปกรณ์ที่ท่านใช้งาน"
 
@@ -8844,6 +8979,9 @@ msgstr "โปรดป้อนวันที่ในรูปแบบ DD MM
 msgid "Please enter no more than %1 characters for both fields."
 msgstr "โปรดป้อนอักขระไม่เกิน %1 ตัวสําหรับทั้งสองฟิลด์"
 
+msgid "Please enter the correct format. Example:"
+msgstr "โปรดป้อนรูปแบบที่ถูกต้อง ตัวอย่าง:"
+
 msgid "Please enter your %1tax information%2 below to continue."
 msgstr "โปรดกรอก %1ข้อมูลภาษี%2 ของท่านด้านล่าง เพื่อดำเนินการต่อ"
 
@@ -8853,14 +8991,14 @@ msgstr "โปรดกรอกที่อยู่ของท่านให
 msgid "Please enter your full home address to avoid authentication delays."
 msgstr "โปรดกรอกที่อยู่ของท่านให้สมบูรณ์เพื่อหลีกเลี่ยงความล่าช้าในการตรวจสอบความถูกต้อง"
 
-msgid "Please enter your trading password to create an account. If you've forgotten your password, click %1Reset password%2"
-msgstr "โปรดป้อนรหัสผ่านการซื้อขายของคุณเพื่อสร้างบัญชี ถ้าคุณลืมรหัสผ่าน ให้คลิก %1ตั้งรหัสผ่าน%2"
-
 msgid "Please fill in the Login ID and Amount you wish to transfer to your Client in the form below:"
 msgstr "โปรดกรอกรหัสผู้ใช้งาน และจำนวนเงินที่ท่านต้องการโอนให้กับลูกค้าของท่านในแบบฟอร์มด้านล่าง"
 
 msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Ticks, and Only Ups/Only Downs are available exclusively with our Synthetic Indices."
 msgstr "โปรดทราบว่า ภูมิภาคเอเชีย, ตัวเลข, รีเซ็ตการเรียก/รีเซ็ตการใส่, Ticks สูง/Ticks ต่ำ และ ขึ้นเท่านั้น/ลงเท่านั้น มีให้เฉพาะในดัชนีสังเคราะห์ของเรา"
+
+msgid "Please note that UK residents are not able to trade CFDs on cryptocurrencies or Synthetic Indices."
+msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "กำหนดให้ 1 ล็อต เทียบเท่า 100 หน่วย โดยอ้างอิงจาก %1 ข้อกำหนดในสัญญา %2"
@@ -8895,6 +9033,9 @@ msgstr "โปรดโหลดหน้านี้อีกครั้ง"
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "โปรดตระหนักว่า การซื้อขายไบนารีออปชั่นเป็นกิจกรรมที่น่าตื่นเต้น แต่พวกเรามีหน้าที่เพื่อความถูกต้องในการแจ้งให้ท่านทราบถึงความเสี่ยงที่กำลังจะเกิดขึ้น การซื้อขายออปชั่นสามารถกลายเป็นพฤติกรรมเสพติด หรือทำให้เกินกว่าวงเงินที่กำหนด พวกเราจะหมั่นติดตามและสอบถามท่านเพื่อให้มีการบวนการวิเคราะห์ของตัวท่านเองเพื่อตรวจสอบหากท่านกำลังมีภาวะความเสี่ยง เพื่อหลีกเลี่ยงความอันตรายและความสูญเสีย โดยสิ่งที่สำคัญคือท่านควรปฏิบัติตามหลักเกณฑ์และแนวปฏิบัติพื้นฐาน"
 
+msgid "Please remember that it is your responsibility to keep your answers accurate and up to date."
+msgstr "โปรดจําไว้ว่าเป็นความรับผิดชอบของคุณในการรักษาคําตอบของคุณให้ถูกต้องและเป็นปัจจุบัน"
+
 msgid "Please resolve all pending issues to continue"
 msgstr "โปรดแก้ไขทุกประเด็นให้ลุล่วงเพื่อดำเนินการต่อ"
 
@@ -8916,6 +9057,9 @@ msgstr "โปรดระบุค่าอย่างน้อยหนึ่
 msgid "Please select the checkbox."
 msgstr "โปรดระบุค่าจากตัวเลือก"
 
+msgid "Please select the country of document issuance"
+msgstr "กรุณาเลือกประเทศที่ออกเอกสาร"
+
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
 msgstr "กรุณาเลือกประเทศที่คุณเป็นผู้อยู่อาศัยที่ต้องเสียภาษี หากคุณมีข้อสงสัย โปรดปรึกษาที่ปรึกษาด้านภาษี"
 
@@ -8924,6 +9068,9 @@ msgstr "โปรดกำหนดสกุลเงินของบัญช
 
 msgid "Please select the date range of your statement:"
 msgstr "โปรดเลือกช่วงวันที่ในใบแจ้งยอดของท่าน"
+
+msgid "Please select the document type and enter the document number."
+msgstr "โปรดเลือกชนิดเอกสารและป้อนหมายเลขเอกสาร"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "โปรดตั้งค่า %1ประเทศที่พำนัก%2 ก่อนอัพเกรดเป็นบัญชีจริง"
@@ -8966,6 +9113,9 @@ msgstr "โปรดลองอีกครั้ง"
 
 msgid "Please update your %1 to continue."
 msgstr "โปรดอัปเดต %1 ของคุณเพื่อดำเนินการต่อ"
+
+msgid "Please upload your identity document."
+msgstr "โปรดอัปโหลดเอกสารระบุตัวตนของคุณ"
 
 msgid "Please wait for confirmation. Our customer support team will get back to you regarding your account status via email within four hours."
 msgstr "โปรดรอการยืนยัน ฝ่ายลูกค้าสัมพันธ์ของเราจะติดต่อกลับเพื่อแจ้งสถานะของบัญชีของท่านผ่านทางอีเมล์ภายในสี่ชั่วโมง"
@@ -9102,8 +9252,8 @@ msgstr "จัดเตรียม และ นำเสนอข้อเส�
 msgid "Prepare and publish any content or place any advertisements that refer to Binary and its relationship with Binary without the prior written consent of Binary"
 msgstr "จัดเตรียมและเผยแพร่เนื้อหาใดๆ หรือทำการโฆษณา โดยอ้างถึง Binary และความสัมพันธ์กับ Binary โดยไม่ได้รับความเห็นชอบเป็นลายลักษณ์อักษรจาก Binary ก่อน"
 
-msgid "Prepare and publish any material or place any advertisements that refer to the Company and the Agent's relationship with the Company without an authorisation being given by the Company"
-msgstr "เตรียมการและเผยแพร่เนื้อหา เอกสารใดๆ หรือ ทำการโฆษณาซึ่งอ้างถึงบริษัทฯ และ ความสัมพันธ์กับตัวแทนฯ โดยไม่ได้รับความยินยอมจากบริษัทฯ"
+msgid "Prepare and publish any material or place any advertisements that refer to the Company and the Agent's relationship with the Company without an authorisation being given by the Company."
+msgstr ""
 
 msgid "Prepare daily, weekly, and monthly financial reports"
 msgstr "จัดเตรียมรายงานการเงินรายวัน รายอาทิตย์ และรายเดือน"
@@ -9300,8 +9450,8 @@ msgstr "ให้การสนับสนุน การแก้ไขป�
 msgid "Provide technical leadership on cryptocurrencies and blockchain technology"
 msgstr "เป็นผู้นำในด้านเทคนิคสำหรับเทคโนโลยีเงินดิจิทัลและบล็อกเชน"
 
-msgid "Provide the Company with all and any information whatsoever that the Agent may become aware of that may be harmful, adverse, or detrimental to the Company and its reputation"
-msgstr "ให้ข้อมูลทั้งหมดหรือข้อมูลใดๆ แก่บริษัทฯ หรืออะไรก็ตามที่ตัวแทนฯ ทราบว่า อาจจะเป็นอันตราย เป็นผลร้าย หรือ ก่อให้เกิดความเสียหายแก่บริษัทฯ และตลอดจนชื่อเสียงของบริษัทฯ"
+msgid "Provide the Company with all and any information whatsoever that the Agent may become aware of that may be harmful, adverse, or detrimental to the Company and its reputation."
+msgstr ""
 
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
 msgstr "ให้รหัสยืนยันสี่หลักด้านล่างนี้เพื่อยืนยันต่อเจ้าหน้าที่ลูกค้าสัมพันธ์"
@@ -9444,6 +9594,12 @@ msgstr "จริง"
 msgid "Real Account"
 msgstr "บัญชีจริง"
 
+msgid "Real Account Opening"
+msgstr "การเปิดบัญชีจริง"
+
+msgid "Real CFDs"
+msgstr "บัญชีจริง CFD"
+
 msgid "Real Estate"
 msgstr "อสังหาริมทรัพย์"
 
@@ -9459,8 +9615,14 @@ msgstr "การเปิดบัญชีเงินจริง"
 msgid "Real Synthetic"
 msgstr "บัญชีจริง ดัชนีสังเคราะห์"
 
+msgid "Real accounts are not available to politically exposed persons (PEPs)."
+msgstr "บัญชีจริงไม่สามารถใช้งานได้กับบุคคลที่มีสถานภาพทางการเมือง (PEPs)"
+
 msgid "Real accounts will be archived after %1 days of inactivity. The client can request for the reactivation of a real account via %2live chat%3."
 msgstr "บัญชีจริงจะถูกเก็บถาวรหลังจากไม่มีการใช้งาน %1 วัน ไคลเอ็นต์สามารถร้องขอการเปิดใช้งานบัญชีจริงอีกครั้งผ่านทาง %2แชทสด%3"
+
+msgid "Real money account opening"
+msgstr "การเปิดบัญชีเงินจริง"
 
 msgid "Real-Money Account"
 msgstr "บัญชีเงินจริง"
@@ -9498,8 +9660,8 @@ msgstr "ได้รับใบเสนอราคาสำหรับกา
 msgid "Receive the approval of the Company to include any information in relation to Binary"
 msgstr "ได้รับการอนุมัติจากบริษัทฯ รวมถึงการอนุมัติข้อมูลใด ๆ ที่เกี่ยวกับ Binary"
 
-msgid "Receive the approval of the Company to include any information in relation to the Company"
-msgstr "ได้รับการอนุมัติจากบริษัทฯ รวมถึงการอนุมัติข้อมูลใด ๆ เกี่ยวกับบริษัทฯ"
+msgid "Receive the approval of the Company to include any information in relation to the Company."
+msgstr ""
 
 msgid "Receive your earnings through your favourite payment method"
 msgstr "รับรายได้ผ่านช่องทางที่คุณปรารถนา"
@@ -9654,8 +9816,8 @@ msgstr "การทำซ้ำ เช่น \"abcabcabc\" จะทำให�
 msgid "Replication,"
 msgstr "การทำซ้ำ"
 
-msgid "Represent themselves as a representative of the Company or as an authorised person by the Company in their advertising activities"
-msgstr "แสดงตนว่า เป็นตัวแทนของบริษัทฯ หรือ เป็นบุคคลที่ได้รับอนุญาตจากบริษัทฯ ในกิจกรรมการโฆษณา"
+msgid "Represent themselves as a representative of the Company or as an authorised person by the Company in their advertising activities."
+msgstr ""
 
 msgid "Representations and warranties"
 msgstr "การเป็นตัวแทนและการรับรอง"
@@ -9719,9 +9881,6 @@ msgstr "รีเซ็ตรหัสผ่านนักลงทุน"
 
 msgid "Reset my demo balance"
 msgstr "รีเซ็ตงบทดลองของฉัน"
-
-msgid "Reset my password"
-msgstr "รีเซ็ตรหัสผ่าน"
 
 msgid "Reset password"
 msgstr "ตั้งรหัสผ่านใหม่"
@@ -9876,6 +10035,9 @@ msgstr "ความเสี่ยงของสลิปเพจ"
 msgid "Risk of stop order"
 msgstr "ความเสี่ยงของการยุติคำสั่งซื้อ"
 
+msgid "Risk warning"
+msgstr "คำเตือนเกี่ยวกับความเสี่ยง"
+
 msgid "Risk warnings and notices related to Transactions and investments in the proposed instruments"
 msgstr "คำเตือนความเสี่ยงและคำบอกกล่าวที่เกี่ยวข้องกับธุรกรรมและการลงทุนในเครื่องมือการลงทุนที่นำเสนอ"
 
@@ -9917,6 +10079,9 @@ msgstr "ราคาขาย"
 
 msgid "Sale of Property"
 msgstr "การขายทรัพย์สิน"
+
+msgid "Sample:"
+msgstr "ตัวอย่าง:"
 
 msgid "Saturday"
 msgstr "วันเสาร์"
@@ -9972,8 +10137,8 @@ msgstr "ค้นหาประเทศ"
 msgid "Search..."
 msgstr "ค้นหา..."
 
-msgid "Second line"
-msgstr "บรรทัดที่สอง"
+msgid "Second line of address"
+msgstr "ที่อยู่ของบรรทัดที่สอง"
 
 msgid "Secondary"
 msgstr "ลำดับที่สอง"
@@ -10131,8 +10296,8 @@ msgstr "ลําดับ เช่น abc หรือ 6543 นั้นง่
 msgid "Server"
 msgstr "เซิร์ฟเวอร์"
 
-msgid "Server maintenance starting 01:00 GMT every Sunday. This process may take up to 2 hours to complete. Service may be disrupted during this time."
-msgstr "การบำรุงรักษาเซิร์ฟเวอร์เริ่มตั้งแต่ 01:00 GMT ทุกวันอาทิตย์ กระบวนการนี้อาจใช้เวลาถึง 2 ชั่วโมงในการดําเนินการให้เสร็จสมบูรณ์ บริการอาจหยุดชะงักในช่วงเวลานี้"
+msgid "Server maintenance starts at 01:00 (GMT) every Sunday. This process may take up to 2 hours to complete. You may experience service disruption during this time."
+msgstr "การบํารุงรักษาเซิร์ฟเวอร์เริ่มเวลา 01:00 น. (GMT) ทุกวันอาทิตย์ กระบวนการนี้อาจใช้เวลาถึง 2 ชั่วโมงในการดําเนินการให้เสร็จสมบูรณ์ คุณอาจพบการหยุดชะงักของบริการในช่วงเวลานี้"
 
 msgid "Server:"
 msgstr "เซิร์ฟเวอร์:"
@@ -10149,8 +10314,8 @@ msgstr "รอบระยะเวลาการซื้อขาย:"
 msgid "Set Currency"
 msgstr "ตั้งค่าสกุลเงิน"
 
-msgid "Set a trading password. Use this to log in and trade on MT5."
-msgstr "ตั้งรหัสผ่านการซื้อขาย ใช้สิ่งนี้เพื่อเข้าสู่ระบบและซื้อขายบน MT5"
+msgid "Set MT5 password"
+msgstr "ตั้งรหัสผ่าน MT5"
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "ตั้งค่า Barrier เพื่อกำหนดตำแหน่งของท่าน และกำหนดผลของตัวเงินที่ท่านจะได้รับ"
@@ -10166,9 +10331,6 @@ msgstr "ตั้งระยะเวลาของการซื้อขา
 
 msgid "Set the standard for our technical documentation by creating a technical style guide that can be followed across the company"
 msgstr "กำหนดมาตรฐานสำหรับเอกสารทางเทคนิคของเรา โดยสร้างคู่มือรูปแบบทางเทคนิคที่สามารถปฏิบัติตามได้ทั่วทั้งบริษัท"
-
-msgid "Set trading password"
-msgstr "ตั้งรหัสผ่านการซื้อขาย"
 
 msgid "Set up %1 on your device now"
 msgstr "ติดตั้ง%1บนอุปกรณ์ของคุณเดี๋ยวนี้"
@@ -10428,6 +10590,9 @@ msgstr "ผลประโยชน์ของรัฐ"
 msgid "State/Province"
 msgstr "รัฐ/จังหวัด"
 
+msgid "State/province"
+msgstr "รัฐ/จังหวัด"
+
 msgid "Stated limits are subject to change without prior notice."
 msgstr "วงเงินที่ได้รับอาจจะมีการเปลี่ยนแปลงโดยไม่บอกกล่าวให้ทราบล่วงหน้า"
 
@@ -10464,6 +10629,9 @@ msgstr "Stays Between/Goes Outside trades"
 msgid "Step"
 msgstr "ขั้น"
 
+msgid "Step %1: %2 (%1 of %3)"
+msgstr "ขั้นตอน %1: %2 (%1 จาก %3)"
+
 msgid "Step 1"
 msgstr "ขั้นตอนที่ 1"
 
@@ -10497,7 +10665,7 @@ msgstr "ขั้นตอนที่ 3: วิธีการซื้อค�
 msgid "Step 3: Make your trade"
 msgstr "ขั้นตอนที่ 3: ทำการซื้อขาย"
 
-msgid "Step Index"
+msgid "Step index"
 msgstr "ดัชนี Step"
 
 msgid "Step indices"
@@ -10548,9 +10716,6 @@ msgstr "สตรอโพรซีเยอร์"
 msgid "Straight rows of keys are easy to guess"
 msgstr "แถวตรงของแป้นคาดเดาได้ง่าย"
 
-msgid "Strong  password contain at least 8 characters, combine uppercase and lowercase letters and numbers."
-msgstr "รหัสผ่านที่ยากต่อการคาดเดาประกอบด้วยอักขระอย่างน้อย 8 ตัว รวมตัวอักษรตัวพิมพ์ใหญ่และตัวพิมพ์เล็กและตัวเลขเข้าด้วยกัน"
-
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "มีความสามารถในการวิเคราะห์ซึ่งได้มีการพิสูจน์ก่อนหน้า หรือมีความสนใจกระตือรือร้นที่จะย้ายเข้ามาในส่วนนี้"
 
@@ -10571,6 +10736,9 @@ msgstr "มีทักษะการสื่อสารทั้งการ
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
 msgstr "รหัสผ่านที่คาดเดาได้ยากประกอบด้วยอย่างน้อย 8 ตัวอักษร รวมตัวอักษรตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์"
+
+msgid "Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols."
+msgstr "รหัสผ่านที่ยากต่อการคาดเดามีอย่างน้อย 8 อักขระ รวมอักษรตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์เข้าด้วยกัน"
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
 msgstr "มีความเข้าใจที่ลึกซึ่งในเรื่องสี การพิม์ การออกแบบอัตลักษณ์ และการออกแบบตราสัญลักษณ์"
@@ -10638,6 +10806,9 @@ msgstr "ส่งเอกสารอย่างใดอย่างหนึ
 msgid "Submit passport photo page"
 msgstr "ส่งหนังสือเดินทางหน้าที่มีรูปภาพ"
 
+msgid "Submit proof of address"
+msgstr "ส่งหลักฐานยืนยันที่อยู่"
+
 msgid "Submit residence permit (back)"
 msgstr "ส่งใบอนุญาตพํานักอาศัย (กลับ)"
 
@@ -10658,6 +10829,9 @@ msgstr "ส่งแล้ว"
 
 msgid "Submitting"
 msgstr "กำลังส่ง"
+
+msgid "Success"
+msgstr "ความสําเร็จ"
 
 msgid "Success!"
 msgstr "ความสําเร็จ!"
@@ -10734,14 +10908,20 @@ msgstr "สวอปสั้น (ต่อปี)"
 msgid "Swiss franc vs Japanese yen"
 msgstr "ฟรังก์สวิส เทียบกับ เยนญี่ปุ่น"
 
+msgid "Switch account"
+msgstr ""
+
+msgid "Switch account?"
+msgstr ""
+
+msgid "Switch to crypto account?"
+msgstr ""
+
 msgid "Symbol"
 msgstr "สัญลักษณ์"
 
 msgid "Synthetic"
 msgstr "สังเคราะห์"
-
-msgid "Synthetic Account"
-msgstr "บัญชีสังเคราะห์"
 
 msgid "Synthetic Indices"
 msgstr "ดัชนีสังเคราะห์"
@@ -10763,6 +10943,9 @@ msgstr "ดัชนีที่ทำขึ้นเองโดยจำลอ
 
 msgid "Synthetics"
 msgstr "สังเคราะห์"
+
+msgid "Synthetics Account"
+msgstr "บัญชีสังเคราะห์"
 
 msgid "System Administrator"
 msgstr "ผู้ดูแลรักษาระบบ"
@@ -10901,6 +11084,9 @@ msgstr "การอนุมัติข้อตกลงและเงื่
 
 msgid "Terms and conditions"
 msgstr "ข้อตกลงและเงื่อนไข"
+
+msgid "Terms of use"
+msgstr "ข้อตกลงในการใช้งาน"
 
 msgid "Tertiary"
 msgstr "ลำดับที่สาม"
@@ -11109,8 +11295,11 @@ msgstr "ตัวแทนฯ มีอำนาจอันชอบธรร�
 msgid "The Agent has taken all measures required to obtain and maintain in full force and effect all authority and/or powers and/or consents and/or licences and/or authorities to enter into and perform this agreement."
 msgstr "ตัวแทนฯ ได้ดำเนินการตามมาตรการทั้งหมดที่จำเป็นที่จะให้ได้มาและรักษาอำนาจอันชอบธรรมที่จำเป็นทั้งหมดและ/หรือ ความสามารถ และ/หรือ ความเห็นชอบ และ/หรือ ใบอนุญาต และ/หรือ การอนุญาตที่ยังมีผลและบังคับใช้เพื่อเข้าสู่และปฏิบัติตามข้อตกลงนี้"
 
-msgid "The Agent may provide the Agent's services to those clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
-msgstr "ตัวแทนฯ อาจให้บริการแก่ลูกค้าของบริษัทฯ ที่ต้องการฝาก และ/หรือ ถอนเงินโดยใช้ตัวแทนฯ ตัวแทนฯ อาจให้บริการแก่ลูกค้าที่ตั้งใจจะใช้กระเป๋าเงินอิเล็กทรอนิกส์ หรือ การชำระเงินอิเล็กทรอนิกส์ ที่นอกเหนือจากวิธีการชำระเงินที่บริษัทฯ ใช้ (ต่อไปนี้เรียกว่า \"การชำระเงินอิเล็กทรอนิกส์\") หรือ สกุลเงินท้องถิ่นนอกเหนือจากที่บริษัทฯ ยอมรับ (ซึ่งต่อไปนี้ เรียกว่า \"สกุลเงินท้องถิ่น\") และ การโอนเงินผ่านธนาคารท้องถิ่น (ต่อไปนี้เรียกว่า \"โอนเงินผ่านธนาคาร\")"
+msgid "The Agent is prohibited from offering the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
+
+msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
+msgstr ""
 
 msgid "The Agent promises to the Company that the Agent shall comply with, and the Agent's services will be performed in accordance with, any applicable anti-corruption laws."
 msgstr "ตัวแทนฯ ให้คำสัญญาต่อบริษัทฯ ว่า จะปฏิบัติตาม และดำเนินการต่างๆ ตามกฎหมายว่าด้วยการป้องกันและปราบปรามการทุจริต"
@@ -11120,9 +11309,6 @@ msgstr "ตัวแทนฯ รับรองและรับประก�
 
 msgid "The Agent shall further undertake to perform all necessary due diligence on the Agent's clients, and the Company shall be entitled, at any time, to request the Agent to provide all information and documentation relating to their clients for the purposes of the Company's AML compliance. "
 msgstr "ตัวแทนฯ รับผิดชอบต่อการสอบทานธุรกิจของลูกค้า และบริษัทฯ มีสิทธิ์ในทุกขณะที่จะร้องขอต่อตัวแทนฯ เพื่อให้ข้อมูลและส่งมอบเอกสารที่เกี่ยวข้องของลูกค้าต่อบริษัทฯ ตามวัตถุประสงค์ของการ ปฏิบัติตามนโยบายป้องกันและปราบปรามการฟอกเงินของบริษัทฯ "
-
-msgid "The Agent shall not be authorised to offer the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
-msgstr "ตัวแทนฯ จะไม่ได้รับอนุญาตให้มีการให้บริการภายใต้ตกลงนี้แก่ลูกค้าที่พำนักอยู่ในประเทศที่ถูกจำกัดตามที่ระบุไว้ในข้อกำหนดและเงื่อนไข (ซึ่งมีการแก้ไขเป็นครั้งคราว) ซึ่งเผยแพร่ไว้บนเว็บไซต์ของบริษัทฯ %1www.binary.com%2"
 
 msgid "The Agent shall not do the following:"
 msgstr "ตัวแทนฯ จะไม่ดำเนินการในเรื่องต่อไปนี้"
@@ -11145,8 +11331,8 @@ msgstr "ตัวแทนฯ ปฏิบัติต่อข้อมูล�
 msgid "The Average"
 msgstr "ค่าเฉลี่ย"
 
-msgid "The Commencement Date of this agreement shall mean the date on which the Agent account is approved by the Company."
-msgstr "วันเริ่มต้นของสัญญานี้ หมายถึง วันที่บริษัทฯ ได้อนุมัติบัญชีตัวแทนฯ"
+msgid "The Commencement Date of this agreement shall mean the date on which the Agent's account is approved by the Company."
+msgstr ""
 
 msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bids and Asks made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Synthetic Indices."
 msgstr "ราคาของบริษัท ถูกกำหนดโดยอ้างอิงจากราคาของผลิตภัณฑ์อ้างอิงซึ่งมีการให้ราคาบนพื้นที่การแลกเปลี่ยนหรือเดิมพันภายนอก โดย %1 กำหนดตามดุลยพินิจของบริษัท โครงสร้างพื้นฐานทางระบบสารสนเทศของบริษัทและระบบการรวบรวมราคาให้บริการในการรับราคาจากโบรกเกอร์ชั้นนำที่บริษัทได้คัดเลือกไว้ ที่ทำหน้าที่เป็นผู้ให้บริการทางสภาพคล่องแก่บริษัท และให้ราคาแก่ลูกค้าซึ่งราคานี้ได้มาโดยอ้างอิงกับตัวเปรียบเทียบ และตลาด ลูกค้าทราบว่าราคาของบริษัทอาจจะต่างจากราคาซื้อและขายบนพื้นที่การแลกเปลี่ยน หรือเดิมพันภายนอกและบริษัทไม่รับผิดชอบต่อการสูญเสียของลูกค้า ที่อาจจะเกิดขึ้นจากความแตกต่างดังกล่าว ข้อความนี้ไม่สามารถใช้กับดัชนีสังเคราะห์"
@@ -11205,8 +11391,8 @@ msgstr "บริษัทฯ ไม่ส่งเสริมพฤติก�
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "บริษัทฯ พยายามที่จะเปิด หรือปิดธุรกรรมของการสั่งซื้อของลูกค้าในราคาสมเหตุสมผลที่บริษัทฯ มี ด้วยการปฏิบัติหน้าที่ในการดำเนินการที่ดีที่สุด การประมวลผลคำสั่งซื้อที่ดีที่สุด หมายถึง เมื่อประมวลผลคำสั่งซื้อ บริษัทฯ จะดำเนินการตามขั้นตอนทั้งหมด เพื่อให้ได้ผลลัพธ์ที่ดีที่สุดแก่ลูกค้า โดยพิจารณาราคา ต้นทุน ความเร็ว ความเป็นไปได้ในการประมวลผลและการชำระราคา ขนาด ลักษณะ หรือ ข้อพิจารณาอื่นๆ ที่เกี่ยวข้องกับการประมวลผลคำสั่งซื้อ"
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited, a client of Deriv (Europe) Limited, or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "บริษัทมีนโยบายการยุติการซื้อขาย ซึ่งป้องกันไม่ให้ลูกค้าสูญเสียเงินมากกว่าจำนวนที่ฝากไว้ อย่างไรก็ตาม ในกรณีที่ตำแหน่งเปิดของลูกค้าไม่ถูกปิดเมื่อระดับมาร์จิ้นของบัญชี MT5 จริงไปถึงระดับยุติการซื้อขาย บริษัทอาจละเว้นยอดคงเหลือที่ติดลบของลูกค้า โดยการเครดิตบัญชีของลูกค้าหากยอดคงเหลือในบัญชีติดลบ ยอดคงเหลือติดลบจะถูกพิจารณา โดยการคำนวณรวมยอดคงเหลือติดลบทั้งหมดที่เกิดขึ้นในทุกๆ บัญชีของลูกค้าภายในระยะเวลา 24 ชั่วโมง ลูกค้ายอมรับว่า เว้นแต่ลูกค้าเป็นลูกค้ารายย่อยของ Deriv Investments (Europe) Limited ลูกค้าของ Deriv (Europe) Limited หรือลูกค้ารายย่อยที่อาศัยอยู่ในออสเตรเลีย ข้อเสนอกลไกการป้องกันยอดคงเหลือติดลบของบริษัทที่ให้แก่ลูกค้านี้ จะเป็นไปตามดุลยพินิจของบริษัทเท่านั้น และบริษัทสงวนสิทธิ์ในการเปลี่ยนแปลงคุณลักษณะและหลักเกณฑ์การคัดเลือกของกลไกการป้องกันยอดคงเหลือติดลบเมื่อใดก็ได้ หากแต่จะไม่มีบริการป้องกันยอดคงเหลือติดลบในสถานการณ์ดังต่อไปนี้:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr "บริษัทมีนโยบายการยุติการซื้อขาย ซึ่งป้องกันไม่ให้ลูกค้าสูญเสียเงินมากกว่าจำนวนที่ฝากไว้ อย่างไรก็ตาม ในกรณีที่ตำแหน่งเปิดของลูกค้าไม่ถูกปิดเมื่อระดับมาร์จิ้นของบัญชี MT5 จริงไปถึงระดับยุติการซื้อขาย บริษัทอาจละเว้นยอดคงเหลือที่ติดลบของลูกค้า โดยการเครดิตบัญชีของลูกค้าหากยอดคงเหลือในบัญชีติดลบ ยอดคงเหลือติดลบจะถูกพิจารณา โดยการคำนวณรวมยอดคงเหลือติดลบทั้งหมดที่เกิดขึ้นในทุกๆ บัญชีของลูกค้าภายในระยะเวลา 24 ชั่วโมง ลูกค้ายอมรับว่า เว้นแต่ลูกค้าเป็นลูกค้ารายย่อยของ Deriv Investments (Europe) Limited หรือลูกค้ารายย่อยที่อาศัยอยู่ในออสเตรเลีย ข้อเสนอกลไกการป้องกันยอดคงเหลือติดลบของบริษัทที่ให้แก่ลูกค้านี้ จะเป็นไปตามดุลยพินิจของบริษัทเท่านั้น และบริษัทสงวนสิทธิ์ในการเปลี่ยนแปลงคุณลักษณะและหลักเกณฑ์การคัดเลือกของกลไกการป้องกันยอดคงเหลือติดลบเมื่อใดก็ได้ หากแต่จะไม่มีบริการป้องกันยอดคงเหลือติดลบในสถานการณ์ดังต่อไปนี้:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "บริษัทฯ มีหน้าที่ทั่วๆ ไป ในการจัดการธุรกิจของเรากับลูกค้าด้วยความซื่อสัตย์ เป็นธรรม และอย่างมืออาชีพ และเพื่อปฏิบัติอย่างเหมาะสมที่สุดเพื่อดำเนินการในการเปิดและปิดการซื้อขายไบนารีออปชั่นกับลูกค้า"
@@ -11262,8 +11448,8 @@ msgstr "บริษัทฯ จำเป็นต้องใช้ปัจ�
 msgid "The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collecting or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information."
 msgstr "บริษัทมีหน้าที่ปฏิบัติตามกฎหมายภายใต้กฎระเบียบการป้องกันข้อมูลในการแจ้งแก่ผู้สมัครถึงข้อมูลที่เกี่ยวข้องกับนโยบายการรักษาข้อมูลส่วนบุคคลนี้ ดังนั้น ผู้สมัครควรจะให้ความสำคัญและอ่านข้อกำหนดของนโยบายนี้ควบคู่ไปกับนโยบายความเป็นส่วนบุคคลอื่นๆ ที่บริษัทได้จัดเตรียมให้กับผู้สมัครในโอกาสต่างๆ และเมื่อบริษัทได้ดำเนินการรวบรวมหรือประเมินผลข้อมูลส่วนบุคคลเกี่ยวกับผู้สมัคร เพื่อให้ผู้สมัครจะได้รับทราบว่า บริษัทกำลังใช้ข้อมูลดังกล่าวอย่างไรและด้วยความประสงค์ใด"
 
-msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, e-mail, and email management software, along with any modifications."
-msgstr "บริษัทฯ เป็นเจ้าของแต่เพียงผู้เดียวในสิทธิ์ หรือ กรรมสิทธิ์ หรือ ผลประโยชน์ อะไรก็ตามในและต่อระบบอิเล็กทรอนิกส์ของ %1 ทั้งหมด รวมถึงซอฟต์แวร์ อีเมล์ และซอฟต์แวร์สำหรับการจัดการอีเมล์ บางอย่างหรือทั้งหมด รวมถึงการแก้ไขเปลี่ยนแปลงใดๆ ด้วย"
+msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, email, and email management software, along with any modifications."
+msgstr ""
 
 msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platform."
 msgstr "บริษัทฯ จะให้บริการสัญญาสำหรับส่วนต่าง (CFD) ผ่านแพลตฟอร์ม MT5 เป็นหลัก"
@@ -11366,6 +11552,9 @@ msgstr "บริษัทฯ ตระหนักในความสำค�
 
 msgid "The Company reserves the right in its sole discretion to refuse and/or cancel services and charge deposit and/or withdrawal fees to anyone for any reasons including, but not limited to the following:"
 msgstr "บริษัทฯ สงวนสิทธิ์ในการใช้ดุลยพินิจเพื่อปฏิเสธ และ/หรือ ยกเลิกบริการ การเรียกเก็บค่าธรรมเนียมการฝาก และ/หรือ การถอน กับบุคคลใดๆ เนื่องด้วยเหตุผลดังต่อไปนี้"
+
+msgid "The Company reserves the right to accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
+msgstr ""
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug, or glitch in the Company website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, manifest mis-calculation of prices, or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors, or suspected system inadequacies that they may experience and may not abuse, or arbitrage based on, such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between the client and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot)."
 msgstr "บริษัทฯ สงวนสิทธิ์ในการยกเลิก/ทำธุรกรรมย้อนกลับ หรือ แก้ไขข้อตกลงของสัญญา (รวมถึงสปอตเริ่มต้นและสปอตสิ้นสุด) ในกรณีที่สัญญาที่ได้มาหรือถูกขายที่ราคาที่ไม่สมเหตุสมผลของตลาด หรือ ได้มา หรือ ถูกขาย ที่ระดับความเสี่ยงต่ำผิดปกติ อันเกิดจากข้อผิดพลาดของระบบที่ยังหาไม่พบ ข้อผิดพลาดเล็กๆ ในซอฟต์แวร์เว็บไซต์ของบริษัทฯ ฟีดข้อมูลการตลาด หรือ ภาวะราคาแฝง ข้อผิดพลาดของฟีดข้อมูล ราคาเบี่ยงเบนผิดทิศทาง การตั้งตัวแปรราคาผิดพลาด หรือ การคำนวณราคาผิดพลาดที่ปรากฏ หรือ ความผิดพลาดที่ชัดเจนอื่นๆ (เรียกว่า \"ข้อผิดพลาดที่สำแดงชัดเจน\") ลูกค้ามีหน้าที่ในการรายงานให้บริษัทฯ ทราบถึงปัญหา ข้อผิดพลาด หรือ หากสงสัยถึงความหย่อนในเสถียรภาพของระบบที่อาจพบ และไม่ได้ใช้ในทางที่ผิด หรือหาโอกาสทำกำไรจากปัญหา หรือ ข้อผิดพลาดของระบบดังกล่าว บริษัทฯ จะพยายามแก้ไขปัญหาดังกล่าวในเวลาสั้นที่สุด การแก้ไขในเงื่อนไขสัญญา (รวมถึงสปอตเริ่มต้นและสปอตสิ้นสุด) สำหรับสัญญาที่มีข้อผิดพลาดที่สำแดงชัดเจน จะดำเนินการด้วยความรับผิดชอบและเป็นไปด้วยความยุติธรรม เงินที่เกิดขึ้นจากสัญญาที่มีข้อผิดพลาดระหว่างลูกค้าและบริษัทฯ จะถูกคืนกลับให้แก่ผู้รับตามที่ได้มีการแก้ไขเงื่อนไขของสัญญา (รวมถึงสปอตเริ่มต้นและสปอตสิ้นสุด)"
@@ -11537,9 +11726,6 @@ msgstr "บริการของบริษัทฯ เกี่ยวข�
 
 msgid "The Company's website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to the client's web browser, which is beyond the Company's control. The Company is not responsible for the privacy practices or the content of such websites. The Company encourages the client to read the privacy policies of these websites because their practices may differ from the Company's."
 msgstr "เว็ยไซต์ของบริษัทฯ มีลิงค์ไปยังเว็บไซต์อื่นและอาจจะมีแบนเนอร์ หรือ ไอคอนโฆษณาที่เกี่ยวกับเว็บไซต์ภายนอกอื่นๆ เว็บไซต์เหล่านี้และโฆษณาต่างๆ อาจจะส่งคุกกี้ให้กับเว็บเบราเซอร์ของลูกค้า ซึ่งเป็นสิ่งที่อยู่นอกเหนือการควบคุมของบริษัทฯ บริษัทฯ ไม่รับผิดชอบต่อแนวปฏิบัติในเรื่องความเป็นส่วนตัว หรือ เนื้อหาของเว็บไซต์ดังกล่าว บริษัทฯ ขอให้ลูกค้าศึกษานโยบายการรักษาข้อมูลส่วนบุคคลของเว็บไซต์เหล่านั้น เนื่องจากการปฏิบัติอาจมีความแตกต่างกับแนวปฏิบัติของบริษัทฯ"
-
-msgid "The Company, exercising its absolute discretion, may accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
-msgstr "ในการพิจารณาโดยใช้ดุลยพินิจ บริษัทฯ อาจจะยอมรับ หรือ ปฏิเสธแอพพลิเคชันของตัวแทนฯ หากเมื่อมีการยอมรับแอพพลิเคชั่นของตัวแทนฯ แล้วบริษัทฯ จะรวมข้อมูลที่เกี่ยวข้อง รวมถึง ชื่อ ที่อยู่ เว็บไซต์ (ถ้ามี) อีเมล์ หมายเลขโทรศัพท์ อัตราคอมมิชชั่น และวิธีการชำระเงินที่ใช้โดยตัวแทนฯ ดังกล่าว ไว้ในรายการตัวแทนการชำระเงิน ซึ่งเผยแพร่บนเว็บไซต์ของบริษัทฯ %1www.binary.com%2"
 
 msgid "The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Deriv Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide."
 msgstr "ผู้จัดการประจำประเทศเป็นผู้ดำเนินการเพื่อให้ได้รับ ให้บริการ บริหาร และขยายเครือข่ายพันธมิตรออนไลน์ในประเทศต่างๆ ที่มีกลุ่มเป้าหมายของเครือ Deriv อยู่ คุณจะใช้ทักษะ ความรู้ ของคุณที่สอดคล้องกับวัฒนธรรมธุรกิจของท้องถิ่นเพื่อเพิ่มอัตราการเติบโตของเราทั่วโลก"
@@ -11778,8 +11964,8 @@ msgstr "รายละเอียดส่วนตัวของผู้ส
 msgid "The applicant's qualifications, skills, education, experience, and employment history"
 msgstr "คุณสมบัติของผู้สมัคร ทักษะ ศึกษา ประสบการณ์ และประวัติการทำงานของผู้สมัคร"
 
-msgid "The application shall be reviewed and assessed by the Company's compliance and marketing departments. It is noted that, following and implementing the anti-money laundering policy and conducting due diligence in accordance with the law and regulations, the Company's compliance department shall request and collect all required information and documentation as per Section H."
-msgstr "ใบสมัครจะถูกพิจารณาและประเมินโดยฝ่ายกำกับดูแล และฝ่ายการตลาดของบริษัทฯ โดยขอเรียนให้ทราบว่า ฝ่ายกำกับดูแลระเบียบของบริษัทฯ ปฏิบัติตามและดำเนินการตามนโยบายการป้องกันและปราบปรามการฟอกเงิน และตรวจสอบวิเคราะห์สถานะตามกฎหมายและกฎระเบียบ และฝ่ายกำกับดูแลของบริษัทฯ จะขอและรวบรวบข้อมูลและเอกสารที่จำเป็นตามหมวด ซ"
+msgid "The application shall be reviewed and assessed by the Company's Compliance and Marketing departments. It is noted that, following and implementing the anti-money laundering policy and conducting due diligence in accordance with the law and regulations, the Company's Compliance department shall request and collect all required information and documentation as per Section H."
+msgstr ""
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr "ราคาประมูลของคู่สกุลเงินบ่งชี้ว่า จะต้องใช้สกุลเงินที่เสนอราคาจำนวนเท่าไรเพื่อที่จะซื้อสกุลเงินฐานหนึ่งหน่วย ซึ่งเป็นที่รู้จักทั่วไป คือ อัตราแลกเปลี่ยน"
@@ -12110,8 +12296,8 @@ msgstr "ปัจจัยที่กล่าวข้างต้นนั้
 msgid "The financial trading services contained within this site are only suitable for clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
 msgstr "บริการซื้อขายทางการเงินในเว็บไซต์นี้เหมาะสำหรับลูกค้าผู้ซึ่งพึงรับรู้ต่อภาวะขาดทุนต่อเงินทั้งหมดที่ได้ลงทุน และผู้ซึ่งเข้าใจและมีประสบการณ์ต่อความเสี่ยงที่เกี่ยวข้องกับสัญญาทางการเงินต่างๆ เท่านั้น"
 
-msgid "The financial trading services contained within this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the acquisition of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium."
-msgstr "บริการการซื้อขายทางการเงินในเว็บไซต์นี้เหมาะกับลูกค้าผู้ซึ่งพึงรับรู้ต่อภาวะขาดทุนต่อเงินทั้งหมดที่ได้ลงทุน และผู้ซึ่งมีความเข้าใจและมีประสบการณ์ต่อความเสี่ยงที่เกี่ยวข้องกับสัญญาทางการเงินต่างๆ ธุรกรรมที่เกี่ยวข้องกับสัญญาทางการเงินมีความเสี่ยงระดับสูง หากสัญญาที่ซื้อหมดอายุ ท่านจะสูญเสียเงินลงทุนของท่านทั้งหมด รวมถึงต้องชำระค่าธรรมเนียมของสัญญาดังกล่าวด้วย"
+msgid "The financial trading services offered on this site are only suitable for customers who accept the possibility of losing all the money they invest and who understand and have experience of the risk involved in the purchase of financial contracts. Transactions in financial contracts carry a high degree of risk. If the contracts you purchased expire as worthless, you will lose all your investment, which includes the contract premium."
+msgstr "บริการซื้อขายทางการเงินในเว็บไซต์นี้เหมาะสำหรับลูกค้าที่ยอมรับความเป็นไปได้ของการขาดทุนเงินทั้งหมดที่พวกเขาลงทุนและผู้ที่เข้าใจ และมีประสบการณ์เกี่ยวกับความเสี่ยงที่เกี่ยวข้องกับการซื้อสัญญาทางการเงิน การทำธุรกรรมในสัญญาทางการเงินมีความเสี่ยงสูง หากสัญญาที่คุณซื้อหมดอายุ คุณจะสูญเสียเงินลงทุนทั้งหมด ซึ่งรวมถึงค่าธรรมเนียมของสัญญาดังกล่าวด้วย"
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "ขั้นตอนแรก คือ การตั้งค่าตัวแปรของการซื้อขายของท่าน มีห้าตัวแปรการซื้อขายที่ท่านจะต้องปรับแต่งเพื่อให้ได้รับราคาของสัญญา"
@@ -12677,6 +12863,12 @@ msgstr "หน้านี้ไม่มีให้บริการในป
 msgid "This page is only available to logged out clients."
 msgstr "หน้านี้สำหรับแสดงให้กับผู้ใช้งานที่ออกจากระบบแล้ว"
 
+msgid "This password is for logging in to your Binary.com account."
+msgstr "รหัสผ่านนี้ใช้สําหรับเข้าสู่ระบบบัญชีผู้ใช้ Binary.com ของคุณ"
+
+msgid "This password is for logging in to your MT5 accounts on the desktop, web, and mobile apps."
+msgstr "รหัสผ่านนี้ใช้สําหรับการเข้าสู่ระบบบัญชี MT5 ของคุณบนเดสก์ท็อป เว็บ และแอปสําหรับอุปกรณ์เคลื่อนที่"
+
 msgid "This password is on the blacklist"
 msgstr "รหัสผ่านนี้อยู่ในบัญชีดํา"
 
@@ -12697,6 +12889,9 @@ msgstr "ในวรรคนี้ของกรณีเหตุสุดว
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
 msgstr "บริการของเว็บไซต์นี้ไม่มีให้บริการในบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ฮ่องกง หรือสำหรับผู้ที่มีอายุต่ำกว่า 18 ปี"
+
+msgid "This will change the password to all of your %1 accounts."
+msgstr "การดําเนินการนี้จะเปลี่ยนรหัสผ่านไปยังบัญชี %1 ของคุณทั้งหมด"
 
 msgid "Thorough knowledge of bash scripting, and experience with the Perl scripting language"
 msgstr "ตลอดจนทักษะความรู้ในการทำสคริปต์แบช (Bash) และประสบการณ์ในการใช้ภาษาเพิร์ล (Perl)"
@@ -12761,6 +12956,9 @@ msgstr "เคล็ดลับ:"
 msgid "Title"
 msgstr "คำนำหน้าชื่อ"
 
+msgid "Title and name"
+msgstr "หัวข้อและชื่อ"
+
 msgid "To"
 msgstr "เพื่อ"
 
@@ -12773,11 +12971,38 @@ msgstr "หากประสงค์จะร่วมงานกับเร
 msgid "To be able to trade OTC instruments available on the MT5 trading platform, the client has to first"
 msgstr "เพื่อการซื้อขายเครืองมือ OTC ที่มีอยู่ในแพลตฟอร์มซื้อขาย MT5 ลูกค้าต้องมีสิ่งเหล่านี้ก่อน"
 
+msgid "To change your country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr "เมื่อต้องการเปลี่ยนแปลงประเทศที่พํานัก อีเมล หรือข้อมูลภาษีของคุณ โปรดติดต่อ %1การสนับสนุนการดูแล%2"
+
+msgid "To change your country of residence, or email, please contact %1Customer Support%2."
+msgstr "เมื่อต้องการเปลี่ยนประเทศที่พํานักของคุณ หรืออีเมล โปรดติดต่อ %1การสนับสนุนการดูแล%2"
+
+msgid "To change your date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr "เมื่อต้องการเปลี่ยนวันเกิด ประเทศที่พํานัก อีเมล หรือข้อมูลภาษีโปรดติดต่อ %1การสนับสนุนการดูแล%2"
+
+msgid "To change your date of birth, country of residence, or email, please contact %1Customer Support%2."
+msgstr "หากต้องการเปลี่ยนวันเกิด ประเทศที่พำนัก หรืออีเมล โปรดติดต่อ %1ฝ่ายสนับสนุนลูกค้า%2"
+
+msgid "To change your name, country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr "หากต้องการเปลี่ยนชื่อ ประเทศที่พำนัก อีเมล หรือข้อมูลภาษี โปรดติดต่อ %1ฝ่ายสนับสนุนลูกค้า%2"
+
+msgid "To change your name, country of residence, or email, please contact %1Customer Support%2."
+msgstr "หากต้องการเปลี่ยนชื่อ ประเทศที่พำนัก หรืออีเมล โปรดติดต่อ %1ฝ่ายสนับสนุนลูกค้า%2"
+
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr "โปรดติดต่อ %1เจ้าหน้าที่ลูกค้าสัมพันธ์ %2 ในการเปลี่ยนแปลง ชื่อ วันเกิด ประเทศที่พำนัก อีเมล์ของท่าน หรือ ข้อมูลภาษี "
 
+msgid "To change your name, date of birth, country of residence, or email, please contact %1Customer Support%2."
+msgstr "หากต้องการเปลี่ยนชื่อ วันเกิด ประเทศที่พำนัก หรืออีเมล โปรดติดต่อ %1ฝ่ายสนับสนุนลูกค้า%2"
+
 msgid "To create a MetaTrader 5 account:"
 msgstr "สร้างบัญชี MetaTrader 5:"
+
+msgid "To deposit cryptocurrency, switch your account."
+msgstr ""
+
+msgid "To deposit money, please switch to your %1 account."
+msgstr ""
 
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
 msgstr "หากต้องการปิดใช้งานการรับรองโดยใช้ 2 ตัวแปร โปรดใส่รหัสที่สร้างขึ้นโดยแอพพลิเคชันด้านล่าง"
@@ -12812,6 +13037,9 @@ msgstr "ในการดำเนินการกับโพซิชัน
 msgid "To many attempts. Please try again in a few minutes"
 msgstr "มีความพยายามมากเกินไป โปรดลองอีกครั้งในอีกสักครู่"
 
+msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of DP2P and credit or debit cards."
+msgstr ""
+
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "ในการเปิดบัญชีธนาคาร เราจะต้องยืนยันตัวตนของคุณ"
 
@@ -12839,8 +13067,14 @@ msgstr "หากต้องการยืนยันคุณอย่าง
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr "เมื่อสัญญาได้มีการลงนามอย่างสมบูรณ์ ข้อมูลดังกล่าวเป็น หรือกลายเป็นวาระสาธารณะ ซึ่งไม่เกิดจากความผิดพลาดของคู่สัญญา"
 
-msgid "To withdraw from MetaTrader 5 Financial Account please %1Authenticate%2 your Binary account."
-msgstr "ในการถอนเงินจากบัญชี MetaTrader 5 โปรด %1ยืนยันตัวตน%2 ในบัญชีไบนารีของท่าน"
+msgid "To withdraw cryptocurrency, switch your account."
+msgstr ""
+
+msgid "To withdraw from MetaTrader 5 %1 please %2Authenticate%3 your Binary account."
+msgstr "หากต้องการถอนออกจาก MetaTrader 5 %1 โปรด %2รับรองความถูกต้อง%3 บัญชีไบนารีของคุณ"
+
+msgid "To withdraw money, please switch to your %1 account."
+msgstr ""
 
 msgid "Today"
 msgstr "วันนี้"
@@ -12881,8 +13115,8 @@ msgstr "สภาพคล่องในระดับสูง"
 msgid "Top-up successful"
 msgstr "การเติมเงินสำเร็จ"
 
-msgid "TopFX"
-msgstr "TopFX"
+msgid "TopFX Ltd"
+msgstr ""
 
 msgid "Total"
 msgstr "ผลรวม"
@@ -12926,6 +13160,9 @@ msgstr "การท่องเที่ยว"
 msgid "Town/City"
 msgstr "เมือง"
 
+msgid "Town/city"
+msgstr "เมือง"
+
 msgid "Track and document thoroughly the bugs that you find"
 msgstr "ติดตามผลและบันทึกกิจกรรมการดำเนินงานของข้อผิดพลาดโปรแกรมที่ท่านพบ"
 
@@ -12943,6 +13180,9 @@ msgstr "ทำการซื้อขาย 24 ชั่วโมง 7 วั�
 
 msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryptocurrency pairs quote a cryptocurrency such as Bitcoin against a fiat currency, such as the US dollar."
 msgstr "ซื้อขายคู่ บิทคอยน์ อีเธอเรียม และไลท์คอยน์ โดยไม่ต้องเป็นเจ้าของ คู่สกุลเงินดิจิทัลมีการเสนอราคาแก่เงินดิจิทัลอย่างเช่น บิทคอยน์ต่อสกุลเงิน fiat เช่น ดอลลาร์สหรัฐ"
+
+msgid "Trade CFDs on forex, stocks, stock indices, commodities, Synthetic Indices, and cryptocurrencies on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
+msgstr "เทรด CFD ในฟอเร็กซ์ หุ้น ดัชนีหุ้น สินค้าโภคภัณฑ์ ดัชนีสังเคราะห์ และสกุลเงินดิจิทัลบน MetaTrader 5 ซึ่งเป็นแพลตฟอร์มหลายสินทรัพย์ที่มีความเป็นไปได้ในการซื้อขายที่โดดเด่นและเครื่องมือวิเคราะห์ทางเทคนิค"
 
 msgid "Trade a larger position than your exisiting capital."
 msgstr "ซื้อขายที่ตำแหน่งที่ใหญ่กว่าเงินทุนที่มี"
@@ -12976,9 +13216,6 @@ msgstr "ซื้อขายฟอเร็กซ์และ CFD บนแพ�
 
 msgid "Trade forex and CFDs with a powerful platform recognised as the global standard."
 msgstr "ซื้อขายฟอเร็กซ์และ CFD ด้วยแพลตฟอร์มอันทรงพลัง ที่ได้รับการยอมรับว่าเป็นมาตรฐานระดับโลก"
-
-msgid "Trade forex and contracts for difference (CFDs) on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
-msgstr "ซื้อขายฟอเร็กซ์และสัญญาสำหรับส่วนต่าง (CFD) กับ MetaTrader 5 ซึ่งเป็นแพลตฟอร์มสำหรับหลากหลายสินทรัพย์ที่นำเสนอเครื่องมือในการซื้อขายและการวิเคราะห์ทางเทคนิค"
 
 msgid "Trade in the world's financial markets"
 msgstr "ซื้อขายในตลาดการเงินระดับโลก"
@@ -13034,8 +13271,8 @@ msgstr "ซื้อขายง่ายด้วยวิธีการฝา
 msgid "Trade with leverage"
 msgstr "ซื้อขายด้วยเลเวอเรจ (พลังทวี)"
 
-msgid "Trade with real funds and access to competitive trading conditions."
-msgstr "ซื้อขายด้วยเงินจริงและเข้าถึงเงื่อนไขการซื้อขายที่มีศักยภาพในการแข่งขัน"
+msgid "Trade with real funds and get access to competitive trading conditions."
+msgstr "เทรดด้วยเงินจริงและเข้าถึงเงื่อนไขการซื้อขายที่แข่งขันได้"
 
 msgid "Trade with the industry pioneer and holder of a patented pricing technology."
 msgstr "ซื้อขายกับผู้บุกเบิกอุตสาหกรรมและเป็นผู้ได้รับสิทธิบัตรในเทคโนโลยีการกำหนดราคา"
@@ -13058,9 +13295,6 @@ msgstr "ข้อมูลการซื้อขาย"
 msgid "Trading Limits"
 msgstr "วงเงินในการซื้อขาย"
 
-msgid "Trading Password Reset"
-msgstr "รีเซ็ตรหัสผ่านการซื้อขาย"
-
 msgid "Trading Platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
 
@@ -13078,9 +13312,6 @@ msgstr "การซื้อขายและการถอนเงินถ
 
 msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
 msgstr "การซื้อขายไบนารีออปชันและ CFD มีความเสี่ยงอย่างมาก อย่าซื้อขายด้วยเงินที่คุณไม่อาจสูญเสียได้ และอย่าซื้อขายด้วยเงินที่ยืมมา เรียนรู้เพิ่มเติมเกี่ยวกับ%1การซื้อขายอย่างรับผิดชอบ%2"
-
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset."
-msgstr "การซื้อขายไบนารีออปชันอาจไม่เหมาะสมสำหรับทุกๆ คน ดังนั้นโปรดพิจารณาว่า ท่านเข้าใจความเสี่ยงทั้งหมดที่เกี่ยวข้อง การขาดทุนของท่านอาจสูงกว่าจำนวนเงินฝากในครั้งแรก และท่านไม่ได้เป็นเจ้าของ หรือ ได้รับผลประโยชน์ใดๆ จากผลิตภัณฑ์อ้างอิงที่ท่านได้ซื้อขาย"
 
 msgid "Trading contracts for difference (CFDs) on Synthetic Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly."
 msgstr "การซื้อขายสัญญาส่วนต่าง (CFD) ของดัชนีสังเคราะห์อาจไม่เหมาะสมสำหรับทุกคน โปรดแน่ใจว่า คุณเข้าใจถึงความเสี่ยงที่เกี่ยวข้องอย่างแท้จริง รวมถึงความเป็นไปได้ที่จะสูญเสียเงินทุนทั้งหมดในบัญชี MT5 ของคุณ การพนันสามารถเสพติดได้ โปรดดำเนินธุรกรรมซื้อขายด้วยความรับผิดชอบ"
@@ -13115,14 +13346,8 @@ msgstr "วงเงินในการซื้อขาย"
 msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
 msgstr "การซื้อขายบน%1สามารถทำให้เสพติดได้ หากคุณต้องการพักจากเว็บไซต์ โปรดใช้%2sเครื่องมือสำหรับพักการซื้อขาย%3"
 
-msgid "Trading password"
-msgstr "รหัสผ่านการซื้อขาย"
-
-msgid "Trading password reset"
-msgstr "รีเซ็ตรหัสผ่านการซื้อขาย"
-
-msgid "Trading password — a new, easy way to sign in to your MT5 accounts"
-msgstr "รหัสผ่านการซื้อขาย - วิธีใหม่ที่ง่ายในการลงชื่อเข้าใช้บัญชี MT5 ของคุณ"
+msgid "Trading options may not be suitable for everyone, so please ensure that you fully understand the risks involved."
+msgstr "การซื้อขายออปชันอาจไม่เหมาะสมสำหรับทุกคน ดังนั้นโปรดแน่ใจว่าคุณเข้าใจความเสี่ยงที่เกี่ยวข้อง"
 
 msgid "Trading platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
@@ -13358,6 +13583,12 @@ msgstr "USD 1"
 msgid "USD 10"
 msgstr "USD 10"
 
+msgid "USD 2"
+msgstr "USD 2"
+
+msgid "USD 4"
+msgstr "USD 4"
+
 msgid "USD Coin"
 msgstr "USD Coin"
 
@@ -13417,6 +13648,9 @@ msgstr "เข้าใจ"
 
 msgid "Unemployed"
 msgstr "ว่างงาน"
+
+msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
+msgstr "น่าเสียดายที่บริการนี้ไม่พร้อมใช้งานในประเทศของคุณ หากคุณต้องการซื้อขายตัวคูณลองใช้ DTrader บน Deriv"
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "สำเร็จการศึกษาจากสาขาการตลาด คณิตศาสตร์ ไอที/การเขียนโปรแกรม และสาขาอื่นๆ ที่เกี่ยวข้อง"
@@ -13496,6 +13730,9 @@ msgstr "อัปโหลดด้านหน้าบัตรประจำ
 msgid "Upload front of license from your computer"
 msgstr "อัปโหลดด้านหน้าใบขับขี่จากคอมพิวเตอร์ของคุณ"
 
+msgid "Upload identity document"
+msgstr "อัพโหลดเอกสารประจำตัว"
+
 msgid "Upload passport photo page"
 msgstr "อัปโหลดหนังสือเดินทางหน้าที่มีรูปภาพ"
 
@@ -13526,6 +13763,9 @@ msgstr "เมื่อข้อตกลงนี้หมดอายุ ห�
 msgid "Usage limit"
 msgstr "วงเงินที่ใช้"
 
+msgid "Use MT5 password to sign in to any of your %1 accounts when using MT5 apps on your mobile or other devices."
+msgstr "ใช้รหัสผ่าน MT5 เพื่อลงชื่อเข้าใช้บัญชี %1 ใด ๆ ของคุณเมื่อใช้แอพ MT5 บนมือถือหรืออุปกรณ์อื่น ๆ ของคุณ"
+
 msgid "Use a few words, avoid common phrases"
 msgstr "ใช้คำไม่กี่คำ หลีกเลี่ยงคำวลีทั่วไป"
 
@@ -13553,8 +13793,8 @@ msgstr "ใช้ หรือทำ API ของ %1 ใหม่ ยกเว�
 msgid "Use the %1 API for any purpose that violates any law or regulation or any right of any person, including but not limited to intellectual property rights, rights of privacy, or rights of personality, or is in any manner inconsistent with these Terms or privacy policy"
 msgstr "ใช้ API ของ %1 เพื่อวัตถุประสงค์ในการฝ่าฝืนกฎหมาย หรือ หลักเกณฑ์ หรือ สิทธิส่วนบุคคลต่างๆ รวมถึงแต่ไม่จำกัดเพียง ทรัพย์สินทางปัญญาต่างๆ สิทธิ์ส่วนบุคคล หรือ สิทธิ์ตามสภาพบุคคล หรือ กิจอื่นๆ ที่ขัดแย้งต่อเงื่อนไขของนโยบายการรักษาข้อมูลส่วนบุคคล"
 
-msgid "Use the Company's name or trademark in the Agent's advertising activities without a written authorisation to be given by the Company"
-msgstr "ใช้ชื่อของบริษัทฯ หรือ เครื่องหมายการค้าในกิจกรรมโฆษณาของตัวแทนฯ โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อักษรจากบริษัทฯ"
+msgid "Use the Company's name or trademark in the Agent's advertising activities without a written authorisation to be given by the Company."
+msgstr ""
 
 msgid "Use the Marketing Materials provided by Binary solely for the purpose of providing IB services and in accordance with Binary's instructions"
 msgstr "ใช้เอกสารทางการตลาดเพื่อ Binary เท่านั้น เพื่อให้บริการ IB และเป็นไปตามคำชี้แจงของ Binary"
@@ -13568,26 +13808,17 @@ msgstr "ใช้โอกาสที่จัดทําโดยเว็บ
 msgid "Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required."
 msgstr "ใช้แพลตฟอร์มเว็บ ไม่ว่า วินโดวส์ ระบบปฏิบัติการแมค หรือ ลินุกซ์ โดยไม่ต้องดาวน์โหลดหรือติดตั้งโปรแกรมใดๆ"
 
-msgid "Use their best endeavours and diligence to transfer funds deposited to %1 Agent Account to its respective %1 Client account"
-msgstr "ใช้ความพยายามอย่างสุดความสามารถและความมานะในการโอนเงินหลักประกันของเขาไปยังบัญชีตัวแทนฯ ของ %1ไปยัง บัญชีลูกค้าของ %1 ตามลำดับ"
+msgid "Use their best endeavours and diligence to transfer funds deposited to %1 Agent Account to its respective %1 Client Account."
+msgstr ""
 
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "ใช้ความพยายามอย่างสุดความสามารถของเขาเพื่อสร้างความสนใจต่อลูกค้าของ Binary"
 
-msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create a password, or you have forgotten your password, please reset it."
+msgid "Use this password to grant viewing access to another user. While they may view your trading account, they will not be able to trade or take any other actions. If this is the first time you try to create password, or you have forgotten your password, please reset it."
 msgstr "ใช้รหัสผ่านนี้เพื่อให้สิทธิ์การดูแก่ผู้ใช้อื่น ในขณะที่พวกเขาอาจดูบัญชีซื้อขายของคุณพวกเขาจะไม่สามารถซื้อขายหรือดําเนินการอื่น ๆ ถ้านี่เป็นครั้งแรกที่คุณพยายามสร้างรหัสผ่าน หรือคุณลืมรหัสผ่าน โปรดตั้งค่ารหัสผ่านใหม่"
-
-msgid "Use this to log in and trade with MT5."
-msgstr "ใช้สิ่งนี้เพื่อเข้าสู่ระบบและเทรดกับ MT5"
-
-msgid "Use this to log in to Binary.com, SmartTrader, Binary Bot, and Webtrader."
-msgstr "ใช้เพื่อล็อกอินเข้าสู่ Binary.com, SmartTrader, Binary Bot และ Webtrader"
 
 msgid "Use to the utmost benefit any possible additional features that some payment processors offer"
 msgstr "ใช้คุณลักษณะเพิ่มเติมที่เป็นไปได้จากผู้ให้บริการชำระเงินเพื่อให้เกิดประโยชน์สูงสุด"
-
-msgid "Use trading password to sign in to any of your MT5 accounts when using MT5 apps on your mobile or other devices."
-msgstr "ใช้รหัสผ่านการซื้อขายเพื่อลงชื่อเข้าใช้บัญชี MT5 ของคุณเมื่อใช้แอพ MT5 บนมือถือหรืออุปกรณ์อื่นๆ ของคุณ"
 
 msgid "Use, perform, and display the Programmer's Application and its content for purposes of marketing, demonstrating, and making the Programmer's Application available to the Company's clients."
 msgstr "ใช้ ดำเนินการ และแสดงแอพพลิเคชันของโปรแกรมเมอร์ และเนื้อหาเพื่อวัตถุประสงค์ทางการตลาด การสาธิต และให้ลูกค้าของบริษัทฯ ได้ใช้งานแอพพลิเคชันของโปรแกรมเมอร์"
@@ -13628,8 +13859,14 @@ msgstr "รหัสยืนยันไม่ถูกต้อง โปร�
 msgid "Verification complete"
 msgstr "การตรวจสอบเสร็จสมบูรณ์"
 
+msgid "Verification of document number failed"
+msgstr "การตรวจสอบหมายเลขเอกสารล้มเหลว"
+
 msgid "Verification required"
 msgstr "ต้องมีการยืนยัน"
+
+msgid "Verify"
+msgstr "ยืนยัน"
 
 msgid "Verify Identity"
 msgstr "ยืนยันตัวตน"
@@ -13643,8 +13880,11 @@ msgstr "ตรวจสอบ และอนุมัติคำขอกา�
 msgid "Verify identity"
 msgstr "ยืนยันตัวตน"
 
-msgid "Version 49. Last modified 23-11-2020."
-msgstr "เวอร์ชัน 49 แก้ไขล่าสุดเมื่อ 23-11-2020"
+msgid "Verify your identity"
+msgstr "ยืนยันตัวตนของคุณ"
+
+msgid "Version 50. Last modified 06-10-2021."
+msgstr ""
 
 msgid "Video Room Facility"
 msgstr "ห้องวีดีโอ"
@@ -13742,6 +13982,9 @@ msgstr "ระดับของจำนวน"
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
+msgid "WARNING"
+msgstr "คำเตือน"
+
 msgid "Waiting for contract settlement."
 msgstr "รอการชำระเงินตามสัญญา"
 
@@ -13771,6 +14014,9 @@ msgstr "พวกเรา"
 
 msgid "We accept"
 msgstr "เรายอมรับ"
+
+msgid "We accept the following cryptocurrencies:"
+msgstr ""
 
 msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
 msgstr "เรามักจะให้ลูกค้าของเรามาเป็นอันดับแรก และอุทิศตัวเองเพื่อสร้างสรรค์ผลิตภัณฑ์และบริการที่ให้ประสบการณ์การซื้อขายที่ดีที่สุดที่เป็นไปได้"
@@ -13880,6 +14126,9 @@ msgstr "เราให้คุณค่ากับทีมงานผู้
 msgid "We were unable to verify your document automatically. We will try to verify your document manually. Please check back in 1-3 days."
 msgstr "เราไม่สามารถยืนยันเอกสารของคุณโดยอัตโนมัติ เราจะยืนยันเอกสารของคุณด้วยตนเอง โปรดตรวจสอบอีกครั้งใน 1-3 วัน"
 
+msgid "We were unable to verify your identity based on the details you entered."
+msgstr "เราไม่สามารถยืนยันตัวตนของคุณตามรายละเอียดที่คุณป้อน"
+
 msgid "We will continue to close open positions until your margin level becomes higher than the stop out level."
 msgstr "เราจะยังคงปิดสถานะที่เปิดอยู่จนกว่าระดับมาร์จิ้นของคุณจะสูงกว่าระดับยุติการซื้อขาย"
 
@@ -13897,6 +14146,12 @@ msgstr "เราอยากทราบความคิดเห็นขอ
 
 msgid "We'll compare it with your document"
 msgstr "เราจะเปรียบเทียบกับเอกสารของคุณ"
+
+msgid "We'll process your details within a few minutes and notify its status via email."
+msgstr "เราจะประมวลผลรายละเอียดของคุณภายในไม่กี่นาทีและแจ้งสถานะทางอีเมล"
+
+msgid "We'll process your details within a few minutes and notify its status via email. Next, we'll need your proof of address"
+msgstr "เราจะประมวลผลรายละเอียดของคุณภายในไม่กี่นาทีและแจ้งสถานะทางอีเมล ต่อไป เราต้องการหลักฐานที่อยู่ของคุณ"
 
 msgid "We're almost there"
 msgstr "เราใกล้จะถึงแล้ว"
@@ -13925,8 +14180,14 @@ msgstr "เราเสียใจที่เห็นคุณจากไป
 msgid "We've grown in size over the years - both in terms of manpower and offices. We currently have over %1 employees across 10 offices in Malta, Dubai, Malaysia, Paraguay, Cyprus, Rwanda, and Belarus. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
 msgstr "เราเติบโตขึ้นในช่วงหลายปีที่ผ่านมาทั้งในด้านกำลังคนและสำนักงาน ปัจจุบันเรามีพนักงานมากกว่า %1 คนในสำนักงาน 10 แห่งในมอลตาดูไบมาเลเซียปารากวัยไซปรัสรวันดาและเบลารุส คาดว่าการเติบโตของจำนวนพนักงานเพิ่มขึ้นในปีนี้เพื่อรองรับความต้องการที่เพิ่มขึ้นในผลิตภัณฑ์และบริการของเรา"
 
+msgid "We've received your document number"
+msgstr "เราได้รับหมายเลขเอกสารของคุณแล้ว"
+
 msgid "We've sent a secure link to %{number}"
 msgstr "เราได้ส่งลิงก์ที่ปลอดภัยไปยัง %{number}"
+
+msgid "We've successfully verified your document number"
+msgstr "เราได้ตรวจสอบหมายเลขเอกสารของคุณเรียบร้อยแล้ว"
 
 msgid "Web and software developer"
 msgstr "นักพัฒนาเว็บและซอฟต์แวร์"
@@ -14075,8 +14336,8 @@ msgstr "เมื่อลูกค้าเปิดบัญชีกับบ
 msgid "When the client opens any transactions in relation to Prohibited Trades"
 msgstr "เมื่อลูกค้าเปิดธุรกรรมใดๆ ที่เกี่ยวข้องกับการซื้อขายที่ต้องห้าม"
 
-msgid "When the client requests a withdrawal from %1 Client Account, such request shall be automatically proceeded, and, as a result, the requested sum shall be transferred from the %1 Client Account to the %1 Agent Account. However, it is noted that when the client reaches the client's withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
-msgstr "เมื่อลูกค้ายื่นขอถอนเงินจากบัญชีลูกค้าของ %1 คำร้องดังกล่าวจะถูกดำเนินการต่อในทันที จากนั้น จำนวนที่ยื่นขอจะถูกโอนจากบัญชีลูกค้าของ %1 ไปยังบัญชีตัวแทนฯ ของ %1 อย่างไรก็ตาม เมื่อลูกค้าทำการถอนเงินจนถึงวงเงินจำกัดในการถอนเงินแล้ว คำร้องการถอนเงินจะไม่ถูกดำเนินการต่อในทันที แต่จะมีการดำเนินการตามกระบวนการยืนยันตัวบุคคลตามที่กำหนดไว้ก่อน"
+msgid "When the client requests a withdrawal from %1 Client Account, such request shall automatically proceed, and, as a result, the requested sum shall be transferred from the %1 Client Account to the %1 Agent Account. However, it is noted that when the client reaches the client's withdrawal limit, a withdrawal request shall not automatically proceed before the required authentication process is conducted."
+msgstr ""
 
 msgid "When the client transfers their money to DIEL for trading purposes, the client's funds are deposited in their %1 account. If the client chooses to trade FX and CFDs, the client shall transfer funds from their %1 account to their MT5 Real Account. Such a transfer shall not be regarded as a transfer from two different accounts but as a transfer of funds from the client's centralised %1 account to the MT5 Real Account. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "เมื่อลูกค้าโอนเงินของเขาให้ DIEL เพื่อวัตถุประสงค์ในการซื้อขาย เงินของลูกค้าจะถูกฝากในบัญชี %1 ของเขา หากลูกค้าประสงค์จะซื้อขาย FX และ CFD ลูกค้าสามารถโอนเงินจากบัญชีของลูกค้าไปยังบัญชีบัญชี MT5 จริง ของ %1 การโอนเงินจะไม่ถือเป็นการโอนเงินของสองบัญชีที่แตกต่างกัน แต่จะเป็นการโอนจากบัญชี %1 ส่วนกลางของลูกค้าไปยังบัญชี MT5 จริง และไม่มีเงินโอนไปยังบัญชีบุคคลที่สามใดๆ"
@@ -14174,8 +14435,8 @@ msgstr "เป็นที่ซึ่งมีการทำงานเป็
 msgid "Where the Agent acts in breach of any warranty, representation, or promise made under this agreement, and any information provided to the Company in connection with this agreement is, or becomes, untrue or misleading"
 msgstr "เมื่อตัวแทนฯ ละเมิดการรับประกัน หรือ การเป็นตัวแทน หรือ คำสัญญาที่กระทำในข้อตกลงนี้ และ ข้อมูลใดๆ ที่ให้ไว้กับบริษัทฯ ที่เกี่ยวข้องกับข้อตกลงนี้ไม่จริง หรือ กลายเป็นไม่จริง หรือ ทำให้เข้าใจผิด"
 
-msgid "Where the Agent becomes incapable to pay their debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law where the Agent is an individual"
-msgstr "เมื่อตัวแทนฯ ไม่สามารถชำระหนี้เมื่อถึงกำหนดเวลา หรือ มีภาวะล้มละลาย หรือ เป็นบุคคลล้มละลาย ตามที่นิยามเอาไว้ในกฎหมายเกี่ยวกับการล้มละลาย หรือ การเป็นบุคคลล้มละลายที่เกี่ยวข้อง ในกรณีที่ตัวแทนฯ เป็นบุคคลธรรมดา"
+msgid "Where the Agent becomes incapable of paying their debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law where the Agent is an individual"
+msgstr ""
 
 msgid "Where the Agent ceases to be competent, capable, adequate, or qualified to effectively perform all of the Agent's duties and obligations that are undertaken and agreed to under this agreement, for any reason, including but not limited to lack of knowledge, expertise, experience, skills, and time, the Agent shall notify the Company immediately and without any delay."
 msgstr "เมื่อตัวแทนฯ สิ้นสุดการมีอำนาจ ความสามารถ มีไม่เพียงพอ หรือ ขาดคุณสมบัติที่จะปฏิบัติหน้าที่ทั้งหมดของตัวแทนฯ และ ภาระหน้าที่ที่ได้รับไว้ และเห็นชอบภายใต้ข้อตกลงนี้ ด้วยเหตุผลใดๆ ก็ตาม โดยรวมถึงการขาดความรู้ ความชำนาญ ประสบการณ์ ทักษะ และเวลา ตัวแทนฯ จะต้องบอกกล่าวแก่บริษัทฯ ทันที โดยปราศจากความล่าช้าใดๆ"
@@ -14192,8 +14453,8 @@ msgstr "เมื่อตัวแทนฯ บกพร่องในหน�
 msgid "Where the Agent omits, fails, or refuses in any manner to provide the Company with evidence of the Agent's identity or any other evidence as required by the law in relation to anti-money laundering within a reasonable time, the Company reserves the right to cease to deal with the Agent."
 msgstr "เมื่อตัวแทนฯ ละเลย หรือ ขาดคุณสมบัติ หรือ ปฏิเสธ หรือ พฤติการณ์ใดก็ตามที่จะให้หลักฐานยืนยันตัวตนของตัวแทนฯ แก่บริษัทฯ หรือ หลักฐานอื่นๆ ตามที่บัญญัติโดยกฎหมายที่เกี่ยวกับการป้องกันและปราบปรามการฟอกเงินภายในเวลาที่เหมาะสม บริษัทฯ สงวนสิทธิ์ที่จะหยุดติดต่อกับตัวแทนฯ นั้น"
 
-msgid "Where the Agent owns or operates website/s, the Agent shall do the following:"
-msgstr "เมื่อตัวแทนฯ เป็นเจ้าของ หรือ ดำเนินการทางเว็บไซต์ ตัวแทนฯ จะดำเนินการสิ่งต่อไปนี้"
+msgid "Where the Agent owns or operates website(s), the Agent shall do the following:"
+msgstr ""
 
 msgid "Where the Company ascertains any mistakes or flaws related to deposits or withdrawals from or to %1 Agent Account or %1 Client Account, the Company shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
 msgstr "เมื่อบริษัทฯ ตรวจสอบจนแน่ใจในข้อผิดพลาด หรือ ข้อบกพร่องที่เกี่ยวกับการฝากเงิน หรือ ถอนเงินจาก หรือ ไปยัง%1 บัญชีตัวแทนฯ หรือ %1 บัญชีลูกค้าแล้ว บริษัทฯ จะใช้มาตรการแก้ไขทั้งหมดเพื่อแก้ไขข้อผิดพลาด หรือ ข้อบกพร่องดังกล่าวให้ถูกต้องภายในเวลาที่เหมาะสม"
@@ -14435,11 +14696,11 @@ msgstr "XMR/USD"
 msgid "XRP/USD"
 msgstr "XRP/USD"
 
+msgid "XTB International Limited"
+msgstr "XTB International Limited"
+
 msgid "Yes"
 msgstr "ใช่"
-
-msgid "Yes I'm sure"
-msgstr "ใช่ ฉัน/ผมแน่ใจ"
 
 msgid "Yes, I'm sure"
 msgstr "ใช่ ฉัน/ผมแน่ใจ"
@@ -14516,11 +14777,17 @@ msgstr "คุณสามารถดําเนินการถ่ายโ
 msgid "You can only subscribe to one signal provider with one %1 account at any given time. You can use your signal on up to 3 computers."
 msgstr "คุณสามารถสมัครสมาชิกผู้ให้บริการสัญญาณรายเดียวด้วยบัญชี %1 เพียงบัญชีเดียวในเวลาใดก็ได้ คุณสามารถใช้สัญญาณของคุณบนคอมพิวเตอร์สูงสุด 3 เครื่อง"
 
+msgid "You can open an account for each cryptocurrency."
+msgstr ""
+
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "ท่านสามารถขายสัญญาซื้อขายของท่านก่อนวันหมดอายุเพื่อรักษากำไรของท่านที่พึงได้ หรือ เพื่อย่อภาวะขาดทุนของท่าน"
 
 msgid "You can top up your demo account with an additional %1 if your balance is %2 or less."
 msgstr "ท่านสามารถเติมเงินในบัญชีทดลอง จำนวน %1 หากมียอดคงเหลือในบัญชี %2 หรือน้อยกว่า"
+
+msgid "You can update personal details at any time in your account settings."
+msgstr "คุณสามารถอัปเดตรายละเอียดส่วนบุคคลได้ตลอดเวลาในการตั้งค่าบัญชีของคุณ"
 
 msgid "You can use an authorized payment agent to process deposits and withdrawals for payment methods or local currencies not supported by %1. It's easy to do."
 msgstr "ท่านสามารถใช้ตัวแทนรับชำระเงินที่ได้รับอนุญาตในการดำเนินการฝากเงิน และ ถอนเงิน ตามวิธีชำระเงิน หรือ สกุลเงินท้องถิ่นที่ไม่ได้รับรองโดย %1 ซึ่งเป็นวิธีที่ง่ายกว่าในทางปฏิบัติ"
@@ -14540,14 +14807,17 @@ msgstr "คุณคาดว่า %1 จะมีมูลค่าลดล�
 msgid "You expect the %1 to rise in value so you can sell it back for a profit."
 msgstr "คุณคาดว่า %1 จะมีมูลค่าเพิ่มขึ้นเพื่อให้คุณสามารถขายคืนเพื่อทำกำไร"
 
-msgid "You have a new binary password."
-msgstr "คุณมีรหัสผ่านไบนารีใหม่"
+msgid "You have a new Binary password to log in to Binary.com."
+msgstr "คุณมีรหัสผ่านไบนารีใหม่เพื่อเข้าสู่ระบบ Binary.com ของคุณ"
 
-msgid "You have a new trading password. Use this to log in to MetaTrader 5."
-msgstr "คุณมีรหัสผ่านการซื้อขายใหม่ ใช้สิ่งนี้เพื่อเข้าสู่ระบบ MetaTrader 5"
+msgid "You have a new MT5 password to log in to your %1 accounts on the web and mobile apps."
+msgstr "คุณมีรหัสผ่าน MT5 ใหม่เพื่อเข้าสู่ระบบบัญชี %1 ของคุณบนเว็บและแอพมือถือ"
 
 msgid "You have a trading password for MT5"
 msgstr "คุณมีรหัสผ่านการซื้อขายสําหรับ MT5"
+
+msgid "You have added a %1 account."
+msgstr "คุณได้เพิ่มบัญชี %1 แล้ว"
 
 msgid "You have already withdrawn %1%2 in aggregate over the last %3 days."
 msgstr "คุณได้ทำการถอนเงิน %1%2 หรือเทียบเท่าในช่วง %3 วันที่ผ่านมา"
@@ -14564,8 +14834,8 @@ msgstr "คุณมีเงินในบัญชี Binary เหล่า�
 msgid "You have funds in these MT5 accounts:"
 msgstr "คุณมีเงินในบัญชี MT5 เหล่านี้:"
 
-msgid "You have insufficient funds in your Binary account, please <a href=\"%1\">add funds</a>."
-msgstr "เงินทุนของท่านในบัญชี Binary ไม่เพียงพอ โปรด <a href=\"%1\">ฝากเงิน</a>"
+msgid "You have insufficient funds in your Binary account, please <a class=\"insufficient-funds-error-link\" href=\"%1\">add funds</a>."
+msgstr "เงินทุนของท่านในบัญชี Binary ไม่เพียงพอ โปรด <a class=\"insufficient-funds-error-link\" href=\"%1\">ฝากเงิน</a>"
 
 msgid "You have insufficient funds in your MT5 account."
 msgstr "คุณมีเงินไม่เพียงพอในบัญชี MT5 ของคุณ"
@@ -14599,9 +14869,6 @@ msgstr "ท่านได้เปลี่ยนสกุลเงินจา
 
 msgid "You have successfully created your Demo Account."
 msgstr "คุณได้สร้างบัญชีทดลองใช้ของคุณเสร็จเรียบร้อยแล้ว"
-
-msgid "You have successfully created your real money %1account."
-msgstr "ท่านได้สร้างบัญชี%1เงินจริงของท่านเรียบร้อยแล้ว"
 
 msgid "You have successfully disabled two-factor authentication for your account."
 msgstr "ระบบได้ปิดการใช้งานการรับรองโดยใช้ 2 ตัวแปรผูกกับบัญชีของท่านเรียบร้อยแล้ว"
@@ -14699,11 +14966,11 @@ msgstr "ท่านจะเพิ่มความตระหนักรู
 msgid "You will need to set a password to complete the process."
 msgstr "คุณจะต้องตั้งรหัสผ่านเพื่อให้กระบวนการเสร็จสมบูรณ์"
 
-msgid "You will not be able to change your fiat account's currency after creating this MT5 account. Are you sure you want to proceed?"
-msgstr "ท่านจะไม่สามารถแก้ไขสกุลเงินของบัญชีเงิน fiat ได้หลังจากท่านเปิดบัญชี MT5 ท่านต้องการดำเนินการต่อหรือไม่?"
+msgid "You will not be able to change currency once you have made a deposit."
+msgstr "คุณจะไม่สามารถเปลี่ยนสกุลเงินได้เมื่อคุณทำการฝากเงิน."
 
-msgid "You will not be able to change your fiat account's currency after making this deposit. Are you sure you want to proceed?"
-msgstr "ท่านจะไม่สามารถแก้ไขสกุลเงินของบัญชีเงิน fiat ได้หลังจากท่านฝากเงินครั้งนี้ ท่านต้องการดำเนินการต่อหรือไม่?"
+msgid "You will not be able to change your fiat account currency after creating this %1 account. Are you sure you want to proceed?"
+msgstr "คุณจะไม่สามารถเปลี่ยนสกุลเงินบัญชี fiat ของคุณได้หลังจากสร้างบัญชี %1 นี้ คุณแน่ใจหรือไม่ว่าคุณต้องการดําเนินการต่อ"
 
 msgid "You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue."
 msgstr "ท่านจะได้รับมอบหมายให้แก้ปัญหาที่ซับซ้อนที่เกิดจากการใช้งานของลูกค้า และการสื่อสารเพื่อทำความเข้าใจอย่างดีเยี่ยมกับฝ่ายผลิตภัณฑ์เพื่อให้มีการออกแบบการใช้งานที่มีประสิทธิภาพ ท่านเป็นตัวแทนหลักในการสร้างสรรค์ระบบงานหรือผลิตภัณฑ์ที่เข้าใจได้ง่าย ใช้งานง่าย เพื่อให้ประสบการณ์ที่ดีที่สุดเท่าที่ทำได้ต่อลูกค้าของเราเพื่อต่อยอดและสนองต่อการเติบโตขององค์กรและรายได้"
@@ -14728,6 +14995,9 @@ msgstr "คุณกำลังขาย %1 และกำลังซื้�
 
 msgid "You're using a Demo Account."
 msgstr "คุณกําลังใช้บัญชีทดลองใช้"
+
+msgid "You're using your %1 account to log in to your Binary.com account. To change your login method into using a username and password, click the %2Unlink%3 button."
+msgstr "คุณกําลังใช้บัญชีผู้ใช้ %1 ของคุณเพื่อเข้าสู่ระบบบัญชีผู้ใช้ Binary.com ของคุณ เมื่อต้องการเปลี่ยนวิธีการเข้าสู่ระบบของคุณให้เป็นชื่อผู้ใช้และรหัสผ่าน ให้คลิกปุ่ม %2ยกเลิกการเชื่อมโยง%3"
 
 msgid "You've carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "ท่านได้ดำเนินการธุรกรรมในตลาดคล้ายกับที่เราได้นำเสนอ เฉลี่ยรวม 10 ธุรกรรม ต่อ ไตรมาส ภายในระยะเวลา 4 ไตรมาสที่ผ่านมา"
@@ -14810,9 +15080,6 @@ msgstr "ใบสมัครของท่านเพื่อปรับส
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "ใบสมัครของท่านจะถูกทวนสอบโดยฝ่ายการตลาดและฝ่ายตรวจสอบของเรา เมื่อได้รับการอนุมัติ ชื่อของท่านจะถูกแสดงในรายชื่อ %1ตัวแทนรับชำระเงิน%2 ของเรา"
 
-msgid "Your binary password has been changed. Please log in again."
-msgstr "รหัสผ่านไบนารีของคุณถูกเปลี่ยนแล้ว กรุณาเข้าสู่ระบบอีกครั้ง"
-
 msgid "Your cashier is locked."
 msgstr "แคชเชียร์ของท่านถูกล็อก"
 
@@ -14842,6 +15109,9 @@ msgstr "เอกสารของคุณกำลังอยู่ระห
 
 msgid "Your document is being reviewed, please check back in 1-3 days. You must also submit a proof of identity."
 msgstr "เอกสารของคุณกำลังอยู่ระหว่างการพิจารณา โปรดตรวจสอบอีกครั้งใน 1-3 วัน นอกจากนี้ต้องส่งหลักฐานยืนยันตัวตนของคุณด้วย"
+
+msgid "Your document number has been verified"
+msgstr "หมายเลขเอกสารของคุณได้รับการยืนยันแล้ว"
 
 msgid "Your face is needed in the selfie"
 msgstr "ใบหน้าของคุณเป็นสิ่งที่จำเป็นในการเซลฟี่"
@@ -14888,9 +15158,6 @@ msgstr "เอกสารแสดงที่อยู่ของท่าน
 msgid "Your proof of identity has been verified successfully"
 msgstr "เอกสารแสดงตัวบุคคลของท่านได้รับการตรวจสอบสมบูรณ์แล้ว"
 
-msgid "Your proof of identity has expired"
-msgstr "เอกสารแสดงตัวบุคคลของท่านหมดอายุแล้ว"
-
 msgid "Your proof of identity submission failed because:"
 msgstr "การส่งหลักฐานยืนยันตัวตนของคุณล้มเหลวเนื่องจาก:"
 
@@ -14923,12 +15190,6 @@ msgstr "โทเค่นของท่านหมดอายุแล้ว
 
 msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr "โทเค่นของท่านหมดอายุแล้ว โปรดคลิก<a href=\"%1\">ที่นี่</a> เพื่อดำเนินกระบวนการตรวจสอบ"
-
-msgid "Your trading password has been changed. Please use this to log in to MetaTrader 5."
-msgstr "รหัสผ่านการซื้อขายของคุณมีการเปลี่ยนแปลง กรุณาใช้ข้อมูลนี้เข้าสู่ระบบ MetaTrader 5"
-
-msgid "Your trading password has been set. Please use this to log in to MetaTrader 5."
-msgstr "รหัสผ่านการซื้อขายของคุณได้รับการตั้งค่าแล้ว กรุณาใช้ข้อมูลนี้เข้าสู่ระบบ MetaTrader 5"
 
 msgid "Your trading statistics since %1."
 msgstr "สถิติการซื้อขายของท่านตั้งแต่ %1"
@@ -15026,14 +15287,17 @@ msgstr "วัน"
 msgid "days"
 msgstr "วัน"
 
+msgid "demo"
+msgstr "สาธิต"
+
 msgid "demo credit to account"
 msgstr "ทดลองใช้เครดิตเข้าบัญชี"
 
 msgid "deposit"
 msgstr "ฝากเข้าบัญชีเงิน"
 
-msgid "deposit or create an MT5 account"
-msgstr "ฝากเข้าบัญชีเงิน fiat ของท่านเป็นครั้งแรก หรือ ก่อนเปิดบัญชี MT5 ท่าน"
+msgid "deposit or create a CFDs account"
+msgstr "ฝากเงินหรือสร้างบัญชี CFD"
 
 msgid "details"
 msgstr "รายละเอียด"
@@ -15044,11 +15308,11 @@ msgstr "ตัวอย่างเช่น สหรัฐอเมริก�
 msgid "e.g. frontend.binaryws.com"
 msgstr "เช่น frontend.binaryws.com"
 
+msgid "either"
+msgstr "ด้วย"
+
 msgid "for account %1"
 msgstr "สำหรับบัญชี %1"
-
-msgid "gaming"
-msgstr "การพนัน"
 
 msgid "hour"
 msgstr "ชั่วโมง"
@@ -15097,6 +15361,9 @@ msgstr "ตำแหน่ง"
 
 msgid "ratio of Account Equity to Total Margin, expressed as a percentage"
 msgstr "อัตราของทุนของบัญชีต่อมาร์จินรวม แสดงในรูปร้อยละ"
+
+msgid "real"
+msgstr "จริง"
 
 msgid "regulated by the Malta Financial Services Authority (MFSA),"
 msgstr "ควบคุมโดยหน่วยงานบริการทางการเงินมอลตา (MFSA),"
@@ -15181,4 +15448,7 @@ msgstr "{SPAIN ONLY}This is a product with leverage. You should be aware that lo
 
 msgid "{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for difference and forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity."
 msgstr "{SPAIN ONLY}คุณกำลังจะซื้อสินค้าที่อาจเข้าใจค่อนข้างยาก สัญญาที่แตกต่างออกไปและการแลกเปลี่ยน ตามกฎทั่วไป CNMV เห็นว่าสินค้าดังกล่าวไม่เหมาะสมสำหรับลูกค้ารายย่อยเนื่องจากมีความซับซ้อน"
+
+msgid "“Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed and regulated for digital options on synthetic indices by the Malta Gaming Authority in Malta (%1licence no. MGA/B2C/102/2000%2) and by Revenue Commissioners for clients in Ireland (licence no. 1010285)."
+msgstr "\"Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, มอลตา ได้รับใบอนุญาตและควบคุมสําหรับตัวเลือกดิจิทัลสําหรับดัชนีสังเคราะห์โดยหน่วยงานการเล่นเกมมอลตาในมอลตา (%1หมายเลขใบอนุญาต MGA/B2C/102/2000%2) และโดยกรรมาธิการสรรพากรสําหรับลูกค้าในไอร์แลนด์ (ใบอนุญาตหมายเลข 1010285)"
 

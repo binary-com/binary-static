@@ -92,6 +92,10 @@ button.button-disabled {
     }
 }
 
+a.button-disabled {
+    pointer-events: none;
+}
+
 span.checked {
     background: url('../images/pages/authenticate/checked.svg') no-repeat;
     width: 16px;
@@ -194,6 +198,10 @@ label {
     line-height: 25px;
 }
 
+.fieldset_margin_top {
+    margin-top: 2rem;
+}
+
 /* used for form label in grid structure */
 .form_label {
     @include BIDIR_VALUE(text-align, right, left);
@@ -232,12 +240,24 @@ label {
     margin: 0 !important;
 }
 
+.auto-margin {
+    margin: auto !important;
+}
+
 .full-height {
     height: 100%;
 }
 
 .full-width {
     width: 100%;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.width-50 {
+    width: 50%;
 }
 
 .errorfield {
@@ -352,7 +372,7 @@ _:-ms-fullscreen, :root #content-holder {
     vertical-align: middle;
 }
 
-#email_consent + label {
+#mail_consent + label {
     display: flex;
     justify-content: center;
 
@@ -381,6 +401,24 @@ input[type=checkbox] {
 .logged_out_title_container {
     margin-top: 40px;
     margin-bottom: 40px;
+    text-align: center;
+}
+
+.signup-warning-message {
+    padding-bottom: 40px;
+}
+
+.padding-2rem {
+    padding: 2rem;
+}
+
+.padding-x-30 {
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+}
+
+.red {
+    color: $COLOR_RED;
 }
 
 button .barspinner.white {
@@ -454,6 +492,14 @@ button .barspinner.white {
     clear: both;
 }
 
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-top-40 {
+    margin-top: 40px;
+}
+
 .sidebar-container {
     position: relative;
 }
@@ -504,9 +550,6 @@ button .barspinner.white {
     .hide-product-checkbox {
         display: none;
     }
-    .email-consent-container {
-        display: none;
-    }
 }
 
 .password {
@@ -516,6 +559,10 @@ button .barspinner.white {
 
         input {
             width: 202px;
+
+            &::-ms-reveal {
+                display: none;
+            }
         }
         @media screen and (max-width: 480px) {
             margin: 0 auto;
@@ -926,6 +973,14 @@ label + input {
                 }
             }
         }
+    }
+}
+
+#real_account_wrapper input {
+    width: 100%;
+    max-width: 340px;
+    @media screen and (max-width: 768px) {
+        box-sizing: border-box;
     }
 }
 

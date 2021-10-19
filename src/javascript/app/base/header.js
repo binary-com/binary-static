@@ -1,7 +1,6 @@
 const BinaryPjax               = require('./binary_pjax');
 const Client                   = require('./client');
 const BinarySocket             = require('./socket');
-const showHidePulser           = require('../common/account_opening').showHidePulser;
 const getCurrencyDisplayCode   = require('../common/currency').getCurrencyDisplayCode;
 const getLandingCompanyValue   = require('../../_common/base/client_base').getLandingCompanyValue;
 const isAuthenticationAllowed  = require('../../_common/base/client_base').isAuthenticationAllowed;
@@ -112,7 +111,7 @@ const Header = (() => {
         }
     };
 
-    const switchLoginid = (loginid) => {
+    const switchLoginid = (loginid, redirect_to) => {
         if (!loginid || loginid.length === 0) return;
         const token = Client.get('token', loginid);
         if (!token || token.length === 0) {
@@ -125,7 +124,18 @@ const Header = (() => {
         GTM.setLoginFlag('account_switch');
         Client.set('loginid', loginid);
         SocketCache.clear();
-        window.location.reload();
+
+        if (redirect_to === 'deposit') {
+            window.location.href = `${Url.urlFor('cashier/forwardws')}?action=deposit`;
+        } else if (redirect_to === 'withdrawal') {
+            window.location.href = `${Url.urlFor('cashier/forwardws')}?action=withdraw`;
+        } else if (redirect_to === 'payment_agent_deposit') {
+            window.location.href = Url.urlFor('/cashier/payment_agent_listws');
+        } else if (redirect_to === 'payment_agent_withdrawal') {
+            window.location.href = Url.urlFor('/paymentagent/withdrawws');
+        } else {
+            window.location.reload();
+        }
     };
 
     const upgradeMessageVisibility = () => {
@@ -136,20 +146,20 @@ const Header = (() => {
                 return;
             }
 
-            const showUpgrade = (url, localized_text) => {
+            const showUpgrade = (url, params, localized_text) => {
                 applyToAllElements(upgrade_msg, (el) => {
                     el.setVisibility(1);
                     applyToAllElements('a', (ele) => {
-                        ele.html(createElement('span', { text: localized_text })).setVisibility(1).setAttribute('href', Url.urlFor(url));
+                        ele.html(createElement('span', { text: localized_text })).setVisibility(1).setAttribute('href', Url.urlFor(url, params));
                     }, '', el);
                 });
             };
 
-            const showUpgradeBtn = (url, localized_text) => {
+            const showUpgradeBtn = (url, params, localized_text) => {
                 applyToAllElements(upgrade_msg, (el) => {
                     el.setVisibility(1);
                     applyToAllElements('a.button', (ele) => {
-                        ele.html(createElement('span', { text: localized_text })).setVisibility(1).setAttribute('href', Url.urlFor(url));
+                        ele.html(createElement('span', { text: localized_text })).setVisibility(1).setAttribute('href', Url.urlFor(url, params));
                     }, '', el);
                 });
             };
@@ -164,12 +174,12 @@ const Header = (() => {
                 upgrade_btn_txt = localize('Open a Real Account');
             } else if (upgrade_info.can_upgrade_to.length === 1) {
                 upgrade_link_txt = upgrade_info.type[0] === 'financial'
-                    ? localize('Click here to open a Financial Account')
+                    ? localize('Click here to open a Multipliers Account')
                     : upgrade_info.can_upgrade_to[0] === 'malta' ?
-                        localize('Click here to open a Gaming account') :
+                        localize('Click here to open an Options account') :
                         localize('Click here to open a Real Account');
                 upgrade_btn_txt = upgrade_info.type[0] === 'financial'
-                    ? localize('Open a Financial Account')
+                    ? localize('Open a Multipliers Account')
                     : localize('Open a Real Account');
             }
 
@@ -186,9 +196,9 @@ const Header = (() => {
                 if (show_upgrade_msg) {
                     const upgrade_url = upgrade_info.can_upgrade_to.length > 1
                         ? 'user/accounts'
-                        : Object.values(upgrade_info.upgrade_links)[0];
-                    showUpgrade(upgrade_url, upgrade_link_txt);
-                    showUpgradeBtn(upgrade_url, upgrade_btn_txt);
+                        : 'new_account/real_account';
+                    showUpgrade(upgrade_url, `account_type=${upgrade_info.can_upgrade_to[0]}`, upgrade_link_txt);
+                    showUpgradeBtn(upgrade_url, `account_type=${upgrade_info.can_upgrade_to[0]}`, upgrade_btn_txt);
                 } else {
                     applyToAllElements(upgrade_msg, (el) => {
                         applyToAllElements('a', (ele) => {
@@ -203,9 +213,9 @@ const Header = (() => {
                 getElementById('virtual-wrapper').setVisibility(0);
                 const upgrade_url = upgrade_info.can_upgrade_to.length > 1
                     ? 'user/accounts'
-                    : Object.values(upgrade_info.upgrade_links)[0];
-                showUpgrade(upgrade_url, upgrade_link_txt);
-                showUpgradeBtn(upgrade_url, upgrade_btn_txt);
+                    : 'new_account/real_account';
+                showUpgrade(upgrade_url, `account_type=${upgrade_info.can_upgrade_to[0]}`, upgrade_link_txt);
+                showUpgradeBtn(upgrade_url, `account_type=${upgrade_info.can_upgrade_to[0]}`, upgrade_btn_txt);
 
                 if (/new_account/.test(window.location.href)) {
                     showHidePulser(0);
@@ -216,6 +226,8 @@ const Header = (() => {
             showHideNewAccount(upgrade_info);
         });
     };
+
+    const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
 
     const showHideNewAccount = (upgrade_info) => {
         if (upgrade_info.can_upgrade || upgrade_info.can_open_multi) {
@@ -482,6 +494,8 @@ const Header = (() => {
         hideNotification,
         displayAccountStatus,
         loginOnClick,
+        switchLoginid,
+        loginIDOnClick,
     };
 })();
 

@@ -13,6 +13,7 @@ const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const getHashValue     = require('../../../../_common/url').getHashValue;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
+const isEuCountry      = require('../../../common/country_base').isEuCountry;
 
 const MetaTraderUI = (() => {
     let $container,
@@ -24,17 +25,21 @@ const MetaTraderUI = (() => {
         $templates,
         $form,
         $main_msg,
-        mt5_login_list,
+        $client_general,
+        $client_eu,
         validations,
         submit,
         topup_demo,
         token,
-        current_action_ui;
+        current_action_ui,
+        landing_company_short;
 
     const accounts_info   = MetaTraderConfig.accounts_info;
     const actions_info    = MetaTraderConfig.actions_info;
     const mt5_url         = 'https://trade.mql5.com/trade';
     const getAccountsInfo = MetaTraderConfig.getAccountsInfo;
+
+    let is_trading_password_confirmed = false;
 
     let disabled_signup_types = {
         'real': false,
@@ -46,22 +51,21 @@ const MetaTraderUI = (() => {
     };
 
     const init = (submit_func, topup_demo_func) => {
-        token        = getHashValue('token');
-        topup_demo   = topup_demo_func;
-        submit       = submit_func;
-        $container   = $('#mt_account_management');
-        $mt5_account = $container.find('#mt5_account');
-        $list_cont   = $container.find('#accounts_list');
-        $list        = $list_cont.find('> div.list');
-        $detail      = $container.find('#account_details');
-        $action      = $container.find('#fst_action');
-        $templates   = $container.find('#templates').remove();
-        $main_msg    = $container.find('#main_msg');
+        landing_company_short = State.getResponse('landing_company.financial_company.shortcode');
+        token                 = getHashValue('token');
+        topup_demo            = topup_demo_func;
+        submit                = submit_func;
+        $container            = $('#mt_account_management');
+        $mt5_account          = $container.find('#mt5_account');
+        $list_cont            = $container.find('#accounts_list');
+        $list                 = $list_cont.find('> div.list');
+        $detail               = $container.find('#account_details');
+        $action               = $container.find('#fst_action');
+        $templates            = $container.find('#templates').remove();
+        $main_msg             = $container.find('#main_msg');
+        $client_general       = $container.find('.client-general');
+        $client_eu            = $container.find('.client-eu');
         $container.find('[class*="act_"]').on('click', populateForm);
-
-        BinarySocket.wait('mt5_login_list').then(() => {
-            mt5_login_list = State.getResponse('mt5_login_list');
-        });
 
         MetaTraderConfig.setMessages($templates.find('#messages'));
 
@@ -69,6 +73,14 @@ const MetaTraderUI = (() => {
 
         populateAccountTypes();
         populateAccountList();
+        populateContent(landing_company_short);
+    };
+
+    const populateContent = (landing_company) => {
+        if (landing_company === 'maltainvest') {
+            $client_general.setVisibility(0);
+            $client_eu.setVisibility(1);
+        }
     };
 
     const populateWebLinks = (server_info) => {
@@ -88,59 +100,126 @@ const MetaTraderUI = (() => {
             supported: 0,
             used     : 0,
         };
-
-        State.getResponse('trading_servers').forEach(trading_server => {
-            // if server is not added to account type, and in accounts_info we are not storing it with server
-            if (!/\d$/.test(account_type) && !getAccountsInfo(account_type)) {
-                account_type += `_${trading_server.id}`;
-            }
-            const new_account_info = getAccountsInfo(account_type);
-            const { market_type, sub_account_type } = new_account_info;
-            const { supported_accounts = [] } = trading_server;
-            const is_server_supported = isSupportedServer(market_type, sub_account_type, supported_accounts);
-
-            if (is_server_supported) {
-                num_servers.supported += 1;
-                const is_used_server = isUsedServer(is_server_supported, trading_server);
-
-                const is_disabled = trading_server.disabled === 1;
-
-                const input_attributes = {
-                    disabled: is_used_server || is_disabled,
-                    type    : 'radio',
-                    name    : 'ddl_trade_server',
-                    value   : trading_server.id,
-                    ...(trading_server.recommended && !is_used_server && !is_disabled && { checked: 'checked' }),
-                };
-
-                const { region, sequence } = trading_server.geolocation;
-                let label_text = sequence > 1 ? `${region} ${sequence}` : region;
-
-                if (is_used_server) {
-                    num_servers.used += 1;
-                    label_text += localize(' (Region added)');
-                } else if (is_disabled) {
-                    num_servers.disabled += 1;
-                    label_text += localize(' (Temporarily unavailable)');
+        
+        try {
+            const trading_servers = State.getResponse('trading_servers');
+            trading_servers.forEach(trading_server => {
+                // if server is not added to account type, and in accounts_info we are not storing it with server
+                if (!/\d$/.test(account_type) && !getAccountsInfo(account_type)) {
+                    account_type += `_${trading_server.id}`;
                 }
+                const new_account_info = getAccountsInfo(account_type);
+                const { market_type, sub_account_type } = new_account_info;
+                const { supported_accounts = [] } = trading_server;
+                const is_server_supported = isSupportedServer(market_type, sub_account_type, supported_accounts);
 
-                $ddl_trade_server
-                    .append(
-                        $('<div />', { id: trading_server.id, class: 'gr-padding-10 gr-parent' })
-                            .append($('<input />', input_attributes))
-                            .append($('<label />', { htmlFor: trading_server.id })
-                                .append($('<span />', { text: label_text }))
-                            )
-                    );
+                if (is_server_supported) {
+                    num_servers.supported += 1;
+                    const is_used_server = isUsedServer(is_server_supported, trading_server);
+
+                    const is_disabled = trading_server.disabled === 1;
+
+                    const input_attributes = {
+                        disabled: is_used_server || is_disabled,
+                        type    : 'radio',
+                        name    : 'ddl_trade_server',
+                        value   : trading_server.id,
+                        ...(trading_server.recommended && !is_used_server && !is_disabled && { checked: 'checked' }),
+                    };
+
+                    const { region, sequence } = trading_server.geolocation;
+                    let label_text = sequence > 1 ? `${region} ${sequence}` : region;
+
+                    if (is_used_server) {
+                        num_servers.used += 1;
+                        label_text += localize(' (Region added)');
+                    } else if (is_disabled) {
+                        num_servers.disabled += 1;
+                        label_text += localize(' (Temporarily unavailable)');
+                    }
+
+                    $ddl_trade_server
+                        .append(
+                            $('<div />', { id: trading_server.id, class: 'gr-padding-10 gr-parent trade-server-item' })
+                                .append($('<input />', input_attributes))
+                                .append($('<label />', { htmlFor: trading_server.id })
+                                    .append($('<span />', { text: label_text }))
+                                )
+                        );
+                }
+            });
+
+            // Check whether any of the servers is checked, if not, check one.
+            if ($ddl_trade_server.find('input[checked]').length === 0) {
+                $ddl_trade_server.find('input:not(:disabled):first').attr('checked', 'checked');
             }
+        } catch (e) {
+            displayMainMessage(localize('Our MT5 servers are temporarily unavailable. We\'re working to restore them. Please try again in a few minutes.'));
+        }
+        return num_servers;
+    };
+
+    const resetMT5TradingPassword = () => BinarySocket.send({
+        verify_email: Client.get('email'),
+        type        : 'trading_platform_mt5_password_reset',
+    });
+
+    const populatePasswordManager = () => {
+        const STEPS = {
+            PASSWORD_INSERT : 1,
+            PASSWORD_CONFIRM: 2,
+        };
+        const $mng_passwd  = $container.find('#frm_manage_password');
+        const $step_1 = $mng_passwd.find('.step-1');
+        const $step_2 = $mng_passwd.find('.step-2');
+        const $button = $mng_passwd.find('#password_change_button');
+        const $confirm_button = $mng_passwd.find('#password_change_confirm_buttons .btn_ok');
+        const $cancel_button = $mng_passwd.find('#password_change_confirm_buttons .btn_cancel');
+        const $trading_password_info = $mng_passwd.find('#trading_password_info');
+        const $trading_password_change_notice = $mng_passwd.find('.trading_password_change_notice');
+        
+        const setStep = (step) => {
+            switch (step) {
+                case STEPS.PASSWORD_INSERT:
+                    $step_1.setVisibility(1);
+                    $step_2.setVisibility(0);
+                    break;
+                case STEPS.PASSWORD_CONFIRM:
+                    $step_1.setVisibility(0);
+                    $step_2.setVisibility(1);
+                    break;
+                default:
+                    $step_1.setVisibility(1);
+                    $step_2.setVisibility(0);
+            }
+        };
+        $button.off('click').on('click', () => {
+            setStep(STEPS.PASSWORD_CONFIRM);
+        });
+        $confirm_button.off('click').on('click', () => {
+            resetMT5TradingPassword().then(() => {
+                showTradingPasswordResetAlertPopup();
+                setStep(STEPS.PASSWORD_INSERT);
+            });
+        });
+        $cancel_button.off('click').on('click', () => {
+            setStep(STEPS.PASSWORD_INSERT);
         });
 
-        // Check whether any of the servers is checked, if not, check one.
-        if ($ddl_trade_server.find('input[checked]').length === 0) {
-            $ddl_trade_server.find('input:not(:disabled):first').attr('checked', 'checked');
-        }
+        const mt5_label =  isEuCountry() ? 'CFDs' : 'MT5';
+        
+        $trading_password_info.text(
+            localize('Use MT5 password to sign in to any of your [_1] accounts when using MT5 apps on your mobile or other devices.',
+                mt5_label
+            )
+        );
 
-        return num_servers;
+        $trading_password_change_notice.text(
+            localize('This will change the password to all of your [_1] accounts.',
+                mt5_label
+            )
+        );
+      
     };
 
     const populateAccountList = () => {
@@ -231,6 +310,20 @@ const MetaTraderUI = (() => {
         button_link_el.children('span').addClass('disabled');
     };
 
+    const getTradingPasswordConfirmVisibility = () => is_trading_password_confirmed;
+
+    const setTradingPasswordConfirmVisibility = (visibility = 0) => {
+        $form.find('#new_user_cancel_button').setVisibility(visibility ? 0 : 1);
+        $form.find('#new_user_back_button').setVisibility(visibility);
+        $form.find('#trading_password_new_user_confirm').setVisibility(visibility);
+        $form.find('#trading_password_change_notice').setVisibility(visibility);
+        $form.find('#new_user_btn_submit_new_account_confirm').setVisibility(visibility);
+        $form.find('#trading_password_new_user').setVisibility((!shouldSetTradingPassword() || visibility) ? 0 : 1);
+        $form.find('#new_user_btn_submit_new_account').setVisibility(visibility ? 0 : 1);
+        $form.find('#trading_password_input').setVisibility(visibility ? 0 : 1);
+        is_trading_password_confirmed = !!visibility;
+    };
+
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
         $acc_item.find('.mt-type').text(getAccountsInfo(acc_type).short_title);
@@ -305,6 +398,7 @@ const MetaTraderUI = (() => {
                 } else {
                     displayStep(3);
                 }
+                displayAccountDescription('real_gaming_financial');
 
                 $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
             });
@@ -320,11 +414,15 @@ const MetaTraderUI = (() => {
 
     const displayAccountDescription = (acc_type) => {
         const $account_desc = $templates.find('.account-desc');
+
+        landing_company_short = State.getResponse('landing_company.financial_company.shortcode');
+
+        const $general_description = landing_company_short === 'maltainvest' ? $account_desc.find('#general_desc_eu') : $account_desc.find('#general_desc');
         let $account_type_desc = '';
         if (acc_type) {
             $account_type_desc = $account_desc.find(`.${acc_type}`);
 
-            const landing_company_short = MetaTraderConfig.getSampleAccount(acc_type).landing_company_short;
+            landing_company_short = MetaTraderConfig.getSampleAccount(acc_type).landing_company_short;
 
             if ($account_type_desc.length === 2) {
                 const $specific_description = $account_desc.find(`.${acc_type}.${landing_company_short}`);
@@ -334,7 +432,7 @@ const MetaTraderUI = (() => {
                 $account_type_desc = $specific_description.length ? $specific_description : $account_type_desc.first();
             }
         }
-        const $el_to_clone = $account_type_desc.length ? $account_type_desc : $account_desc.find('#general_desc');
+        const $el_to_clone = $account_type_desc.length ? $account_type_desc : $general_description;
         $container.find('#account_desc').html($el_to_clone.clone());
     };
 
@@ -439,10 +537,13 @@ const MetaTraderUI = (() => {
         if ($target.prop('tagName').toLowerCase() !== 'a') {
             $target = $target.parents('a');
         }
-        $main_msg.setVisibility(0);
 
         const acc_type = Client.get('mt5_account');
         const action   = $target.attr('class').split(' ').find(c => /^act_/.test(c)).replace('act_', '');
+
+        if (!$action.find(`#frm_${action}`).length) {
+            $main_msg.setVisibility(0);
+        }
 
         const cloneForm = () => {
             $form = $templates.find(`#frm_${action}`).clone();
@@ -455,11 +556,7 @@ const MetaTraderUI = (() => {
                 .setVisibility(1);
 
             if (action === 'manage_password') {
-                if (shouldSetTradingPassword()) {
-                    $form.find('#new_client_message').setVisibility(1);
-                } else {
-                    $form.find('#existing_client_message').setVisibility(1);
-                }
+                populatePasswordManager();
                 $form.find('button#btn_submit_password_change[type="submit"]').append(accounts_info[acc_type].info.display_login ? ` ${localize('for account [_1]', accounts_info[acc_type].info.display_login)}` : '');
                 if (!token) {
                     $form.find('#frm_verify_password_reset').setVisibility(1);
@@ -503,6 +600,8 @@ const MetaTraderUI = (() => {
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
             const should_show_transfer_fee = client_currency !== mt_currency;
+            const txt_amount_deposit_element = $form.find('#txt_amount_deposit');
+            
             if (should_show_transfer_fee) {
                 $('#transfer_fee_amount_to').text(getTransferFee(client_currency, mt_currency));
                 $('#transfer_fee_minimum_to').text(Currency.getMinimumTransferFee(client_currency));
@@ -510,6 +609,17 @@ const MetaTraderUI = (() => {
                 $('#transfer_fee_minimum_from').text(Currency.getMinimumTransferFee(mt_currency));
             }
             $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(should_show_transfer_fee);
+
+            txt_amount_deposit_element.on('input', () => {
+                const balance = Client.get('balance');
+                const insufficient_funds_error = $form.find('#insufficient_funds');
+                const is_balance_more_than_entered = balance >= txt_amount_deposit_element.val();
+
+                if (is_balance_more_than_entered) {
+                    return insufficient_funds_error.setVisibility(0);
+                }
+                return insufficient_funds_error.setVisibility(1);
+            });
 
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
@@ -558,11 +668,6 @@ const MetaTraderUI = (() => {
                 $container.find(`[class~=act_${action}]`).addClass('selected');
                 return;
             }
-
-            if (!$action.find(`#frm_${action}`).length) {
-                $main_msg.setVisibility(0);
-            }
-
             cloneForm();
         });
     };
@@ -622,7 +727,7 @@ const MetaTraderUI = (() => {
     const shouldSetTradingPassword = () => {
         const { status } = State.getResponse('get_account_status');
 
-        return Array.isArray(status) && status.includes('trading_password_required');
+        return Array.isArray(status) && status.includes('mt5_password_not_set');
     };
 
     const displayStep = (step) => {
@@ -630,7 +735,6 @@ const MetaTraderUI = (() => {
         const is_demo = /demo/.test(new_account_type);
         const should_set_trading_password = shouldSetTradingPassword();
         const is_synthetic = /gaming/.test(new_account_type);
-        const has_mt5_account = mt5_login_list.length > 0;
 
         $form.find('#msg_form').remove();
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
@@ -640,14 +744,17 @@ const MetaTraderUI = (() => {
         // Show proper notice msg based on api flag
         if (should_set_trading_password) {
             $form.find('#view_3').find('#trading_password_new_user').setVisibility(1);
-            if (has_mt5_account) {
-                $form.find('#trading_password_input').setVisibility(0);
-                $form.find('#has_mt5_new_user_btn_submit_new_account').setVisibility(1);
-            } else {
-                $form.find('#new_user_btn_submit_new_account').setVisibility(1);
-            }
         } else {
-            $form.find('#view_3').find('#trading_password_existing_user').setVisibility(1);
+            const mt5_label = isEuCountry() ? localize('CFDs') : localize('MT5 Financial');
+            $form.find('#view_3').find('#trading_password_existing_user')
+                .html(localize(
+                    'Enter your MT5 password to add a [_1] [_2] account.',
+                    [
+                        is_demo ? localize('demo') : localize('real'),
+                        is_synthetic ? localize('MT5 Synthetic') : mt5_label,
+                    ]
+                ))
+                .setVisibility(1);
         }
 
         $form.find(`.${is_demo ? 'real' : 'demo'}-only`).setVisibility(0);
@@ -680,12 +787,14 @@ const MetaTraderUI = (() => {
             }
             $('<p />', { id: 'msg_form', class: 'center-text gr-padding-10 error-msg no-margin invisible' }).prependTo($view_3_button_container);
             $view_3_button_container.setVisibility(1);
-            $view_3_button_container.find('#btn_forgot_trading_password').on('click', () => displayStep(4));
-        } else if (step === 4) {
-            BinarySocket.send({
-                verify_email: Client.get('email'),
-                type        : 'trading_platform_password_reset',
+            $view_3_button_container.find('#btn_forgot_trading_password').on('click', () => {
+                resetMT5TradingPassword().then(() => {
+                    showTradingPasswordResetAlertPopup();
+                    loadAction('manage_password');
+                });
             });
+        } else if (step === 4) {
+            resetMT5TradingPassword();
         } else if (step !== 1) {
             displayStep(1);
         }
@@ -707,6 +816,7 @@ const MetaTraderUI = (() => {
         // set active tab
         if (is_new_account) {
             $container.find(`[class~=act_${action}]`).addClass('selected');
+            setTradingPasswordConfirmVisibility(0);
         } else {
             $detail.setVisibility(1);
             $target.addClass('selected');
@@ -714,7 +824,7 @@ const MetaTraderUI = (() => {
         }
 
         // is_new_account
-        displayAccountDescription();
+        displayAccountDescription(acc_type);
         $form = actions_info[action].$form;
         if (Object.keys(accounts_info).every(a_type => !getAccountsInfo(a_type).info)) {
             $form.find('#view_1 .btn-cancel').addClass('invisible');
@@ -760,19 +870,16 @@ const MetaTraderUI = (() => {
         });
 
         $form.find('#ddl_trade_server').off('click').on('click', (e) => {
-            $form.find('#ddl_trade_server').find('input').not(':input[disabled]').removeAttr('checked');
+            const $target_input = $(e.target).parents('.trade-server-item').children('input');
 
-            if (e.target.nodeName === 'SPAN') {
-                $(e.target.parentElement).parent().find('input').not(':input[disabled]').attr('checked', 'checked');
-            }
-            if (e.target.nodeName === 'LABEL') {
-                $(e.target.parentElement).find('input').not(':input[disabled]').attr('checked', 'checked');
-            }
-            if (e.target.nodeName === 'INPUT') {
-                $(e.target).not(':input[disabled]').attr('checked', 'checked');
+            if ($target_input.attr('disabled')) return;
+
+            if ($target_input.length) {
+                $form.find('#ddl_trade_server').find('input').not(':input[disabled]').removeAttr('checked');
+                $target_input.not(':input[disabled]').attr('checked', 'checked');
             }
 
-            const new_user_submit_button = $form.find(mt5_login_list.length > 0 ? '#has_mt5_new_user_btn_submit_new_account' : '#new_user_btn_submit_new_account');
+            const new_user_submit_button = $form.find('#new_user_btn_submit_new_account');
             const existing_user_submit_button = $form.find('#existing_user_btn_submit_new_account');
 
             // Disable/enable submit button based on whether any of the checkboxes is checked.
@@ -792,7 +899,15 @@ const MetaTraderUI = (() => {
             }
             displayStep(2);
         });
-        $form.find('#view_2 .btn-back').click(() => { displayStep(1); });
+        $form.find('#view_3 .btn-back-password').click(() => {
+            setTradingPasswordConfirmVisibility(0);
+            enableButton('new_account');
+        });
+        $form.find('#view_2 .btn-back').click(() => {
+            displayStep(1);
+            const $elem = $container.find('#rbtn_gaming_financial.selected');
+            displayAccountDescription($elem.length > 0 ? 'real_gaming_financial' : undefined);
+        });
 
         // Account type selection
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
@@ -827,7 +942,7 @@ const MetaTraderUI = (() => {
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = 'new_account';
         if (/(demo|real)/.test(selected_acc_type)) {
-            displayAccountDescription();
+            displayAccountDescription(selected_acc_type);
             updateAccountTypesUI(selected_acc_type);
             switchAccountTypesUI(selected_acc_type, $form);
             $form.find('#view_1 .btn-next').addClass('button-disabled');
@@ -884,11 +999,16 @@ const MetaTraderUI = (() => {
         Object.keys(accounts_info)
             .filter(acc_type => acc_type.indexOf(type) === 0)
             .forEach((acc_type) => {
-                let class_name = (type === 'real' && Client.get('is_virtual')) ? 'disabled' : '';
+                const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type, 2);
+                landing_company_short = getAccountsInfo(acc_type).landing_company_short;
+
+                let class_name = (type === 'real' && Client.get('is_virtual')) ||
+                    (landing_company_short === 'malta' && /_gaming_/.test(clean_acc_type)) ? 'disabled' : '';
+
                 if (getAccountsInfo(acc_type).info && (getAvailableServers(false, acc_type).length === 0 || type === 'demo')) {
                     class_name = 'existed';
                 }
-                const clean_acc_type = MetaTraderConfig.getCleanAccType(acc_type, 2);
+
                 $form.find(`.step-2 #${clean_acc_type.replace(type, 'rbtn')}`)
                     .removeClass('existed disabled selected')
                     .addClass(class_name);
@@ -975,8 +1095,8 @@ const MetaTraderUI = (() => {
         let button_selector = 'button';
         if (action === 'new_account') {
             if (shouldSetTradingPassword()) {
-                if (mt5_login_list.length > 0) {
-                    button_selector = '#has_mt5_new_user_btn_submit_new_account';
+                if (getTradingPasswordConfirmVisibility()) {
+                    button_selector = '#new_user_btn_submit_new_account_confirm';
                 } else {
                     button_selector = '#new_user_btn_submit_new_account';
                 }
@@ -1007,12 +1127,12 @@ const MetaTraderUI = (() => {
             // after submit is done, reset token value
             resetManagePasswordTab(action, response);
         }
-        if (/new_account/.test(action)) {
+        if (/new_account/.test(action) && !getTradingPasswordConfirmVisibility()) {
             resetNewAccountForm(response);
         }
     };
 
-    const resetNewAccountForm = (response) => {
+    const resetNewAccountForm = (response = {}) => {
         const should_reset_view = ['#view_3-buttons_reset_password', '#trading_password_reset_required'];
         const normal_view = ['#trading_password_existing_user', '#view_3-buttons_existing_user', '#trading_password_input'];
         const $hint = $('#trading_password_existing_user_validation_error');
@@ -1155,12 +1275,24 @@ const MetaTraderUI = (() => {
             ok_text          : localize('Yes, I\'m sure'),
             cancel_text      : localize('Cancel'),
             localized_title  : localize('Are you sure?'),
-            localized_message: localize('You will not be able to change your fiat account\'s currency after creating this MT5 account. Are you sure you want to proceed?'),
-            onConfirm        : () => {
+            localized_message: localize('You will not be able to change your fiat account currency after creating this [_1] account. Are you sure you want to proceed?',
+                [isEuCountry() ? 'CFDs' : 'MT5'],
+            ),
+            onConfirm: () => {
                 onConfirm();
                 submit(e);
             },
             onAbort,
+        });
+    };
+
+    const showTradingPasswordResetAlertPopup = () => {
+
+        Dialog.alert({
+            id               : 'password-change-email-popup',
+            localized_title  : localize('We’ve sent you an email'),
+            localized_message: localize('Please click on the link in the email to change your MT5 password.'),
+            ok_text          : localize('OK'),
         });
     };
 
@@ -1181,7 +1313,10 @@ const MetaTraderUI = (() => {
         enableButton,
         refreshAction,
         setTopupLoading,
+        getTradingPasswordConfirmVisibility,
+        setTradingPasswordConfirmVisibility,
         showNewAccountConfirmationPopup,
+        shouldSetTradingPassword,
 
         $form                  : () => $form,
         getDisabledAccountTypes: () => disabled_signup_types,
