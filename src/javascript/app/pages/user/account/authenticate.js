@@ -1129,7 +1129,8 @@ const Authenticate = (() => {
             document_number;
         
         const filtered_documents =
-            country_code === 'gh'
+        // Disabled documents for certain countries. Remove when BE implements fix from their side
+            country_code === 'gh' || country_code === 'ng'
                 ? Object.keys(documents_supported).filter(d => d !== 'voter_id')
                 : Object.keys(documents_supported);
 
