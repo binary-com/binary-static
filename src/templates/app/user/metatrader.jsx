@@ -72,7 +72,17 @@ const Metatrader = () => (
         <div className='static_full'>
             <h1>{it.L('MetaTrader 5 dashboard')}</h1>
         </div>
-        <p id='page_msg' className='notice-msg center-text invisible' />
+        <div className='center-text'>
+            <p id='page_msg' className='notice-msg invisible' />
+            <Button
+                id='go_to_deriv'
+                className='toggle button invisible'
+                href='https://app.deriv.com/'
+                text={it.L('Go to DTrader')}
+                text_className='deposit'
+            />
+        </div>
+        
         <p id='financial_authenticate_msg' className='notice-msg center-text invisible'>
             {it.L('Please [_1]authenticate[_2] your account to continue trading.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}
         </p>

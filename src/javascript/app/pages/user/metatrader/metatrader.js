@@ -29,7 +29,8 @@ const MetaTrader = (() => {
                     BinarySocket.send({ get_limits: 1 }).then(addAllAccounts);
                 }
             } else {
-                MetaTraderUI.displayPageError(localize('Sorry, this feature is not available in your jurisdiction.'));
+                MetaTraderUI.displayPageError(localize('Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv.'));
+                MetaTraderUI.displayDirectButton('#go_to_deriv');
             }
         });
     };
