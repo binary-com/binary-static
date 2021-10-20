@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-17 08:21\n"
+"PO-Revision-Date: 2021-10-19 13:04\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -3851,11 +3851,11 @@ msgstr "ฝากเงิน: ทันที"
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "การฝากและถอนเงินจากบัญชี MetaTrader 5 ของท่านจะผ่านบัญชีไบนารีออปชั่นเสมอ"
 
-msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "ได้มีการปิดการใช้งานการฝากและถอนเงินในบัญชีของท่าน โปรดตรวจสอบอีเมล์เพื่อศึกษารายละเอียดเพิ่มเติม"
-
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "การฝาก และ/หรือ การครบกำหนดชำระเงิน ถูกดำเนินการตามสกุลเงินที่ลูกค้ากำหนดไว้ให้กับ DIEL ในแต่ละครั้ง"
+
+msgid "Deposits are temporarily unavailable due to system maintenance. You can make your deposits when the maintenance is complete."
+msgstr ""
 
 msgid "Deriv"
 msgstr "Deriv"
@@ -5095,9 +5095,6 @@ msgstr "การประเมินทางการเงิน"
 
 msgid "Financial Markets Analyst"
 msgstr "นักวิเคราะห์ตลาดการเงิน"
-
-msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
-msgstr "ต้องมีการอนุมัติความเสี่ยงทางการเงิน โปรดติดต่อ %1ฝ่ายลูกค้าสัมพันธ์%2 สำหรับข้อมูลเพิ่มเติม"
 
 msgid "Financial STP"
 msgstr "บัญชี Financial STP"
@@ -8487,8 +8484,11 @@ msgstr "คาดว่าฐานลูกค้าที่ใช้งาน
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "ธุรกิจของเราก่อตั้งขึ้นจากความร่วมมือและเรามุ่งมั่นที่จะสร้างความสัมพันธ์ระยะยาวและเป็นประโยชน์ร่วมกันกับหุ้นส่วนของเรา อย่างไรก็ตามเราจะไม่ลดทอนความมุ่งมั่นของเราที่มีต่อความซื่อสัตย์ทางธุรกิจ ในกรณีที่หุ้นส่วนของเราไม่เต็มใจหรือไม่สามารถปฏิบัติตามหลักการของเราได้ เราขอสงวนสิทธิ์ในการถอนตัวจากความสัมพันธ์ทางธุรกิจ"
 
-msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "แคชเชียร์ของเราหยุดทํางานชั่วคราวเนื่องจากการบํารุงรักษาระบบ คุณสามารถเข้าถึงแคชเชียร์ได้ทันทีที่การบํารุงรักษาเสร็จสมบูรณ์"
+msgid "Our cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
+
+msgid "Our cashier is temporarily down due to system maintenance.You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
 
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "โครงสร้างคอมมิชชั่นของเราเป็นแผน 2 ขั้น อย่างง่าย"
@@ -8499,8 +8499,8 @@ msgstr "คำมั่นสัญญาของเราต่อความ
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "บริษัทฯ ของเรามีการพัฒนาอย่างต่อเนื่องเพื่อขอใบอนุญาตบนเกาะ Isle of Man ในการให้บริการที่ดีขึ้นกับลูกค้าในประเทศสหราชอาณาจักร"
 
-msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "แคชเชียร์สกุลเงินดิจิตอลของเราหยุดทํางานชั่วคราวเนื่องจากการบํารุงรักษาระบบ คุณสามารถเข้าถึงแคชเชียร์ทันทีที่การบํารุงรักษาเสร็จสมบูรณ์"
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "เราเป็นที่นิยมชมชอบของลูกค้า ในกลางปี พ.ศ. 2557 (ค.ศ. 2014) %1 มีธุรกรรมมากกว่า 100 ล้านระเบียน และมีธุรกรรมใหม่ที่เกิดขึ้นรายวันกว่า 130,000 ธุรกรรม"
@@ -8871,17 +8871,11 @@ msgstr "โปรด %1ยืนยันบัญชีของท่าน%2 
 msgid "Please %1authenticate%2 your account to continue trading."
 msgstr "โปรด %1ยืนยัน%2 บัญชีของท่านเพื่อการซื้อขายอย่างต่อเนื่อง"
 
-msgid "Please %1authenticate%2 your account."
-msgstr "โปรด %1 ยืนยันและรับรอง %2 บัญชีของท่าน"
-
 msgid "Please %1complete the financial assessment%2 to open an MT5 account."
 msgstr "โปรด %1ทำแบบประเมินทางการเงิน%2 เพื่อเปิดบัญชี MT5"
 
 msgid "Please %1complete the trading experience section%2 in the financial assessment to open an MT5 account."
 msgstr "โปรด %1กรอกประสบการณ์ด้านการซื้อขาย%2 ในการประเมินทางการเงิน เพื่อเปิดบัญชี MT5"
-
-msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
-msgstr "โปรด %1ปรับปรุงประวัติของท่าน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
 
 msgid "Please %1deposit%2 before transferring to client."
 msgstr "โปรด %1ฝากเงิน%2 ก่อนทำการโอนให้ลูกค้า"
@@ -8925,14 +8919,11 @@ msgstr "โปรดคลิกที่ลิงค์ในอีเมลเ
 msgid "Please complete the %1Real Account form%2 to verify your age as required by the %3UK Gambling%4 Commission (UKGC)."
 msgstr "โปรดกรอก %1แบบฟอร์มบัญชีจริง%2 เพื่อยืนยันอายุของท่าน ตามข้อกำหนดของ %3UK Gambling%4 Commission (UKGC)"
 
-msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
-msgstr "โปรดบันทึกผล %1แบบฟอร์มการประเมินทางการเงิน%2 เพื่อเพิ่มวงเงินการซื้อขายและการถอนเงินของท่าน"
+msgid "Please complete the Appropriateness Test to access your cashier."
+msgstr ""
 
 msgid "Please complete the Real Account form to verify your age as required by the %1UK Gambling%2 Commission (UKGC)."
 msgstr "โปรดกรอกแบบฟอร์มบัญชีจริงเพื่อยืนยันอายุของท่าน ตามที่กำหนดไว้โดย %1UK Gambling%2 Commission (UKGC)"
-
-msgid "Please complete your %1personal details%2 before you proceed."
-msgstr "โปรดกรอก %1รายละเอียดส่วนบุคคลของท่าน%2 ก่อนที่จะดำเนินการต่อ"
 
 msgid "Please complete your personal details before you proceed."
 msgstr "โปรดกรอกรายละเอียดส่วนบุคคลของท่านก่อนที่จะดำเนินการต่อ"
@@ -9072,17 +9063,8 @@ msgstr "โปรดเลือกช่วงวันที่ในใบแ
 msgid "Please select the document type and enter the document number."
 msgstr "โปรดเลือกชนิดเอกสารและป้อนหมายเลขเอกสาร"
 
-msgid "Please set %1country of residence%2 before upgrading to a real-money account."
-msgstr "โปรดตั้งค่า %1ประเทศที่พำนัก%2 ก่อนอัพเกรดเป็นบัญชีจริง"
-
-msgid "Please set the %1currency%2 of your account."
-msgstr "โปรดตั้งค่า %1สกุลเงิน%2 ของบัญชีของท่าน"
-
-msgid "Please set your %130-day turnover limit%2 to access the cashier."
-msgstr "โปรดตั้งค่า %1วงเงินหมุนเวียน 130 วัน%2 เพื่อเข้าถึงแคชเชียร์"
-
-msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
-msgstr "โปรดตั้งค่าวงเงินซื้อขายต่อวัน %130 ของท่าน %2 เพื่อลบวงเงินฝาก"
+msgid "Please set your %1account currency%2 to enable deposits and withdrawals."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "โปรดระบุช่วงเวลาการตรวจสอบสภาพความเป็นจริงที่ท่านต้องการเป็นหน่วยนาทีที่จะเกิดขึ้นจริงระหว่างการซื้อขาย"
@@ -9092,9 +9074,6 @@ msgstr "โปรดส่งข้อมูลข้างต้นมาที
 
 msgid "Please submit your %1proof of address%2."
 msgstr "โปรดส่ง%1เอกสารแสดงที่อยู่%2ของท่าน"
-
-msgid "Please submit your %1proof of identity and proof of address%2."
-msgstr "โปรดส่ง%1เอกสารแสดงที่อยู่และเอกสารแสดงตัวบุคคล%2ของท่าน"
 
 msgid "Please submit your %1proof of identity%2."
 msgstr "โปรดส่ง%1เอกสารแสดงตัวบุคคล%2ของท่าน"
@@ -10503,9 +10482,6 @@ msgstr "ขออภัย มีความผิดพลาดเกิด�
 msgid "Sorry, an error occurred while processing your request."
 msgstr "ขออภัย มีความผิดพลาดเกิดขึ้นขณะที่ประมวลผลความประสงค์ของท่าน"
 
-msgid "Sorry, deposits for this currency are currently disabled."
-msgstr "ขออภัย การฝากเงินสำหรับสกุลเงินนี้ ขณะนี้ถูกปิดการใช้งาน"
-
 msgid "Sorry, mobile version is not available yet."
 msgstr "ขออภัย เวอร์ชันมือถือยังไม่พร้อมใช้งาน"
 
@@ -11451,6 +11427,9 @@ msgstr "บริษัทมีหน้าที่ปฏิบัติตา
 msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, email, and email management software, along with any modifications."
 msgstr ""
 
+msgid "The Company likewise reserves the right to cancel any request for a deposit, withdrawal, or refund of the client’s funds."
+msgstr ""
+
 msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platform."
 msgstr "บริษัทฯ จะให้บริการสัญญาสำหรับส่วนต่าง (CFD) ผ่านแพลตฟอร์ม MT5 เป็นหลัก"
 
@@ -11554,6 +11533,9 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "บริษัทฯ สงวนสิทธิ์ในการใช้ดุลยพินิจเพื่อปฏิเสธ และ/หรือ ยกเลิกบริการ การเรียกเก็บค่าธรรมเนียมการฝาก และ/หรือ การถอน กับบุคคลใดๆ เนื่องด้วยเหตุผลดังต่อไปนี้"
 
 msgid "The Company reserves the right to accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
+msgstr ""
+
+msgid "The Company reserves the right to block or withhold the funds in the client’s account and/or suspend or close the client’s account if it is known or there is reason to believe that one or more of the following cases are true:"
 msgstr ""
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug, or glitch in the Company website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, manifest mis-calculation of prices, or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors, or suspected system inadequacies that they may experience and may not abuse, or arbitrage based on, such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between the client and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot)."
@@ -12329,6 +12311,9 @@ msgstr "สถานที่กลางแจ้งชั้นเยี่ย
 msgid "The high-risk and speculative nature of forex and CFDs"
 msgstr "ลักษณะการเก็งกำไรและความเสี่ยงสูงของฟอเร็กซ์และสัญญาสำหรับส่วนต่าง (CFD)"
 
+msgid "The identification documents you submitted have expired. Please submit valid identity documents to unlock Cashier."
+msgstr ""
+
 msgid "The information outlined in Paragraph 1 of this section shall be submitted to %1partners@binary.com%2."
 msgstr "ข้อมูลที่ระบุไว้ในย่อหน้าที่ 1 ของส่วนนี้จะถูกส่งไปยัง %1partners@binary.com%2"
 
@@ -12790,9 +12775,6 @@ msgstr "เอกสารนี้ (\"ข้อตกลง\") กำหนด�
 
 msgid "This feature is available to demo accounts only."
 msgstr "ฟีเจอร์นี้พร้อมใช้งานสําหรับบัญชีทดลองใช้เท่านั้น"
-
-msgid "This feature is not relevant to demo accounts."
-msgstr "คุณลักษณะนี้ไม่เกี่ยวข้องกับบัญชีทดลอง"
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "ฟังก์ชันนี้สัมพันธ์กับบัญชีตัวแทนชำระเงินเท่านั้น"
@@ -13304,12 +13286,6 @@ msgstr "เวลาซื้อขาย"
 msgid "Trading and Withdrawal Limits"
 msgstr "วงเงินซื้อขายและถอนเงิน"
 
-msgid "Trading and deposits have been disabled on your account. Kindly allow us some time to review the account."
-msgstr "การซื้อขายและการฝากเงินถูกปิดใช้งานในบัญชีของคุณ กรุณาให้เวลาเราตรวจสอบบัญชี"
-
-msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "การซื้อขายและการถอนเงินถูกปิดการใช้งานในบัญชีของคุณ โปรด %1cติดต่อฝ่ายบริการลูกค้า%2 เพื่อขอความช่วยเหลือ"
-
 msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
 msgstr "การซื้อขายไบนารีออปชันและ CFD มีความเสี่ยงอย่างมาก อย่าซื้อขายด้วยเงินที่คุณไม่อาจสูญเสียได้ และอย่าซื้อขายด้วยเงินที่ยืมมา เรียนรู้เพิ่มเติมเกี่ยวกับ%1การซื้อขายอย่างรับผิดชอบ%2"
 
@@ -13651,6 +13627,12 @@ msgstr "ว่างงาน"
 
 msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
 msgstr "น่าเสียดายที่บริการนี้ไม่พร้อมใช้งานในประเทศของคุณ หากคุณต้องการซื้อขายตัวคูณลองใช้ DTrader บน Deriv"
+
+msgid "Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals."
+msgstr ""
+
+msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits."
+msgstr ""
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "สำเร็จการศึกษาจากสาขาการตลาด คณิตศาสตร์ ไอที/การเขียนโปรแกรม และสาขาอื่นๆ ที่เกี่ยวข้อง"
@@ -14228,9 +14210,6 @@ msgstr "มีทักษะในการจัดการที่ดี �
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "เราจะอัปเดตขีดจำกัดของคุณ คลิก %1เห็นด้วยและยอมรับ%2 เพื่อรับทราบว่าคุณต้องรับผิดชอบอย่างเต็มที่ต่อการกระทำของคุณและเราจะไม่รับผิดชอบต่อการเสพติดหรือการสูญเสียใดๆ"
 
-msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
-msgstr "เรากําลังอัปเดตระบบแคชเชียร์ของเราและจะกลับมาออนไลน์ในไม่ช้า โปรดดู%1หน้าสถานะ%2ของเราสําหรับการอัปเดต"
-
 msgid "We’ve sent you an email"
 msgstr "เราได้ส่งอีเมลถึงคุณแล้ว"
 
@@ -14633,8 +14612,8 @@ msgstr "การถอนเงิน: %1 ถึง %2 วัน"
 msgid "Withdrawal: Not applicable"
 msgstr "การถอนเงิน: ไม่เกี่ยวข้อง"
 
-msgid "Withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "ได้มีการปิดการใช้งานการถอนเงินในบัญชีของท่าน กรุณาตรวจสอบอีเมล์เพื่อศึกษารายละเอียดเพิ่มเติม"
+msgid "Withdrawals are temporarily unavailable due to system maintenance. You can make your withdrawals when the maintenance is complete."
+msgstr ""
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
 msgstr "การถอนเงินถูกปิดการใช้งานในบัญชีของคุณ โปรดรอจนกว่าเอกสารที่คุณอัปโหลดจะได้รับการยืนยัน"
@@ -14735,6 +14714,9 @@ msgstr "ท่านจะได้รับหน้าที่ในการ
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "ท่านกำลังขายสกุลเงินฐานและซื้อสกุลเงินที่มีการเสนอราคา"
 
+msgid "You are using a demo account. Please switch to a real account or create one to access Cashier."
+msgstr ""
+
 msgid "You can %1set a new currency%2 before you deposit for the first %3."
 msgstr "ท่านสามารถ %1ตั้งค่าสกุลเงินใหม่%2 ก่อนท่านดำเนินการฝากเงิน %3"
 
@@ -14825,6 +14807,9 @@ msgstr "คุณได้ทำการถอนเงิน %1%2 หรือ
 msgid "You have already withdrawn %1%2."
 msgstr "คุณได้ทำการถอนแล้ว %1%2"
 
+msgid "You have chosen to exclude yourself from trading on our website until %1. If you are unable to place a trade or deposit after your self-exclusion period, please contact us via live chat."
+msgstr ""
+
 msgid "You have created all accounts available to you."
 msgstr "ท่านได้สร้างบัญชีทั้งหมดแล้ว"
 
@@ -14842,6 +14827,9 @@ msgstr "คุณมีเงินไม่เพียงพอในบัญ
 
 msgid "You have not granted access to any applications."
 msgstr "ท่านไม่ได้รับอนุญาตให้เข้าใช้งานระบบใดๆ"
+
+msgid "You have not provided your tax identification number. This information is necessary for legal and regulatory requirements. Please go to %1Personal details%2 in your account settings, and fill in your latest tax identification number."
+msgstr ""
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "คุณมีตําแหน่งที่เปิดในบัญชี Binary เหล่านี้:"
@@ -15014,6 +15002,15 @@ msgstr "ท่านมีประสบการณ์ทำงานในภ
 msgid "Your %1 day withdrawal limit is currently %2%3."
 msgstr "ขีดจํากัดการถอนเงิน %1 วันของคุณ วงเงินการถอนขณะนี้ %2%3"
 
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits and withdrawals."
+msgstr ""
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits."
+msgstr ""
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable withdrawals."
+msgstr ""
+
 msgid "Your %1proof of address%2 has expired."
 msgstr "%1เอกสารแสดงที่อยู่%2ของท่านหมดอายุแล้ว"
 
@@ -15025,9 +15022,6 @@ msgstr "%1เอกสารแสดงตัวบุคคล%2ของท�
 
 msgid "Your %1proof of identity%2 has not been verified."
 msgstr "%1pหลักฐานยืนยันตัวตน%2 ของคุณยังไม่ได้รับการยืนยัน"
-
-msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
-msgstr "ทั้ง%1เอกสารแสดงตัวบุคคล%3 และ%2เอกสารแสดงที่อยู่%3ของท่านหมดอายุแล้ว"
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
 msgstr "%1pหลักฐานยืนยันตัวตน%3 และ %2pหลักฐานที่อยู่%3 ของคุณยังไม่ได้รับการยืนยัน"
@@ -15044,6 +15038,9 @@ msgstr "งบทดลองของคุณถูกรีเซ็ตแล
 msgid "Your Existing Accounts"
 msgstr "บัญชีของท่านที่มีอยู่"
 
+msgid "Your access to Cashier has been temporarily disabled as you have not set your 30-day turnover limit. Please go to %1Self-exclusion%2 and set your 30-day turnover limit."
+msgstr ""
+
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "บัญชีของท่านยังไม่ต้องดำเนินการยืนยันตัวตนในขณะนี้ %1 เราจะแจ้งให้ทราบ หากต้องดำเนินการ"
 
@@ -15052,6 +15049,12 @@ msgstr "บัญชีของท่านได้รับการตรว
 
 msgid "Your account has no Login/Logout activity."
 msgstr "บัญชีของท่านไม่มีประวัติ การเข้าใช้งานระบบ/การออกจากระบบ"
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and access your cashier."
+msgstr ""
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and request for withdrawals."
+msgstr ""
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "บัญชีของท่านได้รับการยืนยันตัวตนอย่างสมบูรณ์แล้ว และวงเงินการถอนเงินของท่านได้รับการยกระดับโดยการเพิ่มวงเงินแล้ว"
@@ -15062,8 +15065,8 @@ msgstr "บัญชีของคุณถูกปิดใช้งานใ
 msgid "Your account is now deactived."
 msgstr "บัญชีของคุณถูกปิดใช้งานในขณะนี้"
 
-msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
-msgstr "บัญชีของท่านถูกระงับ โปรด %1ติดต่อฝ่ายลูกค้าสัมพันธ์%2 เพื่อดำเนินการต่อไป"
+msgid "Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again."
+msgstr ""
 
 msgid "Your account remains under the retail client category."
 msgstr "บัญชีของท่านยังอยู่ในประเภทลูกค้ารายย่อย"
@@ -15080,8 +15083,17 @@ msgstr "ใบสมัครของท่านเพื่อปรับส
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "ใบสมัครของท่านจะถูกทวนสอบโดยฝ่ายการตลาดและฝ่ายตรวจสอบของเรา เมื่อได้รับการอนุมัติ ชื่อของท่านจะถูกแสดงในรายชื่อ %1ตัวแทนรับชำระเงิน%2 ของเรา"
 
+msgid "Your cashier is currently locked. Please contact us via live chat to find out how to unlock it."
+msgstr ""
+
 msgid "Your cashier is locked."
 msgstr "แคชเชียร์ของท่านถูกล็อก"
+
+msgid "Your cashier is locked. Please complete the %1financial assessment%2 to unlock it."
+msgstr ""
+
+msgid "Your cashier is locked. See %1how we protect your funds%2 before you proceed."
+msgstr ""
 
 msgid "Your cashier session has expired. Please try again."
 msgstr "เซสชันสำหรับการชำระเงินของท่านหมดอายุแล้ว โปรดลองใหม่อีกครั้ง"
@@ -15215,6 +15227,9 @@ msgstr "วงเงินการถอนของคุณ คือ %1%2"
 msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
 msgstr "คุณจะต้องเติมเงินในบัญชี MQL5 ของคุณเพื่อสมัครรับสัญญาณแบบชำระเงิน เรียนรู้ %1วิธีการเติมเงินในบัญชีของคุณ%2"
 
+msgid "You’ve not set your country of residence. To access Cashier, please update your %1country of residence%2 in the Personal details section in your account settings."
+msgstr ""
+
 msgid "ZEC vs US dollar"
 msgstr "ZEC เทียบกับดอลลาร์สหรัฐ"
 
@@ -15257,6 +15272,9 @@ msgstr "หน่วยของหนึ่งธุรกรรมแสดง
 msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's web interface, or"
 msgstr "ก. การเข้าถึงแพลตฟอร์มการซื้อขาย MT5 โดยตรงผ่านลิงค์ %1 ของเว็บของ DIEL's หรือ"
 
+msgid "a. Account opened under a false name"
+msgstr ""
+
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "คำสั่งในการสั่งดำเนินการธุรกรรมใดๆ เพื่อปิดโพซิชั่นที่เปิดอยู่ เมื่อราคาถึงระดับราคาที่ลูกค้าระบุเอาไว้"
 
@@ -15272,11 +15290,17 @@ msgstr "คำสั่งหนึ่งของลูกค้าที่ส
 msgid "b. Download and install the MT5 trading platform through the link %1"
 msgstr "ข. ดาวน์โหลด และ ติดตั้งแพลตฟอร์มการซื้อขาย MT5 จากลิงค์ %1"
 
+msgid "b. Submission of fraudulent or tampered document"
+msgstr ""
+
 msgid "back"
 msgstr "ด้านหลัง"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading stock indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "ไบนารี่ออปชัน ฟอเร็กซ์ การซื้อขายฟอเร็กซ์ การซื้อขายออนไลน์ การซื้อขายทางการเงิน การซื้อขายแบบไบนารี่ การซื้อขายดัชนี การซื้อขายดัชนีหุ้น การซื้อขายหุ้นโภคภัณฑ์ กลยุทธ์ไบนารี่ออปชัน โบรกเกอร์ไบนารี่ เดิมพันไบนารี่ แพลตฟอร์มการซื้อขายไบนารี่ออปชัน กลยุทธ์ไบนารี่ การเงิน การลงทุน การซื้อขาย"
+
+msgid "c. Opening of more than one Binary.com account"
+msgstr ""
 
 msgid "close"
 msgstr "ปิด"
