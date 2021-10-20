@@ -57,7 +57,8 @@ const BinaryLoader = (() => {
         const urlParams = new URLSearchParams(window.location.search);
         const qa_server = urlParams.get('qa_server');
         const app_id = urlParams.get('app_id');
-        if (qa_server && app_id) {
+        const URL_regex = /^(?:https?:\/\/)?(?!www | www\.)[A-Za-z0-9_-]+\.+[A-Za-z0-9.\/%&=\?_:;-]+$/i;
+        if (qa_server && app_id && URL_regex.test(qa_server) && !isNaN(app_id)) {
             localStorage.setItem('config.server_url', qa_server);
             localStorage.setItem('config.app_id', app_id);
         }
