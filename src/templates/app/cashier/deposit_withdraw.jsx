@@ -18,17 +18,26 @@ const DepositWithdraw = () => (
                 {it.L('There was a problem validating your personal details. Please update your [_1] [_2]here[_3].', '[_1]', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}
                 <br /> {it.L('If you need assistance feel free to contact our [_1]Customer Support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}
             </p>
-            <p id='not_authenticated_message'>{it.L('Please [_1]authenticate[_2] your account.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
+            <p id='cashier_personal_details_message'>
+                {it.L('Your [_1]personal details[_2] are incomplete. Please go to your account settings and complete your personal details to enable deposits and withdrawals.', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}
+            </p>
+            <p id='withdrawal_personal_details_message'>
+                {it.L('Your [_1]personal details[_2] are incomplete. Please go to your account settings and complete your personal details to enable withdrawals.', `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}
+            </p>
+            <p id='not_authenticated_message'>{it.L('Your account has not been authenticated. Please submit your [_1]proof of identity and proof of address[_2] to authenticate your account and access your cashier.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
+            <p id='high_risk_not_authenticated_message'>{it.L('Your account has not been authenticated. Please submit your [_1]proof of identity and proof of address[_2] to authenticate your account and request for withdrawals.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
         </div>
 
         <div id='errors' className='invisible'>
             <p className='center-text notice-msg'>
-                <span id='financial_risk_error'>{it.L('Financial Risk approval is required. Please contact [_1]customer support[_2] for more information.', `<a href="${it.url_for('contact')}">`, '</a>')}</span>
+                <span id='financial_risk_error'>{it.L('Please complete the Appropriateness Test to access your cashier.')}</span>
                 <span id='age_error'>{it.L('Account needs age verification, please contact [_1]customer support[_2] for more information.', `<a href="${it.url_for('contact')}">`, '</a>')}</span>
                 <span id='tnc_error'>{it.L('Please [_1]accept the updated Terms and Conditions[_2].', `<a href="${it.url_for('user/tnc_approvalws')}">`, '</a>')}</span>
-                <span id='limits_error'>{it.L('Please set your [_1]30-day turnover limit[_2] to access the cashier.', `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>')}</span>
+                <span id='limits_error'>{it.L('Your access to Cashier has been temporarily disabled as you have not set your 30-day turnover limit. Please go to [_1]Self-exclusion[_2] and set your 30-day turnover limit.', `<a href="${it.url_for('user/security/self_exclusionws')}">`, '</a>')}</span>
                 <span id='token_error'>{it.L('Verification code is wrong. Please use the link sent to your email.')}</span>
-                <sapn id='no_balance_error'>{it.L('Please [_1]deposit[_2] to your account.',  `<a href="${it.url_for('cashier/forwardws')}?action=deposit">`, '</a>')}</sapn>
+                <span id='no_balance_error'>{it.L('Please [_1]deposit[_2] to your account.',  `<a href="${it.url_for('cashier/forwardws')}?action=deposit">`, '</a>')}</span>
+                <span id='tin_error'>{it.L('You have not provided your tax identification number. This information is necessary for legal and regulatory requirements. Please go to [_1]Personal details[_2] in your account settings, and fill in your latest tax identification number.',  `<a href="${it.url_for('user/settings/detailsws')}">`, '</a>')}</span>
+                <span id='fa_error'>{it.L('Your cashier is locked. Please complete the [_1]financial assessment[_2] to unlock it.', `<a href="${it.url_for('user/settings/assessmentws')}">`, '</a>')}</span>
                 <span id='custom_error'>{it.L('Sorry, an error occurred while processing your request.')}</span>
             </p>
         </div>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-17 08:20\n"
+"PO-Revision-Date: 2021-10-19 13:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -3850,11 +3850,11 @@ msgstr "存款：即時"
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "MetaTrader 5 帳戶總是通過二元期權帳戶存款和提款 。"
 
-msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "您的帳戶已被禁存款和提款。請檢查您的電子郵件, 以瞭解更多詳情。"
-
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "到期的存款和/或付款將定時以客戶從DIEL指定幣種中選擇的貨幣進行."
+
+msgid "Deposits are temporarily unavailable due to system maintenance. You can make your deposits when the maintenance is complete."
+msgstr ""
 
 msgid "Deriv"
 msgstr "Deriv"
@@ -5094,9 +5094,6 @@ msgstr "金融評估"
 
 msgid "Financial Markets Analyst"
 msgstr "金融市場分析師"
-
-msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
-msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫%1客服部%2。"
 
 msgid "Financial STP"
 msgstr "金融 STP"
@@ -8485,8 +8482,11 @@ msgstr "我們今年的預計活躍客戶總數將超過79萬人。"
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "我們的業務建立在合作基礎上，我們旨在與合作夥伴建立長期的互利關係。但是，我們絕不會對業務誠信的堅持作出妥協。如果我們的合作夥伴不願意或無法遵守我們的原則，我們保留退出業務關係的權利。"
 
-msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "由於系統維護，收銀台暫時無法使用。一旦維護完成，您即可存取收銀台。"
+msgid "Our cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
+
+msgid "Our cashier is temporarily down due to system maintenance.You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
 
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "我們的佣金結構是簡單的二層級計劃。"
@@ -8497,8 +8497,8 @@ msgstr "我們對完整性和可靠性的承諾意味著我們一直都努力為
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "我們公司繼續茁壯成長，並在曼島獲得執照，可以為我們的英國客戶提供更好的服務。"
 
-msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "由於系統維護，加密貨幣收銀台暫時無法使用。一旦維護完成，您即可存取收銀台。"
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr ""
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "毋庸置疑，我們深受客戶喜愛。 2014年中旬，%1的歷史交易數量和每日新交易數量分別超過1億筆和13萬筆。"
@@ -8869,17 +8869,11 @@ msgstr "開立MT5帳戶前請%1驗證您的帳戶%2。"
 msgid "Please %1authenticate%2 your account to continue trading."
 msgstr "請%1驗證%2您的帳戶以繼續交易。"
 
-msgid "Please %1authenticate%2 your account."
-msgstr "請%1驗證%2您的帳戶。"
-
 msgid "Please %1complete the financial assessment%2 to open an MT5 account."
 msgstr "請％1完成財務評估％2，以開立MT5帳戶。"
 
 msgid "Please %1complete the trading experience section%2 in the financial assessment to open an MT5 account."
 msgstr "請完成財務評估中的％1交易經驗部分％2，以開立MT5帳戶。"
-
-msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
-msgstr "請%1完成帳戶資料%2，以提高取款和交易限額。"
 
 msgid "Please %1deposit%2 before transferring to client."
 msgstr "給客戶轉帳前請先%1存款%2。"
@@ -8923,14 +8917,11 @@ msgstr "請點選郵件上的連結以重設交易密碼。"
 msgid "Please complete the %1Real Account form%2 to verify your age as required by the %3UK Gambling%4 Commission (UKGC)."
 msgstr "請按照%3英國博彩%4委員會 (UKGC) 的需求完成%1真實帳戶表格%2以驗證您的年齡。"
 
-msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
-msgstr "請完成%1財務評估表格%2，以便提升您的取款和交易限額。"
+msgid "Please complete the Appropriateness Test to access your cashier."
+msgstr ""
 
 msgid "Please complete the Real Account form to verify your age as required by the %1UK Gambling%2 Commission (UKGC)."
 msgstr "請按照%1英國博彩%2委員會 (UKGC) 的需求完成真實帳戶表格以驗證您的年齡。"
-
-msgid "Please complete your %1personal details%2 before you proceed."
-msgstr "繼續操作前請填寫您的%1個人資料%2。"
 
 msgid "Please complete your personal details before you proceed."
 msgstr "繼續操作前請填寫您的個人資料。"
@@ -9070,17 +9061,8 @@ msgstr "請選擇月結單的日期範圍:"
 msgid "Please select the document type and enter the document number."
 msgstr "請選擇文件類型及輸入文件號。"
 
-msgid "Please set %1country of residence%2 before upgrading to a real-money account."
-msgstr "升級到真實資金帳戶前請先設定%1居住國%2。"
-
-msgid "Please set the %1currency%2 of your account."
-msgstr "請設定帳戶的%1幣種%2。"
-
-msgid "Please set your %130-day turnover limit%2 to access the cashier."
-msgstr "請設定%1 30天交易限額%2，以存取收銀台。"
-
-msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
-msgstr "請將 %130 天交易額限制%2 設置為刪除存款限額。"
+msgid "Please set your %1account currency%2 to enable deposits and withdrawals."
+msgstr ""
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "請指定您的優選實況調查間隔時間分鐘數"
@@ -9090,9 +9072,6 @@ msgstr "請將以上資訊傳到%1。"
 
 msgid "Please submit your %1proof of address%2."
 msgstr "請提交您的%1地址證明%2。"
-
-msgid "Please submit your %1proof of identity and proof of address%2."
-msgstr "請提交您的%1身份證明與地址證明%2。"
 
 msgid "Please submit your %1proof of identity%2."
 msgstr "請提交您的%1身份證明%2。"
@@ -10501,9 +10480,6 @@ msgstr "對不起，在處理您的帳戶時出錯。"
 msgid "Sorry, an error occurred while processing your request."
 msgstr "對不起，在處理您的請求時發生錯誤。"
 
-msgid "Sorry, deposits for this currency are currently disabled."
-msgstr "抱歉，此貨幣的存款目前被禁用。"
-
 msgid "Sorry, mobile version is not available yet."
 msgstr "對不起，手機版本還不可用。"
 
@@ -11449,6 +11425,9 @@ msgstr "根據資料保護法規要求，公司必須將本隱私權聲明所載
 msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, email, and email management software, along with any modifications."
 msgstr "公司是所有 %1 電子系統，包括但不限於任何所有軟體、電子郵件和電子郵件管理軟體，包括任何修改的所有權利、所有權或利益的唯一擁有人。"
 
+msgid "The Company likewise reserves the right to cancel any request for a deposit, withdrawal, or refund of the client’s funds."
+msgstr ""
+
 msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platform."
 msgstr "公司主要通過MT5平台提供差價合約（CFD）。"
 
@@ -11553,6 +11532,9 @@ msgstr "公司有權自行以任何理由拒絕和/或取消對任何人的服�
 
 msgid "The Company reserves the right to accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
 msgstr "公司保留接受或拒絕代理的申請的權利。如代理的申請被接受，公司須將代理使用的所有相關的適用資訊，包括但不限於姓名、地址、網址（如有）、電子郵件地址、電話號碼、佣金率和付款方法列入付款代理清單中，並在公司的網站%1www.binary.com%2上披露。"
+
+msgid "The Company reserves the right to block or withhold the funds in the client’s account and/or suspend or close the client’s account if it is known or there is reason to believe that one or more of the following cases are true:"
+msgstr ""
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug, or glitch in the Company website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, manifest mis-calculation of prices, or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors, or suspected system inadequacies that they may experience and may not abuse, or arbitrage based on, such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between the client and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot)."
 msgstr "如果有任何合約是以不反映公平市場價格獲得或銷售或由於未被發現的編程錯誤、公司網站軟體中的bug 或故障、市場資料輸入或合約定價滯後、資料輸入錯誤、雜散引號、不正確的定價參數或清單計算錯誤或其他明顯的錯誤(「明顯錯誤」) 而以異常低的風險水平下獲取或銷售，公司保留取消/沖銷交易或修改合約條款(包括但不限於入市和退市現價) 的權利。客戶有責任向公司報告他們可能遇到的任何此類問題、錯誤或可疑系統缺陷, 不得濫用或套利此類系統問題或錯誤從中獲取利潤。公司將努力在最短的時間內解決任何此類問題。對明顯錯誤合約的條款 (包括但不限於入市和退市現價) 的任何修正須是合理和公平的。客戶與公司之間就明顯的錯誤合約而對換的款項, 須按照合約條款 (包括但不限於入市和退市現價) 的修訂, 退還給收款人。"
@@ -12325,6 +12307,9 @@ msgstr "精彩的戶外活動"
 msgid "The high-risk and speculative nature of forex and CFDs"
 msgstr "外匯和差價合約的高風險和投機性質"
 
+msgid "The identification documents you submitted have expired. Please submit valid identity documents to unlock Cashier."
+msgstr ""
+
 msgid "The information outlined in Paragraph 1 of this section shall be submitted to %1partners@binary.com%2."
 msgstr "本條款第一段所列資料須提交至%1partners@binary.com%2。"
 
@@ -12786,9 +12771,6 @@ msgstr "本文件（「協議」）規定了「公司」（即 Deriv Services Lt
 
 msgid "This feature is available to demo accounts only."
 msgstr "此功能僅適用於模擬帳戶。"
-
-msgid "This feature is not relevant to demo accounts."
-msgstr "此功能與模擬帳戶沒有關聯。"
 
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "此功能僅適用於支付代理帳戶。"
@@ -13300,12 +13282,6 @@ msgstr "交易時間"
 msgid "Trading and Withdrawal Limits"
 msgstr "交易和取款限額"
 
-msgid "Trading and deposits have been disabled on your account. Kindly allow us some time to review the account."
-msgstr "您的帳戶已被禁交易和存款。請稍候，我們正在評估帳戶。"
-
-msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "您的帳戶已被禁交易和提款。請 %1聯繫客服部%2尋求幫助。"
-
 msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
 msgstr "二元期權和差價合約交易可能涉及重大風險。不要用您輸不起的錢來交易, 也不要用借來的錢交易。瞭解 %1負責任交易%2的詳情。"
 
@@ -13647,6 +13623,12 @@ msgstr "失業人員"
 
 msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
 msgstr "很遺憾，您所在的國家/地區不提供此服務。 如果您想交易乘數，請嘗試 Deriv 的 DTrader。"
+
+msgid "Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals."
+msgstr ""
+
+msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits."
+msgstr ""
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "市場行銷、數學、資訊技術/程式設計或任何相關領域的大學學位"
@@ -14224,9 +14206,6 @@ msgstr "具備良好的組織、行政和會計技能"
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "我們將更新您的限額。點選％1同意和接受％2以確認您對自己的行為負全部責任，如果您因此而上癮或蒙受損失，我們將不承擔任何責任。"
 
-msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
-msgstr "我們的收銀台系統正在更新，很快即將線上提供服務。更新詳情請參閱我們的%1s狀態頁面%2。"
-
 msgid "We’ve sent you an email"
 msgstr "我們已給您傳送電子郵件"
 
@@ -14629,8 +14608,8 @@ msgstr "取款：%1 至%2天"
 msgid "Withdrawal: Not applicable"
 msgstr "取款：不適用"
 
-msgid "Withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "您的帳戶已被禁提款。請檢查您的電子郵件, 以瞭解更多詳情。"
+msgid "Withdrawals are temporarily unavailable due to system maintenance. You can make your withdrawals when the maintenance is complete."
+msgstr ""
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
 msgstr "您的帳戶已被禁提款。須等您載入的文件通過驗證。"
@@ -14731,6 +14710,9 @@ msgstr "您將負責減低我們因欺詐和洗錢而面臨的風險和弊端行
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "您正在賣出基本貨幣並買入報價貨幣。"
 
+msgid "You are using a demo account. Please switch to a real account or create one to access Cashier."
+msgstr ""
+
 msgid "You can %1set a new currency%2 before you deposit for the first %3."
 msgstr "首次%3存款之前, 您可以%1設定新幣種%2。"
 
@@ -14821,6 +14803,9 @@ msgstr "過去 %3 天裡您已累計提取 %1%2。"
 msgid "You have already withdrawn %1%2."
 msgstr "您已提取 %1%2。"
 
+msgid "You have chosen to exclude yourself from trading on our website until %1. If you are unable to place a trade or deposit after your self-exclusion period, please contact us via live chat."
+msgstr ""
+
 msgid "You have created all accounts available to you."
 msgstr "您已開立所有可用的帳戶。"
 
@@ -14838,6 +14823,9 @@ msgstr "您的 MT5 帳戶資金不足。"
 
 msgid "You have not granted access to any applications."
 msgstr "您未獲權限存取任何應用程式。"
+
+msgid "You have not provided your tax identification number. This information is necessary for legal and regulatory requirements. Please go to %1Personal details%2 in your account settings, and fill in your latest tax identification number."
+msgstr ""
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "您在以下 Binary 帳戶中持有未平倉頭寸："
@@ -15010,6 +14998,15 @@ msgstr "您在金融業界工作至少一年, 擁有在我們平台上交易的�
 msgid "Your %1 day withdrawal limit is currently %2%3."
 msgstr "您目前%1天的取款限額是%2%3。"
 
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits and withdrawals."
+msgstr ""
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits."
+msgstr ""
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable withdrawals."
+msgstr ""
+
 msgid "Your %1proof of address%2 has expired."
 msgstr "您的%1地址證明%2已過期。"
 
@@ -15021,9 +15018,6 @@ msgstr "您的%1身份證明%2已過期。"
 
 msgid "Your %1proof of identity%2 has not been verified."
 msgstr "您的%1身份證明%2還未通過驗證。"
-
-msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
-msgstr "您的%1身份證明%3與%2地址證明%3已過期。"
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
 msgstr "您的%1身份證明%3與%2地址證明%3還未通過驗證。"
@@ -15040,6 +15034,9 @@ msgstr "您的模擬餘額已重設。"
 msgid "Your Existing Accounts"
 msgstr "您的目前帳戶"
 
+msgid "Your access to Cashier has been temporarily disabled as you have not set your 30-day turnover limit. Please go to %1Self-exclusion%2 and set your 30-day turnover limit."
+msgstr ""
+
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "此時您的帳戶不需要驗證。%1如果將來需要驗證，我們會通知您。"
 
@@ -15048,6 +15045,12 @@ msgstr "您的帳戶已通過驗證"
 
 msgid "Your account has no Login/Logout activity."
 msgstr "您的帳戶沒有登入/登出活動。"
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and access your cashier."
+msgstr ""
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and request for withdrawals."
+msgstr ""
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "您的帳戶已經得到完全驗證，且您的取款限額已經取消。"
@@ -15058,8 +15061,8 @@ msgstr "您的帳戶已停用."
 msgid "Your account is now deactived."
 msgstr "您的帳戶已停用."
 
-msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
-msgstr "您的帳戶已被限制交易。請%1聯繫客服部%2，以取得協助。"
+msgid "Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again."
+msgstr ""
 
 msgid "Your account remains under the retail client category."
 msgstr "您的帳戶仍屬於零售客戶類別。"
@@ -15076,8 +15079,17 @@ msgstr "您請求成為專業客戶的申請正在處理中。"
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "然後我們的審核和行銷部門將審查您的申請。一旦批准，我們將把您列入%1付款代理%2清單。"
 
+msgid "Your cashier is currently locked. Please contact us via live chat to find out how to unlock it."
+msgstr ""
+
 msgid "Your cashier is locked."
 msgstr "您的收銀台已鎖定。"
+
+msgid "Your cashier is locked. Please complete the %1financial assessment%2 to unlock it."
+msgstr ""
+
+msgid "Your cashier is locked. See %1how we protect your funds%2 before you proceed."
+msgstr ""
 
 msgid "Your cashier session has expired. Please try again."
 msgstr "您的收銀台時段已過期。請重試。"
@@ -15211,6 +15223,9 @@ msgstr "您的取款限額是%1%2。"
 msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
 msgstr "您需要為MQL5帳戶注資以訂閱付費訊號。了解%1如何為帳戶注資%2。"
 
+msgid "You’ve not set your country of residence. To access Cashier, please update your %1country of residence%2 in the Personal details section in your account settings."
+msgstr ""
+
 msgid "ZEC vs US dollar"
 msgstr "大零幣兌美元"
 
@@ -15253,6 +15268,9 @@ msgstr "代表產品披露和規範規定的標的工具的標準化數量的交
 msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's web interface, or"
 msgstr "a. 通過DIEL的網絡介面上的直接連結 %1存取 MT5 交易平台，或"
 
+msgid "a. Account opened under a false name"
+msgstr ""
+
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "當價格達到客戶指定的基準時對持倉頭寸執行平倉交易的指令"
 
@@ -15268,11 +15286,17 @@ msgstr "客戶在參考相關工具包括市場訂單、止損單、限價單等
 msgid "b. Download and install the MT5 trading platform through the link %1"
 msgstr "b. 通過連結 %1 下載並安裝 MT5 交易平台"
 
+msgid "b. Submission of fraudulent or tampered document"
+msgstr ""
+
 msgid "back"
 msgstr "返回"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading stock indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "二元期權、外匯、外匯交易、線上交易、金融交易、二元交易、指數交易、交易股票指數、外匯交易、交易商品、二元期權策略、二元經紀、二元投注、二元期權交易平台、二元策略、金融、投資、交易"
+
+msgid "c. Opening of more than one Binary.com account"
+msgstr ""
 
 msgid "close"
 msgstr "關閉"

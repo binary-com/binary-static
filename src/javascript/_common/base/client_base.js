@@ -341,8 +341,8 @@ const ClientBase = (() => {
 
         return (
             isAccountOfType('financial') ?
-                /(financial_assessment|trading_experience)_not_complete/.test(status) :
-                /financial_assessment_not_complete/.test(status)
+                /(financial_information|trading_experience)_not_complete/.test(status) :
+                /financial_information_not_complete/.test(status)
         );
     };
 
