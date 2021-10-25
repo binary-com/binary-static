@@ -38,8 +38,8 @@ const Statement               = require('../pages/user/account/statement/stateme
 const TopUpVirtual            = require('../pages/user/account/top_up_virtual/top_up_virtual');
 const Accounts                = require('../pages/user/accounts');
 const LostPassword            = require('../pages/user/lost_password');
-const MetaTrader              = require('../pages/user/metatrader/metatrader');
-const TypesOfAccounts         = require('../pages/user/metatrader/types_of_accounts');
+const MetaTrader = require('../pages/user/metatrader/metatrader');
+const TypesOfAccounts = require('../pages/user/metatrader/types_of_accounts');
 // TODO: Remove 'FinancialAccOpening' and 'RealAccOpening' after completely change the signup flow for all countries
 const FinancialAccOpening     = require('../pages/user/new_account/financial_acc_opening');
 const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
@@ -84,7 +84,7 @@ const pages_config = {
     authenticate             : { module: Authenticate,               is_authenticated: true, only_real: true },
     authorised_appsws        : { module: AuthorisedApps,             is_authenticated: true },
     careers                  : { module: StaticPages.Careers },
-    cashier                  : { module: Cashier },
+    cashier                  : { module: Cashier,                    is_authenticated: true },
     cfds                     : { module: GetStarted.CFDs },
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },

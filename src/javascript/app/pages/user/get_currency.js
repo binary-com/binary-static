@@ -11,7 +11,7 @@ const GetCurrency = (() => {
             if (is_different_company) {
                 if (Client.get('loginid') !== loginid) {
                     const currency = Client.get('currency', loginid);
-                    if (!Client.get('is_virtual', loginid) && currency) {
+                    if (!Client.get('is_virtual', loginid) && currency && !Client.get('is_disabled', loginid)) {
                         other_currencies.push(currency);
                     }
                 }

@@ -3,7 +3,7 @@ import React from 'react';
 const Tac = () => (
     <div>
         <h2 data-anchor='terms-and-conditions'>{it.L('Terms and conditions')}</h2>
-        <p><i>{it.L('Version 49. Last modified 23-11-2020.')}</i></p>
+        <p><i>{it.L('Version 50. Last modified 06-10-2021.')}</i></p>
         <p>{it.L('It is the responsibility of each client to read and understand this legal notice and the terms and conditions ("Terms") pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
@@ -95,6 +95,22 @@ const Tac = () => (
         <p>{it.L('If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client\'s account and withhold any funds accumulated therein.')}</p>
 
         <h2 data-anchor='fraud-and-money-laundering'>J. {it.L('Fraud and money laundering')}</h2>
+        <p> {it.L('The Company reserves the right to block or withhold the funds in the client’s account and/or suspend or close the client’s account if it is known or there is reason to believe that one or more of the following cases are true:')}
+            <ul >
+                <li>
+                    {it.L('a. Account opened under a false name')}
+                </li>
+                <li>
+                    {it.L('b. Submission of fraudulent or tampered document')}
+                </li>
+                <li>
+                    {it.L('c. Opening of more than one Binary.com account')}
+                </li>
+                <p>
+                    {it.L('The Company likewise reserves the right to cancel any request for a deposit, withdrawal, or refund of the client’s funds.')}
+                </p>
+            </ul>
+        </p>
         <p>{it.L('No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering, which may have several effects on clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities.')}</p>
         <p>{it.L('The anti-money laundering processes have the following effects on clients:')}
             <ul className='bullet'>

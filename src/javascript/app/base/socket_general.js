@@ -171,9 +171,8 @@ const BinarySocketGeneral = (() => {
             case 'DisabledClient':
                 showNoticeMessage(response.error.message);
                 break;
-
             case 'InvalidToken':
-                Client.sendLogoutRequest(true);
+                if (msg_type !== 'cashier') Client.sendLogoutRequest(true);
                 break;
             
             // no default

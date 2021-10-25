@@ -76,6 +76,14 @@ const Dialog = (() => {
                         el_btn_cancel.firstElementChild.textContent = options.cancel_text;
                     }
 
+                    if (options.ok_class) {
+                        el_btn_ok.classList.add('switch-ok-btn');
+                    }
+
+                    if (options.cancel_class) {
+                        el_btn_cancel.classList.add('switch-cancel-btn');
+                    }
+
                     el_btn_ok.addEventListener('click', () => {
                         el_dialog.remove();
                         if (typeof options.onConfirm === 'function') {

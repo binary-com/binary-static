@@ -14,8 +14,8 @@ const RealAccount = () => (
         </div>
 
         <div className='gr-12 static_full invisible' id='real_account_wrapper'>
-            <h1 id='page_title' />
             <div className='invisible' id='account_opening_steps'>
+                <h1 id='page_title' />
                 <div className='form-progress' id='form_progress' />
                 <div className='invisible' id='currency_step'>
                     <CurrencyForm />
@@ -33,14 +33,13 @@ const RealAccount = () => (
                     <TermsOfUseForm />
                 </div>
             </div>
-            <form className='gr-padding-10 invisible' id='financial_risk_warning'>
-                <p><strong>{it.L('Appropriateness Test: WARNING:')}</strong></p>
-                <p>{it.L('In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved).')}</p>
-                <p>{it.L('On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you.')}</p>
-                <p>{it.L('By clicking <strong>Accept</strong> below and proceeding with the Account Opening you should note that you may be exposing yourself to risks (which may be significant, including the risk of loss of the entire sum invested) that you may not have the knowledge and experience to properly assess or mitigate.')}</p>
-                <div className='align-end' id='submit_section'>
-                    <a id='financial_risk_decline' className='button button-secondary btn_cancel margin-v-10 inline-block-button' href={it.url_for('trading')}><span>{it.L('Decline')}</span></a>
-                    <button id='financial_risk_accept' className='button margin-v-10' type='submit' action='financial_risk_accept'>{it.L('Accept')}</button>
+            <form className='gr-padding-10 gr-10 auto-margin invisible' id='financial_risk_warning'>
+                <fieldset id={'Appropriateness'}>
+                    <legend><strong>{it.L('WARNING')}</strong></legend>
+                    <p className='gr-gutter'>{it.L('Our products and services may expose you to risks that can be substantial at times, including the risk of losing your entire investment. Please note that by clicking [_1]Continue[_2], you’ll be accepting these risks.', '<strong>', '</strong>')}</p>
+                </fieldset>
+                <div className='align-end'>
+                    <button id='financial_risk_accept' className='button margin-v-10' type='submit' action='financial_risk_accept'>{it.L('Continue')}</button>
                 </div>
             </form>
             <ClientMessage />

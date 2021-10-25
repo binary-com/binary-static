@@ -3,7 +3,7 @@
   "version": "3.8.0",
   "description": "Binary.com static content",
   "scripts": {
-    "test": "grunt test",
+    "test": "nyc grunt test",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
     "serve": "sudo -p 'enter password for sudo:' grunt serve",
     "start": "sudo -p 'enter password for sudo:' grunt start",
@@ -91,6 +91,7 @@
     "mock-local-storage": "1.1.7",
     "node-gettext": "2.0.0",
     "node-sass": "4.13.1",
+    "nyc": "^15.1.0",
     "postcss-scss": "0.4.1",
     "react-render-html": "0.6.0",
     "react-svg-loader": "3.0.1",
@@ -138,5 +139,24 @@
     "sinon": "7.2.2",
     "url-polyfill": "1.0.9",
     "web-push-notifications": "3.4.7"
+  },
+  "nyc": {
+    "reporter": [
+      "text-summary",
+      "lcov"
+    ],
+    "temp-directory": "./coverage/.nyc_output",
+    "all": true,
+    "exclude": "typings",
+    "extension": [
+      ".js",
+      ".jsx"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "include": [
+      "src/javascript/**/*.{js, jsx }",
+      "scripts/**/*.{js, jsx}"
+    ]
   }
 }

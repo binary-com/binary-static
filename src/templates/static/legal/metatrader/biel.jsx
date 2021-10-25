@@ -11,11 +11,13 @@ const BIEL = () => (
             <li>{it.L('CFDs on stock indices')}</li>
             <li>{it.L('CFDs on stocks')}</li>
             <li>{it.L('CFDs on Synthetic Indices')}</li>
+            <li>{it.L('CFDs on cryptocurrencies')}</li>
         </ol>
         <p>{it.L('The trading services described in this agreement are OTC. This means that one or more of the Underlying Instruments in which the client transacts with DIEL, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this agreement.')}</p>
         <p>{it.L('The client\'s trades will be carried out on an execution-only basis through our online platform.')}</p>
         <p>{it.L('The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments.')}</p>
         <p>{it.L('The client acknowledges that any explanations, trading recommendations, independent investment research, market commentary, or any other information provided by DIEL is provided to the client as marketing communication and/or educational material, for information purposes only, and does not construe any personal advice on the merits of investing.')}</p>
+        <p>{it.L('Please note that UK residents are not able to trade CFDs on cryptocurrencies or Synthetic Indices.')}</p>
 
         <h2 data-anchor='risk-acknowledgement'>{it.L('Risk acknowledgement')}</h2>
         <p>{it.L('By entering into an agreement with DIEL, the client understands that CFDs are highly speculative, complex products and carry a high degree of risk, especially those traded on Margin. Whilst the client may generate profit and increase their capital, they may also expose themselves to losing the entire sum invested, and their loss may exceed their deposit. The products referred to in this agreement are not appropriate for everyone. The client acknowledges that the trading services described in this agreement are designed for clients who are knowledgeable and experienced in the types of Transactions described in this agreement, and the client fully understands the associated risks before entering into this agreement with DIEL.')}</p>

@@ -1,13 +1,13 @@
+
+const moment                 = require('moment');
 const BinaryPjax             = require('../../base/binary_pjax');
 const Client                 = require('../../base/client');
 const BinarySocket           = require('../../base/socket');
 const Header                 = require('../../base/header');
-const Dialog                 = require('../../common/attach_dom/dialog');
 const Currency               = require('../../common/currency');
 const FormManager            = require('../../common/form_manager');
 const validEmailToken        = require('../../common/form_validation').validEmailToken;
 const handleVerifyCode       = require('../../common/verification_code').handleVerifyCode;
-const getCurrencies          = require('../../../_common/base/currency_base').getCurrencies;
 const localize               = require('../../../_common/localize').localize;
 const State                  = require('../../../_common/storage').State;
 const Url                    = require('../../../_common/url');
@@ -205,18 +205,6 @@ const DepositWithdraw = (() => {
             }
         } else {
             const client_currency = Client.get('currency');
-            if (cashier_type === 'deposit' && has_no_balance && Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'))) {
-                Dialog.confirm({
-                    id                : 'deposit_currency_change_popup_container',
-                    ok_text           : localize('Yes I\'m sure'),
-                    cancel_text       : localize('Cancel'),
-                    localized_title   : localize('Are you sure you want to deposit in [_1]?', [client_currency]),
-                    localized_message : localize('You will not be able to change your fiat account\'s currency after making this deposit. Are you sure you want to proceed?'),
-                    localized_footnote: localize('[_1]No, change my fiat account\'s currency now[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>']),
-                    onAbort           : () => BinaryPjax.load(Url.urlFor('cashier')),
-                });
-            }
-
             $iframe = $(container).find('#cashier_iframe');
 
             if (Currency.isCryptocurrency(client_currency)) {
@@ -264,23 +252,89 @@ const DepositWithdraw = (() => {
             if (/cashier_locked/.test(response_get_account_status.get_account_status.status)) {
                 if (/system_maintenance/.test(response_get_account_status.get_account_status.cashier_validation)) {
                     if (is_crypto) {
-                        showError('custom_error', localize('Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.'));
+                        showError('custom_error', localize('Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete.'));
                     } else {
-                        showError('custom_error', localize('Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete.'));
+                        showError('custom_error', localize('Our cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete.'));
                     }
                     return;
                 }
-                if (/ASK_UK_FUNDS_PROTECTION/.test(response_get_account_status.get_account_status.cashier_validation)) {
-                    initUKGC();
+                if (/ASK_FIX_DETAILS/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showMessage('cashier_personal_details_message');
                     return;
                 }
                 if (/ASK_SELF_EXCLUSION_MAX_TURNOVER_SET/.test(response_get_account_status.get_account_status.cashier_validation)) {
                     showError('limits_error');
                     return;
                 }
+                if (/ASK_UK_FUNDS_PROTECTION/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    initUKGC();
+                    return;
+                }
+                if (/FinancialAssessmentRequired/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('fa_error');
+                    return;
+                }
+                if (/ASK_TIN_INFORMATION/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('tin_error');
+                    return;
+                }
+                if (/ASK_AUTHENTICATE/.test(response_get_account_status.get_account_status.cashier_validation) && Client.isAccountOfType('financial')) {
+                    showMessage('not_authenticated_message');
+                    return;
+                }
+                if (/ASK_AUTHENTICATE/.test(response_get_account_status.get_account_status.cashier_validation) && response_get_account_status.get_account_status.risk_classification === 'high') {
+                    showMessage('high_risk_not_authenticated_message');
+                    return;
+                }
+                if (/documents_expired/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('custom_error', localize('The identification documents you submitted have expired. Please submit valid identity documents to unlock Cashier.'));
+                    return;
+                }
+                if (/ASK_FINANCIAL_RISK_APPROVAL/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('custom_error', localize('Please complete the Appropriateness Test to access your cashier.'));
+                    return;
+                }
+                if (/cashier_locked_status/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('custom_error', localize('Your cashier is currently locked. Please contact us via live chat to find out how to unlock it.'));
+                    return;
+                }
 
                 showError('custom_error', localize('Your cashier is locked.')); // Locked from BO
                 return;
+            } else if (cashier_type === 'deposit' && /deposit_locked/.test(response_get_account_status.get_account_status.status)) {
+                if (/system_maintenance/.test(response_get_account_status.get_account_status.cashier_validation) && is_crypto) {
+                    showError('custom_error', localize('Deposits are temporarily unavailable due to system maintenance. You can make your deposits when the maintenance is complete.'));
+                    return;
+                }
+                if (/SelfExclusion/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('custom_error', localize('You have chosen to exclude yourself from trading on our website until [_1]. If you are unable to place a trade or deposit after your self-exclusion period, please contact us via live chat.', moment(+Client.get('excluded_until') * 1000).format('DD MMM YYYY')));
+                    return;
+                }
+                if (/unwelcome_status/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('custom_error', localize('Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits.'));
+                    return;
+                }
+            } else if (cashier_type === 'withdraw' && /withdrawal_locked/.test(response_get_account_status.get_account_status.status)) {
+                if (/system_maintenance/.test(response_get_account_status.get_account_status.cashier_validation) && is_crypto) {
+                    showError('custom_error', localize('Withdrawals are temporarily unavailable due to system maintenance. You can make your withdrawals when the maintenance is complete.'));
+                    return;
+                }
+                if (/ASK_FIX_DETAILS/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showMessage('withdrawal_personal_details_message');
+                    return;
+                }
+                if (/ASK_AUTHENTICATE/.test(response_get_account_status.get_account_status.cashier_validation) && response_get_account_status.get_account_status.risk_classification === 'high') {
+                    showMessage('high_risk_not_authenticated_message');
+                    return;
+                }
+                if (/withdrawal_locked_status/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('custom_error', localize('Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals.'));
+                    return;
+                }
+                if (/no_withdrawal_or_trading_status/.test(response_get_account_status.get_account_status.cashier_validation)) {
+                    showError('custom_error', localize('Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals.'));
+                    return;
+                }
             }
             const account_currency_config = getPropertyValue(response_get_account_status.get_account_status, ['currency_config', Client.get('currency')]) || {};
             if ((cashier_type === 'deposit' && account_currency_config.is_deposit_suspended) ||
@@ -292,19 +346,6 @@ const DepositWithdraw = (() => {
         }
 
         await BinarySocket.wait('website_status');
-        const currency_config = getPropertyValue(getCurrencies(), [Client.get('currency')]) || {};
-        if (cashier_type === 'deposit') {
-            if (currency_config.is_deposit_suspended) {
-                // Currency deposit is suspended
-                showError('custom_error', localize('Sorry, deposits for this currency are currently disabled.'));
-                return;
-            }
-        } else if (currency_config.is_withdrawal_suspended) { // type is withdrawal
-            // Currency withdrawal is suspended
-            showError('custom_error', localize('Sorry, withdrawals for this currency are currently disabled.'));
-            return;
-        }
-
         const promises = [];
         if (cashier_type === 'deposit') {
             // to speed up page load

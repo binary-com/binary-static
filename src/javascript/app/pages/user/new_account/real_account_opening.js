@@ -18,6 +18,8 @@ const RealAccountOpening = (() => {
     const onLoad = async () => {
         real_account_signup_target = param('account_type');
         const currency_to_set = sessionStorage.getItem('new_financial_account_set_currency');
+        const shouldShowAccountCurrency = localStorage.getItem('SignAccountCurrencyForm');
+        const choosenCurrency = localStorage.getItem('choosenCurrency');
         if (currency_to_set) AccountOpening.setCurrencyForFinancialAccount(currency_to_set);
         else {
             const residence_list_promise = BinarySocket.send({ residence_list: 1 });
@@ -50,6 +52,13 @@ const RealAccountOpening = (() => {
                 financial_assessment,
             });
             current_step = 0;
+
+            if (shouldShowAccountCurrency) {
+                current_step = 1;
+                Object.assign(account_details, { currency: choosenCurrency });
+            }
+            localStorage.removeItem('SignAccountCurrencyForm');
+            localStorage.removeItem('choosenCurrency');
             steps.forEach(step => { step.body_module.init(step.fields, real_account_signup_target); });
 
             setPageTitle();
@@ -57,7 +66,53 @@ const RealAccountOpening = (() => {
             getElementById('real_account_wrapper').setVisibility(1);
             getElementById('account_opening_steps').setVisibility(1);
             renderStep();
+            runNextFix();
         }
+    };
+
+    const runNextFix = () => {
+        let userClickDetected = false;
+        let userTouchDetected = false;
+        const editableElementsSelector = 'input[type=text],input[type=email],input[type=number]';
+        const nonEditableElementsSelector = 'select,input[type=date],input[type=time]';
+
+        window.addEventListener('click', () => {
+            userClickDetected = true;
+            setTimeout(()=>{ userClickDetected = false; }, 500);
+        });
+
+        window.addEventListener('touchstart', () => {
+            userTouchDetected = true;
+            setTimeout(()=>{ userTouchDetected = false; }, 500);
+        });
+
+        document.querySelectorAll('form').forEach((form) => {
+            const formElements = Array.from(form.elements).filter(el => el.tagName !== 'FIELDSET');
+            const editableElements = form.querySelectorAll(editableElementsSelector);
+            const nonEditableElements = form.querySelectorAll(nonEditableElementsSelector);
+
+            for (let i = 1; i < formElements.length; i++){
+                formElements[i - 1].nextFormElement = formElements[i];
+            }
+
+            editableElements.forEach((element) => {
+                element.addEventListener('blur', (event) => {
+                    if (!userClickDetected && !userTouchDetected){
+                        if (element.nextFormElement && event.relatedTarget !== element.nextFormElement){
+                            element.nextFormElement.focus();
+                        }
+                    }
+                });
+            });
+
+            nonEditableElements.forEach((element) => {
+                element.addEventListener('change', () => {
+                    if (element.nextFormElement){
+                        element.nextFormElement.focus();
+                    }
+                });
+            });
+        });
     };
 
     const renderStep = (previous_step = 0) => {
@@ -73,7 +128,6 @@ const RealAccountOpening = (() => {
         });
         $.scrollTo(0, 500);
     };
-
     const onRiskAccept = (e) => {
         e.preventDefault();
         Object.assign(account_details, { accept_risk: 1 });
@@ -102,10 +156,7 @@ const RealAccountOpening = (() => {
     }));
 
     const setPageTitle = () => {
-        getElementById('page_title').innerHTML =
-            real_account_signup_target === 'maltainvest'
-                ? localize('Financial Account Opening')
-                : localize('Real money account opening');
+        getElementById('page_title').innerHTML = localize('Real money account opening');
     };
 
     const onUnload = () => { AccountOpening.showHidePulser(1); };

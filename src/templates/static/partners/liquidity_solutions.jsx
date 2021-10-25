@@ -31,7 +31,7 @@ const LiquiditySolutions = () => (
         <div className='container'>
             <div className='static_full'>
                 <h1>{it.L('Multi-asset liquidity solutions')}</h1>
-                <p>{it.L('[_1] provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies.', it.website_name)}</p>
+                <p>{it.L('[_1] provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, stocks, stock indices, popular cryptocurrencies, and Synthetic indices.', it.website_name)}</p>
                 <p>{it.L('Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible.')}</p>
             </div>
         </div>
