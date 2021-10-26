@@ -104,7 +104,7 @@ const Mt5Signals = () => (
                                             </ol>
                                         </div>
                                     </div>
-                                    <p>{it.L('[_1]Note:[_2] For a wider selection of signal providers, go to [_3]MQL5 showcase page[_4] and search for Deriv under the Broker server field.', '<strong>', '</strong>', '<a href="https://www.mql5.com/en/signals/">', '</a>')}
+                                    <p>{it.L('[_1]Note:[_2] For a wider selection of signal providers, go to [_3]MQL5 showcase page[_4] and search for Deriv under the Broker server field.', '<strong>', '</strong>', '<a href="https://www.mql5.com/en/signals/" target="_blank" rel="noreferrer noopener">', '</a>')}
                                     </p>
                                 </div>
                             </div>
