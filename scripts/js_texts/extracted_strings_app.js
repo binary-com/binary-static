@@ -556,6 +556,7 @@ module.exports = [
     'Sorry, an error occurred while processing your account.',
     'Sorry, an error occurred while processing your request.',
     'Sorry, no mobile phone bills',
+    'Sorry, options trading isn’t available in the United Kingdom and the Isle of Man',
     'Sorry, this feature is not available in your jurisdiction.',
     'Sorry, withdrawals for this currency are currently disabled.',
     'Sorry, your account is not authorised for any further contract purchases.',
