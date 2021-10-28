@@ -7,6 +7,7 @@ const FormProgress = require('../../../common/form_progress');
 const getElementById = require('../../../../_common/common_functions').getElementById;
 const param = require('../../../../_common/url').param;
 const { localize } = require('../../../../_common/localize');
+const isMobile = require('../../../../_common/os_detect').isMobile;
 
 const RealAccountOpening = (() => {
     let real_account_signup_target,
@@ -66,7 +67,58 @@ const RealAccountOpening = (() => {
             getElementById('real_account_wrapper').setVisibility(1);
             getElementById('account_opening_steps').setVisibility(1);
             renderStep();
+            if (isMobile()){
+                runNextFix();
+            }
         }
+    };
+
+    const runNextFix = () => {
+        let userClickDetected = false;
+        let userTouchDetected = false;
+        const editableElementsSelector = 'input[type=text],input[type=email],input[type=number]';
+        const nonEditableElementsSelector = 'select,input[type=date],input[type=time]';
+
+        window.addEventListener('click', () => {
+            userClickDetected = true;
+            setTimeout(()=>{ userClickDetected = false; }, 500);
+        });
+
+        window.addEventListener('touchstart', () => {
+            userTouchDetected = true;
+            setTimeout(()=>{ userTouchDetected = false; }, 500);
+        });
+
+        document.querySelectorAll('form').forEach((form) => {
+            const formElements = Array.from(form.elements).filter(el => el.tagName !== 'FIELDSET');
+            const editableElements = form.querySelectorAll(editableElementsSelector);
+            const nonEditableElements = form.querySelectorAll(nonEditableElementsSelector);
+            for (let i = 1; i < formElements.length; i++){
+                formElements[i - 1].nextFormElement = formElements[i];
+            }
+
+            editableElements.forEach((element) => {
+                element.addEventListener('blur', (event) => {
+                    if (!userClickDetected && !userTouchDetected){
+                        if (element.nextFormElement && event.relatedTarget !== element.nextFormElement){
+                            element.nextFormElement.focus();
+                            if (!element.nextFormElement.value.length) {
+                                element.nextFormElement.click();
+                            }
+                        }
+                    }
+                });
+            });
+
+            nonEditableElements.forEach((element) => {
+                element.addEventListener('change', () => {
+                    if (element.nextFormElement){
+                        element.nextFormElement.focus();
+                        element.nextFormElement.click();
+                    }
+                });
+            });
+        });
     };
 
     const renderStep = (previous_step = 0) => {
