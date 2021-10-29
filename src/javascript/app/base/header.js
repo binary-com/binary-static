@@ -381,7 +381,7 @@ const Header = (() => {
                 residence                 : () => buildMessage(localizeKeepPlaceholders('You’ve not set your country of residence. To access Cashier, please update your [_1]country of residence[_2] in the Personal details section in your account settings.'),                                                   'user/settings/detailsws'),
                 risk                      : () => buildMessage(localizeKeepPlaceholders('Your cashier is locked. Please complete the [_1]financial assessment[_2] to unlock it.'),                                   'user/settings/assessmentws'),
                 tax                       : () => buildMessage(localize('You have not provided your tax identification number. This information is necessary for legal and regulatory requirements. Please go to [_1]Personal details[_2] in your account settings, and fill in your latest tax identification number.'), 'user/settings/detailsws'),
-                unwelcome                 : () => localize('Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits.'),
+                unwelcome                 : () => localize('Unfortunately, you can only make withdrawals. Please contact us via live chat.'),
                 withdrawal_locked_review  : () => localize('Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified.'),
                 withdrawal_locked         : () => localize('Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals.'),
                 tnc                       : () => buildMessage(has_no_tnc_limit

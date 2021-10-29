@@ -311,7 +311,7 @@ const DepositWithdraw = (() => {
                     return;
                 }
                 if (/unwelcome_status/.test(response_get_account_status.get_account_status.cashier_validation)) {
-                    showError('custom_error', localize('Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits.'));
+                    showError('custom_error', localize('Unfortunately, you can only make withdrawals. Please contact us via live chat.'));
                     return;
                 }
             } else if (cashier_type === 'withdraw' && /withdrawal_locked/.test(response_get_account_status.get_account_status.status)) {
