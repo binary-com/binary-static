@@ -7,6 +7,10 @@ import InterviewPopup from '../components/interview_popup.jsx';
 import Title from '../components/title.jsx';
 import Elevio from '../includes/elevio.jsx';
 import LiveChat from '../includes/livechat.jsx';
+import GamingClosePopupIom from '../components/gaming_close_popup_iom.jsx';
+import GamingClosePopup from '../components/gaming_close_popup.jsx';
+import GameCloseBanner from '../components/game_close_banner.jsx';
+import GameCloseBannerIom from '../components/game_close_banner_iom.jsx';
 
 export const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
@@ -49,6 +53,8 @@ const Layout = () => {
                     <div id='content-holder'>
                         <MobileMenu />
                         <a href='javascript:;' id='scrollup' />
+                        <GameCloseBanner />
+                        <GameCloseBannerIom />
                         <InnerContent />
                     </div>
                     <Footer />
@@ -56,6 +62,8 @@ const Layout = () => {
                 <InterviewPopup /> {/* TODO: remove when UX research is finished */}
                 <Elevio />
                 <LiveChat />
+                <GamingClosePopup />
+                <GamingClosePopupIom />
             </body>
         </html>
     );

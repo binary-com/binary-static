@@ -120,6 +120,7 @@ const BinaryLoader = (() => {
         not_authenticated      : () => localize('This page is only available to logged out clients.'),
         no_mf                  : () => localize('Binary options trading is not available in your Multipliers account.'),
         no_mf_switch_to_options: () => localize('Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account.'),
+        no_options_mf_mx       : () => localize('Sorry, options trading isn’t available in the United Kingdom and the Isle of Man'),
         options_blocked        : () => localize('Binary options trading is not available in your country.'),
         residence_blocked      : () => localize('This page is not available in your country of residence.'),
         not_deactivated        : () => localize('Page not available, you did not deactivate your account.'),
@@ -172,6 +173,15 @@ const BinaryLoader = (() => {
                 }
             });
         }
+
+        if (config.no_mf && Client.isLoggedIn()) {
+            BinarySocket.wait('authorize').then((response) => {
+                if (['gb', 'im'].includes(response.authorize.country)) {
+                    displayMessage(error_messages.no_options_mf_mx());
+                }
+            });
+        }
+
         if (this_page === 'deactivated-account' && Client.isLoggedIn()) {
             displayMessage(error_messages.not_deactivated());
         }
@@ -216,6 +226,8 @@ const BinaryLoader = (() => {
             Client.isAccountOfType('financial')
                 || Client.isOptionsBlocked()
                 || ClientBase.get('residence') === 'fr'
+                || ClientBase.get('residence') === 'gb'
+                || ClientBase.get('residence') === 'im'
                 ? ''
                 : content.getElementsByTagName('h1')[0] || '';
         const div_container = createElement('div', { class: 'logged_out_title_container', html: base_html_elements });

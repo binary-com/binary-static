@@ -27,6 +27,7 @@ const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
 const isLoginPages     = require('../../_common/utility').isLoginPages;
 const isProduction     = require('../../config').isProduction;
+const ClosePopup = require('../common/game_close_popup');
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
 
@@ -123,6 +124,13 @@ const Page = (() => {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 RealityCheck.onLoad();
                 Menu.init();
+                const is_uk_residence = (Client.get('residence') === 'gb' || State.getResponse('website_status.clients_country') === 'gb');
+                const is_iom_client = (Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im');
+                if (is_uk_residence && Client.hasAccountType('gaming')) {
+                    ClosePopup.loginOnLoad();
+                } else if (is_iom_client && Client.hasAccountType('gaming')) {
+                    ClosePopup.loginOnLoad();
+                }
             });
         } else {
             Menu.init();

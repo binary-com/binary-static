@@ -66,53 +66,7 @@ const RealAccountOpening = (() => {
             getElementById('real_account_wrapper').setVisibility(1);
             getElementById('account_opening_steps').setVisibility(1);
             renderStep();
-            runNextFix();
         }
-    };
-
-    const runNextFix = () => {
-        let userClickDetected = false;
-        let userTouchDetected = false;
-        const editableElementsSelector = 'input[type=text],input[type=email],input[type=number]';
-        const nonEditableElementsSelector = 'select,input[type=date],input[type=time]';
-
-        window.addEventListener('click', () => {
-            userClickDetected = true;
-            setTimeout(()=>{ userClickDetected = false; }, 500);
-        });
-
-        window.addEventListener('touchstart', () => {
-            userTouchDetected = true;
-            setTimeout(()=>{ userTouchDetected = false; }, 500);
-        });
-
-        document.querySelectorAll('form').forEach((form) => {
-            const formElements = Array.from(form.elements).filter(el => el.tagName !== 'FIELDSET');
-            const editableElements = form.querySelectorAll(editableElementsSelector);
-            const nonEditableElements = form.querySelectorAll(nonEditableElementsSelector);
-
-            for (let i = 1; i < formElements.length; i++){
-                formElements[i - 1].nextFormElement = formElements[i];
-            }
-
-            editableElements.forEach((element) => {
-                element.addEventListener('blur', (event) => {
-                    if (!userClickDetected && !userTouchDetected){
-                        if (element.nextFormElement && event.relatedTarget !== element.nextFormElement){
-                            element.nextFormElement.focus();
-                        }
-                    }
-                });
-            });
-
-            nonEditableElements.forEach((element) => {
-                element.addEventListener('change', () => {
-                    if (element.nextFormElement){
-                        element.nextFormElement.focus();
-                    }
-                });
-            });
-        });
     };
 
     const renderStep = (previous_step = 0) => {
