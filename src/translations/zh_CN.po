@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-28 06:11\n"
+"PO-Revision-Date: 2021-10-29 08:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -595,6 +595,9 @@ msgstr "1%"
 msgid "1-2 years"
 msgstr "1-2 年"
 
+msgid "1. Ensure to close all your positions"
+msgstr ""
+
 msgid "1. Proof of identity"
 msgstr "1. 身份证明"
 
@@ -630,6 +633,9 @@ msgstr "双向报价"
 
 msgid "2. Selfie with proof of ID"
 msgstr "2. 带ID证件的自拍照片"
+
+msgid "2. Withdraw your funds"
+msgstr ""
 
 msgid "2. Your desktop window stays open"
 msgstr "2. 您的桌面窗口保持打开状态"
@@ -2098,8 +2104,8 @@ msgstr "上传文档之前，请确保您的%1个人详细信息%2已更新以�
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "客户在使用交易机器人或智能交易系统和远期交易之前, 应透过模拟账户进行测试。"
 
-msgid "Before you deactivate your account, you need to do the following:"
-msgstr "在停用账户之前，您需要执行以下操作："
+msgid "Before you deactivate your account, you’ll need to:"
+msgstr ""
 
 msgid "Beginner"
 msgstr "初学者"
@@ -2902,9 +2908,6 @@ msgstr "以合理可用的平仓水平将客户所有或任何未平仓头寸平
 
 msgid "Close identity verification screen"
 msgstr "关闭身份验证屏幕"
-
-msgid "Close open positions"
-msgstr "将持仓头寸平仓"
 
 msgid "Close your %1 account."
 msgstr "关闭您的 %1 账户。"
@@ -3721,6 +3724,9 @@ msgstr "停用"
 
 msgid "Deactivate Account"
 msgstr "停用账户"
+
+msgid "Deactivate account"
+msgstr ""
 
 msgid "Deactivate account?"
 msgstr "停用账户?"
@@ -6134,17 +6140,23 @@ msgstr "如果在几分钟内未收到电子邮件，请检查您的垃圾/广�
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "如您在我们的%1开源代码%2中发现任何漏洞， 请随时在GitHub提交引入请求。"
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
-msgstr "如您有 Binary 真实账户，请前往%1C收银台%2提取资金。"
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
+msgstr ""
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
-msgstr "如您有 Binary 真实账户，请前往%1投资组合%2将全部持仓头寸平仓。"
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
+msgstr ""
 
-msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr "如您有 MT5 真实账户，请前往%1MT5 仪表板%2提取资金。"
+msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
+msgstr ""
 
-msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr "如您有 MT5 真实账户，请登录以便将全部持仓头寸平仓。"
+msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
+msgstr ""
+
+msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
+msgstr ""
+
+msgid "If you have a DMT5 real account, log in to close any open positions."
+msgstr ""
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "如有付款参考编号（例如122），可在此处输入。"
@@ -14584,9 +14596,6 @@ msgstr "从MT5提款"
 msgid "Withdraw funds from your MT5 account"
 msgstr "从您的 MT5 账户中提取资金"
 
-msgid "Withdraw your funds"
-msgstr "提取资金"
-
 msgid "Withdrawal"
 msgstr "提款"
 
@@ -14818,6 +14827,9 @@ msgstr "您已开立所有可用的账户。"
 msgid "You have funds in these Binary accounts:"
 msgstr "您在以下Binary 账户中存有资金："
 
+msgid "You have funds in these Deriv X accounts:"
+msgstr ""
+
 msgid "You have funds in these MT5 accounts:"
 msgstr "您在以下 MT5 账户中存有资金："
 
@@ -14835,6 +14847,9 @@ msgstr "您没有提供税务编号。法律和监管规定要求提供此信息
 
 msgid "You have open positions in these Binary accounts:"
 msgstr "您在以下 Binary 账户中持有未平仓头寸："
+
+msgid "You have open positions in these Deriv X accounts:"
+msgstr ""
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "您在以下 MT5 账户中持有未平仓头寸："
