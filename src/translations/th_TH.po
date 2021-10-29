@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-29 08:38\n"
+"PO-Revision-Date: 2021-10-29 11:26\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -596,7 +596,7 @@ msgid "1-2 years"
 msgstr "1-2 ปี"
 
 msgid "1. Ensure to close all your positions"
-msgstr ""
+msgstr "1. ให้แน่ใจว่าจะปิดทุกตําแหน่งของคุณ"
 
 msgid "1. Proof of identity"
 msgstr "1. หลักฐานแสดงตัวบุคคล"
@@ -635,7 +635,7 @@ msgid "2. Selfie with proof of ID"
 msgstr "2. ภาพถ่ายตัวเองพร้อมบัตรประจำตัวประชาชน หรือ เอกสารแสดงตัวบุคคล (ถือในมือ)"
 
 msgid "2. Withdraw your funds"
-msgstr ""
+msgstr "2. ถอนเงินของคุณ"
 
 msgid "2. Your desktop window stays open"
 msgstr "2. หน้าต่างเดสก์ท็อปของคุณยังคงเปิดอยู่"
@@ -2105,7 +2105,7 @@ msgid "Before using the trading robots or Expert Advisors and forward trade, the
 msgstr "ก่อนการใช้หุ่นยนต์ซื้อขาย หรือ Expert Advisors และการซื้อขายล่วงหน้า ลูกค้าควรทดลองใช้งานฟังก์ชันดังกล่าวจากบัญชีทดลองใช้เสียก่อน"
 
 msgid "Before you deactivate your account, you’ll need to:"
-msgstr ""
+msgstr "ก่อนที่คุณจะปิดใช้งานบัญชีของคุณ คุณจะต้องทําสิ่งต่อไปนี้"
 
 msgid "Beginner"
 msgstr "ผู้เริ่มต้น"
@@ -3726,7 +3726,7 @@ msgid "Deactivate Account"
 msgstr "ปิดใช้งานบัญชี"
 
 msgid "Deactivate account"
-msgstr ""
+msgstr "ปิดใช้งานบัญชี"
 
 msgid "Deactivate account?"
 msgstr "ยกเลิกการเรียกใช้บัญชีหรือไม่?"
@@ -6141,22 +6141,22 @@ msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to
 msgstr "หากท่านพบความเปราะบาง หรือ ช่องโหว่ของระบบ %1 โอเพ่นซอสของเรา %2 โปรดส่งข้อมูลการเปลี่ยนแปลงให้เราทราบทาง GitHub"
 
 msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง Binary ให้ไปที่ %1แคชเชียร์%2 เพื่อถอนเงินของคุณ"
 
 msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
-msgstr ""
+msgstr "ถ้าคุณมีบัญชีจริงแบบไบนารี ให้ไปที่ %1พอร์ตโฟลิโอ%2 เพื่อปิดหรือขายตําแหน่งใดๆ ที่เปิดอยู่"
 
 msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง DMT5 หรือ Deriv X ให้ไปที่แผงควบคุม %1DMT5%2 หรือ %3Deriv X%4 เพื่อถอนเงินของคุณ"
 
 msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง DMT5 หรือ Deriv X ให้เข้าสู่ระบบเพื่อปิดตําแหน่งที่เปิดอยู่"
 
 msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง DMT5 ให้ไปที่แผงควบคุม %1DMT5%2 เพื่อถอนเงินของคุณ"
 
 msgid "If you have a DMT5 real account, log in to close any open positions."
-msgstr ""
+msgstr "หากคุณมีบัญชีจริง DMT5 ให้เข้าสู่ระบบเพื่อปิดตําแหน่งที่เปิดอยู่"
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "หากคุณมีข้อมูลอ้างอิงการชำระเงิน (ตัวอย่าง เช่น 122) คุณสามารถป้อนข้อมูลได้ที่นี่"
@@ -13646,8 +13646,8 @@ msgstr "น่าเสียดายที่บริการนี้ไม
 msgid "Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals."
 msgstr "ขออภัย คุณสามารถฝากเงินได้เท่านั้น โปรดติดต่อเราผ่านแชทสดเพื่อเปิดใช้งานการถอนเงิน"
 
-msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits."
-msgstr "ขออภัย คุณสามารถทำการถอนได้เท่านั้น โปรดติดต่อเราผ่านการแชทสดเพื่อเปิดใช้งานการฝากเงิน"
+msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat."
+msgstr ""
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "สำเร็จการศึกษาจากสาขาการตลาด คณิตศาสตร์ ไอที/การเขียนโปรแกรม และสาขาอื่นๆ ที่เกี่ยวข้อง"
@@ -14829,7 +14829,7 @@ msgid "You have funds in these Binary accounts:"
 msgstr "คุณมีเงินในบัญชี Binary เหล่านี้:"
 
 msgid "You have funds in these Deriv X accounts:"
-msgstr ""
+msgstr "คุณมีเงินในบัญชี Deriv X เหล่านี้:"
 
 msgid "You have funds in these MT5 accounts:"
 msgstr "คุณมีเงินในบัญชี MT5 เหล่านี้:"
@@ -14850,7 +14850,7 @@ msgid "You have open positions in these Binary accounts:"
 msgstr "คุณมีตําแหน่งที่เปิดในบัญชี Binary เหล่านี้:"
 
 msgid "You have open positions in these Deriv X accounts:"
-msgstr ""
+msgstr "คุณมีตําแหน่งที่เปิดในบัญชี Deriv X เหล่านี้:"
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "คุณมีตําแหน่งที่เปิดในบัญชี MT5 เหล่านี้:"

@@ -696,7 +696,7 @@ module.exports = [
     'Understood',
     'Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv.',
     'Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals.',
-    'Unfortunately, you can only make withdrawals. Please contact us via live chat to enable deposits.',
+    'Unfortunately, you can only make withdrawals. Please contact us via live chat.',
     'Unknown OS',
     'Unlink',
     'Unsupported browser',
