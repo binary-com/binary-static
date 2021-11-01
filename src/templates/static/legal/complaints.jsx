@@ -11,11 +11,7 @@ const Complaints = () => (
         <p data-show='eucountry'>{it.L('If the client\'s complaint relates to the Company\'s data processing practices, the client may formally submit a complaint to the Information and Data Protection Commissioner (Malta) on the entity\'s [_1]website[_2]. Alternatively, the client can make a complaint to any Supervisory Authority within the European Union.',
             '<a href="https://idpc.org.mt/en/Pages/Home.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
-        <p data-show='eucountry'>{it.L('Clients registered with Deriv (MX) Ltd can formally submit a complaint to their local Supervisory Authority.')}</p>
         <p data-show='eucountry'>{it.L('If the client\'s complaint relates to an outcome of a trade or a transaction and remains unresolved, it will turn into a dispute. Should clients be unsatisfied with the Company\'s response, they can choose to escalate their complaint to the regulator or to an alternative dispute resolution entity.')}</p>
-        <p data-show='eucountry'>{it.L('Clients registered with Deriv (MX) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filing the adjudication form on the [_1]ADR entity\'s website[_2].',
-            '<a href=\'https://www.ibas-uk.com\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')}
-        </p>
         <p data-show='eucountry'>{it.L('Clients registered with Deriv (Europe) Limited can refer their complaints to the Malta Gaming Authority via the [_1]Player Support Unity[_3]. They can file their unresolved disputes with the European Commission’s [_2]Online Dispute Resolution (ODR)[_3].',
             '<a href="https://www.mga.org.mt/support/online-gaming-support/" target="_blank" rel="noopener noreferrer">','<a href="https://ec.europa.eu/odr" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
