@@ -3,7 +3,7 @@ import React from 'react';
 const Tac = () => (
     <div>
         <h2 data-anchor='terms-and-conditions'>{it.L('Terms and conditions')}</h2>
-        <p><i>{it.L('Version 51. Last modified 26-10-2021.')}</i></p>
+        <p><i>{it.L('Version 51. Last modified 26/10/2021.')}</i></p>
         <p>{it.L('It is the responsibility of each client to read and understand this legal notice and the terms and conditions ("Terms") pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
@@ -61,7 +61,7 @@ const Tac = () => (
         <p data-show='eucountry'>{it.L('The Company is required by its licence to inform clients about what happens to the funds that the Company holds on account for clients, and the extent to which funds are protected in the event of insolvency. To learn more, please refer [_1]here[_2].',
             '<a href="http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
-        <p data-show='eucountry'>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (Europe) Limited has arrangements in place so that in the event of insolvency, it is able to meet its obligations to clients. These arrangements are in the form of a loan agreement between Deriv (Europe) Limited and the parent company, Deriv Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level of medium protection.')}</p>
+        <p data-show='eucountry'>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (Europe) Limited has arrangements in place so that in the event of insolvency, it is able to meet its obligations to clients. These arrangements are in the form of a loan agreement between Deriv (Europe) Limited and the parent company, Deriv Limited. This loan will always at minimum cover the client liabilities. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level of medium protection.')}</p>
         <p>{it.L('The Company has various deposit methods available, each with its own timing for deposits, some of which might not be available for withdrawals. Full details of available methods for deposits and withdrawals, including settlement times, can be seen [_1]here[_2].',
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>
