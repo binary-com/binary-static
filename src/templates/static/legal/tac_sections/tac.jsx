@@ -3,16 +3,15 @@ import React from 'react';
 const Tac = () => (
     <div>
         <h2 data-anchor='terms-and-conditions'>{it.L('Terms and conditions')}</h2>
-        <p><i>{it.L('Version 50. Last modified 06-10-2021.')}</i></p>
+        <p><i>{it.L('Version 51. Last modified 26-10-2021.')}</i></p>
         <p>{it.L('It is the responsibility of each client to read and understand this legal notice and the terms and conditions ("Terms") pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>
-            {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term "the Company" shall denote,')}&nbsp;
+            {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term "the Company" shall denote')}&nbsp;
             <span data-show='-eucountry'>{it.L('Deriv (SVG) LLC,')}&nbsp;</span>
-            <span>{it.L('Deriv (Europe) Limited,')}&nbsp;</span>
-            <span>{it.L('Deriv Investments (Europe) Limited, or')}&nbsp;</span>
-            <span>{it.L('Deriv (MX) Ltd.')}&nbsp;</span>
+            <span>{it.L('Deriv (Europe) Limited or')}&nbsp;</span>
+            <span>{it.L('Deriv Investments (Europe) Limited.')}&nbsp;</span>
         </p>
         <p>{it.L('These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products.')}</p>
 
@@ -41,12 +40,10 @@ const Tac = () => (
         <p>{it.L('The applicable jurisdiction shall be one of the following:')}</p>
         <ul className='bullet'>
             <li>{it.L('Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta')}</li>
-            <li>{it.L('Deriv (MX) Ltd: the Isle of Man')}</li>
             <li>{it.L('Deriv (FX) Ltd: Labuan, Territory of Malaysia')}</li>
             <li>{it.L('Deriv (BVI) Ltd: British Virgin Islands')}</li>
             <li>{it.L('Deriv (V) Ltd: Vanuatu')}</li>
             <li>{it.L('Deriv (SVG) LLC: St. Vincent and the Grenadines')}</li>
-            <li>{it.L('Champion Group Ltd: Vanuatu')}</li>
         </ul>
 
         <h2 data-anchor='contracts'>E. {it.L('Contracts')}</h2>
@@ -55,7 +52,6 @@ const Tac = () => (
 
         <h2 data-anchor='clients-liability'>F. {it.L('Client\'s liability')}</h2>
         <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, clients remain fully liable for any and all positions traded on their account and for any credit card transactions entered into the site for their account. Each client also indemnifies the Company against all costs and losses of any kind whatsoever, as may be incurred by the Company as a result, direct or indirect, of the client\'s failure to perform or settle such a transaction.')}</p>
-        <p>{it.L('[_1]In regard to customers of Deriv (MX) Ltd, online gambling debts are enforceable by law in the Isle of Man.[_2]', '<span data-show="eucountry">', '</span>')}</p>
         <p>{it.L('If the client deposits funds via credit or debit card, the client agrees to email or call the Company before placing a chargeback or a retrieval request so the Company can try to retrieve the funds for the client.')}</p>
         <p>{it.L('If the payment processor sends the Company a chargeback or retrieval notification, the Company reserves the right to suspend any or all of the client’s accounts and place a temporary hold on the funds available in it. In that case, any or all of the client’s accounts may remain suspended until the completion of the entire chargeback investigation. The same might apply if the client’s transacting bank initiates the chargeback or retrieval request without the client’s knowledge.')}</p>
         <p>{it.L('If the Company suffers a loss as a result of a chargeback or retrieval request, the client agrees to reimburse the Company the amount before the Company lifts off any limits imposed on any or all of the client’s accounts.')}</p>
@@ -65,7 +61,7 @@ const Tac = () => (
         <p data-show='eucountry'>{it.L('The Company is required by its licence to inform clients about what happens to the funds that the Company holds on account for clients, and the extent to which funds are protected in the event of insolvency. To learn more, please refer [_1]here[_2].',
             '<a href="http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
-        <p data-show='eucountry'>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (MX) Ltd & Deriv (Europe) Limited have arrangements in place so that in the event of insolvency they are able to meet their obligations to clients. These arrangements are in the form of a loan agreement between each respective company and the parent company, Deriv Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level of medium protection.')}</p>
+        <p data-show='eucountry'>{it.L('The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (Europe) Limited has arrangements in place so that in the event of insolvency, it is able to meet its obligations to clients. These arrangements are in the form of a loan agreement between Deriv (Europe) Limited and the parent company, Deriv Limited, this loan will always at minimum cover the client liabilities. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level of medium protection.')}</p>
         <p>{it.L('The Company has various deposit methods available, each with its own timing for deposits, some of which might not be available for withdrawals. Full details of available methods for deposits and withdrawals, including settlement times, can be seen [_1]here[_2].',
             `<a href='${it.url_for('cashier/payment_methods')}'>`, '</a>')}
         </p>
@@ -101,7 +97,6 @@ const Tac = () => (
                 <li>{it.L('Clients must register personally.')}</li>
                 <li>{it.L('Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, contact email address, and personal telephone number.')}</li>
                 <li>{it.L('The Company may, at its sole discretion or as required by regulations in place conduct appropriate "Know Your Customer" (KYC) procedures and require a client to provide proof of identity and suspend an account until satisfactory evidence of identity and address, source of funds, and/or source of wealth have been provided.')}</li>
-                <li>{it.L('In order for a UK resident to make use of the demo account, the client will first have to be age-verified. The client will also need to be fully verified before making use of the real money account. Verification can be done electronically or through submission of KYC documents.')}</li>
                 <li>{it.L('Requested KYC documentation could include')}
                     <ul className='bullet'>
                         <li>{it.L('Proof of identity – such as ID card, passport or driving licence')}</li>
