@@ -123,7 +123,7 @@ const RealAccountOpening = (() => {
 
             nonEditableElements.forEach((element) => {
                 element.addEventListener('change', () => {
-                    if (element.nextFormElement){
+                    if (!element.nextFormElement.classList.contains('next_step_button')){
                         element.nextFormElement.focus();
                         element.nextFormElement.click();
                     }
