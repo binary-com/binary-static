@@ -70,6 +70,17 @@ const RealAccountOpening = (() => {
             if (isMobile()){
                 runNextFix();
             }
+            $('.select').keyup((e) => {
+                const selected = Array.from(e.target.classList).includes('focused');
+                if (e.keyCode === 9 && selected) {
+                    e.target.click();
+                }
+            });
+            $('.select').keydown((e) => {
+                if (e.keyCode === 9) {
+                    e.target.classList.remove('focused');
+                }
+            });
         }
     };
 

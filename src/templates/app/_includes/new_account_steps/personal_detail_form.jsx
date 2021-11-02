@@ -46,8 +46,8 @@ const PersonalDetailForm = () => (
                 </Fieldset>
             </div>
             <div className='align-end' id='submit_section'>
-                <a className='button button-secondary btn_cancel action_previous margin-v-10 inline-block-button' href='javascript:;'><span>{it.L('Previous')}</span></a>
-                <button className='button margin-v-10' type='submit'>{it.L('Next')}</button>
+                <a className='button button-secondary btn_cancel action_previous margin-v-10 inline-block-button' href='javascript:;' tabIndex={1} ><span>{it.L('Previous')}</span></a>
+                <button className='button margin-v-10 next_step_button' type='submit' tabIndex={0}>{it.L('Next')}</button>
             </div>
         </form>
     </React.Fragment >

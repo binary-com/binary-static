@@ -19,8 +19,8 @@ const TermsOfUseForm = () => (
             <Tnc row_id='tnc_row' className='invisible' />
         </div>
         <div className='align-end' id='submit_section'>
-            <a className='button button-secondary btn_cancel action_previous margin-v-10 inline-block-button' href='javascript:;'><span>{it.L('Previous')}</span></a>
-            <button id='new_account_submit' className='button margin-v-10' type='submit' action='new_account'>{it.L('Add account')}</button>
+            <a className='button button-secondary btn_cancel action_previous margin-v-10 inline-block-button' href='javascript:;' tabIndex={1}><span>{it.L('Previous')}</span></a>
+            <button id='new_account_submit' className='button margin-v-10 next_step_button' type='submit' action='new_account' tabIndex={0}>{it.L('Add account')}</button>
         </div>
     </form>
 );

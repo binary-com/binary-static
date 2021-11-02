@@ -25,7 +25,7 @@ const CurrencyForm = () => (
 
                 <p className='invisible error-msg center-text' />
                 <div className='align-end' id='submit_section'>
-                    <button className='button' type='submit'>{it.L('Next')}</button>
+                    <button className='button next_step_button' type='submit'>{it.L('Next')}</button>
                 </div>
             </form>
         </div>

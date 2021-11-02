@@ -918,6 +918,10 @@ body #not_authenticated_financial ul.checked > li {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid $COLOR_LIGHT_GRAY;
+
+    .next_step_button:focus {
+        outline: 2px solid $COLOR_BLUE;
+    }
 }
 
 #page_title {
