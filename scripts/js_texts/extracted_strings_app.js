@@ -663,6 +663,7 @@ module.exports = [
     'To deposit money, please switch to your [_1] account.',
     'To open a bank account, we will need to verify your identity.',
     'To smoothly verify you, we need a better photo',
+    'To transfer funds to your MT5 account, enter an amount of [_1] or more',
     'To withdraw cryptocurrency, switch your account.',
     'To withdraw from MetaTrader 5 [_1] please [_2]Authenticate[_3] your Binary account.',
     'To withdraw money, please switch to your [_1] account.',
