@@ -554,13 +554,6 @@ const Regulation = () => {
                     <RegulatorText />
                     <RegulatorImage padding='4' padding_m='8' href='http://www.mga.org.mt/' image='images/pages/why-us/mga-logo2.svg' />
                 </Box>
-
-                <Box header={it.L('Deriv (MX) Ltd')} >
-                    <p>{it.L('Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man, is licensed and regulated in Great Britain by the Gambling Commission under [_1]account no. 39172[_3] and by the Gambling Supervision Commission in the Isle of Man ([_2]view licence[_3]).', '<a href="https://www.gamblingcommission.gov.uk/public-register/business/detail/39172" target="_blank" rel="noopener noreferrer">', '<a href="https://deriv.com/regulatory/Deriv_(MX)_Ltd.pdf" target="_blank" rel="noopener noreferrer">', '</a>')}</p>
-                    <p>{it.L('Clients in the Isle of Man and the UK who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd.')}</p>
-                    <RegulatorText />
-                    <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/regulation/isle-of-man.png' />
-                </Box>
             </div>
 
             <Box header={it.L('Deriv (SVG) LLC')} >
