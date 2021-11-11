@@ -382,6 +382,13 @@ const idv_document_data = {
             sample_image    : '',
         },
     },
+    br: {
+        cpf: {
+            new_display_name: 'CPF',
+            example_format  : '123.456.789-12',
+            sample_image    : '',
+        },
+    },
 };
 
 const getRegex = target_regex => {
