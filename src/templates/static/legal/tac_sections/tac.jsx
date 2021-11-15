@@ -48,6 +48,7 @@ const Tac = () => (
             <li>{it.L('Deriv (SVG) LLC: St. Vincent and the Grenadines')}</li>
             <li>{it.L('Champion Group Ltd: Vanuatu')}</li>
         </ul>
+        <p>{it.L('Deriv Limited — 13 Castle Street, St. Helier, JE2 3BT, Jersey — is the holding company for the above subsidiaries.')} </p>
 
         <h2 data-anchor='contracts'>E. {it.L('Contracts')}</h2>
         <p>{it.L('The Company does not provide a market amongst or between clients for investments, securities, derivatives, or speculations. Each financial contract purchased by a client via this site is an individual agreement between that client and the Company and is not a security, nor is it transferable, negotiable, or assignable to, or with, any third party.')}</p>
