@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-11-26 02:35\n"
+"PO-Revision-Date: 2021-11-26 02:49\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -2596,9 +2596,6 @@ msgstr "Sesi kasir telah berakhir"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Beberapa batasan tertentu akan dikenakan pada batasan atau tingkat harga kontrak. Pada dasarnya batasan atau tingkat adalah tidak terlalu dekat atau terlalu jauh dari tingkat harga pasar terkini."
 
-msgid "Champion Group Ltd: Vanuatu"
-msgstr "Champion Group Ltd: Vanuatu"
-
 msgid "Change API Endpoint"
 msgstr "Rubah Endpoint API"
 
@@ -3981,6 +3978,9 @@ msgstr "Deriv Investments (Europe) Limited."
 
 msgid "Deriv Limited"
 msgstr "Deriv Limited"
+
+msgid "Deriv Limited — 13 Castle Street, St. Helier, JE2 3BT, Jersey — is the holding company for the above subsidiaries."
+msgstr ""
 
 msgid "Deriv Limited, with registered office at 13 Castle Street, St. Helier, JE2 3BT, Jersey, is the holding company for the subsidiaries listed below."
 msgstr "Deriv Limited, yang beralamat di 13 Castle Street, St. Helier, JE2 3BT, Jersey adalah perusahaan induk dari anak perusahaan yang tercantum di bawah ini."
@@ -11396,8 +11396,8 @@ msgstr "Perusahaan tidak mentolerir segala bentuk perilaku yang tidak pantas. Ha
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Perusahaan berupaya untuk membuka atau menutup transaksi yang terkait dengan Order klien dengan harga yang wajar tersedia bagi Perusahaan, bertindak sesuai dengan tugas Perusahaan untuk melaksanakan eksekusi terbaik. Eksekusi terbaik berarti bahwa, ketika melaksanakan Order, Perusahaan harus mengambil semua langkah yang cukup untuk mendapatkan hasil sebaik mungkin bagi klien, dengan mempertimbangkan harga, biaya, kecepatan, kemungkinan eksekusi dan penyelesaian, ukuran, sifat, atau pertimbangan lain relevan dengan pelaksanaan Order."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "Perusahaan memiliki kebijakan Stop Out untuk mencegah klien kehilangan lebih dari dana deposit mereka. Namun, jika Posisi Berjalan klien tidak ditutup ketika Level margin pada akun riil MT5 mereka mencapai level stop out, perusahaan, atas kebijakannya sendiri, dapat mengesampingkan saldo negatif klien dengan mengkreditkan akun mereka jika akun mereka memiliki saldo negatif. Saldo negatif ditentukan dengan menggabungkan semua saldo negatif yang dimiliki selama periode 24-jam pada semua akun yang dimiliki oleh klien. Klien mengakui bahwa, kecuali jika mereka adalah pelanggan ritel Deriv Investments (Europe) Limited, atau pelanggan yang berdomisili di Australia, tawaran perlindungan saldo negatif oleh perusahaan kepada klien adalah atas kebijakan tunggal perusahaan dan perusahaan berhak untuk mengubah fitur dan kriteria kelayakan perlindungan saldo negatif tersebut setiap saat. Ketentuan perlindungan saldo negatif tidak berlaku pada situasi berikut:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. If the client’s balance becomes negative due to Stop Out, an automatic compensation will revert the client’s balance to zero. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Perusahaan berkewajiban umum untuk menjalankan bisnisnya dengan klien secara jujur, adil, dan profesional serta bertindak demi kepentingan terbaik klien saat membuka dan menutup opsi trading binary bersama klien."
@@ -13899,8 +13899,8 @@ msgstr "Verifikasi identitas"
 msgid "Verify your identity"
 msgstr "Verifikasi identitas Anda"
 
-msgid "Version 50. Last modified 06-10-2021."
-msgstr "Versi 50. Diperbarui terakhir pada 06-10-2021."
+msgid "Version 51. Last modified 17-11-2021."
+msgstr ""
 
 msgid "Video Room Facility"
 msgstr "Fasilitas Ruang Video"
