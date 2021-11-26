@@ -62,6 +62,11 @@ const Accounts = () => (
                     {it.L('Note: For any enquiries regarding disabled or excluded accounts, please contact [_1]Customer Support[_2].', `<a href="${it.url_for('contact')}">`, '</a>')}
                 </div>
             </div>
+            <div id='note_change_currency' className='invisible fill-bg-color gr-padding-10 gr-gutter'>
+                <div className='gr-gutter hint'>
+                    {it.L('Note: Please switch to your [_1] account to change currencies.', '<span id="change_currency"></span>')}
+                </div>
+            </div>
 
             <SeparatorLine className='gr-padding-30' sub_class='gr-padding-10' show_mobile invisible />
         </div>

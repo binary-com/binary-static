@@ -1,8 +1,8 @@
+const moment                   = require('moment');
 const BinaryPjax               = require('./binary_pjax');
 const Client                   = require('./client');
 const BinarySocket             = require('./socket');
 const getCurrencyDisplayCode   = require('../common/currency').getCurrencyDisplayCode;
-const getLandingCompanyValue   = require('../../_common/base/client_base').getLandingCompanyValue;
 const isAuthenticationAllowed  = require('../../_common/base/client_base').isAuthenticationAllowed;
 const GTM                      = require('../../_common/base/gtm');
 const Login                    = require('../../_common/base/login');
@@ -18,6 +18,7 @@ const applyToAllElements       = require('../../_common/utility').applyToAllElem
 const createElement            = require('../../_common/utility').createElement;
 const findParent               = require('../../_common/utility').findParent;
 const template                 = require('../../_common/utility').template;
+const Currency                 = require('../common/currency');
 
 const Header = (() => {
     const onLoad = () => {
@@ -281,38 +282,11 @@ const Header = (() => {
                 is_fully_authenticated,
                 status;
             const is_svg          = Client.get('landing_company_shortcode') === 'svg';
-            const loginid         = Client.get('loginid') || {};
-            const landing_company = State.getResponse('landing_company');
-            const requirements    = getLandingCompanyValue(loginid, landing_company, 'requirements');
-            const necessary_withdrawal_fields = is_svg
-                ? requirements.withdrawal
-                : [];
-            const necessary_signup_fields = is_svg
-                ? requirements.signup.map(field => (field === 'residence' ? 'country' : field))
-                : [];
-
-            const hasMissingRequiredField = () => {
-                // eslint-disable-next-line no-nested-ternary
-                const required_fields = is_svg ? [ ...necessary_signup_fields, ...necessary_withdrawal_fields ]
-                    : Client.isAccountOfType('financial') ? [
-                        'account_opening_reason',
-                        'address_line_1',
-                        'address_city',
-                        'phone',
-                        'tax_identification_number',
-                        'tax_residence',
-                        ...(Client.get('residence') === 'gb' || Client.get('landing_company_shortcode') === 'iom' ? ['address_postcode'] : []),
-                    ] : [];
-
-                const get_settings = State.getResponse('get_settings');
-                // date_of_birth can be 0 as a valid epoch, so we should only check missing values, '', null, or undefined
-                return required_fields.some(field => !(field in get_settings) || get_settings[field] === '' || get_settings[field] === null || get_settings[field] === undefined);
-            };
-
             const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
+            const buildMessageHref = (string, href) => template(string, [`<a href="${href}">`, '</a>']);
             const buildSpecificMessage = (string, additional) => template(string, [...additional]);
-            const buildMessageHref = (string, href) => template(string, [`<a href="${href}" target="_blank">`, '</a>']);
-            const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
+            const hasStatus = (string) => status && status.findIndex(s => s === string) !== -1
+                ? Boolean(true) : Boolean(false);
             const hasVerification = (string) => {
                 const { prompt_client_to_authenticate } = get_account_status;
                 const { identity, document, needs_verification } = authentication;
@@ -367,72 +341,101 @@ const Header = (() => {
             };
 
             const has_no_tnc_limit = is_svg;
+            const is_crypto = Currency.isCryptocurrency(Client.get('currency'));
+            const getSystemMaintenanceMessage = () => {
+                if (is_crypto) {
+                    if (hasStatus('deposit_locked')) {
+                        return localize('Deposits are temporarily unavailable due to system maintenance. You can make your deposits when the maintenance is complete.');
+                    } else if (hasStatus('withdrawal_locked')) {
+                        return localize('Withdrawals are temporarily unavailable due to system maintenance. You can make your withdrawals when the maintenance is complete.');
+                    }
+                    return localize('Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete.');
+                    
+                }
+                return localize('Our cashier is temporarily down due to system maintenance.You can access the Cashier in a few minutes when the maintenance is complete.');
+                
+            };
 
             const messages = {
-                cashier_locked          : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
-                system_maintenance      : () => buildMessageHref(localizeKeepPlaceholders('We’re updating our cashier system and it’ll be back online soon. Please see our [_1]status page[_2] for updates.'), 'https://deriv.statuspage.io/'),
-                currency                : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
-                unsubmitted             : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of identity and proof of address[_2].'),                                                                  'user/authenticate'),
-                expired                 : () => buildSpecificMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_3] and [_2]proof of address[_3] have expired.'),                                                   [`<a href='${Url.urlFor('user/authenticate')}'>`, `<a href='${Url.urlFor('user/authenticate')}?authentication_tab=poa'>`, '</a>']),
-                expired_identity        : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_2] has expired.'),                                                                                         'user/authenticate'),
-                expired_document        : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of address[_2] has expired.'),                                                                                          'user/authenticate', '?authentication_tab=poa'),
-                rejected                : () => buildSpecificMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_3] and [_2]proof of address[_3] have not been verified.'),    [`<a href='${Url.urlFor('user/authenticate')}'>`, `<a href='${Url.urlFor('user/authenticate')}?authentication_tab=poa'>`, '</a>']),
-                rejected_identity       : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_2] has not been verified.'),                                                                               'user/authenticate'),
-                rejected_document       : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of address[_2] has not been verified.'),                                                                                'user/authenticate', '?authentication_tab=poa'),
-                identity                : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of identity[_2].'),                                                                                       'user/authenticate'),
-                document                : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of address[_2].'),                                                                                        'user/authenticate', '?authentication_tab=poa'),
-                excluded_until          : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
-                financial_limit         : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
-                mt5_withdrawal_locked   : () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
-                no_withdrawal_or_trading: () => buildMessage(localizeKeepPlaceholders('Trading and withdrawals have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                 'contact'),
-                required_fields         : () => buildMessage(localizeKeepPlaceholders('Please complete your [_1]personal details[_2] before you proceed.'),                                                                   'user/settings/detailsws'),
-                residence               : () => buildMessage(localizeKeepPlaceholders('Please set [_1]country of residence[_2] before upgrading to a real-money account.'),                                                   'user/settings/detailsws'),
-                risk                    : () => buildMessage(localizeKeepPlaceholders('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),                                   'user/settings/assessmentws'),
-                tax                     : () => buildMessage(localizeKeepPlaceholders('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),                                            'user/settings/detailsws'),
-                unwelcome               : () => localize('Trading and deposits have been disabled on your account. Kindly allow us some time to review the account.'),
-                withdrawal_locked_review: () => localize('Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified.'),
-                withdrawal_locked       : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
-                tnc                     : () => buildMessage(has_no_tnc_limit
+                cashier_locked    : () => localize('Your cashier is currently locked. Please contact us via live chat to find out how to unlock it.'),
+                system_maintenance: () => getSystemMaintenanceMessage(),
+                currency          : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]account currency[_2] to enable deposits and withdrawals.'),                                                                                    'user/set-currency'),
+                unsubmitted       : () => buildMessage(get_account_status.risk_classification === 'high'
+                    ? localizeKeepPlaceholders('Your account has not been authenticated. Please submit your [_1]proof of identity and proof of address[_2] to authenticate your account and request for withdrawals.', 'user/authenticate')
+                    : localizeKeepPlaceholders('Your account has not been authenticated. Please submit your [_1]proof of identity and proof of address[_2] to authenticate your account and access your cashier.'), 'user/authenticate'),
+                expired                   : () => localize('The identification documents you submitted have expired. Please submit valid identity documents to unlock Cashier.'),
+                expired_identity          : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_2] has expired.'),                                                                                         'user/authenticate'),
+                expired_document          : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of address[_2] has expired.'),                                                                                          'user/authenticate', '?authentication_tab=poa'),
+                rejected                  : () => buildSpecificMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_3] and [_2]proof of address[_3] have not been verified.'),    [`<a href='${Url.urlFor('user/authenticate')}'>`, `<a href='${Url.urlFor('user/authenticate')}?authentication_tab=poa'>`, '</a>']),
+                rejected_identity         : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of identity[_2] has not been verified.'),                                                                               'user/authenticate'),
+                rejected_document         : () => buildMessage(localizeKeepPlaceholders('Your [_1]proof of address[_2] has not been verified.'),                                                                                'user/authenticate', '?authentication_tab=poa'),
+                identity                  : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of identity[_2].'),                                                                                       'user/authenticate'),
+                document                  : () => buildMessage(localizeKeepPlaceholders('Please submit your [_1]proof of address[_2].'),                                                                                        'user/authenticate', '?authentication_tab=poa'),
+                excluded_until            : () => localize('You have chosen to exclude yourself from trading on our website until [_1]. If you are unable to place a trade or deposit after your self-exclusion period, please contact us via live chat.', moment(+Client.get('excluded_until') * 1000).format('DD MMM YYYY')),
+                financial_limit           : () => buildMessage(localizeKeepPlaceholders('Your access to Cashier has been temporarily disabled as you have not set your 30-day turnover limit. Please go to [_1]Self-exclusion[_2] and set your 30-day turnover limit.'),                                                             'user/security/self_exclusionws'),
+                mt5_withdrawal_locked     : () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
+                no_withdrawal_or_trading  : () => localize('Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals.'),
+                required_fields           : () => buildMessage(localizeKeepPlaceholders('Your [_1]personal details[_2] are incomplete. Please go to your account settings and complete your personal details to enable deposits and withdrawals.'),                                                                   'user/settings/detailsws'),
+                withdrawal_required_fields: () => buildMessage(localizeKeepPlaceholders('Your [_1]personal details[_2] are incomplete. Please go to your account settings and complete your personal details to enable withdrawals.'),                                                                   'user/settings/detailsws'),
+                deposit_required_fields   : () => buildMessage(localizeKeepPlaceholders('Your [_1]personal details[_2] are incomplete. Please go to your account settings and complete your personal details to enable deposits.'),                                                                   'user/settings/detailsws'),
+                residence                 : () => buildMessage(localizeKeepPlaceholders('You’ve not set your country of residence. To access Cashier, please update your [_1]country of residence[_2] in the Personal details section in your account settings.'),                                                   'user/settings/detailsws'),
+                risk                      : () => buildMessage(localizeKeepPlaceholders('Your cashier is locked. Please complete the [_1]financial assessment[_2] to unlock it.'),                                   'user/settings/assessmentws'),
+                tax                       : () => buildMessage(localize('You have not provided your tax identification number. This information is necessary for legal and regulatory requirements. Please go to [_1]Personal details[_2] in your account settings, and fill in your latest tax identification number.'), 'user/settings/detailsws'),
+                unwelcome                 : () => localize('Unfortunately, you can only make withdrawals. Please contact us via live chat.'),
+                withdrawal_locked_review  : () => localize('Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified.'),
+                withdrawal_locked         : () => localize('Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals.'),
+                tnc                       : () => buildMessage(has_no_tnc_limit
                     ? localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2].')
                     : localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2] to lift your deposit and trading limits.'), 'user/tnc_approvalws'),
+                disabled               : () => localize('Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again.'),
+                financial_risk_approval: () => localize('Please complete the Appropriateness Test to access your cashier.'),
+                ask_uk_funds_protection: () => buildMessageHref(localizeKeepPlaceholders('Your cashier is locked. See [_1]how we protect your funds[_2] before you proceed.'), `${Url.urlFor('cashier/forwardws')}?action=deposit`),
             };
 
             const validations = {
-                cashier_locked          : () => hasStatus('cashier_locked'),
-                system_maintenance      : () => hasStatus('system_maintenance'),
-                currency                : () => !Client.get('currency'),
-                unsubmitted             : () => hasVerification('unsubmitted'),
-                expired                 : () => hasVerification('expired'),
-                expired_identity        : () => hasVerification('expired_identity'),
-                expired_document        : () => hasVerification('expired_document'),
-                rejected                : () => hasVerification('rejected'),
-                rejected_identity       : () => hasVerification('rejected_identity'),
-                rejected_document       : () => hasVerification('rejected_document'),
-                identity                : () => hasVerification('identity'),
-                document                : () => hasVerification('document'),
-                excluded_until          : () => Client.get('excluded_until'),
-                financial_limit         : () => hasStatus('max_turnover_limit_not_set'),
-                mt5_withdrawal_locked   : () => hasStatus('mt5_withdrawal_locked'),
-                no_withdrawal_or_trading: () => hasStatus('no_withdrawal_or_trading'),
-                required_fields         : () => hasMissingRequiredField(),
-                residence               : () => !Client.get('residence'),
-                risk                    : () => Client.getRiskAssessment(),
-                tax                     : () => Client.shouldCompleteTax(),
-                tnc                     : () => Client.shouldAcceptTnc(),
-                unwelcome               : () => hasStatus('unwelcome'),
-                withdrawal_locked_review: () => hasStatus('withdrawal_locked') && get_account_status.risk_classification === 'high' && !is_fully_authenticated && authentication.document.status === 'pending',
-                withdrawal_locked       : () => hasStatus('withdrawal_locked'),
+                cashier_locked            : () => hasStatus('cashier_locked_status'),
+                system_maintenance        : () => hasStatus('system_maintenance'),
+                currency                  : () => hasStatus('ASK_CURRENCY'),
+                unsubmitted               : () => hasStatus('ASK_AUTHENTICATE'),
+                expired                   : () => hasStatus('documents_expired'),
+                expired_identity          : () => hasVerification('expired_identity'),
+                expired_document          : () => hasVerification('expired_document'),
+                rejected                  : () => hasVerification('rejected'),
+                rejected_identity         : () => hasVerification('rejected_identity'),
+                rejected_document         : () => hasVerification('rejected_document'),
+                identity                  : () => hasVerification('identity'),
+                document                  : () => hasVerification('document'),
+                excluded_until            : () => hasStatus('SelfExclusion'),
+                financial_limit           : () => hasStatus('ASK_SELF_EXCLUSION_MAX_TURNOVER_SET'),
+                mt5_withdrawal_locked     : () => hasStatus('mt5_withdrawal_locked'),
+                no_withdrawal_or_trading  : () => hasStatus('no_withdrawal_or_trading_status'),
+                required_fields           : () => hasStatus('cashier_locked') && hasStatus('ASK_FIX_DETAILS'),
+                withdrawal_required_fields: () => hasStatus('withdrawal_locked') && hasStatus('ASK_FIX_DETAILS'),
+                deposit_required_fields   : () => hasStatus('deposit_locked') && hasStatus('ASK_FIX_DETAILS'),
+                residence                 : () => hasStatus('no_residence'),
+                risk                      : () => hasStatus('FinancialAssessmentRequired'),
+                tax                       : () => hasStatus('ASK_TIN_INFORMATION'),
+                tnc                       : () => Client.shouldAcceptTnc(),
+                unwelcome                 : () => hasStatus('unwelcome_status'),
+                withdrawal_locked_review  : () => hasStatus('withdrawal_locked') && get_account_status.risk_classification === 'high' && !is_fully_authenticated && authentication.document.status === 'pending',
+                withdrawal_locked         : () => hasStatus('withdrawal_locked') || hasStatus('withdrawal_locked_status'),
+                disabled                  : () => hasStatus('disabled_status'),
+                financial_risk_approval   : () => hasStatus('ASK_FINANCIAL_RISK_APPROVAL'),
+                ask_uk_funds_protection   : () => hasStatus('ASK_UK_FUNDS_PROTECTION'),
             };
 
             // real account checks in order
             const check_statuses_real = [
+                'currency',
                 'excluded_until',
                 'tnc',
                 'required_fields',
+                'withdrawal_required_fields',
+                'deposit_required_fields',
                 'financial_limit',
+                'ask_uk_funds_protection',
                 'risk',
                 'tax',
-                'currency',
                 'unsubmitted',
                 'expired',
                 'expired_identity',
@@ -442,6 +445,7 @@ const Header = (() => {
                 'rejected_document',
                 'identity',
                 'document',
+                'financial_risk_approval',
                 'unwelcome',
                 'no_withdrawal_or_trading',
                 'system_maintenance',
@@ -449,6 +453,7 @@ const Header = (() => {
                 'withdrawal_locked_review',
                 'withdrawal_locked',
                 'mt5_withdrawal_locked',
+                'disabled',
             ];
 
             // virtual checks

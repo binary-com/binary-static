@@ -27,6 +27,12 @@ const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
 const isLoginPages     = require('../../_common/utility').isLoginPages;
 const isProduction     = require('../../config').isProduction;
+const ClosePopup = require('../common/game_close_popup');
+const EuClosePopup = require('../common/eu_close_popup');
+const EuCloseBanner = require('../common/eu_close_baner');
+const CloseBanner  = require('../common/game_close_banner');
+const RedirectBanner = require('../common/redirect_banner');
+const DerivBanner = require('../common/deriv_banner');
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
 
@@ -122,10 +128,32 @@ const Page = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
                 RealityCheck.onLoad();
+                RedirectBanner.loginOnLoad();
                 Menu.init();
+                const is_uk_residence = (Client.get('residence') === 'gb' || State.getResponse('website_status.clients_country') === 'gb');
+                const is_iom_client = (Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im');
+                const is_be_client = (Client.get('residence') === 'be' || State.getResponse('website_status.clients_country') === 'be') && Client.hasAccountType('gaming');
+                const is_at_client = (Client.get('residence') === 'at' || State.getResponse('website_status.clients_country') === 'at') && Client.hasAccountType('gaming');
+                const mlt_check = ClientBase.get('landing_company_shortcode') === 'malta';
+                const mf_check = ClientBase.get('landing_company_shortcode') === 'maltainvest';
+                if (is_uk_residence && Client.hasAccountType('gaming')) {
+                    CloseBanner.onLoad();
+                    ClosePopup.loginOnLoad();
+                    CloseBanner.onLoad();
+                } else if (is_iom_client && Client.hasAccountType('gaming')) {
+                    CloseBanner.onLoad();
+                    ClosePopup.loginOnLoad();
+                } else if (mlt_check && !mf_check || is_be_client && !mf_check || is_at_client && !mf_check) {
+                    EuClosePopup.loginOnLoad();
+                    EuCloseBanner.onLoad();
+                } else {
+                    DerivBanner.loginOnLoad();
+                }
+                
             });
         } else {
             Menu.init();
+            RedirectBanner.onLoad();
             if (!LocalStore.get('date_first_contact')) {
                 BinarySocket.wait('time').then((response) => {
                     LocalStore.set('date_first_contact', toISOFormat(moment(response.time * 1000).utc()));

@@ -2,13 +2,17 @@ const Cookies        = require('js-cookie');
 const getElementById = require('../../_common/common_functions').getElementById;
 const createElement  = require('../../_common/utility').createElement;
 const getLanguage       = require('../../_common/language').get;
+const BinarySocket = require('../base/socket');
+const State = require('../../_common/storage').State;
+const Client = require('../base/client');
+const isEuCountrySelected      = require('../../_common/utility').isEuCountrySelected;
 
 const DerivBanner = (() => {
     let el_multiplier_banner_container,
         el_close_button,
         multiplier_link;
 
-    const onLoad = () => {
+    const redBanner = () => {
         const is_deriv_banner_dismissed = localStorage.getItem('is_deriv_banner_dismissed');
 
         if (!is_deriv_banner_dismissed) {
@@ -36,6 +40,29 @@ const DerivBanner = (() => {
         }
     };
 
+    const onLoad = () => {
+
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+
+            const eu_country = isEuCountrySelected(Client.get('residence')) || isEuCountrySelected(State.getResponse('website_status.clients_country'));
+
+            if (eu_country) return;
+            redBanner();
+        });
+    };
+
+    const loginOnLoad = () => {
+
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+
+            const client_account = Client.get('landing_company_shortcode') === 'svg';
+
+            if (!client_account) return;
+            redBanner();
+
+        });
+    };
+
     const onClose = () => {
         el_multiplier_banner_container.setVisibility(0);
         localStorage.setItem('is_deriv_banner_dismissed', 1);
@@ -50,6 +77,8 @@ const DerivBanner = (() => {
     return {
         onLoad,
         onUnload,
+        loginOnLoad,
+        redBanner,
     };
 })();
 

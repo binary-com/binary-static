@@ -132,6 +132,13 @@ const PersonalDetails = (() => {
         const has_name          = /name/.test(immutable_fields.toString());
         const has_date_of_birth = /date_of_birth/.test(immutable_fields.toString());
         const has_tax_info      = /tax/.test(immutable_fields.toString());
+
+        $('p').each(function() {
+            if (this.className.indexOf('cs-msg') > -1){
+                this.setVisibility(0);
+            }
+        });
+
         if (has_name && has_date_of_birth && has_tax_info) {
             $('.full-cs-msg').setVisibility(1);
         } else if (!has_name && !has_date_of_birth && !has_tax_info) {

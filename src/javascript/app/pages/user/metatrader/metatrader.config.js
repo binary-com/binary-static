@@ -452,17 +452,6 @@ const MetaTraderConfig = (() => {
                 selector   : fields.deposit.txt_amount.id,
                 validations: [
                     ['req', { hide_asterisk: true }],
-                    // check if balance is less than the minimum limit for transfer
-                    // e.g. client balance could be 0.45 but min limit could be 1
-                    ['custom', {
-                        func: () => {
-                            const deposit_input_value   = document.querySelector('#txt_amount_deposit').value;
-                            const min_req_balance = Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5');
-
-                            return +deposit_input_value > +min_req_balance;
-                        },
-                        message: localize('Should be more than [_1]', Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5')),
-                    }],
                     // check if amount is between min and max
                     ['number', {
                         type: 'float',
@@ -477,6 +466,18 @@ const MetaTraderConfig = (() => {
                         decimals    : Currency.getDecimalPlaces(Client.get('currency')),
                         format_money: true,
                     }],
+                    // check if balance is less than the minimum limit for transfer
+                    // e.g. client balance could be 0.45 but min limit could be 1
+                    ['custom', {
+                        func: () => {
+                            const deposit_input_value   = document.querySelector('#txt_amount_deposit').value;
+                            const min_req_balance = Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5');
+
+                            return +deposit_input_value >= +min_req_balance;
+                        },
+                        message: localize('To transfer funds to your MT5 account, enter an amount of [_1] or more', Currency.getTransferLimits(Client.get('currency'), 'min', 'mt5')),
+                    }],
+                    
                 ],
             },
         ],
@@ -485,6 +486,20 @@ const MetaTraderConfig = (() => {
                 selector   : fields.withdrawal.txt_amount.id,
                 validations: [
                     ['req', { hide_asterisk: true }],
+                    // check if amount is between min and max
+                    ['number', {
+                        type: 'float',
+                        min : () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5'),
+                        max : () => {
+                            const mt5_limit = Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'max', 'mt5');
+                            const balance   = getAccountsInfo(Client.get('mt5_account')).info.balance;
+
+                            // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
+                            return Math.min(mt5_limit, balance || mt5_limit);
+                        },
+                        decimals    : 2,
+                        format_money: true,
+                    }],
                     // check if entered amount is less than the available balance
                     // e.g. transfer amount is 10 but client balance is 5
                     ['custom', {
@@ -508,20 +523,6 @@ const MetaTraderConfig = (() => {
                             return balance && is_balance_more_than_min_req;
                         },
                         message: () => localize('Should be more than [_1]', Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5')),
-                    }],
-                    // check if amount is between min and max
-                    ['number', {
-                        type: 'float',
-                        min : () => Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'min', 'mt5'),
-                        max : () => {
-                            const mt5_limit = Currency.getTransferLimits(getCurrency(Client.get('mt5_account')), 'max', 'mt5');
-                            const balance   = getAccountsInfo(Client.get('mt5_account')).info.balance;
-
-                            // if balance is 0, pass this validation so we can show insufficient funds in the next custom validation
-                            return Math.min(mt5_limit, balance || mt5_limit);
-                        },
-                        decimals    : 2,
-                        format_money: true,
                     }],
                 ],
             },

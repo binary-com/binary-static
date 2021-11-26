@@ -82,6 +82,10 @@ const getSetElementValue = (element, text, type) => { // eslint-disable-line con
  */
 const getElementById = (id_selector, parent = document) => parent.getElementById(id_selector) || createElement('div');
 
+const getElementsByClassName = (class_selector, parent = document) => parent.getElementsByClassName(class_selector) || createElement('div');
+
+const querySelector = (selector, parent = document) => parent.querySelector(selector) || createElement('div');
+
 /*
  * @param  {String}  class_name    the selector class for the element
  * @param  {Element} parent        optional selector to use for parent, defaults to document
@@ -92,12 +96,14 @@ const getVisibleElement = (class_name, parent = document) =>
 
 module.exports = {
     jqueryuiTabsToDropdown,
+    querySelector,
     makeOption,
     isVisible,
     checkInput,
     dateValueChanged,
     selectorExists,
     getElementById,
+    getElementsByClassName,
     getVisibleElement,
     elementTextContent: (element, text) => getSetElementValue(element, text, 'textContent'),
     elementInnerHtml  : (element, text) => getSetElementValue(element, text, 'innerHTML'),

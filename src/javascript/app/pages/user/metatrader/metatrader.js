@@ -329,6 +329,11 @@ const MetaTrader = (() => {
                             });
                         }
                         MetaTraderUI.enableButton(action, response);
+                        await BinarySocket.send({ get_account_status: 1 });
+                        if (!MetaTraderUI.shouldSetTradingPassword()) {
+                            MetaTraderUI.displayStep(3);
+                            MetaTraderUI.displayFormMessage(response.error.message, action);
+                        }
                     } else {
                         await BinarySocket.send({ get_account_status: 1 });
                         if (getAccountsInfo(acc_type) && getAccountsInfo(acc_type).info) {

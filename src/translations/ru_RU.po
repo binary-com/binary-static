@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-14 13:29\n"
+"PO-Revision-Date: 2021-11-26 07:32\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgid " All calls are recorded for training and monitoring purposes."
 msgstr " Все звонки записываются с целью обучения и мониторинга."
 
 msgid " The Company reserves the right to change the requirements of transactions between the Agent’s account and clients."
-msgstr ""
+msgstr " Компания оставляет за собой право изменять требования к транзакциям между счетом Агента и клиентами."
 
 msgid " means %1."
 msgstr " означает %1."
@@ -595,6 +595,9 @@ msgstr "1%"
 msgid "1-2 years"
 msgstr "1-2 года"
 
+msgid "1. Ensure to close all your positions"
+msgstr "1. Убедитесь, что закрыли все позиции"
+
 msgid "1. Proof of identity"
 msgstr "1. Подтверждение личности"
 
@@ -630,6 +633,9 @@ msgstr "Оцените движение рынка в двух направле�
 
 msgid "2. Selfie with proof of ID"
 msgstr "2. Селфи с удостоверением личности"
+
+msgid "2. Withdraw your funds"
+msgstr "2. Выведите средства"
 
 msgid "2. Your desktop window stays open"
 msgstr "2. Окно программы остается открытым."
@@ -753,6 +759,9 @@ msgstr "Степень бакалавра в области финансов, б
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is Synthetic Indices."
 msgstr "Бинарный опцион – это контракт, при котором одна сторона берет на себя обязательства выплатить другой стороне заранее установленную сумму, если цена заданного актива изменится в определенном направлении за указанный период времени. Основным классом базовых активов для бинарных опционов, предлагаемых Компанией, являются синтетические индексы."
+
+msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
+msgstr "Бинарный опцион – это контракт, при котором одна сторона берет на себя обязательства выплатить другой стороне заранее установленную сумму, если цена заданного актива изменится в определенном направлении за указанный период времени. Компания предлагает три основных класса базовых активов для бинарных опционов:"
 
 msgid "A binary option is a contract purchased by a trader, which pays a pre-determined amount if their prediction is correct."
 msgstr "Бинарный опцион – это покупаемый трейдером контракт, по которому выплачивается заранее оговоренная сумма в случае правильного прогноза."
@@ -959,7 +968,7 @@ msgid "About the Company and these Terms"
 msgstr "О Компании и условиях"
 
 msgid "Abusively or fraudulently use, for any purpose, the Application Program Interface (API) of %1."
-msgstr ""
+msgstr "Злоупотреблять или использовать интерфейс прикладного программирования (API) Компании %1 в любых мошеннических целях."
 
 msgid "Accept"
 msgstr "Принять"
@@ -1148,13 +1157,13 @@ msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier
 msgstr "Добавьте +/–, чтобы определить оффсет барьера. Например, +0.005 означает, что барьер будет на 0.005 выше входной спот-котировки."
 
 msgid "Add a cryptocurrency account"
-msgstr ""
+msgstr "Откройте криптовалютный счет"
 
 msgid "Add a description and click %1Save%2 to complete the registration."
 msgstr "Добавьте описание и нажмите %1Сохранить%2, чтобы завершить регистрацию."
 
 msgid "Add a fiat currency account"
-msgstr ""
+msgstr "Откройте фиатный счет"
 
 msgid "Add account"
 msgstr "Добавить счёт"
@@ -1166,10 +1175,10 @@ msgid "Add funds"
 msgstr "Пополнить"
 
 msgid "Add new account"
-msgstr ""
+msgstr "Открыть новый счет"
 
 msgid "Add new crypto account"
-msgstr ""
+msgstr "Открыть новый крипто счет"
 
 msgid "Additional business exposure:"
 msgstr "Дополнительные возможности для бизнеса:"
@@ -1523,7 +1532,7 @@ msgid "Any disputes, controversy, or claims that arise out of or relating to thi
 msgstr "Любые споры, разногласия и претензии, возникающие в адрес Компании в рамках или в связи с данным Соглашением, будут направлены и рассмотрены арбитражным судом, выбранным Компанией. Арбитражные разбирательства будут проводиться на английском языке. Решение, вынесенное судьёй (судьями), может быть исполнено любым судом в соответствующей юрисдикции. Партнёр также несёт финансовую ответственность за любые расходы на данные арбитражные разбирательства."
 
 msgid "Any event capable of having a material adverse effect on the Agent's ability to perform any of their duties and obligations in accordance with this agreement"
-msgstr ""
+msgstr "В случае возникновения любых событий, способных оказать негативное влияние на способность Агента исполнять любые из его обязательств в рамках данного соглашения"
 
 msgid "Any failure on the Programmer's part to maintain the security of any security devices or procedures used in or in association with the %1 API"
 msgstr "неспособность Программиста поддерживать безопасность любого устройства защиты или процедур, применимых на сайте или в отношении интерфейса прикладного программирования (API) %1,"
@@ -1535,7 +1544,7 @@ msgid "Any information given on these pages, and/or emails or newsletters sent b
 msgstr "Любая информация, перечисленная на этих страницах, предоставленная в электронных сообщениях или информационной рассылке, отправляемой Компанией, не должна рассматриваться в качестве финансового или инвестиционного совета. Компания не принимает никакой ответственности в отношении данной информации."
 
 msgid "Any information that the Agent has provided or will provide to the Company in relation to the Agent's financial position, domicile, or other matters is accurate and not misleading."
-msgstr ""
+msgstr "Любая информация, которую Агент предоставил или предоставит Компании в отношении финансового положения, места жительства или других вопросов, является точной и не вводит в заблуждение."
 
 msgid "Any information which the client provides or have provided to the Company in respect of their financial position, domicile, or other matters is accurate and not misleading in any material respect."
 msgstr "Вся информация, предоставленная Компании клиентом в отношении финансового положения, места проживания или иных вопросов является точной и достоверной."
@@ -1589,7 +1598,7 @@ msgid "Applicant's rights"
 msgstr "Права заявителя"
 
 msgid "Application to become a payment agent is reviewed only if the applicant has a Binary.com account with a balance equal to or more than the minimum amount required for the applicant’s country of residence."
-msgstr ""
+msgstr "Заявление на получение статуса платежного агента рассматривается только в том случае, если у заявителя есть счет Binary.com с балансом, равным или превышающим минимальную сумму, требуемую для страны проживания заявителя."
 
 msgid "Applications"
 msgstr "Приложения"
@@ -2098,8 +2107,8 @@ msgstr "Перед загрузкой документа убедитесь, ч�
 msgid "Before using the trading robots or Expert Advisors and forward trade, the client should test it on a demo account."
 msgstr "Перед тем, как использовать торговых роботов или Expert Advisors и форвардную торговлю, клиент должен протестировать их на демо-счете."
 
-msgid "Before you deactivate your account, you need to do the following:"
-msgstr "Прежде чем деактивировать свой счет, вам необходимо сделать следующее:"
+msgid "Before you deactivate your account, you’ll need to:"
+msgstr "Прежде чем деактивировать счет, вам необходимо:"
 
 msgid "Beginner"
 msgstr "Для начинающих"
@@ -2253,6 +2262,9 @@ msgstr "Программа стажировки Binary.com"
 
 msgid "Binary.com in Numbers"
 msgstr "Binary.com в цифрах"
+
+msgid "Binary.com is moving to Deriv on 30 November"
+msgstr "Binary.com полностью переходит на Deriv 30 ноября"
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com рекомендует 1.1.1.1"
@@ -2462,7 +2474,7 @@ msgid "CFDs on commodities"
 msgstr "CFD на сырьевых товарах;"
 
 msgid "CFDs on cryptocurrencies"
-msgstr ""
+msgstr "CFD на криптовалютах"
 
 msgid "CFDs on stock indices"
 msgstr "CFD на фондовых индексах"
@@ -2584,9 +2596,6 @@ msgstr "Сессия в разделе Касса истекла"
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Определенные ограничения накладываются на допустимые уровни барьерных/страйк цен контрактов. Как правило, барьер/страйк не может находиться ни слишком близко, ни слишком далеко от текущего базового рыночного уровня."
 
-msgid "Champion Group Ltd: Vanuatu"
-msgstr "Champion Group Ltd: Вануату"
-
 msgid "Change API Endpoint"
 msgstr "Изменить конечную точку API"
 
@@ -2675,7 +2684,7 @@ msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Руководители, высокопоставленные чиновники и работники законодательных органов"
 
 msgid "Choose a cryptocurrency account"
-msgstr ""
+msgstr "Выберите криптовалютный счет"
 
 msgid "Choose a duration from 10 seconds to 365 days."
 msgstr "Выберите длительность от 10 секунд до 365 дней."
@@ -2708,13 +2717,13 @@ msgid "Choose from three main trade types:"
 msgstr "Выберите один из трёх основных видов контрактов:"
 
 msgid "Choose one of your accounts"
-msgstr ""
+msgstr "Выберите один из ваших счетов"
 
 msgid "Choose one of your accounts or add a new account"
-msgstr ""
+msgstr "Выберите один из ваших счетов или откройте новый"
 
 msgid "Choose one of your accounts or add a new cryptocurrency account"
-msgstr ""
+msgstr "Выберите один из ваших счетов или откройте новый криптовалютный счет"
 
 msgid "Choose scopes:"
 msgstr "Выберите сферу действия:"
@@ -2744,7 +2753,7 @@ msgid "Choose your own strike."
 msgstr "Выберите страйк-цену."
 
 msgid "Choose your preferred cryptocurrency"
-msgstr ""
+msgstr "Выберите желаемую криптовалюту"
 
 msgid "Choose your preferred programme, complete the application form, and receive your affiliate link upon approval."
 msgstr "Выберите программу, заполните форму заявления, дождитесь одобрения и получите партнёрскую ссылку."
@@ -2842,9 +2851,6 @@ msgstr "Не умаляя вышеизложенного, настоящим к�
 msgid "Clients in the European Union who wish to trade gambling products will have their accounts opened with Deriv (Europe) Limited."
 msgstr "Счета клиентов в Евросоюзе, желающих торговать на игорных продуктах, будут открыты в компании Deriv (Europe) Limited."
 
-msgid "Clients in the Isle of Man and the UK who wish to trade gambling products will have their accounts opened with Deriv (MX) Ltd."
-msgstr "Клиенты на Острове Мэн и в Великобритании, желающие торговать на игорных продуктах, могут открыть счет в компании Deriv (MX) Ltd."
-
 msgid "Clients may trade on our platforms only when they are using their own money and are drawing on funds that have been acquired honestly. If you have any suspicion that clients are using money that has been acquired dishonestly, you must inform %1.  In such cases, we may decide to conduct checks on the client’s status and background. %2 management will decide what information needs to be reported to government officials and through what channels."
 msgstr "Клиенты могут торговать на наших платформах только на собственные честно заработанные средства. Если у вас возникли какие-либо подозрения о том, что клиенты могут пользоваться нечестно приобретёнными средствами, вы должны сообщить об этом %1. В таких ситуациях мы можем провести проверку статуса и истории клиента. Менеджмент %2 примет решение, какую информацию необходимо передать государственным органам и каким способом это сделать."
 
@@ -2901,9 +2907,6 @@ msgstr "закрыть любую или все открытые позиции 
 
 msgid "Close identity verification screen"
 msgstr "Закройте экран подтверждения личности"
-
-msgid "Close open positions"
-msgstr "Закройте открытые позиции"
 
 msgid "Close your %1 account."
 msgstr "Закрыть ваш счет %1."
@@ -3431,7 +3434,7 @@ msgid "Create a New Demo Account"
 msgstr "Открыть новый демо-счет"
 
 msgid "Create a cryptocurrency account"
-msgstr ""
+msgstr "Откройте криптовалютный счет"
 
 msgid "Create a new Binary password."
 msgstr "Создать новый пароль Binary."
@@ -3721,6 +3724,9 @@ msgstr "Деактивировать"
 msgid "Deactivate Account"
 msgstr "Деактивировать счет"
 
+msgid "Deactivate account"
+msgstr "Деактивировать счет"
+
 msgid "Deactivate account?"
 msgstr "Деактивировать счет?"
 
@@ -3818,10 +3824,10 @@ msgid "Deposit as little as 5 USD to start trading."
 msgstr "Внесите на счёт всего 5 USD и начните торговлю."
 
 msgid "Deposit cryptocurrencies"
-msgstr ""
+msgstr "Пополнение в криптовалютах"
 
 msgid "Deposit in your local currency via an authorised, independent payment agent in your country."
-msgstr ""
+msgstr "Пополняйте счет в местной валюте через авторизованного независимого платежного агента в вашей стране."
 
 msgid "Deposit now"
 msgstr "Пополнить сейчас"
@@ -3830,13 +3836,13 @@ msgid "Deposit or withdraw below"
 msgstr "Пополните счёт или выведите средства"
 
 msgid "Deposit via bank wire, credit card, and e-wallet"
-msgstr ""
+msgstr "Пополнение через банковский перевод, кредитную карту или электронный кошелек"
 
 msgid "Deposit via bank wire, credit card, and e-wallet."
-msgstr ""
+msgstr "Пополняйте счет банковским переводом, с кредитной карты или электронного кошелька."
 
 msgid "Deposit via payment agents"
-msgstr ""
+msgstr "Пополнение через платежных агентов"
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Пополнение. Подтверждение блокчейнов: %1"
@@ -3850,11 +3856,11 @@ msgstr "Пополнения: Мгновенно"
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr "Пополнение и вывод средств со счёта MetaTrader 5 всегда осуществляется через счёт на бинарных опционах."
 
-msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "На вашем счете отключены функции пополнения и вывода средств. Проверьте свою электронную почту для получения более подробной информации."
-
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "Пополнение счёта и любые причитающиеся платежи должны быть выполнены в валюте, выбранной клиентом из списка, периодически предоставляемого DIEL."
+
+msgid "Deposits are temporarily unavailable due to system maintenance. You can make your deposits when the maintenance is complete."
+msgstr "Пополнение счета временно недоступно из-за технического обслуживания системы. Вы можете пополнить счет после завершения работ."
 
 msgid "Deriv"
 msgstr "Deriv"
@@ -3891,12 +3897,6 @@ msgstr "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mus
 
 msgid "Deriv (FX) Ltd: Labuan, Territory of Malaysia"
 msgstr "Deriv (FX) Ltd: Лабуан, территория Малайзии"
-
-msgid "Deriv (MX) Ltd"
-msgstr "Deriv (MX) Ltd"
-
-msgid "Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man, is licensed and regulated in Great Britain by the Gambling Commission under %1account no. 39172%3 and by the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr "Компания Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man, лицензирована и регулируется в Великобритании Комиссией по азартным играм под %1учетной записью № 39172%3 и Комиссией по надзору за азартными играми острова Мэн (%2см. лицензию%3)."
 
 msgid "Deriv (MX) Ltd."
 msgstr "Deriv (MX) Ltd."
@@ -3970,8 +3970,11 @@ msgstr "Deriv Investments (Europe) Limited."
 msgid "Deriv Limited"
 msgstr "Deriv Limited"
 
-msgid "Deriv Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below."
-msgstr "Компания Deriv Limited, зарегистрированная по адресу 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, является холдинговой компанией, включающей нижеперечисленные дочерние компании."
+msgid "Deriv Limited — 13 Castle Street, St. Helier, JE2 3BT, Jersey — is the holding company for the above subsidiaries."
+msgstr ""
+
+msgid "Deriv Limited, with registered office at 13 Castle Street, St. Helier, JE2 3BT, Jersey, is the holding company for the subsidiaries listed below."
+msgstr "Компания Deriv Limited, зарегистрированная по адресу 13 Castle Street, St. Helier, JE2 3BT, Jersey, является холдинговой компанией, включающей нижеперечисленные дочерние компании."
 
 msgid "Deriv.com launched"
 msgstr "Начал работу Deriv.com"
@@ -4487,10 +4490,10 @@ msgid "Engage in misleading or deceptive conduct or illusory or deceptive advert
 msgstr "Предпринимать вводящие в заблуждение или обманные действия, а также размещать обманчивую или ложную рекламу"
 
 msgid "Engage in misleading, illusory, or deceptive advertising or promises."
-msgstr ""
+msgstr "Давать вводящие в заблуждение, обманчивые или мошеннические обещания."
 
 msgid "Engage in misleading, illusory, or deceptive conduct."
-msgstr ""
+msgstr "Предпринимать вводящие в заблуждение, обманчивые или мошеннические действия."
 
 msgid "Enhanced performance. Intuitively simple."
 msgstr "Высокая функциональность. Простота в использовании."
@@ -4712,7 +4715,7 @@ msgid "Excluded from the website until"
 msgstr "Доступ к сайту закрыт до"
 
 msgid "Exclusive Markets Ltd"
-msgstr ""
+msgstr "Exclusive Markets Ltd"
 
 msgid "Exclusive binary trading technology."
 msgstr "Эксклюзивная технология работы на бинарных опционах."
@@ -4985,7 +4988,7 @@ msgid "Fairly and accurately describe Binary's business and services in a transp
 msgstr "честно, добросовестно и прозрачно описывать клиентам бизнес и услуги Binary,"
 
 msgid "Fairly and accurately describe the Agent's services to the clients."
-msgstr ""
+msgstr "Честно и точно рассказывать клиентам об услугах Агента."
 
 msgid "Familiarity with Git"
 msgstr "Знакомство с Git"
@@ -5096,9 +5099,6 @@ msgstr "Финансовая отчетность"
 msgid "Financial Markets Analyst"
 msgstr "Финансовый аналитик"
 
-msgid "Financial Risk approval is required. Please contact %1customer support%2 for more information."
-msgstr "Необходимо подтверждение финансового риска. Пожалуйста, свяжитесь с %1отделом поддержки клиентов%2 для получения дополнительной информации."
-
 msgid "Financial STP"
 msgstr "Финансовый STP"
 
@@ -5187,7 +5187,7 @@ msgid "Follow up on the recommendations and timeline for corrective actions with
 msgstr "Соблюдение рекомендаций и графика корректирующих действий в сотрудничестве с руководителями отделов"
 
 msgid "Follow, comply, and implement with all business-related directions, policies, and procedures of the Company as amended or re-enacted or replaced from time to time."
-msgstr ""
+msgstr "Соблюдать, соответствовать и внедрять все предписания в отношении бизнеса, политики и процедур Компании, которые подлежат периодическому изменению и дополнению."
 
 msgid "Food Services"
 msgstr "Услуги питания"
@@ -5394,7 +5394,7 @@ msgid "GAMSTOP is a free service that enables you to self-exclude from all onlin
 msgstr "GAMSTOP − это бесплатный сервис, позволяющий вам самоисключаться из торговли на сайтах любых компаний, лицензированных в Великобритании. Чтобы узнать больше и зарегистрироваться, посетите %1."
 
 msgid "GBE Brokers Ltd"
-msgstr ""
+msgstr "GBE Brokers Ltd"
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "Индекс GBP, измеряющий значение британского фунта против корзины из 5 основных мировых валют (USD, EUR, AUD, JPY, CAD), каждая из которых взвешена на 20%"
@@ -5403,7 +5403,7 @@ msgid "GBP/USD currency pair and its bid-ask price."
 msgstr "Цена бид и аск на паре GBP/USD."
 
 msgid "GC Exchange Limited"
-msgstr ""
+msgstr "GC Exchange Limited"
 
 msgid "GDPR"
 msgstr "GDPR или ОРЗД"
@@ -5997,7 +5997,7 @@ msgid "If the <strong>last tick</strong> is equal to the average of the ticks, y
 msgstr "Если <strong>последний тик</strong> равен среднему значению тиков, вы не получите выплату."
 
 msgid "If the Agent’s Binary.com account balance drops below the minimum amount required for the Agent’s country of residence, the Company will give the Agent a 30-day notice and then 30 days grace period to eliminate the deficit. At the end of these 60 days, if the Agent’s account balance does not meet or exceed the minimum required amount, the Company’s contract with the Agent shall be terminated."
-msgstr ""
+msgstr "Если баланс счета Binary.com Агента упадет ниже минимальной суммы, установленной для страны проживания Агента, Компания уведомит Агента за 30 дней, а затем за 30 дней отсрочки платежа для устранения дефицита. По истечении этих 60 дней, если баланс счета Агента не соответствует или находится ниже минимально необходимой суммы, контракт Компании с Агентом будет расторгнут."
 
 msgid "If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client's account and withhold any funds accumulated therein."
 msgstr "Если Компания (по своему усмотрению) не удовлетворена степенью соблюдения клиентом данных условий, а также в случае, если клиент не удовлетворил соответствующий запрос Компании на предоставление определённой информации, Компания имеет право закрыть счёт клиента и удержать любые находящиеся на нём средства."
@@ -6137,17 +6137,23 @@ msgstr "Если вы не получите сообщения от нас в с
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr "Если вы обнаружите какие-либо уязвимости в нашем %1проекте с открытым кодом%2, пожалуйста, отправьте pull-запрос на GitHub."
 
-msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds"
-msgstr "Если у вас есть реальный счет Binary, перейдите в %1Кассу%2, чтобы вывести средства"
+msgid "If you have a Binary real account, go to %1Cashier%2 to withdraw your funds."
+msgstr "Если у вас есть реальный счет Binary, перейдите в %1Кассу%2, чтобы вывести средства."
 
-msgid "If you have a Binary real account, go to %1Portfolio%2 to close any open positions."
-msgstr "Если у вас есть реальный счет Binary, перейдите в %1Портфель%2, чтобы закрыть открытые позиции."
+msgid "If you have a Binary real account, go to %1Portfolio%2 to close or sell any open positions."
+msgstr "Если у вас есть реальный счет Binary, перейдите в %1Портфель%2, чтобы закрыть или продать открытые позиции."
 
-msgid "If you have a MT5 real account, go to %1MT5 dashboard%2 to withdraw your funds."
-msgstr "Если у вас есть реальный счет MT5, перейдите на %1панель MT5%2, чтобы вывести средства."
+msgid "If you have a DMT5 or Deriv X real account, go to your %1DMT5%2 or %3Deriv X%4 dashboard to withdraw your funds."
+msgstr "Если у вас есть реальный счет DMT5 или Deriv X, перейдите на панель %1DMT5%2 или %3Deriv X%4, чтобы вывести средства."
 
-msgid "If you have a MT5 real account, log into it to close any open positions."
-msgstr "Если у вас есть реальный счет MT5, войдите на него, чтобы закрыть открытые позиции."
+msgid "If you have a DMT5 or Deriv X real account, log in to close any open positions."
+msgstr "Если у вас есть реальный счет DMT5 или Deriv X, войдите в него, чтобы закрыть открытые позиции."
+
+msgid "If you have a DMT5 real account, go to your %1DMT5%2 dashboard to withdraw your funds."
+msgstr "Если у вас есть реальный счет DMT5, перейдите на панель %1DMT5%2, чтобы вывести средства."
+
+msgid "If you have a DMT5 real account, log in to close any open positions."
+msgstr "Если у вас есть реальный счет DMT5, войдите на него, чтобы закрыть открытые позиции."
 
 msgid "If you have a payment reference (for example 122), you can enter it here."
 msgstr "Если у вас есть номер перевода (например, 122), укажите его здесь."
@@ -6440,9 +6446,6 @@ msgstr "Компания Deriv Investments (Europe) Limited, расположе�
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "На территории ЕС финансовые продукты предоставляются компанией Deriv Investments (Europe) Limited. Компания расположена по адресу W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, регулируется Мальтийским управлением финансовых услуг в качестве поставщика инвестиционных услуг 3-й категории (%1лицензия номер IS/70156%2)."
 
-msgid "In the Isle of Man and the UK, virtual-events-based bets on synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under %1account no. 39172%3 and by (2) the Gambling Supervision Commission in the Isle of Man (%2view licence%3)."
-msgstr "На острове Мэн и в Великобритании ставки на виртуальные события – синтетические индексы – предоставлены компанией Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man. Компания лицензирована и регулируется (1) комиссией по азартным играм Великобритании под %1учетной записью № 39172%3 и (2) комиссией по надзору за азартными играми острова Мэн (%2см. лицензию%3)."
-
 msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Limited. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr "Наши клиенты из Великобритании работают через Deriv (MX) Ltd и Deriv Investments (Europe) Limited. Клиентов с Острова Мэн обслуживает компания Deriv (MX) Ltd. Клиенты из Европейского Союза (за исключением Великобритании) работают через Deriv (Europe) Limited и Deriv Investments (Europe) Limited. Клиенты из других стран мира работают через Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd и Deriv (FX) Ltd."
 
@@ -6498,7 +6501,7 @@ msgid "In/Out trades"
 msgstr "Контракты Внутри/Вне"
 
 msgid "Include a disclaimer and/or notice that any intellectual property rights — including any trademark or slogan whatsoever — belong to the Company, and any unauthorised use is strictly prohibited."
-msgstr ""
+msgstr "Поместить соответствующий отказ от ответственности или уведомление о том, что все права на интеллектуальную собственность, включая права на торговую марку и любые слоганы, принадлежат Компании, а любое их несанкционированное использование строго запрещено."
 
 msgid "Include a disclaimer or notice that the intellectual property rights of the Trademark solely belong to Binary and any use of it is strictly prohibited unless Binary has given such authorisation."
 msgstr "Разместить отказ от ответственности или уведомление относительно прав на интеллектуальную собственность и торговую марку, которые всецело принадлежат Binary, а любое их использование строго запрещено без получения предварительного согласия Binary."
@@ -7737,7 +7740,7 @@ msgid "Misrepresent Binary or the services that are offered by Binary"
 msgstr "Сообщать ложную информацию о Binary или услугах, предоставляемых Binary"
 
 msgid "Misrepresent the services that the Agent provides to the clients."
-msgstr ""
+msgstr "Искажать услуги, предоставляемые Агентом клиентам."
 
 msgid "Mo"
 msgstr "Пн"
@@ -8147,6 +8150,9 @@ msgstr "Примечание: по любым вопросам о неактив
 msgid "Note: Payment Agent transfers are only available for accounts registered with Deriv (SVG) LLC."
 msgstr "Важно: переводы через платежных агентов доступны только для счетов, зарегистрированных в Deriv (SVG) LLC."
 
+msgid "Note: Please switch to your %1 account to change currencies."
+msgstr "Примечание: чтобы изменить валюту, перейдите на свой счет %1."
+
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency."
 msgstr "Примечание: вы можете открыть только один счет в фиатной валюте. Валюту фиатного счета можно изменить до того, как вы первый раз пополните этот счет или откроете счёт MT5. Также вы можете открыть по одному счёту в каждой доступной криптовалюте."
 
@@ -8486,8 +8492,11 @@ msgstr "Ожидается, что в этом году наша активна�
 msgid "Our business is founded on collaboration and we aim to build long-term, mutually beneficial relationships with our partners. However, we will never compromise our commitment to business integrity. In cases where our partners are unwilling or unable to abide by our principles, we reserve the right to withdraw from the business relationship."
 msgstr "Наш бизнес основан на сотрудничестве; мы стремимся создавать долгосрочные и взаимовыгодные отношения с нашими партнёрами. Тем не менее, мы никогда не пожертвуем нашими обязательствами в угоду деловой этике. В случаях, если партнёры не хотят или не могут соблюдать наши принципы, мы оставляем за собой право прекратить деловые отношения."
 
-msgid "Our cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "Касса временно не работает из-за технического обслуживания системы. Мы откроем доступ к кассе, как только обслуживание будет завершено."
+msgid "Our cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr "Касса временно не работает из-за технического обслуживания системы. Вы сможете получить доступ к кассе через несколько минут после завершения обслуживания."
+
+msgid "Our cashier is temporarily down due to system maintenance.You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr "Касса временно не работает из-за технического обслуживания системы. Вы сможете получить доступ к кассе через несколько минут после завершения обслуживания."
 
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "Наша структура комиссионных представляет собой простой двухуровневый план."
@@ -8498,8 +8507,8 @@ msgstr "Наше неизменное стремление к надёжност
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "Наша компания продолжает процветать и получает лицензию на Острове Мэн, чтобы предлагать лучшее обслуживание нашим клиентам из Великобритании."
 
-msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the cashier as soon as the maintenance is complete."
-msgstr "Криптовалютная касса временно не работает из-за технического обслуживания системы. Мы откроем доступ к кассе, как только обслуживание будет завершено."
+msgid "Our cryptocurrency cashier is temporarily down due to system maintenance. You can access the Cashier in a few minutes when the maintenance is complete."
+msgstr "Криптовалютная касса временно не работает из-за технического обслуживания системы. Вы сможете получить доступ к кассе через несколько минут после завершения обслуживания."
 
 msgid "Our customers clearly like us. In mid-2014, %1 has over 100 million historical transactions and over 130,000 new daily transactions."
 msgstr "Несомненно, клиентам нравится наш сервис. К середине 2014 года %1 зарегистрировал более 100 миллионов транзакций и проводил более 130 тысяч новых сделок ежедневно."
@@ -8775,7 +8784,7 @@ msgid "Perform tests to ensure database performance and security, as well as dat
 msgstr "Проведение тестирования для обеспечения работы баз данных и безопасности, а также целостности данных"
 
 msgid "Perform the Agent's services and other obligations hereunder at their own cost and risk."
-msgstr ""
+msgstr "Выполнять услуги и иные обязательства Агента, перечисленные в рамках данного соглашения, своими силами и за свой счет."
 
 msgid "Performance Tuning,"
 msgstr "Повышение производительности,"
@@ -8870,17 +8879,11 @@ msgstr "Пожалуйста, пройдите %1аутентификацию с
 msgid "Please %1authenticate%2 your account to continue trading."
 msgstr "Для продолжения торговли, пожалуйста, %1аутентифицируйте%2 ваш счёт."
 
-msgid "Please %1authenticate%2 your account."
-msgstr "Пожалуйста, пройдите %1аутентификацию%2 счёта."
-
 msgid "Please %1complete the financial assessment%2 to open an MT5 account."
 msgstr "Пожалуйста, %1завершите финансовую оценку%2, чтобы открыть счёт MT5."
 
 msgid "Please %1complete the trading experience section%2 in the financial assessment to open an MT5 account."
 msgstr "Пожалуйста, %1заполните информацию о торговом опыте%2 в разделе финансовой оценки, чтобы открыть счёт MT5."
-
-msgid "Please %1complete your account profile%2 to lift your withdrawal and trading limits."
-msgstr "Пожалуйста, %1заполните свой профайл,%2 чтобы снять лимиты на трейдинг и вывод средств."
 
 msgid "Please %1deposit%2 before transferring to client."
 msgstr "Пожалуйста, %1пополните%2 счёт перед переводом клиенту."
@@ -8924,14 +8927,11 @@ msgstr "Пожалуйста, нажмите на ссылку в письме, 
 msgid "Please complete the %1Real Account form%2 to verify your age as required by the %3UK Gambling%4 Commission (UKGC)."
 msgstr "Пожалуйста, заполните %1форму на открытие Реального счёта%2, чтобы подтвердить ваш возраст, в соответствии с требованиями %3Комиссии по азартным играм%4 Великобритании (UKGC)."
 
-msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
-msgstr "Прежде, чем продолжить, пожалуйста, заполните следующую %1форму финансовой оценки%2."
+msgid "Please complete the Appropriateness Test to access your cashier."
+msgstr "Пройдите тест на соответствие, чтобы получить доступ к кассе."
 
 msgid "Please complete the Real Account form to verify your age as required by the %1UK Gambling%2 Commission (UKGC)."
 msgstr "Пожалуйста, заполните форму на открытие Реального счёта, чтобы подтвердить свой возраст, согласно требованию %1Комиссии по азартным играм%2 Великобритании (UKGC)."
-
-msgid "Please complete your %1personal details%2 before you proceed."
-msgstr "Чтобы продолжить, введите ваши %1личные данные%2."
 
 msgid "Please complete your personal details before you proceed."
 msgstr "Чтобы продолжить, введите ваши личные данные."
@@ -8997,7 +8997,7 @@ msgid "Please note that Asians, Digits, Reset Call/Reset Put, High Ticks/Low Tic
 msgstr "Обратите внимание, что Азиатские, Цифровые контракты, контракты Reset Колл/Reset Пут, Наибольший/Наименьший тик и Только вверх/вниз доступны только на Синтетических индексах."
 
 msgid "Please note that UK residents are not able to trade CFDs on cryptocurrencies or Synthetic Indices."
-msgstr ""
+msgstr "Обратите внимание, что резиденты Великобритании не могут торговать CFD на криптовалютах или синтетических индексах."
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "Обратите внимание, что один лот равен 100 единицам, %1cогласно особенностям контракта%2."
@@ -9071,17 +9071,8 @@ msgstr "Выберите диапазон дат для выписки:"
 msgid "Please select the document type and enter the document number."
 msgstr "Выберите тип документа и введите номер документа."
 
-msgid "Please set %1country of residence%2 before upgrading to a real-money account."
-msgstr "Пожалуйста, укажите %1страну проживания%2 до перехода на реальный счёт."
-
-msgid "Please set the %1currency%2 of your account."
-msgstr "Пожалуйста установите %1валюту%2 вашего счёта."
-
-msgid "Please set your %130-day turnover limit%2 to access the cashier."
-msgstr "Пожалуйста, установите %1лимит на 30-дневный оборот счета%2, чтобы получить доступ к кассе."
-
-msgid "Please set your %130-day turnover limit%2 to remove deposit limits."
-msgstr "Пожалуйста, установите %1лимит на 30-дневный оборот счета%2, чтобы устранить лимиты на пополнение."
+msgid "Please set your %1account currency%2 to enable deposits and withdrawals."
+msgstr "Установите %1валюту счета%2, чтобы разблокировать пополнение и вывод средств. "
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Пожалуйста, укажите желаемый интервал для проверки реальности (в минутах)"
@@ -9091,9 +9082,6 @@ msgstr "Пожалуйста, отправьте вышеуказанную ин
 
 msgid "Please submit your %1proof of address%2."
 msgstr "Пожалуйста, предоставьте %1подтверждение адреса%2."
-
-msgid "Please submit your %1proof of identity and proof of address%2."
-msgstr "Пожалуйста, предоставьте %1удостоверение личности и подтверждение адреса%2."
 
 msgid "Please submit your %1proof of identity%2."
 msgstr "Пожалуйста, предоставьте %1удостоверение личности%2."
@@ -9252,7 +9240,7 @@ msgid "Prepare and publish any content or place any advertisements that refer to
 msgstr "Создавать и публиковать любой контент, а также размещать любую рекламу, относящуюся к Binary и отношениям с Binary, не получив предварительного письменного согласия от Binary"
 
 msgid "Prepare and publish any material or place any advertisements that refer to the Company and the Agent's relationship with the Company without an authorisation being given by the Company."
-msgstr ""
+msgstr "Готовить и публиковать любые материалы, а также размещать любую рекламу, относящуюся к Компании и сотрудничеству Агента с Компанией без получения предварительного разрешения от Компании."
 
 msgid "Prepare daily, weekly, and monthly financial reports"
 msgstr "Подготовка ежедневного, еженедельного и ежемесячного финансового отчёта"
@@ -9450,7 +9438,7 @@ msgid "Provide technical leadership on cryptocurrencies and blockchain technolog
 msgstr "Поддержание ведущей роли в сфере криптовалют и блокчейн-технологий"
 
 msgid "Provide the Company with all and any information whatsoever that the Agent may become aware of that may be harmful, adverse, or detrimental to the Company and its reputation."
-msgstr ""
+msgstr "Предоставлять Компании любую имеющуюся у Агента информацию, которая может оказать пагубное или негативное влияние на Компанию и ее репутацию."
 
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
 msgstr "Чтобы получить подтверждение, сообщите 4-значный код подтверждения (который указан ниже) нашему специалисту из отдела поддержки клиентов."
@@ -9660,7 +9648,7 @@ msgid "Receive the approval of the Company to include any information in relatio
 msgstr "Получить разрешение Компании на включение любой информации, относящейся к Binary"
 
 msgid "Receive the approval of the Company to include any information in relation to the Company."
-msgstr ""
+msgstr "Получить разрешение Компании размещать любую информацию, относящуюся к Компании."
 
 msgid "Receive your earnings through your favourite payment method"
 msgstr "Получайте прибыль удобным платёжным способом"
@@ -9816,7 +9804,7 @@ msgid "Replication,"
 msgstr "Репликация,"
 
 msgid "Represent themselves as a representative of the Company or as an authorised person by the Company in their advertising activities."
-msgstr ""
+msgstr "Называть себя представителем или уполномоченным лицом Компании в своей рекламной деятельности."
 
 msgid "Representations and warranties"
 msgstr "Гарантии"
@@ -10379,6 +10367,9 @@ msgstr "Если любые условия или положения насто�
 msgid "Should be %1"
 msgstr "Должно быть %1"
 
+msgid "Should be 1"
+msgstr ""
+
 msgid "Should be a valid number."
 msgstr "Введите правильное число."
 
@@ -10502,14 +10493,14 @@ msgstr "Извините, произошла ошибка."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Извините, при обработке вашего запроса произошла ошибка."
 
-msgid "Sorry, deposits for this currency are currently disabled."
-msgstr "К сожалению, пополнение счета в этой валюте временно недоступно."
-
 msgid "Sorry, mobile version is not available yet."
 msgstr "К сожалению, мобильная версия пока недоступна."
 
 msgid "Sorry, no mobile phone bills"
 msgstr "К сожалению, мы не можем принять счет за мобильный телефон"
+
+msgid "Sorry, options trading isn’t available in the United Kingdom and the Isle of Man"
+msgstr "К сожалению, торговля опционами недоступна в Великобритании и на острове Мэн."
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "К сожалению, эта функция недоступна в вашей юрисдикции."
@@ -10582,6 +10573,9 @@ msgstr "Время начала"
 
 msgid "Start trading"
 msgstr "Начать торговлю"
+
+msgid "Start using Deriv with your Binary.com email and password."
+msgstr "Начните использовать Deriv с вашим адресом электронной почты и паролем Binary.com."
 
 msgid "State Benefits"
 msgstr "Государственные пособия"
@@ -10908,13 +10902,13 @@ msgid "Swiss franc vs Japanese yen"
 msgstr "Швейцарский франк против японской иены"
 
 msgid "Switch account"
-msgstr ""
+msgstr "Переключить счет"
 
 msgid "Switch account?"
-msgstr ""
+msgstr "Переключить счет?"
 
 msgid "Switch to crypto account?"
-msgstr ""
+msgstr "Перейти на крипто счет?"
 
 msgid "Symbol"
 msgstr "Символ"
@@ -11295,10 +11289,10 @@ msgid "The Agent has taken all measures required to obtain and maintain in full 
 msgstr "Агент предпринял все необходимые меры, чтобы полностью поддерживать и сохранять все свои полномочия, лицензии и разрешения вступать и действовать в рамках данного соглашения."
 
 msgid "The Agent is prohibited from offering the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
-msgstr ""
+msgstr "В рамках настоящего соглашения Агенту запрещено предлагать свои услуги клиентам, проживающим в странах с ограниченным доступом, перечисленных в правилах и условиях Компании и опубликованных на сайте Компании %1www.binary.com%2 (список подлежит периодическому изменению и дополнению)."
 
 msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
-msgstr ""
+msgstr "Агент может предоставлять свои услуги только тем клиентам Компании, которые проживают в той же юрисдикции, где работает Агент, и желают внести и/или вывеси средства через Агента. Агент может предоставлять свои услуги клиентам, которые намереваются использовать электронный кошелек или способы электронных платежей, отличные от тех, которые используются Компанией (далее именуемые \"электронные платежи\"), или местные валюты, отличные от тех, которые принимаются Компанией (в дальнейшем именуемые \"местная валюта\") и местные банковские переводы (далее именуемые \"банковские переводы\")."
 
 msgid "The Agent promises to the Company that the Agent shall comply with, and the Agent's services will be performed in accordance with, any applicable anti-corruption laws."
 msgstr "Агент даёт Компании обязательства соблюдать все положения и предоставлять свои услуги согласно применимому закону по борьбе с коррупцией."
@@ -11331,7 +11325,7 @@ msgid "The Average"
 msgstr "Среднее"
 
 msgid "The Commencement Date of this agreement shall mean the date on which the Agent's account is approved by the Company."
-msgstr ""
+msgstr "Дата вступления в силу настоящего соглашения означает день, когда счет Агента будет одобрен Компанией."
 
 msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bids and Asks made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Synthetic Indices."
 msgstr "Цены Компании определяются на основе цены Базового инструмента, котируемого на внешних биржах или дилинговых центрах, которые выбираются по усмотрению %1. IT-инфраструктура Компании и система агрегации цен позволяют получать котировки от узкого круга прайм-брокеров, которые действуют как поставщики ликвидности для Компании, и доставлять клиенту котировки, полученные со ссылкой на соответствующие контрольные показатели и рынки. Клиент признает, что Цены Компании могут отличаться от цен Бид и Аск, предоставляемых внешними биржами или дилинговыми центрами, и Компания не несет ответственности за любые убытки, которые клиент может понести в результате таких различий. Данное положение не относится к Синтетическим индексам."
@@ -11390,8 +11384,8 @@ msgstr "Компания не терпит любых форм неприемл�
 msgid "The Company endeavours to open or close the transaction to which the client's Order relates at a price reasonably available to the Company, acting in accordance with the Company's duty of best execution. Best execution means that, when executing Orders, the Company must take all sufficient steps to obtain the best possible result for the client, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the Order."
 msgstr "Компания обязуется предпринять все разумные усилия, чтобы открыть или закрыть контракт, к которому относится ордер клиента, по доступной Компании цене, руководствуясь обязательством наилучшего исполнения. Лучшее исполнение означает, что при исполнении ордеров Компания должна предпринять все возможные меры, чтобы получить для клиента наилучший результат, принимая во внимание цену, расходы, скорость, вероятность исполнения и закрытия контракта, размер, характер или любые другие аспекты, имеющие отношение к исполнению ордера."
 
-msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. However, in the event that the client's Open Positions are not closed when the Margin Level for their MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive the client's negative balance by crediting their account if their Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by the client. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "В Компании действует политика стоп аут (политика принудительного закрытия позиций), которая не позволит клиенту потерять сумму, превышающую депозит. Тем не менее, если открытые позиции клиента не закрыты, когда уровень маржи на Реальном счете MT5 достигнет уровня стоп аут, Компания по своему единоличному усмотрению может ликвидировать отрицательный баланс клиента, предоставив клиенту небольшой кредит, если баланс счета станет отрицательным. Отрицательный баланс образуется путем суммирования отрицательного баланса, появившегося за последние 24 часа на всех счетах клиента. Клиент признает, что, если он не является розничным клиентом Deriv Investments (Europe) Limited или частным клиентом, проживающим в Австралии, предложение защиты от негативного баланса со стороны Компании производится по единоличному усмотрению Компании. Также Компания оставляет за собой право в любое время изменить характеристики и критерии отбора для защиты от отрицательного баланса. Положения политики защиты от отрицательного баланса не применимы в следующих случаях:"
+msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. If the client’s balance becomes negative due to Stop Out, an automatic compensation will revert the client’s balance to zero. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
+msgstr ""
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "Основная обязанность Компании – честно, справедливо и профессионально вести совместный бизнес с клиентом, а также действовать в интересах клиента при открытии и закрытии контрактов на бинарных опционах."
@@ -11448,7 +11442,10 @@ msgid "The Company is required under data protection legislation to notify the a
 msgstr "Согласно закону о защите данных, Компания обязана уведомлять заявителей о данной политике конфиденциальности относительно хранящейся о нём информации. В этой связи заявитель должен прочесть данное уведомление и любые другие уведомления о конфиденциальности, отправляемые ему Компанией в ряде случаев, когда Компании необходимо собирать или обрабатывать личную информацию о заявителе, чтобы заявитель знал, как и зачем Компания использует таковую информацию."
 
 msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, email, and email management software, along with any modifications."
-msgstr ""
+msgstr "Компания является единственным владельцем всех прав, полномочий и любых процентов, а также электронных систем %1, включая, но не ограничиваясь любым программным обеспечением, email-ами и соответствующими программами управления электронной перепиской, наряду с любыми модификациями."
+
+msgid "The Company likewise reserves the right to cancel any request for a deposit, withdrawal, or refund of the client’s funds."
+msgstr "Компания также оставляет за собой право отменить любой запрос на пополнение счета, вывод или возврат средств клиента."
 
 msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platform."
 msgstr "Компания преимущественно предоставляет контракты на разницу (CFD) на платформе MT5."
@@ -11553,7 +11550,10 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "Компания оставляет за собой право по своему усмотрению отказывать в услугах и/или отменять услуги, а также взимать комиссию за пополнение и/или вывод применительно к любому клиенту по любой причине, включая (но не ограничиваясь):"
 
 msgid "The Company reserves the right to accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
-msgstr ""
+msgstr "Компания оставляет за собой право принять или отклонить заявление на статус Агента. Если заявление принято, Компания должна получить всю необходимую информацию, включая, но не ограничиваясь именем, адресом, URL вебсайта (если таковой имеется), электронным адресом, номером телефона, размером комиссий и способами оплаты, применяемыми Агентом, для публикации в списке агентов на сайте Компании %1www.binary.com%2."
+
+msgid "The Company reserves the right to block or withhold the funds in the client’s account and/or suspend or close the client’s account if it is known or there is reason to believe that one or more of the following cases are true:"
+msgstr "Компания оставляет за собой право заблокировать или удержать средства на счете клиента и/или приостановить или закрыть счет клиента, если известно или есть основания полагать, что один или несколько из следующих случаев верны:"
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug, or glitch in the Company website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, manifest mis-calculation of prices, or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors, or suspected system inadequacies that they may experience and may not abuse, or arbitrage based on, such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between the client and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot)."
 msgstr "Компания оставляет за собой право отменить/изменить контракты или внести изменения в условия контрактов (включая, но не ограничиваясь спот-котировками на входе и на выходе) в случае, если любые контракты будут приобретены или проданы по ценам, не отражающим реальные рыночные котировки или приобретены/проданы при аномально низком уровне риска, ввиду ранее незамеченной программной ошибки, наличия бага или неисправности в программном обеспечении сайта Компании, ввиду задержки при получении данных или котировки контракта, неточности в потоке данных, отдельных котировках, неверных ценовых параметрах, просчёта в ценах или ввиду иных очевидных ошибок (\"Явные ошибки\"). Настоящим клиенты обязуются информировать Компанию о любых таких проблемах, ошибках или подозрениях на неисправности системы, с которыми они могут столкнуться, но не смогут воспользоваться или предъявить данные проблемы или ошибки с целью получения выгоды. Компания предпримет все разумные меры, чтобы разрешить любые подобные проблемы в кратчайшие сроки. Любые изменения в условиях контрактов (включая, но не ограничиваясь спот-котировками на входе и на выходе) или явно ошибочных контрактов должны быть честными и логично обоснованными. Деньги, перечисляемые между клиентами и Компанией в отношении ошибочных контрактов, должны быть возвращены плательщику, согласно изменениям, внесённым в условия контрактов (включая, но не ограничиваясь спот-котировками на входе и на выходе)."
@@ -11964,7 +11964,7 @@ msgid "The applicant's qualifications, skills, education, experience, and employ
 msgstr "Квалификация, навыки, образование, опыт и трудовой стаж заявителя"
 
 msgid "The application shall be reviewed and assessed by the Company's Compliance and Marketing departments. It is noted that, following and implementing the anti-money laundering policy and conducting due diligence in accordance with the law and regulations, the Company's Compliance department shall request and collect all required information and documentation as per Section H."
-msgstr ""
+msgstr "Заявление будет рассмотрено и оценено отделами комплаенса и маркетинга Компании. Следует учесть, что, соблюдая и внедряя политику борьбы с отмыванием денег и проводя комплексную проверку в соответствии с законодательством и нормативными актами, отдел комплаенса Компании запрашивает и собирает всю необходимую информацию и документацию в соответствии с Разделом H."
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr "Цена аск валютной пары определяет, какое количество валюты котировки необходимо для покупки одной единицы основной валюты. Это соотношение называется обменным курсом валют."
@@ -12325,6 +12325,9 @@ msgstr "Отличная возможность"
 
 msgid "The high-risk and speculative nature of forex and CFDs"
 msgstr "Высокий риск и спекулятивная природа forex и CFD"
+
+msgid "The identification documents you submitted have expired. Please submit valid identity documents to unlock Cashier."
+msgstr "Истек срок действия отправленных вами документов, удостоверяющих личность. Пожалуйста, предоставьте действительные документы, удостоверяющие личность, чтобы разблокировать кассу."
 
 msgid "The information outlined in Paragraph 1 of this section shall be submitted to %1partners@binary.com%2."
 msgstr "Информация, перечисленная в Параграфе 1 данного раздела, должна быть отправлена на %1partners@binary.com%2."
@@ -12788,9 +12791,6 @@ msgstr "Данный документ (далее именуемый \"Согл�
 msgid "This feature is available to demo accounts only."
 msgstr "Эта опция доступна только для демо-счетов."
 
-msgid "This feature is not relevant to demo accounts."
-msgstr "Эта функция недоступна на демо-счетах."
-
 msgid "This feature is only relevant to payment agent accounts."
 msgstr "Эта функция доступна только на счетах платёжных агентов."
 
@@ -12996,10 +12996,10 @@ msgid "To create a MetaTrader 5 account:"
 msgstr "Чтобы открыть счёт MetaTrader 5:"
 
 msgid "To deposit cryptocurrency, switch your account."
-msgstr ""
+msgstr "Переключите счет, чтобы внести криптовалюту."
 
 msgid "To deposit money, please switch to your %1 account."
-msgstr ""
+msgstr "Чтобы внести средства, перейдите на свой счет %1."
 
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
 msgstr "Чтобы деактивировать двухступенчатую аутентификацию, пожалуйста, введите код, сгенерированный приложением ниже:"
@@ -13035,7 +13035,7 @@ msgid "To many attempts. Please try again in a few minutes"
 msgstr "Слишком много попыток. Пожалуйста, попробуйте еще раз через несколько минут"
 
 msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of DP2P and credit or debit cards."
-msgstr ""
+msgstr "Чтобы выполнить требование, изложенное в предыдущем пункте, заявитель может внести необходимую сумму, используя любой платежный метод, включая услуги другого платежного агента, за исключением DP2P и кредитных или дебетовых карт."
 
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "Чтобы открыть банковский счет, нам необходимо будет подтвердить вашу личность."
@@ -13061,17 +13061,20 @@ msgstr "Чтобы изменить пароль, введите ваш заре
 msgid "To smoothly verify you, we need a better photo"
 msgstr "Нам нужно фото более высокого качества, чтобы верифицировать вас"
 
+msgid "To transfer funds to your MT5 account, enter an amount of %1 or more"
+msgstr "Чтобы перевести средства на свой счет MT5, введите сумму не менее %1"
+
 msgid "To which it, at the time of execution of this Agreement was, or subsequently has become, in the public domain through no fault of the parties"
 msgstr "которая на момент исполнения данного Соглашения была или впоследствии стала известной широкой общественности без участия сторон,"
 
 msgid "To withdraw cryptocurrency, switch your account."
-msgstr ""
+msgstr "Переключите счет, чтобы вывести криптовалюту."
 
 msgid "To withdraw from MetaTrader 5 %1 please %2Authenticate%3 your Binary account."
 msgstr "Чтобы вывести средства с %1 MetaTrader 5, пройдите аутентификацию вашего счета на Binary."
 
 msgid "To withdraw money, please switch to your %1 account."
-msgstr ""
+msgstr "Чтобы вывести средства, перейдите на свой счет %1."
 
 msgid "Today"
 msgstr "Cегодня"
@@ -13113,7 +13116,7 @@ msgid "Top-up successful"
 msgstr "Пополнение прошло успешно"
 
 msgid "TopFX Ltd"
-msgstr ""
+msgstr "TopFX Ltd"
 
 msgid "Total"
 msgstr "Total"
@@ -13229,6 +13232,9 @@ msgstr "Торгуйте металлами с конкурентоспособ�
 msgid "Trade now"
 msgstr "Начать торговлю"
 
+msgid "Trade on Deriv"
+msgstr "Перейти на Deriv"
+
 msgid "Trade on underlying markets that include forex, stock indices, commodities, and more."
 msgstr "Торгуйте на всех основных рынках, включая forex, фондовые индексы, сырьевые товары и многое другое."
 
@@ -13300,12 +13306,6 @@ msgstr "Время открытия рынков"
 
 msgid "Trading and Withdrawal Limits"
 msgstr "Лимиты на торговлю и вывод"
-
-msgid "Trading and deposits have been disabled on your account. Kindly allow us some time to review the account."
-msgstr "На вашем счете отключены трейдинг и пополнение. Нам потребуется некоторое время, чтобы проверить счет."
-
-msgid "Trading and withdrawals have been disabled on your account. Kindly %1contact customer support%2 for assistance."
-msgstr "На вашем счете заблокирована торговля и вывод средств. Пожалуйста, свяжитесь со %1службой поддержки%2 для получения помощи."
 
 msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
 msgstr "Торговля бинарными опционами и CFD сопряжена с существенными рисками. Не работайте с деньгами, которые вы не можете позволить себе потерять и никогда не торгуйте на деньги, взятые в долг. Узнайте больше об %1ответственной торговле%2."
@@ -13649,6 +13649,12 @@ msgstr "Безработный"
 msgid "Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv."
 msgstr "К сожалению, этот сервис недоступен в вашей стране. Если вы хотите торговать мультипликаторами, попробуйте DTrader на Deriv."
 
+msgid "Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals."
+msgstr "К сожалению, вы можете только пополнять счет. Пожалуйста, свяжитесь с нами через чат, чтобы активировать вывод средств."
+
+msgid "Unfortunately, you can only make withdrawals. Please contact us via live chat."
+msgstr "К сожалению, вы можете только выводить средства. Пожалуйста, свяжитесь с нами через чат."
+
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
 msgstr "Высшее образование в области маркетинга, математики, IT/программирования или в смежной области"
 
@@ -13791,7 +13797,7 @@ msgid "Use the %1 API for any purpose that violates any law or regulation or any
 msgstr "Использовать API %1 в любых целях, нарушающих любой закон или установленные нормы, права любого лица, включая, но не ограничиваясь правом на интеллектуальную собственность, правом на сохранение конфиденциальности или охрану сфер личной жизни, а также в иных целях, противоречащих данным Правилам политики конфиденциальности."
 
 msgid "Use the Company's name or trademark in the Agent's advertising activities without a written authorisation to be given by the Company."
-msgstr ""
+msgstr "Использовать имя или торговую марку Компании в рекламной деятельности Агента без получения предварительного письменного разрешения Компании."
 
 msgid "Use the Marketing Materials provided by Binary solely for the purpose of providing IB services and in accordance with Binary's instructions"
 msgstr "использовать маркетинговые материалы, предоставленные Binary, исключительно с целью предоставления услуг ПБ и в соответствии с инструкциями Binary,"
@@ -13806,7 +13812,7 @@ msgid "Use the web platform from any Windows, MacOS, or Linux operating system �
 msgstr "Пользуйтесь веб платформой для операционных систем Windows, MacOS и Linux без загрузки и установки."
 
 msgid "Use their best endeavours and diligence to transfer funds deposited to %1 Agent Account to its respective %1 Client Account."
-msgstr ""
+msgstr "Прилагать максимум усилий и стараний для перевода средств со счета Агента на %1 на соответствующий Клиентский счет %1."
 
 msgid "Use their best endeavours to attract potential clients for Binary"
 msgstr "предпринять все разумные меры для привлечения потенциальных клиентов на Binary,"
@@ -13880,7 +13886,7 @@ msgstr "Подтвердить личность"
 msgid "Verify your identity"
 msgstr "Подтвердите личность"
 
-msgid "Version 50. Last modified 06-10-2021."
+msgid "Version 51. Last modified 17-11-2021."
 msgstr ""
 
 msgid "Video Room Facility"
@@ -14013,7 +14019,7 @@ msgid "We accept"
 msgstr "Мы принимаем:"
 
 msgid "We accept the following cryptocurrencies:"
-msgstr ""
+msgstr "Мы принимаем следующие криптовалюты:"
 
 msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
 msgstr "Мы всегда ценим клиентов превыше всего и стремимся предоставлять продукты и услуги, дающие им наилучший опыт и условия работы."
@@ -14021,8 +14027,8 @@ msgstr "Мы всегда ценим клиентов превыше всего 
 msgid "We are PayOps, part of the Compliance department. Our team emphasizes business development by implementing the payment strategy for the Deriv group of companies in collaboration with the Marketing team."
 msgstr "Мы - команда PayOps, подразделение отдела комплаенса. Наша команда способствует бизнес-развитию путём внедрения платёжных стратегий для группы компаний Deriv Group, в тесном сотрудничестве с маркетинговым отделом."
 
-msgid "We are licensed and regulated in the British Isles and in Malta since 2015."
-msgstr "Наша деятельность лицензирована и регулируется финансовыми органами Британских островов и Мальты с 2015 года."
+msgid "We are licensed and regulated in Malta since 2015."
+msgstr ""
 
 msgid "We are registered with the Financial Commission, an international independent organisation dedicated to resolving disputes within the financial services industry (%1view membership%2)."
 msgstr "Мы зарегистрированы в Финансовой комиссии, независимой международной организации, занимающейся разрешением споров в сфере финансовых услуг (%1см. регистрационные данные%2)."
@@ -14225,9 +14231,6 @@ msgstr "Отличные организационные, администрат�
 msgid "We’ll update your limits. Click %1Agree and accept%2 to acknowledge that you are fully responsible for your actions, and we are not liable for any addiction or loss."
 msgstr "Мы обновим ваши лимиты. Нажмите %1Согласиться и принять%2, чтобы подтвердить, что вы осознаете и полностью отвечаете за свои действия, и мы не несем ответственности за какие-либо убытки или зависимость."
 
-msgid "We’re updating our cashier system and it’ll be back online soon. Please see our %1status page%2 for updates."
-msgstr "Мы обновляем нашу кассовую систему, и скоро она снова станет доступна. Вы можете проверить состояние системы на %1странице статуса%2."
-
 msgid "We’ve sent you an email"
 msgstr "Мы отправили вам электронное письмо"
 
@@ -14334,7 +14337,7 @@ msgid "When the client opens any transactions in relation to Prohibited Trades"
 msgstr "если клиент открывает любой запрещённый контракт,"
 
 msgid "When the client requests a withdrawal from %1 Client Account, such request shall automatically proceed, and, as a result, the requested sum shall be transferred from the %1 Client Account to the %1 Agent Account. However, it is noted that when the client reaches the client's withdrawal limit, a withdrawal request shall not automatically proceed before the required authentication process is conducted."
-msgstr ""
+msgstr "Когда клиент запрашивает вывод средств со счета Клиента %1, такой запрос выполняется автоматически, и в результате запрошенная сумма переводится со счета Клиента %1 на счет Агента %1. Однако следует отметить, что, когда клиент достигает лимита на вывод средств, запрос не должен выполняться автоматически до того, как будет проведен необходимый процесс аутентификации."
 
 msgid "When the client transfers their money to DIEL for trading purposes, the client's funds are deposited in their %1 account. If the client chooses to trade FX and CFDs, the client shall transfer funds from their %1 account to their MT5 Real Account. Such a transfer shall not be regarded as a transfer from two different accounts but as a transfer of funds from the client's centralised %1 account to the MT5 Real Account. No fund transfers shall be made to any other account in the name of any third party."
 msgstr "Когда клиент перечисляет свои средства DIEL с целью торговли, деньги клиента поступают на счёт %1. Если клиент решает торговать на валютных парах и CFD, необходимо перевести средства со счёта %1 на Реальный счёт MT5. Данный перевод средств будет считаться не переводом с двух разных счетов, а переводом с основного счёта %1 на Реальный счёт MT5. Перечисления средств на любой другой счёт от имени третьего лица недопустимы."
@@ -14433,7 +14436,7 @@ msgid "Where the Agent acts in breach of any warranty, representation, or promis
 msgstr "Ситуации, когда Агент нарушил любые условия, обязательства или обещания в рамках данного соглашения, а также ситуации, когда любая информация, предоставленная Компании в рамках данного соглашения, является или станет ложной или недостоверной."
 
 msgid "Where the Agent becomes incapable of paying their debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law where the Agent is an individual"
-msgstr ""
+msgstr "Если Агент неспособен выплатить свои долги при наступлении срока их погашения, либо является банкротом или неплатежеспособным, как это определено в соответствии с любым применимым законодательством о банкротстве или несостоятельности, если Агент является физическим лицом."
 
 msgid "Where the Agent ceases to be competent, capable, adequate, or qualified to effectively perform all of the Agent's duties and obligations that are undertaken and agreed to under this agreement, for any reason, including but not limited to lack of knowledge, expertise, experience, skills, and time, the Agent shall notify the Company immediately and without any delay."
 msgstr "В случаях, если Агент не будет иметь компетенции, возможностей или соответствующей квалификации, чтобы эффективно исполнять все свои обязательства, принятые и оговоренные в рамках данного соглашения (по любой причине, включая, но не ограничиваясь недостатком знаний, опыта, квалификации, навыков и времени), Агент обязуется незамедлительно уведомить об этом Компанию."
@@ -14451,7 +14454,7 @@ msgid "Where the Agent omits, fails, or refuses in any manner to provide the Com
 msgstr "Если Агент избегает или отказывается в разумные сроки предоставлять Компании документы, подтверждающие его личность или любые другие доказательства, необходимые в рамках закона против отмывания денег, Компания оставляет за собой право прекратить дальнейшую работу с ним."
 
 msgid "Where the Agent owns or operates website(s), the Agent shall do the following:"
-msgstr ""
+msgstr "Если Агент владеет или управляет вебсайтом, он/она обязуется:"
 
 msgid "Where the Company ascertains any mistakes or flaws related to deposits or withdrawals from or to %1 Agent Account or %1 Client Account, the Company shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
 msgstr "В случае, если Компания обнаружит любые ошибки или упущения в отношении процедур пополнения счёта или вывода средств на или со счёта Агента %1, а также с Клиентского счёта %1, Компания обязуется предпринять все необходимые меры, чтобы в разумные сроки исправить данные ошибки или недочёты."
@@ -14600,9 +14603,6 @@ msgstr "Вывести средства с MT5"
 msgid "Withdraw funds from your MT5 account"
 msgstr "Вывод средств со счёта MT5"
 
-msgid "Withdraw your funds"
-msgstr "Выведите средства"
-
 msgid "Withdrawal"
 msgstr "Вывод"
 
@@ -14630,8 +14630,8 @@ msgstr "Вывод: от %1 до %2 дн."
 msgid "Withdrawal: Not applicable"
 msgstr "Вывод: не предлагается"
 
-msgid "Withdrawals have been disabled on your account. Please check your email for more details."
-msgstr "На вашем счете отключен вывод средств. Проверьте свою электронную почту для получения более подробной информации."
+msgid "Withdrawals are temporarily unavailable due to system maintenance. You can make your withdrawals when the maintenance is complete."
+msgstr "Вывод средств временно недоступен из-за технического обслуживания системы. Вы можете вывести средства после завершения работ."
 
 msgid "Withdrawals have been disabled on your account. Please wait until your uploaded documents are verified."
 msgstr "На вашем счете временно заблокирован вывод средств. Пожалуйста, подождите, пока загруженные вами документы будут проверены."
@@ -14694,7 +14694,7 @@ msgid "XRP/USD"
 msgstr "XRP/USD"
 
 msgid "XTB International Limited"
-msgstr ""
+msgstr "XTB International Limited"
 
 msgid "Yes"
 msgstr "Да"
@@ -14731,6 +14731,9 @@ msgstr "Вы будете ответственны за смягчение ри�
 
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "Вы продаёте основную (базовую) валюту и покупаете валюту котировки."
+
+msgid "You are using a demo account. Please switch to a real account or create one to access Cashier."
+msgstr "Вы используете демо-счет. Переключитесь на реальный счет или создайте его, чтобы получить доступ к кассе."
 
 msgid "You can %1set a new currency%2 before you deposit for the first %3."
 msgstr "Вы можете %1выбрать новую валюту%2 до того, как пополните счет в первый %3."
@@ -14775,7 +14778,7 @@ msgid "You can only subscribe to one signal provider with one %1 account at any 
 msgstr "Вы можете подписаться только на одного провайдера сигналов с одного счета %1 в любой момент времени. Вы можете использовать сигнал максимум на 3 компьютерах."
 
 msgid "You can open an account for each cryptocurrency."
-msgstr ""
+msgstr "Вы можете открыть по одному счету на каждую криптовалюту."
 
 msgid "You can sell your contract before expiry to keep any profit you may have made or to minimise your loss."
 msgstr "Вы можете продать контракт до окончания срока его действия, чтобы сохранить имеющуюся прибыль или минимизировать убыток."
@@ -14822,11 +14825,17 @@ msgstr "Вы уже в сумме вывели %1%2 за последние %3 �
 msgid "You have already withdrawn %1%2."
 msgstr "Вы уже вывели со счета %1%2."
 
+msgid "You have chosen to exclude yourself from trading on our website until %1. If you are unable to place a trade or deposit after your self-exclusion period, please contact us via live chat."
+msgstr "Вы решили исключить себя из торговли на нашем сайте до %1. Если вы не можете купить контракт или пополнить счет после периода самоисключения, свяжитесь с нами через чат."
+
 msgid "You have created all accounts available to you."
 msgstr "Вы открыли все доступные счета."
 
 msgid "You have funds in these Binary accounts:"
 msgstr "У вас есть средства на этих счетах Binary:"
+
+msgid "You have funds in these Deriv X accounts:"
+msgstr "У вас есть средства на этих счетах Deriv X:"
 
 msgid "You have funds in these MT5 accounts:"
 msgstr "У вас есть средства на этих счетах MT5:"
@@ -14840,8 +14849,14 @@ msgstr "На вашем счете MT5 недостаточно средств."
 msgid "You have not granted access to any applications."
 msgstr "Вы не предоставили доступ ни к каким приложениям."
 
+msgid "You have not provided your tax identification number. This information is necessary for legal and regulatory requirements. Please go to %1Personal details%2 in your account settings, and fill in your latest tax identification number."
+msgstr "Вы не указали свой идентификационный номер налогоплательщика. Эта информация необходима для соблюдения правовых и нормативных требований. Перейдите в %1личные данные%2 в настройках счета и введите свой актуальный идентификационный номер налогоплательщика."
+
 msgid "You have open positions in these Binary accounts:"
 msgstr "У вас есть открытые позиции на этих счетах Binary:"
+
+msgid "You have open positions in these Deriv X accounts:"
+msgstr "У вас есть открытые позиции на этих счетах Deriv X:"
 
 msgid "You have open positions in these MT5 accounts:"
 msgstr "У вас есть открытые позиции на этих счетах  MT5:"
@@ -15011,6 +15026,15 @@ msgstr "Вы работали в сфере финансов на протяже
 msgid "Your %1 day withdrawal limit is currently %2%3."
 msgstr "Ваш %1-дневный лимит на вывод средств составляет %2%3."
 
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits and withdrawals."
+msgstr "Отсутствуют некоторые %1личные данные%2. Пожалуйста, перейдите в настройки счета и введите недостающие личные данные, чтобы активировать пополнение и вывод средств."
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable deposits."
+msgstr "Отсутствуют некоторые %1личные данные%2. Пожалуйста, перейдите в настройки счета и введите недостающие личные данные, чтобы активировать пополнение счета."
+
+msgid "Your %1personal details%2 are incomplete. Please go to your account settings and complete your personal details to enable withdrawals."
+msgstr "Отсутствуют некоторые %1личные данные%2. Пожалуйста, перейдите в настройки счета и введите недостающие личные данные, чтобы активировать вывод средств."
+
 msgid "Your %1proof of address%2 has expired."
 msgstr "Срок действия документа, %1подтверждающего адрес%2, истёк."
 
@@ -15022,9 +15046,6 @@ msgstr "Срок действия документа, %1удостоверяющ
 
 msgid "Your %1proof of identity%2 has not been verified."
 msgstr "Ваш документ, %1подтверждающий личность%2, не прошел проверку."
-
-msgid "Your %1proof of identity%3 and %2proof of address%3 have expired."
-msgstr "Срок действия документов, %1удостоверяющих личность%3 и %2подтверждающих адрес%3, истёк."
 
 msgid "Your %1proof of identity%3 and %2proof of address%3 have not been verified."
 msgstr "Ваши документы, подтверждающие %1личность%3 и %2адрес%3 не прошли проверку"
@@ -15041,6 +15062,9 @@ msgstr "Баланс вашего демо-счета был сброшен."
 msgid "Your Existing Accounts"
 msgstr "Ваши текущие счета"
 
+msgid "Your access to Cashier has been temporarily disabled as you have not set your 30-day turnover limit. Please go to %1Self-exclusion%2 and set your 30-day turnover limit."
+msgstr "Ваш доступ к кассе был временно заблокирован, так как вы не установили 30-дневный лимит на оборот счета. Перейдите на страницу %1самоисключения%2 и установите этот лимит."
+
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "В настоящее время вам не нужно аутентифицировать свой счет.%1Мы сообщим вам, если счету потребуется аутентификация."
 
@@ -15049,6 +15073,12 @@ msgstr "Проверка вашего счёта прошла успешно"
 
 msgid "Your account has no Login/Logout activity."
 msgstr "На вашем счете нет активности входов/выходов."
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and access your cashier."
+msgstr "Ваш счет не был аутентифицирован. Отправьте нам %1подтверждение вашей личности и адреса%2, чтобы аутентифицировать счет и получить доступ к кассе."
+
+msgid "Your account has not been authenticated. Please submit your %1proof of identity and proof of address%2 to authenticate your account and request for withdrawals."
+msgstr "Ваш счет не был аутентифицирован. Отправьте нам %1подтверждение вашей личности и адреса%2, чтобы аутентифицировать счет и активировать вывод средств."
 
 msgid "Your account is fully authenticated and your withdrawal limits have been lifted."
 msgstr "Ваш счет полностью авторизован, и лимит на вывод был снят."
@@ -15059,8 +15089,8 @@ msgstr "Ваш счет успешно деактивирован."
 msgid "Your account is now deactived."
 msgstr "Ваш счет успешно деактивирован."
 
-msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
-msgstr "Ваш счёт заблокирован. Пожалуйста, свяжитесь с нашей %1cлужбой поддержки%2 для получения дальнейшей помощи."
+msgid "Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again."
+msgstr "Ваш счет временно отключен. Свяжитесь с нами через чат, чтобы активировать пополнение и вывод средств."
 
 msgid "Your account remains under the retail client category."
 msgstr "Ваш счёт остаётся в категории индивидуальных."
@@ -15077,8 +15107,17 @@ msgstr "Ваша заявка на квалификацию профессион
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our %1payment agent%2 list."
 msgstr "Затем ваша заявка будет изучена нашими отделами комплаенса и маркетинга. После одобрения мы включим вас в список наших %1Платежных агентов%2."
 
+msgid "Your cashier is currently locked. Please contact us via live chat to find out how to unlock it."
+msgstr "Ваша касса заблокирована. Свяжитесь с нами через чат, чтобы узнать, как получить к ней доступ."
+
 msgid "Your cashier is locked."
 msgstr "Ваша касса заблокирована."
+
+msgid "Your cashier is locked. Please complete the %1financial assessment%2 to unlock it."
+msgstr "Ваша касса заблокирована. Пройдите %1финансовую оценку%2, чтобы получить доступ к кассе."
+
+msgid "Your cashier is locked. See %1how we protect your funds%2 before you proceed."
+msgstr "Ваша касса заблокирована. Прежде чем продолжить, ознакомьтесь с тем, %1как мы защищаем ваши средства%2."
 
 msgid "Your cashier session has expired. Please try again."
 msgstr "Ваша сессия в разделе касса истекла. Обновите страницу."
@@ -15212,6 +15251,9 @@ msgstr "Ваш лимит на вывод составляет %1%2."
 msgid "You’ll need to fund your MQL5 account to subscribe to paid signals. Learn %1how to fund your account%2."
 msgstr "Чтобы подписаться на платные сигналы, вам нужно пополнить свой счет MQL5. Вот как вы можете %1это сделать%2."
 
+msgid "You’ve not set your country of residence. To access Cashier, please update your %1country of residence%2 in the Personal details section in your account settings."
+msgstr "Вы не указали страну проживания. Чтобы получить доступ к кассе, выберите %1страну проживания%2 в разделе Личные данные в настройках счета."
+
 msgid "ZEC vs US dollar"
 msgstr "ZEC против доллара США"
 
@@ -15254,6 +15296,9 @@ msgstr "единица контракта, представляющая собо
 msgid "a. Access the MT5 trading platform through the direct link %1 from DIEL's web interface, or"
 msgstr "a) зайти на торговую платформу MT5 по прямой ссылке %1 через веб интерфейс DIEL; или"
 
+msgid "a. Account opened under a false name"
+msgstr "a. Счет открыт под вымышленным именем"
+
 msgid "an Order to execute a transaction to close an Open Position when the price reaches the client's specified price"
 msgstr "инструкция исполнить контракт с целью закрыть открытую позицию, когда цена достигнет уровня, указанного клиентом"
 
@@ -15269,11 +15314,17 @@ msgstr "исполнение инструкций, предоставленны�
 msgid "b. Download and install the MT5 trading platform through the link %1"
 msgstr "b) загрузить и установить торговую платформу MT5 по ссылке %1"
 
+msgid "b. Submission of fraudulent or tampered document"
+msgstr "b. Были предоставлены фальшивые или подделанные документы"
+
 msgid "back"
 msgstr "назад"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading stock indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "бинарные опционы, forex, форекс, forex трейдинг, торговля на форекс, онлайн торговля, онлайн-трейдинг бинарный трейдинг, торговля на фондовых индексах, трейдинг на фондовых индексах, контракты на форекс, торговля на сырье, стратегия бинарных опционов, бинарный брокер, бинарная ставка, платформа для торговли бинарными опционами, бинарная стратегия, финансы, инвестиции, трейдинг"
+
+msgid "c. Opening of more than one Binary.com account"
+msgstr "c. Открыто более одного счета Binary.com"
 
 msgid "close"
 msgstr "закрыть"

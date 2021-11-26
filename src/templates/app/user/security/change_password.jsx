@@ -78,7 +78,7 @@ const ChangePassword = () => (
                     </div>
                 </Fieldset>
             </form>
-            <form className='form gr-padding-10' id='frm_trading_password'>
+            <form className='form gr-padding-10 invisible' id='frm_trading_password'>
                 <Fieldset legend={it.L('MT5 password')}>
                     <div className='gr-7 gr-12-p gr-12-m'>
                         <p className='hint'>{it.L('This password is for logging in to your MT5 accounts on the desktop, web, and mobile apps.')}</p>

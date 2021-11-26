@@ -70,9 +70,9 @@ const WelcomePageOnboarding = (() => {
     };
     
     const onUnload = () => {
-        cfd.removeEventListener('click', onClickCFD);
-        d_options.removeEventListener('click', onClickDigitalOptions);
-        not_sure.removeEventListener('click', onClickNotSure);
+        if (cfd) cfd.removeEventListener('click', onClickCFD);
+        if (d_options) d_options.removeEventListener('click', onClickDigitalOptions);
+        if (not_sure) not_sure.removeEventListener('click', onClickNotSure);
     };
 
     return {

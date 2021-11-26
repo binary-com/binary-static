@@ -1,5 +1,6 @@
-const Client = require('../base/client');
-const State  = require('../../_common/storage').State;
+const Client              = require('../base/client');
+const State               = require('../../_common/storage').State;
+const isEuCountrySelected = require('../../_common/utility').isEuCountrySelected;
 
 // will return true for all clients with maltainvest/malta/iom financial/gaming landing company shortcode
 // needs to wait for website_status, authorize, and landing_company before being called
@@ -14,7 +15,7 @@ const isEuCountry = () => {
     return (
         (financial_shortcode || gaming_shortcode) ?
             (eu_shortcode_regex.test(financial_shortcode) || eu_shortcode_regex.test(gaming_shortcode)) :
-            eu_excluded_regex.test(clients_country)
+            eu_excluded_regex.test(clients_country) || isEuCountrySelected(clients_country)
     );
 };
 

@@ -615,7 +615,7 @@ const MetaTraderUI = (() => {
                 const insufficient_funds_error = $form.find('#insufficient_funds');
                 const is_balance_more_than_entered = balance >= txt_amount_deposit_element.val();
 
-                if (is_balance_more_than_entered) {
+                if (isNaN(txt_amount_deposit_element.val()) || is_balance_more_than_entered) {
                     return insufficient_funds_error.setVisibility(0);
                 }
                 return insufficient_funds_error.setVisibility(1);
@@ -721,7 +721,8 @@ const MetaTraderUI = (() => {
                 getAccountsInfo(account).info.sub_account_type,
                 trading_server.supported_accounts
             ) &&
-            trading_server.id === getAccountsInfo(account).info.server
+            trading_server.id === getAccountsInfo(account).info.server &&
+            trading_server.account_type === getAccountsInfo(account).info.account_type
         );
 
     const shouldSetTradingPassword = () => {
@@ -745,6 +746,7 @@ const MetaTraderUI = (() => {
         if (should_set_trading_password) {
             $form.find('#view_3').find('#trading_password_new_user').setVisibility(1);
         } else {
+            $form.find('#view_3').find('#trading_password_new_user').setVisibility(0);
             const mt5_label = isEuCountry() ? localize('CFDs') : localize('MT5 Financial');
             $form.find('#view_3').find('#trading_password_existing_user')
                 .html(localize(
@@ -931,7 +933,8 @@ const MetaTraderUI = (() => {
     };
 
     const selectAccountTypeUI = (e) => {
-        const box_class = 'mt5_type_box';
+        const box_class                 = 'mt5_type_box';
+        const real_financial_acc_number = Object.values(accounts_info).filter(acc_type => !acc_type.is_demo && acc_type.market_type === 'financial').length;
         let $item = $(e.target);
         if (!$item.hasClass(box_class)) {
             $item = $item.parents(`.${box_class}`);
@@ -942,12 +945,12 @@ const MetaTraderUI = (() => {
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = 'new_account';
         if (/(demo|real)/.test(selected_acc_type)) {
+            displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual') && real_financial_acc_number > 0) ? MetaTraderConfig.needsRealMessage() : '', true);
             displayAccountDescription(selected_acc_type);
             updateAccountTypesUI(selected_acc_type);
             switchAccountTypesUI(selected_acc_type, $form);
             $form.find('#view_1 .btn-next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
-            displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
         } else {
             const new_acc_type = newAccountGetType();
             displayAccountDescription(new_acc_type);
@@ -1198,10 +1201,9 @@ const MetaTraderUI = (() => {
             The code below is to stop the tooltip from showing wrong
             information.
         */
-        if ((getAccountsInfo(acc_type).landing_company_short === 'vanuatu' &&
+        if (is_mobile || (getAccountsInfo(acc_type).landing_company_short === 'vanuatu' &&
             getAccountsInfo(acc_type).market_type === 'financial' &&
-            getAccountsInfo(acc_type).sub_account_type === 'financial') ||
-            is_mobile) {
+            getAccountsInfo(acc_type).sub_account_type === 'financial')) {
             $icon.remove();
             return;
         }
@@ -1225,7 +1227,9 @@ const MetaTraderUI = (() => {
         const topup_btn_text     = localize('Get [_1]', `10,000.00 ${MetaTraderConfig.getCurrency(acc_type)}`);
 
         el_loading.setVisibility(0);
-        el_demo_topup_btn.firstChild.innerText = topup_btn_text;
+        if (el_demo_topup_btn){
+            el_demo_topup_btn.firstChild.innerText = topup_btn_text;
+        }
 
         if (is_demo) {
             const balance     = +getAccountsInfo(acc_type).info.balance;
@@ -1308,6 +1312,7 @@ const MetaTraderUI = (() => {
         displayMainMessage,
         displayMessage,
         displayPageError,
+        displayStep,
         disableButton,
         disableButtonLink,
         enableButton,

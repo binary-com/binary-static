@@ -47,7 +47,7 @@ const PaymentAgentList = () => (
                             { text: it.L('Summary')                  , placeholder: '%summary' },
                             { text: it.L('Commission on deposits')   , placeholder: '%deposit_commission%' },
                             { text: it.L('Commission on withdrawals'), placeholder: '%withdrawal_commission%' },
-                            { text: it.L('Website')                  , placeholder: '%url', href: true },
+                            { text: it.L('Website')                  , placeholder: '%url' },
                             { text: it.L('Email')                    , placeholder: '%email', mailto: true },
                             { text: it.L('Tel')                      , placeholder: '%telephone' },
                             { text: it.L('Further information')      , placeholder: '%further_information' },

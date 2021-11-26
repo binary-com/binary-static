@@ -1032,3 +1032,8 @@ $.fn.enjoyhint = function (method) {
     return this;
 };
 
+$(window).on('popstate', function() {
+    var $body = $('body');
+    $body.enjoyhint('hide');
+});
+

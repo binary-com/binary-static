@@ -1,4 +1,7 @@
 const MenuSelector   = require('../../_common/menu_selector');
+const TabSelector    = require('../../_common/tab_selector');
+const isEuCountry    = require('../../app/common/country_base').isEuCountry;
+const BinarySocket   = require('../../app/base/socket');
 
 module.exports = {
     BinaryOptions: {
@@ -20,5 +23,19 @@ module.exports = {
     Forex: {
         onLoad  : () => { MenuSelector.init(['what-forex-trading', 'how-to-trade-forex', 'margin-policy', 'contract-specification']); },
         onUnload: () => { MenuSelector.clean(); },
+    },
+    Index: {
+        onLoad: () => {
+            BinarySocket.wait('website_status', 'landing_company').then(() => {
+                if (isEuCountry()) {
+                    const redirect_url = `${location.protocol}//${location.host}${location.pathname}?get_started_tabs=mt5`;
+                    window.history.pushState({ path: redirect_url },'',redirect_url);
+                }
+                TabSelector.onLoad();
+            });
+        },
+        onUnload: () => {
+            TabSelector.onUnload();
+        },
     },
 };

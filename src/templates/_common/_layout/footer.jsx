@@ -169,13 +169,7 @@ const Footer = () => (
                     <div className='gr-12'>
                         <div className='icon-row flex-row'>
                             <div className='regulation-logos flex-row'>
-                                <a className='iom-icon' href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
-                                    <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
-                                </a>
                                 <div className='mga-gamstop-icon-container'>
-                                    <a className='gamstop-icon' href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
-                                        <img className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
-                                    </a>
                                     <a className='mga-icon' href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
                                         <img className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                                     </a>
@@ -214,9 +208,6 @@ const Footer = () => (
                     <div className='gr-12'>
                         <p>
                             {it.L('Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta, is licensed in Malta and regulated by the Malta Financial Services Authority under the Investments Services Act to provide investment services in the European Union ([_1]licence no. IS/70156[_2]). It is also authorised and subject to limited regulation by the Financial Conduct Authority in the UK. Details about the extent of our authorisation and regulation by the Financial Conduct Authority are available from us on request.', `<a href=${it.url_for('download/WS-Deriv-Investments-Europe-Limited.pdf')} target="_blank">`, '</a>')}
-                        </p>
-                        <p>
-                            {it.L('In the Isle of Man and the UK, virtual-events-based bets on synthetic indices are offered by Deriv (MX) Ltd, Millennium House, Level 1, Victoria Road, Douglas IM2 4RW, Isle of Man; licensed and regulated in Great Britain by (1) the Gambling Commission under [_1]account no. 39172[_3] and by (2) the Gambling Supervision Commission in the Isle of Man ([_2]view licence[_3]).', '<a href="https://www.gamblingcommission.gov.uk/public-register/business/detail/39172" target="_blank" rel="noopener noreferrer">', '<a href="https://deriv.com/regulatory/Deriv_(MX)_Ltd.pdf" target="_blank" rel="noopener noreferrer">', '</a>')}
                         </p>
                         <p>
                             {it.L('In the rest of the EU, Synthetic indices are offered by Deriv (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara BKR 9033, Malta; licensed and regulated by (1) the Malta Gaming Authority ([_1]licence no. MGA/B2C/102/2000[_3])  and (2) the Revenue Commissioners for clients in Ireland (licence no. 1010285). View complete [_2]Regulatory Information[_3].', `<a href=${it.url_for('download/regulation/MGA_licence.pdf')} target="_blank">`, `<a href="${it.url_for('regulation')}">`, '</a>')}

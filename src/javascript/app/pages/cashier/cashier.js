@@ -186,11 +186,9 @@ const Cashier = (() => {
     const setBtnDisable = selector => $(selector).addClass('button-disabled').click(false);
 
     const applyStateLockLogic = (status, deposit, withdraw) => {
-        const is_uk_client = Client.get('residence') === 'gb';
-
         // statuses to check with their corresponding selectors
         const statuses_to_check = [
-            { lock: 'cashier_locked', selectors: is_uk_client ? [withdraw] : [deposit, withdraw] },
+            { lock: 'cashier_locked', selectors: [deposit, withdraw] },
             { lock: 'deposit_locked', selectors: [deposit] },
             { lock: 'withdrawal_locked', selectors: [withdraw] },
             { lock: 'no_withdrawal_or_trading', selectors: [withdraw] },
@@ -216,15 +214,16 @@ const Cashier = (() => {
 
     const switchToAccount = (account_type, transaction_type, fiat_account) => {
         const ok_text = localize('Switch account');
+        const fiat_currency = Client.get('currency', fiat_account);
         let localized_title = '';
         let localized_message = '';
 
         if (account_type === 'fiat') {
             localized_title = localize('Switch account?');
             if (transaction_type === 'deposit') {
-                localized_message = localize('To deposit money, please switch to your [_1] account.', fiat_account);
+                localized_message = localize('To deposit money, please switch to your [_1] account.', fiat_currency);
             } else {
-                localized_message = localize('To withdraw money, please switch to your [_1] account.', fiat_account);
+                localized_message = localize('To withdraw money, please switch to your [_1] account.', fiat_currency);
             }
         } else {
             localized_title = localize('Switch to crypto account?');

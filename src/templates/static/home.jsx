@@ -10,6 +10,7 @@ import {
     TabContentContainer,
     TabsSubtabs,
     TabContent }            from  '../_common/components/tabs.jsx';
+
 import DerivBanner          from '../_common/components/deriv_banner.jsx';
 
 const Arrows = ({ direction, parent }) => (

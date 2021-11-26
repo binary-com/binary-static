@@ -67,6 +67,7 @@ const Trading = () => (
                                                 <span id='duration_tooltip'>{it.L('Minimum:')}</span> <span id='duration_minimum' />
                                                 <span id='duration_maximum' className='invisible' />
                                             </div>
+                                            <span id='duration_stock_indices' className='invisible hint'>{it.L('Should be 1')}</span>
                                             <div id='expiry_type_endtime'>
                                                 <input id='expiry_date' type='text' data-lpignore='true' readOnly='readonly' autoComplete='off' />
                                                 <div id='expiry_time_row'>

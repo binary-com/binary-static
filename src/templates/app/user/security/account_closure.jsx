@@ -34,33 +34,50 @@ const AccountClosureDialog = () => (
     </div>
 );
 
-const AccountClosureError = () => (
-    <div id='account_closure_error' className='account-closure-dialog lightbox'>
-        <div id='account_closure_error_content' className='account-closure-dialog-content gr-padding-10 gr-gutter'>
-            <div className='gr-padding-10 gr-parent'>
-                <h3 className='secondary-color'>{it.L('Action required')}</h3>
-                <div className='gr-padding-20 gr-parent invisible' id='account_closure_open'>
-                    {it.L('You have open positions in these Binary accounts:')}
+const AccountClosureError = () => {
+    const account_closure_content = [{
+        id         : 'account_closure_open',
+        description: it.L('You have open positions in these Binary accounts:'),
+    }, {
+        id         : 'account_closure_balance',
+        description: it.L('You have funds in these Binary accounts:'),
+    },{
+        id         : 'account_closure_open_mt',
+        description: it.L('You have open positions in these MT5 accounts:'),
+    },{
+        id         : 'account_closure_balance_mt',
+        description: it.L('You have funds in these MT5 accounts:'),
+    }, {
+        id         : 'account_closure_open_dxtrade',
+        description: it.L('You have open positions in these Deriv X accounts:'),
+    },{
+        id         : 'account_closure_balance_dxtrade',
+        description: it.L('You have funds in these Deriv X accounts:'),
+    }, {
+        id         : 'account_closure_pending_withdrawals',
+        description: it.L('You have pending withdrawal(s) in these Binary accounts:'),
+    }];
+    
+    return (
+        <div id='account_closure_error' className='account-closure-dialog lightbox'>
+            <div id='account_closure_error_content' className='account-closure-dialog-content gr-padding-10 gr-gutter'>
+                <div className='gr-padding-10 gr-parent'>
+                    <h3 className='secondary-color'>{it.L('Action required')}</h3>
+                    {
+                        account_closure_content.map((item) =>
+                            <div key={item.id} className='gr-padding-20 gr-parent invisible' id={item.id}>
+                                {item.description}
+                            </div>
+                        )
+                    }
                 </div>
-                <div className='gr-padding-20 gr-parent invisible' id='account_closure_balance'>
-                    {it.L('You have funds in these Binary accounts:')}
+                <div id='account_closure_error_buttons' className='gr-padding-10 gr-child'>
+                    <button className='modal-back back button no-margin'>{it.L('OK')}</button>
                 </div>
-                <div className='gr-padding-20 gr-parent invisible' id='account_closure_open_mt'>
-                    {it.L('You have open positions in these MT5 accounts:')}
-                </div>
-                <div className='gr-padding-20 gr-parent invisible' id='account_closure_balance_mt'>
-                    {it.L('You have funds in these MT5 accounts:')}
-                </div>
-                <div className='gr-padding-20 gr-parent invisible' id='account_closure_pending_withdrawals'>
-                    {it.L('You have pending withdrawal(s) in these Binary accounts:')}
-                </div>
-            </div>
-            <div id='account_closure_error_buttons' className='gr-padding-10 gr-child'>
-                <button className='modal-back back button no-margin'>{it.L('OK')}</button>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 const AccountClosure = () => (
     <React.Fragment>
@@ -73,20 +90,22 @@ const AccountClosure = () => (
 
         <div id='closure_container' className='account-closure'>
             <div id='step_1' className='invisible'>
-                <h1 id='heading'>{it.L('Deactivate Account')}</h1>
-                <p className='account-closure-subtitle'>{it.L('Before you deactivate your account, you need to do the following:')}</p>
+                <h1 id='heading'>{it.L('Deactivate account')}</h1>
+                <p className='account-closure-subtitle'>{it.L('Before you deactivate your account, you’ll need to:')}</p>
 
                 <div className='gr-no-gutter'>
                     <div id='closing_steps' className='gr-padding-10'>
                         <div className='gr-padding-10'>
-                            <h3 className='secondary-color'>{it.L('Close open positions')}</h3>
-                            <p className='no-margin'>{it.L('If you have a Binary real account, go to [_1]Portfolio[_2] to close any open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
-                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a MT5 real account, log into it to close any open positions.')}</p>
+                            <h3 className='secondary-color'>{it.L('1. Ensure to close all your positions')}</h3>
+                            <p className='no-margin'>{it.L('If you have a Binary real account, go to [_1]Portfolio[_2] to close or sell any open positions.', `<a href="${it.url_for('user/portfoliows')}">`, '</a>')}</p>
+                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a DMT5 real account, log in to close any open positions.')}</p>
+                            <p className='invisible cfd-link no-margin'>{it.L('If you have a DMT5 or Deriv X real account, log in to close any open positions.')}</p>
                         </div>
                         <div className='gr-padding-30'>
-                            <h3 className='secondary-color'>{it.L('Withdraw your funds')}</h3>
-                            <p className='no-margin'>{it.L('If you have a Binary real account, go to [_1]Cashier[_2] to withdraw your funds', `<a href="${it.url_for('cashier')}">`, '</a>')}</p>
-                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a MT5 real account, go to [_1]MT5 dashboard[_2] to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                            <h3 className='secondary-color'>{it.L('2. Withdraw your funds')}</h3>
+                            <p className='no-margin'>{it.L('If you have a Binary real account, go to [_1]Cashier[_2] to withdraw your funds.', `<a href="${it.url_for('cashier')}">`, '</a>')}</p>
+                            <p className='invisible metatrader-link no-margin'>{it.L('If you have a DMT5 real account, go to your [_1]DMT5[_2] dashboard to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>')}</p>
+                            <p className='invisible cfd-link no-margin'>{it.L('If you have a DMT5 or Deriv X real account, go to your [_1]DMT5[_2] or [_3]Deriv X[_4] dashboard to withdraw your funds.', `<a href="${it.url_for('user/metatrader')}">`, '</a>', '<a href="https://app.deriv.com/derivx">', '</a>')}</p>
                         </div>
                     </div>
 

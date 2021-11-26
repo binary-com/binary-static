@@ -60,9 +60,9 @@ const setObject = function(key, value) {
 
         if (quota_exceeded_error) {
             handlesQuotaExceededErrorException();
+        } else {
+            throw e; // re-throw the error unchanged
         }
-
-        throw e; // re-throw the error unchanged
     }
 };
 

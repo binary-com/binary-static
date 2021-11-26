@@ -92,7 +92,7 @@ const Accounts = (() => {
     const populateNewAccounts = (upgrade_info) => {
         const table_headers = TableHeaders.get();
         const residence = Client.get('residence');
-         
+
         upgrade_info.type.forEach((new_account_type, index) => {
             const getAccountTitle = () => {
                 if (new_account_type === 'financial') {
@@ -161,6 +161,7 @@ const Accounts = (() => {
 
         // Replace note to reflect ability to change currency
         $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency.')}`);
+        $('#note_change_currency').setVisibility(0);
     };
 
     const onConfirmSetCurrency = () => {
@@ -212,6 +213,7 @@ const Accounts = (() => {
         const table_headers     = TableHeaders.get();
         const account_currency  = Client.get('currency', loginid);
         const account_type_prop = { text: Client.getAccountTitle(loginid) };
+        const can_currency_change_id = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'), loginid);
 
         if (!Client.isAccountOfType('virtual', loginid)) {
             const company_name                       = getCompanyName(loginid);
@@ -242,7 +244,10 @@ const Accounts = (() => {
                         text: localize('Set currency'),
                         type: 'button',
                     }).on('click', showSetCurrency) : (Currency.getCurrencyFullName(account_currency) || '-'))));
-
+        if (can_currency_change_id) {
+            $('#change_currency').text(account_currency);
+            $('#note_change_currency').setVisibility(1);
+        }
         if (is_disabled || excluded_until) {
             $('#note_support').setVisibility(1);
         }

@@ -581,17 +581,50 @@ const Durations = (() => {
     };
 
     const validateMinDurationAmount = () => {
-        const duration_amount_element  = CommonFunctions.getElementById('duration_amount');
-        const duration_wrapper_element = CommonFunctions.getElementById('duration_wrapper');
+        const duration_amount                = Defaults.get('duration_amount');
+        const duration_unit_value            = Defaults.get('duration_units');
+        const duration_amount_element        = CommonFunctions.getElementById('duration_amount');
+        const duration_wrapper_element       = CommonFunctions.getElementById('duration_wrapper');
+        const current_market                 = CommonFunctions.querySelector('.market_current .market').innerText;
+        const duration_stock_indices_element = CommonFunctions.getElementById('duration_stock_indices');
+        const contract_errors                = CommonFunctions.getElementsByClassName('contract_error');
+        const purchase_buttons               = CommonFunctions.getElementsByClassName('purchase_button');
+        const price_comments                 = CommonFunctions.getElementsByClassName('price_comment');
 
         if (!CommonFunctions.isVisible(duration_amount_element)) {
             duration_wrapper_element.setVisibility(0);
             return;
         }
 
+        if (duration_amount === '') {
+            const contract_errors_array  = Object.values(contract_errors);
+            const purchase_buttons_array = Object.values(purchase_buttons);
+            const price_comment_array    = Object.values(price_comments);
+
+            purchase_buttons_array.forEach(button => button.parentNode.classList.add('button-disabled'));
+            price_comment_array.forEach(comment => comment.style.display = 'none');
+            contract_errors_array.forEach(error => {
+                CommonFunctions.elementTextContent(error, 'Enter the trade duration to know your stake and payout.');
+                error.style.display = 'block';
+            });
+        }
+
         const duration_min_element = CommonFunctions.getElementById('duration_minimum');
         const duration_max_element = CommonFunctions.getElementById('duration_maximum');
         duration_wrapper_element.setVisibility(1);
+        duration_stock_indices_element.setVisibility(0);
+
+        if (current_market === 'Stock Indices' && duration_unit_value === 'h') {
+            const value_is_one_hour = parseInt(duration_amount) === parseInt(duration_min_element.innerText);
+            duration_stock_indices_element.setVisibility(1);
+            duration_wrapper_element.setVisibility(0);
+
+            if (!value_is_one_hour) {
+                duration_stock_indices_element.classList.add('error-msg');
+            } else {
+                duration_stock_indices_element.classList.remove('error-msg');
+            }
+        }
 
         if (+duration_amount_element.value < +duration_min_element.textContent) {
             duration_amount_element.classList.add('error-field');

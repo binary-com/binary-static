@@ -16,7 +16,8 @@ const ChangePassword = (() => {
         $trading_password_container,
         social_signup_identifier,
         forgot_binary_pw_btn_id,
-        forgot_trading_pw_btn_id;
+        forgot_trading_pw_btn_id,
+        $frm_trading_password_id;
 
     const social_signups = {
         'Google': {
@@ -119,14 +120,19 @@ const ChangePassword = (() => {
         social_signup_identifier        = '';
         forgot_binary_pw_btn_id         = '#forgot_binary_pw_btn';
         forgot_trading_pw_btn_id        = '#forgot_trading_pw_btn';
+        $frm_trading_password_id        = $('#frm_trading_password');
 
         $change_password_loading.setVisibility(1);
 
-        BinarySocket.wait('get_account_status').then(() => {
+        BinarySocket.wait('get_account_status').then((response) => {
+            const account_status        = response.get_account_status.status;
+            const has_social_signup     = hasSocialSignup();
             $change_password_loading.setVisibility(0);
             $change_password_container.setVisibility(1);
-            const has_social_signup             = hasSocialSignup();
 
+            if (!account_status.includes('mt5_password_not_set')) {
+                $frm_trading_password_id.setVisibility(1);
+            }
             if (has_social_signup) {
                 initSocialSignup();
             } else {
