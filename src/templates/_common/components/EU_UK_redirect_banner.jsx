@@ -12,7 +12,7 @@ const RedirectBanner = ({ has_margin }) => (
                 className='close_banner_img'
             />
             <div className='close_banner_text_wrapper'>
-                <h3>{it.L('Binary.com is moving to Deriv on 30 November')}</h3>
+                <h3>{it.L('Binary.com is moving to Deriv')}</h3>
                 <p>{it.L('Start using Deriv with your Binary.com email and password.')}</p>
             </div>
         </div>
