@@ -6,15 +6,11 @@ const isEuCountrySelected      = require('../../_common/utility').isEuCountrySel
 
 const RedirectBanner = (() => {
     const onLoad = () => {
-        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
-            const client_country = State.getResponse('website_status.clients_country');
-
-            const eu_country = isEuCountrySelected(Client.get('residence')) || isEuCountrySelected(client_country);
-            if (eu_country) {
+        BinarySocket.wait('website_status').then(() => {
+            if (isEuCountrySelected(State.getResponse('website_status.clients_country'))) {
                 handleRedirect();
             }
         });
-
     };
 
     const handleRedirect = () => {
