@@ -1,0 +1,1708 @@
+[
+  {
+    "name": "Visa",
+    "category": "Credit/debit cards",
+    "key": "visa",
+    "description": "Deposit and withdraw using your Visa credit or debit card.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "visa",
+    "locale": [],
+    "logo": "visa"
+  },
+  {
+    "name": "Visa Electron",
+    "category": "Credit/debit cards",
+    "key": "visa-electron",
+    "description": "Deposit and withdraw using your Visa Electron card. ",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "visa_electron"
+  },
+  {
+    "name": "Mastercard",
+    "category": "Credit/debit cards",
+    "key": "mastercard",
+    "description": "Deposit and withdraw using your Mastercard credit or debit card.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "mastercard",
+    "locale": [],
+    "logo": "mastercard"
+  },
+  {
+    "name": "Maestro",
+    "category": "Credit/debit cards",
+    "key": "maestro",
+    "description": "Deposit and withdraw using your Maestro debit card.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "maestro",
+    "locale": [],
+    "logo": "maestro"
+  },
+  {
+    "name": "Diners",
+    "category": "Credit/debit cards",
+    "key": "diners",
+    "description": "Deposit and withdraw using your Diners credit or debit card.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "diners",
+    "locale": [],
+    "logo": "diners"
+  },
+  {
+    "name": "JCB",
+    "category": "Credit/debit cards",
+    "key": "jcb",
+    "description": "Deposit and withdraw using your JCB credit card. ",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "jcb"
+  },
+  {
+    "name": "Internet Bank Transfer",
+    "category": "Online Banking",
+    "key": "internet-bank-transfer",
+    "description": "Deposit and withdraw easily using secure and fast money transfers.",
+    "deposit_proccessing_time": "1 working day",
+    "min_deposit": "5",
+    "max_deposit": "50,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "50,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "internet_bank_transfer"
+  },
+  {
+    "name": "PayTrust88",
+    "category": "Online Banking",
+    "key": "paytrust88",
+    "description": "Deposit easily with your bank account on any device. Supports major banks in China, Indonesia, South Korea, Thailand, and Vietnam. ",
+    "deposit_proccessing_time": "1 working day",
+    "min_deposit": "10",
+    "max_deposit": "17,000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "ID",
+        "TH",
+        "VN"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "paytrust88"
+  },
+  {
+    "name": "DragonPhoenix",
+    "category": "Online Banking",
+    "key": "dragonphoenix",
+    "description": "Deposit and withdraw easily in THB, IDR, and VND.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "ID",
+        "TH",
+        "VN"
+      ],
+      "excluded": []
+    },
+    "reference": "dragonphoenix",
+    "locale": [],
+    "logo": "dragonphoenix"
+  },
+  {
+    "name": "Ngan Luong",
+    "category": "Online Banking",
+    "key": "ngan-luong",
+    "description": "A leading e-wallet service in Vietnam that’s easy to use, flexible, and safe. Used by thousands of merchants.",
+    "deposit_proccessing_time": "1 working day",
+    "min_deposit": "10",
+    "max_deposit": "2,500",
+    "withdrawal_processing_time": "1 - 3 working days",
+    "min_withdrawal": "10",
+    "max_withdrawal": "2,500",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "VN"
+      ],
+      "excluded": []
+    },
+    "reference": "ngan-luong",
+    "locale": [
+      "vn"
+    ],
+    "logo": "ngan_luong"
+  },
+  {
+    "name": "Help2Pay",
+    "category": "Online Banking",
+    "key": "help2pay",
+    "description": "A leading payment service in Southeast Asia that’s fast, easy, and secure.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "15",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "ID",
+        "TH",
+        "VN"
+      ],
+      "excluded": []
+    },
+    "reference": "help2pay",
+    "locale": [],
+    "logo": "help2pay"
+  },
+  {
+    "name": "Zingpay",
+    "category": "Online Banking",
+    "key": "zingpay",
+    "description": "Payments simplified. Fast and reliable way to deposit funds in your local currency.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "500",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "6,000",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "SA"
+      ],
+      "excluded": []
+    },
+    "reference": "zingpay",
+    "locale": [],
+    "logo": "zingpay"
+  },
+  {
+    "name": "Fasapay",
+    "category": "E-wallets",
+    "key": "fasapay",
+    "description": "Features fast deposits and withdrawals, low fees, and downloadable transaction history.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "10,000",
+    "link_binary": "https://www.fasapay.com/",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "fasapay",
+    "locale": [],
+    "logo": "fasapay"
+  },
+  {
+    "name": "Perfect Money",
+    "category": "E-wallets",
+    "key": "perfect-money",
+    "description": "A cheap and easy method for deposits and withdrawals. Features auto payments, annual interest, and real-time statements",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "10,000",
+    "link_binary": "http://perfectmoney.com/?welcome=1",
+    "currencies": [
+      [
+        "USD",
+        "EUR"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "perfect-money",
+    "locale": [],
+    "logo": "perfect_money"
+  },
+  {
+    "name": "Skrill",
+    "category": "E-wallets",
+    "key": "skrill",
+    "description": "Quick, simple to use, and available anywhere, anytime. Used by millions of clients worldwide.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10,000",
+    "link_binary": "https://account.skrill.com/wallet/account/sign-up?locale=en",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AX",
+        "AS",
+        "AO",
+        "AI",
+        "AQ",
+        "AG",
+        "AT",
+        "BB",
+        "BE",
+        "BZ",
+        "BJ",
+        "BT",
+        "BV",
+        "BG",
+        "BF",
+        "BI",
+        "CA",
+        "CV",
+        "CF",
+        "TD",
+        "CN",
+        "CC",
+        "KM",
+        "CG",
+        "CD",
+        "CK",
+        "CI",
+        "HR",
+        "CU",
+        "CW",
+        "CY",
+        "CZ",
+        "DK",
+        "DJ",
+        "ER",
+        "EE",
+        "FO",
+        "FJ",
+        "FI",
+        "FR",
+        "GF",
+        "PF",
+        "TF",
+        "GA",
+        "GM",
+        "DE",
+        "GI",
+        "GR",
+        "GL",
+        "GD",
+        "GP",
+        "GU",
+        "GW",
+        "GY",
+        "HT",
+        "HM",
+        "VA",
+        "HK",
+        "HU",
+        "IR",
+        "IQ",
+        "IE",
+        "IL",
+        "IT",
+        "JP",
+        "KI",
+        "KP",
+        "KG",
+        "LA",
+        "LV",
+        "LB",
+        "LR",
+        "LY",
+        "LI",
+        "LT",
+        "LU",
+        "MO",
+        "MY",
+        "ML",
+        "MT",
+        "MH",
+        "MQ",
+        "MR",
+        "YT",
+        "FM",
+        "MS",
+        "MM",
+        "NA",
+        "NL",
+        "AN",
+        "NC",
+        "NE",
+        "NU",
+        "NF",
+        "MP",
+        "NO",
+        "PS",
+        "PG",
+        "PN",
+        "PL",
+        "PT",
+        "PR",
+        "RE",
+        "RO",
+        "RW",
+        "KN",
+        "LC",
+        "VC",
+        "WS",
+        "ST",
+        "SC",
+        "SL",
+        "SG",
+        "SK",
+        "SI",
+        "SB",
+        "SO",
+        "GS",
+        "ES",
+        "SH",
+        "PM",
+        "SD",
+        "SR",
+        "SJ",
+        "SE",
+        "SY",
+        "TL",
+        "TG",
+        "TK",
+        "TO",
+        "TR",
+        "TM",
+        "TC",
+        "TV",
+        "AE",
+        "GB",
+        "US",
+        "UM",
+        "VU",
+        "VE",
+        "VI",
+        "WF",
+        "EH",
+        "YE",
+        "ZW"
+      ]
+    },
+    "reference": "skrill",
+    "locale": [],
+    "logo": "skrill"
+  },
+  {
+    "name": "Neteller",
+    "category": "E-wallets",
+    "key": "neteller",
+    "description": "Used by over 20 million clients worldwide. Enjoy instant access, free withdrawals, and reward points that you can redeem for cash. ",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "10,000",
+    "link_binary": "https://member.neteller.com/wallet/account/sign-up?lang=en&btag=a_94953b_2560c_&program=NTAFFILIATE",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AX",
+        "AS",
+        "AO",
+        "AI",
+        "AQ",
+        "AG",
+        "AT",
+        "BB",
+        "BE",
+        "BZ",
+        "BJ",
+        "BT",
+        "BV",
+        "BG",
+        "BF",
+        "BI",
+        "CA",
+        "CV",
+        "CF",
+        "TD",
+        "CN",
+        "CC",
+        "KM",
+        "CG",
+        "CD",
+        "CK",
+        "CI",
+        "HR",
+        "CU",
+        "CW",
+        "CY",
+        "CZ",
+        "DK",
+        "DJ",
+        "ER",
+        "EE",
+        "FO",
+        "FJ",
+        "FI",
+        "FR",
+        "GF",
+        "PF",
+        "TF",
+        "GA",
+        "GM",
+        "DE",
+        "GI",
+        "GR",
+        "GL",
+        "GD",
+        "GP",
+        "GU",
+        "GW",
+        "GY",
+        "HT",
+        "HM",
+        "VA",
+        "HK",
+        "HU",
+        "IR",
+        "IQ",
+        "IE",
+        "IL",
+        "IT",
+        "JP",
+        "KI",
+        "KP",
+        "KG",
+        "LA",
+        "LV",
+        "LB",
+        "LR",
+        "LY",
+        "LI",
+        "LT",
+        "LU",
+        "MO",
+        "MY",
+        "ML",
+        "MT",
+        "MH",
+        "MQ",
+        "MR",
+        "YT",
+        "FM",
+        "MS",
+        "MM",
+        "NA",
+        "NL",
+        "AN",
+        "NC",
+        "NE",
+        "NU",
+        "NF",
+        "MP",
+        "NO",
+        "PS",
+        "PG",
+        "PN",
+        "PL",
+        "PT",
+        "PR",
+        "RE",
+        "RO",
+        "RW",
+        "KN",
+        "LC",
+        "VC",
+        "WS",
+        "ST",
+        "SC",
+        "SL",
+        "SG",
+        "SK",
+        "SI",
+        "SB",
+        "SO",
+        "GS",
+        "ES",
+        "SH",
+        "PM",
+        "SD",
+        "SR",
+        "SJ",
+        "SE",
+        "SY",
+        "TL",
+        "TG",
+        "TK",
+        "TO",
+        "TR",
+        "TM",
+        "TC",
+        "TV",
+        "AE",
+        "GB",
+        "US",
+        "UM",
+        "VU",
+        "VE",
+        "VI",
+        "WF",
+        "EH",
+        "YE",
+        "ZW"
+      ]
+    },
+    "reference": "neteller",
+    "locale": [],
+    "logo": "neteller"
+  },
+  {
+    "name": "WebMoney",
+    "category": "E-wallets",
+    "key": "webmoney",
+    "description": "A complete payment service with over 30 million clients, 10,000  daily signups, and is supported by more than 100,000 merchants.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5",
+    "max_deposit": "3,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "5,000",
+    "link_binary": "https://www.wmtransfer.com/",
+    "currencies": [
+      [
+        "USD",
+        "EUR"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AS",
+        "BS",
+        "BW",
+        "KH",
+        "ET",
+        "GH",
+        "GU",
+        "GY",
+        "IR",
+        "IQ",
+        "KP",
+        "LA",
+        "LY",
+        "ML",
+        "MR",
+        "MP",
+        "PK",
+        "PA",
+        "SO",
+        "SS",
+        "LK",
+        "SD",
+        "SY",
+        "TT",
+        "TN",
+        "UG",
+        "US",
+        "VU",
+        "YE"
+      ]
+    },
+    "reference": "webmoney",
+    "locale": [],
+    "logo": "webmoney"
+  },
+  {
+    "name": "Paysafecard",
+    "category": "E-wallets",
+    "key": "paysafecard",
+    "description": "A convenient payment service that doesn’t need a bank account or credit card. Accepted by thousands of merchants worldwide.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5|5",
+    "max_deposit": "1,000|10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5|5",
+    "max_withdrawal": "750|750",
+    "link_binary": "https://www.paysafecard.com/en/",
+    "currencies": [
+      [
+        "USD",
+        "AUD"
+      ],
+      [
+        "GBP",
+        "EUR"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "AR",
+        "AU",
+        "AT",
+        "BE",
+        "BG",
+        "CN",
+        "HR",
+        "CY",
+        "CZ",
+        "DK",
+        "FI",
+        "FR",
+        "GE",
+        "DE",
+        "GI",
+        "HK",
+        "HU",
+        "IE",
+        "IL",
+        "IT",
+        "KW",
+        "LV",
+        "LI",
+        "LT",
+        "LU",
+        "MO",
+        "MT",
+        "MX",
+        "NL",
+        "NZ",
+        "NO",
+        "PL",
+        "PT",
+        "RO",
+        "SA",
+        "SG",
+        "SK",
+        "SI",
+        "ES",
+        "CH",
+        "TR",
+        "AE",
+        "GB"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "paysafecard"
+  },
+  {
+    "name": "PayLivre",
+    "category": "E-wallets",
+    "key": "paylivre",
+    "description": "Enjoy fast, smooth, and secure deposits and withdrawals with PayLivre.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5",
+    "max_deposit": "4000",
+    "withdrawal_processing_time": "1 - 2 working days",
+    "min_withdrawal": "5",
+    "max_withdrawal": "10,000",
+    "link_binary": "https://www.paylivre.com/",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "BR"
+      ],
+      "excluded": []
+    },
+    "reference": "paylivre",
+    "locale": [],
+    "logo": "paylivre"
+  },
+  {
+    "name": "Jeton",
+    "category": "E-wallets",
+    "key": "jeton",
+    "description": "A fast and secure money transfer service. Access your money anywhere with the mobile app.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5",
+    "max_deposit": "1,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "1,000",
+    "link_binary": "https://www.jeton.com/",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "AUD",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "CH",
+        "ET",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "KP",
+        "MY",
+        "MT",
+        "NO",
+        "LY RW",
+        "RU",
+        "PY",
+        "SD",
+        "SO",
+        "US",
+        "SY",
+        "YE"
+      ]
+    },
+    "reference": "jeton",
+    "locale": [],
+    "logo": "jeton"
+  },
+  {
+    "name": "Sticpay",
+    "category": "E-wallets",
+    "key": "sticpay",
+    "description": "An easy, cheap, and fast way to transfer money. Supported by banks and merchants worldwide.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5",
+    "max_deposit": "10,000",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "1,000",
+    "link_binary": "https://www.sticpay.com/",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "GBP"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "sticpay",
+    "locale": [],
+    "logo": "sticpay"
+  },
+  {
+    "name": "AirTM",
+    "category": "E-wallets",
+    "key": "airtm",
+    "description": "Easily convert your currency to USD and transfer money worldwide. Used by more than 500,000 clients in 163 countries.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "5",
+    "max_deposit": "2,500",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "2,500",
+    "link_binary": "https://www.airtm.com/en/",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "airtm",
+    "locale": [],
+    "logo": "airtm"
+  },
+  {
+    "name": "Bitcoin",
+    "category": "Cryptocurrencies",
+    "key": "bitcoin",
+    "description": "Deposit and withdraw in Bitcoin, the world’s first cryptocurrency.",
+    "deposit_proccessing_time": "Funds available as soon as confirmed",
+    "min_deposit": "Not Available",
+    "max_deposit": "Not Available",
+    "withdrawal_processing_time": "Subject to internal checks",
+    "min_withdrawal": "0.0022",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "BTC"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "EU",
+        "UK",
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "bitcoin",
+    "locale": [],
+    "logo": "bitcoin"
+  },
+  {
+    "name": "Boleto Bancario",
+    "category": "E-wallets",
+    "key": "boleto-bancario",
+    "description": "Use this popular invoice-based payment method to deposit if you don’t have a bank account or credit card. This option is accessible through Directa24.",
+    "deposit_proccessing_time": "2 - 3 working days",
+    "min_deposit": "10",
+    "max_deposit": "1000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "BR"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "boleto_bancario"
+  },
+  {
+    "name": "OnlineNaira",
+    "category": "E-wallets",
+    "key": "onlinenaira",
+    "description": "Make fast and secure deposits and withdrawals with this mobile-friendly solution for clients in Nigeria.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10",
+    "max_deposit": "1000",
+    "withdrawal_processing_time": "1 - 2 working days",
+    "min_withdrawal": "10",
+    "max_withdrawal": "10000",
+    "link_binary": "https://www.onlinenaira.com/",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "NG"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "onlinenaira"
+  },
+  {
+    "name": "Trustly",
+    "category": "E-wallets",
+    "key": "trustly",
+    "description": "Enjoy fast, smooth, and secure deposits and withdrawals with Trustly.",
+    "deposit_proccessing_time": "Instant",
+    "min_deposit": "10|10",
+    "max_deposit": "100|100",
+    "withdrawal_processing_time": "1 - 2 working days",
+    "min_withdrawal": "10|10",
+    "max_withdrawal": "10000|500",
+    "link_binary": "",
+    "currencies": [
+      [
+        "GBP",
+        "USD"
+      ],
+      [
+        "EUR"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "AT",
+        "DK",
+        "EE",
+        "FI",
+        "DE",
+        "NL",
+        "PL",
+        "SE",
+        "GB"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "trustly"
+  },
+  {
+    "name": "Beyonic",
+    "category": "E-wallets",
+    "key": "beyonic",
+    "description": "Make deposits easily using your mobile. For clients in Uganda and Tanzania.",
+    "deposit_proccessing_time": "Instant ",
+    "min_deposit": "5",
+    "max_deposit": "1000",
+    "withdrawal_processing_time": "1 - 2 working days ",
+    "min_withdrawal": "5",
+    "max_withdrawal": "1000",
+    "link_binary": "https://beyonic.com/",
+    "currencies": [
+      [
+        "TZS",
+        "UGX"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "TZ",
+        "UG"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "beyonic"
+  },
+  {
+    "name": "Astropay",
+    "category": "E-wallets",
+    "key": "astropay",
+    "description": "Enjoy fast and secure deposits and withdrawals with Astropay.",
+    "deposit_proccessing_time": "Instant ",
+    "min_deposit": "5",
+    "max_deposit": "2500",
+    "withdrawal_processing_time": "1 working day",
+    "min_withdrawal": "5",
+    "max_withdrawal": "2500",
+    "link_binary": "https://astropay.com/?lang=en",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "AR",
+        "BR",
+        "CL",
+        "CO",
+        "EC",
+        "IN",
+        "MX",
+        "PE"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "astropay"
+  },
+  {
+    "name": "1ForYou",
+    "category": "E-wallets",
+    "key": "1foryou",
+    "description": "Make deposits easily with cash voucher payment solution for South Africa.",
+    "deposit_proccessing_time": "Instant ",
+    "min_deposit": "10",
+    "max_deposit": "1000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "https://1foryou.com/",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "ZA"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "1foryou"
+  },
+  {
+    "name": "AdvCash",
+    "category": "E-wallets",
+    "key": "advcash",
+    "description": "Enjoy fast, smooth, and secure deposits and withdrawals with AdvCash.",
+    "deposit_proccessing_time": "Instant ",
+    "min_deposit": "5",
+    "max_deposit": "1000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "https://advcash.gi/en/",
+    "currencies": [
+      [
+        "USD"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "AF",
+        "BI",
+        "CF",
+        "TD",
+        "CD",
+        "CI",
+        "CU",
+        "ER",
+        "ET",
+        "GN",
+        "HT",
+        "IR",
+        "IQ",
+        "KP",
+        "LR",
+        "LY",
+        "MM",
+        "PR",
+        "RU",
+        "SO",
+        "SD",
+        "SY",
+        "UG",
+        "US",
+        "UM",
+        "VI",
+        "YE",
+        "ZW"
+      ]
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "advcash"
+  },
+  {
+    "name": "Ethereum",
+    "category": "Cryptocurrencies",
+    "key": "ethereum",
+    "description": "Deposit and withdraw in Ethereum, among the top 3 most used cryptocurrencies.",
+    "deposit_proccessing_time": "Funds available as soon as confirmed",
+    "min_deposit": "Not Available",
+    "max_deposit": "Not Available",
+    "withdrawal_processing_time": "Subject to internal checks",
+    "min_withdrawal": "0.013",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "ETH"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "EU",
+        "UK",
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "ethereum",
+    "locale": [],
+    "logo": "ethereum"
+  },
+  {
+    "name": "Litecoin",
+    "category": "Cryptocurrencies",
+    "key": "litecoin",
+    "description": "Deposit and withdraw in Litecoin, a durable cryptocurrency with fast transaction processing.",
+    "deposit_proccessing_time": "Funds available as soon as confirmed",
+    "min_deposit": "Not Available",
+    "max_deposit": "Not Available",
+    "withdrawal_processing_time": "Subject to internal checks",
+    "min_withdrawal": "0.085",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "LTC"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "EU",
+        "UK",
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "litecoin",
+    "locale": [],
+    "logo": "litecoin"
+  },
+  {
+    "name": "Tether ",
+    "category": "Cryptocurrencies",
+    "key": "tether",
+    "description": "Deposit and withdraw in Tether, a cryptocurrency that’s pegged to fiat currencies.",
+    "deposit_proccessing_time": "Funds available as soon as confirmed",
+    "min_deposit": "Not Available",
+    "max_deposit": "Not Available",
+    "withdrawal_processing_time": "Subject to internal checks",
+    "min_withdrawal": "25",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USDT"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "EU",
+        "UK",
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "tether"
+  },
+  {
+    "name": "USDC",
+    "category": "Cryptocurrencies",
+    "key": "usdc",
+    "description": "Deposit and withdraw in USD Coin, a cryptocurrency that’s pegged to USD.",
+    "deposit_proccessing_time": "Funds available as soon as confirmed",
+    "min_deposit": "Not Available",
+    "max_deposit": "Not Available",
+    "withdrawal_processing_time": "Subject to internal checks",
+    "min_withdrawal": "25",
+    "max_withdrawal": "Not Available",
+    "link_binary": "",
+    "currencies": [
+      [
+        "USDC"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "EU",
+        "UK",
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "usdc"
+  },
+  {
+    "name": "Changelly",
+    "category": "Fiat onramp",
+    "key": "changelly",
+    "description": "A safe and speedy crypto exchange and fiat-to-crypto service that's available worldwide. Offering 150+ cryptocurrencies. 24/7 live chat support.",
+    "deposit_proccessing_time": "5 - 30 minutes",
+    "min_deposit": "50",
+    "max_deposit": "5000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "https://changelly.com/",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "GBP",
+        "BTC"
+      ]
+    ],
+    "countries": {
+      "included": [],
+      "excluded": [
+        "EU",
+        "UK",
+        "AF",
+        "AE",
+        "CA",
+        "CF",
+        "HK",
+        "IL",
+        "IR",
+        "IQ",
+        "JE",
+        "MY",
+        "MT",
+        "RW",
+        "PY",
+        "US",
+        "SY"
+      ]
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "changelly"
+  },
+  {
+    "name": "XanPool",
+    "category": "Fiat onramp",
+    "key": "xanpool",
+    "description": "Make a deposit into your Deriv crypto account via local bank wire with this fiat-to-crypto exchange for clients in Southeast Asia.",
+    "deposit_proccessing_time": "5 - 30 minutes",
+    "min_deposit": "50",
+    "max_deposit": "5000",
+    "withdrawal_processing_time": "Not Available",
+    "min_withdrawal": "Not Available",
+    "max_withdrawal": "Not Available",
+    "link_binary": "https://xanpool.com/",
+    "currencies": [
+      [
+        "USD",
+        "EUR",
+        "GBP",
+        "AUD",
+        "BTC",
+        "ETH",
+        "LTC",
+        "USDT"
+      ]
+    ],
+    "countries": {
+      "included": [
+        "ID",
+        "TH",
+        "VN"
+      ],
+      "excluded": []
+    },
+    "reference": "",
+    "locale": [],
+    "logo": "xanpool"
+  }
+]

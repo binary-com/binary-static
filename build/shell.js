@@ -29,6 +29,12 @@ module.exports = function (grunt) {
                 stdout: true
             }
         },
+        payment_methods: {
+            command: 'node scripts/payment_method.js',
+            options: {
+                stdout: true
+            }
+        },
         sitemap: {
             command: `cd ${process.cwd()} && ./scripts/sitemap.js`,
             options: {

@@ -8,7 +8,9 @@
     "serve": "sudo -p 'enter password for sudo:' grunt serve",
     "start": "sudo -p 'enter password for sudo:' grunt start",
     "eslint": "eslint --fix \"src/**/*.jsx\" src/",
-    "build": "grunt release_test_link --production"
+    "build": "npm run build:payment_methods && npm run build:production",
+    "build:production": "grunt release_test_link --production",
+    "build:payment_methods": "node scripts/payment_method"
   },
   "repository": {
     "type": "git",
@@ -120,6 +122,7 @@
     "babel-polyfill": "6.26.0",
     "canvas-toBlob": "1.0.0",
     "classnames": "2.2.5",
+    "csv-parser": "^3.0.0",
     "custom-event-polyfill": "0.3.0",
     "davidshimjs-qrcodejs": "0.0.2",
     "event-source-polyfill": "0.0.9",
