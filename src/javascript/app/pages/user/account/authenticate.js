@@ -1436,13 +1436,56 @@ const Authenticate = (() => {
         }
     };
 
-    const handleManual = () => {
+    const handleManual = async () => {
+        account_status = await getAccountStatus();
+        if (!account_status || account_status.error) {
+            $('#error_occured').setVisibility(1);
+            return;
+        }
+
+        const authentication_object = account_status.authentication;
+        const { identity } = authentication_object;
+        const is_idv_disallowed = account_status.status.some(ac => ac === 'idv_disallowed');
+        const identity_status = identity.status;
+
         $('#idv-container').setVisibility(0);
         $('#authentication_tab').setVisibility(1);
-        $('#msg_personal_details').setVisibility(1);
-        TabSelector.updateTabDisplay();
-        $('#not_authenticated_uns').setVisibility(1);
-        initUnsupported();
+        $('#authentication_tab').setVisibility(1);
+        switch (identity_status) {
+            case 'pending':
+                showCTAButton('document', 'pending');
+                $('#upload_complete').setVisibility(1);
+                break;
+            case 'suspected':
+                $('#unverified').setVisibility(1);
+                break;
+            case 'rejected':
+                $('#limited_poi').setVisibility(1);
+                break;
+            case 'verified':
+                $('#verified').setVisibility(1);
+
+                if (is_idv_disallowed) {
+                    $('#authentication_tab').setVisibility(1);
+                    Url.updateParamsWithoutReload({ authentication_tab: 'poi' }, true);
+                    TabSelector.updateTabDisplay();
+                    $('#poa').setVisibility(1);
+                }
+                break;
+            case 'expired':
+                $('#expired_poi').setVisibility(1);
+                $('#expired_button').off('click').on('click', () => {
+                    $('#expired_poi').setVisibility(0);
+                    handleCountrySelector();
+                });
+                break;
+            default:
+                $('#msg_personal_details').setVisibility(1);
+                TabSelector.updateTabDisplay();
+                $('#not_authenticated_uns').setVisibility(1);
+                initUnsupported();
+                break;
+        }
     };
 
     const initAuthentication = async () => {
