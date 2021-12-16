@@ -1450,7 +1450,6 @@ const Authenticate = (() => {
 
         $('#idv-container').setVisibility(0);
         $('#authentication_tab').setVisibility(1);
-        $('#authentication_tab').setVisibility(1);
         switch (identity_status) {
             case 'pending':
                 showCTAButton('document', 'pending');
