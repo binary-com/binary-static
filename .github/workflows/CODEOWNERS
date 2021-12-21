@@ -43,6 +43,7 @@
 #  matin-binary
 #  mehrzad-fs
 #  nijil-binary
+#  prince-deriv
 #  yashim-deriv
 
 ######################################################################################################
@@ -63,7 +64,7 @@
 # (in case no pattern matches a path in a PR - this should be treated as a bug and result in adding the path to CODEOWNERS)
 # ==============================================================
 
-*                                                               @matin-binary @nijil-binary
+*                                                               @matin-binary @nijil-binary @kevinw-binary
 
 # ==============================================================
 #  binary/styles
@@ -72,38 +73,41 @@
 /src/sass/**/*                                                  @binary-com
 
 # ==============================================================
+#  binary/static
+# ==============================================================
+
+/src/javascript/static/**/*                                     @prince-deriv @habib-deriv
+/src/templates/static/**/*                                      @prince-deriv @habib-deriv
+/src/javascript/landing_pages/**/*                              @prince-deriv @habib-deriv
+/src/templates/landing_pages/**/*                               @prince-deriv @habib-deriv
+
+# ==============================================================
 #  binary/cashier
 # ==============================================================
 
-
-/src/javascript/app/cashier/**/*                                @nijil-binary @bahar-fs @carol-binary
+/src/javascript/app/pages/cashier/**/*                          @nijil-binary @bahar-fs @carol-binary
 /src/templates/app/cashier/**/*                                 @nijil-binary @bahar-fs @carol-binary
 
 # ==============================================================
 #  binary/dashboard
 # ==============================================================
 
-/src/javascript/app/dashboard/**/*                              @matin-binary @akmal-binary
+/src/javascript/app/pages/dashboard/**/*                        @matin-binary @akmal-binary
+/src/templates/app/dashboard/**/*                               @matin-binary @akmal-binary
 
 # ==============================================================
 #  binary/trade
 # ==============================================================
 
-/src/javascript/app/trade/**/*                                  @matin-binary @balakrishna-binary @akmal-binary @mahdiyeh-fs
+/src/javascript/app/pages/trade/**/*                            @matin-binary @balakrishna-binary @akmal-binary @mahdiyeh-fs
+/src/templates/app/trade/**/*                                   @matin-binary @balakrishna-binary @akmal-binary @mahdiyeh-fs
 
 # ==============================================================
-#  binary/user binary/new_account
+#  binary/user
 # ==============================================================
 
-/src/javascript/app/user/**/*                                   @yashim-binary
-/src/javascript/app/new_account/**/*                            @yashim-binary
+/src/javascript/app/pages/user/**/*                             @yashim-binary @akmal-binary
+/src/templates/app/user/**/*                                    @yashim-binary
+/src/templates/app/new_account/**/*                             @yashim-binary
+/src/javascript/app/pages/new_account.js                        @yashim-binary
 
-# ==============================================================
-#  binary/static binary/resources
-# ==============================================================
-
-# ==============================================================
-#  binary/metatrader
-# ==============================================================
-
-/src/javascript/app/metatrader/**/*                             @matin-binary @balakrishna-binary @akmal-binary
