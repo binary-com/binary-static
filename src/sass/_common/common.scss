@@ -218,9 +218,10 @@ label {
         display: block;
         text-align: right;
     }
-    .fields .form-row div:first-child {
-        padding: 0; // needed to fit in text in Russian
-    }
+}
+
+.fields .form-row div:first-child {
+    padding: 0; // needed to fit in text in Russian
 }
 
 .form-row.two-rows {
