@@ -214,14 +214,15 @@ label {
     .required_field_label {
         font-size: 13px;
     }
-    div:first-child label {
-        display: block;
-        text-align: right;
+    div:first-child {
+        .fields & {
+            padding: 0; // needed to fit in text in Russian
+        }
+        label {
+            display: block;
+            text-align: right;
+        }
     }
-}
-
-.fields .form-row div:first-child {
-    padding: 0; // needed to fit in text in Russian
 }
 
 .form-row.two-rows {
