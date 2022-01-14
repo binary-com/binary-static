@@ -646,13 +646,13 @@
                 flex-grow: 1;
                 flex-direction: column;
                 max-width: 100%;
-                .stake_wrapper {
-                  margin-left: unset;
+                    .stake_wrapper {
+                      margin-left: unset;
+                    }
+                    .payout_wrapper {
+                      margin-right: unset;
+                    }
                 }
-                .payout_wrapper {
-                  margin-right: unset;
-                }
-              }
             }
         }
         .contract_amount, .contract_payout, .stake, .payout {
