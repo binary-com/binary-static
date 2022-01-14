@@ -643,14 +643,15 @@
                     margin-right: 20px;
                 }
                 @media screen and (max-width: 527px) {
-                flex-grow: 1;
-                flex-direction: column;
-                max-width: 100%;
+                    flex-grow: 1;
+                    flex-direction: column;
+                    max-width: 100%;
+
                     .stake_wrapper {
-                      margin-left: unset;
+                        margin-left: unset;
                     }
                     .payout_wrapper {
-                      margin-right: unset;
+                        margin-right: unset;
                     }
                 }
             }
