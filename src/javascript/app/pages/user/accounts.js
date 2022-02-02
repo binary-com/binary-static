@@ -41,11 +41,14 @@ const Accounts = (() => {
         }
         clearPopup();
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list').then(() => {
-            landing_company           = State.getResponse('landing_company');
-            const can_change_currency = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'));
-            const is_virtual          = Client.get('is_virtual');
-            const has_real_account    = Client.hasAccountType('real');
+        BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' });
+        BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list', 'trading_platform_accounts').then(() => {
+            landing_company             = State.getResponse('landing_company');
+            const mt5_login_list        = State.getResponse('mt5_login_list');
+            const dxtrade_accounts_list = State.getResponse('trading_platform_accounts');
+            const can_change_currency   = Client.canChangeCurrency(State.getResponse('statement'), mt5_login_list, dxtrade_accounts_list);
+            const is_virtual            = Client.get('is_virtual');
+            const has_real_account      = Client.hasAccountType('real');
             populateExistingAccounts();
 
             let element_to_show = '#no_new_accounts_wrapper';

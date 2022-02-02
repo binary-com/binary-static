@@ -384,11 +384,18 @@ const ClientBase = (() => {
 
     const hasSvgAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));
 
-    const canChangeCurrency = (statement, mt5_login_list, loginid, is_current = true) => {
+    const canChangeCurrency = (statement, mt5_login_list, dxtrade_accounts_list, loginid, is_current = true) => {
         const currency             = get('currency', loginid);
-        const has_no_mt5           = !mt5_login_list || !mt5_login_list.length;
+        const has_no_real_mt5      =
+            !mt5_login_list
+            || mt5_login_list.length === 0
+            || (mt5_login_list && mt5_login_list.filter((account) => account.account_type !== 'demo').length === 0);
+        const has_no_real_dxtrade  =
+            !dxtrade_accounts_list
+            || dxtrade_accounts_list.length === 0
+            || (dxtrade_accounts_list && dxtrade_accounts_list.filter(account => account.account_type !== 'demo').length === 0);
         const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
-        const has_account_criteria = has_no_transaction && has_no_mt5;
+        const has_account_criteria = has_no_transaction && has_no_real_mt5 && has_no_real_dxtrade;
 
         // Current API requirements for currently logged-in user successfully changing their account's currency:
         // 1. User must not have made any transactions
