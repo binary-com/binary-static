@@ -10,7 +10,6 @@ const Tac = () => (
         <p>
             {it.L('Depending on the jurisdiction to which a client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About us section of the website and the type of products offered, the term "the Company" shall denote')}&nbsp;
             <span data-show='-eucountry'>{it.L('Deriv (SVG) LLC,')}&nbsp;</span>
-            <span>{it.L('Deriv (Europe) Limited or')}&nbsp;</span>
             <span>{it.L('Deriv Investments (Europe) Limited.')}&nbsp;</span>
         </p>
         <p>{it.L('These terms and conditions may be supplemented from time to time by supplementary terms and conditions applicable to a particular Company or products.')}</p>
@@ -39,7 +38,7 @@ const Tac = () => (
         <p>{it.L('If a court or regulatory body of competent jurisdiction declares any provision of the Terms to be invalid or unenforceable, the rest of the Terms shall remain in full force and effect.')}</p>
         <p>{it.L('The applicable jurisdiction shall be one of the following:')}</p>
         <ul className='bullet'>
-            <li>{it.L('Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta')}</li>
+            <li>{it.L('Deriv Investments (Europe) Limited')}</li>
             <li>{it.L('Deriv (FX) Ltd: Labuan, Territory of Malaysia')}</li>
             <li>{it.L('Deriv (BVI) Ltd: British Virgin Islands')}</li>
             <li>{it.L('Deriv (V) Ltd: Vanuatu')}</li>
