@@ -2,6 +2,7 @@ const MetaTraderConfig   = require('./metatrader.config');
 const MetaTraderUI       = require('./metatrader.ui');
 const Client             = require('../../../base/client');
 const BinarySocket       = require('../../../base/socket');
+const DerivBanner        = require('../../../common/deriv_banner');
 const setCurrencies      = require('../../../common/currency').setCurrencies;
 const Validation         = require('../../../common/form_validation');
 const localize           = require('../../../../_common/localize').localize;
@@ -18,6 +19,10 @@ const MetaTrader = (() => {
     const getAccountsInfo = MetaTraderConfig.getAccountsInfo;
 
     const onLoad = () => {
+        const financial_account = Client.getAccountType() === 'financial';
+        if (financial_account || Client.isOptionsBlocked()) {
+            DerivBanner.onLoad();
+        }
         BinarySocket.send({ statement: 1, limit: 1 });
         BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
             await BinarySocket.send({ trading_servers: 1, platform: 'mt5' });
@@ -502,6 +507,7 @@ const MetaTrader = (() => {
 
     const onUnload = () => {
         MetaTraderUI.refreshAction();
+        DerivBanner.onUnload();
     };
 
     return {
