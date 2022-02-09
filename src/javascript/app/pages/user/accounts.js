@@ -163,7 +163,7 @@ const Accounts = (() => {
                     }).on('click', () => showCurrencyPopUp('change')))));
 
         // Replace note to reflect ability to change currency
-        $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency.')}`);
+        $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create a real MT5 account. You may also open one account for each supported cryptocurrency.')}`);
         $('#note_change_currency').setVisibility(0);
     };
 
