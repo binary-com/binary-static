@@ -111,17 +111,19 @@ const Cashier = (() => {
         // Set messages based on currency being crypto or fiat
         // If fiat, set message based on if they're allowed to change currency or not
         // Condition is to have no MT5 accounts *and* have no transactions
-        const currency_message = Currency.isCryptocurrency(currency)
+        const currency_is_set_message   = has_no_real_mt5 && has_no_real_dxtrade && has_no_transaction
+            ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
+            : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
+        const currency_message          = Currency.isCryptocurrency(currency)
             ? localize('This is your [_1] account.', `${Currency.getCurrencyDisplayCode(currency)}`)
-            : has_no_real_mt5 && has_no_real_dxtrade && has_no_transaction
-                ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
-                : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
+            : currency_is_set_message;
 
-        const currency_hint = Currency.isCryptocurrency(currency)
+        const fiat_currency_change_hint = has_no_real_mt5 && has_no_real_dxtrade && has_no_transaction
+            ? localize('You can [_1]set a new currency[_2] before you deposit for the first [_3].', [can_change ? url_user_account : '', can_change ? '</a>' : '', change_text_for_iom])
+            : missingCriteria(!has_no_real_mt5, !has_no_real_dxtrade, !has_no_transaction);
+        const currency_hint             = Currency.isCryptocurrency(currency)
             ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${Currency.getCurrencyDisplayCode(currency)}`) + account_action_text
-            : has_no_real_mt5 && has_no_real_dxtrade && has_no_transaction
-                ? localize('You can [_1]set a new currency[_2] before you deposit for the first [_3].', [can_change ? url_user_account : '', can_change ? '</a>' : '', change_text_for_iom])
-                : missingCriteria(!has_no_real_mt5, !has_no_real_dxtrade, !has_no_transaction);
+            : fiat_currency_change_hint;
 
         elementInnerHtml(el_current_currency, currency_message);
         elementInnerHtml(el_current_hint, currency_hint);
