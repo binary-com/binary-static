@@ -84,7 +84,7 @@ const Cashier = (() => {
         $(top_up_id).parent().setVisibility(1);
     };
 
-    const showCurrentCurrency = (currency, statement, mt5_logins) => {
+    const showCurrentCurrency = (currency, statement, mt5_logins, dxtrade_accounts_list) => {
         const has_no_mt5          = mt5_logins.length === 0;
         const has_no_transaction  = (statement.count === 0 && statement.transactions.length === 0);
         const el_acc_currency     = getElementById('account_currency');
@@ -92,7 +92,7 @@ const Cashier = (() => {
         const el_current_currency = getElementById('account_currency_current');
         const el_current_hint     = getElementById('account_currency_hint');
         const upgrade_info        = Client.getUpgradeInfo();
-        const can_change          = Client.canChangeCurrency(statement, mt5_logins);
+        const can_change          = Client.canChangeCurrency(statement, mt5_logins, dxtrade_accounts_list);
         const has_upgrade         = upgrade_info.can_upgrade || upgrade_info.can_open_multi
                                     || can_change;
         const account_action_text = has_upgrade ? `<br />${localize('[_1]Manage your accounts[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
@@ -263,7 +263,8 @@ const Cashier = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
-            BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status', 'landing_company').then(() => {
+            BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' });
+            BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status', 'landing_company', 'trading_platform_accounts').then(() => {
                 if (!is_virtual) checkStatusIsLocked(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
@@ -276,7 +277,8 @@ const Cashier = (() => {
                     showCurrentCurrency(
                         currency,
                         State.getResponse('statement'),
-                        State.getResponse('mt5_login_list')
+                        State.getResponse('mt5_login_list'),
+                        State.getResponse('trading_platform_accounts'),
                     );
                     if (is_p2p_allowed_currency && is_show_dp2p) {
                         setP2PVisibility();

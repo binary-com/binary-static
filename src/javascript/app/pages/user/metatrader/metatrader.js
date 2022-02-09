@@ -19,7 +19,8 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+        BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' });
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement', 'trading_platform_accounts').then(async () => {
             await BinarySocket.send({ trading_servers: 1, platform: 'mt5' });
 
             if (isEligible()) {
@@ -210,7 +211,9 @@ const MetaTrader = (() => {
 
     const getAllAccountsInfo = (response) => {
         MetaTraderUI.init(submit, sendTopupDemo);
-        show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
+        show_new_account_popup = Client.canChangeCurrency(
+            State.getResponse('statement'), (response.mt5_login_list || []), State.getResponse('trading_platform_accounts'), false
+        );
         allAccountsResponseHandler(response);
     };
 
