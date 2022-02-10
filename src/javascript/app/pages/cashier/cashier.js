@@ -100,16 +100,13 @@ const Cashier = (() => {
         const change_text_for_iom        = is_iom_client ? localize('time') : localize('time or create a real MT5 account');
         const url_user_account           = `<a href=${Url.urlFor('user/accounts')}>`;
 
-        const getRealMt5OrDxtradeMissingCriteria = (has_transaction) => {
-            const existing_mt5_or_dxtrade_msg = localize('You can no longer change the currency because you\'ve created a real MT5 or Deriv X account.') + account_action_text;
-            const existing_transaction_msg    = localize('You can no longer change the currency because you\'ve made a first-time deposit.') + account_action_text;
-
-            return !has_transaction ? existing_mt5_or_dxtrade_msg : existing_transaction_msg;
-        };
+        const criteria_not_met_message = has_no_transaction
+            ? localize('You can no longer change the currency because you\'ve created a real MT5 or Deriv X account.') + account_action_text
+            : localize('You can no longer change the currency because you\'ve made a first-time deposit.') + account_action_text;
 
         // Set messages based on currency being crypto or fiat
         // If fiat, set message based on if they're allowed to change currency or not
-        // Condition is to have no MT5 accounts *and* have no transactions
+        // Condition is to have no real MT5 or Deriv X accounts *and* have no transactions
         const fiat_currency_is_set_message = has_no_real_mt5_or_dxtrade && has_no_transaction
             ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
             : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
@@ -119,7 +116,7 @@ const Cashier = (() => {
 
         const fiat_currency_change_hint = has_no_real_mt5_or_dxtrade && has_no_transaction
             ? localize('You can [_1]set a new currency[_2] before you deposit for the first [_3].', [can_change ? url_user_account : '', can_change ? '</a>' : '', change_text_for_iom])
-            : getRealMt5OrDxtradeMissingCriteria(!has_no_transaction);
+            : criteria_not_met_message;
         const currency_hint             = Currency.isCryptocurrency(currency)
             ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${Currency.getCurrencyDisplayCode(currency)}`) + account_action_text
             : fiat_currency_change_hint;

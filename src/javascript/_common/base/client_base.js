@@ -393,7 +393,7 @@ const ClientBase = (() => {
 
         // Current API requirements for currently logged-in user successfully changing their account's currency:
         // 1. User must not have made any transactions
-        // 2. User must not have any MT5 account
+        // 2. User must not have any real MT5 or Deriv X account
         // 3. Not be a crypto account
         // 4. Not be a virtual account
         return is_current ? currency && !get('is_virtual', loginid) && has_account_criteria && !isCryptocurrency(currency) : has_account_criteria;
