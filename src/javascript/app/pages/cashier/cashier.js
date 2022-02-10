@@ -100,7 +100,7 @@ const Cashier = (() => {
         const change_text_for_iom        = is_iom_client ? localize('time') : localize('time or create a real MT5 account');
         const url_user_account           = `<a href=${Url.urlFor('user/accounts')}>`;
 
-        const criteria_not_met_message = has_no_transaction
+        const criteria_not_met_message   = has_no_transaction
             ? localize('You can no longer change the currency because you\'ve created a real MT5 or Deriv X account.') + account_action_text
             : localize('You can no longer change the currency because you\'ve made a first-time deposit.') + account_action_text;
 
