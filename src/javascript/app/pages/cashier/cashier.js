@@ -97,11 +97,11 @@ const Cashier = (() => {
         const has_upgrade                = upgrade_info.can_upgrade || upgrade_info.can_open_multi || can_change;
         const account_action_text        = has_upgrade ? `<br />${localize('[_1]Manage your accounts[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
         const is_iom_client              = Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im';
-        const change_text_for_iom        = is_iom_client ? localize('time') : localize('time or create a real MT5 account');
+        const change_text_for_iom        = is_iom_client ? localize('time') : localize('time or create a real MT5 account (or a real Deriv X account at deriv.com)');
         const url_user_account           = `<a href=${Url.urlFor('user/accounts')}>`;
 
         const criteria_not_met_message   = has_no_transaction
-            ? localize('You can no longer change the currency because you\'ve created a real MT5 or Deriv X account.') + account_action_text
+            ? localize('You can no longer change the currency because you\'ve created a real MT5 account (or a real Deriv X account at deriv.com).') + account_action_text
             : localize('You can no longer change the currency because you\'ve made a first-time deposit.') + account_action_text;
 
         // Set messages based on currency being crypto or fiat
