@@ -3,7 +3,7 @@ import React from 'react';
 const Tac = () => (
     <div>
         <h2 data-anchor='terms-and-conditions'>{it.L('Terms and conditions')}</h2>
-        <p><i>{it.L('Version 52. Last modified 26-11-2021.')}</i></p>
+        <p><i>{it.L('Version 53. Last modified 01-03-2022.')}</i></p>
         <p>{it.L('It is the responsibility of each client to read and understand this legal notice and the terms and conditions ("Terms") pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
@@ -29,7 +29,7 @@ const Tac = () => (
 
         <h2 data-anchor='languages'>C. {it.L('Languages')}</h2>
         <p>{it.L('These terms and conditions are provided in several different languages for clients\' convenience; however, these translations do reflect the same principles. The Company attempts, as much as possible, to provide a faithful translation in English of the official language of several countries. In the event of any differences between the English version of the website and any other language, the English version shall prevail.')}</p>
-        <p><span>{it.L('The client may communicate with the Company through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page.')}</span><span data-show='eucountry'>{it.L(' All calls are recorded for training and monitoring purposes.')}</span></p>
+        <p><span>{it.L('The client may communicate with the Company via online chat on the Company’s websites.')}</span><span data-show='eucountry'>{it.L(' All calls are recorded for training and monitoring purposes.')}</span></p>
         <p>{it.L('Generally the Company will communicate with the client through this website or by email to the email address given by the client upon account opening. The Company will communicate with the client in English or, if another preferred language is selected at account opening, in that language.')}</p>
         <p>{it.L('In cases where the client uses excessive anti-spam filtering which requires the Company to pay a fee in order to send a reply or a notification to the client, the Company will try to find an alternative way to communicate with the client but will not pay the requested fees to do so.')}</p>
 
