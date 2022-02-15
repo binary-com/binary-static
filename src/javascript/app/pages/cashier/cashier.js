@@ -93,7 +93,7 @@ const Cashier = (() => {
         const el_current_currency        = getElementById('account_currency_current');
         const el_current_hint            = getElementById('account_currency_hint');
         const upgrade_info               = Client.getUpgradeInfo();
-        const can_change                 = Client.canChangeCurrency(statement, mt5_logins, dxtrade_accounts_list);
+        const can_change                 = Client.canChangeCurrency(statement, mt5_logins, dxtrade_accounts_list, Client.get('loginid'));
         const has_upgrade                = upgrade_info.can_upgrade || upgrade_info.can_open_multi || can_change;
         const account_action_text        = has_upgrade ? `<br />${localize('[_1]Manage your accounts[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
         const is_iom_client              = Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im';

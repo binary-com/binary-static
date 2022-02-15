@@ -45,7 +45,10 @@ const Accounts = (() => {
         BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list', 'trading_platform_accounts').then(() => {
             landing_company           = State.getResponse('landing_company');
             const can_change_currency = Client.canChangeCurrency(
-                State.getResponse('statement'), State.getResponse('mt5_login_list'), State.getResponse('trading_platform_accounts')
+                State.getResponse('statement'),
+                State.getResponse('mt5_login_list'),
+                State.getResponse('trading_platform_accounts'),
+                Client.get('loginid')
             );
             const is_virtual          = Client.get('is_virtual');
             const has_real_account    = Client.hasAccountType('real');
@@ -169,7 +172,10 @@ const Accounts = (() => {
 
     const onConfirmSetCurrency = () => {
         const can_change_currency = Client.canChangeCurrency(
-            State.getResponse('statement'), State.getResponse('mt5_login_list'), State.getResponse('trading_platform_accounts')
+            State.getResponse('statement'),
+            State.getResponse('mt5_login_list'),
+            State.getResponse('trading_platform_accounts'),
+            Client.get('loginid')
         );
         if (can_change_currency) {
             addChangeCurrencyOption();

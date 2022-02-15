@@ -212,7 +212,11 @@ const MetaTrader = (() => {
     const getAllAccountsInfo = (response) => {
         MetaTraderUI.init(submit, sendTopupDemo);
         show_new_account_popup = Client.canChangeCurrency(
-            State.getResponse('statement'), (response.mt5_login_list || []), State.getResponse('trading_platform_accounts'), false
+            State.getResponse('statement'),
+            (response.mt5_login_list || []),
+            State.getResponse('trading_platform_accounts'),
+            Client.get('loginid'),
+            false
         );
         allAccountsResponseHandler(response);
     };
