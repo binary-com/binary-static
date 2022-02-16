@@ -269,8 +269,10 @@ const MetaTrader = (() => {
 
     const submit = (e) => {
         e.preventDefault();
+        const $btn_submit = $(e.target);
+        const acc_type    = $btn_submit.attr('acc_type');
 
-        if (show_new_account_popup) {
+        if (acc_type.includes('real') && show_new_account_popup) {
             MetaTraderUI.showNewAccountConfirmationPopup(
                 e,
                 () => show_new_account_popup = false,
@@ -280,8 +282,6 @@ const MetaTrader = (() => {
             return;
         }
 
-        const $btn_submit = $(e.target);
-        const acc_type    = $btn_submit.attr('acc_type');
         const action      = $btn_submit.attr('action');
         MetaTraderUI.hideFormMessage(action);
         if (Validation.validate(`#frm_${action}`)) {
