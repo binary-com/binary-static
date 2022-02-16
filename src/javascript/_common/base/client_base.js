@@ -1,11 +1,12 @@
-const moment           = require('moment');
-const isCryptocurrency = require('./currency_base').isCryptocurrency;
-const SocketCache      = require('./socket_cache');
-const localize         = require('../localize').localize;
-const LocalStore       = require('../storage').LocalStore;
-const State            = require('../storage').State;
-const getPropertyValue = require('../utility').getPropertyValue;
-const isEmptyObject    = require('../utility').isEmptyObject;
+const moment                 = require('moment');
+const isCryptocurrency       = require('./currency_base').isCryptocurrency;
+const SocketCache            = require('./socket_cache');
+const localize               = require('../localize').localize;
+const LocalStore             = require('../storage').LocalStore;
+const State                  = require('../storage').State;
+const getHasRealMt5OrDxtrade = require('../utility').getHasRealMt5OrDxtrade;
+const getPropertyValue       = require('../utility').getPropertyValue;
+const isEmptyObject          = require('../utility').isEmptyObject;
 
 const ClientBase = (() => {
     const storage_key = 'client.accounts';
@@ -386,11 +387,9 @@ const ClientBase = (() => {
 
     const canChangeCurrency = (statement, mt5_login_list, dxtrade_accounts_list, loginid, is_current = true) => {
         const currency             = get('currency', loginid);
-        const has_no_real_mt5      = !mt5_login_list || mt5_login_list.filter((account) => account.account_type !== 'demo').length === 0;
-        const has_no_real_dxtrade  = !dxtrade_accounts_list || dxtrade_accounts_list.filter(account => account.account_type !== 'demo').length === 0;
         const has_no_transaction   = (statement.count === 0 && statement.transactions.length === 0);
-        const has_account_criteria = has_no_transaction && has_no_real_mt5 && has_no_real_dxtrade;
-
+        const has_account_criteria = has_no_transaction &&
+            !getHasRealMt5OrDxtrade(mt5_login_list, dxtrade_accounts_list);
         // Current API requirements for currently logged-in user successfully changing their account's currency:
         // 1. User must not have made any transactions
         // 2. User must not have any real MT5 or Deriv X account

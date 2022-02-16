@@ -1,18 +1,19 @@
-const getCurrencies    = require('../user/get_currency').getCurrencies;
-const Client           = require('../../base/client');
-const BinarySocket     = require('../../base/socket');
-const Currency         = require('../../common/currency');
-const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
-const getElementById   = require('../../../_common/common_functions').getElementById;
-const localize         = require('../../../_common/localize').localize;
-const State            = require('../../../_common/storage').State;
-const Url              = require('../../../_common/url');
-const getPropertyValue = require('../../../_common/utility').getPropertyValue;
-const Dialog           = require('../../common/attach_dom/dialog');
-const BinaryPjax       = require('../../base/binary_pjax');
-const Accounts         = require('../user/accounts');
-const Header           = require('../../base/header');
-const isEuCountry      = require('../../common/country_base').isEuCountry;
+const getCurrencies          = require('../user/get_currency').getCurrencies;
+const Client                 = require('../../base/client');
+const BinarySocket           = require('../../base/socket');
+const Currency               = require('../../common/currency');
+const elementInnerHtml       = require('../../../_common/common_functions').elementInnerHtml;
+const getElementById         = require('../../../_common/common_functions').getElementById;
+const localize               = require('../../../_common/localize').localize;
+const State                  = require('../../../_common/storage').State;
+const Url                    = require('../../../_common/url');
+const getHasRealMt5OrDxtrade = require('../../../_common/utility').getHasRealMt5OrDxtrade;
+const getPropertyValue       = require('../../../_common/utility').getPropertyValue;
+const Dialog                 = require('../../common/attach_dom/dialog');
+const BinaryPjax             = require('../../base/binary_pjax');
+const Accounts               = require('../user/accounts');
+const Header                 = require('../../base/header');
+const isEuCountry            = require('../../common/country_base').isEuCountry;
 
 const Cashier = (() => {
     let href = '';
@@ -85,8 +86,7 @@ const Cashier = (() => {
     };
 
     const showCurrentCurrency = (currency, statement, mt5_logins, dxtrade_accounts_list) => {
-        const has_no_real_mt5_or_dxtrade = (!mt5_logins || mt5_logins.filter((account) => account.account_type !== 'demo').length === 0) &&
-            (!dxtrade_accounts_list || dxtrade_accounts_list.filter(account => account.account_type !== 'demo').length === 0);
+        const has_no_real_mt5_or_dxtrade = !getHasRealMt5OrDxtrade(mt5_logins, dxtrade_accounts_list);
         const has_no_transaction         = (statement.count === 0 && statement.transactions.length === 0);
         const el_acc_currency            = getElementById('account_currency');
         const el_currency_image          = getElementById('account_currency_img');
