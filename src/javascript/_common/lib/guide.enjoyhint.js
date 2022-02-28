@@ -1033,7 +1033,8 @@ $.fn.enjoyhint = function (method) {
 };
 
 $(window).on('popstate', function() {
-    var $body = $('body');
-    $body.enjoyhint('hide');
+    if (document.getElementById('guideBtn') && (document.getElementsByClassName('enjoyhint')[0])) {
+        var $body = $('body');
+        $body.enjoyhint('hide')
+    }
 });
-
