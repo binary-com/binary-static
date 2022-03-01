@@ -278,6 +278,11 @@ const AccountClosure = (() => {
                 addSection(account, txt_pending_withdrawals);
             });
         }
+        if (response.error.details.reason.includes('String does not match')){
+            section_id = 'forbidden_characters';
+            const el_section = getElementById(section_id);
+            el_section.setVisibility(1);
+        }
     };
 
     const showFormMessage = (localized_msg) => {

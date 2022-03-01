@@ -56,7 +56,11 @@ const AccountClosureError = () => {
     }, {
         id         : 'account_closure_pending_withdrawals',
         description: it.L('You have pending withdrawal(s) in these Binary accounts:'),
-    }];
+    }, {
+        id         : 'forbidden_characters',
+        description: it.L('Must be numbers, letters, and special characters . ,'),
+    },
+    ];
     
     return (
         <div id='account_closure_error' className='account-closure-dialog lightbox'>
