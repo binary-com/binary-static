@@ -989,7 +989,7 @@ label + input {
             border: 1px solid $COLOR_GRAY;
             border-radius: 4px;
 
-            input[type='checkbox'] + label::before {
+            input[type='checkbox'] + label:before {
                 margin-top: -3px;
             }
             .scope-item-description {
