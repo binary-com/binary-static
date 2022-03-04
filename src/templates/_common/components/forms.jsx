@@ -142,7 +142,7 @@ export const FormRow = ({
         return `gr-8 gr-12-m ${sub_row_class || ''}`;
     };
 
-    const getLebelRowClassName = () => {
+    const getLabelRowClassName = () => {
         if (is_two_rows) {
             return `gr-12 ${label_row_class}`;
         } else if (label_row_cell_width) {
@@ -167,7 +167,7 @@ export const FormRow = ({
             className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
             id={row_id}
         >
-            <div className={getLebelRowClassName()}>
+            <div className={getLabelRowClassName()}>
                 <label htmlFor={type !== 'label' ? id : undefined} className={required ? 'required_asterisk' : ''}>
                     {tooltip ?
                         <span data-balloon-length='xlarge' data-balloon={tooltip}>
