@@ -950,31 +950,27 @@ label + input {
     fieldset > legend {
         margin-left: 20px;
     }
-
     .title-align label {
         text-align: left;
         padding-left: 15px;
         width: 41px !important;
     }
-
     .choose-scopes-align label {
         text-align: left;
         padding-left: 15px;
         width: 128px;
         margin-top: 5px;
     }
-
     .title-row {
         margin-top: 25px;
     }
-
     .input-area {
         padding-left: 15px;
+
         input {
             width: 240px;
         }
     }
-
     .scope-types {
         padding-left: 10px;
         padding-right: 10px;
@@ -993,10 +989,9 @@ label + input {
             border: 1px solid $COLOR_GRAY;
             border-radius: 4px;
 
-            input[type="checkbox"] + label::before {
+            input[type='checkbox'] + label::before {
                 margin-top: -3px;
             }
-
             .scope-item-description {
                 margin-top: 8px;
                 font-size: 14px;
@@ -1004,7 +999,6 @@ label + input {
             }
         }
     }
-
     .gr-padding-10 {
         .button, .hint {
             margin-left: 10px;
@@ -1036,25 +1030,20 @@ label + input {
                 padding-left: 30px;
             }
         }
-
         .scope-types {
             justify-content: center;
         }
-
         .gr-12-m {
             flex-basis: 100%;
             max-width: 100%;
         }
-
         .choose-scopes-align label {
             width: auto;
         }
-
         .gr-padding-10 {
             .button {
                 margin-left: 20%;
             }
-
             .hint {
                 margin-left: calc(20% - 20px);
             }
@@ -1066,13 +1055,11 @@ label + input {
             display: flex;
             justify-content: center;
         }
-
         .gr-padding-10 {
             .button, .hint {
                 margin-left: 0;
             }
         }
-
         .input-area {
             padding-left: 40px !important;
             text-align: left;
@@ -1081,7 +1068,6 @@ label + input {
                 width: 215px;
             }
         }
-
         .scope-types {
             .scope-item {
                 width: 280px;
@@ -1091,7 +1077,6 @@ label + input {
                 }
             }
         }
-
         .scope-list {
             position: relative;
             display: flex;
@@ -1121,7 +1106,7 @@ label + input {
     @media screen and (max-width: 390px) {
         .scope-types {
             .scope-item {
-                width: 250px
+                width: 250px;
             }
         }
     }
