@@ -33,6 +33,7 @@ export const FormRow = ({
     children,
     options,
     default_option,
+    label_row_cell_width,
 }) => {
     const getInnerElement = () => {
         if (type === 'select') {
@@ -135,8 +136,19 @@ export const FormRow = ({
             return 'gr-12';
         } else if (has_geovalidator) {
             return 'gr-3 gr-12-m';
+        } else if (label_row_cell_width) {
+            return `gr-${12 - label_row_cell_width} gr-12-m ${sub_row_class || ''}`;
         }
         return `gr-8 gr-12-m ${sub_row_class || ''}`;
+    };
+
+    const getLebelRowClassName = () => {
+        if (is_two_rows) {
+            return `gr-12 ${label_row_class}`;
+        } else if (label_row_cell_width) {
+            return `gr-${label_row_cell_width} gr-12-m ${label_row_class}`;
+        }
+        return `gr-4 gr-12-m ${label_row_class}`;
     };
 
     if (type === 'checkbox' && !spaced) {
@@ -155,7 +167,7 @@ export const FormRow = ({
             className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
             id={row_id}
         >
-            <div className={`${is_two_rows ? `gr-12 ${label_row_class}` : `gr-4 gr-12-m ${label_row_class}`}`}>
+            <div className={getLebelRowClassName()}>
                 <label htmlFor={type !== 'label' ? id : undefined} className={required ? 'required_asterisk' : ''}>
                     {tooltip ?
                         <span data-balloon-length='xlarge' data-balloon={tooltip}>
@@ -193,6 +205,7 @@ export const SubmitButton = ({
     custom_btn_href,
     custom_btn_id,
     custom_msg_text,
+    left_alignment_size,
 }) => {
     const content =
         <React.Fragment>
@@ -227,10 +240,20 @@ export const SubmitButton = ({
         </React.Fragment>;
 
     if (!no_wrapper) {
+
+        const getClassName = () => {
+            if (!is_left_align) {
+                return 'gr-8 gr-push-4 gr-12-m gr-push-0-m';
+            } else if (left_alignment_size) {
+                return `gr-${12 - left_alignment_size} gr-push-${left_alignment_size} gr-12-m gr-push-0-m`;
+            }
+            return '';
+        };
+
         return (
             <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className || ''}`} id={id}>
                 { !is_centered ?
-                    <div className={`${!is_left_align ? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
+                    <div className={`${getClassName()} center-text-m`}>
                         {content}
                     </div> :
                     content
