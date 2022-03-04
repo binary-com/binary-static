@@ -417,6 +417,13 @@ const TradingEvents = (() => {
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));
 
+        /*
+        * to overcome the delay in loading of purchase button
+        */
+        $('#websocket_form :input').on('input',() => {
+            CommonTrading.showPriceOverlay();
+        });
+
         getElementById('selected_tick').addEventListener('change', CommonTrading.debounce((e) => {
             Defaults.set('selected_tick', e.target.value);
             Price.processPriceRequest();
