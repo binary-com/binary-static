@@ -58,15 +58,18 @@ const AccountClosureError = () => {
         description: it.L('You have pending withdrawal(s) in these Binary accounts:'),
     }, {
         id         : 'forbidden_characters',
-        description: it.L('Must be numbers, letters, and special characters . ,'),
+        description:
+    <div>
+        <p>{it.L('Our machines don’t recognise some of the symbols you used. They only understand letters, numbers, and these symbols  . , ‘ - ')}</p>
+        <p>{it.L('Hit <strong>OK</strong> to edit your answer and try again')}</p>
+    </div>,
     },
     ];
-    
     return (
         <div id='account_closure_error' className='account-closure-dialog lightbox'>
             <div id='account_closure_error_content' className='account-closure-dialog-content gr-padding-10 gr-gutter'>
                 <div className='gr-padding-10 gr-parent'>
-                    <h3 className='secondary-color'>{it.L('Action required')}</h3>
+                    <h3 id='closure_error_title' className='secondary-color'>{it.L('Action required')}</h3>
                     {
                         account_closure_content.map((item) =>
                             <div key={item.id} className='gr-padding-20 gr-parent invisible' id={item.id}>
