@@ -947,7 +947,6 @@ label + input {
 }
 
 #token_form {
-    
     fieldset {
         padding: 14px;
     }
@@ -955,7 +954,8 @@ label + input {
         margin-left: 20px;
     }
     .title-row {
-        margin: 20px 2px 5px 2px;
+        margin: 20px 2px 5px;
+
         label {
             white-space: nowrap;
         }
@@ -968,6 +968,7 @@ label + input {
     .scopes-title {
         padding: 0;
         margin: 0;
+
         label {
             margin: 0 0 0 13px;
             text-align: left;
@@ -977,17 +978,19 @@ label + input {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+
         input[type='checkbox'] + label:before {
             margin-bottom: 3px;
         }
         .scope-item {
             margin: 10px;
             padding: 15px;
-            text-align: left!important;
+            text-align: left !important;
             width: 317px;
             height: 76px;
             border: 1px solid $COLOR_GRAY;
             border-radius: 4px;
+
             .scope-item-description {
                 margin-top: 7px;
                 font-size: 14px;
@@ -997,21 +1000,22 @@ label + input {
         p.error-msg {
             width: 100%;
             padding-left: 10px;
-        } 
+        }
     }
     .gr-padding-10 {
         max-width: 83.3%;
         margin-left: auto;
+
         .button, .hint {
             margin-left: 15px;
-        } 
+        }
     }
 
     @media screen and (max-width: 895px) {
         .scopes-title {
             label {
                 min-width: 128px;
-            }   
+            }
         }
         .scope-types {
             flex-basis: 70%;
@@ -1020,7 +1024,7 @@ label + input {
         .gr-padding-10 {
             .button, .hint {
                 margin-left: 45px;
-            } 
+            }
         }
     }
 
@@ -1031,7 +1035,7 @@ label + input {
         .gr-padding-10 {
             .button, .hint {
                 margin-left: 55px;
-            } 
+            }
         }
     }
 
@@ -1062,6 +1066,7 @@ label + input {
         .gr-padding-10 {
             max-width: 100%;
             text-align: center;
+
             .button, .hint {
                 margin-left: 0;
             }
