@@ -34,6 +34,7 @@ export const FormRow = ({
     options,
     default_option,
     label_row_cell_width,
+    is_simple_row,
 }) => {
     const getInnerElement = () => {
         if (type === 'select') {
@@ -162,6 +163,29 @@ export const FormRow = ({
             </div>
         );
     }
+
+    if (is_simple_row) {
+        return (
+            <div
+                className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
+                id={row_id}
+            >
+                <label htmlFor={type !== 'label' ? id : undefined} className={required ? 'required_asterisk' : ''}>
+                    {tooltip ?
+                        <span data-balloon-length='xlarge' data-balloon={tooltip}>
+                            {label}
+                        </span> :
+                        label
+                    }
+                </label>
+                <div>{getInnerElement()}</div>
+                {hint &&
+                    <p className='hint no-margin'>{hint}</p>
+                }
+                {has_geovalidator ? children : undefined}
+            </div>
+        );
+    }
     return (
         <div
             className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
@@ -205,7 +229,6 @@ export const SubmitButton = ({
     custom_btn_href,
     custom_btn_id,
     custom_msg_text,
-    left_alignment_size,
 }) => {
     const content =
         <React.Fragment>
@@ -240,20 +263,10 @@ export const SubmitButton = ({
         </React.Fragment>;
 
     if (!no_wrapper) {
-
-        const getClassName = () => {
-            if (!is_left_align) {
-                return 'gr-8 gr-push-4 gr-12-m gr-push-0-m';
-            } else if (left_alignment_size) {
-                return `gr-${12 - left_alignment_size} gr-push-${left_alignment_size} gr-12-m gr-push-0-m`;
-            }
-            return '';
-        };
-
         return (
             <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className || ''}`} id={id}>
                 { !is_centered ?
-                    <div className={`${getClassName()} center-text-m`}>
+                    <div className={`${!is_left_align ? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
                         {content}
                     </div> :
                     content

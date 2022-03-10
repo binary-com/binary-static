@@ -947,166 +947,137 @@ label + input {
 }
 
 #token_form {
+    
+    fieldset {
+        padding: 14px;
+    }
     fieldset > legend {
         margin-left: 20px;
     }
-    .title-align label {
-        text-align: left;
-        padding-left: 15px;
-        width: 41px !important;
-    }
-    .choose-scopes-align label {
-        text-align: left;
-        padding-left: 15px;
-        width: 128px;
-        margin-top: 5px;
-    }
     .title-row {
-        margin-top: 25px;
-    }
-    .input-area {
-        padding-left: 15px;
-
+        margin: 20px 2px 5px 2px;
+        label {
+            white-space: nowrap;
+        }
         input {
-            width: 240px;
+            width: 205px;
+            height: 22px;
+            max-width: 100%;
+        }
+    }
+    .scopes-title {
+        padding: 0;
+        margin: 0;
+        label {
+            margin: 0 0 0 13px;
+            text-align: left;
         }
     }
     .scope-types {
-        padding-left: 10px;
-        padding-right: 10px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-
+        input[type='checkbox'] + label:before {
+            margin-bottom: 3px;
+        }
         .scope-item {
             margin: 10px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start !important;
-            width: 319px;
-            height: 100px;
+            padding: 15px;
+            text-align: left!important;
+            width: 317px;
+            height: 76px;
             border: 1px solid $COLOR_GRAY;
             border-radius: 4px;
-
-            input[type='checkbox'] + label:before {
-                margin-top: -3px;
-            }
             .scope-item-description {
-                margin-top: 8px;
+                margin-top: 7px;
                 font-size: 14px;
-                line-height: 20px;
+                line-height: 19px;
             }
         }
+        p.error-msg {
+            width: 100%;
+            padding-left: 10px;
+        } 
     }
     .gr-padding-10 {
+        max-width: 83.3%;
+        margin-left: auto;
         .button, .hint {
-            margin-left: 10px;
-        }
+            margin-left: 15px;
+        } 
     }
 
-    @media screen and (max-width: 960px) {
-        .scope-types {
-            .scope-item {
-                width: 280px;
-                height: 119px;
-            }
-        }
-    }
-
-    @media screen and (max-width: 870px) {
-        .choose-scopes-align label {
-            width: auto;
-        }
-    }
-
-    @media screen and (max-width: 706px) {
-        .title-row {
-            .title-align {
-                max-width: 10% !important;
-            }
-            .input-area {
-                max-width: 90% !important;
-                padding-left: 30px;
-            }
+    @media screen and (max-width: 895px) {
+        .scopes-title {
+            label {
+                min-width: 128px;
+            }   
         }
         .scope-types {
-            justify-content: center;
-        }
-        .gr-12-m {
-            flex-basis: 100%;
-            max-width: 100%;
-        }
-        .choose-scopes-align label {
-            width: auto;
+            flex-basis: 70%;
+            margin-left: 30px;
         }
         .gr-padding-10 {
-            .button {
-                margin-left: 20%;
-            }
-            .hint {
-                margin-left: calc(20% - 20px);
-            }
+            .button, .hint {
+                margin-left: 45px;
+            } 
         }
     }
 
-    @media screen and (max-width: 480px) {
-        p.error-msg {
+    @media screen and (max-width: 650px) {
+        .scope-types {
+            margin-left: 45px;
+        }
+        .gr-padding-10 {
+            .button, .hint {
+                margin-left: 55px;
+            } 
+        }
+    }
+
+    @media screen and (max-width: 572px) {
+        .scopes-title {
+            align-self: flex-start;
+        }
+        .scopes-row {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scopes-title, .scope-types {
+            margin-left: 0;
+            margin-right: 0;
+            flex-basis: unset;
+            max-width: unset;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scope-types {
+            p.error-msg {
+                width: auto;
+                align-self: flex-start;
+            }
         }
         .gr-padding-10 {
+            max-width: 100%;
+            text-align: center;
             .button, .hint {
                 margin-left: 0;
             }
         }
-        .input-area {
-            padding-left: 40px !important;
-            text-align: left;
-
-            input {
-                width: 215px;
-            }
-        }
-        .scope-types {
-            .scope-item {
-                width: 280px;
-
-                .scope-item-description {
-                    text-align: -webkit-auto;
-                }
-            }
-        }
-        .scope-list {
-            position: relative;
-            display: flex;
-
-            input[type='checkbox'] + label {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                display: flex;
-                align-items: center;
-            }
-            p.error-msg {
-                position: absolute;
-                left: 0;
-            }
-            .scope-types {
-                flex-basis: unset;
-                max-width: unset;
-                justify-content: center;
-
-                &:last-child {
-                    margin-bottom: 16px;
-                }
-            }
-        }
     }
 
-    @media screen and (max-width: 390px) {
+    @media screen and (max-width: 435px) {
+        .title-row {
+            input {
+                margin-left: 0;
+            }
+        }
         .scope-types {
             .scope-item {
-                width: 250px;
+                width: 248px;
+                height: 87px;
             }
         }
     }
