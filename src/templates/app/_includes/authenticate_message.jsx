@@ -49,7 +49,7 @@ const FileSelector = ({
                                         <div className='fields'>
                                             { type === 'poi' && (
                                                 <React.Fragment>
-                                                    <div className='gr-row form-row center-text-m'>
+                                                    <div className='gr-row form-row center-text-m poi-input-row'>
                                                         <div className='gr-4 gr-12-m'>
                                                             <label className ='required_field_label' htmlFor={`id_number_${j}`}>{it.L('ID number')}<span className='required_field_asterisk'>*</span>:</label>
                                                         </div>
@@ -57,7 +57,7 @@ const FileSelector = ({
                                                             <input id={`id_number_${j}`} type='text' maxLength='30' />
                                                         </div>
                                                     </div>
-                                                    <div className='gr-row form-row center-text-m' id={`expiry_datepicker_${document.value}`}>
+                                                    <div className='gr-row form-row center-text-m poi-input-row' id={`expiry_datepicker_${document.value}`}>
                                                         <div className='gr-4 gr-12-m'>
                                                             <label className ='required_field_label' htmlFor={`exp_date_${j}`}>{it.L('Expiry date')}<span className='required_field_asterisk'>*</span>:</label>
                                                         </div>

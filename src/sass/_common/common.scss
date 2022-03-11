@@ -231,6 +231,32 @@ label {
     }
 }
 
+@media screen and (max-width: 948px) and (min-width: 480px) {
+    .poi-input-row {
+        display: flex;
+        justify-content: space-around;
+
+        & > div {
+            flex-basis: 100%;
+            max-width: 100%;
+            text-align: center;
+            
+            label {
+                min-width: 73px;
+                text-align: center !important;
+            }
+
+            input {
+                padding-left: 0;
+                padding-right: 0;
+                max-width: 100%;
+                min-width: 80%;
+                height: 26px;
+            }
+        }
+    }
+}
+
 .input {
     width: 45%;
 }
