@@ -211,6 +211,32 @@ label {
 .form-row {
     padding: 10px 0;
 
+    .fields &:nth-child(-n + 2) {
+        div:first-child {
+            padding: 0; // needed to fit in text in any language
+        }
+        @media screen and (max-width: 948px) and (min-width: 480px) {
+            display: flex;
+            justify-content: space-around;
+
+            & > div {
+                flex-basis: 100%;
+                max-width: 100%;
+                text-align: center;
+    
+                label {
+                    min-width: 73px;
+                    text-align: center !important;
+                }
+                input {
+                    max-width: 100%;
+                    min-width: 80%;
+                    height: 30px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
     .required_field_label {
         font-size: 13px;
     }
@@ -228,31 +254,6 @@ label {
     input:not([type='radio']), select {
         width: 100%;
         box-sizing: border-box;
-    }
-}
-
-@media screen and (max-width: 948px) and (min-width: 480px) {
-    .poi-input-row {
-        display: flex;
-        justify-content: space-around;
-
-        & > div {
-            flex-basis: 100%;
-            max-width: 100%;
-            text-align: center;
-
-            label {
-                min-width: 73px;
-                text-align: center !important;
-            }
-            input {
-                padding-left: 0;
-                padding-right: 0;
-                max-width: 100%;
-                min-width: 80%;
-                height: 26px;
-            }
-        }
     }
 }
 
