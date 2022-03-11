@@ -211,17 +211,17 @@ label {
 .form-row {
     padding: 10px 0;
 
+    .fields &:nth-child(-n + 2) {
+        div:first-child {
+            padding: 0; // needed to fit in text in any language
+        }
+    }
     .required_field_label {
         font-size: 13px;
     }
-    div:first-child {
-        .fields & {
-            padding: 0; // needed to fit in text in Russian
-        }
-        label {
-            display: block;
-            text-align: right;
-        }
+    div:first-child label {
+        display: block;
+        text-align: right;
     }
 }
 
