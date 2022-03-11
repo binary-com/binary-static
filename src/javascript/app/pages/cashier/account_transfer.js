@@ -169,7 +169,7 @@ const AccountTransfer = (() => {
 
     const responseHandler = async (response) => {
         if (response.error) {
-            if (['Fiat2CryptoTransferOverLimit', 'Crypto2FiatTransferOverLimit'].includes(response.error.code)) {
+            if (['Fiat2CryptoTransferOverLimit', 'Crypto2FiatTransferOverLimit', 'Crypto2CryptoTransferOverLimit'].includes(response.error.code)) {
                 await BinarySocket.send({ get_account_status: 1 });
                 Dialog.confirm({
                     id               : 'error_transfer',

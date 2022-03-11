@@ -379,10 +379,7 @@ const ClientBase = (() => {
             // so we should compare '' === undefined instead
             return (same_cur_allowed[from_landing_company] || '') === to_landing_company;
         }
-        // or for other clients if current account is cryptocurrency it should only transfer to fiat currencies and vice versa
-        const is_from_crypto = isCryptocurrency(from_currency);
-        const is_to_crypto   = isCryptocurrency(to_currency);
-        return (is_from_crypto ? !is_to_crypto : is_to_crypto);
+        return true;
     };
 
     const hasSvgAccount = () => !!(getAllLoginids().find(loginid => /^CR/.test(loginid)));

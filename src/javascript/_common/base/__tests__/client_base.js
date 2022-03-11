@@ -220,12 +220,6 @@ describe('ClientBase', () => {
 
             expect(Client.canTransferFunds()).to.eq(false);
         });
-        it('fails if client has maltainvest and malta accounts with differing currencies', () => {
-            Client.set('currency', 'USD', loginid_gaming);
-            Client.set('currency', 'EUR', loginid_financial);
-
-            expect(Client.canTransferFunds()).to.eq(false);
-        });
         it('passes if client has maltainvest and malta accounts with the same currency', () => {
             Client.set('currency', 'USD', loginid_gaming);
             Client.set('currency', 'USD', loginid_financial);
@@ -242,22 +236,6 @@ describe('ClientBase', () => {
 
             Client.set('currency', 'USD', loginid_real_iom);
             Client.set('currency', 'USD', loginid_financial);
-
-            expect(Client.canTransferFunds()).to.eq(false);
-        });
-        it('fails if non-maltainvest client only has fiat accounts', () => {
-            Client.clearAllAccounts();
-            [loginid_real, loginid_real_2].forEach((id) => {
-                Client.set('loginid', id, id);
-            });
-            Client.set('currency', 'USD', loginid_real);
-            Client.set('currency', 'EUR', loginid_real_2);
-
-            expect(Client.canTransferFunds()).to.eq(false);
-        });
-        it('fails if non-maltainvest client only has crypto accounts', () => {
-            Client.set('currency', 'BTC', loginid_real);
-            Client.set('currency', 'ETH', loginid_real_2);
 
             expect(Client.canTransferFunds()).to.eq(false);
         });
