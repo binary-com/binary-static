@@ -281,7 +281,8 @@ const AccountClosure = (() => {
                 addSection(account, txt_pending_withdrawals);
             });
         }
-        if (response.error.details.reason.includes('String does not match')){
+        const { reason } = response.error.details;
+        if (reason && reason.includes('String does not match')){
             el_error_title.innerHTML = localize('We couldn’t read that!');
             section_id = 'forbidden_characters';
             const el_section = getElementById(section_id);
