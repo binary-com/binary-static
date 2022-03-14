@@ -631,9 +631,6 @@ msgstr ""
 msgid "20 – 39.999%"
 msgstr ""
 
-msgid "2021 Binary | All rights reserved"
-msgstr ""
-
 msgid "3.75"
 msgstr ""
 
@@ -1265,6 +1262,9 @@ msgid "Agency or partnership"
 msgstr ""
 
 msgid "Agent's obligations"
+msgstr ""
+
+msgid "Agents may not use their Binary.com account for trading under any circumstances."
 msgstr ""
 
 msgid "Agree and accept"
@@ -3856,9 +3856,6 @@ msgstr ""
 msgid "Deriv (Europe) Limited"
 msgstr ""
 
-msgid "Deriv (Europe) Limited or"
-msgstr ""
-
 msgid "Deriv (FX) Ltd"
 msgstr ""
 
@@ -3908,9 +3905,6 @@ msgid "Deriv Investments (Europe) Limited"
 msgstr ""
 
 msgid "Deriv Investments (Europe) Limited aggregates the Bid and Ask prices from a pool of liquidity providers to determine and offer the client the best available price of the instrument. The Company is always the final counterparty to the client's Transactions. The Company may execute Orders on behalf of its client, wherein the Company will act as a broker and pass on the Order to the liquidity provider for execution. Alternatively, the Company may also keep the client's Order on its own account, wherein the Company will take the other side of the client's trade. It is further noted that the Company may make a profit as a result of the client's losses and vice-versa. Further details can be found under Conflicts of interest policy and Order execution policy."
-msgstr ""
-
-msgid "Deriv Investments (Europe) Limited and Deriv (Europe) Limited: Malta"
 msgstr ""
 
 msgid "Deriv Investments (Europe) Limited has prepared the Financial disclosures report in accordance with the Investment Firms Regulation and Directive. Read our report to understand how we comply with market discipline as a market participant."
@@ -5962,7 +5956,7 @@ msgstr ""
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr ""
 
-msgid "If the Agent’s Binary.com account balance drops below the minimum amount required for the Agent’s country of residence, the Company will give the Agent a 30-day notice and then 30 days grace period to eliminate the deficit. At the end of these 60 days, if the Agent’s account balance does not meet or exceed the minimum required amount, the Company’s contract with the Agent shall be terminated."
+msgid "If the Agent has not been asked to meet a minimum account balance requirement upon application, the Agent will receive a 30-day notice to ensure the Agent’s Binary.com account balance meets the minimum balance requirement for the Agent’s country of residence. The Agent may not use credit or debit cards or Deriv P2P to top up the Agent’s Binary.com account for the purpose of meeting the minimum balance requirement. The Company reserves the right to withdraw the Agent’s payment agent status if the Agent does not meet this requirement within 30 days."
 msgstr ""
 
 msgid "If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client's account and withhold any funds accumulated therein."
@@ -6407,9 +6401,6 @@ msgid "In the EU, financial products are offered by Deriv Investments (Europe) L
 msgstr ""
 
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
-msgstr ""
-
-msgid "In the UK, our clients trade through Deriv Investments (Europe) Limited. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
 msgstr ""
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
@@ -9046,6 +9037,9 @@ msgstr ""
 msgid "Please submit your %1proof of address%2."
 msgstr ""
 
+msgid "Please submit your %1proof of identity%2 to authenticate your account and access the Cashier."
+msgstr ""
+
 msgid "Please submit your %1proof of identity%2."
 msgstr ""
 
@@ -10801,7 +10795,7 @@ msgstr ""
 msgid "Such a withdrawal would result in the client's Account Equity being less than zero."
 msgstr ""
 
-msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
+msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright <span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
 msgstr ""
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
@@ -11252,6 +11246,12 @@ msgid "The Agent has taken all measures required to obtain and maintain in full 
 msgstr ""
 
 msgid "The Agent is prohibited from offering the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
+msgstr ""
+
+msgid "The Agent may not make withdrawals through the Cashier page or Deriv P2P unless the Company makes an exception at its sole discretion."
+msgstr ""
+
+msgid "The Agent may not transfer funds to another Agent unless the Company makes an exception at its sole discretion."
 msgstr ""
 
 msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
@@ -12103,7 +12103,7 @@ msgstr ""
 msgid "The client may choose to contact the Company to close the client's account held with the Company. The client's account may be closed if the client does not have any open trade positions and if the client has complied with the requested \"Know Your Client\" procedures to enable the client to withdraw any pending funds in the client's account."
 msgstr ""
 
-msgid "The client may communicate with the Company through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page."
+msgid "The client may communicate with the Company via online chat on the Company’s websites."
 msgstr ""
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
@@ -12328,7 +12328,7 @@ msgstr ""
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr ""
 
-msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Deriv Group companies with all rights reserved."
+msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright %2 Deriv Group companies with all rights reserved."
 msgstr ""
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
@@ -12997,7 +12997,7 @@ msgstr ""
 msgid "To many attempts. Please try again in a few minutes"
 msgstr ""
 
-msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of DP2P and credit or debit cards."
+msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of Deriv P2P and credit or debit cards."
 msgstr ""
 
 msgid "To open a bank account, we will need to verify your identity."
@@ -13849,7 +13849,7 @@ msgstr ""
 msgid "Verify your identity"
 msgstr ""
 
-msgid "Version 52. Last modified 26-11-2021."
+msgid "Version 53. Last modified 01-03-2022."
 msgstr ""
 
 msgid "Video Room Facility"
@@ -15053,6 +15053,9 @@ msgid "Your account is now deactived."
 msgstr ""
 
 msgid "Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again."
+msgstr ""
+
+msgid "Your account needs authentication. Please submit your %1proof of identity%2 to access Cashier."
 msgstr ""
 
 msgid "Your account remains under the retail client category."

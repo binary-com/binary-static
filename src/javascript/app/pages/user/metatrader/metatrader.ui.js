@@ -737,7 +737,7 @@ const MetaTraderUI = (() => {
         const should_set_trading_password = shouldSetTradingPassword();
         const is_synthetic = /gaming/.test(new_account_type);
 
-        $form.find('#msg_form').remove();
+        setTimeout(() => $form.find('#msg_form').setVisibility(0), 5000);
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_3').find('.error-msg, .days-to-crack').setVisibility(0);
