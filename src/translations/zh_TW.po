@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-12-06 01:59\n"
+"PO-Revision-Date: 2022-03-14 03:34\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -646,9 +646,6 @@ msgstr "2.50"
 msgid "20 – 39.999%"
 msgstr "20 – 39.999%"
 
-msgid "2021 Binary | All rights reserved"
-msgstr "2021 Binary | 保留所有權利"
-
 msgid "3.75"
 msgstr "3.75"
 
@@ -1281,6 +1278,9 @@ msgstr "代理或夥伴"
 
 msgid "Agent's obligations"
 msgstr "代理商的義務"
+
+msgid "Agents may not use their Binary.com account for trading under any circumstances."
+msgstr ""
 
 msgid "Agree and accept"
 msgstr "同意和接受"
@@ -5977,8 +5977,8 @@ msgstr "如果 <strong>退市現價</strong> 等於 <strong>障礙價格</strong
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "如果 <strong>最後跳動點</strong> 等於平均跳動點, 您將不會贏得賠付。"
 
-msgid "If the Agent’s Binary.com account balance drops below the minimum amount required for the Agent’s country of residence, the Company will give the Agent a 30-day notice and then 30 days grace period to eliminate the deficit. At the end of these 60 days, if the Agent’s account balance does not meet or exceed the minimum required amount, the Company’s contract with the Agent shall be terminated."
-msgstr "如果代理的 Binary.com 帳戶餘額低於代理居住國家/地區所需的最低金額，公司將提前 30 天通知代理，並給予 30 天寬限期以消除赤字。此60 天期結束時，如果代理的帳戶餘額未達到或超過最低要求金額，公司與代理的合約將終止。"
+msgid "If the Agent has not been asked to meet a minimum account balance requirement upon application, the Agent will receive a 30-day notice to ensure the Agent’s Binary.com account balance meets the minimum balance requirement for the Agent’s country of residence. The Agent may not use credit or debit cards or Deriv P2P to top up the Agent’s Binary.com account for the purpose of meeting the minimum balance requirement. The Company reserves the right to withdraw the Agent’s payment agent status if the Agent does not meet this requirement within 30 days."
+msgstr ""
 
 msgid "If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client's account and withhold any funds accumulated therein."
 msgstr "如果公司（自行決定）不確定客戶是否遵守這些條款，或者如客戶拒絕向公司提供所要求的合理資料，公司可以取消客戶的賬戶並扣留任何累積資金。"
@@ -10816,8 +10816,8 @@ msgstr "此款項轉移將導致客戶的帳戶資金降至小於零。"
 msgid "Such a withdrawal would result in the client's Account Equity being less than zero."
 msgstr "此項提款將導致客戶的帳戶資金小於零。"
 
-msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
-msgstr "可對此類材料進行受限複製和分佈，僅用於非商業目的，前提是所有復製材料都必須保持完整且須在明顯位置標註以下聲明：&ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. 版權所有，並保留一切權利。 &rdquo;"
+msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright <span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
+msgstr ""
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
 msgstr "總結審計結果, 並與部門負責人合作制定擬議的解決方案"
@@ -11268,6 +11268,12 @@ msgstr "代理已採取一切必要的措施, 以全力獲得和高效率保持�
 
 msgid "The Agent is prohibited from offering the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
 msgstr "根據本協議，禁止代理向居住在由刊登在公司網站%1www.binary.com%2的條款和條件（經不時修訂）規定的受限制的國家的客戶提供服務。"
+
+msgid "The Agent may not make withdrawals through the Cashier page or Deriv P2P unless the Company makes an exception at its sole discretion."
+msgstr ""
+
+msgid "The Agent may not transfer funds to another Agent unless the Company makes an exception at its sole discretion."
+msgstr ""
 
 msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
 msgstr "代理僅可向居住在代理經營所在的同一司法管轄區並欲通過代理存款或取款的公司客戶提供服務。代理可向欲使用公司已在使用以外的電子錢包或電子付款方法（以下簡稱「電子付款」）和公司已接受以外的當地貨幣（以下簡稱「當地貨幣」） 和當地銀行電匯（以下簡稱「銀行電匯」）的客戶提供服務。"
@@ -12118,8 +12124,8 @@ msgstr "除非客戶是 Deriv Investments（Europe）Limited 的零售客戶，�
 msgid "The client may choose to contact the Company to close the client's account held with the Company. The client's account may be closed if the client does not have any open trade positions and if the client has complied with the requested \"Know Your Client\" procedures to enable the client to withdraw any pending funds in the client's account."
 msgstr "客戶可以選擇跟公司聯繫以關閉在公司開立的帳戶。如客戶沒有任何未平倉交易頭寸，以及如果客戶已符合「了解您的客戶」之程序要求，允許客戶提取帳戶內的任何待領款項，客戶的帳戶就可以關閉。"
 
-msgid "The client may communicate with the Company through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page."
-msgstr "客戶可以通過此網站以電子郵件、電話或在特別情況下以郵寄方式跟公司溝通。詳情請參閱「聯繫我們」頁面。"
+msgid "The client may communicate with the Company via online chat on the Company’s websites."
+msgstr ""
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
 msgstr "支付保證金時客戶可以將資金從%1帳戶轉入其MT5真實帳戶。如果客戶的%1帳戶內資金不足， 可以先把資金存入%1帳戶， 再將資金從%1帳戶轉入其MT5真實帳戶作為保證金支付。"
@@ -12343,8 +12349,8 @@ msgstr "與客戶的訂單有關的金融工具市場條件，其中包括及時
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "市場平倉價為合約到期時的有效價格。"
 
-msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Deriv Group companies with all rights reserved."
-msgstr "本 %1 網站所包含的各種材料（包括但不限於所有文章、文字、圖像、標誌、整理材料、系統、代碼和設計）由 %2 Deriv 集團公司版權（1999-年）所有。公司保留所有權利。"
+msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright %2 Deriv Group companies with all rights reserved."
+msgstr ""
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
 msgstr "客戶可能蒙受的最大損失就是其向公司支付的金額。"
@@ -13012,8 +13018,8 @@ msgstr "要繼續保留持倉頭寸，客戶需要有足夠支付任何保證金
 msgid "To many attempts. Please try again in a few minutes"
 msgstr "嘗試次數太多。請數分鐘後重試。"
 
-msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of DP2P and credit or debit cards."
-msgstr "為滿足上一條的要求，申請人可以使用任何支付方式，包括其他支付代理的服務存入所需的金額，但 DP2P 和信用卡或借記卡除外。"
+msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of Deriv P2P and credit or debit cards."
+msgstr ""
 
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "要開設銀行帳戶，必須先驗證您的身份。"
@@ -13864,8 +13870,8 @@ msgstr "身份驗證"
 msgid "Verify your identity"
 msgstr "身份驗證"
 
-msgid "Version 52. Last modified 26-11-2021."
-msgstr "版本52。最後修改時間為 2021年11月26日。"
+msgid "Version 53. Last modified 01-03-2022."
+msgstr ""
 
 msgid "Video Room Facility"
 msgstr "視訊室設施"
