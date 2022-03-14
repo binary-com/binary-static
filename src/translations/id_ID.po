@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-12-06 01:59\n"
+"PO-Revision-Date: 2022-03-14 03:21\n"
 "Last-Translator: \n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1281,6 +1281,9 @@ msgstr "Agensi atau kemitraan"
 
 msgid "Agent's obligations"
 msgstr "Kewajiban agen"
+
+msgid "Agents may not use their Binary.com account for trading under any circumstances."
+msgstr ""
 
 msgid "Agree and accept"
 msgstr "Setuju dan terima"
@@ -5977,8 +5980,8 @@ msgstr "Jika <strong>spot akhir</strong> adalah sama dengan <strong>batasan</str
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Jika <strong>tik akhir</strong> sama dengan tik rata-rata, Anda tidak akan memperoleh hasil."
 
-msgid "If the Agent’s Binary.com account balance drops below the minimum amount required for the Agent’s country of residence, the Company will give the Agent a 30-day notice and then 30 days grace period to eliminate the deficit. At the end of these 60 days, if the Agent’s account balance does not meet or exceed the minimum required amount, the Company’s contract with the Agent shall be terminated."
-msgstr "Jika saldo akun Agen Binary.com turun di bawah jumlah minimum yang diperlukan untuk negara tempat tinggal Agen, Perusahaan akan memberi Agen pemberitahuan 30 hari dan kemudian masa tenggang 30 hari untuk menghilangkan defisit. Pada akhir 60 hari ini, jika saldo akun Agen tidak memenuhi atau melebihi jumlah minimum yang disyaratkan, kontrak Perusahaan dengan Agen akan dihentikan."
+msgid "If the Agent has not been asked to meet a minimum account balance requirement upon application, the Agent will receive a 30-day notice to ensure the Agent’s Binary.com account balance meets the minimum balance requirement for the Agent’s country of residence. The Agent may not use credit or debit cards or Deriv P2P to top up the Agent’s Binary.com account for the purpose of meeting the minimum balance requirement. The Company reserves the right to withdraw the Agent’s payment agent status if the Agent does not meet this requirement within 30 days."
+msgstr ""
 
 msgid "If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client's account and withhold any funds accumulated therein."
 msgstr "Jika Perusahaan (dengan kebijakannya sendiri) tidak puas meskipun klien sudah memenuhi persyaratan, atau klien tidak mematuhi permintaan wajar mengenai informasi yang diperlukan oleh Perusahaan, maka Perusahaan dapat membatalkan akun klien dan menahan saldo yang ada."
@@ -10817,8 +10820,8 @@ msgstr "Transfer semacam itu akan mengakibatkan Ekuitas Akun klien turun menjadi
 msgid "Such a withdrawal would result in the client's Account Equity being less than zero."
 msgstr "Penarikan sedemikian akan menyebabkan Ekuitas Akun klien kurang dari nol."
 
-msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
-msgstr "Bahan tersebut dapat disalin dan didistribusikan secara terbatas untuk tujuan non-komersial saja, dengan ketentuan bahwa setiap materi yang disalin adalah utuh dan memberitahukan kalimat berikut dengan jelas: &ldquo;Hak Cipta Terpelihara Deriv Ltd 1999<span class='currentYear'></span>.&rdquo;"
+msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright <span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
+msgstr ""
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
 msgstr "Merangkum temuan audit dan bekerja dengan kepala departemen tentang solusi yang diusulkan"
@@ -11269,6 +11272,12 @@ msgstr "Agen telah mengambil semua langkah yang diperlukan untuk mendapatkan dan
 
 msgid "The Agent is prohibited from offering the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
 msgstr "Agen tidak dibenarkan untuk memberikan layanannya, berdasarkan perjanjian ini, kepada klien yang berdomisili di negara-negara terbatas yang diuraikan dalam syarat dan ketentuan Perusahaan (sebagaimana telah diubah dari waktu ke waktu), yang dipublikasikan pada situs Perusahaan, %1www.binary.com%2."
+
+msgid "The Agent may not make withdrawals through the Cashier page or Deriv P2P unless the Company makes an exception at its sole discretion."
+msgstr ""
+
+msgid "The Agent may not transfer funds to another Agent unless the Company makes an exception at its sole discretion."
+msgstr ""
 
 msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
 msgstr "Agen hanya dapat memberikan layanan kepada klien Perusahaan yang tinggal dalam yuridiksi yang sama dimana klien tersebut ingin melakukan deposit dan/atau penarikan dana menggunakan Agen. Agen dapat menawarkan layanan kepada klien yang ingin menggunakan e-wallet atau metode pembayaran lain yang tidak disediakan oleh Perusahaan (yang kemudian disebut sebagai metode \"e-payment\") atau mata uang lokal selain yang diterima oleh Perusahaan (yang disebut sebagai \"mata uang lokal\") dan transfer bank lokal (yang disebut sebagai \"bank transfer\")."
@@ -12120,8 +12129,8 @@ msgstr "Klien bersedia dan mampu secara finansial untuk mempertahankan total keh
 msgid "The client may choose to contact the Company to close the client's account held with the Company. The client's account may be closed if the client does not have any open trade positions and if the client has complied with the requested \"Know Your Client\" procedures to enable the client to withdraw any pending funds in the client's account."
 msgstr "Klien dapat menghubungi Perusahaan untuk menutup akun klien pada Perusahaan. Akun klien juga dapat ditutup jika klien tidak memiliki posisi trading dan jika kilen telah diminta untuk melengkapi prosedur \"Know Your Client\" untuk menarik saldo atau dana yang masih tersisa pada akun klien."
 
-msgid "The client may communicate with the Company through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page."
-msgstr "Klien dapat berkomunikasi dengan Perusahaan melalui situs web ini atau melalui e-mail, telepon atau melalui pos jika diperlukan. Informasi lengkap dapat ditemukan pada halaman Hubungi kami."
+msgid "The client may communicate with the Company via online chat on the Company’s websites."
+msgstr ""
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
 msgstr "Klien dapat melakukan Pembayaran Margin dengan mentransfer dana dari akun %1 ke Akun Riil MT5 mereka. Jika saldo tidak mencukupi pada akun %1 klien untuk mendanai Akun Riil MT5 mereka, mereka dapat melakukan Pembayaran Margin dengan mendanai akun%1 mereka dan mentransfer dana dari akun %1 ke Akun Riil MT5 mereka."
@@ -12345,8 +12354,8 @@ msgstr "Kondisi pasar dari instrumen finansial pada order klien, termasuk keperl
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "Harga akhir pasar adalah harga pada akhir periode kontrak."
 
-msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Deriv Group companies with all rights reserved."
-msgstr "Semua materi yang tersedia pada situs web %1 (termasuk namun tidak terbatas pada semua artikel, teks, gambar, logo, kompilasi, sistem, kode, dan desain) adalah merupakan Hak Cipta Terpelihara Grup Perusahaan Deriv 1999-%2."
+msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright %2 Deriv Group companies with all rights reserved."
+msgstr ""
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
 msgstr "Kerugian maksimum yang mungkin ditanggung oleh klien adalah jumlah dana yang dibayarkan oleh klien kepada Perusahaan."
@@ -13014,8 +13023,8 @@ msgstr "Untuk mempertahankan Open Posisi, klien harus memiliki Ekuitas Akun yang
 msgid "To many attempts. Please try again in a few minutes"
 msgstr "Terlalu banyak percobaan. Silakan coba beberapa menit lagi."
 
-msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of DP2P and credit or debit cards."
-msgstr "Untuk memenuhi persyaratan pada klausul sebelumnya, pemohon dapat mentransfer jumlah saldo yang diperlukan menggunakan metode pembayaran apa pun, termasuk layanan agen pembayaran lain, kecuali DP2P dan kartu kredit atau debit."
+msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of Deriv P2P and credit or debit cards."
+msgstr ""
 
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "Untuk membuka rekening bank, kami perlu memverifikasi identitas Anda."
@@ -13866,8 +13875,8 @@ msgstr "Verifikasi identitas"
 msgid "Verify your identity"
 msgstr "Verifikasi identitas Anda"
 
-msgid "Version 52. Last modified 26-11-2021."
-msgstr "Versi 52. Diperbarui terakhir pada 26-11-2021."
+msgid "Version 53. Last modified 01-03-2022."
+msgstr ""
 
 msgid "Video Room Facility"
 msgstr "Fasilitas Ruang Video"

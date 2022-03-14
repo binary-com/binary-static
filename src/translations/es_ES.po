@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-12-06 01:59\n"
+"PO-Revision-Date: 2022-03-14 03:21\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -1281,6 +1281,9 @@ msgstr "Agencia o asociación"
 
 msgid "Agent's obligations"
 msgstr "Obligaciones del agente"
+
+msgid "Agents may not use their Binary.com account for trading under any circumstances."
+msgstr ""
 
 msgid "Agree and accept"
 msgstr "Acordar y aceptar"
@@ -5978,8 +5981,8 @@ msgstr "Si el <strong>punto de salida</strong> es igual a la <strong>barrera</st
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Si el <strong>último intervalo</strong> es igual a la media de los intervalos, no recibirá el premio."
 
-msgid "If the Agent’s Binary.com account balance drops below the minimum amount required for the Agent’s country of residence, the Company will give the Agent a 30-day notice and then 30 days grace period to eliminate the deficit. At the end of these 60 days, if the Agent’s account balance does not meet or exceed the minimum required amount, the Company’s contract with the Agent shall be terminated."
-msgstr "Si el saldo de la cuenta de Binary.com del Agente cae por debajo de la cantidad mínima requerida para el país de residencia del Agente, la Compañía dará al Agente un aviso de 30 días y luego 30 días de gracia para eliminar el déficit. Al final de estos 60 días, si el saldo de la cuenta del Agente no alcanza o supera la cantidad mínima requerida, el contrato de la Compañía con el Agente se dará por terminado."
+msgid "If the Agent has not been asked to meet a minimum account balance requirement upon application, the Agent will receive a 30-day notice to ensure the Agent’s Binary.com account balance meets the minimum balance requirement for the Agent’s country of residence. The Agent may not use credit or debit cards or Deriv P2P to top up the Agent’s Binary.com account for the purpose of meeting the minimum balance requirement. The Company reserves the right to withdraw the Agent’s payment agent status if the Agent does not meet this requirement within 30 days."
+msgstr ""
 
 msgid "If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client's account and withhold any funds accumulated therein."
 msgstr "Si la Empresa (a su sola discreción) no está convencida que un cliente esté cumpliendo con estos términos, o si un cliente no coopera con una solicitud razonable de información para la Empresa, la Empresa puede cancelar la cuenta del cliente y retener cualquier fondo acumulado en la misma."
@@ -10818,8 +10821,8 @@ msgstr "Dicha transferencia causaría que el Capital de la Cuenta del cliente ca
 msgid "Such a withdrawal would result in the client's Account Equity being less than zero."
 msgstr "Dicho retiro resultaría en que el capital de la cuenta del cliente sea menor a cero."
 
-msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
-msgstr "Dichos materiales pueden copiarse y distribuirse de acuerdo con una base limitada solo para propósitos no comerciales, siempre y cuando el material que se copie permanezca intacto y en una posición visible: &ldquo;Copyright 1999-<span class='currentYear'></span> Deriv Ltd. Todos los derechos reservados.&rdquo;"
+msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright <span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
+msgstr ""
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
 msgstr "Resumir los resultados de la auditoría y trabajar con los jefes de departamento en las soluciones propuestas"
@@ -11270,6 +11273,12 @@ msgstr "El Agente ha tomado todas las medidas necesarias para obtener y mantener
 
 msgid "The Agent is prohibited from offering the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
 msgstr "El Agente no estará autorizado a ofrecer los servicios de Agente, en virtud de este acuerdo, a los clientes que residen en países restringidos señalados en los términos y condiciones de la Compañía (modificados periódicamente), y publicados en el sitio web de la Compañía, %1www.binary.com%2."
+
+msgid "The Agent may not make withdrawals through the Cashier page or Deriv P2P unless the Company makes an exception at its sole discretion."
+msgstr ""
+
+msgid "The Agent may not transfer funds to another Agent unless the Company makes an exception at its sole discretion."
+msgstr ""
 
 msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
 msgstr "El Agente sólo podrá prestar sus servicios a aquellos clientes de la Compañía que residan en la misma jurisdicción en la que opera el Agente y deseen depositar y/o retirar dinero a través del Agente. El Agente podrá prestar los servicios de Agente a los clientes que pretendan utilizar billeteras electrónicas o métodos de pago electrónico distintos de los utilizados por la Compañía (en lo sucesivo, se le llamará \"pagos electrónicos\") o monedas locales distintas de las aceptadas por la Compañía (en lo sucesivo, se le llamará \"monedas locales\") y transferencias bancarias locales (en lo sucesivo, se le llamará \"transferencias bancarias\")."
@@ -12120,8 +12129,8 @@ msgstr "El cliente está dispuesto y es financieramente capaz de sobrellevar una
 msgid "The client may choose to contact the Company to close the client's account held with the Company. The client's account may be closed if the client does not have any open trade positions and if the client has complied with the requested \"Know Your Client\" procedures to enable the client to withdraw any pending funds in the client's account."
 msgstr "El cliente podrá optar por contactar a la Empresa para cerrar su cuenta. La cuenta podrá cerrarse si el cliente no tiene ninguna posición comercial abierta y si ha cumplido con los procedimientos requeridos de \"Conocer a sus Clientes\" (procedimientos KYC) para poder retirar cualquier saldo en cuenta."
 
-msgid "The client may communicate with the Company through this website or by means of e-mail, phone or, exceptionally, by post. Details can be found in the Contact us page."
-msgstr "El cliente puede comunicarse con la Empresa a través de este sitio web por medio de correo electrónico, teléfono o, excepcionalmente, por correo postal. Los detalles se pueden encontrar en la página Contáctenos."
+msgid "The client may communicate with the Company via online chat on the Company’s websites."
+msgstr ""
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
 msgstr "El cliente puede realizar Pagos de Margen transfiriendo fondos de su cuenta %1 a su Cuenta Real MT5. En el caso que no hayan fondos suficientes en su cuenta %1 para financiar su Cuenta Real MT5, el cliente puede realizar Pagos de Margen financiando su cuenta %1 y transfiriendo los fondos de su cuenta %1 a su Cuenta Real MT5."
@@ -12345,8 +12354,8 @@ msgstr "Las condiciones de mercado de los instrumentos financieros con las cuale
 msgid "The market exit price is the price in effect at the end of the contract period."
 msgstr "El precio de salida del mercado es el precio en vigor en el momento de la finalización del contrato."
 
-msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright 1999-%2 Deriv Group companies with all rights reserved."
-msgstr "Los materiales que conforman el sitio web de %1 (incluyendo sin limitación a todos los artículos, textos, imágenes, logos, compilaciones, sistemas, códigos, y diseño) están registrados bajo Derechos de autor 1999-%2 al grupo de Empresas de Deriv con todos los derechos reservados."
+msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright %2 Deriv Group companies with all rights reserved."
+msgstr ""
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
 msgstr "La pérdida máxima en la que puede incurrir un cliente es la cantidad de dinero invertido por dicho cliente ante la Empresa."
@@ -13014,8 +13023,8 @@ msgstr "Para mantener las Posiciones Abiertas, se requiere que el cliente tenga 
 msgid "To many attempts. Please try again in a few minutes"
 msgstr "Demasiados intentos. Vuelve a intentarlo en unos minutos."
 
-msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of DP2P and credit or debit cards."
-msgstr "Para cumplir con el requisito de la cláusula anterior, el solicitante puede depositar la cantidad requerida utilizando cualquier método de pago, incluyendo los servicios de otro agente de pago, con la excepción de DP2P y tarjetas de crédito o débito."
+msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of Deriv P2P and credit or debit cards."
+msgstr ""
 
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "Para abrir una cuenta bancaria, necesitaremos verificar su identidad."
@@ -13866,8 +13875,8 @@ msgstr "Verificar identidad"
 msgid "Verify your identity"
 msgstr "Verifique su identidad"
 
-msgid "Version 52. Last modified 26-11-2021."
-msgstr "Versión 52. Última modificación 26-11-2021."
+msgid "Version 53. Last modified 01-03-2022."
+msgstr ""
 
 msgid "Video Room Facility"
 msgstr "Sala de video"
