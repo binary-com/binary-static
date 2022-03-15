@@ -14,7 +14,7 @@ const TopUpVirtualPopup = () => (
                 </div>
                 <div className='gr-row'>
                     <div className='gr-6'>
-                        <a className='button button-secondary' id='btn_cancel' href='javascript:;'><span>{it.L('Continue trading')}</span></a>
+                        <a className='button button-secondary' id='btn_cancel' href='javascript:;'><span id='continue_text'>{it.L('Continue trading')}</span></a>
                     </div>
                     <div className='gr-6 gr-no-gutter-left'>
                         <button className='button' type='submit' id='btn_ok'>{it.L('Top up')}</button>

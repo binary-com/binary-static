@@ -26,6 +26,7 @@ const DepositWithdraw = () => (
             </p>
             <p id='not_authenticated_message'>{it.L('Your account has not been authenticated. Please submit your [_1]proof of identity and proof of address[_2] to authenticate your account and access your cashier.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
             <p id='high_risk_not_authenticated_message'>{it.L('Your account has not been authenticated. Please submit your [_1]proof of identity and proof of address[_2] to authenticate your account and request for withdrawals.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
+            <p id='needs_identity_verification'>{it.L('Please submit your [_1]proof of identity[_2] to authenticate your account and access the Cashier.',  `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</p>
         </div>
 
         <div id='errors' className='invisible'>

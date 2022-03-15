@@ -325,6 +325,10 @@ const Header = (() => {
                         result = verification_length && (document.status === 'rejected' || document.status === 'suspected');
                         break;
                     }
+                    case 'needs_identity_verification': {
+                        result = verification_length === 1 && needs_verification.includes('identity');
+                        break;
+                    }
                     case 'identity': {
                         result = verification_length && identity.status === 'none';
                         break;
@@ -387,41 +391,43 @@ const Header = (() => {
                 tnc                       : () => buildMessage(has_no_tnc_limit
                     ? localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2].')
                     : localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2] to lift your deposit and trading limits.'), 'user/tnc_approvalws'),
-                disabled               : () => localize('Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again.'),
-                financial_risk_approval: () => localize('Please complete the Appropriateness Test to access your cashier.'),
-                ask_uk_funds_protection: () => buildMessageHref(localizeKeepPlaceholders('Your cashier is locked. See [_1]how we protect your funds[_2] before you proceed.'), `${Url.urlFor('cashier/forwardws')}?action=deposit`),
+                disabled                   : () => localize('Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again.'),
+                financial_risk_approval    : () => localize('Please complete the Appropriateness Test to access your cashier.'),
+                ask_uk_funds_protection    : () => buildMessageHref(localizeKeepPlaceholders('Your cashier is locked. See [_1]how we protect your funds[_2] before you proceed.'), `${Url.urlFor('cashier/forwardws')}?action=deposit`),
+                needs_identity_verification: () =>buildMessage(localizeKeepPlaceholders('Your account needs authentication. Please submit your [_1]proof of identity[_2] to access Cashier.'), 'user/authenticate'),
             };
 
             const validations = {
-                cashier_locked            : () => hasStatus('cashier_locked_status'),
-                system_maintenance        : () => hasStatus('system_maintenance'),
-                currency                  : () => hasStatus('ASK_CURRENCY'),
-                unsubmitted               : () => hasStatus('ASK_AUTHENTICATE'),
-                expired                   : () => hasStatus('documents_expired'),
-                expired_identity          : () => hasVerification('expired_identity'),
-                expired_document          : () => hasVerification('expired_document'),
-                rejected                  : () => hasVerification('rejected'),
-                rejected_identity         : () => hasVerification('rejected_identity'),
-                rejected_document         : () => hasVerification('rejected_document'),
-                identity                  : () => hasVerification('identity'),
-                document                  : () => hasVerification('document'),
-                excluded_until            : () => hasStatus('SelfExclusion'),
-                financial_limit           : () => hasStatus('ASK_SELF_EXCLUSION_MAX_TURNOVER_SET'),
-                mt5_withdrawal_locked     : () => hasStatus('mt5_withdrawal_locked'),
-                no_withdrawal_or_trading  : () => hasStatus('no_withdrawal_or_trading_status'),
-                required_fields           : () => hasStatus('cashier_locked') && hasStatus('ASK_FIX_DETAILS'),
-                withdrawal_required_fields: () => hasStatus('withdrawal_locked') && hasStatus('ASK_FIX_DETAILS'),
-                deposit_required_fields   : () => hasStatus('deposit_locked') && hasStatus('ASK_FIX_DETAILS'),
-                residence                 : () => hasStatus('no_residence'),
-                risk                      : () => hasStatus('FinancialAssessmentRequired'),
-                tax                       : () => hasStatus('ASK_TIN_INFORMATION'),
-                tnc                       : () => Client.shouldAcceptTnc(),
-                unwelcome                 : () => hasStatus('unwelcome_status'),
-                withdrawal_locked_review  : () => hasStatus('withdrawal_locked') && get_account_status.risk_classification === 'high' && !is_fully_authenticated && authentication.document.status === 'pending',
-                withdrawal_locked         : () => hasStatus('withdrawal_locked') || hasStatus('withdrawal_locked_status'),
-                disabled                  : () => hasStatus('disabled_status'),
-                financial_risk_approval   : () => hasStatus('ASK_FINANCIAL_RISK_APPROVAL'),
-                ask_uk_funds_protection   : () => hasStatus('ASK_UK_FUNDS_PROTECTION'),
+                cashier_locked             : () => hasStatus('cashier_locked_status'),
+                system_maintenance         : () => hasStatus('system_maintenance'),
+                currency                   : () => hasStatus('ASK_CURRENCY'),
+                unsubmitted                : () => hasStatus('ASK_AUTHENTICATE') && hasVerification('unsubmitted'),
+                expired                    : () => hasStatus('documents_expired'),
+                expired_identity           : () => hasVerification('expired_identity'),
+                expired_document           : () => hasVerification('expired_document'),
+                rejected                   : () => hasVerification('rejected'),
+                rejected_identity          : () => hasVerification('rejected_identity'),
+                rejected_document          : () => hasVerification('rejected_document'),
+                identity                   : () => hasVerification('identity'),
+                document                   : () => hasVerification('document'),
+                excluded_until             : () => hasStatus('SelfExclusion'),
+                financial_limit            : () => hasStatus('ASK_SELF_EXCLUSION_MAX_TURNOVER_SET'),
+                mt5_withdrawal_locked      : () => hasStatus('mt5_withdrawal_locked'),
+                no_withdrawal_or_trading   : () => hasStatus('no_withdrawal_or_trading_status'),
+                required_fields            : () => hasStatus('cashier_locked') && hasStatus('ASK_FIX_DETAILS'),
+                withdrawal_required_fields : () => hasStatus('withdrawal_locked') && hasStatus('ASK_FIX_DETAILS'),
+                deposit_required_fields    : () => hasStatus('deposit_locked') && hasStatus('ASK_FIX_DETAILS'),
+                residence                  : () => hasStatus('no_residence'),
+                risk                       : () => hasStatus('FinancialAssessmentRequired'),
+                tax                        : () => hasStatus('ASK_TIN_INFORMATION'),
+                tnc                        : () => Client.shouldAcceptTnc(),
+                unwelcome                  : () => hasStatus('unwelcome_status'),
+                withdrawal_locked_review   : () => hasStatus('withdrawal_locked') && get_account_status.risk_classification === 'high' && !is_fully_authenticated && authentication.document.status === 'pending',
+                withdrawal_locked          : () => hasStatus('withdrawal_locked') || hasStatus('withdrawal_locked_status'),
+                disabled                   : () => hasStatus('disabled_status'),
+                financial_risk_approval    : () => hasStatus('ASK_FINANCIAL_RISK_APPROVAL'),
+                ask_uk_funds_protection    : () => hasStatus('ASK_UK_FUNDS_PROTECTION'),
+                needs_identity_verification: () => hasVerification('needs_identity_verification'),
             };
 
             // real account checks in order
@@ -443,6 +449,7 @@ const Header = (() => {
                 'rejected',
                 'rejected_identity',
                 'rejected_document',
+                'needs_identity_verification',
                 'identity',
                 'document',
                 'financial_risk_approval',

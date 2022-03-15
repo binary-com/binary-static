@@ -800,6 +800,7 @@ module.exports = [
     'Your account has not been authenticated. Please submit your [_1]proof of identity and proof of address[_2] to authenticate your account and request for withdrawals.',
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
     'Your account is temporarily disabled. Please contact us via live chat to enable deposits and withdrawals again.',
+    'Your account needs authentication. Please submit your [_1]proof of identity[_2] to access Cashier.',
     'Your application to be treated as a professional client is being processed.',
     'Your cashier is currently locked. Please contact us via live chat to find out how to unlock it.',
     'Your cashier is locked.',

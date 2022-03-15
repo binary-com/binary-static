@@ -226,6 +226,9 @@ const MetaTraderUI = (() => {
         const $acc_name = $templates.find('> .acc-name');
         let acc_group_demo_set = false;
         let acc_group_real_set = false;
+
+        $list.empty();
+
         Object.keys(accounts_info)
             .sort(sortMt5Accounts)
             .forEach((acc_type) => {
@@ -326,25 +329,28 @@ const MetaTraderUI = (() => {
 
     const updateListItem = (acc_type) => {
         const $acc_item = $list.find(`[value="${acc_type}"]`);
+        const acc_info = getAccountsInfo(acc_type).info;
         $acc_item.find('.mt-type').text(getAccountsInfo(acc_type).short_title);
-        if (getAccountsInfo(acc_type).info) {
-            const server_info = getAccountsInfo(acc_type).info.server_info;
+        if (acc_info) {
+            const server_info = acc_info.server_info;
             const region = server_info && server_info.geolocation.region;
             const sequence = server_info && server_info.geolocation.sequence;
             const is_synthetic = getAccountsInfo(acc_type).market_type === 'gaming' || getAccountsInfo(acc_type).market_type === 'synthetic';
-            const label_text = server_info ? sequence > 1 ? `${region} ${sequence}` : region : getAccountsInfo(acc_type).info.display_server;
+            const is_unknown = /unknown+$/.test(acc_type);
+            const is_real = acc_type.startsWith('real');
+            const label_text = server_info ? sequence > 1 ? `${region} ${sequence}` : region : acc_info.display_server;
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${getAccountsInfo(acc_type).info.display_login})`);
             if (
                 server_info &&
                 is_synthetic &&
                 MetaTraderConfig.hasMultipleTradeServers(acc_type, accounts_info) ||
-                /unknown+$/.test(acc_type)
+                is_real && is_unknown && acc_info.display_server
             ) {
                 $acc_item.find('.mt-server').text(`${label_text}`);
 
                 // add disabled style to unknown or unavailable accounts
-                if (/unknown+$/.test(acc_type)) {
+                if (is_unknown) {
                     $acc_item.find('.mt-server').css({
                         'color'           : '#fff',
                         'background-color': '#dedede',
@@ -737,7 +743,7 @@ const MetaTraderUI = (() => {
         const should_set_trading_password = shouldSetTradingPassword();
         const is_synthetic = /gaming/.test(new_account_type);
 
-        $form.find('#msg_form').remove();
+        setTimeout(() => $form.find('#msg_form').setVisibility(0), 5000);
         $form.find('#mv_new_account div[id^="view_"]').setVisibility(0);
         $form.find(`#view_${step}`).setVisibility(1);
         $form.find('#view_3').find('.error-msg, .days-to-crack').setVisibility(0);
@@ -843,7 +849,7 @@ const MetaTraderUI = (() => {
         $form.find('#view_1 .btn-next').click(function() {
             if (!$(this).hasClass('button-disabled')) {
                 const account_type = newAccountGetType();
-                const is_demo = /^demo_/.test(account_type);
+                const is_demo = /^demo/.test(account_type);
 
                 if (is_demo) {
                     // If accound is demo, we will skip server selection and show the following step
@@ -963,9 +969,11 @@ const MetaTraderUI = (() => {
 
         // disable next button and Synthetic option if all servers are used or unavailable
         const num_servers = populateTradingServers('real_gaming_financial');
-        if (/real/.test(selected_acc_type) && num_servers.supported === num_servers.used + num_servers.disabled) {
+        if (/(real|demo)/.test(selected_acc_type) && num_servers.supported === num_servers.used + num_servers.disabled) {
             disableButtonLink('.btn-next');
             $form.find('.step-2 #rbtn_gaming_financial').addClass('existed');
+            $form.find('.step-2 #rbtn_financial_financial').addClass('existed');
+            $form.find('.step-2 #rbtn_financial_financial_stp').addClass('existed');
         }
     };
 
@@ -1316,6 +1324,7 @@ const MetaTraderUI = (() => {
         disableButton,
         disableButtonLink,
         enableButton,
+        populateAccountList,
         refreshAction,
         setTopupLoading,
         getTradingPasswordConfirmVisibility,

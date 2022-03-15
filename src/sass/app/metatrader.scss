@@ -256,8 +256,8 @@
         }
     }
     #account_details {
-        flex: 0;
         position: relative;
+        min-height: 100px;
 
         .acc-info {
             font-size: $FONT_SIZE_S;
@@ -536,6 +536,8 @@
             display: flex;
         }
         #account_details {
+            min-height: auto;
+
             .add_region {
                 position: unset;
                 display: flex;
