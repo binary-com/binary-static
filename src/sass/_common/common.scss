@@ -949,6 +949,7 @@ label + input {
 #token_form {
     fieldset {
         padding: 14px;
+        
         & > legend {
             margin-left: 20px;
         }
@@ -981,18 +982,17 @@ label + input {
         padding: 10px;
         grid-template-rows: 1fr 1fr 1fr;
 
-
         input[type='checkbox'] + label:before {
             margin-bottom: 3px;
         }
         .scope-item {
             padding: 15px;
+            min-height: 76px;
+            margin-right: 0;
             text-align: left !important;
             border: 1px solid $COLOR_GRAY;
             border-radius: 4px;
-            text-align: left!important;
-            min-height: 76px;
-            margin-right: 0;
+            
 
             .scope-item-description {
                 margin-top: 7px;
