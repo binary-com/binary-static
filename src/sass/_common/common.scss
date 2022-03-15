@@ -949,9 +949,9 @@ label + input {
 #token_form {
     fieldset {
         padding: 14px;
-    }
-    fieldset > legend {
-        margin-left: 20px;
+        & > legend {
+            margin-left: 20px;
+        }
     }
     .title-row {
         margin: 20px 2px 5px;
@@ -975,21 +975,24 @@ label + input {
         }
     }
     .scope-types {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+        grid-template-rows: 1fr 1fr 1fr;
+
 
         input[type='checkbox'] + label:before {
             margin-bottom: 3px;
         }
         .scope-item {
-            margin: 10px;
             padding: 15px;
             text-align: left !important;
-            width: 317px;
-            height: 76px;
             border: 1px solid $COLOR_GRAY;
             border-radius: 4px;
+            text-align: left!important;
+            min-height: 76px;
+            margin-right: 0;
 
             .scope-item-description {
                 margin-top: 7px;
@@ -998,48 +1001,17 @@ label + input {
             }
         }
         p.error-msg {
-            width: 100%;
-            padding-left: 10px;
+            grid-row-end: none;
+            height: 0;
         }
     }
     .gr-padding-10 {
-        max-width: 83.3%;
-        margin-left: auto;
-
         .button, .hint {
-            margin-left: 15px;
+            margin-left: calc(16.3% + 5px);
         }
     }
 
-    @media screen and (max-width: 895px) {
-        .scopes-title {
-            label {
-                min-width: 128px;
-            }
-        }
-        .scope-types {
-            flex-basis: 70%;
-            margin-left: 30px;
-        }
-        .gr-padding-10 {
-            .button, .hint {
-                margin-left: 45px;
-            }
-        }
-    }
-
-    @media screen and (max-width: 650px) {
-        .scope-types {
-            margin-left: 45px;
-        }
-        .gr-padding-10 {
-            .button, .hint {
-                margin-left: 55px;
-            }
-        }
-    }
-
-    @media screen and (max-width: 572px) {
+    @media screen and (max-width: 668px) {
         .scopes-title {
             align-self: flex-start;
         }
@@ -1058,9 +1030,8 @@ label + input {
             align-items: center;
         }
         .scope-types {
-            p.error-msg {
-                width: auto;
-                align-self: flex-start;
+            .scope-item {
+                width: 70%;
             }
         }
         .gr-padding-10 {
@@ -1073,16 +1044,18 @@ label + input {
         }
     }
 
-    @media screen and (max-width: 435px) {
-        .title-row {
-            input {
-                margin-left: 0;
-            }
-        }
+    @media screen and (max-width: 628px) {
         .scope-types {
             .scope-item {
-                width: 248px;
-                height: 87px;
+                width: 80%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 572px) {
+        .scope-types {
+            .scope-item {
+                width: 90%;
             }
         }
     }
