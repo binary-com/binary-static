@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-14 04:00\n"
+"PO-Revision-Date: 2022-03-15 02:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -327,9 +327,6 @@ msgstr "%1 通过以下方案提供商业伙伴关系服务。"
 
 msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
 msgstr "%1 提供模拟設施让您以虛擬資金實踐交易策略。使用螢幕右上角的下拉清單可切換到模拟账户。"
-
-msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, stocks, stock indices, popular cryptocurrencies, and Synthetic indices."
-msgstr "%1 向世界各地的机构客户提供广泛的资产市场报价和交易执行服务，包括主要货币对、现货金属、股票、股票指数、受欢迎的加密货币和综合指数。"
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
 msgstr "%1在管理传入订单时通过采用智能聚合方法为客户提供最佳执行方案。智能聚合方法的工作原理是"
@@ -979,12 +976,6 @@ msgstr "接受协议"
 msgid "Access MT5 dashboard"
 msgstr "访问 MT5 仪表板"
 
-msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
-msgstr "通过顶级流动性提供商，包括银行和非银行机构访问市场报价和执行交易。"
-
-msgid "Access multi-asset liquidity from top-tier institutions."
-msgstr "顶级机构提供多种资产的流动性服务。"
-
 msgid "Access our products and services from a single app."
 msgstr "透过单个应用程序访问我们的产品和服务。"
 
@@ -996,12 +987,6 @@ msgstr "随时随地透过iOS设备访问市场。"
 
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "随时随地在iOS或Android设备上使用原装应用能够程序访问市场。"
-
-msgid "Access to Advanced trading"
-msgstr "进行高级交易"
-
-msgid "Access to multi-asset liquidity and back-office functionality via margin accounts"
-msgstr "通过保证金账户访问多个资产的流动性和后台功能"
 
 msgid "Access to personal data"
 msgstr "个人数据访问"
@@ -1280,7 +1265,7 @@ msgid "Agent's obligations"
 msgstr "代理商的义务"
 
 msgid "Agents may not use their Binary.com account for trading under any circumstances."
-msgstr ""
+msgstr "任何情况下，代理不可使用 Binary.com 账户交易。"
 
 msgid "Agree and accept"
 msgstr "同意和接受"
@@ -2041,9 +2026,6 @@ msgstr "返回交易"
 msgid "Back-End Developer"
 msgstr "后端开发员"
 
-msgid "Back-office support"
-msgstr "后台支持"
-
 msgid "Balance"
 msgstr "余额"
 
@@ -2574,9 +2556,6 @@ msgstr "工作机会 - Labuan"
 
 msgid "Careers - Malta"
 msgstr "工作机会 - 马耳他"
-
-msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
-msgstr "经过仔细挑选的流动性提供商网络使我们能够向零售和机构客户提供低价差和低保证金费率服务"
 
 msgid "Cash Business"
 msgstr "现金业务"
@@ -4631,9 +4610,6 @@ msgstr "Perl的事件驱动编程"
 msgid "Events of Default"
 msgstr "违约事件"
 
-msgid "Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test."
-msgstr "其他人可以使用FIX API 连接到我们的One Zero桥梁，条件是须通过合格测试。"
-
 msgid "Example of a blurry document"
 msgstr "模糊不清文档的示例"
 
@@ -4930,9 +4906,6 @@ msgstr "六、执行场地"
 
 msgid "F. Margin and Leverage"
 msgstr "六、保证金和杠杆交易"
-
-msgid "FIX API"
-msgstr "FIX API"
 
 msgid "FX-majors (standard/micro lots), FX-minors, Commodities, Cryptocurrencies, Stocks, and Stock Indices"
 msgstr "外汇-主要货币对（标准/微手）、 外汇-次要货币对、大宗商品、加密货币、股票和股票指数"
@@ -5687,9 +5660,6 @@ msgstr "如果开始和结束期间价格跳动次数少于2，高于/低于合�
 msgid "Higher/Lower trades"
 msgstr "“高于/低于”交易"
 
-msgid "Highlights"
-msgstr "亮点"
-
 msgid "Hint: You may have chosen a different MT5 password from your %1 log in password."
 msgstr "提示：可能您选择了与%1登录密码不同的 MT5 密码。"
 
@@ -5973,7 +5943,7 @@ msgid "If the <strong>last tick</strong> is equal to the average of the ticks, y
 msgstr "如果 <strong>最后跳动点</strong> 等于平均跳动点, 您将不会赢得赔付。"
 
 msgid "If the Agent has not been asked to meet a minimum account balance requirement upon application, the Agent will receive a 30-day notice to ensure the Agent’s Binary.com account balance meets the minimum balance requirement for the Agent’s country of residence. The Agent may not use credit or debit cards or Deriv P2P to top up the Agent’s Binary.com account for the purpose of meeting the minimum balance requirement. The Company reserves the right to withdraw the Agent’s payment agent status if the Agent does not meet this requirement within 30 days."
-msgstr ""
+msgstr "如果代理在申请时未被要求满足最低账户余额要求，代理将收到 30 天通知，以确保代理的 Binary.com 账户余额满足代理所在国家/地区的最低余额要求。代理不得使用信用卡或借记卡或 Deriv P2P 为代理的 Binary.com 账户充值以满足最低余额要求。如果代理在 30 天内未满足此要求，公司保留撤销代理的支付代理身份权利。"
 
 msgid "If the Company (in its sole discretion) is not satisfied that a client is complying with these terms, or if a client does not comply with a reasonable request for information made by the Company, the Company may cancel the client's account and withhold any funds accumulated therein."
 msgstr "如果公司（自行决定）不确定客户是否遵守这些条款，或者如果客户拒绝向公司提供所要求的合理信息，公司可以取消客户的账户并扣留任何累积资金。"
@@ -6554,9 +6524,6 @@ msgstr "交互式图表工具"
 msgid "Interest in IT or software development"
 msgstr "对信息技术或软件开发有浓厚的兴趣"
 
-msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
-msgstr "对流动性解决方案感兴趣吗？通过%1联系我们获取更多信息。"
-
 msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to %2hear from you!%3"
 msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子錢包方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过%2收到您的消息!%3"
 
@@ -6840,9 +6807,6 @@ msgstr "关键信息文件"
 msgid "Key facts"
 msgstr "关键资料"
 
-msgid "Key features"
-msgstr "关键功能"
-
 msgid "Kick back with beautiful beaches, islands, and mountains just a short flight away. From Malta, you have Europe, the Mediterranean, and North Africa. And from Malaysia, the whole of Asia awaits."
 msgstr "想放松时只需飞行很短的距离就能尽情探索美丽的海滩、岛屿和山区。您可从马耳他轻松前往欧洲、地中海和北非。此外，您也可在马来西亚饱览亚洲最壮观的美景。"
 
@@ -7107,9 +7071,6 @@ msgstr "链接"
 msgid "Linux or MacOs"
 msgstr "Linux 或 MacOs"
 
-msgid "Liquidity solutions"
-msgstr "流动性解决方案"
-
 msgid "Litecoin"
 msgstr "莱特币"
 
@@ -7238,9 +7199,6 @@ msgstr "十三、不可抗力事件"
 
 msgid "MENA FFXPO Award"
 msgstr "中东和北非地区 FFXPO 奖"
-
-msgid "MT4 and MT5 brokers can connect directly to our liquidity on the One Zero bridge by using built-in plugins."
-msgstr "MT4和MT5 经纪商可以使用内置插件直接与One Zero桥梁的流动性连接。"
 
 msgid "MT5"
 msgstr "MT5"
@@ -7797,15 +7755,6 @@ msgstr "屡获殊荣的交易平台。"
 msgid "Multi-Collateral"
 msgstr "多资产抵押"
 
-msgid "Multi-asset Liquidity Solutions"
-msgstr "多个资产的流动性解决方案"
-
-msgid "Multi-asset execution"
-msgstr "多个资产交易执行"
-
-msgid "Multi-asset liquidity solutions"
-msgstr "多个资产的流动性解决方案"
-
 msgid "Multilingual platforms"
 msgstr "多语言平台"
 
@@ -8235,9 +8184,6 @@ msgstr "一旦您点击“提交”按钮，资金将从您的账户转至客户
 msgid "Once you've finished we'll take you to the next step"
 msgstr "完成后，我们将带您进入下一步"
 
-msgid "One Zero"
-msgstr "One Zero"
-
 msgid "One of the first things most forex traders learn is how to read a currency pair. There are two parts to a currency pair"
 msgstr "大多数外汇交易者学习的第一件事就是如何阅读货币对。货币对有两部分"
 
@@ -8472,9 +8418,6 @@ msgstr "由于系统维护，收银台暂时无法使用。数分钟后一旦维
 msgid "Our commission structure is a simple 2-tiered plan."
 msgstr "我们的佣金结构是简单的二层级计划。"
 
-msgid "Our commitment to integrity and reliability means that we always strive to give you access to the best pricing and liquidity possible."
-msgstr "我们对完整性和可靠性的承诺意味着我们一直都努力为您提供最佳报价和流动性。"
-
 msgid "Our company continues to thrive and obtains a license in the Isle of Man to better service our UK clients."
 msgstr "我们公司继续茁壮成长，并在马恩岛获得牌照，可以为我们的英国客户提供更好的服务。"
 
@@ -8543,9 +8486,6 @@ msgstr "全球各地拥有超过一百万个注册账户"
 
 msgid "Over 3 years"
 msgstr "3年以上"
-
-msgid "Over 50 FX pairs, plus spot metals, CFD indices, commodities, and cryptocurrencies."
-msgstr "超过 50 种外汇交易货币对，加上现货金属、差价合约指数、大宗商品和加密货币。"
 
 msgid "Over two billion dollars in trades to date."
 msgstr "超过二十亿美元的交易额。"
@@ -9055,7 +8995,7 @@ msgid "Please submit your %1proof of address%2."
 msgstr "请提交您的%1地址证明%2。"
 
 msgid "Please submit your %1proof of identity%2 to authenticate your account and access the Cashier."
-msgstr ""
+msgstr "请提交%1身份证明%2以验证账户并访问收银台。"
 
 msgid "Please submit your %1proof of identity%2."
 msgstr "请提交您的%1身份证明%2。"
@@ -9599,9 +9539,6 @@ msgstr "实时报价，以银行间期权市场为基准。"
 
 msgid "Reality Check"
 msgstr "真实情况检查"
-
-msgid "Receive back-office support for post-trade risk management and real-time trade/position monitoring."
-msgstr "获取后交易风险管理和实时仓位监测的后台支持。"
 
 msgid "Receive commission when you bring in new clients through trading applications and interfaces you build using the %1 API."
 msgstr "当您通过使用 %1 API 构建的交易应用程序和接口引入新客户时, 将获得佣金。"
@@ -10813,7 +10750,7 @@ msgid "Such a withdrawal would result in the client's Account Equity being less 
 msgstr "此项提款将导致客户账户的资金小于零。"
 
 msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright <span class='currentYear'></span> Deriv Ltd. All rights reserved.&rdquo;"
-msgstr ""
+msgstr "这类材料可以复制和传播，并用于非商业目的，前提是所有复制的材料必须保持完整，且在明显位置标注以下声明：&ldquo;Copyright <span class='currentYear'></span> Deriv Ltd.。版权所有。&rdquo;"
 
 msgid "Summarise audit findings and work with department heads on the proposed solutions"
 msgstr "总结审计结果, 并与部门负责人合作制定拟议的解决方案"
@@ -11266,10 +11203,10 @@ msgid "The Agent is prohibited from offering the Agent's services, under this ag
 msgstr "根据本协议，禁止代理向居住在由刊登在公司网站%1www.binary.com%2的公司条款和条件 （经不时修订）规定的受限制的国家的客户提供服务。"
 
 msgid "The Agent may not make withdrawals through the Cashier page or Deriv P2P unless the Company makes an exception at its sole discretion."
-msgstr ""
+msgstr "除非公司自行决定为例外情况，否则代理人不得通过收银台页面或 Deriv P2P 提款。"
 
 msgid "The Agent may not transfer funds to another Agent unless the Company makes an exception at its sole discretion."
-msgstr ""
+msgstr "除非公司自行决定为例外情况，否则代理不得转汇资金予另一代理。"
 
 msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
 msgstr "代理仅可向居住在代理经营所在的同一司法管辖区并欲通过代理存款或取款的公司客户提供服务。代理可向欲使用公司已在使用以外的电子钱包或电子付款方法（以下简称\"电子付款\"）和公司已接受以外的当地货币（以下简称\"当地货币\"） 和当地银行电汇 （以下简称\"银行电汇\"）的客户提供服务。"
@@ -12122,7 +12059,7 @@ msgid "The client may choose to contact the Company to close the client's accoun
 msgstr "客户可以和公司联系，关闭在公司开立的账户。如客户没有任何未平仓交易头寸，且满足“了解您的客户“的要求，可以提取账户内的待领款项，客户的账户就可以关闭。"
 
 msgid "The client may communicate with the Company via online chat on the Company’s websites."
-msgstr ""
+msgstr "客户可通过公司网站上的在线聊天与公司沟通。"
 
 msgid "The client may make Margin Payments by transferring funds from their %1 account to their MT5 Real Account. In the event that there are insufficient funds in the client's %1 account to fund their MT5 Real Account, they may make Margin Payments by funding their %1 account and transferring the funds from their %1 account to their MT5 Real Account."
 msgstr "支付保证金时客户可以将资金从%1账户转入其MT5真实账户。如果客户的%1账户内资金不足， 客户可以先把资金存入%1账户， 再将资金从%1账户转入MT5真实账户作为保证金支付。"
@@ -12347,7 +12284,7 @@ msgid "The market exit price is the price in effect at the end of the contract p
 msgstr "市场平仓价为合约到期时的有效价格。"
 
 msgid "The materials comprising the %1 website (including without limitation all articles, text, images, logos, compilation, systems, code, and design) are under Copyright %2 Deriv Group companies with all rights reserved."
-msgstr ""
+msgstr "%1 网站所包含的各种材料（包括但不限于所有文章、文字、图片、标识、整理材料、系统、代码和设计）版权归由 %2 Deriv 集团所有 。公司保留所有权利。"
 
 msgid "The maximum loss that may be incurred by any client is the amount of money paid by the client to the Company."
 msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。"
@@ -13016,7 +12953,7 @@ msgid "To many attempts. Please try again in a few minutes"
 msgstr "尝试次数太多。请数分钟后重试。"
 
 msgid "To meet the requirement in the previous clause, the applicant may deposit the required amount using any payment method, including another payment agent’s services, with the exception of Deriv P2P and credit or debit cards."
-msgstr ""
+msgstr "为满足上一条的要求，申请人可以使用任何支付方式，包括其他支付代理的服务存入所需的金额，但 Deriv P2P 和信用卡或借记卡除外。"
 
 msgid "To open a bank account, we will need to verify your identity."
 msgstr "要开设银行账户，必须先验证您的身份。"
@@ -13089,9 +13026,6 @@ msgstr "充值模拟账户"
 
 msgid "Top up error"
 msgstr "充值错误"
-
-msgid "Top-tier liquidity"
-msgstr "顶级流动性"
 
 msgid "Top-up successful"
 msgstr "充值成功"
@@ -13868,7 +13802,7 @@ msgid "Verify your identity"
 msgstr "身份验证"
 
 msgid "Version 53. Last modified 01-03-2022."
-msgstr ""
+msgstr "版本53。最后修改时间01-03-2022。"
 
 msgid "Video Room Facility"
 msgstr "视频室设施"
@@ -15074,7 +15008,7 @@ msgid "Your account is temporarily disabled. Please contact us via live chat to 
 msgstr "您的账户暂时被禁用。请通过实时聊天与我们联系以再次启用存款和取款。"
 
 msgid "Your account needs authentication. Please submit your %1proof of identity%2 to access Cashier."
-msgstr ""
+msgstr "您的账户需要验证。请提交%1身份证明%2以访问收银台。"
 
 msgid "Your account remains under the retail client category."
 msgstr "您的账户仍属于零售客户类别。"
