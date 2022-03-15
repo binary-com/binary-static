@@ -238,10 +238,6 @@ const DepositWithdraw = (() => {
         }
 
         has_no_balance = +Client.get('balance') === 0;
-        if (cashier_type === 'withdraw' && has_no_balance) {
-            showError('no_balance_error');
-            return;
-        }
 
         await BinarySocket.send({ get_account_status: 1 });
         
@@ -249,6 +245,7 @@ const DepositWithdraw = (() => {
         const response_get_account_status = State.get(['response', 'get_account_status']);
         if (!response_get_account_status.error) {
             const is_crypto = Currency.isCryptocurrency(Client.get('currency'));
+            const needs_verification = response_get_account_status.get_account_status.authentication.needs_verification;
             if (/cashier_locked/.test(response_get_account_status.get_account_status.status)) {
                 if (/system_maintenance/.test(response_get_account_status.get_account_status.cashier_validation)) {
                     if (is_crypto) {
@@ -276,6 +273,10 @@ const DepositWithdraw = (() => {
                 }
                 if (/ASK_TIN_INFORMATION/.test(response_get_account_status.get_account_status.cashier_validation)) {
                     showError('tin_error');
+                    return;
+                }
+                if (/ASK_AUTHENTICATE/.test(response_get_account_status.get_account_status.cashier_validation) && needs_verification.length === 1 && needs_verification.includes('identity')) {
+                    showMessage('needs_identity_verification');
                     return;
                 }
                 if (/ASK_AUTHENTICATE/.test(response_get_account_status.get_account_status.cashier_validation) && Client.isAccountOfType('financial')) {
@@ -335,6 +336,9 @@ const DepositWithdraw = (() => {
                     showError('custom_error', localize('Unfortunately, you can only make deposits. Please contact us via live chat to enable withdrawals.'));
                     return;
                 }
+            } else if (cashier_type === 'withdraw' && has_no_balance) {
+                showError('no_balance_error');
+                return;
             }
             const account_currency_config = getPropertyValue(response_get_account_status.get_account_status, ['currency_config', Client.get('currency')]) || {};
             if ((cashier_type === 'deposit' && account_currency_config.is_deposit_suspended) ||

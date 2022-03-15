@@ -139,12 +139,12 @@ const Mt5Signals = () => (
                                     <div>
                                         <p><strong>{it.L('Note:')}</strong></p>
                                         <ol>
-                                            <li>{it.L('You must have an MQL5 community account to subscribe to trading signals. If you don’t have an account yet, please go to [_1]MQL5.com[_2] to register.', '<a href="https://www.mql5.com/en/auth_register">', '</a>')}</li>
-                                            <li>{it.L('You’ll need to fund your MQL5 account to subscribe to paid signals. Learn [_1]how to fund your account[_2].', '<a href="https://www.mql5.com/en/articles/302#deposit">', '</a>')}</li>
+                                            <li>{it.L('You must have an MQL5 community account to subscribe to trading signals. If you don’t have an account yet, please go to [_1]MQL5.com[_2] to register.', '<a href="https://www.mql5.com/en/auth_register" target="_blank">', '</a>')}</li>
+                                            <li>{it.L('You’ll need to fund your MQL5 account to subscribe to paid signals. Learn [_1]how to fund your account[_2].', '<a href="https://www.mql5.com/en/articles/302#deposit" target="_blank">', '</a>')}</li>
                                             <li>{it.L('You can only subscribe to one signal provider with one [_1] account at any given time. You can use your signal on up to 3 computers.', it.website_name)}</li>
                                             <li>{it.L('You won’t be able to trade manually with the same [_1] MT5 account once you’ve subscribed to a signal.', it.website_name)}</li>
                                         </ol>
-                                        <p>{it.L('Have more questions? Check out the [_1]FAQ section[_2] on the MQL5 website.', '<a href="https://www.mql5.com/en/forum/10773#q17">', '</a>')} </p>
+                                        <p>{it.L('Have more questions? Check out the [_1]FAQ section[_2] on the MQL5 website.', '<a href="https://www.mql5.com/en/forum/10773#q17" target="_blank">', '</a>')} </p>
                                         <div className='center-text gr-padding-20'>
                                             <a className='button' href={it.url_for('user/metatrader')}><span>{it.L('Go to the MT5 Terminal')}</span></a>
                                         </div>
