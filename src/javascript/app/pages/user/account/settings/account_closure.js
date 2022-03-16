@@ -27,7 +27,8 @@ const AccountClosure = (() => {
         el_deacivate_button,
         el_error_no_selection,
         el_submit_loading,
-        el_error_title;
+        el_error_title,
+        el_forbidden_characters;
 
     const number_of_steps = 3;
     const max_reason_length = 250;
@@ -61,11 +62,13 @@ const AccountClosure = (() => {
         el_error_no_selection = getElementById('error_no_selection');
         el_submit_loading = getElementById('submit_loading');
         el_error_title = getElementById('closure_error_title');
+        el_forbidden_characters = getElementById('forbidden_characters');
 
         el_closure_loading.setVisibility(1);
         const hideDialogs = () => {
             el_account_closure_warning.setVisibility(0);
             el_account_closure_error.setVisibility(0);
+            el_forbidden_characters.setVisibility(0);
             el_error_title.innerHTML = localize('Action required!');
         };
         hideDialogs();
@@ -233,7 +236,6 @@ const AccountClosure = (() => {
             el_div.appendChild(el_inner_div);
             el_section_parent.appendChild(el_div);
             el_section_parent.appendChild(el_span);
-
             const el_section = getElementById(section_id);
             el_section.setVisibility(1).appendChild(el_section_parent);
         };
