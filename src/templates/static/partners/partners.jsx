@@ -69,13 +69,6 @@ const Partners = () => (
                     header={it.L('Security Testing')}
                     text={it.L('Earn money for any verifiable errors that you find.')}
                 />
-
-                <Column
-                    url={it.url_for('liquidity-solutions')}
-                    image='liquidity-solutions'
-                    header={it.L('Liquidity solutions')}
-                    text={it.L('Access multi-asset liquidity from top-tier institutions.') }
-                />
             </div>
         </div>
     </React.Fragment>

@@ -28,7 +28,7 @@ const MetaTraderConfig = (() => {
         new Promise((resolve) => {
             const $message = $messages.find('#msg_real_financial').clone();
             const is_virtual = Client.get('is_virtual');
-            const is_demo = /^demo_/.test(acc_type);
+            const is_demo = /^demo/.test(acc_type);
 
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
@@ -217,7 +217,7 @@ const MetaTraderConfig = (() => {
                 new Promise((resolve) => {
                     const sample_account = getSampleAccount(acc_type);
                     const is_synthetic = sample_account.market_type === 'gaming' || sample_account.market_type === 'synthetic';
-                    const is_demo = /^demo_/.test(acc_type);
+                    const is_demo = /^demo/.test(acc_type);
 
                     if (is_synthetic && !is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
@@ -367,7 +367,7 @@ const MetaTraderConfig = (() => {
             chk_tnc          : { id: '#chk_tnc' },
             additional_fields: acc_type => {
                 const sample_account = getSampleAccount(acc_type);
-                const is_demo = /^demo_/.test(acc_type);
+                const is_demo = /^demo/.test(acc_type);
                 const get_settings = State.getResponse('get_settings');
                 const account_type = sample_account.market_type === 'synthetic' ? 'gaming' : sample_account.market_type;
                 // First name is not set when user has no real account

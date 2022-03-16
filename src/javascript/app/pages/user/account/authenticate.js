@@ -1370,8 +1370,6 @@ const Authenticate = (() => {
                 showCTAButton('document', 'pending');
                 break;
             case 'suspected':
-                $('#unverified').setVisibility(1);
-                break;
             case 'rejected':
                 if (Number(submissions_left) < 1) {
                     $('#limited_poi').setVisibility(1);

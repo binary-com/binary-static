@@ -285,6 +285,10 @@ const getDocumentData = (country_code, document_type) => {
     return null;
 };
 
+const getHasRealMt5OrDxtrade = (mt5_login_list = [], dxtrade_accounts_list = []) =>
+    (mt5_login_list.filter(({ account_type }) => account_type !== 'demo').length > 0) ||
+    (dxtrade_accounts_list.filter(({ account_type }) => account_type !== 'demo').length > 0);
+
 const getImageLocation = image_name => `/images/common/visual_samples/${image_name}`;
 
 // Note: Ensure that the object keys matches BE API's keys. This is simply a mapping for FE templates
@@ -412,6 +416,7 @@ module.exports = {
     showLoadingImage,
     getDocumentData,
     getRegex,
+    getHasRealMt5OrDxtrade,
     getHighestZIndex,
     downloadCSV,
     template,

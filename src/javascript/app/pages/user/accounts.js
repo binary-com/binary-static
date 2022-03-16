@@ -41,9 +41,15 @@ const Accounts = (() => {
         }
         clearPopup();
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list').then(() => {
+        BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' });
+        BinarySocket.wait('landing_company', 'get_settings', 'statement', 'mt5_login_list', 'trading_platform_accounts').then(() => {
             landing_company           = State.getResponse('landing_company');
-            const can_change_currency = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'));
+            const can_change_currency = Client.canChangeCurrency(
+                State.getResponse('statement'),
+                State.getResponse('mt5_login_list'),
+                State.getResponse('trading_platform_accounts'),
+                Client.get('loginid')
+            );
             const is_virtual          = Client.get('is_virtual');
             const has_real_account    = Client.hasAccountType('real');
             populateExistingAccounts();
@@ -160,12 +166,17 @@ const Accounts = (() => {
                     }).on('click', () => showCurrencyPopUp('change')))));
 
         // Replace note to reflect ability to change currency
-        $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create an MT5 account. You may also open one account for each supported cryptocurrency.')}`);
+        $('#note > .hint').text(`${localize('Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create a real MT5 account (or a real Deriv X account at deriv.com). You may also open one account for each supported cryptocurrency.')}`);
         $('#note_change_currency').setVisibility(0);
     };
 
     const onConfirmSetCurrency = () => {
-        const can_change_currency = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'));
+        const can_change_currency = Client.canChangeCurrency(
+            State.getResponse('statement'),
+            State.getResponse('mt5_login_list'),
+            State.getResponse('trading_platform_accounts'),
+            Client.get('loginid')
+        );
         if (can_change_currency) {
             addChangeCurrencyOption();
         }
@@ -210,10 +221,12 @@ const Accounts = (() => {
     };
 
     const appendExistingAccounts = (loginid) => {
-        const table_headers     = TableHeaders.get();
-        const account_currency  = Client.get('currency', loginid);
-        const account_type_prop = { text: Client.getAccountTitle(loginid) };
-        const can_currency_change_id = Client.canChangeCurrency(State.getResponse('statement'), State.getResponse('mt5_login_list'), loginid);
+        const table_headers          = TableHeaders.get();
+        const account_currency       = Client.get('currency', loginid);
+        const account_type_prop      = { text: Client.getAccountTitle(loginid) };
+        const can_currency_change_id = Client.canChangeCurrency(
+            State.getResponse('statement'), State.getResponse('mt5_login_list'), State.getResponse('trading_platform_accounts'), loginid
+        );
 
         if (!Client.isAccountOfType('virtual', loginid)) {
             const company_name                       = getCompanyName(loginid);

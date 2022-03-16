@@ -242,16 +242,6 @@ const Footer = () => (
                     </div>
                 </div>
             </div>
-            <div className='container'>
-                <div className='gr-row'>
-                    <div className='gr-12'>
-                        <div className='copyright'>
-                            <img src={it.url_for('images/common/copyright.svg')} />
-                            <p>{it.L('2021 Binary | All rights reserved')}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div id='end-note' className='invisible content-inverse-color center-text' />
         <StatusNotification />

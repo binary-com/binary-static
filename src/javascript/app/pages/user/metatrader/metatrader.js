@@ -19,7 +19,8 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.send({ statement: 1, limit: 1 });
-        BinarySocket.wait('landing_company', 'get_account_status', 'statement').then(async () => {
+        BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' });
+        BinarySocket.wait('landing_company', 'get_account_status', 'statement', 'trading_platform_accounts').then(async () => {
             await BinarySocket.send({ trading_servers: 1, platform: 'mt5' });
 
             if (isEligible()) {
@@ -98,6 +99,16 @@ const MetaTrader = (() => {
         });
     };
 
+    const addUnknownAccount = (acc_type) => accounts_info[`${acc_type}_unknown`] = {
+        is_demo              : /^demo/.test(acc_type),
+        landing_company_short: localize('Unavailable'),
+        leverage             : localize('Unavailable'),
+        market_type          : localize('Unavailable'),
+        sub_account_type     : localize('Unavailable'),
+        short_title          : localize('Unavailable'),
+        title                : localize('Unavailable'),
+    };
+
     // * mt5_login_list returns these:
     // landing_company_short: "svg" | "malta" | "maltainvest" |  "vanuatu"  | "labuan" | "bvi"
     // account_type: "real" | "demo"
@@ -112,15 +123,6 @@ const MetaTrader = (() => {
     const addAccount = (market_type, company = {}, server) => {
         // TODO: Update once market_types are available in inaccessible account details
         if (market_type === 'unknown' && !company) {
-            const addUnknownAccount = (acc_type) => accounts_info[`${acc_type}_unknown`] = {
-                is_demo              : acc_type === 'demo',
-                landing_company_short: localize('Unavailable'),
-                leverage             : localize('Unavailable'),
-                market_type          : localize('Unavailable'),
-                sub_account_type     : localize('Unavailable'),
-                short_title          : localize('Unavailable'),
-                title                : localize('Unavailable'),
-            };
             addUnknownAccount('demo');
             addUnknownAccount('real');
         } else {
@@ -192,6 +194,16 @@ const MetaTrader = (() => {
         });
     };
 
+    const addUnavailableAccounts = (response) => {
+        response.mt5_login_list.forEach((account) => {
+            if (account.market_type) {
+                addAccount(account.market_type, account.landing_company_short);
+            } else {
+                addUnknownAccount(`${account.error.details.account_type}-${account.error.details.login}`);
+            }
+        });
+    };
+
     // synthetic is 500
     // financial is 1000, unless maltainvest then 30
     // financial_stp is 100
@@ -210,7 +222,13 @@ const MetaTrader = (() => {
 
     const getAllAccountsInfo = (response) => {
         MetaTraderUI.init(submit, sendTopupDemo);
-        show_new_account_popup = Client.canChangeCurrency(State.getResponse('statement'), (response.mt5_login_list || []), false);
+        show_new_account_popup = Client.canChangeCurrency(
+            State.getResponse('statement'),
+            (response.mt5_login_list || []),
+            State.getResponse('trading_platform_accounts'),
+            Client.get('loginid'),
+            false
+        );
         allAccountsResponseHandler(response);
     };
 
@@ -262,8 +280,10 @@ const MetaTrader = (() => {
 
     const submit = (e) => {
         e.preventDefault();
+        const $btn_submit = $(e.target);
+        const acc_type    = $btn_submit.attr('acc_type');
 
-        if (show_new_account_popup) {
+        if (acc_type.includes('real') && show_new_account_popup) {
             MetaTraderUI.showNewAccountConfirmationPopup(
                 e,
                 () => show_new_account_popup = false,
@@ -273,8 +293,6 @@ const MetaTrader = (() => {
             return;
         }
 
-        const $btn_submit = $(e.target);
-        const acc_type    = $btn_submit.attr('acc_type');
         const action      = $btn_submit.attr('action');
         MetaTraderUI.hideFormMessage(action);
         if (Validation.validate(`#frm_${action}`)) {
@@ -409,6 +427,12 @@ const MetaTrader = (() => {
             return null;
         };
 
+        // Add all unavailable accounts to the account list DOM
+        if (response.mt5_login_list.some(acc => acc.error)) {
+            addUnavailableAccounts(response);
+            MetaTraderUI.populateAccountList();
+        }
+
         // Update account info
         response.mt5_login_list.forEach((account) => {
             const market_type = account.market_type === 'synthetic' ? 'gaming' : account.market_type;
@@ -433,7 +457,8 @@ const MetaTrader = (() => {
                 const { login, account_type, server } = account.error.details;
 
                 // TODO: remove exception handlers for unknown_acc_type when details include market_types and sub market types
-                const unknown_acc_type = account_type === 'real' ? 'real_unknown' : 'demo_unknown';
+                // Generate account type for each unknown account based on unique login
+                const unknown_acc_type = `${account_type}-${login}_unknown`;
                 getAccountsInfo(unknown_acc_type).info = {
                     display_login : MetaTraderConfig.getDisplayLogin(login),
                     display_server: getDisplayServer(trading_servers, server),
