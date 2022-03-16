@@ -21,7 +21,6 @@ module.exports = {
         ['responsible-trading',                'monthly', 0.80],
         ['terms-and-conditions',               'monthly', 0.80],
 
-        ['liquidity-solutions',                'monthly', 0.80],
         ['open-source-projects',               'monthly', 0.80],
         ['partners',                           'monthly', 0.80],
         ['payment-agent',                      'monthly', 0.80],

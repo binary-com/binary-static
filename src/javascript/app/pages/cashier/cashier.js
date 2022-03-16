@@ -1,18 +1,19 @@
-const getCurrencies    = require('../user/get_currency').getCurrencies;
-const Client           = require('../../base/client');
-const BinarySocket     = require('../../base/socket');
-const Currency         = require('../../common/currency');
-const elementInnerHtml = require('../../../_common/common_functions').elementInnerHtml;
-const getElementById   = require('../../../_common/common_functions').getElementById;
-const localize         = require('../../../_common/localize').localize;
-const State            = require('../../../_common/storage').State;
-const Url              = require('../../../_common/url');
-const getPropertyValue = require('../../../_common/utility').getPropertyValue;
-const Dialog           = require('../../common/attach_dom/dialog');
-const BinaryPjax       = require('../../base/binary_pjax');
-const Accounts         = require('../user/accounts');
-const Header           = require('../../base/header');
-const isEuCountry      = require('../../common/country_base').isEuCountry;
+const getCurrencies          = require('../user/get_currency').getCurrencies;
+const Client                 = require('../../base/client');
+const BinarySocket           = require('../../base/socket');
+const Currency               = require('../../common/currency');
+const elementInnerHtml       = require('../../../_common/common_functions').elementInnerHtml;
+const getElementById         = require('../../../_common/common_functions').getElementById;
+const localize               = require('../../../_common/localize').localize;
+const State                  = require('../../../_common/storage').State;
+const Url                    = require('../../../_common/url');
+const getHasRealMt5OrDxtrade = require('../../../_common/utility').getHasRealMt5OrDxtrade;
+const getPropertyValue       = require('../../../_common/utility').getPropertyValue;
+const Dialog                 = require('../../common/attach_dom/dialog');
+const BinaryPjax             = require('../../base/binary_pjax');
+const Accounts               = require('../user/accounts');
+const Header                 = require('../../base/header');
+const isEuCountry            = require('../../common/country_base').isEuCountry;
 
 const Cashier = (() => {
     let href = '';
@@ -84,43 +85,41 @@ const Cashier = (() => {
         $(top_up_id).parent().setVisibility(1);
     };
 
-    const showCurrentCurrency = (currency, statement, mt5_logins) => {
-        const has_no_mt5          = mt5_logins.length === 0;
-        const has_no_transaction  = (statement.count === 0 && statement.transactions.length === 0);
-        const el_acc_currency     = getElementById('account_currency');
-        const el_currency_image   = getElementById('account_currency_img');
-        const el_current_currency = getElementById('account_currency_current');
-        const el_current_hint     = getElementById('account_currency_hint');
-        const upgrade_info        = Client.getUpgradeInfo();
-        const can_change          = Client.canChangeCurrency(statement, mt5_logins);
-        const has_upgrade         = upgrade_info.can_upgrade || upgrade_info.can_open_multi
-                                    || can_change;
-        const account_action_text = has_upgrade ? `<br />${localize('[_1]Manage your accounts[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
-        const is_iom_client       = Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im';
-        const change_text_for_iom = is_iom_client ? localize('time') : localize('time or create an MT5 account');
-        const url_user_account    = `<a href=${Url.urlFor('user/accounts')}>`;
+    const showCurrentCurrency = (currency, statement, mt5_logins, dxtrade_accounts_list) => {
+        const has_no_real_mt5_or_dxtrade = !getHasRealMt5OrDxtrade(mt5_logins, dxtrade_accounts_list);
+        const has_no_transaction         = (statement.count === 0 && statement.transactions.length === 0);
+        const el_acc_currency            = getElementById('account_currency');
+        const el_currency_image          = getElementById('account_currency_img');
+        const el_current_currency        = getElementById('account_currency_current');
+        const el_current_hint            = getElementById('account_currency_hint');
+        const upgrade_info               = Client.getUpgradeInfo();
+        const can_change                 = Client.canChangeCurrency(statement, mt5_logins, dxtrade_accounts_list, Client.get('loginid'));
+        const has_upgrade                = upgrade_info.can_upgrade || upgrade_info.can_open_multi || can_change;
+        const account_action_text        = has_upgrade ? `<br />${localize('[_1]Manage your accounts[_2]', [`<a href=${Url.urlFor('user/accounts')}>`, '</a>'])}` : '';
+        const is_iom_client              = Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im';
+        const change_text_for_iom        = is_iom_client ? localize('time') : localize('time or create a real MT5 account (or a real Deriv X account at deriv.com)');
+        const url_user_account           = `<a href=${Url.urlFor('user/accounts')}>`;
 
-        const missingCriteria = (has_mt5, has_transaction) => {
-            const existing_mt5_msg          = localize('You can no longer change the currency because you\'ve created an MT5 account.') + account_action_text;
-            const existing_transaction_msg  = localize('You can no longer change the currency because you\'ve made a first-time deposit.') + account_action_text;
-
-            return has_mt5 && !has_transaction ? existing_mt5_msg : existing_transaction_msg;
-        };
+        const criteria_not_met_message   = has_no_transaction
+            ? localize('You can no longer change the currency because you\'ve created a real MT5 account (or a real Deriv X account at deriv.com).') + account_action_text
+            : localize('You can no longer change the currency because you\'ve made a first-time deposit.') + account_action_text;
 
         // Set messages based on currency being crypto or fiat
         // If fiat, set message based on if they're allowed to change currency or not
-        // Condition is to have no MT5 accounts *and* have no transactions
-        const currency_message = Currency.isCryptocurrency(currency)
+        // Condition is to have no real MT5 or Deriv X accounts *and* have no transactions
+        const fiat_currency_is_set_message = has_no_real_mt5_or_dxtrade && has_no_transaction
+            ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
+            : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
+        const currency_message             = Currency.isCryptocurrency(currency)
             ? localize('This is your [_1] account.', `${Currency.getCurrencyDisplayCode(currency)}`)
-            : has_no_mt5 && has_no_transaction
-                ? localize('Your fiat account\'s currency is currently set to [_1].', `${currency}`)
-                : localize('Your fiat account\'s currency is set to [_1].', `${currency}`);
+            : fiat_currency_is_set_message;
 
-        const currency_hint = Currency.isCryptocurrency(currency)
+        const fiat_currency_change_hint = has_no_real_mt5_or_dxtrade && has_no_transaction
+            ? localize('You can [_1]set a new currency[_2] before you deposit for the first [_3].', [can_change ? url_user_account : '', can_change ? '</a>' : '', change_text_for_iom])
+            : criteria_not_met_message;
+        const currency_hint             = Currency.isCryptocurrency(currency)
             ? localize('Don\'t want to trade in [_1]? You can open another cryptocurrency account.', `${Currency.getCurrencyDisplayCode(currency)}`) + account_action_text
-            : has_no_mt5 && has_no_transaction
-                ? localize('You can [_1]set a new currency[_2] before you deposit for the first [_3].', [can_change ? url_user_account : '', can_change ? '</a>' : '', change_text_for_iom])
-                : missingCriteria(!has_no_mt5, !has_no_transaction);
+            : fiat_currency_change_hint;
 
         elementInnerHtml(el_current_currency, currency_message);
         elementInnerHtml(el_current_hint, currency_hint);
@@ -263,7 +262,8 @@ const Cashier = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.send({ statement: 1, limit: 1 });
-            BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status', 'landing_company').then(() => {
+            BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' });
+            BinarySocket.wait('authorize', 'mt5_login_list', 'statement', 'get_account_status', 'landing_company', 'trading_platform_accounts').then(() => {
                 if (!is_virtual) checkStatusIsLocked(State.getResponse('get_account_status'));
                 const residence  = Client.get('residence');
                 const currency   = Client.get('currency');
@@ -276,7 +276,8 @@ const Cashier = (() => {
                     showCurrentCurrency(
                         currency,
                         State.getResponse('statement'),
-                        State.getResponse('mt5_login_list')
+                        State.getResponse('mt5_login_list'),
+                        State.getResponse('trading_platform_accounts'),
                     );
                     if (is_p2p_allowed_currency && is_show_dp2p) {
                         setP2PVisibility();
