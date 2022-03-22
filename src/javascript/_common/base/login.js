@@ -13,7 +13,7 @@ const getAppId            = require('../../config').getAppId;
 const Login = (() => {
     const redirectToLogin = (reset_password) => {
         removeCookies('hide_guide');
-        if (!Client.isLoggedIn() && !isLoginPages() && isStorageSupported(sessionStorage) || reset_password) {
+        if (!Client.isLoggedIn() && isLoginPages() && isStorageSupported(sessionStorage) || reset_password) {
             sessionStorage.setItem('redirect_url', window.location.href);
             window.location.href = loginUrl();
         }

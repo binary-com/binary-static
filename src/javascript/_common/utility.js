@@ -109,8 +109,7 @@ const isEmptyObject = (obj) => {
     return is_empty;
 };
 
-const isLoginPages = () => /redirect/i.test(window.location.pathname);
-
+const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
 
 const cloneObject = obj => (!isEmptyObject(obj) ? extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
 
