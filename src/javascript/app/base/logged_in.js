@@ -27,7 +27,7 @@ const LoggedInHandler = (() => {
                 // redirect url
                 const preferred_language   = response.authorize.preferred_language.toLowerCase();
                 if (!sessionStorage.getItem('redirect_url')) {
-                    redirect_url = urlFor('', null, preferred_language);
+                    redirect_url = urlFor('trading', null, preferred_language);
                 } else {
                     redirect_url = urlForLanguage(preferred_language, sessionStorage.getItem('redirect_url'));
                 }
