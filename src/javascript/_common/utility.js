@@ -111,6 +111,7 @@ const isEmptyObject = (obj) => {
 
 const isLoginPages = () => /redirect/i.test(window.location.pathname);
 
+
 const cloneObject = obj => (!isEmptyObject(obj) ? extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
 
 const isDeepEqual = (a, b) => {
