@@ -947,33 +947,114 @@ label + input {
 }
 
 #token_form {
-    @media screen and (max-width: 480px) {
-        p.error-msg {
-            display: flex;
-            justify-content: center;
+    fieldset {
+        padding: 14px;
+
+        & > legend {
+            margin-left: 20px;
         }
-        .scope-list {
-            position: relative;
+    }
+    .title-row {
+        margin: 20px 2px 5px;
+
+        label {
+            white-space: nowrap;
+        }
+        input {
+            width: 205px;
+            height: 22px;
+            max-width: 100%;
+        }
+    }
+    .scopes-title {
+        padding: 0;
+        margin: 0;
+
+        label {
+            margin: 0 0 0 13px;
+            text-align: left;
+        }
+    }
+    .scope-types {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        input[type='checkbox'] + label:before {
+            margin-bottom: 3px;
+        }
+        .scope-item {
+            padding: 15px;
+            min-height: 76px;
+            margin-right: 0;
+            text-align: left !important;
+            border: 1px solid $COLOR_GRAY;
+            border-radius: 4px;
+
+            .scope-item-description {
+                margin-top: 7px;
+                font-size: 14px;
+                line-height: 19px;
+            }
+        }
+        p.error-msg {
+            grid-row-end: none;
+            height: 0;
+        }
+    }
+    .gr-padding-10 {
+        .button, .hint {
+            margin-left: calc(16.3% + 5px);
+        }
+    }
+
+    @media screen and (max-width: 679px) {
+        .scopes-title {
+            align-self: flex-start;
+        }
+        .scopes-row {
             display: flex;
-            justify-content: center;
-
-            input[type='checkbox'] + label {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                display: flex;
-                align-items: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scopes-title, .scope-types {
+            margin-left: 0;
+            margin-right: 0;
+            flex-basis: unset;
+            max-width: unset;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .scope-types {
+            .scope-item {
+                width: 70%;
             }
-            p.error-msg {
-                position: absolute;
-                left: 0;
-            }
-            .scope-types {
-                flex-basis: unset;
-                max-width: unset;
+        }
+        .gr-padding-10 {
+            max-width: 100%;
+            text-align: center;
 
-                &:last-child {
-                    margin-bottom: 16px;
-                }
+            .button, .hint {
+                margin-left: 0;
+            }
+        }
+    }
+
+    @media screen and (max-width: 619px) {
+        .scope-types {
+            .scope-item {
+                width: 80%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 569px) {
+        .scope-types {
+            .scope-item {
+                width: 90%;
             }
         }
     }

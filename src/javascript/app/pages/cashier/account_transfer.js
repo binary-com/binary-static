@@ -212,6 +212,7 @@ const AccountTransfer = (() => {
 
     const onClickReset = () => {
         el_success_form.setVisibility(0);
+        getElementById('topbar').scrollIntoView();
         getElementById('amount').value = '';
         onLoad();
     };

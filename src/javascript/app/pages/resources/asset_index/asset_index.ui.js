@@ -124,6 +124,7 @@ const AssetIndexUI = (() => {
         if (!active_symbols) {
             BinarySocket.wait('authorize').then(() => {
                 BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
+                    response.active_symbols = response.active_symbols.filter(item => item.submarket !== 'smart_fx');
                     AssetIndexUI.setActiveSymbols(response);
                 });
             });
