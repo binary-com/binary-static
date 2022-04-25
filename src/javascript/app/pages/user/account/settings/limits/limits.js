@@ -5,6 +5,7 @@ const BinarySocket = require('../../../../../base/socket');
 const Limits = (() => {
     const onLoad = async () => {
         const response_get_limits = await BinarySocket.send({ get_limits: 1 });
+        response_get_limits.get_limits.market_specific.forex = response_get_limits.get_limits.market_specific.forex.filter(markets => markets.name !== 'Smart FX');
 
         if (response_get_limits.error) {
             LimitsUI.limitsError(response_get_limits.error);

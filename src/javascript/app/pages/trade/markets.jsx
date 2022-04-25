@@ -71,6 +71,7 @@ class Markets extends React.Component {
         let market_symbol = Defaults.get('market');
         const market_list = Symbols.markets();
         this.markets = getAvailableUnderlyings(market_list);
+        delete this.markets.forex.submarkets.smart_fx;
         this.underlyings = Symbols.getAllSymbols() || {};
         let underlying_symbol = Defaults.get('underlying');
 

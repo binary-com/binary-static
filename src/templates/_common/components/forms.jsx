@@ -33,6 +33,8 @@ export const FormRow = ({
     children,
     options,
     default_option,
+    label_row_cell_width,
+    is_simple_row,
 }) => {
     const getInnerElement = () => {
         if (type === 'select') {
@@ -135,8 +137,19 @@ export const FormRow = ({
             return 'gr-12';
         } else if (has_geovalidator) {
             return 'gr-3 gr-12-m';
+        } else if (label_row_cell_width) {
+            return `gr-${12 - label_row_cell_width} gr-12-m ${sub_row_class || ''}`;
         }
         return `gr-8 gr-12-m ${sub_row_class || ''}`;
+    };
+
+    const getLabelRowClassName = () => {
+        if (is_two_rows) {
+            return `gr-12 ${label_row_class}`;
+        } else if (label_row_cell_width) {
+            return `gr-${label_row_cell_width} gr-12-m ${label_row_class}`;
+        }
+        return `gr-4 gr-12-m ${label_row_class}`;
     };
 
     if (type === 'checkbox' && !spaced) {
@@ -150,12 +163,35 @@ export const FormRow = ({
             </div>
         );
     }
+
+    if (is_simple_row) {
+        return (
+            <div
+                className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
+                id={row_id}
+            >
+                <label htmlFor={type !== 'label' ? id : undefined} className={required ? 'required_asterisk' : ''}>
+                    {tooltip ?
+                        <span data-balloon-length='xlarge' data-balloon={tooltip}>
+                            {label}
+                        </span> :
+                        label
+                    }
+                </label>
+                <div>{getInnerElement()}</div>
+                {hint &&
+                    <p className='hint no-margin'>{hint}</p>
+                }
+                {has_geovalidator ? children : undefined}
+            </div>
+        );
+    }
     return (
         <div
             className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
             id={row_id}
         >
-            <div className={`${is_two_rows ? `gr-12 ${label_row_class}` : `gr-4 gr-12-m ${label_row_class}`}`}>
+            <div className={getLabelRowClassName()}>
                 <label htmlFor={type !== 'label' ? id : undefined} className={required ? 'required_asterisk' : ''}>
                     {tooltip ?
                         <span data-balloon-length='xlarge' data-balloon={tooltip}>

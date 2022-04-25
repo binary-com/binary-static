@@ -232,6 +232,7 @@ const TradingTimesUI = (() => {
         if (should_request_active_symbols) {
             BinarySocket.wait('authorize').then(() => {
                 BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
+                    response.active_symbols = response.active_symbols.filter(item => item.submarket !== 'smart_fx');
                     TradingTimesUI.setActiveSymbols(response);
                 });
             });

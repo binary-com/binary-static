@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-15 04:25\n"
+"PO-Revision-Date: 2022-04-25 03:09\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2350,6 +2350,9 @@ msgstr "ซื้อ"
 msgid "Buy = go long"
 msgstr "ซื้อ = ส่งคำสั่ง Long "
 
+msgid "Buy and sell contracts, renew expired purchases, and top up demo accounts."
+msgstr ""
+
 msgid "Buy or Sell"
 msgstr "ซื้อหรือขาย"
 
@@ -2484,21 +2487,6 @@ msgstr "กล้องไม่ทํางาน?"
 
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "ฉันสามารถเสนอค่าตอบแทนกับผู้อ้างอิงของฉันในการลงทะเบียนผ่านลิงค์พันธมิตรของฉันแทนการลงทะเบียนโดยตรงได้หรือไม่?"
-
-msgid "Can be used to buy and sell contracts, renew expired purchases, and top-up demo accounts."
-msgstr "สามารถใช้เพื่อซื้อและขายสัญญาต่ออายุการซื้อที่หมดอายุและบัญชีทดลองใช้การเติมเงิน"
-
-msgid "Can be used to open accounts, set settings, manage token usage, and more."
-msgstr "สามารถใช้เพื่อเปิดบัญชี ตั้งค่าต่างๆ จัดการการใช้โทเค่น และอื่นๆ"
-
-msgid "Can be used to view account activity, including settings, limits, balance sheets, trade purchase history, and more."
-msgstr "สามารถใช้ในการดูกิจกรรมที่เกิดขึ้นของบัญชี รวมถึงการตั้งค่า วงเงิน งบดุล ประวัติการซื้อขาย และอื่นๆ"
-
-msgid "Can be used to view the trading history of an account."
-msgstr "สามารถใช้เพื่อดูประวัติการซื้อขายของบัญชี"
-
-msgid "Can be used to withdraw to payment agents and transfer funds between accounts."
-msgstr "สามารถใช้เพื่อถอนเงินไปยังตัวแทนชำระเงินและโอนเงินระหว่างบัญชี"
 
 msgid "Can you spare 15 minutes?"
 msgstr "ท่านพอมีเวลา 15 นาทีหรือไม่?"
@@ -8074,7 +8062,7 @@ msgid "Note: Please switch to your %1 account to change currencies."
 msgstr "หมายเหตุ: โปรดเปลี่ยนไปใช้บัญชี %1 ของคุณเพื่อเปลี่ยนสกุลเงิน"
 
 msgid "Note: You are limited to one fiat currency account. The currency of your fiat account can be changed before you deposit into your fiat account for the first time or create a real MT5 account (or a real Deriv X account at deriv.com). You may also open one account for each supported cryptocurrency."
-msgstr ""
+msgstr "หมายเหตุ: คุณถูกจำกัดบัญชีสกุลเงิน fiat หนึ่งบัญชี สกุลเงินของบัญชี Fiat ของคุณสามารถเปลี่ยนแปลงได้ก่อนที่คุณจะฝากเงินเข้าบัญชี Fiat ของคุณเป็นครั้งแรก หรือสร้างบัญชี MT5 จริง (หรือบัญชี Deriv X จริงที่ deriv.com) คุณสามารถเปิดบัญชีได้หนึ่งบัญชีสำหรับสกุลเงินดิจิทัลที่รองรับแต่ละสกุลเงิน"
 
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "หมายเหตุ ท่านสามารถมีได้เพียงบัญชีสกุลเงิน fiat หนึ่งบัญชี และหนึ่งบัญชีของบัญชีเงินดิจิทัล"
@@ -8291,6 +8279,9 @@ msgstr "เปิดบัญชีฟรี 1 บัญชี"
 
 msgid "Open account"
 msgstr "เปิดบัญชี"
+
+msgid "Open accounts, manage settings, manage token usage, and more."
+msgstr ""
 
 msgid "Open an account and start trading in minutes."
 msgstr "เปิดบัญชีและเริ่มการซื้อขายในไม่กี่นาที"
@@ -13007,9 +12998,6 @@ msgstr "ทุกวันนี้ ลาบวน เป็นที่รู�
 msgid "Token"
 msgstr "โทเค่น"
 
-msgid "Token name"
-msgstr "ชื่อโทเค่น"
-
 msgid "Too many failed attempts"
 msgstr "มีความพยายามหลายครั้งแต่ไม่สำเร็จ"
 
@@ -13811,6 +13799,9 @@ msgstr "ห้องวีดีโอ"
 msgid "View"
 msgstr "ดู"
 
+msgid "View account activity such as settings, limits, balance sheets, trade purchase history, and more."
+msgstr ""
+
 msgid "View available payment methods"
 msgstr "ดูวิธีการชำระเงินต่างๆ"
 
@@ -13840,6 +13831,9 @@ msgstr "ขอดูรายการสินทรัพย์ทั้งห
 
 msgid "View the operating hours of the markets you can trade."
 msgstr "ดูเวลาในของตลาดที่ท่านสามารถซื้อขาย"
+
+msgid "View the trading history."
+msgstr ""
 
 msgid "View updated statement"
 msgstr "ดูรายการเดินบัญชีล่าสุด"
@@ -14519,6 +14513,9 @@ msgstr "ถอนจาก MT5"
 msgid "Withdraw funds from your MT5 account"
 msgstr "ถอนเงินจากบัญชี MT5 ของท่าน"
 
+msgid "Withdraw to payment agents, and transfer funds between accounts."
+msgstr ""
+
 msgid "Withdrawal"
 msgstr "ถอนเงิน"
 
@@ -14679,7 +14676,7 @@ msgid "You can generate all kinds of insightful reports, including the following
 msgstr "ท่านสามารถเรียกใช้รายงานเจาะลึกต่างๆ รวมถึงรายงานต่อไปนี้"
 
 msgid "You can no longer change the currency because you've created a real MT5 account (or a real Deriv X account at deriv.com)."
-msgstr ""
+msgstr "คุณไม่สามารถเปลี่ยนสกุลเงินได้อีกต่อไป เนื่องจากคุณได้สร้างบัญชี MT5 จริง (หรือบัญชี Deriv X จริงที่ deriv.com)"
 
 msgid "You can no longer change the currency because you've made a first-time deposit."
 msgstr "ท่านไม่สามารถแก้ไขสกุลเงิน เนื่องจากท่านได้ฝากเงินครั้งแล้วไปแล้ว"
@@ -15396,7 +15393,7 @@ msgid "time"
 msgstr "ครั้งแรก"
 
 msgid "time or create a real MT5 account (or a real Deriv X account at deriv.com)"
-msgstr ""
+msgstr "หรือสร้างบัญชี MT5 จริง (หรือบัญชี Deriv X จริงที่ deriv.com) คุณสามารถเปิดบัญชีได้หนึ่งบัญชีสำหรับสกุลเงินดิจิทัลที่รองรับแต่ละสกุลเงิน"
 
 msgid "today"
 msgstr "วันนี้"
