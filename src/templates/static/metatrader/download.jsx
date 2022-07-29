@@ -121,7 +121,7 @@ const MT5DesktopApp = ({ is_first_child, has_desktop_app }) => {
                     <div className='gr-row'>
                         <DesktopDownloadBlock
                             id='windows'
-                            href='https://download.mql5.com/cdn/web/deriv.limited/mt5/deriv5setup.exe'
+                            href='https://download.mql5.com/cdn/web/deriv.limited/mt5/derivmt5setup.exe'
                         />
                         <DesktopDownloadBlock
                             id='linux'
