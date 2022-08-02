@@ -233,12 +233,12 @@ workflows:
             branches:
               only: /^master$/
       - publish_cloudflare_staging:
+          context: binary-frontend-artifact-upload
           requires:
             - release_staging
           filters:
             branches:
               only: /^master$/
-          context: binary-frontend-artifact-upload
       - release_production:
           filters:
             branches:
@@ -246,13 +246,14 @@ workflows:
             tags:
               only: /^production.*/
       - release_aws_production:
+          context: binary-frontend-artifact-upload
           filters:
             branches:
               ignore: /.*/
             tags:
               only: /^production.*/
-          context: binary-frontend-artifact-upload
       - publish_cloudflare_production:
+          context: binary-frontend-artifact-upload
           requires:
             - release_aws_production
           filters:
@@ -260,4 +261,3 @@ workflows:
               ignore: /.*/
             tags:
               only: /^production.*/
-          context: binary-frontend-artifact-upload
