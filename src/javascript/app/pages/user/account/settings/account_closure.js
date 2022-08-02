@@ -1,13 +1,14 @@
-const Metatrader = require('../../metatrader/metatrader');
-const BinarySocket = require('../../../../base/socket');
-const Client = require('../../../../base/client');
-const Currency = require('../../../../common/currency');
-const Url = require('../../../../../_common/url');
-const hasAccountType = require('../../../../../_common/base/client_base').hasAccountType;
-const getElementById = require('../../../../../_common/common_functions').getElementById;
-const localize = require('../../../../../_common/localize').localize;
+const Metatrader         = require('../../metatrader/metatrader');
+const MetaTraderConfig   = require('../../metatrader/metatrader.config');
+const BinarySocket       = require('../../../../base/socket');
+const Client             = require('../../../../base/client');
+const Currency           = require('../../../../common/currency');
+const Url                = require('../../../../../_common/url');
+const hasAccountType     = require('../../../../../_common/base/client_base').hasAccountType;
+const getElementById     = require('../../../../../_common/common_functions').getElementById;
+const localize           = require('../../../../../_common/localize').localize;
 const applyToAllElements = require('../../../../../_common/utility').applyToAllElements;
-const State = require('../../../../../_common/storage').State;
+const State              = require('../../../../../_common/storage').State;
 
 const AccountClosure = (() => {
     let reason_checkbox_list,
@@ -211,7 +212,7 @@ const AccountClosure = (() => {
     const getMT5MarketType = (mt5_account) => mt5_account.market_type === 'synthetic' ? 'gaming' : mt5_account.market_type;
 
     const showErrorPopUp = async (response) => {
-        const mt5_login_list = (await BinarySocket.wait('mt5_login_list')).mt5_login_list;
+        const filtered_mt5_login_list = MetaTraderConfig.getFilteredMt5LoginList((await BinarySocket.wait('mt5_login_list')).mt5_login_list);
         const dxtrade_accounts_list = (await BinarySocket.send({ trading_platform_accounts: 1, platform: 'dxtrade' })).trading_platform_accounts;
 
         // clear all previously added details first
@@ -240,7 +241,7 @@ const AccountClosure = (() => {
             el_section.setVisibility(1).appendChild(el_section_parent);
         };
         const getMTDisplay = (account) => {
-            const mt5_account = (mt5_login_list.find(acc => acc.login === account) || {});
+            const mt5_account = (filtered_mt5_login_list.find(acc => acc.login === account) || {});
             const market_type = getMT5MarketType(mt5_account);
             return Client.getMT5AccountDisplays(market_type, mt5_account.sub_account_type).short;
         };

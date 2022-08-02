@@ -8,6 +8,9 @@ const getTransferFee   = require('../../../../_common/base/currency_base').getTr
 const getElementById   = require('../../../../_common/common_functions').getElementById;
 const localize         = require('../../../../_common/localize').localize;
 const Password         = require('../../../../_common/check_password');
+const BinaryPjax       = require('../../../base/binary_pjax');
+const { urlFor }       = require('../../../../_common/url');
+const getLanguage      = require('../../../../_common/language').get;
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
 const getHashValue     = require('../../../../_common/url').getHashValue;
@@ -65,7 +68,8 @@ const MetaTraderUI = (() => {
         $main_msg             = $container.find('#main_msg');
         $client_general       = $container.find('.client-general');
         $client_eu            = $container.find('.client-eu');
-        $container.find('[class*="act_"]').on('click', populateForm);
+        $container.find('[class*="act_"]').not('[class*="new_account_button"]').on('click', populateForm);
+        $container.find('[class*="new_account_button"]').on('click', () => showGoToDerivAlertPopup(true));
 
         MetaTraderConfig.setMessages($templates.find('#messages'));
 
@@ -338,7 +342,8 @@ const MetaTraderUI = (() => {
             const is_synthetic = getAccountsInfo(acc_type).market_type === 'gaming' || getAccountsInfo(acc_type).market_type === 'synthetic';
             const is_unknown = /unknown+$/.test(acc_type);
             const is_real = acc_type.startsWith('real');
-            const label_text = server_info ? sequence > 1 ? `${region} ${sequence}` : region : acc_info.display_server;
+            const region_to_show = sequence > 1 ? `${region} ${sequence}` : region;
+            const label_text = server_info ? region_to_show : acc_info.display_server;
             setMTAccountText();
             $acc_item.find('.mt-login').text(`(${getAccountsInfo(acc_type).info.display_login})`);
             if (
@@ -370,45 +375,12 @@ const MetaTraderUI = (() => {
                     +getAccountsInfo(acc_type).info.balance);
                 $acc_item.find('.mt-balance').html(mt_balance);
                 $action.find('.mt5-balance').html(mt_balance);
-                const $add_region_btn = $container.find('#btn_add_region');
-                $add_region_btn.setVisibility(
-                    getAvailableServers(false, acc_type).length > 0 && !getAccountsInfo(acc_type).is_demo,
-                );
-                if (disabled_signup_types.real) {
-                    $add_region_btn.addClass('button-disabled');
-                }
             }
             // disable MT5 account opening if created all available accounts
             if (Object.keys(accounts_info).every(type =>
                 getAccountsInfo(type).info || !MetaTraderConfig.hasTradeServers(type))) {
                 $container.find('.act_new_account').remove();
             }
-
-            // Add more trade servers button.
-            $container.find('#btn_add_region').click(() => {
-                if (disabled_signup_types.real) {
-                    return;
-                }
-                const $back_button = $form.find('#view_3 .btn-back');
-                const $cancel_button = $form.find('#view_3 .btn-cancel');
-                const account_type = Client.get('mt5_account');
-                const num_servers = populateTradingServers();
-
-                loadAction('new_account', account_type);
-                $form.find('button[type="submit"]').attr('acc_type', account_type);
-                $cancel_button.setVisibility(1);
-                $back_button.setVisibility(0);
-
-                if (num_servers.supported > 1){
-                    displayStep(2);
-                } else {
-                    displayStep(3);
-                }
-                displayAccountDescription('real_gaming_financial');
-
-                $.scrollTo($container.find('.acc-actions'), 300, { offset: -10 });
-            });
-
         } else {
             $acc_item.setVisibility(0);
         }
@@ -465,7 +437,8 @@ const MetaTraderUI = (() => {
             const display_login = getAccountsInfo(acc_type).info.display_login;
             const region = server_info && server_info.geolocation.region;
             const sequence = server_info && server_info.geolocation.sequence;
-            const label_text = server_info ? sequence > 1 ? `${region} ${sequence}` : region : getAccountsInfo(acc_type).info.display_server;
+            const region_to_show = sequence > 1 ? `${region} ${sequence}` : region;
+            const label_text = server_info ? region_to_show : getAccountsInfo(acc_type).info.display_server;
             $detail.find('.real-only').setVisibility(!is_demo);
             // Update account info
             $detail.find('.acc-info div[data]').map(function () {
@@ -494,11 +467,6 @@ const MetaTraderUI = (() => {
             if (current_action_ui !== 'new_account') {
                 $container.find('.has-account').setVisibility(1);
             }
-
-            // we need to add a small delay to let the servers details be filled before we check their availability
-            setTimeout(() => {
-                $container.find('#btn_add_region').setVisibility(getAvailableServers(false, MetaTraderConfig.getCleanAccType(acc_type, 2)).length > 0 && !is_demo);
-            }, 50);
         } else {
             $detail.find('.acc-info, .acc-actions').setVisibility(0);
         }
@@ -526,7 +494,7 @@ const MetaTraderUI = (() => {
     };
 
     const loadAction = (action, acc_type, should_hide_cancel) => {
-        $container.find(`[class~=act_${action || defaultAction(acc_type)}]`).click();
+        $container.find(`[class~=act_${action || defaultAction(acc_type)}]`).not('[class*="new_account_button"]').click();
         if (should_hide_cancel) {
             $form.find('#view_1 .btn-cancel').hide();
             $form.find('#view_3 .btn-cancel').hide();
@@ -1216,10 +1184,13 @@ const MetaTraderUI = (() => {
 
         BinarySocket.wait('landing_company').then((response) => {
             const landing_company_name = getAccountsInfo(acc_type).market_type === 'synthetic' ? 'mt_gaming_company' : `mt_${getAccountsInfo(acc_type).market_type}_company`;
-            const company = response.landing_company[landing_company_name][getAccountsInfo(acc_type).sub_account_type];
-
+            const company = response.landing_company[landing_company_name][getAccountsInfo(acc_type)
+                .sub_account_type] || {};
             $icon.attr({
-                'data-balloon'       : `${localize('Counterparty')}: ${company.name}, ${localize('Jurisdiction')}: ${company.country}`,
+                'data-balloon': `${localize('Counterparty')}: ${
+                    company.name ||
+                    getAccountsInfo(acc_type).company_data.name
+                }, ${localize('Jurisdiction')}: ${company.country || getAccountsInfo(acc_type).company_data.country}`,
                 'data-balloon-length': 'large',
             });
         });
@@ -1306,6 +1277,26 @@ const MetaTraderUI = (() => {
         });
     };
 
+    const showGoToDerivAlertPopup = (has_mt5_accounts) => {
+        const url_on_confirm = `https://app.deriv.com/mt5?lang=${getLanguage()}`;
+        Dialog.confirm({
+            id               : 'go-to-deriv-popup',
+            localized_title  : localize('Go to Deriv to add an MT5 account'),
+            localized_message: localize('You\'ll be able to log in to Deriv using your Binary.com credentials.'),
+            cancel_text      : has_mt5_accounts ? localize('Cancel') : localize('Back'),
+            ok_text          : localize('Go to Deriv'),
+            onAbort          : has_mt5_accounts ? undefined : () => { BinaryPjax.load(urlFor('trading')); },
+            onConfirm        : () => {
+                if (has_mt5_accounts) {
+                    window.open().location.href = url_on_confirm;
+                } else {
+                    window.location.href = url_on_confirm;
+                }
+            },
+            keep_open_on_confirm: !has_mt5_accounts,
+        });
+    };
+
     return {
         init,
         setAccountType,
@@ -1327,6 +1318,7 @@ const MetaTraderUI = (() => {
         setTopupLoading,
         getTradingPasswordConfirmVisibility,
         setTradingPasswordConfirmVisibility,
+        showGoToDerivAlertPopup,
         showNewAccountConfirmationPopup,
         shouldSetTradingPassword,
 

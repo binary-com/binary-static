@@ -279,14 +279,10 @@
                 border-bottom: none;
             }
         }
-        .add_region {
+        .trade-button-container {
             position: absolute;
             bottom: 20px;
             right: 20px;
-
-            #btn_add_region {
-                margin-right: 16px;
-            }
         }
     }
     .acc-actions {
@@ -538,7 +534,7 @@
         #account_details {
             min-height: auto;
 
-            .add_region {
+            .trade-button-container {
                 position: unset;
                 display: flex;
                 justify-content: flex-end;
@@ -632,9 +628,61 @@ tbody#instruments > tr > td {
     width: 33%;
 }
 
+.mt5_go_to_deriv_banner_wrapper.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #password-change-email-popup, #success_reset_trading_pw_dialog {
     #dialog_content {
         max-width: 480px;
         padding-top: 32px;
+    }
+}
+
+#go-to-deriv-popup {
+    #dialog_content {
+        width: 457px;
+        height: 246px;
+        padding: 32px 0 0 12px;
+
+        .gr-gutter .gr-gutter {
+            padding-bottom: 0;
+
+            & > * {
+                width: 405px;
+
+                @media only screen and (max-width: 768px) {
+                    width: 296px;
+                }
+            }
+        }
+        #dialog_message {
+            margin-top: 4px !important;
+            margin-bottom: 4px !important;
+        }
+
+        @media only screen and (max-width: 768px) {
+            width: 328px;
+            height: 188px;
+            padding: 16px 0 0;
+
+            #dialog_title {
+                font-size: 20px;
+            }
+            #dialog_message {
+                margin-top: unset;
+                padding-top: unset;
+                margin-bottom: 12px !important;
+                font-size: $FONT_SIZE_N;
+            }
+            .gr-row-align-right {
+                justify-content: center;
+
+                a.button {
+                    margin-bottom: unset;
+                }
+            }
+        }
     }
 }

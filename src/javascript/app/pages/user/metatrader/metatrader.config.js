@@ -562,6 +562,10 @@ const MetaTraderConfig = (() => {
         return /\d$/.test(acc_type) ? acc_type.substr(0, acc_type.lastIndexOf('_')) : acc_type;
     };
 
+    // hide bvi and vanuatu (fx) mt5 accounts, display svg and stp (labuan) only:
+    const getFilteredMt5LoginList = (mt5_login_list) => mt5_login_list
+        .filter(mt5_account => mt5_account.landing_company_short === 'svg' || mt5_account.landing_company_short === 'labuan');
+
     // if no server exists yet, e.g. during new account creation
     // we want to get information like landing company etc which is shared
     // between all the servers, so we can disregard the server and return the first
@@ -606,6 +610,7 @@ const MetaTraderConfig = (() => {
         getCleanAccType,
         getCurrency,
         getDisplayLogin,
+        getFilteredMt5LoginList,
         getSampleAccount,
         isAuthenticated,
         isAuthenticationPromptNeeded,

@@ -530,6 +530,118 @@
     }
 }
 
+#mt5_go_to_deriv_banner_container {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    width: 940px;
+    height: 100px;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 64px;
+
+    &.has_margin {
+        margin-bottom: 40px;
+    }
+    @media only screen and (max-width: 768px) {
+        width: 340px;
+        height: 70px;
+        justify-content: space-between;
+        padding: 15px 8px;
+        margin: 0 auto;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: unset;
+        border-collapse: unset;
+        clear: unset;
+        left: 0;
+        top: 0;
+        border-radius: 4px 0 0 4px;
+        border-bottom: 100px solid $COLOR_ORANGE;
+        border-right: 50px solid transparent;
+        border-left: 188px solid $COLOR_ORANGE;
+
+        @media only screen and (max-width: 768px) {
+            border-bottom: 70px solid $COLOR_ORANGE;
+            border-right: 26.5px solid transparent;
+            border-left: 220px solid $COLOR_ORANGE;
+        }
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        display: unset;
+        border-collapse: unset;
+        right: 0;
+        top: 0;
+        width: 766px;
+        height: 100%;
+        border-radius: 0 4px 4px 0;
+        background-color: $COLOR_LIGHT_GRAY;
+
+        @media only screen and (max-width: 768px) {
+            width: 136px;
+        }
+    }
+    .mt5_go_to_deriv_banner {
+        position: relative;
+
+        &_icons {
+            z-index: 2;
+            height: 100%;
+            margin-right: 67px;
+
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+        &_text {
+            z-index: 2;
+
+            h3, p {
+                font-size: $FONT_SIZE_N;
+                color: $COLOR_BLACK;
+                margin: 0;
+
+                @media only screen and (max-width: 768px) {
+                    font-size: $FONT_SIZE_XXS;
+                    color: $COLOR_WHITE;
+                    width: 220px;
+                }
+            }
+            h3 {
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+            p {
+                font-weight: normal;
+            }
+        }
+        &_btn {
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 2;
+            padding: 8px 25px;
+            line-height: 22px;
+            color: $COLOR_WHITE;
+            border-radius: 4px;
+            background-color: $COLOR_GREEN;
+            font-size: $FONT_SIZE_L;
+            font-weight: normal;
+            margin-left: 26px;
+
+            @media only screen and (max-width: 768px) {
+                padding: 1px 10.5px;
+                font-size: $FONT_SIZE_S;
+                margin-left: unset;
+            }
+        }
+    }
+}
+
 #eu_close_banner_container {
     display: flex;
     justify-content: space-between;

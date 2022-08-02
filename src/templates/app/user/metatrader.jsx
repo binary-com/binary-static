@@ -5,6 +5,7 @@ import {
     SubmitButton,
 }                 from '../../_common/components/forms.jsx';
 import Loading    from '../../_common/components/loading.jsx';
+import Mt5GoToDerivBanner from '../../_common/components/mt5_go_to_deriv_banner.jsx';
 
 /* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, landing_company_short, items, id = undefined }) => {
@@ -69,6 +70,9 @@ const CashierDesc = ({ title, desc, arrow_direction }) => (
 
 const Metatrader = () => (
     <React.Fragment>
+        <div className='container mt5_go_to_deriv_banner_wrapper'>
+            <Mt5GoToDerivBanner has_margin />
+        </div>
         <div className='static_full'>
             <h1>{it.L('MetaTrader 5 dashboard')}</h1>
         </div>
@@ -92,7 +96,7 @@ const Metatrader = () => (
                                     </div>
                                 </div>
                                 <div className='gr-grow'>
-                                    <a className='button button-secondary act_new_account' href='javascript:;'>
+                                    <a className='button button-secondary act_new_account new_account_button' href='javascript:;'>
                                         <span id='new_account_icon'>{it.L('New account')}</span>
                                     </a>
                                 </div>
@@ -127,10 +131,7 @@ const Metatrader = () => (
                                 <div className='balance gr-padding-10' data='balance' />
                             </div>
                         </div>
-                        <div className='add_region'>
-                            <a id='btn_add_region' className='button-secondary invisible' href='javascript:;'>
-                                <span>{it.L('+ Add region')}</span>
-                            </a>
+                        <div className='trade-button-container'>
                             <a className='button mt5-web-link' target='_blank' rel='noopener noreferrer'>
                                 <span>{it.L('Trade on web terminal')}</span>
                             </a>

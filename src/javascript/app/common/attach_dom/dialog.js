@@ -85,7 +85,9 @@ const Dialog = (() => {
                     }
 
                     el_btn_ok.addEventListener('click', () => {
-                        el_dialog.remove();
+                        if (!options.keep_open_on_confirm) {
+                            el_dialog.remove();
+                        }
                         if (typeof options.onConfirm === 'function') {
                             options.onConfirm();
                         }
