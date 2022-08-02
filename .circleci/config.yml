@@ -143,6 +143,7 @@ commands:
             cd dist
             npx wrangler pages publish . --project-name=binary-static-pages --branch=main
             echo "New website - http://cf-pages-binary-static.deriv.com"
+
 jobs:
   test:
     docker:
@@ -210,7 +211,6 @@ jobs:
       - attach_workspace:
           at: dist
       - publish_to_pages_staging
-
   publish_cloudflare_production:
     docker:
       - image: circleci/node:16.13.1-stretch
