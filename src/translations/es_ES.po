@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-06-30 14:47\n"
+"PO-Revision-Date: 2022-08-02 02:08\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -540,9 +540,6 @@ msgstr "(e) Tamaño y naturaleza"
 
 msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
 msgstr "* Los pares de criptomonedas no están disponibles para las cuentas financieras DMT5 registradas con Deriv (V) Ltd."
-
-msgid "+ Add region"
-msgstr "+ Agregar región"
 
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
@@ -5480,6 +5477,12 @@ msgstr "Asumir posición corta = vender"
 msgid "Go to DTrader"
 msgstr "Ir a DTrader"
 
+msgid "Go to Deriv"
+msgstr ""
+
+msgid "Go to Deriv to add an MT5 account"
+msgstr ""
+
 msgid "Go to MT5 download page"
 msgstr "Acceder a la página de descarga de MT5"
 
@@ -9456,7 +9459,7 @@ msgid "Quantitative Analyst"
 msgstr "Analista cuantitativo"
 
 msgid "Quote currency"
-msgstr "Moneda secundaria"
+msgstr "Moneda de cotización"
 
 msgid "Quote provision"
 msgstr "Provisión de cotizaciones"
@@ -11931,7 +11934,7 @@ msgid "The application shall be reviewed and assessed by the Company's Complianc
 msgstr "La solicitud será revisada y evaluada por los departamentos de Cumplimiento y Marketing de la Compañía. Cabe destacar que, siguiendo y aplicando la política anti-blanqueo de capitales y llevando a cabo la debida diligencia de acuerdo con la ley y las regulaciones, el departamento de Cumplimiento de la Compañía solicitará y recopilará toda la información y documentación requerida según la Sección H."
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
-msgstr "El precio de venta del par de divisas indica qué cantidad de la moneda secundaria es necesaria para comprar una unidad de la moneda base. Esto se conoce más comúnmente como el tipo de cambio."
+msgstr "El precio de venta del par de divisas indica qué cantidad de la moneda de cotización es necesaria para comprar una unidad de la moneda base. Esto se conoce más comúnmente como el tipo de cambio."
 
 msgid "The average is the average of the ticks, including the entry spot and the last tick."
 msgstr "El promedio es el promedio de los ticks, incluyendo el punto de entrada y el último tick."
@@ -12411,7 +12414,7 @@ msgid "The price of the contract is automatically calculated by our patented pri
 msgstr "El precio del contrato se calcula automáticamente por nuestra tecnología patentada de fijación de precios de acuerdo con los parámetros que ha definido en el Paso 1. Nuestros precios son comparados con el mercado de opciones interbancario, por lo que siempre obtendrá los precios más competitivos. Esto significa que siempre recibirá precios justos y transparentes, sin importar su posición."
 
 msgid "The price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
-msgstr "El precio del par de divisas indica qué cantidad de la moneda secundaria es necesaria para comprar una unidad de la moneda base. Esto se conoce más comúnmente como el tipo de cambio."
+msgstr "El precio del par de divisas indica qué cantidad de la moneda de cotización es necesaria para comprar una unidad de la moneda base. Esto se conoce más comúnmente como el tipo de cambio."
 
 msgid "The products offered on the %1 website include binary options, contracts for difference (\"CFDs\") and other complex derivatives. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on the website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex products offered, please be sure to understand the risks involved."
 msgstr "Los productos ofrecidos en el sitio web de %1 incluyen opciones binarias, contratos por diferencias (\"CFD\" en inglés) y otros derivados complejos. La operación con opciones binarias puede no ser adecuada para todos. La operación con CFD conlleva un alto nivel de riesgo ya que el apalancamiento puede funcionar tanto en contra como a su favor. Como resultado, los productos ofrecidos en este sitio web pueden no ser adecuados para todos los inversionistas debido al riesgo de perder todo el capital invertido. Nunca debe invertir dinero que no pueda permitirse perder, y nunca debe operar con dinero prestado. Antes de operar con los productos complejos que se ofrecen, asegúrese de comprender los riesgos involucrados."
@@ -14685,7 +14688,7 @@ msgid "You are also expected to help us promote our cutting-edge trading platfor
 msgstr "También se espera que nos ayude a promover nuestra plataforma comercial vanguardista que ha sido una de las más reconocidas en la industria del comercio de opciones binarias durante más de 18 años."
 
 msgid "You are buying the base currency and selling the quote currency."
-msgstr "Usted está comprando la moneda base y vendiendo la moneda secundaria."
+msgstr "Usted está comprando la moneda base y vendiendo la moneda de cotización."
 
 msgid "You are categorised as a professional client."
 msgstr "Está categorizado como un cliente profesional."
@@ -14706,7 +14709,7 @@ msgid "You are responsible for mitigating the risks and abuse that we face from 
 msgstr "Usted es responsable de mitigar los riesgos y abusos a los que nos enfrentamos por fraude y blanqueo de capitales. Para lograr esto, usted debe monitorear, analizar y llevar a cabo diversos controles antifraude y AML en las cuentas y depósitos de los clientes. Se unirá a nuestro equipo en Malta e informará a nuestro Jefe de Pagos."
 
 msgid "You are selling the base currency and buying the quote currency."
-msgstr "Usted está vendiendo la moneda base y comprando la moneda secundaria."
+msgstr "Usted está vendiendo la moneda base y comprando la moneda de cotización."
 
 msgid "You are using a demo account. Please switch to a real account or create one to access Cashier."
 msgstr "Está usando una cuenta demo. Cambie a la real o cree una cuenta real para acceder al Cajero."
@@ -14971,6 +14974,9 @@ msgstr "Usted ganará el pago si el precio del mercado finaliza en el dígito qu
 
 msgid "You won’t be able to trade manually with the same %1 MT5 account once you’ve subscribed to a signal."
 msgstr "No podrá operar manualmente con la misma cuenta %1 MT5 una vez que se haya suscrito a una señal."
+
+msgid "You'll be able to log in to Deriv using your Binary.com credentials."
+msgstr ""
 
 msgid "You'll need to restart your verification on your computer"
 msgstr "Deberá reiniciar la verificación en su computadora"
