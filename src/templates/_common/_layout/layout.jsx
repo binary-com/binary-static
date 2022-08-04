@@ -14,6 +14,7 @@ import GameCloseBannerIom from '../components/game_close_banner_iom.jsx';
 import EuCloseBanner from '../components/eu_close_banner.jsx';
 import EuClosePopup from '../components/eu_close_popup.jsx';
 import RedirectBanner from '../components/EU_UK_redirect_banner.jsx';
+import OmappApi from '../includes/omapp_api.jsx';
 
 export const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
@@ -70,6 +71,7 @@ const Layout = () => {
                 <LiveChat />
                 <GamingClosePopup />
                 <GamingClosePopupIom />
+                <OmappApi />
             </body>
         </html>
     );
