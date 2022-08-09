@@ -2,6 +2,9 @@
   "name": "binary-static",
   "version": "3.8.0",
   "description": "Binary.com static content",
+  "engines": {
+    "node": "^14.17.1"
+  },
   "scripts": {
     "test": "nyc grunt test",
     "livereload": "sudo -p 'enter password for sudo:' grunt livereload",
