@@ -51,7 +51,10 @@ const BinaryPjax = (() => {
     };
 
     const setDataPage = (content, url) => {
-        content.setAttribute('data-page', url.match(/.+\/(.+)\.html.*/)[1]);
+        let filename = url.match(/.+\/(.+)/)[1]; // get path
+        filename = filename.replace(/\.[^/.]+$/, ''); // remove suffix if any
+        filename = filename.replace(/\?.+$/, ''); // remove parameters if any
+        content.setAttribute('data-page', filename);
     };
 
     const handleClick = (event) => {
