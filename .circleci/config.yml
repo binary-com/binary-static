@@ -132,7 +132,7 @@ commands:
           command: |
             cd dist
             npx wrangler pages publish . --project-name=binary-static-pages --branch=staging
-            echo "New staging website - http://staging.cf-pages-binary-static.deriv.com"
+            echo "New staging website - http://staging.cf-pages-binary-static.binary.com"
 
   publish_to_pages_production:
     description: "Publish to cloudflare pages"
@@ -142,7 +142,7 @@ commands:
           command: |
             cd dist
             npx wrangler pages publish . --project-name=binary-static-pages --branch=main
-            echo "New website - http://cf-pages-binary-static.deriv.com"
+            echo "New website - http://cf-pages-binary-static.binary.com"
 jobs:
   test:
     docker:
