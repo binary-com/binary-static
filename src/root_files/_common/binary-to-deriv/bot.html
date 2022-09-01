@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    	<style id="antiClickjack">body{display:none !important;}</style>
+    	<script type="text/javascript">
+    		if (self === top) {
+    			var antiClickjack = document.getElementById("antiClickjack");
+    			antiClickjack.parentNode.removeChild(antiClickjack);
+    		} else {
+    			top.location = self.location;
+    		}
+    	</script>
+	<link rel="apple-touch-icon" sizes="57x57" href="image/binary-style/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="image/binary-style/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="image/binary-style/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="image/binary-style/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="image/binary-style/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="image/binary-style/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="image/binary-style/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="image/binary-style/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="image/binary-style/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="image/binary-style/favicons/favicon-192x192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="image/binary-style/favicons/favicon-160x160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="image/binary-style/favicons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="image/binary-style/favicons/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="image/binary-style/favicons/favicon-32x32.png">
+	<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="referrer" content="origin">
+    <title>Binary Bot</title>
+    <link href="css/bundle-bfd9aa3ef3.css" rel="stylesheet" />    <link rel="stylesheet" href="css/binary.css">
+    <link href="css/bot-a2172c47a0.css" rel="stylesheet" /></head>
+
+<body>
+    <div id="bot-main" class="hidden" style="width: 100%;position: relative;height: 100%;">  
+    <div id="tour"></div>
+    <div id="center"></div>
+    <div id="workspace_center"></div>
+    <span id="limits-dialog"></span>
+    <span id="load-dialog"></span>
+    <span id="save-dialog"></span>
+    <span id="integrations-dialog"></span>
+    <span id="chart-dialog"></span>
+    <span id="trading-view-dialog"></span>
+    <span id="logPanel" class="draggable-dialog" data-i18n-title="Log">
+        <div id="logTable" class="logTable-scroll"></div>
+    </span>
+    <span id="summaryPanel" class="draggable-dialog" data-i18n-title="Summary"></span>
+    <div id="bot-landing-alert-popup" class="bot-landing-alert-popup"></div>
+    <div>
+        <div class="blocker"></div>
+        <div class="reality-check" style="display: none">
+            <h1 data-i18n-text="Reality Check"></h1>
+            <p
+                data-i18n-text="Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis.">
+            </p>
+            <p data-i18n-text="Please specify your preferred reality-check interval in minutes">
+                <input id="realityDuration" interval="1" maxlength="2" value="10">
+            </p>
+            <p id="rc-err" style="display: none;" class="error-msg"
+                data-i18n-text="Please enter a number between 10 to 60."></p>
+            <div>
+                <button bcont="1" class="button" id="continue-trading" data-i18n-text="Continue Trading"></button>
+                <a id="statement-reality-check" class="button-secondary" href="#">
+                    <span data-i18n-text="Statement"></span>
+                </a>
+                <a id="logout-reality-check" class="button-secondary" href="#">
+                    <span data-i18n-text="Log out"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="barspinner dark">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+    <div id="topbar">
+        <div class="right-header show-on-load">
+            <div id="movetoderiv_language_switcher" class="languages">
+              <ul id="display_language">
+                <li class="displaying_language_mtd">
+                  <div class="language_background_flag"></div>
+                  <span class="language actual_flag"></span>
+                  <span class="nav-caret"></span>
+                </li>
+              </ul>
+              <ul id="select_language" class="language_list border_hide_mtd">
+                <li class="hide_lang">
+                  <span class="world world-black"></span>
+                    <span class="language"></span>
+                  <span class="nav-caret"></span>
+                </li>
+                <li id="show_lang" class="en"><img class="language_flag" src="./image/english-flag.png"><div class="language_text">English</div></li>
+                <li id="show_lang" class="es"><img class="language_flag" src="./image/spain-flag.png"><div class="language_text">Español</div></li>
+                <li id="show_lang" class="id"><img class="language_flag" src="./image/indonesia-flag.png"><div class="language_text">Indonesia</div></li>
+                <li id="show_lang" class="pt"><img class="language_flag" src="./image/portugal-flag.png"><div class="language_text">Português</div></li>
+              </ul>
+            </div>
+        </div>
+        <div id="server-status" class="right-header"></div>
+        <a id="contact-us" class="right-header" target="_blank" href="https://www.binary.com/en/contact.html"
+            data-i18n-text="Contact us"></a>
+        <div id="server-time" class="right-header"></div>
+    </div>
+    <div id="header" style="display: none;">
+        <div class="left-header">
+            <div class="logo-wrapper">
+                <a href="https://www.binary.com" target="blank" id="logo">
+                    <div class="logo-parent">
+                        <div class="logo">
+                            <img class="responsive" src="image/binary-style/logo/symbol.svg" alt="Binary logo" />
+                        </div>
+                        <div class="binary-logo-text">
+                            <img class="responsive" src="" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="moving-banner"></div>
+        <div class="dbot-banner eu-hide invisible">
+            <div class="dbot-banner__separator"></div>
+                <div class="dbot-banner__icon any-show invisible">
+                    <a href="https://bot.deriv.com/" target="_blank">
+                        <img src="./image/bbot-to-deriv-banner-en.svg">
+                    </a>    
+                </div>
+                <div class="dbot-banner__icon pt-show invisible">
+                    <a href="https://bot.deriv.com/?l=pt" target="_blank">
+                        <img src="./image/bbot-to-deriv-banner-pt.svg">
+                    </a>    
+                </div>
+        </div>        <div class="right-header show-on-load">
+            <div class="intro-login-logout">
+                <div id="account-list">
+                    <div id="main-logout">
+                        <ul id="main-account" class="nav-menu main-nav">
+                            <li class="account">
+                                <a href="javascript:;">
+                                    <div class="main-account">
+                                        <div class="account-type"></div>
+                                        <div class="account-id"></div>
+                                        <div class="topMenuBalance">&ensp;</div>
+                                    </div>
+                                    <div class="nav-caret"></div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul id="all-accounts" class="nav-menu main-nav">
+                            <li class="account">
+                                <a href="javascript:;">
+                                    <div class="main-account">
+                                        <div class="account-type"></div>
+                                        <div class="account-id"></div>
+                                        <div class="topMenuBalance">&ensp;</div>
+                                    </div>
+                                    <div class="nav-caret"></div>
+                                </a>
+                                <ul>
+                                    <div class="login-id-list"></div>
+                                    <a href="javascript:;" id="btn_logout" class="logout">
+                                        <li id="logout" data-i18n-text="Log out"></li>
+                                    </a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button id="login" data-i18n-text="Log in" />
+            </div>
+        </div>
+    
+    </div>
+   
+    
+    
+    <div id="toolbox" class="actions_menu show-on-load hidden">
+        <button data-i18n-title="Reset the blocks to their initial state" id="resetButton"
+            class="toolbox-button icon-reset"></button>
+        <button data-i18n-title="Load new blocks (xml file)" id="load-xml" class="toolbox-button icon-browse"></button>
+        <button data-i18n-title="Save the existing blocks (xml file)" id="save-xml"
+            class="toolbox-button icon-save"></button>
+        <button data-i18n-title="Connect Binary Bot to your Google Drive to easily save and re-use your blocks"
+            id="integrations" class="toolbox-button icon-integrations invisible"></button>
+    
+        <span class="toolbox-separator"></span>
+        <button data-i18n-title="Undo the changes (Ctrl+Z)" id="undo" class="toolbox-button icon-undo"></button>
+        <button data-i18n-title="Redo the changes (Ctrl+Shift+Z)" id="redo" class="toolbox-button icon-redo"></button>
+    
+        <span class="toolbox-separator"></span>
+        <button data-i18n-title="Zoom In (Ctrl + +)" id="zoomIn" class="toolbox-button icon-zoom-in"></button>
+        <button data-i18n-title="Zoom Out (Ctrl + -)" id="zoomOut" class="toolbox-button icon-zoom-out"></button>
+        <button data-i18n-title="Rearrange Vertically" id="rearrange" class="toolbox-button icon-sort"></button>
+    
+        <span class="toolbox-separator"></span>
+        <button data-i18n-title="Show/hide the summary pop-up" id="showSummary"
+            class="toolbox-button icon-summary"></button>
+        <button data-i18n-title="Run the bot" id="runButton" class="toolbox-button icon-run"></button>
+        <button data-i18n-title="Stop the bot" id="stopButton" class="toolbox-button icon-stop"></button>
+        <button data-i18n-title="Show log" id="logButton" class="toolbox-button icon-info"></button>
+    
+        <span class="toolbox-separator"></span>
+        <button data-i18n-title="Show chart" id="chartButton" class="toolbox-button icon-chart-line"></button>
+        <button data-i18n-title="Show Trading View" id="tradingViewButton"
+            class="toolbox-button icon-trading-view"></button>
+    
+        <span class="toolbox-separator"></span>
+        <button data-i18n-title="Toggle header" id="toggleHeaderButton" class="toolbox-button icon-hide-header"></button>
+    
+        <div id="toolbox-account" class="right-header" style="display: none">
+            <button id="toolbox-login" data-i18n-text="Log in"></button>
+            <div id="toolbox-account-list">
+                <a href="javascript:;">
+                    <ul id="toolbox-main-account" class="nav-menu">
+                        <li class="account-type"></li>
+                        <li class="account-id"></li>
+                        <li class="topMenuBalance"></li>
+                        <li class="nav-caret"></li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    
+    </div>
+    <div id="errorArea"></div>
+    <div id="notification-banner"></div>
+    
+    <ul id="toolbox-all-accounts" class="nav-menu main-nav" style="display: none;">
+        <li>
+            <ul>
+                <div class="login-id-list"></div>
+                <a href="javascript:;" id="toolbox-btn_logout" class="logout">
+                    <li id="toolbox-logout" data-i18n-text="Log out"></li>
+                </a>
+            </ul>
+        </li>
+    </ul>
+    
+    <div id="blocklyArea"></div>
+    
+    <div id="blocklyDiv" style="position: absolute;"></div>
+    
+    <form id="fileUploadForm" style="display: none;">
+        <input data-i18n-title="Open an already saved XML file and retrieve its blocks" type="file" id="files" accept=".xml"
+            multiple />
+    </form>
+    <div id="footer"></div>
+    <audio id="announcement" autostart="false" preload="auto">
+        <source src="sound/announcement.ogg" type="audio/ogg" />
+        <source src="sound/announcement.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="earned-money" autostart="false" preload="auto">
+        <source src="sound/coins.ogg" type="audio/ogg" />
+        <source src="sound/coins.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="job-done" autostart="false" preload="auto">
+        <source src="sound/job-done.ogg" type="audio/ogg" />
+        <source src="sound/job-done.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="error" autostart="false" preload="auto">
+        <source src="sound/out-of-bounds.ogg" type="audio/ogg" />
+        <source src="sound/out-of-bounds.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="severe-error" autostart="false" preload="auto">
+        <source src="sound/i-am-being-serious.ogg" type="audio/ogg" />
+        <source src="sound/i-am-being-serious.mp3" type="audio/mp3" />
+    </audio>
+    <script src="js/bundle-ca910a23e2.js"></script><script src="js/bot-3537fab383.min.js"></script>    <div id='elevio-shell' class='invisible'>
+        <span class='text'></span>
+        <span class='icon'>
+            <svg viewBox="0 0 74.2 74.2">
+                <g>
+                    <path d="M37.1,74.2C16.7,74.2,0,57.6,0,37.1S16.7,0,37.1,0s37.1,16.7,37.1,37.1S57.6,74.2,37.1,74.2z M37.1,4.8C19.3,4.8,4.8,19.3,4.8,37.1c0,17.8,14.5,32.3,32.3,32.3s32.3-14.5,32.3-32.3C69.4,19.3,54.9,4.8,37.1,4.8z"/>
+                    <g>
+                        <path id="XMLID_17_" d="M29.4,22.7c1.9-2.1,4.6-3.1,8-3.1c3.1,0,5.6,0.9,7.5,2.6s2.8,4,2.8,6.7c0,1.7-0.3,3-1,4 c-0.7,1-2.1,2.6-4.2,4.6c-1.5,1.5-2.5,2.7-3,3.7c-0.3,0.7-0.5,1.5-0.6,2.6c-0.1,1.1-1,1.9-2.1,1.9h0c-1.2,0-2.2-1-2.1-2.3 c0.1-1.2,0.4-2.3,0.7-3.1c0.5-1.4,1.7-2.9,3.6-4.7l1.9-1.9c0.6-0.5,1-1.1,1.4-1.7c0.6-1,1-2.1,1-3.2c0-1.5-0.5-2.9-1.4-4 c-0.9-1.1-2.5-1.7-4.6-1.7c-2.7,0-4.5,1-5.5,2.9c-0.4,0.7-0.7,1.7-0.8,2.8c-0.1,1-1,1.8-2.1,1.8h0c-1.3,0-2.3-1.1-2.1-2.4 C27.1,26.2,28,24.3,29.4,22.7z M36.9,49.7L36.9,49.7c1.3,0,2.3,1,2.3,2.3v0.2c0,1.3-1,2.3-2.3,2.3h0c-1.3,0-2.3-1-2.3-2.3V52 C34.5,50.7,35.6,49.7,36.9,49.7z" className="st0"/>
+                    </g>
+                </g>
+            </svg>
+        </span>
+    </div>    <!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P97C2DZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) -->    <div class="notifyjs-corner" style="bottom: 0px; right: 0px;"></div>
+    <div class="notifyjs-corner" style="bottom: 0px; left: 0px;"></div>
+    </div>
+</body>
+
+</html>

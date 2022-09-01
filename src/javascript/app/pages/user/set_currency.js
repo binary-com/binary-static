@@ -163,16 +163,28 @@ const SetCurrency = (() => {
             const $display_name = $('<span/>', {
                 text: Currency.getCurrencyName(c) || c,
                 ...(/^UST$/.test(c) && {
-                    'data-balloon'       : localize('Tether Omni (USDT) is a version of Tether that\'s pegged to USD and is built on the Bitcoin blockchain.'),
+                    'data-balloon': localize(
+                        'Tether as an Omni token (USDT) is a version of Tether that is hosted on the Omni layer on the Bitcoin blockchain.'
+                    ),
                     'data-balloon-length': 'medium',
                     'data-balloon-pos'   : 'top',
-                    'class'              : 'show-mobile',
+                    class                : 'show-mobile',
                 }),
                 ...(/^eUSDT/.test(c) && {
-                    'data-balloon'       : localize('Tether ERC20 (eUSDT) is a version of Tether that\'s pegged to USD and is hosted on the Ethereum platform.'),
+                    'data-balloon': localize(
+                        'Tether as an ERC20 token (eUSDT) is a version of Tether that is hosted on Ethereum.'
+                    ),
                     'data-balloon-length': 'medium',
                     'data-balloon-pos'   : 'top',
-                    'class'              : 'show-mobile',
+                    class                : 'show-mobile',
+                }),
+                ...(/^tUSDT/.test(c) && {
+                    'data-balloon': localize(
+                        'Tether as a TRC20 token (tUSDT) is a version of Tether that is hosted on Tron.'
+                    ),
+                    'data-balloon-length': 'medium',
+                    'data-balloon-pos'   : 'top',
+                    class                : 'show-mobile',
                 }),
             });
 

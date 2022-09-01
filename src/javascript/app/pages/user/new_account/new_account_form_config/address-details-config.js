@@ -22,7 +22,7 @@ const getAddressDetailsConfig = ({ account_settings, is_svg }) => [
         supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
         default_value: account_settings.address_city || '',
         rules        : [
-            'req',
+            'req', 'address_city',
             ['regular', { regex: /^[a-zA-Z\s\W'.-]{1,35}$/ }],
         ],
     },

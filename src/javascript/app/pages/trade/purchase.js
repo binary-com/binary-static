@@ -102,47 +102,49 @@ const Purchase = (() => {
                     authorization_error_btn_login.removeEventListener('click', loginOnClick);
                     authorization_error_btn_login.addEventListener('click', loginOnClick);
                 } else {
-                    BinarySocket.wait('get_account_status').then(response => {
-                        confirmation_error.setVisibility(1);
-                        let message = error.message;
-                        if (/NoMFProfessionalClient/.test(error.code)) {
-                            const account_status = getPropertyValue(response, ['get_account_status', 'status']) || [];
-                            const has_professional_requested = account_status.includes('professional_requested');
-                            const has_professional_rejected  = account_status.includes('professional_rejected');
-                            if (has_professional_requested) {
-                                message = localize('Your application to be treated as a professional client is being processed.');
-                            } else if (has_professional_rejected) {
-                                const message_text = `${localize('Your professional client request is [_1]not approved[_2].', ['<strong>', '</strong>'])}<br />${localize('Please reapply once the required criteria has been fulfilled.')}<br /><br />${localize('More information can be found in an email sent to you.')}`;
-                                const button_text  = localize('I want to reapply');
-
-                                message = prepareConfirmationErrorCta(message_text, button_text, true);
-                            } else {
-                                const message_text = localize('In the EU, financial binary options are only available to professional investors.');
-                                const button_text  = localize('Apply now as a professional investor');
-
-                                message = prepareConfirmationErrorCta(message_text, button_text);
+                    confirmation_error.setVisibility(1);
+                    let message = error.message;
+                    if (/CompanyWideLimitExceeded/i.test(error.code)) {
+                        const redirect = '<a href="https://www.binary.com/en/terms-and-conditions.html?anchor=trading-limits#legal-binary" target="_blank" rel="noopener noreferrer">';
+                        const redirect_close = '</a>';
+                        message = localize('No further trading is allowed on this contract type for the current trading session. For more info, refer to our [_1]terms and conditions[_2].',[redirect, redirect_close]);
+                    } else {
+                        BinarySocket.wait('get_account_status').then(response => {
+                            if (/NoMFProfessionalClient/.test(error.code)) {
+                                const account_status = getPropertyValue(response, ['get_account_status', 'status']) || [];
+                                const has_professional_requested = account_status.includes('professional_requested');
+                                const has_professional_rejected  = account_status.includes('professional_rejected');
+                                if (has_professional_requested) {
+                                    message = localize('Your application to be treated as a professional client is being processed.');
+                                } else if (has_professional_rejected) {
+                                    const message_text = `${localize('Your professional client request is [_1]not approved[_2].', ['<strong>', '</strong>'])}<br />${localize('Please reapply once the required criteria has been fulfilled.')}<br /><br />${localize('More information can be found in an email sent to you.')}`;
+                                    const button_text  = localize('I want to reapply');
+                                    message = prepareConfirmationErrorCta(message_text, button_text, true);
+                                } else {
+                                    const message_text = localize('In the EU, financial binary options are only available to professional investors.');
+                                    const button_text  = localize('Apply now as a professional investor');
+                                    message = prepareConfirmationErrorCta(message_text, button_text);
+                                }
+                            } else if (/RestrictedCountry/.test(error.code)) {
+                                let additional_message = '';
+                                if (/FinancialBinaries/.test(error.code)) {
+                                    additional_message = localize('Try our [_1]Synthetic Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=synthetic-indices#range-of-markets')}" >`, '</a>']);
+                                } else if (/Random/.test(error.code)) {
+                                    additional_message = localize('Try our other markets.');
+                                }
+                                message = `${error.message}. ${additional_message}`;
+                            } else if (/ClientUnwelcome/.test(error.code) && /gb/.test(Client.get('residence'))) {
+                                if (!Client.hasAccountType('real') && Client.get('is_virtual')) {
+                                    message = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the [_3]UK Gambling[_4] Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>', '<strong>', '</strong>']);
+                                } else if (Client.hasAccountType('real') && /^virtual|iom$/i.test(Client.get('landing_company_shortcode'))) {
+                                    message = localize('Account access is temporarily limited. Please check your inbox for more details.');
+                                } else {
+                                    message = error.message;
+                                }
                             }
-                        } else if (/RestrictedCountry/.test(error.code)) {
-                            let additional_message = '';
-                            if (/FinancialBinaries/.test(error.code)) {
-                                additional_message = localize('Try our [_1]Synthetic Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=synthetic-indices#range-of-markets')}" >`, '</a>']);
-                            } else if (/Random/.test(error.code)) {
-                                additional_message = localize('Try our other markets.');
-                            }
-
-                            message = `${error.message}. ${additional_message}`;
-                        } else if (/ClientUnwelcome/.test(error.code) && /gb/.test(Client.get('residence'))) {
-                            if (!Client.hasAccountType('real') && Client.get('is_virtual')) {
-                                message = localize('Please complete the [_1]Real Account form[_2] to verify your age as required by the [_3]UK Gambling[_4] Commission (UKGC).', [`<a href='${urlFor('new_account/realws')}'>`, '</a>', '<strong>', '</strong>']);
-                            } else if (Client.hasAccountType('real') && /^virtual|iom$/i.test(Client.get('landing_company_shortcode'))) {
-                                message = localize('Account access is temporarily limited. Please check your inbox for more details.');
-                            } else {
-                                message = error.message;
-                            }
-                        }
-
-                        CommonFunctions.elementInnerHtml(confirmation_error, message);
-                    });
+                        });
+                    }
+                    CommonFunctions.elementInnerHtml(confirmation_error, message);
                 }
             }
         } else {

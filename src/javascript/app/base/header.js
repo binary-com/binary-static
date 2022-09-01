@@ -429,7 +429,7 @@ const Header = (() => {
                 tnc                        : () => Client.shouldAcceptTnc(),
                 unwelcome                  : () => hasStatus('unwelcome_status'),
                 withdrawal_locked_review   : () => hasStatus('withdrawal_locked') && get_account_status.risk_classification === 'high' && !is_fully_authenticated && authentication.document.status === 'pending',
-                withdrawal_locked          : () => (hasStatus('withdrawal_locked') && !hasStatus('only_pa_withdrawals_allowed')) || hasStatus('withdrawal_locked_status'),
+                withdrawal_locked          : () => (hasStatus('withdrawal_locked') && !hasStatus('only_pa_p2p_withdrawals_allowed')) || hasStatus('withdrawal_locked_status'),
                 disabled                   : () => hasStatus('disabled_status'),
                 financial_risk_approval    : () => hasStatus('ASK_FINANCIAL_RISK_APPROVAL'),
                 ask_uk_funds_protection    : () => hasStatus('ASK_UK_FUNDS_PROTECTION'),

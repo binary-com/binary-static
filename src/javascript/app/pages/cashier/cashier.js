@@ -192,14 +192,14 @@ const Cashier = (() => {
             { lock: 'withdrawal_locked', selectors: [withdraw] },
             { lock: 'no_withdrawal_or_trading', selectors: [withdraw] },
             { lock: 'unwelcome', selectors: [deposit] },
-            { lock: 'only_pa_withdrawals_allowed', selectors: [withdraw] },
+            { lock: 'only_pa_p2p_withdrawals_allowed', selectors: [withdraw] },
         ];
         statuses_to_check.forEach(item => {
             if (status.includes(item.lock)) {
                 item.selectors.forEach(selector => setBtnDisable(selector));
             }
         });
-        if (status.includes('only_pa_withdrawals_allowed')){
+        if (status.includes('only_pa_p2p_withdrawals_allowed')){
             $('.pa_withdraw').removeClass('button-disabled').click(false);
         }
     };

@@ -77,9 +77,14 @@ const AccountOpening = (() => {
     const showResponseError = (response) => {
         getElementById('loading').setVisibility(0);
         getElementById('real_account_wrapper').setVisibility(1);
+        const error_message = response.error.message;
+        let client_error_message = null;
+        if (response.error.code.message_to_client){
+            client_error_message = response.error.code.message_to_client;
+        }
         const $notice_box = $('#client_message').find('.notice-msg');
         $('#submit-message').empty();
-        $notice_box.text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : response.error.message).end()
+        $notice_box.text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : (error_message || client_error_message)).end()
             .setVisibility(1);
         $.scrollTo($notice_box, 500, { offset: -150 });
     };
@@ -293,9 +298,13 @@ const AccountOpening = (() => {
     const handleNewAccount = (response, message_type) => {
         if (response.error) {
             const error_message = response.error.message;
+            let client_error_message = null;
+            if (response.error.code.message_to_client){
+                client_error_message = response.error.code.message_to_client;
+            }
             const $notice_box    = $('#client_message').find('.notice-msg');
             $('#submit-message').empty();
-            $notice_box.text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : error_message).end()
+            $notice_box.text(response.msg_type === 'sanity_check' ? localize('There was some invalid character in an input field.') : (error_message || client_error_message)).end()
                 .setVisibility(1);
             $.scrollTo($notice_box, 500, { offset: -150 });
         } else {
@@ -333,7 +342,7 @@ const AccountOpening = (() => {
             { selector: '#date_of_birth',               validations: ['req'] },
             { selector: '#address_line_1',              validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
             { selector: '#address_line_2',              validations: ['address', ['length', { min: 0, max: 70 }]] },
-            { selector: '#address_city',                validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
+            { selector: '#address_city',                validations: ['req', 'address_city', ['length', { min: 1, max: 35 }]] },
             { selector: '#address_state',               validations: [residence === 'au' ? 'req' : '', $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]]] },
             { selector: '#address_postcode',            validations: [residence === 'gb' || State.getResponse('authorize.upgradeable_landing_companies').some(lc => lc === 'iom') ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',                       validations: ['req', 'phone', ['length', { min: 9, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },

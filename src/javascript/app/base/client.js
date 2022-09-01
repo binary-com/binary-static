@@ -137,7 +137,8 @@ const Client = (() => {
                 redirection(response);
             });
         } else {
-            redirection(response);
+            // for non-binary domains adding a delay for redirection to prevent NS_BINDING_ABORTED error in firefox.
+            setTimeout(() => {  redirection(response); }, 500);
         }
     };
 

@@ -280,7 +280,7 @@ const PaymentAgentWithdraw = (() => {
 
             const get_account_status = State.getResponse('get_account_status');
             if (/(withdrawal|cashier)_locked/.test(get_account_status.status)) {
-                if (!/only_pa_withdrawals_allowed/.test(get_account_status.status)){
+                if (!/only_pa_p2p_withdrawals_allowed/.test(get_account_status.status)){
                     showPageError('', 'withdrawal-locked-error');
                     return;
                 }

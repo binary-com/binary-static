@@ -13,9 +13,9 @@ const IPHistoryUI = (() => {
         const browser      = data.browser;
         let browser_string = browser ? `${browser.name} v${browser.version}` : 'Unknown';
         if (browser && browser.app) {
-            browser_string += ` ${browser.app} app`;
+            browser_string = ` ${browser.name} ${browser.app} v/${browser.version}`;
         }
-        const patt         = /(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium|Binary app|Android|iPhone|Dart) v[0-9.]+(\b.*DP2P app)?$/i;
+        const patt         = /(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium|Binary app|Android|iPhone|Dart)(\b.*(Deriv GO|Deriv P2P))? v(\/)?[0-9.+]+$/i;
         if (!patt.test(browser_string) && browser_string !== 'Unknown') {
             browser_string = 'Error';
         }
