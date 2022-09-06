@@ -66,7 +66,7 @@ const OrderExecution = () => (
         <ul className='bullet'>
             <li>{it.L('GBE Brokers Ltd')}</li>
             <li>{it.L('TopFX Ltd')}</li>
-            <li>{it.L('Prime Brokerage Services Limited')}</li>
+            <li>{it.L('Global Pop Liquidity Solutions Ltd')}</li>
             <li>{it.L('Exclusive Markets Ltd')}</li>
             <li>{it.L('GC Exchange Limited')}</li>
         </ul>
