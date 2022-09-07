@@ -65,8 +65,8 @@ const OrderExecution = () => (
         <p>{it.L('When executing client orders using the A-book model, the Company directs the client\'s trade to one of its liquidity providers, namely:')}</p>
         <ul className='bullet'>
             <li>{it.L('GBE Brokers Ltd')}</li>
-            <li>{it.L('TopFX Ltd')}</li>
-            <li>{it.L('Prime Brokerage Services Limited')}</li>
+            <li>{it.L('Fondex Limited ')}</li>
+            <li>{it.L('Global Pop Liquidity Solutions Ltd')}</li>
             <li>{it.L('Exclusive Markets Ltd')}</li>
             <li>{it.L('GC Exchange Limited')}</li>
         </ul>
