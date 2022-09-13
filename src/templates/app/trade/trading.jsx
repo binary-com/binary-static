@@ -7,6 +7,7 @@ import DerivBanner from '../../_common/components/deriv_banner.jsx';
 const Trading = () => (
     <React.Fragment>
         <div id='trading_socket_container'>
+            <div id='redirect-loading' className='redirect-loader' />
             <DerivBanner />
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />

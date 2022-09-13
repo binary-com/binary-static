@@ -33,6 +33,7 @@ const EuCloseBanner = require('../common/eu_close_baner');
 const CloseBanner  = require('../common/game_close_banner');
 const RedirectBanner = require('../common/redirect_banner');
 const DerivBanner = require('../common/deriv_banner');
+const { removeLoadingImage } = require('../../_common/utility');
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
 
@@ -48,6 +49,7 @@ const Page = (() => {
     };
 
     const onDocumentReady = () => {
+      
         // LocalStorage can be used as a means of communication among
         // different windows. The problem that is solved here is what
         // happens if the user logs out or switches loginid in one
@@ -83,7 +85,33 @@ const Page = (() => {
         });
     };
 
+    const contentCheckPlaceholder =  {
+        show: () => {
+            contentCheckPlaceholder.hide();
+
+            const placeholder_container = $('<div id="content-placeholder-container"/>');
+
+            placeholder_container.css({
+                'position'  : 'fixed',
+                'top'       : '0px',
+                'left'      : '0px',
+                'z-index'   : '99999',
+                'width'     : '100vw',
+                'height'    : '100vh',
+                'background': '#ffffff',
+            });
+
+            $('body').append(placeholder_container);
+        },
+        hide: ()=> {
+            $('#content-placeholder-container').remove();
+        },
+    };
+
     const onLoad = () => {
+        // Added a container layer to avoid showing any page before the redirection check is done.
+        contentCheckPlaceholder.show();
+
         if (State.get('is_loaded_by_pjax')) {
             Url.reset();
             updateLinksURL('#content');
@@ -127,6 +155,10 @@ const Page = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
+                contentCheckPlaceholder.hide();
+                setTimeout(() => {
+                    removeLoadingImage();
+                }, 1000);
                 RealityCheck.onLoad();
                 Menu.init();
                 const is_uk_residence = (Client.get('residence') === 'gb' || State.getResponse('website_status.clients_country') === 'gb');
