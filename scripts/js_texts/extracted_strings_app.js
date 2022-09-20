@@ -625,7 +625,6 @@ module.exports = [
     'Th',
     'Thank you',
     'Thank you for signing up! Please check your email to complete the registration process.',
-    'Thank you, we\'ll get back to you within 24 hours',
     'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.',
     'The identification documents you submitted have expired. Please submit valid identity documents to unlock Cashier.',
     'The investor password of account number [_1] has been changed.',
