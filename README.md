@@ -148,3 +148,5 @@ git push origin staging_v20191010_0
 ## Manage translations
 - Automatic: this will be done automatically with [Github action](.github/workflows/sync_crowdin_translations.md)
 - Manual: If you need to add translation manually use [manual translation doc](scripts/README.md#Updating-the-translations)
+
+
