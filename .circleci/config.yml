@@ -8,9 +8,9 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - source-v1-{{ .Branch }}-{{ .Revision }}
-            - source-v1-{{ .Branch }}-
-            - source-v1-
+            - source-tib-{{ .Branch }}-{{ .Revision }}
+            - source-tib-{{ .Branch }}-
+            - source-tib-
       - run: 
           name: Fetch git tags 
           command: |
@@ -27,7 +27,7 @@ commands:
           name: Compress git objects 
           command: git gc
       - save_cache:
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          key: source-tib-{{ .Branch }}-{{ .Revision }}
           paths:
             - ".git"
   npm_install:
@@ -35,13 +35,13 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - node-{{ checksum "package-lock.json" }}
-            - node-
+            - node-tib-{{ checksum "package-lock.json" }}
+            - node-tib-
       - run:
           name: Install npm packages
           command: npm install
       - save_cache:
-          key: node-{{ checksum "package-lock.json" }}
+          key: node-tib-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
   test:
