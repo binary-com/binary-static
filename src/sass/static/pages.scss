@@ -638,6 +638,11 @@ body #_elev_io {
     .margin-top-17 {
         margin-top: 17px;
     }
+    .regulatory-images {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 .tour-content#content {
