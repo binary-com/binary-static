@@ -65,7 +65,7 @@ const Authenticate = (() => {
         const language            = getLanguage();
         const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
         const $not_authenticated  = $('#not_authenticated');
-        const link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
+        const link = Url.urlForCurrentDomain(`https://static.deriv.com/legacy/marketing/authentication/Authentication_Process${language_based_link}.pdf`);
 
         $not_authenticated.setVisibility(1);
 
@@ -107,7 +107,7 @@ const Authenticate = (() => {
         const language               = getLanguage();
         const language_based_link    = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
         const $not_authenticated_uns = $('#not_authenticated_uns');
-        const link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
+        const link = Url.urlForCurrentDomain(`https://static.deriv.com/legacy/marketing/authentication/Authentication_Process${language_based_link}.pdf`);
 
         $not_authenticated_uns.find('.learn_more').setVisibility(1).find('a').attr('href', link);
 
