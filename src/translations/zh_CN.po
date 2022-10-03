@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-09-26 04:56\n"
+"PO-Revision-Date: 2022-10-03 04:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -3020,6 +3020,9 @@ msgstr "公司的义务"
 msgid "Company's rights"
 msgstr "公司权利"
 
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
+
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "投资者补偿计划下的补偿"
 
@@ -3755,14 +3758,14 @@ msgstr "模拟账户"
 msgid "Demo CFDs"
 msgstr "演示差价合约"
 
+msgid "Demo Derived"
+msgstr ""
+
 msgid "Demo Financial"
 msgstr "演示金融"
 
 msgid "Demo Financial STP"
 msgstr "演示金融 STP"
-
-msgid "Demo Synthetic"
-msgstr "演示综合"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "演示账户没有付款代理服务。"
@@ -3824,8 +3827,8 @@ msgstr "存款：%1天"
 msgid "Deposit: Instant"
 msgstr "存款：实时"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "MetaTrader 5账户总是通过二元期权账户存款和提款 。"
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr ""
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "到期的存款和/或付款将定时以客户从DIEL指定币种中选择的货币进行."
@@ -3940,6 +3943,12 @@ msgstr "衍生工具"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "衍生投资工具（如二元期权和相关市场）的波动性很大。二元期权所涉及的基础工具价格可能会快速起伏，且幅度很大，很可能出现客户和 %1 皆无法控制的突发事件或状况变化。"
+
+msgid "Derived"
+msgstr ""
+
+msgid "Derived Account"
+msgstr ""
 
 msgid "Description"
 msgstr "说明"
@@ -5093,9 +5102,6 @@ msgstr "金融信息"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "无论是新手还是经验丰富的交易员，都有适合其交易策略的平台。"
 
-msgid "Find out more"
-msgstr "查找更多信息"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我们提供的每个差价合约资产的成本和详细信息。"
 
@@ -5131,6 +5137,9 @@ msgstr "选择头寸参数..."
 
 msgid "First-class client service."
 msgstr "一流的客户服务。"
+
+msgid "Fixed spreads"
+msgstr ""
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "解决问题并提供改进建议。"
@@ -7065,6 +7074,9 @@ msgstr "杠杆能够以现有资本进行更大头寸交易。"
 msgid "Leverage up to %1"
 msgstr "杠杆率高达%1"
 
+msgid "Leverage up to 1:1000"
+msgstr ""
+
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，客户将能够持有比保证金高出 50 倍的交易头寸。当客户投资一种杠杆产品时，客户的盈利或亏损将根据杠杆的头寸计算，也就是说，客户为账户设置的杠杆比率决定了其交易增加/扩大数值。"
 
@@ -8472,6 +8484,9 @@ msgstr "我们的差价合约账户适用于新手和经验丰富的交易者。
 msgid "Our Company"
 msgstr "我们公司"
 
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr ""
+
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "MT5 服务器暂时不能用。正在修复中。请于数分钟后重试。"
 
@@ -9576,6 +9591,9 @@ msgstr "开立真实账户"
 msgid "Real CFDs"
 msgstr "真实差价合约"
 
+msgid "Real Derived"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "房地产"
 
@@ -9587,9 +9605,6 @@ msgstr "真实金融 STP"
 
 msgid "Real Money Account Opening"
 msgstr "开立真实资金账户"
-
-msgid "Real Synthetic"
-msgstr "真实综合"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "政治公众人士(PEP) 不可使用真实账户。"
@@ -13450,11 +13465,11 @@ msgstr "转移自"
 msgid "Transfer funds between your real money accounts."
 msgstr "在真实资金账户间转移资金。"
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "把资金从 MetaTrader 5 账户转移到二元期权账户︰"
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr ""
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "把资金从二元期权账户转移到 MetaTrader 5 账户︰"
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr ""
 
 msgid "Transfer funds to a payment agent"
 msgstr "将资金转予付款代理"

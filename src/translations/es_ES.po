@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-09-21 11:51\n"
+"PO-Revision-Date: 2022-10-03 04:37\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -3020,6 +3020,9 @@ msgstr "Obligaciones de la Empresa"
 msgid "Company's rights"
 msgstr "Derechos de la Empresa"
 
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
+
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "Compensación de acuerdo con el Esquema de Compensación de Inversores"
 
@@ -3755,14 +3758,14 @@ msgstr "Cuentas de prueba"
 msgid "Demo CFDs"
 msgstr "Demo de CFD"
 
+msgid "Demo Derived"
+msgstr ""
+
 msgid "Demo Financial"
 msgstr "Financiera demo"
 
 msgid "Demo Financial STP"
 msgstr "Financiera STP demo"
-
-msgid "Demo Synthetic"
-msgstr "Sintética demo"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "Las cuentas virtuales no cuentan con servicios de Agente de pago."
@@ -3824,8 +3827,8 @@ msgstr "Depósito: %1 día"
 msgid "Deposit: Instant"
 msgstr "Depósito: Instantáneo"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "Los depósitos y retiros de su cuenta MetaTrader 5 siempre pasan por su cuenta de opciones binarias."
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr ""
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "Los depósitos y/o pagos vencidos deben hacerse en la divisa elegida por el cliente entre las que DIEL especifica de manera periódica."
@@ -3940,6 +3943,12 @@ msgstr "Derivativo"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "Los instrumentos derivados de inversión como las opciones binarias y los mercados relacionados pueden ser altamente volátiles. Los precios del instrumento subyacente al que una Opción Binaria hace referencia pueden fluctuar rápidamente y con amplios márgenes, y pueden reflejar eventos imprevisibles o cambios en las condiciones, ninguno de los cuales puede ser controlado por cliente o por %1."
+
+msgid "Derived"
+msgstr ""
+
+msgid "Derived Account"
+msgstr ""
 
 msgid "Description"
 msgstr "Descripción"
@@ -5093,9 +5102,6 @@ msgstr "Información financiera"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "Encuentre una plataforma de trading que se adecue a su experiencia y a la estrategia que prefiera, ya sea un operador principiante o experimentado."
 
-msgid "Find out more"
-msgstr "Obtenga más información"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "Averigüe más sobre los costos y detalles de cada activo CFD que ofrecemos."
 
@@ -5131,6 +5137,9 @@ msgstr "Primero, defina su posición..."
 
 msgid "First-class client service."
 msgstr "Servicio al cliente de primera calidad."
+
+msgid "Fixed spreads"
+msgstr ""
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "Arreglar problemas y proporcionar comentarios para mejorar."
@@ -7064,6 +7073,9 @@ msgstr "El apalancamiento le permite operar un volumen más grande con su capita
 msgid "Leverage up to %1"
 msgstr "Apalancamiento hasta %1"
 
+msgid "Leverage up to 1:1000"
+msgstr ""
+
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "El apalancamiento, en el contexto de la operación de margen, se refiere al uso del margen para aumentar/amplificar el valor de una operación. El apalancamiento se expresa como un ratio. Un apalancamiento de 50:1, por ejemplo, significa que el cliente podría entrar en una posición comercial que es 50 veces más alta que su margen. Cuando el cliente invierte en un producto apalancado, sus ganancias o pérdidas se basan en la posición apalancada, es decir, el valor aumentado/amplificado de su operación determinado en base a la relación de apalancamiento que se establezca para su cuenta."
 
@@ -8471,6 +8483,9 @@ msgstr "Nuestra cuenta de CFD es adecuada tanto para nuevos traders como para ex
 msgid "Our Company"
 msgstr "Nuestra empresa"
 
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr ""
+
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "Nuestros servidores MT5 no están disponibles temporalmente. Estamos trabajando para restaurarlos. Vuelva a intentarlo en unos minutos."
 
@@ -9575,6 +9590,9 @@ msgstr "Apertura de cuenta Real"
 msgid "Real CFDs"
 msgstr "Real de CFD"
 
+msgid "Real Derived"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "Propiedad"
 
@@ -9586,9 +9604,6 @@ msgstr "Financiera STP real"
 
 msgid "Real Money Account Opening"
 msgstr "Abra una Cuenta de Dinero Real"
-
-msgid "Real Synthetic"
-msgstr "Sintética real"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "Las cuentas reales no están disponibles para personas expuestas políticamente (PEP)."
@@ -13448,11 +13463,11 @@ msgstr "Transferir desde"
 msgid "Transfer funds between your real money accounts."
 msgstr "Transfiera fondos entre sus cuentas de dinero real."
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "Transferir fondos desde su cuenta MetaTrader 5 a su cuenta de opciones binarias."
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr ""
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "Transferir fondos desde su cuenta de opciones binarias a su cuenta MetaTrader 5."
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr ""
 
 msgid "Transfer funds to a payment agent"
 msgstr "Transferir fondos a un agente de pagos"

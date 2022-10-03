@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-09-26 04:56\n"
+"PO-Revision-Date: 2022-10-03 04:37\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -3019,6 +3019,9 @@ msgstr "公司的義務"
 msgid "Company's rights"
 msgstr "公司權利"
 
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
+
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "投資者補償計劃下的補償"
 
@@ -3754,14 +3757,14 @@ msgstr "示範帳戶"
 msgid "Demo CFDs"
 msgstr "示範差價合約"
 
+msgid "Demo Derived"
+msgstr ""
+
 msgid "Demo Financial"
 msgstr "示範金融"
 
 msgid "Demo Financial STP"
 msgstr "示範金融 STP"
-
-msgid "Demo Synthetic"
-msgstr "示範綜合"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "示範帳戶沒有付款代理服務。"
@@ -3823,8 +3826,8 @@ msgstr "存款：%1天"
 msgid "Deposit: Instant"
 msgstr "存款：即時"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "MetaTrader 5 帳戶總是通過二元期權帳戶存款和提款 。"
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr ""
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "到期的存款和/或付款將定時以客戶從DIEL指定幣種中選擇的貨幣進行."
@@ -3939,6 +3942,12 @@ msgstr "衍生工具"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "衍生投資工具如二元期權和相關市場的波動性很大。二元期權所涉及的基礎工具價格可能會快速起伏，且幅度很大，很可能反映出一些客戶或 %1 皆無法控制的不可預測事件或狀況變遷。"
+
+msgid "Derived"
+msgstr ""
+
+msgid "Derived Account"
+msgstr ""
 
 msgid "Description"
 msgstr "描述"
@@ -4955,7 +4964,7 @@ msgid "Fairly and accurately describe the Agent's services to the clients."
 msgstr "公正準確地向客戶描述代理的服務."
 
 msgid "Fake links often contain the word that looks like \"Binary\" but look out for these differences."
-msgstr "假連結通常包含類似「Binry」的單詞，但請注意這些差異。"
+msgstr "假連結通常包含類似「Binary」的單詞，但請注意這些差異。"
 
 msgid "Familiarity with Git"
 msgstr "熟悉 Git"
@@ -5092,9 +5101,6 @@ msgstr "財務資訊"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "無論是新手還是經驗豐富的交易員，都有適合您的交易策略的平台-。"
 
-msgid "Find out more"
-msgstr "了解更多訊息"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我們提供的每個差價合約資產的成本和詳細資料。"
 
@@ -5130,6 +5136,9 @@ msgstr "選擇頭寸參數..."
 
 msgid "First-class client service."
 msgstr "一流的客戶服務。"
+
+msgid "Fixed spreads"
+msgstr ""
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "解決問題並提供改進建議。"
@@ -7063,6 +7072,9 @@ msgstr "槓桿使您能夠以現有資本進行更大頭寸交易。"
 msgid "Leverage up to %1"
 msgstr "槓桿率高達%1"
 
+msgid "Leverage up to 1:1000"
+msgstr ""
+
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "融資融券交易中，槓桿指使用保證金增加/擴大交易數值。槓桿的表達方式是比率。舉個例子，如果槓桿是50: 1，客戶將能夠持有比保證金高出 50 倍的交易頭寸。當客戶投資一種槓桿產品時，其盈利或虧損將根據槓桿的頭寸計算，也就是說，客戶為帳戶設定的槓桿比率決定了其交易增加/擴大數值。"
 
@@ -8470,6 +8482,9 @@ msgstr "我們的差價合約帳戶適用于新手和經驗豐富的交易者。
 msgid "Our Company"
 msgstr "我們公司"
 
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr ""
+
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "MT5 伺服器暫時不能用。正在修復中。請於數分鐘後重試。"
 
@@ -9574,6 +9589,9 @@ msgstr "開立真實帳戶"
 msgid "Real CFDs"
 msgstr "真實差價合約"
 
+msgid "Real Derived"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "房地產"
 
@@ -9585,9 +9603,6 @@ msgstr "真實金融 STP"
 
 msgid "Real Money Account Opening"
 msgstr "開立真實資金帳戶"
-
-msgid "Real Synthetic"
-msgstr "真實綜合"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "政治公眾人士(PEP) 不可使用真實帳戶。"
@@ -13447,11 +13462,11 @@ msgstr "轉自"
 msgid "Transfer funds between your real money accounts."
 msgstr "在真實資金帳戶間轉匯資金。"
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "把資金從MetaTrader 5帳戶轉匯到二元期權帳戶︰"
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr ""
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "把資金從二元期權帳戶轉匯到MetaTrader 5帳戶︰"
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr ""
 
 msgid "Transfer funds to a payment agent"
 msgstr "將資金轉予付款代理"

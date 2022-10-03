@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-09-26 04:56\n"
+"PO-Revision-Date: 2022-10-03 04:37\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -3019,6 +3019,9 @@ msgstr "Обязательства Компании"
 msgid "Company's rights"
 msgstr "Права Компании"
 
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
+
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "Компенсации в рамках Схемы Компенсации инвесторам"
 
@@ -3754,14 +3757,14 @@ msgstr "Демо-счета"
 msgid "Demo CFDs"
 msgstr "Демо CFD"
 
+msgid "Demo Derived"
+msgstr ""
+
 msgid "Demo Financial"
 msgstr "Демо Финансовый"
 
 msgid "Demo Financial STP"
 msgstr "Демо Финансовый STP"
-
-msgid "Demo Synthetic"
-msgstr "Демо Синтетический"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "Услуги платежных агентов недоступны на демо-счетах."
@@ -3823,8 +3826,8 @@ msgstr "Пополнение: %1 дн."
 msgid "Deposit: Instant"
 msgstr "Пополнения: Мгновенно"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "Пополнение и вывод средств со счёта MetaTrader 5 всегда осуществляется через счёт на бинарных опционах."
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr ""
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "Пополнение счёта и любые причитающиеся платежи должны быть выполнены в валюте, выбранной клиентом из списка, периодически предоставляемого DIEL."
@@ -3939,6 +3942,12 @@ msgstr "Производные"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "Производные инвестиционные инструменты, такие как бинарные опционы и смежные рынки, могут быть весьма нестабильными. Цены на базовые инструменты, на которых происходит торговля бинарными опционами, могут быстро и в широких пределах колебаться, а также подвергаться воздействию непредсказуемых событий или изменений в условиях, не зависящих от клиента или %1."
+
+msgid "Derived"
+msgstr ""
+
+msgid "Derived Account"
+msgstr ""
 
 msgid "Description"
 msgstr "Описание"
@@ -5093,9 +5102,6 @@ msgstr "Финансовая информация"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "Найдите торговую платформу, которая соответствует вашему опыту и выбранной стратегии, независимо от того, являетесь вы опытным трейдером или новичком."
 
-msgid "Find out more"
-msgstr "Узнать больше"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "Получите информацию о цене и параметрах каждого нашего актива для CFD."
 
@@ -5131,6 +5137,9 @@ msgstr "Сначала определите параметры контракт�
 
 msgid "First-class client service."
 msgstr "Первоклассная служба поддержки клиентов."
+
+msgid "Fixed spreads"
+msgstr ""
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "Решение проблем и предоставление отзывов для улучшения рабочих процессов."
@@ -7064,6 +7073,9 @@ msgstr "Кредитное плечо дает вам возможность о�
 msgid "Leverage up to %1"
 msgstr "Кредитное плечо до %1"
 
+msgid "Leverage up to 1:1000"
+msgstr ""
+
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "Кредитное плечо в контексте маржинальной торговли означает использование маржи для увеличения стоимости контракта. Кредитное плечо выражается в виде соотношения. Например, кредитное плечо 50:1 означает, что клиент сможет открыть позицию, которая в 50 раз превышает маржу клиента. При инвестициях в продукт с кредитным плечом прибыль или убыток клиента основаны на позиции с большой долей заёмных средств, то есть увеличенная стоимость контракта клиента определяется на основе коэффициента кредитного плеча, который клиент установил на своем счете."
 
@@ -8471,6 +8483,9 @@ msgstr "Счет CFD подходит для опытных трейдеров �
 msgid "Our Company"
 msgstr "Наша компания"
 
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr ""
+
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "Наши серверы MT5 временно недоступны. Мы работаем над их восстановлением. Пожалуйста, попробуйте еще раз через несколько минут."
 
@@ -9575,6 +9590,9 @@ msgstr "Открытие реального счета"
 msgid "Real CFDs"
 msgstr "Реальный CFD"
 
+msgid "Real Derived"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "Недвижимость"
 
@@ -9586,9 +9604,6 @@ msgstr "Реальный Финансовый STP"
 
 msgid "Real Money Account Opening"
 msgstr "Открытие реального счета"
-
-msgid "Real Synthetic"
-msgstr "Реальный Синтетический"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "Реальные счета недоступны для политически значимых лиц (ПЗЛ)."
@@ -13448,11 +13463,11 @@ msgstr "Перевести со счёта"
 msgid "Transfer funds between your real money accounts."
 msgstr "Перевод средств между реальными счетами."
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "Переведите средства со счёта MetaTrader 5 на счёт для бинарных опционов."
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr ""
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "Переведите средства со счёта на бинарных опционах на счёт MetaTrader 5."
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr ""
 
 msgid "Transfer funds to a payment agent"
 msgstr "Перевод средств платежному агенту"
