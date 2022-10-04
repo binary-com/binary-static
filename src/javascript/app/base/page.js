@@ -1,38 +1,39 @@
-const Cookies          = require('js-cookie');
-const moment           = require('moment');
-const Client           = require('./client');
-const Contents         = require('./contents');
-const Header           = require('./header');
-const Footer           = require('./footer');
-const Menu             = require('./menu');
-const BinarySocket     = require('./socket');
-const TrafficSource    = require('../common/traffic_source');
-const RealityCheck     = require('../pages/user/reality_check/reality_check');
-const Elevio           = require('../../_common/base/elevio');
-const Login            = require('../../_common/base/login');
-const ClientBase       = require('../../_common/base/client_base');
-const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
-const getElementById   = require('../../_common/common_functions').getElementById;
-const Crowdin          = require('../../_common/crowdin');
-const GTM              = require('../../_common/gtm');
-const Language         = require('../../_common/language');
-const PushNotification = require('../../_common/lib/push_notification');
-const localize         = require('../../_common/localize').localize;
-const isMobile         = require('../../_common/os_detect').isMobile;
-const LocalStore       = require('../../_common/storage').LocalStore;
-const State            = require('../../_common/storage').State;
-const scrollToTop      = require('../../_common/scroll').scrollToTop;
-const toISOFormat      = require('../../_common/string_util').toISOFormat;
-const Url              = require('../../_common/url');
-const createElement    = require('../../_common/utility').createElement;
-const isLoginPages     = require('../../_common/utility').isLoginPages;
-const isProduction     = require('../../config').isProduction;
-const ClosePopup = require('../common/game_close_popup');
-const EuClosePopup = require('../common/eu_close_popup');
-const EuCloseBanner = require('../common/eu_close_baner');
-const CloseBanner  = require('../common/game_close_banner');
-const RedirectBanner = require('../common/redirect_banner');
-const DerivBanner = require('../common/deriv_banner');
+const Cookies                = require('js-cookie');
+const moment                 = require('moment');
+const Client                 = require('./client');
+const Contents               = require('./contents');
+const Header                 = require('./header');
+const Footer                 = require('./footer');
+const Menu                   = require('./menu');
+const BinarySocket           = require('./socket');
+const TrafficSource          = require('../common/traffic_source');
+const RealityCheck           = require('../pages/user/reality_check/reality_check');
+const Login                  = require('../../_common/base/login');
+const ClientBase             = require('../../_common/base/client_base');
+const elementInnerHtml       = require('../../_common/common_functions').elementInnerHtml;
+const getElementById         = require('../../_common/common_functions').getElementById;
+const Crowdin                = require('../../_common/crowdin');
+const GTM                    = require('../../_common/gtm');
+const Language               = require('../../_common/language');
+const PushNotification       = require('../../_common/lib/push_notification');
+const localize               = require('../../_common/localize').localize;
+const isMobile               = require('../../_common/os_detect').isMobile;
+const LocalStore             = require('../../_common/storage').LocalStore;
+const State                  = require('../../_common/storage').State;
+const scrollToTop            = require('../../_common/scroll').scrollToTop;
+const toISOFormat            = require('../../_common/string_util').toISOFormat;
+const Url                    = require('../../_common/url');
+const createElement          = require('../../_common/utility').createElement;
+const isLoginPages           = require('../../_common/utility').isLoginPages;
+const isProduction           = require('../../config').isProduction;
+const WarningScamMessage     = require('../pages/user/warning_scam_message');
+const ClosePopup             = require('../common/game_close_popup');
+const EuClosePopup           = require('../common/eu_close_popup');
+const EuCloseBanner          = require('../common/eu_close_baner');
+const CloseBanner            = require('../common/game_close_banner');
+const RedirectBanner         = require('../common/redirect_banner');
+const DerivBanner            = require('../common/deriv_banner');
+const { removeLoadingImage } = require('../../_common/utility');
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
 
@@ -41,7 +42,6 @@ const Page = (() => {
         State.set('is_loaded_by_pjax', false);
         GTM.init();
         Url.init();
-        Elevio.init();
         PushNotification.init();
         onDocumentReady();
         Crowdin.init();
@@ -97,10 +97,7 @@ const Page = (() => {
                     // TODO: uncomment below to enable interview popup dialog
                     // InterviewPopup.onLoad();
                 }
-                if (url_query_strings['data-elevio-article']) {
-                    Elevio.injectElevio();
-                }
-
+                
                 // Handle opening livechat via URL
                 const is_livechat_open = url_query_strings.is_livechat_open === 'true';
 
@@ -127,8 +124,13 @@ const Page = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
+                setTimeout(() => {
+                    removeLoadingImage();
+                }, 1000);
                 RealityCheck.onLoad();
                 Menu.init();
+                const is_brazil_client = State.getResponse('website_status.clients_country') === 'br';
+                const read_scam_message = localStorage.getItem('read_scam_message') || false;
                 const is_uk_residence = (Client.get('residence') === 'gb' || State.getResponse('website_status.clients_country') === 'gb');
                 const is_iom_client = (Client.get('residence') === 'im' || State.getResponse('website_status.clients_country') === 'im');
                 const is_be_client = (Client.get('residence') === 'be' || State.getResponse('website_status.clients_country') === 'be') && Client.hasAccountType('gaming');
@@ -136,6 +138,7 @@ const Page = (() => {
                 const mlt_check = ClientBase.get('landing_company_shortcode') === 'malta';
                 const mf_check = ClientBase.get('landing_company_shortcode') === 'maltainvest';
                 const virtual_account = Client.get('landing_company_shortcode') === 'virtual';
+                if (is_brazil_client && !read_scam_message) { WarningScamMessage.has_read_warning_scam_message(); }
                 if (!is_iom_client || is_uk_residence && !Client.hasAccountType('gaming') || mf_check || mlt_check) RedirectBanner.loginOnLoad();
                 if (is_uk_residence && Client.hasAccountType('gaming')) {
                     CloseBanner.onLoad();

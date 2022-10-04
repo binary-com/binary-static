@@ -173,14 +173,14 @@ const Purchase = (() => {
 
             const potential_profit_value = payout_value ? formatMoney(currency, payout_value - cost_value) : undefined;
 
-            CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
+            CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p id="contract_purchase_cost--amount">${formatMoney(currency, cost_value)}</p>`);
             if (isLookback(contract_type)) {
-                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
+                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p id="contract_purchase_payout--amount">${formula}</p>`);
                 profit.setVisibility(0);
             } else {
                 profit.setVisibility(1);
-                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
-                CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${potential_profit_value}</p>`);
+                CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p id="contract_purchase_payout--amount">${formatMoney(currency, payout_value)}</p>`);
+                CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p id="contract_purchase_profit--amount">${potential_profit_value}</p>`);
             }
 
             updateValues.updateContractBalance(receipt.balance_after);

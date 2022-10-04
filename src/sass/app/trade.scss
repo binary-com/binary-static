@@ -537,6 +537,13 @@
                 background-color: rgba(204, 0, 0, 0.1);
             }
         }
+        #contract_purchase_cost, #contract_purchase_payout, #contract_purchase_profit, #contract_purchase_loss {
+            @media screen and (max-width: 375px) {
+                &--amount {
+                    font-size: 4vw;
+                }
+            }
+        }
         #contract_purchase_payout {
             border-right: 1px solid $COLOR_GRAY;
         }

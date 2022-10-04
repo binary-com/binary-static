@@ -305,7 +305,6 @@ const Home = () => {
                                     header={it.L('Cryptocurrencies*')}
                                     text={it.L('Cryptocurrency pairs including Bitcoin, Ethereum, and Litecoin.')}
                                     image='images/pages/home/trade/crypto.svg'
-                                    footnote={it.L('*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd.')}
                                 />
                             </TabContent>
                             <TabContent id='cfds'>

@@ -92,6 +92,12 @@ body.ES {
     }
 }
 
+body.ES, body.PT {
+    .ui-accordion .ui-accordion-icons {
+        padding-right: 1em;
+    }
+}
+
 body.RU {
     #frm_verify_email button {
         font-size: $FONT_SIZE_XS;

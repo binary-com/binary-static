@@ -21,12 +21,6 @@ const LoggedIn = () => (
             <meta name='referrer' content='origin' />
         </head>
         <body>
-            <div id='header-binary'>
-                <a href={it.url_for('/')}>
-                    <img id='symbol-logo' src={it.url_for('images/logo/symbol.svg')} alt='' />
-                    <img id='type-logo' src={it.url_for('images/logo/type.svg')} alt='Binary.com' />
-                </a>
-            </div>
             <div id='content-holder'>
                 <div id='content'>
                     <div id='login_loading'>

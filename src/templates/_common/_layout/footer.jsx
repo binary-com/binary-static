@@ -52,7 +52,7 @@ const Footer = () => (
                                     { text: it.L('Binary.com in Numbers'),  href: it.url_for('binary-in-numbers') },
                                     { text: it.L('Careers'),                href: it.deriv_career_url ,                   target: '_blank' },
                                     { text: it.L('Patents'),                href: it.url_for('legal/us_patents') },
-                                    { text: it.L('Contact Us'),             href: it.url_for('contact') },
+                                    { text: it.L('Contact Us'),             href: 'https://deriv.com/help-centre' },
                                 ]}
                             />
 

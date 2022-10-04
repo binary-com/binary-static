@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-08-29 09:58\n"
+"PO-Revision-Date: 2022-10-03 08:34\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -538,9 +538,6 @@ msgstr "（四）结算的可能性"
 msgid "(e) Size and nature"
 msgstr "（五）大小和性质"
 
-msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
-msgstr "*加密货币对不适用于在 Deriv (V) 有限公司注册的 DMT5 金融账户。"
-
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
 
@@ -822,6 +819,9 @@ msgstr "具敏锐眼光, 可确定营销的新趋势, 评估新技术, 并确保
 
 msgid "A lifelong interest in accounting, and an aptitude for numbers"
 msgstr "对会计极感兴趣，愿意终身投入其中，以及对数字具备高敏感性"
+
+msgid "A link can contain the word \"Binary\" and still be fake."
+msgstr "链接可能包含 “Binary” 一词，但仍然是假的。"
 
 msgid "A list of accepted payment methods"
 msgstr "可接受的付款方式列表"
@@ -2152,6 +2152,9 @@ msgstr "BetOnMarkets.com 于1999年推出，目前营业额达10亿美元"
 msgid "Betting system and method"
 msgstr "博彩系统和方法"
 
+msgid "Beware of the fake links."
+msgstr "当心虚假链接。"
+
 msgid "Bid"
 msgstr "出价"
 
@@ -2809,8 +2812,8 @@ msgstr "客户同意遵守本公司为验证此条款是否合规而提出的合
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "客户也被告知，如果客户提供错误的信息，其权利可能会受到损害，因为公司无法以客户的最佳利益行事。"
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. This company does not offer CFDs on cryptocurrencies. %1 is not available in the Republic of Vanuatu."
-msgstr "全球其他地区的客户 (不包括某些国家如美国、加拿大、香港) 可在 Deriv (V) 有限公司开设外汇和差价合约 Metatrader 5 账户。公司不提供加密货币的差价合约。%1在瓦努阿图不能使用。"
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
+msgstr "全球其他地区的客户 (不包括某些国家如美国、加拿大、香港) 可在 Deriv (V) 有限公司开设外汇和差价合约 Metatrader 5 账户。%1在瓦努阿图不能使用。"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
 msgstr "全球其他地区的客户 (不包括某些国家如美国、加拿大和香港) 可在 Deriv (SVG) 有限责任公司开设账户。"
@@ -3016,6 +3019,9 @@ msgstr "公司的义务"
 
 msgid "Company's rights"
 msgstr "公司权利"
+
+msgid "Compare MetaTrader 5 accounts"
+msgstr "比较 MetaTrader 5 账户"
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "投资者补偿计划下的补偿"
@@ -3752,14 +3758,14 @@ msgstr "模拟账户"
 msgid "Demo CFDs"
 msgstr "演示差价合约"
 
+msgid "Demo Derived"
+msgstr "演示衍生资产"
+
 msgid "Demo Financial"
 msgstr "演示金融"
 
 msgid "Demo Financial STP"
 msgstr "演示金融 STP"
-
-msgid "Demo Synthetic"
-msgstr "演示综合"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "演示账户没有付款代理服务。"
@@ -3821,8 +3827,8 @@ msgstr "存款：%1天"
 msgid "Deposit: Instant"
 msgstr "存款：实时"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "MetaTrader 5账户总是通过二元期权账户存款和提款 。"
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr "MT5 账户总是通过二元期权账户存款和提款 。"
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "到期的存款和/或付款将定时以客户从DIEL指定币种中选择的货币进行."
@@ -3937,6 +3943,12 @@ msgstr "衍生工具"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "衍生投资工具（如二元期权和相关市场）的波动性很大。二元期权所涉及的基础工具价格可能会快速起伏，且幅度很大，很可能出现客户和 %1 皆无法控制的突发事件或状况变化。"
+
+msgid "Derived"
+msgstr "衍生资产"
+
+msgid "Derived Account"
+msgstr "衍生账户"
 
 msgid "Description"
 msgstr "说明"
@@ -4055,8 +4067,14 @@ msgstr "多样化"
 msgid "Divorce Settlement"
 msgstr "离婚协议"
 
+msgid "Do not get lured to fake \"Binary\" pages!"
+msgstr "不要被引诱前往虚假的 “Binary” 页面！"
+
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "疲惫或受酒精影响时不要交易。"
+
+msgid "Do not trust and give away your credentials on fake websites, ads or emails."
+msgstr "不要信任虚假网站、广告或电子邮件并泄露凭证。"
 
 msgid "Do you manage a social media page that's dedicated to online trading? Partner with us and convert your audience into potential profit."
 msgstr "是否在管理专门用于网上交易的社交媒体页面？请与我们合作，将您的受众转成潜在利润。"
@@ -4625,6 +4643,9 @@ msgstr "例如:"
 msgid "Example: XAU/USD (Gold vs US dollar) symbol pair"
 msgstr "例如：黄金/美元（黄金兑美元）符号对"
 
+msgid "Examples"
+msgstr "例如"
+
 msgid "Excellent English language skills, both oral and written"
 msgstr "优秀的英语口语和书写技能"
 
@@ -4943,6 +4964,9 @@ msgstr "以透明的方式向客户公平准确地描述Binary的业务和服务
 msgid "Fairly and accurately describe the Agent's services to the clients."
 msgstr "公正准确地向客户描述代理的服务."
 
+msgid "Fake links often contain the word that looks like \"Binary\" but look out for these differences."
+msgstr "虚假链接通常包含类似 “Biary” 的单词，但要注意这些区别。"
+
 msgid "Familiarity with Git"
 msgstr "熟悉 Git"
 
@@ -5078,9 +5102,6 @@ msgstr "金融信息"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "无论是新手还是经验丰富的交易员，都有适合其交易策略的平台。"
 
-msgid "Find out more"
-msgstr "查找更多信息"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我们提供的每个差价合约资产的成本和详细信息。"
 
@@ -5117,6 +5138,9 @@ msgstr "选择头寸参数..."
 msgid "First-class client service."
 msgstr "一流的客户服务。"
 
+msgid "Fixed spreads"
+msgstr "固定利差"
+
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "解决问题并提供改进建议。"
 
@@ -5143,6 +5167,9 @@ msgstr "与部门主管一起跟进纠正措施的建议和时间表"
 
 msgid "Follow, comply, and implement with all business-related directions, policies, and procedures of the Company as amended or re-enacted or replaced from time to time."
 msgstr "跟踪、遵守和执行经修订或重新制订或随时更换的公司所有与业务有关的指示、政策和程序."
+
+msgid "Fondex Limited "
+msgstr "Fondex 有限公司 "
 
 msgid "Food Services"
 msgstr "饮食服务"
@@ -5458,6 +5485,9 @@ msgstr "2018年全球品牌大奖"
 
 msgid "Global Brands Magazine"
 msgstr "全球品牌杂志"
+
+msgid "Global Pop Liquidity Solutions Ltd"
+msgstr "Global Pop 流动性解决方案有限公司"
 
 msgid "Glossary"
 msgstr "术语表"
@@ -5843,6 +5873,9 @@ msgstr "我很感兴趣"
 msgid "I'm no longer interested in trading."
 msgstr "我对交易不再感兴趣。"
 
+msgid "I've read the above carefully."
+msgstr "我已经仔细阅读了以上内容。"
+
 msgid "I. Trading"
 msgstr "九、交易"
 
@@ -6010,6 +6043,9 @@ msgstr "如果申请人成功被公司录取聘用，申请人的资料将被保
 
 msgid "If the bid price is 1.05229, you'll buy 1.05229 USD for every 1 EUR you sell."
 msgstr "如果卖价是1.05229，那么每卖出1欧元就会买入1.05229美元。"
+
+msgid "If the client account has been locked or suspended and has not recorded any transactions for a period of twelve months or more, the Company reserves the right to rescind the client account funds."
+msgstr "如果客户账户已被锁定或暂停，并且在十二个月或更长时间内没有任何交易记录，公司保留撤销客户账户资金的权利。"
 
 msgid "If the client agrees with a DRC’s decision, the client will need to accept it within 4 weeks. If the client does not respond to the DRC’s decision within 4 weeks, the complaint is considered closed."
 msgstr "如果客户同意 DRC 的决定，则需要在14天内接受。如果没有在14天内回应 DRC 的决定，则该投诉将被视为已结案。"
@@ -7037,6 +7073,9 @@ msgstr "杠杆能够以现有资本进行更大头寸交易。"
 
 msgid "Leverage up to %1"
 msgstr "杠杆率高达%1"
+
+msgid "Leverage up to 1:1000"
+msgstr "杠杆率高达 1: 1000"
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，客户将能够持有比保证金高出 50 倍的交易头寸。当客户投资一种杠杆产品时，客户的盈利或亏损将根据杠杆的头寸计算，也就是说，客户为账户设置的杠杆比率决定了其交易增加/扩大数值。"
@@ -8169,6 +8208,9 @@ msgstr "OAuth 应用程序 ID"
 msgid "OK"
 msgstr "确定"
 
+msgid "OK, got it"
+msgstr "好，明白了"
+
 msgid "OMG/USD"
 msgstr "嫩模币/美元"
 
@@ -8294,6 +8336,9 @@ msgstr "ID 号(%1) 只允许字母、数字、空格、下划线和连字符。"
 
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "只允许字母、空格、连字符、句号和省略号。"
+
+msgid "Only log in to your account at this secure link, never elsewhere."
+msgstr "只能通过此安全链接登录账户，切勿在其他地方登录。"
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "每人只能开立一个账户。使用假名开立账户或属于同一客户的多个账户不能提取款项和/或退款。"
@@ -8438,6 +8483,9 @@ msgstr "我们的差价合约账户适用于新手和经验丰富的交易者。
 
 msgid "Our Company"
 msgstr "我们公司"
+
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr "公司的衍生账户允许客户对衍生指数进行差价交易 - 这是公司专有的衍生资产，可模拟市场力量。"
 
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "MT5 服务器暂时不能用。正在修复中。请于数分钟后重试。"
@@ -9228,9 +9276,6 @@ msgstr "价格/定价数据"
 msgid "Primary"
 msgstr "小学"
 
-msgid "Prime Brokerage Services Limited"
-msgstr "Prime Brokerage Services 有限公司"
-
 msgid "Prior to placing an Order, which results in opening a position, the client acknowledges that it is their responsibility to ensure that their Account Free Margin is sufficient to cover the Margin required in relation to the opening of the position (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "下单开盘交易前，客户确认确保其账户可用保证金足以支付开盘交易所须的保证金（\"要求保证金\"），并持续满足保证金要求是客户的责任。"
 
@@ -9546,6 +9591,9 @@ msgstr "开立真实账户"
 msgid "Real CFDs"
 msgstr "真实差价合约"
 
+msgid "Real Derived"
+msgstr "真实衍生资产"
+
 msgid "Real Estate"
 msgstr "房地产"
 
@@ -9557,9 +9605,6 @@ msgstr "真实金融 STP"
 
 msgid "Real Money Account Opening"
 msgstr "开立真实资金账户"
-
-msgid "Real Synthetic"
-msgstr "真实综合"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "政治公众人士(PEP) 不可使用真实账户。"
@@ -10911,6 +10956,9 @@ msgstr "综合"
 msgid "Synthetics Account"
 msgstr "综合账户"
 
+msgid "Synthetics, Basket indices"
+msgstr ""
+
 msgid "System Administrator"
 msgstr "系统管理员"
 
@@ -11108,9 +11156,6 @@ msgstr "谢谢您的注册！请查看邮件以完成注册程序。"
 
 msgid "Thank you for your interest in partnering with us. We've made it easy for you to apply online. Just fill out the %1online application form%2 with all necessary details. If you are already registered as a %3 affiliate, you can email us at %4 instead. We will contact you directly if your application is successful."
 msgstr "谢谢您对我们的合作感兴趣。可以轻松在网上申请。只需填写 %1在线申请表%2 并输入所有必要的细节。如果已经注册为 %3 联盟会员，可以给我们发送电子邮件到 %4 。申请批准后，我们将直接与您联系。"
-
-msgid "Thank you, we'll get back to you within 24 hours"
-msgstr "谢谢，我们会在24小时内回复"
 
 msgid "That contravenes any laws, regulations, instruments, ordinances, or rules that govern the operation of any exchange, financial market, or financial regulatory environment"
 msgstr "违反任何管制任何交易所、金融市场或金融监管环境运作的法律、规例、文书、条例或规则"
@@ -11742,6 +11787,9 @@ msgstr "DRC 可能会要求客户或公司提供其他信息，所需信息必�
 msgid "The DRC will decide on the complaint (it should be noted that the DRC mentions no timeframe for announcing its decision)."
 msgstr "DRC 将对投诉做出决定（请注意，DRC 不会提及其宣布决定的时间表）。"
 
+msgid "The Derived account allows you to trade contracts for difference (CFDs) on synthetics that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr ""
+
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "域名系统 (DNS) 允许通过方便使用的 web 地址 (如 %1) 而不是复杂的 IP 地址访问网站。"
 
@@ -11947,9 +11995,6 @@ msgstr "价差可由公司全权酌情决定更改。客户确认，虽然公司
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "适用于客户MT5真实账户的强制平仓水平可能与公司网站公布的默认强制平仓水平不一样。"
 
-msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr "综合账户让您以最低真实市场波动率进行差价合约综合指数交易。全年无休，全天候交易，公平审计由第三方独立机构监控。"
-
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "系统管理团队负责维护、配置和可靠运行我们的计算机软件、硬件和网络。"
 
@@ -12030,6 +12075,9 @@ msgstr "上述条款不适用于任何信息，范围包括"
 
 msgid "The clauses above shall not apply in its entirety to any Introducing Brokers who are contracted to provide Introducing Broker services with Deriv Investments (Europe) Limited."
 msgstr "上述条款完全不适用于任何与Deriv 投资（欧洲）有限公司签约提供推介经纪服务的推介经纪。"
+
+msgid "The client account funds will be rescinded if the client account has been inactive for 30 days with an account balance of USD/AUD/EUR/GBP1 or less."
+msgstr "如果客户账户已闲置 30 天且账户余额为 1 美元/澳元/欧元/英镑或更少，账户资金将被撤销。"
 
 msgid "The client acknowledges and accepts that a trade may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body, or any other organisation involved in the execution, clearing, and/or settlement of the said trade. Should any such organisation take decisions or measures which affect a trade or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) that it, at its sole discretion, considers reasonable. "
 msgstr "客户确认并接受交易必须受到由法律、规则、规定、习俗和参与该交易执行、结算和（或）结清的交易所、市场、结算所、交易机构或任何其他组织的做法规定的的市场规则。如果任何此类机构采取影响交易或持仓头寸的决定或措施，公司有权自行决定采取任何公司认为合理的行动（包括替客户开盘或收盘）。 "
@@ -13153,9 +13201,6 @@ msgstr "充值错误"
 msgid "Top-up successful"
 msgstr "充值成功"
 
-msgid "TopFX Ltd"
-msgstr "TopFX 有限公司"
-
 msgid "Total"
 msgstr "总计"
 
@@ -13423,11 +13468,11 @@ msgstr "转移自"
 msgid "Transfer funds between your real money accounts."
 msgstr "在真实资金账户间转移资金。"
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "把资金从 MetaTrader 5 账户转移到二元期权账户︰"
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr "把资金从 MT5 账户转移到二元期权账户︰"
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "把资金从二元期权账户转移到 MetaTrader 5 账户︰"
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr "把资金从二元期权账户转移到 MT5 账户︰"
 
 msgid "Transfer funds to a payment agent"
 msgstr "将资金转予付款代理"
@@ -14956,6 +15001,9 @@ msgstr "资金只可在法定账户和加密货币账户之间转移."
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "可以为每种受支持的加密货币开立专用账户。"
 
+msgid "You may see links to websites with a fake Binary login page where you’ll get scammed for your money. "
+msgstr "您可能会看到带有虚假 Binary 登录页面的网站链接，资金可能会通过这些链接被骗取。 "
+
 msgid "You must also submit a proof of address."
 msgstr "还必须提交地址证明。"
 
@@ -15120,12 +15168,6 @@ msgstr "由于尚未设置 30 天交易限额，您已被暂时禁用收银台�
 
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "此时账户不需要验证。%1如果将来需要验证，我们会通知您。"
-
-msgid "Your account funds will be rescinded if your account has been inactive for 30 days with an account balance of USD/AUD/EUR/GBP1 or less."
-msgstr "如果账户已闲置 30 天且账户余额为 1 美元/澳元/欧元/英镑或更少，账户资金将被撤销。"
-
-msgid "Your account funds will be rescinded if your account has been locked or has not recorded any transactions for a period of more than twelve months."
-msgstr "如果账户被锁定或超过十二个月没有记录任何交易，账户资金将被撤销。"
 
 msgid "Your account has been verified successfully"
 msgstr "账户已通过验证"

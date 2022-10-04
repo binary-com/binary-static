@@ -13,6 +13,7 @@ import GameCloseBanner from '../components/game_close_banner.jsx';
 import GameCloseBannerIom from '../components/game_close_banner_iom.jsx';
 import EuCloseBanner from '../components/eu_close_banner.jsx';
 import EuClosePopup from '../components/eu_close_popup.jsx';
+import WarningScamMessage from '../../app/user/warning_scam_message.jsx';
 import RedirectBanner from '../components/EU_UK_redirect_banner.jsx';
 
 export const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
@@ -50,6 +51,7 @@ const Layout = () => {
         <html>
             <Head />
             <body className={it.language}>
+                <div id='redirect-loading' className='redirect-loader' />
                 <div id='msg_notification' className='notice-msg center-text' />
                 <div id='page-wrapper'>
                     <Header />
@@ -70,6 +72,7 @@ const Layout = () => {
                 <LiveChat />
                 <GamingClosePopup />
                 <GamingClosePopupIom />
+                <WarningScamMessage />
             </body>
         </html>
     );

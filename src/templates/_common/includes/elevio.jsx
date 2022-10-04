@@ -2,7 +2,7 @@
 import React from 'react';
 
 const Elevio = () => (
-    <React.Fragment>
+    <a href="https://deriv.com/help-centre">
         <div id='elevio-shell'>
             <span className='text'>
                 {it.L('NEED HELP?')}
@@ -18,6 +18,6 @@ const Elevio = () => (
                 </svg>
             </span>
         </div>
-    </React.Fragment>
+    </a>
 );
 export default Elevio;

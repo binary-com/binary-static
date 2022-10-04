@@ -9,12 +9,12 @@ const updatePurchaseStatus = (final_price, pnl, profit, localized_contract_statu
     const $profit  = $('#contract_purchase_profit');
     const currency = Client.get('currency');
 
-    $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { html: formatMoney(currency, Math.abs(pnl)) })));
-    $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { html: formatMoney(currency, final_price) })));
+    $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { html: formatMoney(currency, Math.abs(pnl)) }).attr('id','contract_purchase_payout--amount')));
+    $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { html: formatMoney(currency, final_price) }).attr('id','contract_purchase_cost--amount')));
     if (!final_price) {
-        $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { html: formatMoney(currency, pnl) })));
+        $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { html: formatMoney(currency, pnl) }).attr('id','contract_purchase_loss--amount')));
     } else {
-        $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { html: formatMoney(currency, profit) })));
+        $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { html: formatMoney(currency, profit) }).attr('id','contract_purchase_profit--amount')));
         updateContractBalance(Client.get('balance'));
     }
 };

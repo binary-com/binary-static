@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-08-29 09:58\n"
+"PO-Revision-Date: 2022-10-03 08:34\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -538,9 +538,6 @@ msgstr "(d) Вероятность одобрения"
 msgid "(e) Size and nature"
 msgstr "(e) Размер и свойства"
 
-msgid "*Cryptocurrency pairs are not available for DMT5 Financial accounts registered with Deriv (V) Ltd."
-msgstr "*Криптовалютные пары недоступны для финансовых счетов DMT5, зарегистрированных в Deriv (V) Ltd."
-
 msgid "0 – 19.999%"
 msgstr "0 – 19.999%"
 
@@ -822,6 +819,9 @@ msgstr "Способность различать и определять нов
 
 msgid "A lifelong interest in accounting, and an aptitude for numbers"
 msgstr "Большой интерес к бухгалтерии и хорошие математические способности"
+
+msgid "A link can contain the word \"Binary\" and still be fake."
+msgstr "Ссылка может содержать слово \"Binary\" и все равно быть ложной."
 
 msgid "A list of accepted payment methods"
 msgstr "список применимых платёжных методов,"
@@ -2152,6 +2152,9 @@ msgstr "BetOnMarkets.com достигает оборота в 1 миллиард
 msgid "Betting system and method"
 msgstr "Система и методы ставок"
 
+msgid "Beware of the fake links."
+msgstr "Остерегайтесь ложных ссылок."
+
 msgid "Bid"
 msgstr "Бид"
 
@@ -2809,8 +2812,8 @@ msgstr "Клиенты соглашаются выполнять разумны�
 msgid "Clients are also advised that their rights may be prejudiced if they provide the wrong information as the Company would not be in a position to act in their best interests."
 msgstr "Клиентам следует помнить, что их права могут быть затронуты в случае предоставления ложной информации, так как Компания не сможет действовать в их лучших интересах."
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. This company does not offer CFDs on cryptocurrencies. %1 is not available in the Republic of Vanuatu."
-msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли на Forex и CFD на платформе Metatrader 5 будут открыты в рамках компании Deriv (V) Ltd. Эта компания не предлагает CFD на криптовалютах. Услуги %1 не действуют в Вануату. "
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
+msgstr "Счета клиентов из других стран мира (за исключением США, Канады и Гонконга) для торговли FX и CFD на платформе Metatrader 5 будут открыты в компании Deriv (V) Ltd. Услуги %1 недоступны в Вануату."
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
 msgstr "Счета для клиентов из других стран мира (за исключением США, Канады и Гонконга) будут открыты в компании Deriv (SVG) LLC."
@@ -3015,6 +3018,9 @@ msgstr "Обязательства Компании"
 
 msgid "Company's rights"
 msgstr "Права Компании"
+
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "Компенсации в рамках Схемы Компенсации инвесторам"
@@ -3751,14 +3757,14 @@ msgstr "Демо-счета"
 msgid "Demo CFDs"
 msgstr "Демо CFD"
 
+msgid "Demo Derived"
+msgstr ""
+
 msgid "Demo Financial"
 msgstr "Демо Финансовый"
 
 msgid "Demo Financial STP"
 msgstr "Демо Финансовый STP"
-
-msgid "Demo Synthetic"
-msgstr "Демо Синтетический"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "Услуги платежных агентов недоступны на демо-счетах."
@@ -3820,8 +3826,8 @@ msgstr "Пополнение: %1 дн."
 msgid "Deposit: Instant"
 msgstr "Пополнения: Мгновенно"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "Пополнение и вывод средств со счёта MetaTrader 5 всегда осуществляется через счёт на бинарных опционах."
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr ""
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "Пополнение счёта и любые причитающиеся платежи должны быть выполнены в валюте, выбранной клиентом из списка, периодически предоставляемого DIEL."
@@ -3936,6 +3942,12 @@ msgstr "Производные"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "Производные инвестиционные инструменты, такие как бинарные опционы и смежные рынки, могут быть весьма нестабильными. Цены на базовые инструменты, на которых происходит торговля бинарными опционами, могут быстро и в широких пределах колебаться, а также подвергаться воздействию непредсказуемых событий или изменений в условиях, не зависящих от клиента или %1."
+
+msgid "Derived"
+msgstr ""
+
+msgid "Derived Account"
+msgstr ""
 
 msgid "Description"
 msgstr "Описание"
@@ -4054,8 +4066,14 @@ msgstr "Разнообразие"
 msgid "Divorce Settlement"
 msgstr "Раздел имущества"
 
+msgid "Do not get lured to fake \"Binary\" pages!"
+msgstr "Не ведитесь на ложные страницы \"Binary\"!"
+
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "Не торгуйте, когда вы устали или находитесь в состоянии алкогольного опьянения."
+
+msgid "Do not trust and give away your credentials on fake websites, ads or emails."
+msgstr "Не доверяйте и не вводите свои учетные данные на ложных сайтах, в объявлениях или электронных письмах."
 
 msgid "Do you manage a social media page that's dedicated to online trading? Partner with us and convert your audience into potential profit."
 msgstr "У вас есть страница в соц сетях, посвященная онлайн-трейдингу? Станьте нашим партнером и превратите посетителей вашей страницы в источник дохода."
@@ -4624,6 +4642,9 @@ msgstr "Пример:"
 msgid "Example: XAU/USD (Gold vs US dollar) symbol pair"
 msgstr "Рассмотрим пример: пара XAU/USD (золото против доллара США)"
 
+msgid "Examples"
+msgstr "Примеры"
+
 msgid "Excellent English language skills, both oral and written"
 msgstr "Отличное знание английского языка: устного и письменного"
 
@@ -4942,6 +4963,9 @@ msgstr "честно, добросовестно и прозрачно опис�
 msgid "Fairly and accurately describe the Agent's services to the clients."
 msgstr "Честно и точно рассказывать клиентам об услугах Агента."
 
+msgid "Fake links often contain the word that looks like \"Binary\" but look out for these differences."
+msgstr "Ложные ссылки часто содержат слово, похожее на \"Binary\". Нужно всегда обращать внимание на написание."
+
 msgid "Familiarity with Git"
 msgstr "Знакомство с Git"
 
@@ -5078,9 +5102,6 @@ msgstr "Финансовая информация"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "Найдите торговую платформу, которая соответствует вашему опыту и выбранной стратегии, независимо от того, являетесь вы опытным трейдером или новичком."
 
-msgid "Find out more"
-msgstr "Узнать больше"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "Получите информацию о цене и параметрах каждого нашего актива для CFD."
 
@@ -5117,6 +5138,9 @@ msgstr "Сначала определите параметры контракт�
 msgid "First-class client service."
 msgstr "Первоклассная служба поддержки клиентов."
 
+msgid "Fixed spreads"
+msgstr ""
+
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "Решение проблем и предоставление отзывов для улучшения рабочих процессов."
 
@@ -5143,6 +5167,9 @@ msgstr "Соблюдение рекомендаций и графика корр
 
 msgid "Follow, comply, and implement with all business-related directions, policies, and procedures of the Company as amended or re-enacted or replaced from time to time."
 msgstr "Соблюдать, соответствовать и внедрять все предписания в отношении бизнеса, политики и процедур Компании, которые подлежат периодическому изменению и дополнению."
+
+msgid "Fondex Limited "
+msgstr "Fondex Limited "
 
 msgid "Food Services"
 msgstr "Услуги питания"
@@ -5458,6 +5485,9 @@ msgstr "Премия Global Brands Awards 2018"
 
 msgid "Global Brands Magazine"
 msgstr "Журнал Global Brands Magazine"
+
+msgid "Global Pop Liquidity Solutions Ltd"
+msgstr "Global Pop Liquidity Solutions Ltd"
 
 msgid "Glossary"
 msgstr "Глоссарий"
@@ -5843,6 +5873,9 @@ msgstr "Мне интересно"
 msgid "I'm no longer interested in trading."
 msgstr "Я больше не интересуюсь трейдингом."
 
+msgid "I've read the above carefully."
+msgstr "Я внимательно прочитал(а) вышеизложенное."
+
 msgid "I. Trading"
 msgstr "I. Контракты"
 
@@ -6010,6 +6043,9 @@ msgstr "Если заявка будет одобрена и заявитель 
 
 msgid "If the bid price is 1.05229, you'll buy 1.05229 USD for every 1 EUR you sell."
 msgstr "Если цена бид равна 1.05229, вы купите 1.05229 USD за каждый проданный 1 EUR."
+
+msgid "If the client account has been locked or suspended and has not recorded any transactions for a period of twelve months or more, the Company reserves the right to rescind the client account funds."
+msgstr "Если счет клиента был заблокирован или приостановлен и не регистрировал никаких транзакций в течение двенадцати месяцев или более, Компания оставляет за собой право аннулировать средства на счете клиента."
 
 msgid "If the client agrees with a DRC’s decision, the client will need to accept it within 4 weeks. If the client does not respond to the DRC’s decision within 4 weeks, the complaint is considered closed."
 msgstr "Если клиент согласен с решением DRC, клиент должен будет принять его в течение 4 недель. Если клиент не ответит на решение DRC в течение 4 недель, жалоба будет считаться закрытой."
@@ -7036,6 +7072,9 @@ msgstr "Кредитное плечо дает вам возможность о�
 
 msgid "Leverage up to %1"
 msgstr "Кредитное плечо до %1"
+
+msgid "Leverage up to 1:1000"
+msgstr ""
 
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "Кредитное плечо в контексте маржинальной торговли означает использование маржи для увеличения стоимости контракта. Кредитное плечо выражается в виде соотношения. Например, кредитное плечо 50:1 означает, что клиент сможет открыть позицию, которая в 50 раз превышает маржу клиента. При инвестициях в продукт с кредитным плечом прибыль или убыток клиента основаны на позиции с большой долей заёмных средств, то есть увеличенная стоимость контракта клиента определяется на основе коэффициента кредитного плеча, который клиент установил на своем счете."
@@ -8168,6 +8207,9 @@ msgstr "Номер приложения OAuth"
 msgid "OK"
 msgstr "ОК"
 
+msgid "OK, got it"
+msgstr "Понятно"
+
 msgid "OMG/USD"
 msgstr "OMG/USD"
 
@@ -8293,6 +8335,9 @@ msgstr "Для номера ID разрешены только буквы, ци�
 
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "Допускаются только буквы латинского алфавита, пробелы, дефисы, точки и апострофы."
+
+msgid "Only log in to your account at this secure link, never elsewhere."
+msgstr "Входите в систему только по этой защищенной ссылке, а не где-либо еще."
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Разрешается иметь только один счет на человека. Вывод средств или компенсация не может перечисляться на счета, открытые на вымышленное имя, или на множественные счета, открытые одним и тем же лицом."
@@ -8437,6 +8482,9 @@ msgstr "Счет CFD подходит для опытных трейдеров �
 
 msgid "Our Company"
 msgstr "Наша компания"
+
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr ""
 
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "Наши серверы MT5 временно недоступны. Мы работаем над их восстановлением. Пожалуйста, попробуйте еще раз через несколько минут."
@@ -9227,9 +9275,6 @@ msgstr "Цена(цены)/информация о ценах"
 msgid "Primary"
 msgstr "Начальное"
 
-msgid "Prime Brokerage Services Limited"
-msgstr "Prime Brokerage Services Limited"
-
 msgid "Prior to placing an Order, which results in opening a position, the client acknowledges that it is their responsibility to ensure that their Account Free Margin is sufficient to cover the Margin required in relation to the opening of the position (the \"Margin Requirement\"), and to continuously meet the Margin Requirement."
 msgstr "Перед размещением ордера (что приводит к открытию контракта или к увеличению числа текущих открытых позиций) клиент обязуется удостовериться в том, что на его/её счете достаточно свободной маржи для покрытия маржинальных требований по открытым контрактам (см. \"Маржинальные требования\"), а также для дальнейшего соблюдения Маржинальных требований."
 
@@ -9545,6 +9590,9 @@ msgstr "Открытие реального счета"
 msgid "Real CFDs"
 msgstr "Реальный CFD"
 
+msgid "Real Derived"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "Недвижимость"
 
@@ -9556,9 +9604,6 @@ msgstr "Реальный Финансовый STP"
 
 msgid "Real Money Account Opening"
 msgstr "Открытие реального счета"
-
-msgid "Real Synthetic"
-msgstr "Реальный Синтетический"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "Реальные счета недоступны для политически значимых лиц (ПЗЛ)."
@@ -10910,6 +10955,9 @@ msgstr "Синтетические активы"
 msgid "Synthetics Account"
 msgstr "Синтетический счет"
 
+msgid "Synthetics, Basket indices"
+msgstr ""
+
 msgid "System Administrator"
 msgstr "Системный администратор"
 
@@ -11107,9 +11155,6 @@ msgstr "Спасибо за регистрацию! Теперь проверь�
 
 msgid "Thank you for your interest in partnering with us. We've made it easy for you to apply online. Just fill out the %1online application form%2 with all necessary details. If you are already registered as a %3 affiliate, you can email us at %4 instead. We will contact you directly if your application is successful."
 msgstr "Благодарим вас за интерес к сотрудничеству с нами. Мы упростили процесс подачи заявки онлайн: вам нужно заполнить %1эту форму%2 и указать все необходимые данные. Если вы уже являетесь зарегистрированным партнёром %3, напишите нам на %4. Мы свяжемся с вами напрямую, если ваша заявка будет одобрена."
-
-msgid "Thank you, we'll get back to you within 24 hours"
-msgstr "Спасибо! Мы свяжемся с вами в течение 24 часов"
 
 msgid "That contravenes any laws, regulations, instruments, ordinances, or rules that govern the operation of any exchange, financial market, or financial regulatory environment"
 msgstr "нарушающей любые законы, нормы, противоречащей правилам инструментов, предписаниям, правилам работы любой биржи, финансового рынка или нормативно-правовой базе финансового сектора;"
@@ -11741,6 +11786,9 @@ msgstr "DRC может запросить дополнительную инфо�
 msgid "The DRC will decide on the complaint (it should be noted that the DRC mentions no timeframe for announcing its decision)."
 msgstr "DRC примет решение по жалобе (обратите внимание, что DRC не указывает сроки объявления решения)."
 
+msgid "The Derived account allows you to trade contracts for difference (CFDs) on synthetics that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr ""
+
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "Система Domain Name System (DNS) открывает доступ на вебсайт через простой веб адрес, например, %1, вместо сложного IP адреса."
 
@@ -11945,9 +11993,6 @@ msgstr "Размер спреда подлежит изменению, что н
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "Уровень стоп аут, относящийся к Реальному счёту MT5 клиента, может отличаться от уровня стоп аут по умолчанию, опубликованного на вебсайте Компании."
 
-msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr "Синтетический счет позволяет вам торговать контрактами на разницу (CFD) на активах, имитирующих движение реальных рынков. Синтетические индексы доступны для торговли 24/7 и регулярно проверяются независимой третьей стороной."
-
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "Команда системных администраторов несёт ответственность за поддержание, конфигурацию и надёжную работу компьютерного и программного обеспечения нашего оборудования и сетей."
 
@@ -12028,6 +12073,9 @@ msgstr "Положение выше не относится к любой инф
 
 msgid "The clauses above shall not apply in its entirety to any Introducing Brokers who are contracted to provide Introducing Broker services with Deriv Investments (Europe) Limited."
 msgstr "Вышеперечисленные положения не распространяются полностью на любых Представляющих брокеров, с которыми заключен договор на оказание услуг Представляющего брокера с Deriv Investments (Europe) Limited."
+
+msgid "The client account funds will be rescinded if the client account has been inactive for 30 days with an account balance of USD/AUD/EUR/GBP1 or less."
+msgstr "Средства счета клиента будут аннулированы, если счет не был активен в течение 30 дней с балансом на счете 1 USD/AUD/EUR/GBP или меньше."
 
 msgid "The client acknowledges and accepts that a trade may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body, or any other organisation involved in the execution, clearing, and/or settlement of the said trade. Should any such organisation take decisions or measures which affect a trade or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) that it, at its sole discretion, considers reasonable. "
 msgstr "Клиент соглашается и признаёт, что на все контракты могут распространяться правила работы рынка, изложенные во внутренних документах, правилах, постановлениях, нормах и порядках биржи, рынка, клиринговой компании, органа или любой другой организации, принимающей участие в исполнении, клиринге и/или урегулировании данного контракта. Если таковая организация примет решение или меры, затрагивающие контракт или открытую позицию, Компания должна быть уполномочена предпринять любые действия (в том числе закрыть любую открытую позицию клиента), которые Компания сочтёт необходимыми (по своему единоличному усмотрению). "
@@ -13151,9 +13199,6 @@ msgstr "Ошибка при пополнении"
 msgid "Top-up successful"
 msgstr "Пополнение прошло успешно"
 
-msgid "TopFX Ltd"
-msgstr "TopFX Ltd"
-
 msgid "Total"
 msgstr "Total"
 
@@ -13421,11 +13466,11 @@ msgstr "Перевести со счёта"
 msgid "Transfer funds between your real money accounts."
 msgstr "Перевод средств между реальными счетами."
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "Переведите средства со счёта MetaTrader 5 на счёт для бинарных опционов."
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr ""
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "Переведите средства со счёта на бинарных опционах на счёт MetaTrader 5."
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr ""
 
 msgid "Transfer funds to a payment agent"
 msgstr "Перевод средств платежному агенту"
@@ -14954,6 +14999,9 @@ msgstr "Вы можете переводить средства только м�
 msgid "You may open one account for each supported cryptocurrency."
 msgstr "Вы можете открыть по одному счёту на каждую доступную криптовалюту."
 
+msgid "You may see links to websites with a fake Binary login page where you’ll get scammed for your money. "
+msgstr "Вы можете встретить ссылки на сайты с ложной страницей входа на Binary. Цель таких сайтов – украсть ваши данные и деньги. "
+
 msgid "You must also submit a proof of address."
 msgstr "Вам также необходимо предоставить подтверждение адреса."
 
@@ -15118,12 +15166,6 @@ msgstr "Ваш доступ к кассе был временно заблоки
 
 msgid "Your account does not need authentication at this time.%1We will inform you if authentication is required in the future."
 msgstr "В настоящее время вам не нужно аутентифицировать свой счет.%1Мы сообщим вам, если счету потребуется аутентификация."
-
-msgid "Your account funds will be rescinded if your account has been inactive for 30 days with an account balance of USD/AUD/EUR/GBP1 or less."
-msgstr "Средства вашего счета будут аннулированы, если он не был активен в течение 30 дней с балансом на счете 1 USD/AUD/EUR/GBP или меньше."
-
-msgid "Your account funds will be rescinded if your account has been locked or has not recorded any transactions for a period of more than twelve months."
-msgstr "Средства вашего счета будут аннулированы, если счет был заблокирован или на нем не было транзакций более двенадцати месяцев."
 
 msgid "Your account has been verified successfully"
 msgstr "Проверка вашего счёта прошла успешно"

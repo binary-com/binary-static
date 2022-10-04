@@ -843,6 +843,124 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.lightbox .warning-scam-message-content {
+    padding: 25px;
+    padding-bottom: 20px;
+
+    .warning-scam-message-title {
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+    }
+    .warning-scam-message-subtitle {
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 14px;
+        }
+    }
+    .warning-scam-message-title-secondary {
+        color: $COLOR_BLACK;
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+    }
+    .warning-scam-message-text-secondary {
+        font-size: 16px;
+        margin-bottom: 24px;
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 14px;
+        }
+    }
+    .warning-scam-message-info-message {
+        display: flex;
+        padding-left: 16px;
+        margin-bottom: 24px;
+    }
+    .warning-scam-message-content-info-message {
+        display: flex;
+        padding-left: 8px;
+        margin-bottom: 24px;
+    }
+    .warning-scam-message-scam-title-text {
+        font-weight: 300;
+        margin-bottom: 0;
+        color: $COLOR_BLACK;
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 16px;
+        }
+    }
+    .warning-scam-message-correct-content {
+        display: flex;
+        border: solid $COLOR_GREEN;
+        border-radius: 4px;
+        padding: 16px 8px;
+        margin-bottom: 24px;
+        flex-direction: column;
+        justify-content: center;
+        @media (min-width: 320px) and (max-width: 767px) {
+            padding: 22px 8px;
+        }
+    }
+    .warning-scam-message-wrong-content {
+        display: flex;
+        border: solid $COLOR_RED;
+        border-radius: 4px;
+        padding: 16px 8px;
+        margin-bottom: 24px;
+        flex-direction: column;
+        justify-content: center;
+        @media (min-width: 320px) and (max-width: 767px) {
+            padding: 22px 8px;
+        }
+    }
+    .warning-scam-message-link-container {
+        display: flex;
+        margin-left: 24px;
+        border-radius: 4px;
+        border: solid $COLOR_GRAY_SHADE;
+        background-color: $COLOR_LIGHT_GRAY;
+        justify-content: center;
+        align-items: center;
+    }
+    .warning-scam-message-link {
+        margin: 8px 0;
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 16px;
+        }
+    }
+    .warning-scam-message-checkbox-container {
+        display: flex;
+    }
+    .warning-scam-message-button-icon-container {
+        padding: 24px;
+        display: flex;
+        justify-content: space-between;
+        @media (min-width: 320px) and (max-width: 767px) {
+            padding-top: 40px;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    #warning_scam_message_button {
+        margin-bottom: 0;
+        @media (min-width: 320px) and (max-width: 767px) {
+            margin-bottom: 24px;
+        }
+    }
+    .warning-scam-message-acknowledge-message {
+        @media (min-width: 320px) and (max-width: 767px) {
+            font-size: 14px;
+        }
+    }
+    .icon-sm {
+        height: 16px;
+        width: 16px;
+        margin: 3px 8px 0 0;
+    }
+}
+
 .lightbox #set_currency {
     padding: 25px;
     padding-bottom: 20px;
@@ -2203,6 +2321,8 @@ body #not_authenticated_financial ul.checked > li {
     }
     &-image {
         border: 2px solid $COLOR_GRAY;
+        width: 100%;
+        height: auto;
     }
 
 }

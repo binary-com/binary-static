@@ -27,8 +27,7 @@ const ViewPopup = (() => {
         sell_text_updated,
         btn_view,
         multiplier,
-        $container,
-        $loading;
+        $container;
 
     const popupbox_id   = 'inpage_popup_content_box';
     const wrapper_id    = 'sell_content_wrapper';
@@ -57,8 +56,6 @@ const ViewPopup = (() => {
         }
 
         getContract();
-
-        setLoadingState(true);
     };
 
     const responseContract = (response) => {
@@ -136,8 +133,6 @@ const ViewPopup = (() => {
     })();
 
     const showContract = () => {
-        setLoadingState(false);
-
         if (!$container) {
             $container = makeTemplate();
         }
@@ -709,24 +704,7 @@ const ViewPopup = (() => {
         }
     };
 
-    const setLoadingState = (show_loading) => {
-        if (show_loading) {
-            $loading = $('#trading_init_progress');
-            if ($loading.length) {
-                $loading.show();
-            }
-        } else {
-            if ($loading.length) {
-                $loading.hide();
-            }
-            if (btn_view) {
-                ViewPopupUI.enableButton($(btn_view));
-            }
-        }
-    };
-
     const showMessagePopup = (localized_text, localized_title, msg_class) => {
-        setLoadingState(false);
         const $con = $('<div/>');
         $con.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: localized_title }));
         $con.append(

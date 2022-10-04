@@ -1,7 +1,6 @@
 import React from 'react';
 import Analysis from './analysis.jsx';
 import Portfolio from '../user/portfolio.jsx';
-import Loading from '../../_common/components/loading.jsx';
 import DerivBanner from '../../_common/components/deriv_banner.jsx';
 
 const Trading = () => (
@@ -303,9 +302,6 @@ const Trading = () => (
             </div>
             <div id='all_prices' />
             <Analysis />
-        </div>
-        <div id='trading_init_progress'>
-            <Loading />
         </div>
     </React.Fragment>
 );

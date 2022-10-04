@@ -56,7 +56,7 @@ const VideoFacility           = require('../pages/user/video_facility');
 
 // ==================== static ====================
 // const Charity            = require('../../static/pages/charity');
-const Contact             = require('../../static/pages/contact');
+// const Contact             = require('../../static/pages/contact');
 // const Contact2            = require('../../static/pages/contact_2');
 const DeactivatedAccount  = require('../../static/pages/deactivated_account');
 const GetStarted          = require('../../static/pages/get_started');
@@ -89,7 +89,7 @@ const pages_config = {
     // charity                  : { module: Charity },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
     closure                  : { module: AccountClosure,             is_authenticated: true },
-    contact                  : { module: Contact },
+    // contact                  : { module: Contact },
     cryptocurrencies         : { module: GetStarted.Cryptocurrencies },
     cyberjaya                : { module: StaticPages.Locations },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
