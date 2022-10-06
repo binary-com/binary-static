@@ -204,7 +204,7 @@
                 .mt-icon {
                     float: right;
                 }
-                .mt-login {
+                .mt-type, .mt-login {
                     padding-left: 3px;
                     font-size: 90%;
                 }
@@ -497,8 +497,9 @@
     #account_desc {
         .button {
             span {
-                padding: 10px 5px;
-                line-height: 18px;
+                font-size: $FONT_SIZE_S;
+                padding: 10px;
+                line-height: 15px;
                 width: 95%;
             }
         }

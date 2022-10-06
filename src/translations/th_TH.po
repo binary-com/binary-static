@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-09-21 02:35\n"
+"PO-Revision-Date: 2022-10-03 08:34\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -821,7 +821,7 @@ msgid "A lifelong interest in accounting, and an aptitude for numbers"
 msgstr "มีความสนใจมานานในด้านบัญชีและมีความถนัดในการทำงานกับตัวเลข"
 
 msgid "A link can contain the word \"Binary\" and still be fake."
-msgstr ""
+msgstr "การเชื่อมโยงสามารถมีคำว่า “Binary” และยังคงเป็นของปลอม"
 
 msgid "A list of accepted payment methods"
 msgstr "วิธีการชำระเงิน"
@@ -2153,7 +2153,7 @@ msgid "Betting system and method"
 msgstr "ระบบการพนันและวิธีการ"
 
 msgid "Beware of the fake links."
-msgstr ""
+msgstr "โปรดระวังลิงก์ปลอม"
 
 msgid "Bid"
 msgstr "ประมูล"
@@ -2813,7 +2813,7 @@ msgid "Clients are also advised that their rights may be prejudiced if they prov
 msgstr "ลูกค้าพึงทราบว่า อาจเกิดความลำเอียงในสิทธิ์ที่ได้รับ หากลูกค้าให้ข้อมูลที่ไม่ถูกต้อง ทำให้บริษัทฯ ไม่อยู่ในสถานะที่จะดำเนินการเพื่อประโยชน์สูงสุดของลูกค้าได้"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Deriv (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr ""
+msgstr "ลูกค้าจากประเทศอื่นๆ ทั่วโลก (ยกเว้นบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ฮ่องกง) จะมีบัญชี FX และบัญชี CFD Metatrader 5 ที่เปิดบัญชีกับ Deriv (V) Ltd หากแต่ %1 จะไม่ได้ให้บริการในสาธารณรัฐวานูอาตู"
 
 msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, and Hong Kong) will have their account opened with Deriv (SVG) LLC."
 msgstr "ลูกค้าอื่นๆ ทั่วโลก (ที่ไม่ได้อยู่ในประเทศเหล่านี้ ได้แก่ สหรัฐอเมริกา แคนาดาและฮ่องกง) จะเปิดบัญชีกับ Deriv (SVG) LLC"
@@ -3018,6 +3018,9 @@ msgstr "หน้าที่ของบริษัทฯ"
 
 msgid "Company's rights"
 msgstr "สิทธิ์ของบริษัทฯ"
+
+msgid "Compare MetaTrader 5 accounts"
+msgstr ""
 
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "ค่าตอบแทนภายใต้แผนค่าตอบแทนต่อนักลงทุน (Investor Compensation Scheme)"
@@ -3755,14 +3758,14 @@ msgstr "บัญชีทดลองใช้"
 msgid "Demo CFDs"
 msgstr "สาธิต CFD"
 
+msgid "Demo Derived"
+msgstr ""
+
 msgid "Demo Financial"
 msgstr "บัญชีทดลอง Financial"
 
 msgid "Demo Financial STP"
 msgstr "บัญชีทดลอง Financial STP"
-
-msgid "Demo Synthetic"
-msgstr "บัญชีทดลอง ดัชนีสังเคราะห์"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "บัญชีทดลองใช้ไม่มีบริการของบริษัทตัวแทนการชําระเงิน"
@@ -3824,8 +3827,8 @@ msgstr "ฝากเงิน: %1 วัน"
 msgid "Deposit: Instant"
 msgstr "ฝากเงิน: ทันที"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "การฝากและถอนเงินจากบัญชี MetaTrader 5 ของท่านจะผ่านบัญชีไบนารีออปชั่นเสมอ"
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr ""
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "การฝาก และ/หรือ การครบกำหนดชำระเงิน ถูกดำเนินการตามสกุลเงินที่ลูกค้ากำหนดไว้ให้กับ DIEL ในแต่ละครั้ง"
@@ -3940,6 +3943,12 @@ msgstr "อนุพันธ์"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "เครื่องมือสำหรับการลงทุนอนุพันธ์ เช่น ไบนารีออปชั่น และตลาดที่เกี่ยวข้องมีความผันผวนสูง ราคาของผลิตภัณฑ์อ้างอิงซึ่งไบนารีออปชั่นอ้างอิงจะมีความไม่แน่นอน ผันผวนอย่างรวดเร็วและเกินขอบเขต และอาจเป็นเหตุการณ์ที่ไม่สามารถพยากรณ์ได้ หรือ มีการเปลี่ยนแปลงในเงื่อนไขต่างๆ หรือไม่มีปัจจัยใดเลยที่ควบคุมได้จากลูกค้า หรือ %1"
+
+msgid "Derived"
+msgstr ""
+
+msgid "Derived Account"
+msgstr ""
 
 msgid "Description"
 msgstr "รายละเอียด"
@@ -4059,13 +4068,13 @@ msgid "Divorce Settlement"
 msgstr "ข้อตกลงการหย่า"
 
 msgid "Do not get lured to fake \"Binary\" pages!"
-msgstr ""
+msgstr "ไม่ได้รับการล่อให้ปลอม “Binary” หน้า!"
 
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "โปรดอย่าเทรดเมื่อท่านเหนื่อยล้า หรือ เมื่อท่านอยู่ในภาวะที่มีแอลกอฮอล์"
 
 msgid "Do not trust and give away your credentials on fake websites, ads or emails."
-msgstr ""
+msgstr "อย่าไว้วางใจและอย่าให้ข้อมูลประจำตัวของคุณแก่เวบไซต์ปลอม โฆษณาปลอม หรืออีเมล์ปลอม"
 
 msgid "Do you manage a social media page that's dedicated to online trading? Partner with us and convert your audience into potential profit."
 msgstr "ท่านกำลังจัดการเพจสื่อสังคมออนไลน์เฉพาะสำหรับการซื้อขายออนไลน์ใช่ไหม? ร่วมเป็นพันธมิตรกับเราเพื่อเปลี่ยนให้ผู้เยี่ยมชมเพจของท่านเป็นโอกาสสร้างรายได้"
@@ -4635,7 +4644,7 @@ msgid "Example: XAU/USD (Gold vs US dollar) symbol pair"
 msgstr "ตัวอย่าง: คู่สัญลักษณ์ XAU/USD (ทองคำ เทียบกับ ดอลลาร์สหรัฐ)"
 
 msgid "Examples"
-msgstr ""
+msgstr "ตัวอย่าง"
 
 msgid "Excellent English language skills, both oral and written"
 msgstr "มีทักษะภาษาอังกฤษดีเยี่ยมในการสื่อสารทางคำพูดและการเขียน"
@@ -5093,9 +5102,6 @@ msgstr "ข้อมูลทางการเงิน"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "พบแพลตฟอร์มการซื้อขายที่เหมาะสมกับประสบการณ์ของคุณและกลยุทธ์ที่คุณกำหนดได้ ไม่ว่าคุณจะเป็นนักลงทุนใหม่ หรือ นักลงทุนผู้เชี่ยวชาญ"
 
-msgid "Find out more"
-msgstr "ดูข้อมูลเพิ่มเติม"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "ค้นหาข้อมูลเพิ่มเติมเกี่ยวกับต้นทุนและรายละเอียดของสินทรัพย์ CFD แต่ละรายการที่เรานำเสนอ"
 
@@ -5131,6 +5137,9 @@ msgstr "ขั้นแรก กำหนดโพซิชั่นของ�
 
 msgid "First-class client service."
 msgstr "บริการลูกค้าชั้นเลิศ"
+
+msgid "Fixed spreads"
+msgstr ""
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "แก้ปัญหาและให้ข้อมูลเพื่อการปรับปรุงแก้ไขในระยะยาว"
@@ -7064,6 +7073,9 @@ msgstr "เลเวอเรจช่วยให้ท่านสามาร
 msgid "Leverage up to %1"
 msgstr "เลเวอเรจสูงถึง %1"
 
+msgid "Leverage up to 1:1000"
+msgstr ""
+
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "เลเวอเรจในบริบทของการซื้อขายมาร์จิน หมายถึง การใช้มาร์จินเพื่อเพิ่ม/ขยายมูลค่าของการซื้อขาย เลเวอเรจจะแสดงออกมาในรูปของอัตราส่วน เช่น เลเวอเรจ 50:1 หมายถึง ลูกค้าจะสามารถเข้าไปอยู่ในโพซิชั่นซื้อขายที่สูงกว่ามาร์จินของลูกค้า 50 เท่า เมื่อลูกค้าลงทุนในผลิตภัณฑ์เลเวอเรจ กำไรหรือขาดทุนของลูกค้าขึ้นอยู่กับโพซิชั่นที่เลเวอเรจ นั่นคือ มูลค่าที่เพิ่ม/ขยายของการซื้อขายของลูกค้าจะพิจารณาจากสัดส่วนเลเวอเรจที่ลูกค้าตั้งเอาไว้ในบัญชีของลูกค้า"
 
@@ -8472,6 +8484,9 @@ msgstr "บัญชี CFD ของเราเหมาะสําหรั�
 msgid "Our Company"
 msgstr "บริษัทฯ ของเรา"
 
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr ""
+
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "เซิร์ฟเวอร์ MT5 ของเราไม่พร้อมใช้งานชั่วคราว เรากําลังดําเนินการเพื่อฟื้นฟูพวกเขา โปรดลองอีกครั้งในอีกสักครู่"
 
@@ -9576,6 +9591,9 @@ msgstr "การเปิดบัญชีจริง"
 msgid "Real CFDs"
 msgstr "บัญชีจริง CFD"
 
+msgid "Real Derived"
+msgstr ""
+
 msgid "Real Estate"
 msgstr "อสังหาริมทรัพย์"
 
@@ -9587,9 +9605,6 @@ msgstr "บัญชีจริง Financial STP"
 
 msgid "Real Money Account Opening"
 msgstr "การเปิดบัญชีเงินจริง"
-
-msgid "Real Synthetic"
-msgstr "บัญชีจริง ดัชนีสังเคราะห์"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "บัญชีจริงไม่สามารถใช้งานได้กับบุคคลที่มีสถานภาพทางการเมือง (PEPs)"
@@ -10941,6 +10956,9 @@ msgstr "สังเคราะห์"
 msgid "Synthetics Account"
 msgstr "บัญชีสังเคราะห์"
 
+msgid "Synthetics, Basket indices"
+msgstr ""
+
 msgid "System Administrator"
 msgstr "ผู้ดูแลรักษาระบบ"
 
@@ -11769,6 +11787,9 @@ msgstr ""
 msgid "The DRC will decide on the complaint (it should be noted that the DRC mentions no timeframe for announcing its decision)."
 msgstr ""
 
+msgid "The Derived account allows you to trade contracts for difference (CFDs) on synthetics that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr ""
+
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "ระบบชื่อโดเมน (DNS) ช่วยให้คุณเข้าถึงเว็บไซต์ผ่านทางที่อยู่เว็บที่ใช้งานได้ง่ายเช่น %1 แทนที่จะเป็นที่อยู่ IP ที่ซับซ้อน"
 
@@ -11972,9 +11993,6 @@ msgstr "สเปรดอาจมีการเปลี่ยนแปลง
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "ระดับยุติการซื้อขายที่ใช้กับบัญชี MT5 จริงของลูกค้า อาจจะแตกต่างจากระดับยุติการซื้อขายที่แจ้งไว้บนเว็บไซต์ของบริษัทฯ"
-
-msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr "บัญชีสังเคราะห์อนุญาตให้คุณทำสัญญาซื้อขายในส่วนต่าง (CFD) กับดัชนีสังเคราะห์ที่เลียนแบบการเคลื่อนไหวจริง และมีให้บริการทุกวันตลอด 24 ชั่วโมง ผ่านการตรวจสอบความเป็นธรรมโดยกลุ่มบุคคลที่สาม"
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "ทีมเจ้าหน้าที่ดูแลระบบรับผิดชอบในการดูแล ตั้งค่า และดำเนินการงานปฏิบัติการที่เกี่ยวข้องกับงานซอฟท์แวร์ ฮาร์ดแวร์ และเครือข่าย"
@@ -13451,11 +13469,11 @@ msgstr "โอนจาก"
 msgid "Transfer funds between your real money accounts."
 msgstr "โอนเงินระหว่างบัญชีเงินจริงของท่าน"
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "โอนเงินจากบัญชี MT5 ของท่าน สู่บัญชีไบนารีออปชั่นของท่าน"
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr ""
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "โอนเงินจากบัญชีไบนารีออปชั่นเข้าสู่บัญชี MetaTrader 5 ของท่าน"
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr ""
 
 msgid "Transfer funds to a payment agent"
 msgstr "โอนเงินไปยังตัวแทนชำระเงิน"
