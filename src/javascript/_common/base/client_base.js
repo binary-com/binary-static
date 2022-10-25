@@ -249,8 +249,8 @@ const ClientBase = (() => {
         const obj_display = {
             gaming: {
                 financial: {
-                    short: localize('Synthetic'),
-                    full : is_demo ? localize('Demo Synthetic') : localize('Real Synthetic'),
+                    short: localize('Derived'),
+                    full : is_demo ? localize('Demo Derived') : localize('Real Derived'),
                 },
             },
             financial: {

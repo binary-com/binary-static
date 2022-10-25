@@ -25,7 +25,7 @@ const AccountDesc = ({ title, description, account_type, landing_company_short, 
             </ul>
             <p  data-show='-eucountry' className='center-text-m'>
                 <a className='button button-full-width-m' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>
-                    <span>{it.L('Find out more')}</span>
+                    <span>{it.L('Compare MetaTrader 5 accounts')}</span>
                 </a>
             </p>
         </div>
@@ -242,29 +242,17 @@ const Metatrader = () => (
                         ]}
                     />
 
-                    {/* <AccountDesc
-                        account_type={'financial_financial_stp'}
-                        title={it.L('Financial STP Account')}
-                        description={it.L('Our MetaTrader 5 Financial STP account provides you with tight spreads, higher ticket size and offers more products.')}
-                        items={[
-                            it.L('Leverage up to [_1]', '1:100'),
-                            it.L('Variable spreads'),
-                            it.L('Market execution'),
-                            it.L('No commission'),
-                        ]}
-                    /> */}
-
-                    {/* <AccountDesc
+                    <AccountDesc
                         account_type={'gaming_financial'}
-                        title={it.L('Synthetic Account')}
-                        description={it.L('Our Synthetic account allows you to trade CFDs on Synthetic Indices - our proprietary synthetic assets that simulate market forces.')}
+                        title={it.L('Derived Account')}
+                        description={it.L('Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces.')}
                         items={[
-                            it.L('Leverage up to [_1]', '1:1000'),
+                            it.L('Leverage up to 1:1000'),
                             it.L('Fixed spreads'),
                             it.L('Market execution'),
                             it.L('No commission'),
                         ]}
-                    /> */}
+                    />
                 </div>
                 <div id='frm_new_accounts'>
                     <form id='frm_new_account'>
@@ -520,7 +508,7 @@ const Metatrader = () => (
                             <div className='fill-bg-color center-text mt-container'>
                                 <div className='gr-10 gr-push-1 gr-12-m gr-push-0-m'>
                                     <h3 className='secondary-color'>{it.L('How to manage your funds')}</h3>
-                                    <p className='hint'>{it.L('Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account.')}</p>
+                                    <p className='hint'>{it.L('Deposits and withdrawals for your MT5 account always pass through your binary options account.')}</p>
                                     <div className='gr-row'>
                                         <div className='gr-5 gr-no-gutter-m'>
                                             <img src={it.url_for('images/pages/metatrader/dashboard/binary_wallet.svg')} />
@@ -548,7 +536,7 @@ const Metatrader = () => (
                             <div className='gr-6 gr-12-m flex'>
                                 <div className='mt-panel mt-container'>
                                     <form id='frm_deposit'>
-                                        <CashierDesc title={it.L('Transfer funds to your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MetaTrader 5 account.')} />
+                                        <CashierDesc title={it.L('Transfer funds to your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MT5 account.')} />
 
                                         <div className='form'>
                                             <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('Subject to [_1] transfer fee or [_2], whichever is higher', '<strong id="transfer_fee_amount_to"></strong>', '<strong id="transfer_fee_minimum_to"></strong>')} />
@@ -570,7 +558,7 @@ const Metatrader = () => (
                             <div className='gr-6 gr-12-m flex'>
                                 <div className='mt-panel mt-container'>
                                     <form id='frm_withdrawal'>
-                                        <CashierDesc title={it.L('Withdraw funds from your MT5 account')} arrow_direction='left' desc={it.L('Transfer funds from your MetaTrader 5 account into your binary options account.')} />
+                                        <CashierDesc title={it.L('Withdraw funds from your MT5 account')} arrow_direction='left' desc={it.L('Transfer funds from your MT5 account into your binary options account.')} />
 
                                         <div className='form'>
                                             <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('Subject to [_1] transfer fee or [_2], whichever is higher', '<strong id="transfer_fee_amount_from"></strong>', '<strong id="transfer_fee_minimum_from"></strong>')} />

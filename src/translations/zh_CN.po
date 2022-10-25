@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-09-26 04:56\n"
+"PO-Revision-Date: 2022-10-19 05:47\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1663,9 +1663,6 @@ msgstr "赛柏再也是高科技知识中心, 这里有多家跨国公司和私�
 msgid "As a result, the client's trades are executed at market as follows:"
 msgstr "因此, 客户的交易在市场上的执行方式如下:"
 
-msgid "As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at %1 You will also assist our developers in understanding and patching the bugs that you find."
-msgstr "我们是开源的坚定支持者，鼓励通过 GitHub 和%1 的技术博客发布各项新发现、方法和工具。您也会帮助我们的开发员了解和修补您发现的程序漏洞。"
-
 msgid "As an example, Expert Advisors might be able to be programmed for"
 msgstr "例如, 可提供智能交易系统编程给"
 
@@ -3020,6 +3017,9 @@ msgstr "公司的义务"
 msgid "Company's rights"
 msgstr "公司权利"
 
+msgid "Compare MetaTrader 5 accounts"
+msgstr "比较 MetaTrader 5 账户"
+
 msgid "Compensation under Investor Compensation Scheme"
 msgstr "投资者补偿计划下的补偿"
 
@@ -3755,14 +3755,14 @@ msgstr "模拟账户"
 msgid "Demo CFDs"
 msgstr "演示差价合约"
 
+msgid "Demo Derived"
+msgstr "演示衍生资产"
+
 msgid "Demo Financial"
 msgstr "演示金融"
 
 msgid "Demo Financial STP"
 msgstr "演示金融 STP"
-
-msgid "Demo Synthetic"
-msgstr "演示综合"
 
 msgid "Demo accounts do not have Payment Agent services."
 msgstr "演示账户没有付款代理服务。"
@@ -3824,8 +3824,8 @@ msgstr "存款：%1天"
 msgid "Deposit: Instant"
 msgstr "存款：实时"
 
-msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
-msgstr "MetaTrader 5账户总是通过二元期权账户存款和提款 。"
+msgid "Deposits and withdrawals for your MT5 account always pass through your binary options account."
+msgstr "MT5 账户总是通过二元期权账户存款和提款 。"
 
 msgid "Deposits and/or payments due are to be made in the currency chosen by the client from the ones specified by DIEL from time to time."
 msgstr "到期的存款和/或付款将定时以客户从DIEL指定币种中选择的货币进行."
@@ -3860,8 +3860,8 @@ msgstr "Deriv (FX) 有限公司，"
 msgid "Deriv (FX) Ltd, Deriv BVI (Ltd), or"
 msgstr "Deriv (FX) 有限公司、Deriv BVI (有限公司) 或"
 
-msgid "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr "Deriv (FX) 有限公司, 地址是 Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia。由纳闽金融服务管理局授予许可证执行资金经纪业务%1(许可证编号MB/18/0024)%2和监管。"
+msgid "Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2. A member of the %3Labuan Fintech Association%4."
+msgstr "Deriv (FX) 有限公司，地址是 Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia。由纳闽金融服务管理局授予许可证执行资金经纪业务%1(许可证编号MB/18/0024)%2和监管。是%3纳闽 Fintech 协会%4的成员。"
 
 msgid "Deriv (FX) Ltd: Labuan, Territory of Malaysia"
 msgstr "Deriv (FX) 有限公司: 纳闽，马来西亚直辖区"
@@ -3940,6 +3940,12 @@ msgstr "衍生工具"
 
 msgid "Derivative investment instruments such as binary options and related markets can be highly volatile. The prices of the underlying instrument that a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by the client or %1."
 msgstr "衍生投资工具（如二元期权和相关市场）的波动性很大。二元期权所涉及的基础工具价格可能会快速起伏，且幅度很大，很可能出现客户和 %1 皆无法控制的突发事件或状况变化。"
+
+msgid "Derived"
+msgstr "衍生资产"
+
+msgid "Derived Account"
+msgstr "衍生账户"
 
 msgid "Description"
 msgstr "说明"
@@ -5093,9 +5099,6 @@ msgstr "金融信息"
 msgid "Find a trading platform that suits your experience and preferred strategy – whether you're a new or seasoned trader."
 msgstr "无论是新手还是经验丰富的交易员，都有适合其交易策略的平台。"
 
-msgid "Find out more"
-msgstr "查找更多信息"
-
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我们提供的每个差价合约资产的成本和详细信息。"
 
@@ -5131,6 +5134,9 @@ msgstr "选择头寸参数..."
 
 msgid "First-class client service."
 msgstr "一流的客户服务。"
+
+msgid "Fixed spreads"
+msgstr "固定利差"
 
 msgid "Fixing problems and providing feedback for improvement."
 msgstr "解决问题并提供改进建议。"
@@ -7065,6 +7071,9 @@ msgstr "杠杆能够以现有资本进行更大头寸交易。"
 msgid "Leverage up to %1"
 msgstr "杠杆率高达%1"
 
+msgid "Leverage up to 1:1000"
+msgstr "杠杆率高达 1: 1000"
+
 msgid "Leverage, in the context of margin trading, refers to the use of margin to increase/amplify the value of a trade. Leverage is expressed as a ratio. A 50:1 leverage, for example, means that the client would be able to enter into a trade position that is of 50 times higher than the client's margin. When the client invests in a leveraged product, the client's profit or loss is based on the leveraged position, i.e. the increased/amplified value of the client's trade is determined based on the leverage ratio that the client has set for the client's account."
 msgstr "融资融券交易中，杠杆指使用保证金增加/扩大交易数值。杠杆的表达方式是比率。举个例子，如果杠杆是50: 1，客户将能够持有比保证金高出 50 倍的交易头寸。当客户投资一种杠杆产品时，客户的盈利或亏损将根据杠杆的头寸计算，也就是说，客户为账户设置的杠杆比率决定了其交易增加/扩大数值。"
 
@@ -8472,6 +8481,9 @@ msgstr "我们的差价合约账户适用于新手和经验丰富的交易者。
 msgid "Our Company"
 msgstr "我们公司"
 
+msgid "Our Derived account allows you to trade CFDs on Derived Indices - our proprietary Derived assets that simulate market forces."
+msgstr "公司的衍生账户允许客户对衍生指数进行差价交易 - 这是公司专有的衍生资产，可模拟市场力量。"
+
 msgid "Our MT5 servers are temporarily unavailable. We're working to restore them. Please try again in a few minutes."
 msgstr "MT5 服务器暂时不能用。正在修复中。请于数分钟后重试。"
 
@@ -8625,8 +8637,8 @@ msgstr "合作伙伴的收入"
 msgid "Partners"
 msgstr "合作伙伴"
 
-msgid "Parts of this clause may not apply to Synthetic Indices."
-msgstr "本条款的一些部分不适用于综合指数。"
+msgid "Parts of this clause may not apply to Synthetic Indices, basket indices, and derived FX."
+msgstr "本条款的部分内容不适用于综合指数、篮子指数和衍生外汇。"
 
 msgid "Passion for Linux and other open-source platforms"
 msgstr "对使用Linux和其它开源平台充满热忱"
@@ -9558,9 +9570,6 @@ msgstr "阅读我们对这个流行衍生工具的简单介绍，了解可以使
 msgid "Read the %1 company blog"
 msgstr "阅读%1公司博客"
 
-msgid "Read the %1 tech blog"
-msgstr "阅读%1技术博客"
-
 msgid "Ready to trade?"
 msgstr "已经准备好开始交易了吗？"
 
@@ -9576,6 +9585,9 @@ msgstr "开立真实账户"
 msgid "Real CFDs"
 msgstr "真实差价合约"
 
+msgid "Real Derived"
+msgstr "真实衍生资产"
+
 msgid "Real Estate"
 msgstr "房地产"
 
@@ -9587,9 +9599,6 @@ msgstr "真实金融 STP"
 
 msgid "Real Money Account Opening"
 msgstr "开立真实资金账户"
-
-msgid "Real Synthetic"
-msgstr "真实综合"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
 msgstr "政治公众人士(PEP) 不可使用真实账户。"
@@ -10941,6 +10950,9 @@ msgstr "综合"
 msgid "Synthetics Account"
 msgstr "综合账户"
 
+msgid "Synthetics, Basket indices"
+msgstr "综合、篮子指数"
+
 msgid "System Administrator"
 msgstr "系统管理员"
 
@@ -11343,8 +11355,8 @@ msgstr "平均"
 msgid "The Commencement Date of this agreement shall mean the date on which the Agent's account is approved by the Company."
 msgstr "本协议的生效日期是指公司批准代理账户的日期。"
 
-msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bids and Asks made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Synthetic Indices."
-msgstr "公司在参考了由公司自主经%1选定的外部交易所或交易设施所报的基础工具价格之后决定价格。公司拥有信息技术基础设施和价格聚合器系统，便于向充当公司流动性提供商，经过挑选的主要经纪商收集报价，并将经过参考有关基准和市场得来的价格提供给客户。客户确认公司的价格可能与外部交易所或交易设施所提供的买入和卖出价格不相同，以及公司不对客户因所述差异所引起的任何损失承担赔偿责任。本条款不适用于综合指数。"
+msgid "The Company Prices are determined by reference to the price of the Underlying Instrument which is quoted on external exchanges or dealing facilities that %1 selects at the Company's discretion. The Company's IT infrastructure and price aggregator system facilitate the reception of quotes from shortlisted prime brokers, who act as liquidity providers for the Company and the delivery of the quotes, derived with reference against relevant benchmark and markets, to the client. The client acknowledges that the Company Prices may differ from the Bids and Asks made available by external exchanges or dealing facilities and the Company is not liable for any losses that the client might incur arising from such differences. This clause does not apply to Synthetic Indices, basket indices, and derived FX."
+msgstr "公司在参考了由公司自主经%1选定的外部交易所或交易设施所报的基础工具价格之后决定价格。公司拥有信息技术基础设施和价格聚合器系统，便于向充当公司流动性提供商，经过挑选的主要经纪商收集报价，并将经过参考有关基准和市场得来的价格提供给客户。客户确认公司的价格可能与外部交易所或交易设施所提供的买入和卖出价格不相同，以及公司不对客户因所述差异所引起的任何损失承担赔偿责任。本条款不适用于综合指数、篮子指数和衍生外汇。"
 
 msgid "The Company aims to keep a record of the kinds of activity that the Company carries on in which a material conflict could arise or has arisen. The Company also maintains procedures to manage actual or potential conflicts. This includes procedures to maintain appropriate independence among members of the Company's staff who are involved in potentially conflicting activities. Such independence-upholding procedures can be followed, for example, through the operation of information barriers, physical separation of staff, the segregation of duties and responsibilities, and the maintenance of a policy of independence, which requires the Company's staff, when providing services to a client, to act in the best interests of the client and to disregard any conflicts of interest, or in some circumstances, to decline to act for a client or potential client in order to avoid conflicts of interest."
 msgstr "公司希望记录持续运行并可能发生利益冲突的活动。公司也持续管理实际或潜在冲突，包括让与潜在冲突活动相关的员工保持适当的独立性，例如：通过信息障碍、员工隔离、责任分离制度和保持政策独立性。这需要公司的员工在服务时以客户的最佳利益为主，忽略利益冲突，并在某些情况下拒绝为客户或潜在客户采取行动。"
@@ -11667,8 +11679,8 @@ msgstr "公司通过电子系统提供各种报表，详细说明由联盟会员
 msgid "The Company shall, in its absolute discretion, determine whether the application of the Introducing Broker has been successful. The Company's decision is final and is not subject to any appeal."
 msgstr "公司将自行确定推介经纪的申请是否成功。公司的决定具有最终性，不能提出申诉。"
 
-msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Synthetic Indices."
-msgstr "公司市场数据源自充当流动性提供商的主要经纪人，因此通过从顶级银行获取的聚合流动性池为客户执行交易。公司提供的服务不包括由公司或主要经纪人向客户递送实物外币。客户确认并同意，此类数据由公司和任何此类提供商专有，以及客户不会重传、重新分配、发布、披露、或显示此类数据的全部或部分给第三方。客户陈述并保证客户将仅按照本协议的目的而不是为了任何其他目的使用此类数据，为了便于在MT5真实账户进行交易。本条款不适用于综合指数。"
+msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Synthetic Indices, basket indices, and derived FX."
+msgstr "公司市场数据源自充当流动性提供商的主要经纪人，因此通过从顶级银行获取的聚合流动性池为客户执行交易。公司提供的服务不包括由公司或主要经纪人向客户递送实物外币。客户确认并同意，此类数据由公司和任何此类提供商专有，以及客户不会重传、重新分配、发布、披露、或显示此类数据的全部或部分给第三方。客户陈述并保证客户将仅按照本协议的目的而不是为了任何其他目的使用此类数据，为了便于在MT5真实账户进行交易。本条款不适用于综合指数、篮子指数和衍生外汇。"
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "公司努力确保所有订单都能执行。然而, 有时会碰到重大困难或不寻常的情况, 因此并不一定每次都能够办到。一旦公司意识到与正确执行订单有关的任何重大困难的任何情况, 公司会迅速将问题通知客户。"
@@ -11768,6 +11780,9 @@ msgstr "DRC 可能会要求客户或公司提供其他信息，所需信息必�
 
 msgid "The DRC will decide on the complaint (it should be noted that the DRC mentions no timeframe for announcing its decision)."
 msgstr "DRC 将对投诉做出决定（请注意，DRC 不会提及其宣布决定的时间表）。"
+
+msgid "The Derived account allows you to trade contracts for difference (CFDs) on synthetics that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
+msgstr "衍生账户让您以最低真实市场波动率进行差价合约综合交易。全年无休，全天候交易，公平审计由第三方独立机构监控。"
 
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "域名系统 (DNS) 允许通过方便使用的 web 地址 (如 %1) 而不是复杂的 IP 地址访问网站。"
@@ -11973,9 +11988,6 @@ msgstr "价差可由公司全权酌情决定更改。客户确认，虽然公司
 
 msgid "The Stop Out Level applicable to the client's MT5 Real Account may differ from the default Stop Out Level published on the Company website."
 msgstr "适用于客户MT5真实账户的强制平仓水平可能与公司网站公布的默认强制平仓水平不一样。"
-
-msgid "The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party."
-msgstr "综合账户让您以最低真实市场波动率进行差价合约综合指数交易。全年无休，全天候交易，公平审计由第三方独立机构监控。"
 
 msgid "The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks."
 msgstr "系统管理团队负责维护、配置和可靠运行我们的计算机软件、硬件和网络。"
@@ -12955,8 +12967,8 @@ msgstr "此要求由《统一报告标准》 (CRS) 和《外国账户税收遵�
 msgid "This risk disclosure statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which the client might be exposed and does not describe all the risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide the client with information, so that the client can reasonably understand the risks associated with forex and contracts for differences offered by %1, as it is the Company's intention to provide the client with the best possible trading experience."
 msgstr "此风险披露声明并非详尽无遗，也并非包含客户可能会接触到的所有风险的全面声明。此声明也并不能描述外汇交易和合约现存的固有风险或将来可能发生的所有风险差异。其目的在于为客户提供及让客户合理理解%1在符合公司利益的同时为客户提供的最佳外汇与差价合约交易经验相关的风险信息。"
 
-msgid "This section on force majeure events does not apply to Synthetic Indices."
-msgstr "此不可抗力事件章节不适用于综合指数。"
+msgid "This section on force majeure events does not apply to Synthetic Indices, basket indices, and derived FX."
+msgstr "此不可抗力事件章节不适用于综合指数、篮子指数和衍生外汇。"
 
 msgid "This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
 msgstr "某些国家如美国、加拿大、香港或18岁以下人士无法使用本网站的服务。"
@@ -13450,11 +13462,11 @@ msgstr "转移自"
 msgid "Transfer funds between your real money accounts."
 msgstr "在真实资金账户间转移资金。"
 
-msgid "Transfer funds from your MetaTrader 5 account into your binary options account."
-msgstr "把资金从 MetaTrader 5 账户转移到二元期权账户︰"
+msgid "Transfer funds from your MT5 account into your binary options account."
+msgstr "把资金从 MT5 账户转移到二元期权账户︰"
 
-msgid "Transfer funds from your binary options account into your MetaTrader 5 account."
-msgstr "把资金从二元期权账户转移到 MetaTrader 5 账户︰"
+msgid "Transfer funds from your binary options account into your MT5 account."
+msgstr "把资金从二元期权账户转移到 MT5 账户︰"
 
 msgid "Transfer funds to a payment agent"
 msgstr "将资金转予付款代理"

@@ -67,8 +67,8 @@ const TypesOfAccounts = () => (
             />
             <Box
                 image='synthetic'
-                title={it.L('Synthetic')}
-                text={it.L('The Synthetic account allows you to trade contracts for difference (CFDs) on synthetic indices that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party.')}
+                title={it.L('Derived')}
+                text={it.L('The Derived account allows you to trade contracts for difference (CFDs) on synthetics that mimic real-world movements. Available for trading 24/7 and audited for fairness by an independent third party.')}
             />
 
             <p className='hint' data-show='-eucountry' >{`${it.L('Note:')} ${it.L('To protect your portfolio from adverse market movements due to the market opening gap, we reserve the right to decrease leverage on all offered symbols for financial accounts before market close and increase it again after market open. Please make sure that you have enough funds available in your MT5 account to support your positions at all times.')}`}</p>
@@ -82,7 +82,7 @@ const TypesOfAccounts = () => (
                         scroll
                         data={{
                             thead: [
-                                [{ text: '' }, { text: it.L('Financial') }, { text: it.L('Financial STP') }, { text: it.L('Synthetic') }],
+                                [{ text: '' }, { text: it.L('Financial') }, { text: it.L('Financial STP') }, { text: it.L('Derived') }],
                             ],
                             tbody: [
                                 [{ text: <Row             text={it.L('Account currency')} /> },       { text: it.L('USD') },                                                                       { text: it.L('USD') },                               { text: it.L('USD') }],
@@ -95,7 +95,7 @@ const TypesOfAccounts = () => (
                                 [{ text: <Row number={6}  text={it.L('Stop out level')} /> },         { text: '50%' },                                                                             { text: '50%' },                                     { text: '50%' }],
                                 [{ text: <Row             text={it.L('Number of assets')} /> },       { text: '50+' },                                                                             { text: '50+' },                                     { text: '10+' }],
                                 [{ text: <Row number={7}  text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                                                            { text: '24/7' },                                     { text: it.L('N/A') }],
-                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, basket indices, commodities, cryptocurrencies, stocks, and stock indices') }, { text: it.L('FX-majors, FX-minors, FX-exotics, cryptocurrencies') },  { text: it.L('Synthetic indices') }],
+                                [{ text: <Row             text={it.L('Trading instruments')} /> },    { text: it.L('FX-majors (standard/micro lots), FX-minors, basket indices, commodities, cryptocurrencies, stocks, and stock indices') }, { text: it.L('FX-majors, FX-minors, FX-exotics, cryptocurrencies') },  { text: it.L('Synthetics, Basket indices') }],
                             ],
                         }}
                         tbody_id='instruments'

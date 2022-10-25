@@ -576,10 +576,13 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Deriv (FX) Ltd')} >
-                <p>{it.L('Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business [_1](licence no. MB/18/0024)[_2].', `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Deriv (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business [_1](licence no. MB/18/0024)[_2]. A member of the [_3]Labuan Fintech Association[_4].', `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>', `<a href=${'https://www.labuanfintech.org/'} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Deriv (FX) Ltd. [_1] is not available in Malaysia.', it.website_name)}</p>
                 <RegulatorText />
-                <RegulatorImage href='https://www.labuanibfc.com/' image='images/pages/regulation/labuan-logo.png' />
+                <div className='regulatory-images'>
+                    <RegulatorImage href='https://www.labuanibfc.com/' image='images/pages/regulation/labuan-logo.png' />
+                    <RegulatorImage href='https://www.labuanibfc.com/' image='images/pages/regulation/labuan-second-logo.png' />
+                </div>
             </Box>
 
             <Box header={it.L('The Financial Commission')} last>

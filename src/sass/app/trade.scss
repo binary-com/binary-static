@@ -518,7 +518,6 @@
                 display: flex;
                 flex-direction: column;
                 line-height: 1.4em;
-                padding: 0 10px;
             }
         }
         #contract_purchase_spots {
@@ -546,9 +545,20 @@
         }
         #contract_purchase_payout {
             border-right: 1px solid $COLOR_GRAY;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
         }
         #contract_purchase_profit {
-            border-left: 1px solid $COLOR_GRAY;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+        }
+        #contract_purchase_cost {
+            border-right: 1px solid $COLOR_GRAY;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
         }
         .contract_amount, .contract_payout, .payout, .stake {
             @include BIDIR_VALUE(padding, 3px, 3px);

@@ -382,8 +382,6 @@ const JobDetails = () => (
 
                             <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic web applications. As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.', it.website_name)}</p>
 
-                            <p>{it.L('As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at [_1] You will also assist our developers in understanding and patching the bugs that you find.', '<a href=\'https://tech.binary.com/\' target=\'_blank\'>https://tech.binary.com/</a>')}</p>
-
                             <p>{it.L('You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats.')}</p>
 
                             <UlText

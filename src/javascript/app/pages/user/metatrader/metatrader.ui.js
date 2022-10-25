@@ -400,6 +400,12 @@ const MetaTraderUI = (() => {
         if (acc_type) {
             $account_type_desc = $account_desc.find(`.${acc_type}`);
 
+            // remove extra characters for real account to return the account description
+            if ($account_type_desc.length === 0 && acc_type.includes('real')) {
+                const formatted_acc_type = acc_type.slice(0, -9);
+                $account_type_desc = $account_desc.find(`.${formatted_acc_type}`);
+            }
+
             landing_company_short = MetaTraderConfig.getSampleAccount(acc_type).landing_company_short;
 
             if ($account_type_desc.length === 2) {
@@ -920,7 +926,6 @@ const MetaTraderUI = (() => {
         const action            = 'new_account';
         if (/(demo|real)/.test(selected_acc_type)) {
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual') && real_financial_acc_number > 0) ? MetaTraderConfig.needsRealMessage() : '', true);
-            displayAccountDescription(selected_acc_type);
             updateAccountTypesUI(selected_acc_type);
             switchAccountTypesUI(selected_acc_type, $form);
             $form.find('#view_1 .btn-next').addClass('button-disabled');

@@ -170,14 +170,6 @@ const Careers = () => {
                     <Box
                         gr='gr-3 gr-6-p'
                         padding='20'
-                        icon='images/pages/careers/tb-icon.svg'
-                        href='https://tech.binary.com'
-                        text={it.L('Read the [_1] tech blog', it.website_name)}
-                        target='_blank'
-                    />
-                    <Box
-                        gr='gr-3 gr-6-p'
-                        padding='20'
                         icon='images/pages/careers/bb-icon.svg'
                         href='https://blog.binary.com'
                         text={it.L('Read the [_1] company blog', it.website_name)}

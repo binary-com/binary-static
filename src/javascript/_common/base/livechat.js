@@ -2,6 +2,7 @@ const BinarySocket  = require('./socket_base');
 const ClientBase    = require('./client_base');
 const TrafficSource = require('../../app/common/traffic_source');
 const licenseID     = require('../utility').lc_licenseID;
+const Url           = require('../../_common/url');
 
 const LiveChat = (() => {
     
@@ -66,6 +67,11 @@ const LiveChat = (() => {
                         setNameEmail();
                     };
                 }
+
+                // Handle opening livechat via URL
+                const url_query_strings = Url.paramsHash();
+                const is_livechat_open = url_query_strings.is_livechat_open === 'true';
+                if (is_livechat_open) window.LC_API.open_chat_window();
             });
         }
     };
