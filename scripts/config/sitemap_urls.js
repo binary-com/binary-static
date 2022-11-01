@@ -40,7 +40,6 @@ module.exports = {
         // ==================== Section: "app" ====================
         ['cashier',                            'monthly', 0.80],
         ['cashier/payment_agent_listws',       'monthly', 0.80],
-        ['cashier/payment_methods',            'monthly', 0.80],
 
         ['trading',                            'monthly', 0.80],
 

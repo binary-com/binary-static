@@ -118,7 +118,6 @@ const pages_config = {
     metatrader               : { module: MetaTrader,                 is_authenticated: true, needs_currency: true },
     overview                 : { module: Dashboard },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
-    payment_methods          : { module: Cashier.PaymentMethods },
     platforms                : { module: Platforms,                  no_mf: true, no_blocked_country: true, msg_residence_blocked: true },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },

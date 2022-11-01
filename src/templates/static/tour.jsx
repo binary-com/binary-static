@@ -47,7 +47,7 @@ const Tour = () => (
             <div className='section border-bottom'>
                 <div className='section-content center-text gr-padding-30'>
                     <h1>{it.L('Bank your way')}</h1>
-                    <a className='button' href={it.url_for('cashier/payment_methods')}>
+                    <a className='button' href='https://deriv.com/payment-methods/'>
                         <span>{it.L('View payment methods')}</span>
                     </a>
                     <p>{it.L('Trade with ease with [_1]\'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.', it.website_name)}</p>

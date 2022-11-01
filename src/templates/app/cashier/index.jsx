@@ -139,7 +139,7 @@ const Cashier = () => (
                 <div className='gr-6 gr-8-m'>
                     <span className='client_virtual'>{it.L('Deposit via bank wire, credit card, and e-wallet.')}</span>
                     &nbsp;
-                    <a className='client_virtual' href={`${it.url_for('cashier/payment_methods')}`} id='view_payment_methods'>
+                    <a className='client_virtual' href='https://deriv.com/payment-methods/' id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Please do not share your bank account, credit card, or e-wallet with another client, as this may cause delays in your withdrawals.')} />

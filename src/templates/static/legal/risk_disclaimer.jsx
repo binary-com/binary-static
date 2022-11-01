@@ -54,7 +54,7 @@ const RiskDisclaimer = () => (
         <p>{it.L('The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. [_1] has taken reasonable measures to ensure the accuracy of the information on the website.', it.website_name)}</p>
 
         <h2 data-anchor='costs-and-charges'>{it.L('Costs and charges')}</h2>
-        <p>{it.L('The Company\'s costs and charges for depositing and withdrawing money are set out [_1]here[_2]. The client should be aware of all costs and charges that apply to the client because they will affect the client\'s profitability.', `<a href="${it.url_for('cashier/payment_methods')}">`, '</a>')}</p>
+        <p>{it.L('The Company\'s costs and charges for depositing and withdrawing money are set out [_1]here[_2]. The client should be aware of all costs and charges that apply to the client because they will affect the client\'s profitability.', '<a href="https://deriv.com/payment-methods/">', '</a>')}</p>
     </div>
 );
 

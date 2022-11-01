@@ -73,7 +73,7 @@ const Footer = () => (
                                 header={it.L('Banking')}
                                 items={[
                                     { text: it.L('Cashier'),         href: it.url_for('cashier') },
-                                    { text: it.L('Payment Methods'), href: it.url_for('cashier/payment_methods') },
+                                    { text: it.L('Payment Methods'), href: 'https://deriv.com/payment-methods/' },
                                 ]}
                             />
                         </div>

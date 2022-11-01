@@ -22,7 +22,7 @@ const PaymentLogo = () => payment_methods_list.map((item, inx) => (
     <div key={inx} className={`gr-2 gr-4-m center-text ${item.className || ''}`} data-show={item.dataShow}>
         {item.param ?
             <a
-                href={`${it.url_for('cashier/payment_methods')}${item.param}`}
+                href='https://deriv.com/payment-methods/'
                 rel={/^http/.test(item.href) ? 'noopener noreferrer' : undefined}
                 target={item.target || undefined}
             >
