@@ -599,7 +599,6 @@ module.exports = [
     'Switch account',
     'Switch account?',
     'Switch to crypto account?',
-    'Synthetic Indices',
     'Take a photo',
     'Take a photo of the back of your card',
     'Take a photo of the back of your license',
