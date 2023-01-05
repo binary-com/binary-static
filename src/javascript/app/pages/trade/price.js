@@ -197,7 +197,18 @@ const Price = (() => {
         const currency            = CommonFunctions.getVisibleElement('currency');
 
         if (!h4) return;
-        const display_text = type && contract_type ? contract_type[type] : '';
+
+        const form_name = Defaults.get('formname');
+        let display_text = type && contract_type ? contract_type[type] : '';
+
+        if (form_name === 'risefall' || form_name === 'callputequal') {
+            if (type === 'CALL' || type === 'CALLE') {
+                display_text = localize('Rise');
+            } else {
+                display_text = localize('Fall');
+            }
+        }
+        
         if (display_text) {
             h4.setAttribute('class', `contract_heading ${type}`);
             CommonFunctions.elementTextContent(h4, display_text);

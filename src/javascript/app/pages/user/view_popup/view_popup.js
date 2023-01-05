@@ -2,6 +2,7 @@ const moment                   = require('moment');
 const ViewPopupUI              = require('./view_popup.ui');
 const Highchart                = require('../../trade/charts/highchart');
 const Callputspread            = require('../../trade/callputspread');
+const Defaults                 = require('../../trade/defaults');
 const DigitDisplay             = require('../../trade/digit_trade');
 const Lookback                 = require('../../trade/lookback');
 const Reset                    = require('../../trade/reset');
@@ -84,16 +85,16 @@ const ViewPopup = (() => {
         showContract();
     };
 
-    const ContractTypeDisplay = (() => {
-        let contract_type_display;
+    const ContractTypeDisplay = () => {
+        const form_name = Defaults.get('formname');
 
-        const initContractTypeDisplay = () => ({
+        return {
             ASIANU      : localize('Asian Up'),
             ASIAND      : localize('Asian Down'),
-            CALL        : localize('Higher'),
-            CALLE       : localize('Higher or equal'),
-            PUT         : localize('Lower'),
-            PUTE        : localize('Lower or equal'),
+            CALL        : form_name === 'risefall' ? localize('Rise') : localize('Higher'),
+            CALLE       : localize('Rise or equal'),
+            PUT         : form_name === 'risefall' ? localize('Fall') : localize('Lower'),
+            PUTE        : localize('Fall or equal'),
             DIGITMATCH  : localize('Digit Matches'),
             DIGITDIFF   : localize('Digit Differs'),
             DIGITODD    : localize('Digit Odd'),
@@ -120,24 +121,15 @@ const ViewPopup = (() => {
             RUNLOW      : localize('Only Downs'),
             MULTUP      : localize('Multiplier Up'),
             MULTDOWN    : localize('Multiplier Down'),
-        });
-
-        return {
-            get: () => {
-                if (!contract_type_display) {
-                    contract_type_display = initContractTypeDisplay();
-                }
-                return contract_type_display;
-            },
         };
-    })();
+    };
 
     const showContract = () => {
         if (!$container) {
             $container = makeTemplate();
         }
 
-        containerSetText('trade_details_contract_type', ContractTypeDisplay.get()[contract.contract_type]);
+        containerSetText('trade_details_contract_type', ContractTypeDisplay()[contract.contract_type]);
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
         if (Lookback.isLookback(contract.contract_type)) {
