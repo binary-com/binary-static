@@ -5,7 +5,7 @@ const util  = require('util');
 
 exports.root_path = require('app-root-path').path;
 
-// ---------- Pages config ----------
+// --------- Pages config ----------
 exports.pages = require('./config/pages.js').map(p => ({
     save_as      : p[0],
     tpl_path     : p[1],
