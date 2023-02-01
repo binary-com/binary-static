@@ -3,33 +3,6 @@ orbs:
   k8s: circleci/kubernetes@0.7.0
   slack: circleci/slack@3.4.2
 commands:
-  git_checkout_from_cache:
-    description: "Git checkout and save cache"
-    steps:
-      - restore_cache:
-          keys:
-            - source-v1-{{ .Branch }}-{{ .Revision }}
-            - source-v1-{{ .Branch }}-
-            - source-v1-
-      - run: 
-          name: Fetch git tags 
-          command: |
-            mkdir -p ~/.ssh
-            ssh-keyscan github.com >> ~/.ssh/known_hosts
-            echo 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ== ' >> ~/.ssh/known_hosts
-            # Fetch tags if git cache is present
-            if [ -e /home/circleci/project/.git ]
-            then
-              git fetch origin --tags
-            fi
-      - checkout
-      - run:
-          name: Compress git objects 
-          command: git gc
-      - save_cache:
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ".git"
   npm_install:
     description: "npm install and save cache"
     steps:
@@ -60,15 +33,12 @@ commands:
       - run:
           name: Building dist for << parameters.target >>
           command: node_modules/grunt/bin/grunt releaseci --<< parameters.target >>
-  deploy:
-    description: "Deploy to static branches"
+  versioning:
+    description: "Add version to build"
     parameters:
       target_branch:
         type: string
     steps:
-      - checkout
-      - attach_workspace:
-          at: dist
       - run:
           name: Tag build
           command: echo "<< parameters.target_branch >> $(date -u +'%Y-%m-%dT%H:%M:%SZ')" > dist/version
@@ -141,27 +111,29 @@ commands:
           name: "Publish to cloudflare pages (production)"
           command: |
             cd dist
-            npx wrangler pages publish . --project-name=binary-static-pages --branch=main
+            npx wrangler pages publish . --project-name=binary-static-pages --branch=main-test
             echo "New website - http://cf-pages-binary-static.binary.com"
 jobs:
   test:
     docker:
       - image: circleci/node:14-stretch
     steps:
-      - git_checkout_from_cache
+      - checkout
       - npm_install
       - test
   release_staging:
     docker:
       - image: circleci/node:14-stretch
     steps:
-      - git_checkout_from_cache
+      - checkout
       - npm_install
       - test
       - build:
          target: 'staging'
       - build:
           target: 'translations'
+      - versioning:
+          target_branch: "staging"
       - persist_to_workspace:
           root: dist
           paths:
@@ -175,27 +147,17 @@ jobs:
     docker:
       - image: circleci/node:14-stretch
     steps:
-      - git_checkout_from_cache
+      - checkout
       - npm_install
       - test
       - build:
           target: 'production'
+      - versioning:
+          target_branch: "production"
       - persist_to_workspace:
           root: dist
           paths:
             - .
-      - deploy:
-          target_branch: "production"
-      - notify_slack
-  release_aws_production:
-    docker:
-      - image: circleci/node:14-stretch
-    steps:
-      - git_checkout_from_cache
-      - npm_install
-      - test
-      - build:
-          target: 'production'
       - docker_build_push:
           docker_latest_image_tag: latest
           docker_image_tag: ${CIRCLE_TAG}
@@ -203,6 +165,7 @@ jobs:
           k8s_svc_name: "production-binary-com"
           k8s_namespace: "www-binary-com-production"
           k8s_version: ${CIRCLE_TAG}
+      - notify_slack
   publish_cloudflare_staging:
     docker:
       - image: circleci/node:16.13.1-stretch
@@ -210,7 +173,6 @@ jobs:
       - attach_workspace:
           at: dist
       - publish_to_pages_staging
-
   publish_cloudflare_production:
     docker:
       - image: circleci/node:16.13.1-stretch
@@ -241,13 +203,6 @@ workflows:
               only: /^master$/
           context: binary-frontend-artifact-upload
       - release_production:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^production.*/
-          context: binary-frontend-artifact-upload
-      - release_aws_production:
           filters:
             branches:
               ignore: /.*/
