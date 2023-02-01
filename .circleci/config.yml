@@ -138,7 +138,7 @@ jobs:
           root: dist
           paths:
             - .
-      - deploy:
+      - versioning:
           target_branch: "staging"
       - docker_build_push
       - k8s_deploy
