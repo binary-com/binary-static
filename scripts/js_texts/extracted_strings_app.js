@@ -12,6 +12,7 @@ module.exports = [
     'Account balance:',
     'Account currency',
     'Accounts List',
+    'Accumulator',
     'Acknowledge',
     'Action',
     'Action required!',
