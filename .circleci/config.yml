@@ -111,7 +111,7 @@ commands:
           name: "Publish to cloudflare pages (production)"
           command: |
             cd dist
-            npx wrangler pages publish . --project-name=binary-static-pages --branch=main-test
+            npx wrangler pages publish . --project-name=binary-static-pages --branch=main
             echo "New website - http://cf-pages-binary-static.binary.com"
 jobs:
   test:
