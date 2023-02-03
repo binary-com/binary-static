@@ -257,6 +257,7 @@ module.exports = [
     'Go to DTrader',
     'Go to Deriv',
     'Go to Deriv to add an MT5 account',
+    'Go to Deriv to add an account',
     'Go to statement',
     'Goes Outside',
     'Got it',
