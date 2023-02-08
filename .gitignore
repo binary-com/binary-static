@@ -3,7 +3,8 @@
 .grunt/
 .sass-cache/
 .vscode/
-dist/
+dist/*
+!dist/www
 node_modules/
 scripts/CNAME
 .DS_Store
