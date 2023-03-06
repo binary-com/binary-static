@@ -96,12 +96,6 @@ a.button-disabled {
     pointer-events: none;
 }
 
-.immutable-field {
-    pointer-events: none;
-    -webkit-text-fill-color: $COLOR_GRAY; // to make disabled field normal one in ios
-    opacity: 1; /* required for iphone */
-}
-
 span.checked {
     background: url('../images/pages/authenticate/checked.svg') no-repeat;
     width: 16px;

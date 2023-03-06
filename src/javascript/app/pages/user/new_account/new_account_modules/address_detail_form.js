@@ -20,15 +20,6 @@ const AddressDetailForm = (() => {
 
             getElementById(`${field.section}_section`).setVisibility(1);
             getElementById(`${field.id}_row`).setVisibility(1);
-            if (field.is_immutable) {
-                if (field.id === 'address_state') {
-                    $('#address_state').parent().css('pointer-events', 'none');
-                    $('#select2-address_state-container').addClass('immutable-field');
-                    $('#select2-address_state-container').parent().addClass('white-bg-color');
-                } else {
-                    $(`#${field.id}`).attr('disabled', 'disabled').addClass('immutable-field');
-                }
-            }
         });
     };
 
