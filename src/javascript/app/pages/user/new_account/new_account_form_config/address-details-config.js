@@ -1,55 +1,63 @@
 const AddressDetailForm = require('../new_account_modules/address_detail_form');
 const localize = require('../../../../../_common/localize').localize;
 
-const getAddressDetailsConfig = ({ account_settings, is_svg }) => [
-    {
-        id           : 'address_line_1',
-        section      : 'address_section',
-        supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
-        default_value: account_settings.address_line_1 || '',
-        rules        : ['req', 'address', ['length', { min: 1, max: 700 }]],
-    },
-    {
-        id           : 'address_line_2',
-        section      : 'address_section',
-        supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
-        default_value: account_settings.address_line_2 || '',
-        rules        : [['length', { min: 0, max: 70 }]],
-    },
-    {
-        id           : 'address_city',
-        section      : 'address_section',
-        supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
-        default_value: account_settings.address_city || '',
-        rules        : [
-            'req', 'address_city',
-            ['regular', { regex: /^[a-zA-Z\s\W'.-]{1,35}$/ }],
-        ],
-    },
-    {
-        id           : 'address_state',
-        section      : 'address_section',
-        supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
-        default_value: account_settings.address_state || '',
-        rules        : [
-            ['regular', { regex: /^[\w\s\W'.-;,]{0,60}$/ }],
-            // Isle of Man and SVG Clients do not need to fill out state.
-            ...(account_settings.country_code === 'im' || is_svg ? [] : ['req']),
-        ],
-    },
-    {
-        id           : 'address_postcode',
-        section      : 'address_section',
-        supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
-        default_value: account_settings.address_postcode || '',
-        rules        : [
-            ['length', { min: 0, max: 20 }],
-            'postcode',
-            // GB and IM residence are required to fill in the post code.
-            ...(/^(im|gb)$/.test(account_settings.country_code) ? ['req'] : []),
-        ],
-    },
-];
+const getAddressDetailsConfig = ({ account_settings, is_svg }) => {
+    const isImmutable = (field) => account_settings.immutable_fields.includes(field);
+    return ([
+        {
+            id           : 'address_line_1',
+            section      : 'address_section',
+            supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
+            default_value: account_settings.address_line_1 || '',
+            is_immutable : isImmutable('address_line_1'),
+            rules        : ['req', 'address', ['length', { min: 1, max: 700 }]],
+        },
+        {
+            id           : 'address_line_2',
+            section      : 'address_section',
+            supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
+            default_value: account_settings.address_line_2 || '',
+            is_immutable : isImmutable('address_line_2'),
+            rules        : [['length', { min: 0, max: 70 }]],
+        },
+        {
+            id           : 'address_city',
+            section      : 'address_section',
+            supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
+            default_value: account_settings.address_city || '',
+            is_immutable : isImmutable('address_city'),
+            rules        : [
+                'req', 'address_city',
+                ['regular', { regex: /^[a-zA-Z\s\W'.-]{1,35}$/ }],
+            ],
+        },
+        {
+            id           : 'address_state',
+            section      : 'address_section',
+            supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
+            default_value: account_settings.address_state || '',
+            is_immutable : isImmutable('address_state'),
+            rules        : [
+                ['regular', { regex: /^[\w\s\W'.-;,]{0,60}$/ }],
+                // Isle of Man and SVG Clients do not need to fill out state.
+                ...(account_settings.country_code === 'im' || is_svg ? [] : ['req']),
+            ],
+        },
+        {
+            id           : 'address_postcode',
+            section      : 'address_section',
+            supported_in : ['svg', 'iom', 'malta', 'maltainvest'],
+            default_value: account_settings.address_postcode || '',
+            is_immutable : isImmutable('address_postcode'),
+            rules        : [
+                ['length', { min: 0, max: 20 }],
+                'postcode',
+                // GB and IM residence are required to fill in the post code.
+                ...(/^(im|gb)$/.test(account_settings.country_code) ? ['req'] : []),
+            ],
+        },
+    ]);
+};
 
 const getRequiredFields = (landing_company, all_fields) =>
     all_fields.filter(field => field.supported_in.includes(landing_company));
