@@ -66,7 +66,7 @@ const Header = () => (
             <div className='container'>
                 <div className='gr-12'>
                     <div className='gr-row gr-row-align-middle'>
-                        <div className='gr-3 gr-2-m gr-2-p remove-branding'>
+                        <div className='gr-3 gr-2-m gr-2-p'>
                             <a id='logo' href='javascript:;' className='gr-11'>
                                 <div className='gr-row logo-parent'>
                                     <div className='gr-3 gr-12-m gr-12-p gr-no-gutter logo'>

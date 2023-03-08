@@ -84,12 +84,6 @@ const Page = (() => {
     };
 
     const onLoad = () => {
-        const host_name = $(location).attr('hostname');
-        const removeBranding = () => {
-            if (host_name !== 'localhost' && host_name !== 'binary.com' && host_name !== 'staging.binary.com' && !host_name.includes('binary-static-git-fork')) {
-                $('.remove-branding').remove();
-            }
-        };
         if (State.get('is_loaded_by_pjax')) {
             Url.reset();
             updateLinksURL('#content');
@@ -102,7 +96,6 @@ const Page = (() => {
                     // InterviewPopup.onLoad();
                 }
             }
-            removeBranding();
             Header.onLoad();
             Footer.onLoad();
             Language.setCookie();

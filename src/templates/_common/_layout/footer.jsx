@@ -38,7 +38,7 @@ const DialogNotification = () => (
 );
 
 const Footer = () => (
-    <div id='footer' className='no-print remove-branding'>
+    <div id='footer' className='no-print'>
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
             <div className='container'>
                 <div className='gr-row gr-padding-10'>
