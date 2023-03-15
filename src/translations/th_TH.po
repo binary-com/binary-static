@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-03-08 05:57\n"
+"PO-Revision-Date: 2023-03-15 04:24\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protoco
 msgstr "\"API ของ %1\" หมายถึง ระบบของ %1 ที่ประกอบด้วย ชุดคำสั่งต่างๆ โปรโตคอลต่างๆ เครื่องมือต่างๆ และทรัพยากรต่างๆ ที่ถูกพัฒนาขึ้นและดำเนินการโดย %1 ซึ่งโปรแกรมเมอร์สามารถใช้งานแอพพลิเคชันที่ลงทะเบียนเพื่อเชื่อมต่อกับแพลตฟอร์มการซื้อขายของ %1"
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. binary options can have only one of two possible outcomes and allow the client to take a simple \"Yes or No\" approach. Like traditional options, binary options are based on an underlying asset such as currencies, commodities, or stock indices; however, one of the most significant differences between binary options and traditional options, among others, is that there can only be two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
-msgstr "\"ไบนารี (Binary)\" หรือ \"ดิจิทัล (Digital)\" ออปชั่น คือ ผลิตภัณฑ์ทางการเงินประเภทหนึ่งซึ่งจะมีการกำหนดมูลค่า หรือ มูลค่าคงที่ ขึ้นกับวาระการหมดอายุของไบนารีออปชั่นดังกล่าว ไบนารีออปชั่นมีผลลัพธ์เพียง 2 ทาง ซึ่งจะให้ลูกค้าพิจารณาง่ายๆ ว่า ใช่ หรือ ไม่ใช่ เช่นเดียวกับออปชั่นดั้งเดิม ไบนารีออปชั่น จะมีพื้นฐายขึ้นกับผลิตภัณฑ์อ้างอิง ได้แก่ สกุลเงินต่างๆ สินค้าโภคภัณฑ์ หรือ ดัชนีหุ้น แต่มีสิ่งสำคัญที่ทำให้ไบนารีออปชั่นในปัจจุบันมีความแตกต่างจากออปชั่นดั้งเดิม คือ ไบนารีออปชั่นมีผลลัพธ์เพียง 2 ทาง กล่าวคือ ลูกค้าได้รับผลตอบแทนจากสิ่งที่เกิดขึ้นในธุรกรรมนั้น หรือ ลูกค้าขาดทุนจากการลงทุนนั้น เท่านั้น"
+msgstr "\"ไบนารี (Binary)\" หรือ \"ดิจิทัล (Digital)\" ออปชั่น คือตราสารสิทธิที่จะจ่ายตามมูลค่าคงที่ซึ่งมีการกำหนดไว้ล่วงหน้าโดยขึ้นอยู่กับว่าการค้านั้นในเวลาที่ไบนารีออปชั่นดังกล่าวนั้นหมดอายุหรือไม่ ทั้งนี้ ไบนารีออปชั่นมีผลลัพธ์ออกมาได้เพียง 2 ทางซึ่งจะช่วยให้ลูกค้าพิจารณาได้ง่ายๆ ว่า ใช่ หรือ ไม่ใช่ แม้ว่าไบนารีออปชั่นจะมีพื้นฐานขึ้นกับผลิตภัณฑ์อ้างอิงได้แก่ สกุลเงินต่างๆ สินค้าโภคภัณฑ์ หรือ ดัชนีหุ้น เช่นเดียวกับออปชั่นดั้งเดิมต่างๆ ก็ตาม ข้อแตกต่างสำคัญอันหนึ่งของไบนารีออปชั่นเทียบกับออปชั่นดั้งเดิมก็คือ ไบนารีออปชั่นมีผลลัพธ์เพียง 2 ทางเท่านั้น กล่าวคือ ลูกค้าจะได้รับเงินผลตอบแทนจากสิ่งที่เกิดขึ้นในธุรกรรมนั้น หรือ ลูกค้าจะสูญเสียเงินทุนทรัพย์ที่ลงไป"
 
 msgid "\"Content\" means any data or content either from the Company's Website or accessed via the API. The Company's \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
 msgstr "\"เนื้อหา (Content)\" หมายถึง ข้อมูล หรือ เนื้อหาต่างๆ ที่ปรากฏในเว็บไซต์ของบริษัท ที่สามารถเข้าถึงได้ผ่าน API \"เว็บไซต์ (Website)\" ของบริษัท หมายถึง เว็บไซต์ของ %1 ที่ปรากฎใน www.binary.com และเว็บไซต์อื่น หรือ บริการต่างๆ ที่ดำเนินการโดย %1"
@@ -146,7 +146,7 @@ msgid "%1 Account %2"
 msgstr "%1 บัญชี %2"
 
 msgid "%1 Application Programming Interface (\"API\")"
-msgstr "%1 Application Programming Interface (\"API\")"
+msgstr "%1 ช่องทางการเชื่อมต่อ (\"API\")"
 
 msgid "%1 Graduate Programme"
 msgstr "โปรแกรมบัณฑิต %1"
@@ -179,7 +179,7 @@ msgid "%1 assesses the choice of external execution venues regularly (at least o
 msgstr "%1 ประเมินทางเลือกของการดำเนินการภายนอกสถานที่เป็นประจำ (อย่างน้อยปีละครั้ง) โดยเจตนาเพื่อให้บรรลุผลที่ดีขึ้นสำหรับลูกค้าตามข้อผูกมัดในการดำเนินการที่ดีที่สุดของบริษัทฯ"
 
 msgid "%1 clients can trade forex from Sunday 21:00 GMT to Friday 21:00 GMT."
-msgstr "ลูกค้า %1 สามารถซื้อขายฟอเร็กซ์ได้ตั้งแต่วันอาทิตย์ 21:00 GMT ถึงวันศุกร์ 21:00 GMT"
+msgstr "ลูกค้า %1 สามารถซื้อขาย Forex ได้ตั้งแต่วันอาทิตย์ 21:00 GMT ถึงวันศุกร์ 21:00 GMT"
 
 msgid "%1 continues to innovate and grow"
 msgstr "%1 เติบโตและสร้างสรรค์สิ่งใหม่ๆ อย่างต่อเนื่อง"
@@ -194,13 +194,13 @@ msgid "%1 desktop app"
 msgstr "%1 แอพพลิเคชันสำหรับคอมพิวเตอร์ตั้งโต๊ะ"
 
 msgid "%1 employees and affiliates must avoid conflicts of interest. For example, they may not compete with the company, either directly or indirectly, or use knowledge gained while working for %1 to help anyone else compete with it."
-msgstr "พนักงานหรือพันธมิตร %1 ต้องหลีกเลี่ยงความขัดแย้งทางผลประโยชน์ ตัวอย่างเช่น พวกเขาไม่สามารถแข่งขันกับบริษัท ไม่ว่าจะโดยตรงหรือโดยอ้อมหรือใช้ความรู้ที่ได้รับในขณะทำงานให้ %1 เพื่อช่วยให้ผู้อื่นแข่งขันด้วย"
+msgstr "พนักงานหรือพันธมิตร %1 ต้องหลีกเลี่ยงผลประโยชน์ทับซ้อน ตัวอย่างเช่น พวกเขาไม่สามารถแข่งขันกับบริษัท ไม่ว่าจะโดยตรงหรือโดยอ้อม หรือใช้ความรู้ที่ได้รับในขณะทำงานให้กับ %1 เพื่อช่วยให้ผู้อื่นแข่งขันด้วย"
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stock indices, commodities, and synthetic indices."
-msgstr "%1 ช่วยให้ทุกคนสามารถเข้าร่วมในตลาดการเงินได้ง่ายขึ้น คุณสามารถซื้อขายด้วยเงินลงทุนขั้นต่ำเพียง 1 USD กับสกุลเงินหลัก ดัชนีหุ้น หุ้นโภคภัณฑ์ และ ดัชนีสังเคราะห์"
+msgstr "%1 ช่วยให้ทุกคนสามารถเข้าร่วมในตลาดการเงินได้ง่ายขึ้น คุณสามารถซื้อขายด้วยเงินลงทุนขั้นต่ำเพียง $1 USD กับสกุลเงินหลัก ดัชนีหุ้น หุ้นโภคภัณฑ์ และ ดัชนีสังเคราะห์"
 
 msgid "%1 has been credited into your Demo Account: %2."
-msgstr "%1 ได้ถูกเพิ่มเข้าในบัญชีทดลองใช้านแล้ว: %2"
+msgstr "%1 ได้ถูกเพิ่มเข้าในบัญชีทดลองของคุณแล้ว: %2"
 
 msgid "%1 has been credited into your MT5 Demo Account: %2."
 msgstr "%1 ได้ถูกเพิ่มเข้าในบัญชีทดลองบนแพลตฟอร์ม MT5 ของท่านแล้ว: %2"
@@ -242,7 +242,7 @@ msgid "%1 is an active proponent of the open-source movement and is in the proce
 msgstr "%1 เป็นผู้สนับสนุนปัจจุบันของการเคลื่อนไหวแบบโอเพ่นซอส และอยู่ในระหว่างขั้นตอนในการโอเพ่นซอสส่วนประกอบจำนวนมากของ Codebase"
 
 msgid "%1 is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Synthetic Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %2Responsible Trading%3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, Hong Kong, or to persons under age 18."
-msgstr "%1 เป็นผู้ให้บริการการซื้อขายออนไลน์ที่ได้รับรางวัลซึ่งช่วยให้ลูกค้าสามารถซื้อขายในตลาดการเงินผ่านไบนารี่ออฟชั่นและ CFD การซื้อขายไบนารี่ออฟชั่นและ CFD ในดัชนีสังเคราะห์จัดเป็นกิจกรรมการพนัน โปรดจำไว้ว่าการพนันสามารถเสพติดได้โปรดเล่นอย่างมีความรับผิดชอบ เรียนรู้เพิ่มเติมเกี่ยวกับ %2การซื้อขายอย่างมีความรับผิดชอบ%3 ผลิตภัณฑ์บางรายการไม่มีให้บริการในบางประเทศ บริการของเว็บไซต์นี้ไม่มีให้บริการในบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ฮ่องกง หรือ สำหรับผู้ที่มีอายุต่ำกว่า 18 ปี"
+msgstr "%1 เป็นผู้ให้บริการการซื้อขายออนไลน์ที่ได้รับรางวัลซึ่งช่วยลูกค้าให้ได้ทำการเทรดไบนารีออปชั่นและ CFD ในตลาดการเงินต่างๆ ทั้งนี้การซื้อขายไบนารีออปชั่นและ CFD สำหรับดัชนีสังเคราะห์นั้นอาจทำให้เกิดการเสพติด ดังนั้นกรุณาดำเนินการซื้อขายอย่างมีความรับผิดชอบ ศึกษาเพิ่มเติมเกี่ยวกับเรื่องนี้ได้ที่ %2การซื้อขายอย่างมีความรับผิดชอบ%3 ผลิตภัณฑ์บางรายการนั้นไม่ได้มีให้บริการในทุกประเทศ และบริการต่างๆ ของเว็บไซต์นี้จะไม่มีให้บริการในบางประเทศ เช่น สหรัฐอเมริกา แคนาดา ฮ่องกง หรือจะไม่ให้บริการแก่บุคคลที่อายุต่ำกว่า 18 ปี"
 
 msgid "%1 is awarded 'Best Trading Platform in Asia' by Global Brands Magazine. The Global Brands Awards honours excellence in performance and exceptional service delivery. "
 msgstr "%1ได้รับรางวัล \"แพลตฟอร์มการซื้อขายที่ดีที่สุดในเอเชีย\" โดยนิตยสารโกลโบลแบรนด์ รางวัลโกลโบลแบรนด์ (Global Brands) ยกย่องความยอดเยี่ยมของประสิทธิภาพในการทำงานและการให้บริการที่ดีเยี่ยม "
@@ -260,10 +260,10 @@ msgid "%1 is not affiliated with any of the payment agents listed above. Each pa
 msgstr "%1 ไม่ได้เป็นสมาชิกกับตัวแทนรับชำระเงินที่แจกแจงข้างต้น ตัวแทนรับชำระเงินแต่ละรายดำเนินการในฐานะผู้ให้บริการอิสระ และไม่ได้รับการรับรอง รับประกัน หรือ อนุมัติโดย %1 ลูกค้าที่ติดต่อกับตัวแทนรับชำระเงินจะต้องรับผิดชอบต่อความเสี่ยงต่างๆ ด้วยตัวเอง ขอแนะนำให้ลูกค้าตรวจสอบข้อมูลหลักฐานอ้างอิงของตัวแทนรับชำระเงินก่อนที่จะส่งเงินให้กับตัวแทนฯ ไม่ว่าในกรณีใดๆ ก็ตาม %1 จะไม่รับผิดชอบต่อธุรกรรมที่กระทำขึ้นระหว่างลูกค้ากับตัวแทนรับชำระเงิน"
 
 msgid "%1 is one of the oldest and most successful online trading companies in the world. Our commitment to high standards of ethics is one of the key factors that will ensure our continuing success.  Our Business Principles summarise the values that underpin our work."
-msgstr "%1 เป็นหนึ่งในบริษัทการซื้อขายออนไลน์ที่เก่าแก่และประสบความสำเร็จมากที่สุดในโลก ความมุ่งมั่นของเราที่มีต่อมาตรฐานระดับสูงของจริยธรรมเป็นปัจจัยสำคัญที่จะทำให้เราประสบความสำเร็จอย่างต่อเนื่อง หลักการทางธุรกิจของเราสรุปคุณค่าที่สนับสนุนการทำงานของเรา"
+msgstr "%1 เป็นหนึ่งในบริษัทการซื้อขายออนไลน์ที่เก่าแก่และประสบความสำเร็จมากที่สุดในโลก ความมุ่งมั่นของเราต่อมาตรฐานจริยธรรมระดับสูงเป็นหนึ่งในปัจจัยสำคัญที่จะทำให้เราประสบความสำเร็จอย่างต่อเนื่อง หลักการทางธุรกิจของเราได้รวมความมาเป็นค่านิยมอันเป็นฐานรองรับงานของเรา"
 
 msgid "%1 is owned and operated by the Deriv Group Ltd. group of companies. For more information, %2visit our history page%3."
-msgstr "%1 เป็นเจ้าของและดำเนินการโดยบริษัท Deriv Group Ltd สำหรับข้อมูลเพิ่มเติม %2เยี่ยมชมหน้าประวัติของเรา%3"
+msgstr "บริษัท Deriv Group Ltd เป็นเจ้าของและดำเนินการ %1 สำหรับข้อมูลเพิ่มเติม %2เยี่ยมชมหน้าประวัติของเรา%3"
 
 msgid "%1 is the award-winning industry pioneer in online options trading. We boast:"
 msgstr "%1 ได้รับรางวัลผู้บุกเบิกในวงการซื้อขายออปชั่นออนไลน์ เรามีความเชี่ยวชาญในเรื่อง"
@@ -317,7 +317,7 @@ msgid "%1 owes the client a duty of best execution when executing orders on the 
 msgstr "%1 มีหน้าที่ที่จะต้องดำเนินการอย่างดีที่สุดในการดำเนินการคำสั่งซื้อในนามของลูกค้า นั่นคือ เมื่อลูกค้าไว้วางใจในบริษัทอย่างแท้จริงในการปกป้องผลประโยชน์ของลูกค้าที่เกี่ยวข้องกับการดำเนินการคำสั่งซื้อ"
 
 msgid "%1 prohibits anti-competitive agreements or conduct, including fixing prices, restricting the supply of services, price rigging and market sharing. We require our business partners to commit to free and fair competition and to abide by relevant competition laws and regulations."
-msgstr "%1 ห้ามข้อตกลงหรือพฤติกรรมต่อต้านการแข่งขัน ซึ่งรวมถึงการกำหนดราคา การจำกัดการให้บริการการกำหนดราคาและส่วนแบ่งการตลาด เรากำหนดให้พันธมิตรทางธุรกิจของเรามุ่งมั่นที่จะแข่งขันอย่างเสรีและเป็นธรรมและปฏิบัติตามกฎหมายพร้อมกฎระเบียบการแข่งขันที่เกี่ยวข้อง"
+msgstr "%1 ห้ามข้อตกลงหรือพฤติกรรมที่ต่อต้านการแข่งขัน ซึ่งรวมถึงการกำหนดราคาในหมู่พวก การจำกัดการให้บริการ การฮั้วราคาและการจัดส่วนแบ่งการตลาดในหมู่พวก เรากำหนดให้พันธมิตรทางธุรกิจของเรามุ่งมั่นที่จะแข่งขันอย่างเสรีและเป็นธรรมและปฏิบัติตามกฎหมายพร้อมกฎระเบียบการแข่งขันที่เกี่ยวข้อง"
 
 msgid "%1 property"
 msgstr "ทรัพย์สินของ %1"
@@ -326,7 +326,7 @@ msgid "%1 provides business partnership services via the following programs."
 msgstr "%1 มีบริการสำหรับพันธมิตรทางธุรกิจผ่านโปรแกรมต่างๆ ต่อไปนี้"
 
 msgid "%1 provides demo facilities to practise your trading strategy with virtual funds. Switch to your demo account using the drop-down box in the top-right corner of the screen."
-msgstr "%1 มีสิ่งอํานวยความสะดวกในการทดลองใช้เพื่อฝึกกลยุทธ์การเทรดของคุณด้วยเงินทุนเสมือน สลับไปยังบัญชีทดลองใช้ของคุณโดยใช้กล่องแบบหล่นลงที่มุมขวาบนของหน้าจอ"
+msgstr "%1 ให้สิ่งอํานวยความสะดวกในการทดลองใช้เพื่อฝึกฝนกลยุทธ์การเทรดของคุณโดยใช้เงินทุนเสมือน คุณสามารถสลับไปยังบัญชีทดลองของคุณได้โดยเลือกจากกล่องรายการแบบดึงลงที่อยู่ตรงมุมขวาบนของหน้าจอ"
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by"
 msgstr "%1 นำเสนอการประมวลผลที่ดีที่สุดในการจัดการคำสั่งซื้อโดยวิธีการรวมกันอย่างชาญฉลาด ซึ่งมีกลไกการทำงานโดย"
@@ -362,7 +362,7 @@ msgid "%1 takes home first prize in the Financial Trading Operator category at t
 msgstr "%1 ได้รับรางวัลชนะเลิศ ประเภท Financial Trading Operator ในงานเกียรติยศ EGR Operator Awards ปี ค.ศ. 2015 จัดที่เมืองลอนดอน"
 
 msgid "%1 trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
-msgstr "การซื้อขาย %1 อาจกลายเป็นการเสพติดที่แท้จริงเช่นเดียวกับกิจกรรมอื่น ๆ ที่ถูกผลักดันให้ถึงขีด จํากัด เพื่อหลีกเลี่ยงอันตรายจากการเสพติดดังกล่าวเราให้การตรวจสอบความเป็นจริงที่ให้สรุปการซื้อขายและบัญชีของคุณเป็นประจํา"
+msgstr "การเทรดอาจกลายเป็นสิ่งเสพติดอย่างแท้จริงเช่นเดียวกับกิจกรรมอื่นใดที่ทำมากจนเกินขีดจํากัด ดังนั้น เพื่อเลี่ยงอันตรายจากการเสพติดดังกล่าว เราจึงให้บริการเช็คสภาพความเป็นจริงโดยจัดส่งข้อสรุปการซื้อขายและบัญชีต่างๆ ของคุณมาให้คุณอยู่เป็นประจํา"
 
 msgid "%1 tries to maintain a reasonable relation between the quoted prices of each underlying asset that a Binary Option refers to and the actual market prices of such an asset. %1 makes no warranty, expressed or implied, that the quoted prices represent prevailing market prices."
 msgstr "%1 พยายามรักษาความสัมพันธ์ระหว่างราคาที่เสนอของสินทรัพย์ที่ไบนารีออปชั่นอ้างอิงถึง กับราคาจริงในตลาดของสินทรัพย์ดังกล่าว %1จะไม่รับรองอย่างชัดแจ้งหรือโดยนัยว่า ราคาที่นำเสนอนั้น คือ ราคาทั่วไปของตลาด"
@@ -416,7 +416,7 @@ msgid "%1's Quantitative Analytics team is responsible for the pricing of our bi
 msgstr "%1 ทีมวิเคราะห์เชิงปริมาณมีหน้าที่รับผิดชอบในการกำหนดราคาของไบนารีออปชันของเรา ท่านจะร่วมงานกับทีมในการบริหารความเสี่ยงและความสามารถในการทำกำไรของออปชันของบริษัทฯ"
 
 msgid "%1's Synthetic Indices are synthetic indices that mimic real-world market volatility and are available for trading 24/7. They are based on a cryptographically secure random number generator audited for fairness by an independent third party."
-msgstr "ดัชนีสังเคราะห์ของ %1 เป็นดัชนีสังเคราะห์ที่เลียนแบบความผันผวนของตลาดในโลกแห่งความเป็นจริง และสามารถซื้อขายได้ตลอด 24 ชั่วโมงทุกวัน ดัชนีนี้ตั้งอยู่บนตัวสร้างหมายเลขแบบสุ่มที่ปลอดภัยด้วยการเข้ารหัสซึ่งตรวจสอบเพื่อความเป็นธรรมโดยหน่วยงานอิสระ"
+msgstr "ดัชนีสังเคราะห์ของ %1 เป็นดัชนีสังเคราะห์ที่เลียนแบบความผันผวนของตลาดในโลกแห่งความเป็นจริง และมีให้สามารถเทรดได้ตลอด 24 ชั่วโมงทุกวัน ดัชนีนี้ตั้งอยู่บนตัวสร้างหมายเลขแบบสุ่มที่ปลอดภัยด้วยการเข้ารหัสและได้รับการตรวจสอบเพื่อความเป็นธรรมโดยหน่วยงานอิสระภายนอก"
 
 msgid "%1's UI/UX team explores the many ways that we can design better product experiences for our users. As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together."
 msgstr "ทีม UI/UX ของ %1 สำรวจหลายๆวิธีที่เราสามารถออกแบบผลิตภัณฑ์เพื่อสร้างประสบการณ์ที่ดีกว่าให้แก่ผู้ใช้ของเรา ในฐานะนักออกแบบกราฟิก คุณจะทำหน้าที่พัฒนากราฟิกที่ดึงดูดและองค์ประกอบภาพ เช่น ภาพ และไอคอน สำหรับเว็บไซต์และแอพพลิเคชันของเรา คุณจะมีบทบาทสำคัญในการสร้างส่วนต่อเชื่อมกับผู้ใช้งานที่จะทำให้ผลิตภัณฑ์และผู้ใช้งานเข้ามาใกล้กันมากขึ้น"
@@ -434,7 +434,7 @@ msgid "%1's systems are now processing in excess of 1 million transactions/day (
 msgstr "ขณะนี้ระบบของ %1 มีการประมวลผลเกินกว่า 1 ล้านธุรกรรม/วัน (รวมถึงบัญชีทดลอง)"
 
 msgid "%124/7 customer support%2 to enhance your trading experience"
-msgstr "การสนับสนุนลูกค้า %124/7%2 เพื่อปรับปรุงประสบการณ์การซื้อขายของคุณ"
+msgstr "%1การสนับสนุนลูกค้าแบบ 24/7%2 มีเพื่อส่งเสริมประสบการณ์การซื้อขายของคุณ"
 
 msgid "%1CFD%2"
 msgstr "%1CFD%2"
@@ -449,7 +449,7 @@ msgid "%1Deriv-Server%2 or %1Deriv-Server-02%2 if your signals is for real accou
 msgstr "%1Deriv-Server%2 หรือ %1Deriv-Server-02%2 หากสัญญาณของคุณใช้สำหรับบัญชีจริงเท่านั้น"
 
 msgid "%1Digital Options%1"
-msgstr "%1ดิจิทัลออปชัน%1"
+msgstr "%1ดิจิทัลออปชั่น%1"
 
 msgid "%1Founded%2 October 1999"
 msgstr "%1ก่อตั้งเมื่อ%2 ตุลาคม พ.ศ. 2542 (ค.ศ. 1999)"
@@ -458,19 +458,19 @@ msgid "%1Manage your accounts%2"
 msgstr "%1จัดการบัญชีของท่าน%2"
 
 msgid "%1Maximise returns%2 by %3risking more%4 than you put in."
-msgstr "%1เพิ่มผลตอบแทนสูงสุด%2โดย %3ความเสี่ยง%4 มากกว่าที่คุณใส่"
+msgstr "%1เพิ่มผลตอบแทนสูงสุด%2 โดย %3เสี่ยงมากกว่า%4 จำนวนที่คุณลงเงินไป"
 
 msgid "%1Not Sure?%1"
 msgstr "%1ไม่แน่ใจ?%1"
 
 msgid "%1Note:%2 For a wider selection of signal providers, go to %3MQL5 showcase page%4 and search for Deriv under the Broker server field."
-msgstr "%1หมายเหตุ:%2 สําหรับการเลือกผู้ให้บริการสัญญาณที่กว้างขึ้นสําหรับ Deriv ให้ไปที่ %3หน้าตู้โชว์ MQL5%4 และค้นหา Deriv ภายใต้ช่องเซิร์ฟเวอร์ โบรกเกอร์"
+msgstr "%1หมายเหตุ:%2 สําหรับการเลือกผู้ให้บริการสัญญาณที่หลากหลายขึ้นให้ไปที่ %3หน้าแสดง MQL5%4 และค้นหา Deriv ภายใต้ช่องที่ระบุเซิร์ฟเวอร์โบรกเกอร์"
 
 msgid "%1Note:%2 You need to upgrade your MQL5 account to seller status to be able to add a signal. If you’ve not upgraded yet, follow the steps on %3this page%4 to register as a seller."
-msgstr "%1หมายเหตุ:%2 คุณต้องอัปเกรดบัญชี MQL5 ของคุณเป็นสถานะผู้ขายเพื่อให้สามารถเพิ่มสัญญาณได้ หากคุณยังไม่ได้อัปเกรด ขั้นตอน %3ในหน้านี้%4 ลงทะเบียนเป็นผู้ขาย"
+msgstr "%1หมายเหตุ:%2 คุณต้องอัปเกรดบัญชี MQL5 ของคุณเป็นสถานะผู้ขายเพื่อให้สามารถเพิ่มสัญญาณได้ หากคุณยังไม่ได้อัปเกรดเช่นนั้น ให้ทำตามขั้นตอนใน %3หน้านี้%4 เพื่อลงทะเบียนเป็นผู้ขาย"
 
 msgid "%1Please note that if you live in the United Kingdom, self-exclusion cannot be removed until its period has expired. %2If you wish to resume trading after your self-exclusion period is over, please make your request by calling %3. Requests by chat or email shall not be entertained."
-msgstr "%1โปรดทราบว่าหากคุณอาศัยอยู่ในสหราชอาณาจักรจะไม่สามารถลบหรือยกเลิกการป้องกันตนเองได้ จนกว่าจะหมดระยะเวลา %2หากคุณต้องการซื้อขายอีกครั้งหลังจากระยะเวลาการป้องกันตนเองสิ้นสุดลง โปรดส่งคำขอของคุณโดยการโทร %3 การร้องขอทางแชทหรืออีเมลไม่เพียงพอ"
+msgstr "%1โปรดทราบว่าหากคุณอาศัยอยู่ในสหราชอาณาจักร ระบบกันตัวเองจะไม่อาจถูกลบหรือยกเลิกได้จนกว่าจะหมดอายุตามระยะที่ตั้งไว้ %2หากคุณต้องการทำการซื้อขายอีกครั้งหลังจากระยะเวลาการกันตัวเองสิ้นสุดลงโปรดส่งคำขอของคุณโดยโทรไปที่ %3 เพราะการร้องขอผ่านช่องทางแชทหรืออีเมล์จะไม่ได้รับการพิจารณา"
 
 msgid "%1Please note%2: Commission payout for all assets will be converted to your deposit currency based on the latest exchange rate."
 msgstr "%1โปรดทราบ%2: การจ่ายคอมมิชชั่นสำหรับสินทรัพย์ทั้งหมดจะถูกแปลงเป็นสกุลเงินฝากของคุณตามอัตราแลกเปลี่ยนล่าสุด"
@@ -482,7 +482,7 @@ msgid "%1Use MetaTrader %2Economic Calendar"
 msgstr "%1ใช้ MetaTrader %2ปฏิทินเศรษฐกิจ"
 
 msgid "%1’s refusal to pay bribes is an essential part of our ethical commitment. Similarly, we do not permit our business partners to pay bribes when acting on our behalf."
-msgstr "%1 ปฏิเสธที่จะจ่ายสินบนเป็นส่วนสําคัญของความมุ่งมั่นทางจริยธรรมของเรา ในทํานองเดียวกันเราไม่อนุญาตให้พันธมิตรทางธุรกิจของเราจ่ายสินบนเมื่อดำเนินการในนามของเรา"
+msgstr "การที่ %1 ปฏิเสธที่จะจ่ายสินบนนั้นเป็นส่วนสําคัญของความมุ่งมั่นทางจริยธรรมของเรา ในทํานองเดียวกัน เราก็ไม่อนุญาตให้พันธมิตรทางธุรกิจของเราจ่ายสินบนเมื่อดำเนินการในนามของเรา"
 
 msgid "'Best Customer Communication Firm' award by Investors Chronicle"
 msgstr "รางวัล ‘Best Customer Communication Firm’ ได้รับจาก Investors Chronicle"
@@ -512,7 +512,7 @@ msgid "(This limit may vary depending on current exchange rates.)"
 msgstr "(วงเงินอาจมีการเปลี่ยนแปลง ขึ้นอยู่กับอัตราแลกเปลี่ยนปัจจุบัน)"
 
 msgid "(You can find the account server name on your %1MT5 dashboard%2)."
-msgstr "(คุณสามารถค้นหาชื่อเซิร์ฟเวอร์บัญชีได้จากแดชบอร์ด %1MT5%2 ของคุณ)"
+msgstr "(คุณสามารถค้นหาชื่อเซิร์ฟเวอร์บัญชีได้จากหน้ากระดาน %1MT5%2 ของคุณ)"
 
 msgid "(a) Price and cost"
 msgstr "(ก) ราคาและต้นทุน"
@@ -584,7 +584,7 @@ msgid "1-2 years"
 msgstr "1-2 ปี"
 
 msgid "1. Ensure to close all your positions"
-msgstr "1. ให้แน่ใจว่าจะปิดทุกตําแหน่งของคุณ"
+msgstr "1. ดูให้แน่ใจว่าได้ปิดทุกตําแหน่งของคุณแล้ว"
 
 msgid "1. Proof of identity"
 msgstr "1. หลักฐานแสดงตัวบุคคล"
@@ -701,10 +701,10 @@ msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services
 msgstr "<strong>การทดสอบความเหมาะสม: คำเตือน:</strong> ในการให้บริการ พวกเราขออนุญาตสอบถามข้อมูลจากท่านเพื่อประเมินผลิตภัณฑ์และบริการที่เหมาะสมให้กับท่าน (ซึ่งรายละเอียดจะเกี่ยวข้องกับประสบการณ์และความรู้ของท่านเพื่อให้เข้าใจถึงระดับความเสี่ยงที่เกี่ยวข้องในผลิตภัณฑ์แต่ละประเภท)"
 
 msgid "A Contract for difference (CFD) is a derivative contract that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset."
-msgstr "สัญญาซื้อขายส่วนต่าง (CFD) คือสัญญาอนุพันธ์ที่ให้คุณทำกำไรโดยการเก็งกำไรที่เพิ่มขึ้นหรือลงของสินทรัพย์อ้างอิง กำไรและขาดทุนของคุณคำนวณจากส่วนต่างในการซื้อขายของราคาสินทรัพย์อ้างอิง"
+msgstr "สัญญาส่วนต่าง (CFD) คือสัญญาอนุพันธ์ที่ให้คุณทำกำไรโดยการคาดการณ์การขึ้นลงของราคาสินทรัพย์อ้างอิง โดยกำไรและขาดทุนของคุณนั้นจะถูกคำนวณจากส่วนต่างของราคาซื้อขายของสินทรัพย์อ้างอิง"
 
 msgid "A Contract for difference (CFD) is a financial derivative that allows you to potentially profit by speculating on the rise or fall of an underlying asset, without actually owning that asset."
-msgstr "สัญญาซื้อขายส่วนต่าง (CFD) เป็นอนุพันธ์ทางการเงินที่ช่วยให้คุณสามารถทำกำไรได้โดยการเก็งกำไรเพิ่มขึ้นหรือลงของสินทรัพย์อ้างอิง โดยไม่ต้องเป็นเจ้าของสินทรัพย์นั้นจริงๆ"
+msgstr "สัญญาส่วนต่าง (CFD) เป็นอนุพันธ์ทางการเงินที่ช่วยให้คุณทำกำไรโดยการคาดการณ์การขึ้นลงของราคาสินทรัพย์อ้างอิง โดยไม่ต้องเป็นเจ้าของสินทรัพย์นั้นจริงๆ"
 
 msgid "A Diploma in Financial Crime, Risk Management and Compliance (ICA) will be an advantage"
 msgstr "ประกาศนียบัตรด้านอาชญากรรมทางการเงิน การบริหารความเสี่ยง และการปฏิบัติตามกฎ (ICA) จะเป็นประโยชน์"
@@ -743,7 +743,7 @@ msgid "A bachelor's degree in commerce or any business-related field, law, or ri
 msgstr "สำเร็จการศึกษาระดับปริญญาตรีสาขาพาณิชย์ศาสตร์ หรือ สาขาที่เกี่ยวข้องกับการบริหารธุรกิจ นิติศาสตร์ หรือ การบริหารความเสี่ยง"
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The major underlying asset class for binary options offered by the Company is Synthetic Indices."
-msgstr "ตัวเลือกไบนารีคือสัญญาที่ฝ่ายหนึ่งดําเนินการจ่ายเงินจํานวนที่ระบุให้กับอีกฝ่ายหากมูลค่าของสินทรัพย์ที่กําหนดมีการเปลี่ยนแปลงในทิศทางเฉพาะภายในระยะเวลาที่กําหนดไว้ ประเภทสินทรัพย์อ้างอิงที่สําคัญสําหรับตัวเลือกไบนารีที่นําเสนอโดย บริษัท คือดัชนีสังเคราะห์"
+msgstr "ไบนารีออปชั่นคือสัญญาที่ฝ่ายหนึ่งดําเนินการจ่ายเงินจํานวนที่ระบุให้กับอีกฝ่ายหากมูลค่าของสินทรัพย์ที่กําหนดมีการเปลี่ยนแปลงไปในทิศทางจำเพาะภายในระยะเวลาที่กําหนดไว้ ทั้งนี้ดัชนีสังเคราะห์คือประเภทสินทรัพย์อ้างอิงหลักสําหรับไบนารีออปชั่นที่นําเสนอโดยบริษัท"
 
 msgid "A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are"
 msgstr "ไบนารีออปชัน คือ สัญญาซึ่งฝ่ายหนึ่งจะต้องจ่ายเงินจำนวนหนึ่งให้แก่อีกฝ่าย หากมูลค่าของสินทรัพย์นั้นเปลี่ยนไปในทิศทางเฉพาะภายในเวลาที่กำหนดไว้ ระดับของสินทรัพย์อ้างอิงหลักสามประเภทของไบนารีออปชันที่บริษัทฯ นำเสนอ คือ"
@@ -2466,6 +2466,9 @@ msgstr "CFD ในหุ้น"
 
 msgid "CPA (EU only)"
 msgstr "CPA (EU เท่านั้น)"
+
+msgid "Call"
+msgstr ""
 
 msgid "Call Spread"
 msgstr "คอลสเปรด"
@@ -9377,6 +9380,9 @@ msgstr "คำขอสั่งซื้อได้ถูกส่งแล้
 
 msgid "Purpose of collecting personal data"
 msgstr "วัตถุประสงค์ในการรวบรวมข้อมูลส่วนบุคคล"
+
+msgid "Put"
+msgstr ""
 
 msgid "Put Spread"
 msgstr "พุทสเปรด"
