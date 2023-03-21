@@ -1883,7 +1883,7 @@ button > .barspinner.white {
     .hero-inner__content {
       flex: 1 1 50%; }
       .hero-inner__content h1 {
-        color: #FFF;
+        color: #fff;
         margin: 2rem 2rem 2rem 0;
         font: 700 5rem "IBM Plex Sans", sans-serif; }
         @media (max-width: 1024px) {
@@ -1923,7 +1923,7 @@ button > .barspinner.white {
   height: 2.5rem;
   border-radius: 0.25rem;
   font: 700 0.875rem "IBM Plex Sans", sans-serif;
-  background-color: #C2C2C2;
+  background-color: #c2c2c2;
   color: #000;
   outline: none;
   border: none;
@@ -1931,7 +1931,7 @@ button > .barspinner.white {
   cursor: pointer;
   text-transform: none; }
   .l-btn.primary {
-    background-color: #2E8836;
+    background-color: #2e8836;
     color: #fff; }
     @media (max-width: 1024px) {
       .l-btn.primary {
@@ -1940,7 +1940,7 @@ button > .barspinner.white {
       background-color: #246d2a;
       color: #fff; }
   .l-btn.danger {
-    background: #FF444F;
+    background: #ff444f;
     color: #fff; }
     @media (max-width: 1024px) {
       .l-btn.danger {
@@ -2008,7 +2008,7 @@ button > .barspinner.white {
         border: solid 2px #999999;
         text-transform: none; }
         .switch-inner__content .l-btn.transparent:hover {
-          background-color: #C2C2C2; }
+          background-color: #c2c2c2; }
 
 .landing_carousel {
   display: flex !important;
@@ -2056,7 +2056,7 @@ button > .barspinner.white {
         width: 100%; } }
 
 .choose-wrapper {
-  background: #F2F3F4; }
+  background: #f2f3f4; }
   .choose-wrapper-inner {
     padding: 7.5rem 0; }
     @media (max-width: 1024px) {
@@ -2252,7 +2252,7 @@ button > .barspinner.white {
           margin: 0 auto; } }
 
 .about-trade-wrapper {
-  background-color: #F8FAFB;
+  background-color: #f8fafb;
   padding: 0;
   padding: 0 2rem; }
   @media (max-width: 1024px) {
@@ -2284,7 +2284,9 @@ button > .barspinner.white {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 1.4rem 0; }
+          padding: 1.4rem 0;
+          flex-wrap: wrap;
+          gap: 8px; }
           .about-trade-wrapper-inner-social-icons-mobile img {
             margin-right: 1rem; } }
     .about-trade-wrapper-inner-info-location {
@@ -2389,7 +2391,7 @@ button > .barspinner.white {
 .bot-landing-alert-btn-group {
   text-align: center; }
   .bot-landing-alert-btn-group .default {
-    background: #C2C2C2;
+    background: #c2c2c2;
     margin-right: 1rem; }
     .bot-landing-alert-btn-group .default :hover {
       background-color: #d8d6d6; }
@@ -2903,4 +2905,4 @@ label {
 .notifyjs-corner {
   z-index: 998 !important; }
 
-/*# sourceMappingURL=bot-a54c470547.css.map */
+/*# sourceMappingURL=bot-ad35859479.css.map */
