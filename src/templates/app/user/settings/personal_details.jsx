@@ -66,7 +66,7 @@ const PersonalDetails = () => (
 
             <Fieldset id='address_form' className='invisible RealAcc' legend={it.L('Address')}>
                 <p className='hint'>{it.L('Please enter your full home address to avoid authentication delays.')}</p>
-                <AddressLine1 no_hint row_id='row_address_line_1'  row_class='invisible'/>
+                <AddressLine1 no_hint row_id='row_address_line_1'  row_class='invisible' />
                 <AddressLine2 row_id='row_address_line_2'  row_class='invisible' />
                 <AddressCity row_id='row_address_city'  row_class='invisible' />
                 <AddressState row_id='row_address_state'  row_class='invisible' />

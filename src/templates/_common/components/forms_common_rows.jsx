@@ -148,13 +148,13 @@ export const AddressLine1 = ({ hint, row_class, row_id }) => (
             id='lbl_address_line_1'
             row_id='row_lbl_address_line_1'
             row_class='invisible'
-    />
+        />
         <FormRow
             type='text'
             id='address_line_1'
             className='center-text-m'
             label={it.L('First line of address')}
-            attributes={{maxLength: '70', 'data-lpignore': true}}
+            attributes={ {maxLength: '70', 'data-lpignore': true} }
             hint={hint}
             row_class={row_class}
             row_id={row_id}
@@ -170,13 +170,13 @@ export const AddressLine2 = ({ hint, row_class, row_id }) => (
             id='lbl_address_line_2'
             row_id='row_lbl_address_line_2'
             row_class='invisible'
-    />
+        />
         <FormRow
             type='text'
             id='address_line_2'
             className='center-text-m'
             label={it.L('Second line of address')}
-            attributes={{maxLength: '70', 'data-lpignore': true}}
+            attributes={ {maxLength: '70', 'data-lpignore': true} }
             hint={hint}
             row_class={row_class}
             row_id={row_id}
@@ -192,13 +192,13 @@ export const AddressCity = ({ hint, row_class, row_id }) => (
             id='lbl_address_city'
             row_id='row_lbl_address_city'
             row_class='invisible'
-    />
+        />
         <FormRow
             type='text'
             id='address_city'
             className='center-text-m'
             label={it.L('Town/city')}
-            attributes={{maxLength: 35, 'data-lpignore': true}}
+            attributes={ {maxLength: 35, 'data-lpignore': true} }
             hint={hint}
             row_class={row_class}
             row_id={row_id}
@@ -214,12 +214,12 @@ export const AddressState = ({ row_class, row_id }) => (
             id='lbl_address_state'
             row_id='row_lbl_address_state'
             row_class='invisible'
-    />
+        />
         <FormRow
             type='select'
             id='address_state'
             label={it.L('State/province')}
-            attributes={{single: 'single'}}
+            attributes={ {single: 'single'} }
             row_class={row_class}
             row_id={row_id}
         />
@@ -234,13 +234,13 @@ export const AddressPostcode = ({ children, hint, row_class, row_id, is_full_wid
             id='lbl_address_postcode'
             row_id='row_lbl_address_postcode'
             row_class='invisible'
-    />
+        />
         <FormRow
             type='text'
             id='address_postcode'
             className='center-text-m'
             label={it.L('Postal/ZIP code')}
-            attributes={{maxLength: '20', 'data-lpignore': true}}
+            attributes={ {maxLength: '20', 'data-lpignore': true} }
             hint={hint}
             row_class={`postcode-form-row ${row_class || ''}`}
             has_geovalidator={!is_full_width}
