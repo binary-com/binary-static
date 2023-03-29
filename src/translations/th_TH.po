@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-03-23 03:42\n"
+"PO-Revision-Date: 2023-03-29 05:11\n"
 "Last-Translator: \n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -9107,19 +9107,19 @@ msgid "Predict that the market stops inside or outside two price targets at the 
 msgstr "คาดการณ์ว่าตลาดจะอยู่ภายใน หรือ ออกนอกขอบเขต 2 ราคาเป้าหมาย ณ จุดสิ้นสุดเวลาสัญญา"
 
 msgid "Predict that the market will end higher or lower than a price target."
-msgstr "คาดการณ์ว่าตลาดจะปิดที่สูงกว่าหรือต่ำกว่าราคาเป้าหมาย"
+msgstr "คาดการณ์ว่าตลาดจะปิดที่จุดราคาสูงกว่าหรือต่ำกว่าราคาเป้าหมาย"
 
 msgid "Predict that the market will end higher or lower than the average price."
 msgstr "คาดการณ์ว่าตลาดจะปิดที่สูงกว่าหรือต่ำกว่าราคาเฉลี่ย"
 
 msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)."
-msgstr "คาดการณ์ว่าตลาดจะสิ้นสุดสูงกว่าระดับปัจจุบันหรือระดับในเวลาที่กำหนดไว้ (เวลารีเซ็ต)"
+msgstr "คาดการณ์ว่าตลาดจะสิ้นสุดที่จุดราคาสูงกว่าระดับปัจจุบันหรือระดับในเวลาที่กำหนดไว้ (เวลารีเซ็ต)"
 
 msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)."
-msgstr "คาดการณ์ว่าตลาดจะสิ้นสุดต่ำกว่าระดับปัจจุบันหรือระดับในเวลาที่กำหนดไว้ (เวลารีเซ็ต)"
+msgstr "คาดการณ์ว่าตลาดจะสิ้นสุดที่จุดราคาต่ำกว่าระดับปัจจุบันหรือระดับในเวลาที่กำหนดไว้ (เวลารีเซ็ต)"
 
 msgid "Predict that the market will rise or fall from its current level."
-msgstr "คาดการณ์ว่าตลาดจะขึ้นหรือตกลงจากระดับปัจจุบัน"
+msgstr "คาดการณ์ว่าตลาดจะราคาขึ้นหรือราคาตกลงจากระดับปัจจุบัน"
 
 msgid "Predict that the market will touch or not touch a target any time during the contract period."
 msgstr "คาดการณ์ว่า ตลาดจะถึง หรือ ไม่ถึงราคาเป้าหมายในระหว่างช่วงเวลาของสัญญา"
@@ -9131,7 +9131,7 @@ msgid "Predict the last decimal digit of the spot price with Digits. There are t
 msgstr "คาดการณ์ถึงตัวเลขหลักทศนิยมสุดท้ายของราคาสปอตที่มีหลักตัวเลข มีการซื้อขายแบบหลักตัวเลขอยู่สามประเภท"
 
 msgid "Predictable substitutions like '@' instead of 'a' don't help very much"
-msgstr "การแทนที่เพื่อช่วยเพิ่มการคาดเดา เช่น \"@\" แทน \"a\" ไม่ได้ช่วยมากนัก"
+msgstr "การแทนที่อักขระที่คาดเดาได้ อย่างเช่น \"@\" แทน \"a\" นั้นไม่ได้ช่วยอะไรมากนัก"
 
 msgid "Preferences:"
 msgstr "คุณสมบัติที่ต้องการ:"
@@ -9149,7 +9149,7 @@ msgid "Prepare and publish any content or place any advertisements that refer to
 msgstr "จัดเตรียมและเผยแพร่เนื้อหาใดๆ หรือทำการโฆษณา โดยอ้างถึง Binary และความสัมพันธ์กับ Binary โดยไม่ได้รับความเห็นชอบเป็นลายลักษณ์อักษรจาก Binary ก่อน"
 
 msgid "Prepare and publish any material or place any advertisements that refer to the Company and the Agent's relationship with the Company without an authorisation being given by the Company."
-msgstr "เตรียมการและเผยแพร่เนื้อหา เอกสารใดๆ หรือ ทำการโฆษณาซึ่งอ้างถึงบริษัทฯ และ ความสัมพันธ์กับตัวแทนฯ โดยไม่ได้รับความยินยอมจากบริษัทฯ"
+msgstr "จัดทำและเผยแพร่เนื้อหาสื่อใดๆ หรือทำการโฆษณาซึ่งอ้างถึงบริษัทฯ และความสัมพันธ์กับตัวแทนฯ โดยไม่ได้รับความยินยอมจากบริษัทฯ"
 
 msgid "Prepare daily, weekly, and monthly financial reports"
 msgstr "จัดเตรียมรายงานการเงินรายวัน รายอาทิตย์ และรายเดือน"
@@ -9200,7 +9200,7 @@ msgid "Processing"
 msgstr "การประมวลผล"
 
 msgid "Produce coding standards, training manuals, and other technical documents for our Back-end, Front-end, Quants, Business Intelligence, and Quality Assurance teams as well as for the third-party developers who use our API"
-msgstr "จัดทําโค้ดมาตรฐาน คู่มือการฝึกอบรม และเอกสารทางเทคนิคอื่นๆ สําหรับ Back-end, Front-end, Quants, ข่าวกรองธุรกิจ และทีมประกันคุณภาพ รวมถึงสําหรับนักพัฒนาซอฟต์แวร์บุคคลที่สามที่ใช้ API ของเรา"
+msgstr "จัดทำมาตรฐานการเขียนโค้ด คู่มือการฝึกอบรม และเอกสารทางเทคนิคอื่นๆ สำหรับทีมระบบจัดการเว็บไซต์หรือหลังบ้าน (Back-end), ทีมส่วนติดต่อผู้ใช้หรือหน้าบ้าน (Front-End), ทีมวิเคราะห์เชิงปริมาณสำหรับระบบการลงทุน (Quants), ทีมธุรกิจอัจฉริยะ (Business Intelligence) และทีมการประกันคุณภาพ (Quality Assurance) ของเรา รวมถึงสำหรับนักพัฒนาที่เป็นบุคคลภายนอกที่ใช้ API ของเรา"
 
 msgid "Produce content for websites, blogs, social media, and marketing materials"
 msgstr "ผลิตเนื้อหาที่ใช้อยู่ในเว็บไซต์ บล็อก สื่อสังคมต่างๆ และสื่อการตลาด"
@@ -9341,13 +9341,13 @@ msgid "Provide technical leadership on cryptocurrencies and blockchain technolog
 msgstr "เป็นผู้นำในด้านเทคนิคสำหรับเทคโนโลยีเงินดิจิทัลและบล็อกเชน"
 
 msgid "Provide the Company with all and any information whatsoever that the Agent may become aware of that may be harmful, adverse, or detrimental to the Company and its reputation."
-msgstr "ให้ข้อมูลทั้งหมดหรือข้อมูลใดๆ แก่บริษัทฯ หรืออะไรก็ตามที่ตัวแทนฯ ทราบว่า อาจจะเป็นอันตราย เป็นผลร้าย หรือ ก่อให้เกิดความเสียหายแก่บริษัทฯ และตลอดจนชื่อเสียงของบริษัทฯ"
+msgstr "ให้ข้อมูลทั้งหมดหรือข้อมูลใดๆ ก็ตามแก่บริษัทซึ่งตัวแทนได้ทราบมาว่า อาจจะเป็นอันตราย เป็นผลร้าย หรือ ก่อให้เกิดความเสียหายแก่บริษัท และชื่อเสียงของบริษัท"
 
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
 msgstr "ให้รหัสยืนยันสี่หลักด้านล่างนี้เพื่อยืนยันต่อเจ้าหน้าที่ลูกค้าสัมพันธ์"
 
 msgid "Provide the whole document page for best results"
-msgstr "จัดเตรียมหน้าเอกสารทั้งหมดเพื่อให้ได้ผลลัพธ์ที่ดีที่สุด"
+msgstr "ส่งเอกสารทั้งหน้าเพื่อให้ได้ผลลัพธ์ที่ดีที่สุด"
 
 msgid "Provision of service"
 msgstr "เงื่อนไขของการบริการ (Provision of Service)"
@@ -9443,13 +9443,13 @@ msgid "RTS 28"
 msgstr "RTS 28"
 
 msgid "Range break 100 breaks through the range on average once every 100 times that it hits the border."
-msgstr "การแบ่งช่วง 100 จะทะลุผ่านช่วงโดยเฉลี่ยทุกๆ 100 ครั้งที่ชนขอบ"
+msgstr "ดัชนี Range break 100 จะทำการทะลุกรอบโดยเฉลี่ยในทุกๆ 100 ครั้งที่ชนเส้นกรอบ"
 
 msgid "Range break 200 breaks through the range on average once every 200 times that it hits the border."
-msgstr "การแบ่งช่วง 200 จะทะลุผ่านช่วงโดยเฉลี่ยทุกๆ 200 ครั้งที่ชนขอบ"
+msgstr "ดัชนี Range break 200 จะทำการทะลุกรอบโดยเฉลี่ยในทุกๆ 200 ครั้งที่ชนเส้นกรอบ"
 
 msgid "Range break index fluctuates within a range between an upper and lower price level, also known as borders. When it hits either border, the index occasionally breaks through the range with a jump or crash, creating a new range. There are two types:"
-msgstr "ดัชนีการแบ่งช่วงมีความผันผวนภายในช่วงระหว่างระดับราคาบนและระดับราคาที่ต่ำกว่าหรือที่เรียกว่าเส้นขอบ เมื่อถึงเส้นขอบทั้งสองข้างดัชนีจะทะลุผ่านช่วงนั้นในบางครั้งด้วยการกระโดดหรือชนทำให้เกิดช่วงใหม่ มีสองประเภท:"
+msgstr "ดัชนี Range break แกว่งตัวขึ้นลงอยู่ภายในช่วงกรอบระหว่างเส้นระดับราคาอันบนและอันล่างหรือที่เรียกว่าเส้นกรอบ (border) เมื่อราคาชนเส้นกรอบหนึ่งใด บางครั้งก็จะทะลุผ่านกรอบนั้นไปโดยการกระโดด (jump) หรือการลดวูบ (crash) และก่อเกิดช่วงกรอบอันใหม่ มีสองประเภท:"
 
 msgid "Range break indices"
 msgstr "ดัชนีทะลุกรอบหรือ Range Break"
@@ -9503,10 +9503,10 @@ msgid "Real Money Account Opening"
 msgstr "การเปิดบัญชีเงินจริง"
 
 msgid "Real accounts are not available to politically exposed persons (PEPs)."
-msgstr "บัญชีจริงไม่สามารถใช้งานได้กับบุคคลที่มีสถานภาพทางการเมือง (PEPs)"
+msgstr "บัญชีจริงนั้นไม่มีให้ใช้งานสำหรับบุคคลที่มีสถานภาพทางการเมือง (PEPs)"
 
 msgid "Real accounts will be archived after %1 days of inactivity. The client can request for the reactivation of a real account via %2live chat%3."
-msgstr "บัญชีจริงจะถูกเก็บถาวรหลังจากไม่มีการใช้งาน %1 วัน ไคลเอ็นต์สามารถร้องขอการเปิดใช้งานบัญชีจริงอีกครั้งผ่านทาง %2แชทสด%3"
+msgstr "บัญชีจริงจะถูกเก็บถาวรหลังจากไม่มีการใช้งาน %1 วัน ลูกค้าสามารถขอการเปิดใช้งานบัญชีจริงอีกครั้งผ่านทาง %2แชทสด%3"
 
 msgid "Real money account opening"
 msgstr "การเปิดบัญชีเงินจริง"
@@ -9536,16 +9536,16 @@ msgid "Receive instant prices based on your position."
 msgstr "รับราคาทันทีตามตำแหน่งของท่าน"
 
 msgid "Receive prices that are benchmarked against interbank rates."
-msgstr "รับราคาที่เปรียบเทียบกับอัตราระหว่างธนาคาร"
+msgstr "ได้รับราคาที่เทียบเคียงกับอัตราดอกเบี้ยระหว่างธนาคาร "
 
 msgid "Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates."
-msgstr "ได้รับใบเสนอราคาสำหรับการซื้อขายและการซื้อขายเองจากตลาด ดังนั้นคุณจะได้รับอัตราที่เป็นกลาง และโปร่งใสเสมอ"
+msgstr "รับใบเสนอราคาสำหรับการซื้อขายและการค้าต่างตอบแทนเพื่อที่คุณจะได้รับอัตราที่เป็นกลางและโปร่งใสอยู่เสมอ"
 
 msgid "Receive the approval of the Company to include any information in relation to Binary"
 msgstr "ได้รับการอนุมัติจากบริษัทฯ รวมถึงการอนุมัติข้อมูลใด ๆ ที่เกี่ยวกับ Binary"
 
 msgid "Receive the approval of the Company to include any information in relation to the Company."
-msgstr "ได้รับการอนุมัติจากบริษัทฯ รวมถึงการอนุมัติข้อมูลใด ๆ เกี่ยวกับบริษัทฯ"
+msgstr "ได้รับการอนุมัติจากบริษัทให้รวมข้อมูลใดๆ เกี่ยวกับบริษัทเข้ามาไว้ด้วย"
 
 msgid "Receive your earnings through your favourite payment method"
 msgstr "รับรายได้ผ่านช่องทางที่คุณปรารถนา"
@@ -10106,7 +10106,7 @@ msgid "Select payment agent"
 msgstr "เลือกตัวแทนชำระเงิน"
 
 msgid "Select the signal provider you prefer and click the %1Subscribe%2 button."
-msgstr "เลือกผู้ให้บริการสัญญาณที่คุณต้องการแล้วคลิกปุ่ม %1ติดตาม%2"
+msgstr "เลือกผู้ให้บริการสัญญาณที่คุณต้องการแล้วคลิกปุ่ม %1สมัครสมาชิก%2 "
 
 msgid "Select your market and underlying asset"
 msgstr "เลือกตลาดที่ท่านต้องการ และ ผลิตภัณฑ์อ้างอิงของท่าน"
@@ -10130,7 +10130,7 @@ msgid "Self-exclusion limits"
 msgstr "ข้อจำกัดการพักการซื้อขาย"
 
 msgid "Self-exclusion on this website is applicable to your account only as accessed on %1 or deriv.com and does not apply to any other website."
-msgstr "การป้องกันตนเองบนเว็บไซต์นี้ใช้ได้กับบัญชีของคุณที่เข้าถึงใน %1 หรือ deriv.com เท่านั้นและไม่มีผลกับเว็บไซต์อื่นๆ"
+msgstr "ระบบกันตัวเองบนเว็บไซต์นี้ใช้ได้กับบัญชีของคุณที่เข้าถึงใน %1 หรือ deriv.com เท่านั้นและไม่มีผลกับเว็บไซต์อื่นๆ"
 
 msgid "Self-motivation and flexibility in task rotations"
 msgstr "มีแรงจูงใจในการสร้างสรรค์สิ่งใหม่ และมีความยืดหยุ่นในหมุนเวียนงาน"
@@ -10244,7 +10244,7 @@ msgid "Settles"
 msgstr "ชำระเงิน"
 
 msgid "Setup two-factor authentication for your %1 account now:"
-msgstr "ตั้งค่าการรับรองความถูกต้องด้วยสองปัจจัยสำหรับบัญชี %1 ของคุณทันที:"
+msgstr "ตั้งค่าระบบยืนยันตัวตนสองขั้นตอนสำหรับบัญชี %1 ของคุณทันที:"
 
 msgid "Severability"
 msgstr "การโมฆะเป็นบางส่วน"
@@ -10256,7 +10256,7 @@ msgid "Sharp, benchmarked prices"
 msgstr "เฉียบคม ราคามาตรฐาน"
 
 msgid "Short keyboard patterns are easy to guess"
-msgstr "รูปแบบแป้นพิมพ์สั้นคาดเดาได้ง่าย"
+msgstr "รูปแบบแป้นพิมพ์สั้นนั้นคาดเดาได้ง่าย"
 
 msgid "Short to long-term durations"
 msgstr "ระยะเวลาสั้นถึงระยะยาว"
@@ -10334,7 +10334,7 @@ msgid "Silver vs US dollar"
 msgstr "เงิน เทียบกับ ดอลลาร์สหรัฐ"
 
 msgid "Similar to forex trading, you must understand when to buy (or \"go long\") and when to sell (or \"go short\"). In forex trading, you'll buy a certain currency pair if you think the value of the base currency will rise. The opposite is also true: you will sell a certain currency pair if you think the value of the base currency will fall."
-msgstr "คล้ายกับการซื้อขายฟอเร็กซ์ คุณจะต้องเข้าใจว่าเมื่อไหร่จะซื้อ (หรือ \"ไปยาว\") และเมื่อไหร่จะขาย (หรือ \"ไปสั้น\") ในการซื้อขายฟอเร็กซ์ คุณจะซื้อคู่สกุลเงินหนึ่งถ้าคุณคิดว่าค่าของสกุลเงินพื้นฐานจะเพิ่มขึ้น เช่นเดียวกันในทางตรงกันข้าม คุณจะขายคู่สกุลเงินหนึ่งๆถ้าคุณคิดว่าค่าของสกุลเงินพื้นฐานจะตกลง"
+msgstr "คล้ายกับการซื้อขาย Forex คุณจะต้องเข้าใจว่าเมื่อไหร่จะซื้อ (หรือ \"go long\") และเมื่อไหร่จะขาย (หรือ \"go short\") โดยในการซื้อขาย Forex นั้นคุณจะซื้อคู่สกุลเงินหนึ่งใดหากคุณคิดว่าค่าของสกุลเงินพื้นฐานจะเพิ่มขึ้น และในทางตรงกันข้ามคุณจะขายคู่สกุลเงินหนึ่งใดหากคุณคิดว่าค่าของสกุลเงินพื้นฐานจะตกลง"
 
 msgid "Simple and intuitive"
 msgstr "ใช้งานง่าย"
@@ -10346,10 +10346,10 @@ msgid "Simply click on \"Create\" to generate your token; then copy and paste it
 msgstr "คลิก \"Create\" เพื่อสร้างโทเค่นของท่าน แล้วคัดลอกและวางโทเค่นในแอพพลิเคชันของท่าน"
 
 msgid "Since DIEL exclusively deals on own account in Financial Products, this means that DIEL acts as the execution venue, and accordingly all transactions entered into with DIEL will be executed outside a regulated market (stock exchange) or multilateral trading facility."
-msgstr "เนื่องจาก DIEL ดำเนินการกับบัญชีที่เกี่ยวข้องกับผลิตภัณฑ์ทางการเงิน ซึ่งหมายถึง DIEL เป็นสถานที่ปฏิบัติการและจัดการธุรกรรมทั้งหมดที่ป้อนเข้าสู่ระบบ DIEL จะกระทำการนอกตลาด (ตลาดหลักทรัพย์) หรือสถานที่ซื้อขายพหุภาคี"
+msgstr "เนื่องจาก DIEL ดำเนินการผลิตภัณฑ์ทางการเงินโดยลำพัง ซึ่งหมายถึงว่า DIEL ทำหน้าที่เป็นสถานที่ดำเนินการตามคำสั่งการค้าและดังนั้นธุรกรรมทั้งหมดที่ป้อนเข้าสู่ระบบ DIEL จะถูกดำเนินการภายนอกตลาดที่มีการควบคุม (ตลาดหลักทรัพย์) หรือสถานที่ซื้อขายพหุภาคี"
 
 msgid "Since DIEL is a member of the Malta Investor Compensation Scheme, the client is covered for the first €20,000 of any claim that the client may have in the unlikely event of DIEL suffering an investment default and not being able to meet its obligations. This protection is available only to retail clients. Neither professional clients nor eligible counterparties can benefit from this protection."
-msgstr "เนื่องจาก DIEL เป็นสมาชิกของ Malta Investor Compensation Scheme แผนการชดเชยแก่นักลงทุนในมอลตา ลูกค้าได้รับการคุ้มครองจำนวน €20,000 แรกในการเรียกร้องใดๆ ในเรื่องความเสียหายจากการผิดสัญญาการลงทุน หรือขัดต่อเงื่อนไขหน้าที่ความรับผิดชอบ ความคุ้มครองนี้มีให้ต่อนักลงทุนรายย่อยเท่านั้น นักลงทุนประเภทอื่นไม่สามารถรับประโยชน์ในข้อนี้"
+msgstr "เนื่องจาก DIEL เป็นสมาชิกของแผนการ Malta Investor Compensation Scheme ในมอลตา ลูกค้าจะได้รับการคุ้มครองสำหรับจำนวน €20,000 แรกในการเรียกร้องใดๆ หากเกิดกรณีอันเป็นไปได้ยากได้แก่การที่ DIEL เกิดล้มละลายและไม่สามารถทำตามพันธะหน้าที่ได้ โดยความคุ้มครองนี้จะมีให้แก่ลูกค้ารายย่อยเท่านั้น ในขณะที่ลูกค้าที่มีความเชี่ยวชาญหรือคู่ค้าที่มีคุณสมบัตินั้นไม่สามารถรับประโยชน์จากการคุ้มครองนี้ได้"
 
 msgid "Since all transactions on the %1 website are fully automated, our pricing and risk management algorithms must fully consider critical factors such as real-time pricing parameters, data feed irregularities, and latencies."
 msgstr "เนื่องจากทุกธุรกรรมบนเว็บไซต์ %1 เป็นไปอย่างอัติโนมัติ อัลกอริธึ่มของราคาและการบริหารความเสี่ยงจะต้องพิจารณาตัวแปรสำคัญ เช่น ตัวแปรราคาที่เป็นตามเวลาจริง ความผิดปกติในการฟีดข้อมูล และภาวะแฝง"
@@ -10406,13 +10406,13 @@ msgid "Sorry, no mobile phone bills"
 msgstr "ขออภัย ไม่รับบิลค่าโทรศัพท์มือถือ"
 
 msgid "Sorry, options trading isn’t available in the United Kingdom and the Isle of Man"
-msgstr "ขออภัย ไม่มีการซื้อขายตัวเลือกในสหราชอาณาจักรและเกาะแมน"
+msgstr "ขออภัย ไม่มีการซื้อขายตราสารสิทธิหรือออปชั่นในสหราชอาณาจักรและเกาะไอล์ออฟแมน"
 
 msgid "Sorry, this feature is not available in your jurisdiction."
 msgstr "ขออภัย ฟังก์ชันนี้ไม่พร้อมใช้งานในพื้นที่ของท่าน"
 
 msgid "Sorry, withdrawals for this currency are currently disabled."
-msgstr "ขออภัย การถอนเงินสำหรับสกุลเงินนี้ ขณะนี้ถูกปิดการใช้งาน"
+msgstr "ขออภัย การถอนเงินสำหรับสกุลเงินนี้ถูกปิดการใช้งานในขณะนี้"
 
 msgid "Sorry, your account is not authorised for any further contract purchases."
 msgstr "ขออภัย บัญชีของคุณไม่ได้รับอนุญาตให้ซื้อสัญญาเพิ่ม"
@@ -10430,7 +10430,7 @@ msgid "Spanish and Guaraní are the two official languages of the country. Most 
 msgstr "ภาษาราชการ คือ ภาษาสเปน และภาษา Guaraní ชาวปารากวัยส่วนใหญ่สามารถพูดได้คล่องทั้งสองภาษา แต่ในเขตนอกเมืองจะพูดภาษา Guaraní เป็นส่วนใหญ่ ในเมืองหลวง ภาษาสเปนเป็นภาษาหลัก แต่ท่านจะพบผู้ที่พูดภาษาอังกฤษได้ไม่ยากด้วยเช่นกัน"
 
 msgid "Special conditions apply to clients who are employed in the banking and/or finance sector. They may not conduct trades through our website without the knowledge of their employer. They must check that any such trading is in accordance with their employer's policies."
-msgstr "เงื่อนไขพิเศษใช้กับลูกค้าที่ทำงานในการธนาคาร หรือหน่วยงานสถาบันการเงิน พวกเขาไม่สามารถทำการซื้อขายผ่านเว็บไซต์ของเรา โดยปราศจากความรู้ของนายจ้าง พวกเขาต้องตรวจสอบว่าการซื้อขายใดๆ นั้นเป็นไปตามนโยบายของนายจ้าง"
+msgstr "เงื่อนไขพิเศษนั้นใช้กับลูกค้าที่ทำงานในภาคการธนาคาร และ/หรือการเงิน พวกเขาไม่สามารถทำการซื้อขายผ่านเว็บไซต์ของเราโดยปราศจากการรับรู้รับทราบของนายจ้าง ดังนั้นพวกเขาจะต้องตรวจสอบว่าการซื้อขายใดๆ นี้เป็นไปตามนโยบายของนายจ้างหรือไม่"
 
 msgid "Specific instructions"
 msgstr "คำสั่งเฉพาะ"
@@ -10481,7 +10481,7 @@ msgid "Start trading"
 msgstr "เริ่มซื้อขาย"
 
 msgid "Start using Deriv with your Binary.com email and password."
-msgstr "เริ่มใช้ Deriv ด้วยอีเมลและรหัสผ่าน Binary.com ของคุณ"
+msgstr "เริ่มใช้งาน Deriv ได้โดยใช้อีเมล์และรหัสผ่าน Binary.com ของคุณ"
 
 msgid "State Benefits"
 msgstr "ผลประโยชน์ของรัฐ"
@@ -10574,7 +10574,7 @@ msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. Th
 msgstr "ออกมาสู่ชีวิตกลางแจ้ง และอาบแดดบนหาดลาบวนที่มีธรรมชาติอันบริสุทธิ์ ดำน้ำไปดูซากปรักหักพัง ข้ามจากเกาะนี้ไปเกาะโน้น พายเรือคายัค และตกปลาทะเลลึก"
 
 msgid "Steps required to continue verification on your mobile"
-msgstr "ขั้นตอนที่จำเป็นในการยืนยันต่อไปบนมือถือของคุณ"
+msgstr "มีขั้นตอนต่างๆที่จำเป็นต้องดำเนินการต่อในการยืนยันบนมือถือของคุณ"
 
 msgid "Stock Indices"
 msgstr "ดัชนีหุ้น"
@@ -10610,7 +10610,7 @@ msgid "Stored Procedures"
 msgstr "สตรอโพรซีเยอร์"
 
 msgid "Straight rows of keys are easy to guess"
-msgstr "แถวตรงของแป้นคาดเดาได้ง่าย"
+msgstr "อักขระจากแถวตรงของแป้นนั้นคาดเดาได้ง่าย"
 
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr "มีความสามารถในการวิเคราะห์ซึ่งได้มีการพิสูจน์ก่อนหน้า หรือมีความสนใจกระตือรือร้นที่จะย้ายเข้ามาในส่วนนี้"
@@ -10631,7 +10631,7 @@ msgid "Strong oral and written communication skills in both the regional languag
 msgstr "มีทักษะการสื่อสารทั้งการพูดและการเขียนในทั้งภาษาของภูมิภาคและภาษาอังกฤษ"
 
 msgid "Strong passwords contain at least 8 characters, combine uppercase and lowercase letters, numbers, and symbols."
-msgstr "รหัสผ่านที่คาดเดาได้ยากประกอบด้วยอย่างน้อย 8 ตัวอักษร รวมตัวอักษรตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์"
+msgstr "รหัสผ่านที่คาดเดายากประกอบไปด้วยอักขระอย่างน้อย 8 ตัว รวมตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์"
 
 msgid "Strong passwords contain at least 8 characters. Combine uppercase and lowercase letters, numbers, and symbols."
 msgstr "รหัสผ่านที่คาดเดายากประกอบไปด้วยอักขระอย่างน้อย 8 ตัว รวมตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์"
@@ -11126,7 +11126,7 @@ msgid "The Affiliate and the Company are independent contractors, and nothing in
 msgstr "พันธมิตรนายหน้าออนไลน์และบริษัทฯ เป็นผู้รับจ้างอิสระ และไม่มีส่วนใดของข้อตกลงนี้จะสร้างความเป็นหุ้นส่วน การร่วมทุน ตัวแทน แฟรนไชส์ ตัวแทนขาย หรือ ความสัมพันธ์ในการจ้างงานระหว่างกัน พันธมิตรนายหน้าออนไลน์ไม่มีอำนาจในการสร้าง หรือ ยอมรับข้อเสนอใดๆ หรือ เป็นตัวแทนใดๆ ของบริษัทฯ พันธมิตรนายหน้าออนไลน์จะไม่กำหนดถ้อยแถลงใดๆ ไม่ว่าในเว็บไซต์ของพันธมิตรนายหน้าออนไลน์ หรือ ที่อื่นๆ เพื่อสร้างความขัดแย้งต่อใจความในอนุเฉทนี้"
 
 msgid "The Affiliate has committed fraud or abused this business relationship in any way. If such fraud or abuse is detected, the Company shall not be liable to the Affiliate for any commissions for any fraudulent sales or any sales based on abuse."
-msgstr "พันธมิตรได้กระทำการฉ้อโกงหรือละเมิดความสัมพันธ์ทางธุรกิจนี้ในทางใดทางหนึ่ง หากตรวจพบการทุจริตหรือการละเมิดดังกล่าว บริษัทจะไม่รับผิดต่อบริษัทในเครือสำหรับค่าคอมมิชชั่นสำหรับการขายที่เป็นการฉ้อโกงหรือการขายใดๆ ที่เกิดจากการละเมิด"
+msgstr "พันธมิตรได้กระทำการฉ้อโกงหรือละเมิดความสัมพันธ์ทางธุรกิจนี้ในทางใดทางหนึ่ง หากตรวจพบการฉ้อโกงหรือการละเมิดดังกล่าว บริษัทจะไม่รับผิดต่อพันธมิตรสำหรับค่าคอมมิชชั่นจากการขายที่เป็นการฉ้อโกงหรือการขายใดๆ ที่เกิดจากการละเมิด"
 
 msgid "The Affiliate has not obtained and has not maintained all necessary licences and consents to operate within any laws, rules, and regulations applicable under the authority of any regulatory body of the jurisdiction(s) in which the Affiliate operates or targets business."
 msgstr "พันธมิตรนายหน้าออนไลน์ไม่ได้รับ และไม่ได้ดำเนินการต่อใบอนุญาตที่จำเป็นทั้งหมด หรือ ยินยอมที่จะปฏิบัติตามกฏหมาย ข้อกำหนด และกฎเกณฑ์ที่เป็นไปตามอำนาจและขอบเขตของการบังคับใช้ตามกฎหมายที่พันธมิตรนายหน้าออนไลน์ดำเนินการ หรือ เป้าหมายในธุรกิจ"
@@ -11174,7 +11174,7 @@ msgid "The Affiliate shall not hold or pool the Affiliate's referrals' funds or 
 msgstr "พันธมิตรนายหน้าออนไลน์จะไม่ถือ หรือ นำหลักประกันของผู้ถูกอ้างอิงของพันธมิตรนายหน้าออนไลน์ หรือ หลักประกันของบุคคลที่สามเข้าบัญชีพันธมิตรนายหน้าออนไลน์ที่มีอยู่กับ %1"
 
 msgid "The Affiliate shall not impersonate the Company’s domains, or bid on, purchase, or register keywords, search terms, or other identifiers for use in any search engine, portal, sponsored advertising service, or other search or referral service that are identical or similar to any of the Company’s trademarks or trade names that include the word \"%1\" or any variation thereof."
-msgstr "พันธมิตรจะต้องไม่ปลอมตัวเป็นโดเมนของบริษัท หรือประมูล ซื้อ หรือลงทะเบียนคําหลัก คําค้นหา หรือตัวระบุอื่นๆ เพื่อใช้ในเครื่องมือค้นหา พอร์ทัล บริการโฆษณาที่ได้รับการสนับสนุน หรือบริการค้นหาหรือการอ้างอิงอื่นๆ ที่เหมือนกันหรือคล้ายกับเครื่องหมายการค้าหรือชื่อทางการค้าของบริษัทที่มีคําว่า \"%1\" หรือรูปแบบใดๆ"
+msgstr "พันธมิตรจะต้องไม่เลียนแบบโดเมนของเราหรือทำการประมูล ซื้อ หรือลงทะเบียนคำหลัก ข้อความค้นหา หรือตัวระบุอื่นๆ สำหรับใช้ในเครื่องมือค้นหา พอร์ทัล บริการโฆษณาที่ได้รับการสนับสนุน หรือบริการค้นหาหรืออ้างอิงอื่นๆ ที่เหมือนหรือคล้ายกับเครื่องหมายการค้าหรือชื่อทางการค้าของบริษัทรวมถึงคำว่า \"%1\" หรือรูปแบบอื่นของคำนี้"
 
 msgid "The Affiliate shall not place trades on the Affiliate's referrals' behalf."
 msgstr "พันธมิตรฯ จะต้องไม่ทำการซื้อขายในนามของผู้ถูกอ้างอิงของพันธมิตรฯ"
@@ -11189,7 +11189,7 @@ msgid "The Affiliate's obligations"
 msgstr "หน้าที่ความรับผิดชอบของพันธมิตรนายหน้าออนไลน์"
 
 msgid "The Affiliate’s advertisements and campaigns must not lead traffic directly to the Company’s websites and must not include any URL containing the word \"%1\" or any variation thereof."
-msgstr "โฆษณาและแคมเปญของพันธมิตรจะต้องไม่นําการเข้าชมโดยตรงไปยังเว็บไซต์ของ บริษัท และจะต้องไม่รวม URL ใด ๆ ที่มีคําว่า \"%1\" หรือรูปแบบใด ๆ"
+msgstr "โฆษณาและแคมเปญของพันธมิตรจะต้องไม่นำผู้เข้าชมมายังเว็บไซต์ของเราโดยตรง และต้องไม่รวมที่อยู่เว็บ URL ที่มีคำว่า \"%1\" หรือรูปแบบอื่นของคำนี้อยู่"
 
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with, the Agent's fraudulent acts or omissions, negligence, misconduct, wilful default, or breach of this Agreement."
 msgstr "ตัวแทนฯ ตกลงที่ชดใช้แก่บริษัทฯ สำหรับความเสียหายใดๆ หรือ ทั้งหมด ซึ่งอาจเกิดกับบริษัทฯ จาก หรือ เกี่ยวข้องกับพฤติกรรมฉ้อโกง หรือ การละเลย ความประมาทใดๆ การประพฤติมิชอบ การเพิกเฉยอย่างจงใจ หรือ การละเมิดสัญญานี้ของตัวแทนฯ"
@@ -11201,16 +11201,16 @@ msgid "The Agent has taken all measures required to obtain and maintain in full 
 msgstr "ตัวแทนฯ ได้ดำเนินการตามมาตรการทั้งหมดที่จำเป็นที่จะให้ได้มาและรักษาอำนาจอันชอบธรรมที่จำเป็นทั้งหมดและ/หรือ ความสามารถ และ/หรือ ความเห็นชอบ และ/หรือ ใบอนุญาต และ/หรือ การอนุญาตที่ยังมีผลและบังคับใช้เพื่อเข้าสู่และปฏิบัติตามข้อตกลงนี้"
 
 msgid "The Agent is prohibited from offering the Agent's services, under this agreement, to the clients who reside in restricted countries outlined in the Company's terms and conditions (as amended from time to time), which are published on the Company's website, %1www.binary.com%2."
-msgstr "ห้ามมิให้ตัวแทนเสนอบริการของตัวแทนภายใต้ข้อตกลงนี้ ให้กับลูกค้าที่อาศัยอยู่ในประเทศที่ถูกจำกัดตามที่ระบุไว้ในข้อกำหนดและเงื่อนไขของบริษัท (ซึ่งมีการแก้ไขเป็นครั้งคราว) ซึ่งเผยแพร่บนเว็บไซต์ของบริษัท %1www.binary.com%2"
+msgstr "ห้ามมิให้ตัวแทนเสนอบริการของตัวแทนภายใต้ข้อตกลงนี้ให้กับลูกค้าที่อาศัยอยู่ในประเทศที่ถูกจำกัดตามที่ระบุไว้ในข้อกำหนดและเงื่อนไขของบริษัท (ซึ่งมีการแก้ไขเป็นครั้งคราว) ซึ่งเผยแพร่บนเว็บไซต์ของบริษัท %1www.binary.com%2"
 
 msgid "The Agent may not make withdrawals through the Cashier page or Deriv P2P unless the Company makes an exception at its sole discretion."
-msgstr "ตัวแทนไม่สามารถถอนเงินผ่านหน้าแคชเชียร์หรือ Deriv P2P เว้นแต่บริษัทจะให้ข้อยกเว้นตามดุลยพินิจของบริษัทแต่เพียงผู้เดียว"
+msgstr "ตัวแทนไม่อาจถอนเงินผ่านทางหน้าแคชเชียร์หรือทาง Deriv P2P ได้นอกจากว่าบริษัทยอมยกเว้นให้ตามดุลยพินิจของบริษัทแต่ผู้เดียว"
 
 msgid "The Agent may not transfer funds to another Agent unless the Company makes an exception at its sole discretion."
-msgstr "ตัวแทนไม่สามารถโอนเงินไปยังตัวแทนอื่นได้ เว้นแต่บริษัทจะให้ข้อยกเว้นตามดุลยพินิจของบริษัทแต่เพียงผู้เดียว"
+msgstr "ตัวแทนไม่สามารถโอนเงินไปยังตัวแทนอื่นได้ นอกจากว่าบริษัทยอมยกเว้นให้ตามดุลยพินิจของบริษัทแต่ผู้เดียว"
 
 msgid "The Agent may only provide the Agent's services to those clients of the Company who reside within the same jurisdiction where the Agent operates and desire to deposit and/or withdraw money through the Agent. The Agent may provide the Agent's services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the \"e-payments\") or local currencies other than those accepted by the Company (hereinafter referred to as the \"local currencies\") and local bank wire transfers (hereinafter referred to as the \"bank wire transfers\")."
-msgstr "ตัวแทนสามารถให้บริการของตัวแทนได้เฉพาะกับลูกค้าของบริษัทที่อาศัยอยู่ในเขตอำนาจศาลเดียวกันกับที่ตัวแทนดำเนินการและต้องการฝากและ/หรือถอนเงินผ่านตัวแทน ตัวแทนอาจให้บริการของตัวแทนกับลูกค้าที่ตั้งใจจะใช้ e-wallet หรือวิธีการชำระเงินอิเล็กทรอนิกส์นอกเหนือจากที่บริษัทใช้ (ต่อไปนี้จะเรียกว่า \"การชำระเงินทางอิเล็กทรอนิกส์\") หรือสกุลเงินท้องถิ่นอื่นนอกเหนือจากที่บริษัทยอมรับ (ต่อไปนี้จะเรียกว่า \"สกุลเงินท้องถิ่น\") และการโอนเงินผ่านธนาคารในท้องถิ่น (ต่อไปนี้จะเรียกว่า \"การโอนเงินผ่านธนาคาร\")"
+msgstr "ตัวแทนสามารถให้บริการของตัวแทนได้เฉพาะกับลูกค้าของบริษัทซึ่งอาศัยอยู่ในเขตอำนาจศาลเดียวกันกับที่ๆ ตัวแทนดำเนินการอยู่และซึ่งต้องการฝากและ/หรือถอนเงินผ่านตัวแทน ทั้งนี้ ตัวแทนอาจให้บริการกับลูกค้าที่ตั้งใจจะใช้อีวอลเล็ทหรืออีเพย์เม้นอันนอกเหนือจากที่บริษัทใช้อยู่ (ต่อไปนี้จะเรียกว่า \"การชำระเงินทางอิเล็กทรอนิกส์\") หรือสกุลเงินท้องถิ่นอื่นนอกเหนือจากที่บริษัทยอมรับ (ต่อไปนี้จะเรียกว่า \"สกุลเงินท้องถิ่น\") และการโอนเงินผ่านธนาคารท้องถิ่น (ต่อไปนี้จะเรียกว่า \"การโอนเงินผ่านธนาคาร\")"
 
 msgid "The Agent promises to the Company that the Agent shall comply with, and the Agent's services will be performed in accordance with, any applicable anti-corruption laws."
 msgstr "ตัวแทนฯ ให้คำสัญญาต่อบริษัทฯ ว่า จะปฏิบัติตาม และดำเนินการต่างๆ ตามกฎหมายว่าด้วยการป้องกันและปราบปรามการทุจริต"
@@ -11258,7 +11258,7 @@ msgid "The Company also collects basic tax residence information for the purpose
 msgstr "บริษัทฯ ยังได้เก็บรวบรวมข้อมูลพื้นฐานเกี่ยวกับสถานที่เกิดแหล่งรายได้สำหรับภาษี เพื่อวัตถุประสงค์ในการปฏิบัติตามข้อกำหนดของ CRS/FATCA ข้อมูลภาษีที่ลูกค้าให้ไว้นั้นจะถูกเปิดเผยให้กับเจ้าหน้าที่ที่มีหน้าที่ในการเก็บรวบรวมข้อมูลนี้เพื่อการทำรายงานสำหรับ CRS/FATCA เท่านั้น และ %1 จะดำเนินการในขอบเขตที่กฎหมายบังคับเพื่อเก็บรวบรวมจากลูกค้า และเปิดเผยให้กับเจ้าหน้าที่ที่มีอำนาจเท่านั้น บริษัทฯ จะไม่ใช้ เปิดเผย หรือ ดำเนินการกับข้อมูลนี้ในทางอื่นไม่ว่าเมื่อไรก็ตาม"
 
 msgid "The Company also has a regulatory obligation to send the personal data of the clients residing in the UK to GAMSTOP to check whether or not  they have self-excluded with GAMSTOP. To find out more, please read the %1GAMSTOP privacy policy%2."
-msgstr "นอกจากนี้ บริษัท ยังมีภาระหน้าที่ตามกฎข้อบังคับในการส่งข้อมูลส่วนบุคคลของลูกค้าที่อาศัยอยู่ในสหราชอาณาจักรไปยัง GAMSTOP เพื่อตรวจสอบว่าพวกเขาได้ยกเว้นตนเองกับ GAMSTOP หรือไม่ หากต้องการข้อมูลเพิ่มเติมโปรดอ่าน %1GAMSTOP นโยบายความเป็นส่วนตัว%2"
+msgstr "นอกจากนี้ บริษัทยังมีภาระหน้าที่ตามกฎข้อบังคับในการส่งข้อมูลส่วนบุคคลของลูกค้าที่อาศัยอยู่ในสหราชอาณาจักรไปยัง GAMSTOP เพื่อตรวจสอบว่าพวกเขาได้ทำการกันตนเองไว้กับ GAMSTOP หรือไม่ ดูข้อมูลเพิ่มเติมได้ที่ %1นโยบายความเป็นส่วนตัว GAMSTOP%2"
 
 msgid "The Company also reserves the right to request documentation pertaining to any other legal obligation."
 msgstr "บริษัทฯ สงวนสิทธิ์ในการขอเอกสารใดๆ ที่เกี่ยวกับหน้าที่ทางกฎหมาย"
@@ -11270,10 +11270,10 @@ msgid "The Company collects and assesses the client's data to profile the client
 msgstr "บริษัทฯ รวบรวม และประเมินข้อมูลของลูกค้า เพื่อรวบรวมสถานะของลูกค้าที่เกี่ยวข้องกับผลิตภัณฑ์ของบริษัทฯ บริษัทฯ ดำเนินการนี้เองโดยการใช้วิธีการประมวลผลอัตโนมัติ ด้วยการจำแนกลูกค้าตามผลการประเมินนี้ บริษัทฯ จะสามารถนำเสนอผลิตภัณฑ์และบริการที่เหมาะสมที่สุดให้กับลูกค้า"
 
 msgid "The Company collects, stores, and processes a range of information about the applicant, including but not limited to the following:"
-msgstr "บริษัทรวบรวมจัดเก็บและประมวลผลข้อมูลต่างๆ เกี่ยวกับผู้สมัครรวมถึง แต่ไม่จํากัดเฉพาะข้อมูลต่อไปนี้:"
+msgstr "บริษัทรวบรวม จัดเก็บ และประมวลผลข้อมูลต่างๆ เกี่ยวกับผู้สมัคร โดยจะรวมถึงแต่ไม่จํากัดเฉพาะข้อมูลดังต่อไปนี้:"
 
 msgid "The Company does not guarantee and bears no liability for the simultaneous selling of the original and copy trades when the client engages in copy trading on WebTrader."
-msgstr "บริษัทไม่รับประกันและไม่รับผิดชอบต่อการขายการซื้อขายต้นฉบับและคัดลอกพร้อมกันเมื่อลูกค้ามีส่วนร่วมในการคัดลอกการซื้อขายบน WebTrader"
+msgstr "บริษัทไม่รับประกันและไม่รับผิดต่อการขายพร้อมกันของสัญญาการค้าที่เป็นต้นฉบับและที่เป็นการคัดลอกในยามที่ลูกค้าเข้ามีส่วนร่วมในการคัดลอกการเทรดบน WebTrader"
 
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
 msgstr "บริษัทฯ ไม่รับรองว่า API ของ %1 ดำเนินการโดยปราศจากข้อขัดข้อง หรือ ข้อผิดพลาด การทำงานของ API ของ %1 อาจจะได้รับผลกระทบจากการดูแลรักษาระบบ การปรับปรุงระบบ หรือ การล้มเหลวของเครือข่าย หรือ ระบบ บริษัทฯ ปฏิเสธความรับผิดชอบต่อการสูญเสีย หรือภาระใดๆ ที่อาจจะเกิดขึ้นเนื่องจากข้อขัดข้อง หรือ ข้อผิดพลาดดังกล่าว"
@@ -11291,10 +11291,10 @@ msgid "The Company does not provide and is not authorised to provide investment 
 msgstr "บริษัทฯ ไม่ได้ให้คำแนะนำการลงทุน และ ไม่ได้รับอนุญาตให้แนะนำการลงทุน บริษัทฯ ไม่ให้คำแนะนำส่วนบุคคล หรือ คำแนะนำเพื่อการซื้อหรือขายในการลงทุนใดๆ โดยเฉพาะ"
 
 msgid "The Company does not share any data related to the client's cloud storage service with anyone."
-msgstr "บริษัทจะไม่เปิดเผยข้อมูลใดๆ ที่เกี่ยวข้องกับบริการจัดเก็บข้อมูลบนคลาวด์ของลูกค้ากับใครก็ตาม"
+msgstr "บริษัทไม่แบ่งปันข้อมูลใดๆ ที่เกี่ยวข้องกับบริการพื้นที่เก็บข้อมูลบนคลาวด์ของลูกค้าให้แก่บุคคลใดๆ ก็ตาม"
 
 msgid "The Company does not store any data related to the client's cloud storage service on any of the Company's servers. All files are downloaded on the client's local machines."
-msgstr "บริษัทไม่จัดเก็บข้อมูลใดๆ ที่เกี่ยวข้องกับบริการจัดเก็บข้อมูลบนคลาวด์ของลูกค้าบนเซิร์ฟเวอร์ใดๆ ของบริษัท ไฟล์ทั้งหมดจะถูกดาวน์โหลดบนเครื่องของลูกค้า"
+msgstr "บริษัทไม่จัดเก็บข้อมูลใดๆ ที่เกี่ยวข้องกับบริการพื้นที่เก็บข้อมูลบนคลาวด์ของลูกค้าบนเซิร์ฟเวอร์ใดๆ ของบริษัท เพราะไฟล์ทั้งหมดจะถูกดาวน์โหลดบนเครื่องของลูกค้า"
 
 msgid "The Company does not tolerate any form of inappropriate behaviour. This includes the usage of offensive language. The Company reserves the right to restrict or terminate the client's account if there is any form of inappropriate behaviour on the client's part."
 msgstr "บริษัทฯ ไม่ส่งเสริมพฤติกรรมที่แสดงออกอย่างไม่เหมาะสม รวมถึงการใช้ภาษาที่มีความรุนแรง ตอบโต้ โจมตี บริษัทฯ จึงขอสงวนสิทธิ์ในการจำกัดการใช้งาน หรือ เพิกถอนบัญชีของลูกค้า หากพบว่าลูกค้าท่านใดแสดงพฤติกรรมที่ไม่เหมาะสม"
@@ -11303,7 +11303,7 @@ msgid "The Company endeavours to open or close the transaction to which the clie
 msgstr "บริษัทฯ พยายามที่จะเปิด หรือปิดธุรกรรมของการสั่งซื้อของลูกค้าในราคาสมเหตุสมผลที่บริษัทฯ มี ด้วยการปฏิบัติหน้าที่ในการดำเนินการที่ดีที่สุด การประมวลผลคำสั่งซื้อที่ดีที่สุด หมายถึง เมื่อประมวลผลคำสั่งซื้อ บริษัทฯ จะดำเนินการตามขั้นตอนทั้งหมด เพื่อให้ได้ผลลัพธ์ที่ดีที่สุดแก่ลูกค้า โดยพิจารณาราคา ต้นทุน ความเร็ว ความเป็นไปได้ในการประมวลผลและการชำระราคา ขนาด ลักษณะ หรือ ข้อพิจารณาอื่นๆ ที่เกี่ยวข้องกับการประมวลผลคำสั่งซื้อ"
 
 msgid "The Company has a Stop Out policy which prevents the client from losing more than they have deposited. If the client’s balance becomes negative due to Stop Out, an automatic compensation will revert the client’s balance to zero. The client acknowledges that, unless they are a retail customer of Deriv Investments (Europe) Limited or a retail customer residing in Australia, the offer of the negative balance protection by the Company to the client is at the Company's sole discretion and the Company reserves the right to change the features and eligibility criteria of the negative balance protection at any time. The provisions of the negative balance protection do not apply in the following situations:"
-msgstr "บริษัทมีนโยบาย Stop Out ซึ่งป้องกันไม่ให้ลูกค้าสูญเสียมากกว่าที่ฝากไว้ หากยอดคงเหลือของลูกค้าติดลบเนื่องจาก Stop Out การชดเชยอัตโนมัติจะเปลี่ยนยอดคงเหลือของลูกค้าเป็นศูนย์ ลูกค้ารับทราบว่า เว้นแต่พวกเขาจะเป็นลูกค้ารายย่อยของ Deriv Investments (Europe) Limited หรือลูกค้ารายย่อยที่อาศัยอยู่ในออสเตรเลีย ข้อเสนอการคุ้มครองยอดคงเหลือติดลบโดยบริษัทให้กับลูกค้านั้นขึ้นอยู่กับดุลยพินิจของบริษัทแต่เพียงผู้เดียว และบริษัทขอสงวนสิทธิ์ สิทธิ์ในการเปลี่ยนแปลงคุณสมบัติและเกณฑ์คุณสมบัติของการคุ้มครองยอดคงเหลือติดลบได้ตลอดเวลา บทบัญญัติของการคุ้มครองยอดคงเหลือติดลบใช้ไม่ได้ในสถานการณ์ต่อไปนี้:"
+msgstr "บริษัทมีนโยบายตัวยุติการซื้อขายหรือ Stop Out ซึ่งป้องกันไม่ให้ลูกค้าขาดทุนเกินจำนวนที่ฝากไว้ หากยอดคงเหลือของลูกค้าติดลบเนื่องจาก Stop Out ระบบการชดเชยอัตโนมัติจะเปลี่ยนยอดคงเหลือของลูกค้าเป็นศูนย์ ลูกค้ารับทราบว่าข้อเสนอการคุ้มครองยอดคงเหลือติดลบโดยบริษัทให้กับลูกค้านั้นขึ้นอยู่กับดุลยพินิจของบริษัทแต่เพียงผู้เดียว และบริษัทขอสงวนสิทธิ์ในการเปลี่ยนแปลงฟีเจอร์และเกณฑ์คุณสมบัติของการคุ้มครองยอดคงเหลือติดลบได้ตลอดเวลา เว้นแต่พวกเขาจะเป็นลูกค้ารายย่อยของ Deriv Investments (Europe) Limited หรือลูกค้ารายย่อยที่อาศัยอยู่ในออสเตรเลีย ทั้งนี้ บทบัญญัติการคุ้มครองยอดคงเหลือติดลบจะใช้ไม่ได้ในสถานการณ์ต่อไปนี้:"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
 msgstr "บริษัทฯ มีหน้าที่ทั่วๆ ไป ในการจัดการธุรกิจของเรากับลูกค้าด้วยความซื่อสัตย์ เป็นธรรม และอย่างมืออาชีพ และเพื่อปฏิบัติอย่างเหมาะสมที่สุดเพื่อดำเนินการในการเปิดและปิดการซื้อขายไบนารีออปชั่นกับลูกค้า"
@@ -11333,13 +11333,13 @@ msgid "The Company holds customer funds in bank accounts separate from the opera
 msgstr "บริษัทฯ ดูแลหลักประกันของลูกค้าในบัญชีที่ถูกจัดสรรแยกจากบัญชีปฏิบัติการ และได้จัดการเพื่อให้แน่ใจว่า สินทรัพย์ของบัญชีลูกค้าจะถูกจำหน่ายให้แก่ลูกค้า หากมีภาวะล้มละลาย"
 
 msgid "The Company holds customer funds in bank accounts separate from the operational accounts. Deriv (Europe) Limited has arrangements in place so that in the event of insolvency, it is able to meet its obligations to clients. These arrangements are in the form of a loan agreement between Deriv (Europe) Limited and the parent company, Deriv Limited. This loan will always at minimum cover the client liabilities. This meets the Gambling Commission's requirements for the segregation of customer funds at the level of medium protection."
-msgstr "บริษัทถือเงินลูกค้าในบัญชีธนาคารแยกจากบัญชีปฏิบัติการ Deriv (Europe) Limited มีการเตรียมการเพื่อที่ว่าในกรณีของการล้มละลาย บริษัทสามารถปฏิบัติตามภาระผูกพันที่มีต่อลูกค้าได้ ข้อตกลงเหล่านี้อยู่ในรูปแบบของสัญญาเงินกู้ระหว่าง Deriv (Europe) Limited และบริษัทแม่ Deriv Limited เงินกู้นี้จะครอบคลุมหนี้สินของลูกค้าเป็นอย่างน้อย เป็นไปตามข้อกำหนดของ Gambling Commission สำหรับการแยกเงินของลูกค้าในระดับการป้องกันปานกลาง"
+msgstr "บริษัทถือเงินลูกค้าไว้ในบัญชีธนาคารต่างๆ ซึ่งจะแยกจากบัญชีปฏิบัติการ โดยบริษัท Deriv (Europe) Limited ได้เตรียมการไว้เผื่อในกรณีหากมีการล้มละลายบริษัทก็จะยังสามารถปฏิบัติตามภาระผูกพันที่มีต่อลูกค้าได้ ข้อตกลงเหล่านี้อยู่ในรูปแบบของสัญญาเงินกู้ระหว่างบริษัท Deriv (Europe) Limited และบริษัทแม่คือ Deriv Limited โดยเงินกู้นี้จะครอบคลุมหนี้สินของลูกค้าเป็นอย่างน้อย ข้อดังกล่าวนี้คือเป็นการทำตามข้อกำหนดของหน่วยงาน Gambling Commission ที่ให้มีการแยกเงินของลูกค้าในระดับการป้องกันขั้นปานกลาง"
 
 msgid "The Company is an independent legal entity and is not affiliated with the MT5 trading platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
 msgstr "บริษัทฯ เป็นหน่วยงานอิสระทางกฎหมายและไม่มีความผูกพันต่อระบบซื้อขาย MT5 บริษัทฯ ไม่ได้เป็นเจ้าของ เป็นผู้ควบคุม หรือ ดำเนินการใดๆ ในแพลตฟอร์ม MT5 ดังนั้น บริษัทฯ จะไม่รับประกันใดๆ ต่อผลิตภัณฑ์หรือบริการที่เกี่ยวข้องกับระบบซื้อขาย MT5 รวมถึงบริษัทฯ ไม่ได้มีส่วนในการทวนสอบ หรือ ตรวจสอบศักยภาพการให้บริการของระบบซื้อขาย MT5 ซึ่งถูกแสดง และ/หรือ อธิบายไว้ในเว็บไซต์ที่เกี่ยวข้องกับระบบซื้อขาย MT5"
 
 msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be accepted only if the orders are within the client’s account limit. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all Binary Options contracts are traded on over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
-msgstr "บริษัทได้รับอนุญาตให้ทำธุรกรรมอนุพันธ์ในบัญชีของตนเอง คำสั่งซื้อของลูกค้าจะได้รับการยอมรับก็ต่อเมื่อคำสั่งซื้อนั้นอยู่ภายในขีดจำกัดบัญชีของลูกค้า คำสั่งของลูกค้าจะถูกดำเนินการโดยบริษัทและบริษัทจะเป็นสถานที่ดำเนินการของลูกค้าแต่เพียงผู้เดียวสำหรับการซื้อขายไบนารี่ออปชันทั้งหมดของลูกค้า ซึ่งหมายความว่า บริษัทจะทำหน้าที่เป็นคู่ค้าของลูกค้าเสมอ ลูกค้าพึงตระหนักว่า พวกเขามีความเสี่ยงที่สูงขึ้นเนื่องจากสัญญาซื้อขายไบนารี่ออปชันทั้งหมดมีการซื้อขายในตลาดแบบซื้อขายได้เองโดยตรง (OTC) ซึ่งต่างจากตลาดแลกเปลี่ยนแบบควบคุมทั่วไป ในนโยบายส่วนนี้จะอธิบายถึงวิธีการที่บริษัทตั้งใจที่จะปฏิบัติตามข้อผูกพันในสัญญาให้ดีที่สุด"
+msgstr "บริษัทได้รับใบอนุญาตให้ทำธุรกรรมอนุพันธ์โดยลำพัง คำสั่งซื้อขายของลูกค้าจะได้รับการยอมรับก็ต่อเมื่อคำสั่งซื้อนั้นอยู่ภายในขีดจำกัดบัญชีของลูกค้า คำสั่งซื้อของลูกค้าจะถูกดำเนินการโดยบริษัทและบริษัทจะเป็นสถานที่ดำเนินการของลูกค้าแต่เพียงผู้เดียวสำหรับการซื้อขายไบนารี่ออปชั่นทั้งหมดของลูกค้า ซึ่งนี่หมายความว่า บริษัทจะทำหน้าที่เป็นคู่ค้าของลูกค้าเสมอ ลูกค้าพึงตระหนักว่า พวกเขามีความเสี่ยงที่สูงขึ้นเนื่องจากสัญญาซื้อขายไบนารี่ออปชั่นทั้งหมดนั้นเป็นแบบตลาดที่มีซื้อขายกันได้เองโดยตรง (OTC) ซึ่งต่างจากตลาดแลกเปลี่ยนทั่วไปที่ได้รับการควบคุมกำกับ นโยบายส่วนนี้จะอธิบายถึงวิธีการที่บริษัทตั้งใจที่จะปฏิบัติตามข้อผูกพันในสัญญาให้ดีที่สุด"
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API."
 msgstr "บริษัทฯ ไม่รับผิดชอบความสูญเสีย หรือ ความเสียหายใดๆ อันอาจจะเกิดขึ้นจากข้อมูล หรือ ราคาที่เผยแพร่ หรือ เกิดขึ้นจาก API ของ %1 หรือ ข้อผิดพลาดใดๆ หรือ การละเว้นที่เกิดจาก API ของ %1"
@@ -11357,16 +11357,16 @@ msgid "The Company is required to take a number of factors into account when con
 msgstr "บริษัทฯ จำเป็นต้องใช้ปัจจัยที่หลากหลาย เมื่อกำลังดำเนินการพิจารณาการประมวลผลที่ดีที่สุดให้กับลูกค้า"
 
 msgid "The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collecting or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information."
-msgstr "บริษัทมีหน้าที่ปฏิบัติตามกฎหมายภายใต้กฎระเบียบการป้องกันข้อมูลในการแจ้งแก่ผู้สมัครถึงข้อมูลที่เกี่ยวข้องกับนโยบายการรักษาข้อมูลส่วนบุคคลนี้ ดังนั้น ผู้สมัครควรจะให้ความสำคัญและอ่านข้อกำหนดของนโยบายนี้ควบคู่ไปกับนโยบายความเป็นส่วนบุคคลอื่นๆ ที่บริษัทได้จัดเตรียมให้กับผู้สมัครในโอกาสต่างๆ และเมื่อบริษัทได้ดำเนินการรวบรวมหรือประเมินผลข้อมูลส่วนบุคคลเกี่ยวกับผู้สมัคร เพื่อให้ผู้สมัครจะได้รับทราบว่า บริษัทกำลังใช้ข้อมูลดังกล่าวอย่างไรและด้วยความประสงค์ใด"
+msgstr "บริษัทมีหน้าที่ต้องปฏิบัติตามกฎระเบียบการป้องกันข้อมูลในการแจ้งแก่ผู้สมัครถึงข้อมูลที่เกี่ยวข้องกับนโยบายการรักษาข้อมูลส่วนบุคคลนี้ ดังนั้น มันเป็นเรื่องสำคัญที่ผู้สมัครควรจะอ่านข้อกำหนดของนโยบายนี้ควบคู่ไปกับนโยบายความเป็นส่วนบุคคลอื่นๆ ที่บริษัทได้จัดเตรียมให้กับผู้สมัครในโอกาสต่างๆ ที่บริษัทจะดำเนินการรวบรวมหรือประเมินผลข้อมูลส่วนบุคคลเกี่ยวกับผู้สมัคร เพื่อที่ผู้สมัครจะได้รับทราบว่า บริษัทกำลังใช้ข้อมูลดังกล่าวอย่างไรและเพื่ออะไร"
 
 msgid "The Company is the sole owner of all rights, titles, or interests whatsoever in and to all %1 electronic systems, including but not limited to any and all software, email, and email management software, along with any modifications."
-msgstr "บริษัทฯ เป็นเจ้าของแต่เพียงผู้เดียวในสิทธิ์ หรือ กรรมสิทธิ์ หรือ ผลประโยชน์ อะไรก็ตามในและต่อระบบอิเล็กทรอนิกส์ของ%1 รวมถึงแต่ไม่จำกัดเพียงซอฟท์แวร์ อีเมล์ และซอฟท์แวร์การจัดการอีเมล์ บางอย่างหรือทั้งหมด รวมถึงการปรับเปลี่ยนใดๆ ด้วย"
+msgstr "บริษัทเป็นเจ้าของแต่เพียงผู้เดียวในสิทธิ์ กรรมสิทธิ์ หรือ ผลประโยชน์ อะไรก็ตามในและต่อระบบอิเล็กทรอนิกส์ของ %1 โดยรวมถึงแต่ไม่จำกัดเพียงซอฟท์แวร์ อีเมล์ และซอฟท์แวร์การจัดการอีเมล์ รวมถึงการปรับเปลี่ยนใดๆ ด้วย"
 
 msgid "The Company keeps the client's information for the whole duration of the client's subscription with the Company. If the Company chooses to close the client's Binary.com account, the client's data will be kept only until the Company's legal and regulatory obligations on data retention are met. The Company shall delete the client's data when the applicable retention period expires. The criteria the Company uses for determining the retention period for the client's personal data will be any applicable regulatory requirements or legal obligations, including tax, financial, and anti-money laundering laws, or to establish or defend potential legal claims."
-msgstr "บริษัทเก็บข้อมูลของลูกค้าไว้ตลอดระยะเวลาที่ลูกค้าสมัครสมาชิกกับบริษัท หากบริษัทเลือกที่จะปิดบัญชี Binary.com ของลูกค้า ข้อมูลของลูกค้าจะถูกเก็บไว้จนกว่าจะปฏิบัติตามภาระผูกพันทางกฎหมายและข้อบังคับของบริษัทเกี่ยวกับการเก็บรักษาข้อมูลเท่านั้น บริษัทจะลบข้อมูลของลูกค้าเมื่อระยะเวลาการเก็บรักษาที่ใช้บังคับหมดลง เกณฑ์ที่บริษัทใช้ในการกำหนดระยะเวลาการเก็บรักษาข้อมูลส่วนบุคคลของลูกค้าจะเป็นข้อกำหนดด้านกฎระเบียบที่บังคับใช้หรือภาระผูกพันทางกฎหมาย ซึ่งรวมถึงกฎหมายภาษี การเงิน และการป้องกันการฟอกเงิน หรือเพื่อสร้างหรือปกป้องการเรียกร้องทางกฎหมายที่อาจเกิดขึ้น"
+msgstr "บริษัทเก็บข้อมูลของลูกค้าไว้ตลอดระยะเวลาที่มีสมาชิกภาพกับบริษัท หากบริษัทเลือกที่จะปิดบัญชี Binary.com ของลูกค้า ข้อมูลของลูกค้าจะถูกเก็บไว้จนกว่าข้อผูกพันทางกฎหมายและข้อบังคับของบริษัทเกี่ยวกับการเก็บรักษาข้อมูลจะสมบูรณ์และสิ้นสุดลงเท่านั้น บริษัทจะลบข้อมูลของลูกค้าเมื่อระยะเวลาการเก็บรักษาที่ใช้บังคับหมดลง เกณฑ์ที่บริษัทใช้ในการกำหนดระยะเวลาการเก็บรักษาข้อมูลส่วนบุคคลของลูกค้าจะเป็นข้อกำหนดด้านกฎระเบียบที่บังคับใช้หรือภาระผูกพันทางกฎหมาย ซึ่งรวมถึงกฎหมายภาษี การเงิน และการป้องกันการฟอกเงิน หรือเพื่อสร้างหรือปกป้องการเรียกร้องทางกฎหมายที่อาจเกิดขึ้น"
 
 msgid "The Company likewise reserves the right to cancel any request for a deposit, withdrawal, or refund of the client’s funds."
-msgstr "บริษัทขอสงวนสิทธิ์ในการยกเลิกคำขอฝาก ถอน หรือคืนเงินของลูกค้า"
+msgstr "บริษัทขอสงวนสิทธิ์ในการยกเลิกคำร้องขอสำหรับการฝาก ถอน หรือขอคืนเงินของลูกค้า"
 
 msgid "The Company mainly provides contracts for difference (CFDs) via MT5 platform."
 msgstr "บริษัทฯ จะให้บริการสัญญาสำหรับส่วนต่าง (CFD) ผ่านแพลตฟอร์ม MT5 เป็นหลัก"
@@ -11378,16 +11378,16 @@ msgid "The Company makes no claims that the %1 website will be uninterrupted or 
 msgstr "บริษัทฯ ปฏิเสธในการอ้างสิทธิ์ที่ว่า เว็บไซต์ %1 จะไม่มีการถูกรบกวน หรือ เป็นบริการที่ปราศจากข้อผิดพลาด และจะไม่รับผิดชอบใดๆต่อผลลัพธ์ที่อาจเป็นผลมาจากข้อผิดพลาด หรือการหยุดชะงักใดๆ"
 
 msgid "The Company may also collect personal data about the applicant from third parties, such as further references supplied by former employers and information from criminal records checks permitted by law."
-msgstr "บริษัทอาจรวบรวมข้อมูลส่วนบุคคลเกี่ยวกับผู้สมัครจากบุคคลภายนอก เช่น การอ้างอิงเพิ่มเติมจากอดีตนายจ้างและข้อมูลจากการตรวจสอบประวัติอาชญากรรมที่กฎหมายอนุญาต"
+msgstr "บริษัทอาจรวบรวมข้อมูลส่วนบุคคลเกี่ยวกับผู้สมัครจากบุคคลภายนอก เช่น การอ้างอิงเพิ่มเติมจากอดีตนายจ้างและข้อมูลจากการตรวจสอบประวัติอาชญากรรมตามที่กฎหมายอนุญาต"
 
 msgid "The Company may also impose volume trading limits on clients' accounts at its sole discretion. Trading volume limits can be viewed in the Security & limits section of the client's account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
 msgstr "บริษัทฯ อาจจำกัดปริมาณการซื้อขายในบัญชีของลูกค้าตามดุลยพินิจของบริษัทฯ ลูกค้าสามารถศึกษาข้อมูลเกี่ยวกับข้อจำกัดปริมาณการซื้อขายได้จากส่วนของความปลอดภัยและข้อจำกัดในบัญชีของลูกค้า หากยอดคงเหลือในบัญชีเกินจำนวนสูงสุด จะต้องมีการถอนเงิน เพื่อทำให้ยอดคงเหลือเป็นไปตามข้อจำกัดวงเงินดังกล่าว"
 
 msgid "The Company may also transfer relevant personal and financial data to any company within the Deriv Group companies. This includes any of the Company's business associates or payment providers within or outside of the EEA, including countries that might not offer an equivalent level of protection of personal data. In all instances, the Company places a contractual obligation on such third parties to offer the same level of rights and protection as stipulated in the GDPR."
-msgstr "นอกจากนี้บริษัทยังอาจถ่ายโอนข้อมูลส่วนบุคคลและข้อมูลทางการเงินที่เกี่ยวข้องไปยัง บริษัทในเครือ Deriv ซึ่งรวมถึงผู้ร่วมธุรกิจของ บริษัทหรือผู้ให้บริการชำระเงินภายในหรือภายนอก EEA รวมถึงประเทศที่อาจไม่ได้ให้การคุ้มครองข้อมูลส่วนบุคคลในระดับที่เทียบเท่า ในทุกกรณี บริษัทได้กำหนดหน้าที่ตามข้อตกลงให้แก่บุคคลภายนอกดังกล่าว เพื่อให้สิทธิ์และมีมาตรการป้องกันเช่นเดียวกันกับที่ระบุไว้ใน GDPR"
+msgstr "นอกจากนี้บริษัทยังอาจถ่ายโอนข้อมูลส่วนบุคคลและข้อมูลทางการเงินที่เกี่ยวข้องไปยังบริษัทในเครือ Deriv Group ซึ่งรวมถึงผู้ร่วมธุรกิจของบริษัทหรือผู้ให้บริการชำระเงินภายในหรือภายนอก EEA รวมถึงประเทศที่อาจไม่ได้ให้การคุ้มครองข้อมูลส่วนบุคคลในระดับที่เทียบเท่ากัน ทั้งนี้ ในทุกกรณีบริษัทได้กำหนดภาระผูกพันตามสัญญาให้บุคคลภายนอกดังกล่าวเพื่อให้สิทธิ์และมีมาตรการป้องกันในระดับเดียวกันกับที่ระบุไว้ใน GDPR"
 
 msgid "The Company may also transfer the client's data to third parties outside the EEA for content delivery services, customer relationship management services, and communication and marketing services."
-msgstr "บริษัทอาจโอนข้อมูลของลูกค้าไปยังบุคคลที่สามนอก EEA สำหรับบริการจัดส่งเนื้อหา บริการจัดการลูกค้าสัมพันธ์ และบริการสื่อสารและการตลาด"
+msgstr "บริษัทอาจถ่ายโอนข้อมูลของลูกค้าไปยังบุคคลที่สามภายนอก EEA สำหรับบริการจัดส่งเนื้อหา บริการจัดการความสัมพันธ์กับลูกค้า และบริการด้านการสื่อสารและการตลาด "
 
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. The Company will endeavour to ensure that Affiliates are notified when changes have been made to the commission structure."
 msgstr "บริษัทฯ อาจเปลี่ยนแปลงโครงสร้างค่าตอบแทน ณ เวลาใดๆ ตามแต่ดุลยพินิจ และถือเป็นสิทธิ์ขาดของบริษัทฯ และบริษัทฯ จะดำเนินการเพื่อให้มั่นใจว่า พันธมิตรฯ จะได้รับการแจ้งเมื่อมีการเปลี่ยนแปลงใดๆ เกี่ยวกับโครงสร้างของค่าตอบแทน"
@@ -11396,10 +11396,10 @@ msgid "The Company may change, suspend, terminate, or discontinue any aspect of 
 msgstr "บริษัทฯ อาจเปลี่ยนแปลง ระงับชั่วคราว ยุติ หรือ ยับยั้ง การใช้งานส่วนหนึ่งส่วนใดของ API ของ %1 รวมถึงการเปิดให้บริการ ลักษณะข้อมูล หรือ การใช้งานใดๆ ที่เข้าถึงได้ทาง API ของ %1 โดยจะแจ้งให้โปรแกรมเมอร์ทราบไม่น้อยกว่า 7 วันทำการ"
 
 msgid "The Company may collect basic tax residence information for the purposes of Common Reporting Standard (CRS) compliance. The tax information that the client may provide will only be disclosed to the authorities who are legally charged with collecting this information for CRS reporting. The Company shall disclose the client's tax information to them only to the extent that the Company is legally obliged to. The Company does not use, disclose, or process this information in any other way at any time."
-msgstr "บริษัทอาจรวบรวมข้อมูลพื้นฐานด้านภาษีเพื่อวัตถุประสงค์ในการปฏิบัติตามมาตรฐานการรายงานทั่วไป (CRS) ข้อมูลภาษีที่ลูกค้าอาจให้จะถูกเปิดเผยต่อหน่วยงานที่มีหน้าที่ตามกฎหมายในการเก็บรวบรวมข้อมูลนี้สำหรับการรายงาน CRS เท่านั้น บริษัทจะเปิดเผยข้อมูลภาษีของลูกค้าแก่พวกเขาเฉพาะในขอบเขตที่บริษัทผูกพันตามกฎหมายเท่านั้น บริษัทจะไม่ใช้ เปิดเผย หรือประมวลผลข้อมูลนี้ในลักษณะอื่นใดเมื่อใดก็ได้"
+msgstr "บริษัทอาจรวบรวมข้อมูลพื้นฐานด้านภาษีเพื่อวัตถุประสงค์ในการปฏิบัติตามมาตรฐานการรายงานทั่วไป (CRS) ข้อมูลภาษีที่ลูกค้าอาจให้จะถูกเปิดเผยต่อหน่วยงานที่มีหน้าที่ตามกฎหมายในการเก็บรวบรวมข้อมูลนี้สำหรับการรายงาน CRS เท่านั้น บริษัทจะเปิดเผยข้อมูลภาษีของลูกค้าแก่พวกเขาเฉพาะในขอบเขตที่บริษัทผูกพันตามกฎหมายเท่านั้น บริษัทจะไม่ใช้ เปิดเผย หรือประมวลผลข้อมูลนี้ในลักษณะอื่นใดในเวลาใดก็ตาม"
 
 msgid "The Company may collect this information in a variety of ways. Data is collected and contained in CVs or resumes, cover letters, and identity documents, via Self-Assessment Topgrading Questionnaires/Interview (SATI), or through interviews or other forms of assessment, including online tests."
-msgstr "บริษัทอาจรวบรวมข้อมูลนี้ได้หลายวิธี ข้อมูลจะถูกรวบรวมและอยู่ในประวัติย่อหรือประวัติย่อส่วนบุคคลหรือรีซูเม่แบบสอบถามเพื่อประเมินลักษณะและระดับทักษะส่วนบุคคล/การสัมภาษณ์ (SATI) หรือผ่านการสัมภาษณ์หรือการประเมินในรูปแบบอื่นๆ รวมถึงการทดสอบออนไลน์"
+msgstr "บริษัทอาจรวบรวมข้อมูลนี้ได้หลายวิธี ข้อมูลจะถูกรวบรวมและอยู่ในประวัติย่อ (CV) หรือสรุปประวัติส่วนบุคคล (Resume) จดหมายสมัครงาน และเอกสารแสดงข้อมูลตัวตนผ่านแบบสอบถาม/การสัมภาษณ์เพื่อการประเมินลักษณะและระดับทักษะส่วนบุคคลหรือ SATI หรือผ่านการสัมภาษณ์หรือการประเมินในรูปแบบอื่นๆ รวมถึงการทำแบบทดสอบออนไลน์"
 
 msgid "The Company may from time to time inform clients about changes on the website, new services, and promotions. If, however, the client wishes to opt out of such a service and does not wish to receive any direct marketing data, the client can either unsubscribe from the service directly or email the Company's customer support team. If the client decides to opt in again into receiving promotional material, the client can also do so by contacting the customer support team."
 msgstr "บริษัทฯ อาจจะแจ้งให้ลูกค้าทราบเป็นครั้งคราว เกี่ยวกับการเปลี่ยนแปลงบนเว็บไซต์ การเพิ่มบริการใหม่ และการส่งเสริมการขาย หากไม่ประสงค์ที่จะรับข้อมูล หรือ สื่อทางการตลาดใดๆ ลูกค้าสามารถเลือกไม่รับข่าวสารข้อมูลได้โดยตรง หรือ ส่งอีเมล์แจ้งให้กับฝ่ายลูกค้าสัมพันธ์ของบริษัทฯ ทราบ และหากประสงค์จะรับข้อมูลการตลาดอีกครั้ง ลูกค้าสามารถติดต่อฝ่ายลูกค้าสัมพันธ์เพื่อดำเนินการได้เช่นกัน"
@@ -11414,13 +11414,13 @@ msgid "The Company may modify any provisions or terms of this Agreement at any t
 msgstr "บริษัทฯ สามารถเปลี่ยนแปลงข้อกำหนดหรือเงื่อนไขของสัญญานี้เมื่อใดก็ได้ ซึ่งเป็นความรับผิดชอบของโบรกเกอร์แนะนำในการตรวจสอบการเปลี่ยนแปลงทั้งหมดในสัญญาที่มีการเผยแพร่บนเว็บไซต์อย่างสม่ำเสมอ"
 
 msgid "The Company may need to transfer the client's personal data to any of its business associates or payment providers within or outside of the European Economic Area (EEA), including countries that might not offer an equivalent level of protection of personal data, for the purpose of processing by third parties."
-msgstr "บริษัทอาจจำเป็นต้องถ่ายโอนข้อมูลส่วนบุคคลของลูกค้าไปยังผู้ร่วมธุรกิจหรือผู้ให้บริการชำระเงินภายในหรือนอกเขตเศรษฐกิจยุโรป (EEA) รวมถึงประเทศที่อาจไม่มีระดับการปกป้องข้อมูลส่วนบุคคลที่เทียบเท่ากัน เพื่อวัตถุประสงค์ในการ การประมวลผลโดยบุคคลที่สาม"
+msgstr "บริษัทอาจจำเป็นต้องถ่ายโอนข้อมูลส่วนบุคคลของลูกค้าไปยังผู้ร่วมธุรกิจหรือผู้ให้บริการชำระเงินของเราภายในหรือภายนอกเขตเศรษฐกิจยุโรปหรือ European Economic Area (EEA) รวมถึงประเทศที่อาจไม่ให้การปกป้องข้อมูลส่วนบุคคลในระดับที่เทียบเท่ากัน เพื่อวัตถุประสงค์ในการดำเนินการโดยบุคคลที่สาม"
 
 msgid "The Company may release subsequent versions of the %1 API and require that the Programmer use those subsequent versions. The Programmer's continued use of the APIs following a subsequent release will be deemed the Programmer's acceptance of modifications."
 msgstr "บริษัทฯ จะประกาศเวอร์ชัน API ของ %1 ต่างๆ เพื่อใช้งาน และกำหนดให้โปรแกรมเมอร์ใช้งานเวอร์ชันนั้นๆ การใช้งานของโปรแกรมเมอร์ใน API เวอร์ชันต่อๆ มาเหล่านี้ หมายถึง โปรแกรมเมอร์ได้ยอมรับการเปลี่ยนแปลง"
 
 msgid "The Company may transfer relevant personal data to any company within Deriv Group Ltd where it is necessary for the performance of a contract with the client related to the Company services."
-msgstr "บริษัทอาจถ่ายโอนข้อมูลส่วนบุคคลที่เกี่ยวข้องไปยังบริษัทใดๆ ภายใน Deriv Group Ltd ในกรณีที่จำเป็นสำหรับการปฏิบัติตามสัญญากับลูกค้าที่เกี่ยวข้องกับบริการของบริษัท"
+msgstr "บริษัทอาจถ่ายโอนข้อมูลส่วนบุคคลที่เกี่ยวข้องไปยังบริษัทใดๆ ภายในเครือ Deriv Group Ltd ตามที่จำเป็นเพื่อการปฏิบัติตามสัญญาที่มีกับลูกค้าเกี่ยวกับบริการต่างๆ ของบริษัท"
 
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide."
 msgstr "บริษัทฯ อาจจะใช้ หรือ เปิดเผย (หรือ พิจารณาที่จะไม่ใช้ หรือ เปิดเผย) ผลงานในกรณีใดๆ ในช่องทางใดๆ ในสื่อใดๆ ทั่วโลก"
@@ -11444,16 +11444,16 @@ msgid "The Company may, however, withhold the client's withdrawal request from t
 msgstr "บริษัทฯ อาจระงับคำร้องในการถอนเงินของลูกค้าจากบัญชี MT5 จริงไปยังบัญชี %1 ทั้งหมดหรือบางส่วน ในกรณีใดๆ ต่อไปนี้"
 
 msgid "The Company must award the settlement within 28 days of when the decision is reached."
-msgstr "บริษัทต้องให้ดำเนินตามคำตัดสินเพื่อระงับข้อพิพาทภายใน 28 วันนับจากวันที่มีการตัดสินใจออกมา"
+msgstr "บริษัทต้องดำเนินการตามคำตัดสินเพื่อระงับข้อพิพาทภายใน 28 วันนับจากวันที่มีการตัดสินใจออกมา"
 
 msgid "The Company offers a number of merchant solutions and payment service providers for making online payments. The client will be billed at the time of, or shortly after, making a transaction. The client agrees to pay for all trades that the client purchases via any of the available merchant solutions or payment service providers."
-msgstr "บริษัทนำเสนอแนวทางสำหรับร้านค้าและผู้ให้บริการการชำระเงินจำนวนมากสำหรับการชำระเงินออนไลน์ ลูกค้าจะถูกเรียกเก็บเงินในเวลาหรือหลังจากทำธุรกรรมไม่นาน ลูกค้าตกลงที่จะชำระเงินสำหรับการซื้อขายทั้งหมดที่ลูกค้าซื้อผ่านทางที่นำเสนอของร้านค้าหรือผู้ให้บริการการชำระเงินที่มีอยู่"
+msgstr "บริษัทนำเสนอโซลูชั่นสำหรับผู้ค้าและผู้ให้บริการการชำระเงินจำนวนมากสำหรับการชำระเงินทางออนไลน์ ลูกค้าจะถูกเรียกเก็บเงินในเวลาหรือหลังจากทำธุรกรรมไม่นาน ลูกค้าตกลงว่าจะชำระเงินสำหรับการเทรดทั้งหมดที่ลูกค้าซื้อผ่านโซลูชั่นสำหรับผู้ค้าหรือผู้ให้บริการการชำระเงินที่มีอยู่"
 
 msgid "The Company offers binary options through its online interactive platform."
 msgstr "บริษัทฯ ให้บริการไบนารีออปชั่นผ่านของแพลตฟอร์มแบบโต้ตอบออนไลน์"
 
 msgid "The Company only accesses the client's cloud storage when the client's action initiates it. Clients can disconnect their storage service at any time."
-msgstr "บริษัทจะเข้าถึงพื้นที่จัดเก็บข้อมูลคลาวด์ของลูกค้า เมื่อการดําเนินการของลูกค้าเริ่มต้นเท่านั้น ลูกค้าสามารถยกเลิกการเชื่อมต่อบริการจัดเก็บข้อมูลได้ตลอดเวลา"
+msgstr "บริษัทจะเข้าถึงที่เก็บข้อมูลบนคลาวด์ของลูกค้า เมื่อการกระทำของลูกค้ากระตุ้นให้เริ่มต้นทำเช่นนั้นเท่านั้น ลูกค้าสามารถยกเลิกการเชื่อมต่อบริการจัดเก็บข้อมูลได้ตลอดเวลา"
 
 msgid "The Company operates in full compliance with the General Data Protection Regulation (GDPR) and other applicable Data Protection laws. These regulatory measures oblige the Company to use the clients' personal data according to the principles of fair, lawful, and transparent information processing."
 msgstr "บริษัทดำเนินการตามกฎระเบียบให้ความคุ้มครองข้อมูลส่วนบุคคลของผู้บริโภค (GDPR) และกฎหมายคุ้มครองข้อมูลอื่นๆ ที่เกี่ยวข้อง มาตรการกำกับดูแลเหล่านี้บังคับให้บริษัทใช้ข้อมูลส่วนบุคคลของลูกค้าตามหลักการของการประมวลผลข้อมูลที่ยุติธรรม ถูกกฎหมาย และโปร่งใส"
@@ -11486,10 +11486,10 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "บริษัทฯ สงวนสิทธิ์ในการใช้ดุลยพินิจเพื่อปฏิเสธ และ/หรือ ยกเลิกบริการ การเรียกเก็บค่าธรรมเนียมการฝาก และ/หรือ การถอน กับบุคคลใดๆ เนื่องด้วยเหตุผลดังต่อไปนี้"
 
 msgid "The Company reserves the right to accept or reject the Agent's application. Where the Agent's application is accepted, the Company shall include all relevant information, including but not limited to name, address, website URL (if available), email address, telephone number, commission rates, and payment methods used by the Agent, in the payment agent list which is disclosed on the Company's website, %1www.binary.com%2."
-msgstr "บริษัทขอสงวนสิทธิ์ในการยอมรับหรือปฏิเสธการสมัครตัวแทน ในกรณีที่ใบสมัครของตัวแทนได้รับการยอมรับ บริษัทจะรวมข้อมูลที่เกี่ยวข้องทั้งหมด รวมถึงแต่ไม่จำกัดเพียงชื่อ ที่อยู่ URL ของเว็บไซต์ (ถ้ามี) ที่อยู่อีเมล หมายเลขโทรศัพท์ อัตราค่าคอมมิชชั่น และวิธีการชำระเงินที่ตัวแทนใช้ รายชื่อตัวแทนชำระเงินที่เปิดเผยบนเว็บไซต์ของบริษัท %1www.binary.com%2"
+msgstr "บริษัทขอสงวนสิทธิ์ในการยอมรับหรือปฏิเสธใบสมัครของตัวแทน โดยในกรณีที่ใบสมัครของตัวแทนได้รับการยอมรับนั้นบริษัทจะรวมข้อมูลที่เกี่ยวข้องทั้งหมด รวมถึงแต่ไม่จำกัดเพียงชื่อ ที่อยู่ URL ของเว็บไซต์ (ถ้ามี) ที่อยู่อีเมล์ หมายเลขโทรศัพท์ อัตราค่าคอมมิชชั่น และวิธีการชำระเงินต่างๆ ที่ตัวแทนใช้ เข้าไว้ในลิสต์รายชื่อตัวแทนชำระเงินที่เผยแพร่บนเว็บไซต์ของบริษัท %1www.binary.com%2"
 
 msgid "The Company reserves the right to block or withhold the funds in the client’s account and/or suspend or close the client’s account if it is known or there is reason to believe that one or more of the following cases are true:"
-msgstr "บริษัทขอสงวนสิทธิ์ในการบล็อกหรือระงับเงินในบัญชีของลูกค้า และ/หรือระงับหรือปิดบัญชีของลูกค้า หากทราบหรือมีเหตุผลที่เชื่อได้ว่ากรณีต่อไปนี้อย่างน้อยหนึ่งกรณีเป็นจริง:"
+msgstr "บริษัทขอสงวนสิทธิ์ในการบล็อกหรือระงับเงินในบัญชีของลูกค้า และ/หรือ ระงับหรือปิดบัญชีของลูกค้า หากบริษัททราบหรือมีเหตุผลที่เชื่อได้ว่ากรณีต่อไปนี้อย่างน้อยหนึ่งกรณีนั้นเป็นจริง:"
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug, or glitch in the Company website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, manifest mis-calculation of prices, or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors, or suspected system inadequacies that they may experience and may not abuse, or arbitrage based on, such system problems or errors for profit. The Company will endeavour to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between the client and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot)."
 msgstr "บริษัทฯ สงวนสิทธิ์ในการยกเลิก/ทำธุรกรรมย้อนกลับ หรือ แก้ไขข้อตกลงของสัญญา (รวมถึงสปอตเริ่มต้นและสปอตสิ้นสุด) ในกรณีที่สัญญาที่ได้มาหรือถูกขายที่ราคาที่ไม่สมเหตุสมผลของตลาด หรือ ได้มา หรือ ถูกขาย ที่ระดับความเสี่ยงต่ำผิดปกติ อันเกิดจากข้อผิดพลาดของระบบที่ยังหาไม่พบ ข้อผิดพลาดเล็กๆ ในซอฟต์แวร์เว็บไซต์ของบริษัทฯ ฟีดข้อมูลการตลาด หรือ ภาวะราคาแฝง ข้อผิดพลาดของฟีดข้อมูล ราคาเบี่ยงเบนผิดทิศทาง การตั้งตัวแปรราคาผิดพลาด หรือ การคำนวณราคาผิดพลาดที่ปรากฏ หรือ ความผิดพลาดที่ชัดเจนอื่นๆ (เรียกว่า \"ข้อผิดพลาดที่สำแดงชัดเจน\") ลูกค้ามีหน้าที่ในการรายงานให้บริษัทฯ ทราบถึงปัญหา ข้อผิดพลาด หรือ หากสงสัยถึงความหย่อนในเสถียรภาพของระบบที่อาจพบ และไม่ได้ใช้ในทางที่ผิด หรือหาโอกาสทำกำไรจากปัญหา หรือ ข้อผิดพลาดของระบบดังกล่าว บริษัทฯ จะพยายามแก้ไขปัญหาดังกล่าวในเวลาสั้นที่สุด การแก้ไขในเงื่อนไขสัญญา (รวมถึงสปอตเริ่มต้นและสปอตสิ้นสุด) สำหรับสัญญาที่มีข้อผิดพลาดที่สำแดงชัดเจน จะดำเนินการด้วยความรับผิดชอบและเป็นไปด้วยความยุติธรรม เงินที่เกิดขึ้นจากสัญญาที่มีข้อผิดพลาดระหว่างลูกค้าและบริษัทฯ จะถูกคืนกลับให้แก่ผู้รับตามที่ได้มีการแก้ไขเงื่อนไขของสัญญา (รวมถึงสปอตเริ่มต้นและสปอตสิ้นสุด)"
@@ -11510,7 +11510,7 @@ msgid "The Company reserves the right to refuse the Affiliate's referrals' appli
 msgstr "บริษัทฯ สงวนสิทธิ์ในการปฏิเสธใบสมัครของผู้อ้างอิงของพันธมิตรฯ ในการเปิดบัญชี (หรือปิดบัญชีของพันธมิตรฯ) ตามที่จำเป็น เพื่อให้เป็นไปตามข้อกำหนดที่บริษัทฯ ได้วางไว้ตามกำหนดเวลา และ/หรือ ตามข้อกำหนด ภายใต้กฎหมาย กฎระเบียบ หลักเกณฑ์ต่างๆ ที่บังคับใช้"
 
 msgid "The Company reserves the right to refuse the client's request to open an MT5 Real Account for any reason, and any MT5 Real Account may be closed at the Company's discretion at any time upon 7-day notice."
-msgstr "บริษัทฯ สงวนสิทธิ์ที่จะปฏิเสธการร้องขอเปิดบัญชี MT5 จริงของลูกค้าด้วยเหตุผลใดๆ ก็ตาม และบริษัทฯ อาจปิดบัญชี MT5 จริงเมื่อใดก็ได้ ตามแต่ดุลยพินิจของบริษัทฯ แจ้งล่วงหน้า 7 วัน"
+msgstr "บริษัทขอสงวนสิทธิ์ที่จะปฏิเสธการร้องขอเปิดบัญชี MT5 จริงของลูกค้าด้วยเหตุผลใดๆ ก็ตาม และบริษัทอาจปิดบัญชี MT5 จริงใดๆ เมื่อใดก็ได้ตามแต่ดุลยพินิจของบริษัทโดยจะมีการแจ้งล่วงหน้า 7 วัน"
 
 msgid "The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of clients who engage in any trading activity"
 msgstr "บริษัทฯ สงวนสิทธิ์ในการปฏิเสธการดำเนินธุรกิจ การเพิกถอนการดำเนินธุรกิจ และการทำธุรกรรมย้อนกลับ ของลูกค้าผู้ซึ่งดำเนินพฤติการณ์ซื้อขายใดๆ"
@@ -11528,13 +11528,13 @@ msgid "The Company reserves the right to void, delay, or withhold payment of com
 msgstr "บริษัทฯ สงวนสิทธิ์ในการยกเลิก หน่วงเหนี่ยว หรือ ระงับการชำระเงินค่าธรรมเนียมนายหน้าให้พันธมิตรฯ หากพบ หรือมีข้อสงสัยในพฤติการณ์ที่อาจฝ่าฝืนกฎหมาย หรือข้อตกลงและเงื่อนไขต่างๆ ในข้อตกลงนี้"
 
 msgid "The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Deriv group of companies."
-msgstr "บริษัทมีสิทธิที่จะใช้สิทธิหรือปฏิบัติตามภาระผูกพันใดๆ ของบริษัท (รวมถึง แต่ไม่จำกัดเพียง ข้อผูกพันในการชำระเงิน) ผ่านสมาชิกของบริษัทในเครือ Deriv"
+msgstr "บริษัทมีสิทธิ์ที่จะใช้สิทธิหรือปฏิบัติตามภาระผูกพันใดๆ ของบริษัทในที่นี้ (รวมถึง แต่ไม่จำกัดเพียง ข้อผูกพันในการชำระเงิน) ผ่านบริษัทในเครือ Deriv Group"
 
 msgid "The Company shall ensure the confidentiality of all personal data provided by the applicant at all times and is protected against any accidental loss or disclosure, destruction, and abuse. The Company shall also ensure that such personal data is only processed and stored as necessary for the purposes specified in this privacy policy and all applicable Data Protection Laws."
-msgstr "บริษัทจะต้องรักษาความลับของข้อมูลส่วนบุคคลทั้งหมดที่ผู้สมัครให้ไว้ตลอดเวลาและได้รับการปกป้องจากการสูญเสียหรือการเปิดเผยการทำลายและการละเมิดโดยไม่ได้ตั้งใจ บริษัทจะต้องตรวจสอบให้แน่ใจว่าข้อมูลส่วนบุคคลดังกล่าวได้รับการประมวลผล และจัดเก็บเท่าที่จำเป็นสำหรับวัตถุประสงค์ที่ระบุไว้ในนโยบายความเป็นส่วนตัว และกฎหมายคุ้มครองข้อมูลที่เกี่ยวข้อง"
+msgstr "บริษัทจะต้องรักษาความลับของข้อมูลส่วนบุคคลทั้งหมดที่ผู้สมัครให้ไว้ตลอดเวลาและปกป้องข้อมูลนั้นจากการสูญหายหรือการเปิดเผย การทำลาย และการละเมิดโดยไม่ได้ตั้งใจ บริษัทจะต้องตรวจสอบให้แน่ใจว่าข้อมูลส่วนบุคคลดังกล่าวได้รับการประมวลผล และจัดเก็บตามที่จำเป็นสำหรับวัตถุประสงค์ที่ระบุไว้ในนโยบายความเป็นส่วนตัวนี้และกฎหมายคุ้มครองข้อมูลที่เกี่ยวข้อง"
 
 msgid "The Company shall further disclose information about the applicant internally within the Deriv Group of companies for the purpose of the recruitment exercise. The Company shall ensure that a data-sharing agreement is in place and that the applicant's data is held securely and in line with GDPR requirements. The Company shall further disclose information about the applicant when It is legally obligated to do so."
-msgstr "บริษัทจะเปิดเผยข้อมูลเพิ่มเติมเกี่ยวกับผู้สมัครภายในเครือบริษัท Deriv เพื่อวัตถุประสงค์ในการฝึกหัดคัดเลือก บริษัทจะต้องตรวจสอบให้แน่ใจว่ามีข้อตกลงการแบ่งปันข้อมูลและข้อมูลของผู้สมัครจะถูกเก็บไว้อย่างปลอดภัยและเป็นไปตามข้อกำหนดของ GDPR บริษัทจะเปิดเผยข้อมูลเพิ่มเติมเกี่ยวกับผู้สมัครเมื่อมีข้อบัญญัติตามกฎหมายที่อนุญาตและกำหนดให้ดำเนินการได้"
+msgstr "บริษัทจะเปิดเผยข้อมูลเพิ่มเติมเกี่ยวกับผู้สมัครภายในเครือบริษัท Deriv เพื่อวัตถุประสงค์ในการฝึกหัดคัดเลือกคนเข้าทำงาน โดยบริษัทจะต้องทำให้แน่ใจว่ามีการทำข้อตกลงการแบ่งปันข้อมูลแล้วและข้อมูลของผู้สมัครนั้นจะถูกเก็บไว้อย่างปลอดภัยและเป็นไปตามข้อกำหนดของ GDPR บริษัทจะเปิดเผยข้อมูลเพิ่มเติมเกี่ยวกับผู้สมัครเมื่อมีข้อบัญญัติตามกฎหมายที่อนุญาตและกำหนดให้ดำเนินการได้"
 
 msgid "The Company shall have no liability arising from orders, investment decisions, or purchases of third-party goods or services (including financial instruments and currency) based on information published on or furnished through the %1 API."
 msgstr "บริษัทฯ จะไม่มีส่วนรับผิดชอบใดๆ ต่อคำสั่ง การตัดสินใจในการลงทุน หรือ การซื้อสินค้า หรือ บริการจากบุคคลที่สาม (รวมถึงเครื่องมือทางการเงิน และ สกุลเงิน) ที่อ้างอิงจากข้อมูลที่เผยแพร่ หรือ ประกอบให้เกิดขึ้นผ่าน API ของ %1"
@@ -11570,13 +11570,13 @@ msgid "The Company shall, in its absolute discretion, determine whether the appl
 msgstr "บริษัทฯ ใช้ดุลยพินิจในการพิจารณาใบสมัครของโบรกเกอร์แนะนำและอนุมัติ คำตัดสินของบริษัทฯ ถือเป็นสิ้นสุดและไม่รองรับต่อการขออุทธรณ์ใดๆ"
 
 msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing the client's transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by the Company or the prime brokers to the client. The client acknowledges and agrees that such data is proprietary to the Company and any such provider, and the client will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. The client represents and warrants that they will only use such data for purposes of facilitating their entry into transactions with the Company on the client's MT5 Real Account in accordance with this agreement and not for any other purpose. This clause does not apply to Synthetic Indices, basket indices, and derived FX."
-msgstr "บริษัทจัดหาข้อมูลการตลาดจากโบรกเกอร์ชั้นนำซึ่งทำหน้าที่เป็นผู้ให้บริการสภาพคล่องดังนั้นธุรกรรมของลูกค้าจึงถูกดำเนินการผ่านกลุ่มสภาพคล่องรวมจากธนาคารชั้นนำ บริการต่างๆ ที่บริษัทนำเสนอไม่รวมถึงการส่งมอบเงินตราต่างประเทศโดยทางกายภาพโดยบริษัทเองหรือโบรกเกอร์ชั้นนำให้กับลูกค้า ลูกค้าได้รับทราบและตกลงว่าข้อมูลดังกล่าวเป็นกรรมสิทธิ์ของบริษัท และผู้ให้บริการดังกล่าว และลูกค้าจะไม่ส่งซ้ำ แจกจ่ายซ้ำ เผยแพร่ เปิดเผย หรือแสดงข้อมูลดังกล่าว โดยทั้งหมดหรือโดยบางส่วนให้แก่บุคคลที่สาม ลูกค้ารับรองและรับประกันว่าพวกเขาจะใช้ข้อมูลดังกล่าวเพื่อจุดประสงค์ในการอำนวยความสะดวกในการเข้าทำธุรกรรมกับบริษัทผ่านทางบัญชีจริง MT5 ของลูกค้าตามที่ระบุในสัญญาข้อตกลงนี้เท่านั้น และไม่ใช่เพื่อวัตถุประสงค์อื่นใด ข้อความนี้ใช้ไม่ได้กับดัชนีสังเคราะห์ ดัชนีตะกร้า และ Derived F"
+msgstr "บริษัทจัดหาข้อมูลการตลาดจากโบรกเกอร์ชั้นนำซึ่งทำหน้าที่เป็นผู้ให้บริการสภาพคล่องดังนั้นธุรกรรมของลูกค้าจึงถูกดำเนินการผ่านกลุ่มสภาพคล่องรวมจากธนาคารชั้นนำ บริการต่างๆ ที่บริษัทนำเสนอจะไม่รวมถึงการส่งมอบเงินตราต่างประเทศโดยทางกายภาพโดยบริษัทเองหรือโบรกเกอร์ชั้นนำให้กับลูกค้า ลูกค้าได้รับทราบและตกลงว่าข้อมูลดังกล่าวเป็นกรรมสิทธิ์ของบริษัท และผู้ให้บริการดังกล่าว และลูกค้าจะไม่ส่งซ้ำ แจกจ่ายซ้ำ เผยแพร่ เปิดเผย หรือแสดงข้อมูลดังกล่าวโดยทั้งหมดหรือโดยบางส่วนให้แก่บุคคลที่สาม ลูกค้ารับรองและรับประกันว่าจะใช้ข้อมูลดังกล่าวเพื่อจุดประสงค์ในการอำนวยความสะดวกในการเข้าทำธุรกรรมกับบริษัทผ่านทางบัญชีจริง MT5 ของลูกค้าตามที่ระบุในสัญญาข้อตกลงนี้เท่านั้น และไม่ใช่เพื่อวัตถุประสงค์อื่นใด ข้อความนี้ใช้ไม่ได้กับดัชนีสังเคราะห์ ดัชนีตะกร้า และ Derived FX"
 
 msgid "The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue."
 msgstr "บริษัทฯ มุ่งมั่นเพื่อให้แน่ใจว่า ทุกที่คำสั่งซื้อได้ถูกดำเนินการประมวลผล อย่างไรก็ตาม ในบางกรณีที่มีความยากลำบากหรือสถานการณ์ที่ผิดปกติ อาจส่งผลต่อการประมวลผลตามปกติ โดยบริษัทฯ ได้ตระหนักถึงเงื่อนไข และสภาวการณ์ที่ไม่ปกติ หากแต่ได้จัดให้มีการดำเนินการที่เหมาะสมต่อคำสั่งซื้อ ซึ่งจะแจ้งให้ลูกค้าทราบทันทีหากพบปัญหาใดๆ ดังกล่าว"
 
 msgid "The Company typically collects and processes the applicant's personal data for the purposes of the legitimate interests that It pursues. Here are some examples of such interests:"
-msgstr "โดยทั่วไปบริษัทจะรวบรวมและประมวลผลข้อมูลส่วนบุคคลของผู้สมัครเพื่อวัตถุประสงค์ของผลประโยชน์ที่ชอบด้วยกฎหมายที่บริษัทดำเนินการ นี่คือตัวอย่างบางส่วนของความสนใจดังกล่าว:"
+msgstr "โดยทั่วไปบริษัทจะรวบรวมและประมวลผลข้อมูลส่วนบุคคลของผู้สมัครเพื่อวัตถุประสงค์ของผลประโยชน์ที่ชอบด้วยกฎหมายที่บริษัทดำเนินการ นี่คือตัวอย่างบางส่วนของสิ่งดังกล่าว:"
 
 msgid "The Company uses identity verification services and real-time fraud detection measures to help protect the client from unauthorised access to the client's account. The Company also monitors account activity for signs of unusual activity that might indicate fraud and work with collection and law-enforcement agencies to address fraud issues."
 msgstr "บริษัทฯ ใช้บริการการตรวจสอบอัตลักษณ์ และการตรวจจับการทุจริตแบบเรียลไทม์ เพื่อช่วยป้องกันการเข้าถึงบัญชีของลูกค้าโดยไม่ได้รับอนุญาต บริษัทฯ ยังได้ตรวจตราบัญชีเพื่อตรวจดูพฤติกรรมที่ไม่ปกติ ซึ่งอาจจะบ่งชี้ถึงการทุจริต และประสานงานรวมกันกับหน่วยงานรวบรวมข้อมูลและหน่วยงานที่บังคับใช้กฎหมายเพื่อตรวจสอบกรณีทุจริตต่างๆ"
@@ -11663,7 +11663,7 @@ msgid "The Company's website contains links to other websites and may contain ba
 msgstr "เว็ยไซต์ของบริษัทฯ มีลิงค์ไปยังเว็บไซต์อื่นและอาจจะมีแบนเนอร์ หรือ ไอคอนโฆษณาที่เกี่ยวกับเว็บไซต์ภายนอกอื่นๆ เว็บไซต์เหล่านี้และโฆษณาต่างๆ อาจจะส่งคุกกี้ให้กับเว็บเบราเซอร์ของลูกค้า ซึ่งเป็นสิ่งที่อยู่นอกเหนือการควบคุมของบริษัทฯ บริษัทฯ ไม่รับผิดชอบต่อแนวปฏิบัติในเรื่องความเป็นส่วนตัว หรือ เนื้อหาของเว็บไซต์ดังกล่าว บริษัทฯ ขอให้ลูกค้าศึกษานโยบายการรักษาข้อมูลส่วนบุคคลของเว็บไซต์เหล่านั้น เนื่องจากการปฏิบัติอาจมีความแตกต่างกับแนวปฏิบัติของบริษัทฯ"
 
 msgid "The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Deriv Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide."
-msgstr "ผู้จัดการประจำประเทศเป็นผู้ดำเนินการเพื่อให้ได้รับ ให้บริการ บริหาร และขยายเครือข่ายพันธมิตรออนไลน์ในประเทศต่างๆ ที่มีกลุ่มเป้าหมายของเครือ Deriv อยู่ คุณจะใช้ทักษะ ความรู้ ของคุณที่สอดคล้องกับวัฒนธรรมธุรกิจของท้องถิ่นเพื่อเพิ่มอัตราการเติบโตของเราทั่วโลก"
+msgstr "ผู้จัดการประจำประเทศเป็นผู้ดำเนินการเพื่อให้ได้รับ ให้บริการ บริหาร และขยายเครือข่ายพันธมิตรออนไลน์ในประเทศต่างๆ ที่มีลูกค้ากลุ่มเป้าหมายของเครือ Deriv Group อยู่ คุณจะใช้พลัง ทักษะ และความรู้ของคุณที่สอดคล้องกับวัฒนธรรมธุรกิจท้องถิ่นเพื่อเพิ่มอัตราการเติบโตอย่างรวดเร็วของเราทั่วโลก"
 
 msgid "The DRC may request additional information from the client or the Company, who must then provide the requested information within 7 days."
 msgstr "DRC อาจขอข้อมูลเพิ่มเติมจากลูกค้าหรือจากบริษัท ซึ่งจะต้องให้ข้อมูลตามที่ร้องขอภายใน 7 วัน"
@@ -11687,7 +11687,7 @@ msgid "The Financial Commission has 5 days to acknowledge that the client’s co
 msgstr "คณะกรรมาธิการการเงินหรือ Financial Commission มีเวลา 5 วันในการรับทราบว่าได้รับการร้องเรียนของคุณ และมีเวลา 14 วันในการตอบข้อร้องเรียนผ่านกระบวนการระงับข้อพิพาทภายในหรือ Internal Dispute Resolution (IDR) ของบริษัท"
 
 msgid "The Financial Commission offers compensation up to 20,000 EUR on a case-to-case basis, unbiased assessment of disputes, and fast and effective dispute resolution free of charge."
-msgstr "คณะกรรมการการเงินเสนอค่าตอบแทนสูงถึง 20,000 EUR เป็นกรณีๆ โดยการประเมินข้อพิพาทอย่างเป็นกลางและการระงับข้อพิพาทที่รวดเร็วและมีประสิทธิภาพโดยไม่เสียค่าใช้จ่าย"
+msgstr "คณะกรรมการการเงินเสนอค่าชดเชยสูงถึง 20,000 EUR โดยพิจารณาเป็นกรณีๆ ไปและผ่านการประเมินข้อพิพาทอย่างเป็นกลางและการระงับข้อพิพาทที่รวดเร็วและมีประสิทธิภาพโดยไม่เสียค่าใช้จ่าย"
 
 msgid "The Financial Commission will investigate the validity of the complaint within 5 business days."
 msgstr "คณะกรรมาธิการการเงินหรือ Financial Commission จะตรวจสอบความถูกต้องของการร้องเรียนภายใน 5 วันทำการ"
@@ -12394,7 +12394,7 @@ msgid "The photo should clearly show your document"
 msgstr "รูปภาพควรแสดงเอกสารของคุณอย่างชัดเจน"
 
 msgid "The platforms aren't user-friendly."
-msgstr "แพลตฟอร์มไม่ใช้งานง่าย"
+msgstr "แพลตฟอร์มเหล่านี้ใช้งานยาก"
 
 msgid "The platforms lack key features or functionality."
 msgstr "แพลตฟอร์มเหล่านี้ขาดคุณสมบัติหรือฟังก์ชันที่สำคัญ"
