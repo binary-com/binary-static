@@ -168,14 +168,14 @@ jobs:
       - notify_slack
   publish_cloudflare_staging:
     docker:
-      - image: circleci/node:16.13.1-stretch
+      - image: cimg/node:20.2.0
     steps:
       - attach_workspace:
           at: dist
       - publish_to_pages_staging
   publish_cloudflare_production:
     docker:
-      - image: circleci/node:16.13.1-stretch
+      - image: cimg/node:20.2.0
     steps:
       - attach_workspace:
           at: dist
