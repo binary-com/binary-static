@@ -21,7 +21,7 @@ This repository contains the static HTML, Javascript, CSS, and images content of
 
 ## Pre-installation
 
-Before running or contribute to this project, you need to have the setup of the following packages in your environment
+Before running or contributing to this project, you need to have the setup of the following packages in your environment
 
 - Ruby, RubyGems
 - Sass (`sudo gem install sass`)
@@ -74,7 +74,7 @@ Before running or contribute to this project, you need to have the setup of the 
 
 ## Test link deployment
 
-There are two types of test link deployment preview:
+There are two types of test link deployment previews:
 
 1. Automatic deployment
 
@@ -89,7 +89,7 @@ You can manually deploy your test link using gh-pages with the following configu
 1.  Register your application [here](https://developers.binary.com/applications/). This will give you the ability to redirect back to your Github pages after login.
     Use `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html` for the Redirect URL and `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/redirect.html` for the Verification URL.
 
-        If you're using a custom domain, replace the Github URLs above with your domain.
+        If you're using a custom domain, replace the GitHub URLs above with your domain.
 
 2.  In `src/javascript/config.js`: Insert the `Application ID` of your registered application in `user_app_id`.
 
