@@ -67,7 +67,6 @@ const OrderExecution = () => (
             <li>{it.L('GBE Brokers Ltd')}</li>
             <li>{it.L('Fondex Limited ')}</li>
             <li>{it.L('Global Pop Liquidity Solutions Ltd')}</li>
-            <li>{it.L('Exclusive Markets Ltd')}</li>
             <li>{it.L('GC Exchange Limited')}</li>
         </ul>
 
