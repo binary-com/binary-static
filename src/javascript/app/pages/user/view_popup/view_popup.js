@@ -52,12 +52,8 @@ const ViewPopup = (() => {
             ViewPopupUI.setOnCloseFunction(onClose);
         }
 
-        if (btn_view) {
-            ViewPopupUI.disableButton($(btn_view));
-            ViewPopupUI.cleanup(false);
-        }
-
         getContract();
+    
     };
 
     const responseContract = (response) => {
