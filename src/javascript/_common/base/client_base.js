@@ -234,6 +234,11 @@ const ClientBase = (() => {
         return acccount.status.some(s => s === 'allow_document_upload' || s === 'allow_poi_resubmission');
     };
 
+    const isPoincAllowed = () => {
+        const account = State.getResponse('get_account_status');
+        return account.status.some(s => s === 'allow_poinc_resubmission');
+    };
+
     // * MT5 login list returns these:
     // market_type: "financial" | "gaming"
     // sub_account_type: "financial" | "financial_stp" | "swap_free"
@@ -416,6 +421,7 @@ const ClientBase = (() => {
         isAccountOfType,
         isAuthenticationAllowed,
         isOptionsBlocked,
+        isPoincAllowed,
         getAccountOfType,
         hasAccountType,
         hasCurrencyType,
