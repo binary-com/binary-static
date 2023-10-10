@@ -5,6 +5,7 @@ const Table            = require('../../../common/attach_dom/table');
 const DatePicker       = require('../../../components/date_picker');
 const Login            = require('../../../../_common/base/login');
 const CommonFunctions  = require('../../../../_common/common_functions');
+const ClientBase       = require('../../../../_common/base/client_base');
 const localize         = require('../../../../_common/localize').localize;
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 const toISOFormat      = require('../../../../_common/string_util').toISOFormat;
@@ -19,9 +20,11 @@ const TradingTimesUI = (() => {
         $empty_trading_times,
         columns,
         active_symbols,
+        gaming_account,
         trading_times;
 
     const onLoad = () => {
+        gaming_account       = ClientBase.getAccountType() === 'gaming';
         $date                = $('#trading-date');
         $container           = $('#trading-times');
         $date_container      = $('#trading-date-container');
@@ -149,7 +152,6 @@ const TradingTimesUI = (() => {
 
     const createMarketTables = (market) => {
         const $market_tables = $('<div/>');
-
         // submarkets of this market
         const submarkets = market.submarkets;
         let should_populate;
@@ -158,10 +160,23 @@ const TradingTimesUI = (() => {
             if (should_populate) {
                 // submarket table
                 const $submarket_table = createEmptyTable(`${market.name}-${s}`);
+                // changing market data to fit as a class on the table
+                const submarket_class = submarkets[s].name.replace(/\s|\//g, '-').toLowerCase();
 
-                // submarket name
-                $submarket_table.find('thead').prepend(createSubmarketHeader(submarkets[s].name))
+                // adding the submarket name and adding a class to the element
+                $submarket_table.find('thead').prepend(createSubmarketHeader(submarkets[s].name)).addClass(submarket_class)
                     .find('th.opens, th.closes').addClass('nowrap');
+
+                const step_indices = $submarket_table.find('.step-indices');
+                const crash_boom_indices = $submarket_table.find('.crash-boom-indices');
+
+                if (gaming_account) {
+                    step_indices.setVisibility(0);
+                    crash_boom_indices.setVisibility(0);
+                } else {
+                    step_indices.setVisibility(1);
+                    crash_boom_indices.setVisibility(1);
+                }
 
                 // symbols of this submarket
                 const symbols = submarkets[s].symbols;
@@ -183,7 +198,6 @@ const TradingTimesUI = (() => {
     const createSubmarketHeader = submarket_name => (
         $('<tr/>', { class: 'flex-tr' })
             .append($('<th/>', { class: 'flex-tr-child submarket-name', colspan: columns.length, text: submarket_name })));
-
     const createSubmarketTableRow = (market_name, submarket_name, symbol) => {
         const $table_row = Table.createFlexTableRow(
             [
