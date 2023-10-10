@@ -20,7 +20,7 @@ const TradingResetPassword = (() => {
         } else {
             Dialog.alert({
                 id               : 'success_reset_trading_pw_dialog',
-                localized_message: localize('You have a new MT5 password to log in to your [_1] accounts on the web and mobile apps.', isEuCountry() ? 'CFDs' : 'MT5'),
+                localized_message: localize('You have a new MT5 password to log in to your [_1] accounts on the desktop, web and mobile apps.', isEuCountry() ? 'CFDs' : 'MT5'),
                 localized_title  : localize('Success'),
                 ok_text          : localize('Done'),
                 onConfirm        : () => { BinaryPjax.load(Url.urlFor('user/metatrader')); },
