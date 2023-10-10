@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[6039],{23652:function(e,t,n){"use strict";n.r(t);var a=n(67294),r=n(85899),i=n(77549),c=n(82081),u=n(68838);t.default=(0,u.Wm)()((function(){return a.createElement(a.Fragment,null,a.createElement(c.HJ,{title:"Deriv Careers | Internal audit jobs",description:"See job vacancies in Deriv’s Internal audit team. Join and grow with us."}),a.createElement(r.Z,{data:i.Z.internal_audit[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-internal-audit-index-js-13e40032bec02cfd3684.js.map

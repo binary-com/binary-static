@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[7109],{35671:function(e,t,r){"use strict";r.r(t);var n=r(67294),a=r(85899),c=r(77549),i=r(82081),s=r(68838);t.default=(0,s.Wm)()((function(){return n.createElement(n.Fragment,null,n.createElement(i.HJ,{title:"Deriv Careers | Customer Support jobs",description:"See job vacancies in Deriv’s Customer Support team. Join and grow with us."}),n.createElement(a.Z,{data:c.Z.cs[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-customer-support-index-js-d926513a552eeea75f95.js.map

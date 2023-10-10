@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[6867],{57215:function(e,r,t){"use strict";t.r(r);var n=t(67294),a=t(85899),i=t(77549),c=t(82081),u=t(68838);r.default=(0,u.Wm)()((function(){return n.createElement(n.Fragment,null,n.createElement(c.HJ,{title:"Deriv Careers | Cyber Security and IT jobs",description:"See job vacancies in Deriv’s Cyber Security and IT team. Join and grow with us."}),n.createElement(a.Z,{data:i.Z.security[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-cyber-security-it-index-js-b1e2c61adb3a08899eaf.js.map

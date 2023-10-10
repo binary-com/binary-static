@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[2275],{14269:function(e,n,t){"use strict";t.r(n);var a=t(67294),c=t(85899),i=t(77549),r=t(82081),u=t(68838);n.default=(0,u.Wm)()((function(){return a.createElement(a.Fragment,null,a.createElement(r.HJ,{title:"Deriv Careers | Finance and Account jobs",description:"See job vacancies in Deriv’s Finance and Account team. Join and grow with us."}),a.createElement(c.Z,{data:i.Z.finance[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-finance-accounts-index-js-2002eb3b68b60f4d149d.js.map

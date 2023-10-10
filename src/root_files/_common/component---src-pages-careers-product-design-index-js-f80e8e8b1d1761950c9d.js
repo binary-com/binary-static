@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[2983],{73957:function(e,t,r){"use strict";r.r(t);var n=r(67294),c=r(85899),i=r(77549),a=r(82081),s=r(68838);t.default=(0,s.Wm)()((function(){return n.createElement(n.Fragment,null,n.createElement(a.HJ,{title:"Deriv Careers | Product Design jobs",description:"See job vacancies in Deriv’s Product Design team. Join and grow with us."}),n.createElement(c.Z,{data:i.Z.product[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-product-design-index-js-f80e8e8b1d1761950c9d.js.map

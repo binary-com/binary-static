@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[4777],{34894:function(e,c,s){"use strict";s(67294);c.Z=s.p+"static/stocksHeaderBelowSection.8d49534b.svg"}}]);
+//# sourceMappingURL=75e7f63e966e4eddf74537246b83480178ab572d-3f2d40d97df357d35d2b.js.map

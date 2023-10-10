@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[6157],{6021:function(e,t,n){"use strict";n.r(t);var r=n(67294),a=n(85899),i=n(77549),c=n(82081),s=n(68838);t.default=(0,s.Wm)()((function(){return r.createElement(r.Fragment,null,r.createElement(c.HJ,{title:"Deriv Careers | Marketing jobs",description:"See job vacancies in Deriv’s Marketing team. Join and grow with us."}),r.createElement(a.Z,{data:i.Z.marketing[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-marketing-index-js-b8e9f58af1de61498174.js.map

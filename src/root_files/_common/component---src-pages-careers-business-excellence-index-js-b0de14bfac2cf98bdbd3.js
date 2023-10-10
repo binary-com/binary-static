@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[2344],{79306:function(e,n,s){"use strict";s.r(n);var t=s(67294),a=s(85899),i=s(77549),r=s(82081),c=s(68838);n.default=(0,c.Wm)()((function(){return t.createElement(t.Fragment,null,t.createElement(r.HJ,{title:"Deriv Careers | Business analyst jobs",description:"See job vacancies in Deriv’s Business analyst team. Join and grow with us."}),t.createElement(a.Z,{data:i.Z.business_excellence[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-business-excellence-index-js-b0de14bfac2cf98bdbd3.js.map

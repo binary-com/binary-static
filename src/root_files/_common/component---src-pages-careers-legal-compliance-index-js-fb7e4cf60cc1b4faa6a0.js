@@ -1,0 +1,2 @@
+(self.webpackChunkderiv_com=self.webpackChunkderiv_com||[]).push([[9494],{11202:function(e,a,n){"use strict";n.r(a);var t=n(67294),c=n(85899),i=n(77549),r=n(82081),l=n(68838);a.default=(0,l.Wm)()((function(){return t.createElement(t.Fragment,null,t.createElement(r.HJ,{title:"Deriv Careers | Legal and Compliance jobs",description:"See job vacancies in Deriv’s Legal and Compliance team. Join and grow with us."}),t.createElement(c.Z,{data:i.Z.compliance[0]}))}))}}]);
+//# sourceMappingURL=component---src-pages-careers-legal-compliance-index-js-fb7e4cf60cc1b4faa6a0.js.map
