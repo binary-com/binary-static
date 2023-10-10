@@ -51,7 +51,7 @@ const ServerTime = (() => {
         };
         updateTime();
         pending.resolve();
-        update_time_interval = setInterval(updateTime, 1000);
+        update_time_interval = setInterval(updateTime, 300);
     };
 
     const get = () => server_time ? server_time.clone() : undefined;
